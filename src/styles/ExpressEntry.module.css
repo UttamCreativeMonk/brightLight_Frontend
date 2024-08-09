@@ -1,0 +1,369 @@
+.bannerParent {
+  background-image: url("../assets/canadaBlue.jpeg");
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 100px 0px;
+}
+.banner {
+  width: 1440px;
+  margin: auto;
+  text-align: center;
+}
+
+.bannerHeading h1 {
+  color: #e8c47c;
+  font-size: 50px;
+}
+
+.bannerHeading p {
+  color: #ffffff;
+  width: 74%;
+  margin: auto;
+  font-size: 25px;
+  line-height: 1.8;
+  padding-top: 60px;
+}
+
+.bannerHeadingRotateParent {
+  width: 700px;
+  margin: auto;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  /* gap: 10px; */
+  align-items: center;
+  color: white;
+  margin-top: 150px;
+}
+
+.bannerHeadingRotate {
+  transform: rotate(-90deg);
+  border-bottom: 1px solid white;
+  padding-bottom: 20px;
+  font-size: 30px;
+}
+
+.bannerHeadingRotatePara p {
+  text-align: left;
+  padding-bottom: 24px;
+  font-size: 30px;
+}
+
+.bannerHeadingRotatePara {
+  margin-left: -50px;
+}
+
+.canadianParent {
+  width: 1440px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  text-align: left;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.canadianContent {
+  width: 46%;
+  color: #78797b;
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+.canadianContent p {
+  margin-bottom: 35px;
+}
+
+.canadianImg {
+  width: 46%;
+}
+
+.canadianImg img {
+  border-radius: 20px;
+  width: 100%;
+}
+
+/* // */
+
+.eligibleParent {
+  width: 1440px;
+  margin: auto;
+  text-align: left;
+  padding: 100px 0px;
+}
+
+.eligibleParent h1 {
+  font-size: 60px;
+  color: #132f46;
+  padding-bottom: 30px;
+}
+
+.eligibleParent p {
+  font-size: 30px;
+  color: #78797b;
+}
+
+.eligibleCardParent {
+  display: flex;
+  margin: auto;
+  margin-top: 60px;
+  justify-content: space-between;
+}
+
+.eligibleCard {
+  /* height: 180px; */
+  padding: 60px 20px;
+  width: 350px;
+  background-color: #153b58;
+  color: white;
+  border-radius: 15px;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  line-height: 1.8;
+}
+
+/* // */
+
+.additionGrandParent {
+  background-color: #132f46;
+}
+
+.additionParent {
+  width: 1440px;
+  margin: auto;
+  text-align: left;
+  padding: 50px 0px;
+}
+
+.additionParent {
+  color: #efce8e;
+}
+
+.additionCardParent {
+  width: 1440px;
+  margin: auto;
+  text-align: left;
+  padding: 50px 0px;
+}
+
+.additionCardParent h1 {
+  font-size: 60px;
+  color: #efce8e;
+  padding-bottom: 30px;
+}
+
+.additionCardParent {
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+}
+
+.additionCard {
+  /* height: 180px; */
+  padding: 60px 20px;
+  width: 340px;
+  background-color: white;
+  color: #132f46;
+  border-radius: 15px;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  line-height: 1.8;
+}
+
+
+.advantagesParent{
+    width: 100%;
+    padding: 100px 0px;
+}
+
+.advantages{
+    width: 1440px;
+    margin: auto;
+}
+
+.advantagesHeading h1{
+    font-size: 50px;
+    color: #153b58;
+    margin-bottom: 50px;
+}
+
+.advantagesPara p{
+    color: #78797b;
+    font-size: 25px;
+    margin-bottom: 60px;
+    align-items: left;
+    line-height: 1.8;
+}
+
+.forgetParent{
+    width: 100%;
+    background-color:#132f46;
+    padding: 100px 0px;
+}
+
+.forgetMain{
+    width: 1440px;
+    margin: auto;
+}
+
+.forgetHeading h1{
+    color: #ecca86;
+    text-align: left;
+    font-size: 50px;
+}
+
+.forgetList{
+    color: white;
+    width: 1340px;
+    text-align: left;
+    margin-top: 50px;
+    font-size: 25px;
+}
+
+.forgetListMain{
+    padding-top: 40px;
+}
+
+
+.incaseParent{
+    width: 100%;
+    padding: 100px 0px;
+}
+
+.incaseMain{
+    width: 1440px;
+    margin: auto;
+    text-align: left;
+}
+
+.incaseContent h1{
+    color: #132f46;
+    font-size: 70px;
+    padding-bottom: 40px;
+}
+
+.incaseContent p{
+    color: #000000;
+    line-height: 1.9;
+    font-size: 27px;
+}
+
+.theButton {
+    align-items: center;
+    appearance: none;
+    background-color: #fff;
+    border-radius: 33px;
+    border-style: none;
+    border: 2px solid #285a83;
+    box-sizing: border-box;
+    color: #132f46;
+    cursor: pointer;
+    display: inline-flex;
+    fill: currentcolor;
+    font-family: "Google Sans", Roboto, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    height: 48px;
+    justify-content: center;
+    letter-spacing: 0.25px;
+    line-height: normal;
+    max-width: 100%;
+    overflow: visible;
+    padding: 30px 50px;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: auto;
+    will-change: transform, opacity;
+    z-index: 0;
+    margin-top: 60px;
+  }
+  
+  .theButton:hover {
+    background: #f6f9fe;
+    color: #174ea6;
+  }
+  
+
+  .bestChoiceParent {
+    background-image: url("../assets/blue-map.png");
+    width: 100%;
+    /* height: 1200px; */
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px 0px;
+  }
+  
+  .bestChoice {
+    width: 1440px;
+    margin: auto;
+    text-align: center;
+    position: relative;
+  }
+  
+  .bestChoiceHeading h2 {
+    color: #d2ae6d;
+    font-size: 50px;
+    width: 65%;
+    text-align: right;
+  }
+  
+  .bestChoiceHeading {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+.faqParent{
+  width: 100%;
+  background-image: url("../assets/question.png");
+  text-align: right;
+  padding: 100px 0px;
+  background-color: #f9f9f9;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.faqMain{
+  width: 1440px;
+  margin: auto;
+}
+
+.faqContent{
+  display: flex;
+}
+
+.faqHeading{
+  width: 47%;
+}
+
+.faqHeading h1{
+  text-align: left;
+  color: #153b58;
+  font-size: 60px;
+
+}
+
+.faqHeading h4{
+  text-align: left;
+  color: #153b58;
+  font-size: 25px;
+  padding-top: 50px;
+}
+
+.faqPara{
+  width: 47%;
+}
+
+.faqPara p{
+  line-height: 1.5;
+  font-size: 20px;
+}

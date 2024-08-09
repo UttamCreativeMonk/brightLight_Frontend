@@ -1,0 +1,25 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body{
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar{
+  display: none;
+}
+
+img{
+  background-size: cover;
+  object-fit: cover;
+}
+
+@font-face {
+  font-family: 'YourCustomFont';
+  src: url('./assets/fonts/Madera-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

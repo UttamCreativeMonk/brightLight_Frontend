@@ -1,0 +1,510 @@
+.aboutBanner {
+  background-image: url("../assets/about-banner.png");
+  width: 100%;
+  padding: 120px 0px;
+}
+
+.aboutUsTopContentSection {
+  width: 1440px;
+  margin: auto;
+  text-align: center;
+}
+
+.aboutLogo img {
+  height: auto;
+  width: 400px;
+  margin: auto;
+}
+
+.aboutHeading {
+  font-size: 30px;
+  color: white;
+  width: 700px;
+  margin: auto;
+  margin-top: 130px;
+  text-align: center;
+  margin-bottom: 130px;
+}
+
+.aboutUsFeaturesSection {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.aboutUsFeature {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background-color: rgba(255, 255, 0, 0.122);
+  border-radius: 20px;
+  padding-right: 10px;
+}
+
+.aboutUsFeature div {
+  width: 30%;
+  border: 3px solid white;
+  border-radius: 20px;
+  background-color: #132f46;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutUsFeature div img {
+  width: 70px;
+  height: 70px;
+  background-size: cover;
+  object-fit: cover;
+  border: 1px solid white;
+}
+
+.aboutUsFeature p {
+  width: 65%;
+  text-align: left;
+  color: yellow;
+  font-size: 25px;
+}
+
+.bannerParaParent {
+  color: white;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  font-size: 25px;
+  margin-top: 70px;
+  line-height: 1.5;
+}
+
+/* .foundationParent{
+    width: 1440px;
+} */
+.designContent {
+  width: 75%;
+  /* margin: auto; */
+  margin-top: 100px;
+  color: #132f46;
+}
+
+.designContent h1 {
+  margin-bottom: 50px;
+  font-size: 50px;
+  text-align: left;
+}
+
+.designContent h3 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 30px;
+  text-align: left;
+}
+
+.foundationContent {
+  width: 1440px;
+}
+
+.foundation {
+  width: 1440px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.foundationInside {
+  width: 47%;
+}
+
+.foundationInside img {
+  height: auto;
+  width: 80%;
+  
+}
+
+.foundationMainSection {
+  background-image: url("../assets/aboutLeaf.png");
+  width: 100%;
+  margin: auto;
+  padding: 120px 0px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.foundationContentSection {
+  width: 47%;
+}
+
+.foundationContentSection p {
+  text-align: left;
+  margin-bottom: 50px;
+  color: #132f46;
+  font-size: 22px;
+  line-height: 1.9;
+}
+
+.vision {
+  width: 1440px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.visionContentSection {
+  width: 47%;
+}
+
+.visionContentSection p {
+  text-align: left;
+  margin-bottom: 50px;
+  width: 70%;
+  font-size: 20px;
+  margin: auto;
+  line-height: 1.9;
+  color: #132f46;
+}
+
+.visionInside {
+  width: 47%;
+}
+
+.visionInsideImg{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.visionInside img {
+  height: auto;
+  width: 220px;
+  object-fit: cover;
+  text-align: left;
+}
+
+.visionMainSection {
+  background: linear-gradient(to right, rgb(221, 221, 221), #f4f6f8);
+  width: 100%;
+  margin: auto;
+  padding: 120px 0px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.pillarParent {
+  background-image: url("../assets/pillars-bg.png");
+  width: 100vw;
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 150px 0px;
+}
+
+.pillarSection {
+  width: 1440px;
+  margin: auto;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+.pillarLogo {
+  width: 47%;
+}
+
+.pillarLogo img {
+  width: 40%;
+  height: auto;
+  text-align: center;
+}
+
+.pillarLogoContent {
+  width: 100%;
+  color: white;
+}
+
+.pillarLogoContent h2 {
+  padding-top: 30px;
+  font-size: 60px;
+}
+
+.pillarLogoContent p {
+  padding-top: 40px;
+  font-size: 20px;
+  line-height: 1.9;
+}
+
+.pillarFeatureSection {
+  width: 47%;
+  text-align: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+.pillarFeatureSvg h4 {
+  text-align: center;
+  color: #cfb681;
+  font-size: 35px;
+  margin: 0px 0px 10px 0px;
+}
+
+.pillarFeatureSvg svg {
+  position: relative;
+  top: -25px;
+}
+
+.pillarFeatureSection p {
+  color: #cfb681;
+  font-size: 22px;
+}
+
+.pillarFeatureSvg {
+  width: 60%;
+  border-radius: 10px;
+  padding: 10px 10px 30px 10px;
+  background: linear-gradient(to bottom, #14334c 10%, #030c1412);
+}
+
+.weAreParent {
+  background-image: url("../assets/we-are-background.png");
+  height: auto;
+  width: 100%;
+  padding: 180px 0px;
+}
+
+.weAreParentImg {
+  width: 1440px;
+  margin: auto;
+}
+
+.weAreParentImg img {
+  width: 100%;
+  height: auto;
+}
+
+.ourAchivementParent {
+  background-image: url("../assets/and-bg.png");
+  width: 100%;
+  height: auto;
+  padding: 50px 0px 100px 0px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.andSymbol {
+  text-align: center;
+  font-size: 180px;
+  font-weight: 700;
+  color: #132f46;
+  position: relative;
+  top: -180px;
+}
+
+.ourAchivementSection {
+  width: 1440px;
+  margin: auto;
+  text-align: center;
+  color: #132f46;
+  margin-top: -100px;
+}
+
+.ourAchivementHeading h1 {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  font-size: 65px;
+}
+
+.ourAchivementCardParent {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 1240px;
+  margin: auto;
+  margin-top: 100px;
+}
+
+.ourAchivementCard {
+  background-color: white;
+  border-radius: 18.7px;
+  border: none;
+  padding: 60px 35px;
+  text-align: center;
+}
+
+.ourAchivementCard h2 {
+  font-size: 70px;
+  margin-top: 40px;
+}
+
+.ourAchivementCard p {
+  font-size: 30px;
+}
+
+.bestChoiceParent {
+  background-image: url("../assets/blue-map.png");
+  width: 100%;
+  /* height: 1200px; */
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 100px 0px;
+}
+
+.bestChoice {
+  width: 1440px;
+  margin: auto;
+  text-align: center;
+  position: relative;
+}
+
+.bestChoiceHeading h2 {
+  color: #d2ae6d;
+  font-size: 50px;
+  width: 65%;
+  text-align: right;
+}
+
+.bestChoiceHeading {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.socialPresenceParent {
+  background-image: url("../assets/pillars-bg.png");
+  padding: 100px 0px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.socialPresence {
+  width: 1440px;
+  margin: auto;
+  text-align: center;
+  color: white;
+}
+
+.socialPresence h1 {
+  font-size: 60px;
+}
+
+.socialPresence p {
+  font-size: 22px;
+  line-height: 1.9;
+  padding-top: 50px;
+  width: 67%;
+  margin: auto;
+  text-align: center;
+}
+
+.socialPresenceIconsParent p {
+  color: white;
+}
+
+.socialPresenceIcons {
+  display: flex;
+  width: 1240px;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.socialPresenceIcons a img{
+  width: 100%;
+}
+
+
+.vancouverParent {
+  background-image: url("../assets/vancover-based.png");
+  width: 100%;
+  height: 830px;
+}
+
+.vancouver {
+  width: 1440px;
+  margin: auto;
+  text-align: center;
+  color: #132f46;
+}
+
+.vancouver h1 {
+  padding-top: 140px;
+  font-size: 60px;
+}
+
+.mapParent {
+  background-image: url("../assets/mainbg.png");
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: auto;
+  padding: 100px 0px;
+}
+
+.mapSection {
+  width: 1440px;
+  margin: auto;
+  text-align: center;
+}
+
+.mapSection iframe {
+  width: 100%;
+  height: 590px;
+  border-radius: 20px;
+  border: none;
+}
+
+.theButton {
+  align-items: center;
+  appearance: none;
+  background-color: #fff;
+  border-radius: 33px;
+  border-style: none;
+  border: 2px solid #285a83;
+  box-sizing: border-box;
+  color: #132f46;
+  cursor: pointer;
+  display: inline-flex;
+  fill: currentcolor;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: 0.25px;
+  line-height: normal;
+  max-width: 100%;
+  overflow: visible;
+  padding: 30px 50px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+  will-change: transform, opacity;
+  z-index: 0;
+  margin-top: 60px;
+}
+
+.theButton:hover {
+  background: #f6f9fe;
+  color: #174ea6;
+}

@@ -1,0 +1,194 @@
+.navbar {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px 0px;
+  background-color: #132f46 ;
+  font-family: "Madera-Regular.tff", sans-serif;
+}
+/* firstNavbar Css */
+.firstNavbar {
+  width: 1440px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.calculatorIcon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.ancor {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 80px;
+}
+
+.ancor a {
+  color: white;
+  text-decoration: none;
+}
+
+.mobileIcon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.mobileIcon svg {
+  transform: rotate(20deg);
+}
+
+/* secondNavbar css */
+
+.secondNavbar {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: 1440px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 40px;
+  border-radius: 10px;
+  background-color: white;
+  position: relative;
+  top:-5px;
+  z-index: 3;
+
+}
+
+.logo{
+    padding-right: 30px;
+    border-right: 1px solid  #132f46 ;
+}
+
+.logo img{
+    width: 50px;
+    height: auto;
+}
+
+.mainNavbar{
+display: flex;
+align-items: center;
+justify-content: flex-end;
+gap: 50px;
+
+}
+
+.mainNavbar a{
+  color: #132f46;
+  text-decoration: none;
+ 
+}
+
+
+/* // */
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  border: 1px solid #dec18f; /* Border color for the overall shape */
+  width: fit-content;
+  overflow: hidden;
+}
+
+.inputWrapper {
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 50px; /* Round left side only */
+  padding-left: 10px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+  color: #dec18f; /* Adjust icon color to match border */
+  pointer-events: none;
+}
+
+.input {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 10px 10px 10px 35px; /* Add left padding to accommodate the icon */
+  font-size: 16px;
+  border-radius: 50px 0 0 50px; /* Round left side only */
+}
+
+.button {
+  background-color: #dec18f; /* Button background color */
+  color: white;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 50px; 
+  font-size: 16px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.contactNavbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: #0b3d6e; */
+  padding: 10px 20px;
+  color: white;
+  width: 1340px;
+  margin: auto;
+  /* background-color: black; */
+}
+
+.contactInfo {
+  display: flex;
+  align-items: center;
+}
+
+.location,
+.email {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.icon {
+  width: 18px;
+  height: auto;
+  margin-right: 5px;
+}
+
+.email .icon {
+  margin-left: 10px;
+}
+
+.socialMedia {
+  display: flex;
+  align-items: center;
+
+}
+
+.socialIcon {
+  width: 24px;
+  height: 24px;
+  margin-left: 15px;
+  fill: white;
+  cursor: pointer;
+}
+
+.socialIcon:hover {
+  fill: #f1c40f;
+}
