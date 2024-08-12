@@ -18,7 +18,7 @@ let Contact = () => {
   };
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className={styles.contactTopSection}>
         <h1>Contact Us</h1>
         <h3>Got a Question? We're here to answer!</h3>
@@ -126,7 +126,7 @@ let Contact = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
