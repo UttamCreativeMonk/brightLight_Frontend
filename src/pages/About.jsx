@@ -11,6 +11,8 @@ import VisaImg from "../assets/visa.png";
 import BlueMap from "../assets/blue-map.png";
 import BestChoice from "../assets/best-choice.png";
 import InstaBlue from "../assets/insta.png";
+import Director1 from "../assets/loveneeth-founder.webp";
+import Director2 from "../assets/sumir.webp";
 
 let About = () => {
   return (
@@ -163,6 +165,44 @@ let About = () => {
 
           {/* / */}
         </div>
+      </div>
+
+      <div className={styles.meetDirectorsParent}>
+        <div className={styles.meetDirectorMain}>
+          <h1>Meet the Directors</h1>
+        </div>
+        <div className={styles.thedirectors}>
+          <div className={styles.meetDirectorimgContent}>
+            <h1>Loveneet Paneswar</h1>
+            <h3>Founder & RCIC Consultant</h3>
+            <p>
+              Loveneet Paneswar, the "guiding light" of Brightlight Immigration,
+              is one of the firm's founders and a Regulated Canadian Immigration
+              Consultant (RCIC) with over a decade of experience and an
+              exceptional track record of success.
+            </p>
+          </div>
+          <div className={styles.meetDirectorImg}>
+            <img src={Director1} alt="err" />
+          </div>
+        </div>
+        {/* // */}
+        <div className={styles.thedirectors}>
+          <div className={styles.meetDirectorImg}>
+            <img src={Director2} alt="err" />
+          </div>
+          <div className={styles.meetDirectorimgContent}>
+            <h1>Sumir Paneswar</h1>
+            <h3>Co-Founder & Chief Client Manager</h3>
+            <p>
+              Sumir Paneswar is another founding member of Brightlight
+              Immigration. Mr. Sumir is our Chief Client Manager & brand's
+              Spokesperson, deeply committed to addressing all of our clients
+              inquiries and concerns.
+            </p>
+          </div>
+        </div>
+        {/* // */}
       </div>
 
       <div className={styles.weAreParent}>

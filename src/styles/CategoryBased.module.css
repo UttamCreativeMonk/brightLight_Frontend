@@ -1,0 +1,340 @@
+.bannerParent {
+  background-image: url("../assets/canadaBlue.jpeg");
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 100px 0px;
+}
+.banner {
+  width: 1440px;
+  margin: auto;
+  text-align: center;
+}
+
+.bannerHeading h1 {
+  color: #e8c47c;
+  font-size: 50px;
+}
+
+.bannerHeading p {
+  color: #ffffff;
+  width: 100%;
+  margin: auto;
+  font-size: 25px;
+  line-height: 1.8;
+  padding-top: 60px;
+}
+
+.bannerHeadingRotateParent {
+  width: 700px;
+  margin: auto;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  /* gap: 10px; */
+  align-items: center;
+  color: white;
+  margin-top: 150px;
+}
+
+.bannerHeadingRotate {
+  transform: rotate(-90deg);
+  border-bottom: 1px solid white;
+  padding-bottom: 20px;
+  font-size: 30px;
+}
+
+.bannerHeadingRotatePara p {
+  text-align: left;
+  padding-bottom: 24px;
+  font-size: 30px;
+}
+
+.bannerHeadingRotatePara {
+  margin-left: -50px;
+}
+
+.canadianParent {
+  width: 1440px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  text-align: left;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.canadianContent {
+  width: 46%;
+  color: #78797b;
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+.canadianContent h1 {
+  color: #153b58;
+  font-size: 50px;
+  padding-bottom: 30px;
+}
+
+.canadianContent p {
+  margin-bottom: 35px;
+  line-height: 35px;
+}
+
+.canadianImg {
+  width: 46%;
+}
+
+.canadianImg img {
+  border-radius: 20px;
+  width: 60%;
+}
+
+/* // */
+
+.eligibleParent {
+  width: 1440px;
+  margin: auto;
+  text-align: left;
+  padding: 100px 0px;
+}
+
+.eligibleParent h1 {
+  font-size: 60px;
+  color: #132f46;
+  width: 55%;
+  padding-bottom: 60px;
+}
+
+.eligibleParent p {
+  font-size: 30px;
+  color: #78797b;
+}
+
+.eligibleCardParent {
+  display: flex;
+  margin: auto;
+  margin-top: 60px;
+  justify-content: space-between;
+}
+
+.eligibleCard {
+  /* height: 180px; */
+  padding: 60px 20px;
+  width: 350px;
+  background-color: #153b58;
+  color: white;
+  border-radius: 15px;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  line-height: 1.8;
+}
+
+/* // */
+
+.container {
+  padding-top: 40px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.column {
+  list-style-type: none;
+}
+
+.column ul {
+  padding: 0;
+  margin: 0;
+}
+
+.column li {
+  margin-bottom: 16px;
+  font-size: 36px;
+  color: #00273f;
+  line-height: 40px;
+  padding-bottom: 50px;
+}
+
+.categoryBasedParent {
+  background-color: #132f46;
+  width: 100%;
+  padding: 100px 0px;
+}
+
+.categoryBasedMain {
+  width: 1440px;
+  margin: auto;
+  align-items: center;
+}
+
+.categoryBasedMain h1 {
+  font-size: 60px;
+  color: #eece8d;
+}
+
+.categoryBasedContentParent {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 60px;
+  align-items: center;
+  margin: auto;
+}
+
+.categoryBasedContent p {
+  color: white;
+  font-size: 30px;
+  line-height: 50px;
+}
+
+.categoryBasedContent {
+  width: 55%;
+}
+
+.categoryBasedImg {
+  width: 42%;
+  text-align: center;
+}
+
+.categoryBasedImg img {
+  width: 100%;
+  border: 1px solid white;
+}
+
+.eligibilityParent {
+  width: 1440px;
+  margin: auto;
+  align-items: center;
+  /* border: 1px solid red; */
+}
+
+.eligibilityMain h1 {
+  font-size: 70px;
+  color: #132f46;
+}
+
+.eligibilityMain h3 {
+  font-size: 30px;
+  color: #132f46;
+  padding-top: 20px;
+}
+
+.eligibilityPara {
+  font-size: 30px;
+  line-height: 45px;
+  padding-top: 50px;
+  color: #1a1a1a;
+}
+
+.cardWrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0px;
+  padding-top: 100px;
+}
+
+.card {
+  border: 2px solid #00273f; /* Border color */
+  border-radius: 10px;
+  padding: 38px;
+  text-align: center;
+  width: 22%; /* Adjust width as needed */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Optional for a subtle shadow */
+}
+
+.card p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 34px;
+  font-weight: 600;
+  color: #00273f; /* Text color */
+}
+
+.benifitParent {
+  width: 1440px;
+  margin: auto;
+  border: 1px solid red;
+  padding: 100px 0px;
+}
+
+.benifitMain h1 {
+  font-size: 60px;
+  color: #132f46;
+}
+
+.benifitlistParent {
+  width: 1380px;
+  color: #00273f;
+  font-size: 25px;
+  padding-top: 50px;
+  line-height: 50px;
+  margin: auto;
+}
+
+.benifitlistParent li {
+  padding-top: 20px;
+}
+
+
+.howApplyParent{
+    /* width: 1440px; */
+    margin: auto;
+    background-color: #00273f;
+}
+
+.howApplyMain{
+    width: 1440px;
+    margin: auto;
+}
+
+.stepsGrid {
+  /* width: 1440px; */
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+  background-color: #00273f; /* Background color */
+}
+
+.step {
+  display: flex;
+  flex-direction: column; /* Stack numbering and content vertically */
+  align-items: flex-start;
+  padding: 10px;
+  color: white; /* Text color */
+}
+
+.stepNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  color: #00273f;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 50%;
+  margin-bottom: 10px; /* Space between number and content */
+}
+
+.stepContent {
+  flex-grow: 1;
+}
+
+.stepContent p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.stepContent a {
+  color: #f2c94c; /* Link color */
+  text-decoration: none;
+}
+
+.stepContent a:hover {
+  text-decoration: underline;
+}

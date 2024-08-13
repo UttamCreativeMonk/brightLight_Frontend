@@ -6,6 +6,9 @@ import Navbar from './components/Navbar';
 import PermanentResidency from "./pages/PermanentResidency";
 import ExpressEntry from './pages/ExpressEntry';
 import Footer from './components/Footer';
+import Navbar1 from './components/Navbar1';
+import Footer1 from './components/Footer1';
+import CategoryBased from './pages/CategoryBased';
 
 
 function App() {
@@ -18,11 +21,15 @@ function App() {
   return (
     <div className="App">
       {/* <Navbar/> */}
+      {/* <Navbar1/> */}
       {/* <Contact/> */}
       {/* <About/> */}
       {/* <PermanentResidency/> */}
-      <ExpressEntry/>
+      {/* <ExpressEntry/> */}
       {/* <Footer/> */}
+      {/* <Footer1/> */}
+      <CategoryBased/>
+     
     </div>
   );
 }

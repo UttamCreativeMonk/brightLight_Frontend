@@ -124,7 +124,6 @@
 .foundationInside img {
   height: auto;
   width: 80%;
-  
 }
 
 .foundationMainSection {
@@ -177,7 +176,7 @@
   width: 47%;
 }
 
-.visionInsideImg{
+.visionInsideImg {
   width: 100%;
   display: flex;
   justify-content: flex-start;
@@ -425,10 +424,9 @@
   margin-top: 30px;
 }
 
-.socialPresenceIcons a img{
+.socialPresenceIcons a img {
   width: 100%;
 }
-
 
 .vancouverParent {
   background-image: url("../assets/vancover-based.png");
@@ -507,4 +505,60 @@
 .theButton:hover {
   background: #f6f9fe;
   color: #174ea6;
+}
+
+.meetDirectorsParent {
+  background-image: url("../assets/meet-directors-bg.png");
+  width: 100%;
+  padding: 100px 0px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.meetDirectorMain {
+  width: 1440px;
+  margin: auto;
+  align-items: center;
+  text-align: center;
+}
+
+.meetDirectorMain h1 {
+  font-size: 40px;
+  color: #132f46;
+}
+
+.thedirectors {
+  width: 1440px;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 50px;
+}
+
+.thedirectors img {
+  width: 350px;
+}
+
+.meetDirectorimgContent {
+  width: 45%;
+}
+
+.meetDirectorimgContent h1 {
+  width: 34%;
+  font-size: 50px;
+  line-height: 50px;
+  color: #e9c67f;
+}
+
+.meetDirectorimgContent h3 {
+  padding-top: 10px;
+  font-size: 22px;
+  color: #132f46;
+}
+
+.meetDirectorimgContent p{
+  font-size: 20px;
+  color: #132f46;
+  padding-top: 30px;
+  line-height: 33px;
 }
