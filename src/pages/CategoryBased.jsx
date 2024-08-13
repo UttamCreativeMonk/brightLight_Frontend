@@ -7,6 +7,7 @@ import PlaneMap from "../assets/planeMap.png";
 import BluePolygon from "../assets/blue-polygon.webp";
 import GoogleIcon from "../assets/google-review.webp";
 import GirlVisa from "../assets/GirlVisa.png";
+import LinkAncor from "../assets/link-arrows.png";
 
 let CategoryBased = () => {
   return (
@@ -24,23 +25,6 @@ let CategoryBased = () => {
               sooner than you might under the standard Evnrose Entry process.
             </p>
           </div>
-
-          {/* <div className={styles.bannerHeadingRotateParent}>
-            <div className={styles.bannerHeadingRotate}>
-              <h3>QUICK ACCESS</h3>
-            </div>
-            <div className={styles.bannerHeadingRotatePara}>
-              <p>About the program</p>
-              <p>Eligibility</p>
-              <p>Advantages of Express Entry</p>
-              <p>Refusal Reasons</p>
-              <p>Draw History</p>
-              <p>Why Choose us</p>
-              <p>Testimonials</p>
-              <p>FAQs</p>
-              <p>Blogs</p>
-            </div>
-          </div> */}
         </div>
       </div>
 
@@ -180,79 +164,147 @@ let CategoryBased = () => {
       </div>
 
       <div className={styles.howApplyParent}>
-        <div  className={styles.howApplyMain}>
-        <h1>How to Apply?</h1>
-        <h4>
-          Meet the eligibility criteria? Let's see how you can apply for a
-          category-based draw
-        </h4>
-        
-       
-     
-      <div className={styles.stepsGrid}>
-        <div className={styles.step}>
-          <div className={styles.stepNumber}>1</div>
-          <div className={styles.stepContent}>
-            <p>
-              Create an Express Entry profile first. Or even better and
-              stress-free solution, let us handle your case for you.{" "}
-              <a href="#">Click here</a>
-            </p>
+        <div className={styles.howApplyMain}>
+          <h1>How to Apply?</h1>
+          <h4>
+            Meet the eligibility criteria? Let's see how you can apply for a
+            category-based draw
+          </h4>
+
+          <div className={styles.stepsGrid}>
+            <div className={styles.step}>
+              <div className={styles.stepNumber}>1</div>
+              <div className={styles.stepContent}>
+                <p>
+                  Create an Express Entry profile first. Or even better and
+                  stress-free solution, let us handle your case for you.{" "}
+                  <a href="#">Click here</a>
+                </p>
+              </div>
+            </div>
+            <div className={styles.step}>
+              <div className={styles.stepNumber}>2</div>
+              <div className={styles.stepContent}>
+                <p>
+                  Next, IRCC conducts draws irregularly, so keep a check on the
+                  official website or <a href="#">Click here</a> for a prompt
+                  notification.
+                </p>
+              </div>
+            </div>
+            <div className={styles.step}>
+              <div className={styles.stepNumber}>3</div>
+              <div className={styles.stepContent}>
+                <p>
+                  The higher your score, the more likely you are to get an ITA.
+                  Improve language skills, gain work experience, and get a
+                  higher education.
+                </p>
+              </div>
+            </div>
+            <div className={styles.step}>
+              <div className={styles.stepNumber}>4</div>
+              <div className={styles.stepContent}>
+                <p>
+                  If you meet the criteria and have a high enough score, you
+                  will get an ITA to apply for permanent residence.
+                </p>
+              </div>
+            </div>
+            <div className={styles.step}>
+              <div className={styles.stepNumber}>5 </div>
+              <div className={styles.stepContent}>
+                <p>
+                  You'll have 60 days to submit your complete application,
+                  including documents like identity proof, language test
+                  results, and work experience verification.
+                </p>
+              </div>
+            </div>
+            <div className={styles.step}>
+              <div className={styles.stepNumber}>6</div>
+              <div className={styles.stepContent}>
+                <p>
+                  Once your application is approved, you will receive a
+                  Confirmation of Permanent Residence (COPR), allowing you to
+                  live and work in Canada permanently.
+                </p>
+              </div>
+            </div>
+            {/* / */}
           </div>
+          {/* // */}
         </div>
-        <div className={styles.step}>
-          <div className={styles.stepNumber}>2</div>
-          <div className={styles.stepContent}>
-            <p>
-              Next, IRCC conducts draws irregularly, so keep a check on the
-              official website or <a href="#">Click here</a> for a prompt
-              notification.
-            </p>
-          </div>
-        </div>
-        <div className={styles.step}>
-          <div className={styles.stepNumber}>3</div>
-          <div className={styles.stepContent}>
-            <p>
-              The higher your score, the more likely you are to get an ITA.
-              Improve language skills, gain work experience, and get a higher
-              education.
-            </p>
-          </div>
-        </div>
-        <div className={styles.step}>
-          <div className={styles.stepNumber}>4</div>
-          <div className={styles.stepContent}>
-            <p>
-              If you meet the criteria and have a high enough score, you will
-              get an ITA to apply for permanent residence.
-            </p>
-          </div>
-        </div>
-        <div className={styles.step}>
-          <div className={styles.stepNumber}>5</div>
-          <div className={styles.stepContent}>
-            <p>
-              You'll have 60 days to submit your complete application, including
-              documents like identity proof, language test results, and work
-              experience verification.
-            </p>
-          </div>
-        </div>
-        <div className={styles.step}>
-          <div className={styles.stepNumber}>6</div>
-          <div className={styles.stepContent}>
-            <p>
-              Once your application is approved, you will receive a Confirmation
-              of Permanent Residence (COPR), allowing you to live and work in
-              Canada permanently.
-            </p>
-          </div>
-        </div>
-        {/* / */}
       </div>
-      {/* // */}
+
+      <div className={styles.refusalParent}>
+        <div className={styles.refusalMain}>
+          <h1>Reasons of Refusal</h1>
+          <h3>
+            Don't forget to avoid these common category-based draw refusal
+            reasons and increase your chances of approval.
+          </h3>
+
+          <div className={styles.refusalListParent}>
+            <ul>
+              <li>
+                Your applicant does not meet the eligibility criteria for the
+                program you are applying for. The eligibility criteria vary
+                depending on the program, but they typically include age,
+                education, work experience, language proficiency, and financial
+                resources.
+              </li>
+              <li>
+                You shared inaccurate and incomplete information on your Express
+                Entry profile.
+              </li>
+              <li>
+                You have failed to meet the minimum language requirements for
+                the program you are applying for.
+              </li>
+              <li>Your CRS Score is not high enough.</li>
+              <li>
+                Failed to submit all of the required documentation with your
+                application.
+              </li>
+              <li>
+                You have a medical condition that could pose a health risk to
+                yourself or others.
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
+
+      <div className={styles.theButtonAncorParent}>
+        <div className={styles.theButtonAncor}>
+          <a href="/">
+            Express Entry Category Based Draws History{" "}
+            <span className={styles.theButtonSpan}>
+              <img src={LinkAncor} alt="err" />
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div className={styles.appointementParent}>
+        <div className={styles.appointementMain}>
+          <h1>Book Appointment</h1>
+          <h5>In Case</h5>
+          <p>
+            You have received a refusal for any of the reasons mentioned above
+            or having doubts regarding your case and application, do not worry.
+            With over a decade of experience, we specialize in handling Express
+            Entry Programs. Our approval rate for these programs are near to
+            100%. We achieve this with a tailored approach to your specific
+            case. We use case law and find similar cases to your circumstances
+            that had positive results, and we use them as precedents in cases we
+            work on. This is why we have a high success rate. At Brightlight
+            Immigration, we have a dedicated team of visa application
+            specialists who can assist you from the start of the application
+            process all the way to obtaining your PR. Start your process now.
+          </p>
+        </div>
       </div>
     </>
   );

@@ -9,6 +9,8 @@ import Footer from './components/Footer';
 import Navbar1 from './components/Navbar1';
 import Footer1 from './components/Footer1';
 import CategoryBased from './pages/CategoryBased';
+import TransportOccupation from './pages/TransportOccupation';
+
 
 
 function App() {
@@ -28,7 +30,9 @@ function App() {
       {/* <ExpressEntry/> */}
       {/* <Footer/> */}
       {/* <Footer1/> */}
-      <CategoryBased/>
+      {/* <CategoryBased/> */}
+
+      <TransportOccupation/>
      
     </div>
   );

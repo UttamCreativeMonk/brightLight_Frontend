@@ -12,13 +12,13 @@
 }
 
 .bannerHeading h1 {
-  color: #e8c47c;
+  color: #ffffff;
   font-size: 50px;
 }
 
 .bannerHeading p {
   color: #ffffff;
-  width: 100%;
+  width: 85%;
   margin: auto;
   font-size: 25px;
   line-height: 1.8;
@@ -207,6 +207,7 @@
   width: 1440px;
   margin: auto;
   align-items: center;
+  padding: 100px 0px;
   /* border: 1px solid red; */
 }
 
@@ -255,7 +256,6 @@
 .benifitParent {
   width: 1440px;
   margin: auto;
-  border: 1px solid red;
   padding: 100px 0px;
 }
 
@@ -282,6 +282,7 @@
     /* width: 1440px; */
     margin: auto;
     background-color: #00273f;
+    padding: 100px 0px;
 }
 
 .howApplyMain{
@@ -289,14 +290,27 @@
     margin: auto;
 }
 
+.howApplyMain h1{
+    color: #e8c47c;
+    font-size: 60px;
+    padding-top: 30px;
+}
+
+.howApplyMain h4{
+    color: #ffffff;
+    font-size: 30px;
+    padding-top: 20px;
+}
+
+
+
 .stepsGrid {
-  /* width: 1440px; */
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
   padding: 20px;
-  background-color: #00273f; /* Background color */
+  background-color: #00273f; 
 }
 
 .step {
@@ -327,7 +341,8 @@
 
 .stepContent p {
   margin: 0;
-  font-size: 16px;
+  font-size: 27px;
+  line-height: 35px;
 }
 
 .stepContent a {
@@ -337,4 +352,98 @@
 
 .stepContent a:hover {
   text-decoration: underline;
+}
+
+
+
+/* // */
+.refusalParent {
+  width: 1440px;
+  margin: auto;
+  padding: 100px 0px;
+}
+
+.refusalMain h1{
+  font-size: 60px;
+  color: #132f46;
+}
+
+.refusalMain h3{
+  font-size: 30px;
+  color: #132f46;
+  padding-top: 40px;
+  width: 90%;
+}
+
+.refusalListParent {
+  width: 1380px;
+  color: #00273f;
+  font-size: 25px;
+  padding-top: 50px;
+  line-height: 50px;
+  margin: auto;
+}
+
+.refusalListParent li {
+  padding-top: 20px;
+}
+
+
+/* // */
+
+
+
+
+.appointementParent{
+  width: 1440px;
+  margin: auto;
+  padding: 100px 0px;
+}
+
+.appointementMain h1{
+  font-size: 60px;
+  color: #132f46;
+}
+
+.appointementMain h5{
+  font-size: 35px;
+  color: #132f46;
+  padding-top: 20px;
+}
+
+.appointementMain p{
+  font-size: 30px;
+  color: #132f46;
+  padding-top: 50px;
+  line-height: 50px;
+}
+
+.theButtonAncor{
+  width: 1440px;
+  margin: auto;
+  text-align: center;
+  align-items: center;
+}
+
+.theButtonAncor a{
+  background-color: #132f46;
+  color: white;
+  padding: 20px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 40px;
+
+}
+
+.theButtonAncorParent{
+  padding: 100px 0px;
+}
+
+.theButtonAncor{
+  padding-left: 10px;
+
+}
+
+.theButtonSpan img{
+  width: 2%;
 }
