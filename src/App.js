@@ -7,6 +7,8 @@ import ExpressEntry from "./pages/ExpressEntry";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import CategoryBased from "./pages/CategoryBased";
+import HomePage from "./pages/HomePage";
+import TransportOccupationTwo from "../src/pages/TranportOccupation-2";
 
 function App() {
   // useEffect(()=>{
@@ -17,13 +19,15 @@ function App() {
   // },[]);
   return (
     <div className="App">
-      <Navbar />
+      {/* <Navbar /> */}
       {/* <Contact/> */}
-      <About/>
+      {/* <About/> */}
       {/* <PermanentResidency/> */}
       {/* <ExpressEntry/> */}
+      {/* <TransportOccupationTwo/> */}
+      <HomePage/>
       {/* <Footer/> */}
-      <Footer />
+      {/* <Footer /> */}
       {/* <CategoryBased/> */}
     </div>
   );

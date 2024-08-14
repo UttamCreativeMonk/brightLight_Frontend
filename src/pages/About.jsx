@@ -12,7 +12,12 @@ import SocialMoblile from "../assets/Layer 1.png";
 import VisaImg from "../assets/visa.png";
 import BlueMap from "../assets/blue-map.png";
 import BestChoice from "../assets/best-choice.png";
+
+import TiktokBlue from "../assets/tiktok1Icon.png";
+import LinkedinBlue from "../assets/linkedin1Icon.png";
 import InstaBlue from "../assets/insta.png";
+import FacebookBlue from "../assets/facebook1Icon.png";
+import YoutubeBlue from "../assets/youtube1Icon.png";
 import Director1 from "../assets/loveneeth-founder.webp";
 import Director2 from "../assets/sumir.webp";
 import Twelve from "../assets/12-years2.png";
@@ -33,18 +38,18 @@ let About = () => {
           </div>
           <div className={styles.aboutUsFeaturesSection}>
             <div className={styles.aboutUsFeature}>
-              <div>
+             
               <img src={Twelve} alt="err" />
-              </div>
+             
               <p>
                 Trusted Canadian Immigration expert with over 12 years of
                 experience.
               </p>
             </div>
             <div className={styles.aboutUsFeature}>
-              <div>
+             
                 <img src={Comprehensive} alt="err" />
-              </div>
+              
               <p>Providing comprehensive immigration services.</p>
             </div>
           </div>
@@ -280,19 +285,19 @@ let About = () => {
             <p>Find Us On</p>
             <div className={styles.socialPresenceIcons}>
               <a href="#">
-                <img src={InstaBlue} alt="err" />
+                <img src={TiktokBlue} alt="err" />
+              </a>
+              <a href="#">
+                <img src={LinkedinBlue} alt="err" />
               </a>
               <a href="#">
                 <img src={InstaBlue} alt="err" />
               </a>
               <a href="#">
-                <img src={InstaBlue} alt="err" />
+                <img src={FacebookBlue} alt="err" />
               </a>
               <a href="#">
-                <img src={InstaBlue} alt="err" />
-              </a>
-              <a href="#">
-                <img src={InstaBlue} alt="err" />
+                <img src={YoutubeBlue} alt="err" />
               </a>
             </div>
           </div>

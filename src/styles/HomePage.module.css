@@ -1,0 +1,172 @@
+.bannerParent {
+  background-image: url("../assets/contactMap.png");
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 100px 0px;
+}
+
+.bannerMain {
+  width: 1440px;
+  margin: auto;
+  text-align: center;
+  align-items: center;
+}
+
+.bannerHeading h1 {
+  font-size: 55px;
+  padding-top: 10px;
+  color: #727376;
+  font-weight: 400;
+}
+
+.bannerHeading h2 {
+  font-size: 18px;
+  padding-top: 30px;
+  font-weight: 500;
+  color: #132f46;
+}
+
+.bannerBlueHeading {
+  color: #1d629a;
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f8f8;
+  margin-top: 70px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 160px;
+  height: 160px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  background-color: #1d629a;
+  color: white;
+}
+
+.icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.bookButton17 {
+  margin-top: 40px;
+  align-items: center;
+  appearance: none;
+  background-color: #fff;
+  border-radius: 28px;
+  border-style: none;
+  border: 2px solid #00273f;
+  box-sizing: border-box;
+  color: #3c4043;
+  cursor: pointer;
+  display: inline-flex;
+  fill: currentcolor;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  justify-content: center;
+  letter-spacing: 0.25px;
+  line-height: normal;
+  max-width: 100%;
+  overflow: visible;
+  padding: 18px 66px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+  will-change: transform, opacity;
+  z-index: 0;
+}
+
+.bookButton17:hover {
+  background: #f6f9fe;
+  color: #174ea6;
+}
+
+.bookButton17:active {
+  box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%),
+    0 8px 12px 6px rgb(60 64 67 / 15%);
+  outline: none;
+}
+
+.bookButton17:focus {
+  outline: none;
+  border: 2px solid #4285f4;
+}
+
+.memberParent {
+  background-color: #132f46;
+  padding: 100px 0px;
+}
+
+.memberMain {
+  width: 1440px;
+  margin: auto;
+  color: white;
+}
+
+/* .memberCardImg{
+    padding: 20px 20px;
+    background-color: white;
+  } */
+
+.memberCardParent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+}
+
+.memberCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.memberCard p {
+  padding-bottom: 40px;
+  font-size: 22px;
+}
+
+.memberCardImg {
+  height: 180px;
+  width: 350px;
+  background-color: white;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.memberCardImg img {
+  width: 300px;
+}

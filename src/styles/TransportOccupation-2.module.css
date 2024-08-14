@@ -17,6 +17,13 @@
   font-size: 50px;
 }
 
+.bannerHeading h3 {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 500;
+  padding-top: 30px;
+}
+
 .bannerHeading p {
   color: #ffffff;
   width: 74%;
