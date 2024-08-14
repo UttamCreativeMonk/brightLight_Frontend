@@ -4,15 +4,21 @@ import AboutLogo from "../assets/brightlight-main-logo.webp";
 import AboutDesign from "../assets/aboutDesign.png";
 import VisionImg from "../assets/vision.png";
 import PillarSectionLogo from "../assets/pillars.png";
-// import { ReactComponent as Responsibility } from "../assets/responsibility.svg";
-import { ReactComponent as Responsibility } from "../assets/handsShake.svg";
-import WeAreImg from "../assets/we-are.png";
+import INTEGRITY from "../assets/integrity1.png";
+import RESPONSIBILITY from "../assets/responsibility.png";
+import Reliability from "../assets/reliability.png"
+import WeAreImg from "../assets/we-are-1.png";
+import SocialMoblile from "../assets/Layer 1.png";
 import VisaImg from "../assets/visa.png";
 import BlueMap from "../assets/blue-map.png";
 import BestChoice from "../assets/best-choice.png";
 import InstaBlue from "../assets/insta.png";
 import Director1 from "../assets/loveneeth-founder.webp";
 import Director2 from "../assets/sumir.webp";
+import Twelve from "../assets/12-years2.png";
+import Comprehensive from "../assets/comprehensive1.png"
+
+
 
 let About = () => {
   return (
@@ -28,21 +34,18 @@ let About = () => {
           <div className={styles.aboutUsFeaturesSection}>
             <div className={styles.aboutUsFeature}>
               <div>
-                <img />
+              <img src={Twelve} alt="err" />
               </div>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo,
-                nihil.
+                Trusted Canadian Immigration expert with over 12 years of
+                experience.
               </p>
             </div>
             <div className={styles.aboutUsFeature}>
               <div>
-                <img />
+                <img src={Comprehensive} alt="err" />
               </div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo,
-                nihil.
-              </p>
+              <p>Providing comprehensive immigration services.</p>
             </div>
           </div>
         </div>
@@ -144,21 +147,22 @@ let About = () => {
 
           <div className={styles.pillarFeatureSection}>
             <div className={styles.pillarFeatureSvg}>
-              <Responsibility width={100} height={100} />
+              <img src={INTEGRITY} alt="err" />
               <h4>INTEGRITY</h4>
               <p>We stand behind our word</p>
             </div>
 
             <div className={styles.pillarFeatureSvg}>
-              <Responsibility width={100} height={100} />
-              <h4>INTEGRITY</h4>
-              <p>We take behind our commitment</p>
+           <img src={RESPONSIBILITY} alt="err" />
+     
+              <h4>RESPONSIBILITY</h4>
+              <p>We take our commitment</p>
               <p>seriously</p>
             </div>
 
             <div className={styles.pillarFeatureSvg}>
-              <Responsibility width={100} height={100} />
-              <h4>INTEGRITY</h4>
+            <img src={Reliability} alt="err" />
+              <h4>RELIABILITY</h4>
               <p>You can count us, always</p>
             </div>
           </div>
@@ -267,6 +271,10 @@ let About = () => {
             give us a follow, and join the conversation! We promise it'll be
             worth your time.
           </p>
+
+          <div className={styles.socialMoblileImgDiv}>
+            <img src={SocialMoblile} alt="err" />
+          </div>
 
           <div className={styles.socialPresenceIconsParent}>
             <p>Find Us On</p>

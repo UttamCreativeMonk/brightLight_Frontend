@@ -1,17 +1,12 @@
-import { useEffect } from 'react';
-import './App.css';
-import Contact from './pages/Contact';
-import About from './pages/About';
-import Navbar from './components/Navbar';
+import { useEffect } from "react";
+import "./App.css";
+import Contact from "./pages/Contact";
+import About from "./pages/About";
 import PermanentResidency from "./pages/PermanentResidency";
-import ExpressEntry from './pages/ExpressEntry';
-import Footer from './components/Footer';
-import Navbar1 from './components/Navbar1';
-import Footer1 from './components/Footer1';
-import CategoryBased from './pages/CategoryBased';
-import TransportOccupation from './pages/TransportOccupation';
-
-
+import ExpressEntry from "./pages/ExpressEntry";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import CategoryBased from "./pages/CategoryBased";
 
 function App() {
   // useEffect(()=>{
@@ -22,18 +17,14 @@ function App() {
   // },[]);
   return (
     <div className="App">
-      {/* <Navbar/> */}
-      {/* <Navbar1/> */}
+      <Navbar />
       {/* <Contact/> */}
-      {/* <About/> */}
+      <About/>
       {/* <PermanentResidency/> */}
       {/* <ExpressEntry/> */}
       {/* <Footer/> */}
-      {/* <Footer1/> */}
+      <Footer />
       {/* <CategoryBased/> */}
-
-      <TransportOccupation/>
-     
     </div>
   );
 }

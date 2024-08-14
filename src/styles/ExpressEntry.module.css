@@ -229,6 +229,34 @@
 }
 
 
+.theButtonAncorParentTwo{
+  padding: 100px 0px;
+}
+
+/* .theButtonAncorTwo{
+  padding-left: 10px;
+
+} */
+
+.theButtonAncorTwo{
+  width: 1440px;
+  margin: auto;
+  text-align: center;
+  align-items: center;
+}
+
+.theButtonAncorTwo a{
+  background-color: #ffffff;
+  border: 2px solid #132f46;
+  color: #132f46;
+  padding: 15px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 33px;
+}
+
+
+
 .incaseParent{
     width: 100%;
     padding: 100px 0px;

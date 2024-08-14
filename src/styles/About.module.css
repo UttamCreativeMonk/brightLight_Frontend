@@ -40,7 +40,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  background-color: rgba(255, 255, 0, 0.122);
+  background-color: rgba(233, 233, 24, 0.122);
   border-radius: 20px;
   padding-right: 10px;
 }
@@ -67,7 +67,7 @@
 .aboutUsFeature p {
   width: 65%;
   text-align: left;
-  color: yellow;
+  color: #ecca87;
   font-size: 25px;
 }
 
@@ -123,7 +123,8 @@
 
 .foundationInside img {
   height: auto;
-  width: 80%;
+  width: 75%;
+  margin-right: 150px;
 }
 
 .foundationMainSection {
@@ -408,6 +409,10 @@
   width: 67%;
   margin: auto;
   text-align: center;
+}
+
+.socialMoblileImgDiv{
+  padding-top: 70px;
 }
 
 .socialPresenceIconsParent p {

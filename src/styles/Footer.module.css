@@ -1,65 +1,16 @@
-.upperFooter {
-  /* border: 1px solid red; */
-  width: 1000px;
-  display: flex;
-  margin: auto;
-  height: auto;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #ead9b0;
-  border-radius: 15px;
-  padding: 15px 30px;
-  position: relative;
-  z-index: 3;
-  bottom: -50px;
-}
-
-.upperFooter img {
-  width: 20%;
-}
-
-.upperFooter div {
-  width: 40%;
-}
-
-.upperFooter h1 {
-  color: #132f46;
-}
-
-.upperFooter p {
-  color: #132f46;
-}
-
-.upperFooter button {
-  width: 22%;
-  background-color: #cab78b;
-  color: white;
-  border: 1.4px solid rgb(173, 154, 109);
-  padding: 20px 20px;
-  border-radius: 5px;
-  box-shadow: rgb(173, 154, 109) 4px 4px 4px;
-  cursor: pointer;
-  opacity: 1;
-  transition: 0.3s all ease-in-out;
-}
-
-.upperFooter button:hover {
-  opacity: 0.8;
-}
-
-.upperFooterLowerText {
-  text-align: center;
-  position: relative;
-  top: 70px;
-  color: white;
-}
-
 .footer {
-  /* border: 1px solid red; */
   background-color: #132f46;
   color: white;
-  padding-top: 150px;
-  padding-bottom: 50px;
+  padding: 100px 0px;
+}
+
+.footer p a {
+  color: rgb(211, 211, 211);
+  text-decoration: none;
+}
+
+.footer p {
+  color: rgb(211, 211, 211);
 }
 
 .innerFooter {
@@ -96,7 +47,7 @@
   width: 60%;
   display: flex;
   flex-direction: column;
-  row-gap: 30px;
+  row-gap: 50px;
   align-items: center;
   justify-content: center;
 }
@@ -105,12 +56,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 30px;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.socialMediaFooter div {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footerHeading {
+  font-weight: 600;
+  color: white !important;
 }
 
 .socialIcon {
-  width: 25px;
-  height: 25px;
+  width: 45px;
+  height: 45px;
   cursor: pointer;
 }
 
@@ -120,27 +84,46 @@
   margin-bottom: 15px;
 }
 
+.footerLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
 .footerLogo1 {
   height: auto;
-  width: 300px;
+  width: 48%;
+  padding-right: 30px;
+  border-right: 1px solid white;
+}
+
+.footerLogo2 {
+  width: 40%;
 }
 
 .footerAncor a {
-  color: white;
+  color: rgb(211, 211, 211);
   text-decoration: none;
 }
 
 .footerAncor {
-  margin-top: 20px;
+  margin-top: -10px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   gap: 5px;
 }
 
+.footerAncor:nth-child(2) {
+  margin-top: 20px;
+}
+
 .footerAncor span {
   position: relative;
-  top: -5px;
+  top: -14px;
+  font-size: 40px;
+  right: -5px;
 }
 
 .privacyPolicy {
