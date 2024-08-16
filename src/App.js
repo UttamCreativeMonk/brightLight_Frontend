@@ -22,10 +22,10 @@ function App() {
       {/* <Navbar /> */}
       {/* <Contact/> */}
       {/* <About/> */}
-      {/* <PermanentResidency/> */}
+      <PermanentResidency/>
       {/* <ExpressEntry/> */}
       {/* <TransportOccupationTwo/> */}
-      <HomePage/>
+      {/* <HomePage/> */}
       {/* <Footer/> */}
       {/* <Footer /> */}
       {/* <CategoryBased/> */}

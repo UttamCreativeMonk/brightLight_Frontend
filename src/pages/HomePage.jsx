@@ -1,6 +1,19 @@
 import React from "react";
 import styles from "../styles/HomePage.module.css";
+
+
+import permanentResidenceImg from '../assets/permanent_residence.png';
+import bcpnpImg from '../assets/bcpnp.png';
+import visitorVisaImg from '../assets/visitor_visa.png';
+import studyVisaImg from '../assets/study_visa.png';
+import familySponsorshipImg from '../assets/family_sponsorship.png';
+import workPermitImg from '../assets/work_permit.png';
+import pflImg from '../assets/pfl.png';
+
+
+
 import Rcic from "../assets/rcic.png";
+import Capic from "../assets/capic.png";
 import Cicc from "../assets/cicc.png";
 import Simplifying1 from "../assets/immigration-challenges.png";
 import Simplifying2 from "../assets/expert-in-refusal.png";
@@ -10,15 +23,19 @@ import GoldenPointer from "../assets/golden-pointer.png";
 import Runway from "../assets/runway.png";
 import Plane from "../assets/plane.png";
 
+import Visa from "../assets/visa2.png";
+import CheckMark from "../assets/success-stories-icon.webp";
+import SmileFace from "../assets/happy-clients-icon.webp";
+
 let HomePage = () => {
   const cards = [
-    { title: "Permanent Residence", icon: "🏡" },
-    { title: "BCPNP", icon: "👨‍✈️" },
-    { title: "Visitor Visa", icon: "🛂" },
-    { title: "Study Visa", icon: "🎓" },
-    { title: "Family Sponsorship", icon: "👨‍👩‍👧", active: true },
-    { title: "Work Permit", icon: "👷‍♂️" },
-    { title: "PFL", icon: "📄" },
+    { title: 'Permanent Residence', img: permanentResidenceImg },
+    { title: 'BCPNP', img: bcpnpImg },
+    { title: 'Visitor Visa', img: visitorVisaImg },
+    { title: 'Study Visa', img: studyVisaImg },
+    { title: 'Family Sponsorship', img: familySponsorshipImg },
+    { title: 'Work Permit', img: workPermitImg },
+    { title: 'PFL', img: pflImg },
   ];
   return (
     <>
@@ -35,21 +52,28 @@ let HomePage = () => {
             </h1>
             <h2>WE'VE HELPED MANY OVERCOME THEM</h2>
           </div>
-          <div className={styles.bannerCardParent}>
-            <div className={styles.cardContainer}>
-              {cards.map((card, index) => (
-                <div key={index} className={styles.card}>
-                  <div className={styles.icon}>{card.icon}</div>
-                  <div className={styles.title}>{card.title}</div>
-                </div>
-              ))}
-            </div>
-          </div>
+          <div className={styles.cardContainer}>
+      {cards.map((card, index) => (
+        <div
+          key={index}
+          className={styles.card}
+        >
+          <img src={card.img} alt={card.title} className={styles.icon} />
+          <div className={styles.title}>{card.title}</div>
+        </div>
+      ))}
+    </div>
           <button className={styles.bookButton17} role="button">
             More Services
           </button>
         </div>
       </div>
+
+<div className={styles.bannerParent2}>
+  <div className={styles.bannerMain2}>
+
+  </div>
+</div>
 
       <div className={styles.memberParent}>
         <div className={styles.memberMain}>
@@ -64,7 +88,7 @@ let HomePage = () => {
             <div className={styles.memberCard}>
               <p>Member of</p>
               <div className={styles.memberCardImg}>
-                <img src={Rcic} alt="err" />
+                <img src={Capic} alt="err" />
               </div>
             </div>
 
@@ -223,6 +247,47 @@ let HomePage = () => {
           <div className={styles.runwayParent}>
             <img src={Runway} alt="err" />
             <img src={Plane} className={styles.plane} alt="err" />
+          </div>
+        </div>
+      </div>
+
+      <div className={styles.expertiseParent}>
+        <div className={styles.expertiseContentParent}>
+          <div className={styles.expertiseContentHeading}>
+            <h1>Our Expertise is Your Success</h1>
+            <p>
+              Whether you're a student, a professional, or an entrepreneur
+              dreaming of Canada, we're here to help you achieve it. Our
+              Immigration visa services in Canada are tailored to your needs,
+              making your journey to Canadian dream smooth.
+            </p>
+
+            <button className={styles.knowButton}>
+              <a href="/">Know More</a>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div className={styles.aspectsParent}>
+        <div className={styles.aspectsMain}>
+          <div className={styles.aspectsHeading}>
+            <h1>Some Aspects that Hold Significance!</h1>
+            <h2>
+              OUR ACHIEVEMENTS IN THE SUCCESSFUL JOURNEY HAVE BEEN REMARKABLE
+            </h2>
+          </div>
+
+          <div className={styles.aspectsCardParent}>
+            <div className={styles.aspectsCard}>
+              <img src={Visa} alt="err" /> <h1>10,257+</h1> <p>VISA PROCESSED</p>
+            </div>
+            <div className={styles.aspectsCard}>
+              <img src={CheckMark} alt="err" /> <h1>10,112+</h1> <p>SUCCESS STORIES</p>
+            </div>
+            <div className={styles.aspectsCard}>
+              <img src={SmileFace} alt="err" /> <h1>10,121+</h1> <p>HAPPY CLIENTS</p>
+            </div>
           </div>
         </div>
       </div>

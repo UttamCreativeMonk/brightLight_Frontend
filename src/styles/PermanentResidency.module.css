@@ -92,6 +92,7 @@
 .pathway {
   width: 1440px;
   margin: auto;
+
 }
 
 .pathwayHeading h1 {
@@ -104,20 +105,28 @@
 .pathwayCardsParent {
   display: flex;
   justify-content: space-around;
+  margin-top: 50px;
 }
 
 .pathwayCards {
   background-color: white;
   text-align: center;
-  padding: 50px;
+  height: 270px;
+  width: 275px;
   margin-top: 40px;
   margin-bottom: 10px;
   border-radius: 20px;
   color: #132f46;
+  align-items: center;
 }
 
 .pathwayCards h2 {
   margin-top: 40px;
+}
+
+.pathwayCards img{
+  height: 100px;
+  width: 100px;
 }
 
 .fourCardParent {

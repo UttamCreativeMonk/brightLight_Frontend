@@ -37,7 +37,6 @@
   align-items: center;
   padding: 20px;
   background-color: #f8f8f8;
-  margin-top: 70px;
 }
 
 .card {
@@ -46,9 +45,9 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
-  width: 160px;
-  height: 160px;
-  border-radius: 10px;
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
   background-color: #ffffff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease;
@@ -56,13 +55,15 @@
 }
 
 .card:hover {
-  background-color: #1d629a;
+  background-color: #132f46;
   color: white;
 }
 
 .icon {
-  font-size: 40px;
+  width: 40px;
+  height: 40px;
   margin-bottom: 10px;
+  object-fit: contain;
 }
 
 .title {
@@ -70,6 +71,7 @@
   font-weight: bold;
   text-align: center;
 }
+
 
 .bookButton17 {
   margin-top: 40px;
@@ -122,6 +124,16 @@
   border: 2px solid #4285f4;
 }
 
+.bannerParent2{
+  background-image: url("../assets/homePageBanner.jpg");
+  width: 100%;
+  height: 600px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* padding: 100px 0px; */
+}
+
+
 .memberParent {
   background-color: #132f46;
   padding: 100px 0px;
@@ -132,11 +144,6 @@
   margin: auto;
   color: white;
 }
-
-/* .memberCardImg{
-    padding: 20px 20px;
-    background-color: white;
-  } */
 
 .memberCardParent {
   display: flex;
@@ -171,172 +178,285 @@
   width: 300px;
 }
 
-.simplifyingParent{
-    background-image: url("../assets/aboutLeaf.png");
-    width: 100%;
-    padding: 100px 0px;
+.simplifyingParent {
+  background-image: url("../assets/aboutLeaf.png");
+  width: 100%;
+  padding: 100px 0px;
 }
 
-.simplifyingMain{
-    width: 1440px;
-    margin: auto;
-    align-items: center;
-    text-align: center;
+.simplifyingMain {
+  width: 1440px;
+  margin: auto;
+  align-items: center;
+  text-align: center;
 }
 
-.simplifyingDiv{
-    border-radius: 25px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    border: 2px dotted #132f46;
-    padding: 60px 0px;
-    text-align: left;
-    margin-top: 50px;
-    gap: 60px;
+.simplifyingDiv {
+  border-radius: 25px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  border: 2px dotted #132f46;
+  padding: 60px 0px;
+  text-align: left;
+  margin-top: 50px;
+  gap: 60px;
 }
 
-.simplifyingImg{
-    display: flex;
-    align-items: flex-start;
+.simplifyingImg {
+  display: flex;
+  align-items: flex-start;
 }
 
-.simplifyingImg img{
-    width: 100px;
+.simplifyingImg img {
+  width: 100px;
 }
 
-.simplifyingContent{
-    width: 70%;
+.simplifyingContent {
+  width: 70%;
 }
 
-.simplifyingContent h1{
-    color: #132f46;
-    font-weight: 500;
+.simplifyingContent h1 {
+  color: #132f46;
+  font-weight: 500;
 }
 
-.simplifyingContent p{
-    padding-top: 30px;
-    font-size: 25px;
-    line-height: 35px;
-    color: #132f46;
+.simplifyingContent p {
+  padding-top: 30px;
+  font-size: 25px;
+  line-height: 35px;
+  color: #132f46;
 }
 
 .fourCardParent {
-    width: 100%;
-    padding: 100px 0px;
-  }
-  
-  .fourCard {
-    width: 1440px;
-    margin: auto;
-    text-align: center;
-  }
-  
-  .fourCardHeading {
-    color: #132f46;
-    text-align: center;
-  }
-  
-  .fourCardHeading h1 {
-    font-size: 70px;
-  }
-  
-  .fourCardHeading p {
-    margin-top: 20px;
-    font-size: 24px;
-    letter-spacing: 1px;
-  }
-  
-  .fourCardImgParent {
-    background-image: url("../assets/Asset.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top left;
-    margin: 170px 0px 100px 0px;
-  }
-  
-  .fourCardMain {
-    width: 330px;
-    border-radius: 0px 0px 50px 50px;
-    padding: 0px 10px 40px 10px;
-    background-color: white;
-  }
+  width: 100%;
+  padding: 100px 0px;
+}
 
- 
-  
-  .pointerImageSection {
-    position: relative;
-    top: -100px;
-    margin-bottom: -50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .fourCardImg img {
-    width: 220px;
-  }
-  
-  .pointerImageSection p {
-    position: absolute;
-    z-index: 2;
-    top: 36px;
-    font-size: 120px;
-    font-weight: 1000;
-  }
-  
-  .fourCardImg {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-  }
-  
-  .fourCardMain h3 {
-    margin-bottom: 25px;
-    font-size: 28px;
-    text-align: left;
-    margin-left: 25px;
-    font-weight: 600;
-    color: #132f46;
-  }
-  
-  .fourCardMain ul {
-    width: 250px;
-    margin: auto;
-    text-align: left;
-  }
-  
-  .fourCardMain ul li {
-    margin-bottom: 20px;
-  }
-  
-  .goldenCard{
-    box-shadow: rgb(248, 240, 224,0.5) 0px 2px 1px, rgba(248, 240, 224,0.5) 0px 4px 2px, rgba(248, 240, 224,0.5) 0px 8px 4px, rgba(248, 240, 224,0.5) 0px 16px 8px, rgba(248, 240, 224,0.5) 0px 32px 16px;
-  }
-  
-  .goldenCard p{
-    color: #e0b969;
-  }
-  
-  .blueCard{
-    box-shadow:rgb(207, 212, 217,0.5) 0px 2px 1px, rgba(207, 212, 217,0.5) 0px 4px 2px, rgba(207, 212, 217,0.5) 0px 8px 4px, rgba(207, 212, 217,0.5) 0px 16px 8px, rgba(207, 212, 217,0.5) 0px 32px 16px;
-  }
-  
-  .blueCard p{
-    color: #184d79
-  }
-  
-  .runwayParent{
-    width: 1440px;
-    margin: auto;
-  }
-  
-  .runwayParent img:nth-child(1){
-    width: 100%;
-  }
-  
-  .plane{
-    width: 150px;
-    background-size: cover;
-  }
+.fourCard {
+  width: 1440px;
+  margin: auto;
+  text-align: center;
+}
+
+.fourCardHeading {
+  color: #132f46;
+  text-align: center;
+}
+
+.fourCardHeading h1 {
+  font-size: 70px;
+}
+
+.fourCardHeading p {
+  margin-top: 20px;
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+.fourCardImgParent {
+  background-image: url("../assets/Asset.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top left;
+  margin: 170px 0px 100px 0px;
+}
+
+.fourCardMain {
+  width: 330px;
+  border-radius: 0px 0px 50px 50px;
+  padding: 0px 10px 40px 10px;
+  background-color: white;
+}
+
+.pointerImageSection {
+  position: relative;
+  top: -100px;
+  margin-bottom: -50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.fourCardImg img {
+  width: 220px;
+}
+
+.pointerImageSection p {
+  position: absolute;
+  z-index: 2;
+  top: 36px;
+  font-size: 120px;
+  font-weight: 1000;
+}
+
+.fourCardImg {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.fourCardMain h3 {
+  margin-bottom: 25px;
+  font-size: 28px;
+  text-align: left;
+  margin-left: 25px;
+  font-weight: 600;
+  color: #132f46;
+}
+
+.fourCardMain ul {
+  width: 250px;
+  margin: auto;
+  text-align: left;
+}
+
+.fourCardMain ul li {
+  margin-bottom: 20px;
+}
+
+.goldenCard {
+  box-shadow: rgb(248, 240, 224, 0.5) 0px 2px 1px,
+    rgba(248, 240, 224, 0.5) 0px 4px 2px, rgba(248, 240, 224, 0.5) 0px 8px 4px,
+    rgba(248, 240, 224, 0.5) 0px 16px 8px,
+    rgba(248, 240, 224, 0.5) 0px 32px 16px;
+}
+
+.goldenCard p {
+  color: #e0b969;
+}
+
+.blueCard {
+  box-shadow: rgb(207, 212, 217, 0.5) 0px 2px 1px,
+    rgba(207, 212, 217, 0.5) 0px 4px 2px, rgba(207, 212, 217, 0.5) 0px 8px 4px,
+    rgba(207, 212, 217, 0.5) 0px 16px 8px,
+    rgba(207, 212, 217, 0.5) 0px 32px 16px;
+}
+
+.blueCard p {
+  color: #184d79;
+}
+
+.runwayParent {
+  width: 1440px;
+  margin: auto;
+}
+
+.runwayParent img:nth-child(1) {
+  width: 100%;
+}
+
+.plane {
+  width: 150px;
+  background-size: cover;
+}
+
+.expertiseParent {
+  background-image: url("../assets/pillars-bg.png");
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 100px 0px;
+}
+
+.expertiseContentParent {
+  width: 1440px;
+  margin: auto;
+  align-items: center;
+  text-align: center;
+}
+
+.expertiseContentHeading h1 {
+  font-size: 60px;
+  color: #e0b969;
+  padding-bottom: 50px;
+}
+
+.expertiseContentHeading p {
+  font-size: 26px;
+  color: #ffffff;
+  line-height: 40px;
+  padding-bottom: 30px;
+  font-weight: 300;
+}
+
+.knowButton {
+  color: white;
+  border: 2px solid white;
+  padding: 20px 45px;
+  background-color: transparent;
+  font-size: 18px;
+  border-radius: 30px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.knowButton a {
+  text-decoration: none;
+  color: white;
+}
+
+.aspectsParent{
+  background-image: url("../assets/contactMap.png");
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 100px 0px;
+}
+
+.aspectsMain{
+  width: 1440px;
+  margin: auto;
+  text-align: center;
+  align-items: center;
+}
+
+.aspectsHeading h1{
+  color: #132f46;
+  font-size: 65px;
+}
+
+.aspectsHeading h2{
+  color: #132f46;
+  font-size: 35px;
+  font-weight: 400;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.aspectsCardParent{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.aspectsCard{
+  color: white;
+  background-color: #033b5d;
+  padding: 60px 30px;
+  height: 360px;
+  width: 288px;
+  border-radius: 20px;
+}
+
+.aspectsCard img{
+  height: 100px;
+  width: 100px;
+}
+
+.aspectsCard h1{
+  font-size: 50px;
+  padding-top: 20px;
+}
+
+.aspectsCard p{
+  font-size: 30px;
+  font-weight: 300;
+  padding-top: 15px;
+  padding-top: 10px;
+}
+
+
+

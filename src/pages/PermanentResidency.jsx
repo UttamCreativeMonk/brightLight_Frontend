@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../styles/PermanentResidency.module.css";
 import ServiceImg from "../assets/service-data-image.webp";
 import { ReactComponent as Responsibility } from "../assets/handsShake.svg";
+import studyVisaImg from '../assets/study_visa.png';
 import BluePointer from "../assets/blue-pointer.png";
 import GoldenPointer from "../assets/golden-pointer.png";
 import Runway from "../assets/runway.png";
@@ -71,20 +72,20 @@ let PermanentResidency = () => {
 
           <div className={styles.pathwayCardsParent}>
             <div className={styles.pathwayCards}>
-              <Responsibility width={100} height={100} />
+              <img src={studyVisaImg} alt="" />
               <h2>Express Entry</h2>
             </div>
             <div className={styles.pathwayCards}>
-              <Responsibility width={100} height={100} />
-              <h2>Express Entry</h2>
+            <img src={studyVisaImg} alt="" />
+              <h2>Pilot Program</h2>
             </div>
             <div className={styles.pathwayCards}>
-              <Responsibility width={100} height={100} />
-              <h2>Express Entry</h2>
+            <img src={studyVisaImg} alt="" />
+              <h2>PNP</h2>
             </div>
             <div className={styles.pathwayCards}>
-              <Responsibility width={100} height={100} />
-              <h2>Express Entry</h2>
+            <img src={studyVisaImg} alt="" />
+              <h2>RNIP</h2>
             </div>
           </div>
         </div>
@@ -93,8 +94,8 @@ let PermanentResidency = () => {
       <div className={styles.fourCardParent}>
         <div className={styles.fourCard}>
           <div className={styles.fourCardHeading}>
-            <h1>Here's how we can help you</h1>
-            <p>IT'S QUITE EASY.WE PROMISE</p>
+            <h1>Our Process</h1>
+            <p>IT’S QUITE EASY. WE PROMISE</p>
           </div>
           <div className={styles.fourCardImgParent}>
             <div className={styles.fourCardImg}>
@@ -128,23 +129,20 @@ let PermanentResidency = () => {
                   <img src={GoldenPointer} alt="err" />
                   <p>2</p>
                 </div>
-                <h3>PERSONALISED ASSESMENT</h3>
+                <h3>TAILORED APPROACH</h3>
                 <ul>
                   <li>
-                    Firstly, we will identify and understand your Canadian
-                    immigration needs and goals.
+                    We'll create a custom Canadian immigration plan suited just
+                    for you according to the pathway selected.
                   </li>
                   <li>
-                    Then, we will assess your eligibility for various
-                    immigration programs accordingly.
+                    Based on this plan, you'll receive a clear proposal from us
+                    outlining our services and payment structure, i.e., 50%
+                    before processing your file and 50% before submission.
                   </li>
                   <li>
-                    We will recommend the best pathway for your immigration
-                    goals after assessment.
-                  </li>
-                  <li>
-                    Any questions you have about the chosen pathway will be
-                    addressed along with any other concerns.
+                    Once the initial 50% payment is made, we'll share a
+                    comprehensive checklist to ensure everything is ready
                   </li>
                 </ul>
               </div>
@@ -153,23 +151,22 @@ let PermanentResidency = () => {
                   <img src={BluePointer} alt="err" />
                   <p>3</p>
                 </div>
-                <h3>PERSONALISED ASSESMENT</h3>
+                <h3>APPLICATION FULFILLMENT</h3>
                 <ul>
                   <li>
-                    Firstly, we will identify and understand your Canadian
-                    immigration needs and goals.
+                    A case manager will be assigned to guide you and collect
+                    documents as per the checklist
                   </li>
                   <li>
-                    Then, we will assess your eligibility for various
-                    immigration programs accordingly.
+                    We’ll prepare a strong application within 7-10 business days
                   </li>
                   <li>
-                    We will recommend the best pathway for your immigration
-                    goals after assessment.
+                    Once your application is ready, we’ll send it to you for
+                    review and final approval.
                   </li>
                   <li>
-                    Any questions you have about the chosen pathway will be
-                    addressed along with any other concerns.
+                    After your approval, simply pay the remaining 50% payment,
+                    and your application will be submitted.
                   </li>
                 </ul>
               </div>
@@ -178,23 +175,24 @@ let PermanentResidency = () => {
                   <img src={GoldenPointer} alt="err" />
                   <p>4</p>
                 </div>
-                <h3>PERSONALISED ASSESMENT</h3>
+                <h3>TRUSTED PARTNERSHIP</h3>
                 <ul>
                   <li>
-                    Firstly, we will identify and understand your Canadian
-                    immigration needs and goals.
+                    Once your application is submitted successfully, we'll keep
+                    you informed at every stage of the process, from submission
+                    to decision.
                   </li>
                   <li>
-                    Then, we will assess your eligibility for various
-                    immigration programs accordingly.
+                    Our ongoing support and guidance will help you achieve your
+                    immigration goals.
                   </li>
                   <li>
-                    We will recommend the best pathway for your immigration
-                    goals after assessment.
+                    You can reach out to us to inquire about updates on your
+                    application.
                   </li>
                   <li>
-                    Any questions you have about the chosen pathway will be
-                    addressed along with any other concerns.
+                    If satisfied with our service, we hope you'll feel inclined
+                    to refer others to us
                   </li>
                 </ul>
               </div>
