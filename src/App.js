@@ -9,6 +9,9 @@ import Footer from "./components/Footer";
 import CategoryBased from "./pages/CategoryBased";
 import HomePage from "./pages/HomePage";
 import TransportOccupationTwo from "../src/pages/TranportOccupation-2";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsAndConditions from "./pages/TermsAndConditions";
+import BCPNPCalculator from "./pages/BCPNPCalculator";
 
 function App() {
   // useEffect(()=>{
@@ -22,7 +25,10 @@ function App() {
       {/* <Navbar /> */}
       {/* <Contact/> */}
       {/* <About/> */}
-      <PermanentResidency/>
+      {/* <PermanentResidency/> */}
+      {/* <PrivacyPolicy/> */}
+      {/* <TermsAndConditions/> */}
+      <BCPNPCalculator/>
       {/* <ExpressEntry/> */}
       {/* <TransportOccupationTwo/> */}
       {/* <HomePage/> */}

@@ -1,0 +1,56 @@
+  .bannerParent{
+    background-image: url("../assets/canadaBlue.jpeg");
+    width: 100%;
+    padding: 150px 0px;
+  }
+
+  .bannerHeading{
+    width: 1440px;
+    margin: auto;
+    text-align: center;
+  }
+
+  .bannerHeading h1{
+    color: white;
+    font-size: 50px;
+  }
+
+
+  .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+  }
+  
+  .header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .radioGroup {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .radioItem {
+    width: 48%;
+    margin-bottom: 10px;
+  }
+  
+  .points {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .points input {
+    margin-left: 10px;
+    width: 50px;
+    text-align: center;
+  }
+  
