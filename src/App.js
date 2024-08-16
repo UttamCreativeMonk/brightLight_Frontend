@@ -12,6 +12,7 @@ import TransportOccupationTwo from "../src/pages/TranportOccupation-2";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import BCPNPCalculator from "./pages/BCPNPCalculator";
+import Testimonials from "./sections/Testimonials";
 
 function App() {
   // useEffect(()=>{
@@ -28,6 +29,7 @@ function App() {
       {/* <PermanentResidency/> */}
       {/* <PrivacyPolicy/> */}
       {/* <TermsAndConditions/> */}
+      {/* <Testimonials/> */}
       <BCPNPCalculator/>
       {/* <ExpressEntry/> */}
       {/* <TransportOccupationTwo/> */}

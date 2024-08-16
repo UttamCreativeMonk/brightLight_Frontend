@@ -4,6 +4,14 @@ import google from "../assets/google-review.webp";
 import { ReactComponent as ReviewStar } from "../assets/review_star.svg";
 import { ReactComponent as Arrow } from "../assets/right-arrow-white.svg";
 import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
+import aboutBanner from "../assets/about-banner.png";
+
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 let Testimonials = () => {
   let [currentReview, setCurrentReview] = useState(0);
@@ -82,6 +90,49 @@ let Testimonials = () => {
       review_stars: "4",
     },
   ];
+
+  let clientVideosData = [
+    {
+      img: aboutBanner,
+      person_name: "Person 1",
+    },
+    {
+      img: aboutBanner,
+      person_name: "Person 2",
+    },
+    {
+      img: aboutBanner,
+      person_name: "Person 3",
+    },
+    {
+      img: aboutBanner,
+      person_name: "Person 4",
+    },
+    {
+      img: aboutBanner,
+      person_name: "Person 5",
+    },
+    {
+      img: aboutBanner,
+      person_name: "Person 6",
+    },
+    {
+      img: aboutBanner,
+      person_name: "Person 7",
+    },
+    {
+      img: aboutBanner,
+      person_name: "Person 8",
+    },
+    {
+      img: aboutBanner,
+      person_name: "Person 9",
+    },
+    {
+      img: aboutBanner,
+      person_name: "Person 10",
+    },
+  ];
   return (
     <div className={styles.testimonialsSection}>
       <div className={styles.testimonialsContentSection}>
@@ -117,6 +168,40 @@ let Testimonials = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div className={styles.testimonialsVideoSection}>
+          <Swiper
+            effect={"coverflow"}
+            grabCursor={true}
+            centeredSlides={true}
+            loop={true}
+            slidesPerView={"auto"}
+            coverflowEffect={{
+              rotate: 0,
+              stretch: 0,
+              depth: 100,
+              modifier: 2.5,
+            }}
+            pagination={{ el: ".swiper_pagination", clickable: true }}
+            modules={[EffectCoverflow, Pagination, Navigation]}
+            className={styles.swiper_container}
+          >
+            {clientVideosData.map((item) => {
+              return (
+                <SwiperSlide>
+                  <img src={item.img} />
+                  <p>{item.person_name}</p>
+                </SwiperSlide>
+              );
+            })}
+            ;
+            <div class="slider-controler" className={styles.slider_controler}>
+              <div
+                class="swiper_pagination"
+                className={styles.swiper_pagination}
+              ></div>
+            </div>
+          </Swiper>
         </div>
       </div>
     </div>
