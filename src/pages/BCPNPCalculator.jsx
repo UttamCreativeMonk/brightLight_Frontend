@@ -4,6 +4,16 @@ import styles from '../styles/BCPNPCalculator.module.css';
 const BCPNPCalculator = () => {
   const [points, setPoints] = useState(0);
   const [canadaExperiencePoints, setCanadaExperiencePoints] = useState(0);
+  const [currentJobPoints, setCurrentJobPoints] = useState(0);
+  const [educationPoints, setEducationPoints] = useState(0);
+  const [bcEducationPoints, setBcEducationPoints] = useState(0);
+  const [canadaEducationPoints, setCanadaEducationPoints] = useState(0);
+  const [occupationPoints, setOccupationPoints] = useState(0);
+  const [languagePoints, setLanguagePoints] = useState(0);
+  const [languageProficiencyPoints, setLanguageProficiencyPoints] = useState(0);
+  const [hourlyWagePoints, setHourlyWagePoints] = useState(0);
+  const [employmentAreaPoints, setEmploymentAreaPoints] = useState(0);
+  const [languageProficiencyRegionPoints, setLanguageProficiencyRegionPoints] = useState(0);
 
   // Handles the first section's experience change
   const handleExperienceChange = (e) => {
@@ -45,6 +55,182 @@ const BCPNPCalculator = () => {
       setCanadaExperiencePoints(6); // Mimic the case '2-3'
     } else {
       setCanadaExperiencePoints(0); // Mimic the case '0'
+    }
+  };
+
+  // Handles the third section's current job change
+  const handleCurrentJobChange = (e) => {
+    const currentJobValue = e.target.value;
+
+    if (currentJobValue === 'yes') {
+      setCurrentJobPoints(4);
+    } else {
+      setCurrentJobPoints(1);
+    }
+  };
+
+  // Handles the fourth section's education level change
+  const handleEducationChange = (e) => {
+    const educationValue = e.target.value;
+
+    switch (educationValue) {
+      case 'doctoral':
+        setEducationPoints(20);
+        break;
+      case 'masters':
+        setEducationPoints(18);
+        break;
+      case 'postGradCert':
+        setEducationPoints(16);
+        break;
+      case 'bachelors':
+        setEducationPoints(14);
+        break;
+      case 'associate':
+        setEducationPoints(12);
+        break;
+      case 'diplomaCert':
+        setEducationPoints(10);
+        break;
+      case 'secondarySchool':
+        setEducationPoints(5);
+        break;
+      default:
+        setEducationPoints(0);
+        break;
+    }
+  };
+
+  // Handles the Post-Secondary Education Completed in B.C. change
+  const handleBcEducationChange = (e) => {
+    const bcEducationValue = e.target.value;
+
+    if (bcEducationValue === 'yes') {
+      setBcEducationPoints(3);
+    } else {
+      setBcEducationPoints(0);
+    }
+  };
+
+  // Handles the Post-Secondary Education Completed in Canada (Outside B.C.) change
+  const handleCanadaEducationChange = (e) => {
+    const canadaEducationValue = e.target.value;
+
+    if (canadaEducationValue === 'yes') {
+      setCanadaEducationPoints(5);
+    } else {
+      setCanadaEducationPoints(0);
+    }
+  };
+
+  // Handles the working in specific occupations change
+  const handleOccupationChange = (e) => {
+    const occupationValue = e.target.value;
+
+    if (occupationValue === 'yes') {
+      setOccupationPoints(6);
+    } else {
+      setOccupationPoints(3);
+    }
+  };
+
+  // Handles the Language Points change
+  const handleLanguageChange = (e) => {
+    const languageValue = e.target.value;
+
+    switch (languageValue) {
+      case '10+':
+        setLanguagePoints(20);
+        break;
+      case '9':
+        setLanguagePoints(18);
+        break;
+      case '8':
+        setLanguagePoints(16);
+        break;
+      case '7':
+        setLanguagePoints(14);
+        break;
+      case '6':
+        setLanguagePoints(12);
+        break;
+      case '5':
+        setLanguagePoints(10);
+        break;
+      case '4':
+        setLanguagePoints(8);
+        break;
+      case 'lessThan4':
+        setLanguagePoints(5);
+        break;
+      case 'noTest':
+        setLanguagePoints(0);
+        break;
+      default:
+        setLanguagePoints(0);
+        break;
+    }
+  };
+
+  // Handles the Language Proficiency change
+  const handleLanguageProficiencyChange = (e) => {
+    const languageProficiencyValue = e.target.value;
+
+    if (languageProficiencyValue === 'yes') {
+      setLanguageProficiencyPoints(5);
+    } else {
+      setLanguageProficiencyPoints(3);
+    }
+  };
+
+  // Handles the Hourly Wage change
+  const handleHourlyWageChange = (e) => {
+    const wageValue = parseFloat(e.target.value);
+
+    if (wageValue >= 30) {
+      setHourlyWagePoints(8);
+    } else {
+      setHourlyWagePoints(4);
+    }
+  };
+
+  // Handles the Area of Employment change
+  const handleEmploymentAreaChange = (e) => {
+    const areaValue = e.target.value;
+
+    switch (areaValue) {
+      case 'area1':
+        setEmploymentAreaPoints(10);
+        break;
+      case 'area2':
+        setEmploymentAreaPoints(7);
+        break;
+      case 'area3':
+        setEmploymentAreaPoints(5);
+        break;
+      default:
+        setEmploymentAreaPoints(0);
+        break;
+    }
+  };
+
+  // Handles the Language Proficiency Region change
+  const handleLanguageProficiencyRegionChange = (e) => {
+    const proficiencyRegionValue = e.target.value;
+
+    switch (proficiencyRegionValue) {
+      case 'regionalExperience':
+        setLanguageProficiencyRegionPoints(5);
+        break;
+      case 'regionalAlumni':
+        setLanguageProficiencyRegionPoints(7);
+        break;
+      case 'notApplicable':
+        setLanguageProficiencyRegionPoints(3);
+        break;
+      default:
+        setLanguageProficiencyRegionPoints(0);
+        break;
     }
   };
 
@@ -103,7 +289,7 @@ const BCPNPCalculator = () => {
         </div>
       </div>
 
-      {/* Section 2: Experience in Canada */}
+      {/* Section 2: At Least 1 Year of Directly Related Experience in Canada */}
       <div className={styles.container}>
         <div className={styles.header}>
           2. At least 1 year of directly related experience in Canada?
@@ -122,6 +308,295 @@ const BCPNPCalculator = () => {
         </div>
         <div className={styles.points}>
           Points <input type="text" value={canadaExperiencePoints} readOnly />
+        </div>
+      </div>
+
+      {/* Section 3: Currently Working Full-Time in B.C. */}
+      <div className={styles.container}>
+        <div className={styles.header}>
+          3. Currently working full-time in B.C. for the employer in the occupation identified in the BC PNP registration?
+        </div>
+        <div className={styles.radioGroup}>
+          <div className={styles.radioItem}>
+            <label>
+              <input type="radio" name="currentJob" value="yes" onChange={handleCurrentJobChange} /> Yes
+            </label>
+          </div>
+          <div className={styles.radioItem}>
+            <label>
+              <input type="radio" name="currentJob" value="no" onChange={handleCurrentJobChange} /> No
+            </label>
+          </div>
+        </div>
+        <div className={styles.points}>
+          Points <input type="text" value={currentJobPoints} readOnly />
+        </div>
+      </div>
+
+      {/* Section 4: Education Level */}
+      <div className={styles.container}>
+        <div className={styles.header}>
+          4. Choose your Education Level
+        </div>
+        <div className={styles.radioGroup}>
+          <div className={styles.radioItem}>
+            <label>
+              <input type="radio" name="education" value="doctoral" onChange={handleEducationChange} /> Doctoral Degree
+            </label>
+          </div>
+          <div className={styles.radioItem}>
+            <label>
+              <input type="radio" name="education" value="masters" onChange={handleEducationChange} /> Master's Degree
+            </label>
+          </div>
+          <div className={styles.radioItem}>
+            <label>
+              <input type="radio" name="education" value="postGradCert" onChange={handleEducationChange} /> Post Graduation Certificate or Diploma
+            </label>
+          </div>
+          <div className={styles.radioItem}>
+            <label>
+              <input type="radio" name="education" value="bachelors" onChange={handleEducationChange} /> Bachelor's Degree
+            </label>
+          </div>
+          <div className={styles.radioItem}>
+            <label>
+              <input type="radio" name="education" value="associate" onChange={handleEducationChange} /> Associate Degree
+            </label>
+          </div>
+          <div className={styles.radioItem}>
+            <label>
+              <input type="radio" name="education" value="diplomaCert" onChange={handleEducationChange} /> Post-Secondary Diploma/Certificate (Trades or Non-Trades)
+            </label>
+          </div>
+          <div className={styles.radioItem}>
+            <label>
+              <input type="radio" name="education" value="secondarySchool" onChange={handleEducationChange} /> Secondary School (High School) or less
+            </label>
+          </div>
+        </div>
+        <div className={styles.points}>
+          Points <input type="text" value={educationPoints} readOnly />
+        </div>
+      </div>
+
+      {/* Section 5: Post-Secondary Education Completed in B.C. */}
+      <div className={styles.container}>
+        <div className={styles.header}>
+          5. Post-Secondary Education Completed in B.C.?
+        </div>
+        <div className={styles.radioGroup}>
+          <div className={styles.radioItem}>
+            <label>
+              <input type="radio" name="bcEducation" value="yes" onChange={handleBcEducationChange} /> Yes
+            </label>
+          </div>
+          <div className={styles.radioItem}>
+            <label>
+              <input type="radio" name="bcEducation" value="no" onChange={handleBcEducationChange} /> No
+            </label>
+          </div>
+        </div>
+        <div className={styles.points}>
+          Points <input type="text" value={bcEducationPoints} readOnly />
+        </div>
+      </div>
+
+      {/* Section 6: Post-Secondary Education Completed in Canada (Outside B.C.) */}
+      <div className={styles.container}>
+        <div className={styles.header}>
+          6. Post-Secondary Education Completed in Canada (Outside B.C.)?
+        </div>
+        <div className={styles.radioGroup}>
+          <div className={styles.radioItem}>
+            <label>
+              <input type="radio" name="canadaEducation" value="yes" onChange={handleCanadaEducationChange} /> Yes
+            </label>
+          </div>
+          <div className={styles.radioItem}>
+            <label>
+              <input type="radio" name="canadaEducation" value="no" onChange={handleCanadaEducationChange} /> No
+            </label>
+          </div>
+        </div>
+        <div className={styles.points}>
+          Points <input type="text" value={canadaEducationPoints} readOnly />
+        </div>
+      </div>
+
+      {/* Section 7: Are you working in one of the following occupations? */}
+      <div className={styles.container}>
+        <div className={styles.header}>
+          7. Are you working in one of the following occupations?
+        </div>
+        <div className={styles.radioGroup}>
+          <div className={styles.radioItem}>
+            <label>
+              <input type="radio" name="occupation" value="yes" onChange={handleOccupationChange} /> Yes
+            </label>
+          </div>
+          <div className={styles.radioItem}>
+            <label>
+              <input type="radio" name="occupation" value="no" onChange={handleOccupationChange} /> No
+            </label>
+          </div>
+        </div>
+        <div className={styles.points}>
+          Points <input type="text" value={occupationPoints} readOnly />
+        </div>
+      </div>
+
+      {/* Section 8: Language Points */}
+      <div className={styles.container}>
+        <div className={styles.header}>
+          8. Language Points (Canadian Language Benchmark Level):
+        </div>
+        <div className={styles.radioGroup}>
+          <div className={styles.radioItem}>
+            <label>
+              <input type="radio" name="language" value="10+" onChange={handleLanguageChange} /> 10+
+            </label>
+          </div>
+          <div className={styles.radioItem}>
+            <label>
+              <input type="radio" name="language" value="9" onChange={handleLanguageChange} /> 9
+            </label>
+          </div>
+          <div className={styles.radioItem}>
+            <label>
+              <input type="radio" name="language" value="8" onChange={handleLanguageChange} /> 8
+            </label>
+          </div>
+          <div className={styles.radioItem}>
+            <label>
+              <input type="radio" name="language" value="7" onChange={handleLanguageChange} /> 7
+            </label>
+          </div>
+          <div className={styles.radioItem}>
+            <label>
+              <input type="radio" name="language" value="6" onChange={handleLanguageChange} /> 6
+            </label>
+          </div>
+          <div className={styles.radioItem}>
+            <label>
+              <input type="radio" name="language" value="5" onChange={handleLanguageChange} /> 5
+            </label>
+          </div>
+          <div className={styles.radioItem}>
+            <label>
+              <input type="radio" name="language" value="4" onChange={handleLanguageChange} /> 4
+            </label>
+          </div>
+          <div className={styles.radioItem}>
+            <label>
+              <input type="radio" name="language" value="lessThan4" onChange={handleLanguageChange} /> Less than 4
+            </label>
+          </div>
+          <div className={styles.radioItem}>
+            <label>
+              <input type="radio" name="language" value="noTest" onChange={handleLanguageChange} /> No Test
+            </label>
+          </div>
+        </div>
+        <div className={styles.points}>
+          Points <input type="text" value={languagePoints} readOnly />
+        </div>
+      </div>
+
+      {/* Section 9: Language Proficiency in both English and French */}
+      <div className={styles.container}>
+        <div className={styles.header}>
+          9. Language Proficiency in both English and French (CLB 4 or higher in each of 4 competencies on both tests)
+        </div>
+        <div className={styles.radioGroup}>
+          <div className={styles.radioItem}>
+            <label>
+              <input type="radio" name="languageProficiency" value="yes" onChange={handleLanguageProficiencyChange} /> Yes
+            </label>
+          </div>
+          <div className={styles.radioItem}>
+            <label>
+              <input type="radio" name="languageProficiency" value="no" onChange={handleLanguageProficiencyChange} /> No
+            </label>
+          </div>
+        </div>
+        <div className={styles.points}>
+          Points <input type="text" value={languageProficiencyPoints} readOnly />
+        </div>
+      </div>
+
+      {/* Section 10: Hourly Wage of the B.C. Job Offer */}
+      <div className={styles.container}>
+        <div className={styles.header}>
+          10. Hourly Wage of the B.C. Job Offer: $
+        </div>
+        <input type="number" placeholder="Enter wage" onChange={handleHourlyWageChange} />
+        <div className={styles.points}>
+          Points <input type="text" value={hourlyWagePoints} readOnly />
+        </div>
+      </div>
+
+      {/* Section 11: Area of Employment within B.C. */}
+      <div className={styles.container}>
+        <div className={styles.header}>
+          11. Area of Employment within B.C.
+        </div>
+        <div className={styles.radioGroup}>
+          <div className={styles.radioItem}>
+            <label>
+              <input type="radio" name="employmentArea" value="area1" onChange={handleEmploymentAreaChange} /> Area 1: Metro Vancouver Regional District
+            </label>
+          </div>
+          <div className={styles.radioItem}>
+            <label>
+              <input type="radio" name="employmentArea" value="area2" onChange={handleEmploymentAreaChange} /> Area 2: Squamish, Abbotsford, Agassiz, Mission, and Chilliwack
+            </label>
+          </div>
+          <div className={styles.radioItem}>
+            <label>
+              <input type="radio" name="employmentArea" value="area3" onChange={handleEmploymentAreaChange} /> Area 3: Areas of B.C. not included in Area 1 or 2
+            </label>
+          </div>
+        </div>
+        <div className={styles.points}>
+          Points <input type="text" value={employmentAreaPoints} readOnly />
+        </div>
+      </div>
+
+      {/* Section 12: Language Proficiency Region */}
+      <div className={styles.container}>
+        <div className={styles.header}>
+          12. Language Proficiency in both English and French (CLB 4 or higher in each of 4 competencies on both tests)
+        </div>
+        <div className={styles.radioGroup}>
+          <div className={styles.radioItem}>
+            <label>
+              <input type="radio" name="languageProficiencyRegion" value="regionalExperience" onChange={handleLanguageProficiencyRegionChange} /> Regional Experience
+            </label>
+          </div>
+          <div className={styles.radioItem}>
+            <label>
+              <input type="radio" name="languageProficiencyRegion" value="regionalAlumni" onChange={handleLanguageProficiencyRegionChange} /> Regional Alumni
+            </label>
+          </div>
+          <div className={styles.radioItem}>
+            <label>
+              <input type="radio" name="languageProficiencyRegion" value="notApplicable" onChange={handleLanguageProficiencyRegionChange} /> Not Applicable
+            </label>
+          </div>
+        </div>
+        <div className={styles.points}>
+          Points <input type="text" value={languageProficiencyRegionPoints} readOnly />
+        </div>
+      </div>
+
+      {/* Total Points */}
+      <div className={styles.container}>
+        <div className={styles.header}>
+          Total Points
+        </div>
+        <div className={styles.points}>
+          {points + canadaExperiencePoints + currentJobPoints + educationPoints + bcEducationPoints + canadaEducationPoints + occupationPoints + languagePoints + languageProficiencyPoints + hourlyWagePoints + employmentAreaPoints + languageProficiencyRegionPoints}
         </div>
       </div>
     </>
