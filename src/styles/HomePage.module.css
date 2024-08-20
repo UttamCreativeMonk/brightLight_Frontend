@@ -72,7 +72,6 @@
   text-align: center;
 }
 
-
 .bookButton17 {
   margin-top: 40px;
   align-items: center;
@@ -124,19 +123,67 @@
   border: 2px solid #4285f4;
 }
 
-.bannerParent2{
+/* .bannerParent2{
   background-image: url("../assets/homePageBanner.jpg");
   width: 100%;
-  height: 600px;
+  height:1100px;
+  height: auto;
   background-repeat: no-repeat;
   background-size: cover;
-  /* padding: 100px 0px; */
+} */
+
+.bannerParent2 {
+  position: relative;
 }
 
+.bannerParent2 img {
+  width: 100%;
+  height: auto;
+}
+
+.bannerParent2ButtonDiv{
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 30px;
+}
+
+.bannerParent2 button {
+  color: white;
+  font-size: 20px;
+
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 10px 40px;
+  border-radius: 5px;
+}
+
+.bannerParent2HaveQuestions button{
+  /* width: 100%; */
+  height: 55px;
+  font-size: 30px;
+}
+
+.bannerParent2HaveQuestions p{
+  color: white;
+  font-size: 10px;
+  
+}
+
+.bannerParent2HaveQuestions h5{
+  text-align: left;
+  color: white;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
 
 .memberParent {
   background-color: #132f46;
   padding: 100px 0px;
+  margin-top: -5px;
 }
 
 .memberMain {
@@ -397,7 +444,7 @@
   color: white;
 }
 
-.aspectsParent{
+.aspectsParent {
   background-image: url("../assets/contactMap.png");
   width: 100%;
   background-repeat: no-repeat;
@@ -405,19 +452,19 @@
   padding: 100px 0px;
 }
 
-.aspectsMain{
+.aspectsMain {
   width: 1440px;
   margin: auto;
   text-align: center;
   align-items: center;
 }
 
-.aspectsHeading h1{
+.aspectsHeading h1 {
   color: #132f46;
   font-size: 65px;
 }
 
-.aspectsHeading h2{
+.aspectsHeading h2 {
   color: #132f46;
   font-size: 35px;
   font-weight: 400;
@@ -425,14 +472,14 @@
   padding-bottom: 50px;
 }
 
-.aspectsCardParent{
+.aspectsCardParent {
   display: flex;
   text-align: center;
   align-items: center;
   justify-content: space-around;
 }
 
-.aspectsCard{
+.aspectsCard {
   color: white;
   background-color: #033b5d;
   padding: 60px 30px;
@@ -441,22 +488,19 @@
   border-radius: 20px;
 }
 
-.aspectsCard img{
+.aspectsCard img {
   height: 100px;
   width: 100px;
 }
 
-.aspectsCard h1{
+.aspectsCard h1 {
   font-size: 50px;
   padding-top: 20px;
 }
 
-.aspectsCard p{
+.aspectsCard p {
   font-size: 30px;
   font-weight: 300;
   padding-top: 15px;
   padding-top: 10px;
 }
-
-
-

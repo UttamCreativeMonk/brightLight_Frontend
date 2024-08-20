@@ -1,22 +1,21 @@
 import React from "react";
 import styles from "../styles/HomePage.module.css";
 
-
-import permanentResidenceImg from '../assets/permanent_residence.png';
-import bcpnpImg from '../assets/bcpnp.png';
-import visitorVisaImg from '../assets/visitor_visa.png';
-import studyVisaImg from '../assets/study_visa.png';
-import familySponsorshipImg from '../assets/family_sponsorship.png';
-import workPermitImg from '../assets/work_permit.png';
-import pflImg from '../assets/pfl.png';
-
-
+import permanentResidenceImg from "../assets/permanent_residence.png";
+import bcpnpImg from "../assets/bcpnp.png";
+import visitorVisaImg from "../assets/visitor_visa.png";
+import studyVisaImg from "../assets/study_visa.png";
+import familySponsorshipImg from "../assets/family_sponsorship.png";
+import workPermitImg from "../assets/work_permit.png";
+import pflImg from "../assets/pfl.png";
 
 import Rcic from "../assets/rcic.png";
 import Capic from "../assets/capic.png";
 import Cicc from "../assets/cicc.png";
 import Simplifying1 from "../assets/immigration-challenges.png";
 import Simplifying2 from "../assets/expert-in-refusal.png";
+import BannerImage from "../assets/homePageBanner.jpg";
+import LinkedinLogo from "../assets/bannerLinkedinLogo.png";
 
 import BluePointer from "../assets/blue-pointer.png";
 import GoldenPointer from "../assets/golden-pointer.png";
@@ -29,13 +28,13 @@ import SmileFace from "../assets/happy-clients-icon.webp";
 
 let HomePage = () => {
   const cards = [
-    { title: 'Permanent Residence', img: permanentResidenceImg },
-    { title: 'BCPNP', img: bcpnpImg },
-    { title: 'Visitor Visa', img: visitorVisaImg },
-    { title: 'Study Visa', img: studyVisaImg },
-    { title: 'Family Sponsorship', img: familySponsorshipImg },
-    { title: 'Work Permit', img: workPermitImg },
-    { title: 'PFL', img: pflImg },
+    { title: "Permanent Residence", img: permanentResidenceImg },
+    { title: "BCPNP", img: bcpnpImg },
+    { title: "Visitor Visa", img: visitorVisaImg },
+    { title: "Study Visa", img: studyVisaImg },
+    { title: "Family Sponsorship", img: familySponsorshipImg },
+    { title: "Work Permit", img: workPermitImg },
+    { title: "PFL", img: pflImg },
   ];
   return (
     <>
@@ -53,27 +52,31 @@ let HomePage = () => {
             <h2>WE'VE HELPED MANY OVERCOME THEM</h2>
           </div>
           <div className={styles.cardContainer}>
-      {cards.map((card, index) => (
-        <div
-          key={index}
-          className={styles.card}
-        >
-          <img src={card.img} alt={card.title} className={styles.icon} />
-          <div className={styles.title}>{card.title}</div>
-        </div>
-      ))}
-    </div>
+            {cards.map((card, index) => (
+              <div key={index} className={styles.card}>
+                <img src={card.img} alt={card.title} className={styles.icon} />
+                <div className={styles.title}>{card.title}</div>
+              </div>
+            ))}
+          </div>
           <button className={styles.bookButton17} role="button">
             More Services
           </button>
         </div>
       </div>
 
-<div className={styles.bannerParent2}>
-  <div className={styles.bannerMain2}>
+      <div className={styles.bannerParent2}>
+        <img src={BannerImage} alt="err" />
+        <div className={styles.bannerParent2ButtonDiv}>
+          <button> <img src={LinkedinLogo} alt="err" /></button>
+          <div className={styles.bannerParent2HaveQuestions}>
+            <h5>Have Questions ?</h5>
+            <button><b>RCIC</b><p> APPOINTEMENT</p></button>
+          </div>
+        </div>
 
-  </div>
-</div>
+        <div className={styles.bannerMain2}></div>
+      </div>
 
       <div className={styles.memberParent}>
         <div className={styles.memberMain}>
@@ -280,13 +283,16 @@ let HomePage = () => {
 
           <div className={styles.aspectsCardParent}>
             <div className={styles.aspectsCard}>
-              <img src={Visa} alt="err" /> <h1>10,257+</h1> <p>VISA PROCESSED</p>
+              <img src={Visa} alt="err" /> <h1>10,257+</h1>{" "}
+              <p>VISA PROCESSED</p>
             </div>
             <div className={styles.aspectsCard}>
-              <img src={CheckMark} alt="err" /> <h1>10,112+</h1> <p>SUCCESS STORIES</p>
+              <img src={CheckMark} alt="err" /> <h1>10,112+</h1>{" "}
+              <p>SUCCESS STORIES</p>
             </div>
             <div className={styles.aspectsCard}>
-              <img src={SmileFace} alt="err" /> <h1>10,121+</h1> <p>HAPPY CLIENTS</p>
+              <img src={SmileFace} alt="err" /> <h1>10,121+</h1>{" "}
+              <p>HAPPY CLIENTS</p>
             </div>
           </div>
         </div>

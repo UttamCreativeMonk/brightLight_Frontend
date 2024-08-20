@@ -30,10 +30,10 @@ function App() {
       {/* <PrivacyPolicy/> */}
       {/* <TermsAndConditions/> */}
       {/* <Testimonials/> */}
-      <BCPNPCalculator/>
+      {/* <BCPNPCalculator/> */}
       {/* <ExpressEntry/> */}
       {/* <TransportOccupationTwo/> */}
-      {/* <HomePage/> */}
+      <HomePage/>
       {/* <Footer/> */}
       {/* <Footer /> */}
       {/* <CategoryBased/> */}
