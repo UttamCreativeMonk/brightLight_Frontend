@@ -13,6 +13,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import BCPNPCalculator from "./pages/BCPNPCalculator";
 import Testimonials from "./sections/Testimonials";
+import FederalSkilled from "./pages/FederalSkilled";
 
 function App() {
   // useEffect(()=>{
@@ -23,20 +24,26 @@ function App() {
   // },[]);
   return (
     <div className="App">
+     {/* <PrivacyPolicy/> */}
+      {/* <TermsAndConditions/> */}
+
+   
+
       {/* <Navbar /> */}
       {/* <Contact/> */}
       {/* <About/> */}
       {/* <PermanentResidency/> */}
-      {/* <PrivacyPolicy/> */}
-      {/* <TermsAndConditions/> */}
+ 
       {/* <Testimonials/> */}
+      <FederalSkilled/>
       {/* <BCPNPCalculator/> */}
       {/* <ExpressEntry/> */}
       {/* <TransportOccupationTwo/> */}
-      <HomePage/>
+      {/* <HomePage/> */}
       {/* <Footer/> */}
-      {/* <Footer /> */}
+    
       {/* <CategoryBased/> */}
+      {/* <Footer /> */}
     </div>
   );
 }

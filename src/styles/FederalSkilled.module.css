@@ -1,0 +1,186 @@
+.bannerParent{
+    background-image: url("../assets//canadaBlue.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    padding: 100px 0px;
+}
+
+.bannerHeading{
+    width: 1440px;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.bannerHeading h1{
+    font-size: 60px;
+    padding-bottom: 80px;
+}
+
+.bannerHeading p{
+    font-weight: 300;
+    font-size: 35px;
+    padding-bottom: 50px;
+    line-height: 50px;
+}
+
+
+  
+.container {
+    /* width: 1440px; */
+    margin: 50px auto;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    background-color: #fff;
+  }
+  
+  
+  .header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .header h4{
+    color: #4d4d4d;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .subHeader {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .headerLineParent {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .headerLineParent h3{
+    width: 100%;
+  }
+  
+  .headerLineParent p {
+    height: 1.1px;
+    width: 100%;
+    background-color: #132f46;
+  }
+  
+  .headerLineParent h3{
+    color: #132f46;
+    font-weight: 500;
+  }
+  
+  .radioGroup {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .radioGroup3{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start; 
+    margin-bottom: 20px;
+  }
+
+  .radioGroup2{
+    margin-bottom: 20px;
+  }
+  
+  .radioItem {
+    color: #666666;
+    width: 20%;
+    margin-bottom: 10px;
+  }
+  
+  .radioItem2{
+    color: #666666;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  .points {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .points input {
+    margin-left: 10px;
+    width: 50px;
+    text-align: center;
+  }
+  
+  .dropdown {
+    width: 240px;
+    height: 45px;
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    background-color: #e6e6e6;
+    margin-bottom: 20px;
+    color: #4d4d4d;
+  }
+  
+
+  
+  /* // */
+
+  .containerParent {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 1440px;
+    margin: auto;
+    margin-top: 100px;
+  }
+
+
+  .firstSection{
+    width: 66%;
+  }
+  
+  .pointsSection{
+    width: 32%;
+  }
+
+
+  
+.pointContainer{
+    height: 300px;
+    width: 420px;
+    margin: auto;
+    align-items: center;
+    padding: 30px 0px;
+    /* border: 1px solid #ddd; */
+    border-radius: 20px;
+    background-color: #132f46;
+    color: white;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .pointContainer h2{
+    width: 420px;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    align-items: center;
+  }
+
+  
+  .points h1{
+    font-size: 60px;
+    color: white;
+  }
