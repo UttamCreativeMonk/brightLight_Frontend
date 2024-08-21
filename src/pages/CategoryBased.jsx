@@ -1,13 +1,16 @@
 import React from "react";
 import styles from "../styles/CategoryBased.module.css";
 import ServiceImg from "../assets/service-data-image.webp";
-import BestChoice from "../assets/best-choice.png";
+// import BestChoice from "../assets/best-choice.png";
 import { ReactComponent as Responsibility } from "../assets/handsShake.svg";
 import PlaneMap from "../assets/planeMap.png";
 import BluePolygon from "../assets/blue-polygon.webp";
 import GoogleIcon from "../assets/google-review.webp";
 import GirlVisa from "../assets/GirlVisa.png";
 import LinkAncor from "../assets/link-arrows.png";
+import BestChoice from "../sections/BestChoice";
+import Testimonials from "../sections/Testimonials";
+import FAQ from "../sections/FAQ";
 
 let CategoryBased = () => {
   return (
@@ -306,6 +309,9 @@ let CategoryBased = () => {
           </p>
         </div>
       </div>
+      <BestChoice/>
+      <Testimonials/>
+      <FAQ/>
     </>
   );
 };

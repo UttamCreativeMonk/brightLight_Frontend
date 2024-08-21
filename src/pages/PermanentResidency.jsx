@@ -2,11 +2,12 @@ import React from "react";
 import styles from "../styles/PermanentResidency.module.css";
 import ServiceImg from "../assets/service-data-image.webp";
 import { ReactComponent as Responsibility } from "../assets/handsShake.svg";
-import studyVisaImg from '../assets/study_visa.png';
+import studyVisaImg from '../assets/graduatedStudent.png';
 import BluePointer from "../assets/blue-pointer.png";
 import GoldenPointer from "../assets/golden-pointer.png";
 import Runway from "../assets/runway.png";
 import Plane from "../assets/plane.png";
+import OurProcess from "../sections/OurProcess";
 
 
 let PermanentResidency = () => {
@@ -91,7 +92,10 @@ let PermanentResidency = () => {
         </div>
       </div>
 
-      <div className={styles.fourCardParent}>
+      <OurProcess/>
+
+
+      {/* <div className={styles.fourCardParent}>
         <div className={styles.fourCard}>
           <div className={styles.fourCardHeading}>
             <h1>Our Process</h1>
@@ -203,9 +207,9 @@ let PermanentResidency = () => {
             <img src={Plane} className={styles.plane} alt="err" />
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div className={styles.blogParent}>
+      {/* <div className={styles.blogParent}>
         <div className={styles.blogMain}>
           <div className={styles.blogHeading}>
             <h1>Read our recent Blogs on Express Entry 2024</h1>
@@ -216,7 +220,7 @@ let PermanentResidency = () => {
             <div className={styles.blogCard}></div>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

@@ -1,11 +1,15 @@
 import React from "react";
 import styles from "../styles/ExpressEntry.module.css";
 import ServiceImg from "../assets/service-data-image.webp";
-import BestChoice from "../assets/best-choice.png";
+// import BestChoice from "../assets/best-choice.png";
 import { ReactComponent as Responsibility } from "../assets/handsShake.svg";
 import PlaneMap from "../assets/planeMap.png";
 import BluePolygon from "../assets/blue-polygon.webp";
 import GoogleIcon from "../assets/google-review.webp";
+
+import BestChoice from "../sections/BestChoice";
+// import Testimonials from "../sections/Testimonials";
+import FAQ from "../sections/FAQ";
 
 let ExpressEntry = () => {
   return (
@@ -197,120 +201,13 @@ let ExpressEntry = () => {
             </button>
           </div>
         </div>
-      </div>/
-
-      <div>
-        <div className={styles.bestChoiceParent}>
-          <div className={styles.bestChoice}>
-            <div className={styles.bestChoiceHeading}>
-              {/* <h2>What makes us the best choice for you?</h2> */}
-            </div>
-            <img src={BestChoice} alt="err" />
-            <img src={PlaneMap} alt="err" />
-          </div>
-        </div>
       </div>
 
-      {/* <div className={styles.faqParent}>
-        <div className={styles.faqImageParent}>
-        <div className={styles.faqMain}>
-          <div className={styles.faqContent}>
-            <div className={styles.faqHeading}>
-              <div className={styles.faqHeadingTest}> 
-              <div className={styles.bluePolygon}><img src={BluePolygon} alt="err" />
-              <div> <h1>FAQ's Made Simple</h1> </div>
-              </div>
-              </div>
-              <h4> Who is eligible for Express Entry? </h4>
-              <h4> How do I apply for Express Entry? </h4>
-              <h4> How do I get an Invitation to Apply (ITA)?</h4>
-              <h4>
-                {" "}
-                What is the processing time for Express Entry applications?{" "}
-              </h4>
-              <h4>
-                {" "}
-                What are the benefits of immigrating to Canada through Express
-                Entry?{" "}
-              </h4>
-              <h4>
-                {" "}
-                What are the risks of immigrating to Canada through Express
-                Entry?{" "}
-              </h4>
-              <h4>
-                {" "}
-                How can I improve my chances of success in the Express Entry
-                system?{" "}
-              </h4>
-            </div>
-            <div className={styles.faqPara}>
-              <p>
-                Express Entry is Canada's main economic immigration system for
-                skilled workers, professionals, and international graduates. It
-                is a points-based system that uses a ranking system called the
-                Comprehensive Ranking System (CRS) to select candidates for
-                permanent residency.
-              </p>
-            </div>
-          </div>
-        </div>
-        /</div>
-      </div> */}
+      <BestChoice/>
+      <FAQ/>
 
-      <div className={styles.container}>
-        <div className={styles.faqSection}>
-          <div className={styles.icon}>
-            <div className={styles.questionMark}>?</div>
-          </div>
-          <div className={styles.faqContent}>
-            <h1 className={styles.title}>FAQ’s Made Simple</h1>
-            <div className={styles.faqItem}>
-              <h2 className={styles.question}>What is Express Entry?</h2>
-              <p className={styles.answer}>
-                Express Entry is Canada’s main economic immigration system for
-                skilled workers, professionals, and international graduates. It
-                is a points-based system that uses a ranking system called the
-                Comprehensive Ranking System (CRS) to select candidates for
-                permanent residency.
-              </p>
-            </div>
-            <ul className={styles.questions}>
-              <li>Who is eligible for Express Entry?</li>
-              <li>How do I apply for Express Entry?</li>
-              <li>How do I get an Invitation to Apply (ITA)?</li>
-              <li>
-                What is the processing time for Express Entry applications?
-              </li>
-              <li>
-                What are the benefits of immigrating to Canada through Express
-                Entry?
-              </li>
-              <li>
-                What are the risks of immigrating to Canada through Express
-                Entry?
-              </li>
-              <li>
-                How can I improve my chances of success in the Express Entry
-                system?
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
 
-      {/* // */}
 
-      <div className={styles.testimonialParent}>
-        <div className={styles.testimonialMain}>
-          <h1>Don't leave without hearing from our clients testimonials.</h1>
-
-          <div className={styles.testimonialGoogleParent}>
-            <div className={styles.testimonialGoogleImg}><img src={GoogleIcon} alt="err" /></div>
-            <div className={styles.testimonialRating}><p>4.4/5</p></div>
-          </div>
-        </div>
-      </div>
     </>
   );
 };

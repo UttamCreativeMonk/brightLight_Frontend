@@ -2,6 +2,9 @@ import React from "react";
 import styles from "../styles/TransportOccupation.module.css";
 import BlueLinkAncor from "../assets/blueLink-arrows.png";
 import LinkAncor from "../assets/link-arrows.png";
+import BestChoice from "../sections/BestChoice";
+import Testimonials from "../sections/Testimonials";
+import FAQ from "../sections/FAQ";
 
 let TransportOccupation = () => {
   return (
@@ -199,7 +202,11 @@ let TransportOccupation = () => {
           </p>
         </div>
       </div>
-    </>
+      <BestChoice/>
+    <Testimonials/>
+    <FAQ/>
+      </>
+ 
   );
 };
 

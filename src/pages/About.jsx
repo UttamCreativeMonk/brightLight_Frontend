@@ -11,7 +11,7 @@ import WeAreImg from "../assets/we-are-1.png";
 import SocialMoblile from "../assets/Layer 1.png";
 import VisaImg from "../assets/visa.png";
 import BlueMap from "../assets/blue-map.png";
-import BestChoice from "../assets/best-choice.png";
+// import BestChoice from "../assets/best-choice.png";
 
 import TiktokBlue from "../assets/tiktok1Icon.png";
 import LinkedinBlue from "../assets/linkedin1Icon.png";
@@ -23,6 +23,9 @@ import Director2 from "../assets/sumir.webp";
 import Twelve from "../assets/12-years2.png";
 import Comprehensive from "../assets/comprehensive1.png"
 
+import BestChoice from "../sections/BestChoice.jsx";
+
+import Map from "../sections/Map.jsx";
 
 
 let About = () => {
@@ -251,14 +254,7 @@ let About = () => {
         </div>
       </div>
 
-      <div className={styles.bestChoiceParent}>
-        <div className={styles.bestChoice}>
-          <div className={styles.bestChoiceHeading}>
-            <h2>What makes us the best choice for you?</h2>
-          </div>
-          <img src={BestChoice} alt="err" />
-        </div>
-      </div>
+<BestChoice/>
 
       <div className={styles.socialPresenceParent}>
         <div className={styles.socialPresence}>
@@ -310,18 +306,7 @@ let About = () => {
         </div>
       </div>
 
-      <div className={styles.mapParent}>
-        <div className={styles.mapSection}>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27462.752602531727!2d76.74414563737653!3d30.63835165105361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390febb05ee7e45b%3A0xa17a586890ee2175!2sGmada%20Aerocity%2C%20Sahibzada%20Ajit%20Singh%20Nagar%2C%20Punjab!5e0!3m2!1sen!2sin!4v1723022976691!5m2!1sen!2sin"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-          <button className={styles.theButton} role="button">
-            Find Us On Maps
-          </button>
-        </div>
-      </div>
+<Map/>
     </>
   );
 };
