@@ -321,6 +321,10 @@
   margin-top: -100px;
 }
 
+.ourAchivementSection img {
+  width: 100px;
+}
+
 .ourAchivementHeading h1 {
   width: 50%;
   margin: auto;
@@ -411,7 +415,7 @@
   text-align: center;
 }
 
-.socialMoblileImgDiv{
+.socialMoblileImgDiv {
   padding-top: 70px;
 }
 
@@ -561,7 +565,7 @@
   color: #132f46;
 }
 
-.meetDirectorimgContent p{
+.meetDirectorimgContent p {
   font-size: 20px;
   color: #132f46;
   padding-top: 30px;
