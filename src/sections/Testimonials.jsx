@@ -169,6 +169,7 @@ let Testimonials = () => {
             </div>
           </div>
         </div>
+        
         <div className={styles.testimonialsVideoSection}>
           <Swiper
             effect={"coverflow"}

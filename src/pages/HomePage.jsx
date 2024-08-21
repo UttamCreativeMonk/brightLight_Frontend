@@ -1,13 +1,30 @@
 import React from "react";
 import styles from "../styles/HomePage.module.css";
 
-import permanentResidenceImg from "../assets/permanent_residence.png";
-import bcpnpImg from "../assets/bcpnp.png";
-import visitorVisaImg from "../assets/visitor_visa.png";
-import studyVisaImg from "../assets/study_visa.png";
-import familySponsorshipImg from "../assets/family_sponsorship.png";
-import workPermitImg from "../assets/work_permit.png";
-import pflImg from "../assets/pfl.png";
+// import permanentResidenceImg from "../assets/homeLocation.png";
+// import bcpnpImg from "../assets/employee.png";
+// import visitorVisaImg from "../assets/visa.png";
+// import studyVisaImg from "../assets/graduatedStudent.png";
+// import familySponsorshipImg from "../assets/parents.png";
+// import workPermitImg from "../assets/workPermit.png";
+// import pflImg from "../assets/file.png";
+
+import permanentResidenceImg from "../assets/homeLocation.png";
+import permanentResidenceHoverImg from "../assets/visaSVG.svg";
+import bcpnpImg from "../assets/employee.png";
+import bcpnpHoverImg from "../assets/employeeWhite.png";
+import visitorVisaImg from "../assets/visa.png";
+import visitorVisaHoverImg from "../assets/visaWhite.png";
+import studyVisaImg from "../assets/graduatedStudent.png";
+import studyVisaHoverImg from "../assets/graduatedStudentWhite.png";
+import familySponsorshipImg from "../assets/parents.png";
+import familySponsorshipHoverImg from "../assets/parentsWhite.png";
+import workPermitImg from "../assets/workPermit.png";
+import workPermitHoverImg from "../assets/workPermitWhite.png";
+import pflImg from "../assets/file.png";
+import pflHoverImg from "../assets/fileWhite.png";
+
+import WhiteLogo from "../assets/bright-source.webp";
 
 import Rcic from "../assets/rcic.png";
 import Capic from "../assets/capic.png";
@@ -17,24 +34,92 @@ import Simplifying2 from "../assets/expert-in-refusal.png";
 import BannerImage from "../assets/homePageBanner.jpg";
 import LinkedinLogo from "../assets/bannerLinkedinLogo.png";
 
-import BluePointer from "../assets/blue-pointer.png";
-import GoldenPointer from "../assets/golden-pointer.png";
-import Runway from "../assets/runway.png";
-import Plane from "../assets/plane.png";
-
 import Visa from "../assets/visa2.png";
 import CheckMark from "../assets/success-stories-icon.webp";
 import SmileFace from "../assets/happy-clients-icon.webp";
 
+// import BestChoice from "../sections/BestChoice";
+import Testimonials from "../sections/Testimonials";
+import FAQ from "../sections/FAQ";
+import OurProcess from "../sections/OurProcess";
+
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
+import aboutBanner from "../assets/about-banner.png";
+
 let HomePage = () => {
   const cards = [
-    { title: "Permanent Residence", img: permanentResidenceImg },
-    { title: "BCPNP", img: bcpnpImg },
-    { title: "Visitor Visa", img: visitorVisaImg },
-    { title: "Study Visa", img: studyVisaImg },
-    { title: "Family Sponsorship", img: familySponsorshipImg },
-    { title: "Work Permit", img: workPermitImg },
-    { title: "PFL", img: pflImg },
+    {
+      title: "Permanent Residence",
+      img: permanentResidenceImg,
+      hoverImg: permanentResidenceHoverImg,
+    },
+    {
+      title: "BCPNP",
+      img: bcpnpImg,
+      hoverImg: bcpnpHoverImg,
+    },
+    {
+      title: "Visitor Visa",
+      img: visitorVisaImg,
+      hoverImg: visitorVisaHoverImg,
+    },
+    { title: "Study Visa", img: studyVisaImg, hoverImg: studyVisaHoverImg },
+    {
+      title: "Family Sponsorship",
+      img: familySponsorshipImg,
+      hoverImg: familySponsorshipHoverImg,
+    },
+    { title: "Work Permit", img: workPermitImg, hoverImg: workPermitHoverImg },
+    { title: "PFL", img: pflImg, hoverImg: pflHoverImg },
+  ];
+
+  let clientVideosData = [
+    {
+      img: aboutBanner,
+      person_name: "Person 1",
+    },
+    {
+      img: aboutBanner,
+      person_name: "Person 2",
+    },
+    {
+      img: aboutBanner,
+      person_name: "Person 3",
+    },
+    {
+      img: aboutBanner,
+      person_name: "Person 4",
+    },
+    {
+      img: aboutBanner,
+      person_name: "Person 5",
+    },
+    {
+      img: aboutBanner,
+      person_name: "Person 6",
+    },
+    {
+      img: aboutBanner,
+      person_name: "Person 7",
+    },
+    {
+      img: aboutBanner,
+      person_name: "Person 8",
+    },
+    {
+      img: aboutBanner,
+      person_name: "Person 9",
+    },
+    {
+      img: aboutBanner,
+      person_name: "Person 10",
+    },
   ];
   return (
     <>
@@ -43,7 +128,7 @@ let HomePage = () => {
           <div className={styles.bannerHeading}>
             <h1>
               Feeling{" "}
-              <span className={styles.bannerBlueHeading}>Overwhelmed?</span>{" "}
+              <span className={styles.bannerBlueHeading}>Overwhelmed?</span>
             </h1>
             <h1>
               Just Received a{" "}
@@ -53,9 +138,20 @@ let HomePage = () => {
           </div>
           <div className={styles.cardContainer}>
             {cards.map((card, index) => (
-              <div key={index} className={styles.card}>
+              <div
+                key={index}
+                className={styles.card}
+                // onMouseEnter={(e) =>
+                //   (e.currentTarget.querySelector("img").src = card.hoverImg)
+                // }
+                // onMouseLeave={(e) =>
+                //   (e.currentTarget.querySelector("img").src = card.img)
+                // }
+              >
                 <img src={card.img} alt={card.title} className={styles.icon} />
-                <div className={styles.title}>{card.title}</div>
+                <div className={styles.title}>
+                  <h2>{card.title}</h2>
+                </div>
               </div>
             ))}
           </div>
@@ -68,10 +164,16 @@ let HomePage = () => {
       <div className={styles.bannerParent2}>
         <img src={BannerImage} alt="err" />
         <div className={styles.bannerParent2ButtonDiv}>
-          <button> <img src={LinkedinLogo} alt="err" /></button>
+          <button>
+            {" "}
+            <img src={LinkedinLogo} alt="err" />
+          </button>
           <div className={styles.bannerParent2HaveQuestions}>
             <h5>Have Questions ?</h5>
-            <button><b>RCIC</b><p> APPOINTEMENT</p></button>
+            <button>
+              <b>RCIC</b>
+              <p>APPOINTEMENT</p>
+            </button>
           </div>
         </div>
 
@@ -140,119 +242,7 @@ let HomePage = () => {
         </div>
       </div>
 
-      <div className={styles.fourCardParent}>
-        <div className={styles.fourCard}>
-          <div className={styles.fourCardHeading}>
-            <h1>Our Process</h1>
-            <p>IT’S QUITE EASY. WE PROMISE</p>
-          </div>
-          <div className={styles.fourCardImgParent}>
-            <div className={styles.fourCardImg}>
-              <div className={`${styles.fourCardMain} ${styles.blueCard}`}>
-                <div className={styles.pointerImageSection}>
-                  <img src={BluePointer} alt="err" />
-                  <p>1</p>
-                </div>
-                <h3>PERSONALISED ASSESMENT</h3>
-                <ul>
-                  <li>
-                    Firstly, we will identify and understand your Canadian
-                    immigration needs and goals.
-                  </li>
-                  <li>
-                    Then, we will assess your eligibility for various
-                    immigration programs accordingly.
-                  </li>
-                  <li>
-                    We will recommend the best pathway for your immigration
-                    goals after assessment.
-                  </li>
-                  <li>
-                    Any questions you have about the chosen pathway will be
-                    addressed along with any other concerns.
-                  </li>
-                </ul>
-              </div>
-              <div className={`${styles.fourCardMain} ${styles.goldenCard}`}>
-                <div className={styles.pointerImageSection}>
-                  <img src={GoldenPointer} alt="err" />
-                  <p>2</p>
-                </div>
-                <h3>TAILORED APPROACH</h3>
-                <ul>
-                  <li>
-                    We'll create a custom Canadian immigration plan suited just
-                    for you according to the pathway selected.
-                  </li>
-                  <li>
-                    Based on this plan, you'll receive a clear proposal from us
-                    outlining our services and payment structure, i.e., 50%
-                    before processing your file and 50% before submission.
-                  </li>
-                  <li>
-                    Once the initial 50% payment is made, we'll share a
-                    comprehensive checklist to ensure everything is ready
-                  </li>
-                </ul>
-              </div>
-              <div className={`${styles.fourCardMain} ${styles.blueCard}`}>
-                <div className={styles.pointerImageSection}>
-                  <img src={BluePointer} alt="err" />
-                  <p>3</p>
-                </div>
-                <h3>APPLICATION FULFILLMENT</h3>
-                <ul>
-                  <li>
-                    A case manager will be assigned to guide you and collect
-                    documents as per the checklist
-                  </li>
-                  <li>
-                    We’ll prepare a strong application within 7-10 business days
-                  </li>
-                  <li>
-                    Once your application is ready, we’ll send it to you for
-                    review and final approval.
-                  </li>
-                  <li>
-                    After your approval, simply pay the remaining 50% payment,
-                    and your application will be submitted.
-                  </li>
-                </ul>
-              </div>
-              <div className={`${styles.fourCardMain} ${styles.goldenCard}`}>
-                <div className={styles.pointerImageSection}>
-                  <img src={GoldenPointer} alt="err" />
-                  <p>4</p>
-                </div>
-                <h3>TRUSTED PARTNERSHIP</h3>
-                <ul>
-                  <li>
-                    Once your application is submitted successfully, we'll keep
-                    you informed at every stage of the process, from submission
-                    to decision.
-                  </li>
-                  <li>
-                    Our ongoing support and guidance will help you achieve your
-                    immigration goals.
-                  </li>
-                  <li>
-                    You can reach out to us to inquire about updates on your
-                    application.
-                  </li>
-                  <li>
-                    If satisfied with our service, we hope you'll feel inclined
-                    to refer others to us
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className={styles.runwayParent}>
-            <img src={Runway} alt="err" />
-            <img src={Plane} className={styles.plane} alt="err" />
-          </div>
-        </div>
-      </div>
+      <OurProcess />
 
       <div className={styles.expertiseParent}>
         <div className={styles.expertiseContentParent}>
@@ -269,6 +259,43 @@ let HomePage = () => {
               <a href="/">Know More</a>
             </button>
           </div>
+          /
+          <div className={styles.testimonialsVideoSection}>
+            <Swiper
+              effect={"coverflow"}
+              grabCursor={true}
+              centeredSlides={true}
+              loop={true}
+              slidesPerView={"auto"}
+              coverflowEffect={{
+                rotate: 0,
+                stretch: 0,
+                depth: 100,
+                modifier: 2.5,
+              }}
+              pagination={{ el: ".swiper_pagination", clickable: true }}
+              modules={[EffectCoverflow, Pagination, Navigation]}
+              className={styles.swiper_container}
+            >
+              {clientVideosData.map((item) => {
+                return (
+                  <SwiperSlide>
+                    <div ></div>
+                    <img src={item.img} />
+                    {/* <p>{item.person_name}</p> */}
+                  </SwiperSlide>
+                );
+              })}
+              ;
+              <div class="slider-controler" className={styles.slider_controler}>
+                <div
+                  class="swiper_pagination"
+                  className={styles.swiper_pagination}
+                ></div>
+              </div>
+            </Swiper>
+          </div>
+          /
         </div>
       </div>
 
@@ -295,6 +322,75 @@ let HomePage = () => {
               <p>HAPPY CLIENTS</p>
             </div>
           </div>
+        </div>
+      </div>
+      <Testimonials />
+      <FAQ />
+
+      <div className={styles.sourceParent}>
+        <div className={styles.sourceMain}>
+          <div className={styles.sourceHeadingParent}>
+            <div>
+              <img src={WhiteLogo} alt="ERR" />
+            </div>
+            <div>
+              <h1>Your Source For Staying Informed</h1>
+              <p>IMMIGRATION NEWS & TRENDS</p>
+            </div>
+          </div>
+          <div className={styles.sourceContentParent}>
+            <div className={styles.sourceContent}>
+              <div className={styles.sourceContentDate}>
+                <p>VISA</p>
+                <h2>NOV</h2>
+                <h1>30</h1>
+              </div>
+              <div className={styles.sourceContentData}>
+                <h3>
+                  Minister Miller reveals strategy to improve Canada’s
+                  immigration system
+                </h3>
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy of the printing and typesetting industry. Lorem
+                  Ipsum has been the industry's standard dummy text since the
+                  1500s, wheLorem industry. Lorem Ipsum has been the industry's
+                  standard dummy text since the 1500s, whe Lorem Ipsum is simply
+                  dummy text of.
+                </p>
+                <button>Read more</button>
+              </div>
+            </div>
+            / <hr />
+            <div className={styles.sourceContent}>
+              <div className={styles.sourceContentDate}>
+                <p>STUDY</p>
+                <h2>MAY</h2>
+                <h1>30</h1>
+              </div>
+              <div className={styles.sourceContentData}>
+                <h3>
+                  Canada caps international student admissions, tightens
+                  eligibility for work permits
+                </h3>
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy of the printing and typesetting industry. Lorem
+                  Ipsum has been the industry's standard dummy text since the
+                  1500s, wheLorem industry. Lorem Ipsum has been the industry's
+                  standard dummy text since the 1500s, whe Lorem Ipsum is simply
+                  dummy text of.
+                </p>
+                <button>Read more</button>
+              </div>
+            </div>
+          </div>
+          <hr />
+          {/* // */}
+
+          {/* // */}
         </div>
       </div>
     </>

@@ -162,16 +162,17 @@
 }
 
 .additionCard {
-  /* height: 180px; */
-  padding: 60px 20px;
+  height: 180px;
+  padding: 70px 30px;
   width: 340px;
   background-color: white;
   color: #132f46;
   border-radius: 15px;
   margin: auto;
+  align-items: center;
   text-align: center;
-  display: flex;
-  line-height: 1.8;
+  /* display: flex; */
+  /* line-height: 1.8; */
 }
 
 

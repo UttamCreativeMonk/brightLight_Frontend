@@ -105,7 +105,7 @@
 .pathwayCardsParent {
   display: flex;
   justify-content: space-around;
-  margin-top: 50px;
+  margin-top: 90px;
 }
 
 .pathwayCards {
@@ -113,11 +113,22 @@
   text-align: center;
   height: 270px;
   width: 275px;
-  margin-top: 40px;
-  margin-bottom: 10px;
+  margin: auto;
+  padding: 60px 20px;
+  text-align: center;
+  /* margin-top: 40px; */
+  /* margin-bottom: 10px; */
   border-radius: 20px;
   color: #132f46;
   align-items: center;
+}
+
+.pathwayCards:hover{
+  background-color: #e0b969;
+}
+
+.pathwayCardsParent :hover {
+  color: white;
 }
 
 .pathwayCards h2 {

@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import React, { useEffect, useState, useRef } from "react";
 import styles from "../styles/BestChoice.module.css";
 import BestChoiceImg from "../assets/best-choice.png";

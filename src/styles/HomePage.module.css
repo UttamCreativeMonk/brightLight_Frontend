@@ -35,8 +35,9 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 20px;
-  background-color: #f8f8f8;
+  /* padding: 20px; */
+  background-color: #fefefe;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 
 .card {
@@ -45,11 +46,11 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
-  width: 120px;
-  height: 120px;
+  /* width: 120px;
+  height: 120px; */
   border-radius: 8px;
   background-color: #ffffff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
   transition: background-color 0.3s ease;
   cursor: pointer;
 }
@@ -67,9 +68,10 @@
 }
 
 .title {
-  font-size: 14px;
+  font-size: 11px;
   font-weight: bold;
   text-align: center;
+  color: #132f46;
 }
 
 .bookButton17 {
@@ -143,8 +145,11 @@
 
 .bannerParent2ButtonDiv{
   position: absolute;
-  bottom: 30px;
-  left: 30px;
+  width: 1440px;
+  margin: auto;
+  align-items: center;
+  bottom: 90px;
+  left: 150px;
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
@@ -161,23 +166,31 @@
   border-radius: 5px;
 }
 
+.bannerParent2HaveQuestions{
+  width: 1440px;
+  margin: auto;
+ 
+}
+
 .bannerParent2HaveQuestions button{
   /* width: 100%; */
-  height: 55px;
-  font-size: 30px;
+  font-size: 25px;
+}
+
+.bannerParent2ButtonDiv button img{
+  width: 135px;
 }
 
 .bannerParent2HaveQuestions p{
   color: white;
   font-size: 10px;
-  
 }
 
 .bannerParent2HaveQuestions h5{
   text-align: left;
   color: white;
   font-weight: 400;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .memberParent {
@@ -503,4 +516,177 @@
   font-weight: 300;
   padding-top: 15px;
   padding-top: 10px;
+}
+
+/* // */
+
+
+.sourceParent{
+  background-image: url("../assets//blue-background.png");
+  width: 100%;
+  height: auto;
+  margin: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 100px 0px;
+}
+
+.sourceMain{
+  width: 1440px;
+  margin: auto;
+  align-items: center;
+}
+
+.sourceHeadingParent{
+  display: flex;
+  justify-content: space-between;
+}
+
+.sourceHeadingParent img{
+  width: 330px;
+}
+
+.sourceHeadingParent h1{
+  color: white;
+  font-size: 65px;
+}
+
+.sourceHeadingParent p{
+  color:white;
+  font-size: 22px;
+  padding-top: 13px;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+}
+
+.sourceContent{
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 80px;
+}
+
+.sourceContentDate{
+  width: 10%;
+}
+
+.sourceContentData{
+  color: white;
+  width: 75%;
+}
+
+.sourceContentData h3{
+  font-size: 26px;
+}
+
+.sourceContentData p{
+  font-size: 18px;
+  line-height: 35px;
+  margin-top: 30px;
+}
+
+.sourceContentDate p{
+  color: white;
+  padding-bottom: 20px;
+  font-weight: 600;
+}
+
+.sourceContentDate h2{
+  color: #e0b969;
+  font-size: 33px;
+}
+
+.sourceContentDate h1{
+  color: #e0b969;
+  padding-bottom: 20px;
+  font-size: 100px;
+}
+
+.sourceContentData button{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 30px;
+  padding: 15px 40px;
+  font-size: 16px;
+  color: white;
+}
+
+/* Example CSS */
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.card {
+  position: relative;
+  width: 190px;
+  height: 150px;
+  margin: 5px;
+  padding: 5px;
+  background-color: transparent;
+  border-radius: 2px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  border-right: 1px solid #00273f;
+}
+
+.card:last-child{
+  border-right: none;
+}
+
+
+.card img {
+  width: 40%;
+  height: auto;
+  transition: opacity 0.3s ease;
+}
+
+.card .title h2 {
+  color: #132f46;
+  transition: color 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  background-color: #132f46;
+}
+
+.card:hover img {
+  /* opacity: 0.1; */
+  filter: invert(1);
+}
+
+.card:hover .title h2 {
+  color: #fff; 
+  z-index: 1; 
+  position: relative;
+}
+
+/* // */
+
+.testimonialsVideoSection {
+  margin: 100px 0px;
+}
+
+.testimonialsVideoSection img {
+  width: 475px;
+  height: 575px;
+  background-color: white;
+}
+
+
+.testimonialsVideoSection p {
+  text-align: center;
+  color: white;
+  font-size: 25px;
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+  font-weight: 200;
 }

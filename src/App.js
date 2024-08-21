@@ -14,6 +14,8 @@ import TermsAndConditions from "./pages/TermsAndConditions";
 import BCPNPCalculator from "./pages/BCPNPCalculator";
 import Testimonials from "./sections/Testimonials";
 import FederalSkilled from "./pages/FederalSkilled";
+import OurProcess from "../src/sections/OurProcess";
+import TransportOccupation from "../src/pages/TransportOccupation";
 
 function App() {
   // useEffect(()=>{
@@ -35,13 +37,14 @@ function App() {
       {/* <PermanentResidency/> */}
  
       {/* <Testimonials/> */}
-      <FederalSkilled/>
+      {/* <FederalSkilled/> */}
       {/* <BCPNPCalculator/> */}
       {/* <ExpressEntry/> */}
+      {/* <TransportOccupation/> */}
       {/* <TransportOccupationTwo/> */}
-      {/* <HomePage/> */}
+      <HomePage/>
       {/* <Footer/> */}
-    
+    {/* <OurProcess/> */}
       {/* <CategoryBased/> */}
       {/* <Footer /> */}
     </div>
