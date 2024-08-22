@@ -6,12 +6,19 @@ import { ReactComponent as PhoneIcon } from "../assets/phoneIcon.svg";
 import BrightlightBlueLogo from "../assets/brlightlight-icon.webp";
 import LocationIcon from "../assets/location-white.png";
 import EmailIcon from "../assets/mail-white.png";
+import EmailBlue from "../assets/mailBlue.png";
+import LocationBlue from "../assets/locationBlue.png";
 
 import { ReactComponent as TikTokIcon } from "../assets/tiktok.svg";
 import { ReactComponent as LinkedInIcon } from "../assets/linkedin.svg";
 import { ReactComponent as InstagramIcon } from "../assets/instagram.svg";
 import { ReactComponent as FacebookIcon } from "../assets/facebook.svg";
 import { ReactComponent as YouTubeIcon } from "../assets/youtube.svg";
+import Facebookblue from "../assets/facebookBlue.png";
+import Youtubeblue from "../assets/youtubeBlue.png";
+import Instagramblue from "../assets/instagramBlue.png";
+import Linkedinblue from "../assets/linkedinBlue.png";
+import Tiktokblue from "../assets/tiktokBlue.png";
 
 const Navbar1 = (props) => {
   const { showBlue } = props;
@@ -131,7 +138,7 @@ const Navbar1 = (props) => {
               <div className={styles.location}>
                 {showBlue ? (
                   <img
-                    src={LocationIcon}
+                    src={LocationBlue}
                     alt="Location Blue"
                     className={styles.icon}
                   />
@@ -152,7 +159,7 @@ const Navbar1 = (props) => {
               <div className={styles.email}>
                 {showBlue ? (
                   <img
-                    src={EmailIcon}
+                    src={EmailBlue}
                     alt="Email blue"
                     className={styles.icon}
                   />
@@ -166,31 +173,31 @@ const Navbar1 = (props) => {
                 >
                   info@brightlightimmigration.ca
                 </span>
-              </div>
-            </div>
+              </div> 
+            </div> 
             <div className={styles.socialMedia}>
               {showBlue ? (
-                <TikTokIcon className={styles.socialIcon} blue />
+                <img src={Tiktokblue} />
               ) : (
                 <TikTokIcon className={styles.socialIcon} />
               )}
               {showBlue ? (
-                <LinkedInIcon className={styles.socialIcon} blue />
+                <img src={Linkedinblue} />
               ) : (
                 <LinkedInIcon className={styles.socialIcon} />
               )}
               {showBlue ? (
-                <InstagramIcon className={styles.socialIcon} blue />
+                <img src={Instagramblue} />
               ) : (
                 <InstagramIcon className={styles.socialIcon} />
               )}
               {showBlue ? (
-                <FacebookIcon className={styles.socialIcon} blue />
+                <img src={Facebookblue} />
               ) : (
                 <FacebookIcon className={styles.socialIcon} />
               )}
               {showBlue ? (
-                <YouTubeIcon className={styles.socialIcon} blue />
+                <img src={Youtubeblue} />
               ) : (
                 <YouTubeIcon className={styles.socialIcon} />
               )}

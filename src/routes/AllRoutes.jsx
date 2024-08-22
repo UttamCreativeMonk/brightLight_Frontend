@@ -13,6 +13,8 @@ let AllRoutes = () => {
       <Route path="/contact-us" element={<Contact />} />
       <Route path="/BCPNP-Calculator" element={<BCPNPCalculator />} />
       <Route path="/Federal-Skilled" element={<FederalSkilled />} />
+      <Route path="/contact-us" element={<Contact />} />
+     
 
       <Route path="*" element />
     </Routes>
