@@ -164,7 +164,7 @@
 .bannerParent2 button {
   color: white;
   font-size: 20px;
-
+  cursor: pointer;
   background-color: transparent;
   border: 1px solid white;
   padding: 10px 40px;
@@ -446,8 +446,13 @@
   font-weight: 300;
 }
 
+.expertiseContentHeading button{
+  cursor: pointer;
+}
+
 .knowButton {
   color: white;
+  cursor: pointer;
   border: 2px solid white;
   padding: 20px 45px;
   background-color: transparent;
@@ -578,6 +583,10 @@
 .sourceContentData{
   color: white;
   width: 75%;
+}
+
+.sourceContentData button{
+  cursor: pointer;
 }
 
 .sourceContentData h3{

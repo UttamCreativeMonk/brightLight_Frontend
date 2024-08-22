@@ -3,7 +3,6 @@ import styles from "../styles/Contact.module.css";
 import Navbar1 from "../components/Navbar1";
 import Footer from "../components/Footer";
 
-
 let Contact = () => {
   let [activeDiv, setActiveDiv] = useState("insideCanada");
   useEffect(() => {
@@ -19,7 +18,7 @@ let Contact = () => {
   };
   return (
     <>
-      <Navbar1 showBlue={true}/>
+      <Navbar1 showBlue={true} />
       <div className={styles.contactTopSection}>
         <h1>Contact Us</h1>
         <h3>Got a Question? We're here to answer!</h3>
@@ -127,8 +126,8 @@ let Contact = () => {
           </div>
         </div>
       </div>
-      
-     <Footer/>
+
+      <Footer />
     </>
   );
 };

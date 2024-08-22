@@ -9,6 +9,7 @@ import PermanentResidency from "../pages/PermanentResidency";
 import TransportOccupationTwo from "../pages/TranportOccupation-2";
 import CategoryBased from "../pages/CategoryBased";
 import NotFoundPage from "../pages/NotFoundPage";
+import Blogs from "../pages/Blogs";
 
 let AllRoutes = () => {
   return (
@@ -22,6 +23,7 @@ let AllRoutes = () => {
       <Route path="/express-entry" element={<ExpressEntry />} />
       <Route path="/permanent-residency" element={<PermanentResidency/>}/>
       <Route path="/transport-occupation" element={<TransportOccupationTwo/>}/>
+      <Route path="/blogs" element={<Blogs/>} />
 
       <Route path="/category-based" element={<CategoryBased/>} />
 

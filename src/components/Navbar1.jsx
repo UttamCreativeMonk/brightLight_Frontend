@@ -177,29 +177,44 @@ const Navbar1 = (props) => {
             </div> 
             <div className={styles.socialMedia}>
               {showBlue ? (
+                 <a target="_blank" href="https://www.tiktok.com/@brightlightimmigration?_t=8lzyE6vJG0E&_r=1">
                 <img src={Tiktokblue} />
+                </a>
               ) : (
+                <a target="_blank" href="https://www.tiktok.com/@brightlightimmigration?_t=8lzyE6vJG0E&_r=1">
                 <TikTokIcon className={styles.socialIcon} />
+                </a>
               )}
-              {showBlue ? (
+              {showBlue ? ( <a target="_blank" href="https://ca.linkedin.com/in/loveneet-paneswar-5b2377198">
                 <img src={Linkedinblue} />
+                </a>
               ) : (
+                <a target="_blank" href="https://ca.linkedin.com/in/loveneet-paneswar-5b2377198">
                 <LinkedInIcon className={styles.socialIcon} />
+                </a>
               )}
               {showBlue ? (
+                <a target="_blank" href="https://www.instagram.com/brightlightimmigration?igsh=b2xmdzh5eDdsc29p">
                 <img src={Instagramblue} />
-              ) : (
+                </a>
+              ) : ( <a target="_blank" href="https://www.instagram.com/brightlightimmigration?igsh=b2xmdzh5eDdsc29p">
                 <InstagramIcon className={styles.socialIcon} />
+                </a>
               )}
               {showBlue ? (
+                <a target="_blank" href="https://www.facebook.com/brightlightimmigration">
                 <img src={Facebookblue} />
-              ) : (
+                </a>
+              ) : ( <a target="_blank" href="https://www.facebook.com/brightlightimmigration">
                 <FacebookIcon className={styles.socialIcon} />
+                </a>
               )}
               {showBlue ? (
-                <img src={Youtubeblue} />
+                <a target="_blank" href="https://www.youtube.com/channel/UC2NJoKhIOconAE_IFCxX7uA">
+                <img src={Youtubeblue}  /></a>
               ) : (
-                <YouTubeIcon className={styles.socialIcon} />
+                <a target="_blank" href="https://www.youtube.com/channel/UC2NJoKhIOconAE_IFCxX7uA"><YouTubeIcon className={styles.socialIcon} /></a>
+                
               )}
             </div>
           </div>

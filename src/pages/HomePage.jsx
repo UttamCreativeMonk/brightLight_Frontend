@@ -214,9 +214,7 @@ let HomePage = () => {
           </div>
         </div>
       </div>
-<Blogs/>
-<Testimonials_White/>
-<FAQ_Blue/>
+
       <div className={styles.simplifyingParent}>
         <div className={styles.simplifyingMain}>
           <div className={styles.simplifyingDiv}>
@@ -269,7 +267,7 @@ let HomePage = () => {
               <a href="/">Know More</a>
             </button>
           </div>
-          /
+          
           <div className={styles.testimonialsVideoSection}>
             <Swiper
               effect={"coverflow"}
@@ -334,8 +332,11 @@ let HomePage = () => {
           </div>
         </div>
       </div>
-      <Testimonials />
-      <FAQ />
+   
+<Testimonials_White/>
+
+      {/* <Testimonials />
+      <FAQ /> */}
 
       <div className={styles.sourceParent}>
         <div className={styles.sourceMain}>
@@ -372,7 +373,7 @@ let HomePage = () => {
                 <button>Read more</button>
               </div>
             </div>
-            / <hr />
+             <hr />
             <div className={styles.sourceContent}>
               <div className={styles.sourceContentDate}>
                 <p>STUDY</p>
@@ -403,6 +404,14 @@ let HomePage = () => {
           {/* // */}
         </div>
       </div>
+
+
+
+      <Blogs/>
+      <FAQ_Blue/>
+     
+      
+
       <Footer />
     </>
   );

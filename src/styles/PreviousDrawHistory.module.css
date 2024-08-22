@@ -1,0 +1,21 @@
+.bannerParent{
+    background-image: url("../assets/canadaBlue.jpeg");
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
+    padding: 100px 0px;
+    padding-top: 230px;
+}
+
+.bannerMain{
+    width: 1440px;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+}
+
+.bannerMain h1{
+    font-size: 70px;
+    color: white;
+}

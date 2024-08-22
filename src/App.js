@@ -21,6 +21,7 @@ import Navbar1 from "./components/Navbar1";
 import PaginationTable from "./sections/PaginationTable";
 import Footer1 from "./components/Footer1";
 import NotFoundPage from "./pages/NotFoundPage";
+import PreviousDrawHistory from "./pages/PreviousDrawHistory";
 
 function App() {
   // useEffect(()=>{
@@ -54,7 +55,8 @@ function App() {
       {/* <CategoryBased/> */}
       {/* <Footer /> */}
       {/* <NotFoundPage/> */}
-      
+      {/* <PreviousDrawHistory/> */}
+
       <AllRoutes/>
 
       {/* <Footer1/> */}
