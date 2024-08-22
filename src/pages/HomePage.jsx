@@ -51,6 +51,8 @@ import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
 import aboutBanner from "../assets/about-banner.png";
+import Navbar1 from "../components/Navbar1";
+import Footer from "../components/Footer";
 
 let HomePage = () => {
   const cards = [
@@ -123,6 +125,7 @@ let HomePage = () => {
   ];
   return (
     <>
+      <Navbar1 showBlue={true} />
       <div className={styles.bannerParent}>
         <div className={styles.bannerMain}>
           <div className={styles.bannerHeading}>
@@ -280,7 +283,7 @@ let HomePage = () => {
               {clientVideosData.map((item) => {
                 return (
                   <SwiperSlide>
-                    <div ></div>
+                    <div></div>
                     <img src={item.img} />
                     {/* <p>{item.person_name}</p> */}
                   </SwiperSlide>
@@ -393,6 +396,7 @@ let HomePage = () => {
           {/* // */}
         </div>
       </div>
+      <Footer />
     </>
   );
 };

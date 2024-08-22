@@ -16,6 +16,8 @@ import Testimonials from "./sections/Testimonials";
 import FederalSkilled from "./pages/FederalSkilled";
 import OurProcess from "../src/sections/OurProcess";
 import TransportOccupation from "../src/pages/TransportOccupation";
+import AllRoutes from "./routes/AllRoutes";
+import Navbar1 from "./components/Navbar1";
 
 function App() {
   // useEffect(()=>{
@@ -42,11 +44,12 @@ function App() {
       {/* <ExpressEntry/> */}
       {/* <TransportOccupation/> */}
       {/* <TransportOccupationTwo/> */}
-      <HomePage/>
+      {/* <HomePage/> */}
       {/* <Footer/> */}
     {/* <OurProcess/> */}
       {/* <CategoryBased/> */}
       {/* <Footer /> */}
+      <AllRoutes/>
     </div>
   );
 }
