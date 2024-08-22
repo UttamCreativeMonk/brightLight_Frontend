@@ -1,10 +1,17 @@
 import React from "react";
 import styles from "../styles/TransportOccupation-2.module.css";
 import LinkAncor from "../assets/link-arrows.png";
+import BestChoice from "../sections/BestChoice";
+import Testimonials from "../sections/Testimonials";
+import FAQ from "../sections/FAQ";
+import PaginationTable from "../sections/PaginationTable";
+import Navbar1 from "../components/Navbar1";
+import Footer from "../components/Footer";
 
 let TransportOccupationTwo = () => {
   return (
     <>
+    <Navbar1/>
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div className={styles.bannerHeading}>
@@ -133,6 +140,7 @@ let TransportOccupationTwo = () => {
               <li>A valid Express Entry profile.</li>
             </ul>
           </div>
+          <PaginationTable/>
         </div>
       </div>
 
@@ -191,6 +199,12 @@ let TransportOccupationTwo = () => {
         </div>
       </div>
 
+
+      <BestChoice/>
+      <Testimonials/>
+      <FAQ/>
+
+<Footer/>
     </>
   );
 };

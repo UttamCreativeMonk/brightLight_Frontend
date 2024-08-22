@@ -18,6 +18,8 @@ import OurProcess from "../src/sections/OurProcess";
 import TransportOccupation from "../src/pages/TransportOccupation";
 import AllRoutes from "./routes/AllRoutes";
 import Navbar1 from "./components/Navbar1";
+import PaginationTable from "./sections/PaginationTable";
+import Footer1 from "./components/Footer1";
 
 function App() {
   // useEffect(()=>{
@@ -44,12 +46,15 @@ function App() {
       {/* <ExpressEntry/> */}
       {/* <TransportOccupation/> */}
       {/* <TransportOccupationTwo/> */}
+      {/* <PaginationTable/> */}
       {/* <HomePage/> */}
       {/* <Footer/> */}
     {/* <OurProcess/> */}
       {/* <CategoryBased/> */}
       {/* <Footer /> */}
       <AllRoutes/>
+
+      {/* <Footer1/> */}
     </div>
   );
 }

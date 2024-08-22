@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styles from "../styles/Contact.module.css";
-import Navbar from "../components/Navbar";
+import Navbar1 from "../components/Navbar1";
 import Footer from "../components/Footer";
+
 
 let Contact = () => {
   let [activeDiv, setActiveDiv] = useState("insideCanada");
@@ -18,7 +19,7 @@ let Contact = () => {
   };
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar1 showBlue={true}/>
       <div className={styles.contactTopSection}>
         <h1>Contact Us</h1>
         <h3>Got a Question? We're here to answer!</h3>
@@ -126,7 +127,8 @@ let Contact = () => {
           </div>
         </div>
       </div>
-      {/* <Footer /> */}
+      
+     <Footer/>
     </>
   );
 };

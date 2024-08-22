@@ -6,7 +6,10 @@ import BestChoice from "../sections/BestChoice";
 import Testimonials from "../sections/Testimonials";
 import FAQ from "../sections/FAQ";
 
-let TransportOccupation = () => {
+
+// not Use This Page
+
+let TransportOccupation = () => {     
   return (
     <>
       <div className={styles.bannerParent}>

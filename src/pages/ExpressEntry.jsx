@@ -10,10 +10,13 @@ import GoogleIcon from "../assets/google-review.webp";
 import BestChoice from "../sections/BestChoice";
 // import Testimonials from "../sections/Testimonials";
 import FAQ from "../sections/FAQ";
+import Navbar1 from "../components/Navbar1";
+import Footer from "../components/Footer";
 
 let ExpressEntry = () => {
   return (
     <>
+    <Navbar1/>
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div className={styles.bannerHeading}>
@@ -206,7 +209,7 @@ let ExpressEntry = () => {
       <BestChoice/>
       <FAQ/>
 
-
+<Footer/>
 
     </>
   );

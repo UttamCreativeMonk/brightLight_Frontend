@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import styles from "../styles/FederalSkilled.module.css";
+import Navbar1 from "../components/Navbar1";
+import Footer from "../components/Footer";
 
 const FederalSkilled = () => {
   const [languagePoints, setLanguagePoints] = useState(0);
@@ -160,6 +162,7 @@ const FederalSkilled = () => {
 
   return (
     <>
+    <Navbar1/>
       <div className={styles.bannerParent}>
         <div className={styles.bannerHeading}>
           <h1>Federal Skilled Worker Program Calculator</h1>
@@ -759,6 +762,8 @@ const FederalSkilled = () => {
       </div>
 {/* // */}
       </div>
+
+      <Footer/>
     </>
   );
 };

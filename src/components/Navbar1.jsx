@@ -60,7 +60,7 @@ const Navbar1 = (props) => {
 
         <div className={styles.bottomSectionNavbar}>
           <div className={styles.secondNavbar}>
-            <a href="#" className={styles.logo}>
+            <a href="/" className={styles.logo}>
               <img src={BrightlightBlueLogo} alt="Brightlight Blue Logo" />
             </a>
             <div className={styles.mainNavbar}>
@@ -76,7 +76,7 @@ const Navbar1 = (props) => {
                     <a href="/express-entry">Express Entry</a>
                     <a href="/permanent-residency">Permanent Residency</a>
                     <a href="/transport-occupation">Transport Occupation</a>
-                    <a href="/service4">Service 4</a>
+                    <a href="/category-based">CategoryBased</a>
                   </div>
                 )}
               </div>

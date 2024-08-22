@@ -11,10 +11,13 @@ import LinkAncor from "../assets/link-arrows.png";
 import BestChoice from "../sections/BestChoice";
 import Testimonials from "../sections/Testimonials";
 import FAQ from "../sections/FAQ";
+import Navbar1 from "../components/Navbar1";
+import Footer from "../components/Footer";
 
 let CategoryBased = () => {
   return (
     <>
+    <Navbar1/>
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div className={styles.bannerHeading}>
@@ -28,6 +31,28 @@ let CategoryBased = () => {
               sooner than you might under the standard Evnrose Entry process.
             </p>
           </div>
+          {/* // */}
+          <div className={styles.bannerHeadingRotateParent}>
+            <div className={styles.bannerHeadingRotate}>
+              <h3>QUICK ACCESS</h3>
+            </div>
+            <div className={styles.bannerHeadingRotatePara}>
+              <p>About the program</p>
+              <p>Benefits</p>
+              <p>Categories</p>
+              <p>How it Works</p>
+              <p>Eligibility</p>
+              <p>Draw History</p>
+              <p>How to Apply</p>
+              <p>Refusal Reasons</p>
+              <p>Book Appointment</p>
+              <p>Why Choose Us</p>
+              <p>Testimonials</p>
+              <p>FAQs</p>
+              <p>Blogs</p>
+            </div>
+          </div>
+          {/* // */}
         </div>
       </div>
 
@@ -312,6 +337,8 @@ let CategoryBased = () => {
       <BestChoice/>
       <Testimonials/>
       <FAQ/>
+
+      <Footer/>
     </>
   );
 };

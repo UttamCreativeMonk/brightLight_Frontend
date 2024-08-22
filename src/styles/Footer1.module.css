@@ -1,0 +1,118 @@
+ .upperFooter {
+
+    width: 1000px;
+    display: flex;
+    margin: auto;
+    height: auto;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ead9b0;
+    border-radius: 15px;
+    padding: 15px 30px;
+    position: relative;
+    z-index: 3;
+    bottom: -50px;
+  }
+  
+  .upperFooter img {
+    width: 20%;
+  }
+  
+  .upperFooter div {
+    width: 40%;
+  }
+  
+  .upperFooter h1 {
+    color: #132f46;
+  }
+  
+  .upperFooter p {
+    color: #132f46;
+  }
+  
+  .upperFooter button {
+    width: 22%;
+    background-color: #cab78b;
+    border: 1.4px solid rgb(173, 154, 109);
+  padding: 20px 20px;
+  border-radius: 5px;
+  box-shadow: rgb(173, 154, 109) 4px 4px 4px;
+  cursor: pointer;
+  opacity: 1;
+  transition: 0.3s all ease-in-out;
+  
+}
+
+.upperFooter button:hover {
+    opacity: 0.8;
+  }
+  
+  .upperFooterLowerText {
+    text-align: center;
+    position: relative;
+    top: 70px;
+    color: white;
+  }
+
+  .footer {
+ 
+    background-color: #132f46;
+    color: white;
+    padding-top: 150px;
+    padding-bottom: 50px;
+  }
+
+  .innerFooter {
+  
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      row-gap: 30px;
+      row-gap: 50px;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+  
+    }
+ 
+    
+    .socialIcon {
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+        margin-bottom: 15px;
+      }
+
+      .footerAncor a {
+        color: white;
+        color: rgb(211, 211, 211);
+        text-decoration: none;
+      }
+
+
+      .footerAncor {
+        margin-top: 20px;
+    
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 5px;
+      }
+
+      .footerAncor span {
+        position: relative;
+        top: -5px;
+      }
+
+      
+        .copyrightHeading {
+          text-align: center;
+          margin-top: 50px;
+        
+        }
+
+
+        

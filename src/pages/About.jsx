@@ -26,11 +26,14 @@ import Comprehensive from "../assets/comprehensive1.png"
 import BestChoice from "../sections/BestChoice.jsx";
 
 import Map from "../sections/Map.jsx";
+import Navbar1 from "../components/Navbar1.jsx";
+import Footer from "../components/Footer.jsx";
 
 
 let About = () => {
   return (
     <>
+    <Navbar1/>
       <div className={styles.aboutBanner}>
         <div className={styles.aboutUsTopContentSection}>
           <div className={styles.aboutLogo}>
@@ -307,6 +310,10 @@ let About = () => {
       </div>
 
 <Map/>
+
+
+<Footer/>
+
     </>
   );
 };
