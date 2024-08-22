@@ -7,6 +7,10 @@
   padding-top: 200px;
 }
 
+.bannerHeading{
+  font-family: 'AvenirNextLTPro', sans-serif;
+}
+
 .bannerMain {
   width: 1440px;
   margin: auto;
@@ -76,6 +80,7 @@
 }
 
 .bookButton17 {
+  font-family: 'AvenirNextLTPro', sans-serif;
   margin-top: 40px;
   align-items: center;
   appearance: none;
@@ -88,7 +93,6 @@
   cursor: pointer;
   display: inline-flex;
   fill: currentcolor;
-  font-family: "Google Sans", Roboto, Arial, sans-serif;
   font-size: 16px;
   font-weight: 500;
   justify-content: center;

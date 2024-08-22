@@ -19,11 +19,36 @@ img {
 }
 
 @font-face {
-  font-family: "YourCustomFont";
+  font-family: "Madera-Regular";
   src: url("./assets/fonts/Madera-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "AvenirNextLTPro";
+  src: url("./assets/fonts/AvenirNextLTPro-Regular.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Manrope-Regular";
+  src: url("./assets/fonts/Manrope-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1,h2,h3,h4,h5,h6,button{
+  font-family: 'AvenirNextLTPro', sans-serif;
+}
+
+span,p,a,input,li,thead{
+  font-family: 'Manrope-Regular', sans-serif;
+}
+
+
+
 
 .swiper-slide {
   flex-shrink: 1 !important;

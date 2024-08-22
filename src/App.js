@@ -20,6 +20,7 @@ import AllRoutes from "./routes/AllRoutes";
 import Navbar1 from "./components/Navbar1";
 import PaginationTable from "./sections/PaginationTable";
 import Footer1 from "./components/Footer1";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
   // useEffect(()=>{
@@ -52,6 +53,8 @@ function App() {
     {/* <OurProcess/> */}
       {/* <CategoryBased/> */}
       {/* <Footer /> */}
+      {/* <NotFoundPage/> */}
+      
       <AllRoutes/>
 
       {/* <Footer1/> */}

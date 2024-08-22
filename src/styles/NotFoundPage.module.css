@@ -1,0 +1,12 @@
+.mainNotFound {
+    width: 1440px;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    background-size: cover;
+    height: 800px;
+}
+
+.NotFoundPageimage{
+    width: 900px;
+}

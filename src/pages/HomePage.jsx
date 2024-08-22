@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../styles/HomePage.module.css";
 
+
 // import permanentResidenceImg from "../assets/homeLocation.png";
 // import bcpnpImg from "../assets/employee.png";
 // import visitorVisaImg from "../assets/visa.png";
