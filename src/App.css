@@ -1,25 +1,26 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body{
+html,
+body {
   overflow-x: hidden;
 }
 
-body::-webkit-scrollbar{
+body::-webkit-scrollbar {
   display: none;
 }
 
-img{
+img {
   background-size: cover;
   object-fit: cover;
 }
 
 @font-face {
-  font-family: 'YourCustomFont';
-  src: url('./assets/fonts/Madera-Regular.ttf') format('truetype');
+  font-family: "YourCustomFont";
+  src: url("./assets/fonts/Madera-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -52,4 +53,117 @@ img{
 
 .swiper-3d .swiper-slide-shadow-right {
   background-image: none !important;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+img {
+  background-size: cover;
+  object-fit: cover;
+}
+
+@font-face {
+  font-family: "YourCustomFont";
+  src: url("./assets/fonts/Madera-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.swiper-slide {
+  flex-shrink: 1 !important;
+}
+
+.swiper_pagination {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.swiper_pagination_2 {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.swiper-pagination-bullet {
+  width: 12px !important;
+  height: 12px !important;
+  opacity: 0.5 !important;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1 !important;
+  background: white !important;
+}
+
+.swiper-3d .swiper-slide-shadow-left {
+  background-image: none !important;
+}
+
+.swiper-3d .swiper-slide-shadow-right {
+  background-image: none !important;
+}
+
+.swiper_pagination_2 .swiper-pagination-bullet {
+  width: 12px !important;
+  height: 12px !important;
+  opacity: 0.5 !important;
+}
+
+.swiper_pagination_2 .swiper-pagination-bullet-active {
+  opacity: 1 !important;
+  background: #132f46 !important;
+}
+
+.swiper_pagination_2 .swiper-3d .swiper-slide-shadow-left {
+  background-image: none !important;
+}
+
+.swiper_pagination_2 .swiper-3d .swiper-slide-shadow-right {
+  background-image: none !important;
+}
+
+.slick-slider {
+  position: relative !important;
+}
+
+.slick-arrow {
+  position: absolute;
+  top: auto !important;
+  bottom: -50px !important;
+  left: 50% !important;
+  z-index: 100;
+  transform: translateX(-50%);
+}
+
+.slick-prev {
+  margin-left: -50px;
+}
+
+.slick-next {
+  margin-right: -50px;
+}
+
+.slick-prev:before {
+  color: #132f46 !important;
+}
+
+.slick-next:before {
+  color: #132f46 !important;
 }

@@ -1,0 +1,139 @@
+.testimonialsSection {
+    width: 100%;
+    padding: 150px 0px;
+    background-image: url("../assets/aboutLeaf.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .testimonialsContentSection {
+    width: 1440px;
+  }
+  
+  .testimonialsContentSection h1 {
+    text-align: center;
+    color: #132f46;
+    font-size: 70px;
+    margin-bottom: 100px;
+  }
+  
+  .googleImageSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 100px;
+  }
+  
+  .googleImageSection img {
+    width: 300px;
+    padding: 20px 50px 20px 0px;
+    border-right: 1px solid #132f46;
+  }
+  
+  .googleImageSection p {
+    color: #132f46;
+    font-weight: 200;
+    font-size: 100px;
+    margin-top: -10px;
+  }
+  
+  .clientTestimonialsSection {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  
+  .clientImageSection {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .clientImageSection img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    border-radius: 50% 0% 50% 50%;
+  }
+  
+  .clientReviewsOverflowSection {
+    width: 1440px;
+    overflow: hidden;
+    display: flex;
+  }
+  
+  .clientTestimonialsSection {
+    width: 1440px;
+    flex-shrink: 0;
+  }
+  
+  .reviewDetails {
+    width: 85%;
+  }
+  
+  .reviewDetails h3 {
+    color: #132f46;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+  }
+  
+  .reviewDetails h2 {
+    text-transform: uppercase;
+    color: #132f46;
+    font-weight: 600;
+    font-size: 27px;
+  }
+  
+  .reviewsStarsSection {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .reviewsPaginationSection {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    margin-top: 50px;
+    color: #132f46;
+    font-size: 14px;
+  }
+  
+  .reviewsPaginationSection svg {
+    cursor: pointer;
+  }
+  
+  .reviewsPaginationSection svg:nth-child(1) {
+    transform: rotate(180deg);
+  }
+  
+  .reviewsPaginationSection p {
+    margin-top: -2px;
+  }
+  
+  .testimonialsVideoSection {
+    margin: 100px 0px;
+  }
+  
+  .testimonialsVideoSection img {
+    width: 500px;
+    height: 500px;
+  }
+  
+  .testimonialsVideoSection p {
+    text-align: center;
+    color: #132f46;
+    font-size: 25px;
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    font-weight: 400;
+  }

@@ -54,6 +54,10 @@ import aboutBanner from "../assets/about-banner.png";
 import Navbar1 from "../components/Navbar1";
 import Footer from "../components/Footer";
 
+import FAQ_Blue from "../sections/FAQ_Blue";
+import Testimonials_White from "../sections/Testimonials_White";
+import Blogs from "../sections/Blogs";
+
 let HomePage = () => {
   const cards = [
     {
@@ -209,7 +213,9 @@ let HomePage = () => {
           </div>
         </div>
       </div>
-
+<Blogs/>
+<Testimonials_White/>
+<FAQ_Blue/>
       <div className={styles.simplifyingParent}>
         <div className={styles.simplifyingMain}>
           <div className={styles.simplifyingDiv}>

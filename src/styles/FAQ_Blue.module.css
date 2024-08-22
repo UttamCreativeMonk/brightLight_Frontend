@@ -1,0 +1,93 @@
+.faqSection {
+    width: 100%;
+    background-image: linear-gradient(to bottom, #132f46, #081825);
+    background-repeat: no-repeat;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0px;
+  }
+  
+  .faqParentSection {
+    width: 1440px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .faqQuestionSection {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 30px;
+    width: 60%;
+  }
+  
+  .faqAnswersSection {
+    width: 38%;
+    margin-top: -30px;
+    font-size: 20px;
+    color: white;
+  }
+  
+  .questionMarkSection {
+    width: 150px;
+    height: 150px;
+    background-image: url("../assets/faqimage-golden.webp");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    color: white;
+    font-weight: 800;
+    font-size: 100px;
+  }
+  
+  .faqQuestionsParentSection {
+    width: 75%;
+  }
+  
+  .questions {
+    border-right: 1px solid white;
+    padding: 10px 30px 10px 0px;
+  }
+  
+  .faqQuestionsParentSection h1 {
+    color: white;
+    font-size: 50px;
+    font-weight: 800;
+  }
+  
+  .questionSection {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  
+  .questionSection svg {
+    display: none;
+  }
+  
+  .questionSection:nth-child(1) {
+    margin-top: 30px;
+  }
+  
+  .questionSection p {
+    width: 90%;
+    color: gold;
+    transition: 0.1s all ease-in-out;
+    font-size: 20px;
+  }
+  
+  .questionSection.active p {
+    color: white;
+    font-weight: 800;
+  }
+  
+  .questionSection.active svg {
+    display: block;
+    fill: white;
+  }

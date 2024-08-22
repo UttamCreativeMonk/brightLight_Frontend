@@ -1,0 +1,211 @@
+import React from "react";
+import styles from "../styles/Testimonials_White.module.css";
+import google from "../assets/google-review.webp";
+import { ReactComponent as ReviewStar } from "../assets/review_star_blue.svg";
+import { ReactComponent as Arrow } from "../assets/right-arrow-blue.svg";
+import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
+import aboutBanner from "../assets/about-banner.png";
+
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+let Testimonials_White = () => {
+  let [currentReview, setCurrentReview] = useState(0);
+  let handlePreviousReview = () => {
+    setCurrentReview((prev) => Math.max(prev - 1, 0));
+  };
+
+  let handleNextReview = () => {
+    setCurrentReview((prev) =>
+      Math.min(prev + 1, clientTestimonials.length - 1)
+    );
+  };
+  let clientTestimonials = [
+    {
+      image:
+        "https://www.fasttrackpromotion.com/wp-content/uploads/2013/04/happy-male-employee.jpg",
+      review:
+        "1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi unde asperiores facilis quam dolor saepe molestiae sed necessitatibus maiores tempora accusantium veniam cum officia alias rerum, repellat consectetur ea, incidunt aliquam dolorum rem cumque quos! Id deserunt fuga, aut dicta ipsa aspernatur minima velit earum qui doloremque doloribus hic amet.",
+      person_name: "Saksham Verma",
+      review_stars: "1",
+    },
+    {
+      image:
+        "https://www.fasttrackpromotion.com/wp-content/uploads/2013/04/happy-male-employee.jpg",
+      review:
+        "2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi unde asperiores facilis quam dolor saepe molestiae sed necessitatibus maiores tempora accusantium veniam cum officia alias rerum, repellat consectetur ea, incidunt aliquam dolorum rem cumque quos! Id deserunt fuga, aut dicta ipsa aspernatur minima velit earum qui doloremque doloribus hic amet.",
+      person_name: "Saksham Verma",
+      review_stars: "4",
+    },
+    {
+      image:
+        "https://www.fasttrackpromotion.com/wp-content/uploads/2013/04/happy-male-employee.jpg",
+      review:
+        "3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi unde asperiores facilis quam dolor saepe molestiae sed necessitatibus maiores tempora accusantium veniam cum officia alias rerum, repellat consectetur ea, incidunt aliquam dolorum rem cumque quos! Id deserunt fuga, aut dicta ipsa aspernatur minima velit earum qui doloremque doloribus hic amet.",
+      person_name: "Saksham Verma",
+      review_stars: "3",
+    },
+    {
+      image:
+        "https://www.fasttrackpromotion.com/wp-content/uploads/2013/04/happy-male-employee.jpg",
+      review:
+        "4 Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi unde asperiores facilis quam dolor saepe molestiae sed necessitatibus maiores tempora accusantium veniam cum officia alias rerum, repellat consectetur ea, incidunt aliquam dolorum rem cumque quos! Id deserunt fuga, aut dicta ipsa aspernatur minima velit earum qui doloremque doloribus hic amet.",
+      person_name: "Saksham Verma",
+      review_stars: "5",
+    },
+    {
+      image:
+        "https://www.fasttrackpromotion.com/wp-content/uploads/2013/04/happy-male-employee.jpg",
+      review:
+        "5 Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi unde asperiores facilis quam dolor saepe molestiae sed necessitatibus maiores tempora accusantium veniam cum officia alias rerum, repellat consectetur ea, incidunt aliquam dolorum rem cumque quos! Id deserunt fuga, aut dicta ipsa aspernatur minima velit earum qui doloremque doloribus hic amet.",
+      person_name: "Saksham Verma",
+      review_stars: "2",
+    },
+    {
+      image:
+        "https://www.fasttrackpromotion.com/wp-content/uploads/2013/04/happy-male-employee.jpg",
+      review:
+        "6 Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi unde asperiores facilis quam dolor saepe molestiae sed necessitatibus maiores tempora accusantium veniam cum officia alias rerum, repellat consectetur ea, incidunt aliquam dolorum rem cumque quos! Id deserunt fuga, aut dicta ipsa aspernatur minima velit earum qui doloremque doloribus hic amet.",
+      person_name: "Saksham Verma",
+      review_stars: "1",
+    },
+    {
+      image:
+        "https://www.fasttrackpromotion.com/wp-content/uploads/2013/04/happy-male-employee.jpg",
+      review:
+        "7 Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi unde asperiores facilis quam dolor saepe molestiae sed necessitatibus maiores tempora accusantium veniam cum officia alias rerum, repellat consectetur ea, incidunt aliquam dolorum rem cumque quos! Id deserunt fuga, aut dicta ipsa aspernatur minima velit earum qui doloremque doloribus hic amet.",
+      person_name: "Saksham Verma",
+      review_stars: "5",
+    },
+    {
+      image:
+        "https://www.fasttrackpromotion.com/wp-content/uploads/2013/04/happy-male-employee.jpg",
+      review:
+        "8 Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi unde asperiores facilis quam dolor saepe molestiae sed necessitatibus maiores tempora accusantium veniam cum officia alias rerum, repellat consectetur ea, incidunt aliquam dolorum rem cumque quos! Id deserunt fuga, aut dicta ipsa aspernatur minima velit earum qui doloremque doloribus hic amet.",
+      person_name: "Saksham Verma",
+      review_stars: "4",
+    },
+  ];
+
+  let clientVideosData = [
+    {
+      img: aboutBanner,
+      person_name: "Person 1",
+    },
+    {
+      img: aboutBanner,
+      person_name: "Person 2",
+    },
+    {
+      img: aboutBanner,
+      person_name: "Person 3",
+    },
+    {
+      img: aboutBanner,
+      person_name: "Person 4",
+    },
+    {
+      img: aboutBanner,
+      person_name: "Person 5",
+    },
+    {
+      img: aboutBanner,
+      person_name: "Person 6",
+    },
+    {
+      img: aboutBanner,
+      person_name: "Person 7",
+    },
+    {
+      img: aboutBanner,
+      person_name: "Person 8",
+    },
+    {
+      img: aboutBanner,
+      person_name: "Person 9",
+    },
+    {
+      img: aboutBanner,
+      person_name: "Person 10",
+    },
+  ];
+  return (
+    <div className={styles.testimonialsSection}>
+      <div className={styles.testimonialsContentSection}>
+        <h1>Don't Leave without hearing from our clients testimonials.</h1>
+        <div className={styles.googleImageSection}>
+          <img src={google} />
+          <p>4.4/5</p>
+        </div>
+        <div className={styles.clientReviewsOverflowSection}>
+          <div className={styles.clientTestimonialsSection}>
+            <div className={styles.clientImageSection}>
+              <img
+                src={clientTestimonials[currentReview].image}
+                alt={clientTestimonials[currentReview].person_name}
+              />
+            </div>
+            <div className={styles.reviewDetails}>
+              <h3>{clientTestimonials[currentReview].review}</h3>
+              <h2>{clientTestimonials[currentReview].person_name}</h2>
+              <div className={styles.reviewsStarsSection}>
+                {Array.from(
+                  { length: clientTestimonials[currentReview].review_stars },
+                  (_, i) => (
+                    <ReviewStar key={i} width={25} height={25} />
+                  )
+                )}
+              </div>
+
+              <div className={styles.reviewsPaginationSection}>
+                <Arrow width={20} height={20} onClick={handlePreviousReview} />
+                <p>{`${currentReview + 1} / ${clientTestimonials.length}`}</p>
+                <Arrow width={20} height={20} onClick={handleNextReview} />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.testimonialsVideoSection}>
+          <Swiper
+            effect={"coverflow"}
+            grabCursor={true}
+            centeredSlides={true}
+            loop={true}
+            slidesPerView={"auto"}
+            coverflowEffect={{
+              rotate: 0,
+              stretch: 0,
+              depth: 100,
+              modifier: 2.5,
+            }}
+            pagination={{ el: ".swiper_pagination_2", clickable: true }}
+            modules={[EffectCoverflow, Pagination, Navigation]}
+            className={styles.swiper_container}
+          >
+            {clientVideosData.map((item, index) => {
+              return (
+                <SwiperSlide key={index}>
+                  <img src={item.img} />
+                  <p>{item.person_name}</p>
+                </SwiperSlide>
+              );
+            })}
+            <div class="slider-controler" className={styles.slider_controler}>
+              <div
+                class="swiper_pagination_2"
+                className={styles.swiper_pagination}
+              ></div>
+            </div>
+          </Swiper>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Testimonials_White;
