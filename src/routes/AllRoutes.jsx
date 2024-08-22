@@ -4,6 +4,10 @@ import About from "../pages/About";
 import Contact from "../pages/Contact";
 import BCPNPCalculator from "../pages/BCPNPCalculator";
 import FederalSkilled from "../pages/FederalSkilled";
+import ExpressEntry from "../pages/ExpressEntry";
+import PermanentResidency from "../pages/PermanentResidency";
+import TransportOccupation from "../pages/TransportOccupation";
+import TransportOccupationTwo from "../pages/TranportOccupation-2";
 
 let AllRoutes = () => {
   return (
@@ -14,7 +18,11 @@ let AllRoutes = () => {
       <Route path="/BCPNP-Calculator" element={<BCPNPCalculator />} />
       <Route path="/Federal-Skilled" element={<FederalSkilled />} />
       <Route path="/contact-us" element={<Contact />} />
-     
+      <Route path="/express-entry" element={<ExpressEntry />} />
+      <Route path="/permanent-residency" element={<PermanentResidency/>}/>
+      <Route path="/transport-occupation" element={<TransportOccupation/>}/>
+
+      <Route path="/service-4" element={<TransportOccupationTwo />} />
 
       <Route path="*" element />
     </Routes>

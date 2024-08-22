@@ -73,9 +73,9 @@ const Navbar1 = (props) => {
                 <a href="/">SERVICES</a>
                 {showServicesDropdown && (
                   <div className={styles.dropdownMenu}>
-                    <a href="/service1">Service 1</a>
-                    <a href="/service2">Service 2</a>
-                    <a href="/service3">Service 3</a>
+                    <a href="/express-entry">Express Entry</a>
+                    <a href="/permanent-residency">Permanent Residency</a>
+                    <a href="/transport-occupation">Transport Occupation</a>
                     <a href="/service4">Service 4</a>
                   </div>
                 )}
