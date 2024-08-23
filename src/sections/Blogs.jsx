@@ -64,8 +64,8 @@ let Blogs = () => {
         <div className={styles.sliderSection}>
           <Slider {...settings}>
             {blogs.map((item, index) => {
-              const truncateText = (text, numWords) => {
-                const words = text.split(" ");
+              let truncateText = (text, numWords) => {
+                let words = text.split(" ");
                 if (words.length <= numWords) return text;
                 return words.slice(0, numWords).join(" ") + "...";
               };
@@ -73,7 +73,7 @@ let Blogs = () => {
                 <a
                   className={styles.blog}
                   key={index}
-                  href={`/blogs/${item.blog_heading}`}
+                  href={`/blogs/${item._id}`}
                 >
                   <img src={item.image} />
                   <h5>{item.category}</h5>

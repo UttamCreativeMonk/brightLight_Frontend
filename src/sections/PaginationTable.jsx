@@ -128,3 +128,86 @@ const PaginationTable = () => {
 
 export default PaginationTable;
 
+
+// For Fetching From The api Backend the Code is Below //
+
+
+
+// import React, { useState, useEffect } from "react";
+// import styles from "./PaginationTable.module.css";
+
+// const PaginationTable = () => {
+//   const [data, setData] = useState([]);
+//   const [currentPage, setCurrentPage] = useState(1);
+//   const [totalPages, setTotalPages] = useState(1);
+
+//   useEffect(() => {
+//     fetchPageData(currentPage);
+//   }, [currentPage]);
+
+//   const fetchPageData = async (page) => {
+//     try {
+//       const response = await fetch(`/api/data?page=${page}`);
+//       const result = await response.json();
+//       setData(result.data);
+//       setTotalPages(result.totalPages);
+//     } catch (error) {
+//       console.error("Error fetching data:", error);
+//     }
+//   };
+
+//   const handlePageChange = (page) => {
+//     if (page >= 1 && page <= totalPages) {
+//       setCurrentPage(page);
+//     }
+//   };
+
+//   return (
+//     <div className={styles.tableContainer}>
+//       <table className={styles.table}>
+//         <thead>
+//           <tr>
+//             <th>Occupations</th>
+//             <th>2021 NOC Code</th>
+//             <th>2021 TEER Category</th>
+//           </tr>
+//         </thead>
+//         <tbody>
+//           {data.map((row, index) => (
+//             <tr key={index}>
+//               <td>{row.occupation}</td>
+//               <td>{row.nocCode}</td>
+//               <td>{row.teerCategory}</td>
+//             </tr>
+//           ))}
+//         </tbody>
+//       </table>
+//       <div className={styles.pagination}>
+//         <button onClick={() => handlePageChange(1)} disabled={currentPage === 1}>
+//           {"<<"}
+//         </button>
+//         <button
+//           onClick={() => handlePageChange(currentPage - 1)}
+//           disabled={currentPage === 1}
+//         >
+//           {"<"}
+//         </button>
+//         <span>{currentPage} of {totalPages}</span>
+//         <button
+//           onClick={() => handlePageChange(currentPage + 1)}
+//           disabled={currentPage === totalPages}
+//         >
+//           {">"}
+//         </button>
+//         <button
+//           onClick={() => handlePageChange(totalPages)}
+//           disabled={currentPage === totalPages}
+//         >
+//           {">>"}
+//         </button>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default PaginationTable;

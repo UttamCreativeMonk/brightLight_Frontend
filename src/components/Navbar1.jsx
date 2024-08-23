@@ -8,6 +8,7 @@ import LocationIcon from "../assets/location-white.png";
 import EmailIcon from "../assets/mail-white.png";
 import EmailBlue from "../assets/mailBlue.png";
 import LocationBlue from "../assets/locationBlue.png";
+import { ReactComponent as Search } from "../assets/search.svg";
 
 import { ReactComponent as TikTokIcon } from "../assets/tiktok.svg";
 import { ReactComponent as LinkedInIcon } from "../assets/linkedin.svg";
@@ -22,10 +23,9 @@ import Tiktokblue from "../assets/tiktokBlue.png";
 
 const Navbar1 = (props) => {
   const { showBlue } = props;
-
-  // State to manage dropdown visibility
-  const [showServicesDropdown, setShowServicesDropdown] = useState(false);
-  const [showCalculatorsDropdown, setShowCalculatorsDropdown] = useState(false);
+  let [showAboutDropdown, setShowAboutDropdown] = useState(false);
+  let [showServicesDropdown, setShowServicesDropdown] = useState(false);
+  let [showCalculatorsDropdown, setShowCalculatorsDropdown] = useState(false);
 
   return (
     <>
@@ -37,7 +37,28 @@ const Navbar1 = (props) => {
             <RightArrow width={10} height={10} />
           </div>
           <div className={styles.ancor}>
-            <a href="/about-us">ABOUT</a>
+            <div className={styles.relativeDiv}>
+              <a
+                href="/about-us"
+                onMouseEnter={() => setShowAboutDropdown(true)}
+                onMouseLeave={() => setShowAboutDropdown(false)}
+              >
+                ABOUT
+              </a>
+              <div
+                className={`${styles.aboutDropdown} ${
+                  showAboutDropdown ? styles.showAboutDropdown : null
+                }`}
+                onMouseEnter={() => setShowAboutDropdown(true)}
+                onMouseLeave={() => setShowAboutDropdown(false)}
+              >
+                <a href="/">Link 1</a>
+                <a href="/">Link 2</a>
+                <a href="/">Link 3</a>
+                <a href="/">Link 4</a>
+                <a href="/">Link 5</a>
+              </div>
+            </div>
             <a href="/contact-us">CONTACT</a>
             <div className={styles.mobileIcon}>
               <svg
@@ -64,42 +85,56 @@ const Navbar1 = (props) => {
               <img src={BrightlightBlueLogo} alt="Brightlight Blue Logo" />
             </a>
             <div className={styles.mainNavbar}>
-              {/* SERVICES Menu with Dropdown */}
-              <div
-                className={styles.navItem}
-                onMouseEnter={() => setShowServicesDropdown(true)}
-                onMouseLeave={() => setShowServicesDropdown(false)}
-              >
-                <a href="/">SERVICES</a>
-                {showServicesDropdown && (
-                  <div className={styles.dropdownMenu}>
-                    <a href="/express-entry">Express Entry</a>
-                    <a href="/permanent-residency">Permanent Residency</a>
-                    <a href="/transport-occupation">Transport Occupation</a>
-                    <a href="/category-based">CategoryBased</a>
-                  </div>
-                )}
+              <div className={styles.relativeDiv}>
+                <a
+                  href="/"
+                  onMouseEnter={() => setShowServicesDropdown(true)}
+                  onMouseLeave={() => setShowServicesDropdown(false)}
+                >
+                  SERVICES
+                </a>
+                <div
+                  className={`${styles.servicesDropdown} ${
+                    showServicesDropdown ? styles.showServicesDropdown : null
+                  }`}
+                  onMouseEnter={() => setShowServicesDropdown(true)}
+                  onMouseLeave={() => setShowServicesDropdown(false)}
+                >
+                  <a href="/BCPNP-Calculator">BCPNP Calculator</a>
+                  <a href="/Federal-Skilled">Federal Skilled</a>
+                  <a href="/express-entry">Express Entry</a>
+                  <a href="/transport-occupation">Transport Occupation</a>
+                </div>
               </div>
 
               {/* BLOGS */}
-              <a href="/">BLOGS</a>
+              <a href="/blogs">BLOGS</a>
 
               {/* NEWS */}
               <a href="/">NEWS</a>
 
               {/* CALCULATORS Menu with Dropdown */}
-              <div
-                className={styles.navItem}
-                onMouseEnter={() => setShowCalculatorsDropdown(true)}
-                onMouseLeave={() => setShowCalculatorsDropdown(false)}
-              >
-                <a href="/">CALCULATORS</a>
-                {showCalculatorsDropdown && (
-                  <div className={styles.dropdownMenu}>
-                    <a href="/BCPNP-Calculator">BCPNP Calculator</a>
-                    <a href="/Federal-Skilled">Federal Skilled</a>
-                  </div>
-                )}
+              <div className={styles.relativeDiv}>
+                <a
+                  href="/"
+                  onMouseEnter={() => setShowCalculatorsDropdown(true)}
+                  onMouseLeave={() => setShowCalculatorsDropdown(false)}
+                >
+                  CALCULATORS
+                </a>
+                <div
+                  className={`${styles.calculatorsDropdown} ${
+                    showCalculatorsDropdown
+                      ? styles.showCalculatorsDropdown
+                      : null
+                  }`}
+                  onMouseEnter={() => setShowCalculatorsDropdown(true)}
+                  onMouseLeave={() => setShowCalculatorsDropdown(false)}
+                >
+                  <a href="/BCPNP-Calculator">BC PNP Calculator</a>
+                  <a href="/">CLB Calculator</a>
+                  <a href="/Federal-Skilled">FSW Calculator</a>
+                </div>
               </div>
 
               {/* CONTACT */}
@@ -108,20 +143,11 @@ const Navbar1 = (props) => {
               {/* Search Bar */}
               <div className={styles.searchBar}>
                 <div className={styles.inputWrapper}>
-                  <svg
+                  <Search
                     className={styles.searchIcon}
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0114 0z"
-                    />
-                  </svg>
+                    width={20}
+                    height={20}
+                  />
                   <input
                     type="text"
                     className={styles.input}
@@ -173,48 +199,83 @@ const Navbar1 = (props) => {
                 >
                   info@brightlightimmigration.ca
                 </span>
-              </div> 
-            </div> 
+              </div>
+            </div>
             <div className={styles.socialMedia}>
               {showBlue ? (
-                 <a target="_blank" href="https://www.tiktok.com/@brightlightimmigration?_t=8lzyE6vJG0E&_r=1">
-                <img src={Tiktokblue} />
+                <a
+                  target="_blank"
+                  href="https://www.tiktok.com/@brightlightimmigration?_t=8lzyE6vJG0E&_r=1"
+                >
+                  <img src={Tiktokblue} />
                 </a>
               ) : (
-                <a target="_blank" href="https://www.tiktok.com/@brightlightimmigration?_t=8lzyE6vJG0E&_r=1">
-                <TikTokIcon className={styles.socialIcon} />
-                </a>
-              )}
-              {showBlue ? ( <a target="_blank" href="https://ca.linkedin.com/in/loveneet-paneswar-5b2377198">
-                <img src={Linkedinblue} />
-                </a>
-              ) : (
-                <a target="_blank" href="https://ca.linkedin.com/in/loveneet-paneswar-5b2377198">
-                <LinkedInIcon className={styles.socialIcon} />
+                <a
+                  target="_blank"
+                  href="https://www.tiktok.com/@brightlightimmigration?_t=8lzyE6vJG0E&_r=1"
+                >
+                  <TikTokIcon className={styles.socialIcon} />
                 </a>
               )}
               {showBlue ? (
-                <a target="_blank" href="https://www.instagram.com/brightlightimmigration?igsh=b2xmdzh5eDdsc29p">
-                <img src={Instagramblue} />
+                <a
+                  target="_blank"
+                  href="https://ca.linkedin.com/in/loveneet-paneswar-5b2377198"
+                >
+                  <img src={Linkedinblue} />
                 </a>
-              ) : ( <a target="_blank" href="https://www.instagram.com/brightlightimmigration?igsh=b2xmdzh5eDdsc29p">
-                <InstagramIcon className={styles.socialIcon} />
-                </a>
-              )}
-              {showBlue ? (
-                <a target="_blank" href="https://www.facebook.com/brightlightimmigration">
-                <img src={Facebookblue} />
-                </a>
-              ) : ( <a target="_blank" href="https://www.facebook.com/brightlightimmigration">
-                <FacebookIcon className={styles.socialIcon} />
-                </a>
-              )}
-              {showBlue ? (
-                <a target="_blank" href="https://www.youtube.com/channel/UC2NJoKhIOconAE_IFCxX7uA">
-                <img src={Youtubeblue}  /></a>
               ) : (
-                <a target="_blank" href="https://www.youtube.com/channel/UC2NJoKhIOconAE_IFCxX7uA"><YouTubeIcon className={styles.socialIcon} /></a>
-                
+                <a
+                  target="_blank"
+                  href="https://ca.linkedin.com/in/loveneet-paneswar-5b2377198"
+                >
+                  <LinkedInIcon className={styles.socialIcon} />
+                </a>
+              )}
+              {showBlue ? (
+                <a
+                  target="_blank"
+                  href="https://www.instagram.com/brightlightimmigration?igsh=b2xmdzh5eDdsc29p"
+                >
+                  <img src={Instagramblue} />
+                </a>
+              ) : (
+                <a
+                  target="_blank"
+                  href="https://www.instagram.com/brightlightimmigration?igsh=b2xmdzh5eDdsc29p"
+                >
+                  <InstagramIcon className={styles.socialIcon} />
+                </a>
+              )}
+              {showBlue ? (
+                <a
+                  target="_blank"
+                  href="https://www.facebook.com/brightlightimmigration"
+                >
+                  <img src={Facebookblue} />
+                </a>
+              ) : (
+                <a
+                  target="_blank"
+                  href="https://www.facebook.com/brightlightimmigration"
+                >
+                  <FacebookIcon className={styles.socialIcon} />
+                </a>
+              )}
+              {showBlue ? (
+                <a
+                  target="_blank"
+                  href="https://www.youtube.com/channel/UC2NJoKhIOconAE_IFCxX7uA"
+                >
+                  <img src={Youtubeblue} />
+                </a>
+              ) : (
+                <a
+                  target="_blank"
+                  href="https://www.youtube.com/channel/UC2NJoKhIOconAE_IFCxX7uA"
+                >
+                  <YouTubeIcon className={styles.socialIcon} />
+                </a>
               )}
             </div>
           </div>

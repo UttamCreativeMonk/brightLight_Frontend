@@ -81,7 +81,7 @@ let Blogs = () => {
           <div className={styles.firstBlogContentSection}>
             <h4>{firstBlog.date}</h4>
             <h1>{firstBlog.blog_heading}</h1>
-            <a href={`/blogs/${firstBlog.blog_heading}`}>Read More</a>
+            <a href={`/blogs/${firstBlog._id}`}>Read More</a>
           </div>
           <div>
             <img src={firstBlog.image} />
@@ -100,7 +100,7 @@ let Blogs = () => {
               <a
                 key={index}
                 className={styles.blog}
-                href={`/blogs/${item.blog_heading}`}
+                href={`/blogs/${item._id}`}
               >
                 <img src={item.image} />
                 <div>

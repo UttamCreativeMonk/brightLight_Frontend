@@ -6,7 +6,7 @@ import VisionImg from "../assets/vision.png";
 import PillarSectionLogo from "../assets/pillars.png";
 import INTEGRITY from "../assets/integrity1.png";
 import RESPONSIBILITY from "../assets/responsibility.png";
-import Reliability from "../assets/reliability.png"
+import Reliability from "../assets/reliability.png";
 import WeAreImg from "../assets/we-are-1.png";
 import SocialMoblile from "../assets/Layer 1.png";
 import VisaImg from "../assets/visa.png";
@@ -21,7 +21,7 @@ import YoutubeBlue from "../assets/youtube1Icon.png";
 import Director1 from "../assets/loveneeth-founder.webp";
 import Director2 from "../assets/sumir.webp";
 import Twelve from "../assets/12-years2.png";
-import Comprehensive from "../assets/comprehensive1.png"
+import Comprehensive from "../assets/comprehensive1.png";
 
 import BestChoice from "../sections/BestChoice.jsx";
 
@@ -33,7 +33,7 @@ import Footer from "../components/Footer.jsx";
 let About = () => {
   return (
     <>
-    <Navbar1/>
+      <Navbar1 />
       <div className={styles.aboutBanner}>
         <div className={styles.aboutUsTopContentSection}>
           <div className={styles.aboutLogo}>
@@ -44,18 +44,16 @@ let About = () => {
           </div>
           <div className={styles.aboutUsFeaturesSection}>
             <div className={styles.aboutUsFeature}>
-             
               <img src={Twelve} alt="err" />
-             
+
               <p>
                 Trusted Canadian Immigration expert with over 12 years of
                 experience.
               </p>
             </div>
             <div className={styles.aboutUsFeature}>
-             
-                <img src={Comprehensive} alt="err" />
-              
+              <img src={Comprehensive} alt="err" />
+
               <p>Providing comprehensive immigration services.</p>
             </div>
           </div>
@@ -76,9 +74,9 @@ let About = () => {
 
       <div className={styles.foundationMainSection}>
         <div className={styles.foundation}>
-          <div className={styles.foundationInside}>
+          <div className={`${styles.foundationInside} ${styles.foundation1}`}>
             <img src={AboutDesign} alt="err" />
-            <div className={styles.designContent}>
+            <div className={`${styles.designContent} ${styles.designContent1}`}>
               <h1>OUR FOUNDATION</h1>
               <h3>
                 Creating continuous possibilities for your immigration goals.
@@ -164,15 +162,15 @@ let About = () => {
             </div>
 
             <div className={styles.pillarFeatureSvg}>
-           <img src={RESPONSIBILITY} alt="err" />
-     
+              <img src={RESPONSIBILITY} alt="err" />
+
               <h4>RESPONSIBILITY</h4>
               <p>We take our commitment</p>
               <p>seriously</p>
             </div>
 
             <div className={styles.pillarFeatureSvg}>
-            <img src={Reliability} alt="err" />
+              <img src={Reliability} alt="err" />
               <h4>RELIABILITY</h4>
               <p>You can count us, always</p>
             </div>
@@ -257,7 +255,7 @@ let About = () => {
         </div>
       </div>
 
-<BestChoice/>
+      {/* <BestChoice /> */}
 
       <div className={styles.socialPresenceParent}>
         <div className={styles.socialPresence}>
@@ -309,11 +307,9 @@ let About = () => {
         </div>
       </div>
 
-<Map/>
+      {/* <Map /> */}
 
-
-<Footer/>
-
+      <Footer />
     </>
   );
 };
