@@ -227,3 +227,301 @@
 .officeInfoSection div {
   margin-bottom: 40px;
 }
+
+@media all and (max-width: 1450px) {
+  .contactTopSection {
+    width: 1200px;
+  }
+
+  .officeDetailsSection{
+    width: 1200px;
+  }
+
+}
+
+@media all and (max-width: 1240px) {
+  .officeDetailsSection{
+    width: 1000px;
+  }
+}
+
+@media all and (max-width: 1190px) {
+  .contactTopSection {
+    width: 850px;
+  }
+
+}
+
+@media all and (max-width: 1080px) {
+  .contactTopSection {
+    width: 850px;
+  }
+  .contactForm {
+    width: 600px;
+  }
+  .officeDetailsSection{
+    flex-direction: column;
+    /* width: 100%; */
+  }
+
+  .officeDetailsSection iframe {
+    width: 850px;
+  }
+  .officeSection{
+    /* width: 100%; */
+    margin-top: 60px;
+  }
+
+}
+
+@media all and (max-width: 960px) {
+  .officeDetailsSection{
+    width: 100%;
+  }
+
+  .officeDetailsSection iframe {
+    width: 600px;
+  }
+}
+
+@media all and (max-width: 880px) {
+  .contactTopSection {
+    width: 650px;
+  }
+  .contactForm {
+    width: 600px;
+  }
+  .inputBarFlexSection{
+    flex-direction: column;
+  }
+  .contactTopSection p{
+    width: 100%;
+  }
+  .inputBarFlexSection .inputBar {
+    width: 100%;
+  }
+  .officeSection{
+    width: 60%;
+  }
+}
+
+@media all and (max-width: 690px) {
+  .contactTopSection {
+    width: 600px;
+  }
+  .contactForm {
+    width: 500px;
+  }
+  .officeSection{
+    width: 80%;
+  }
+}
+
+@media all and (max-width: 690px){
+
+  .officeDetailsSection iframe {
+    width: 500px;
+  }
+
+  .officeSection{
+    width: 70%;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .contactTopSection {
+    width: 400px;
+  }
+  .contactForm {
+    width: 400px;
+  }
+
+  .formCategory div.active {
+    font-size: 17px;
+  }
+
+  .formCategory div.notActive{
+    font-size: 17px;
+  }
+
+  .contactMessageBox textarea {
+    height: 200px;
+  }
+
+  .officeDetailsSection iframe {
+    width: 450px;
+  }
+
+  .officeSection{
+    width: 74%;
+  }
+  .officeSection div h5 {
+    font-size: 14px;
+  }
+  .officeSection div p {
+    font-size: 13px;
+  }
+
+}
+
+@media all and (max-width: 490px) {
+  .contactTopSection h1{
+    font-size: 40px;
+  }
+  .contactTopSection h3{
+    font-size: 15px;
+  }
+  .contactMessageBox textarea {
+    height: 160px;
+  }
+
+  .officeDetailsSection iframe {
+    width: 420px;
+  }
+
+  .officeSection{
+    width: 77%;
+  }
+  .officeSection div h5 {
+    font-size: 14px;
+  }
+  .officeSection div p {
+    font-size: 13px;
+  }
+}
+
+@media all and (max-width: 460px) {
+  .contactTopSection {
+    width: 340px;
+  }
+  .contactForm {
+    width: 340px;
+  }
+  .formCategory div.active {
+    font-size: 14px;
+  }
+
+  .formCategory div.notActive{
+    font-size: 14px;
+  }
+
+  .officeDetailsSection iframe {
+    width: 390px;
+    height: 190px;
+  }
+
+  .officeSection{
+    width: 79%;
+  }
+  .officeSection div h5 {
+    font-size: 14px;
+  }
+  .officeSection div p {
+    font-size: 13px;
+  }
+
+}
+@media all and (max-width: 420px){
+  .officeDetailsSection iframe {
+    width: 320px;
+    height: 190px;
+  }
+
+  .officeSection{
+    width: 82%;
+  }
+  .officeSection div h5 {
+    font-size: 14px;
+  }
+  .officeSection div p {
+    font-size: 13px;
+  }
+  .officeInfoSection {
+    width: 50%;
+  }
+}
+
+@media all and (max-width: 400px) {
+  .contactTopSection {
+    width: 300px;
+  }
+  .contactForm {
+    width: 300px;
+  }
+  .formCategory div.active {
+    font-size: 11px;
+  }
+
+  .formCategory div.notActive{
+    font-size: 11px;
+  }
+  .contactMessageBox textarea {
+    height: 150px;
+  }
+
+  .officeDetailsSection iframe {
+    width: 300px;
+    height: 190px;
+  }
+
+  .officeSection{
+    width: 82%;
+  }
+  .officeSection div h5 {
+    font-size: 13px;
+  }
+  .officeSection div p {
+    font-size: 11px;
+  }
+  .officeInfoSection {
+    width: 51%;
+  }
+  
+}
+
+@media all and (max-width: 330px) {
+  .contactTopSection {
+    width: 270px;
+  }
+  .contactForm {
+    width: 270px;
+  }
+  .formCategory div.active {
+    font-size: 11px;
+    height: 60px;
+  }
+
+  .formCategory div.notActive{
+    font-size: 11px;
+    height: 60px;
+  }
+  .contactMessageBox textarea {
+    height: 150px;
+  }
+
+  .officeDetailsSection iframe {
+    width: 270px;
+    height: 190px;
+  }
+
+  .officeSection{
+    width: 81%;
+    margin: auto;
+    margin-top: 40px;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .officeSection div h5 {
+    font-size: 13px;
+  }
+  .officeSection div p {
+    font-size: 11px;
+  }
+  /* .officeInfoSection {
+    width: 52%;
+ 
+  } */
+
+}

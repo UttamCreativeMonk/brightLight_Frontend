@@ -250,7 +250,7 @@ let HomePage = () => {
         </div>
       </div>
 
-      <OurProcess />
+      {/* <OurProcess /> */}
 
       <div className={styles.expertiseParent}>
         <div className={styles.expertiseContentParent}>
@@ -268,7 +268,7 @@ let HomePage = () => {
             </button>
           </div>
           
-          <div className={styles.testimonialsVideoSection}>
+          {/* <div className={styles.testimonialsVideoSection}>
             <Swiper
               effect={"coverflow"}
               grabCursor={true}
@@ -290,7 +290,6 @@ let HomePage = () => {
                   <SwiperSlide>
                     <div></div>
                     <img src={item.img} />
-                    {/* <p>{item.person_name}</p> */}
                   </SwiperSlide>
                 );
               })}
@@ -302,7 +301,7 @@ let HomePage = () => {
                 ></div>
               </div>
             </Swiper>
-          </div>
+          </div> */}
           /
         </div>
       </div>
@@ -333,7 +332,7 @@ let HomePage = () => {
         </div>
       </div>
    
-<Testimonials_White/>
+{/* <Testimonials_White/> */}
 
       {/* <Testimonials />
       <FAQ /> */}
@@ -407,8 +406,8 @@ let HomePage = () => {
 
 
 
-      <Blogs/>
-      <FAQ_Blue/>
+      {/* <Blogs/>
+      <FAQ_Blue/> */}
      
       
 

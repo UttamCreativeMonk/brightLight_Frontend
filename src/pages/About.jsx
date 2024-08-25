@@ -10,7 +10,9 @@ import Reliability from "../assets/reliability.png";
 import WeAreImg from "../assets/we-are-1.png";
 import SocialMoblile from "../assets/Layer 1.png";
 import VisaImg from "../assets/visa.png";
-import BlueMap from "../assets/blue-map.png";
+import TickBlue from "../assets/tick-blue.png";
+import SmileBlue from "../assets/smile-blue.png";
+// import BlueMap from "../assets/blue-map.png";
 // import BestChoice from "../assets/best-choice.png";
 
 import TiktokBlue from "../assets/tiktok1Icon.png";
@@ -20,15 +22,14 @@ import FacebookBlue from "../assets/facebook1Icon.png";
 import YoutubeBlue from "../assets/youtube1Icon.png";
 import Director1 from "../assets/loveneeth-founder.webp";
 import Director2 from "../assets/sumir.webp";
-import Twelve from "../assets/12-years2.png";
-import Comprehensive from "../assets/comprehensive1.png";
+import Twelve from "../assets/12-years22.png";
+import Comprehensive from "../assets/comprehensive11.png";
 
 import BestChoice from "../sections/BestChoice.jsx";
 
 import Map from "../sections/Map.jsx";
 import Navbar1 from "../components/Navbar1.jsx";
 import Footer from "../components/Footer.jsx";
-
 
 let About = () => {
   return (
@@ -78,10 +79,10 @@ let About = () => {
             <img src={AboutDesign} alt="err" />
             <div className={`${styles.designContent} ${styles.designContent1}`}>
               <h1>OUR FOUNDATION</h1>
-              <h3>
+              <h3 className={styles.borderBottomFoundation}>
                 Creating continuous possibilities for your immigration goals.
               </h3>
-              <hr />
+              {/* <hr /> */}
               <h3>Make lasting connections with you based on trust.</h3>
             </div>
           </div>
@@ -240,22 +241,22 @@ let About = () => {
             </div>
 
             <div className={styles.ourAchivementCard}>
-              <img src={VisaImg} alt="err" />
-              <h2>15,745+</h2>
-              <p>VISA PROCESSED</p>
+              <img src={TickBlue} alt="err" />
+              <h2>14688+</h2>
+              <p>SUCCESS STORIES</p>
             </div>
 
             <div className={styles.ourAchivementCard}>
-              <img src={VisaImg} alt="err" />
-              <h2>15,745+</h2>
-              <p>VISA PROCESSED</p>
+              <img src={SmileBlue} alt="err" />
+              <h2>14934+</h2>
+              <p>HAPPY CLIENTS</p>
             </div>
             {/* / */}
           </div>
         </div>
       </div>
 
-      {/* <BestChoice /> */}
+      <BestChoice />
 
       <div className={styles.socialPresenceParent}>
         <div className={styles.socialPresence}>
@@ -307,7 +308,7 @@ let About = () => {
         </div>
       </div>
 
-      {/* <Map /> */}
+      <Map />
 
       <Footer />
     </>

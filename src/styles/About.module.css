@@ -1006,14 +1006,11 @@
   }
 
   .aboutUsFeature {
-    width: 70%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 10px;
-    background-color: rgba(233, 233, 24, 0.122);
-    border-radius: 20px;
-    padding-right: 10px;
+
   }
   
   .aboutUsFeaturesSection {
@@ -1023,6 +1020,10 @@
     align-items: center;
     justify-content: center;
     gap: 50px;
+  }
+  
+  .socialPresence p {
+    width: 100%;
   }
 
   .visionInside img {
@@ -1059,13 +1060,21 @@
     font-size: 16px;
   }
 
+
   .designContent {
     width: 75%;
     margin: auto;
-    /* margin-top: 100px; */
+    margin-top: 100px;
     color: #132f46;
   }
+
+  .designContent1{
+    margin-top: 100px;
+  }
   
+  .designContent h1{
+    margin-bottom: 40px;
+  }
 
   .vision {
     width: 900px;
@@ -1150,7 +1159,7 @@
   }
   
   .foundationInside img {
-    width: 75%;
+    width: 55%;
     margin-right: 0px;
   }
 
@@ -1159,10 +1168,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 10px;
-    background-color: rgba(233, 233, 24, 0.122);
-    border-radius: 20px;
-    padding-right: 10px;
+
   }
   
   .aboutUsFeaturesSection {
@@ -1224,6 +1230,7 @@
     width: 100%;
     display: flex;
     justify-content: space-around;
+    margin-bottom: 40px;
   }
   
   .visionInsideImg {
@@ -1305,6 +1312,16 @@
   .meetDirectorimgContent{
     order: 2
   }
+
+  .vancouverParent{
+    height: 500px;
+  }
+
+  .vancouver h1{
+    padding-top: 50px;
+    font-size: 50px;
+  }
+
 }
 
 
@@ -1331,6 +1348,10 @@
   /* .pillarSection {
     width: 800px;
   } */
+
+  .vancouver{
+    font-size: 40px;
+  }
   
   .weAreParentImg {
     width: 700px;
@@ -1412,8 +1433,9 @@
     object-fit: cover;
     text-align: left;
   }
-  
-  
+  .aboutUsFeature{
+    width: 100%;
+  }
 }
 
 
@@ -1487,9 +1509,9 @@ font-size: 18px;
     margin: auto;
   }
 
-  /* .ourAchivementCardParent {
-    width: 700px;
-  } */
+  .ourAchivementCardParent {
+    width: 300px;
+  }
   
   .ourAchivementCard {
     padding: 5px 5px;
@@ -1550,8 +1572,17 @@ font-size: 18px;
     width: 520px;
   }
 
-  .aboutUsFeature{
-    width: 90%;
+  .aboutUsFeature {
+    width: 100%;
+    height: 150px;
+  }
+
+  .aboutUsFeature img{
+    height: 150px; 
+  }
+
+  .aboutUsFeature p{
+    font-size: 18px;
   }
   
   .foundationContent {
@@ -1678,6 +1709,27 @@ font-size: 18px;
 
 @media all and (max-width:560px){
 
+  .designContent{
+    margin-top: 50px;
+  }
+
+  .designContent h3{
+    width: 100%;
+  }
+
+  .borderBottomFoundation{
+    border-bottom: 3px solid #132f46;
+  }
+
+  .vancouverParent{
+    height: 400px;
+  }
+
+  .vancouver h1{
+    padding-top: 50px;
+    font-size: 40px;
+  }
+
   .aboutUsTopContentSection {
     width: 450px;
   }
@@ -1755,7 +1807,6 @@ font-size: 18px;
   }
 
   .pillarLogo{
-    width: 450px;
     height: 370px;
   }
 
@@ -1768,7 +1819,7 @@ font-size: 18px;
   }
 
   .socialPresenceIcons {
-    width: 450px;
+    width: 350px;
   }
   .pillarSection{
     width: 450px;
@@ -1776,7 +1827,7 @@ font-size: 18px;
   }
 
   .pillarLogo {
-    width: 450px;
+    /* width: 450px; */
     margin: auto;
   }
 
@@ -1817,12 +1868,35 @@ font-size: 18px;
 
 @media all and (max-width:450px){
 
+  .socialMoblileImgDiv img{
+    width: 70%;
+  }
+  .vancouverParent{
+    height: 350px;
+  }
+
+  .vancouver h1{
+    padding-top: 40px;
+    font-size: 32px;
+  }
+
+
   .aboutUsTopContentSection {
     width: 380px;
   }
 
   .aboutUsFeature{
     width: 100%;
+  }
+
+  .aboutUsFeature p{
+    font-size: 16px;
+  }
+  .aboutUsFeature img{
+    height: 120px; 
+  }
+  .aboutUsFeature {
+    height: 120px; 
   }
   
   .foundationContent {
@@ -1851,7 +1925,7 @@ font-size: 18px;
   }
 
   .designContent h3{
-    font-size: 19px;
+    font-size: 15px;
   }
   
   .pillarFeatureSvg h4 {
@@ -1876,7 +1950,11 @@ font-size: 18px;
   }
 
   .socialPresence {
-    width: 440px;
+    width: 340px;
+  }
+
+  .socialPresenceIcons{
+    width: 300px;
   }
   
   .vancouver {
@@ -1902,7 +1980,7 @@ font-size: 18px;
   }
 
   .pillarLogo{
-    width: 400px;
+    /* width: 400px; */
     height: 370px;
   }
 
@@ -1923,7 +2001,7 @@ font-size: 18px;
   }
 
   .socialPresenceIcons {
-    width: 380px;
+    width: 340px;
   }
   .pillarSection{
     width: 380px;
@@ -1931,7 +2009,7 @@ font-size: 18px;
   }
 
   .pillarLogo {
-    width: 380px;
+    /* width: 380px; */
     margin: auto;
   }
 
@@ -1958,3 +2036,525 @@ font-size: 18px;
   }
   
 }
+
+
+
+@media all and (max-width:430px){
+
+  .ourAchivementHeading h1{
+    font-size: 38px;
+  }
+
+  .vancouverParent{
+    height: 300px;
+  }
+
+  .vancouver h1{
+    padding-top: 40px;
+    font-size: 30px;
+  }
+
+  .aboutUsTopContentSection {
+    width: 340px;
+  }
+
+  .aboutUsFeature{
+    width: 100%;
+  }
+
+  .aboutUsFeature p{
+    font-size: 16px;
+  }
+  .aboutUsFeature img{
+    height: 120px; 
+  }
+  .aboutUsFeature {
+    height: 120px; 
+  }
+  
+  .foundationContent {
+    width: 340px;
+  }
+
+  .aboutLogo img {
+    width: 350px;
+  }
+  
+  .foundation {
+    width: 340px;
+  }
+
+  .vision {
+    width: 340px;
+  }
+
+  .aboutHeading{
+    width: 340px;
+    font-size: 19px;
+  }
+  
+  .ourAchivementCardParent {
+    width: 240px;
+  }
+
+  .ourAchivementCard img{
+    margin-top: 20px;
+  }
+
+  .ourAchivementCard p{
+    margin-bottom: 20px;
+    font-size: 12px;
+  }
+
+  .designContent h1{
+    font-size: 30px;
+  }
+
+  .designContent h3{
+    font-size: 15px;
+  }
+  
+  .pillarFeatureSvg h4 {
+    font-size: 14px;
+      }
+
+  .weAreParentImg {
+    width: 340px;
+  }
+ 
+  .ourAchivementSection {
+    width: 340px;
+  }
+  
+  .bestChoice {
+    width: 340px;
+  }
+  
+  .bannerPara{
+    font-size: 17px;
+    line-height: 30px;
+  }
+
+  .socialPresence {
+    width: 320px;
+  }
+
+  .socialPresenceIcons{
+    width: 280px;
+  }
+  
+  .vancouver {
+    width: 340px;
+  }
+  
+  .mapSection {
+    width: 340px;
+  }
+  
+  .meetDirectorMain {
+    width: 340px;
+  }
+  
+  .thedirectors {
+    width: 340px;
+
+  }
+  .meetDirectorimgContent{
+    width: 340px;
+  
+  }
+
+  .pillarLogo{
+    /* width: 380px; */
+    height: 350px;
+  }
+
+  .ourAchivementCard h2{
+    font-size:50px ;
+    margin-top: 10px;
+  }
+
+  .ourAchivementCard p{
+    font-size:25px ;
+  }
+
+  .pillarLogoContent h2{
+    font-size: 40px;
+  }
+
+  .pillarLogoContent p{
+    line-height: 30px;
+  }
+  
+  .ourAchivementCard {
+    padding: 5px 5px;
+  }
+
+  .socialPresenceIcons {
+    width: 320px;
+  }
+  .pillarSection{
+    width: 340px;
+    
+  }
+
+  .pillarLogo img{
+    width: 40%;
+  }
+
+  .pillarLogoContent{
+    width: 54%;
+  }
+
+  .pillarFeatureSection{
+    width: 340px;
+    margin-top: 270px;
+  }
+
+
+  .visionInside img {
+    height: auto;
+    width: 100px;
+    object-fit: cover;
+    text-align: left;
+  }
+  
+}
+
+@media all and (max-width:370px){
+
+  .aboutUsTopContentSection {
+    width: 320px;
+  }
+
+  .aboutUsFeature{
+    width: 100%;
+  }
+
+  .aboutUsFeature p{
+    font-size: 16px;
+  }
+  .aboutUsFeature img{
+    height: 120px; 
+  }
+  .aboutUsFeature {
+    height: 120px; 
+  }
+  
+  .foundationContent {
+    width: 320px;
+  }
+
+  .aboutLogo img {
+    width: 320px;
+  }
+  
+  .foundation {
+    width: 320px;
+  }
+
+  .vision {
+    width: 320px;
+  }
+
+  .aboutHeading{
+    width: 320px;
+    font-size: 19px;
+  }
+  
+  .ourAchivementCardParent {
+    width: 230px;
+  }
+
+  .ourAchivementCard img{
+    margin-top: 20px;
+  }
+
+  .designContent h1{
+    font-size: 30px;
+  }
+
+  .designContent h3{
+    font-size: 15px;
+  }
+  
+  .pillarFeatureSvg h4 {
+    font-size: 14px;
+      }
+
+  .weAreParentImg {
+    width: 320px;
+  }
+ 
+  .ourAchivementSection {
+    width: 320px;
+  }
+  
+  .bestChoice {
+    width: 320px;
+  }
+  
+  .bannerPara{
+    font-size: 17px;
+    line-height: 30px;
+  }
+
+  .socialPresence {
+    width: 320px;
+  }
+
+  .socialPresenceIcons{
+    width: 280px;
+  }
+  
+  .vancouver {
+    width: 320px;
+  }
+  
+  .mapSection {
+    width: 320px;
+  }
+  
+  .meetDirectorMain {
+    width: 320px;
+  }
+  
+  .thedirectors {
+    width: 320px;
+
+  }
+  .meetDirectorimgContent{
+    width: 320px;
+  
+  }
+
+  .pillarLogo{
+    /* width: 370px; */
+    height: 340px;
+  }
+
+  .ourAchivementCard h2{
+    font-size:50px ;
+    margin-top: 10px;
+  }
+
+  .ourAchivementCard p{
+    font-size:25px ;
+  }
+
+  .pillarLogoContent h2{
+    font-size: 40px;
+  }
+
+  .pillarLogoContent p{
+    line-height: 30px;
+  }
+  
+  .ourAchivementCard {
+    padding: 5px 5px;
+  }
+
+  .socialPresenceIcons {
+    width: 300px;
+  }
+  .pillarSection{
+    width: 320px;
+    
+  }
+
+  .pillarLogo img{
+    width: 40%;
+  }
+
+  .pillarLogoContent{
+    width: 54%;
+  }
+
+  .pillarFeatureSection{
+    width: 320px;
+    margin-top: 270px;
+  }
+
+
+  .visionInside img {
+    height: auto;
+    width: 100px;
+    object-fit: cover;
+    text-align: left;
+  }
+  
+}
+
+
+@media all and (max-width:350px){
+
+  .vancouverParent{
+    height: 300px;
+  }
+
+  .vancouver h1{
+    padding-top: 30px;
+    font-size: 28px;
+  }
+
+  .aboutUsTopContentSection {
+    width: 290px;
+  }
+
+  .aboutUsFeature{
+    width: 100%;
+  }
+
+  .aboutUsFeature p{
+    font-size: 15px;
+  }
+  .aboutUsFeature img{
+    height: 110px; 
+  }
+  .aboutUsFeature {
+    height: 120px; 
+  }
+  
+  .foundationContent {
+    width: 290px;
+  }
+
+  .aboutLogo img {
+    width: 290px;
+  }
+  
+  .foundation {
+    width: 290px;
+  }
+
+  .vision {
+    width: 290px;
+  }
+
+  .aboutHeading{
+    width: 290px;
+    font-size: 19px;
+  }
+  
+  .ourAchivementCardParent {
+    width: 230px;
+  }
+
+  .ourAchivementCard img{
+    margin-top: 20px;
+  }
+
+  .designContent h1{
+    font-size: 30px;
+  }
+
+  .designContent h3{
+    font-size: 15px;
+  }
+  
+  .pillarFeatureSvg h4 {
+    font-size: 14px;
+      }
+
+  .weAreParentImg {
+    width: 290px;
+  }
+ 
+  .ourAchivementSection {
+    width: 290px;
+  }
+  
+  .bestChoice {
+    width: 290px;
+  }
+  
+  .bannerPara{
+    font-size: 17px;
+    line-height: 30px;
+  }
+
+  .socialPresence {
+    width: 290px;
+  }
+
+  .socialPresenceIcons{
+    width: 250px;
+  }
+  
+  .vancouver {
+    width: 290px;
+  }
+  
+  .mapSection {
+    width: 290px;
+  }
+  
+  .meetDirectorMain {
+    width: 290px;
+  }
+  
+  .thedirectors {
+    width: 290px;
+
+  }
+  .meetDirectorimgContent{
+    width: 290px;
+  }
+
+  .pillarLogo{
+    /* width: 370px; */
+    height: 340px;
+  }
+
+  .ourAchivementCard h2{
+    font-size:50px ;
+    margin-top: 10px;
+  }
+
+  .ourAchivementCard p{
+    font-size:25px ;
+  }
+
+  .pillarLogoContent h2{
+    font-size: 40px;
+  }
+
+  .pillarLogoContent p{
+    line-height: 30px;
+  }
+  
+  .ourAchivementCard {
+    padding: 5px 5px;
+  }
+
+  .socialPresenceIcons {
+    width: 300px;
+  }
+  .pillarSection{
+    width: 290px;
+    
+  }
+
+  .pillarLogo img{
+    width: 40%;
+  }
+
+  .pillarLogoContent{
+    width: 54%;
+  }
+
+  .pillarFeatureSection{
+    width: 290px;
+    margin-top: 270px;
+  }
+
+
+  .visionInside img {
+    height: auto;
+    width: 100px;
+    object-fit: cover;
+    text-align: left;
+  }
+  
+}
+

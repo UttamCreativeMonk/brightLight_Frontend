@@ -174,13 +174,13 @@ let ExpressEntry = () => {
 
       <div className={styles.incaseParent}>
         <div className={styles.incaseMain}>
-        <div className={styles.theButtonAncorParentTwo}>
+        {/* <div className={styles.theButtonAncorParentTwo}>
         <div className={styles.theButtonAncorTwo}>
           <a href="/">
             Express Entry Draws History
           </a>
         </div>
-      </div>
+      </div> */}
           <div className={styles.incaseContent}>
             <h1>In case</h1>
 

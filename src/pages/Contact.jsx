@@ -109,18 +109,14 @@ let Contact = () => {
           <div className={styles.officeInfoSection}>
             <div>
               <h5>OUR OFFICE LOCATION</h5>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam,
-                corporis.
-              </p>
+              <p>15315 66 Ave unit 327, Surrey, BC V3S 2A1</p>
             </div>
 
             <div>
               <h5>GET IN TOUCH</h5>
-              <p>0000 - 0000 - 0000</p>
+              <p>(604) 503-3734 </p>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed,
-                aspernatur.
+              info@brightlightimmigration.ca
               </p>
             </div>
           </div>
