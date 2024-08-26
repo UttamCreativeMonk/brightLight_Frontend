@@ -46,7 +46,6 @@ let About = () => {
           <div className={styles.aboutUsFeaturesSection}>
             <div className={styles.aboutUsFeature}>
               <img src={Twelve} alt="err" />
-
               <p>
                 Trusted Canadian Immigration expert with over 12 years of
                 experience.

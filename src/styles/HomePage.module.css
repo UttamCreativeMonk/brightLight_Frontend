@@ -200,12 +200,14 @@
 
 .memberParent {
   background-color: #132f46;
-  padding: 100px 0px;
+  /* padding: 100px 0px; */
+  padding-top: 50px;
+  padding-bottom: 50px;
   margin-top: -5px;
 }
 
 .memberMain {
-  width: 1440px;
+  width: 1420px;
   margin: auto;
   color: white;
 }
@@ -250,7 +252,7 @@
 }
 
 .simplifyingMain {
-  width: 1440px;
+  width: 1340px;
   margin: auto;
   align-items: center;
   text-align: center;
@@ -266,6 +268,7 @@
   text-align: left;
   margin-top: 50px;
   gap: 60px;
+  justify-content: space-evenly;
 }
 
 .simplifyingImg {
@@ -703,6 +706,14 @@
 }
 
 @media all and (max-width: 1450px) {
+  .aspectsCardParent{
+    width: 1340px;
+    margin: auto;
+  }
+  .aspectsMain{
+    width: 1340px;
+  }
+
   .bannerMain {
     width: 1400px;
     margin: auto;
@@ -721,9 +732,44 @@
     width: 160px;
     margin: auto;
   }
+
+  .sourceMain{
+    width: 1260px;
+  }
+  .sourceHeadingParentFirstDiv{
+    margin-right: 50px;
+  }
+  .sourceContent{
+    justify-content: space-around;
+  }
+  .expertiseContentParent{
+    width: 1260px;
+  }
+}
+
+@media all and (max-width:1420px){
+  .memberMain {
+    width: 1220px;
+  }
+
+  .simplifyingMain {
+    width: 1320px;
+  }
 }
 
 @media all and (max-width: 1400px) {
+
+  .aspectsCardParent{
+    width: 1200px;
+    margin: auto;
+  }
+  .aspectsMain{
+    width: 1200px;
+  }
+  .aspectsHeading h2{
+    font-size: 30px;
+  }
+
   .card {
     width: 320px;
     margin: auto;
@@ -753,12 +799,53 @@
   }
 }
 
+@media all and (max-width:1320px){
+  .expertiseContentParent{
+    width: 1150px;
+  }
+  .expertiseContentHeading h1{
+    font-size: 40px;
+  }
+  .expertiseContentHeading p{
+    font-size: 18px;
+  }
+
+  .simplifyingMain {
+    width: 1220px;
+  }
+  .memberCardImg{
+    height: 150px;
+    width:250px ;
+  }
+  .memberCardParent{
+    gap: 80px;
+  }
+  .memberMain{
+    width: 1020px;
+  }
+   
+.memberCardImg img{
+    width: 200px;
+}
+}
 
 @media all and (max-width: 1300px) {
+  .simplifyingMain {
+    width: 1100px;
+    padding: 40px 0px;
+  }
+
+  .simplifyingMain p{
+    font-size: 20px;
+  }
+
+  .simplifyingContent{
+    width: 77%;
+  }
+
   .card {
     width: 320px;
     padding: 50px 20px;
-
   }
 
   .bannerMain {
@@ -776,3 +863,1013 @@
     background-color: transparent;
   }
 }
+
+@media all and (max-width: 1280px) {
+  .memberParent{
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .sourceMain{
+    width: 1150px;
+  }
+  .sourceContent{
+    justify-content: space-around;
+  }
+
+  .card {
+    width: 280px;
+    padding: 50px 20px;
+
+  }
+
+  .bannerMain {
+    width: 1100px;
+    align-items: center;
+    margin: auto;
+  }
+
+  .cardContainer {
+    width: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    row-gap: 25px;
+    box-shadow: none;
+    flex-wrap: wrap;
+    background-color: transparent;
+  }
+}
+
+@media all and (max-width:1245px){
+  .aspectsCardParent{
+    width: 1100px;
+    margin: auto;
+  }
+  .aspectsMain{
+    width: 1100px;
+  }
+  .aspectsHeading h2{
+    font-size: 26px;
+  }
+}
+
+/* @media all and (max-width:1100px){
+  .aspectsCardParent{
+    width: 1000px;
+    margin: auto;
+  }
+  .aspectsMain{
+    width: 1000px;
+  }
+  .aspectsHeading h2{
+    font-size: 22px;
+  }
+} */
+
+@media all and (max-width: 1150px) {
+
+  .expertiseContentParent{
+    width: 1020px;
+  }
+  .expertiseContentHeading h1{
+    font-size: 40px;
+  }
+  .expertiseContentHeading p{
+    font-size: 18px;
+  }
+
+  
+  .sourceMain{
+    width: 1020px;
+  }
+
+  .aspectsCard{
+    height: 350px;
+    width: 278px;
+  }
+  .aspectsCardParent{
+    width: 1000px;
+    margin: auto;
+  }
+  .aspectsMain{
+    width: 1000px;
+  }
+  .aspectsHeading h2{
+    font-size: 22px;
+  }
+  .aspectsHeading h1{
+    font-size: 55px;
+  }
+  .simplifyingMain {
+    width: 920px;
+    padding: 0px;
+  }
+  .simplifyingContent{
+    width: 60%;
+  }
+  .simplifyingImg{
+    width: 0%;
+  }
+
+  .simplifyingMain p{
+    font-size: 16px;
+  }
+
+  .simplifyingMain h1{
+    font-size: 25px;
+  }
+
+  .card {
+    width: 260px;
+    padding: 45px 20px;
+  }
+
+  .bannerMain {
+    width: 1000px;
+    align-items: center;
+    margin: auto;
+  }
+
+  .cardContainer {
+    width: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    row-gap: 25px;
+    box-shadow: none;
+    flex-wrap: wrap;
+    background-color: transparent;
+  }
+}
+
+@media all and (max-width: 1020px) {
+
+  .expertiseContentParent{
+    width: 890px;
+  }
+  .expertiseContentHeading h1{
+    font-size: 40px;
+  }
+  .expertiseContentHeading p{
+    font-size: 17px;
+  }
+
+
+  .sourceMain{
+    width: 960px;
+  }
+
+  .aspectsCard{
+    height: 340px;
+    width: 268px;
+  }
+  .aspectsCardParent{
+    width: 900px;
+    margin: auto;
+  }
+  .aspectsMain{
+    width: 900px;
+  }
+  .aspectsHeading h2{
+    font-size: 20px;
+  }
+
+  .memberCardImg{
+    height: 150px;
+    width:220px ;
+  }
+  .memberCardParent{
+    gap: 70px;
+  }
+  .memberMain{
+    width: 900px;
+  }
+   
+ .memberCardImg img{
+    width: 180px;
+  }
+
+  .simplifyingMain {
+    width: 820px;
+    padding: 0px;
+  }
+  .simplifyingContent{
+    width: 74%;
+  }
+  .simplifyingImg{
+    width: 5%;
+  }
+
+  .simplifyingDiv{
+    padding: 40px 0px;
+  }
+
+  .simplifyingMain p{
+    font-size: 16px;
+  }
+
+  .simplifyingMain h1{
+    font-size: 25px;
+  }
+ 
+  .card {
+    width: 260px;
+    padding: 42px 20px;
+  }
+
+  .bannerMain {
+    width: 900px;
+    align-items: center;
+    margin: auto;
+  }
+
+  .cardContainer {
+    width: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    row-gap: 25px;
+    box-shadow: none;
+    flex-wrap: wrap;
+    background-color: transparent;
+  }
+}
+
+@media all and (max-width: 960px) {
+  .sourceHeadingParent img {
+   margin-bottom: 20px;
+   width: 250px;
+  }
+
+  .sourceContentDate h1 {
+    font-size: 70px;
+  }
+  .sourceContentData{
+    width: 100%;
+  }
+  .sourceContentDate{
+    width: 100%;
+  }
+  /* .sourceContentDate h1{
+    width: 60px;
+  } */
+  .sourceContentDate h2{
+    width: 24px;
+  }
+
+  .sourceMain{
+    width: 95%;
+  }
+  .sourceContent{
+    flex-direction: column;
+  }
+
+  .sourceHeadingParent{
+    flex-direction: column;
+  }
+
+  .aspectsCardParent{
+    flex-direction: column;
+  }
+
+  .aspectsHeading h2{
+    font-size: 18px;
+    margin: auto;
+  }
+
+  .aspectsHeading h1{
+    font-size: 42px;
+  }
+
+  .aspectsCard{
+    height: 350px;
+    width: 288px;
+    margin-top: 40px;
+  }
+  .aspectsCard p{
+    font-size: 26px;
+  }
+  .aspectsCardParent{
+    width: 95%;
+    margin: auto;
+  }
+  .aspectsMain{
+    width: 95%;
+  }
+  .aspectsHeading h2{
+    font-size: 20px;
+  }
+
+  /* / */
+
+  .simplifyingMain{
+    width: 95%;
+  }
+
+  .simplifyingContent{
+    width: 100%;
+  }
+  .simplifyingImg{
+    width: 100%;
+  }
+
+  .simplifyingDiv{
+  flex-direction: column;
+  border: none;
+  gap: 30px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  }
+
+  .simplifyingMain p{
+    font-size: 19px;
+    font-weight: 500;
+  }
+
+  .simplifyingMain h1{
+    font-size: 34px;
+    font-weight: 700;
+  }
+
+  .card {
+    width: 260px;
+    padding: 36px 20px;
+  }
+
+  .bannerMain {
+    width: 860px;
+  }
+
+  .bannerHeading h1{
+    padding-top: 0px;
+    margin-top: -5px;
+    font-size: 50px;
+  }
+
+  .cardContainer {
+    width: 860px;
+  }
+}
+@media all and (max-width: 900px) {
+  .expertiseContentParent{
+    width: 95%;
+  }
+  .expertiseContentHeading h1{
+    font-size: 40px;
+  }
+  .expertiseContentHeading p{
+    font-size: 17px;
+  }
+
+
+  .memberCard p{
+    font-size: 21px;
+  }
+  .memberCardImg{
+    height: 110px;
+    width: 220px ;
+  }
+  .memberCardParent{
+    gap: 60px;
+  }
+  .memberCard{
+    text-align: left;
+    align-items: flex-start;
+  }
+  .memberMain{
+    width: 95%;
+  } 
+ .memberCardImg img{
+    width: 170px;
+  }
+
+  .card {
+    width: 220px;
+    padding: 36px 10px;
+    margin: 0px;
+  }
+
+  .bannerMain {
+    width: 800px;
+  }
+
+  .bookButton17 {
+    padding: 19px 40px;
+  }
+
+  .cardContainer {
+    width: 95%;
+  }
+}
+
+@media all and (max-width: 830px) {
+  .memberCardImg{
+    height: 100px;
+    width: 200px ;
+  }
+  .memberCardParent{
+    gap: 50px;
+  }
+
+ .memberCardImg img{
+    width: 170px;
+  }
+}
+
+@media all and (max-width: 790px) {
+  .knowButton{
+    padding: 15px 25px;
+    font-size: 15px;
+  }
+  .card {
+    width: 200px;
+    padding: 40px 10px;
+    margin: 0px;
+    height: 165px;
+  }
+
+  .bannerHeading h1{
+    padding-top: 0px;
+    margin-top: -3px;
+    font-size: 44px;
+  }
+
+  .card img {
+    width: 30%;
+  }
+  .title {
+    font-size: 10px;
+    width: 50%;
+  }
+
+  .bannerMain {
+    width: 700px;
+  }
+
+  .cardContainer {
+    width: 95%;
+  }
+
+  .bookButton17 {
+    padding: 19px 35px;
+    font-size: 13px;
+  }
+
+
+}
+
+@media all and (max-width: 730px) {
+  .memberCard p{
+    font-size: 16px;
+    padding-bottom: 30px;
+  }
+  .memberCardImg{
+    height: 90px;
+    width: 180px ;
+  }
+  .memberCardParent{
+    gap: 50px;
+  }
+
+ .memberCardImg img{
+    width: 160px;
+  }
+
+  .simplifyingMain p{
+    font-size: 19px;
+  }
+
+  .simplifyingMain h1{
+    font-size: 30px;
+  }
+
+  .simplifyingImg img{
+    width: 90px;
+  }
+
+  .card {
+    width: 150px;
+    padding: 40px 10px;
+    margin: 0px;
+    height: 140px;
+  }
+
+  /* .card img {
+    width: 30%;
+  }
+  .title {
+    font-size: 10px;
+    width: 50%;
+  } */
+
+  .bannerMain {
+    width: 580px;
+  }
+
+  .cardContainer {
+    width: 95%;
+  }
+}
+
+@media all and (max-width: 690px) {
+  .sourceContentDate h2{
+    font-size: 20px;
+  }
+
+  .sourceContentDate h1{
+    padding-bottom: 0px;
+  }
+
+  .sourceContentData h3{
+    font-size: 24px;
+  }
+  .memberCardImg{
+    height: 90px;
+    width: 160px ;
+  }
+
+  .memberCardParent{
+    gap: 30px;
+  }
+
+ .memberCardImg img{
+    width: 150px;
+  }
+}
+
+@media all and (max-width: 580px) {
+  .expertiseContentHeading h1{
+    font-size: 38px;
+    padding-bottom: 20px;
+  }
+  .expertiseContentHeading p{
+line-height: 30px;
+  }
+
+  .sourceHeadingParent h1 {
+    font-size: 40px;
+  }
+  .sourceHeadingParent p {
+    font-size: 18px;
+  }
+
+  .memberCardImg{
+    height: 65px;
+    width: 140px ;
+  }
+
+  .memberCardParent{
+    gap: 25px;
+  }
+
+ .memberCardImg img{
+    width: 110px;
+  }
+
+  .simplifyingMain h1{
+    font-size: 27px;
+  }
+
+  .card {
+    width: 140px;
+    padding: 40px 10px;
+    margin: 0px;
+    height: 120px;
+    text-align: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .bannerHeading h1{
+    padding-top: 0px;
+    margin-top: -3px;
+    font-size: 35px;
+  }
+
+  .bannerHeading h2 {
+    font-size: 14px;
+    padding-top: 20px;
+  }
+
+  /* .card img {
+    width: 30%;
+  } */
+  .title {
+    font-size: 9px;
+    width: 60%;
+  }
+
+  .bannerMain {
+    width: 500px;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cardContainer {
+    width: 95%;
+  }
+
+  .bookButton17 {
+    padding: 16px 30px;
+    font-size: 12px;
+  }
+}
+
+@media all and (max-width: 501px) {
+  .memberParent{
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+  .expertiseContentHeading p {
+    padding-bottom: 10px;
+  }
+
+  .expertiseContentHeading h1{
+    font-size: 30px;
+  }
+  .expertiseContentHeading p{
+    font-size: 15px;
+  }
+  .sourceHeadingParent h1 {
+    font-size: 38px;
+  }
+  .sourceHeadingParent p {
+    font-size: 14px;
+  }
+
+  .aspectsHeading h2{
+    font-size: 18px;
+    margin: auto;
+  }
+
+  .aspectsHeading h1{
+    font-size: 38px;
+  }
+
+  .aspectsCard{
+    height: 295px;
+    width: 225px;
+    margin: auto;
+    margin-top: 40px;
+  }
+
+  .aspectsCard h1{
+    font-size: 40px;
+  }
+
+  .aspectsCard p{
+    font-size: 18px;
+    /* padding-bottom: 5px; */
+  }
+
+  .memberCard p{
+    font-size: 12px;
+    padding-bottom: 25px;
+  }
+
+  .memberCardImg{
+    height: 60px;
+    width: 115px ;
+  }
+
+  .memberCardParent{
+    gap: 20px;
+  }
+
+ .memberCardImg img{
+    width: 95px;
+  }
+
+  .simplifyingMain h1{
+    font-size: 27px;
+  }
+
+  .simplifyingMain h1{
+    font-size: 24px;
+  }
+
+  .simplifyingMain p{
+    font-size: 17px;
+  }
+
+  .card {
+    width: 113px;
+    padding: 40px 10px;
+    margin: 0px;
+    height: 100px;
+    text-align: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .bannerHeading h1 {
+    font-size: 30px;
+  } 
+
+  .bannerHeading h2 {
+    font-size: 12px;
+    padding-top: 15px;
+  }
+
+  .card img {
+    width: 35%;
+  }
+  .title {
+    font-size: 8px;
+    width: 75%;
+  }
+
+  .bannerMain {
+    width: 400px;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cardContainer {
+    width: 95%;
+  }
+  .bookButton17 {
+    padding: 15px 30px;
+    font-size: 12px;
+    border-radius: 26px;
+  }
+
+}
+
+
+@media all and (max-width: 415px) {
+  .knowButton{
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+
+  .sourceContentData h3{
+    font-size: 20px;
+  }
+  .sourceContentData p{
+    font-size: 16px;
+  }
+  .sourceContentData button{
+    padding: 15px 25px;
+    font-size: 14px;
+  }
+
+  .aspectsHeading h2{
+    font-size: 17px;
+    width: 350px;
+    margin: auto;
+    line-height: 28px;
+  }
+
+  .aspectsHeading h1{
+    font-size: 38px;
+  }
+
+  .aspectsCard{
+    height: 280px;
+    width: 215px;
+    margin: auto;
+    margin-top: 40px;
+  }
+
+  .aspectsCard h1{
+    font-size: 40px;
+  }
+  
+  .aspectsCard p{
+    font-size: 16px;
+    /* padding-bottom: 5px; */
+    
+  }
+  .aspectsCard img{
+    margin-top: -25px;
+  }
+  
+  .memberCard p{
+    font-size: 10px;
+    padding-bottom: 20px;
+  }
+
+  .memberCardImg{
+    height: 60px;
+    width: 100px ;
+  }
+
+  .memberCardParent{
+    gap: 18px;
+  }
+
+ .memberCardImg img{
+    width: 80px;
+  }
+
+
+  .simplifyingMain h1{
+    font-size: 19px;
+  }
+
+  .simplifyingMain p{
+    font-size: 15px;
+    line-height: 26px;
+  }
+
+  .simplifyingImg img{
+    width: 80px;
+  }
+
+  .card {
+    width: 100px;
+    padding: 40px 10px;
+    margin: 0px;
+    height: 100px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .card img {
+    width: 38%;
+    align-items: center;
+    text-align: center;
+  }
+  .title {
+    font-size: 7px;
+    width: 77%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .bannerMain {
+    width: 370px;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cardContainer {
+    width: 95%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .bannerHeading h1 {
+    font-size: 28px;
+  } 
+
+  .bannerHeading h2 {
+    font-size: 10px;
+    padding-top: 10px;
+  }
+
+  .bookButton17 {
+    padding: 11px 26px;
+    font-size: 11px;
+    border-radius: 25px;
+  }
+
+}
+
+@media all and (max-width: 365px) {
+
+  .memberParent{
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .memberCard p{
+    font-size: 10px;
+    padding-bottom: 20px;
+  }
+
+  .memberCardImg{
+    height: 55px;
+    width: 90px ;
+  }
+
+  .memberCardParent{
+    gap: 15px;
+  }
+
+ .memberCardImg img{
+    width: 80px;
+  }
+
+
+  .simplifyingImg img{
+    width: 70px;
+  }
+
+  .card {
+    width: 90px;
+    padding: 40px 10px;
+    margin: 0px;
+    height: 90px;
+    text-align: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .card img {
+    width: 44%;
+  }
+  .title {
+    font-size: 6px;
+    width: 90%;
+  }
+
+  .bannerMain {
+    width: 338px;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cardContainer {
+    width: 95%;
+  }
+
+  .bannerHeading h1 {
+    font-size: 26px;
+  } 
+
+  .bannerHeading h2 {
+    font-size: 10px;
+    padding-top: 14px;
+  }
+  .bookButton17 {
+    padding: 11px 24px;
+    font-size: 10px;
+    border-radius: 24px;
+  }
+}
+
+@media all and (max-width: 335px) {
+  .sourceHeadingParent h1 {
+    font-size: 34px;
+  }
+  .card {
+    width: 110px;
+    padding: 40px 10px;
+    margin: 0px;
+    height: 110px;
+    text-align: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .card img {
+    width: 48%;
+  }
+  .title {
+    font-size: 7px;
+    width: 65%;
+  }
+
+  .bannerMain {
+    width: 315px;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cardContainer {
+    width: 95%;
+  }
+}
+
+@media all and (max-width: 320px) {
+  .card {
+    width: 90px;
+    padding: 40px 10px;
+    margin: 0px;
+    height: 90px;
+    text-align: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .card img {
+    width: 48%;
+  }
+  .title {
+    font-size: 7px;
+    width: 65%;
+  }
+
+  .bannerMain {
+    width: 280px;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cardContainer {
+    width: 95%;
+  }
+}
+

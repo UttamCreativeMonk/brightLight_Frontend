@@ -302,7 +302,7 @@ let HomePage = () => {
               </div>
             </Swiper>
           </div> */}
-          /
+          
         </div>
       </div>
 
@@ -340,7 +340,7 @@ let HomePage = () => {
       <div className={styles.sourceParent}>
         <div className={styles.sourceMain}>
           <div className={styles.sourceHeadingParent}>
-            <div>
+            <div  className={styles.sourceHeadingParentFirstDiv}>
               <img src={WhiteLogo} alt="ERR" />
             </div>
             <div>
