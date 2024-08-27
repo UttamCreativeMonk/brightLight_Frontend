@@ -22,6 +22,7 @@ import PaginationTable from "./sections/PaginationTable";
 import Footer1 from "./components/Footer1";
 import NotFoundPage from "./pages/NotFoundPage";
 import PreviousDrawHistory from "./pages/PreviousDrawHistory";
+import Loader from "./components/Loader";
 
 function App() {
   // useEffect(()=>{
@@ -32,16 +33,14 @@ function App() {
   // },[]);
   return (
     <div className="App">
-     {/* <PrivacyPolicy/> */}
+      {/* <PrivacyPolicy/> */}
       {/* <TermsAndConditions/> */}
-
-   
 
       {/* <Navbar /> */}
       {/* <Contact/> */}
       {/* <About/> */}
       {/* <PermanentResidency/> */}
- 
+
       {/* <Testimonials/> */}
       {/* <FederalSkilled/> */}
       {/* <BCPNPCalculator/> */}
@@ -51,13 +50,13 @@ function App() {
       {/* <PaginationTable/> */}
       {/* <HomePage/> */}
       {/* <Footer/> */}
-    {/* <OurProcess/> */}
+      {/* <OurProcess/> */}
       {/* <CategoryBased/> */}
       {/* <Footer /> */}
       {/* <NotFoundPage/> */}
       {/* <PreviousDrawHistory/> */}
-
-      <AllRoutes/>
+      <Loader />
+      <AllRoutes />
 
       {/* <Footer1/> */}
     </div>

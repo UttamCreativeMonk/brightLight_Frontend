@@ -1,12 +1,11 @@
 .bannerParent {
   background-image: url("../assets/canadaBlue.jpeg");
   width: 100%;
-  padding: 150px 0px;
-  padding-top: 230px;
+  padding: 230px 0px; 
 }
 
 .bannerHeading {
-  width: 1440px;
+  max-width: 1440px;
   margin: auto;
   text-align: center;
 }
@@ -15,6 +14,7 @@
   color: white;
   font-size: 50px;
 }
+
 .bannerHeading p {
   color: white;
   font-size: 35px;
@@ -38,54 +38,39 @@
   display: flex;
   align-items: stretch;
   justify-content: space-between;
-  width: 1440px;
-  margin: auto;
-  margin-top: 100px;
+  max-width: 1440px; 
+  margin: 100px auto 0 auto; 
 }
 
-.firstSection{
+.firstSection {
   width: 66%;
 }
 
-.pointsSection{
+.pointsSection {
   margin: 50px auto;
   width: 32%;
+  position: sticky;
+  top: 0;
 }
 
-.container {
-  /* width: 1440px; */
-  margin: 50px auto;
-  align-items: center;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 20px;
-  background-color: #fff;
-}
-
-.pointContainer{
+.pointContainer {
   height: 300px;
-  width: 420px;
+  width: 100%;
   margin: auto;
-  align-items: center;
   padding: 30px 0px;
-  /* border: 1px solid #ddd; */
   border-radius: 20px;
   background-color: #132f46;
   color: white;
   text-align: center;
-  align-items: center;
+  z-index: 50;
 }
 
-.pointContainer h2{
-  width: 420px;
-  color: white;
+.pointContainer h2 {
   font-size: 50px;
-  text-align: center;
-  align-items: center;
-  
+  color: white;
 }
 
-.points h1{
+.points h1 {
   font-size: 60px;
   color: white;
 }
@@ -94,19 +79,24 @@
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
-  width: 900px;
+  max-width: 900px; 
 }
 
 .header h4 {
   color: #132f46;
-  margin-top: 20px;
-  margin-bottom: 30px;
+  margin: 20px 0 30px 0; 
 }
 
-.header h5{
+.header h5 {
   margin-top: 20px;
   color: #4d4d4d;
   font-size: 24px;
+}
+
+.divPofSeven p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #4d4d4d;
 }
 
 .radioGroup {
@@ -114,13 +104,29 @@
   flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 20px;
-  width: 900px;
 }
 
 .radioItem {
   width: 45%;
-  margin-top: 30px;
-  margin-bottom: 50px;
+  margin: 30px 0 50px 0;
+}
+
+.enterWageInput {
+  width: 120px;
+  font-size: 11px;
+  padding: 5px 10px;
+  text-decoration: none;
+  border: none;
+  border: 0.5px solid gray;
+  border-radius: 4px;
+  align-items: center;
+  text-align: center;
+  /* margin-top: -40px; */
+}
+.enterWageInput:focus {
+  text-decoration: none;
+  outline: none;
+  border: 0.5px solid gray;
 }
 
 .points {
@@ -132,4 +138,289 @@
   margin-left: 10px;
   width: 50px;
   text-align: center;
+}
+
+.container {
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background-color: #fff;
+}
+
+
+@media all and (max-width: 1440px) {
+  .containerParent{
+    width: 95%;
+  }
+
+}
+
+@media all and (max-width: 1130px) {
+  .bannerHeading{
+    width: 95%;
+  }
+}
+
+@media all and (max-width: 1030px) {
+  .containerParent {
+    flex-direction: column;
+  }
+  .firstSection {
+    width: 95%;
+    margin: auto;
+  }
+  .radioItem {
+    width: 30%;
+    margin: 30px 0 50px 0;
+  }
+
+  .divPofSeven p {
+    font-size: 14px;
+  }
+  .pointsSection {
+    width: 95%;
+  }
+  .pointContainer {
+    padding: 30px 50px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .pointContainer h2{
+    font-size: 25px;
+  }
+  .points h1{
+    font-size: 40px;
+  }
+  .pointContainer{
+    width: auto;
+  }
+  .points{
+    width: auto;
+  }
+}
+
+@media all and (max-width: 980px) {
+
+  .bannerHeading h1{
+    font-size: 35px;
+  }
+
+  .bannerHeading p{
+    font-size: 20px;
+  }
+
+  .divPofSeven {
+    width: 90%;
+    margin-top: 20px;
+  }
+
+  .divPofSeven p {
+    font-size: 12px;
+  }
+
+  .radioGroup {
+    font-size: 15px;
+  }
+  .header h5 {
+    font-size: 20px;
+  }
+  .radioItem {
+    margin: 30px 0 20px 0;
+  }
+}
+
+@media all and (max-width: 780px) {
+  .bannerParent{
+    padding-top: 150px;
+    padding-bottom: 110px;
+  }
+  .radioGroup {
+    font-size: 14px;
+  }
+  .header h5 {
+    font-size: 16px;
+  }
+  .header h4 {
+    font-size: 22px;
+  }
+  .radioItem {
+    margin: 24px 0 20px 0;
+  }
+}
+
+@media all and (max-width: 680px) {
+
+
+  /* .bannerHeading h1{
+    font-size: 30px;
+  } */
+
+  .bannerHeading p{
+    line-height: 34px;
+    padding-top: 60px;
+  }
+
+  .pointContainer{
+    align-items: center;
+  }
+  .pointContainer h2{
+    font-size: 20px;
+    margin-bottom: 0px;
+  }
+  .points h1{
+    font-size: 30px;
+  }
+  
+  .radioGroup {
+    font-size: 12px;
+    margin-bottom: 2px;
+  }
+
+  .header h5 {
+    font-size: 14px;
+  }
+  .header h4 {
+    font-size: 20px;
+  }
+  .radioItem {
+    margin: 24px 0 20px 0;
+  }
+  .divPofSeven {
+    font-size: 11px;
+  }
+}
+
+@media all and (max-width: 560px) {
+  .divPofSeven {
+    font-size: 10px;
+  }
+  .divPofSeven p {
+    font-size: 10px;
+  }
+  .radioGroup {
+    font-size: 12px;
+    margin-bottom: 0px;
+  }
+  .header h5 {
+    font-size: 13px;
+  }
+  .header h4 {
+    font-size: 18px;
+  }
+  .radioItem {
+    margin: 22px 0 16px 0;
+  }
+}
+
+@media all and (max-width: 460px) {
+
+  .bannerParent{
+    padding-top: 150px;
+    padding-bottom: 80px;
+  }
+  .bannerHeading h1{
+    font-size: 30px;
+  }
+
+  .bannerHeading p{
+    font-size: 16px;
+    padding-top: 40px;
+  }
+
+
+  .pointContainer{
+    padding: 20px 23px;
+    align-items: center;
+    height: 70px;
+  }
+  .pointContainer h2{
+    font-size: 14px;
+  }
+  .points h1{
+    font-size: 22px;
+  }
+  .divPofSeven p {
+    font-size: 9px;
+  }
+  .radioGroup {
+    font-size: 10px;
+  }
+  .header h5 {
+    font-size: 12px;
+  }
+  .header h4 {
+    font-size: 14px;
+  }
+  .radioItem {
+    margin: 20px 0 16px 0;
+  }
+  /* .headerLineParent input{
+    width: 50px;
+  } */
+  .enterWageInput {
+    width: 80px;
+    font-size: 11px;
+    padding: 1px 10px;
+    text-decoration: none;
+    border: none;
+    border: 0.5px solid gray;
+    border-radius: 4px;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .enterWageInput:focus {
+    text-decoration: none;
+    outline: none;
+    border: 0.5px solid gray;
+  }
+  .radioItem input {
+    width: 8px;
+  }
+
+  .headingNumbers {
+    font-size: 14px;
+    background-color: #132f46;
+    width: 20px;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media all and (max-width: 370px) {
+  .pointContainer{
+    padding: 10px 23px;
+  }
+  .radioGroup {
+    font-size: 9px;
+  }
+  .header h5 {
+    font-size: 11px;
+  }
+  .header h4 {
+    font-size: 12px;
+  }
+  .radioItem {
+    margin: 10px 0 16px 0;
+  }
+}
+
+@media all and (max-width: 355px) {
+  .bannerParent{
+    padding-top: 150px;
+    padding-bottom: 70px;
+  }
+  .bannerHeading h1{
+    font-size: 26px;
+  }
+  .divPofSeven p {
+    font-size: 8px;
+  }
 }

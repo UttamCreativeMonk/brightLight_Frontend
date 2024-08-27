@@ -239,7 +239,7 @@ const BCPNPCalculator = () => {
 
   return (
     <>
-    <Navbar1/>
+      <Navbar1 />
       {/* Section 1: Work Experience in B.C. Job Offer */}
       <div className={styles.bannerParent}>
         <div className={styles.bannerHeading}>
@@ -257,7 +257,7 @@ const BCPNPCalculator = () => {
             <div className={styles.header}>
               <div className={styles.headerLineParent}>
                 {" "}
-                <div>1</div>
+                <div className={styles.headingNumbers}>1</div>
                 <p></p>{" "}
               </div>
               <h5>
@@ -354,7 +354,7 @@ const BCPNPCalculator = () => {
             <div className={styles.header}>
               <div className={styles.headerLineParent}>
                 {" "}
-                <div>2</div>
+                <div className={styles.headingNumbers}>2</div>
                 <p></p>{" "}
               </div>
               <h4> ADDITIONAL POINTS FOR WORK EXPERIENCE</h4>
@@ -397,7 +397,7 @@ const BCPNPCalculator = () => {
             <div className={styles.header}>
               <div className={styles.headerLineParent}>
                 {" "}
-                <div>3</div>
+                <div className={styles.headingNumbers}>3</div>
                 <p></p>{" "}
               </div>
               <h5>
@@ -439,7 +439,7 @@ const BCPNPCalculator = () => {
           <div className={styles.container}>
             <div className={styles.headerLineParent}>
               {" "}
-              <div>4</div>
+              <div className={styles.headingNumbers}>4</div>
               <p></p>{" "}
             </div>
             <div className={styles.header}>
@@ -534,7 +534,7 @@ const BCPNPCalculator = () => {
             <div className={styles.header}>
               <div className={styles.headerLineParent}>
                 {" "}
-                <div>5</div>
+                <div className={styles.headingNumbers}>5</div>
                 <p></p>{" "}
               </div>
               <h4>ADDITIONAL POINT FOR EDUCATION IN B.C. OR CANADA</h4>
@@ -574,7 +574,7 @@ const BCPNPCalculator = () => {
             <div className={styles.header}>
               <div className={styles.headerLineParent}>
                 {" "}
-                <div>6</div>
+                <div className={styles.headingNumbers}>6</div>
                 <p></p>{" "}
               </div>
               <h4>ADDITIONAL POINT FOR EDUCATION IN B.C. OR CANADA</h4>
@@ -617,7 +617,7 @@ const BCPNPCalculator = () => {
             <div className={styles.header}>
               <div className={styles.headerLineParent}>
                 {" "}
-                <div>7</div>
+                <div className={styles.headingNumbers}>7</div>
                 <p></p>{" "}
               </div>
               <h4>ADDITIONAL POINT FOR PROFFESIONAL DESIGNATION IN B.C.</h4>
@@ -650,10 +650,11 @@ const BCPNPCalculator = () => {
             <div className={styles.points}>
               {/* Points <input type="text" value={occupationPoints} readOnly /> */}
             </div>
-            <h5>
+            <div className={styles.divPofSeven}>
+            <p>
               Any Trade (Valid trade certificate issued by Skilled TradesBC or
               trades apprentices registered with Skilled Trades BC)
-            </h5>
+            </p>
             <p>NOC 33100 (Dental Assistants)</p>
             <p>NOC 32111 (Dental Hygienists)</p>
             <p>NOC 32112 (Dental Technicians)</p>
@@ -667,6 +668,7 @@ const BCPNPCalculator = () => {
               acupuncturists)
             </p>
             <p>NOC 32104 (Veterinary technicians)</p>
+            </div>
           </div>
 
           {/* Section 8: Language Points */}
@@ -674,7 +676,7 @@ const BCPNPCalculator = () => {
             <div className={styles.header}>
               <div className={styles.headerLineParent}>
                 {" "}
-                <div>8</div>
+                <div className={styles.headingNumbers}>8</div>
                 <p></p>{" "}
               </div>
               <h5> Language Points (Canadian Language Benchmark Level):</h5>
@@ -790,7 +792,7 @@ const BCPNPCalculator = () => {
             <div className={styles.header}>
               <div className={styles.headerLineParent}>
                 {" "}
-                <div>9</div>
+                <div className={styles.headingNumbers}>9</div>
                 <p></p>{" "}
               </div>
               <h4>ADDITIONAL POINT FOR LANGUAGE PROFICIENCY</h4>
@@ -833,14 +835,14 @@ const BCPNPCalculator = () => {
             <div className={styles.header}>
               <div className={styles.headerLineParent}>
                 {" "}
-                <div>10</div>
+                <div className={styles.headingNumbers}>10</div>
                 <p></p>{" "}
               </div>
               <h5>
                 Hourly Wage of the B.C. Job Offer: ${" "}
-                <input
+                <input className={styles.enterWageInput}
                   type="number"
-                  placeholder="Enter wage"
+                  // placeholder="Enter wage"
                   onChange={handleHourlyWageChange}
                 />
               </h5>
@@ -855,7 +857,7 @@ const BCPNPCalculator = () => {
           <div className={styles.container}>
             <div className={styles.headerLineParent}>
               {" "}
-              <div>11</div>
+              <div className={styles.headingNumbers}>11</div>
               <p></p>{" "}
             </div>
             <div className={styles.header}>
@@ -906,7 +908,7 @@ const BCPNPCalculator = () => {
             <div className={styles.header}>
               <div className={styles.headerLineParent}>
                 {" "}
-                <div>12</div>
+                <div className={styles.headingNumbers}>12</div>
                 <p></p>{" "}
               </div>
               <h5>
@@ -963,7 +965,7 @@ const BCPNPCalculator = () => {
         {/* Total Points */}
         <div className={styles.pointsSection}>
           <div className={styles.pointContainer}>
-            <div className={styles.header}>
+            <div className={styles.headerPoints}>
               {" "}
               <h2>Total Points under B.C PNP</h2>
             </div>
@@ -987,7 +989,7 @@ const BCPNPCalculator = () => {
         </div>
         {/* // */}
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };

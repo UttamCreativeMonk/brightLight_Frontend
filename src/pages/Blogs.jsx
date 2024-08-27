@@ -51,12 +51,9 @@ let Blogs = () => {
       <div className={styles.blogsTopSection}>
         <img src={brightSource} />
         <h3>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-          corporis sit repudiandae nostrum ipsum saepe fugit possimus eos
-          doloribus? Ad iusto quis voluptates nobis veritatis perferendis libero
-          sint velit? Excepturi dignissimos, beatae debitis velit unde dicta
-          repellat quia officia fugit quidem? Debitis dolores doloribus cumque
-          blanditiis nesciunt ullam quibusdam asperiores.
+          We're your go-to spot for easy-to-digest blogs about Canadian
+          immigration. Think of us as your helpful guide, breaking down the ins
+          and outs of moving to Canada with simple words and stories.
         </h3>
       </div>
       <div className={styles.searchSection}>

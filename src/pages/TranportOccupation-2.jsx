@@ -158,8 +158,6 @@ let TransportOccupationTwo = () => {
       </div>
 
 
-
-
       <div className={styles.contactUpperParent}>
         <div className={styles.contactUpperMain}>
           <p>
@@ -200,9 +198,9 @@ let TransportOccupationTwo = () => {
       </div>
 
 
-      <BestChoice/>
+      {/* <BestChoice/>
       <Testimonials/>
-      <FAQ/>
+      <FAQ/> */}
 
 <Footer/>
     </>

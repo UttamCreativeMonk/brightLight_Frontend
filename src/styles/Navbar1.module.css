@@ -8,7 +8,13 @@
   background-color: #132f46;
   font-family: "Madera-Regular.tff", sans-serif;
   position: relative;
+  font-size: 15px;
 }
+
+.navbar a:hover{
+  text-decoration: none;
+}
+
 .firstNavbar {
   width: 1440px;
   /* margin: auto; */

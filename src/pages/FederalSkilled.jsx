@@ -189,7 +189,7 @@ const FederalSkilled = () => {
         <div className={styles.header}>
           <div className={styles.headerLineParent}>
             <div>1</div>
-            <p></p> <h3>First Official Language (Max. 24 Points)</h3>
+            <p className={styles.headerLineParentPara}></p> <h3>First Official Language (Max. 24 Points)</h3>
           </div>
           {/* First Official Language (Max. 24 Points) */}
         </div>
@@ -403,7 +403,7 @@ const FederalSkilled = () => {
         <div className={styles.header}>
           <div className={styles.headerLineParent}>
             <div>2</div>
-            <p></p> <h3>Do you have at least CLB 5 in all abilities?</h3>
+            <p className={styles.headerLineParentPara}></p> <h3>Do you have at least CLB 5 in all abilities?</h3>
           </div>
           {/* 2. Do you have at least CLB 5 in all abilities? */}
         </div>
@@ -416,7 +416,7 @@ const FederalSkilled = () => {
                 value="yes"
                 onChange={handleClb5Change}
               />{" "}
-              Yes (4 points)
+              Yes 
             </label>
           </div>
           <div className={styles.radioItem}>
@@ -427,7 +427,7 @@ const FederalSkilled = () => {
                 value="no"
                 onChange={handleClb5Change}
               />{" "}
-              No (1 point)
+              No 
             </label>
           </div>
         </div>
@@ -539,7 +539,7 @@ const FederalSkilled = () => {
             <div>4</div>
             <p></p>
           </div>
-          <h4> Age (Max. 12 Points)</h4>
+          <h4> Age </h4>
         </div>
         <select className={styles.dropdown} onChange={handleAgeChange}>
           <option value="lessThan18">Less than 18 years</option>
@@ -570,7 +570,7 @@ const FederalSkilled = () => {
                 value="yes"
                 onChange={handleEmploymentChange}
               />{" "}
-              Yes (10 points)
+              Yes 
             </label>
           </div>
           <div className={styles.radioItem}>
@@ -581,7 +581,7 @@ const FederalSkilled = () => {
                 value="no"
                 onChange={handleEmploymentChange}
               />{" "}
-              No (0 points)
+              No 
             </label>
           </div>
         </div>
@@ -596,7 +596,7 @@ const FederalSkilled = () => {
             <div>6</div>
             <p></p>
           </div>
-          <h4> Work Experience (Max. 15 Points)</h4>
+          <h4> Work Experience</h4>
         </div>
         <div className={styles.radioGroup}>
           <div className={styles.radioItem}>
@@ -607,7 +607,7 @@ const FederalSkilled = () => {
                 value="1Year"
                 onChange={handleExperienceChange}
               />{" "}
-              1 Year (9 points)
+              1 Year 
             </label>
           </div>
           <div className={styles.radioItem}>
@@ -618,7 +618,7 @@ const FederalSkilled = () => {
                 value="2-3Years"
                 onChange={handleExperienceChange}
               />{" "}
-              2-3 Years (11 points)
+              2-3 Years 
             </label>
           </div>
           <div className={styles.radioItem}>
@@ -629,7 +629,7 @@ const FederalSkilled = () => {
                 value="4-5Years"
                 onChange={handleExperienceChange}
               />{" "}
-              4-5 Years (13 points)
+              4-5 Years 
             </label>
           </div>
           <div className={styles.radioItem}>
@@ -640,7 +640,7 @@ const FederalSkilled = () => {
                 value="6Years"
                 onChange={handleExperienceChange}
               />{" "}
-              6 Years or More (15 points)
+              6 Years or More 
             </label>
           </div>
         </div>
@@ -667,7 +667,7 @@ const FederalSkilled = () => {
                 onChange={handleAdaptabilityChange}
               />{" "}
               Your accompanying spouse/common-law partner's language level
-              (minimum CLB 4) - 5 Points
+              (minimum CLB 4) 
             </label>
           </div>
           <div className={styles.radioItem2}>
@@ -679,7 +679,7 @@ const FederalSkilled = () => {
                 onChange={handleAdaptabilityChange}
               />{" "}
               Your previous study in Canada (at least 2 academic years of
-              full-time study) - 5 Points
+              full-time study)
             </label>
           </div>
           <div className={styles.radioItem2}>
@@ -691,7 +691,7 @@ const FederalSkilled = () => {
                 onChange={handleAdaptabilityChange}
               />{" "}
               Your spouse/common-law partner's previous study in Canada (at
-              least 2 academic years of full-time study) - 5 Points
+              least 2 academic years of full-time study)
             </label>
           </div>
           <div className={styles.radioItem2}>
@@ -703,7 +703,7 @@ const FederalSkilled = () => {
                 onChange={handleAdaptabilityChange}
               />{" "}
               Your past work experience in Canada (at least one year in NOC 0,
-              A, B) - 5 Points
+              A, B) 
             </label>
           </div>
           <div className={styles.radioItem2}>
@@ -715,7 +715,7 @@ const FederalSkilled = () => {
                 onChange={handleAdaptabilityChange}
               />{" "}
               Your spouse/common-law partner's previous work experience in
-              Canada (at least one year in NOC 0, A, B) - 5 Points
+              Canada (at least one year in NOC 0, A, B)
             </label>
           </div>
           <div className={styles.radioItem2}>
@@ -726,7 +726,7 @@ const FederalSkilled = () => {
                 value="arrangedEmployment"
                 onChange={handleAdaptabilityChange}
               />{" "}
-              Arranged Employment in Canada - 10 Points
+              Arranged Employment in Canada
             </label>
           </div>
           <div className={styles.radioItem2}>
@@ -738,7 +738,7 @@ const FederalSkilled = () => {
                 onChange={handleAdaptabilityChange}
               />{" "}
               Relatives in Canada (parent/grandparent, brother/sister,
-              aunt/uncle, or niece/nephew) - 5 Points
+              aunt/uncle, or niece/nephew) 
             </label>
           </div>
         </div>
@@ -750,7 +750,9 @@ const FederalSkilled = () => {
 
       <div className={styles.pointsSection}> 
       <div className={styles.pointContainer}>
-        <div className={styles.header}><h2>Total Points under fedral Skilled Worker Program</h2></div>
+        <div className={styles.header}>
+          <h2>Total Points under fedral Skilled Worker Program</h2>
+          </div>
         <div className={styles.points}>
             <h1>
             {totalPoints}
