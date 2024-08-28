@@ -284,3 +284,321 @@ color: #132f46;
   height: 300px;
   width: 450px;
 }
+
+
+@media (max-width: 1080px) {
+
+  .bannerHeadingRotateParent {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 50px;
+    position: relative; 
+    width: 100%;
+  }
+
+  .bannerHeadingRotate {
+    transform: none;
+    border: none;
+    padding-bottom: 0;
+    font-size: 24px; 
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .bannerHeadingRotate::after {
+    content: '\25BC';
+    font-size: 16px;
+    margin-left: 10px;
+    transition: transform 0.3s;
+  }
+
+
+  .bannerHeadingRotateParent.active .bannerHeadingRotate::after {
+    transform: rotate(180deg);
+  }
+
+  .bannerHeadingRotatePara {
+    margin-left: 0;
+    display: none; 
+    background-color: #f7f7f7;
+    padding: 10px;
+    position: absolute; 
+    top: 100%; 
+    left: 0;
+    width: 100%; 
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding-top: 25px 0px;
+  }
+
+  .bannerHeadingRotateParent.active .bannerHeadingRotatePara {
+    display: block; 
+  }
+
+  .bannerHeadingRotatePara p {
+    font-size: 18px;
+    padding: 10px 0;
+    color: #00273f;
+    align-items: center;
+    text-align: center;
+  }
+
+}
+
+@media (max-width: 1450px) {
+.banner{
+  width: 1350px;
+}
+.canadianParent{
+  width: 1350px;
+}
+.pathway{
+  width: 1350px;
+}
+}
+
+@media all and (max-width: 1360px) {
+  .banner {
+    width: 1240px;
+  }
+
+  .canadianParent {
+    width: 1240px;
+  }
+  .pathway{
+    width: 1240px;
+  }
+}
+
+@media all and (max-width: 1260px) {
+  .banner {
+    width: 1140px;
+  }
+
+  .canadianParent {
+    width: 1140px;
+  }
+  .pathway{
+    width: 1140px;
+  }
+  .pathwayCardsParent{
+    gap: 40px;
+  }
+}
+
+@media all and (max-width: 1190px) {
+  .banner {
+    width: 1040px;
+  }
+
+  .canadianParent {
+    width: 1040px;
+  }
+  .pathway{
+    width: 1040px;
+  }
+}
+@media all and (max-width: 1090px) {
+  .banner {
+    width: 940px;
+  }
+
+  .canadianParent {
+    width: 940px;
+  }
+  .pathway{
+    width: 940px;
+  }
+}
+
+@media all and (max-width: 1000px) {
+  .banner {
+    width: 800px;
+  }
+
+  .bannerHeading p {
+    width: 100%;
+  }
+
+  .canadianParent {
+    width: 800px;
+    flex-direction: column-reverse;
+  }
+
+  .canadianImg {
+    width: 100%;
+    margin-bottom: 80px;
+  }
+  .canadianContent {
+    width: 100%;
+    text-align: center;
+  }
+  .pathwayCardsParent{
+   display: grid;
+   grid-template-columns: repeat(2,44%);
+  }
+
+  .pathwayCards{
+    height: auto;
+  }
+}
+
+@media all and (max-width: 840px) {
+  .banner {
+    width: 95%;
+  }
+
+  .bannerHeading p{
+    font-size: 20px;
+  }
+  .bannerHeadingRotate h3{
+    font-size: 20px;
+  }
+
+  .canadianParent {
+    width: 95%;
+  }
+
+  .canadianImg {
+    width: 100%;
+    margin-bottom: 80px;
+  }
+  .canadianContent {
+    width: 100%;
+  }
+  .pathway{
+    width: 95%;
+  }
+}
+
+@media all and (max-width: 630px) {
+  .pathwayCards{
+    width: 95%;
+    height: auto;
+  }
+  .pathwayCardsParent{
+    gap: 20px;
+  }
+}
+
+
+@media all and (max-width: 540px) {
+  .pathwayCards{
+    width: 90%;
+    height: 210px;
+    padding: 33px 20px;
+  }
+  .pathwayCardsParent{
+    gap: 15px;
+  }
+  .pathwayCards img{
+    width: 84px;
+    height: 84px;
+  }
+  .pathwayCards h2{
+    font-size: 18px;
+  }
+
+}
+
+
+@media all and (max-width: 490px) {
+  .pathwayCards{
+    width: 85%;
+    height: 180px;
+    padding: 28px 20px;
+  }
+  .pathwayCardsParent{
+    gap: 13px;
+  }
+  .pathwayCards img{
+    width: 65px;
+    height: 65px;
+  }
+  .pathwayCards h2{
+    font-size: 16px;
+  }
+  .pathwayHeading h1{
+    font-size: 38px;
+  }
+  .canadianContent p{
+    font-size: 16px;
+  }
+  .bannerHeading h1{
+    font-size: 36px;
+  }
+  .bannerHeadingRotate h3{
+    font-size: 18px;
+  }
+}
+
+@media all and (max-width: 445px) {
+  .bannerHeading p{
+    font-size: 17px;
+  }
+  .pathwayCards{
+    width: 170px;
+    height: 170px;
+    padding: 26px 20px;
+  }
+  .pathwayCardsParent{
+    gap: 13px;
+  }
+  .pathwayCards img{
+    width: 60px;
+    height: 60px;
+  }
+  .pathwayCards h2{
+    font-size: 14px;
+  }
+}
+
+
+@media all and (max-width: 395px) {
+  .pathwayHeading h1{
+    font-size: 26px;
+  }
+  .pathwayCards{
+    width: 150px;
+    height: 150px;
+    padding: 24px 20px;
+  }
+  
+  .pathwayCardsParent{
+    gap: 11px;
+  }
+  .pathwayCards img{
+    width: 60px;
+    height: 60px;
+  }
+  .pathwayCards h2{
+    font-size: 13px;
+    margin-top: 20px;
+  }
+
+}
+
+@media all and (max-width: 330px){
+  .pathwayCardsParent{
+    display: flex;
+  flex-direction: column;
+   }
+
+   .pathwayCards{
+    width: 60%;
+    height: 180px;
+    padding: 30px 20px;
+    margin-top: 10px;
+  }
+  .pathwayCards img{
+    width: 75px;
+    height: 75px;
+  }
+  .pathwayCards h2{
+    font-size: 16px;
+  }
+
+}

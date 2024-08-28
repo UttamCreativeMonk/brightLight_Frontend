@@ -52,11 +52,11 @@ const Navbar1 = (props) => {
                 onMouseEnter={() => setShowAboutDropdown(true)}
                 onMouseLeave={() => setShowAboutDropdown(false)}
               >
-                <a href="/">Link 1</a>
-                <a href="/">Link 2</a>
-                <a href="/">Link 3</a>
-                <a href="/">Link 4</a>
-                <a href="/">Link 5</a>
+                <a href="/permanent-residency">Permanent Residency</a>
+                <a href="/clb-ilets-calculator">CLB ILETS Calculator</a>
+                <a href="/category-based">Category Based</a>
+                <a href="/previous-draw-history">Previous Draw History</a>
+                {/* <a href="/">Link 5</a> */}
               </div>
             </div>
             <a href="/contact-us">CONTACT</a>

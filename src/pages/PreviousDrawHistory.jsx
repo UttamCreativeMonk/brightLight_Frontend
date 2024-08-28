@@ -1,26 +1,3 @@
-// import React from "react";
-// import styles from "../styles/PreviousDrawHistory.module.css";
-// import Navbar1 from "../components/Navbar1";
-// import Footer from "../components/Footer";
-
-// let PreviousDrawHistory =()=>{
-//     return(
-//         <>
-
-
-
-
-
-//         <Footer/>
-//         </>
-//     )
-// }
-
-// export default PreviousDrawHistory;
-
-
-
-
 import React, { useState } from "react";
 import styles from "../styles/PreviousDrawHistory.module.css";
 import Navbar1 from "../components/Navbar1";
@@ -33,17 +10,17 @@ const PreviousDrawHistory = () => {
   const itemsPerPage = 5;
 
   const dummyData = [
-    { number: 101, occupation: "Contractors and supervisors, landscaping...", nocCode: "7851", teerCategory: "7851", roundType: "General" },
-    { number: 102, occupation: "Agricultural service contractors...", nocCode: "254548", teerCategory: "254548", roundType: "General" },
-    { number: 103, occupation: "Butchers - retail and wholesale", nocCode: "6554", teerCategory: "6554", roundType: "Special" },
-    { number: 104, occupation: "April 1, 2024", nocCode: "2487", teerCategory: "2487", roundType: "General" },
-    { number: 105, occupation: "April 1, 2024", nocCode: "298512", teerCategory: "298512", roundType: "Special" },
-    { number: 106, occupation: "April 1, 2024", nocCode: "8445", teerCategory: "8445", roundType: "General" },
-    { number: 107, occupation: "April 1, 2024", nocCode: "1548", teerCategory: "1548", roundType: "Special" },
-    { number: 108, occupation: "April 1, 2024", nocCode: "21582", teerCategory: "21582", roundType: "General" },
-    { number: 109, occupation: "April 1, 2024", nocCode: "545", teerCategory: "545", roundType: "Special" },
-    { number: 110, occupation: "April 1, 2024", nocCode: "2324", teerCategory: "2324", roundType: "General" },
-    { number: 111, occupation: "April 1, 2024", nocCode: "884", teerCategory: "884", roundType: "Special" },
+    { number: 101, date: "March 30,2024", occupation: "Contractors and supervisors, landscaping...", nocCode: "7851", teerCategory: "7851", roundType: "General" },
+    { number: 102, date: "March 19,2024", occupation: "Agricultural service contractors...", nocCode: "254548", teerCategory: "254548", roundType: "General" },
+    { number: 103, date: "March 18,2024", occupation: "Butchers - retail and wholesale", nocCode: "6554", teerCategory: "6554", roundType: "Special" },
+    { number: 104, date: "March 17,2024", occupation: "Supervisors, assembly and fabrication", nocCode: "2487", teerCategory: "2487", roundType: "General" },
+    { number: 105, date: "March 16,2024", occupation: "Motor vehicle body repairers", nocCode: "298512", teerCategory: "298512", roundType: "Special" },
+    { number: 106, date: "March 15,2024", occupation: "Fish plant workers", nocCode: "8445", teerCategory: "8445", roundType: "General" },
+    { number: 107, date: "March 13,2024", occupation: "Textile and garment production workers", nocCode: "1548", teerCategory: "1548", roundType: "Special" },
+    { number: 108, date: "March 11,2024", occupation: "Metalworking machine operators", nocCode: "21582", teerCategory: "21582", roundType: "General" },
+    { number: 109, date: "March 10,2024", occupation: "Industrial painters and coaters", nocCode: "545", teerCategory: "545", roundType: "Special" },
+    { number: 110, date: "March 8,2024", occupation: "Woodworking machine operators", nocCode: "2324", teerCategory: "2324", roundType: "General" },
+    { number: 111, date: "March 7,2024", occupation: "Other products assemblers, finishers", nocCode: "884", teerCategory: "884", roundType: "Special" },
   ];
 
   const totalPages = Math.ceil(dummyData.length / itemsPerPage);
@@ -60,18 +37,26 @@ const PreviousDrawHistory = () => {
   };
 
   const handleSortChange = (key) => {
-    const direction = sortConfig.direction === 'asc' ? 'desc' : 'asc';
+    const direction = sortConfig.key === key && sortConfig.direction === 'asc' ? 'desc' : 'asc';
     setSortConfig({ key, direction });
   };
 
   const sortedData = [...dummyData].sort((a, b) => {
-    if (a[sortConfig.key] < b[sortConfig.key]) {
-      return sortConfig.direction === 'asc' ? -1 : 1;
+    if (sortConfig.key === 'date') {
+      const dateA = new Date(a.date);
+      const dateB = new Date(b.date);
+      if (dateA < dateB) return sortConfig.direction === 'asc' ? -1 : 1;
+      if (dateA > dateB) return sortConfig.direction === 'asc' ? 1 : -1;
+      return 0;
+    } else {
+      if (a[sortConfig.key] < b[sortConfig.key]) {
+        return sortConfig.direction === 'asc' ? -1 : 1;
+      }
+      if (a[sortConfig.key] > b[sortConfig.key]) {
+        return sortConfig.direction === 'asc' ? 1 : -1;
+      }
+      return 0;
     }
-    if (a[sortConfig.key] > b[sortConfig.key]) {
-      return sortConfig.direction === 'asc' ? 1 : -1;
-    }
-    return 0;
   });
 
   const filteredData = sortedData.filter(row => {
@@ -103,14 +88,25 @@ const PreviousDrawHistory = () => {
             <tr>
               <th>
                 <button className={styles.sortButton} onClick={() => handleSortChange('number')}>
-                  # 
+                  <span className={styles.headingSpan}>#</span>
+                
                   <span className={styles.dropdownArrow}>
                     {sortConfig.key === 'number' ? (sortConfig.direction === 'asc' ? '▲' : '▼') : '▼'}
                   </span>
                 </button>
               </th>
               <th>
-                Occupations
+                <button className={styles.sortButton} onClick={() => handleSortChange('date')}>
+                 <span className={styles.headingSpan}>Date</span>
+                  
+                  <span className={styles.dropdownArrow}>
+                    {sortConfig.key === 'date' ? (sortConfig.direction === 'asc' ? '▲' : '▼') : '▼'}
+                  </span>
+                </button>
+              </th>
+              <th>
+                <span className={styles.headingSpan}> Occupations</span>
+               
                 <div className={styles.dropdown}>
                   <span className={styles.dropdownArrow}>▼</span>
                   <div className={styles.dropdownContent}>
@@ -122,7 +118,8 @@ const PreviousDrawHistory = () => {
                 </div>
               </th>
               <th>
-                Round Type
+                <span className={styles.headingSpan}>Round Type</span>
+                
                 <div className={styles.dropdown}>
                   <span className={styles.dropdownArrow}>▼</span>
                   <div className={styles.dropdownContent}>
@@ -133,7 +130,8 @@ const PreviousDrawHistory = () => {
                 </div>
               </th>
               <th>
-                2021 NOC Code
+                <span className={styles.headingSpan}>2021 NOC Code</span>
+                
                 <div className={styles.dropdown}>
                   <span className={styles.dropdownArrow}>▼</span>
                   <div className={styles.dropdownContent}>
@@ -145,7 +143,8 @@ const PreviousDrawHistory = () => {
                 </div>
               </th>
               <th>
-                2021 TEER Category
+                <span className={styles.headingSpan}>2021 TEER Category</span>
+                
                 <div className={styles.dropdown}>
                   <span className={styles.dropdownArrow}>▼</span>
                   <div className={styles.dropdownContent}>
@@ -161,17 +160,18 @@ const PreviousDrawHistory = () => {
           <tbody>
             {currentData.length > 0 ? (
               currentData.map((row, index) => (
-                <tr key={index}>
-                  <td>{row.number}</td>
-                  <td>{row.occupation}</td>
-                  <td>{row.roundType}</td>
-                  <td>{row.nocCode}</td>
-                  <td>{row.teerCategory}</td>
+                <tr className={styles.dataAll} key={index}>
+                  <td> <p>{row.number}</p> </td>
+                  <td> <p>{row.date}</p></td>
+                  <td> <p>{row.occupation}</p></td>
+                  <td> <p>{row.roundType}</p></td>
+                  <td><p>{row.nocCode}</p></td>
+                  <td><p>{row.teerCategory}</p></td>
                 </tr>
               ))
             ) : (
               <tr>
-                <td colSpan="5">No data available</td>
+                <td colSpan="6"><p>No data available</p></td>
               </tr>
             )}
           </tbody>
@@ -199,4 +199,3 @@ const PreviousDrawHistory = () => {
 };
 
 export default PreviousDrawHistory;
-

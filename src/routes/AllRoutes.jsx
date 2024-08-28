@@ -11,6 +11,8 @@ import CategoryBased from "../pages/CategoryBased";
 import NotFoundPage from "../pages/NotFoundPage";
 import Blogs from "../pages/Blogs";
 import BlogDetails from "../pages/BlogDetails";
+import CLBILETSCalculator from "../pages/CLBILETSCalculator";
+import PreviousDrawHistory from "../pages/PreviousDrawHistory";
 
 let AllRoutes = () => {
   return (
@@ -22,11 +24,14 @@ let AllRoutes = () => {
       <Route path="/Federal-Skilled" element={<FederalSkilled />} />
       <Route path="/contact-us" element={<Contact />} />
       <Route path="/express-entry" element={<ExpressEntry />} />
-      <Route path="/permanent-residency" element={<PermanentResidency />} />
+      <Route path="/permanent-residency" element={<PermanentResidency/>} />
       <Route path="/transport-occupation" element={<TransportOccupationTwo />} />
       <Route path="/blogs" element={<Blogs />} />
-      <Route path="/blogs/:id" element={<BlogDetails />} />
-      <Route path="/category-based" element={<CategoryBased />} />
+      <Route path="/blogs/:id" element={<BlogDetails/>} />
+      <Route path="/category-based" element={<CategoryBased/>} />
+      <Route path="/clb-ilets-calculator" element={<CLBILETSCalculator/>} />
+      <Route path="/previous-draw-history" element={<PreviousDrawHistory/>} />
+      
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );

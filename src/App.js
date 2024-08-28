@@ -23,6 +23,7 @@ import Footer1 from "./components/Footer1";
 import NotFoundPage from "./pages/NotFoundPage";
 import PreviousDrawHistory from "./pages/PreviousDrawHistory";
 import Loader from "./components/Loader";
+import CLBILETSCalculator from "../src/pages/CLBILETSCalculator";
 
 function App() {
   // useEffect(()=>{
@@ -56,6 +57,7 @@ function App() {
       {/* <NotFoundPage/> */}
       {/* <PreviousDrawHistory/> */}
       <Loader />
+      {/* <CLBILETSCalculator/> */}
       <AllRoutes />
 
       {/* <Footer1/> */}

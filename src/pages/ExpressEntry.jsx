@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../styles/ExpressEntry.module.css";
 import ServiceImg from "../assets/service-data-image.webp";
 // import BestChoice from "../assets/best-choice.png";
@@ -14,9 +14,14 @@ import Navbar1 from "../components/Navbar1";
 import Footer from "../components/Footer";
 
 let ExpressEntry = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
   return (
     <>
-    <Navbar1/>
+      <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div className={styles.bannerHeading}>
@@ -28,16 +33,24 @@ let ExpressEntry = () => {
             </p>
           </div>
 
-          <div className={styles.bannerHeadingRotateParent}>
-            <div className={styles.bannerHeadingRotate}>
+          <div
+            className={`${styles.bannerHeadingRotateParent} ${
+              isDropdownOpen ? styles.active : ""
+            }`}
+          >
+            <div
+              className={styles.bannerHeadingRotate}
+              onClick={toggleDropdown}
+            >
               <h3>QUICK ACCESS</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
               <p>About the program</p>
               <p>Eligibility</p>
               <p>Advantages of Express Entry</p>
-              <p>Refusal Reasons</p>
+              <p>Refusal Reason</p>
               <p>Draw History</p>
+              <p>Appointment</p>
               <p>Why Choose us</p>
               <p>Testimonials</p>
               <p>FAQs</p>
@@ -174,7 +187,7 @@ let ExpressEntry = () => {
 
       <div className={styles.incaseParent}>
         <div className={styles.incaseMain}>
-        {/* <div className={styles.theButtonAncorParentTwo}>
+          {/* <div className={styles.theButtonAncorParentTwo}>
         <div className={styles.theButtonAncorTwo}>
           <a href="/">
             Express Entry Draws History
@@ -206,11 +219,10 @@ let ExpressEntry = () => {
         </div>
       </div>
 
-      <BestChoice/>
-      <FAQ/>
+      <BestChoice />
+      <FAQ />
 
-<Footer/>
-
+      <Footer />
     </>
   );
 };

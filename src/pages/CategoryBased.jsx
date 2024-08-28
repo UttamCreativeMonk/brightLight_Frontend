@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../styles/CategoryBased.module.css";
 import ServiceImg from "../assets/service-data-image.webp";
 // import BestChoice from "../assets/best-choice.png";
@@ -15,9 +15,14 @@ import Navbar1 from "../components/Navbar1";
 import Footer from "../components/Footer";
 
 let CategoryBased = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
   return (
     <>
-    <Navbar1/>
+      <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div className={styles.bannerHeading}>
@@ -32,8 +37,15 @@ let CategoryBased = () => {
             </p>
           </div>
           {/* // */}
-          <div className={styles.bannerHeadingRotateParent}>
-            <div className={styles.bannerHeadingRotate}>
+          <div
+            className={`${styles.bannerHeadingRotateParent} ${
+              isDropdownOpen ? styles.active : ""
+            }`}
+          >
+            <div
+              className={styles.bannerHeadingRotate}
+              onClick={toggleDropdown}
+            >
               <h3>QUICK ACCESS</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
@@ -307,10 +319,12 @@ let CategoryBased = () => {
       <div className={styles.theButtonAncorParent}>
         <div className={styles.theButtonAncor}>
           <a href="/">
-            Express Entry Category Based Draws History{" "}
-            <span className={styles.theButtonSpan}>
-              <img src={LinkAncor} alt="err" />
-            </span>
+            <button>
+              Express Entry Category Based Draws History{" "}
+              <span className={styles.theButtonSpan}>
+                <img src={LinkAncor} alt="err" />
+              </span>
+            </button>
           </a>
         </div>
       </div>
@@ -334,11 +348,11 @@ let CategoryBased = () => {
           </p>
         </div>
       </div>
-      <BestChoice/>
+      {/* <BestChoice/>
       <Testimonials/>
-      <FAQ/>
+      <FAQ/> */}
 
-      <Footer/>
+      <Footer />
     </>
   );
 };

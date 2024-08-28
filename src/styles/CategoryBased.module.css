@@ -153,7 +153,7 @@
 
 .column li {
   margin-bottom: 16px;
-  font-size: 36px;
+  font-size: 32px;
   color: #00273f;
   line-height: 40px;
   padding-bottom: 50px;
@@ -278,43 +278,39 @@
   padding-top: 20px;
 }
 
-
-.howApplyParent{
-    /* width: 1440px; */
-    margin: auto;
-    background-color: #00273f;
-    padding: 100px 0px;
+.howApplyParent {
+  /* width: 1440px; */
+  margin: auto;
+  background-color: #00273f;
+  padding: 100px 0px;
 }
 
-.howApplyMain{
-    width: 1440px;
-    margin: auto;
+.howApplyMain {
+  width: 1440px;
+  margin: auto;
 }
 
-.howApplyMain h1{
-    color: #e8c47c;
-    font-size: 60px;
-    padding-top: 30px;
+.howApplyMain h1 {
+  color: #e8c47c;
+  font-size: 60px;
+  padding-top: 30px;
 }
 
-.howApplyMain h4{
-    color: #ffffff;
-    font-size: 28px;
-    padding-top: 30px;
-    font-weight: 500;
+.howApplyMain h4 {
+  color: #ffffff;
+  font-size: 28px;
+  padding-top: 30px;
+  font-weight: 500;
 }
-
-
 
 .stepsGrid {
- 
   margin: auto;
   margin-top: 80px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
   padding: 20px;
-  background-color: #00273f; 
+  background-color: #00273f;
 }
 
 .step {
@@ -358,8 +354,6 @@
   text-decoration: underline;
 }
 
-
-
 /* // */
 .refusalParent {
   width: 1440px;
@@ -367,12 +361,12 @@
   padding: 100px 0px;
 }
 
-.refusalMain h1{
+.refusalMain h1 {
   font-size: 60px;
   color: #132f46;
 }
 
-.refusalMain h3{
+.refusalMain h3 {
   font-size: 30px;
   color: #132f46;
   padding-top: 40px;
@@ -392,66 +386,59 @@
   padding-top: 20px;
 }
 
-
 /* // */
 
-
-
-
-.appointementParent{
+.appointementParent {
   width: 1440px;
   margin: auto;
   padding: 100px 0px;
 }
 
-.appointementMain h1{
+.appointementMain h1 {
   font-size: 60px;
   color: #132f46;
 }
 
-.appointementMain h5{
+.appointementMain h5 {
   font-size: 35px;
   color: #132f46;
   padding-top: 20px;
 }
 
-.appointementMain p{
+.appointementMain p {
   font-size: 30px;
   color: #132f46;
   padding-top: 50px;
   line-height: 50px;
 }
 
-.theButtonAncor{
+.theButtonAncor {
   width: 1440px;
   margin: auto;
   text-align: center;
   align-items: center;
 }
 
-.theButtonAncor a{
+.theButtonAncor button {
   background-color: #132f46;
   color: white;
   padding: 20px 20px;
   border-radius: 10px;
   text-decoration: none;
   font-size: 40px;
-
 }
 
-.theButtonAncorParent{
+.theButtonAncorParent {
   padding: 100px 0px;
 }
 
-.theButtonAncor{
+.theButtonAncor button{
   padding-left: 10px;
-
 }
 
-.theButtonSpan img{
+.theButtonSpan img {
   width: 2%;
 }
-
 
 .bannerHeadingRotateParent {
   width: 700px;
@@ -482,14 +469,13 @@
   margin-left: -50px;
 }
 
-
 .headerLineParent {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.headerLineParent h3{
+.headerLineParent h3 {
   width: 100%;
 }
 
@@ -499,7 +485,488 @@
   background-color: #ffffff;
 }
 
-.headerLineParent h3{
+.headerLineParent h3 {
   color: #ffffff;
   font-weight: 500;
+}
+
+@media (max-width: 1080px) {
+  .bannerHeadingRotateParent {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 50px;
+    position: relative;
+    width: 100%;
+  }
+
+  .bannerHeadingRotate {
+    transform: none;
+    border: none;
+    padding-bottom: 0;
+    font-size: 24px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .bannerHeadingRotate::after {
+    content: "\25BC";
+    font-size: 16px;
+    margin-left: 10px;
+    transition: transform 0.3s;
+  }
+
+  .bannerHeadingRotateParent.active .bannerHeadingRotate::after {
+    transform: rotate(180deg);
+  }
+
+  .bannerHeadingRotatePara {
+    margin-left: 0;
+    display: none;
+    background-color: #f7f7f7;
+    padding: 10px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding-top: 25px 0px;
+  }
+
+  .bannerHeadingRotateParent.active .bannerHeadingRotatePara {
+    display: block;
+  }
+
+  .bannerHeadingRotatePara p {
+    font-size: 18px;
+    padding: 10px 0;
+    color: #00273f;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1480px) {
+  .banner {
+    width: 95%;
+  }
+  .canadianParent {
+    width: 95%;
+  }
+  .eligibleParent {
+    width: 95%;
+  }
+  .eligibleParent {
+    width: 95%;
+  }
+  .categoryBasedMain {
+    width: 95%;
+  }
+  .benifitParent {
+    width: 95%;
+  }
+  .howApplyMain {
+    width: 95%;
+  }
+  .refusalParent {
+    width: 95%;
+  }
+  .appointementParent {
+    width: 95%;
+  }
+  .theButtonAncor {
+    width: 95%;
+  }
+  .cardWrapper {
+    display: flex;
+    padding: 20px 0px;
+    padding-top: 100px;
+    width: 95%;
+    margin: auto;
+  }
+  .eligibilityParent{
+    width: 95%;
+  }
+  .eligibilityPara{
+    width: 95%;
+    margin: auto;
+  }
+  .benifitParent{
+    width: 95%;
+  }
+  .benifitMain{
+    width: 95%;
+  }
+  .benifitlistParent{
+    width: 95%;
+  }
+  .refusalListParent{
+    width: 95%;
+  }
+}
+
+@media (max-width: 1180px){
+  .cardWrapper{
+    display: grid;
+    grid-template-columns: repeat(2,35%);
+    margin: auto;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+  .card{
+    width: 70%;
+    height: 170px;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+   
+  }
+
+  .card p{
+    line-height: 25px;
+}
+}
+
+
+@media (max-width: 1080px) {
+  .canadianParent{
+    flex-direction: column-reverse;
+  }
+  .canadianImg{
+    width: 100%;
+  }
+  .canadianImg img{
+    width: 100%;
+  }
+  .canadianContent{
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+  }
+  .eligibleParent h1{
+    width: 100%;
+    font-size: 50px;
+    text-align: center;
+  }
+  .container{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .categoryBasedContentParent{
+    flex-direction: column-reverse;
+  }
+  .categoryBasedMain {
+    align-items: center;
+    text-align: center;
+  }
+  .categoryBasedContent{
+    width: 100%;
+    padding-top: 50px;
+  }
+  .categoryBasedImg{
+    width: 100%;
+  }
+  .benifitMain{
+    align-items: center;
+    text-align: center;
+  }
+  .howApplyMain h4,h1{
+    align-items: center;
+    text-align: center;
+  }
+  .refusalMain{
+    align-items: center;
+    text-align: center;
+  }
+  .appointementMain{
+    align-items: center;
+    text-align: center;
+  }
+  .eligibilityMain{
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width:1050px){
+  .cardWrapper{
+    grid-template-columns: repeat(2,50%);
+  }
+}
+
+@media (max-width:870px){
+  .bannerHeading p{
+    font-size: 23px;
+  }
+  .bannerHeadingRotate h3{
+    font-size: 22px;
+  }
+  .container li{
+    font-size: 23px;
+  }
+  .categoryBasedMain h1{
+    font-size: 42px;
+  }
+  .categoryBasedContent p{
+    font-size: 26px;
+  }
+  .eligibilityMain h1{
+    font-size: 49px;
+  }
+  .eligibilityMain h3{
+    font-size: 24px;
+  }
+  .eligibilityMain p{
+    font-size: 20px;
+  }
+  .card{
+    width: 76%;
+  }
+  .benifitMain h1{
+    font-size: 44px;
+  }
+  .benifitlistParent li{
+    font-size: 22px;
+  }
+  .refusalMain h3{
+    font-size: 24px;
+  }
+  .refusalListParent li{
+    font-size: 22px;
+  }
+  .appointementMain p{
+    font-size: 24px;
+  }
+  .stepContent p{
+    font-size: 21px;
+  }
+}
+
+@media (max-width:766px){
+  .cardWrapper{
+    grid-template-columns: repeat(2,50%);
+  }
+  .card{
+    height: 175px;
+    padding: 54px 5px;
+  }
+}
+
+@media (max-width:766px){
+
+  .card{
+    height: 160px;
+    padding: 45px 5px;
+  }
+  .card p{
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 690px){
+  .stepsGrid{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width:644px){
+  .bannerHeading p{
+    font-size: 22px;
+  }
+  .bannerHeadingRotate h3{
+    font-size: 22px;
+  }
+  .container li{
+    font-size: 21px;
+  }
+  .categoryBasedMain h1{
+    font-size: 38px;
+  }
+  .categoryBasedContent p{
+    font-size: 22px;
+  }
+  .eligibilityParent h1{
+    font-size: 40px;
+  }
+  .eligibilityMain h1{
+    font-size: 45px;
+  }
+  .eligibilityMain h3{
+    font-size: 21px;
+  }
+  .eligibilityMain p{
+    font-size: 20px;
+  }
+  .eligibilityPara{
+    font-size: 20px;
+  }
+  .howApplyMain h4{
+    font-size: 20px;
+  }
+  .card{
+    width: 76%;
+  }
+  .benifitMain h1{
+    font-size: 40px;
+  }
+  .benifitlistParent li{
+    font-size: 20px;
+  }
+  .refusalMain h3{
+    font-size: 20px;
+  }
+  .refusalListParent li{
+    font-size: 20px;
+  }
+  .appointementMain p{
+    font-size: 20px;
+  }
+  .stepContent p{
+    font-size: 20px;
+  }
+  .eligibleParent h1{
+    font-size: 38px;
+}
+}
+
+@media (max-width:590px){
+
+  .cardWrapper{
+    grid-template-columns: repeat(2,49%);
+  }
+
+  .card{
+    height: 166px;
+    padding: 30px 5px;
+  }
+  .card p{
+    font-size: 14px;
+  }
+}
+@media (max-width:490px){
+  .bannerHeading h1{
+    font-size: 32px;
+  }
+  .bannerHeading p{
+    font-size: 20px;
+  }
+  .bannerHeadingRotate h3{
+    font-size: 20px;
+  }
+  .container li{
+    font-size: 20px;
+  }
+
+  .canadianContent h1{
+    font-size: 34px;
+  }
+  .categoryBasedMain h1{
+    font-size: 36px;
+  }
+  .categoryBasedContent p{
+    font-size: 18px;
+  }
+  .eligibilityParent h1{
+    font-size: 28px;
+  }
+  .eligibilityMain h1{
+    font-size: 36px;
+  }
+  .eligibilityMain h3{
+    font-size: 18px;
+  }
+  .eligibilityMain p{
+    font-size: 18px;
+  }
+  .eligibilityPara{
+    font-size: 18px;
+  }
+  .howApplyMain h4{
+    font-size: 18px;
+  }
+  .card{
+    width: 76%;
+  }
+  .benifitMain h1{
+    font-size: 30px;
+  }
+  .benifitlistParent li{
+    font-size: 18px;
+  }
+  .refusalMain h1{
+    font-size: 36px;
+  }
+  .refusalMain h3{
+    font-size: 15px;
+  }
+  .refusalListParent li{
+    font-size: 18px;
+  }
+  .appointementMain p{
+    font-size: 18px;
+  }
+  .stepContent p{
+    font-size: 18px;
+  }
+  .eligibleParent h1{
+    font-size: 28px;
+    padding-bottom: 5px;
+}
+.column li{
+  padding-bottom: 0px;
+}
+.howApplyMain h1{
+  font-size: 38px;
+}
+.howApplyMain h4{
+  font-size: 15px;
+}
+.appointementMain h1{
+  font-size: 40px;
+}
+}
+
+@media (max-width:484px){
+
+  .cardWrapper{
+    grid-template-columns: repeat(2,49%);
+    gap: 14px;
+  }
+
+  .card{
+    width: 90%;
+    height: 166px;
+    padding: 30px 0px;
+  }
+  .card p{
+    font-size: 14px;
+  }
+  .theButtonAncor button {
+    padding: 10px 10px;
+    font-size: 20px;
+  }
+}
+
+
+@media (max-width:394px){
+
+  .cardWrapper{
+    grid-template-columns: repeat(2,49%);
+    gap: 11px;
+  }
+
+  .card{
+    width: 100%;
+    height: 166px;
+    padding: 30px 0px;
+  }
+  .card p{
+    font-size: 14px;
+  }
 }

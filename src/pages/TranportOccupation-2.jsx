@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from 'react';
 import styles from "../styles/TransportOccupation-2.module.css";
 import LinkAncor from "../assets/link-arrows.png";
 import BestChoice from "../sections/BestChoice";
@@ -8,44 +8,56 @@ import PaginationTable from "../sections/PaginationTable";
 import Navbar1 from "../components/Navbar1";
 import Footer from "../components/Footer";
 
+
 let TransportOccupationTwo = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
   return (
     <>
     <Navbar1/>
-      <div className={styles.bannerParent}>
-        <div className={styles.banner}>
-          <div className={styles.bannerHeading}>
-            <h1>Transport Occupations</h1>
-            <h3>CATEGORY BASED DRAW</h3>
-            <p>
-              Exploring the Agriculture and Agri-Food Occupations Category
-              offers access to abundant opportunities within Canada's thriving
-              agricultural sector. Whether your skills lie in crop production,
-              livestock farming, agricultural research, or any other Agri-food
-              occupation, this program paves the way for a rewarding career path
-              in Canada.
-            </p>
-          </div>
+    <div className={styles.bannerParent}>
+      <div className={styles.banner}>
+        <div className={styles.bannerHeading}>
+          <h1>Transport Occupations</h1>
+          <h3>CATEGORY BASED DRAW</h3>
+          <p>
+            Exploring the Agriculture and Agri-Food Occupations Category
+            offers access to abundant opportunities within Canada's thriving
+            agricultural sector. Whether your skills lie in crop production,
+            livestock farming, agricultural research, or any other Agri-food
+            occupation, this program paves the way for a rewarding career path
+            in Canada.
+          </p>
+        </div>
 
-          <div className={styles.bannerHeadingRotateParent}>
-            <div className={styles.bannerHeadingRotate}>
-              <h3>QUICK ACCESS</h3>
-            </div>
-            <div className={styles.bannerHeadingRotatePara}>
-              <p>About the program</p>
-              <p>Eligibility</p>
-              <p>NOC Codes</p>
-              <p>Draw History</p>
-              <p>Appointment</p>
-              <p>Why Choose us</p>
-              <p>Testimonials</p>
-              <p>FAQs</p>
-              <p>Blogs</p>
-            </div>
+        <div
+          className={`${styles.bannerHeadingRotateParent} ${
+            isDropdownOpen ? styles.active : ''
+          }`}
+        >
+          <div
+            className={styles.bannerHeadingRotate}
+            onClick={toggleDropdown}
+          >
+            <h3>QUICK ACCESS</h3>
+          </div>
+          <div className={styles.bannerHeadingRotatePara}>
+            <p>About the program</p>
+            <p>Eligibility</p>
+            <p>NOC Codes</p>
+            <p>Draw History</p>
+            <p>Appointment</p>
+            <p>Why Choose us</p>
+            <p>Testimonials</p>
+            <p>FAQs</p>
+            <p>Blogs</p>
           </div>
         </div>
       </div>
-
+    </div>
 
       <div className={styles.eligibleParent}>
         <div className={styles.eligibleMain}>
@@ -149,10 +161,12 @@ let TransportOccupationTwo = () => {
       <div className={styles.theButtonAncorParentTwo}>
         <div className={styles.theButtonAncorTwo}>
           <a href="/">
+          <button>
             Express Entry Agriculture and agri-food occupations draws history
             <span className={styles.theButtonSpanTwo}>
               <img src={LinkAncor} alt="err" />
             </span>
+            </button>
           </a>
         </div>
       </div>
@@ -198,9 +212,9 @@ let TransportOccupationTwo = () => {
       </div>
 
 
-      {/* <BestChoice/>
+       <BestChoice/>
       <Testimonials/>
-      <FAQ/> */}
+      <FAQ/> 
 
 <Footer/>
     </>

@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from 'react';
 import styles from "../styles/PermanentResidency.module.css";
 import ServiceImg from "../assets/service-data-image.webp";
 import { ReactComponent as Responsibility } from "../assets/handsShake.svg";
-import studyVisaImg from '../assets/graduatedStudent.png';
+import studyVisaImg from "../assets/graduatedStudent.png";
 import BluePointer from "../assets/blue-pointer.png";
 import GoldenPointer from "../assets/golden-pointer.png";
 import Runway from "../assets/runway.png";
@@ -11,11 +11,15 @@ import OurProcess from "../sections/OurProcess";
 import Navbar1 from "../components/Navbar1";
 import Footer from "../components/Footer";
 
-
 let PermanentResidency = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
   return (
     <>
-    <Navbar1/>
+      <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div className={styles.bannerHeading}>
@@ -28,16 +32,28 @@ let PermanentResidency = () => {
             </p>
           </div>
 
-          <div className={styles.bannerHeadingRotateParent}>
-            <div className={styles.bannerHeadingRotate}>
+          <div
+            className={`${styles.bannerHeadingRotateParent} ${
+              isDropdownOpen ? styles.active : ""
+            }`}
+          >
+            <div
+              className={styles.bannerHeadingRotate}
+              onClick={toggleDropdown}
+            >
               <h3>QUICK ACCESS</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
               <p>About the program</p>
-              <p>Pathways to becoming PR</p>
-              <p>Our process</p>
+              <p>Eligibility</p>
+              <p>Advantages of Express Entry</p>
+              <p>Refusal Reason</p>
+              <p>Draw History</p>
+              <p>Appointment</p>
+              <p>Why Choose us</p>
+              <p>Testimonials</p>
+              <p>FAQs</p>
               <p>Blogs</p>
-              <p>Free Assessment</p>
             </div>
           </div>
         </div>
@@ -80,25 +96,24 @@ let PermanentResidency = () => {
               <h2>Express Entry</h2>
             </div>
             <div className={styles.pathwayCards}>
-            <img src={studyVisaImg} alt="" />
+              <img src={studyVisaImg} alt="" />
               <h2>Pilot Program</h2>
             </div>
             <div className={styles.pathwayCards}>
-            <img src={studyVisaImg} alt="" />
+              <img src={studyVisaImg} alt="" />
               <h2>PNP</h2>
             </div>
             <div className={styles.pathwayCards}>
-            <img src={studyVisaImg} alt="" />
+              <img src={studyVisaImg} alt="" />
               <h2>RNIP</h2>
             </div>
           </div>
         </div>
       </div>
 
-      <OurProcess/>
+      {/* <OurProcess /> */}
 
-
-    <Footer/>
+      <Footer />
     </>
   );
 };
