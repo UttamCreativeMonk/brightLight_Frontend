@@ -13,6 +13,7 @@ import Blogs from "../pages/Blogs";
 import BlogDetails from "../pages/BlogDetails";
 import CLBILETSCalculator from "../pages/CLBILETSCalculator";
 import PreviousDrawHistory from "../pages/PreviousDrawHistory";
+import MoreServices from "../pages/MoreServices";
 
 let AllRoutes = () => {
   return (
@@ -31,6 +32,7 @@ let AllRoutes = () => {
       <Route path="/category-based" element={<CategoryBased/>} />
       <Route path="/clb-ilets-calculator" element={<CLBILETSCalculator/>} />
       <Route path="/previous-draw-history" element={<PreviousDrawHistory/>} />
+      <Route path="/more-services" element={<MoreServices/>} />
       
       <Route path="*" element={<NotFoundPage />} />
     </Routes>

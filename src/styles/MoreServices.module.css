@@ -1,0 +1,121 @@
+.bannerParent{
+    background-image: url("../assets/canadaBlue.jpeg");
+    width: 100%;
+    padding: 100px 0px;
+    padding-top: 230px;
+}
+
+.bannerMain{
+    width: 1440px;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+}
+
+.bannerHeading{
+    width: 95%;
+}
+
+.bannerHeading h1{
+    font-size: 55px;
+    color:#e2bc6f;
+    width: 90%;
+}
+
+.bannerHeading p{
+    font-size: 20px;
+    line-height: 30px;
+    color:#ffffff;
+    padding-top: 30px;
+}
+
+  /* // */
+
+  .container {
+    width: 1440px;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+}
+
+.sidebar {
+    width: 20%; /* Reduced width to make more space for the content */
+    /* background-color: #f7f8fa; */
+    padding: 20px;
+    /* box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); */
+}
+
+.heading {
+    font-size: 16px;
+    padding: 10px 0;
+    cursor: pointer;
+    color: #bdbdbd;
+    transition: color 0.3s ease;
+}
+
+.activeHeading {
+    color: #132f46;
+    font-weight: bold;
+}
+
+.content {
+    width: 40%; /* Adjusted width for better layout balance */
+    padding: 50px;
+    text-align: left; /* Align text to the left */
+}
+
+.imageContainer {
+    width: 40%; /* Adjusted width for centering */
+    display: flex;
+    justify-content: center; /* Horizontally center the image */
+    align-items: center; /* Vertically center the image */
+}
+
+.image {
+    width: 100px; /* Increased size for better visibility */
+    height: 100px;
+}
+
+.text h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.text p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.subcategories {
+    list-style-type: none;
+    padding: 0;
+}
+
+.subcategories li {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0;
+}
+
+/* Dropdown Styles */
+.dropdown {
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.dropdownHeader {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    cursor: pointer;
+    color: #2c3e50;
+}
+
+.dropdownContent {
+    padding: 10px 0;
+    font-size: 14px;
+    color: #666;
+}
