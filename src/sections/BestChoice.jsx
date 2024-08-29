@@ -1,4 +1,3 @@
-// import React from "react";
 import React, { useEffect, useState, useRef } from "react";
 import styles from "../styles/BestChoice.module.css";
 import BestChoiceImg from "../assets/best-choice.png";
@@ -6,8 +5,11 @@ import PlaneMap from "../assets/planeMap.png";
 
 let BestChoice = () => {
   let [planeTop, setPlaneTop] = useState(150);
-  const [isTrackImageVisible, setIsTrackImageVisible] = useState(false);
-  const trackImageRef = useRef(null);
+  let [isTrackImageVisible, setIsTrackImageVisible] = useState(false);
+  let trackImageRef = useRef(null);
+  let [bestChoiceHeading, setBestChoiceHeading] = useState([]);
+  let [bestChoiceImage, setBestChoiceImage] = useState([]);
+  let [plane, setPlane] = useState([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -51,20 +53,61 @@ let BestChoice = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [isTrackImageVisible]);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/aboutUsBestChoiceSection")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setBestChoiceHeading(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    fetch("https://brightlight-node.onrender.com/bestChoice")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setBestChoiceImage(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    fetch("https://brightlight-node.onrender.com/plane")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPlane(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
   return (
     <div className={styles.bestChoiceParent}>
       <div className={styles.bestChoice}>
         <div className={styles.bestChoiceHeading}>
-          <h2>What makes us the best choice for you?</h2>
+          <h2>{bestChoiceHeading?.heading}</h2>
         </div>
         <img
-          src={PlaneMap}
+          src={plane?.image}
           alt="err"
           className={styles.plane}
-          style={{ top: `${planeTop}px` }}
+          style={`{ top: ${planeTop}px }`}
         />
         <img
-          src={BestChoiceImg}
+          src={bestChoiceImage?.image}
           ref={trackImageRef}
           alt="err"
           className={styles.trackImage}
