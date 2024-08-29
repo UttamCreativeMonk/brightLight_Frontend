@@ -235,7 +235,7 @@
   padding: 100px 0px;
 }
 
-.theButtonAncorTwo button{
+.theButtonAncorTwo button {
   padding-left: 10px;
 }
 
@@ -339,14 +339,33 @@
   border: 2px solid #4285f4;
 }
 
+.headerLineParent {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.headerLineParent p {
+  height: 1.1px;
+  width: 3000px;
+  background-color: #132f46;
+}
+.headingNumbers{
+  width: 75px;
+  text-align: center;
+  background-color: #132f46;
+  color: white;
+  border-radius: 50%;
+}
 
 @media (max-width: 1080px) {
-
   .bannerHeadingRotateParent {
     flex-direction: column;
     text-align: center;
     margin-top: 50px;
-    position: relative; 
+    position: relative;
     width: 100%;
   }
 
@@ -354,7 +373,7 @@
     transform: none;
     border: none;
     padding-bottom: 0;
-    font-size: 24px; 
+    font-size: 24px;
     text-align: left;
     display: flex;
     justify-content: space-between;
@@ -363,12 +382,11 @@
   }
 
   .bannerHeadingRotate::after {
-    content: '\25BC';
+    content: "\25BC";
     font-size: 16px;
     margin-left: 10px;
     transition: transform 0.3s;
   }
-
 
   .bannerHeadingRotateParent.active .bannerHeadingRotate::after {
     transform: rotate(180deg);
@@ -376,20 +394,20 @@
 
   .bannerHeadingRotatePara {
     margin-left: 0;
-    display: none; 
+    display: none;
     background-color: #f7f7f7;
     padding: 10px;
-    position: absolute; 
-    top: 100%; 
+    position: absolute;
+    top: 100%;
     left: 0;
-    width: 100%; 
+    width: 100%;
     z-index: 10;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding-top: 25px 0px;
   }
 
   .bannerHeadingRotateParent.active .bannerHeadingRotatePara {
-    display: block; 
+    display: block;
   }
 
   .bannerHeadingRotatePara p {
@@ -399,24 +417,20 @@
     align-items: center;
     text-align: center;
   }
-
 }
 
-
- 
 @media all and (max-width: 1480px) {
-  .agricultureMain{
+  .agricultureMain {
     width: 95%;
   }
-  .contactParent{
+  .contactParent {
     width: 95%;
   }
 }
-@media all and (max-width: 1450px){
-  .contactUpperParent{
+@media all and (max-width: 1450px) {
+  .contactUpperParent {
     width: 95%;
   }
-
 }
 
 @media all and (max-width: 1440px) {
@@ -426,19 +440,19 @@
   .bannerHeading p {
     width: 95%;
   }
-  .eligibleParent{
+  .eligibleParent {
     width: 95%;
     /* text-align: center; */
   }
-  .stepContent{
+  .stepContent {
     width: 95%;
   }
-.stepContentList{
-  width: 95%;
-}
-.agricultureList{
-  width: 95%;
-}
+  .stepContentList {
+    width: 95%;
+  }
+  .agricultureList {
+    width: 95%;
+  }
 }
 
 @media all and (max-width: 1080px) {
@@ -447,73 +461,69 @@
     margin: auto;
     text-align: center;
   }
-  .contactUpperParent{
+  .contactUpperParent {
     text-align: center;
   }
-  .contactParent{
-    text-align: center;
-  }
-
-  .agricultureMain h1{
+  .contactParent {
     text-align: center;
   }
 
-  .agricultureMain h2{
+  .agricultureMain h1 {
+    text-align: center;
+  }
+
+  .agricultureMain h2 {
     text-align: center;
   }
   /* .agricultureList{
 align-items: center;
   } */
-
-    
-
 }
 
-@media all and (max-width: 890px){
-  .eligibleMain{
+@media all and (max-width: 890px) {
+  .eligibleMain {
     text-align: center;
   }
-  .agricultureMain h1{
+  .agricultureMain h1 {
     font-size: 35px;
   }
-  .agricultureMain h2{
+  .agricultureMain h2 {
     font-size: 24px;
   }
-  .agricultureList li{
+  .agricultureList li {
     font-size: 20px;
   }
 }
 
-@media all and (max-width: 800px){
-.contactUpperMain p{
-  font-size: 24px;
-}
-.contactMain p{
-  font-size: 24px;
-}
-/* .bookButton17{
+@media all and (max-width: 800px) {
+  .contactUpperMain p {
+    font-size: 24px;
+  }
+  .contactMain p {
+    font-size: 24px;
+  }
+  /* .bookButton17{
   width: 290px;
 } */
 }
 
 @media all and (max-width: 610px) {
-
-  .agricultureMain h1{
+  .agricultureMain h1 {
     font-size: 31px;
   }
-  .agricultureMain h2{
+  .agricultureMain h2 {
     font-size: 16px;
   }
-  .agricultureList li{
+  .agricultureList li {
     font-size: 16px;
   }
-  .eligibleMain h1{
+  .eligibleMain h1 {
     font-size: 40px;
   }
-  .eligibleMain h3{
+  .eligibleMain h3 {
     font-size: 21px;
   }
-  .stepContent p{
+  .stepContent p {
     font-size: 22px;
   }
   .bannerHeading h1 {
@@ -525,15 +535,15 @@ align-items: center;
   .bannerHeading p {
     font-size: 15px;
   }
-  .stepContentList li{
+  .stepContentList li {
     font-size: 25px;
   }
-  .stepContentList h3{
+  .stepContentList h3 {
     font-size: 21px;
     text-align: center;
   }
 }
-@media all and (max-width: 545px){
+@media all and (max-width: 545px) {
   .theButtonAncorTwo button {
     padding: 10px 10px;
     font-size: 18px;
@@ -544,28 +554,28 @@ align-items: center;
   .bannerHeading h1 {
     font-size: 40px;
   }
-  .stepContent h2{
+  .stepContent h2 {
     font-size: 22px;
     margin-top: 10px;
     padding-bottom: 5px;
   }
-  .stepContent p{
+  .stepContent p {
     font-size: 18px;
   }
 }
 
 @media all and (max-width: 380px) {
-  .agricultureMain h1{
+  .agricultureMain h1 {
     font-size: 26px;
   }
-  .agricultureMain h2{
+  .agricultureMain h2 {
     font-size: 15px;
     line-height: 22px;
   }
-  .agricultureList li{
+  .agricultureList li {
     font-size: 15px;
   }
-  .eligibleMain h1{
+  .eligibleMain h1 {
     font-size: 34px;
   }
   .bannerHeading h1 {
@@ -575,4 +585,3 @@ align-items: center;
     font-size: 14px;
   }
 }
-

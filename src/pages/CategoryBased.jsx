@@ -213,7 +213,10 @@ let CategoryBased = () => {
 
           <div className={styles.stepsGrid}>
             <div className={styles.step}>
-              <div className={styles.stepNumber}>1</div>
+            <div className={styles.headerLineParent}>      
+                <div className={styles.headingNumbers}>1</div>
+                <p></p>
+              </div>
               <div className={styles.stepContent}>
                 <p>
                   Create an Express Entry profile first. Or even better and
@@ -223,7 +226,10 @@ let CategoryBased = () => {
               </div>
             </div>
             <div className={styles.step}>
-              <div className={styles.stepNumber}>2</div>
+            <div className={styles.headerLineParent}>      
+                <div className={styles.headingNumbers}>2</div>
+                <p></p>
+              </div>
               <div className={styles.stepContent}>
                 <p>
                   Next, IRCC conducts draws irregularly, so keep a check on the
@@ -233,7 +239,10 @@ let CategoryBased = () => {
               </div>
             </div>
             <div className={styles.step}>
-              <div className={styles.stepNumber}>3</div>
+            <div className={styles.headerLineParent}>      
+                <div className={styles.headingNumbers}>3</div>
+                <p></p>
+              </div>
               <div className={styles.stepContent}>
                 <p>
                   The higher your score, the more likely you are to get an ITA.
@@ -243,7 +252,10 @@ let CategoryBased = () => {
               </div>
             </div>
             <div className={styles.step}>
-              <div className={styles.stepNumber}>4</div>
+            <div className={styles.headerLineParent}>      
+                <div className={styles.headingNumbers}>4</div>
+                <p></p>
+              </div>
               <div className={styles.stepContent}>
                 <p>
                   If you meet the criteria and have a high enough score, you
@@ -252,7 +264,10 @@ let CategoryBased = () => {
               </div>
             </div>
             <div className={styles.step}>
-              <div className={styles.stepNumber}>5 </div>
+            <div className={styles.headerLineParent}>      
+                <div className={styles.headingNumbers}>5</div>
+                <p></p>
+              </div>
               <div className={styles.stepContent}>
                 <p>
                   You'll have 60 days to submit your complete application,
@@ -262,7 +277,10 @@ let CategoryBased = () => {
               </div>
             </div>
             <div className={styles.step}>
-              <div className={styles.stepNumber}>6</div>
+            <div className={styles.headerLineParent}>      
+                <div className={styles.headingNumbers}>6</div>
+                <p></p>
+              </div>
               <div className={styles.stepContent}>
                 <p>
                   Once your application is approved, you will receive a

@@ -131,6 +131,17 @@
   color: #4d4d4d;
 }
 
+.radioItem label{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.radioItem2 label{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
 /* // */
 
 .containerParent {
@@ -307,6 +318,9 @@
   }
 
   .radioItem input {
+    width: 8px;
+  }
+  .radioItem2 input {
     width: 8px;
   }
 

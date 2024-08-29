@@ -255,10 +255,9 @@ const BCPNPCalculator = () => {
         <div className={styles.firstSection}>
           <div className={styles.container}>
             <div className={styles.header}>
-              <div className={styles.headerLineParent}>
-                {" "}
+              <div className={styles.headerLineParent}>      
                 <div className={styles.headingNumbers}>1</div>
-                <p></p>{" "}
+                <p></p>
               </div>
               <h5>
                 Directly Related Work Experience in the Occupation of B.C. Job
@@ -273,8 +272,7 @@ const BCPNPCalculator = () => {
                     name="experience"
                     value="5+"
                     onChange={handleExperienceChange}
-                  />{" "}
-                  5 or more years
+                  />{" "}                              
                 </label>
               </div>
               <div className={styles.radioItem}>

@@ -164,7 +164,7 @@
 
 .additionCard {
   height: 180px;
-  padding: 70px 30px;
+  padding: 70px 0px;
   width: 340px;
   background-color: white;
   color: #132f46;
@@ -176,6 +176,9 @@
   /* line-height: 1.8; */
 }
 
+.additionCard h2 {
+  font-size: 24px;
+}
 .advantagesParent {
   width: 100%;
   padding: 100px 0px;
@@ -462,12 +465,11 @@
 }
 
 @media (max-width: 1080px) {
-
   .bannerHeadingRotateParent {
     flex-direction: column;
     text-align: center;
     margin-top: 50px;
-    position: relative; 
+    position: relative;
     width: 100%;
   }
 
@@ -475,7 +477,7 @@
     transform: none;
     border: none;
     padding-bottom: 0;
-    font-size: 24px; 
+    font-size: 24px;
     text-align: left;
     display: flex;
     justify-content: space-between;
@@ -484,12 +486,11 @@
   }
 
   .bannerHeadingRotate::after {
-    content: '\25BC';
+    content: "\25BC";
     font-size: 16px;
     margin-left: 10px;
     transition: transform 0.3s;
   }
-
 
   .bannerHeadingRotateParent.active .bannerHeadingRotate::after {
     transform: rotate(180deg);
@@ -497,20 +498,20 @@
 
   .bannerHeadingRotatePara {
     margin-left: 0;
-    display: none; 
+    display: none;
     background-color: #f7f7f7;
     padding: 10px;
-    position: absolute; 
-    top: 100%; 
+    position: absolute;
+    top: 100%;
     left: 0;
-    width: 100%; 
+    width: 100%;
     z-index: 10;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding-top: 25px 0px;
   }
 
   .bannerHeadingRotateParent.active .bannerHeadingRotatePara {
-    display: block; 
+    display: block;
   }
 
   .bannerHeadingRotatePara p {
@@ -520,7 +521,6 @@
     align-items: center;
     text-align: center;
   }
-
 }
 
 @media all and (max-width: 1450px) {
@@ -1030,64 +1030,93 @@
   }
 }
 
-@media all and (max-width: 580px) {
-  .eligibleParent h1{
-    font-size: 40px;
-  }
-  .eligibleParent p{
-    font-size: 18px;
+@media all and (max-width: 730px) {
+  .bannerHeadingRotate h3 {
+    font-size: 20px;
   }
 
   .additionParent h1{
+    font-size: 28px;
+  }
+  
+  .additionCard {
+    width: 285px;
+    height: 158px;
+    font-size: 12px;
+    padding: 65px 0px;
+    margin-bottom: 40px;
+  }
+}
+@media all and (max-width: 580px) {
+  .eligibleParent h1 {
+    font-size: 40px;
+  }
+  .eligibleParent p {
+    font-size: 18px;
+  }
+
+  .additionParent h1 {
     font-size: 30px;
   }
 
-  .advantagesHeading h1{
+  .advantagesHeading h1 {
     font-size: 40px;
   }
 
-  .advantagesPara p{
+  .advantagesPara p {
     font-size: 18px;
   }
 
-  .forgetHeading h1{
+  .forgetHeading h1 {
     font-size: 30px;
   }
 
-  .forgetMain li{
+  .forgetMain li {
     font-size: 18px;
   }
-
 }
-
 
 @media all and (max-width: 580px) {
-  .eligibleParent h1{
+  .eligibleParent h1 {
     font-size: 34px;
   }
-  .eligibleParent p{
+  .eligibleParent p {
     font-size: 18px;
   }
 
-  .additionParent h1{
+  .additionParent h1 {
     font-size: 26px;
   }
 
-  .advantagesHeading h1{
+  .advantagesHeading h1 {
     font-size: 34px;
   }
 
-  .advantagesPara p{
+  .advantagesPara p {
     font-size: 18px;
   }
 
-  .forgetHeading h1{
+  .forgetHeading h1 {
     font-size: 26px;
   }
 
-  .forgetMain li{
+  .forgetMain li {
     font-size: 18px;
   }
-
 }
 
+@media all and (max-width: 490px) {
+  .bannerHeadingRotate h3 {
+    font-size: 18px;
+  }
+  .additionCard {
+    width: 220px;
+    height: 140px;
+    font-size: 12px;
+    padding: 65px 10px;
+ 
+  }
+  .additionCard h2{
+    font-size: 14px;
+  }
+}

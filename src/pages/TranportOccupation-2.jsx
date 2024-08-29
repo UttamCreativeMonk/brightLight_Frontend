@@ -73,7 +73,10 @@ let TransportOccupationTwo = () => {
           <div className={styles.chooseMain}>
             <div className={styles.stepsGrid}>
               <div className={styles.step}>
-                <div className={styles.stepNumber}>1</div>
+              <div className={styles.headerLineParent}>      
+                <div className={styles.headingNumbers}>1</div>
+                <p></p>
+              </div>
                 <div className={styles.stepContent}>
                   <p>
                     Join the Express Entry Pool: The first step towards becoming
@@ -83,7 +86,10 @@ let TransportOccupationTwo = () => {
                 </div>
               </div>
               <div className={styles.step}>
-                <div className={styles.stepNumber}>2</div>
+              <div className={styles.headerLineParent}>      
+                <div className={styles.headingNumbers}>2</div>
+                <p></p>
+              </div>
                 <div className={styles.stepContent}>
                   <h2>Choose Your Program:</h2>
                   <p>

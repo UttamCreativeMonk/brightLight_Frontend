@@ -307,7 +307,7 @@
   margin: auto;
   margin-top: 80px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 49%;
   gap: 20px;
   padding: 20px;
   background-color: #00273f;
@@ -432,7 +432,7 @@
   padding: 100px 0px;
 }
 
-.theButtonAncor button{
+.theButtonAncor button {
   padding-left: 10px;
 }
 
@@ -488,6 +488,30 @@
 .headerLineParent h3 {
   color: #ffffff;
   font-weight: 500;
+}
+.headerLineParent {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.headerLineParent p {
+  height: 1.1px;
+  width: 570px;
+  background-color: #ffffff;
+}
+.headingNumbers {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #ffffff;
+  color: #132f46;
+  border-radius: 50%;
 }
 
 @media (max-width: 1080px) {
@@ -587,364 +611,393 @@
     width: 95%;
     margin: auto;
   }
-  .eligibilityParent{
+  .eligibilityParent {
     width: 95%;
   }
-  .eligibilityPara{
+  .eligibilityPara {
     width: 95%;
     margin: auto;
   }
-  .benifitParent{
+  .benifitParent {
     width: 95%;
   }
-  .benifitMain{
+  .benifitMain {
     width: 95%;
   }
-  .benifitlistParent{
+  .benifitlistParent {
     width: 95%;
   }
-  .refusalListParent{
+  .refusalListParent {
     width: 95%;
   }
 }
 
-@media (max-width: 1180px){
-  .cardWrapper{
+@media (max-width: 1360px) {
+  .stepsGrid {
+    width: 95%;
+    gap: 1px;
+    padding: 0px;
+  }
+  .howApplyMain {
+    width: 95%;
+  }
+  .step {
+    width: 90%;
+  }
+}
+
+@media (max-width: 1290px) {
+  .stepContent {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .step {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  .stepsGrid {
+    width: 100%;
+    grid-template-columns: 100%;
+  }
+
+  .headerLineParent p {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1180px) {
+  .cardWrapper {
     display: grid;
-    grid-template-columns: repeat(2,35%);
+    grid-template-columns: repeat(2, 35%);
     margin: auto;
     align-items: center;
     text-align: center;
     gap: 30px;
   }
-  .card{
+  .card {
     width: 70%;
     height: 170px;
     margin: auto;
     align-items: center;
     text-align: center;
-   
   }
 
-  .card p{
+  .card p {
     line-height: 25px;
+  }
 }
-}
-
 
 @media (max-width: 1080px) {
-  .canadianParent{
+  .canadianParent {
     flex-direction: column-reverse;
   }
-  .canadianImg{
+  .canadianImg {
     width: 100%;
   }
-  .canadianImg img{
+  .canadianImg img {
     width: 100%;
   }
-  .canadianContent{
+  .canadianContent {
     width: 100%;
     text-align: center;
     margin-top: 40px;
   }
-  .eligibleParent h1{
+  .eligibleParent h1 {
     width: 100%;
     font-size: 50px;
     text-align: center;
   }
-  .container{
+  .container {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
-  .categoryBasedContentParent{
+  .categoryBasedContentParent {
     flex-direction: column-reverse;
   }
   .categoryBasedMain {
     align-items: center;
     text-align: center;
   }
-  .categoryBasedContent{
+  .categoryBasedContent {
     width: 100%;
     padding-top: 50px;
   }
-  .categoryBasedImg{
+  .categoryBasedImg {
     width: 100%;
   }
-  .benifitMain{
+  .benifitMain {
     align-items: center;
     text-align: center;
   }
-  .howApplyMain h4,h1{
+  .howApplyMain h4,
+  h1 {
     align-items: center;
     text-align: center;
   }
-  .refusalMain{
+  .refusalMain {
     align-items: center;
     text-align: center;
   }
-  .appointementMain{
+  .appointementMain {
     align-items: center;
     text-align: center;
   }
-  .eligibilityMain{
+  .eligibilityMain {
     align-items: center;
     text-align: center;
   }
 }
 
-@media (max-width:1050px){
-  .cardWrapper{
-    grid-template-columns: repeat(2,50%);
+@media (max-width: 1050px) {
+  .cardWrapper {
+    grid-template-columns: repeat(2, 50%);
   }
 }
 
-@media (max-width:870px){
-  .bannerHeading p{
+@media (max-width: 870px) {
+  .bannerHeading p {
     font-size: 23px;
   }
-  .bannerHeadingRotate h3{
+  .bannerHeadingRotate h3 {
     font-size: 22px;
   }
-  .container li{
+  .container li {
     font-size: 23px;
   }
-  .categoryBasedMain h1{
+  .categoryBasedMain h1 {
     font-size: 42px;
   }
-  .categoryBasedContent p{
+  .categoryBasedContent p {
     font-size: 26px;
   }
-  .eligibilityMain h1{
+  .eligibilityMain h1 {
     font-size: 49px;
   }
-  .eligibilityMain h3{
+  .eligibilityMain h3 {
     font-size: 24px;
   }
-  .eligibilityMain p{
+  .eligibilityMain p {
     font-size: 20px;
   }
-  .card{
+  .card {
     width: 76%;
   }
-  .benifitMain h1{
+  .benifitMain h1 {
     font-size: 44px;
   }
-  .benifitlistParent li{
+  .benifitlistParent li {
     font-size: 22px;
   }
-  .refusalMain h3{
+  .refusalMain h3 {
     font-size: 24px;
   }
-  .refusalListParent li{
+  .refusalListParent li {
     font-size: 22px;
   }
-  .appointementMain p{
+  .appointementMain p {
     font-size: 24px;
   }
-  .stepContent p{
+  .stepContent p {
     font-size: 21px;
   }
 }
 
-@media (max-width:766px){
-  .cardWrapper{
-    grid-template-columns: repeat(2,50%);
+@media (max-width: 766px) {
+  .cardWrapper {
+    grid-template-columns: repeat(2, 50%);
   }
-  .card{
+  .card {
     height: 175px;
     padding: 54px 5px;
   }
 }
 
-@media (max-width:766px){
-
-  .card{
+@media (max-width: 766px) {
+  .card {
     height: 160px;
     padding: 45px 5px;
   }
-  .card p{
+  .card p {
     font-size: 14px;
   }
 }
 
-@media (max-width: 690px){
-  .stepsGrid{
+@media (max-width: 690px) {
+  .stepsGrid {
     display: flex;
     flex-direction: column;
   }
 }
 
-@media (max-width:644px){
-  .bannerHeading p{
+@media (max-width: 644px) {
+  .bannerHeading p {
     font-size: 22px;
   }
-  .bannerHeadingRotate h3{
+  .bannerHeadingRotate h3 {
     font-size: 22px;
   }
-  .container li{
+  .container li {
     font-size: 21px;
   }
-  .categoryBasedMain h1{
+  .categoryBasedMain h1 {
     font-size: 38px;
   }
-  .categoryBasedContent p{
+  .categoryBasedContent p {
     font-size: 22px;
   }
-  .eligibilityParent h1{
+  .eligibilityParent h1 {
     font-size: 40px;
   }
-  .eligibilityMain h1{
+  .eligibilityMain h1 {
     font-size: 45px;
   }
-  .eligibilityMain h3{
+  .eligibilityMain h3 {
     font-size: 21px;
   }
-  .eligibilityMain p{
+  .eligibilityMain p {
     font-size: 20px;
   }
-  .eligibilityPara{
+  .eligibilityPara {
     font-size: 20px;
   }
-  .howApplyMain h4{
+  .howApplyMain h4 {
     font-size: 20px;
   }
-  .card{
+  .card {
     width: 76%;
   }
-  .benifitMain h1{
+  .benifitMain h1 {
     font-size: 40px;
   }
-  .benifitlistParent li{
+  .benifitlistParent li {
     font-size: 20px;
   }
-  .refusalMain h3{
+  .refusalMain h3 {
     font-size: 20px;
   }
-  .refusalListParent li{
+  .refusalListParent li {
     font-size: 20px;
   }
-  .appointementMain p{
+  .appointementMain p {
     font-size: 20px;
   }
-  .stepContent p{
+  .stepContent p {
     font-size: 20px;
   }
-  .eligibleParent h1{
+  .eligibleParent h1 {
     font-size: 38px;
-}
+  }
 }
 
-@media (max-width:590px){
-
-  .cardWrapper{
-    grid-template-columns: repeat(2,49%);
+@media (max-width: 590px) {
+  .cardWrapper {
+    grid-template-columns: repeat(2, 49%);
   }
 
-  .card{
+  .card {
     height: 166px;
     padding: 30px 5px;
   }
-  .card p{
+  .card p {
     font-size: 14px;
   }
 }
-@media (max-width:490px){
-  .bannerHeading h1{
+@media (max-width: 490px) {
+  .bannerHeading h1 {
     font-size: 32px;
   }
-  .bannerHeading p{
+  .bannerHeading p {
     font-size: 20px;
   }
-  .bannerHeadingRotate h3{
+  .bannerHeadingRotate h3 {
     font-size: 20px;
   }
-  .container li{
+  .container li {
     font-size: 20px;
   }
 
-  .canadianContent h1{
+  .canadianContent h1 {
     font-size: 34px;
   }
-  .categoryBasedMain h1{
+  .categoryBasedMain h1 {
     font-size: 36px;
   }
-  .categoryBasedContent p{
+  .categoryBasedContent p {
     font-size: 18px;
   }
-  .eligibilityParent h1{
+  .eligibilityParent h1 {
     font-size: 28px;
   }
-  .eligibilityMain h1{
+  .eligibilityMain h1 {
     font-size: 36px;
   }
-  .eligibilityMain h3{
+  .eligibilityMain h3 {
     font-size: 18px;
   }
-  .eligibilityMain p{
+  .eligibilityMain p {
     font-size: 18px;
   }
-  .eligibilityPara{
+  .eligibilityPara {
     font-size: 18px;
   }
-  .howApplyMain h4{
+  .howApplyMain h4 {
     font-size: 18px;
   }
-  .card{
+  .card {
     width: 76%;
   }
-  .benifitMain h1{
+  .benifitMain h1 {
     font-size: 30px;
   }
-  .benifitlistParent li{
+  .benifitlistParent li {
     font-size: 18px;
   }
-  .refusalMain h1{
+  .refusalMain h1 {
     font-size: 36px;
   }
-  .refusalMain h3{
+  .refusalMain h3 {
     font-size: 15px;
   }
-  .refusalListParent li{
+  .refusalListParent li {
     font-size: 18px;
   }
-  .appointementMain p{
+  .appointementMain p {
     font-size: 18px;
   }
-  .stepContent p{
+  .stepContent p {
     font-size: 18px;
   }
-  .eligibleParent h1{
+  .eligibleParent h1 {
     font-size: 28px;
     padding-bottom: 5px;
-}
-.column li{
-  padding-bottom: 0px;
-}
-.howApplyMain h1{
-  font-size: 38px;
-}
-.howApplyMain h4{
-  font-size: 15px;
-}
-.appointementMain h1{
-  font-size: 40px;
-}
+  }
+  .column li {
+    padding-bottom: 0px;
+  }
+  .howApplyMain h1 {
+    font-size: 38px;
+  }
+  .howApplyMain h4 {
+    font-size: 15px;
+  }
+  .appointementMain h1 {
+    font-size: 40px;
+  }
 }
 
-@media (max-width:484px){
-
-  .cardWrapper{
-    grid-template-columns: repeat(2,49%);
+@media (max-width: 484px) {
+  .cardWrapper {
+    grid-template-columns: repeat(2, 49%);
     gap: 14px;
   }
 
-  .card{
+  .card {
     width: 90%;
     height: 166px;
     padding: 30px 0px;
   }
-  .card p{
+  .card p {
     font-size: 14px;
   }
   .theButtonAncor button {
@@ -953,20 +1006,18 @@
   }
 }
 
-
-@media (max-width:394px){
-
-  .cardWrapper{
-    grid-template-columns: repeat(2,49%);
+@media (max-width: 394px) {
+  .cardWrapper {
+    grid-template-columns: repeat(2, 49%);
     gap: 11px;
   }
 
-  .card{
+  .card {
     width: 100%;
     height: 166px;
     padding: 30px 0px;
   }
-  .card p{
+  .card p {
     font-size: 14px;
   }
 }

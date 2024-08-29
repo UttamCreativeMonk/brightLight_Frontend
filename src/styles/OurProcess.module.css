@@ -145,3 +145,29 @@
     left: 0px;
     transition: 0.1s all ease-in-out;
   }
+
+  @media (max-width: 1470px) {
+    .runwayParent {
+      width: 95%;
+    }
+    .fourCard {
+      width: 95%;
+    }
+  }
+  
+  @media (max-width: 1400px) {
+    .fourCardImg {
+      gap: 30px;
+    }
+  }
+
+  @media (max-width: 1340px) {
+    .fourCardImg {
+      gap: 50px;
+      display: grid;
+      grid-template-columns:repeat(2,350px) ;
+      justify-content: center;
+      row-gap:120px;
+    }
+
+  }

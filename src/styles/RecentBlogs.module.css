@@ -1,55 +1,115 @@
 .recentBlogs {
-    width: 100%;
-    padding: 100px 0px;
-    background-color: rgb(233, 233, 233);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
+  width: 100%;
+  padding: 100px 0px;
+  background-color: rgb(233, 233, 233);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recentBlogMainSection {
+  width: 1440px;
+}
+
+.recentBlogMainSection h1 {
+  color: rgb(126, 126, 126);
+  padding-bottom: 15px;
+  border-bottom: 3px solid rgb(156, 156, 156);
+}
+
+.blogsGridSection {
+  margin-top: 50px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.blogs {
+  width: 32%;
+}
+
+.blogs:hover {
+  text-decoration: none;
+}
+
+.blogs img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.blogs h4 {
+  margin: 10px 0px;
+  color: #132f46;
+}
+
+.blogs h2 {
+  font-size: 20px;
+  margin: 10px 0px;
+  line-height: 1.5;
+}
+
+.blogs p {
+  color: gray;
+  font-weight: 600;
+}
+
+@media (max-width: 1460px) {
   .recentBlogMainSection {
-    width: 1440px;
+    width: 95%;
   }
-  
-  .recentBlogMainSection h1 {
-    color: rgb(126, 126, 126);
-    padding-bottom: 15px;
-    border-bottom: 3px solid rgb(156, 156, 156);
-  }
-  
-  .blogsGridSection {
-    margin-top: 50px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-  }
-  
-  .blogs {
-    width: 32%;
-  }
-  
-  .blogs:hover {
-    text-decoration: none;
-  }
-  
-  .blogs img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .blogs h4 {
-    margin: 10px 0px;
-    color: #132f46;
-  }
-  
+}
+
+@media (max-width: 1160px) {
   .blogs h2 {
-    font-size: 20px;
-    margin: 10px 0px;
-    line-height: 1.5;
+    font-size: 16px;
   }
-  
   .blogs p {
-    color: gray;
-    font-weight: 600;
+    font-size: 15px;
   }
+}
+
+@media (max-width: 1060px) {
+
+  .blogs {
+    width: 95%;
+    align-items: center;
+    margin: auto;
+  }
+
+  .blogsGridSection {
+    flex-direction: column;
+  }
+
+  .blogs img {
+    width: 95%;
+    height: 250px;
+    border-radius: 50px;
+  }
+  .blogs p {
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 555px) {
+  .blogs img {
+    width: 95%;
+    height: 200px;
+  }
+}
+
+
+@media (max-width: 485px) {
+  .blogs img {
+    height: 130px;
+  }
+  .blogs h2 {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 345px) {
+  .blogs img {
+    height: 110px;
+  }
+}

@@ -111,6 +111,16 @@
   margin: 30px 0 50px 0;
 }
 
+.radioItem label{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.label{
+  display: flex;
+}
+
 .enterWageInput {
   width: 120px;
   font-size: 11px;
@@ -147,6 +157,8 @@
   border-radius: 20px;
   background-color: #fff;
 }
+
+ 
 
 
 @media all and (max-width: 1440px) {
@@ -313,6 +325,9 @@
   .radioItem {
     margin: 22px 0 16px 0;
   }
+  .radioItem input {
+    width: 8px;
+  }
 }
 
 @media all and (max-width: 460px) {
@@ -329,7 +344,6 @@
     font-size: 16px;
     padding-top: 40px;
   }
-
 
   .pointContainer{
     padding: 20px 23px;
@@ -378,7 +392,7 @@
     border: 0.5px solid gray;
   }
   .radioItem input {
-    width: 8px;
+    width: 7px;
   }
 
   .headingNumbers {

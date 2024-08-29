@@ -250,7 +250,7 @@ let HomePage = () => {
         </div>
       </div>
 
-      {/* <OurProcess /> */}
+      <OurProcess />
 
       <div className={styles.expertiseParent}>
         <div className={styles.expertiseContentParent}>
@@ -268,7 +268,7 @@ let HomePage = () => {
             </button>
           </div>
           
-          {/* <div className={styles.testimonialsVideoSection}>
+          <div className={styles.testimonialsVideoSection}>
             <Swiper
               effect={"coverflow"}
               grabCursor={true}
@@ -301,7 +301,7 @@ let HomePage = () => {
                 ></div>
               </div>
             </Swiper>
-          </div> */}
+          </div> 
           
         </div>
       </div>
@@ -332,10 +332,10 @@ let HomePage = () => {
         </div>
       </div>
    
-{/* <Testimonials_White/> */}
+<Testimonials_White/>
 
-      {/* <Testimonials />
-      <FAQ /> */}
+      <Testimonials />
+      <FAQ /> 
 
       <div className={styles.sourceParent}>
         <div className={styles.sourceMain}>
@@ -406,8 +406,8 @@ let HomePage = () => {
 
 
 
-      {/* <Blogs/>
-      <FAQ_Blue/> */}
+      <Blogs/>
+      <FAQ_Blue/>
      
       
 
