@@ -187,9 +187,9 @@ let Testimonials = () => {
             modules={[EffectCoverflow, Pagination, Navigation]}
             className={styles.swiper_container}
           >
-            {clientVideosData.map((item) => {
+            {clientVideosData.map((item,index) => {
               return (
-                <SwiperSlide>
+                <SwiperSlide key={index}>
                   <img src={item.img} />
                   <p>{item.person_name}</p>
                 </SwiperSlide>

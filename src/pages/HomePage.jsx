@@ -1,13 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "../styles/HomePage.module.css";
-
-// import permanentResidenceImg from "../assets/homeLocation.png";
-// import bcpnpImg from "../assets/employee.png";
-// import visitorVisaImg from "../assets/visa.png";
-// import studyVisaImg from "../assets/graduatedStudent.png";
-// import familySponsorshipImg from "../assets/parents.png";
-// import workPermitImg from "../assets/workPermit.png";
-// import pflImg from "../assets/file.png";
 
 import permanentResidenceImg from "../assets/homeLocation.png";
 import permanentResidenceHoverImg from "../assets/visaSVG.svg";
@@ -26,19 +18,14 @@ import pflHoverImg from "../assets/fileWhite.png";
 
 import WhiteLogo from "../assets/bright-source.webp";
 
-import Rcic from "../assets/rcic.png";
-import Capic from "../assets/capic.png";
-import Cicc from "../assets/cicc.png";
-import Simplifying1 from "../assets/immigration-challenges.png";
-import Simplifying2 from "../assets/expert-in-refusal.png";
-import BannerImage from "../assets/homePageBanner.jpg";
+
 import LinkedinLogo from "../assets/bannerLinkedinLogo.png";
 
 import Visa from "../assets/visa2.png";
 import CheckMark from "../assets/success-stories-icon.webp";
 import SmileFace from "../assets/happy-clients-icon.webp";
 
-// import BestChoice from "../sections/BestChoice";
+
 import Testimonials from "../sections/Testimonials";
 import FAQ from "../sections/FAQ";
 import OurProcess from "../sections/OurProcess";
@@ -59,6 +46,15 @@ import Testimonials_White from "../sections/Testimonials_White";
 import Blogs from "../sections/Blogs";
 
 let HomePage = () => {
+  let [topSection, setTopSection] = useState([]);
+  let [headline1Rest, setHeadline1Rest] = useState("");
+  let [headline1Last, setHeadline1Last] = useState("");
+  let [headline2Rest, setHeadline2Rest] = useState("");
+  let [headline2Last, setHeadline2Last] = useState("");
+  let [memberData, setMemberData] = useState([]);
+  let [featuresData, setFeaturesData] = useState([]);
+  let [loveneetBgImage, setLoveneetBgImage] = useState([]);
+
   const cards = [
     {
       title: "Permanent Residence",
@@ -127,6 +123,71 @@ let HomePage = () => {
       person_name: "Person 10",
     },
   ];
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/home-top")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          let headlineText = data[0].headline1;
+          let words = headlineText.split(" ");
+          let lastWord = words.pop();
+          let restOfText = words.join(" ");
+          setTopSection(data[0]);
+          setHeadline1Rest(restOfText);
+          setHeadline1Last(lastWord);
+
+          let headlineText2 = data[0].headline2;
+          let words2 = headlineText2.split(" ");
+          let lastWord2 = words2.pop();
+          let restOfText2 = words2.join(" ");
+          setHeadline2Rest(restOfText2);
+          setHeadline2Last(lastWord2);
+        }
+      });
+
+    fetch("https://brightlight-node.onrender.com/member-of")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setMemberData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    fetch("https://brightlight-node.onrender.com/features")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setFeaturesData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    fetch("https://brightlight-node.onrender.com/loveneetBg")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setLoveneetBgImage(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   return (
     <>
       <Navbar1 showBlue={true} />
@@ -134,27 +195,18 @@ let HomePage = () => {
         <div className={styles.bannerMain}>
           <div className={styles.bannerHeading}>
             <h1>
-              Feeling{" "}
-              <span className={styles.bannerBlueHeading}>Overwhelmed?</span>
+              {headline1Rest}{" "}
+              <span className={styles.bannerBlueHeading}>{headline1Last}</span>
             </h1>
             <h1>
-              Just Received a{" "}
-              <span className={styles.bannerBlueHeading}>Refusal?</span>
+              {headline2Rest}{" "}
+              <span className={styles.bannerBlueHeading}>{headline2Last}</span>
             </h1>
-            <h2>WE'VE HELPED MANY OVERCOME THEM</h2>
+            <h2>{topSection?.SmallHeadline1}</h2>
           </div>
           <div className={styles.cardContainer}>
             {cards.map((card, index) => (
-              <div
-                key={index}
-                className={styles.card}
-                // onMouseEnter={(e) =>
-                //   (e.currentTarget.querySelector("img").src = card.hoverImg)
-                // }
-                // onMouseLeave={(e) =>
-                //   (e.currentTarget.querySelector("img").src = card.img)
-                // }
-              >
+              <div key={index} className={styles.card}>
                 <img src={card.img} alt={card.title} className={styles.icon} />
                 <div className={styles.title}>
                   <h2>{card.title}</h2>
@@ -171,7 +223,7 @@ let HomePage = () => {
       </div>
 
       <div className={styles.bannerParent2}>
-        <img src={BannerImage} alt="err" />
+        <img src={loveneetBgImage?.image} alt="err" />
         <div className={styles.bannerParent2ButtonDiv}>
           <button>
             {" "}
@@ -193,23 +245,23 @@ let HomePage = () => {
         <div className={styles.memberMain}>
           <div className={styles.memberCardParent}>
             <div className={styles.memberCard}>
-              <p>Member of</p>
+              <p>{memberData?.heading1}</p>
               <div className={styles.memberCardImg}>
-                <img src={Rcic} alt="err" />
+                <img src={memberData?.heading1Img} alt="err" />
               </div>
             </div>
 
             <div className={styles.memberCard}>
-              <p>Member of</p>
+              <p>{memberData?.heading2}</p>
               <div className={styles.memberCardImg}>
-                <img src={Capic} alt="err" />
+                <img src={memberData?.heading2Img} alt="err" />
               </div>
             </div>
 
             <div className={styles.memberCard}>
-              <p>Accepted by</p>
+              <p>{memberData?.heading3}</p>
               <div className={styles.memberCardImg}>
-                <img src={Cicc} alt="err" />
+                <img src={memberData?.heading3Img} alt="err" />
               </div>
             </div>
           </div>
@@ -218,36 +270,53 @@ let HomePage = () => {
 
       <div className={styles.simplifyingParent}>
         <div className={styles.simplifyingMain}>
-          <div className={styles.simplifyingDiv}>
-            <div className={styles.simplifyingImg}>
-              <img src={Simplifying1} alt="err" />
+          {featuresData.feature1SVG && featuresData.feature1Heading ? (
+            <div className={styles.simplifyingDiv}>
+              <div className={styles.simplifyingImg}>
+                <img src={featuresData?.feature1SVG} alt="err" />
+              </div>
+              <div className={styles.simplifyingContent}>
+                <h1>{featuresData?.feature1Heading}</h1>
+                <p>{featuresData?.feature1Description}</p>
+              </div>
             </div>
-            <div className={styles.simplifyingContent}>
-              <h1>Simplifying Immigration Challenges</h1>
-              <p>
-                We understand the stress and confusion you might be facing. Our
-                expert team knows every twist and turn of the complex
-                immigration process making it faster and easier than you'd
-                imagine.
-              </p>
-            </div>
-          </div>
+          ) : null}
 
-          <div className={styles.simplifyingDiv}>
-            <div className={styles.simplifyingImg}>
-              <img src={Simplifying2} alt="err" />
+          {featuresData.feature2SVG && featuresData.feature2Heading ? (
+            <div className={styles.simplifyingDiv}>
+              <div className={styles.simplifyingImg}>
+                <img src={featuresData?.feature2SVG} alt="err" />
+              </div>
+              <div className={styles.simplifyingContent}>
+                <h1>{featuresData?.feature2Heading}</h1>
+                <p>{featuresData?.feature2Description}</p>
+              </div>
             </div>
-            <div className={styles.simplifyingContent}>
-              <h1>Expert in Refusal Cases</h1>
-              <p>
-                We have a proven track record of success in helping individuals
-                overcome refusals, even those with 3 or 4 refusals. Our team of
-                experienced professionals will carefully review your case and
-                develop a personalised strategy to help you achieve your
-                immigration goals.
-              </p>
+          ) : null}
+
+          {featuresData.feature3SVG && featuresData.feature3Heading ? (
+            <div className={styles.simplifyingDiv}>
+              <div className={styles.simplifyingImg}>
+                <img src={featuresData?.feature3SVG} alt="err" />
+              </div>
+              <div className={styles.simplifyingContent}>
+                <h1>{featuresData?.feature3Heading}</h1>
+                <p>{featuresData?.feature3Description}</p>
+              </div>
             </div>
-          </div>
+          ) : null}
+
+          {featuresData.feature4SVG && featuresData.feature4Heading ? (
+            <div className={styles.simplifyingDiv}>
+              <div className={styles.simplifyingImg}>
+                <img src={featuresData?.feature4SVG} alt="err" />
+              </div>
+              <div className={styles.simplifyingContent}>
+                <h1>{featuresData?.feature4Heading}</h1>
+                <p>{featuresData?.feature4Description}</p>
+              </div>
+            </div>
+          ) : null}
         </div>
       </div>
 
@@ -333,6 +402,9 @@ let HomePage = () => {
       </div>
 
       <Testimonials_White />
+
+      <Testimonials />
+      <FAQ />
 
       <div className={styles.sourceParent}>
         <div className={styles.sourceMain}>

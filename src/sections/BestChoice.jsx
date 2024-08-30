@@ -1,7 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
 import styles from "../styles/BestChoice.module.css";
-import BestChoiceImg from "../assets/best-choice.png";
-import PlaneMap from "../assets/planeMap.png";
 
 let BestChoice = () => {
   let [planeTop, setPlaneTop] = useState(150);

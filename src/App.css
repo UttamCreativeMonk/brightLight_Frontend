@@ -49,7 +49,9 @@ span,p,a,input,li,thead{
   font-family: 'Manrope-Regular', sans-serif;
 }
 
-
+ul li:empty {
+  display: none;
+}
 
 
 .swiper-slide {

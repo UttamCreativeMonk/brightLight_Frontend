@@ -3,17 +3,33 @@ import BluePointer from "../assets/blue-pointer.png";
 import GoldenPointer from "../assets/golden-pointer.png";
 import Runway from "../assets/runway.png";
 import Plane from "../assets/plane.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 let OurProcess = () => {
   let [planePosition, setPlanePosition] = useState(0);
+  let [ourProcessData, setOurProcessData] = useState([]);
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/our-process")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setOurProcessData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   return (
     <div className={styles.ourProcessSection}>
       <div className={styles.fourCardParent}>
         <div className={styles.fourCard}>
           <div className={styles.fourCardHeading}>
-            <h1>Our Process</h1>
-            <p>IT’S QUITE EASY. WE PROMISE</p>
+            <h1>{ourProcessData?.heading}</h1>
+            <p>{ourProcessData?.description}</p>
           </div>
           <div className={styles.fourCardImgParent}>
             <div className={styles.fourCardImg}>
@@ -25,23 +41,22 @@ let OurProcess = () => {
                   <img src={BluePointer} alt="err" />
                   <p>1</p>
                 </div>
-                <h3>PERSONALISED ASSESMENT</h3>
+                <h3>{ourProcessData?.step1heading}</h3>
                 <ul>
                   <li>
-                    Firstly, we will identify and understand your Canadian
-                    immigration needs and goals.
+                    {ourProcessData?.step1p1 ? ourProcessData.step1p1 : null}
                   </li>
                   <li>
-                    Then, we will assess your eligibility for various
-                    immigration programs accordingly.
+                    {ourProcessData?.step1p2 ? ourProcessData.step1p2 : null}
                   </li>
                   <li>
-                    We will recommend the best pathway for your immigration
-                    goals after assessment.
+                    {ourProcessData?.step1p3 ? ourProcessData.step1p3 : null}
                   </li>
                   <li>
-                    Any questions you have about the chosen pathway will be
-                    addressed along with any other concerns.
+                    {ourProcessData?.step1p4 ? ourProcessData.step1p4 : null}
+                  </li>
+                  <li>
+                    {ourProcessData?.step1p5 ? ourProcessData.step1p5 : null}
                   </li>
                 </ul>
               </div>
@@ -53,20 +68,22 @@ let OurProcess = () => {
                   <img src={GoldenPointer} alt="err" />
                   <p>2</p>
                 </div>
-                <h3>TAILORED APPROACH</h3>
+                <h3>{ourProcessData?.step2heading}</h3>
                 <ul>
                   <li>
-                    We'll create a custom Canadian immigration plan suited just
-                    for you according to the pathway selected.
+                    {ourProcessData?.step2p1 ? ourProcessData.step2p1 : null}
                   </li>
                   <li>
-                    Based on this plan, you'll receive a clear proposal from us
-                    outlining our services and payment structure, i.e., 50%
-                    before processing your file and 50% before submission.
+                    {ourProcessData?.step2p2 ? ourProcessData.step2p2 : null}
                   </li>
                   <li>
-                    Once the initial 50% payment is made, we'll share a
-                    comprehensive checklist to ensure everything is ready
+                    {ourProcessData?.step2p3 ? ourProcessData.step2p3 : null}
+                  </li>
+                  <li>
+                    {ourProcessData?.step2p4 ? ourProcessData.step2p4 : null}
+                  </li>
+                  <li>
+                    {ourProcessData?.step2p5 ? ourProcessData.step2p5 : null}
                   </li>
                 </ul>
               </div>
@@ -78,22 +95,22 @@ let OurProcess = () => {
                   <img src={BluePointer} alt="err" />
                   <p>3</p>
                 </div>
-                <h3>APPLICATION FULFILLMENT</h3>
+                <h3>{ourProcessData?.step3heading}</h3>
                 <ul>
                   <li>
-                    A case manager will be assigned to guide you and collect
-                    documents as per the checklist
+                    {ourProcessData?.step3p1 ? ourProcessData.step3p1 : null}
                   </li>
                   <li>
-                    We’ll prepare a strong application within 7-10 business days
+                    {ourProcessData?.step3p2 ? ourProcessData.step3p2 : null}
                   </li>
                   <li>
-                    Once your application is ready, we’ll send it to you for
-                    review and final approval.
+                    {ourProcessData?.step3p3 ? ourProcessData.step3p3 : null}
                   </li>
                   <li>
-                    After your approval, simply pay the remaining 50% payment,
-                    and your application will be submitted.
+                    {ourProcessData?.step3p4 ? ourProcessData.step3p4 : null}
+                  </li>
+                  <li>
+                    {ourProcessData?.step3p5 ? ourProcessData.step3p5 : null}
                   </li>
                 </ul>
               </div>
@@ -105,24 +122,22 @@ let OurProcess = () => {
                   <img src={GoldenPointer} alt="err" />
                   <p>4</p>
                 </div>
-                <h3>TRUSTED PARTNERSHIP</h3>
+                <h3>{ourProcessData?.step4heading}</h3>
                 <ul>
                   <li>
-                    Once your application is submitted successfully, we'll keep
-                    you informed at every stage of the process, from submission
-                    to decision.
+                    {ourProcessData?.step4p1 ? ourProcessData.step4p1 : null}
                   </li>
                   <li>
-                    Our ongoing support and guidance will help you achieve your
-                    immigration goals.
+                    {ourProcessData?.step4p2 ? ourProcessData.step4p2 : null}
                   </li>
                   <li>
-                    You can reach out to us to inquire about updates on your
-                    application.
+                    {ourProcessData?.step4p3 ? ourProcessData.step4p3 : null}
                   </li>
                   <li>
-                    If satisfied with our service, we hope you'll feel inclined
-                    to refer others to us
+                    {ourProcessData?.step4p4 ? ourProcessData.step4p4 : null}
+                  </li>
+                  <li>
+                    {ourProcessData?.step4p5 ? ourProcessData.step4p5 : null}
                   </li>
                 </ul>
               </div>
@@ -134,7 +149,7 @@ let OurProcess = () => {
               src={Plane}
               className={styles.plane}
               alt="err"
-              style={{ left: `${planePosition}px` }}
+              style={{ left:`${planePosition}px` }}
             />
           </div>
         </div>
