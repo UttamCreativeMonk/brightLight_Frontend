@@ -31,6 +31,7 @@ let Blogs = () => {
       })
       .then((data) => {
         if (data) {
+          // let trimData = data.slice(0, 5);
           setBlogs(data);
         }
       })
@@ -43,14 +44,14 @@ let Blogs = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 1,
+    slidesToScroll: 2,
   };
   return (
     <div className={styles.blogs}>
       <div className={styles.blogsParent}>
         <div className={styles.blogsTopSection}>
           <img src={brightBlogs} />
-          <div>
+          <div className={styles.blogsHeading}>
             <h1>Our Thougtful Narratives</h1>
             <p>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -78,7 +79,7 @@ let Blogs = () => {
                   <img src={item.image} />
                   <h5>{item.category}</h5>
                   <h2>{item.blog_heading}</h2>
-                  <h6>{item.date}</h6>
+                  <h6><b>{item.date}</b></h6>
                   <p>{truncateText(item.blog_description_para_1, 20)}</p>
                   <button>Read More</button>
                 </a>

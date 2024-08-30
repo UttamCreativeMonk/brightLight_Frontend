@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "../styles/HomePage.module.css";
 
-
 // import permanentResidenceImg from "../assets/homeLocation.png";
 // import bcpnpImg from "../assets/employee.png";
 // import visitorVisaImg from "../assets/visa.png";
@@ -163,9 +162,11 @@ let HomePage = () => {
               </div>
             ))}
           </div>
-          <button className={styles.bookButton17} role="button">
-            More Services
-          </button>
+          <a href="/more-services">
+            <button className={styles.bookButton17} role="button">
+              More Services
+            </button>
+          </a>
         </div>
       </div>
 
@@ -267,7 +268,7 @@ let HomePage = () => {
               <a href="/">Know More</a>
             </button>
           </div>
-          
+
           <div className={styles.testimonialsVideoSection}>
             <Swiper
               effect={"coverflow"}
@@ -301,8 +302,7 @@ let HomePage = () => {
                 ></div>
               </div>
             </Swiper>
-          </div> 
-          
+          </div>
         </div>
       </div>
 
@@ -331,16 +331,13 @@ let HomePage = () => {
           </div>
         </div>
       </div>
-   
-<Testimonials_White/>
 
-      <Testimonials />
-      <FAQ /> 
+      <Testimonials_White />
 
       <div className={styles.sourceParent}>
         <div className={styles.sourceMain}>
           <div className={styles.sourceHeadingParent}>
-            <div  className={styles.sourceHeadingParentFirstDiv}>
+            <div className={styles.sourceHeadingParentFirstDiv}>
               <img src={WhiteLogo} alt="ERR" />
             </div>
             <div>
@@ -372,7 +369,7 @@ let HomePage = () => {
                 <button>Read more</button>
               </div>
             </div>
-             <hr />
+            <hr />
             <div className={styles.sourceContent}>
               <div className={styles.sourceContentDate}>
                 <p>STUDY</p>
@@ -404,12 +401,8 @@ let HomePage = () => {
         </div>
       </div>
 
-
-
-      <Blogs/>
-      <FAQ_Blue/>
-     
-      
+      <Blogs />
+      <FAQ_Blue />
 
       <Footer />
     </>

@@ -104,7 +104,7 @@ let BestChoice = () => {
           src={plane?.image}
           alt="err"
           className={styles.plane}
-          style={`{ top: ${planeTop}px }`}
+          style={{ top: `${planeTop}px` }}
         />
         <img
           src={bestChoiceImage?.image}

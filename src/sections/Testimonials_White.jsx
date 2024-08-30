@@ -134,6 +134,7 @@ let Testimonials_White = () => {
     },
   ];
   return (
+    <>
     <div className={styles.testimonialsSection}>
       <div className={styles.testimonialsContentSection}>
         <h1>Don't Leave without hearing from our clients testimonials.</h1>
@@ -205,6 +206,7 @@ let Testimonials_White = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

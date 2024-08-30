@@ -23,9 +23,15 @@ import Tiktokblue from "../assets/tiktokBlue.png";
 
 const Navbar1 = (props) => {
   const { showBlue } = props;
-  let [showAboutDropdown, setShowAboutDropdown] = useState(false);
-  let [showServicesDropdown, setShowServicesDropdown] = useState(false);
-  let [showCalculatorsDropdown, setShowCalculatorsDropdown] = useState(false);
+  const [showAboutDropdown, setShowAboutDropdown] = useState(false);
+  const [showServicesDropdown, setShowServicesDropdown] = useState(false);
+  const [showCalculatorsDropdown, setShowCalculatorsDropdown] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(false);
+
+  const toggleSidebar = () => {
+    setShowSidebar(!showSidebar);
+  };
+
 
   return (
     <>
@@ -84,6 +90,7 @@ const Navbar1 = (props) => {
             <a href="/" className={styles.logo}>
               <img src={BrightlightBlueLogo} alt="Brightlight Blue Logo" />
             </a>
+
             <div className={styles.mainNavbar}>
               <div className={styles.relativeDiv}>
                 <a
@@ -139,25 +146,51 @@ const Navbar1 = (props) => {
 
               {/* CONTACT */}
               <a href="/contact-us">CONTACT</a>
+            </div>
 
-              {/* Search Bar */}
-              <div className={styles.searchBar}>
-                <div className={styles.inputWrapper}>
-                  <Search
-                    className={styles.searchIcon}
-                    width={20}
-                    height={20}
-                  />
-                  <input
-                    type="text"
-                    className={styles.input}
-                    placeholder="Search here"
-                  />
-                </div>
-                <button className={styles.button}>Search here</button>
+            {/* Search Bar */}
+            <div className={styles.searchBar}>
+              <div className={styles.inputWrapper}>
+                <Search
+                  className={styles.searchIcon}
+                  width={20}
+                  height={20}
+                />
+                <input
+                  type="text"
+                  className={styles.input}
+                  placeholder="Search here"
+                />
               </div>
+              <button className={styles.button}>Search here</button>
+            </div>
+
+            {/* Hamburger Icon */}
+            <div className={styles.hamburger} onClick={toggleSidebar}>
+              &#9776;
             </div>
           </div>
+
+          {/* Sidebar */}
+          <div
+            className={`${styles.sidebar} ${
+              showSidebar ? styles.showSidebar : ""
+            }`}
+          >
+            <div className={styles.sidebarContent}>
+              <div className={styles.closeBtn} onClick={toggleSidebar}>
+                &times;
+              </div>
+              <a href="/">SERVICES</a>
+              <a href="/blogs">BLOGS</a>
+              <a href="/">NEWS</a>
+              <a href="/contact-us">CONTACT</a>
+              <a href="/BCPNP-Calculator">BCPNP Calculator</a>
+              <a href="/">CLB Calculator</a>
+              <a href="/Federal-Skilled">FSW Calculator</a>
+            </div>
+          </div>
+
 
           <div className={styles.contactNavbar}>
             <div className={styles.contactInfo}>

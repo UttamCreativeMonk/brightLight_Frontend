@@ -137,3 +137,21 @@
   margin-top: 20px;
   font-weight: 200;
 }
+
+@media all and (max-width: 1460px) {
+.testimonialsContentSection{
+  width: 95%;
+}
+.clientTestimonialsSection{
+  width: 95%;
+}
+.clientReviewsOverflowSection{
+  width: 95%;
+}
+.testimonialsVideoSection{
+  width: 95%;
+}
+.reviewDetails {
+  width: 95%;
+}
+}

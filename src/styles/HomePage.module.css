@@ -706,11 +706,11 @@
 }
 
 @media all and (max-width: 1450px) {
-  .aspectsCardParent{
+  .aspectsCardParent {
     width: 1340px;
     margin: auto;
   }
-  .aspectsMain{
+  .aspectsMain {
     width: 1340px;
   }
 
@@ -733,21 +733,21 @@
     margin: auto;
   }
 
-  .sourceMain{
+  .sourceMain {
     width: 1260px;
   }
-  .sourceHeadingParentFirstDiv{
+  .sourceHeadingParentFirstDiv {
     margin-right: 50px;
   }
-  .sourceContent{
+  .sourceContent {
     justify-content: space-around;
   }
-  .expertiseContentParent{
+  .expertiseContentParent {
     width: 1260px;
   }
 }
 
-@media all and (max-width:1420px){
+@media all and (max-width: 1420px) {
   .memberMain {
     width: 1220px;
   }
@@ -758,15 +758,14 @@
 }
 
 @media all and (max-width: 1400px) {
-
-  .aspectsCardParent{
+  .aspectsCardParent {
     width: 1200px;
     margin: auto;
   }
-  .aspectsMain{
+  .aspectsMain {
     width: 1200px;
   }
-  .aspectsHeading h2{
+  .aspectsHeading h2 {
     font-size: 30px;
   }
 
@@ -799,34 +798,34 @@
   }
 }
 
-@media all and (max-width:1320px){
-  .expertiseContentParent{
+@media all and (max-width: 1320px) {
+  .expertiseContentParent {
     width: 1150px;
   }
-  .expertiseContentHeading h1{
+  .expertiseContentHeading h1 {
     font-size: 40px;
   }
-  .expertiseContentHeading p{
+  .expertiseContentHeading p {
     font-size: 18px;
   }
 
   .simplifyingMain {
     width: 1220px;
   }
-  .memberCardImg{
+  .memberCardImg {
     height: 150px;
-    width:250px ;
+    width: 250px;
   }
-  .memberCardParent{
+  .memberCardParent {
     gap: 80px;
   }
-  .memberMain{
+  .memberMain {
     width: 1020px;
   }
-   
-.memberCardImg img{
+
+  .memberCardImg img {
     width: 200px;
-}
+  }
 }
 
 @media all and (max-width: 1300px) {
@@ -835,11 +834,11 @@
     padding: 40px 0px;
   }
 
-  .simplifyingMain p{
+  .simplifyingMain p {
     font-size: 20px;
   }
 
-  .simplifyingContent{
+  .simplifyingContent {
     width: 77%;
   }
 
@@ -865,22 +864,21 @@
 }
 
 @media all and (max-width: 1280px) {
-  .memberParent{
+  .memberParent {
     padding-top: 30px;
     padding-bottom: 30px;
   }
 
-  .sourceMain{
+  .sourceMain {
     width: 1150px;
   }
-  .sourceContent{
+  .sourceContent {
     justify-content: space-around;
   }
 
   .card {
     width: 280px;
     padding: 50px 20px;
-
   }
 
   .bannerMain {
@@ -902,15 +900,15 @@
   }
 }
 
-@media all and (max-width:1245px){
-  .aspectsCardParent{
+@media all and (max-width: 1245px) {
+  .aspectsCardParent {
     width: 1100px;
     margin: auto;
   }
-  .aspectsMain{
+  .aspectsMain {
     width: 1100px;
   }
-  .aspectsHeading h2{
+  .aspectsHeading h2 {
     font-size: 26px;
   }
 }
@@ -929,55 +927,53 @@
 } */
 
 @media all and (max-width: 1150px) {
-
-  .expertiseContentParent{
+  .expertiseContentParent {
     width: 1020px;
   }
-  .expertiseContentHeading h1{
+  .expertiseContentHeading h1 {
     font-size: 40px;
   }
-  .expertiseContentHeading p{
+  .expertiseContentHeading p {
     font-size: 18px;
   }
 
-  
-  .sourceMain{
+  .sourceMain {
     width: 1020px;
   }
 
-  .aspectsCard{
+  .aspectsCard {
     height: 350px;
     width: 278px;
   }
-  .aspectsCardParent{
+  .aspectsCardParent {
     width: 1000px;
     margin: auto;
   }
-  .aspectsMain{
+  .aspectsMain {
     width: 1000px;
   }
-  .aspectsHeading h2{
+  .aspectsHeading h2 {
     font-size: 22px;
   }
-  .aspectsHeading h1{
+  .aspectsHeading h1 {
     font-size: 55px;
   }
   .simplifyingMain {
     width: 920px;
     padding: 0px;
   }
-  .simplifyingContent{
+  .simplifyingContent {
     width: 60%;
   }
-  .simplifyingImg{
+  .simplifyingImg {
     width: 0%;
   }
 
-  .simplifyingMain p{
+  .simplifyingMain p {
     font-size: 16px;
   }
 
-  .simplifyingMain h1{
+  .simplifyingMain h1 {
     font-size: 25px;
   }
 
@@ -1006,49 +1002,47 @@
 }
 
 @media all and (max-width: 1020px) {
-
-  .expertiseContentParent{
+  .expertiseContentParent {
     width: 890px;
   }
-  .expertiseContentHeading h1{
+  .expertiseContentHeading h1 {
     font-size: 40px;
   }
-  .expertiseContentHeading p{
+  .expertiseContentHeading p {
     font-size: 17px;
   }
 
-
-  .sourceMain{
+  .sourceMain {
     width: 960px;
   }
 
-  .aspectsCard{
+  .aspectsCard {
     height: 340px;
     width: 268px;
   }
-  .aspectsCardParent{
+  .aspectsCardParent {
     width: 900px;
     margin: auto;
   }
-  .aspectsMain{
+  .aspectsMain {
     width: 900px;
   }
-  .aspectsHeading h2{
+  .aspectsHeading h2 {
     font-size: 20px;
   }
 
-  .memberCardImg{
+  .memberCardImg {
     height: 150px;
-    width:220px ;
+    width: 220px;
   }
-  .memberCardParent{
+  .memberCardParent {
     gap: 70px;
   }
-  .memberMain{
+  .memberMain {
     width: 900px;
   }
-   
- .memberCardImg img{
+
+  .memberCardImg img {
     width: 180px;
   }
 
@@ -1056,25 +1050,25 @@
     width: 820px;
     padding: 0px;
   }
-  .simplifyingContent{
+  .simplifyingContent {
     width: 74%;
   }
-  .simplifyingImg{
+  .simplifyingImg {
     width: 5%;
   }
 
-  .simplifyingDiv{
+  .simplifyingDiv {
     padding: 40px 0px;
   }
 
-  .simplifyingMain p{
+  .simplifyingMain p {
     font-size: 16px;
   }
 
-  .simplifyingMain h1{
+  .simplifyingMain h1 {
     font-size: 25px;
   }
- 
+
   .card {
     width: 260px;
     padding: 42px 20px;
@@ -1101,96 +1095,96 @@
 
 @media all and (max-width: 960px) {
   .sourceHeadingParent img {
-   margin-bottom: 20px;
-   width: 250px;
+    margin-bottom: 20px;
+    width: 250px;
   }
 
   .sourceContentDate h1 {
     font-size: 70px;
   }
-  .sourceContentData{
+  .sourceContentData {
     width: 100%;
   }
-  .sourceContentDate{
+  .sourceContentDate {
     width: 100%;
   }
   /* .sourceContentDate h1{
     width: 60px;
   } */
-  .sourceContentDate h2{
+  .sourceContentDate h2 {
     width: 24px;
   }
 
-  .sourceMain{
+  .sourceMain {
     width: 95%;
   }
-  .sourceContent{
+  .sourceContent {
     flex-direction: column;
   }
 
-  .sourceHeadingParent{
+  .sourceHeadingParent {
     flex-direction: column;
   }
 
-  .aspectsCardParent{
+  .aspectsCardParent {
     flex-direction: column;
   }
 
-  .aspectsHeading h2{
+  .aspectsHeading h2 {
     font-size: 18px;
     margin: auto;
   }
 
-  .aspectsHeading h1{
+  .aspectsHeading h1 {
     font-size: 42px;
   }
 
-  .aspectsCard{
+  .aspectsCard {
     height: 350px;
     width: 288px;
     margin-top: 40px;
   }
-  .aspectsCard p{
+  .aspectsCard p {
     font-size: 26px;
   }
-  .aspectsCardParent{
+  .aspectsCardParent {
     width: 95%;
     margin: auto;
   }
-  .aspectsMain{
+  .aspectsMain {
     width: 95%;
   }
-  .aspectsHeading h2{
+  .aspectsHeading h2 {
     font-size: 20px;
   }
 
   /* / */
 
-  .simplifyingMain{
+  .simplifyingMain {
     width: 95%;
   }
 
-  .simplifyingContent{
+  .simplifyingContent {
     width: 100%;
   }
-  .simplifyingImg{
+  .simplifyingImg {
     width: 100%;
   }
 
-  .simplifyingDiv{
-  flex-direction: column;
-  border: none;
-  gap: 30px;
-  margin-top: 0px;
-  margin-bottom: 10px;
+  .simplifyingDiv {
+    flex-direction: column;
+    border: none;
+    gap: 30px;
+    margin-top: 0px;
+    margin-bottom: 10px;
   }
 
-  .simplifyingMain p{
+  .simplifyingMain p {
     font-size: 19px;
     font-weight: 500;
   }
 
-  .simplifyingMain h1{
+  .simplifyingMain h1 {
     font-size: 34px;
     font-weight: 700;
   }
@@ -1204,7 +1198,7 @@
     width: 860px;
   }
 
-  .bannerHeading h1{
+  .bannerHeading h1 {
     padding-top: 0px;
     margin-top: -5px;
     font-size: 50px;
@@ -1213,37 +1207,51 @@
   .cardContainer {
     width: 860px;
   }
+  .sourceContentDate h1 {
+    text-align: left;
+  }
+  .sourceHeadingParent h1 {
+    text-align: left;
+  }
+
+  .testimonialsVideoSection img {
+    width: 300px;
+    height: 325px;
+  }
+  
+  .testimonialsVideoSection p {
+    font-size: 22px;
+  }
 }
 @media all and (max-width: 900px) {
-  .expertiseContentParent{
+  .expertiseContentParent {
     width: 95%;
   }
-  .expertiseContentHeading h1{
+  .expertiseContentHeading h1 {
     font-size: 40px;
   }
-  .expertiseContentHeading p{
+  .expertiseContentHeading p {
     font-size: 17px;
   }
 
-
-  .memberCard p{
+  .memberCard p {
     font-size: 21px;
   }
-  .memberCardImg{
+  .memberCardImg {
     height: 110px;
-    width: 220px ;
+    width: 220px;
   }
-  .memberCardParent{
+  .memberCardParent {
     gap: 60px;
   }
-  .memberCard{
+  .memberCard {
     text-align: left;
     align-items: flex-start;
   }
-  .memberMain{
+  .memberMain {
     width: 95%;
-  } 
- .memberCardImg img{
+  }
+  .memberCardImg img {
     width: 170px;
   }
 
@@ -1267,21 +1275,21 @@
 }
 
 @media all and (max-width: 830px) {
-  .memberCardImg{
+  .memberCardImg {
     height: 100px;
-    width: 200px ;
+    width: 200px;
   }
-  .memberCardParent{
+  .memberCardParent {
     gap: 50px;
   }
 
- .memberCardImg img{
+  .memberCardImg img {
     width: 170px;
   }
 }
 
 @media all and (max-width: 790px) {
-  .knowButton{
+  .knowButton {
     padding: 15px 25px;
     font-size: 15px;
   }
@@ -1292,7 +1300,7 @@
     height: 165px;
   }
 
-  .bannerHeading h1{
+  .bannerHeading h1 {
     padding-top: 0px;
     margin-top: -3px;
     font-size: 44px;
@@ -1318,36 +1326,34 @@
     padding: 19px 35px;
     font-size: 13px;
   }
-
-
 }
 
 @media all and (max-width: 730px) {
-  .memberCard p{
+  .memberCard p {
     font-size: 16px;
     padding-bottom: 30px;
   }
-  .memberCardImg{
+  .memberCardImg {
     height: 90px;
-    width: 180px ;
+    width: 180px;
   }
-  .memberCardParent{
+  .memberCardParent {
     gap: 50px;
   }
 
- .memberCardImg img{
+  .memberCardImg img {
     width: 160px;
   }
 
-  .simplifyingMain p{
+  .simplifyingMain p {
     font-size: 19px;
   }
 
-  .simplifyingMain h1{
+  .simplifyingMain h1 {
     font-size: 30px;
   }
 
-  .simplifyingImg img{
+  .simplifyingImg img {
     width: 90px;
   }
 
@@ -1376,38 +1382,38 @@
 }
 
 @media all and (max-width: 690px) {
-  .sourceContentDate h2{
+  .sourceContentDate h2 {
     font-size: 20px;
   }
 
-  .sourceContentDate h1{
+  .sourceContentDate h1 {
     padding-bottom: 0px;
   }
 
-  .sourceContentData h3{
+  .sourceContentData h3 {
     font-size: 24px;
   }
-  .memberCardImg{
+  .memberCardImg {
     height: 90px;
-    width: 160px ;
+    width: 160px;
   }
 
-  .memberCardParent{
+  .memberCardParent {
     gap: 30px;
   }
 
- .memberCardImg img{
+  .memberCardImg img {
     width: 150px;
   }
 }
 
 @media all and (max-width: 580px) {
-  .expertiseContentHeading h1{
+  .expertiseContentHeading h1 {
     font-size: 38px;
     padding-bottom: 20px;
   }
-  .expertiseContentHeading p{
-line-height: 30px;
+  .expertiseContentHeading p {
+    line-height: 30px;
   }
 
   .sourceHeadingParent h1 {
@@ -1417,20 +1423,20 @@ line-height: 30px;
     font-size: 18px;
   }
 
-  .memberCardImg{
+  .memberCardImg {
     height: 65px;
-    width: 140px ;
+    width: 140px;
   }
 
-  .memberCardParent{
+  .memberCardParent {
     gap: 25px;
   }
 
- .memberCardImg img{
+  .memberCardImg img {
     width: 110px;
   }
 
-  .simplifyingMain h1{
+  .simplifyingMain h1 {
     font-size: 27px;
   }
 
@@ -1444,7 +1450,7 @@ line-height: 30px;
     text-align: center;
   }
 
-  .bannerHeading h1{
+  .bannerHeading h1 {
     padding-top: 0px;
     margin-top: -3px;
     font-size: 35px;
@@ -1478,10 +1484,21 @@ line-height: 30px;
     padding: 16px 30px;
     font-size: 12px;
   }
+
+  
+  .testimonialsVideoSection img {
+    width: 250px;
+    height: 275px;
+  }
+  
+  .testimonialsVideoSection p {
+    font-size: 20px;
+  }
+
 }
 
 @media all and (max-width: 501px) {
-  .memberParent{
+  .memberParent {
     padding-top: 25px;
     padding-bottom: 25px;
   }
@@ -1489,10 +1506,10 @@ line-height: 30px;
     padding-bottom: 10px;
   }
 
-  .expertiseContentHeading h1{
+  .expertiseContentHeading h1 {
     font-size: 30px;
   }
-  .expertiseContentHeading p{
+  .expertiseContentHeading p {
     font-size: 15px;
   }
   .sourceHeadingParent h1 {
@@ -1502,58 +1519,58 @@ line-height: 30px;
     font-size: 14px;
   }
 
-  .aspectsHeading h2{
+  .aspectsHeading h2 {
     font-size: 18px;
     margin: auto;
   }
 
-  .aspectsHeading h1{
+  .aspectsHeading h1 {
     font-size: 38px;
   }
 
-  .aspectsCard{
+  .aspectsCard {
     height: 295px;
     width: 225px;
     margin: auto;
     margin-top: 40px;
   }
 
-  .aspectsCard h1{
+  .aspectsCard h1 {
     font-size: 40px;
   }
 
-  .aspectsCard p{
+  .aspectsCard p {
     font-size: 18px;
     /* padding-bottom: 5px; */
   }
 
-  .memberCard p{
+  .memberCard p {
     font-size: 12px;
     padding-bottom: 25px;
   }
 
-  .memberCardImg{
+  .memberCardImg {
     height: 60px;
-    width: 115px ;
+    width: 115px;
   }
 
-  .memberCardParent{
+  .memberCardParent {
     gap: 20px;
   }
 
- .memberCardImg img{
+  .memberCardImg img {
     width: 95px;
   }
 
-  .simplifyingMain h1{
+  .simplifyingMain h1 {
     font-size: 27px;
   }
 
-  .simplifyingMain h1{
+  .simplifyingMain h1 {
     font-size: 24px;
   }
 
-  .simplifyingMain p{
+  .simplifyingMain p {
     font-size: 17px;
   }
 
@@ -1569,7 +1586,7 @@ line-height: 30px;
 
   .bannerHeading h1 {
     font-size: 30px;
-  } 
+  }
 
   .bannerHeading h2 {
     font-size: 12px;
@@ -1599,87 +1616,83 @@ line-height: 30px;
     font-size: 12px;
     border-radius: 26px;
   }
-
 }
 
-
 @media all and (max-width: 415px) {
-  .knowButton{
+  .knowButton {
     padding: 10px 20px;
     font-size: 12px;
   }
 
-  .sourceContentData h3{
+  .sourceContentData h3 {
     font-size: 20px;
   }
-  .sourceContentData p{
+  .sourceContentData p {
     font-size: 16px;
   }
-  .sourceContentData button{
+  .sourceContentData button {
     padding: 15px 25px;
     font-size: 14px;
   }
 
-  .aspectsHeading h2{
+  .aspectsHeading h2 {
     font-size: 17px;
     width: 350px;
     margin: auto;
     line-height: 28px;
   }
 
-  .aspectsHeading h1{
+  .aspectsHeading h1 {
     font-size: 38px;
   }
 
-  .aspectsCard{
+  .aspectsCard {
     height: 280px;
     width: 215px;
     margin: auto;
     margin-top: 40px;
   }
 
-  .aspectsCard h1{
+  .aspectsCard h1 {
     font-size: 40px;
   }
-  
-  .aspectsCard p{
+
+  .aspectsCard p {
     font-size: 16px;
     /* padding-bottom: 5px; */
-    
   }
-  .aspectsCard img{
+  .aspectsCard img {
     margin-top: -25px;
   }
-  
-  .memberCard p{
+
+  .memberCard p {
     font-size: 10px;
     padding-bottom: 20px;
   }
 
-  .memberCardImg{
+  .memberCardImg {
     height: 60px;
-    width: 100px ;
+    width: 100px;
   }
 
-  .memberCardParent{
+  .memberCardParent {
     gap: 18px;
   }
 
- .memberCardImg img{
+  .memberCardImg img {
     width: 80px;
   }
 
-
-  .simplifyingMain h1{
+  .simplifyingMain h1 {
     font-size: 19px;
   }
 
-  .simplifyingMain p{
+  .simplifyingMain p {
     font-size: 15px;
     line-height: 26px;
   }
 
-  .simplifyingImg img{
+  .simplifyingImg img {
     width: 80px;
   }
 
@@ -1719,7 +1732,7 @@ line-height: 30px;
 
   .bannerHeading h1 {
     font-size: 28px;
-  } 
+  }
 
   .bannerHeading h2 {
     font-size: 10px;
@@ -1731,36 +1744,37 @@ line-height: 30px;
     font-size: 11px;
     border-radius: 25px;
   }
-
+  .testimonialsVideoSection img {
+    width: 200px;
+    height: 245px;
+  }
 }
 
 @media all and (max-width: 365px) {
-
-  .memberParent{
+  .memberParent {
     padding-top: 20px;
     padding-bottom: 20px;
   }
 
-  .memberCard p{
+  .memberCard p {
     font-size: 10px;
     padding-bottom: 20px;
   }
 
-  .memberCardImg{
+  .memberCardImg {
     height: 55px;
-    width: 90px ;
+    width: 90px;
   }
 
-  .memberCardParent{
+  .memberCardParent {
     gap: 15px;
   }
 
- .memberCardImg img{
+  .memberCardImg img {
     width: 80px;
   }
 
-
-  .simplifyingImg img{
+  .simplifyingImg img {
     width: 70px;
   }
 
@@ -1795,7 +1809,7 @@ line-height: 30px;
 
   .bannerHeading h1 {
     font-size: 26px;
-  } 
+  }
 
   .bannerHeading h2 {
     font-size: 10px;
@@ -1872,4 +1886,5 @@ line-height: 30px;
     width: 95%;
   }
 }
+
 

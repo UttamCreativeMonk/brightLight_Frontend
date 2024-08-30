@@ -82,6 +82,14 @@ span,p,a,input,li,thead{
   background-image: none !important;
 }
 
+.slick-slide{
+  width: 300px !important;
+  margin-right: 50px;
+}
+
+.slick-track{
+  display: flex;
+}
 
 * {
   margin: 0;

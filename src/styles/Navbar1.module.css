@@ -307,3 +307,105 @@
 .searchIcon g path {
   fill: #dec18f;
 }
+
+/* 
+@media all and (max-width: 1439px){
+  .firstNavbar {
+    width: 95%;
+  }
+  .secondNavbar {
+    width: 95%;
+  }
+  .contactNavbar{
+    width: 95%;
+  }
+}
+
+
+@media all and (max-width: 1290px){
+  .firstNavbar {
+    width: 90%;
+  }
+  .secondNavbar {
+    width: 90%;
+    padding: 30px 50px;
+  }
+  .contactNavbar{
+    width: 90%;
+  }
+} */
+
+
+@media all and (max-width: 1080px){
+  .firstNavbar {
+    width: 90%;
+  }
+  .secondNavbar {
+    width: 90%;
+    padding: 30px 50px;
+  }
+  .contactNavbar{
+    width: 90%;
+  }
+}
+
+/* Add these styles to Navbar1.module.css */
+
+/* Hides all menu items except logo and search bar on screens <= 1080px */
+
+
+/* Initially hide the hamburger icon */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Sidebar styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar.showSidebar {
+  right: 0;
+}
+
+.sidebarContent {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.closeBtn {
+  align-self: flex-end;
+  cursor: pointer;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 1080px) {
+  .mainNavbar {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+
+  }
+}

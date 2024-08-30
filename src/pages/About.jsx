@@ -34,6 +34,7 @@ let About = () => {
   let [socialMediaData, setSocialMediaData] = useState([]);
   let [globallyData, setGloballyData] = useState([]);
   let [globallyImg, setGloballyImg] = useState([]);
+  let [weAreSmall, setWeAreSmall] = useState([]);
   useEffect(() => {
     fetch("https://brightlight-node.onrender.com/aboutUsTopSection")
       .then((res) => {
@@ -94,6 +95,22 @@ let About = () => {
       .then((data) => {
         if (data) {
           setWeAre(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    //
+
+    fetch("https://brightlight-node.onrender.com/weAreSmall")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data[0]);
+        if (data) {
+          setWeAreSmall(data[0]);
         }
       })
       .catch((error) => {
@@ -391,7 +408,8 @@ let About = () => {
 
       <div className={styles.weAreParent}>
         <div className={styles.weAreParentImg}>
-          <img src={weAre?.img} alt="err" />
+          <img src={weAre?.img} alt="err" className={styles.weAreBig}/>
+          <img src={weAreSmall?.image} alt="err" className={styles.weAreSmall}/>
         </div>
       </div>
 
@@ -476,7 +494,7 @@ let About = () => {
 
       <div
         className={styles.vancouverParent}
-        style={{ backgroundImage: url(`${globallyImg?.image}`) }}
+        style={{ backgroundImage: `url(${globallyImg?.image})` }}
       >
         <div className={styles.vancouver}>
           <h1>{globallyData?.heading}</h1>
