@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import styles from "../styles/HomePage.module.css";
-
 import permanentResidenceImg from "../assets/homeLocation.png";
 import permanentResidenceHoverImg from "../assets/visaSVG.svg";
 import bcpnpImg from "../assets/employee.png";
@@ -15,21 +14,11 @@ import workPermitImg from "../assets/workPermit.png";
 import workPermitHoverImg from "../assets/workPermitWhite.png";
 import pflImg from "../assets/file.png";
 import pflHoverImg from "../assets/fileWhite.png";
-
 import WhiteLogo from "../assets/bright-source.webp";
-
-
 import LinkedinLogo from "../assets/bannerLinkedinLogo.png";
-
-import Visa from "../assets/visa2.png";
-import CheckMark from "../assets/success-stories-icon.webp";
-import SmileFace from "../assets/happy-clients-icon.webp";
-
-
 import Testimonials from "../sections/Testimonials";
 import FAQ from "../sections/FAQ";
 import OurProcess from "../sections/OurProcess";
-
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
@@ -40,7 +29,6 @@ import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
 import aboutBanner from "../assets/about-banner.png";
 import Navbar1 from "../components/Navbar1";
 import Footer from "../components/Footer";
-
 import FAQ_Blue from "../sections/FAQ_Blue";
 import Testimonials_White from "../sections/Testimonials_White";
 import Blogs from "../sections/Blogs";
@@ -54,6 +42,7 @@ let HomePage = () => {
   let [memberData, setMemberData] = useState([]);
   let [featuresData, setFeaturesData] = useState([]);
   let [loveneetBgImage, setLoveneetBgImage] = useState([]);
+  let [achiementsData, setAchievementsData] = useState([]);
 
   const cards = [
     {
@@ -181,6 +170,19 @@ let HomePage = () => {
       .then((data) => {
         if (data) {
           setLoveneetBgImage(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    fetch("https://brightlight-node.onrender.com/achievements-section")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setAchievementsData(data[0]);
         }
       })
       .catch((error) => {
@@ -355,9 +357,9 @@ let HomePage = () => {
               modules={[EffectCoverflow, Pagination, Navigation]}
               className={styles.swiper_container}
             >
-              {clientVideosData.map((item) => {
+              {clientVideosData.map((item, index) => {
                 return (
-                  <SwiperSlide>
+                  <SwiperSlide key={index}>
                     <div></div>
                     <img src={item.img} />
                   </SwiperSlide>
@@ -378,24 +380,25 @@ let HomePage = () => {
       <div className={styles.aspectsParent}>
         <div className={styles.aspectsMain}>
           <div className={styles.aspectsHeading}>
-            <h1>Some Aspects that Hold Significance!</h1>
-            <h2>
-              OUR ACHIEVEMENTS IN THE SUCCESSFUL JOURNEY HAVE BEEN REMARKABLE
-            </h2>
+            <h1>{achiementsData?.heading}</h1>
+            <h2>{achiementsData?.description}</h2>
           </div>
 
           <div className={styles.aspectsCardParent}>
             <div className={styles.aspectsCard}>
-              <img src={Visa} alt="err" /> <h1>10,257+</h1>{" "}
-              <p>VISA PROCESSED</p>
+              <img src={achiementsData?.achievement1SVG} alt="err" />{" "}
+              <h1>{achiementsData?.achievement1Numbers}</h1>{" "}
+              <p>{achiementsData?.achievement1Heading}</p>
             </div>
             <div className={styles.aspectsCard}>
-              <img src={CheckMark} alt="err" /> <h1>10,112+</h1>{" "}
-              <p>SUCCESS STORIES</p>
+              <img src={achiementsData?.achievement2SVG} alt="err" />{" "}
+              <h1>{achiementsData?.achievement2Numbers}</h1>{" "}
+              <p>{achiementsData?.achievement2Heading}</p>
             </div>
             <div className={styles.aspectsCard}>
-              <img src={SmileFace} alt="err" /> <h1>10,121+</h1>{" "}
-              <p>HAPPY CLIENTS</p>
+              <img src={achiementsData?.achievement3SVG} alt="err" />{" "}
+              <h1>{achiementsData?.achievement3Numbers}</h1>{" "}
+              <p>{achiementsData?.achievement3Heading}</p>
             </div>
           </div>
         </div>
@@ -467,15 +470,10 @@ let HomePage = () => {
             </div>
           </div>
           <hr />
-          {/* // */}
-
-          {/* // */}
         </div>
       </div>
-
       <Blogs />
       <FAQ_Blue />
-
       <Footer />
     </>
   );

@@ -95,6 +95,38 @@
   .faqParentSection {
     width: 95%;
   }
+
+  .faqQuestionsParentSection h1 {
+    text-align: left;
+  }
+}
+
+@media all and (max-width: 1100px) {
+  .faqParentSection {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .questions {
+    border-right: none;
+    padding: 10px 0px 10px 0px;
+  }
+
+  .faqQuestionSection {
+    width: 100%;
+  }
+
+  .faqAnswersSection {
+    width: 100%;
+    margin-top: -30px;
+    font-size: 20px;
+  }
+
+  .questionMarkSection {
+    width: 100px;
+    height: 100px;
+    font-size: 50px;
+  }
 }
 
 @media (max-width: 820px) {
@@ -104,15 +136,6 @@
 
   .questionSection {
     flex-direction: column;
-  }
-
-  .questionMarkSection {
-    height: 100px;
-    width: 100px;
-  }
-
-  .questionMarkSection {
-    font-size: 50px;
   }
 
   .faqQuestionSection {
@@ -126,5 +149,4 @@
   .faqQuestionSection {
     flex-direction: column;
   }
-  
 }

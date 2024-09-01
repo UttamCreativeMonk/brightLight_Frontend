@@ -123,9 +123,11 @@
   margin: 100px 0px;
 }
 
-.testimonialsVideoSection img {
+.testimonialsVideoSection iframe {
   width: 500px;
   height: 500px;
+  border-radius: 10px;
+  border: none;
 }
 
 .testimonialsVideoSection p {
@@ -139,19 +141,86 @@
 }
 
 @media all and (max-width: 1460px) {
-.testimonialsContentSection{
-  width: 95%;
+  .testimonialsContentSection {
+    width: 95%;
+  }
+  .clientTestimonialsSection {
+    width: 95%;
+    gap: 35px;
+  }
+  .clientReviewsOverflowSection {
+    width: 95%;
+  }
+  .testimonialsVideoSection {
+    width: 95%;
+    margin: auto;
+    padding-top: 70px;
+  }
+  .clientReviewsOverflowSection{
+    width: 100%;
+  }
+  .reviewDetails {
+    width: 95%;
+  }
 }
-.clientTestimonialsSection{
-  width: 95%;
+
+@media all and (max-width: 980px) {
+  .testimonialsVideoSection img {
+    width: 300px;
+    height: 300px;
+  }
+  .testimonialsVideoSection p {
+    font-size: 20px;
+  }
 }
-.clientReviewsOverflowSection{
-  width: 95%;
+
+
+@media all and (max-width: 680px) {
+  .testimonialsContentSection h1{
+    font-size: 50px;
+  }
+  .googleImageSection img{
+    width: 200px;
+  }
+  .googleImageSection p{
+    font-size: 50px;
+  }
+
+  .testimonialsVideoSection iframe {
+    width: 350px;
+    height: 350px;
+  }
 }
-.testimonialsVideoSection{
-  width: 95%;
+
+@media all and (max-width: 500px) {
+  .testimonialsVideoSection img {
+    width: 200px;
+    height: 200px;
+  }
+  .testimonialsVideoSection p {
+    font-size: 18px;
+  }
 }
-.reviewDetails {
-  width: 95%;
-}
+
+@media all and (max-width: 415px) {
+  .testimonialsContentSection h1{
+    font-size: 40px;
+  }
+  .googleImageSection img{
+    width: 120px;
+    padding: 0px;
+    padding-right: 20px;
+  }
+  .googleImageSection p{
+    font-size: 40px;
+    padding-left: 15px;
+  }
+  .googleImageSection {
+    gap: 0px;
+  }
+
+  .testimonialsVideoSection iframe {
+    width: 300px;
+    height: 300px;
+  }
 }
