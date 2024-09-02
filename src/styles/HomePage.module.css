@@ -46,6 +46,29 @@
     rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 
+.expertiseDiv {
+  width: 300px;
+  padding: 80px 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: white;
+}
+
+.expertiseDiv p {
+  color: #132f46 !important;
+  width: 100% !important;
+  font-size: 17px !important;
+  margin-bottom: 20px !important;
+  line-height: 1.5;
+}
+
+.expertiseDiv a {
+  padding: 10px 15px;
+  font-size: 14px;
+  border: 1px solid #132f46;
+  border-radius: 10px;
+}
+
 .card {
   display: flex;
   flex-direction: column;
@@ -66,11 +89,17 @@
   color: white;
 }
 
-.icon {
+/* .icon {
   width: 40px;
   height: 40px;
   margin-bottom: 10px;
   object-fit: contain;
+} */
+
+.card img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
 }
 
 .title {
@@ -796,6 +825,15 @@
     flex-wrap: wrap;
     background-color: transparent;
   }
+  .bannerParent2ButtonDiv {
+    width: 90%;
+    bottom: 6%;
+    left: 8%;
+  }
+
+  .bannerParent2ButtonDiv button img {
+    width: 105px;
+  }
 }
 
 @media all and (max-width: 1320px) {
@@ -913,18 +951,22 @@
   }
 }
 
-/* @media all and (max-width:1100px){
-  .aspectsCardParent{
-    width: 1000px;
-    margin: auto;
+@media all and (max-width: 1100px) {
+  .bannerParent2ButtonDiv {
+    width: 90%;
+    bottom: 3%;
+    left: 8%;
   }
-  .aspectsMain{
-    width: 1000px;
+
+  .bannerParent2ButtonDiv button img {
+    width: 85px;
   }
-  .aspectsHeading h2{
-    font-size: 22px;
+
+  .bannerParent2HaveQuestions button {
+    /* width: 100%; */
+    font-size: 15px;
   }
-} */
+}
 
 @media all and (max-width: 1150px) {
   .expertiseContentParent {
@@ -1380,6 +1422,28 @@
   .cardContainer {
     width: 95%;
   }
+  .bannerParent2ButtonDiv {
+    width: 90%;
+    bottom: 3%;
+    left: 8%;
+  }
+
+  .bannerParent2ButtonDiv button img {
+    width: 75px;
+  }
+
+  .bannerParent2HaveQuestions button {
+    /* width: 100%; */
+    font-size: 12px;
+  }
+
+  .bannerParent2HaveQuestions button p {
+    font-size: 8px;
+  }
+
+  .bannerParent2 button {
+    padding: 5px 20px;
+  }
 }
 
 @media all and (max-width: 690px) {
@@ -1496,6 +1560,31 @@
     font-size: 20px;
   }
 
+}
+
+@media all and (max-width: 550px) {
+  .bannerParent2ButtonDiv {
+    width: 90%;
+    bottom: 2%;
+    left: 8%;
+  }
+
+  .bannerParent2ButtonDiv button img {
+    width: 55px;
+  }
+
+  .bannerParent2HaveQuestions button {
+    /* width: 100%; */
+    font-size: 10px;
+  }
+
+  .bannerParent2HaveQuestions button p {
+    font-size: 6px;
+  }
+
+  .bannerParent2 button {
+    padding: 5px 20px;
+  }
 }
 
 @media all and (max-width: 501px) {
@@ -1748,6 +1837,28 @@
   .testimonialsVideoSection img {
     width: 200px;
     height: 245px;
+  }
+  .bannerParent2ButtonDiv {
+    width: 90%;
+    bottom: 2%;
+    left: 8%;
+  }
+
+  .bannerParent2ButtonDiv button img {
+    width: 55px;
+  }
+
+  .bannerParent2HaveQuestions button {
+    /* width: 100%; */
+    font-size: 10px;
+  }
+
+  .bannerParent2HaveQuestions button p {
+    font-size: 6px;
+  }
+
+  .bannerParent2 button {
+    padding: 5px 20px;
   }
 }
 

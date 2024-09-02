@@ -32,7 +32,6 @@
     cursor: pointer;
     display: inline-flex;
     fill: currentcolor;
-    font-family: "Google Sans", Roboto, Arial, sans-serif;
     font-size: 18px;
     font-weight: 500;
     height: 48px;
@@ -57,4 +56,18 @@
   .theButton:hover {
     background: #f6f9fe;
     color: #174ea6;
+  }
+
+  @media (max-width: 1460px) {
+    .mapSection {
+      width: 95%;
+    }
+  }
+
+
+  @media (max-width: 560px) {
+    .mapSection iframe {
+      width: 95%;
+      height: 300px;
+    }
   }

@@ -20,6 +20,7 @@ import Youtubeblue from "../assets/youtubeBlue.png";
 import Instagramblue from "../assets/instagramBlue.png";
 import Linkedinblue from "../assets/linkedinBlue.png";
 import Tiktokblue from "../assets/tiktokBlue.png";
+import hamBurgerIconWhite from "../assets/hamBurgerIconWhite.svg";
 
 const Navbar1 = (props) => {
   const { showBlue } = props;
@@ -162,7 +163,12 @@ const Navbar1 = (props) => {
 
             {/* Hamburger Icon */}
             <div className={styles.hamburger} onClick={toggleSidebar}>
-              &#9776;
+              {/* &#9776; */}{" "}
+              <img
+                src={hamBurgerIconWhite}
+                className={styles.hamburgerColoredIcon}
+                alt="wee"
+              />
             </div>
           </div>
 
@@ -172,17 +178,25 @@ const Navbar1 = (props) => {
               showSidebar ? styles.showSidebar : ""
             }`}
           >
+            {/* ///// */}
             <div className={styles.sidebarContent}>
               <div className={styles.closeBtn} onClick={toggleSidebar}>
                 &times;
               </div>
-              <a href="/">SERVICES</a>
+              <div className={styles.dropdown}>
+                <a href="#" className={styles.dropbtn}>
+                  SERVICES
+                  <span className={styles.arrow}>▼</span>
+                </a>
+                <div className={styles.dropdownContent}>
+                  <a href="/BCPNP-Calculator">BCPNP Calculator</a>
+                  <a href="/">CLB Calculator</a>
+                  <a href="/Federal-Skilled">FSW Calculator</a>
+                </div>
+              </div>
               <a href="/blogs">BLOGS</a>
               <a href="/">NEWS</a>
               <a href="/contact-us">CONTACT</a>
-              <a href="/BCPNP-Calculator">BCPNP Calculator</a>
-              <a href="/">CLB Calculator</a>
-              <a href="/Federal-Skilled">FSW Calculator</a>
             </div>
           </div>
 

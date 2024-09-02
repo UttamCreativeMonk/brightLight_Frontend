@@ -2240,8 +2240,6 @@
     width: 95%;
   }
 
-
-
   .pillarLogoContent {
     width: 100%;
   }
@@ -2272,6 +2270,15 @@
   .ourAchivementCardParent{
     width: 210px;
   }
+  .pillarParent{
+    padding: 0px 0px;
+  }
+  .visionMainSection{
+    padding: 80px 0px;
+  }
+.borderBottomFoundation{
+  margin-bottom: 30px;
+}
 }
 
 @media all and (max-width: 370px) {
@@ -2345,7 +2352,7 @@
   }
 
   .bannerPara {
-    font-size: 16px;
+    font-size: 12px;
     line-height: 22px;
   }
 
@@ -2480,7 +2487,7 @@
   }
 
   .aboutLogo img {
-    width: 290px;
+    width: 220px;
   }
 
   .foundation {

@@ -130,6 +130,9 @@
 }
 
 @media all and (max-width: 750px) {
+  .bannerMain h1{
+    font-size: 40px;
+  }
   .dataAll p {
     font-size: 12px;
   }
@@ -139,6 +142,9 @@
 }
 
 @media all and (max-width: 630px) {
+  .bannerMain h1{
+    font-size: 30px;
+  }
   .dataAll p {
     font-size: 12px;
   }
@@ -172,6 +178,9 @@
 }
 
 @media all and (max-width: 430px) {
+  .bannerMain h1{
+    font-size: 28px;
+  }
   .table {
     width: 95%;
   }
@@ -189,15 +198,22 @@
   .table th {
     padding: 2px;
   }
+  .dropdownArrow {
+    margin-left: 8px;
+    font-size: 7px;
+  }
 }
 
 
 @media all and (max-width: 365px) {
+  .bannerMain h1{
+    font-size: 26px;
+  }
   .table {
     width: 95%;
   }
   .dataAll p {
-    font-size: 8px;
+    font-size: 7px;
   }
   .headingSpan {
     font-size: 7px;

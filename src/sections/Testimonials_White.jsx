@@ -15,6 +15,8 @@ import "swiper/css/navigation";
 
 let Testimonials_White = () => {
   let [videosData, setVideosData] = useState([]);
+  let [data, setData] = useState([]);
+  let [reviewData, setReviewData] = useState([]);
   useEffect(() => {
     fetch("https://brightlight-node.onrender.com/videos-section")
       .then((res) => {
@@ -23,6 +25,101 @@ let Testimonials_White = () => {
       .then((data) => {
         if (data) {
           setVideosData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    fetch("https://brightlight-node.onrender.com/testimonials-section")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          let sortedArray = [];
+          if (data[0].review1img && data[0].review1name) {
+            sortedArray.push({
+              image: data[0].review1img,
+              review: data[0].review1text,
+              review_stars: Math.floor(data[0].review1star),
+              person_name: data[0].review1name,
+            });
+          }
+          if (data[0].review2img && data[0].review2name) {
+            sortedArray.push({
+              image: data[0].review2img,
+              review: data[0].review2text,
+              review_stars: Math.floor(data[0].review2star),
+              person_name: data[0].review2name,
+            });
+          }
+          if (data[0].review3img && data[0].review3name) {
+            sortedArray.push({
+              image: data[0].review3img,
+              review: data[0].review3text,
+              review_stars: Math.floor(data[0].review3star),
+              person_name: data[0].review3name,
+            });
+          }
+          if (data[0].review4img && data[0].review4name) {
+            sortedArray.push({
+              image: data[0].review4img,
+              review: data[0].review4text,
+              review_stars: Math.floor(data[0].review4star),
+              person_name: data[0].review4name,
+            });
+          }
+          if (data[0].review5img && data[0].review5name) {
+            sortedArray.push({
+              image: data[0].review5img,
+              review: data[0].review5text,
+              review_stars: Math.floor(data[0].review5star),
+              person_name: data[0].review5name,
+            });
+          }
+          if (data[0].review6img && data[0].review6name) {
+            sortedArray.push({
+              image: data[0].review6img,
+              review: data[0].review6text,
+              review_stars: Math.floor(data[0].review6star),
+              person_name: data[0].review6name,
+            });
+          }
+          if (data[0].review7img && data[0].review7name) {
+            sortedArray.push({
+              image: data[0].review7img,
+              review: data[0].review7text,
+              review_stars: Math.floor(data[0].review7star),
+              person_name: data[0].review7name,
+            });
+          }
+          if (data[0].review8img && data[0].review8name) {
+            sortedArray.push({
+              image: data[0].review8img,
+              review: data[0].review8text,
+              review_stars: Math.floor(data[0].review8star),
+              person_name: data[0].review8name,
+            });
+          }
+          if (data[0].review9img && data[0].review9name) {
+            sortedArray.push({
+              image: data[0].review9img,
+              review: data[0].review9text,
+              review_stars: Math.floor(data[0].review9star),
+              person_name: data[0].review9name,
+            });
+          }
+          if (data[0].review10img && data[0].review10name) {
+            sortedArray.push({
+              image: data[0].review10img,
+              review: data[0].review10text,
+              review_stars: Math.floor(data[0].review10star),
+              person_name: data[0].review10name,
+            });
+          }
+          setReviewData(sortedArray);
+          setData(data[0]);
         }
       })
       .catch((error) => {
@@ -72,142 +169,31 @@ let Testimonials_White = () => {
   };
 
   let handleNextReview = () => {
-    setCurrentReview((prev) =>
-      Math.min(prev + 1, clientTestimonials.length - 1)
-    );
+    setCurrentReview((prev) => Math.min(prev + 1, reviewData.length - 1));
   };
-  let clientTestimonials = [
-    {
-      image:
-        "https://www.fasttrackpromotion.com/wp-content/uploads/2013/04/happy-male-employee.jpg",
-      review:
-        "1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi unde asperiores facilis quam dolor saepe molestiae sed necessitatibus maiores tempora accusantium veniam cum officia alias rerum, repellat consectetur ea, incidunt aliquam dolorum rem cumque quos! Id deserunt fuga, aut dicta ipsa aspernatur minima velit earum qui doloremque doloribus hic amet.",
-      person_name: "Saksham Verma",
-      review_stars: "1",
-    },
-    {
-      image:
-        "https://www.fasttrackpromotion.com/wp-content/uploads/2013/04/happy-male-employee.jpg",
-      review:
-        "2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi unde asperiores facilis quam dolor saepe molestiae sed necessitatibus maiores tempora accusantium veniam cum officia alias rerum, repellat consectetur ea, incidunt aliquam dolorum rem cumque quos! Id deserunt fuga, aut dicta ipsa aspernatur minima velit earum qui doloremque doloribus hic amet.",
-      person_name: "Saksham Verma",
-      review_stars: "4",
-    },
-    {
-      image:
-        "https://www.fasttrackpromotion.com/wp-content/uploads/2013/04/happy-male-employee.jpg",
-      review:
-        "3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi unde asperiores facilis quam dolor saepe molestiae sed necessitatibus maiores tempora accusantium veniam cum officia alias rerum, repellat consectetur ea, incidunt aliquam dolorum rem cumque quos! Id deserunt fuga, aut dicta ipsa aspernatur minima velit earum qui doloremque doloribus hic amet.",
-      person_name: "Saksham Verma",
-      review_stars: "3",
-    },
-    {
-      image:
-        "https://www.fasttrackpromotion.com/wp-content/uploads/2013/04/happy-male-employee.jpg",
-      review:
-        "4 Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi unde asperiores facilis quam dolor saepe molestiae sed necessitatibus maiores tempora accusantium veniam cum officia alias rerum, repellat consectetur ea, incidunt aliquam dolorum rem cumque quos! Id deserunt fuga, aut dicta ipsa aspernatur minima velit earum qui doloremque doloribus hic amet.",
-      person_name: "Saksham Verma",
-      review_stars: "5",
-    },
-    {
-      image:
-        "https://www.fasttrackpromotion.com/wp-content/uploads/2013/04/happy-male-employee.jpg",
-      review:
-        "5 Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi unde asperiores facilis quam dolor saepe molestiae sed necessitatibus maiores tempora accusantium veniam cum officia alias rerum, repellat consectetur ea, incidunt aliquam dolorum rem cumque quos! Id deserunt fuga, aut dicta ipsa aspernatur minima velit earum qui doloremque doloribus hic amet.",
-      person_name: "Saksham Verma",
-      review_stars: "2",
-    },
-    {
-      image:
-        "https://www.fasttrackpromotion.com/wp-content/uploads/2013/04/happy-male-employee.jpg",
-      review:
-        "6 Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi unde asperiores facilis quam dolor saepe molestiae sed necessitatibus maiores tempora accusantium veniam cum officia alias rerum, repellat consectetur ea, incidunt aliquam dolorum rem cumque quos! Id deserunt fuga, aut dicta ipsa aspernatur minima velit earum qui doloremque doloribus hic amet.",
-      person_name: "Saksham Verma",
-      review_stars: "1",
-    },
-    {
-      image:
-        "https://www.fasttrackpromotion.com/wp-content/uploads/2013/04/happy-male-employee.jpg",
-      review:
-        "7 Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi unde asperiores facilis quam dolor saepe molestiae sed necessitatibus maiores tempora accusantium veniam cum officia alias rerum, repellat consectetur ea, incidunt aliquam dolorum rem cumque quos! Id deserunt fuga, aut dicta ipsa aspernatur minima velit earum qui doloremque doloribus hic amet.",
-      person_name: "Saksham Verma",
-      review_stars: "5",
-    },
-    {
-      image:
-        "https://www.fasttrackpromotion.com/wp-content/uploads/2013/04/happy-male-employee.jpg",
-      review:
-        "8 Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi unde asperiores facilis quam dolor saepe molestiae sed necessitatibus maiores tempora accusantium veniam cum officia alias rerum, repellat consectetur ea, incidunt aliquam dolorum rem cumque quos! Id deserunt fuga, aut dicta ipsa aspernatur minima velit earum qui doloremque doloribus hic amet.",
-      person_name: "Saksham Verma",
-      review_stars: "4",
-    },
-  ];
-
-  let clientVideosData = [
-    {
-      img: aboutBanner,
-      person_name: "Person 1",
-    },
-    {
-      img: aboutBanner,
-      person_name: "Person 2",
-    },
-    {
-      img: aboutBanner,
-      person_name: "Person 3",
-    },
-    {
-      img: aboutBanner,
-      person_name: "Person 4",
-    },
-    {
-      img: aboutBanner,
-      person_name: "Person 5",
-    },
-    {
-      img: aboutBanner,
-      person_name: "Person 6",
-    },
-    {
-      img: aboutBanner,
-      person_name: "Person 7",
-    },
-    {
-      img: aboutBanner,
-      person_name: "Person 8",
-    },
-    {
-      img: aboutBanner,
-      person_name: "Person 9",
-    },
-    {
-      img: aboutBanner,
-      person_name: "Person 10",
-    },
-  ];
   return (
     <>
       <div className={styles.testimonialsSection}>
         <div className={styles.testimonialsContentSection}>
-          <h1>Don't Leave without hearing from our clients testimonials.</h1>
+          <h1>{data?.heading}</h1>
           <div className={styles.googleImageSection}>
             <img src={google} />
-            <p>4.4/5</p>
+            <p>{data?.googleRatings}/5</p>
           </div>
           <div className={styles.clientReviewsOverflowSection}>
             <div className={styles.clientTestimonialsSection}>
               <div className={styles.clientImageSection}>
                 <img
-                  src={clientTestimonials[currentReview].image}
-                  alt={clientTestimonials[currentReview].person_name}
+                  src={reviewData[currentReview]?.image}
+                  alt={reviewData[currentReview]?.person_name}
                 />
               </div>
               <div className={styles.reviewDetails}>
-                <h3>{clientTestimonials[currentReview].review}</h3>
-                <h2>{clientTestimonials[currentReview].person_name}</h2>
+                <h3>{reviewData[currentReview]?.review}</h3>
+                <h2>{reviewData[currentReview]?.person_name}</h2>
                 <div className={styles.reviewsStarsSection}>
                   {Array.from(
-                    { length: clientTestimonials[currentReview].review_stars },
+                    { length: reviewData[currentReview]?.review_stars },
                     (_, i) => (
                       <ReviewStar key={i} width={25} height={25} />
                     )
@@ -220,7 +206,7 @@ let Testimonials_White = () => {
                     height={20}
                     onClick={handlePreviousReview}
                   />
-                  <p>{`${currentReview + 1} / ${clientTestimonials.length}`}</p>
+                  <p>{`${currentReview + 1} / ${reviewData.length}`}</p>
                   <Arrow width={20} height={20} onClick={handleNextReview} />
                 </div>
               </div>

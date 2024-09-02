@@ -131,6 +131,14 @@
   font-size: 15px;
   font-weight: 300;
 }
+.box{
+  cursor: pointer;
+}
+.selectedBox {
+  background-color: #12233d; /* Same as hover color */
+  color: white;
+}
+
 
 @media all and (max-width: 1440px) {
   .calculatorButtonsParent {
@@ -243,6 +251,7 @@
 @media all and (max-width: 490px) {
     .scoreContainer{
         margin-top: 70px;
+        padding-bottom: 60px;
     }
     .calculatorHeading h1{
         font-size: 45px;
@@ -264,6 +273,7 @@
     width: 95%;
     grid-template-columns: repeat(2, 36%);
     padding: 15px 38px;
+    padding-bottom: 60px;
   }
   .container {
     width: 90%;
@@ -302,6 +312,7 @@
     width: 95%;
     grid-template-columns: repeat(2, 50%);
     padding: 15px 38px;
+    padding-bottom: 60px;
   }
   .row {
     gap: 0px;
@@ -337,5 +348,6 @@
     width: 95%;
     grid-template-columns: repeat(2, 38%);
     padding: 15px 8px;
+    padding-bottom: 50px;
   }
 }

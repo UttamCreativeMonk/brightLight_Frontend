@@ -43,6 +43,8 @@ let HomePage = () => {
   let [featuresData, setFeaturesData] = useState([]);
   let [loveneetBgImage, setLoveneetBgImage] = useState([]);
   let [achiementsData, setAchievementsData] = useState([]);
+  let [servicesData, setServicesData] = useState([]);
+  let [services, setServices] = useState([]);
 
   const cards = [
     {
@@ -188,6 +190,77 @@ let HomePage = () => {
       .catch((error) => {
         console.log(error);
       });
+
+    fetch("https://brightlight-node.onrender.com/services-section")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          let filteredArray = [];
+          if (data[0].service1svg && data[0].service1name) {
+            filteredArray.push({
+              title: data[0].service1name,
+              img: data[0].service1svg,
+              desc: data[0].service1desc,
+            });
+          }
+          if (data[0].service2svg && data[0].service2name) {
+            filteredArray.push({
+              title: data[0].service2name,
+              img: data[0].service2svg,
+              desc: data[0].service2desc,
+            });
+          }
+          if (data[0].service3svg && data[0].service3name) {
+            filteredArray.push({
+              title: data[0].service3name,
+              img: data[0].service3svg,
+              desc: data[0].service3desc,
+            });
+          }
+          if (data[0].service4svg && data[0].service4name) {
+            filteredArray.push({
+              title: data[0].service4name,
+              img: data[0].service4svg,
+              desc: data[0].service4desc,
+            });
+          }
+          if (data[0].service5svg && data[0].service5name) {
+            filteredArray.push({
+              title: data[0].service5name,
+              img: data[0].service5svg,
+              desc: data[0].service5desc,
+            });
+          }
+          if (data[0].service6svg && data[0].service6name) {
+            filteredArray.push({
+              title: data[0].service6name,
+              img: data[0].service6svg,
+              desc: data[0].service6desc,
+            });
+          }
+          if (data[0].service7svg && data[0].service7name) {
+            filteredArray.push({
+              title: data[0].service7name,
+              img: data[0].service7svg,
+              desc: data[0].service7desc,
+            });
+          }
+          if (data[0].service8svg && data[0].service8name) {
+            filteredArray.push({
+              title: data[0].service8name,
+              img: data[0].service8svg,
+              desc: data[0].service8desc,
+            });
+          }
+          setServices(filteredArray);
+          setServicesData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
   return (
@@ -206,8 +279,9 @@ let HomePage = () => {
             </h1>
             <h2>{topSection?.SmallHeadline1}</h2>
           </div>
+
           <div className={styles.cardContainer}>
-            {cards.map((card, index) => (
+            {services.map((card, index) => (
               <div key={index} className={styles.card}>
                 <img src={card.img} alt={card.title} className={styles.icon} />
                 <div className={styles.title}>
@@ -327,13 +401,8 @@ let HomePage = () => {
       <div className={styles.expertiseParent}>
         <div className={styles.expertiseContentParent}>
           <div className={styles.expertiseContentHeading}>
-            <h1>Our Expertise is Your Success</h1>
-            <p>
-              Whether you're a student, a professional, or an entrepreneur
-              dreaming of Canada, we're here to help you achieve it. Our
-              Immigration visa services in Canada are tailored to your needs,
-              making your journey to Canadian dream smooth.
-            </p>
+            <h1>{servicesData?.heading}</h1>
+            <p>{servicesData?.description}</p>
 
             <button className={styles.knowButton}>
               <a href="/">Know More</a>
@@ -357,15 +426,21 @@ let HomePage = () => {
               modules={[EffectCoverflow, Pagination, Navigation]}
               className={styles.swiper_container}
             >
-              {clientVideosData.map((item, index) => {
+              {services?.map((item, index) => {
+                let formattedTitle = item.title
+                  .toLowerCase()
+                  .replace(/\s+/g, "-");
                 return (
                   <SwiperSlide key={index}>
-                    <div></div>
-                    <img src={item.img} />
+                    <div className={styles.expertiseDiv}>
+                      <h4>{item.title}</h4>
+                      <p>{item.desc}</p>
+                      <a href={`/services/${formattedTitle}`}>Know More</a>
+                    </div>
                   </SwiperSlide>
                 );
               })}
-              ;
+
               <div class="slider-controler" className={styles.slider_controler}>
                 <div
                   class="swiper_pagination"

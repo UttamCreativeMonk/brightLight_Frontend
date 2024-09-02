@@ -157,7 +157,6 @@
   cursor: pointer;
   display: inline-flex;
   fill: currentcolor;
-  font-family: "Google Sans", Roboto, Arial, sans-serif;
   font-size: 16px;
   font-weight: 500;
   /* height: 48px; */
@@ -237,6 +236,7 @@
 
 .theButtonAncorTwo button {
   padding-left: 10px;
+  border: none;
 }
 
 .theButtonSpanTwo img {
@@ -319,8 +319,7 @@
   -webkit-user-select: none;
   touch-action: manipulation;
   width: auto;
-  will-change: transform, opacity;
-  z-index: 0;
+
 }
 
 .bookButton17:hover {
@@ -352,7 +351,7 @@
   width: 3000px;
   background-color: #132f46;
 }
-.headingNumbers{
+.headingNumbers {
   width: 75px;
   text-align: center;
   background-color: #132f46;
@@ -565,23 +564,77 @@ align-items: center;
 }
 
 @media all and (max-width: 380px) {
+  .button17 {
+    padding: 12px 22px !important;
+    font-size: 14px;
+  }
+  .bookButton17 {
+    padding: 12px 22px !important;
+    font-size: 14px;
+  }
+  .stepContentList {
+    width: 100%;
+  }
+  .bannerHeadingRotate {
+    font-size: 18px;
+  }
+  
+
   .agricultureMain h1 {
-    font-size: 26px;
+    font-size: 24px;
   }
   .agricultureMain h2 {
-    font-size: 15px;
-    line-height: 22px;
+    font-size: 11px;
+    line-height: 20px;
   }
   .agricultureList li {
-    font-size: 15px;
+    font-size: 11px;
   }
+  .agricultureList{
+    padding-top: 40px;
+}
   .eligibleMain h1 {
-    font-size: 34px;
+    font-size: 28px;
+  }
+  .eligibleMain h3 {
+    font-size: 16px;
   }
   .bannerHeading h1 {
-    font-size: 38px;
+    font-size: 32px;
   }
   .bannerHeading h3 {
     font-size: 14px;
+  }
+  .headingNumbers {
+    width: 270px;
+  }
+  .stepsGrid {
+    padding: 0px;
+  }
+  .stepsGrid p {
+    font-size: 16px;
+    line-height: 25px;
+  }
+  .stepContentList li {
+    font-size: 18px;
+    line-height: 30px;
+  }
+  .stepContent h3 {
+    font-size: 20px;
+  }
+  .headerLineParent {
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+  .contactUpperMain p {
+    font-size: 18px;
+    line-height: 30px;
+  }
+  .contactMain p {
+    font-size: 18px;
+    line-height: 30px;
+  }
+  .theButtonSpanTwo img {
+    width: 3.2%;
   }
 }
