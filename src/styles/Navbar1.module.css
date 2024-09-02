@@ -11,7 +11,7 @@
   font-size: 15px;
 }
 
-.navbar a:hover{
+.navbar a:hover {
   text-decoration: none;
 }
 
@@ -116,7 +116,7 @@
   z-index: 3;
 }
 
-.input {
+.searchBar input {
   width: 100%;
   border: none;
   outline: none;
@@ -125,7 +125,7 @@
   border-radius: 50px 0 0 50px; /* Round left side only */
 }
 
-.button {
+.searchBar button {
   background-color: #dec18f; /* Button background color */
   color: white;
   border: none;
@@ -308,21 +308,28 @@
   fill: #dec18f;
 }
 
-/* 
-@media all and (max-width: 1439px){
+@media all and (max-width: 1439px) {
   .firstNavbar {
     width: 95%;
   }
   .secondNavbar {
     width: 95%;
   }
-  .contactNavbar{
+  .contactNavbar {
     width: 95%;
+  }
+  .mainNavbar{
+    gap: 25px;
+  }
+  .logo{
+    margin-right: 18px;
+  }
+  .searchBar{
+    margin-left: 30px;
   }
 }
 
-
-@media all and (max-width: 1290px){
+@media all and (max-width: 1290px) {
   .firstNavbar {
     width: 90%;
   }
@@ -330,29 +337,39 @@
     width: 90%;
     padding: 30px 50px;
   }
-  .contactNavbar{
+  .contactNavbar {
     width: 90%;
   }
-} */
+}
 
-
-@media all and (max-width: 1080px){
+@media all and (max-width: 1080px) {
   .firstNavbar {
     width: 90%;
   }
-  .secondNavbar {
-    width: 90%;
-    padding: 30px 50px;
+  .firstNavbar .ancor {
+    gap: 40px;
+    font-size: 14px;
   }
-  .contactNavbar{
+
+  .secondNavbar {
+    width: 100%;
+    padding: 30px 0px;
+  }
+  .contactNavbar {
     width: 90%;
+  }
+
+  .bottomSectionNavbar {
+    width: 95%;
+  }
+  .searchBar{
+    margin-left: 0px;
   }
 }
 
 /* Add these styles to Navbar1.module.css */
 
 /* Hides all menu items except logo and search bar on screens <= 1080px */
-
 
 /* Initially hide the hamburger icon */
 .hamburger {
@@ -406,6 +423,147 @@
 
   .hamburger {
     display: block;
+  }
+  .logo {
+    padding-right: 0px;
+    border: none;
+  }
+  .secondNavbar {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+  }
 
+  .searchBar input {
+    padding: 0px;
+    width: 120px;
+    background-color: transparent;
+  }
+  .searchBar button {
+    padding: 9px 9px;
+    font-size: 10px;
+  }
+  .searchBar {
+    height: 30px;
+  }
+  .searchIcon {
+    width: 12px;
+    height: 12px;
+  }
+  .contactInfo {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-right: 0px;
+  }
+  .location {
+    margin-right: 0px;
+  }
+  .email {
+    margin-right: 0px;
+    padding-top: 5px;
+  }
+  .email .icon {
+    margin-left: 0px;
+    width: 14px;
+  }
+  .icon {
+    width: 11px;
+  }
+
+  .socialMedia img {
+    width: 18px;
+    height: 18px;
+    margin-left: 14px;
+  }
+  .socialIcon {
+    width: 16px;
+    height: 16px;
+    margin-left: 9px;
+  }
+
+  .socialMedia {
+    margin-top: 20px;
+  }
+  .contactNavbar {
+    width: 100%;
+    padding: 0px;
+  }
+  .searchBar{
+    margin-left: auto;
+    margin-right: 10px;
+  }
+  .inputWrapper{
+    background-color: transparent;
+  }
+}
+
+@media all and (max-width: 670px) {
+  .firstNavbar .ancor {
+    gap: 20px;
+    font-size: 11px;
+  }
+  .calculatorIcon p {
+    font-size: 11px;
+  }
+  .iconGearIcon {
+    width: 15px;
+    height: 15px;
+  }
+  .RightArrowIcon {
+    width: 8px;
+    height: 8px;
+  }
+  .mobileIcon svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+@media all and (max-width: 450px) {
+  .lowerFooterText {
+    font-size: 10px;
+  }
+  .socialMedia img {
+    width: 16px;
+    height: 16px;
+    margin-left: 9px;
+  }
+  .socialIcon {
+    width: 16px;
+    height: 16px;
+    margin-left: 9px;
+  }
+
+  .firstNavbar .ancor {
+    gap: 10px;
+    font-size: 8px;
+  }
+  .calculatorIcon p {
+    font-size: 8px;
+  }
+  .iconGearIcon {
+    width: 12px;
+    height: 12px;
+  }
+  .RightArrowIcon {
+    width: 8px;
+    height: 8px;
+  }
+
+  .searchBar input {
+    padding: 0px;
+    width: 50px;
+  }
+  .searchBar button {
+    padding: 5px 5px;
+    font-size: 7px;
+  }
+  .searchBar{
+    height: 20px;
+  }
+  .searchIcon {
+    width: 10px;
+    height: 10px;
   }
 }

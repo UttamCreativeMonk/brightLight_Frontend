@@ -1546,6 +1546,17 @@
   .ourAchivementHeading h1 {
     font-size: 50px;
   }
+  .aboutUsFeature{
+    border-radius: 40px;
+  }
+  .bannerParaParent{
+    width: 90%;
+  }
+
+  .bannerPara {
+    font-size: 20px;
+    line-height: 28px;
+  }
 }
 
 @media all and (max-width: 620px) {
@@ -1682,6 +1693,9 @@
   .meetDirectorImg img {
     width: 220px;
   }
+  .aboutUsFeature{
+    border-radius: 40px;
+  }
 }
 
 @media all and (max-width: 560px) {
@@ -1731,9 +1745,6 @@
     font-size: 19px;
   }
 
-  /* .pillarSection {
-    width: 800px;
-  } */
 
   .pillarFeatureSvg h4 {
     font-size: 14px;
@@ -1751,10 +1762,6 @@
     width: 450px;
   }
 
-  .bannerPara {
-    font-size: 22px;
-    line-height: 30px;
-  }
 
   .socialPresence {
     width: 480px;
@@ -1786,9 +1793,6 @@
     height: 370px;
   }
 
-  /* .ourAchivementCardParent {
-    width: 700px;
-  } */
 
   .ourAchivementCard {
     padding: 5px 5px;
@@ -1798,7 +1802,7 @@
     width: 350px;
   }
   .pillarSection {
-    width: 450px;
+    width: 95%;
     margin: auto;
   }
 
@@ -1836,6 +1840,23 @@
     font-size: 40px;
     margin-top: 30px;
   }
+  .pillarFeatureSection{
+    margin-top: 150px;
+  }
+  .pillarParent{
+    padding: 100px 0px;
+  }
+  .aboutUsFeature{
+    border-radius: 40px;
+  }
+  .bannerPara {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .bannerParaParent{
+    width: 95%;
+  }
+
 }
 
 @media all and (max-width: 450px) {
@@ -1883,12 +1904,8 @@
 
   .aboutHeading {
     width: 380px;
-    font-size: 19px;
   }
 
-  /* .pillarSection {
-    width: 800px;
-  } */
 
   .designContent h1 {
     font-size: 30px;
@@ -1899,9 +1916,21 @@
   }
 
   .pillarFeatureSvg h4 {
-    font-size: 14px;
+    font-size: 10px;
   }
-
+  .pillarFeatureSvg p {
+    font-size: 9px;
+  }
+  .pillarFeatureSvg{
+    width: 32%;
+    height: 160px;
+  }
+  .pillarFeatureSvg img {
+    width: 40px;
+  }
+  .pillarFeatureSection{
+    width: 100%;
+  }
   .weAreParentImg {
     width: 380px;
   }
@@ -1950,13 +1979,10 @@
   }
 
   .pillarLogo {
-    /* width: 400px; */
+    width: 95%;
     height: 370px;
   }
 
-  /* .ourAchivementCardParent {
-    width: 700px;
-  } */
 
   .pillarLogoContent h2 {
     font-size: 40px;
@@ -1974,25 +2000,27 @@
     width: 340px;
   }
   .pillarSection {
-    width: 380px;
+    width: 95%;
     margin: auto;
   }
 
   .pillarLogo {
     /* width: 380px; */
     margin: auto;
+    gap: 10px;
   }
 
   .pillarLogo img {
-    width: 40%;
+    width: 37%;
+    height: 208px;
   }
 
   .pillarLogoContent {
-    width: 54%;
+    width: 100%;
   }
 
   .pillarFeatureSection {
-    width: 380px;
+    width: 95%;
     margin: auto;
     margin-top: 270px;
   }
@@ -2003,6 +2031,39 @@
     object-fit: cover;
     text-align: left;
   }
+  .pillarFeatureSection{
+    margin-top: 80px;
+  }
+  .pillarParent{
+    padding: 100px 0px;
+  }
+  .aboutUsFeature{
+    border-radius: 40px;
+  }
+  .bannerPara {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .visionContentSection p{
+    font-size: 16px;
+  }
+  .meetDirectorimgContent{
+    width: 95%;
+  }
+  .meetDirectorimgContent h3{
+    font-size: 16px;
+  }
+  .meetDirectorimgContent p{
+    font-size: 15px;
+    line-height: 25px;
+  }
+  .pillarLogo img{
+    margin: auto;
+  }
+  .aboutHeading{
+    font-size:16px;
+  }
+
 }
 
 @media all and (max-width: 430px) {
@@ -2028,7 +2089,7 @@
   }
 
   .aboutUsFeature p {
-    font-size: 16px;
+    font-size: 14px;
   }
   .aboutUsFeature img {
     height: 120px;
@@ -2042,9 +2103,26 @@
   }
 
   .aboutLogo img {
-    width: 350px;
+    width: 300px;
   }
 
+  .pillarFeatureSection{
+    width: 95%;
+  }
+
+  .pillarFeatureSvg h4 {
+    font-size: 11px;
+  }
+  .pillarFeatureSvg p {
+    font-size: 7px;
+  }
+  .pillarFeatureSvg{
+    width: 30%;
+    height: 120px;
+  }
+  .pillarFeatureSvg img {
+    width: 35px;
+  }
   .foundation {
     width: 340px;
   }
@@ -2079,9 +2157,6 @@
     font-size: 15px;
   }
 
-  .pillarFeatureSvg h4 {
-    font-size: 14px;
-  }
 
   .weAreParentImg {
     width: 340px;
@@ -2101,8 +2176,16 @@
   }
 
   .socialPresence {
-    width: 320px;
+    width: 95%;
   }
+  .socialPresence p{
+   font-size: 16px;
+  }
+  .socialPresence h1{
+    font-size: 45px;
+   }
+ 
+
 
   .socialPresenceIcons {
     width: 280px;
@@ -2127,10 +2210,6 @@
     width: 340px;
   }
 
-  .pillarLogo {
-    /* width: 380px; */
-    height: 350px;
-  }
 
   .ourAchivementCard h2 {
     font-size: 50px;
@@ -2138,15 +2217,16 @@
   }
 
   .ourAchivementCard p {
-    font-size: 25px;
+    font-size: 20px;
   }
 
   .pillarLogoContent h2 {
-    font-size: 40px;
+    font-size: 30px;
   }
 
   .pillarLogoContent p {
-    line-height: 30px;
+    line-height: 20px;
+    font-size: 14px;
   }
 
   .ourAchivementCard {
@@ -2157,19 +2237,17 @@
     width: 320px;
   }
   .pillarSection {
-    width: 340px;
+    width: 95%;
   }
 
-  .pillarLogo img {
-    width: 40%;
-  }
+
 
   .pillarLogoContent {
-    width: 54%;
+    width: 100%;
   }
 
   .pillarFeatureSection {
-    width: 340px;
+    width: 95%;
     margin-top: 270px;
   }
 
@@ -2178,6 +2256,21 @@
     width: 100px;
     object-fit: cover;
     text-align: left;
+  }
+  .pillarFeatureSection{
+    margin-top: 0px;
+  }
+  .pillarParent{
+    padding: 100px 0px;
+  }
+  .aboutUsFeature{
+    border-radius: 40px;
+  }
+  .aboutHeading{
+    font-size:16px;
+  }
+  .ourAchivementCardParent{
+    width: 210px;
   }
 }
 
@@ -2191,21 +2284,21 @@
   }
 
   .aboutUsFeature p {
-    font-size: 16px;
+    font-size: 13px;
   }
   .aboutUsFeature img {
-    height: 120px;
+    height: 100px;
   }
   .aboutUsFeature {
-    height: 120px;
+    height: 102px;
   }
 
   .foundationContent {
-    width: 320px;
+    width: 95%;
   }
 
   .aboutLogo img {
-    width: 320px;
+    width: 240px;
   }
 
   .foundation {
@@ -2219,6 +2312,8 @@
   .aboutHeading {
     width: 320px;
     font-size: 19px;
+    margin-top: 70px;
+    margin-bottom: 50px;
   }
 
   .ourAchivementCardParent {
@@ -2237,10 +2332,6 @@
     font-size: 15px;
   }
 
-  .pillarFeatureSvg h4 {
-    font-size: 14px;
-  }
-
   .weAreParentImg {
     width: 320px;
   }
@@ -2254,8 +2345,8 @@
   }
 
   .bannerPara {
-    font-size: 17px;
-    line-height: 30px;
+    font-size: 16px;
+    line-height: 22px;
   }
 
   .socialPresence {
@@ -2285,10 +2376,6 @@
     width: 320px;
   }
 
-  .pillarLogo {
-    /* width: 370px; */
-    height: 340px;
-  }
 
   .ourAchivementCard h2 {
     font-size: 50px;
@@ -2300,11 +2387,12 @@
   }
 
   .pillarLogoContent h2 {
-    font-size: 40px;
+    font-size: 30px;
   }
 
   .pillarLogoContent p {
-    line-height: 30px;
+    line-height: 17px;
+    font-size: 14px;
   }
 
   .ourAchivementCard {
@@ -2314,22 +2402,13 @@
   .socialPresenceIcons {
     width: 300px;
   }
-  .pillarSection {
-    width: 320px;
-  }
 
-  .pillarLogo img {
-    width: 40%;
-  }
-
-  .pillarLogoContent {
-    width: 54%;
-  }
-
-  .pillarFeatureSection {
-    width: 320px;
-    margin-top: 270px;
-  }
+   .pillarLogo{
+    gap: 10px;
+   }
+   .pillarLogo img{
+    height: 190px;
+   }
 
   .visionInside img {
     height: auto;
@@ -2337,9 +2416,38 @@
     object-fit: cover;
     text-align: left;
   }
+
+  .pillarFeatureSvg h4 {
+    font-size: 9px;
+  }
+  .pillarFeatureSvg p {
+    font-size: 6px;
+  }
+  .pillarFeatureSvg{
+    width: 30%;
+    height: 110px;
+  }
+  .pillarFeatureSvg img {
+    width: 30px;
+  }
+  .aboutUsFeature{
+    border-radius: 40px;
+  }
+  .aboutHeading{
+    font-size:14px;
+  }
+  .ourAchivementCardParent{
+    width: 200px;
+  }
+  .ourAchivementCard h2{
+    font-size: 30px;
+  }
+  .ourAchivementCard p{
+    font-size: 15px;
+  }
 }
 
-@media all and (max-width: 350px) {
+@media all and (max-width: 345px) {
   .vancouverParent {
     height: 300px;
   }
@@ -2358,7 +2466,7 @@
   }
 
   .aboutUsFeature p {
-    font-size: 15px;
+    font-size: 12px;
   }
   .aboutUsFeature img {
     height: 110px;
@@ -2385,7 +2493,7 @@
 
   .aboutHeading {
     width: 290px;
-    font-size: 19px;
+    font-size: 14px;
   }
 
   .ourAchivementCardParent {
@@ -2404,9 +2512,7 @@
     font-size: 15px;
   }
 
-  .pillarFeatureSvg h4 {
-    font-size: 14px;
-  }
+
 
   .weAreParentImg {
     width: 290px;
@@ -2467,11 +2573,12 @@
   }
 
   .pillarLogoContent h2 {
-    font-size: 40px;
+    font-size: 30px;
   }
 
   .pillarLogoContent p {
-    line-height: 30px;
+    line-height: 17px;
+
   }
 
   .ourAchivementCard {
@@ -2481,7 +2588,7 @@
   .socialPresenceIcons {
     width: 300px;
   }
-  .pillarSection {
+  /* .pillarSection {
     width: 290px;
   }
 
@@ -2496,12 +2603,36 @@
   .pillarFeatureSection {
     width: 290px;
     margin-top: 270px;
-  }
+  } */
 
   .visionInside img {
     height: auto;
     width: 100px;
     object-fit: cover;
     text-align: left;
+  }
+  .pillarFeatureSection{
+    flex-direction: column;
+    align-items: center;
+  }
+  .pillarFeatureSvg h4 {
+    font-size: 14px;
+  }
+  .pillarFeatureSvg p {
+    font-size: 9px;
+  }
+  .pillarFeatureSvg{
+    width: 60%;
+    height: auto;
+    padding: 8px;
+  }
+  .pillarFeatureSvg img {
+    width: 40px;
+  }
+  .pillarFeatureSection{
+    margin-top: 20px;
+  }
+  .aboutUsFeature{
+    border-radius: 40px;
   }
 }

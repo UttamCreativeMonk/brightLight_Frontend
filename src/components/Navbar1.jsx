@@ -32,15 +32,18 @@ const Navbar1 = (props) => {
     setShowSidebar(!showSidebar);
   };
 
-
   return (
     <>
       <div className={styles.navbar}>
         <div className={styles.firstNavbar}>
           <div className={styles.calculatorIcon}>
-            <IconGear width={25} height={25} />
+            <IconGear className={styles.iconGearIcon} width={25} height={25} />
             <p>CALCULATORS</p>
-            <RightArrow width={10} height={10} />
+            <RightArrow
+              className={styles.RightArrowIcon}
+              width={10}
+              height={10}
+            />
           </div>
           <div className={styles.ancor}>
             <div className={styles.relativeDiv}>
@@ -151,16 +154,8 @@ const Navbar1 = (props) => {
             {/* Search Bar */}
             <div className={styles.searchBar}>
               <div className={styles.inputWrapper}>
-                <Search
-                  className={styles.searchIcon}
-                  width={20}
-                  height={20}
-                />
-                <input
-                  type="text"
-                  className={styles.input}
-                  placeholder="Search here"
-                />
+                <Search className={styles.searchIcon} width={20} height={20} />
+                <input type="text" className={styles.input} />
               </div>
               <button className={styles.button}>Search here</button>
             </div>
@@ -190,7 +185,6 @@ const Navbar1 = (props) => {
               <a href="/Federal-Skilled">FSW Calculator</a>
             </div>
           </div>
-
 
           <div className={styles.contactNavbar}>
             <div className={styles.contactInfo}>

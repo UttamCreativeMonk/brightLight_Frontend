@@ -272,7 +272,8 @@ const BCPNPCalculator = () => {
                     name="experience"
                     value="5+"
                     onChange={handleExperienceChange}
-                  />{" "}                              
+                  />{" "}    
+                  5 or more years                          
                 </label>
               </div>
               <div className={styles.radioItem}>

@@ -359,7 +359,7 @@ let About = () => {
             <div className={styles.meetDirectorimgContent}>
               <h1>{directorsSection?.d2name}</h1>
               <h3>{directorsSection?.d2designation}</h3>
-              <p>{directorsSection?.d3description}</p>
+              <p>{directorsSection?.d2description}</p>
             </div>
           </div>
         ) : null}

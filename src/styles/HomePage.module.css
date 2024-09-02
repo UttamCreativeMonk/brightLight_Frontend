@@ -1187,6 +1187,7 @@
   .simplifyingMain h1 {
     font-size: 34px;
     font-weight: 700;
+    text-align: left;
   }
 
   .card {
