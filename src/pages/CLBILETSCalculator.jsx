@@ -250,6 +250,7 @@ const CLBILETSCalculator = () => {
           </div>
         </div>
       </div>
+      <Footer1/>
     </>
   );
 };

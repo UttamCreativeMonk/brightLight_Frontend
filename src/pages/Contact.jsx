@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "../styles/Contact.module.css";
 import Navbar1 from "../components/Navbar1";
-import Footer from "../components/Footer";
+import Footer1 from "../components/Footer1";
 
 let Contact = () => {
   let [activeDiv, setActiveDiv] = useState("insideCanada");
@@ -123,7 +123,7 @@ let Contact = () => {
         </div>
       </div>
 
-      <Footer />
+      <Footer1/>
     </>
   );
 };

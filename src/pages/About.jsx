@@ -17,7 +17,7 @@ import Comprehensive from "../assets/comprehensive11.png";
 import BestChoice from "../sections/BestChoice.jsx";
 import Map from "../sections/Map.jsx";
 import Navbar1 from "../components/Navbar1.jsx";
-import Footer from "../components/Footer.jsx";
+import Footer1 from "../components/Footer1";
 
 let About = () => {
   let [topSectionData, setTopSectionData] = useState([]);
@@ -501,9 +501,9 @@ let About = () => {
         </div>
       </div>
 
-      <Map />
+      <Map/>
 
-      <Footer />
+      <Footer1/>
     </>
   );
 };

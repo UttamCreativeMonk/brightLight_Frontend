@@ -6,7 +6,7 @@ import Testimonials from "../sections/Testimonials";
 import FAQ from "../sections/FAQ";
 import PaginationTable from "../sections/PaginationTable";
 import Navbar1 from "../components/Navbar1";
-import Footer from "../components/Footer";
+import Footer1 from "../components/Footer1";
 
 
 let TransportOccupationTwo = () => {
@@ -222,7 +222,7 @@ let TransportOccupationTwo = () => {
       <Testimonials/>
       <FAQ/> 
 
-<Footer/>
+<Footer1/>
     </>
   );
 };

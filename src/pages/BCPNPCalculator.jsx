@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "../styles/BCPNPCalculator.module.css";
 import Navbar1 from "../components/Navbar1";
-import Footer from "../components/Footer";
+import Footer1 from "../components/Footer1";
 
 const BCPNPCalculator = () => {
   const [points, setPoints] = useState(0);
@@ -988,7 +988,7 @@ const BCPNPCalculator = () => {
         </div>
         {/* // */}
       </div>
-      <Footer />
+      <Footer1/>
     </>
   );
 };

@@ -117,9 +117,10 @@
   }
 
   .faqAnswersSection {
-    width: 100%;
-    margin-top: -30px;
+    width: 75%;
+    margin: auto;
     font-size: 20px;
+    margin-top: 50px;
   }
 
   .questionMarkSection {
@@ -134,19 +135,36 @@
     font-size: 40px;
   }
 
-  .questionSection {
-    flex-direction: column;
-  }
-
   .faqQuestionSection {
     width: 100%;
   }
 
   .questionSection p {
-    font-size: 18px;
+    font-size: 15px;
   }
 
   .faqQuestionSection {
     flex-direction: column;
+  }
+
+  .faqQuestionsParentSection {
+    width: 100%;
+  }
+
+  .faqAnswersSection {
+    width: 100%;
+  }
+
+  .questionSection svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .faqAnswersSection p {
+    font-size: 15px;
+  }
+  .faqAnswersSection{
+    padding-top: 20px;
+    border-top: 1px solid #132f46;
   }
 }

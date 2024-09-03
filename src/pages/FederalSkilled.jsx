@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "../styles/FederalSkilled.module.css";
 import Navbar1 from "../components/Navbar1";
-import Footer from "../components/Footer";
+import Footer1 from "../components/Footer1";
 
 const FederalSkilled = () => {
   const [languagePoints, setLanguagePoints] = useState(0);
@@ -765,7 +765,7 @@ const FederalSkilled = () => {
 {/* // */}
       </div>
 
-      <Footer/>
+      <Footer1/>
     </>
   );
 };

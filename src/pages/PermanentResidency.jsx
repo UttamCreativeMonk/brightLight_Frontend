@@ -3,13 +3,9 @@ import styles from "../styles/PermanentResidency.module.css";
 import ServiceImg from "../assets/service-data-image.webp";
 import { ReactComponent as Responsibility } from "../assets/handsShake.svg";
 import studyVisaImg from "../assets/graduatedStudent.png";
-import BluePointer from "../assets/blue-pointer.png";
-import GoldenPointer from "../assets/golden-pointer.png";
-import Runway from "../assets/runway.png";
-import Plane from "../assets/plane.png";
 import OurProcess from "../sections/OurProcess";
 import Navbar1 from "../components/Navbar1";
-import Footer from "../components/Footer";
+import Footer1 from "../components/Footer1";
 
 let PermanentResidency = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -111,9 +107,9 @@ let PermanentResidency = () => {
         </div>
       </div>
 
-      {/* <OurProcess /> */}
+      <OurProcess />
 
-      <Footer />
+      <Footer1/>
     </>
   );
 };

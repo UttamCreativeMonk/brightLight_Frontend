@@ -1,4 +1,4 @@
-import Footer from "../components/Footer";
+import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
 import styles from "../styles/BlogsPage.module.css";
 import brightSource from "../assets/bright-source-blue.png";
@@ -130,7 +130,7 @@ let Blogs = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      <Footer1/>
     </>
   );
 };

@@ -13,7 +13,7 @@ import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
 import Navbar1 from "../components/Navbar1";
-import Footer from "../components/Footer";
+import Footer1 from "../components/Footer1";
 import FAQ_Blue from "../sections/FAQ_Blue";
 import Testimonials_White from "../sections/Testimonials_White";
 import Blogs from "../sections/Blogs";
@@ -465,7 +465,7 @@ let HomePage = () => {
       </div>
       <Blogs />
       <FAQ_Blue />
-      <Footer />
+      <Footer1/>
     </>
   );
 };

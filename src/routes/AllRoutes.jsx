@@ -13,6 +13,8 @@ import Blogs from "../pages/Blogs";
 import BlogDetails from "../pages/BlogDetails";
 import CLBILETSCalculator from "../pages/CLBILETSCalculator";
 import PreviousDrawHistory from "../pages/PreviousDrawHistory";
+import PrivacyPolicy from "../pages/PrivacyPolicy";
+import TermsAndConditions from "../pages/TermsAndConditions";
 import MoreServices from "../pages/MoreServices";
 
 let AllRoutes = () => {
@@ -33,6 +35,9 @@ let AllRoutes = () => {
       <Route path="/clb-ilets-calculator" element={<CLBILETSCalculator/>} />
       <Route path="/previous-draw-history" element={<PreviousDrawHistory/>} />
       <Route path="/more-services" element={<MoreServices/>} />
+      
+      <Route path="/privacy-policy" element={<PrivacyPolicy/>} />
+      <Route path="/terms-&-conditions" element={<TermsAndConditions/>} />
       
       <Route path="*" element={<NotFoundPage />} />
     </Routes>

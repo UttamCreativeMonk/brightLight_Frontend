@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import styles from "../styles/BlogsDetails.module.css";
 import { useEffect, useState } from "react";
 import Navbar1 from "../components/Navbar1";
-import Footer from "../components/Footer";
+import Footer1 from "../components/Footer1";
 import Linkedin from "../assets/bannerLinkedinLogo.png";
 import rcic from "../assets/rcic.png";
 import searchIcon from "../assets/search-gray.png";
@@ -129,7 +129,7 @@ let BlogDetails = () => {
           <p>{blog.blog_description_para_4}</p>
         ) : null}
       </div>
-      <Footer />
+      <Footer1/>
     </>
   );
 };

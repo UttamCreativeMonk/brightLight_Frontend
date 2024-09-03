@@ -5,6 +5,7 @@ import homeLocationImg from "../assets/homeLocation.png";
 import graduatedStudentImg from "../assets/graduatedStudent.png";
 import parentsImg from "../assets/parents.png";
 import workPermitImg from "../assets/workPermit.png";
+import Footer1 from "../components/Footer1";
 
   let MoreServices = () => {
     const [selectedHeading, setSelectedHeading] = useState("Permanent Residency");
@@ -182,6 +183,7 @@ import workPermitImg from "../assets/workPermit.png";
           </div>
         </div>
       </div>
+      <Footer1/>
     </>
   );
 };

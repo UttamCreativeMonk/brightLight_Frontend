@@ -440,6 +440,9 @@
     font-size: 14px;
 
   }
+  .goldenCard{
+    margin-top: 140px;
+  }
 }
 
 
@@ -468,6 +471,12 @@
   }
   .fourCardMain h3{
     font-size: 12px;
+  }
+  .goldenCard{
+    margin-top: 120px;
+  }
+  .fourCardImgParent{
+    margin-top: 100px;
   }
 }
 

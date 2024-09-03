@@ -3,16 +3,14 @@ import styles from "../styles/ExpressEntry.module.css";
 import ServiceImg from "../assets/service-data-image.webp";
 // import BestChoice from "../assets/best-choice.png";
 import { ReactComponent as Responsibility } from "../assets/handsShake.svg";
-import PlaneMap from "../assets/planeMap.png";
-import BluePolygon from "../assets/blue-polygon.webp";
-import GoogleIcon from "../assets/google-review.webp";
+
 
 import BestChoice from "../sections/BestChoice";
 // import Testimonials from "../sections/Testimonials";
 import FAQ from "../sections/FAQ";
 import RecentBlogs from "../sections/RecentBlogs";
 import Navbar1 from "../components/Navbar1";
-import Footer from "../components/Footer";
+import Footer1 from "../components/Footer1";
 
 let ExpressEntry = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -223,7 +221,7 @@ let ExpressEntry = () => {
     
       <FAQ />
       <RecentBlogs />
-      <Footer />
+      <Footer1/>
     </>
   );
 };

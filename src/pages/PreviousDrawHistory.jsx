@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "../styles/PreviousDrawHistory.module.css";
 import Navbar1 from "../components/Navbar1";
-import Footer from "../components/Footer";
+import Footer1 from "../components/Footer1";
 
 const PreviousDrawHistory = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -194,6 +194,7 @@ const PreviousDrawHistory = () => {
           </button>
         </div>
       </div>
+      <Footer1/>
     </>
   );
 };

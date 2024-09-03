@@ -1,29 +1,8 @@
 import { useEffect } from "react";
 import "./App.css";
-import Contact from "./pages/Contact";
-import About from "./pages/About";
-import PermanentResidency from "./pages/PermanentResidency";
-import ExpressEntry from "./pages/ExpressEntry";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import CategoryBased from "./pages/CategoryBased";
-import HomePage from "./pages/HomePage";
-import TransportOccupationTwo from "../src/pages/TranportOccupation-2";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import TermsAndConditions from "./pages/TermsAndConditions";
-import BCPNPCalculator from "./pages/BCPNPCalculator";
-import Testimonials from "./sections/Testimonials";
-import FederalSkilled from "./pages/FederalSkilled";
-import OurProcess from "../src/sections/OurProcess";
-import TransportOccupation from "../src/pages/TransportOccupation";
+
 import AllRoutes from "./routes/AllRoutes";
-import Navbar1 from "./components/Navbar1";
-import PaginationTable from "./sections/PaginationTable";
-import Footer1 from "./components/Footer1";
-import NotFoundPage from "./pages/NotFoundPage";
-import PreviousDrawHistory from "./pages/PreviousDrawHistory";
 import Loader from "./components/Loader";
-import CLBILETSCalculator from "../src/pages/CLBILETSCalculator";
 
 function App() {
   // useEffect(()=>{
@@ -32,35 +11,12 @@ function App() {
   //     behavior: "smooth"
   //   })
   // },[]);
+  
   return (
     <div className="App">
-      {/* <PrivacyPolicy/> */}
-      {/* <TermsAndConditions/> */}
-
-      {/* <Navbar /> */}
-      {/* <Contact/> */}
-      {/* <About/> */}
-      {/* <PermanentResidency/> */}
-
-      {/* <Testimonials/> */}
-      {/* <FederalSkilled/> */}
-      {/* <BCPNPCalculator/> */}
-      {/* <ExpressEntry/> */}
-      {/* <TransportOccupation/> */}
-      {/* <TransportOccupationTwo/> */}
-      {/* <PaginationTable/> */}
-      {/* <HomePage/> */}
-      {/* <Footer/> */}
-      {/* <OurProcess/> */}
-      {/* <CategoryBased/> */}
-      {/* <Footer /> */}
-      {/* <NotFoundPage/> */}
-      {/* <PreviousDrawHistory/> */}
       <Loader />
-      {/* <CLBILETSCalculator/> */}
-      <AllRoutes />
 
-      {/* <Footer1/> */}
+      <AllRoutes />
     </div>
   );
 }

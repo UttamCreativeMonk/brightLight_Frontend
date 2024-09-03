@@ -609,14 +609,14 @@
 
   .searchBar input {
     padding: 0px;
-    width: 50px;
+    width: 70px;
   }
   .searchBar button {
-    padding: 5px 5px;
+    padding: 10px 10px;
     font-size: 7px;
   }
   .searchBar{
-    height: 20px;
+    height: 30px;
   }
   .searchIcon {
     width: 10px;
