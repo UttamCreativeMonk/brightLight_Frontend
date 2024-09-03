@@ -21,8 +21,8 @@ let AllRoutes = () => {
       <Route path="/" element={<HomePage />} />
       <Route path="/about-us" element={<About />} />
       <Route path="/contact-us" element={<Contact />} />
-      <Route path="/BCPNP-Calculator" element={<BCPNPCalculator />} />
-      <Route path="/Federal-Skilled" element={<FederalSkilled />} />
+      <Route path="/bcpnp-calculator" element={<BCPNPCalculator />} />
+      <Route path="/federal-skilled" element={<FederalSkilled />} />
       <Route path="/contact-us" element={<Contact />} />
       <Route path="/express-entry" element={<ExpressEntry />} />
       <Route path="/permanent-residency" element={<PermanentResidency/>} />

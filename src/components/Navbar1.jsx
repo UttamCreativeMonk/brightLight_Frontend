@@ -189,9 +189,9 @@ const Navbar1 = (props) => {
                   <span className={styles.arrow}>▼</span>
                 </a>
                 <div className={styles.dropdownContent}>
-                  <a href="/BCPNP-Calculator">BCPNP Calculator</a>
+                  <a href="/bcpnp-calculator">BCPNP Calculator</a>
                   <a href="/">CLB Calculator</a>
-                  <a href="/Federal-Skilled">FSW Calculator</a>
+                  <a href="/federal-skilled">FSW Calculator</a>
                 </div>
               </div>
               <a href="/blogs">BLOGS</a>

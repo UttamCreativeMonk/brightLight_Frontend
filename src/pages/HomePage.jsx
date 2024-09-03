@@ -12,7 +12,6 @@ import "swiper/css/navigation";
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
-import aboutBanner from "../assets/about-banner.png";
 import Navbar1 from "../components/Navbar1";
 import Footer from "../components/Footer";
 import FAQ_Blue from "../sections/FAQ_Blue";
