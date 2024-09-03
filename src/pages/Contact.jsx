@@ -4,9 +4,22 @@ import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
 
 let Contact = () => {
+  let [data, setData] = useState([]);
   let [activeDiv, setActiveDiv] = useState("insideCanada");
   useEffect(() => {
     setActiveDiv("insideCanada");
+    fetch("https://brightlight-node.onrender.com/contact-page")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
   let handleActiveDiv = () => {
@@ -20,18 +33,9 @@ let Contact = () => {
     <>
       <Navbar1 showBlue={true} />
       <div className={styles.contactTopSection}>
-        <h1>Contact Us</h1>
-        <h3>Got a Question? We're here to answer!</h3>
-        <h3>
-          Reach out using the form below, and we'll get back to you pronto.
-        </h3>
-
-        <p>
-          While booking a free assessment or scheduling an appointment with our
-          Registered Canadian immigration Concsultant (RCIC) is the prefrred
-          method to contact us, rest assured that will promptly reach out you.
-          Please feel to share your detailed query below.
-        </p>
+        <h1>{data?.page_heading}</h1>
+        <h3>{data?.form_section_heading}</h3>
+        <p>{data?.form_section_description}</p>
       </div>
       <div className={styles.contactMapSection}>
         <div className={styles.contactForm}>
@@ -115,15 +119,13 @@ let Contact = () => {
             <div>
               <h5>GET IN TOUCH</h5>
               <p>(604) 503-3734 </p>
-              <p>
-              info@brightlightimmigration.ca
-              </p>
+              <p>info@brightlightimmigration.ca</p>
             </div>
           </div>
         </div>
       </div>
 
-      <Footer1/>
+      <Footer1 />
     </>
   );
 };

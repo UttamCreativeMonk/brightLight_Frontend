@@ -359,6 +359,10 @@
   border-radius: 50%;
 }
 
+.bannerHeadingRotatePara p{
+  cursor: pointer;
+}
+
 @media (max-width: 1080px) {
   .bannerHeadingRotateParent {
     flex-direction: column;

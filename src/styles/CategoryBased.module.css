@@ -514,6 +514,11 @@
   border-radius: 50%;
 }
 
+.card {
+  display: flex;
+  align-items: center;
+}
+
 @media (max-width: 1080px) {
   .bannerHeadingRotateParent {
     flex-direction: column;
@@ -987,6 +992,9 @@
 }
 
 @media (max-width: 484px) {
+  .theButtonAncorParent{
+    padding: 10px 0px ;
+  }
   .cardWrapper {
     grid-template-columns: repeat(2, 49%);
     gap: 14px;
@@ -1019,5 +1027,95 @@
   }
   .card p {
     font-size: 14px;
+  }
+  .bannerHeading p {
+    width: 100%;
+    font-size: 15px;
+  }
+  .canadianContent h1 {
+    font-size: 30px;
+  }
+  .canadianContent p {
+    margin-bottom: 20px;
+    line-height: 30px;
+    font-size: 19px;
+  }
+
+  .eligibilityParent h1 {
+    font-size: 25px;
+  }
+
+  .container li {
+    font-size: 18px;
+    margin-bottom: 2px;
+  }
+  .eligibilityParent {
+    padding: 20px 0px;
+  }
+  .categoryBasedParent {
+    padding: 50px 0px;
+  }
+  .categoryBasedMain h1 {
+    font-size: 30px;
+  }
+  .categoryBasedContent p {
+    line-height: 35px;
+  }
+  .eligibilityMain h3 {
+    font-size: 16px;
+    margin-top: 30px;
+  }
+  .eligibilityMain p {
+    font-size: 16px;
+  }
+  .eligibilityPara {
+    line-height: 28px;
+  }
+  .card {
+    display: flex;
+    align-items: center;
+  }
+  .benifitMain h1{
+    font-size: 24px;
+  }
+  .benifitlistParent{
+    line-height: 34px;
+    padding-top: 25px;
+  }
+  .howApplyParent{
+    padding: 40px 0px;
+  }
+
+  .refusalParent{
+    padding: 50px 0px;
+  }
+  .refusalMain h3{
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .refusalListParent{
+    padding-top: 20px;
+    line-height: 35px;
+  }
+  .refusalListParent ul{
+    margin-left: 10px;
+  }
+  .theButtonAncorParent{
+    padding: 10px 0px ;
+  }
+  .appointementMain h1{
+    font-size: 30px;
+  }
+  .appointementMain h5{
+    font-size: 26px;
+  }
+
+  .appointementMain p{
+    line-height: 35px;
+    font-size: 16px;
+  }
+  .appointementParent{
+    padding: 50px 0px;
   }
 }

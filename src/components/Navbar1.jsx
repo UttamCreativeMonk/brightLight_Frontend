@@ -21,6 +21,8 @@ import Instagramblue from "../assets/instagramBlue.png";
 import Linkedinblue from "../assets/linkedinBlue.png";
 import Tiktokblue from "../assets/tiktokBlue.png";
 import hamBurgerIconWhite from "../assets/hamBurgerIconWhite.svg";
+import hamBurgerIconBlue from "../assets/hamBurgerIconBlue.svg";
+import whiteLogo from "../assets/brightlight-logo-white.png";
 
 const Navbar1 = (props) => {
   const { showBlue } = props;
@@ -55,19 +57,16 @@ const Navbar1 = (props) => {
               >
                 ABOUT
               </a>
-              <div
+              {/* <div
                 className={`${styles.aboutDropdown} ${
                   showAboutDropdown ? styles.showAboutDropdown : null
                 }`}
                 onMouseEnter={() => setShowAboutDropdown(true)}
                 onMouseLeave={() => setShowAboutDropdown(false)}
-              >
-                <a href="/permanent-residency">Permanent Residency</a>
+              >            
                 <a href="/clb-ilets-calculator">CLB ILETS Calculator</a>
-                <a href="/category-based">Category Based</a>
-                <a href="/previous-draw-history">Previous Draw History</a>
                 <a href="/more-services">More Services</a>
-              </div>
+              </div> */}
             </div>
             <a href="/contact-us">CONTACT</a>
             <div className={styles.mobileIcon}>
@@ -91,9 +90,19 @@ const Navbar1 = (props) => {
 
         <div className={styles.bottomSectionNavbar}>
           <div className={styles.secondNavbar}>
-            <a href="/" className={styles.logo}>
+            <a href="/" className={`${styles.logo} ${styles.logoDesktop}`}>
               <img src={BrightlightBlueLogo} alt="Brightlight Blue Logo" />
             </a>
+
+            {showBlue ? (
+              <a href="/" className={`${styles.logo} ${styles.logoMobile}`}>
+                <img src={BrightlightBlueLogo} alt="Brightlight Blue Logo" />
+              </a>
+            ) : (
+              <a href="/" className={`${styles.logo} ${styles.logoMobile}`}>
+                <img src={whiteLogo} alt="Brightlight Blue Logo" />
+              </a>
+            )}
 
             <div className={styles.mainNavbar}>
               <div className={styles.relativeDiv}>
@@ -111,10 +120,13 @@ const Navbar1 = (props) => {
                   onMouseEnter={() => setShowServicesDropdown(true)}
                   onMouseLeave={() => setShowServicesDropdown(false)}
                 >
-                  <a href="/BCPNP-Calculator">BCPNP Calculator</a>
-                  <a href="/Federal-Skilled">Federal Skilled</a>
+                  {/* <a href="/bcpnp-calculator">BCPNP Calculator</a> */}
+                  <a href="/federal-skilled">Federal Skilled</a>
                   <a href="/express-entry">Express Entry</a>
                   <a href="/transport-occupation">Transport Occupation</a>
+                  <a href="/permanent-residency">Permanent Residency</a>
+                  <a href="/category-based">Category Based</a>
+                  <a href="/previous-draw-history">Previous Draw History</a>
                 </div>
               </div>
 
@@ -142,9 +154,11 @@ const Navbar1 = (props) => {
                   onMouseEnter={() => setShowCalculatorsDropdown(true)}
                   onMouseLeave={() => setShowCalculatorsDropdown(false)}
                 >
-                  <a href="/BCPNP-Calculator">BC PNP Calculator</a>
-                  <a href="/">CLB Calculator</a>
+                  {/* <a href="/BCPNP-Calculator">BC PNP Calculator</a> */}
+                  {/* <a href="/clb-ilets-calculator">CLB Calculator</a> */}
                   <a href="/Federal-Skilled">FSW Calculator</a>
+                  <a href="/express-entry">Express Entry</a>
+                  <a href="/transport-occupation">Transport Occupation</a>
                 </div>
               </div>
 
@@ -165,7 +179,7 @@ const Navbar1 = (props) => {
             <div className={styles.hamburger} onClick={toggleSidebar}>
               {/* &#9776; */}{" "}
               <img
-                src={hamBurgerIconWhite}
+                src={showBlue ? hamBurgerIconBlue : hamBurgerIconWhite}
                 className={styles.hamburgerColoredIcon}
                 alt="wee"
               />
@@ -189,11 +203,15 @@ const Navbar1 = (props) => {
                   <span className={styles.arrow}>▼</span>
                 </a>
                 <div className={styles.dropdownContent}>
-                  <a href="/bcpnp-calculator">BCPNP Calculator</a>
-                  <a href="/">CLB Calculator</a>
-                  <a href="/federal-skilled">FSW Calculator</a>
+                <a href="/federal-skilled">Federal Skilled</a>
+                  <a href="/express-entry">Express Entry</a>
+                  <a href="/transport-occupation">Transport Occupation</a>
+                  <a href="/permanent-residency">Permanent Residency</a>
+                  <a href="/category-based">Category Based</a>
+                  <a href="/previous-draw-history">Previous Draw History</a>
                 </div>
               </div>
+              {/* <div></div> */}
               <a href="/blogs">BLOGS</a>
               <a href="/">NEWS</a>
               <a href="/contact-us">CONTACT</a>

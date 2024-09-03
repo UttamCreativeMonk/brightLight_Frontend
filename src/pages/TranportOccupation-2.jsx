@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import styles from "../styles/TransportOccupation-2.module.css";
 import LinkAncor from "../assets/link-arrows.png";
 import BestChoice from "../sections/BestChoice";
@@ -8,58 +8,65 @@ import PaginationTable from "../sections/PaginationTable";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
 
-
-let TransportOccupationTwo = () => {
+const TransportOccupationTwo = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
-    <Navbar1/>
-    <div className={styles.bannerParent}>
-      <div className={styles.banner}>
-        <div className={styles.bannerHeading}>
-          <h1>Transport Occupations</h1>
-          <h3>CATEGORY BASED DRAW</h3>
-          <p>
-            Exploring the Agriculture and Agri-Food Occupations Category
-            offers access to abundant opportunities within Canada's thriving
-            agricultural sector. Whether your skills lie in crop production,
-            livestock farming, agricultural research, or any other Agri-food
-            occupation, this program paves the way for a rewarding career path
-            in Canada.
-          </p>
-        </div>
-
-        <div
-          className={`${styles.bannerHeadingRotateParent} ${
-            isDropdownOpen ? styles.active : ''
-          }`}
-        >
-          <div
-            className={styles.bannerHeadingRotate}
-            onClick={toggleDropdown}
-          >
-            <h3>QUICK ACCESS</h3>
+      <Navbar1 />
+      <div className={styles.bannerParent}>
+        <div className={styles.banner}>
+          <div className={styles.bannerHeading}>
+            <h1>Transport Occupations</h1>
+            <h3>CATEGORY BASED DRAW</h3>
+            <p>
+              Exploring the Agriculture and Agri-Food Occupations Category
+              offers access to abundant opportunities within Canada's thriving
+              agricultural sector. Whether your skills lie in crop production,
+              livestock farming, agricultural research, or any other Agri-food
+              occupation, this program paves the way for a rewarding career path
+              in Canada.
+            </p>
           </div>
-          <div className={styles.bannerHeadingRotatePara}>
-            <p>About the program</p>
-            <p>Eligibility</p>
-            <p>NOC Codes</p>
-            <p>Draw History</p>
-            <p>Appointment</p>
-            <p>Why Choose us</p>
-            <p>Testimonials</p>
-            <p>FAQs</p>
-            <p>Blogs</p>
+
+          <div
+            className={`${styles.bannerHeadingRotateParent} ${
+              isDropdownOpen ? styles.active : ""
+            }`}
+          >
+            <div
+              className={styles.bannerHeadingRotate}
+              onClick={toggleDropdown}
+            >
+              <h3>QUICK ACCESS</h3>
+            </div>
+            <div className={styles.bannerHeadingRotatePara}>
+              <p onClick={() => scrollToSection("about-program")}>About the program</p>
+              <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
+              <p onClick={() => scrollToSection("noc-codes")}>NOC Codes</p>
+              <p onClick={() => scrollToSection("draw-history")}>Draw History</p>
+              <p onClick={() => scrollToSection("appointment")}>Appointment</p>
+              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose us</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("faqs")}>FAQs</p>
+              <p onClick={() => scrollToSection("blogs")}>Blogs</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-      <div className={styles.eligibleParent}>
+      <div id="about-program" className={styles.eligibleParent}>
         <div className={styles.eligibleMain}>
           <h1>First you must be eligible with Express Entry</h1>
           <h3>
@@ -69,14 +76,14 @@ let TransportOccupationTwo = () => {
           </h3>
         </div>
         {/* // */}
-        <div className={styles.chooseParent}>
+        <div id="eligibility" className={styles.chooseParent}>
           <div className={styles.chooseMain}>
             <div className={styles.stepsGrid}>
               <div className={styles.step}>
-              <div className={styles.headerLineParent}>      
-                <div className={styles.headingNumbers}>1</div>
-                <p></p>
-              </div>
+                <div className={styles.headerLineParent}>
+                  <div className={styles.headingNumbers}>1</div>
+                  <p></p>
+                </div>
                 <div className={styles.stepContent}>
                   <p>
                     Join the Express Entry Pool: The first step towards becoming
@@ -86,10 +93,10 @@ let TransportOccupationTwo = () => {
                 </div>
               </div>
               <div className={styles.step}>
-              <div className={styles.headerLineParent}>      
-                <div className={styles.headingNumbers}>2</div>
-                <p></p>
-              </div>
+                <div className={styles.headerLineParent}>
+                  <div className={styles.headingNumbers}>2</div>
+                  <p></p>
+                </div>
                 <div className={styles.stepContent}>
                   <h2>Choose Your Program:</h2>
                   <p>
@@ -103,24 +110,30 @@ let TransportOccupationTwo = () => {
                         program is ideal for tech workers who have the necessary
                         work experience, education, and language ability.
                       </li>
-                      <button className={styles.button17} role="button">View Program</button>
+                      <button className={styles.button17} role="button">
+                        View Program
+                      </button>
                       <li>
                         <b>Canadian Experience Class (CEC):</b>
                         Similar to the FSW program, the CEC is also suitable for
                         tech workers who have gained Canadian work experience.
                       </li>
-                      <button className={styles.button17} role="button">View Program</button>
+                      <button className={styles.button17} role="button">
+                        View Program
+                      </button>
                       <li>
                         <b>
                           Federal Skilled Agriculture and agri-food occupations
-                          s Program (FSTP):
+                          Program (FSTP):
                         </b>
-                        If you're a Agriculture and agri-food occupations s
+                        If you're an Agriculture and agri-food occupations
                         worker, this program is designed for you. It requires
                         proof of relevant work experience, education, and
                         language proficiency.
                       </li>
-                      <button className={styles.button17} role="button">View Program</button>
+                      <button className={styles.button17} role="button">
+                        View Program
+                      </button>
                     </ul>
                   </div>
                   <h3>
@@ -131,14 +144,11 @@ let TransportOccupationTwo = () => {
                 </div>
               </div>
             </div>
-            {/* // */}
           </div>
         </div>
-        {/* // */} {/* // */}
       </div>
 
-
-      <div className={styles.agricultureParent}>
+      <div id="noc-codes" className={styles.agricultureParent}>
         <div className={styles.agricultureMain}>
           <h1>
             Agriculture and agri-food occupations category eligibility criteria:
@@ -158,25 +168,22 @@ let TransportOccupationTwo = () => {
               <li>A valid Express Entry profile.</li>
             </ul>
           </div>
-          <PaginationTable/>
+          <PaginationTable />
         </div>
       </div>
 
-
-
-      <div className={styles.theButtonAncorParentTwo}>
+      <div id="draw-history" className={styles.theButtonAncorParentTwo}>
         <div className={styles.theButtonAncorTwo}>
           <a href="/">
-          <button>
-            Express Entry Agriculture and agri-food occupations draws history
-            <span className={styles.theButtonSpanTwo}>
-              <img src={LinkAncor} alt="err" />
-            </span>
+            <button>
+              Express Entry Agriculture and agri-food occupations draws history
+              <span className={styles.theButtonSpanTwo}>
+                <img src={LinkAncor} alt="err" />
+              </span>
             </button>
           </a>
         </div>
       </div>
-
 
       <div className={styles.contactUpperParent}>
         <div className={styles.contactUpperMain}>
@@ -189,7 +196,7 @@ let TransportOccupationTwo = () => {
         </div>
       </div>
 
-      <div className={styles.contactParent}>
+      <div id="appointment" className={styles.contactParent}>
         <div className={styles.contactMain}>
           <h1>Contact</h1>
 
@@ -212,21 +219,27 @@ let TransportOccupationTwo = () => {
             process now.
           </p>
 
-
-          <button className={styles.bookButton17} role="button">Book an Appointment</button>
+          <button className={styles.bookButton17} role="button">
+            Book an Appointment
+          </button>
         </div>
       </div>
 
+      <div id="why-choose-us">
+        <BestChoice />
+      </div>
 
-       <BestChoice/>
-      <Testimonials/>
-      <FAQ/> 
+      <div id="testimonials">
+        <Testimonials />
+      </div>
 
-<Footer1/>
+      <div id="faqs">
+        <FAQ />
+      </div>
+
+      <Footer1 />
     </>
   );
 };
 
 export default TransportOccupationTwo;
-
-

@@ -1,19 +1,26 @@
 import React, { useState } from 'react';
 import styles from "../styles/PermanentResidency.module.css";
 import ServiceImg from "../assets/service-data-image.webp";
-import { ReactComponent as Responsibility } from "../assets/handsShake.svg";
 import studyVisaImg from "../assets/graduatedStudent.png";
 import OurProcess from "../sections/OurProcess";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
 import RecentBlogs from '../sections/RecentBlogs';
 
-let PermanentResidency = () => {
+const PermanentResidency = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       <Navbar1 />
@@ -41,22 +48,16 @@ let PermanentResidency = () => {
               <h3>QUICK ACCESS</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p>About the program</p>
-              <p>Eligibility</p>
-              <p>Advantages of Permanent Entry</p>
-              <p>Refusal Reason</p>
-              <p>Draw History</p>
-              <p>Appointment</p>
-              <p>Why Choose us</p>
-              <p>Testimonials</p>
-              <p>FAQs</p>
-              <p>Blogs</p>
+              <p onClick={() => scrollToSection("about-program")}>About the program</p>
+              <p onClick={() => scrollToSection("Pathways-becoming-PR")}>Pathways to PR</p>
+              <p onClick={() => scrollToSection("Our-process")}>Our process</p>
+              <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div className={styles.canadianParent}>
+      <div id="about-program" className={styles.canadianParent}>
         <div className={styles.canadianContent}>
           <p>
             The Canadian Permanent Residency (PR) Program, managed by
@@ -77,40 +78,45 @@ let PermanentResidency = () => {
         </div>
 
         <div className={styles.canadianImg}>
-          <img src={ServiceImg} alt="err" />
+          <img src={ServiceImg} alt="Permanent Residency" />
         </div>
       </div>
 
-      <div className={styles.pathwayParent}>
+      <div id="Pathways-becoming-PR" className={styles.pathwayParent}>
         <div className={styles.pathway}>
           <div className={styles.pathwayHeading}>
-            <h1>Pathway's to becoming a PR</h1>
+            <h1>Pathways to Becoming a PR</h1>
           </div>
 
           <div className={styles.pathwayCardsParent}>
             <div className={styles.pathwayCards}>
-              <img src={studyVisaImg} alt="" />
+              <img src={studyVisaImg} alt="Express Entry" />
               <h2>Express Entry</h2>
             </div>
             <div className={styles.pathwayCards}>
-              <img src={studyVisaImg} alt="" />
+              <img src={studyVisaImg} alt="Pilot Program" />
               <h2>Pilot Program</h2>
             </div>
             <div className={styles.pathwayCards}>
-              <img src={studyVisaImg} alt="" />
+              <img src={studyVisaImg} alt="PNP" />
               <h2>PNP</h2>
             </div>
             <div className={styles.pathwayCards}>
-              <img src={studyVisaImg} alt="" />
+              <img src={studyVisaImg} alt="RNIP" />
               <h2>RNIP</h2>
             </div>
           </div>
         </div>
       </div>
 
-      <OurProcess />
+      <div id="Our-process">
+        <OurProcess />
+      </div>
 
-      <RecentBlogs/>
+      <div id="blogs">
+        <RecentBlogs />
+      </div>
+      
       <Footer1/>
     </>
   );

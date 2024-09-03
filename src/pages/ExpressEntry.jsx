@@ -1,35 +1,50 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/ExpressEntry.module.css";
 import ServiceImg from "../assets/service-data-image.webp";
-// import BestChoice from "../assets/best-choice.png";
 import { ReactComponent as Responsibility } from "../assets/handsShake.svg";
-
-
 import BestChoice from "../sections/BestChoice";
-// import Testimonials from "../sections/Testimonials";
+import Testimonials from "../sections/Testimonials";
 import FAQ from "../sections/FAQ";
 import RecentBlogs from "../sections/RecentBlogs";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
 
-let ExpressEntry = () => {
+const ExpressEntry = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/express-entry")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data && data.length > 0) {
+          setData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching Express Entry data:", error);
+      });
+  }, []);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div className={styles.bannerHeading}>
-            <h1>Express Entry</h1>
-            <p>
-              Are you considering making Canada your new home or exploring
-              professional opportunities? The Canadian Express Entry Program
-              might be the pathway for you!
-            </p>
+            <h1>{data?.heading}</h1>
+            <p>{data?.description}</p>
           </div>
 
           <div
@@ -44,173 +59,137 @@ let ExpressEntry = () => {
               <h3>QUICK ACCESS</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p>About the program</p>
-              <p>Eligibility</p>
-              <p>Advantages of Express Entry</p>
-              <p>Refusal Reason</p>
-              <p>Draw History</p>
-              <p>Appointment</p>
-              <p>Why Choose us</p>
-              <p>Testimonials</p>
-              <p>FAQs</p>
-              <p>Blogs</p>
+              <p onClick={() => scrollToSection("about-program")}>About the program</p>
+              <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
+              <p onClick={() => scrollToSection("advantages")}>Advantages of Express Entry</p>
+              <p onClick={() => scrollToSection("refusal-reason")}>Refusal Reason</p>
+              <p onClick={() => scrollToSection("draw-history")}>Draw History</p>
+              <p onClick={() => scrollToSection("appointment")}>Appointment</p>
+              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose us</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("faqs")}>FAQs</p>
+              <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div className={styles.canadianParent}>
+      <div id="about-program" className={styles.canadianParent}>
         <div className={styles.canadianContent}>
-          <p>
-            The Canadian Express Entry Program is a points-based system used by
-            the Canadian government to select skilled workers for permanent
-            residence. It's for those skilled individuals who can contribute to
-            the country's economic growth. It is a swift and efficient way for
-            qualified candidates to become permanent residents of Canada.
-          </p>
+          <p>{data?.aboutDescription}</p>
         </div>
-
         <div className={styles.canadianImg}>
-          <img src={ServiceImg} alt="err" />
+          <img src={data?.aboutImage || ServiceImg} alt="About Program" />
         </div>
       </div>
 
-      <div className={styles.eligibleParent}>
-        <h1>Are you eligible for Express Entry? Let's Find out</h1>
-        <p>
-          To be eligible for Canada Express Entry, you must meet the minimum
-          requirements of at least one of the three immigration programs it
-          manages:
-        </p>
+      <div id="eligibility" className={styles.eligibleParent}>
+        <h1>{data?.eligibilityHeading}</h1>
+        <p>{data?.eligibilityDescription}</p>
 
         <div className={styles.eligibleCardParent}>
-          <div className={styles.eligibleCard}>
-            <h2>FEDERAL SKILLED WORKER PROGRAM (FSWP)</h2>
-          </div>
-          <div className={styles.eligibleCard}>
-            <h2>FEDERAL SKILLED TRADE PROGRAM (FSTP)</h2>
-          </div>
-          <div className={styles.eligibleCard}>
-            <h2>CANADIAN EXPERIENCE PROGRAM (CEC)</h2>
-          </div>
+          {data?.er1 && (
+            <div className={styles.eligibleCard}>
+              <h2>{data.er1}</h2>
+            </div>
+          )}
+          {data?.er2 && (
+            <div className={styles.eligibleCard}>
+              <h2>{data.er2}</h2>
+            </div>
+          )}
+          {data?.er3 && (
+            <div className={styles.eligibleCard}>
+              <h2>{data.er3}</h2>
+            </div>
+          )}
+          {data?.er4 && (
+            <div className={styles.eligibleCard}>
+              <h2>{data.er4}</h2>
+            </div>
+          )}
+          {data?.er5 && (
+            <div className={styles.eligibleCard}>
+              <h2>{data.er5}</h2>
+            </div>
+          )}
         </div>
       </div>
 
-      <div className={styles.additionGrandParent}>
+      <div id="draw-history" className={styles.additionGrandParent}>
         <div className={styles.additionParent}>
-          <h1>
-            In addition to the above programs, there are 3 categories of draws
-            that you can get an Invitation to apply (ITA) from.
-          </h1>
-
+          <h1>{data?.drawHeading}</h1>
           <div className={styles.additionCardParent}>
-            <div className={styles.additionCard}>
-              <h2>GENERAL DRAWS</h2>
-            </div>
-            <div className={styles.additionCard}>
-              <h2>CATEGORY BASED SELECTION</h2>
-            </div>
-            <div className={styles.additionCard}>
-              <h2>PNP BASED SELECTION</h2>
-            </div>
+            {data?.draw1 && (
+              <div className={styles.additionCard}>
+                <h2>{data.draw1}</h2>
+              </div>
+            )}
+            {data?.draw2 && (
+              <div className={styles.additionCard}>
+                <h2>{data.draw2}</h2>
+              </div>
+            )}
+            {data?.draw3 && (
+              <div className={styles.additionCard}>
+                <h2>{data.draw3}</h2>
+              </div>
+            )}
+            {data?.draw4 && (
+              <div className={styles.additionCard}>
+                <h2>{data.draw4}</h2>
+              </div>
+            )}
+            {data?.draw5 && (
+              <div className={styles.additionCard}>
+                <h2>{data.draw5}</h2>
+              </div>
+            )}
           </div>
         </div>
       </div>
 
-      <div className={styles.advantagesParent}>
+      <div id="advantages" className={styles.advantagesParent}>
         <div className={styles.advantages}>
           <div className={styles.advantagesHeading}>
-            <h1>Advantages of Express Entry:</h1>
+            <h1>{data?.advantageHeading}</h1>
           </div>
           <div className={styles.advantagesPara}>
-            <p>
-              There are various immigration programs that you can apply through:
-              FSWP, FSTP, CEC or category based.This means that you can choose
-              the program that best suits your qualifications and experience.
-            </p>
+            <p>{data?.advantageDescription}</p>
             <hr />
-            <p>Applications for Express Entry are accepted all year round.</p>
-            <hr />
-            <p>
-              Once you receive your permanent residency visa, you can settle
-              anywhere in Canada.
-            </p>
-            <hr />
-            <p>
-              After you have been physically present in Canada for at least
-              1,095 days (3 years) out of the last 5 years, you can apply for
-              Canadian Citizenship.
-            </p>
+            {data?.a1 && <p>{data.a1}</p>}
+            {data?.a2 && <p>{data.a2}</p>}
+            {data?.a3 && <p>{data.a3}</p>}
+            {data?.a4 && <p>{data.a4}</p>}
+            {data?.a5 && <p>{data.a5}</p>}
           </div>
         </div>
       </div>
 
-      <div className={styles.forgetParent}>
+      <div id="refusal-reason" className={styles.forgetParent}>
         <div className={styles.forgetMain}>
           <div className={styles.forgetHeading}>
-            <h1>
-              Don't forget to avoid these common Express Entry refusal reasons
-              and increase your chances of approval.
-            </h1>
+            <h1>{data?.refusalHeading}</h1>
           </div>
-
           <div className={styles.forgetListParent}>
             <ul className={styles.forgetListMain}>
-              <li className={styles.forgetList}>
-                You selected an incorrect National Occupational Classification
-                (NOC) code for your application.
-              </li>
-              <li className={styles.forgetList}>
-                You do not meet the minimum requirements for Express Entry,
-                including age, education, work experience, language proficiency,
-                and settlement funds.
-              </li>
-              <li className={styles.forgetList}>
-                Inaccurate and incomplete information about your education, work
-                experience, family members, and previous immigration history.
-              </li>
-              <li className={styles.forgetList}>
-                {" "}
-                Missing essential documents, such as police clearances,
-                educational assessments, language test results, work experience
-                verification letters, reference letters etc.
-              </li>
-              <li className={styles.forgetList}>
-                You failed to submit your Express Entry application within 60
-                days of receiving an Invitation to Apply (ITA).
-              </li>
+              {data?.r1 && <li className={styles.forgetList}>{data.r1}</li>}
+              {data?.r2 && <li className={styles.forgetList}>{data.r2}</li>}
+              {data?.r3 && <li className={styles.forgetList}>{data.r3}</li>}
+              {data?.r4 && <li className={styles.forgetList}>{data.r4}</li>}
+              {data?.r5 && <li className={styles.forgetList}>{data.r5}</li>}
+              {data?.r6 && <li className={styles.forgetList}>{data.r6}</li>}
+              {data?.r7 && <li className={styles.forgetList}>{data.r7}</li>}
             </ul>
           </div>
         </div>
       </div>
 
-      <div className={styles.incaseParent}>
+      <div id="appointment" className={styles.incaseParent}>
         <div className={styles.incaseMain}>
-          {/* <div className={styles.theButtonAncorParentTwo}>
-        <div className={styles.theButtonAncorTwo}>
-          <a href="/">
-            Express Entry Draws History
-          </a>
-        </div>
-      </div> */}
           <div className={styles.incaseContent}>
-            <h1>In case</h1>
-
-            <p>
-              You have received a refusal for any of the reasons mentioned above
-              or having doubts regarding your case and application, do not
-              worry. With over a decade of experience, we specialize in handling
-              Express Entry Programs. Our approval rate for these programs are
-              near to 100%. We achieve this with a tailored approach to your
-              specific case. We use case law and find similar cases to your
-              circumstances that had positive results, and we use them as
-              precedents in cases we work on. This is why we have a high success
-              rate. At Brightlight Immigration, we have a dedicated team of visa
-              application specialists who can assist you from the start of the
-              application process all the way to obtaining your PR. Start your
-              process now.
-            </p>
-
+            <h1>{data?.appointmentHeading}</h1>
+            <p>{data?.appointmentDescription}</p>
             <button className={styles.theButton} role="button">
               Book an Appointment
             </button>
@@ -218,10 +197,23 @@ let ExpressEntry = () => {
         </div>
       </div>
 
-    
-      <FAQ />
-      <RecentBlogs />
-      <Footer1/>
+      <div id="why-choose-us">
+        <BestChoice />
+      </div>
+
+      <div id="testimonials">
+        <Testimonials />
+      </div>
+
+      <div id="faqs">
+        <FAQ />
+      </div>
+
+      <div id="blogs">
+        <RecentBlogs />
+      </div>
+
+      <Footer1 />
     </>
   );
 };

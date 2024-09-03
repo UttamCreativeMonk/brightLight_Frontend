@@ -463,6 +463,9 @@
   font-size: 70px;
   color: white;
 }
+.bannerHeadingRotatePara p{
+  cursor: pointer;
+}
 
 @media (max-width: 1080px) {
   .bannerHeadingRotateParent {
