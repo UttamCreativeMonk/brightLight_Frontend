@@ -6,6 +6,7 @@ import studyVisaImg from "../assets/graduatedStudent.png";
 import OurProcess from "../sections/OurProcess";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
+import RecentBlogs from '../sections/RecentBlogs';
 
 let PermanentResidency = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -42,7 +43,7 @@ let PermanentResidency = () => {
             <div className={styles.bannerHeadingRotatePara}>
               <p>About the program</p>
               <p>Eligibility</p>
-              <p>Advantages of Express Entry</p>
+              <p>Advantages of Permanent Entry</p>
               <p>Refusal Reason</p>
               <p>Draw History</p>
               <p>Appointment</p>
@@ -109,6 +110,7 @@ let PermanentResidency = () => {
 
       <OurProcess />
 
+      <RecentBlogs/>
       <Footer1/>
     </>
   );
