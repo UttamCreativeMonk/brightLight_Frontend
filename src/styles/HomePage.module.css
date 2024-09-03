@@ -734,6 +734,12 @@
   font-weight: 200;
 }
 
+.title h2{
+  margin-top: 20px;
+}
+
+
+
 @media all and (max-width: 1450px) {
   .aspectsCardParent {
     width: 1340px;

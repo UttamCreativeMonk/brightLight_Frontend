@@ -1,22 +1,19 @@
 import React, { useState } from "react";
 import styles from "../styles/MoreServices.module.css";
 import Navbar1 from "../components/Navbar1";
-import homeLocationImg from '../assets/homeLocation.png';
-import graduatedStudentImg from '../assets/graduatedStudent.png';
-import parentsImg from '../assets/parents.png';
-import workPermitImg from '../assets/workPermit.png';
+import homeLocationImg from "../assets/homeLocation.png";
+import graduatedStudentImg from "../assets/graduatedStudent.png";
+import parentsImg from "../assets/parents.png";
+import workPermitImg from "../assets/workPermit.png";
 
-let MoreServices = () => {
-  const [selectedHeading, setSelectedHeading] = useState("Permanent Residency");
-
-
-  const [openDropdown, setOpenDropdown] = useState(null);
-
+  let MoreServices = () => {
+    const [selectedHeading, setSelectedHeading] = useState("Permanent Residency");
+    const [openDropdown, setOpenDropdown] = useState(null);
 
   const sections = {
     "Permanent Residency": {
       text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the",
-      image: homeLocationImg, 
+      image: homeLocationImg,
       subcategories: ["FSWP", "FSTP", "CEC", "Category based"],
       dropdowns: {
         "Pilot Program": "Details about the Pilot Program.",
@@ -26,7 +23,7 @@ let MoreServices = () => {
     },
     "Temporary Residence": {
       text: "Temporary Residence content goes here.",
-      image: "/path-to-another-image.png", 
+      image: "/path-to-another-image.png",
       subcategories: ["Visitor Visa", "Work Permit"],
       dropdowns: {
         "Study Permit": "Details about the Study Permit.",
@@ -46,7 +43,7 @@ let MoreServices = () => {
     },
     "Family Reunification & Sponsorship": {
       text: "Family Reunification & Sponsorship content goes here.",
-      image: parentsImg, 
+      image: parentsImg,
       subcategories: ["Family Reunification & Sponsorship", "Work Permit"],
       dropdowns: {
         "Study Permit": "Details about the Study Permit.",
@@ -57,7 +54,7 @@ let MoreServices = () => {
     },
     "Work Permit": {
       text: "Work Permit content goes here.",
-      image: workPermitImg, 
+      image: workPermitImg,
       subcategories: ["Work Permit"],
       dropdowns: {
         "Work Permit": "Details about the Work Permit.",
@@ -65,7 +62,7 @@ let MoreServices = () => {
     },
     Caregiver: {
       text: "Work Permit content goes here.",
-      image: "/path-to-Caregiver.png", 
+      image: "/path-to-Caregiver.png",
       subcategories: ["Caregiver"],
       dropdowns: {
         Caregiver: "Details about the Caregiver.",
@@ -73,7 +70,7 @@ let MoreServices = () => {
     },
     "PR Renewal": {
       text: "PR Renewal.",
-      image: "/path-to-PR Renewal.png", 
+      image: "/path-to-PR Renewal.png",
       subcategories: ["PR Renewal"],
       dropdowns: {
         "PR Renewal": "Details about the PR Renewal.",
@@ -81,7 +78,7 @@ let MoreServices = () => {
     },
     Citizenship: {
       text: "Citizenship.",
-      image: "/path-to-Citizenship.png", 
+      image: "/path-to-Citizenship.png",
       subcategories: ["Citizenship"],
       dropdowns: {
         Citizenship: "Details about the Citizenship.",
@@ -89,7 +86,7 @@ let MoreServices = () => {
     },
     "Other Services": {
       text: "Other Services.",
-      image: "/path-to-Other Services.png", 
+      image: "/path-to-Other Services.png",
       subcategories: ["Other Services"],
       dropdowns: {
         "Other Services": "Details about the Other Services.",
@@ -97,12 +94,10 @@ let MoreServices = () => {
     },
   };
 
- 
   const handleHeadingClick = (heading) => {
     setSelectedHeading(heading);
-    setOpenDropdown(null); 
+    setOpenDropdown(null);
   };
-
 
   const handleDropdownToggle = (dropdown) => {
     setOpenDropdown(openDropdown === dropdown ? null : dropdown);
@@ -141,7 +136,7 @@ let MoreServices = () => {
               }
               onClick={() => handleHeadingClick(heading)}
             >
-              {heading}
+              <h5>{heading}</h5>
             </div>
           ))}
         </div>

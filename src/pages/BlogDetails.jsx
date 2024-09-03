@@ -48,7 +48,7 @@ let BlogDetails = () => {
           return item._id != id;
         });
         if (recentBlogsFilteredData) {
-          setRecentBlogs(recentBlogsFilteredData);
+          setRecentBlogs(recentBlogsFilteredData.slice(0,3));
         }
       });
   }, []);
@@ -77,7 +77,7 @@ let BlogDetails = () => {
                   <img src={Linkedin} />
                 </a>
                 <div>
-                  <p>Have Questions ?</p>
+                  <p className={styles.haveAQuestion}>Have Questions ?</p>
                   <a className={styles.imageSection} href={loveneetData.rcic}>
                     <img src={rcic} />
                   </a>

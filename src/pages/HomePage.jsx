@@ -1,19 +1,5 @@
 import React, { useEffect } from "react";
 import styles from "../styles/HomePage.module.css";
-import permanentResidenceImg from "../assets/homeLocation.png";
-import permanentResidenceHoverImg from "../assets/visaSVG.svg";
-import bcpnpImg from "../assets/employee.png";
-import bcpnpHoverImg from "../assets/employeeWhite.png";
-import visitorVisaImg from "../assets/visa.png";
-import visitorVisaHoverImg from "../assets/visaWhite.png";
-import studyVisaImg from "../assets/graduatedStudent.png";
-import studyVisaHoverImg from "../assets/graduatedStudentWhite.png";
-import familySponsorshipImg from "../assets/parents.png";
-import familySponsorshipHoverImg from "../assets/parentsWhite.png";
-import workPermitImg from "../assets/workPermit.png";
-import workPermitHoverImg from "../assets/workPermitWhite.png";
-import pflImg from "../assets/file.png";
-import pflHoverImg from "../assets/fileWhite.png";
 import WhiteLogo from "../assets/bright-source.webp";
 import LinkedinLogo from "../assets/bannerLinkedinLogo.png";
 import Testimonials from "../sections/Testimonials";
@@ -45,75 +31,6 @@ let HomePage = () => {
   let [achiementsData, setAchievementsData] = useState([]);
   let [servicesData, setServicesData] = useState([]);
   let [services, setServices] = useState([]);
-
-  const cards = [
-    {
-      title: "Permanent Residence",
-      img: permanentResidenceImg,
-      hoverImg: permanentResidenceHoverImg,
-    },
-    {
-      title: "BCPNP",
-      img: bcpnpImg,
-      hoverImg: bcpnpHoverImg,
-    },
-    {
-      title: "Visitor Visa",
-      img: visitorVisaImg,
-      hoverImg: visitorVisaHoverImg,
-    },
-    { title: "Study Visa", img: studyVisaImg, hoverImg: studyVisaHoverImg },
-    {
-      title: "Family Sponsorship",
-      img: familySponsorshipImg,
-      hoverImg: familySponsorshipHoverImg,
-    },
-    { title: "Work Permit", img: workPermitImg, hoverImg: workPermitHoverImg },
-    { title: "PFL", img: pflImg, hoverImg: pflHoverImg },
-  ];
-
-  let clientVideosData = [
-    {
-      img: aboutBanner,
-      person_name: "Person 1",
-    },
-    {
-      img: aboutBanner,
-      person_name: "Person 2",
-    },
-    {
-      img: aboutBanner,
-      person_name: "Person 3",
-    },
-    {
-      img: aboutBanner,
-      person_name: "Person 4",
-    },
-    {
-      img: aboutBanner,
-      person_name: "Person 5",
-    },
-    {
-      img: aboutBanner,
-      person_name: "Person 6",
-    },
-    {
-      img: aboutBanner,
-      person_name: "Person 7",
-    },
-    {
-      img: aboutBanner,
-      person_name: "Person 8",
-    },
-    {
-      img: aboutBanner,
-      person_name: "Person 9",
-    },
-    {
-      img: aboutBanner,
-      person_name: "Person 10",
-    },
-  ];
 
   useEffect(() => {
     fetch("https://brightlight-node.onrender.com/home-top")
