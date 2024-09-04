@@ -61,14 +61,7 @@ import Footer1 from "../components/Footer1";
         "Work Permit": "Details about the Work Permit.",
       },
     },
-    Caregiver: {
-      text: "Work Permit content goes here.",
-      image: "/path-to-Caregiver.png",
-      subcategories: ["Caregiver"],
-      dropdowns: {
-        Caregiver: "Details about the Caregiver.",
-      },
-    },
+
     "PR Renewal": {
       text: "PR Renewal.",
       image: "/path-to-PR Renewal.png",
@@ -77,7 +70,7 @@ import Footer1 from "../components/Footer1";
         "PR Renewal": "Details about the PR Renewal.",
       },
     },
-    Citizenship: {
+    "Citizenship": {
       text: "Citizenship.",
       image: "/path-to-Citizenship.png",
       subcategories: ["Citizenship"],

@@ -2,8 +2,6 @@ import React, { useEffect } from "react";
 import styles from "../styles/HomePage.module.css";
 import WhiteLogo from "../assets/bright-source.webp";
 import LinkedinLogo from "../assets/bannerLinkedinLogo.png";
-import Testimonials from "../sections/Testimonials";
-import FAQ from "../sections/FAQ";
 import OurProcess from "../sections/OurProcess";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -397,8 +395,8 @@ let HomePage = () => {
 
       <Testimonials_White />
 
-      <Testimonials />
-      <FAQ />
+      {/* <Testimonials />
+      <FAQ /> */}
 
       <div className={styles.sourceParent}>
         <div className={styles.sourceMain}>

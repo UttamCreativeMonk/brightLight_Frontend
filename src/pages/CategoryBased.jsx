@@ -8,13 +8,22 @@ import Testimonials from "../sections/Testimonials";
 import FAQ from "../sections/FAQ";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
+import RecentBlogs from "../sections/RecentBlogs";
 
-let CategoryBased = () => {
+const CategoryBased = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       <Navbar1 />
@@ -28,10 +37,10 @@ let CategoryBased = () => {
               agriculture then this could be your chance to make Canada your new
               home. Category-Based Draws offer lower CRS score cut-offs, meaning
               you may receive an invitation to apply for permanent residence
-              sooner than you might under the standard Evnrose Entry process.
+              sooner than you might under the standard Express Entry process.
             </p>
           </div>
-          {/* // */}
+
           <div
             className={`${styles.bannerHeadingRotateParent} ${
               isDropdownOpen ? styles.active : ""
@@ -44,26 +53,38 @@ let CategoryBased = () => {
               <h3>QUICK ACCESS</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p>About the program</p>
-              <p>Benefits</p>
-              <p>Categories</p>
-              <p>How it Works</p>
-              <p>Eligibility</p>
-              <p>Draw History</p>
-              <p>How to Apply</p>
-              <p>Refusal Reasons</p>
-              <p>Book Appointment</p>
-              <p>Why Choose Us</p>
-              <p>Testimonials</p>
-              <p>FAQs</p>
-              <p>Blogs</p>
+              <p onClick={() => scrollToSection("about-the-program")}>
+                About the program
+              </p>
+              <p onClick={() => scrollToSection("benefits")}>Benefits</p>
+              <p onClick={() => scrollToSection("categories")}>Categories</p>
+              <p onClick={() => scrollToSection("how-it-works")}>
+                How it Works
+              </p>
+              <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
+              <p onClick={() => scrollToSection("draw-history")}>
+                Draw History
+              </p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply
+              </p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>
+                Refusal Reasons
+              </p>
+              <p onClick={() => scrollToSection("book-appointment")}>
+                Book Appointment
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
+              <p onClick={() => scrollToSection("faqs")}>FAQs</p>
+              <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
           </div>
-          {/* // */}
         </div>
       </div>
 
-      <div className={styles.canadianParent}>
+      <div className={styles.canadianParent} id="about-the-program">
         <div className={styles.canadianContent}>
           <h1>Introduction to Program</h1>
           <p>
@@ -82,7 +103,7 @@ let CategoryBased = () => {
         </div>
       </div>
 
-      <div className={styles.eligibleParent}>
+      <div className={styles.eligibleParent} id="benefits">
         <h1>Here are the 6 Categories of Category based draws:</h1>
         <div className={styles.container}>
           <div className={styles.column}>
@@ -104,7 +125,7 @@ let CategoryBased = () => {
         </div>
       </div>
 
-      <div className={styles.categoryBasedParent}>
+      <div className={styles.categoryBasedParent} id="how-it-works">
         <div className={styles.categoryBasedMain}>
           <h1>So how does category-based draws work?</h1>
           <div className={styles.categoryBasedContentParent}>
@@ -126,7 +147,7 @@ let CategoryBased = () => {
         </div>
       </div>
 
-      <div className={styles.eligibilityParent}>
+      <div className={styles.eligibilityParent} id="eligibility">
         <div className={styles.eligibilityMain}>
           <h1>Eligibility for the program</h1>
           <h3>Are you eligible for a Category Based draw? Let's find out</h3>
@@ -166,7 +187,7 @@ let CategoryBased = () => {
         </div>
       </div>
 
-      <div className={styles.benifitParent}>
+      <div className={styles.benifitParent} id="benefits">
         <div className={styles.benifitMain}>
           <h1>Did we mention the benefits?</h1>
           <h1>Here they are</h1>
@@ -198,7 +219,7 @@ let CategoryBased = () => {
         </div>
       </div>
 
-      <div className={styles.howApplyParent}>
+      <div className={styles.howApplyParent} id="how-to-apply">
         <div className={styles.howApplyMain}>
           <h1>How to Apply?</h1>
           <h4>
@@ -208,7 +229,7 @@ let CategoryBased = () => {
 
           <div className={styles.stepsGrid}>
             <div className={styles.step}>
-            <div className={styles.headerLineParent}>      
+              <div className={styles.headerLineParent}>
                 <div className={styles.headingNumbers}>1</div>
                 <p></p>
               </div>
@@ -221,7 +242,7 @@ let CategoryBased = () => {
               </div>
             </div>
             <div className={styles.step}>
-            <div className={styles.headerLineParent}>      
+              <div className={styles.headerLineParent}>
                 <div className={styles.headingNumbers}>2</div>
                 <p></p>
               </div>
@@ -234,7 +255,7 @@ let CategoryBased = () => {
               </div>
             </div>
             <div className={styles.step}>
-            <div className={styles.headerLineParent}>      
+              <div className={styles.headerLineParent}>
                 <div className={styles.headingNumbers}>3</div>
                 <p></p>
               </div>
@@ -247,7 +268,7 @@ let CategoryBased = () => {
               </div>
             </div>
             <div className={styles.step}>
-            <div className={styles.headerLineParent}>      
+              <div className={styles.headerLineParent}>
                 <div className={styles.headingNumbers}>4</div>
                 <p></p>
               </div>
@@ -259,7 +280,7 @@ let CategoryBased = () => {
               </div>
             </div>
             <div className={styles.step}>
-            <div className={styles.headerLineParent}>      
+              <div className={styles.headerLineParent}>
                 <div className={styles.headingNumbers}>5</div>
                 <p></p>
               </div>
@@ -272,7 +293,7 @@ let CategoryBased = () => {
               </div>
             </div>
             <div className={styles.step}>
-            <div className={styles.headerLineParent}>      
+              <div className={styles.headerLineParent}>
                 <div className={styles.headingNumbers}>6</div>
                 <p></p>
               </div>
@@ -284,13 +305,11 @@ let CategoryBased = () => {
                 </p>
               </div>
             </div>
-            {/* / */}
           </div>
-          {/* // */}
         </div>
       </div>
 
-      <div className={styles.refusalParent}>
+      <div className={styles.refusalParent} id="refusal-reasons">
         <div className={styles.refusalMain}>
           <h1>Reasons of Refusal</h1>
           <h3>
@@ -342,7 +361,7 @@ let CategoryBased = () => {
         </div>
       </div>
 
-      <div className={styles.appointementParent}>
+      <div className={styles.appointementParent} id="book-appointment">
         <div className={styles.appointementMain}>
           <h1>Book Appointment</h1>
           <h5>In Case</h5>
@@ -361,11 +380,20 @@ let CategoryBased = () => {
           </p>
         </div>
       </div>
-      <BestChoice/>
-      <Testimonials/>
-      <FAQ/>
 
-      <Footer1/>
+      <BestChoice />
+      <div id="testimonials">
+        <Testimonials />
+      </div>
+
+      <div id="faqs">
+        <FAQ />
+      </div>
+
+      <div id="blogs">
+        <RecentBlogs/>
+      </div>
+      <Footer1 />
     </>
   );
 };

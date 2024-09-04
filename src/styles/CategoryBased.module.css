@@ -519,6 +519,10 @@
   align-items: center;
 }
 
+.bannerHeadingRotatePara{
+  cursor: pointer;
+}
+
 @media (max-width: 1080px) {
   .bannerHeadingRotateParent {
     flex-direction: column;
@@ -1011,6 +1015,18 @@
   .theButtonAncor button {
     padding: 10px 10px;
     font-size: 20px;
+  }
+  .benifitParent{
+    padding-bottom: 30px;
+  }
+  .eligibleParent{
+    padding: 20px 0px;
+  }
+  .benifitParent{
+    margin-top: 50px;
+  }
+  .canadianParent{
+    margin-top: 50px;
   }
 }
 

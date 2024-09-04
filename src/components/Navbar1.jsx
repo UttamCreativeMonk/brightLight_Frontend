@@ -30,6 +30,7 @@ const Navbar1 = (props) => {
   const [showServicesDropdown, setShowServicesDropdown] = useState(false);
   const [showCalculatorsDropdown, setShowCalculatorsDropdown] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
+  let [showNestedDropdown, setShowNestedDropdown] = useState(false);
 
   const toggleSidebar = () => {
     setShowSidebar(!showSidebar);
@@ -57,16 +58,6 @@ const Navbar1 = (props) => {
               >
                 ABOUT
               </a>
-              {/* <div
-                className={`${styles.aboutDropdown} ${
-                  showAboutDropdown ? styles.showAboutDropdown : null
-                }`}
-                onMouseEnter={() => setShowAboutDropdown(true)}
-                onMouseLeave={() => setShowAboutDropdown(false)}
-              >            
-                <a href="/clb-ilets-calculator">CLB ILETS Calculator</a>
-                <a href="/more-services">More Services</a>
-              </div> */}
             </div>
             <a href="/contact-us">CONTACT</a>
             <div className={styles.mobileIcon}>
@@ -124,7 +115,29 @@ const Navbar1 = (props) => {
                   <a href="/federal-skilled">Federal Skilled</a>
                   <a href="/express-entry">Express Entry</a>
                   <a href="/transport-occupation">Transport Occupation</a>
-                  <a href="/permanent-residency">Permanent Residency</a>
+                  <div className={`${styles.relativeDiv} ${styles.flex}`}>
+                    <a
+                      href="/permanent-residency"
+                      onMouseEnter={() => setShowNestedDropdown(true)}
+                      onMouseLeave={() => setShowNestedDropdown(false)}
+                    >
+                      Permanent Residency
+                    </a>
+                    <div
+                      className={`${styles.permanentNestedSection} ${
+                        showNestedDropdown ? styles.showNested : null
+                      }`}
+                      onMouseEnter={() => setShowNestedDropdown(true)}
+                      onMouseLeave={() => setShowNestedDropdown(false)}
+                    >
+                      <a href="/">Nested 1</a>
+                      <a href="/">Nested 2</a>
+                      <a href="/">Nested 3</a>
+                      <a href="/">Nested 4</a>
+                      <a href="/">Nested 5</a>
+                    </div>
+                  </div>
+
                   <a href="/category-based">Category Based</a>
                   <a href="/previous-draw-history">Previous Draw History</a>
                 </div>
@@ -203,7 +216,7 @@ const Navbar1 = (props) => {
                   <span className={styles.arrow}>▼</span>
                 </a>
                 <div className={styles.dropdownContent}>
-                <a href="/federal-skilled">Federal Skilled</a>
+                  <a href="/federal-skilled">Federal Skilled</a>
                   <a href="/express-entry">Express Entry</a>
                   <a href="/transport-occupation">Transport Occupation</a>
                   <a href="/permanent-residency">Permanent Residency</a>

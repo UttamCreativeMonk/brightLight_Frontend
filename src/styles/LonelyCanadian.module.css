@@ -1,0 +1,202 @@
+.bannerParent {
+    background-image: url("../assets/canadaBlue.jpeg");
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 50px 0px;
+    /* padding-top: 30px; */
+  }
+  .banner {
+    width: 1440px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .bannerHeading h1 {
+    color: #e8c47c;
+    font-size: 50px;
+    text-align: center;
+  }
+  
+  .bannerHeading p {
+    color: #00273f;
+    width: 74%;
+    margin: auto;
+    font-size: 25px;
+    line-height: 1.8;
+    padding-top: 60px;
+  }
+  
+  .bannerHeadingRotateParent {
+    width: 700px;
+    margin: auto;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    /* gap: 10px; */
+    align-items: center;
+    color: white;
+    /* margin-top: 150px; */
+  }
+  
+  .bannerHeadingRotate {
+    transform: rotate(-90deg);
+    border-bottom: 1px solid white;
+    padding-bottom: 20px;
+    font-size: 30px;
+  }
+  
+  .bannerHeadingRotatePara p {
+    text-align: left;
+    padding-bottom: 24px;
+    font-size: 30px;
+  }
+  
+
+  .bannerHeadingRotatePara p {
+    cursor: pointer;
+  }
+  
+  @media (max-width: 1450px) {
+    .banner {
+      width: 95%;
+    }
+  }
+  
+  @media (max-width: 1080px) {
+    .bannerHeadingRotateParent {
+      flex-direction: column;
+      text-align: center;
+      /* margin-top: 50px; */
+      position: relative;
+      width: 100%;
+    }
+  
+    .bannerHeadingRotate {
+      transform: none;
+      border: none;
+      padding-bottom: 0;
+      font-size: 24px;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+  
+    .bannerHeadingRotate::after {
+      content: "\25BC";
+      font-size: 16px;
+      margin-left: 10px;
+      transition: transform 0.3s;
+    }
+  
+    .bannerHeadingRotateParent.active .bannerHeadingRotate::after {
+      transform: rotate(180deg);
+    }
+  
+    .bannerHeadingRotatePara {
+      margin-left: 0;
+      display: none;
+      background-color: #f7f7f7;
+      padding: 10px;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding-top: 25px 0px;
+    }
+  
+    .bannerHeadingRotateParent.active .bannerHeadingRotatePara {
+      display: block;
+    }
+  
+    .bannerHeadingRotatePara p {
+      font-size: 18px;
+      padding: 10px 0;
+      color: #00273f;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+
+  .container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .header {
+    text-align: center;
+  }
+  
+  .header h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  .header p {
+    font-size: 1.2em;
+    color: #555;
+  }
+  
+  section {
+    margin-top: 20px;
+  }
+  
+  h2 {
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+  }
+  
+  ul {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
+  
+  .link {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .link:hover {
+    text-decoration: underline;
+  }
+  
+  .applicationProcess h3 {
+    margin-top: 15px;
+  }
+  
+  .faq dl {
+    margin: 0;
+  }
+  
+  .faq dt {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .faq dd {
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .testimonials {
+    margin-top: 20px;
+  }
+  
+  .toggleButton {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .toggleButton:hover {
+    background-color: #0056b3;
+  }
+  
