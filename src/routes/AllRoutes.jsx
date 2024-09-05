@@ -16,6 +16,7 @@ import PreviousDrawHistory from "../pages/PreviousDrawHistory";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
 import TermsAndConditions from "../pages/TermsAndConditions";
 import MoreServices from "../pages/MoreServices";
+import Admin from "../pages/Admin";
 
 let AllRoutes = () => {
   return (
@@ -34,6 +35,7 @@ let AllRoutes = () => {
       <Route path="/category-based" element={<CategoryBased/>} />
       <Route path="/clb-ilets-calculator" element={<CLBILETSCalculator/>} />
       <Route path="/previous-draw-history" element={<PreviousDrawHistory/>} />
+      <Route path="/users/admin/dashboard" element={<Admin />} />
       <Route path="/more-services" element={<MoreServices/>} />
       
       <Route path="/privacy-policy" element={<PrivacyPolicy/>} />

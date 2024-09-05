@@ -146,7 +146,7 @@
   
   .header h1 {
     font-size: 2.5em;
-    color: #333;
+    color: #00273f;
   }
   
   .mainContent {
@@ -157,17 +157,17 @@
     margin-bottom: 40px;
   }
   
-  h2 {
+  .section h2 {
     font-size: 2em;
-    color: #444;
+    color: #00273f;
   }
   
-  h3 {
+ .section h3 {
     font-size: 1.5em;
-    color: #555;
+    color: #00273f;
   }
   
-  p {
+ .section p {
     font-size: 1em;
     color: #666;
   }
@@ -193,19 +193,19 @@
     gap: 10px;
   }
   
-  .button {
+ .section .button {
     display: inline-block;
     padding: 10px 20px;
     margin: 5px;
     text-align: center;
     text-decoration: none;
     color: #fff;
-    background-color: #007bff;
+    background-color: #00273f;
     border-radius: 5px;
   }
   
-  .button:hover {
-    background-color: #0056b3;
+ .section.button:hover {
+    background-color: #003c3f;
   }
   
   .applicationProcess ul {
@@ -219,7 +219,7 @@
   
   .faq h3 {
     font-size: 1.2em;
-    color: #333;
+    color: #00273f;
     margin-bottom: 10px;
     margin-top:30px;
   }
@@ -236,11 +236,11 @@
     text-align: center;
     text-decoration: none;
     color: #fff;
-    background-color: #28a745;
+    background-color: #00273f;
     border-radius: 5px;
   }
   
   .bookAppointment:hover {
-    background-color: #218838;
+    background-color: #216b88;
   }
   

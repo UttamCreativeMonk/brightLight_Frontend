@@ -23,6 +23,41 @@ import Adoption from './pages/Adoption';
 import DependentChildren from "./pages/DependentChildren";
 import HumanitarianCompassionate from "./pages/HumanitarianCompassionate";
 import LonelyCanadian from "./pages/LonelyCanadian";
+import ParentsGrandparents from "./pages/ParentsGrandparents";
+import StudentVisa from "./pages/StudentVisa";
+import Orphan from "./pages/Orphan";
+import InsideCanada from "./pages/InsideCanada";
+import ChangeCollegeProgram from "./pages/ChangeCollegeProgram";
+import VisitorToStudent from "./pages/VisitorToStudent";
+import OutsideCananda from "./pages/OutsideCananda";
+import NonSds from "./pages/NonSds";
+import Sds from "./pages/Sds";
+import StudyPermitMinors from "./pages/StudyPermitMinors";
+import ExtensionsDraft from "./pages/ExtensionsDraft";
+import Flagpoling from "./pages/Flagpoling";
+import RestorationStatusDraft from "./pages/RestorationStatusDraft";
+import SpousalOpenWorkPermit from"./pages/SpousalOpenWorkPermit";
+import CommonLawPartnerPermanent from "./pages/CommonLawPartnerPermanent";
+import CommonLawPartnerTemporary from "./pages/CommonLawPartnerTemporary";
+import Cby from "./pages/Cby";
+import SuperVisa from "./pages/SuperVisa";
+import TemporaryResidentPermitDraft from "./pages/TemporaryResidentPermitDraft";
+import VisitorVisa from "./pages/VisitorVisa" ;
+import BusinessVisitorVisa from "./pages/BusinessVisitorVisa";
+import DualIntentVisa from "./pages/DualIntentVisa";
+import CanadianExperienceClass from "./pages/CanadianExperienceClass";
+import FederalSkilledTradesProgram from "./pages/FederalSkilledTradesProgram";
+import FederalSkilledWorkerProgram from "./pages/FederalSkilledWorkerProgram";
+import FrenchTargetedDraw from "./pages/FrenchTargetedDraw";
+import HealthcareTargetedDraw from "./pages/HealthcareTargetedDraw";
+import StemTargetedDraw from "./pages/StemTargetedDraw";
+import TradeOccupationTargetedDraw from "./pages/TradeOccupationTargetedDraw";
+import TransportOccupationTargetedDraw from "./pages/TransportOccupationTargetedDraw";
+import PilotPrograms from "./pages/PilotPrograms";
+import AgriFoodPilotProgram from "./pages/AgriFoodPilotProgram";
+import Rnip from "./pages/Rnip";
+import Pnp from "./pages/Pnp";
+
 
 function App() {
   // useEffect(()=>{
@@ -56,8 +91,44 @@ function App() {
       {/* <HumanitarianCompassionate/> */}
       {/* <LonelyCanadian/> */}
 
+{/* <Orphan /> */}
+{/* <ParentsGrandparents/> */}
+{/* <StudentVisa/> */}
+{/* <InsideCanada/> */}
+{/* <ChangeCollegeProgram/> */}
+{/* <VisitorToStudent/> */}
+{/* <OutsideCananda/> */}
+{/* <NonSds/> */}
+{/* <Sds/> */}
+{/* <StudyPermitMinors/> */}
+{/* <ExtensionsDraft/> */}
+{/* <Flagpoling/> */}
+{/* <RestorationStatusDraft/> */}
+{/* <SpousalOpenWorkPermit/> */}
+{/* <CommonLawPartnerPermanent/> */}
+{/* <CommonLawPartnerTemporary/> */}
+{/* <Cby/> */}
+{/* <SuperVisa/> */}
+{/* <TemporaryResidentPermitDraft/> */}
+{/* <VisitorVisa/> */}
+{/* <BusinessVisitorVisa/> */}
+{/* <DualIntentVisa/> */}
+{/* <CanadianExperienceClass/> */}
+{/* <FederalSkilledTradesProgram/> */}
+{/* <FederalSkilledWorkerProgram/> */}
+{/* <FrenchTargetedDraw/> */}
+{/* <HealthcareTargetedDraw/> */}
+{/* <StemTargetedDraw/> */}
+{/* <TradeOccupationTargetedDraw/> */}
+{/* <TransportOccupationTargetedDraw/> */}
+{/* <PilotPrograms/> */}
+{/* <AgriFoodPilotProgram/> */}
+{/* <Rnip/> */}
+{/* <Pnp/> */}
 
- {/* <Loader /> */}
+
+
+ <Loader />
       <AllRoutes />
     </div>
   );

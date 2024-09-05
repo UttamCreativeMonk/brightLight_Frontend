@@ -139,30 +139,34 @@
     margin-bottom: 40px;
   }
   
-  h2 {
+  .benefits, .eligibility, .evidence, .applicationProcess, .consultation, .whyChooseUs, .testimonials, .faq  h2 {
     font-size: 24px;
     margin-bottom: 20px;
+    color: #00273f;
   }
   
-  h3 {
+  .benefits, .eligibility, .evidence, .applicationProcess, .consultation, .whyChooseUs, .testimonials, .faq   h3 {
     font-size: 20px;
     margin-bottom: 10px;
+     color: #00273f;
   }
   
-  ul {
+  .benefits , .benefits ul {
     list-style-type: disc;
     margin-left: 20px;
   }
   
-  ol {
+ .applicationProcess ol {
     margin-left: 20px;
   }
   
-  li, p {
+  /* li, p {
     margin-bottom: 10px;
   }
-  
+   */
   .faqItem {
     margin-bottom: 20px;
   }
+
+  
   

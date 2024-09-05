@@ -135,33 +135,31 @@
     margin-bottom: 20px;
   }
   
-  .benefits, .eligibility, .applicationProcess, .refusalReasons, .consultation, .whyChooseUs, .testimonials, .faq {
-    margin-bottom: 20px;
-  }
+ 
   
-  h1, h2, h3 {
-    color: #2a2a2a;
+  /* .container h1, h2, h3 {
+    color: #00273f;
   }
-  
-  ul, ol {
+   */
+ .container ul, ol {
     margin-left: 20px;
   }
   
-  table {
+ .container table {
     width: 100%;
     border-collapse: collapse;
   }
   
-  table, th, td {
+ .container table, th, td {
     border: 1px solid #ddd;
   }
   
-  th, td {
+ .container th, td {
     padding: 8px;
     text-align: left;
   }
   
-  th {
+ .container th {
     background-color: #f4f4f4;
   }
   
@@ -171,5 +169,12 @@
   
   .faq dd {
     margin-left: 20px;
+  }
+  .benefits, .eligibility, .applicationProcess, .refusalReasons, .consultation, .whyChooseUs, .testimonials, .faq {
+    margin-bottom: 50px;
+  }
+
+  .bannerHeadingRotate h3{
+    color: white;
   }
   

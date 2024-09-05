@@ -141,7 +141,7 @@
   
   .header h1 {
     font-size: 2.5em;
-    color: #333;
+    color: #00273f;
   }
   
   .mainContent {
@@ -152,17 +152,17 @@
     margin-bottom: 40px;
   }
   
-  h2 {
+  .section h2 {
     font-size: 2em;
-    color: #444;
+    color: #00273f;
   }
   
-  h3 {
+ .section h3 {
     font-size: 1.5em;
-    color: #555;
+    color: #00273f;
   }
   
-  p {
+  .section p {
     font-size: 1em;
     color: #666;
   }
@@ -173,19 +173,19 @@
     gap: 10px;
   }
   
-  .button {
+  .section .button {
     display: inline-block;
     padding: 10px 20px;
     margin: 5px;
     text-align: center;
     text-decoration: none;
     color: #fff;
-    background-color: #007bff;
+    background-color: #00273f;
     border-radius: 5px;
   }
   
-  .button:hover {
-    background-color: #0056b3;
+  .section .button:hover {
+    background-color: #00b3ad;
   }
   
   ul {
