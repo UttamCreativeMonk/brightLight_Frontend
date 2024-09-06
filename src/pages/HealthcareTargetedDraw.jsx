@@ -34,25 +34,13 @@ const HealthcareTargetedDraw = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
-                About the Program
-              </p>
-              <p onClick={() => scrollToSection("key-points")}>Key Points</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>
-                Refusal Reasons
-              </p>
-              <p onClick={() => scrollToSection("book-appointment")}>
-                Book Appointment
-              </p>
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose Us?
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("about-program")}>About the Program </p>
+              <p onClick={() => scrollToSection("eligiblity")}>Eligiblity</p>
+              <p onClick={() => scrollToSection("eligiblity-occupation")}>Eligiblity Occupation</p>
+              <p onClick={() => scrollToSection("previous-draw-history")}>Previous Draw History</p>
+              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
+              <p onClick={() => scrollToSection("why-choose-us")}> Why Choose Us?  </p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -64,26 +52,26 @@ const HealthcareTargetedDraw = () => {
       <div className={styles.container}>
       <h1 className={styles.heading}>Category-Based Express Entry Selection Draws: Healthcare Draw</h1>
 
-      <section className={styles.introduction}>
+      <section className={styles.introduction} id="about-program">
         <p>In 2023, the Canadian Government launched the Express Entry healthcare draws, a strategic initiative aimed at attracting and retaining crucial healthcare professionals like nurses, physicians, and dentists. This program fast-tracks immigration applications, significantly reducing the time between application and approval for permanent residency. The process, managed by Canada's Immigration, Refugees, and Citizenship Canada (IRCC), aims to process the majority of applications within six months. However, it's important to note that this is not a guaranteed timeline. The urgent need for additional healthcare workers in Canada is evident, and the Express Entry healthcare draws are a crucial tool in addressing this issue.</p>
       </section>
 
-      <section className={styles.eligibilityCriteria}>
+      <section className={styles.eligibilityCriteria} id="eligiblity">
         <h2 className={styles.subheading}>Eligibility Criteria for Express Entry Healthcare Draws</h2>
         <p>Understanding the process of becoming eligible for Express Entry healthcare draws requires a comprehensive understanding of the Express Entry system itself.</p>
         <p>Express Entry is not an immigration program but a system used to manage several Canadian immigration programs. It operates on an expression of interest intake model, where you submit your profile into a pool of candidates and wait for an invitation to apply for permanent residency.</p>
         <p>To be eligible for Express Entry, you must meet the criteria for one of the following programs:</p>
         <ul>
-          <li><Link to="/fswp-program" className={styles.button}>Federal Skilled Worker (FSW)</Link>: No Canadian experience required</li>
-          <li><Link to="/cec-program" className={styles.button}>Canadian Experience Class (CEC)</Link>: Canadian experience required</li>
-          <li><Link to="/fstp-program" className={styles.button}>Federal Skilled Trades (FST)</Link>: Dedicated to trades workers</li>
+          <li><Link to="/federal-skilled-worker-program" className={styles.button}>Federal Skilled Worker (FSW)</Link>: No Canadian experience required</li>
+          <li><Link to="/canadian-experience-class" className={styles.button}>Canadian Experience Class (CEC)</Link>: Canadian experience required</li>
+          <li><Link to="/federal-skilled-worker-program" className={styles.button}>Federal Skilled Trades (FST)</Link>: Dedicated to trades workers</li>
         </ul>
         <p>Once you've submitted your profile, your eligibility for each program is evaluated based on your work experience, education, age, and language proficiency. This evaluation is conducted using the Comprehensive Ranking System (CRS), which assigns a score to your profile.</p>
         <p>Your CRS score is crucial as it determines whether you receive an invitation to apply (ITA) in a round of invitations, also known as a draw. In an all-program draw, the highest-scoring candidates are invited, while in a category-based draw, the top-scoring candidates who meet the draw's category eligibility criteria are invited.</p>
         <p>Healthcare Express Entry draws are category-based draws. To be eligible for the health worker category, you must have at least six months of full-time work experience in an eligible healthcare occupation within the past three years.</p>
       </section>
 
-      <section className={styles.eligibleOccupations}>
+      <section className={styles.eligibleOccupations} id="eligiblity-occupation">
         <h2 className={styles.subheading}>Eligible Occupations for Express Entry Healthcare Draws</h2>
         <p>In order to be eligible for Express Entry Healthcare draws, you must have at least six months of full-time (or the equivalent in part-time) paid work experience within the three years preceding the issuance of an ITA and when IRCC receives your application for Canadian permanent residency.</p>
         <p>Healthcare occupations category eligibility:</p>
@@ -281,10 +269,10 @@ const HealthcareTargetedDraw = () => {
         </table>
       </section>
 
-      <section className={styles.drawHistory}>
+      <section className={styles.drawHistory} id="previous-draw-history">
         <h2 className={styles.subheading}>Express Entry Healthcare Draws History</h2>
         <p>The first-ever Express Entry draw for targeted healthcare occupation workers was held in February 2024. Express Entry draw #284 saw a CRS score of 422 and invited 3500 candidates eligible for category-based selection in healthcare occupations.</p>
-        <Link to="/draw-history" className={styles.button}>View Previous Draw History</Link>
+        <Link to="/previous-draw-history" className={styles.button}>View Previous Draw History</Link>
       </section>
 
       <section className={styles.applicationProcess}>

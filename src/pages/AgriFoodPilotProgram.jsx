@@ -41,7 +41,7 @@ const AgriFoodPilotProgram = () => {
               <p onClick={() => scrollToSection("about-program")}>
                 About the Program
               </p>
-              <p onClick={() => scrollToSection("key-points")}>Key Points</p>
+              <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
               <p onClick={() => scrollToSection("how-to-apply")}>
                 How to Apply?
               </p>
@@ -65,7 +65,7 @@ const AgriFoodPilotProgram = () => {
       </div>
 
       <div className={styles.container}>
-        <header className={styles.header}>
+        <header className={styles.header} id="about-program">
           <h1>Agri-Food Pilot Program</h1>
         </header>
 
@@ -94,7 +94,7 @@ const AgriFoodPilotProgram = () => {
           </p>
         </section>
 
-        <section className={styles.criteria}>
+        <section className={styles.criteria} id="eligibility">
           <h2>Eligibility Criteria for Agri-Food Immigration Pilot</h2>
           <p>
             To be eligible for Canada’s Agri-Food Immigration Pilot, foreign

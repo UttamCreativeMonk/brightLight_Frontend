@@ -34,25 +34,13 @@ const TransportOccupationTargetedDraw = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
-                About the Program
-              </p>
-              <p onClick={() => scrollToSection("key-points")}>Key Points</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>
-                Refusal Reasons
-              </p>
-              <p onClick={() => scrollToSection("book-appointment")}>
-                Book Appointment
-              </p>
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose Us?
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("about-program")}> About the Program </p>
+              <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
+              <p onClick={() => scrollToSection("transport-eligibility")}>Transport Eligibility</p>
+              <p onClick={() => scrollToSection("transport_occupations")}>Transport Occupations</p>
+              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment </p>
+              <p onClick={() => scrollToSection("why-choose-us")}> Why Choose Us? </p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -62,7 +50,7 @@ const TransportOccupationTargetedDraw = () => {
 
 
       <div className={styles.container}>
-      <h1 className={styles.heading}>Category-Based Express Entry Selection Draws: Transport Occupations</h1>
+      <h1 className={styles.heading} id="about-program">Category-Based Express Entry Selection Draws: Transport Occupations</h1>
 
       <div className={styles.introduction}>
         <p>
@@ -70,7 +58,7 @@ const TransportOccupationTargetedDraw = () => {
         </p>
       </div>
 
-      <div className={styles.eligibility}>
+      <div className={styles.eligibility} id="eligibility">
         <h2 className={styles.subheading}>First You Must Be Eligible with Express Entry</h2>
         <ol>
           <li>Join the Express Entry Pool: The first step towards becoming a candidate for a transport-specific draw is to get into the Express Entry pool.</li>
@@ -87,7 +75,7 @@ const TransportOccupationTargetedDraw = () => {
         </p>
       </div>
 
-      <div className={styles.transportEligibility}>
+      <div className={styles.transportEligibility} id="transport-eligibility">
         <h2 className={styles.subheading}>Eligibility Criteria for Transport Occupations Category</h2>
         <ul>
           <li>Within the last 3 years, you have at least 6 months of full-time, continuous work experience (or an equivalent amount of part-time work experience) in a single eligible transport occupation. This experience can be gained either in Canada or abroad.</li>
@@ -161,7 +149,7 @@ const TransportOccupationTargetedDraw = () => {
         </table>
       </div>
 
-      <div className={styles.drawHistory}>
+      <div className={styles.drawHistory} id="transport_occupations">
         <h2 className={styles.subheading}>Express Entry Transport Draws History</h2>
         <p>The first-ever Express Entry draw for Transport occupation workers was held in September 2023. Express Entry draw #264 saw a CRS score of 435 and invited 1000 candidates eligible for category-based selection in Transport occupations.</p>
         <a href="/previous-draw-history" className={styles.button}>View Previous Draw History</a>

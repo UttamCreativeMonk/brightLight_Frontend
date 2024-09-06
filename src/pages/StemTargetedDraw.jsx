@@ -34,25 +34,13 @@ const StemTargetedDraw = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
-                About the Program
-              </p>
-              <p onClick={() => scrollToSection("key-points")}>Key Points</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>
-                Refusal Reasons
-              </p>
-              <p onClick={() => scrollToSection("book-appointment")}>
-                Book Appointment
-              </p>
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose Us?
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("about-program")}> About the Program </p>
+              <p onClick={() => scrollToSection("eligiblity")}>Eligiblity</p>
+              <p onClick={() => scrollToSection("stem-eligiblity")}>Stem Eligiblity</p>
+              <p onClick={() => scrollToSection("stem-noc-codes")}>Stem Noc Codes </p>
+              <p onClick={() => scrollToSection("book-appointment")}> Book Appointment </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>  Why Choose Us?  </p>
+              <p onClick={() => scrollToSection("testimonials")}>  Testimonials </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -63,21 +51,21 @@ const StemTargetedDraw = () => {
       <div className={styles.container}>
       <h1 className={styles.heading}>Category-Based Express Entry Selection Draws: STEM (Science, Technology, Engineering, Math) Occupations</h1>
 
-      <section className={styles.introduction}>
+      <section className={styles.introduction} id="about-program">
         <p>Canada's Express Entry system is not just a general immigration tool, but also a strategic resource for targeting specific sectors of the economy. Occasionally, Canada conducts Science, Technology, Engineering, and Math (STEM)-specific draws through the Express Entry system. These draws specifically target candidates who have work experience in eligible STEM occupations.</p>
         <p>If you're part of the STEM workforce and are considering immigrating to Canada, these specialized draws could be a significant opportunity for you. Stay tuned for more updates on these STEM-specific Express Entry draws and make your move to Canada a successful one.</p>
       </section>
 
-      <section className={styles.eligibility}>
+      <section className={styles.eligibility} id="eligiblity">
         <h2 className={styles.subheading}>First You Must Be Eligible with Express Entry</h2>
         <p>Before you can participate in a STEM-specific draw through Canada's Express Entry system, you need to be eligible. Here's how you can get started:</p>
         <ol>
           <li>Join the Express Entry Pool: The first step towards becoming a candidate for a STEM-specific draw is to get into the Express Entry pool.</li>
           <li>Choose Your Program: There are three programs you can be eligible for to join the Express Entry pool:
             <ul>
-              <li><Link to="/fswp-program" className={styles.button}>Federal Skilled Worker Program (FSW)</Link>: This program is ideal for tech workers who have the necessary work experience, education, and language ability.</li>
-              <li><Link to="/cec-program" className={styles.button}>Canadian Experience Class (CEC)</Link>: Similar to the FSW program, the CEC is also suitable for tech workers who have gained Canadian work experience.</li>
-              <li><Link to="/fstp-program" className={styles.button}>Federal Skilled Trades Program (FSTP)</Link>: If you're a trades worker, this program is designed for you. It requires proof of relevant work experience, education, and language proficiency.</li>
+              <li><Link to="/federal-skilled-worker-program" className={styles.button}>Federal Skilled Worker Program (FSW)</Link>: This program is ideal for tech workers who have the necessary work experience, education, and language ability.</li>
+              <li><Link to="/canadian-experience-class" className={styles.button}>Canadian Experience Class (CEC)</Link>: Similar to the FSW program, the CEC is also suitable for tech workers who have gained Canadian work experience.</li>
+              <li><Link to="/federal-skilled-trades-program" className={styles.button}>Federal Skilled Trades Program (FSTP)</Link>: If you're a trades worker, this program is designed for you. It requires proof of relevant work experience, education, and language proficiency.</li>
             </ul>
           </li>
         </ol>
@@ -91,7 +79,7 @@ const StemTargetedDraw = () => {
         <p>Having six months of work experience in a STEM occupation alone is not enough to qualify for Express Entry. You need to meet the work experience requirements for at least one of the programs first. If you have one year of work experience in an eligible STEM occupation and meet the other requirements of the CEC or the FSW, then you may be invited in a STEM-specific draw.</p>
       </section>
 
-      <section className={styles.stemEligibility}>
+      <section className={styles.stemEligibility} id="stem-eligiblity">
         <h2 className={styles.subheading}>Eligibility Criteria for STEM (Science, Technology, Engineering, Math) Occupations</h2>
         <ul>
           <li>A valid university degree in a STEM field.</li>
@@ -100,7 +88,7 @@ const StemTargetedDraw = () => {
         </ul>
       </section>
 
-      <section className={styles.stemNocCodes}>
+      <section className={styles.stemNocCodes} id="stem-noc-codes">
         <h2 className={styles.subheading}>STEM Eligible NOC Codes</h2>
         <p><a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/submit-profile/rounds-invitations/category-based-selection.html" target="_blank" rel="noopener noreferrer" className={styles.link}>STEM Eligible NOC Codes</a></p>
 
@@ -240,7 +228,7 @@ const StemTargetedDraw = () => {
       <section className={styles.drawHistory}>
         <h2 className={styles.subheading}>Express Entry STEM Draws History</h2>
         <p>The first-ever Express Entry draw for STEM workers was just held. Express Entry draw #254 saw a CRS score of 486 and invited 500 candidates eligible for category-based selection in science, technology, mathematics, and engineering (STEM) occupations.</p>
-        <Link to="/draw-history" className={styles.button}>View Previous Draw History</Link>
+        <Link to="/previous-draw-history" className={styles.button}>View Previous Draw History</Link>
       </section>
 
       <section className={styles.contact}>

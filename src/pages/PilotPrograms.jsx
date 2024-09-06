@@ -37,16 +37,8 @@ const PilotPrograms = () => {
               <p onClick={() => scrollToSection("about-program")}>
                 About the Program
               </p>
-              <p onClick={() => scrollToSection("key-points")}>Key Points</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>
-                Refusal Reasons
-              </p>
-              <p onClick={() => scrollToSection("book-appointment")}>
-                Book Appointment
-              </p>
+              <p onClick={() => scrollToSection("pilot-program")}>Pilot Program</p>
+
               <p onClick={() => scrollToSection("why-choose-us")}>
                 Why Choose Us?
               </p>
@@ -61,7 +53,7 @@ const PilotPrograms = () => {
       </div>
 
       <div className={styles.container}>
-      <h1 className={styles.heading}>Canada’s Pilot Programs</h1>
+      <h1 className={styles.heading} id="about-program">Canada’s Pilot Programs</h1>
 
       <div className={styles.introduction}>
         <p>
@@ -72,11 +64,11 @@ const PilotPrograms = () => {
         </p>
       </div>
 
-      <div className={styles.pilotPrograms}>
+      <div className={styles.pilotPrograms} id="pilot-program">
         <h2 className={styles.subheading}>Here is one of the Pilot Programs</h2>
         <ul>
           <li>
-            <a href="/agri-food-pilot" className={styles.button}>
+            <a href="/agri-food-pilot-program" className={styles.button}>
               Agri-Food Pilot
             </a>
           </li>

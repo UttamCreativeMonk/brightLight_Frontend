@@ -18,6 +18,69 @@ import TermsAndConditions from "../pages/TermsAndConditions";
 import MoreServices from "../pages/MoreServices";
 import Admin from "../pages/Admin";
 
+import SkilledWorkerStream from "../pages/SkilledWorkerStream";
+import PrioritiesProgram from "../pages/PrioritiesProgram";
+import InternationalPostGraduateProgram from "../pages/InternationalPostGraduateProgram";
+import InternationalGraduateProgram from "../pages/InternationalGraduateProgram";
+import HealthAuthorityStream from "../pages/HealthAuthoritiesStream";
+import EntryLevelSemiSkilled from "../pages/EntryLevelSemiSkilled";
+import BcPnp from "../pages/BcPnp";
+import Pnp from "../pages/Pnp";
+import Rnip from "../pages/Rnip";
+import AgriFoodPilotProgram from "../pages/AgriFoodPilotProgram";
+import PilotPrograms from "../pages/PilotPrograms";
+import TransportOccupationTargetedDraw from "../pages/TransportOccupationTargetedDraw";
+import TradeOccupationTargetedDraw from "../pages/TradeOccupationTargetedDraw";
+import StemTargetedDraw from "../pages/StemTargetedDraw";
+import FrenchTargetedDraw from "../pages/FrenchTargetedDraw";
+import FederalSkilledWorkerProgram from "../pages/FederalSkilledWorkerProgram";
+import FederalSkilledTradesProgram from "../pages/FederalSkilledTradesProgram";
+import CanadianExperienceClass from "../pages/CanadianExperienceClass";
+import DualIntentVisa from "../pages/DualIntentVisa";
+import BusinessVisitorVisa from "../pages/BusinessVisitorVisa";
+import VisitorVisa from "../pages/VisitorVisa";
+import TemporaryResidentPermitDraft from "../pages/TemporaryResidentPermitDraft";
+import SuperVisa from "../pages/SuperVisa";
+import Cby from "../pages/Cby";
+import CommonLawPartnerTemporary from "../pages/CommonLawPartnerTemporary";
+import CommonLawPartnerPermanent from "../pages/CommonLawPartnerPermanent";
+import SpousalOpenWorkPermit from "../pages/SpousalOpenWorkPermit";
+import RestorationStatusDraft from "../pages/RestorationStatusDraft";
+import Flagpoling from "../pages/Flagpoling";
+import ExtensionsDraft from "../pages/ExtensionsDraft";
+import StudyPermitMinors from "../pages/StudyPermitMinors";
+import Sds from "../pages/Sds";
+import NonSds from "../pages/NonSds";
+import OutsideCananda from "../pages/OutsideCananda";
+import VisitorToStudent from "../pages/VisitorToStudent";
+import ChangeCollegeProgram from "../pages/ChangeCollegeProgram";
+import InsideCanada from "../pages/InsideCanada";
+import StudentVisa from "../pages/StudentVisa";
+import ParentsGrandparents from "../pages/ParentsGrandparents";
+import Orphan from "../pages/Orphan";
+import LonelyCanadian from "../pages/LonelyCanadian";
+import HumanitarianCompassionate from "../pages/HumanitarianCompassionate";
+import DependentChildren from "../pages/DependentChildren";
+import Adoption from "../pages/Adoption";
+import FamilyReunificationSponsorship from "../pages/FamilyReunificationSponsorship";
+import Pgwp from "../pages/Pgwp";
+import OpenWorkCanadaLP from "../pages/OpenWorkCanadaLP";
+import OpenWorkVulnerableLP from "../pages/OpenWorkVulnerableLP";
+import FrancophoneMobilityProgram from "../pages/FrancophoneMobilityProgram";
+import BridgingOpenWorkPermitLP from "../pages/BridgingOpenWorkPermitLP";
+import LowWageLmia from "../pages/LowWageLmia";
+import GlobalStreamLmia from "../pages/GlobalStreamLmia";
+import AgricultureStreamLmia from "../pages/AgricultureStreamLmia";
+import OpenWorkPermit from "../pages/OpenWorkPermit";
+import LmiaReviewed from "../pages/LmiaReviewed";
+import ReplyToPflPage from "../pages/ReplyToPflPage";
+import AdditionalDocument from "../pages/AdditionalDocument";
+import Reconsideration from "../pages/Reconsideration";
+import Citizenship from "../pages/Citizenship";
+import PrRenewal from "../pages/PrRenewal";
+
+
+
 let AllRoutes = () => {
   return (
     <Routes>
@@ -37,11 +100,73 @@ let AllRoutes = () => {
       <Route path="/previous-draw-history" element={<PreviousDrawHistory/>} />
       <Route path="/users/admin/dashboard" element={<Admin />} />
       <Route path="/more-services" element={<MoreServices/>} />
-      
+   
       <Route path="/privacy-policy" element={<PrivacyPolicy/>} />
       <Route path="/terms-&-conditions" element={<TermsAndConditions/>} />
       
       <Route path="*" element={<NotFoundPage />} />
+
+      <Route path="/skilled-worker-stream" element={<SkilledWorkerStream/>} />
+      <Route path="/priorities-program" element={<PrioritiesProgram/>} />
+      <Route path="/international-post-graduate-program" element={<InternationalPostGraduateProgram/>} />
+      <Route path="/international-graduate-program" element={<InternationalGraduateProgram/>} />
+      <Route path="/health-authority-stream" element={<HealthAuthorityStream/>} />
+      <Route path="/entry-level-semi-skilled" element={<EntryLevelSemiSkilled/>} />
+      <Route path="/bc-pnp" element={<BcPnp/>} />
+      <Route path="/pnp" element={<Pnp/>} />
+      <Route path="/rnip" element={<Rnip/>} />
+      <Route path="/agri-food-pilot-program" element={<AgriFoodPilotProgram/>} />
+      <Route path="/pilot-programs" element={<PilotPrograms/>} />
+      <Route path="/transport-occupation-targeted-draw" element={<TransportOccupationTargetedDraw/>} />
+      <Route path="/trade-occupation-targeted-draw" element={<TradeOccupationTargetedDraw/>} />
+      <Route path="/stem-targeted-draw" element={<StemTargetedDraw/>} />
+      <Route path="/french-targeted-draw" element={<FrenchTargetedDraw/>} />
+      <Route path="/federal-skilled-worker-program" element={<FederalSkilledWorkerProgram/>} />
+      <Route path="/federal-skilled-trades-program" element={<FederalSkilledTradesProgram/>} />
+      <Route path="/canadian-experience-class" element={<CanadianExperienceClass/>} />
+      <Route path="/dual-intent-visa" element={<DualIntentVisa/>} />
+      <Route path="/business-visitor-visa" element={<BusinessVisitorVisa/>} />
+      <Route path="/visitor-visa" element={<VisitorVisa/>} />
+      <Route path="/temporary-resident-permit-draft" element={<TemporaryResidentPermitDraft/>} />
+      <Route path="/super-visa" element={<SuperVisa/>} />
+      <Route path="/cby" element={<Cby/>} />
+      <Route path="/common-law-partner-temporary" element={<CommonLawPartnerTemporary/>} />
+      <Route path="/restoration-status-draft" element={<RestorationStatusDraft/>} />
+      <Route path="/common-law-partner-permanent" element={<CommonLawPartnerPermanent/>} />
+      <Route path="/spousal-open-work-permit" element={<SpousalOpenWorkPermit/>} />
+      <Route path="/flagpoling" element={<Flagpoling/>} />
+      <Route path="/extensions-draft" element={<ExtensionsDraft/>} />
+      <Route path="/study-permit-minors" element={<StudyPermitMinors/>} />
+      <Route path="/sds" element={<Sds/>} />
+      <Route path="/non-sds" element={<NonSds/>} />
+      <Route path="/outside-cananda" element={<OutsideCananda/>} />
+      <Route path="/visitor-to-student" element={<VisitorToStudent/>} />
+      <Route path="/change-college-program" element={<ChangeCollegeProgram/>} />
+      <Route path="/inside-canada" element={<InsideCanada/>} />
+      <Route path="/student-visa" element={<StudentVisa/>} />
+      <Route path="/ParentsGrandparents" element={<ParentsGrandparents/>} />
+      <Route path="/orphan" element={<Orphan/>} />
+      <Route path="/lonely-canadian" element={<LonelyCanadian/>} />
+      <Route path="/humanitarian-compassionate" element={<HumanitarianCompassionate/>} />
+      <Route path="/dependent-children" element={<DependentChildren/>} />
+      <Route path="/adoption" element={<Adoption/>} />
+      <Route path="/family-reunification-sponsorship" element={<FamilyReunificationSponsorship/>} />
+      <Route path="/pgwp" element={<Pgwp/>} />
+      <Route path="/openWork-canada-lp" element={<OpenWorkCanadaLP/>} />
+      <Route path="/open-work-vulnerable-lp" element={<OpenWorkVulnerableLP/>} />
+      <Route path="/francophone-mobility-program" element={<FrancophoneMobilityProgram/>} />
+      <Route path="/bridging-open-work-permit-lp" element={<BridgingOpenWorkPermitLP/>} />
+      <Route path="/low-wage-lmia" element={<LowWageLmia/>} />
+      <Route path="/global-stream-lmia" element={<GlobalStreamLmia/>} />
+      <Route path="/agriculture-stream-lmia" element={<AgricultureStreamLmia/>} />
+      <Route path="/open-work-permit" element={<OpenWorkPermit/>} />
+      <Route path="/lmia-reviewed" element={<LmiaReviewed/>} />
+      <Route path="/reply-to-pfl-page" element={<ReplyToPflPage/>} />
+      <Route path="/additional-document" element={<AdditionalDocument/>} />
+      <Route path="/reconsideration" element={<Reconsideration/>} />
+      <Route path="/citizenship" element={<Citizenship/>} />
+      <Route path="/pr-renewal" element={<PrRenewal/>} />
+
     </Routes>
   );
 };

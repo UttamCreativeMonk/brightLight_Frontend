@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "../styles/AgriFoodPilotProgram.module.css";
+import styles from "../styles/Rnip.module.css";
 import { Link } from "react-router-dom";
 
 
@@ -34,25 +34,16 @@ const AgriFoodPilotProgram = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
-                About the Program
-              </p>
-              <p onClick={() => scrollToSection("key-points")}>Key Points</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>
-                Refusal Reasons
-              </p>
-              <p onClick={() => scrollToSection("book-appointment")}>
-                Book Appointment
-              </p>
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose Us?
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("about-program")}> About the Program </p>
+              <p onClick={() => scrollToSection("benefits")}>Benefits</p>
+              <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
+              <p onClick={() => scrollToSection("process")}>Process</p>
+              <p onClick={() => scrollToSection("participating_communities")}>Participating Communities</p>
+              <p onClick={() => scrollToSection("how-to-apply")}> How to Apply? </p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons </p>
+              <p onClick={() => scrollToSection("book-appointment")}> Book Appointment</p>
+              <p onClick={() => scrollToSection("why-choose-us")}> Why Choose Us? </p>
+              <p onClick={() => scrollToSection("testimonials")}> Testimonials </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -62,10 +53,10 @@ const AgriFoodPilotProgram = () => {
 
     
       <div className={styles.container}>
-      <header className={styles.header}>
+      <header className={styles.header} id="about-program">
         <h1>Rural and Northern Immigration Pilot (RNIP)</h1>
       </header>
-      <section className={styles.content}>
+      <section className={styles.content} id="benefits">
         <p>
           The Rural and Northern Immigration Pilot (RNIP) is revolutionizing the way economic immigration benefits smaller communities across Canada. Unlike traditional immigration programs that often favor large cities, RNIP empowers rural and northern communities to take charge of their own economic growth by attracting foreign workers and international students who want to settle permanently.
         </p>
@@ -73,7 +64,7 @@ const AgriFoodPilotProgram = () => {
           The program's community-driven approach is its strength. Communities themselves assess prospective candidates, ensuring they have the skills and intentions that align perfectly with local needs. This means newcomers don't just fill jobs - they become integral parts of the community fabric, contributing their unique talents and perspectives to enrich the area.
         </p>
         <h2>Participating Communities</h2>
-        <table className={styles.table}>
+        <table className={styles.table} id="eligibility">
           <thead>
             <tr>
               <th>Community</th>
@@ -171,7 +162,7 @@ const AgriFoodPilotProgram = () => {
           </tbody>
         </table>
 
-        <h2>Educational Requirements</h2>
+        <h2>Educational Requirements</h2 >
         <p>You must have a Canadian high school diploma or an educational credential assessment (ECA) report, from a designated organization or professional body, showing that you completed a foreign credential that’s equal to Canadian secondary school (high school).</p>
 
         <h2>Settlement Funds</h2>

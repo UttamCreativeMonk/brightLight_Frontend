@@ -124,130 +124,107 @@
 
 
 
-
   .container {
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
-  
-  .heading {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #00273f;
-  }
-  
-  .introduction,
-  .eligibility,
-  .stemEligibility,
-  .stemNocCodes,
-  .drawHistory,
-  .contact,
-  .whyChooseUs,
-  .testimonials {
-    margin-bottom: 30px;
-  }
-  
-  .subheading {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: #00273f;
-  }
-  
- .eligibility p {
-    font-size: 1rem;
-    line-height: 1.6;
+    /* padding: 20px; */
     color: #333;
   }
   
-  /* ol, ul {
-    margin-left: 20px;
+  .header {
+    text-align: center;
+    /* padding: 20px 0; */
+    
   }
   
-  ul li {
+  .header h1 {
+    font-size: 2.1em;
+    margin: 0;
+    color: #e8c47c;
+    width: 1440px;
+    margin: auto;
     margin-bottom: 10px;
   }
-   */
-  a.link {
-    color: #0056b3;
-    text-decoration: none;
+  
+  .section {
+    margin: 10px;
   }
   
-  a.link:hover {
-    text-decoration: underline;
+  .section h2 {
+    font-size: 2em;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 5px;
   }
   
-  .button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #00273f;
-    border-radius: 5px;
-    text-align: center;
-    text-decoration: none;
+  .criteria h3 {
+    font-size: 1.5em;
     margin-top: 10px;
+  }
+/*   
+  ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  ol {
+    padding-left: 20px;
+  }
+   */
+  .button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
   }
   
   .button:hover {
-    background-color: #004494;
+    background-color: #0056b3;
   }
   
-  .table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  .table th, .table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
-  }
-  
-  .table th {
-    background-color: #f4f4f4;
+  strong {
     font-weight: bold;
   }
-  
-  .table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  .table tbody tr:hover {
-    background-color: #f1f1f1;
-  }
-  
-  .videoTestimonials, .writtenTestimonials {
-    margin-bottom: 20px;
-  }
-  
-  .whyChooseUs p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #333;
-  }
-  
-  .container h2{
-    margin-top: 40px;
-    margin-bottom: 40px;
+
+  .section h2{
+    margin-top: 50px;
   }
 
-  .heading{
-    margin-top: 30px;
+
+  .header h1{
+    width: 95%;
+  }
+  .criteria h3{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+
+
+  .section h2{
+    margin-top: 40px;
     margin-bottom: 30px;
   }
+  .section li{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 
+  @media (max-width: 500px) {
+    .section h2{
+      font-size: 20px;
+      margin-top: 40px;
+      margin-bottom: 30px;
+    }
+    .section li{
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    .header h1{
+      font-size: 26px;
+    }
 
-
-  @media (max-width: 400px) {
-.heading{
-  font-size: 26px;
-}
-.container h2{
-  font-size: 20px;
-}
   }

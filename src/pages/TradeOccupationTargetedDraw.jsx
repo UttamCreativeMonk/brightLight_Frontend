@@ -34,25 +34,13 @@ const TradeOccupationTargetedDraw = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
-                About the Program
-              </p>
-              <p onClick={() => scrollToSection("key-points")}>Key Points</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>
-                Refusal Reasons
-              </p>
-              <p onClick={() => scrollToSection("book-appointment")}>
-                Book Appointment
-              </p>
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose Us?
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("about-program")}>About the Program </p>
+              <p onClick={() => scrollToSection("eligible")}>Eligible</p>
+              <p onClick={() => scrollToSection("trade-occupations-category")}>Trade Occupations Category</p>
+              <p onClick={() => scrollToSection("criteria-trade-occupations-category")}>Criteria-Trade-Occupation</p>
+              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
+              <p onClick={() => scrollToSection("why-choose-us")}> Why Choose Us?</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -61,15 +49,15 @@ const TradeOccupationTargetedDraw = () => {
       </div>
 
       <div className={styles.container}>
-      <h1 className={styles.heading}>Category-Based Express Entry Selection Draws: Trade Occupations</h1>
+      <h1 className={styles.heading} id="about-program">Category-Based Express Entry Selection Draws: Trade Occupations</h1>
 
-      <div className={styles.introduction}>
+      <div className={styles.introduction} >
         <p>
           Canada’s Express Entry system for Trades is tailored to meet the rising demand for skilled workers in various trade sectors. This streamlined system simplifies immigration, targeting skilled trades professionals directly. Through Express Entry, meticulous evaluation of international candidates' profiles occurs, emphasizing their trade expertise, work experience, and language proficiency. Exceptional candidates, demonstrating excellence in their trades with significant experience and language skills, receive Invitations to Apply (ITAs) for permanent residency. This process is central to Canada's strategy to strengthen its skilled trade workforce, demonstrating a dedicated commitment to improving its trade infrastructure.
         </p>
       </div>
 
-      <div className={styles.eligibility}>
+      <div className={styles.eligibility} id="eligible">
         <h2 className={styles.subheading}>First You Must Be Eligible with Express Entry</h2>
         <ol>
           <li>Join the Express Entry Pool: The first step towards becoming a candidate for a trade-specific draw is to get into the Express Entry pool.</li>
@@ -86,7 +74,7 @@ const TradeOccupationTargetedDraw = () => {
         </p>
       </div>
 
-      <div className={styles.tradeEligibility}>
+      <div className={styles.tradeEligibility} id="trade-occupations-category">
         <h2 className={styles.subheading}>Eligibility Criteria for Trade Occupations Category</h2>
         <ul>
           <li>You must have a Red Seal or other recognized trade certification.</li>
@@ -97,7 +85,7 @@ const TradeOccupationTargetedDraw = () => {
       </div>
 
       <div className={styles.tableContainer}>
-        <h2 className={styles.subheading}>Eligible Trade Occupations</h2>
+        <h2 className={styles.subheading} id="criteria-trade-occupations-category">Eligible Trade Occupations</h2>
         <table className={styles.table}>
           <thead>
             <tr>

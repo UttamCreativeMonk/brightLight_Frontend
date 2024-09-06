@@ -17,9 +17,9 @@ import BridgingOpenWorkPermitLP from "./pages/BridgingOpenWorkPermitLP";
 import FrancophoneMobilityProgram from "./pages/FrancophoneMobilityProgram";
 import OpenWorkVulnerableLP from "./pages/OpenWorkVulnerableLP";
 import OpenWorkCanadaLP from "./pages/OpenWorkCanadaLP";
-import Pgwp from  "./pages/Pgwp";
+import Pgwp from "./pages/Pgwp";
 import FamilyReunificationSponsorship from "./pages/FamilyReunificationSponsorship";
-import Adoption from './pages/Adoption';
+import Adoption from "./pages/Adoption";
 import DependentChildren from "./pages/DependentChildren";
 import HumanitarianCompassionate from "./pages/HumanitarianCompassionate";
 import LonelyCanadian from "./pages/LonelyCanadian";
@@ -36,13 +36,13 @@ import StudyPermitMinors from "./pages/StudyPermitMinors";
 import ExtensionsDraft from "./pages/ExtensionsDraft";
 import Flagpoling from "./pages/Flagpoling";
 import RestorationStatusDraft from "./pages/RestorationStatusDraft";
-import SpousalOpenWorkPermit from"./pages/SpousalOpenWorkPermit";
+import SpousalOpenWorkPermit from "./pages/SpousalOpenWorkPermit";
 import CommonLawPartnerPermanent from "./pages/CommonLawPartnerPermanent";
 import CommonLawPartnerTemporary from "./pages/CommonLawPartnerTemporary";
 import Cby from "./pages/Cby";
 import SuperVisa from "./pages/SuperVisa";
 import TemporaryResidentPermitDraft from "./pages/TemporaryResidentPermitDraft";
-import VisitorVisa from "./pages/VisitorVisa" ;
+import VisitorVisa from "./pages/VisitorVisa";
 import BusinessVisitorVisa from "./pages/BusinessVisitorVisa";
 import DualIntentVisa from "./pages/DualIntentVisa";
 import CanadianExperienceClass from "./pages/CanadianExperienceClass";
@@ -57,6 +57,14 @@ import PilotPrograms from "./pages/PilotPrograms";
 import AgriFoodPilotProgram from "./pages/AgriFoodPilotProgram";
 import Rnip from "./pages/Rnip";
 import Pnp from "./pages/Pnp";
+import BcPnp from "./pages/BcPnp";
+import EntryLevelSemiSkilled from "./pages/EntryLevelSemiSkilled";
+import HealthAuthoritiesStream from "./pages/HealthAuthoritiesStream";
+import InternationalGraduateProgram from "./pages/InternationalGraduateProgram";
+import InternationalPostGraduateProgram from "./pages/InternationalPostGraduateProgram";
+import PrioritiesProgram from "./pages/PrioritiesProgram";
+import SkilledWorkerStream from "./pages/SkilledWorkerStream";
+
 
 
 function App() {
@@ -69,7 +77,6 @@ function App() {
 
   return (
     <div className="App">
-     
       {/* <PrRenewal/> */}
       {/* <Citizenship/> */}
       {/* <Reconsideration/> */}
@@ -91,45 +98,52 @@ function App() {
       {/* <HumanitarianCompassionate/> */}
       {/* <LonelyCanadian/> */}
 
-{/* <Orphan /> */}
-{/* <ParentsGrandparents/> */}
-{/* <StudentVisa/> */}
-{/* <InsideCanada/> */}
-{/* <ChangeCollegeProgram/> */}
-{/* <VisitorToStudent/> */}
-{/* <OutsideCananda/> */}
-{/* <NonSds/> */}
-{/* <Sds/> */}
-{/* <StudyPermitMinors/> */}
-{/* <ExtensionsDraft/> */}
-{/* <Flagpoling/> */}
-{/* <RestorationStatusDraft/> */}
-{/* <SpousalOpenWorkPermit/> */}
-{/* <CommonLawPartnerPermanent/> */}
-{/* <CommonLawPartnerTemporary/> */}
-{/* <Cby/> */}
-{/* <SuperVisa/> */}
-{/* <TemporaryResidentPermitDraft/> */}
-{/* <VisitorVisa/> */}
-{/* <BusinessVisitorVisa/> */}
-{/* <DualIntentVisa/> */}
-{/* <CanadianExperienceClass/> */}
-{/* <FederalSkilledTradesProgram/> */}
-{/* <FederalSkilledWorkerProgram/> */}
-{/* <FrenchTargetedDraw/> */}
-{/* <HealthcareTargetedDraw/> */}
-{/* <StemTargetedDraw/> */}
-{/* <TradeOccupationTargetedDraw/> */}
-{/* <TransportOccupationTargetedDraw/> */}
-{/* <PilotPrograms/> */}
-{/* <AgriFoodPilotProgram/> */}
-{/* <Rnip/> */}
-{/* <Pnp/> */}
+      {/* <Orphan /> */}
+      {/* <ParentsGrandparents/> */}
+      {/* <StudentVisa/> */}
+      {/* <InsideCanada/> */}
+      {/* <ChangeCollegeProgram/> */}
+      {/* <VisitorToStudent/> */}
+      {/* <OutsideCananda/> */}
+      {/* <NonSds/> */}
+      {/* <Sds/> */}
+      {/* <StudyPermitMinors/> */}
+      {/* <ExtensionsDraft/> */}
+      {/* <Flagpoling/> */}
+      {/* <RestorationStatusDraft/> */}
+      {/* <SpousalOpenWorkPermit/> */}
+      {/* <CommonLawPartnerPermanent/> */}
+      {/* <CommonLawPartnerTemporary/> */}
+      {/* <Cby/> */}
+      {/* <SuperVisa/> */}
+      {/* <TemporaryResidentPermitDraft/> */}
+      {/* <VisitorVisa/> */}
+      {/* <BusinessVisitorVisa/> */}
+      {/* <DualIntentVisa/> */}
+      {/* <CanadianExperienceClass/> */}
+      {/* <FederalSkilledTradesProgram/> */}
+      {/* <FederalSkilledWorkerProgram/> */}
+      {/* <FrenchTargetedDraw/> */}
+      <HealthcareTargetedDraw/>
+      {/* <StemTargetedDraw/> */}
+      {/* <TradeOccupationTargetedDraw/> */}
+      {/* <TransportOccupationTargetedDraw/> */}
+      {/* <PilotPrograms/> */}
+      {/* <AgriFoodPilotProgram/> */}
+      {/* <Rnip/> */}
+      {/* <Pnp/> */}
+      {/* <BcPnp/> */}
+      {/* <EntryLevelSemiSkilled/> */}
+      {/* <HealthAuthoritiesStream/> */}
+      {/* <InternationalGraduateProgram/> */}
+      {/* <InternationalPostGraduateProgram/> */}
+      {/* <PrioritiesProgram/>   */}
+      {/* <SkilledWorkerStream/> */}
 
 
 
- <Loader />
-      <AllRoutes />
+      {/* <Loader />
+      <AllRoutes /> */}
     </div>
   );
 }

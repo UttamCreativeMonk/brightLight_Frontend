@@ -4,7 +4,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     padding: 50px 0px;
-    /* padding-top: 30px; */
+    padding-top: 230px;
   }
   .banner {
     width: 1440px;
@@ -57,12 +57,7 @@
     cursor: pointer;
   }
   
-  @media (max-width: 1450px) {
-    .banner {
-      width: 95%;
-    }
-  }
-  
+
   @media (max-width: 1080px) {
     .bannerHeadingRotateParent {
       flex-direction: column;
@@ -122,132 +117,148 @@
     }
   }
 
-
-
-
   .container {
-    max-width: 1200px;
+    width: 1440px;
     margin: 0 auto;
     padding: 20px;
-    font-family: Arial, sans-serif;
   }
   
-  .heading {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #00273f;
-  }
-  
-  .introduction,
-  .eligibility,
-  .stemEligibility,
-  .stemNocCodes,
-  .drawHistory,
-  .contact,
-  .whyChooseUs,
-  .testimonials {
-    margin-bottom: 30px;
-  }
-  
-  .subheading {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: #00273f;
-  }
-  
- .eligibility p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #333;
-  }
-  
-  /* ol, ul {
-    margin-left: 20px;
-  }
-  
-  ul li {
-    margin-bottom: 10px;
-  }
-   */
-  a.link {
-    color: #0056b3;
-    text-decoration: none;
-  }
-  
-  a.link:hover {
-    text-decoration: underline;
-  }
-  
-  .button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #00273f;
-    border-radius: 5px;
+  /* Header */
+  .header {
     text-align: center;
-    text-decoration: none;
-    margin-top: 10px;
+    margin-bottom: 40px;
   }
   
-  .button:hover {
-    background-color: #004494;
+  .header h1 {
+    font-size: 2.5em;
+    margin: 0;
+    color: #e8c47c;
+  }
+  
+  .header h2 {
+    font-size: 1.5em;
+    color: #ffffff;
+  }
+  
+  /* Sections */
+  .section {
+    margin-bottom: 40px;
+  }
+  
+  .section h3 {
+    font-size: 2em;
+    margin-top: 80px;
+  }
+  
+  /* Occupation List */
+  .occupationList {
+    margin-bottom: 20px;
+  }
+  
+  .occupationList h4 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
   }
   
   .table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-top: 10px;
   }
   
   .table th, .table td {
     border: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
+    padding: 8px;
   }
   
   .table th {
     background-color: #f4f4f4;
-    font-weight: bold;
   }
   
-  .table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
+  /* Call to Action */
+  .callToAction {
+    text-align: left;
   }
   
-  .table tbody tr:hover {
-    background-color: #f1f1f1;
+  .button {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
   }
   
-  .videoTestimonials, .writtenTestimonials {
+  .button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Testimonials and Why Choose Us */
+  .testimonials, .whyChooseUs {
+    margin-top: 40px;
+  }
+  .occupationList h4{
+    margin-top: 40px;
     margin-bottom: 20px;
   }
-  
-  .whyChooseUs p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #333;
-  }
-  
-  .container h2{
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
 
-  .heading{
+  .callToAction .button{
     margin-top: 30px;
     margin-bottom: 30px;
   }
+  .callToAction ol{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 
+  @media (max-width: 1450px) {
+    .banner {
+      width: 95%;
+    }
+    .container{
+      width: 95%;
+    }
+    .occupationList{
+      width: 95%;
+    }
+    .section{
+      width: 95%;
+      margin: auto;
+    }
+    .table{
+      width: 95%;
+    }
+  }
+  
+  @media (max-width: 500px) {
 
+    .section h3 {
+      font-size: 20px;
+      margin-top: 80px;
+    }
 
-  @media (max-width: 400px) {
-.heading{
-  font-size: 26px;
-}
-.container h2{
-  font-size: 20px;
-}
+    .header h1 {
+      font-size: 26px;
+    }
+    
+    .header h2 {
+      font-size: 15px;
+      margin-top: 30px;
+    }
+    .occupationList h4{
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+
+    .callToAction .button{
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+    .callToAction ol{
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  
   }
