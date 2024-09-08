@@ -36,7 +36,11 @@ const Adoption = () => {
               <p onClick={() => scrollToSection("about-program")}>
                 About the Program
               </p>
-              <p onClick={() => scrollToSection("key-points")}>Key Points</p>
+              <p onClick={() => scrollToSection("types-of-adoption")}>Types of Adoption</p>
+              <p onClick={() => scrollToSection("intra-country")}>Intra Country</p>
+              <p onClick={() => scrollToSection("inter-country")}>Inter Country</p>
+              <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
+              <p onClick={() => scrollToSection("consultation")}>Consultation</p>
               <p onClick={() => scrollToSection("how-to-apply")}>
                 How to Apply?
               </p>
@@ -60,13 +64,13 @@ const Adoption = () => {
       </div>
 
       <div className={styles.container}>
-      <header className={styles.header}>
+      <header className={styles.header} id="about-program">
         <h1>Canada's Adoption Program</h1>
         <p>The heart-warming journey of bringing a child into your life through adoption is an incredible act of love and commitment, offering the child a nurturing home and a lifetime of opportunities.</p>
         <p>Canada's adoption program under family reunification and sponsorship provides a pathway for eligible Canadians to adopt children from both within Canada and internationally. The program aims to provide permanent homes for children who cannot live with their biological families due to various circumstances.</p>
       </header>
 
-      <section className={styles.adoptionTypes}>
+      <section className={styles.adoptionTypes} id="types-of-adoption">
         <h2>Types of Adoption</h2>
         <ul>
           <li>
@@ -105,7 +109,7 @@ const Adoption = () => {
         </ol>
       </section>
 
-      <section className={styles.eligibility}>
+      <section className={styles.eligibility} id="eligibility">
         <h2>Eligibility Criteria for Adoption in Canada</h2>
         <ul>
           <li>Be a Canadian citizen or permanent resident.</li>
@@ -118,7 +122,7 @@ const Adoption = () => {
         <p>Note that if you are adopting a child from abroad, you will need to sponsor the child for permanent residency in Canada. This means that you will be financially responsible for the child's care until they reach the age of majority.</p>
       </section>
 
-      <section className={styles.refusalReasons}>
+      <section className={styles.refusalReasons} id="refusal-reasons">
         <h2>Common Reasons for Refusals of Adoption Program</h2>
         <ul>
           <li>Incomplete or inaccurate information on your application or during interviews.</li>
@@ -127,7 +131,7 @@ const Adoption = () => {
         </ul>
       </section>
 
-      <section className={styles.consultation}>
+      <section className={styles.consultation} id="consultation">
         <h2>Still Not Sure?</h2>
         <p>If you have received a refusal for any of the reasons mentioned above, do not worry. With over a decade of experience, we specialize in previously refused cases. We have successfully obtained approvals for clients with multiple previous refusals by using a tailored approach, addressing each concern listed in previous refusals, and applying case law precedents. Our high success rate is a testament to our expertise.</p>
         <p>At Brightlight Immigration, we have a dedicated team of visa application specialists who can assist you from the start of the application process all the way to obtaining your visa. <a href="#book-appointment" className={styles.button}>Start your process now</a></p>
@@ -136,20 +140,6 @@ const Adoption = () => {
       <section className={styles.whyChooseUs}>
         <h2>Why Choose Us?</h2>
         <p>[Insert the "Why Choose Us" section content here]</p>
-      </section>
-
-      <section className={styles.faq}>
-        <h2>FAQs Made Simple</h2>
-        <dl>
-          <dt>Who is eligible to sponsor a child for adoption under the program?</dt>
-          <dd>To be eligible to sponsor a child for adoption under the program, you must be a Canadian citizen or permanent resident who is at least 18 years of age. You must also be able to provide a stable and loving home for the child, and you must pass a criminal background check and medical assessment.</dd>
-
-          <dt>How long does it take to adopt a child under this program?</dt>
-          <dd>The processing time for adoption applications can vary depending on the type of adoption. However, it typically takes 12-24 months to complete the adoption process.</dd>
-
-          <dt>What support services are available to adoptive families?</dt>
-          <dd>The Canadian government provides several support services to adoptive families, including pre-adoption counseling and support, ongoing support for adoptive families, and information on resources and services for adoptive families.</dd>
-        </dl>
       </section>
 
       <section className={styles.blogs}>

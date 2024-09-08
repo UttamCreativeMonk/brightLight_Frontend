@@ -126,10 +126,9 @@
 
   /* ExtensionsDraft.module.css */
 .container {
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 20px;
-    font-family: Arial, sans-serif;
   }
   
   .heading {
@@ -153,7 +152,7 @@
 
   .button {
     display: inline-block;
-    background-color: #007bff;
+    background-color: #00273f;
     color: white;
     padding: 10px 20px;
     text-align: center;
@@ -171,3 +170,24 @@
     margin-bottom: 20px;
   }
   
+  .container h2 {
+    color: #00273f;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .heading {
+    color: #e8c47c;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  @media (max-width: 1080px) {
+    .container h2 {
+      font-size: 20px;
+    }
+  
+    .heading {
+      font-size: 26px;
+    }
+  }

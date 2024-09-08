@@ -38,13 +38,14 @@ const RestorationStatusDraft = () => {
                 <p onClick={() => scrollToSection("about-program")}>
                   About the Program
                 </p>
-                <p onClick={() => scrollToSection("key-points")}>Key Points</p>
+                <p onClick={() => scrollToSection("check-status")}>Check Status</p>
                 <p onClick={() => scrollToSection("how-to-apply")}>
                   How to Apply?
                 </p>
-                <p onClick={() => scrollToSection("refusal-reasons")}>
-                  Refusal Reasons
+                <p onClick={() => scrollToSection("requirement")}>
+                  Requirement
                 </p>
+                <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
                 <p onClick={() => scrollToSection("book-appointment")}>
                   Book Appointment
                 </p>
@@ -62,7 +63,7 @@ const RestorationStatusDraft = () => {
         </div>
 
         <div className={styles.container}>
-      <h1 className={styles.heading}>Restoration of Status</h1>
+      <h1 className={styles.heading} id="about-program">Restoration of Status</h1>
       <section className={styles.introduction}>
         <p>Are you a temporary resident in Canada who has lost status? Don't despair! There is a way to regain your legal standing in Canada.</p>
         <p>The restoration of status is a process that provides temporary residents with a second chance to maintain their legal presence in Canada. If your temporary status (student visa, visitor permit, or work permit) lapses or expires and you did not apply for an extension before the expiry date, you will be considered out of status. At this point, you have a few options. You can either depart Canada immediately or apply to restore your temporary status. You have a maximum of 90 days from the date your status expires to apply for restoration of your status.</p>
@@ -70,7 +71,7 @@ const RestorationStatusDraft = () => {
         <p><strong>Important:</strong> If you're a student or worker on temporary status, you're not allowed to work or study while your restoration application is under review.</p>
       </section>
 
-      <section className={styles.checkStatus}>
+      <section className={styles.checkStatus} id="check-status">
         <h2 className={styles.subheading}>How to Check if Your Immigration Status is Valid</h2>
         <p>To check if your stay in Canada is still allowed, look for the expiration date printed on your permits. These dates provide an indication of your temporary permission to remain in Canada until that point.</p>
         <ul>
@@ -79,7 +80,7 @@ const RestorationStatusDraft = () => {
         </ul>
       </section>
 
-      <section className={styles.requirements}>
+      <section className={styles.requirements} id="requirement">
         <h2 className={styles.subheading}>What Are the Requirements for Restoration of Your Status?</h2>
         <ul>
           <li>Apply for restoration of status within 90 days (3 months) of your status expiration.</li>
@@ -101,7 +102,7 @@ const RestorationStatusDraft = () => {
         </ul>
       </section>
 
-      <section className={styles.refusalReasons}>
+      <section className={styles.refusalReasons} id="refusal-reasons">
         <h2 className={styles.subheading}>Common Reasons for Refusal of Restoration of Status Applications</h2>
         <ul>
           <li>Missed the deadline to submit the restoration application within 90 days of the expiry of status.</li>

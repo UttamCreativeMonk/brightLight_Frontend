@@ -37,21 +37,12 @@ const DualIntentVisa = () => {
                 About the Program
               </p>
               <p onClick={() => scrollToSection("key-points")}>Key Points</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>
-                Refusal Reasons
-              </p>
-              <p onClick={() => scrollToSection("book-appointment")}>
-                Book Appointment
-              </p>
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose Us?
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>   How to Apply? </p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons   </p>
+              <p onClick={() => scrollToSection("book-appointment")}> Book Appointment</p>
+              <p onClick={() => scrollToSection("why-choose-us")}> Why Choose Us?</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -59,7 +50,7 @@ const DualIntentVisa = () => {
         </div>
       </div>
       <div className={styles.container}>
-      <h1 className={styles.heading}>Dual Intent Visa</h1>
+      <h1 className={styles.heading} id="about-program">Dual Intent Visa</h1>
 
       <section className={styles.introduction}>
         <p>
@@ -82,7 +73,7 @@ const DualIntentVisa = () => {
         </ul>
       </section>
 
-      <section className={styles.keyConsiderations}>
+      <section className={styles.keyConsiderations} id="key-points">
         <h2 className={styles.subheading}>Key Considerations</h2>
         <p>
           Dual Intent Visas are often used by outland spouses awaiting spousal sponsorship approval. These visas typically have a high approval rate, often within 30 days. Here’s what you should know:
@@ -94,7 +85,7 @@ const DualIntentVisa = () => {
         </ul>
       </section>
 
-      <section className={styles.eligibility}>
+      <section className={styles.eligibility} id="eligibility">
         <h2 className={styles.subheading}>Eligibility Criteria</h2>
         <p>To be eligible for a Dual Intent Visa, you must meet the following criteria:</p>
         <ul>
@@ -108,7 +99,7 @@ const DualIntentVisa = () => {
         <p>For parents and grandparents, officers will assess whether your primary intention is to visit temporarily and not seek permanent residency.</p>
       </section>
 
-      <section className={styles.refusals}>
+      <section className={styles.refusals} id="refusal-reasons">
         <h2 className={styles.subheading}>Common Refusal Reasons</h2>
         <ul>
           <li>Failure to demonstrate genuine dual intent.</li>

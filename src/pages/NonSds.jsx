@@ -38,7 +38,11 @@ const NonSds = () => {
                 <p onClick={() => scrollToSection("about-program")}>
                   About the Program
                 </p>
-                <p onClick={() => scrollToSection("key-points")}>Key Points</p>
+                <p onClick={() => scrollToSection("pros-cons")}>Pros Cons</p>
+                <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
+                <p onClick={() => scrollToSection("language-chart")}>Language Chart</p>
+                <p onClick={() => scrollToSection("proof-of-funds")}>Proof of Funds</p>
+                <p onClick={() => scrollToSection("spousal-permit")}>Spousal Permit</p>
                 <p onClick={() => scrollToSection("how-to-apply")}>
                   How to Apply?
                 </p>
@@ -63,7 +67,7 @@ const NonSds = () => {
 
 
         <div className={styles.container}>
-      <h1 className={styles.heading}>Non-Student Direct Stream (Non-SDS) / General Student Visa</h1>
+      <h1 className={styles.heading} id="about-program">Non-Student Direct Stream (Non-SDS) / General Student Visa</h1>
       
       <section className={styles.intro}>
         <p>
@@ -73,7 +77,7 @@ const NonSds = () => {
         </p>
       </section>
 
-      <section className={styles.prosCons}>
+      <section className={styles.prosCons} id="pros-cons">
         <h2 className={styles.subheading}>Pros and Cons</h2>
         <div className={styles.grid}>
           <div className={styles.pros}>
@@ -97,7 +101,7 @@ const NonSds = () => {
         </div>
       </section>
 
-      <section className={styles.eligibility}>
+      <section className={styles.eligibility} id="eligibility">
         <h2 className={styles.subheading}>Eligibility for Non-SDS Program</h2>
         <ul>
           <li>You need to have a valid offer of admission from a designated learning institution (DLI) in Canada.</li>
@@ -107,7 +111,7 @@ const NonSds = () => {
           <li>Meet all other Canadian immigration requirements, such as criminal background checks and medical exams.</li>
         </ul>
 
-        <div className={styles.languageChart}>
+        <div className={styles.languageChart} id="language-chart">
           <h3>Minimum Language Test Scores Required:</h3>
           <table>
             <thead>
@@ -147,7 +151,7 @@ const NonSds = () => {
               </tr>
             </tbody>
           </table>
-          <Link to="/clb-calculator" className={styles.button}>Check CLB Score Requirements</Link>
+          <Link to="/bcpnp-calculator" className={styles.button}>Check CLB Score Requirements</Link>
         </div>
       </section>
 
@@ -167,7 +171,7 @@ const NonSds = () => {
         </ul>
       </section>
 
-      <section className={styles.proofOfFunds}>
+      <section className={styles.proofOfFunds} id="proof-of-funds">
         <h2 className={styles.subheading}>Proof of Funds Chart</h2>
         <table>
           <thead>
@@ -249,7 +253,7 @@ const NonSds = () => {
         </table>
       </section>
 
-      <section className={styles.spousalPermit}>
+      <section className={styles.spousalPermit} id="spousal-permit">
         <h2 className={styles.subheading}>Spousal Open Work Permit</h2>
         <p>As of March 19, 2024, to be eligible to apply for a Spousal Open Work Permit as an international student, you must be enrolled in one of the following programs:</p>
         <ul>
@@ -270,7 +274,7 @@ const NonSds = () => {
         </ul>
       </section>
 
-      <section className={styles.refusalReasons}>
+      <section className={styles.refusalReasons} id="refusal-reasons">
         <h2 className={styles.subheading}>Reasons for Refusal</h2>
         <ul>
           <li>Your application is incomplete, and you did not share all the required documentation.</li>

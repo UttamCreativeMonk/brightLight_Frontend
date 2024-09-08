@@ -82,15 +82,15 @@ function App() {
       {/* <Reconsideration/> */}
       {/* <AdditionalDocument/> */}
       {/* <ReplyToPflPage/> */}
-      {/* <LmiaReviewed /> */}
-      {/* <OpenWorkPermit/> */}
+      <LmiaReviewed />
+      {/* <OpenWorkPermit/>  // add the links */}
       {/* <AgricultureStreamLmia/> */}
       {/* <GlobalStreamLmia/> */}
-      {/* <LowWageLmia/>  */}
+      {/* <LowWageLmia/>    //table css fix issue */}
       {/* <BridgingOpenWorkPermitLP /> */}
       {/* <FrancophoneMobilityProgram/> */}
       {/* <OpenWorkVulnerableLP/> */}
-      {/* <OpenWorkCanadaLP/> */}
+      {/* <OpenWorkCanadaLP/>  //table css fix issue */}
       {/* <Pgwp/> */}
       {/* <FamilyReunificationSponsorship/> */}
       {/* <Adoption/> */}
@@ -100,7 +100,7 @@ function App() {
 
       {/* <Orphan /> */}
       {/* <ParentsGrandparents/> */}
-      {/* <StudentVisa/> */}
+      {/* <StudentVisa/>  //  check css again */}
       {/* <InsideCanada/> */}
       {/* <ChangeCollegeProgram/> */}
       {/* <VisitorToStudent/> */}
@@ -111,7 +111,7 @@ function App() {
       {/* <ExtensionsDraft/> */}
       {/* <Flagpoling/> */}
       {/* <RestorationStatusDraft/> */}
-      {/* <SpousalOpenWorkPermit/> */}
+      {/* <SpousalOpenWorkPermit/> // look the page content is incomplete */}
       {/* <CommonLawPartnerPermanent/> */}
       {/* <CommonLawPartnerTemporary/> */}
       {/* <Cby/> */}
@@ -124,7 +124,7 @@ function App() {
       {/* <FederalSkilledTradesProgram/> */}
       {/* <FederalSkilledWorkerProgram/> */}
       {/* <FrenchTargetedDraw/> */}
-      <HealthcareTargetedDraw/>
+      {/* <HealthcareTargetedDraw/> */}
       {/* <StemTargetedDraw/> */}
       {/* <TradeOccupationTargetedDraw/> */}
       {/* <TransportOccupationTargetedDraw/> */}

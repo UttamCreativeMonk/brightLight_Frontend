@@ -39,7 +39,14 @@ const FrancophoneMobilityProgram = () => {
               <p onClick={() => scrollToSection("about-program")}>
                 About the Program
               </p>
-              <p onClick={() => scrollToSection("key-points")}>Key Points</p>
+              <p onClick={() => scrollToSection("benifits")}>Benifits</p>
+              <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
+              <p onClick={() => scrollToSection("employer-requirement")}>Employer Requirement</p>
+              <p onClick={() => scrollToSection("work-permit-duration")}>Work Permit Duration</p>
+              <p onClick={() => scrollToSection("family-members")}>Family Members</p>
+              <p onClick={() => scrollToSection("application-process")}>Application Process</p>
+              <p onClick={() => scrollToSection("work-permit-renewals")}>Work Permit Renewals</p>
+              <p onClick={() => scrollToSection("consultation")}>Consultation</p>
               <p onClick={() => scrollToSection("how-to-apply")}>
                 How to Apply?
               </p>
@@ -63,12 +70,12 @@ const FrancophoneMobilityProgram = () => {
       </div>
 
       <div className={styles.container}>
-      <header className={styles.header}>
+      <header className={styles.header} id="about-program">
         <h1>Francophone Mobility Program – NO LMIA Required</h1>
         <p>Mobilité Francophone: Unlocking Opportunities for French-Speaking Workers</p>
       </header>
       
-      <section className={styles.benefits}>
+      <section className={styles.benefits} id="benifits">
         <h2>Benefits of Francophone Mobility Program</h2>
         <ul>
           <li><strong>No LMIA Required:</strong> Operates under the International Mobility Program, allowing employers to hire foreign nationals without a Labour Market Impact Assessment (LMIA). This eliminates recruitment efforts for Canadian citizens and waives the $1,000 LMIA application fee.</li>
@@ -79,7 +86,7 @@ const FrancophoneMobilityProgram = () => {
         </ul>
       </section>
       
-      <section className={styles.eligibility}>
+      <section className={styles.eligibility} id="eligibility">
         <h2>Eligibility Criteria for Francophone Mobility Program</h2>
         <ul>
           <li><strong>Job Offer:</strong> Must be from outside Quebec (anywhere else in Canada). Primary agricultural work is not covered.</li>
@@ -89,7 +96,7 @@ const FrancophoneMobilityProgram = () => {
         <button className={styles.tefButton}>French CLB Calculator</button>
       </section>
       
-      <section className={styles.employerRequirements}>
+      <section className={styles.employerRequirements} id="employer-requirement">
         <h2>Employer Requirements for the Francophone Mobility Program</h2>
         <ul>
           <li><strong>Job Offer:</strong> Issue a job offer at a reasonable wage rate within the province of work.</li>
@@ -99,7 +106,7 @@ const FrancophoneMobilityProgram = () => {
         </ul>
       </section>
       
-      <section className={styles.workPermitDuration}>
+      <section className={styles.workPermitDuration} id="work-permit-duration">
         <h2>Work Permit Duration for Francophone Mobility Program</h2>
         <p>The work permit duration is determined by whichever comes earlier:</p>
         <ul>
@@ -108,7 +115,7 @@ const FrancophoneMobilityProgram = () => {
         </ul>
       </section>
       
-      <section className={styles.familyMembers}>
+      <section className={styles.familyMembers} id="family-members">
         <h2>Family Members and Dependents for Francophone Mobility Program</h2>
         <ul>
           <li><strong>Dependent Children:</strong> Can apply for study permits.</li>
@@ -116,7 +123,7 @@ const FrancophoneMobilityProgram = () => {
         </ul>
       </section>
       
-      <section className={styles.applicationProcess}>
+      <section className={styles.applicationProcess} id="application-process">
         <h2>Application Process for Francophone Mobility Program</h2>
         <ol>
           <li><strong>Job Search:</strong>
@@ -140,14 +147,14 @@ const FrancophoneMobilityProgram = () => {
         </ol>
       </section>
       
-      <section className={styles.workPermitRenewals}>
+      <section className={styles.workPermitRenewals} id="work-permit-renewals">
         <h2>Work Permit Renewals for the Mobilité Francophone Stream</h2>
         <ul>
           <li><strong>Submission Options:</strong> Renewals can be submitted by mail or online. Existing permits under the discontinued “Significant benefit – Francophone destined to work outside of Quebec” category can be renewed through Mobilité Francophone.</li>
         </ul>
       </section>
       
-      <section className={styles.consultation}>
+      <section className={styles.consultation} id="consultation">
         <h2>Still not sure?</h2>
         <p>If you have received a refusal for any of the reasons mentioned above, do not worry. With over a decade of experience, we specialize in previously refused cases. While we don't provide jobs for LMIA, we can certainly assist you if you have a job offer. We have obtained approvals for clients who had multiple previous refusals with a tailored approach, addressing each concern listed in previous refusals. We use case law and similar cases as precedents to achieve a high success rate.</p>
         <p>At Brightlight Immigration, we have a dedicated team of visa application specialists to assist you from the start of the application process to obtaining your visa. Start your process now.</p>
@@ -163,29 +170,7 @@ const FrancophoneMobilityProgram = () => {
         {/* Add video and written testimonials with options to hide/show */}
       </section>
       
-      <section className={styles.faq}>
-        <h2>FAQs Made Easy</h2>
-        <div className={styles.faqItem}>
-          <h3>Can I Apply if My Profession Isn’t in TEER Levels 0 to 3?</h3>
-          <p>Since June 2023, the program has been extended to include all job categories between TEER Levels 0 to 5, except for primary agriculture.</p>
-        </div>
-        <div className={styles.faqItem}>
-          <h3>What Level of French Proficiency is Required?</h3>
-          <p>A CLB5 level of French is necessary. Candidates must pass a recognized language test to demonstrate their proficiency. Use our calculators to determine the required score to achieve CLB5 in French.</p>
-        </div>
-        <div className={styles.faqItem}>
-          <h3>Are Qualifications Obtained Outside Canada Accepted?</h3>
-          <p>Yes, qualifications obtained outside Canada are accepted if they are equivalent to Canadian standards. Consider having your qualifications assessed by a recognized organization in Canada.</p>
-        </div>
-        <div className={styles.faqItem}>
-          <h3>Do I Need a Job Offer to Apply?</h3>
-          <p>Yes, a valid job offer from a Canadian employer outside Quebec is required for applying to the Mobilité Francophone program.</p>
-        </div>
-        <div className={styles.faqItem}>
-          <h3>What French exams are accepted to qualify under the Francophone Mobility Program?</h3>
-          <p>Applicants must demonstrate French language proficiency at CLB/NCLC level 5 or higher through exams such as TEF or TCF.</p>
-        </div>
-      </section>
+
     </div>
 
       {/* <Footer1 /> */}

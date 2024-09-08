@@ -200,9 +200,9 @@ section ul {
     margin-bottom: 20px;
 }
 
-.section ul, ol {
+/* .section ul, ol {
     padding-left: 20px;
-}
+} */
 
 .bookAppointment button {
     background-color: #007bff;

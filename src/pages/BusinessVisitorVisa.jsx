@@ -36,13 +36,11 @@ const BusinessVisitorVisa = () => {
               <p onClick={() => scrollToSection("about-program")}>
                 About the Program
               </p>
-              <p onClick={() => scrollToSection("key-points")}>Key Points</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>
-                Refusal Reasons
-              </p>
+              <p onClick={() => scrollToSection("activities")}>Activities</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
+              <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
+              <p onClick={() => scrollToSection("event-codes")}>Event Codes</p>
+              <p onClick={() => scrollToSection("essential-documents")}>Essential Documents</p>
               <p onClick={() => scrollToSection("book-appointment")}>
                 Book Appointment
               </p>
@@ -61,7 +59,7 @@ const BusinessVisitorVisa = () => {
 
 
       <div className={styles.container}>
-      <h1 className={styles.heading}>Business Visitor Visa</h1>
+      <h1 className={styles.heading} id="about-program">Business Visitor Visa</h1>
 
       <section className={styles.introduction}>
         <p>
@@ -69,7 +67,7 @@ const BusinessVisitorVisa = () => {
         </p>
       </section>
 
-      <section className={styles.activities}>
+      <section className={styles.activities} id="activities">
         <h2 className={styles.subheading}>Activities Allowed with a Business Visitor Visa</h2>
         <ul>
           <li>Purchasing Canadian goods or services for a foreign business or government.</li>
@@ -85,7 +83,7 @@ const BusinessVisitorVisa = () => {
         </p>
       </section>
 
-      <section className={styles.eligibility}>
+      <section className={styles.eligibility} id="eligibility">
         <h2 className={styles.subheading}>Eligibility Criteria</h2>
         <p>To qualify as a business visitor, you must meet the following requirements:</p>
         <ul>
@@ -107,14 +105,14 @@ const BusinessVisitorVisa = () => {
         </p>
       </section>
 
-      <section className={styles.eventCode}>
+      <section className={styles.eventCode} id="event-codes">
         <h2 className={styles.subheading}>Event Code (if Applicable)</h2>
         <p>
           If your meeting, event, or conference is registered with Immigration, Refugees and Citizenship Canada (IRCC), your organizer will provide an event code. Include this code on your visa application form to indicate your participation in a registered event.
         </p>
       </section>
 
-      <section className={styles.documents}>
+      <section className={styles.documents} id="essential-documents">
         <h2 className={styles.subheading}>Essential Documents for Entry</h2>
         <p>Upon arrival at the border, ensure you have the following documents:</p>
         <ul>

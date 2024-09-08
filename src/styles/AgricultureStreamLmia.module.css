@@ -130,7 +130,7 @@
   /* src/components/AgricultureStreamLmia.module.css */
 
 .container {
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 20px;
     box-sizing: border-box;
@@ -166,7 +166,7 @@
   
  .section p {
     font-size: 1em;
-    color: #00273f;
+    /* color: #00273f; */
   }
   
  .section ul {
@@ -177,6 +177,10 @@
   .section ol {
     list-style-type: decimal;
     margin-left: 20px;
+  }
+  
+  .section li{
+    margin-top: 20px;
   }
   
  .section .table {
@@ -196,13 +200,26 @@
     background-color: #f2f2f2;
   }
   
-  .faq {
+  .container h2 {
+    color: #00273f;
+    margin-top: 30px;
     margin-bottom: 20px;
   }
   
-  .faq h3 {
-    font-size: 1.2em;
-    color: #00273f;
-    margin-bottom: 10px;
+  .header h1{
+    color: #e8c47c;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+
+  @media (max-width: 400px) {
+    .container h2 {
+      font-size: 20px;
+    }
+  
+    .header h1{
+      font-size: 26px;
+    }
   }
   

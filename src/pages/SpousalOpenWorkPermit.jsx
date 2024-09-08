@@ -36,7 +36,8 @@ const SpousalOpenWorkPermit = () => {
               <p onClick={() => scrollToSection("about-program")}>
                 About the Program
               </p>
-              <p onClick={() => scrollToSection("key-points")}>Key Points</p>
+              <p onClick={() => scrollToSection("benifits")}>Benifits</p>
+              <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
               <p onClick={() => scrollToSection("how-to-apply")}>
                 How to Apply?
               </p>
@@ -61,14 +62,14 @@ const SpousalOpenWorkPermit = () => {
 
 
       <div className={styles.container}>
-      <h1 className={styles.heading}>Spousal Open Work Permit (SOWP) Canada</h1>
+      <h1 className={styles.heading} id="about-program">Spousal Open Work Permit (SOWP) Canada</h1>
 
       <section className={styles.introduction}>
         <p>With a Spousal Open Work Permit (SOWP), your spouse can accompany you in Canada, allowing them to flourish professionally and contribute to your family's well-being.</p>
         <p>A Spousal Open Work Permit (SOWP) is a type of work permit issued to the spouse or common-law partner of a temporary visa holder, permanent resident, or citizen of Canada. It allows the spouse to work freely in Canada without requiring a specific job offer. This type of permit is particularly beneficial for spouses who want to join their partners in Canada and contribute financially to their families.</p>
       </section>
 
-      <section className={styles.benefits}>
+      <section className={styles.benefits} id="benifits">
         <h2 className={styles.subheading}>Benefits of Spousal Open Work Permit (SOWP)</h2>
         <ul>
           <li>It enables your spouse or common-law partner to accompany you to Canada and reside with you.</li>
@@ -81,7 +82,7 @@ const SpousalOpenWorkPermit = () => {
         </ul>
       </section>
 
-      <section className={styles.pathways}>
+      {/* <section className={styles.pathways}>
         <h2 className={styles.subheading}>Pathways under Spousal Open Work Permit (SOWP)</h2>
         <ul>
           <li>
@@ -100,9 +101,9 @@ const SpousalOpenWorkPermit = () => {
             </Link>
           </li>
         </ul>
-      </section>
+      </section> */}
 
-      <section className={styles.eligibility}>
+      <section className={styles.eligibility} id="eligibility">
         <h2 className={styles.subheading}>Eligibility Criteria for Spousal Open Work Permit (SOWP)</h2>
         <p>If your partner is currently working or studying in Canada, you could be eligible for an open work permit. Or, in some cases, if your partner is sponsoring you for permanent residency in Canada, you could also be eligible for a spousal open work permit. To be eligible for a SOWP, you need to meet the following criteria:</p>
         <ol>
@@ -157,7 +158,7 @@ const SpousalOpenWorkPermit = () => {
         </div>
       </section>
 
-      <section className={styles.applicationProcess}>
+      <section className={styles.applicationProcess} id="how-to-apply">
         <h2 className={styles.subheading}>How to Apply for Spousal Open Work Permit (SOWP)</h2>
         <p>The list of documents needed for a Canadian spousal open work permit will depend on the category you're applying under and your individual circumstances. However, here's a general list of documents you might need to provide:</p>
         <ol>
@@ -174,7 +175,7 @@ const SpousalOpenWorkPermit = () => {
         <p>Please note that these are just general documents, and the specific requirements may vary depending on your circumstances. It is always advisable to consult with an immigration consultant or authorized representative for personalized guidance and a checklist. Reach out to our Regulated Canadian Immigration Consultant (RCIC) at 604-503-3734 for a more tailored checklist to increase your chances of a successful application.</p>
       </section>
 
-      <section className={styles.refusalReasons}>
+      <section className={styles.refusalReasons} id="refusal-reasons">
         <h2 className={styles.subheading}>Common Reasons for Refusal of Spousal Open Work Permit (SOWP)</h2>
         <p>To increase your chances of successfully obtaining a spousal open work permit (SOWP), it's crucial to avoid certain common reasons for refusal, receiving Procedural Fairness Letter (PFL), or a request for additional documents. Let's explore the most frequently cited reasons why an immigration officer might deny your application:</p>
         <ul>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from '../styles/StudentVisa.module.css';
+import styles from '../styles/InsideCanada.module.css';
 
 const InsideCanada = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -37,7 +37,7 @@ const InsideCanada = () => {
                 <p onClick={() => scrollToSection("about-program")}>
                   About the Program
                 </p>
-                <p onClick={() => scrollToSection("key-points")}>Key Points</p>
+                <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
                 <p onClick={() => scrollToSection("how-to-apply")}>
                   How to Apply?
                 </p>
@@ -61,7 +61,7 @@ const InsideCanada = () => {
         </div>
 
         <div className={styles.container}>
-      <h1 className={styles.heading}>Study Permit: Inside Canada</h1>
+      <h1 className={styles.heading} id="">Study Permit: Inside Canada</h1>
       <p className={styles.intro}>
         While the standard procedure for obtaining a Canadian student visa is to apply from outside Canada, there are exceptions. You may be eligible to apply for a student visa while already residing in Canada or if you wish to change your college or program.
       </p>
@@ -69,7 +69,7 @@ const InsideCanada = () => {
         The processing time for a student visa application from inside Canada can vary depending on individual circumstances. If you need to extend your stay, you can apply for an extension from inside Canada. For the most up-to-date processing times and information on your study permit extension, please contact our office at 604-503-3734.
       </p>
 
-      <section className={styles.benefits}>
+      <section className={styles.benefits} id="benifits">
         <h2 className={styles.subheading}>Benefits</h2>
         <ul className={styles.benefitList}>
           <li>No GIC Required</li>
@@ -87,15 +87,15 @@ const InsideCanada = () => {
         </ul>
       </section>
 
-      <section className={styles.programs}>
+      {/* <section className={styles.programs}>
         <h2 className={styles.subheading}>Programs to Consider</h2>
         <div className={styles.buttonContainer}>
           <a href="/visitor-to-student" className={styles.button}>Visitor to Student Status</a>
           <a href="/change-college" className={styles.button}>Change of College or Existing Program (DLI Change)</a>
         </div>
-      </section>
+      </section> */}
 
-      <section className={styles.eligibility}>
+      <section className={styles.eligibility} id="eligibility">
         <h2 className={styles.subheading}>Eligibility Criteria for Student Visa - Inside Canada</h2>
         <ul className={styles.eligibilityList}>
           <li>You are already in Canada legally with valid status (study permit, work permit, or visitor record).</li>
@@ -118,7 +118,7 @@ const InsideCanada = () => {
         </ul>
       </section>
 
-      <section className={styles.applicationSteps}>
+      <section className={styles.applicationSteps} id="how-to-apply">
         <h2 className={styles.subheading}>How to Apply for a Study Permit from Inside Canada</h2>
         <ol className={styles.stepList}>
           <li>Contact Bright Light Immigration.</li>
@@ -129,7 +129,7 @@ const InsideCanada = () => {
         </ol>
       </section>
 
-      <section className={styles.refusals}>
+      <section className={styles.refusals} id="refusal-reasons">
         <h2 className={styles.subheading}>Common Reasons for Refusals</h2>
         <ul className={styles.refusalList}>
           <li>Lack of proof of funds to afford living and studying in Canada.</li>
@@ -140,7 +140,7 @@ const InsideCanada = () => {
         </ul>
       </section>
 
-      <section className={styles.callToAction}>
+      <section className={styles.callToAction} >
         <h2 className={styles.subheading}>Still Not Sure?</h2>
         <p className={styles.callToActionText}>
           If you have faced a refusal for any of the reasons mentioned above, don't worry. With over 10 years of experience, we specialize in handling previously refused cases. We have successfully secured approval for students who have had multiple refusals, long gaps in education, and are of mature age.

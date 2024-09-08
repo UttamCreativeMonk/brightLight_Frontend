@@ -38,7 +38,9 @@ const Flagpoling = () => {
                 <p onClick={() => scrollToSection("about-program")}>
                   About the Program
                 </p>
-                <p onClick={() => scrollToSection("key-points")}>Key Points</p>
+                <p onClick={() => scrollToSection("benifits")}>Benifits</p>
+                <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
+                <p onClick={() => scrollToSection("tips")}>Tips</p>
                 <p onClick={() => scrollToSection("how-to-apply")}>
                   How to Apply?
                 </p>
@@ -63,13 +65,13 @@ const Flagpoling = () => {
 
 
         <div className={styles.container}>
-      <h1 className={styles.heading}>Flagpoling</h1>
+      <h1 className={styles.heading} id="about-program">Flagpoling</h1>
       <section className={styles.introduction}>
         <p>Flagpoling is a legal process of exiting Canada and re-entering the country without physically crossing into the USA to obtain, change, or extend a valid status in Canada. It is commonly used to obtain a new temporary residence status, such as renewing a study permit, applying for a work permit, or finalizing the permanent residency (PR) process.</p>
         <p>Typically, temporary resident visa holders have the option to apply through online or paper applications. However, these applications can take weeks or even months to process. Therefore, sometimes people choose to save time by going to the port of entry (aka border). This allows for quick processing, which can be helpful for people who need their application processed quickly.</p>
       </section>
 
-      <section className={styles.benefits}>
+      <section className={styles.benefits} id="benifits">
         <h2 className={styles.subheading}>Benefits of Flagpoling</h2>
         <ul>
           <li>Flagpoling is a time-saving alternative to applying for a work or study permit through online or paper applications, where processing times can take weeks or even months or longer than what is mentioned on the IRCC website.</li>
@@ -78,7 +80,7 @@ const Flagpoling = () => {
         </ul>
       </section>
 
-      <section className={styles.eligibility}>
+      <section className={styles.eligibility} id="eligibility">
         <h2 className={styles.subheading}>Eligibility Criteria for Flagpoling</h2>
         <ul>
           <li>You must be currently holding a valid visitor, study, or work permit.</li>
@@ -89,7 +91,7 @@ const Flagpoling = () => {
         </ul>
       </section>
 
-      <section className={styles.tips}>
+      <section className={styles.tips} id="tips">
         <h2 className={styles.subheading}>Don’t Forget This Important Tip</h2>
         <p>While flagpoling can be a helpful tool when used under the right circumstances, it's important to approach it with careful preparation and the right documentation. We strongly advocate for thorough preparation to maximize the benefits of this process. However, it's crucial to remember that flagpoling also comes with inherent risks. Potential denial of entry at both US and Canadian borders could lead to forced removal from Canada back to your home country. Additionally, flagpoling typically involves a detailed interview with a US immigration officer or CBSA border officer.</p>
       </section>

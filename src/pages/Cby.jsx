@@ -36,7 +36,9 @@ const Cby = () => {
               <p onClick={() => scrollToSection("about-program")}>
                 About the Program
               </p>
-              <p onClick={() => scrollToSection("key-points")}>Key Points</p>
+              <p onClick={() => scrollToSection("benifits")}>Benifits</p>
+              <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
+              <p onClick={() => scrollToSection("income-table")}>Income Table</p>
               <p onClick={() => scrollToSection("how-to-apply")}>
                 How to Apply?
               </p>
@@ -60,14 +62,14 @@ const Cby = () => {
       </div>
 
       <div className={styles.container}>
-      <h1 className={styles.heading}>Open Work Permit for Spouse or Common-law Partner of an International Student</h1>
+      <h1 className={styles.heading} id="about-program">Open Work Permit for Spouse or Common-law Partner of an International Student</h1>
 
       <section className={styles.introduction}>
         <p>Canada allows spouses and common-law partners to come to Canada and accompany their partners who are international students. Over the years, IRCC has made drastic changes to this program, allowing only certain international students to invite their partners. It is crucial to understand the program eligibility before initiating your immigration process to avoid any long period of separation between you and your partner.</p>
         <p>Both the applicant and their spouse must fulfill their respective sets of requirements to reunite and work in Canada.</p>
       </section>
 
-      <section className={styles.benefits}>
+      <section className={styles.benefits} id="benifits">
         <h2 className={styles.subheading}>Benefits of Open Work Permit for Spouse or Common-law Partner of an International Student</h2>
         <ul>
           <li>It enables your spouse or common-law partner to accompany you to Canada and reside with you.</li>
@@ -81,7 +83,7 @@ const Cby = () => {
         </ul>
       </section>
 
-      <section className={styles.eligibility}>
+      <section className={styles.eligibility} id="eligibility">
         <h2 className={styles.subheading}>Eligibility Criteria for Open Work Permit for Spouse or Common-law Partner of an International Student</h2>
         <p>The requirements for the principal applicant (international student) differ for both the categories (Before March 19, 2024, applicants and After March 19, 2024 applicants). However, the requirements are the same for the accompanying spouse or common-law partner.</p>
         
@@ -180,7 +182,7 @@ const Cby = () => {
         </ul>
       </section>
 
-      <section className={styles.applicationProcess}>
+      <section className={styles.applicationProcess} id="how-to-apply">
         <h2 className={styles.subheading}>How to Apply for Open Work Permit for Spouse or Common-law Partner of an International Student</h2>
         <ol>
           <li>Gather documents to prove the above-mentioned eligibility criteria for the international student.</li>
@@ -192,7 +194,7 @@ const Cby = () => {
         </ol>
       </section>
 
-      <section className={styles.refusalReasons}>
+      <section className={styles.refusalReasons} id="refusal-reasons">
         <h2 className={styles.subheading}>Common Reasons for Refusal</h2>
         <ul>
           <li>Lack of documentation verifying the enrollment status of the international student.</li>

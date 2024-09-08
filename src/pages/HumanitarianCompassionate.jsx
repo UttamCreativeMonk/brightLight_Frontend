@@ -36,7 +36,9 @@ const HumanitarianCompassionate = () => {
               <p onClick={() => scrollToSection("about-program")}>
                 About the Program
               </p>
-              <p onClick={() => scrollToSection("key-points")}>Key Points</p>
+              <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
+              <p onClick={() => scrollToSection("application")}>Application</p>
+              <p onClick={() => scrollToSection("consultation")}>Consultation</p>
               <p onClick={() => scrollToSection("how-to-apply")}>
                 How to Apply?
               </p>
@@ -61,7 +63,7 @@ const HumanitarianCompassionate = () => {
 
 
       <div className={styles.container}>
-      <header className={styles.header}>
+      <header className={styles.header} id="about-program">
         <h1>Canada Humanitarian and Compassionate (H&C) Program</h1>
         <p>Unlike traditional immigration programs that prioritize factors like education, work experience, and language proficiency, the Humanitarian and Compassionate (H&C) program focuses on the human element, acknowledging that life's challenges can be tough and unpredictable.</p>
         <p>The Humanitarian and Compassionate (H&C) program allows Canadian citizens and permanent residents to sponsor certain family members who meet the H&C criteria. This program focuses on individuals or families who, despite their efforts, end up in difficult situations and can't go through the usual immigration process.</p>
@@ -84,7 +86,7 @@ const HumanitarianCompassionate = () => {
         </ul>
       </section>
 
-      <section className={styles.eligibility}>
+      <section className={styles.eligibility} id="eligibility">
         <h2>Eligibility Criteria for the Humanitarian and Compassionate (H&C) Program</h2>
         <ul>
           <li>You must be a spouse, common-law partner, or parent of a Canadian citizen or permanent resident.</li>
@@ -94,7 +96,7 @@ const HumanitarianCompassionate = () => {
         </ul>
       </section>
 
-      <section className={styles.applicationProcess}>
+      <section className={styles.applicationProcess} id="application">
         <h2>How to Apply for the Humanitarian and Compassionate (H&C) Program</h2>
         <ol>
           <li>Collect all relevant evidence to support your H&C claims.</li>
@@ -103,7 +105,7 @@ const HumanitarianCompassionate = () => {
         </ol>
       </section>
 
-      <section className={styles.refusalReasons}>
+      <section className={styles.refusalReasons} id="refusal-reasons">
         <h2>Common Reasons for Refusals of the Humanitarian and Compassionate (H&C) Program</h2>
         <ul>
           <li>You did not provide enough evidence to support your H&C claims. This could include evidence of hardship, integration, or humanitarian reasons.</li>
@@ -112,13 +114,13 @@ const HumanitarianCompassionate = () => {
         </ul>
       </section>
 
-      <section className={styles.consultation}>
+      <section className={styles.consultation} id="consultation">
         <h2>Still Not Sure?</h2>
         <p>If you have received a refusal for any of the reasons mentioned above, do not worry. With over a decade of experience, we specialize in previously refused cases. We have successfully obtained approvals for clients with multiple previous refusals by using a tailored approach, addressing each concern listed in previous refusals, and applying case law precedents. Our high success rate is a testament to our expertise.</p>
         <p>At Brightlight Immigration, we have a dedicated team of visa application specialists who can assist you from the start of the application process all the way to obtaining your visa. <a href="#book-appointment" className={styles.button}>Start your process now</a></p>
       </section>
 
-      <section className={styles.whyChooseUs}>
+      <section className={styles.whyChooseUs} id="why-choose-us">
         <h2>Why Choose Us?</h2>
         <p>[Insert the "Why Choose Us" section content here]</p>
       </section>
@@ -136,22 +138,7 @@ const HumanitarianCompassionate = () => {
         <button className={styles.toggleButton}>Toggle Testimonials Visibility</button>
       </section>
 
-      <section className={styles.faq}>
-        <h2>FAQs Made Simple</h2>
-        <dl>
-          <dt>What is the H&C program?</dt>
-          <dd>The H&C program is a discretionary immigration program that allows certain individuals who would not otherwise be eligible under Canada's regular immigration programs to apply for permanent residence. The program is designed to provide humanitarian assistance to individuals who are facing exceptional circumstances that warrant consideration.</dd>
 
-          <dt>What are the processing times for H&C applications under family reunification?</dt>
-          <dd>Processing times for H&C applications under family reunification can vary depending on the complexity of the case. Typically, applications can take up to two years to be processed.</dd>
-
-          <dt>What are the costs involved in applying for the H&C program under family reunification?</dt>
-          <dd>There are a number of fees involved in applying for the H&C program under family reunification. These fees include processing fees, medical exam fees, and translation fees. The total cost of an application can vary depending on the complexity of the case.</dd>
-
-          <dt>What are my chances of success in applying for the H&C program under family reunification?</dt>
-          <dd>The chances of success in applying for the H&C program under family reunification depend on the specific circumstances of your case. However, the program is designed to help individuals who are facing exceptional circumstances that make it difficult for them to remain in their home country.</dd>
-        </dl>
-      </section>
 
       <section className={styles.blogs}>
         <h2>Blogs</h2>

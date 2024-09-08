@@ -139,14 +139,14 @@
   
   /* .container h1, h2, h3 {
     color: #00273f;
-  }
-   */
- .container ul, ol {
+  } */
+  
+ /* .container ul, ol {
     margin-left: 20px;
   }
-  
+   */
  .container table {
-    width: 100%;
+    width: 90%;
     border-collapse: collapse;
   }
   
@@ -155,7 +155,7 @@
   }
   
  .container th, td {
-    padding: 8px;
+    padding: 5px;
     text-align: left;
   }
   
@@ -163,18 +163,47 @@
     background-color: #f4f4f4;
   }
   
-  .faq dt {
-    font-weight: bold;
-  }
+
   
-  .faq dd {
-    margin-left: 20px;
-  }
-  .benefits, .eligibility, .applicationProcess, .refusalReasons, .consultation, .whyChooseUs, .testimonials, .faq {
-    margin-bottom: 50px;
+  @media (max-width:1450px) {
+    .container{
+      width: 95%;
+    }
   }
 
-  .bannerHeadingRotate h3{
-    color: white;
+
+  .container h2 {
+    color: #00273f;
+    margin-top: 30px;
+    margin-bottom: 20px;
   }
   
+  .header h1{
+    color: #e8c47c;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .applicationProcess li{
+    margin-bottom: 30px;
+  }
+
+  .eligibility h3{
+    color: #00273f;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  .eligibility li{
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 400px) {
+    .container h2 {
+      font-size: 20px;
+    }
+  
+    .header h1 {
+      font-size: 26px;
+    }
+  }

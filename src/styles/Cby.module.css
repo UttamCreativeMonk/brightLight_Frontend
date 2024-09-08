@@ -148,13 +148,13 @@
     text-align: center;
   }
   
-  ul, ol {
+  /* ul, ol {
     margin-left: 20px;
-  }
+  } */
   
   .button {
     display: inline-block;
-    background-color: #007bff;
+    background-color: #00273f;
     color: white;
     padding: 10px 20px;
     text-align: center;
@@ -202,5 +202,44 @@
   
   .table ul li {
     margin-bottom: 5px;
+  }
+
+  
+  
+  .container h2 {
+    color: #00273f;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .heading {
+    color: #e8c47c;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .table{
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .eligibility h3,h4{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: #00273f;
+  }
+
+  @media (max-width: 1080px) {
+    .container h2 {
+      font-size: 20px;
+    }
+  
+    .heading {
+      font-size: 26px;
+    }
+
+    .eligibility h3,h4{
+      font-size: 18px;
+    }
   }
   

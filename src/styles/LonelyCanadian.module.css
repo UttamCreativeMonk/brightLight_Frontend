@@ -125,7 +125,7 @@
 
   .container {
     padding: 20px;
-    max-width: 1200px;
+    max-width: 1440px;
     margin: auto;
   }
   
@@ -173,19 +173,6 @@
     margin-top: 15px;
   }
   
-  .faq dl {
-    margin: 0;
-  }
-  
-  .faq dt {
-    font-weight: bold;
-    margin-top: 10px;
-  }
-  
-  .faq dd {
-    margin-left: 20px;
-    margin-bottom: 10px;
-  }
   
   .testimonials {
     margin-top: 20px;
@@ -201,5 +188,27 @@
   
   .toggleButton:hover {
     background-color: #0056b3;
+  }
+  
+  .container h2 {
+    color: #00273f;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .heading {
+    color: #e8c47c;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  
+  @media (max-width: 400px) {
+    .container h2 {
+      font-size: 20px;
+    }
+  
+    .heading {
+      font-size: 30px;
+    }
   }
   

@@ -41,8 +41,8 @@ const StudentVisa = () => {
                 <p onClick={() => scrollToSection("how-to-apply")}>
                   How to Apply?
                 </p>
-                <p onClick={() => scrollToSection("refusal-reasons")}>
-                  Refusal Reasons
+                <p onClick={() => scrollToSection("pathways")}>
+                  Pathways
                 </p>
                 <p onClick={() => scrollToSection("book-appointment")}>
                   Book Appointment
@@ -60,13 +60,13 @@ const StudentVisa = () => {
           </div>
         </div>
         <div className={styles.container}>
-      <h1 className={styles.heading}>Student Visa</h1>
+      <h1 className={styles.heading} id="about-program">Student Visa</h1>
       <p className={styles.description}>
         Canada ranks as one of the top choices worldwide for students. Its uniqueness lies not only in offering opportunities for academic pursuit but also in inviting exploration of its diverse cultures and the enjoyment of a safe, high-quality life. With its comprehensive healthcare system and stunning natural landscapes, this destination becomes an attractive prospect for pursuing your academic aspirations. Whether your passion lies in STEM (Science, Technology, Engineering, Math) fields, healthcare, humanities, social sciences, or creative pursuits, Canada's diverse educational system has something to offer everyone. As a student in Canada, you have the privilege of learning at some of the world's top-rated universities and colleges.
       </p>
 
       <section className={styles.pathways}>
-        <h2 className={styles.subheading}>Pathways to Study Abroad</h2>
+        <h2 className={styles.subheading} id="pathways">Pathways to Study Abroad</h2>
         <div className={styles.pathwayContainer}>
           <div className={styles.pathway}>
             <img src="/images/outside-canada.png" alt="Outside Canada" className={styles.image} />

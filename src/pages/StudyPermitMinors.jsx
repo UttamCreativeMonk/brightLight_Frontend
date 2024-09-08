@@ -20,9 +20,7 @@ const StudyPermitMinors = () => {
       <>
         {/* <Navbar1 /> */}
         <div className={styles.bannerParent}>
-          <div className={styles.banner}>
-           
-  
+          <div className={styles.banner}> 
             <div
               className={`${styles.bannerHeadingRotateParent} ${
                 isDropdownOpen ? styles.active : ""
@@ -38,7 +36,8 @@ const StudyPermitMinors = () => {
                 <p onClick={() => scrollToSection("about-program")}>
                   About the Program
                 </p>
-                <p onClick={() => scrollToSection("key-points")}>Key Points</p>
+                <p onClick={() => scrollToSection("exeption")}>Exeption</p>
+                <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
                 <p onClick={() => scrollToSection("how-to-apply")}>
                   How to Apply?
                 </p>
@@ -63,12 +62,12 @@ const StudyPermitMinors = () => {
 
 
         <div className={styles.container}>
-      <h1 className={styles.heading}>Canadian Study Permit for Minors</h1>
+      <h1 className={styles.heading} id="about-program">Canadian Study Permit for Minors</h1>
       <section className={styles.introduction}>
         <p>As parents, we all aspire to provide our children with the best possible foundation for their future. Canada offers a unique and enriching educational experience that can set your child on a path to success and global citizenship. A study permit for minors allows a child under the age of 18 to attend any type of educational institution in Canada, including elementary schools, secondary schools, vocational schools, colleges, and universities. Minors who want to study in Canada for more than 6 months must apply for a study permit before they enter the country.</p>
       </section>
 
-      <section className={styles.exceptions}>
+      <section className={styles.exceptions} id="Exeption">
         <h2 className={styles.subheading}>Exceptions to the Rule</h2>
         <ul>
           <li>Minors who are refugees or refugee claimants do not need a study permit if they are accompanied by their parents or if they have a custodian in Canada who is a Canadian citizen or permanent resident.</li>
@@ -77,7 +76,7 @@ const StudyPermitMinors = () => {
         </ul>
       </section>
 
-      <section className={styles.eligibility}>
+      <section className={styles.eligibility} id="eligibility">
         <h2 className={styles.subheading}>Eligibility for the Program</h2>
         <ul>
           <li>Be between the ages of 12 and 17</li>
@@ -88,7 +87,7 @@ const StudyPermitMinors = () => {
         </ul>
       </section>
 
-      <section className={styles.applicationProcess}>
+      <section className={styles.applicationProcess} id="how-to-apply">
         <h2 className={styles.subheading}>Application Process</h2>
         <p>Meet the eligibility criteria? Let's see how you or your child can apply for a Study Permit for minors. The application process is similar to the application process for an adult, refer to the <Link to="/student-visa">student visa page</Link>. However, some additional documents are required, such as:</p>
         <ul>
@@ -101,7 +100,7 @@ const StudyPermitMinors = () => {
         </ul>
       </section>
 
-      <section className={styles.refusalReasons}>
+      <section className={styles.refusalReasons} id="refusal-reasons">
         <h2 className={styles.subheading}>Reasons for Refusal</h2>
         <ul>
           <li>The nature of the minor's program of study is irrelevant.</li>

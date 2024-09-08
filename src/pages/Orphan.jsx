@@ -37,7 +37,7 @@ const Orphan = () => {
                 <p onClick={() => scrollToSection("about-program")}>
                   About the Program
                 </p>
-                <p onClick={() => scrollToSection("key-points")}>Key Points</p>
+                <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
                 <p onClick={() => scrollToSection("how-to-apply")}>
                   How to Apply?
                 </p>
@@ -60,12 +60,12 @@ const Orphan = () => {
           </div>
         </div>
     <div className={styles.container}>
-      <h1 className={styles.heading}>Canada's Orphan Sponsorship Program</h1>
+      <h1 className={styles.heading} id="about-program">Canada's Orphan Sponsorship Program</h1>
       <p className={styles.description}>
         The Canada Orphan Sponsorship Program gives orphaned kids a chance to be with their Canadian relatives or start a new life in Canada. This special program is all about care and kindness, helping these children overcome challenges and have a life full of possibilities.
       </p>
       <section className={styles.section}>
-        <h2 className={styles.subheading}>Eligibility criteria for a Sponsor:</h2>
+        <h2 className={styles.subheading} id="eligibility">Eligibility criteria for a Sponsor:</h2>
         <ul className={styles.list}>
           <li>You must be a Canadian citizen or permanent resident who has lived in Canada for at least one year.</li>
           <li>You must be at least 18 years old.</li>
@@ -97,7 +97,7 @@ const Orphan = () => {
       </section>
 
       <section className={styles.section}>
-        <h2 className={styles.subheading}>How to apply for sponsoring an Orphan?</h2>
+        <h2 className={styles.subheading} id="how-to-apply">How to apply for sponsoring an Orphan?</h2>
         <ul className={styles.list}>
           <li>Complete a series of forms, including the sponsorship application form, financial assessment form, and medical forms for the orphan.</li>
           <li>Gather all the required supporting documents, such as birth certificates, passports, financial statements, criminal records checks, and letters of reference.</li>
@@ -108,7 +108,7 @@ const Orphan = () => {
       </section>
 
       <section className={styles.section}>
-        <h2 className={styles.subheading}>Common reasons for refusals of Orphan Sponsorship Program:</h2>
+        <h2 className={styles.subheading} id="refusal-reasons">Common reasons for refusals of Orphan Sponsorship Program:</h2>
         <ul className={styles.list}>
           <li>You may not qualify due to several reasons such as not being a Canadian citizen or permanent resident, not having lived in Canada for at least one year, lacking the financial ability to support the orphan, not having suitable housing for the orphan, or having a questionable character.</li>
           <li>The relationship between you and the orphan might not be close enough. This could be because you are a distant relative or haven't had regular contact with the orphan.</li>
@@ -117,7 +117,7 @@ const Orphan = () => {
       </section>
 
       <section className={styles.section}>
-        <h2 className={styles.subheading}>Still not sure?</h2>
+        <h2 className={styles.subheading} id="why-choose-us">Still not sure?</h2>
         <p className={styles.paragraph}>
           If you have received a refusal for any of the reasons mentioned above, do not worry. With over a decade of experience, we specialize in previously refused cases. We have got approvals for clients who had multiple previous refusals. We achieve this with a tailored approach to your specific case, addressing each concern that the officer has listed in previous refusals. We use case law and find similar cases to your circumstances that had positive results, and we use them as precedents in cases we work on. This is why we have a high success rate.
         </p>

@@ -36,7 +36,12 @@ const OpenWorkCanadaLP = () => {
               <p onClick={() => scrollToSection("about-program")}>
                 About the Program
               </p>
-              <p onClick={() => scrollToSection("key-points")}>Key Points</p>
+              <p onClick={() => scrollToSection("benifits")}>Benifits</p>
+              <p onClick={() => scrollToSection("application-process")}>Application Process</p>
+              <p onClick={() => scrollToSection("consultation")}>Consultation</p>
+              <p onClick={() => scrollToSection("application-process")}>Application Process</p>
+              <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
+              <p onClick={() => scrollToSection("age-chart")}>Age Chart</p>
               <p onClick={() => scrollToSection("how-to-apply")}>
                 How to Apply?
               </p>
@@ -61,12 +66,12 @@ const OpenWorkCanadaLP = () => {
 
 
       <div className={styles.container}>
-      <header className={styles.header}>
+      <header className={styles.header} id="about-program">
         <h1>Open Work Permit for Dependent Child of Foreign Worker in Canada</h1>
         <p>IRCC now allows your dependent children of Temporary Foreign Workers (TFWs) to obtain work permits without the need for an LMIA or job offer, under LMIA exemption codes C46 and C48.</p>
       </header>
 
-      <section className={styles.benefits}>
+      <section className={styles.benefits} id="benifits">
         <h2>Benefits of Open Work Permit for Dependent Child</h2>
         <ul>
           <li><strong>Financial Independence:</strong> Enables your dependent child to work and earn income, supporting their expenses or saving for education.</li>
@@ -78,7 +83,7 @@ const OpenWorkCanadaLP = () => {
         </ul>
       </section>
 
-      <section className={styles.eligibility}>
+      <section className={styles.eligibility} id="eligibility">
         <h2>Eligibility Criteria</h2>
         <p>There are three main groups of eligible family members:</p>
         <h3>1. Foreign Nationals in High-Skilled Occupations (TEER 0, 1, 2, or 3)</h3>
@@ -117,7 +122,7 @@ const OpenWorkCanadaLP = () => {
         </ul>
       </section>
 
-      <section className={styles.ageChart}>
+      <section className={styles.ageChart} id="age-chart">
         <h2>Legal Minimum Age to Work by Province/Territory</h2>
         <table>
           <thead>
@@ -197,7 +202,7 @@ const OpenWorkCanadaLP = () => {
         </table>
       </section>
 
-      <section className={styles.applicationProcess}>
+      <section className={styles.applicationProcess} id="application-process">
         <h2>How to Apply</h2>
         <ol>
           <li>Identify the principal applicant’s occupation in TEER category 0, 1, 2, 3, 4, or 5.</li>
@@ -210,7 +215,7 @@ const OpenWorkCanadaLP = () => {
         </ol>
       </section>
 
-      <section className={styles.refusalReasons}>
+      <section className={styles.refusalReasons} id="refusal-reasons">
         <h2>Common Reasons for Refusal</h2>
         <ul>
           <li>Lack of documentation verifying the NOC of the principal applicant.</li>
@@ -220,7 +225,7 @@ const OpenWorkCanadaLP = () => {
         </ul>
       </section>
 
-      <section className={styles.consultation}>
+      <section className={styles.consultation} id="consultation">
         <h2>Still Not Sure?</h2>
         <p>If you have received a refusal for any of the reasons mentioned above, do not worry. With over a decade of experience, we specialize in previously refused cases. While we don't provide jobs for LMIA, we can assist if you have a job offer. We have successfully obtained approvals for clients with previous refusals through a tailored approach, addressing each concern listed in refusals, and using case law as precedents. Contact us at Brightlight Immigration for expert assistance from start to finish.</p>
       </section>
@@ -242,17 +247,6 @@ const OpenWorkCanadaLP = () => {
         </div>
       </section>
 
-      <section className={styles.faq}>
-        <h2>FAQs</h2>
-        <dl>
-          <dt>Can my child study while on an open work permit?</dt>
-          <dd>No, they will need a study permit to study in Canada.</dd>
-          <dt>Can my minor child on a study permit work?</dt>
-          <dd>No, minor children cannot work on a study permit.</dd>
-          <dt>Can my child apply for permanent residency after gaining experience in Canada?</dt>
-          <dd>Yes, they can apply for the Canadian Experience Class or Provincial Nominee Program.</dd>
-        </dl>
-      </section>
     </div>
     </>
   );

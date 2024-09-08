@@ -36,7 +36,11 @@ const AgricultureStreamLmia = () => {
               <p onClick={() => scrollToSection("about-program")}>
                 About the Program
               </p>
-              <p onClick={() => scrollToSection("key-points")}>Key Points</p>
+              <p onClick={() => scrollToSection("noc")}>NOC</p>
+              <p onClick={() => scrollToSection("national-commodity-list")}>National Commodity List</p>
+              <p onClick={() => scrollToSection("important-considerations")}>Important Considerations</p>
+              <p onClick={() => scrollToSection("housing-requirements")}>Housing Requirements</p>
+              <p onClick={() => scrollToSection("benifits")}>Benifits</p>
               <p onClick={() => scrollToSection("how-to-apply")}>
                 How to Apply?
               </p>
@@ -60,7 +64,7 @@ const AgricultureStreamLmia = () => {
       </div>
 
       <div className={styles.container}>
-      <header className={styles.header}>
+      <header className={styles.header} id="about-program">
         <h1>Agricultural Stream LMIA</h1>
       </header>
       <main className={styles.mainContent}>
@@ -74,7 +78,7 @@ const AgricultureStreamLmia = () => {
           </ol>
         </section>
 
-        <section className={styles.section}>
+        <section className={styles.section} id="noc">
           <h2>NOC Codes</h2>
           <table className={styles.table}>
             <thead>
@@ -120,7 +124,7 @@ const AgricultureStreamLmia = () => {
           </table>
         </section>
 
-        <section className={styles.section}>
+        <section className={styles.section} id="national-commodity-list">
           <h2>National Commodity List</h2>
           <ul>
             <li>Apiary products</li>
@@ -146,12 +150,12 @@ const AgricultureStreamLmia = () => {
           </ul>
         </section>
 
-        <section className={styles.section}>
+        <section className={styles.section} id="housing-requirements">
           <h2>Housing Requirements</h2>
           <p>Employers must provide proof that the on-farm or off-site housing has been inspected by the appropriate provincial/territorial/municipal body or by an authorized private inspector with appropriate certification. Foreign workers are not obliged to use the accommodation provided by the employer and can choose to live at the accommodation of their own choice with their family.</p>
         </section>
 
-        <section className={styles.section}>
+        <section className={styles.section} id="benifits">
           <h2>Benefits of Agricultural Stream LMIA</h2>
           <ul>
             <li>No LMIA processing fees, as compared to low-wage/high-wage LMIA applications, where the employer has to pay $1000.00 for each position.</li>
@@ -162,7 +166,7 @@ const AgricultureStreamLmia = () => {
           </ul>
         </section>
 
-        <section className={styles.section}>
+        <section className={styles.section} id="important-considerations">
           <h2>Important Considerations</h2>
           <p>Agriculture Stream LMIA applications are approved with the employment duration of 2 years only. However, if the employer qualifies for the same position in the High-wage LMIA application, the employment duration can be 3 years instead.</p>
         </section>
@@ -181,7 +185,7 @@ const AgricultureStreamLmia = () => {
           </ol>
         </section>
 
-        <section className={styles.section}>
+        <section className={styles.section} id="refusal-reasons">
           <h2>Common Reasons for Refusal</h2>
           <ul>
             <li>Failure to perform or document the minimum recruitment requirements.</li>
@@ -212,21 +216,7 @@ const AgricultureStreamLmia = () => {
           {/* Option to hide any testimonial in the backend */}
         </section>
 
-        <section className={styles.section}>
-          <h2>FAQs</h2>
-          <div className={styles.faq}>
-            <h3>What is the maximum duration of employment under this stream?</h3>
-            <p>The employment duration for Agricultural Stream LMIA applications is typically two years, but it can be extended to three years if the employer qualifies under the High-wage LMIA application.</p>
-          </div>
-          <div className={styles.faq}>
-            <h3>How much is the LMIA application fee?</h3>
-            <p>The Labour Market Impact Assessment (LMIA) processing fee doesn’t apply to occupations related to primary agriculture and positions under the National Occupational Classification (NOC) codes 80020, 80021, 82030, 82031, 84120, 85100, 85101, and 85103.</p>
-          </div>
-          <div className={styles.faq}>
-            <h3>What type of housing can an employer provide to foreign workers?</h3>
-            <p>There are two types of housing – on-farm housing and off-site housing. The employer can be the owner or leaseholder of these housing properties.</p>
-          </div>
-        </section>
+
       </main>
     </div>
     </>

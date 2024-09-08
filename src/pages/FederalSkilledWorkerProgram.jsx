@@ -34,25 +34,14 @@ const FederalSkilledWorkerProgram = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
-                About the Program
-              </p>
-              <p onClick={() => scrollToSection("key-points")}>Key Points</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>
-                Refusal Reasons
-              </p>
-              <p onClick={() => scrollToSection("book-appointment")}>
-                Book Appointment
-              </p>
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose Us?
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("about-program")}> About the Program </p>
+              <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
+              <p onClick={() => scrollToSection("categories")}>Categories</p>
+              <p onClick={() => scrollToSection("process")}>Process</p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
+              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>  Why Choose Us?</p>
+              <p onClick={() => scrollToSection("testimonials")}> Testimonials</p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -61,7 +50,7 @@ const FederalSkilledWorkerProgram = () => {
       </div>
 
       <div className={styles.container}>
-      <h1 className={styles.heading}>Federal Skilled Worker Program (FSWP)</h1>
+      <h1 className={styles.heading} id="about-program">Federal Skilled Worker Program (FSWP)</h1>
 
       <section className={styles.introduction}>
         <p>
@@ -72,7 +61,7 @@ const FederalSkilledWorkerProgram = () => {
         </p>
       </section>
 
-      <section className={styles.eligibility}>
+      <section className={styles.eligibility} id="eligibility">
         <h2 className={styles.subheading}>Eligibility Criteria for Federal Skilled Worker Program (FSWP)</h2>
         <ul>
           <li>You must be between 18 and 45 years old.</li>
@@ -81,7 +70,7 @@ const FederalSkilledWorkerProgram = () => {
           <li>Must have at least 1 year of continuous work experience in a skilled occupation listed in NOC TEER categories 0, 1, 2, or 3. The work experience must be in the same type of job as the one you want to use for your immigration application.</li>
         </ul>
 
-        <h3 className={styles.subheading}>TEER Categories and Examples of Jobs</h3>
+        <h3 className={styles.subheading} id="categories">TEER Categories and Examples of Jobs</h3>
         <table className={styles.table}>
           <thead>
             <tr>
@@ -143,17 +132,17 @@ const FederalSkilledWorkerProgram = () => {
 
         <p>You do not need a job offer to apply for the FSWP, but having a valid job offer from a Canadian employer may increase your chances of receiving an invitation to apply for permanent residency.</p>
         
-        <Link to="/fswp-calculator" className={styles.button}>FSWP Calculator</Link>
+        <Link to="/federal-skilled-worker-program" className={styles.button}>FSWP Calculator</Link>
       </section>
 
       <section className={styles.expressEntry}>
         <h2 className={styles.subheading}>Express Entry Federal Skilled Worker Program (FSWP) Draws History</h2>
         <p>
-          For the latest updates on Express Entry draws, <Link to="/express-entry-draws-history" className={styles.link}>click here</Link>.
+          For the latest updates on Express Entry draws, <Link to="express-entry" className={styles.link}>click here</Link>.
         </p>
       </section>
 
-      <section className={styles.applicationProcess}>
+      <section className={styles.applicationProcess} id="Process">
         <h2 className={styles.subheading}>How to Apply for Federal Skilled Worker Program (FSWP)</h2>
         <ol>
           <li>Create your profile on the Immigration, Refugees and Citizenship Canada (IRCC) website, or for a stress-free solution, let us handle your case for you. <Link to="https://book.brightlightimmigration.ca/calendar-page" className={styles.link}>Click here</Link>.</li>
@@ -165,7 +154,7 @@ const FederalSkilledWorkerProgram = () => {
         </ol>
       </section>
 
-      <section className={styles.refusalReasons}>
+      <section className={styles.refusalReasons} id="refusal-reasons">
         <h2 className={styles.subheading}>Common Reasons for Refusals of Federal Skilled Worker Program (FSWP)</h2>
         <ul>
           <li>You don’t have a Canadian high school diploma or equivalent, language proficiency in English or French, and skilled work experience in a NOC-listed occupation.</li>

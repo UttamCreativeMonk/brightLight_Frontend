@@ -157,7 +157,7 @@
    */
   .button {
     display: inline-block;
-    background-color: #007bff;
+    background-color: #00273f;
     color: white;
     padding: 10px 20px;
     text-align: center;
@@ -179,3 +179,24 @@
     margin-top: 20px;
   }
   
+  .container h2{
+    color: #00273f;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+
+  .heading{
+    color: #e8c47c;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 400px) {
+    .container h2{
+      font-size: 20px;
+    }
+  
+    .heading{
+      font-size: 30px;
+    }
+  }

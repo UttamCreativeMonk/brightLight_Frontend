@@ -64,7 +64,7 @@ const OpenWorkPermit = () => {
 
 
       <div className={styles.container}>
-      <header className={styles.header}>
+      <header className={styles.header} id="about-program">
         <h1>Open Work Permit</h1>
       </header>
       <main className={styles.mainContent}>
@@ -76,7 +76,7 @@ const OpenWorkPermit = () => {
         <section className={styles.section}>
           <h2>Categories Under Open Work Permit</h2>
           <div className={styles.categories}>
-            <Link to="/open-work-permits/pgwp" className={styles.button}>Post-Graduate Work Permit (PGWP)</Link>
+            <Link to="/pgwp" className={styles.button}>Post-Graduate Work Permit (PGWP)</Link>
             <Link to="/open-work-permits/bowp" className={styles.button}>Bridging Open Work Permit (BOWP)</Link>
             <Link to="/tr-sowp" className={styles.button}>Spousal Open Work Permit (SOWP)</Link>
             <Link to="/open-work-permits/vulnerable-workers" className={styles.button}>Open Work Permit for Vulnerable Workers</Link>

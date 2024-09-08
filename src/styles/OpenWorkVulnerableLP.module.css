@@ -142,13 +142,13 @@
   .benefits, .eligibility, .evidence, .applicationProcess, .consultation, .whyChooseUs, .testimonials, .faq  h2 {
     font-size: 24px;
     margin-bottom: 20px;
-    color: #00273f;
+    /* color: #00273f; */
   }
   
   .benefits, .eligibility, .evidence, .applicationProcess, .consultation, .whyChooseUs, .testimonials, .faq   h3 {
     font-size: 20px;
     margin-bottom: 10px;
-     color: #00273f;
+     /* color: #00273f; */
   }
   
   .benefits , .benefits ul {
@@ -164,9 +164,29 @@
     margin-bottom: 10px;
   }
    */
-  .faqItem {
-    margin-bottom: 20px;
-  }
 
   
+     
+  .container h2 {
+    color: #00273f;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .header h1{
+    color: #e8c47c;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+
+  @media (max-width: 400px) {
+    .container h2 {
+      font-size: 20px;
+    }
+  
+    .header h1{
+      font-size: 26px;
+    }
+  }
   

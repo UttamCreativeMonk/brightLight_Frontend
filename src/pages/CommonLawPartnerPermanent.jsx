@@ -36,7 +36,8 @@ const CommonLawPartnerPermanent = () => {
               <p onClick={() => scrollToSection("about-program")}>
                 About the Program
               </p>
-              <p onClick={() => scrollToSection("key-points")}>Key Points</p>
+              <p onClick={() => scrollToSection("benifits")}>Benifits</p>
+              <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
               <p onClick={() => scrollToSection("how-to-apply")}>
                 How to Apply?
               </p>
@@ -60,7 +61,7 @@ const CommonLawPartnerPermanent = () => {
       </div>
 
       <div className={styles.container}>
-        <h1 className={styles.heading}>
+        <h1 className={styles.heading} id="about-program">
           Open Work Permit for Spouse or Common-law Partner of a Permanent
           Resident/Canadian Citizen
         </h1>
@@ -92,7 +93,7 @@ const CommonLawPartnerPermanent = () => {
           </ul>
         </section>
 
-        <section className={styles.benefits}>
+        <section className={styles.benefits} id="benifits">
           <h2 className={styles.subheading}>
             Benefits of Open Work Permit for Spouse or Common-law Partner of a
             Permanent Resident/Canadian Citizen
@@ -119,7 +120,7 @@ const CommonLawPartnerPermanent = () => {
           </ul>
         </section>
 
-        <section className={styles.eligibility}>
+        <section className={styles.eligibility} id="eligibility">
           <h2 className={styles.subheading}>Eligibility Criteria</h2>
           <ol>
             <li>
@@ -140,7 +141,7 @@ const CommonLawPartnerPermanent = () => {
           </ol>
         </section>
 
-        <section className={styles.applicationProcess}>
+        <section className={styles.applicationProcess} id="how-to-apply">
           <h2 className={styles.subheading}>How to Apply</h2>
           <ol>
             <li>
@@ -168,7 +169,7 @@ const CommonLawPartnerPermanent = () => {
           </ol>
         </section>
 
-        <section className={styles.refusalReasons}>
+        <section className={styles.refusalReasons} id="refusal-reasons">
           <h2 className={styles.subheading}>Common Reasons for Refusal</h2>
           <ul>
             <li>

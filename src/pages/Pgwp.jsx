@@ -36,7 +36,11 @@ const Pgwp = () => {
               <p onClick={() => scrollToSection("about-program")}>
                 About the Program
               </p>
-              <p onClick={() => scrollToSection("key-points")}>Key Points</p>
+              <p onClick={() => scrollToSection("benifits")}>Benifits</p>
+              <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
+              <p onClick={() => scrollToSection("application-process")}>Application Process</p>
+              <p onClick={() => scrollToSection("consultation")}>KeyPoints</p>
+              {/* <p onClick={() => scrollToSection("keypoints")}>KeyPoints</p> */}
               <p onClick={() => scrollToSection("how-to-apply")}>
                 How to Apply?
               </p>
@@ -61,12 +65,12 @@ const Pgwp = () => {
 
 
       <div className={styles.container}>
-      <header className={styles.header}>
+      <header className={styles.header} id="about-program">
         <h1>Canada’s Post-Graduate Work Permit (PGWP)</h1>
         <p>If you are an international student who has graduated from a designated learning institution (DLI) in Canada, you may be eligible for a Post-Graduation Work Permit (PGWP).</p>
       </header>
 
-      <section className={styles.benefits}>
+      <section className={styles.benefits} id="benifits">
         <h2>Benefits of a Post-Graduate Work Permit (PGWP)</h2>
         <ul>
           <li><strong>Valuable Canadian Work Experience:</strong> Enhance your career prospects and increase your chances of obtaining permanent residency in Canada.</li>
@@ -75,7 +79,7 @@ const Pgwp = () => {
         </ul>
       </section>
 
-      <section className={styles.eligibility}>
+      <section className={styles.eligibility} id="eligibility">
         <h2>Eligibility Criteria for Post-Graduate Work Permit (PGWP)</h2>
         <p>Are you eligible for a PGWP? Let's find out.</p>
         <ul>
@@ -89,7 +93,7 @@ const Pgwp = () => {
         </ul>
       </section>
 
-      <section className={styles.applicationProcess}>
+      <section className={styles.applicationProcess} id="application-process">
         <h2>How to Apply for Post-Graduate Work Permit (PGWP)</h2>
         <p>Meet the eligibility criteria? Here’s how you can apply for PGWP:</p>
         <ul>
@@ -104,7 +108,7 @@ const Pgwp = () => {
         </ul>
       </section>
 
-      <section className={styles.refusalReasons}>
+      <section className={styles.refusalReasons} id="refusal-reasons">
         <h2>Common Reasons for Refusal of Post-Graduate Work Permit (PGWP)</h2>
         <ul>
           <li>Failure to meet the eligibility criteria set by IRCC.</li>
@@ -114,7 +118,7 @@ const Pgwp = () => {
         </ul>
       </section>
 
-      <section className={styles.consultation}>
+      <section className={styles.consultation} id="consultation">
         <h2>Still Not Sure?</h2>
         <p>If you have received a refusal for any of the reasons mentioned above, do not worry. With over a decade of experience, we specialize in previously refused cases. We have successfully obtained approvals for clients with multiple previous refusals through a tailored approach, addressing each concern listed in previous refusals and using case law as precedents. This high success rate is why our clients trust us.</p>
         <p>At Brightlight Immigration, our dedicated team of visa application specialists can assist you from start to finish. Start your process now!</p>
@@ -137,31 +141,7 @@ const Pgwp = () => {
         </div>
       </section>
 
-      <section className={styles.faq}>
-        <h2>FAQs Made Simple</h2>
-        <dl>
-          <dt>What is a PGWP?</dt>
-          <dd>The PGWP is a temporary work permit that allows international students who have graduated from a Canadian Designated Learning Institution (DLI) to work in Canada after they graduate.</dd>
-          
-          <dt>How long is a PGWP valid for?</dt>
-          <dd>The length of your PGWP depends on the length of your study program:
-            <ul>
-              <li>If your program was less than eight months, you are not eligible for a PGWP.</li>
-              <li>If your program was at least eight months but less than two years, your PGWP will be valid for up to the same length as your study program.</li>
-              <li>If your program was two years or more, your PGWP will be valid for up to three years.</li>
-            </ul>
-          </dd>
-          
-          <dt>Can I travel outside Canada while I have a PGWP?</dt>
-          <dd>Yes, you can travel outside Canada while you have a PGWP. However, ensure that your PGWP and TRV are still valid when you return to Canada.</dd>
-          
-          <dt>Can I work while I am waiting for my PGWP application to be processed?</dt>
-          <dd>Yes, you can work while waiting for your PGWP application to be processed if you have a valid study permit.</dd>
-          
-          <dt>What is the processing time for a PGWP application?</dt>
-          <dd>The processing time for a PGWP application varies, but it typically takes about 45 days. You can also obtain a PGWP at one of the ports of entry through a process called flagpoling.</dd>
-        </dl>
-      </section>
+
 
       <section className={styles.blogs}>
         <h2>Blogs</h2>

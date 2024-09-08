@@ -36,7 +36,10 @@ const GlobalStreamLmia = () => {
               <p onClick={() => scrollToSection("about-program")}>
                 About the Program
               </p>
-              <p onClick={() => scrollToSection("key-points")}>Key Points</p>
+              <p onClick={() => scrollToSection("benifits")}>Benifits</p>
+              <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
+              <p onClick={() => scrollToSection("labour-market")}>Labour Market</p>
+              <p onClick={() => scrollToSection("benifits")}>Benifits</p>
               <p onClick={() => scrollToSection("how-to-apply")}>
                 How to Apply?
               </p>
@@ -60,7 +63,7 @@ const GlobalStreamLmia = () => {
       </div>
 
       <div className={styles.container}>
-      <header className={styles.header}>
+      <header className={styles.header} id="about-program">
         <h1>Global Talent Stream (GTS) LMIA</h1>
       </header>
 
@@ -72,7 +75,7 @@ const GlobalStreamLmia = () => {
           </p>
         </section>
 
-        <section className={styles.section}>
+        <section className={styles.section} id="benifits">
           <h2>Benefits of Global Talent Stream (GTS) LMIA</h2>
           <ul>
             <li>GTS LMIAs are typically processed within 10 business days.</li>
@@ -82,7 +85,7 @@ const GlobalStreamLmia = () => {
           </ul>
         </section>
 
-        <section className={styles.section}>
+        <section className={styles.section} id="eligibility">
           <h2>Eligibility Criteria for Global Talent Stream (GTS) LMIA</h2>
           <h3>Global Talent Stream Categories</h3>
           <p>The Global Talent Stream consists of two categories with their own set of requirements:</p>
@@ -153,7 +156,7 @@ const GlobalStreamLmia = () => {
           </ul>
         </section>
 
-        <section className={styles.section}>
+        <section className={styles.section} id="labour-market">
           <h2>Labour Market Benefits Plan (LMBP)</h2>
           <p>
             The Labour Market Benefits Plan (LMBP) is a mandatory component of the Global Talent Stream (GTS) application process. It requires employers to outline specific activities they will undertake to create positive outcomes for the Canadian labor market as a result of hiring a foreign worker.
@@ -192,7 +195,7 @@ const GlobalStreamLmia = () => {
           </ol>
         </section>
 
-        <section className={styles.section}>
+        <section className={styles.section} id="refusal-reasons">
           <h2>Common Reasons for Refusal of Global Talent Stream (GTS) LMIA</h2>
           <ul>
             <li>Insufficient Evidence of Labour Market Benefits.</li>

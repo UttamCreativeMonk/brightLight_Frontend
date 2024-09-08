@@ -36,7 +36,12 @@ const LonelyCanadian = () => {
               <p onClick={() => scrollToSection("about-program")}>
                 About the Program
               </p>
-              <p onClick={() => scrollToSection("key-points")}>Key Points</p>
+              <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
+              <p onClick={() => scrollToSection("benifits")}>Benifits</p>
+              <p onClick={() => scrollToSection("duration")}>Duration</p>
+              <p onClick={() => scrollToSection("application-process")}>Application Process</p>
+              <p onClick={() => scrollToSection("alternatives")}>Alternatives</p>
+
               <p onClick={() => scrollToSection("how-to-apply")}>
                 How to Apply?
               </p>
@@ -61,12 +66,12 @@ const LonelyCanadian = () => {
 
 
       <div className={styles.container}>
-      <header className={styles.header}>
+      <header className={styles.header} id="about-program">
         <h1>Lonely Canadian Sponsoring Other Relatives: A Path to Family Reunification</h1>
         <p>Canada’s family sponsorship program prioritizes family reunification. If you wish to sponsor other family members who may be lonely or orphaned, certain conditions apply. Here’s what you need to know:</p>
       </header>
 
-      <section className={styles.eligibility}>
+      <section className={styles.eligibility} id="eligibility">
         <h2>Eligibility Criteria to Sponsor Other Relatives as a Lonely Canadian</h2>
         <ul>
           <li>Minimum Necessary Income: The sponsor should have sufficient income.</li>
@@ -79,7 +84,7 @@ const LonelyCanadian = () => {
         </ul>
       </section>
 
-      <section className={styles.duration}>
+      <section className={styles.duration} id="duration">
         <h2>Duration of Undertaking</h2>
         <ul>
           <li>The undertaking to sponsor other relatives to Canada lasts for ten years.</li>
@@ -91,7 +96,7 @@ const LonelyCanadian = () => {
         </ul>
       </section>
 
-      <section className={styles.bankruptcyCriminalSentences}>
+      <section className={styles.bankruptcyCriminalSentences} id="bankruptcy">
         <h2>Bankruptcy and Criminal Sentences</h2>
         <ul>
           <li>Sponsoring other relatives is not allowed if the sponsor is filing for bankruptcy.</li>
@@ -102,7 +107,7 @@ const LonelyCanadian = () => {
         </ul>
       </section>
 
-      <section className={styles.sponsoringSiblings}>
+      <section className={styles.sponsoringSiblings} id="sponsor-siblings">
         <h2>Sponsoring Siblings</h2>
         <p>Alternative options exist for sponsoring siblings:</p>
         <ul>
@@ -121,7 +126,7 @@ const LonelyCanadian = () => {
         </ul>
       </section>
 
-      <section className={styles.alternatives}>
+      <section className={styles.alternatives} id="alternatives">
         <h2>Exploring Other Possibilities</h2>
         <p>Consider the following alternatives if you cannot sponsor a sibling over 18 years of age:</p>
         <ul>
@@ -131,7 +136,7 @@ const LonelyCanadian = () => {
         </ul>
       </section>
 
-      <section className={styles.applicationProcess}>
+      <section className={styles.applicationProcess} id="application-process">
         <h2>How to Apply for Sponsoring a Relative as a Lonely Canadian</h2>
         <h3>Step 1: Obtain the Application Package</h3>
         <ul>
@@ -203,32 +208,7 @@ const LonelyCanadian = () => {
         <button className={styles.toggleButton}>Toggle Testimonials Visibility</button>
       </section>
 
-      <section className={styles.faq}>
-        <h2>FAQ Made Simple</h2>
-        <dl>
-          <dt>What is the lonely Canada pathway?</dt>
-          <dd>Lonely Canadian allows citizens or permanent residents to sponsor extended family members for immigration. If the sponsored individual is married or has children, they can bring their immediate family along to Canada.</dd>
 
-          <dt>Who is considered a Lonely Canadian Sponsor?</dt>
-          <dd>A lonely sponsor does not have:
-            <ul>
-              <li>Mother</li>
-              <li>Father</li>
-              <li>Child</li>
-              <li>Spouse</li>
-              <li>Common-law partner</li>
-              <li>Conjugal partner</li>
-              <li>Grandparents</li>
-            </ul>
-          </dd>
-
-          <dt>I filed for Bankruptcy. Can I still sponsor as a Lonely Canadian?</dt>
-          <dd>If the sponsor is in the process of filing for bankruptcy or has already filed for bankruptcy, they are not permitted to sponsor other relatives. However, eligibility to sponsor becomes possible only after the discharge of bankruptcy.</dd>
-
-          <dt>How long am I responsible for the person I sponsor as a Lonely Canadian?</dt>
-          <dd>The commitment to sponsor other relatives to Canada extends over a period of ten years. This duration commences when your relative attains permanent residency in Canada. Throughout this time, the sponsored relative will not have access to social assistance. If the sponsor receives any social assistance during this period, they are obligated to repay the amount to the government. Additionally, the undertaking also encompasses the spouse or child of the sponsored relative. Importantly, social assistance for disabled individuals does not affect the sponsorship application.</dd>
-        </dl>
-      </section>
 
       <section className={styles.blogs}>
         <h2>Blogs</h2>

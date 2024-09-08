@@ -36,7 +36,9 @@ const DependentChildren = () => {
               <p onClick={() => scrollToSection("about-program")}>
                 About the Program
               </p>
-              <p onClick={() => scrollToSection("key-points")}>Key Points</p>
+              <p onClick={() => scrollToSection("application-process")}>Application Process</p>
+              <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
+              <p onClick={() => scrollToSection("consultation")}>consultation</p>
               <p onClick={() => scrollToSection("how-to-apply")}>
                 How to Apply?
               </p>
@@ -61,13 +63,13 @@ const DependentChildren = () => {
 
 
       <div className={styles.container}>
-      <header className={styles.header}>
+      <header className={styles.header} id="about-program">
         <h1>Canada’s Dependent Children Sponsorship Program</h1>
         <p>The Dependent Child Program helps families stay together and gives your child the chance to go to good schools in Canada, grow up in a safe place, and be successful in the future.</p>
         <p>The Dependent Children Program allows Canadian citizens and permanent residents to bring their unmarried children under the age of 22 to Canada as permanent residents.</p>
       </header>
 
-      <section className={styles.eligibility}>
+      <section className={styles.eligibility} id="eligibility">
         <h2>Eligibility Requirements</h2>
         <h3>For the Dependent Child:</h3>
         <ul>
@@ -83,7 +85,7 @@ const DependentChildren = () => {
         </ul>
       </section>
 
-      <section className={styles.applicationProcess}>
+      <section className={styles.applicationProcess} id="application-process">
         <h2>How to Apply for the Dependent Children Sponsorship Program</h2>
         <ol>
           <li>Collect and submit a variety of documents to support your application, such as proof of identity, proof of relationship with your child, financial documentation, and accommodation details.</li>
@@ -92,7 +94,7 @@ const DependentChildren = () => {
         </ol>
       </section>
 
-      <section className={styles.refusalReasons}>
+      <section className={styles.refusalReasons} id="refusal-reasons">
         <h2>Common Reasons for Refusals</h2>
         <ul>
           <li>Fails to meet the eligibility criteria for the DC Program, such as being a Canadian citizen or permanent resident, having the financial means to support the sponsored child, or having a clean criminal record.</li>
@@ -101,7 +103,7 @@ const DependentChildren = () => {
         </ul>
       </section>
 
-      <section className={styles.consultation}>
+      <section className={styles.consultation} id="consultation">
         <h2>Still Not Sure?</h2>
         <p>If you have received a refusal for any of the reasons mentioned above, do not worry. With over a decade of experience, we specialize in previously refused cases. We have successfully obtained approvals for clients with multiple previous refusals by using a tailored approach, addressing each concern listed in previous refusals, and applying case law precedents. Our high success rate is a testament to our expertise.</p>
         <p>At Brightlight Immigration, we have a dedicated team of visa application specialists who can assist you from the start of the application process to obtaining your visa. <a href="#book-appointment" className={styles.button}>Start your process now</a></p>
@@ -125,25 +127,6 @@ const DependentChildren = () => {
         <button className={styles.toggleButton}>Toggle Testimonials Visibility</button>
       </section>
 
-      <section className={styles.faq}>
-        <h2>FAQs Made Simple</h2>
-        <dl>
-          <dt>Who can sponsor a dependent child?</dt>
-          <dd>To be eligible to sponsor a dependent child, you must be a Canadian citizen or permanent resident. You must also meet the financial requirements, provide proof of legal custody of the child, and be able to prove that the child is your biological, adopted, or stepchild.</dd>
-
-          <dt>What is the age limit for dependent children?</dt>
-          <dd>A child is considered a dependent child if they are under the age of 22. However, there are some exceptions. Children who are 22 or older may still be eligible to be sponsored if they have depended on their parents for financial support since before they were 22 and they are unable to financially support themselves because of a physical or mental condition.</dd>
-
-          <dt>What are the financial requirements for sponsoring a dependent child?</dt>
-          <dd>To be eligible to sponsor a dependent child, you must have enough income to provide for the child's basic needs, such as food, shelter, clothing, and medical care. You must also show that you have the savings to support the child for at least three years after they arrive in Canada.</dd>
-
-          <dt>What is the medical exam for dependent children?</dt>
-          <dd>All sponsored children who are over the age of 15 are required to undergo a medical exam to assess their health. The exam will determine if the child has any medical conditions that may affect their ability to live in Canada.</dd>
-
-          <dt>How long does the application process take?</dt>
-          <dd>The processing time for a dependent child sponsorship application can vary depending on several factors. However, it typically takes between 12 and 18 months to process an application.</dd>
-        </dl>
-      </section>
 
       <section className={styles.blogs}>
         <h2>Blogs</h2>

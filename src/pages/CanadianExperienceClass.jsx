@@ -33,25 +33,14 @@ const CanadianExperienceClass = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
-                About the Program
-              </p>
-              <p onClick={() => scrollToSection("key-points")}>Key Points</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>
-                Refusal Reasons
-              </p>
-              <p onClick={() => scrollToSection("book-appointment")}>
-                Book Appointment
-              </p>
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose Us?
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("about-program")}> About the Program </p>
+              <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
+              <p onClick={() => scrollToSection("express-entry")}>Express Entry</p>
+              <p onClick={() => scrollToSection("how-to-apply")}> How to Apply?</p>
+              <p onClick={() => scrollToSection("refusal-reasons")}> Refusal Reasons </p>
+              <p onClick={() => scrollToSection("book-appointment")}> Book Appointment</p>
+              <p onClick={() => scrollToSection("why-choose-us")}>  Why Choose Us? </p>
+              <p onClick={() => scrollToSection("testimonials")}> Testimonials  </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -60,7 +49,7 @@ const CanadianExperienceClass = () => {
       </div>
 
       <div className={styles.container}>
-      <h1 className={styles.heading}>Canadian Experience Class (CEC)</h1>
+      <h1 className={styles.heading} id="about-program">Canadian Experience Class (CEC)</h1>
 
       <section className={styles.introduction}>
         <p>
@@ -68,7 +57,7 @@ const CanadianExperienceClass = () => {
         </p>
       </section>
 
-      <section className={styles.eligibility}>
+      <section className={styles.eligibility} id="eligibility">
         <h2 className={styles.subheading}>Eligibility Criteria for Canadian Experience Class (CEC)</h2>
         <ul>
           <li>At least one year of paid skilled work experience in Canada. This means your job must be categorized as skilled in the National Occupational Classification (NOC). You must have worked for at least 1,560 hours (30 hours per week for 52 weeks) over a 12-month period.</li>
@@ -79,14 +68,14 @@ const CanadianExperienceClass = () => {
         </ul>
       </section>
 
-      <section className={styles.expressEntry}>
+      <section className={styles.expressEntry} id="express-entry">
         <h2 className={styles.subheading}>Express Entry FSWP Draws History</h2>
         <p>
-          For the latest updates on Express Entry draws, <Link to="/express-entry-draws-history" className={styles.link}>click here</Link>.
+          For the latest updates on Express Entry draws, <Link to="/express-entry" className={styles.link}>click here</Link>.
         </p>
       </section>
 
-      <section className={styles.applicationProcess}>
+      <section className={styles.applicationProcess} id="how-to-apply">
         <h2 className={styles.subheading}>How to Apply for the Canadian Experience Class (CEC) Program</h2>
         <ol>
           <li>Create an Express Entry profile and submit your information, including your work experience, language skills, and education. Alternatively, let us handle your case for you. <Link to="/book-appointment" className={styles.link}>Click here</Link> for a stress-free solution.</li>
@@ -96,7 +85,7 @@ const CanadianExperienceClass = () => {
         </ol>
       </section>
 
-      <section className={styles.refusalReasons}>
+      <section className={styles.refusalReasons} id="refusal-reasons">
         <h2 className={styles.subheading}>Common Reasons for Refusals of Canadian Experience Class (CEC) Program</h2>
         <ul>
           <li>Incomplete application with inaccurate information.</li>

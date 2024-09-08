@@ -38,7 +38,11 @@ const Sds = () => {
                 <p onClick={() => scrollToSection("about-program")}>
                   About the Program
                 </p>
-                <p onClick={() => scrollToSection("key-points")}>Key Points</p>
+                <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
+                <p onClick={() => scrollToSection("faster-processing")}>Faster Processing</p>
+                <p onClick={() => scrollToSection("exclusion")}>Exclusion</p>
+                <p onClick={() => scrollToSection("family")}>Family</p>
+                <p onClick={() => scrollToSection("application-submission")}>Application-Submission</p>
                 <p onClick={() => scrollToSection("how-to-apply")}>
                   How to Apply?
                 </p>
@@ -62,7 +66,7 @@ const Sds = () => {
         </div>
 
         <div className={styles.container}>
-      <h1 className={styles.heading}>Student Direct Stream (SDS)</h1>
+      <h1 className={styles.heading} id="about-program">Student Direct Stream (SDS)</h1>
       
       <section className={styles.intro}>
         <p>
@@ -78,7 +82,7 @@ const Sds = () => {
         <p>Most study permit applications submitted through the SDS are processed within 20 calendar days, although some may take longer.</p>
       </section>
 
-      <section className={styles.fasterProcessing}>
+      <section className={styles.fasterProcessing} id="faster-processing">
         <h2 className={styles.subheading}>How to Benefit from Faster Processing</h2>
         <p>To take advantage of quicker processing times, students must:</p>
         <ul>
@@ -88,7 +92,7 @@ const Sds = () => {
         <p><strong>Note:</strong> A study permit is not a visa and cannot be used for travel to or entry into Canada. Depending on your situation, you may also need to obtain a visitor visa or an electronic travel authorization (eTA).</p>
       </section>
 
-      <section className={styles.eligibility}>
+      <section className={styles.eligibility} id="eligibility">
         <h2 className={styles.subheading}>Eligibility Criteria for the Student Direct Stream (SDS)</h2>
         <p>Legal residents of the following 14 countries may qualify for faster study permit processing through the SDS:</p>
         <table className={styles.countryTable}>
@@ -130,7 +134,7 @@ const Sds = () => {
           <li>Complete a medical exam (if applicable) before applying.</li>
           <li>Obtain a police certificate (if applicable).</li>
         </ul>
-        <Link to="/clb-calculator" className={styles.button}>Check CLB Score Requirements</Link>
+        <Link to="/bcpnp-calculator" className={styles.button}>Check CLB Score Requirements</Link>
       </section>
 
       <section className={styles.applicationProcess}>
@@ -239,7 +243,7 @@ const Sds = () => {
         </ol>
       </section>
 
-      <section className={styles.family}>
+      <section className={styles.family} id="family">
         <h2 className={styles.subheading}>Bringing Spouses, Common-Law Partners, and Dependent Children</h2>
         <p>If your spouse, common-law partner, or dependent children plan to accompany you to Canada, they may also qualify for faster processing of the following:</p>
         <ul>
@@ -267,7 +271,7 @@ const Sds = () => {
         </ul>
       </section>
 
-      <section className={styles.exclusions}>
+      <section className={styles.exclusions} id="exclusion">
         <h2 className={styles.subheading}>Who Isn’t Eligible for the Student Direct Stream (SDS)?</h2>
         <ul>
           <li>If you reside anywhere other than the 14 countries listed above (even if you’re a citizen of those countries), you must apply through the regular study permit process.</li>
@@ -275,7 +279,7 @@ const Sds = () => {
         </ul>
       </section>
 
-      <section className={styles.applicationSubmission}>
+      <section className={styles.applicationSubmission} id="application-submission">
         <h2 className={styles.subheading}>Submitting Your Application</h2>
         <p>Students applying through the Student Direct Stream can only apply online; there’s no paper application process. To complete your application, follow these steps:</p>
         <ol>
@@ -293,7 +297,7 @@ const Sds = () => {
         <p>If your application is refused, you’ll receive a letter explaining the decision. For any questions, reach out directly to the visa office.</p>
       </section>
 
-      <section className={styles.refusalReasons}>
+      <section className={styles.refusalReasons} id="refusal-reasons">
         <h2 className={styles.subheading}>Reasons for Refusal</h2>
         <ul>
           <li>Insufficient Identity or travel history documents</li>

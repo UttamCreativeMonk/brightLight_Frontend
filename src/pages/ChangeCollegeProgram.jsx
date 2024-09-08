@@ -37,7 +37,7 @@ const ChangeCollegeProgram = () => {
                 <p onClick={() => scrollToSection("about-program")}>
                   About the Program
                 </p>
-                <p onClick={() => scrollToSection("key-points")}>Key Points</p>
+                <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
                 <p onClick={() => scrollToSection("how-to-apply")}>
                   How to Apply?
                 </p>
@@ -61,7 +61,7 @@ const ChangeCollegeProgram = () => {
         </div>
 
         <div className={styles.container}>
-      <h1 className={styles.heading}>Change Your College or Program in Canada (DLI Change)</h1>
+      <h1 className={styles.heading} id="about-program">Change Your College or Program in Canada (DLI Change)</h1>
       <p className={styles.intro}>
         The decision to change colleges or programs is significant and often driven by a desire to explore new opportunities, enhance your skill set, or align with your evolving career goals. Whether you're seeking a more challenging curriculum, a more supportive learning environment, or a better fit with your personal values, understanding your motivations is crucial for making an informed choice.
       </p>
@@ -69,7 +69,7 @@ const ChangeCollegeProgram = () => {
         If you are an international student in Canada, you have the flexibility to change your college or program of study while maintaining your valid study permit. However, the process and requirements for changing schools vary depending on your eligibility and the new institution you intend to attend. For the most up-to-date information and handling your case, please contact our office at 604-503-3734.
       </p>
 
-      <section className={styles.eligibility}>
+      <section className={styles.eligibility} id="eligibility">
         <h2 className={styles.subheading}>Eligibility Criteria for Changing Your College or Program in Canada (DLI Change)</h2>
         <ul className={styles.eligibilityList}>
           <li>Your original study permit must still be valid or have an extension application pending.</li>
@@ -77,7 +77,7 @@ const ChangeCollegeProgram = () => {
         </ul>
       </section>
 
-      <section className={styles.process}>
+      <section className={styles.process} id="how-to-apply">
         <h2 className={styles.subheading}>How to Change Your College or Program in Canada (DLI Change)</h2>
         <p className={styles.processDescription}>
           If your study permit has not yet been approved:
@@ -97,7 +97,7 @@ const ChangeCollegeProgram = () => {
         </ul>
       </section>
 
-      <section className={styles.refusals}>
+      <section className={styles.refusals} id="refusal-reasons">
         <h2 className={styles.subheading}>Reasons for Refusals for Changing Your College or Program in Canada (DLI Change)</h2>
         <ul className={styles.refusalList}>
           <li>If your academic background is not strong enough for the new program, IRCC will refuse your application.</li>

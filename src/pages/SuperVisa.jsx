@@ -36,7 +36,9 @@ const SuperVisa = () => {
               <p onClick={() => scrollToSection("about-program")}>
                 About the Program
               </p>
-              <p onClick={() => scrollToSection("key-points")}>Key Points</p>
+              <p onClick={() => scrollToSection("benifits")}>Benifits</p>
+              <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
+              <p onClick={() => scrollToSection("income-table")}>Income Table</p>
               <p onClick={() => scrollToSection("how-to-apply")}>
                 How to Apply?
               </p>
@@ -60,13 +62,13 @@ const SuperVisa = () => {
       </div>
 
       <div className={styles.container}>
-      <h1 className={styles.heading}>Super Visa</h1>
+      <h1 className={styles.heading} id="about-program">Super Visa</h1>
 
       <section className={styles.introduction}>
         <p>The Super Visa is a temporary visa program offered to parents and grandparents of Canadian citizens or permanent residents.</p>
       </section>
 
-      <section className={styles.benefits}>
+      <section className={styles.benefits} id="benifits">
         <h2 className={styles.subheading}>Benefits of Super Visa</h2>
         <ul>
           <li>It allows them to visit their children or grandchildren in Canada for up to five continuous years from their first arrival, with no requirement to extend their status during this five-year stay.</li>
@@ -74,7 +76,7 @@ const SuperVisa = () => {
         </ul>
       </section>
 
-      <section className={styles.eligibility}>
+      <section className={styles.eligibility} id="eligibility">
         <h2 className={styles.subheading}>Eligibility Criteria for Super Visa</h2>
         <p>To meet the eligibility requirements for a Super Visa, you as the sponsor (child or grandchild in Canada) must:</p>
         <ul>
@@ -99,7 +101,7 @@ const SuperVisa = () => {
         </ul>
       </section>
 
-      <section className={styles.incomeTable}>
+      <section className={styles.incomeTable} id="income-table">
         <h2 className={styles.subheading}>Super Visa Income Table</h2>
         <p>Minimum necessary income requirements Updated as of June 3, 2024:</p>
         <table className={styles.table}>
@@ -157,7 +159,7 @@ const SuperVisa = () => {
         </ol>
       </section>
 
-      <section className={styles.refusalReasons}>
+      <section className={styles.refusalReasons} id="refusal-reasons">
         <h2 className={styles.subheading}>Common Reasons for Refusal</h2>
         <ul>
           <li>Sponsor does not have sufficient financial support based on family size. This is a common reason for refusal because you may have miscalculated your funds based on the income chart and family size.</li>

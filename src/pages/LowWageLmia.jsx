@@ -36,7 +36,12 @@ const LowWageLmia = () => {
               <p onClick={() => scrollToSection("about-program")}>
                 About the Program
               </p>
-              <p onClick={() => scrollToSection("key-points")}>Key Points</p>
+              <p onClick={() => scrollToSection("noc")}>NOC</p>
+              <p onClick={() => scrollToSection("provincialWage")}>NOC</p>
+              <p onClick={() => scrollToSection("benifits")}>Benifits</p>
+              <p onClick={() => scrollToSection("application-steps")}>Application Steps</p>
+              <p onClick={() => scrollToSection("differences")}>Differences</p>
+              <p onClick={() => scrollToSection("consultation")}>Consultation</p>
               <p onClick={() => scrollToSection("how-to-apply")}>
                 How to Apply?
               </p>
@@ -60,7 +65,7 @@ const LowWageLmia = () => {
       </div>
 
       <div className={styles.container}>
-      <header className={styles.header}>
+      <header className={styles.header} id="about-program">
         <h1>Low-wage/High-wage LMIA</h1>
       </header>
       <section className={styles.intro}>
@@ -71,7 +76,7 @@ const LowWageLmia = () => {
           <li>Provincial median wage</li>
         </ul>
       </section>
-      <section className={styles.noc}>
+      <section className={styles.noc} id="noc">
         <h2>1. National Occupation Classification NOC Code:</h2>
         <p>The National Occupational Classification is a database developed by the Government of Canada categorizing all types of possible occupations in the Canadian labor market according to their skill level.</p>
       </section>
@@ -115,7 +120,7 @@ const LowWageLmia = () => {
         <h2>Low-wage LMIA</h2>
         <p>This LMIA is for occupations that pay an hourly wage that is below the Provincial/territorial Median Hourly Wage. It can be of any NOC TEER Code. There is a cap on how many foreign workers an employer can hire on low-wage LMIAs.</p>
       </section>
-      <section className={styles.benefits}>
+      <section className={styles.benefits} id="benifits">
         <h2>Benefits of Low-wage/High-wage LMIA:</h2>
         <ul>
           <li>The employer can apply for low-wage/high-wage LMIA to immediately meet the labor shortage.</li>
@@ -124,7 +129,7 @@ const LowWageLmia = () => {
           <li>The employer can apply for an unnamed LMIA and then add the name of the finalized workers to the LMIA later on after the LMIA is approved.</li>
         </ul>
       </section>
-      <section className={styles.applicationSteps}>
+      <section className={styles.applicationSteps} id="application-steps">
         <h2>How to Apply for Low-wage/High-wage LMIA:</h2>
         <ol>
           <li>Have an initial assessment performed by us to verify if the employer is eligible to apply for LMIA for a specific position and how many positions are allowed.</li>
@@ -150,7 +155,7 @@ const LowWageLmia = () => {
           <li>Once LMIA is received, the employer can add or remove the name of the foreign worker.</li>
         </ol>
       </section>
-      <section className={styles.differences}>
+      <section className={styles.differences} id="differences">
         <h2>Differences Between High-Wage and Low-Wage Positions</h2>
         <table className={styles.differencesTable}>
           <thead>
@@ -209,7 +214,7 @@ const LowWageLmia = () => {
           </tbody>
         </table>
       </section>
-      <section className={styles.refusalReasons}>
+      <section className={styles.refusalReasons} id="refusal-reasons">
         <h2>Common Reasons for Refusal of High-Wage and Low-Wage Positions:</h2>
         <ul>
           <li>Failure to perform or document minimum recruitment requirements.</li>
@@ -225,7 +230,7 @@ const LowWageLmia = () => {
           <li>Regularly offer services in the sex industry (striptease, erotic dance, escort services, or erotic massage)</li>
         </ul>
       </section>
-      <section className={styles.consultation}>
+      <section className={styles.consultation} id="consultation">
         <h2>Still not sure?</h2>
         <p>If you have received a refusal for any of the reasons mentioned above, do not worry. With over a decade of experience, we specialize in previously refused cases. While we don't provide jobs for LMIA, we can certainly assist you if you have a job offer. We have obtained approvals for clients who had multiple previous refusals. We achieve this with a tailored approach to your specific case, addressing each concern that the officer has listed in previous refusals. We use case law and find similar cases to your circumstances that had positive results, and we use them as precedents in cases we work on. This is why we have a high success rate.</p>
         <p>At Brightlight Immigration, we have a dedicated team of visa application specialists who can assist you from the start of the application process to obtaining your visa. Start your process now.</p>
@@ -238,45 +243,7 @@ const LowWageLmia = () => {
         <h2>Client Testimonials</h2>
         {/* Add video and written testimonials with options to hide/show */}
       </section>
-      <section className={styles.faq}>
-        <h2>FAQs</h2>
-        <div className={styles.faqItem}>
-          <h3>How long is LMIA valid for?</h3>
-          <p>An LMIA is valid for 6 months or 36 months if applying under the Recognised Employer Program. The selected foreign worker has to apply within this validity period.</p>
-        </div>
-        <div className={styles.faqItem}>
-          <h3>How much is the LMIA application fee?</h3>
-          <p>The employer is required to pay $1000.00 for each position mentioned in the LMIA application.</p>
-        </div>
-        <div className={styles.faqItem}>
-          <h3>How old should a company be to apply for LMIA?</h3>
-          <p>Service Canada has not set any specific requirement for low-wage/high-wage applications regarding how long the company must be registered and operational to be eligible to apply for LMIA. Once the business operations have started and a labor shortage exists, the employer can apply for LMIA.</p>
-        </div>
-        <div className={styles.faqItem}>
-          <h3>Is there a difference between low-wage and high-wage LMIA?</h3>
-          <p>Yes, there is a difference. Low-wage positions are those that fall below the provincial or territorial median hourly wage, while high-wage positions are those that are at or above the median hourly wage.</p>
-        </div>
-        <div className={styles.faqItem}>
-          <h3>How many employees must they have before they can apply for an LMIA?</h3>
-          <p>There is no minimum requirement for a specific number of employees on payroll before an employer can apply for LMIA. It depends on business to business. However, this number of employees will be used for cap calculations for low-wage position LMIA.</p>
-        </div>
-        <div className={styles.faqItem}>
-          <h3>Can an employer recruit an unlimited number of foreign workers with an LMIA, or are there any restrictions on the number?</h3>
-          <p>High-wage LMIA applications do not have a cap or limit. However, there is a limit on the number of foreign workers an employer can hire for low-wage LMIA applications. This limit is based on the industry, NOC code, and the number of Canadians and foreigners already on the payroll.</p>
-        </div>
-        <div className={styles.faqItem}>
-          <h3>Are there compliance and regulations that apply to the employer after hiring a foreign worker through an LMIA?</h3>
-          <p>Yes, the employer will be required to meet the following conditions:
-            <ul>
-              <li>The terms and conditions outlined in the employment contract must be adhered to.</li>
-              <li>It is important to retain all LMIA documentation for 6 years, as there may be a random audit conducted within this timeframe, even if the foreign worker does not show up for work.</li>
-              <li>If the foreign worker is present on-site, they may be interviewed and various documents such as payroll records will be reviewed to ensure compliance about wages, working hours, overtime, and working conditions.</li>
-              <li>It is required that the foreign worker receives higher wages or has improved working conditions compared to the initial offer, but not less.</li>
-              <li>Employers are obligated to report to Service Canada if the foreign worker fails to show up for work, whether from the beginning or at any point during the employment period.</li>
-            </ul>
-          </p>
-        </div>
-      </section>
+
       <section className={styles.blogs}>
         <h2>Blogs</h2>
         {/* Add blog content or links */}

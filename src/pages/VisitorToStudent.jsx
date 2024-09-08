@@ -37,7 +37,8 @@ const VisitorToStudent = () => {
                 <p onClick={() => scrollToSection("about-program")}>
                   About the Program
                 </p>
-                <p onClick={() => scrollToSection("key-points")}>Key Points</p>
+                <p onClick={() => scrollToSection("benifits")}>Benifits</p>
+                <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
                 <p onClick={() => scrollToSection("how-to-apply")}>
                   How to Apply?
                 </p>
@@ -61,12 +62,12 @@ const VisitorToStudent = () => {
         </div>
 
         <div className={styles.container}>
-      <h1 className={styles.heading}>Visitor to Student</h1>
+      <h1 className={styles.heading} id="about-program">Visitor to Student</h1>
       <p className={styles.intro}>
         Transitioning from visitor status to student status (also known as a change of status) can be an option for you if you have been staying in Canada as a visitor and wish to pursue full-time studies in a recognized academic institution. This program, known as the Visitor to Student Program (VTS), allows you to extend your stay and pursue studies at a designated learning institution (DLI). This process involves you applying for a student visa or changing your current visa to a student visa.
       </p>
 
-      <section className={styles.benefits}>
+      <section className={styles.benefits} id="benifits">
         <h2 className={styles.subheading}>Benefits of Changing Your Status from Visitor to Student</h2>
         <ul className={styles.benefitsList}>
           <li>A Guaranteed Investment Certificate (GIC) is not required to apply for a Study Permit when you apply from inside Canada.</li>
@@ -80,7 +81,7 @@ const VisitorToStudent = () => {
         </ul>
       </section>
 
-      <section className={styles.eligibility}>
+      <section className={styles.eligibility} id="eligibility">
         <h2 className={styles.subheading}>Eligibility Criteria for the Student Permit Program</h2>
         <ul className={styles.eligibilityList}>
           <li>You are already in Canada legally with a valid status, such as a valid study permit, work permit, or visitor record.</li>
@@ -117,7 +118,7 @@ const VisitorToStudent = () => {
         </ol>
       </section>
 
-      <section className={styles.refusals}>
+      <section className={styles.refusals} id="refusal-reasons">
         <h2 className={styles.subheading}>Reasons for Refusals of Study Permit When Applying as a Visitor</h2>
         <ul className={styles.refusalList}>
           <li>You do not have a Letter of Acceptance (LOA) from a DLI.</li>

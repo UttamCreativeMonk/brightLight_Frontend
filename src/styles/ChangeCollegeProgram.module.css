@@ -124,10 +124,9 @@
 
 /* ChangeCollegeProgram.module.css */
 .container {
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 20px;
-    font-family: Arial, sans-serif;
   }
   
   .heading {
@@ -207,7 +206,7 @@
     font-size: 1rem;
     font-weight: bold;
     color: #fff;
-    background-color: #007bff;
+    background-color: #00273f;
     border: none;
     border-radius: 5px;
     text-decoration: none;
@@ -223,4 +222,25 @@
   }
   
  
+  .container h2 {
+    color: #00273f;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .heading {
+    color: #e8c47c;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  
+  @media (max-width: 400px) {
+    .container h2 {
+      font-size: 20px;
+    }
+  
+    .heading {
+      font-size: 30px;
+    }
+  }
   

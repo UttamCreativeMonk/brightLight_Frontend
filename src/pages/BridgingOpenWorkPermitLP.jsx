@@ -36,7 +36,10 @@ const BridgingOpenWorkPermitLP = () => {
               <p onClick={() => scrollToSection("about-program")}>
                 About the Program
               </p>
-              <p onClick={() => scrollToSection("key-points")}>Key Points</p>
+              <p onClick={() => scrollToSection("benifits")}>Benifits</p>
+              <p onClick={() => scrollToSection("application-process")}>Application Process</p>
+              <p onClick={() => scrollToSection("advice")}>Advice</p>
+              <p onClick={() => scrollToSection("benifits")}>Benifits</p>
               <p onClick={() => scrollToSection("how-to-apply")}>
                 How to Apply?
               </p>
@@ -60,13 +63,13 @@ const BridgingOpenWorkPermitLP = () => {
       </div>
 
       <div className={styles.container}>
-      <header className={styles.header}>
+      <header className={styles.header} id="about-program">
         <h1>Bridging Open Work Permit</h1>
       </header>
       <section className={styles.intro}>
         <p>You can continue work in Canada while waiting for your permanent residency application (APR) to be approved. For this, you will have to apply for a bridging open work permit depending on the type of permanent residency application you have submitted. This type of work permit will “bridge” the gap between the expiry of your current work permit and the final decision on your permanent residency application.</p>
       </section>
-      <section className={styles.benefits}>
+      <section className={styles.benefits} id="benifits">
         <h2>Benefits of Bridging Open Work Permit</h2>
         <ul>
           <li>No interruption in your employment while you wait for the results of your permanent residence application.</li>
@@ -75,7 +78,7 @@ const BridgingOpenWorkPermitLP = () => {
           <li>You can apply even if you are on maintained status or eligible for restoration.</li>
         </ul>
       </section>
-      <section className={styles.eligibility}>
+      <section className={styles.application} id="application-process">
         <h2>Eligibility criteria for Bridging Open Work Permit:</h2>
         <p>To be eligible for a bridging open work permit (BOWP), you must:</p>
         <ul>
@@ -123,7 +126,7 @@ const BridgingOpenWorkPermitLP = () => {
           </li>
         </ul>
       </section>
-      <section className={styles.application}>
+      <section className={styles.application} id="how-to-apply">
         <h2>How to apply for Bridging Open Work Permit:</h2>
         <ol>
           <li>After your permanent residency application has been completed and submitted, gather documents to prove above-mentioned eligibility criteria for bridging open work permit, suitable for your class of permanent residency application.</li>
@@ -132,7 +135,7 @@ const BridgingOpenWorkPermitLP = () => {
           <li>Wait for IRCC to process your application.</li>
         </ol>
       </section>
-      <section className={styles.advice}>
+      <section className={styles.advice} id="advice">
         <h2>Still not sure?</h2>
         <p>If you have received a refusal for any of the reasons mentioned above, do not worry. With over a decade of experience, we specialize in previously refused cases. While we don't provide jobs for LMIA, we can certainly assist you if you have a job offer. We have obtained approvals for clients who had multiple previous refusals. We achieve this with a tailored approach to your specific case, addressing each concern that the officer has listed in previous refusals. We use case law and find similar cases to your circumstances that had positive results, and we use them as precedents in cases we work on. This is why we have a high success rate. At Brightlight Immigration, we have a dedicated team of visa application specialists who can assist you from the start of the application process to obtaining your visa. Start your process now.</p>
       </section>
@@ -144,33 +147,7 @@ const BridgingOpenWorkPermitLP = () => {
         <h2>Clients Testimonials</h2>
         <p>Video testimonials and written testimonials. (option to hide any of them should be there in backend)</p>
       </section>
-      <section className={styles.faq}>
-        <h2>FAQ made simple:</h2>
-        <div className={styles.faqItem}>
-          <h3>Can I work in any province on a bridging open work permit?</h3>
-          <p>Yes, you can. However, if you are a PNP applicant, then you are restricted to work in the nomination province only.</p>
-        </div>
-        <div className={styles.faqItem}>
-          <h3>How long is bridging open work permit valid for?</h3>
-          <p>The duration for bridging open work permit for Quebec skilled worker class (QSWC) and Provincial Nominee Program (PNP) is usually 24 months. The duration of the bridging open work permit for other permanent residency categories remains 12 months. It cannot be issued beyond the validity of your passport.</p>
-        </div>
-        <div className={styles.faqItem}>
-          <h3>Is it possible to change my closed work permit to bridging open work permit?</h3>
-          <p>Yes, if you have submitted your permanent residency application, you can change your closed work permit to bridging open work permit.</p>
-        </div>
-        <div className={styles.faqItem}>
-          <h3>When is the best time to apply to apply for bridging open work permit?</h3>
-          <p>You can apply for bridging open work permit as soon as you submit your Express Entry application and receive the Acknowledgement of Receipt letter in the message section of IRCC MyPortal account.</p>
-        </div>
-        <div className={styles.faqItem}>
-          <h3>Can my spouse and dependent children apply for bridging open worker permit as well?</h3>
-          <p>They can apply for an open work permit, provided you qualify as a foreign national who has applied for permanent residence through an economic immigration program.</p>
-        </div>
-        <div className={styles.faqItem}>
-          <h3>My permanent residency application got refused, will IRCC cancel my bridging open work permit?</h3>
-          <p>No, IRCC does not cancel your bridging open work permit if your permanent residency application was refused or rejected. You can continue to work on this bridging open work permit and submit new permanent residency application.</p>
-        </div>
-      </section>
+
       <section className={styles.blogs}>
         <h2>Blogs</h2>
         {/* Blog content goes here */}

@@ -36,7 +36,8 @@ const CommonLawPartnerTemporary = () => {
               <p onClick={() => scrollToSection("about-program")}>
                 About the Program
               </p>
-              <p onClick={() => scrollToSection("key-points")}>Key Points</p>
+              <p onClick={() => scrollToSection("benifits")}>Benifits</p>
+              <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
               <p onClick={() => scrollToSection("how-to-apply")}>
                 How to Apply?
               </p>
@@ -59,7 +60,7 @@ const CommonLawPartnerTemporary = () => {
         </div>
       </div>
       <div className={styles.container}>
-      <h1 className={styles.heading}>Open Work Permit for Spouse or Common-law Partner of a Temporary Foreign Worker</h1>
+      <h1 className={styles.heading} id="about-program">Open Work Permit for Spouse or Common-law Partner of a Temporary Foreign Worker</h1>
 
       <section className={styles.introduction}>
         <p>The spouses or common-law partners of authorized workers coming to Canada or working in Canada may apply for an open work permit without having an offer of employment.</p>
@@ -71,7 +72,7 @@ const CommonLawPartnerTemporary = () => {
         <p>Both the applicant and their spouse must fulfill their respective sets of requirements to reunite and work in Canada.</p>
       </section>
 
-      <section className={styles.benefits}>
+      <section className={styles.benefits} id="benifits">
         <h2 className={styles.subheading}>Benefits of Open Work Permit for Spouse or Common-law Partner of a Temporary Foreign Worker</h2>
         <ul>
           <li>It enables your spouse or common-law partner to accompany you to Canada and reside with you.</li>
@@ -85,7 +86,7 @@ const CommonLawPartnerTemporary = () => {
         </ul>
       </section>
 
-      <section className={styles.eligibility}>
+      <section className={styles.eligibility} id="eligibility">
         <h2 className={styles.subheading}>Eligibility Criteria for Applying for Open Work Permit of Spouse or Common-law Partner of a Temporary Foreign Worker</h2>
         <p>The requirements for the principal applicant or temporary foreign worker differ for both categories. However, the requirements are the same for the accompanying spouse or common-law partner.</p>
         

@@ -37,13 +37,12 @@ const FederalSkilledTradesProgram = () => {
               <p onClick={() => scrollToSection("about-program")}>
                 About the Program
               </p>
-              <p onClick={() => scrollToSection("key-points")}>Key Points</p>
+              <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
+              <p onClick={() => scrollToSection("express-entry")}>Express Entry</p>
               <p onClick={() => scrollToSection("how-to-apply")}>
                 How to Apply?
               </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>
-                Refusal Reasons
-              </p>
+              <p onClick={() => scrollToSection("refusal-reasons")}> Refusal Reasons </p>
               <p onClick={() => scrollToSection("book-appointment")}>
                 Book Appointment
               </p>
@@ -61,7 +60,7 @@ const FederalSkilledTradesProgram = () => {
       </div>
 
       <div className={styles.container}>
-      <h1 className={styles.heading}>Federal Skilled Trades Program (FSTP)</h1>
+      <h1 className={styles.heading} id="about-program">Federal Skilled Trades Program (FSTP)</h1>
 
       <section className={styles.introduction}>
         <p>
@@ -72,7 +71,7 @@ const FederalSkilledTradesProgram = () => {
         </p>
       </section>
 
-      <section className={styles.eligibility}>
+      <section className={styles.eligibility} id="eligibility">
         <h2 className={styles.subheading}>Eligibility Criteria for Federal Skilled Trades Program (FSTP)</h2>
         <ul>
           <li>Two years of paid full-time work experience (or an equal amount of part-time work experience) in a skilled trade within the last five years.</li>
@@ -96,7 +95,7 @@ const FederalSkilledTradesProgram = () => {
         </ul>
       </section>
 
-      <section className={styles.expressEntry}>
+      <section className={styles.expressEntry} id="express-entry">
         <h2 className={styles.subheading}>Express Entry FSTP Draws History</h2>
         <p>
           For the latest updates on Express Entry draws, <Link to="/express-entry-draws-history" className={styles.link}>click here</Link>.
@@ -114,7 +113,7 @@ const FederalSkilledTradesProgram = () => {
         </ol>
       </section>
 
-      <section className={styles.refusalReasons}>
+      <section className={styles.refusalReasons} id="refusal-reasons">
         <h2 className={styles.subheading}>Common Reasons for Refusals of the Federal Skilled Trades Program (FSTP)</h2>
         <ul>
           <li>Inadequate qualifications: You do not have the necessary skills, education, or experience to perform the job duties.</li>
@@ -126,7 +125,7 @@ const FederalSkilledTradesProgram = () => {
       </section>
 
       <section className={styles.support}>
-        <h2 className={styles.subheading}>Still Not Sure?</h2>
+        <h2 className={styles.subheading} id="why-choose-us">Still Not Sure?</h2>
         <p>
           If you have received a refusal for any of the reasons mentioned above or have doubts regarding your case and application, do not worry. With over a decade of experience, we specialize in handling Express Entry Programs. Our approval rate for these programs is nearly 100%, achieved through a tailored approach to your specific case and using similar successful cases as precedents.
         </p>

@@ -38,7 +38,7 @@ const ExtensionsDraft = () => {
                 <p onClick={() => scrollToSection("about-program")}>
                   About the Program
                 </p>
-                <p onClick={() => scrollToSection("key-points")}>Key Points</p>
+                <p onClick={() => scrollToSection("benifits")}>Benifits</p>
                 <p onClick={() => scrollToSection("how-to-apply")}>
                   How to Apply?
                 </p>
@@ -63,13 +63,13 @@ const ExtensionsDraft = () => {
 
 
         <div className={styles.container}>
-      <h1 className={styles.heading}>Extension of Temporary Status</h1>
+      <h1 className={styles.heading} id="about-program">Extension of Temporary Status</h1>
       <section className={styles.introduction}>
         <p>The plans can change, and you may need to extend your stay in Canada for various reasons. Let us guide you to maintain your legal status in Canada.</p>
         <p>If you are visiting Canada for leisure, work, family visits, studies, or temporary employment, your circumstances may change, and you may need to extend your stay beyond the initially specified duration in your visa. In such cases, you typically need to apply for an extension to maintain valid legal status in Canada.</p>
       </section>
 
-      <section className={styles.benefits}>
+      <section className={styles.benefits} id="benifits">
         <h2 className={styles.subheading}>Benefits of Extending Your Temporary Status</h2>
         <ul>
           <li>You can stay longer in Canada after applying for an extension, without having to leave Canada and come back.</li>

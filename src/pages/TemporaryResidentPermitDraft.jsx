@@ -36,7 +36,7 @@ const TemporaryResidentPermitDraft = () => {
               <p onClick={() => scrollToSection("about-program")}>
                 About the Program
               </p>
-              <p onClick={() => scrollToSection("key-points")}>Key Points</p>
+              <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
               <p onClick={() => scrollToSection("how-to-apply")}>
                 How to Apply?
               </p>
@@ -59,7 +59,7 @@ const TemporaryResidentPermitDraft = () => {
         </div>
       </div>
       <div className={styles.container}>
-      <h1 className={styles.heading}>Temporary Resident Permit (TRP)</h1>
+      <h1 className={styles.heading} id="about-program">Temporary Resident Permit (TRP)</h1>
 
       <section className={styles.introduction}>
         <p>
@@ -67,21 +67,21 @@ const TemporaryResidentPermitDraft = () => {
         </p>
       </section>
 
-      <section className={styles.eligibility}>
+      <section className={styles.eligibility} id="eligibility">
         <h2 className={styles.subheading}>Eligibility Criteria for Temporary Resident Permit</h2>
         <p>
           The TRP is only granted when the individual's reasons for visiting Canada are compelling enough to outweigh the potential risks their presence may pose. For example, someone might receive a TRP for a work-related visit if their expertise is deemed beneficial to the Canadian economy or society, despite the reasons that initially made them inadmissible.
         </p>
       </section>
 
-      <section className={styles.applicationProcess}>
+      <section className={styles.applicationProcess} id="how-to-apply">
         <h2 className={styles.subheading}>How to Apply for a Temporary Resident Permit</h2>
         <p>
           To obtain a Temporary Resident Permit requires you to show a compelling purpose for your intended visit to Canada. The application process can vary depending on your country of origin. For specific country-specific requirements, kindly connect with our office at 604 503 3734.
         </p>
       </section>
 
-      <section className={styles.refusalReasons}>
+      <section className={styles.refusalReasons} id="refusal-reasons">
         <h2 className={styles.subheading}>Common Reasons for Refusals of Temporary Resident Permit (TRP)</h2>
         <ul>
           <li>When an individual is deemed inadmissible to Canada, it means they are prohibited from entering the country, often due to medical or criminal history issues.</li>
