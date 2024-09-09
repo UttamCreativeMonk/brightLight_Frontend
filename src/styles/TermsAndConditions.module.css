@@ -46,3 +46,13 @@
       width: 95%;
     }
   }
+
+
+
+  .termsContainer h2:empty{
+    display: none;
+  }
+
+  .termsContainer p:empty{
+    display: none;
+  }

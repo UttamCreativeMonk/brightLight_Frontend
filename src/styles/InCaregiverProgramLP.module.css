@@ -1,3 +1,4 @@
+/* src/components/WorkPermitPage.module.css */
 .bannerParent {
     background-image: url("../assets/canadaBlue.jpeg");
     width: 100%;
@@ -6,11 +7,6 @@
     padding: 50px 0px;
     /* padding-top: 30px; */
   }
-
-  section{
-    overflow-x: scroll;
-  }
-  
   .banner {
     width: 1440px;
     margin: auto;
@@ -24,7 +20,7 @@
   }
   
   .bannerHeading p {
-    color: #00273f;
+    /* color: #00273f; */
     width: 74%;
     margin: auto;
     font-size: 25px;
@@ -57,7 +53,9 @@
     font-size: 30px;
   }
   
-
+  .bannerHeadingRotatePara {
+    margin-left: -50px;
+  }
   .bannerHeadingRotatePara p {
     cursor: pointer;
   }
@@ -127,82 +125,159 @@
     }
   }
   
-
+  /* src/components/LmiaReviewedPage.module.css */
+  
+  /* src/components/LmiaReviewedPage.module.css */
+  
   .container {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
-    width: 1440px;
-    margin: auto;
-    align-items: center;
+    box-sizing: border-box;
   }
   
   .header {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
   }
   
- 
+  .header h1 {
+    font-size: 2.5em;
+    color: #e8c47c;
+  }
   
-  /* .container h1, h2, h3 {
+  .mainContent {
+    line-height: 1.6;
+  }
+  
+  .section {
+    margin-bottom: 40px;
+  }
+  
+  .section h2 {
+    font-size: 2em;
     color: #00273f;
-  } */
+  }
   
- /* .container ul, ol {
+  .section h3 {
+    font-size: 1.5em;
+    color: #00273f;
+  }
+  
+  .section p {
+    font-size: 1em;
+    color: #666;
+  }
+  
+  .benefits {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .benefit {
+    width: 45%;
+  }
+  
+  .benefit ul {
+    list-style-type: disc;
     margin-left: 20px;
   }
-   */
- .container table {
-    width: 100%;
-    border-collapse: collapse;
+  
+  .pathways {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
   }
   
- .container table, th, td {
-    border: 1px solid #ddd;
+  .section .button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #00273f;
+    border-radius: 5px;
   }
   
- .container th, td {
-    padding: 5px;
-    text-align: left;
+  .section.button:hover {
+    background-color: #003c3f;
   }
   
- .container th {
-    background-color: #f4f4f4;
+  .applicationProcess ul {
+    list-style-type: disc;
+    margin-left: 20px;
   }
   
-
+  .bookAppointment {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #00273f;
+    border-radius: 5px;
+  }
   
-  @media (max-width:1450px) {
-    .container{
-      width: 95%;
+  .bookAppointment:hover {
+    background-color: #216b88;
+  }
+  
+  
+  
+  @media (max-width: 1080px) {
+  
+    .benefits{
+      flex-direction: column;
+    }
+    .benefit{
+      width: 100%;
     }
   }
-
-
+  
+    .container h2 {
+      color: #00273f;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+  
+    .container h3 {
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+    
+    .header h1 {
+      color: #e8c47c;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    
+  
+    @media (max-width: 400px) {
+      .container h2 {
+        font-size: 20px;
+      }
+    
+      .header h1{
+        font-size: 26px;
+      }
+    }
+    
+  
   .container h2 {
     color: #00273f;
     margin-top: 30px;
     margin-bottom: 20px;
   }
   
-  .header h1{
+  .header h1 {
     color: #e8c47c;
     margin-top: 20px;
     margin-bottom: 20px;
   }
   
-  .applicationProcess li{
-    margin-bottom: 30px;
-  }
-
-  .eligibility h3{
-    color: #00273f;
-    margin-top: 30px;
-    margin-bottom: 10px;
-  }
-
-  .eligibility li{
-    margin-bottom: 20px;
-  }
-
   @media (max-width: 400px) {
     .container h2 {
       font-size: 20px;
@@ -211,8 +286,5 @@
     .header h1 {
       font-size: 26px;
     }
-    .container table {
-      width: 300px;
-      border-collapse: collapse;
-    }
   }
+  

@@ -122,6 +122,7 @@
   border-radius: 20px;
   color: #132f46;
   align-items: center;
+  transition: 0.3s all ease-in-out;
 }
 
 .pathwayCards:hover{

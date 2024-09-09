@@ -4,31 +4,15 @@ import editIcon from "../assets/edit.png";
 import deleteIcon from "../assets/delete.png";
 import update from "../assets/update.png";
 
-let MemberOf = () => {
+let Blogs = () => {
   let [sectionDataSingle, setSectionDataSingle] = useState({});
   let [editMode, setEditMode] = useState(false);
 
   const handleInputChange = (e) => {
-    if (e.target.type === "file") {
-      const file = e.target.files[0];
-      const reader = new FileReader();
-
-      reader.onloadend = () => {
-        setSectionDataSingle({
-          ...sectionDataSingle,
-          [e.target.name]: reader.result, // Convert file to Base64 and store in state
-        });
-      };
-
-      if (file) {
-        reader.readAsDataURL(file);
-      }
-    } else {
-      setSectionDataSingle({
-        ...sectionDataSingle,
-        [e.target.name]: e.target.value,
-      });
-    }
+    setSectionDataSingle({
+      ...sectionDataSingle,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const handleEditClick = () => {
@@ -42,7 +26,7 @@ let MemberOf = () => {
     }
 
     fetch(
-      `https://brightlight-node.onrender.com/member-of/${sectionDataSingle._id}`,
+      `https://brightlight-node.onrender.com/blog-section/${sectionDataSingle._id}`,
       {
         method: "PUT",
         headers: {
@@ -56,13 +40,14 @@ let MemberOf = () => {
         alert("Update Successful");
         setEditMode(false);
       })
-      .catch(() => {
+      .catch((error) => {
         alert("Update Failed");
+        console.error("Error updating data:", error);
       });
   };
 
   useEffect(() => {
-    fetch("https://brightlight-node.onrender.com/member-of")
+    fetch("https://brightlight-node.onrender.com/blog-section")
       .then((res) => res.json())
       .then((data) => {
         if (data && data.length > 0) {
@@ -76,38 +61,28 @@ let MemberOf = () => {
 
   return (
     <div className={styles.singleSectionData}>
-      {/* Form fields for editing */}
-      {[1, 2, 3].map((num) => (
-        <div key={num}>
-          <input
-            placeholder={`Heading ${num}`}
-            name={`heading${num}`}
-            value={sectionDataSingle[`heading${num}`] || ""}
-            onChange={handleInputChange}
-            disabled={!editMode}
-          />
-          <img
-            className={styles.existingImageSmall}
-            src={sectionDataSingle[`heading${num}Img`]}
-          />
-          <input
-            name={`heading${num}Img`}
-            type="file"
-            onChange={handleInputChange}
-            disabled={!editMode}
-          />
-        </div>
-      ))}
+      <input
+        placeholder="Heading"
+        name="heading"
+        value={sectionDataSingle.heading || ""}
+        onChange={handleInputChange}
+        disabled={!editMode}
+      />
+      <textarea
+        placeholder="Description"
+        name="description"
+        value={sectionDataSingle.description || ""}
+        onChange={handleInputChange}
+        disabled={!editMode}
+      />
       <div className={styles.editIcons}>
         {editMode ? (
-          <>
-            <img
-              src={update}
-              className={styles.updateIcon}
-              onClick={handleUpdateClick}
-              alt="Update"
-            />
-          </>
+          <img
+            src={update}
+            className={styles.updateIcon}
+            onClick={handleUpdateClick}
+            alt="Update"
+          />
         ) : (
           <img
             src={editIcon}
@@ -122,4 +97,4 @@ let MemberOf = () => {
   );
 };
 
-export default MemberOf;
+export default Blogs;

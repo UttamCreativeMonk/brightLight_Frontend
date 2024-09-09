@@ -78,7 +78,9 @@ import AdditionalDocument from "../pages/AdditionalDocument";
 import Reconsideration from "../pages/Reconsideration";
 import Citizenship from "../pages/Citizenship";
 import PrRenewal from "../pages/PrRenewal";
-
+import InCaregiverProgramLP from "../pages/InCaregiverProgramLP";
+import PathwaysForCaregiver from "../pages/PathwaysForCaregiver";
+import PermanentResidencePathwaysCaregiversLP from "../pages/PermanentResidencePathwaysCaregiversLP";
 
 
 let AllRoutes = () => {
@@ -167,7 +169,11 @@ let AllRoutes = () => {
       <Route path="/citizenship" element={<Citizenship/>} />
       <Route path="/pr-renewal" element={<PrRenewal/>} />
 
+      <Route path="/in-home-caregiver-program-lp" element={<InCaregiverProgramLP/>} />
+      <Route path="/pathways-for-caregiver" element={<PathwaysForCaregiver/>} />
+      <Route path="/permanent-residence-pathways-caregivers-lp" element={<PermanentResidencePathwaysCaregiversLP/>} />
     </Routes>
+    
   );
 };
 

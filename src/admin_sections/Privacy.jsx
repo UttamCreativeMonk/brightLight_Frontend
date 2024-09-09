@@ -4,64 +4,73 @@ import editIcon from "../assets/edit.png";
 import deleteIcon from "../assets/delete.png";
 import update from "../assets/update.png";
 
-let Services = () => {
-  let [sectionDataSingle, setSectionDataSingle] = useState({});
+let Privacy = () => {
+  let [sectionDataSingle, setSectionDataSingle] = useState({
+    heading: "",
+    description: "",
+    subHeading1: "",
+    subHeadingDescription1: "",
+    subHeading2: "",
+    subHeadingDescription2: "",
+    subHeading3: "",
+    subHeadingDescription3: "",
+    subHeading4: "",
+    subHeadingDescription4: "",
+    subHeading5: "",
+    subHeadingDescription5: "",
+    subHeading6: "",
+    subHeadingDescription6: "",
+    subHeading7: "",
+    subHeadingDescription7: "",
+    subHeading8: "",
+    subHeadingDescription8: "",
+    subHeading9: "",
+    subHeadingDescription9: "",
+    subHeading10: "",
+    subHeadingDescription10: "",
+  });
   let [editMode, setEditMode] = useState(false);
-  let [files, setFiles] = useState({});
 
-  const handleInputChange = (e) => {
-    if (e.target.type === "file") {
-      setFiles({
-        ...files,
-        [e.target.name]: e.target.files[0],
-      });
-    } else {
-      setSectionDataSingle({
-        ...sectionDataSingle,
-        [e.target.name]: e.target.value,
-      });
-    }
+  let handleInputChange = (e) => {
+    setSectionDataSingle({
+      ...sectionDataSingle,
+      [e.target.name]: e.target.value,
+    });
   };
 
-  const handleEditClick = () => {
+  let handleEditClick = () => {
     setEditMode(true);
   };
 
-  const handleUpdateClick = () => {
+  let handleUpdateClick = () => {
     if (!sectionDataSingle._id) {
       console.error("No ID found for update.");
       return;
     }
 
-    const formData = new FormData();
-    for (let key in sectionDataSingle) {
-      formData.append(key, sectionDataSingle[key]);
-    }
-    for (let key in files) {
-      formData.append(key, files[key]);
-    }
-
     fetch(
-      `https://brightlight-node.onrender.com/services-section/${sectionDataSingle._id}`,
+      `https://brightlight-node.onrender.com/privacy-policy/${sectionDataSingle._id}`,
       {
         method: "PUT",
-        body: formData,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(sectionDataSingle),
       }
     )
       .then((response) => response.json())
-      .then((data) => {
-        console.log("Update Response:", data);
+      .then(() => {
         alert("Update Successful");
         setEditMode(false);
       })
       .catch((error) => {
-        console.error("Error updating data:", error);
         alert("Update Failed");
+        console.error("Error updating data:", error);
       });
   };
 
   useEffect(() => {
-    fetch("https://brightlight-node.onrender.com/services-section")
+    fetch("https://brightlight-node.onrender.com/privacy-policy")
       .then((res) => res.json())
       .then((data) => {
         if (data && data.length > 0) {
@@ -82,62 +91,51 @@ let Services = () => {
         onChange={handleInputChange}
         disabled={!editMode}
       />
-      <input
+      <textarea
         placeholder="Description"
         name="description"
         value={sectionDataSingle.description || ""}
         onChange={handleInputChange}
         disabled={!editMode}
       />
-
-      {[1, 2, 3, 4, 5, 6, 7, 8].map((service, index) => (
-        <div key={index}>
+      {Array.from({ length: 10 }, (_, i) => (
+        <div key={i}>
           <input
-            placeholder={`Service ${service} Name`}
-            name={`service${service}name`}
-            value={sectionDataSingle[`service${service}name`] || ""}
+            placeholder={`Sub Heading ${i + 1}`}
+            name={`subHeading${i + 1}`}
+            value={sectionDataSingle[`subHeading${i + 1}`] || ""}
             onChange={handleInputChange}
             disabled={!editMode}
           />
-          <input
-            placeholder={`Service ${service} Description`}
-            name={`service${service}desc`}
-            value={sectionDataSingle[`service${service}desc`] || ""}
-            onChange={handleInputChange}
-            disabled={!editMode}
-          />
-          <img
-            className={styles.existingImageSmall}
-            src={sectionDataSingle[`service${service}svg`]}
-          />
-          <input
-            name={`service${service}svg`}
-            type="file"
-            accept=".svg"
+          <textarea
+            placeholder={`Sub Heading ${i + 1} Description`}
+            name={`subHeadingDescription${i + 1}`}
+            value={sectionDataSingle[`subHeadingDescription${i + 1}`] || ""}
             onChange={handleInputChange}
             disabled={!editMode}
           />
         </div>
       ))}
-
       <div className={styles.editIcons}>
         {editMode ? (
           <img
             src={update}
             className={styles.updateIcon}
             onClick={handleUpdateClick}
+            alt="Update"
           />
         ) : (
           <img
             src={editIcon}
             className={styles.editIcon}
             onClick={handleEditClick}
+            alt="Edit"
           />
         )}
-        <img src={deleteIcon} />
+        <img src={deleteIcon} alt="Delete" />
       </div>
     </div>
   );
 };
 
-export default Services;
+export default Privacy;

@@ -4,8 +4,13 @@ import editIcon from "../assets/edit.png";
 import deleteIcon from "../assets/delete.png";
 import update from "../assets/update.png";
 
-let OurProcess = () => {
-  let [sectionDataSingle, setSectionDataSingle] = useState({});
+let Vision = () => {
+  let [sectionDataSingle, setSectionDataSingle] = useState({
+    heading: "",
+    headline1: "",
+    headline2: "",
+    description: "",
+  });
   let [editMode, setEditMode] = useState(false);
 
   const handleInputChange = (e) => {
@@ -26,7 +31,7 @@ let OurProcess = () => {
     }
 
     fetch(
-      `https://brightlight-node.onrender.com/our-process/${sectionDataSingle._id}`,
+      `https://brightlight-node.onrender.com/aboutUsVisionSection/${sectionDataSingle._id}`,
       {
         method: "PUT",
         headers: {
@@ -47,7 +52,7 @@ let OurProcess = () => {
   };
 
   useEffect(() => {
-    fetch("https://brightlight-node.onrender.com/our-process")
+    fetch("https://brightlight-node.onrender.com/aboutUsVisionSection")
       .then((res) => res.json())
       .then((data) => {
         if (data && data.length > 0) {
@@ -69,33 +74,26 @@ let OurProcess = () => {
         disabled={!editMode}
       />
       <input
+        placeholder="Headline 1"
+        name="headline1"
+        value={sectionDataSingle.headline1 || ""}
+        onChange={handleInputChange}
+        disabled={!editMode}
+      />
+      <input
+        placeholder="Headline 2"
+        name="headline2"
+        value={sectionDataSingle.headline2 || ""}
+        onChange={handleInputChange}
+        disabled={!editMode}
+      />
+      <textarea
         placeholder="Description"
         name="description"
         value={sectionDataSingle.description || ""}
         onChange={handleInputChange}
         disabled={!editMode}
       />
-      {[1, 2, 3, 4].map((step) => (
-        <div key={step}>
-          <input
-            placeholder={`Step ${step} Heading`}
-            name={`step${step}heading`}
-            value={sectionDataSingle[`step${step}heading`] || ""}
-            onChange={handleInputChange}
-            disabled={!editMode}
-          />
-          {[1, 2, 3, 4, 5].map((paragraph) => (
-            <input
-              key={`step${step}p${paragraph}`}
-              placeholder={`Step ${step} Paragraph ${paragraph}`}
-              name={`step${step}p${paragraph}`}
-              value={sectionDataSingle[`step${step}p${paragraph}`] || ""}
-              onChange={handleInputChange}
-              disabled={!editMode}
-            />
-          ))}
-        </div>
-      ))}
       <div className={styles.editIcons}>
         {editMode ? (
           <img
@@ -118,4 +116,4 @@ let OurProcess = () => {
   );
 };
 
-export default OurProcess;
+export default Vision;

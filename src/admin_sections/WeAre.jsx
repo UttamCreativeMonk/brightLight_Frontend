@@ -4,7 +4,7 @@ import editIcon from "../assets/edit.png";
 import deleteIcon from "../assets/delete.png";
 import update from "../assets/update.png";
 
-let LoveneetBanner = () => {
+let WeAre = () => {
   const [sectionDataSingle, setSectionDataSingle] = useState({});
   const [editMode, setEditMode] = useState(false);
   const [imageFile, setImageFile] = useState(null);
@@ -31,10 +31,10 @@ let LoveneetBanner = () => {
     }
 
     const formData = new FormData();
-    formData.append('file', imageFile);
+    formData.append("file", imageFile);
 
     fetch(
-      `https://brightlight-node.onrender.com/loveneetBg/${sectionDataSingle._id}`,
+      `https://brightlight-node.onrender.com/we-are/${sectionDataSingle._id}`,
       {
         method: "PUT",
         body: formData,
@@ -58,7 +58,7 @@ let LoveneetBanner = () => {
     }
 
     fetch(
-      `https://brightlight-node.onrender.com/loveneetBg/${sectionDataSingle._id}`,
+      `https://brightlight-node.onrender.com/we-are/${sectionDataSingle._id}`,
       {
         method: "DELETE",
       }
@@ -75,7 +75,7 @@ let LoveneetBanner = () => {
   };
 
   useEffect(() => {
-    fetch("https://brightlight-node.onrender.com/loveneetBg")
+    fetch("https://brightlight-node.onrender.com/we-are")
       .then((res) => res.json())
       .then((data) => {
         if (data && data.length > 0) {
@@ -89,10 +89,10 @@ let LoveneetBanner = () => {
 
   return (
     <div className={styles.singleSectionData}>
-      <img className={styles.existingImage} src={sectionDataSingle.image} />
+      <img className={styles.existingImage} src={sectionDataSingle.img} />
       {editMode ? (
         <>
-          <input name="image" type="file" onChange={handleInputChange} />
+          <input name="img" type="file" onChange={handleInputChange} />
           <div className={styles.editIcons}>
             <img
               src={update}
@@ -122,4 +122,4 @@ let LoveneetBanner = () => {
   );
 };
 
-export default LoveneetBanner;
+export default WeAre;

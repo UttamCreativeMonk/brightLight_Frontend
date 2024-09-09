@@ -68,21 +68,26 @@ const StudentVisa = () => {
       <section className={styles.pathways}>
         <h2 className={styles.subheading} id="pathways">Pathways to Study Abroad</h2>
         <div className={styles.pathwayContainer}>
+          <a href="/outside-cananda">
           <div className={styles.pathway}>
-            <img src="/images/outside-canada.png" alt="Outside Canada" className={styles.image} />
             <h3 className={styles.pathwayTitle}>Outside Canada</h3>
             <p className={styles.pathwayDescription}>Explore study options and visa requirements for students planning to study in Canada from abroad.</p>
           </div>
-          <div className={styles.pathway}>
-            <img src="/images/inside-canada.png" alt="Inside Canada" className={styles.image} />
+          </a>
+          <a href="/inside-canada">
+          <div className={styles.pathway} >
+       
             <h3 className={styles.pathwayTitle}>Inside Canada</h3>
             <p className={styles.pathwayDescription}>Discover the options available for students already in Canada or planning to transfer from one institution to another.</p>
+          
           </div>
+          </a>
+          <a href="/study-permit-minors">
           <div className={styles.pathway}>
-            <img src="/images/minor-permit.png" alt="Study Permit for Minor" className={styles.image} />
             <h3 className={styles.pathwayTitle}>Study Permit for Minor</h3>
             <p className={styles.pathwayDescription}>Learn about the specific requirements and process for obtaining a study permit for minors.</p>
           </div>
+          </a>
         </div>
       </section>
 

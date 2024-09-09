@@ -4,8 +4,17 @@ import editIcon from "../assets/edit.png";
 import deleteIcon from "../assets/delete.png";
 import update from "../assets/update.png";
 
-let MemberOf = () => {
-  let [sectionDataSingle, setSectionDataSingle] = useState({});
+let Pillars = () => {
+  let [sectionDataSingle, setSectionDataSingle] = useState({
+    heading: "",
+    description1: "",
+    pillar1Heading: "",
+    pillar1Description: "",
+    pillar2Heading: "",
+    pillar2Description: "",
+    pillar3Heading: "",
+    pillar3Description: "",
+  });
   let [editMode, setEditMode] = useState(false);
 
   const handleInputChange = (e) => {
@@ -16,7 +25,7 @@ let MemberOf = () => {
       reader.onloadend = () => {
         setSectionDataSingle({
           ...sectionDataSingle,
-          [e.target.name]: reader.result, // Convert file to Base64 and store in state
+          [e.target.name]: reader.result,
         });
       };
 
@@ -42,7 +51,7 @@ let MemberOf = () => {
     }
 
     fetch(
-      `https://brightlight-node.onrender.com/member-of/${sectionDataSingle._id}`,
+      `https://brightlight-node.onrender.com/aboutUsPillarsSection/${sectionDataSingle._id}`,
       {
         method: "PUT",
         headers: {
@@ -52,17 +61,19 @@ let MemberOf = () => {
       }
     )
       .then((response) => response.json())
-      .then(() => {
+      .then((data) => {
+        console.log("Update Response:", data);
         alert("Update Successful");
         setEditMode(false);
       })
-      .catch(() => {
+      .catch((error) => {
+        console.error("Error updating data:", error);
         alert("Update Failed");
       });
   };
 
   useEffect(() => {
-    fetch("https://brightlight-node.onrender.com/member-of")
+    fetch("https://brightlight-node.onrender.com/aboutUsPillarsSection")
       .then((res) => res.json())
       .then((data) => {
         if (data && data.length > 0) {
@@ -76,23 +87,33 @@ let MemberOf = () => {
 
   return (
     <div className={styles.singleSectionData}>
-      {/* Form fields for editing */}
+      <input
+        placeholder="Heading"
+        name="heading"
+        value={sectionDataSingle.heading || ""}
+        onChange={handleInputChange}
+        disabled={!editMode}
+      />
+      <textarea
+        placeholder="Description"
+        name="description1"
+        value={sectionDataSingle.description1 || ""}
+        onChange={handleInputChange}
+        disabled={!editMode}
+      />
       {[1, 2, 3].map((num) => (
-        <div key={num}>
+        <div key={num} className={styles.pillarItem}>
           <input
-            placeholder={`Heading ${num}`}
-            name={`heading${num}`}
-            value={sectionDataSingle[`heading${num}`] || ""}
+            placeholder={`Pillar ${num} Heading`}
+            name={`pillar${num}Heading`}
+            value={sectionDataSingle[`pillar${num}Heading`] || ""}
             onChange={handleInputChange}
             disabled={!editMode}
           />
-          <img
-            className={styles.existingImageSmall}
-            src={sectionDataSingle[`heading${num}Img`]}
-          />
-          <input
-            name={`heading${num}Img`}
-            type="file"
+          <textarea
+            placeholder={`Pillar ${num} Description`}
+            name={`pillar${num}Description`}
+            value={sectionDataSingle[`pillar${num}Description`] || ""}
             onChange={handleInputChange}
             disabled={!editMode}
           />
@@ -100,14 +121,12 @@ let MemberOf = () => {
       ))}
       <div className={styles.editIcons}>
         {editMode ? (
-          <>
-            <img
-              src={update}
-              className={styles.updateIcon}
-              onClick={handleUpdateClick}
-              alt="Update"
-            />
-          </>
+          <img
+            src={update}
+            className={styles.updateIcon}
+            onClick={handleUpdateClick}
+            alt="Update"
+          />
         ) : (
           <img
             src={editIcon}
@@ -122,4 +141,4 @@ let MemberOf = () => {
   );
 };
 
-export default MemberOf;
+export default Pillars;

@@ -64,6 +64,9 @@ import InternationalGraduateProgram from "./pages/InternationalGraduateProgram";
 import InternationalPostGraduateProgram from "./pages/InternationalPostGraduateProgram";
 import PrioritiesProgram from "./pages/PrioritiesProgram";
 import SkilledWorkerStream from "./pages/SkilledWorkerStream";
+import InCaregiverProgramLP from "./pages/InCaregiverProgramLP";
+import PathwaysForCaregiver from "./pages/PathwaysForCaregiver";
+import PermanentResidencePathwaysCaregiversLP from "./pages/PermanentResidencePathwaysCaregiversLP";
 
 
 
@@ -77,7 +80,7 @@ function App() {
 
   return (
     <div className="App">
-      <PrRenewal/>
+      {/* <PrRenewal/> */}
       {/* <Citizenship/> */}
       {/* <Reconsideration/> */}
       {/* <AdditionalDocument/> */}
@@ -86,11 +89,11 @@ function App() {
       {/* <OpenWorkPermit/>  // add the links */}
       {/* <AgricultureStreamLmia/> */}
       {/* <GlobalStreamLmia/> */}
-      {/* <LowWageLmia/>    //table css fix issue */}
+      {/* <LowWageLmia/>   */}
       {/* <BridgingOpenWorkPermitLP /> */}
       {/* <FrancophoneMobilityProgram/> */}
       {/* <OpenWorkVulnerableLP/> */}
-      {/* <OpenWorkCanadaLP/>  //table css fix issue */}
+      {/* <OpenWorkCanadaLP/> */}
       {/* <Pgwp/> */}
       {/* <FamilyReunificationSponsorship/> */}
       {/* <Adoption/> */}
@@ -100,7 +103,7 @@ function App() {
 
       {/* <Orphan /> */}
       {/* <ParentsGrandparents/> */}
-      {/* <StudentVisa/>  //  check css again */}
+      {/* <StudentVisa/>   */}
       {/* <InsideCanada/> */}
       {/* <ChangeCollegeProgram/> */}
       {/* <VisitorToStudent/> */}
@@ -111,7 +114,7 @@ function App() {
       {/* <ExtensionsDraft/> */}
       {/* <Flagpoling/> */}
       {/* <RestorationStatusDraft/> */}
-      {/* <SpousalOpenWorkPermit/> // look the page content is incomplete */}
+      {/* <SpousalOpenWorkPermit/>*/}
       {/* <CommonLawPartnerPermanent/> */}
       {/* <CommonLawPartnerTemporary/> */}
       {/* <Cby/> */}
@@ -140,9 +143,12 @@ function App() {
       {/* <PrioritiesProgram/>   */}
       {/* <SkilledWorkerStream/> */}
 
+      {/* <InCaregiverProgramLP/> */}
+      {/* <PathwaysForCaregiver/> */}
+      {/* <PermanentResidencePathwaysCaregiversLP/> */}
 
-
-      {/* <Loader />
+{/* 
+      <Loader />
       <AllRoutes /> */}
     </div>
   );

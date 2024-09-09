@@ -4,7 +4,7 @@ import editIcon from "../assets/edit.png";
 import deleteIcon from "../assets/delete.png";
 import update from "../assets/update.png";
 
-let MemberOf = () => {
+let Testimonials = () => {
   let [sectionDataSingle, setSectionDataSingle] = useState({});
   let [editMode, setEditMode] = useState(false);
 
@@ -42,27 +42,29 @@ let MemberOf = () => {
     }
 
     fetch(
-      `https://brightlight-node.onrender.com/member-of/${sectionDataSingle._id}`,
+      `https://brightlight-node.onrender.com/testimonials-section/${sectionDataSingle._id}`,
       {
         method: "PUT",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
         body: JSON.stringify(sectionDataSingle),
       }
     )
       .then((response) => response.json())
-      .then(() => {
+      .then((data) => {
+        console.log("Update Response:", data);
         alert("Update Successful");
         setEditMode(false);
       })
-      .catch(() => {
+      .catch((error) => {
+        console.error("Error updating data:", error);
         alert("Update Failed");
       });
   };
 
   useEffect(() => {
-    fetch("https://brightlight-node.onrender.com/member-of")
+    fetch("https://brightlight-node.onrender.com/testimonials-section")
       .then((res) => res.json())
       .then((data) => {
         if (data && data.length > 0) {
@@ -76,28 +78,59 @@ let MemberOf = () => {
 
   return (
     <div className={styles.singleSectionData}>
-      {/* Form fields for editing */}
-      {[1, 2, 3].map((num) => (
+      <div>
+        <input
+          placeholder="Heading"
+          name="heading"
+          value={sectionDataSingle.heading || ""}
+          onChange={handleInputChange}
+          disabled={!editMode}
+        />
+        <input
+          placeholder="Google Ratings"
+          name="googleRatings"
+          value={sectionDataSingle.googleRatings || ""}
+          onChange={handleInputChange}
+          disabled={!editMode}
+        />
+      </div>
+
+      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
         <div key={num}>
           <input
-            placeholder={`Heading ${num}`}
-            name={`heading${num}`}
-            value={sectionDataSingle[`heading${num}`] || ""}
+            placeholder="Review Text"
+            name={`review${num}text`}
+            value={sectionDataSingle[`review${num}text`] || ""}
+            onChange={handleInputChange}
+            disabled={!editMode}
+          />
+          <input
+            placeholder="Review Name"
+            name={`review${num}name`}
+            value={sectionDataSingle[`review${num}name`] || ""}
+            onChange={handleInputChange}
+            disabled={!editMode}
+          />
+          <input
+            placeholder="Star Rating"
+            name={`review${num}star`}
+            value={sectionDataSingle[`review${num}star`] || ""}
             onChange={handleInputChange}
             disabled={!editMode}
           />
           <img
             className={styles.existingImageSmall}
-            src={sectionDataSingle[`heading${num}Img`]}
+            src={sectionDataSingle[`review${num}img`]}
           />
           <input
-            name={`heading${num}Img`}
+            name={`review${num}img`}
             type="file"
             onChange={handleInputChange}
             disabled={!editMode}
           />
         </div>
       ))}
+
       <div className={styles.editIcons}>
         {editMode ? (
           <>
@@ -105,7 +138,6 @@ let MemberOf = () => {
               src={update}
               className={styles.updateIcon}
               onClick={handleUpdateClick}
-              alt="Update"
             />
           </>
         ) : (
@@ -113,13 +145,12 @@ let MemberOf = () => {
             src={editIcon}
             className={styles.editIcon}
             onClick={handleEditClick}
-            alt="Edit"
           />
         )}
-        <img src={deleteIcon} alt="Delete" />
+        <img src={deleteIcon} />
       </div>
     </div>
   );
 };
 
-export default MemberOf;
+export default Testimonials;

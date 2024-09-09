@@ -46,7 +46,7 @@ let Features = () => {
       {
         method: "PUT",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(sectionDataSingle),
       }
@@ -78,36 +78,36 @@ let Features = () => {
 
   return (
     <div className={styles.singleSectionData}>
-      {/* Form fields for editing */}
-      {['feature1', 'feature2', 'feature3', 'feature4'].map((feature, index) => (
-        <div key={index}>
-          <input
-            placeholder="Heading"
-            name={`${feature}Heading`}
-            value={sectionDataSingle[`${feature}Heading`] || ""}
-            onChange={handleInputChange}
-            disabled={!editMode}
-          />
-          <input
-            placeholder="Description"
-            name={`${feature}Description`}
-            value={sectionDataSingle[`${feature}Description`] || ""}
-            onChange={handleInputChange}
-            disabled={!editMode}
-          />
-          <img
-            className={styles.existingImageSmall}
-            src={sectionDataSingle[`${feature}SVG`]}
-            alt={`Feature ${index + 1}`}
-          />
-          <input
-            name={`${feature}SVG`}
-            type="file"
-            onChange={handleInputChange}
-            disabled={!editMode}
-          />
-        </div>
-      ))}
+      {["feature1", "feature2", "feature3", "feature4"].map(
+        (feature, index) => (
+          <div key={index}>
+            <input
+              placeholder="Heading"
+              name={`${feature}Heading`}
+              value={sectionDataSingle[`${feature}Heading`] || ""}
+              onChange={handleInputChange}
+              disabled={!editMode}
+            />
+            <input
+              placeholder="Description"
+              name={`${feature}Description`}
+              value={sectionDataSingle[`${feature}Description`] || ""}
+              onChange={handleInputChange}
+              disabled={!editMode}
+            />
+            <img
+              className={styles.existingImageSmall}
+              src={sectionDataSingle[`${feature}SVG`]}
+            />
+            <input
+              name={`${feature}SVG`}
+              type="file"
+              onChange={handleInputChange}
+              disabled={!editMode}
+            />
+          </div>
+        )
+      )}
       <div className={styles.editIcons}>
         {editMode ? (
           <>
@@ -115,7 +115,6 @@ let Features = () => {
               src={update}
               className={styles.updateIcon}
               onClick={handleUpdateClick}
-              alt="Update"
             />
           </>
         ) : (
@@ -123,10 +122,9 @@ let Features = () => {
             src={editIcon}
             className={styles.editIcon}
             onClick={handleEditClick}
-            alt="Edit"
           />
         )}
-        <img src={deleteIcon} alt="Delete" />
+        <img src={deleteIcon} />
       </div>
     </div>
   );

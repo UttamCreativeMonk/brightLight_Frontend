@@ -37,3 +37,12 @@
       width: 95%;
     }
   }
+
+
+  .privacyContainer h2:empty {
+    display: none;
+  }
+  
+  .privacyContainer p:empty {
+    display: none;
+  }

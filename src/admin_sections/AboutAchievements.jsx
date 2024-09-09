@@ -4,9 +4,19 @@ import editIcon from "../assets/edit.png";
 import deleteIcon from "../assets/delete.png";
 import update from "../assets/update.png";
 
-let HomeTop = () => {
-  let [sectionDataSingle, setSectionDataSingle] = useState({});
+let AboutAchievement = () => {
+  let [sectionDataSingle, setSectionDataSingle] = useState({
+    heading: "",
+    description1: "",
+    achievement1Numbers: "",
+    achievement1Heading: "",
+    achievement2Numbers: "",
+    achievement2Heading: "",
+    achievement3Numbers: "",
+    achievement3Heading: "",
+  });
   let [editMode, setEditMode] = useState(false);
+
   let handleInputChange = (e) => {
     setSectionDataSingle({
       ...sectionDataSingle,
@@ -17,6 +27,7 @@ let HomeTop = () => {
   let handleEditClick = () => {
     setEditMode(true);
   };
+
   let handleUpdateClick = () => {
     if (!sectionDataSingle._id) {
       console.error("No ID found for update.");
@@ -24,7 +35,7 @@ let HomeTop = () => {
     }
 
     fetch(
-      `https://brightlight-node.onrender.com/home-top/${sectionDataSingle._id}`,
+      `https://brightlight-node.onrender.com/aboutUsAchievementsSection/${sectionDataSingle._id}`,
       {
         method: "PUT",
         headers: {
@@ -43,8 +54,9 @@ let HomeTop = () => {
         console.error("Error updating data:", error);
       });
   };
+
   useEffect(() => {
-    fetch("https://brightlight-node.onrender.com/home-top")
+    fetch("https://brightlight-node.onrender.com/aboutUsAchievementsSection")
       .then((res) => res.json())
       .then((data) => {
         if (data && data.length > 0) {
@@ -55,26 +67,62 @@ let HomeTop = () => {
         console.log("Error fetching data:", error);
       });
   }, []);
+
   return (
     <div className={styles.singleSectionData}>
       <input
-        placeholder="Headline1"
-        name="headline1"
-        value={sectionDataSingle.headline1 || ""}
+        placeholder="Heading"
+        name="heading"
+        value={sectionDataSingle.heading || ""}
+        onChange={handleInputChange}
+        disabled={!editMode}
+      />
+      <textarea
+        placeholder="Description"
+        name="description1"
+        value={sectionDataSingle.description1 || ""}
         onChange={handleInputChange}
         disabled={!editMode}
       />
       <input
-        placeholder="Headline2"
-        name="headline2"
-        value={sectionDataSingle.headline2 || ""}
+        placeholder="Achievement 1 Number"
+        name="achievement1Numbers"
+        value={sectionDataSingle.achievement1Numbers || ""}
         onChange={handleInputChange}
         disabled={!editMode}
       />
       <input
-        placeholder="Small Headline"
-        name="SmallHeadline1"
-        value={sectionDataSingle.SmallHeadline1 || ""}
+        placeholder="Achievement 1 Heading"
+        name="achievement1Heading"
+        value={sectionDataSingle.achievement1Heading || ""}
+        onChange={handleInputChange}
+        disabled={!editMode}
+      />
+      <input
+        placeholder="Achievement 2 Number"
+        name="achievement2Numbers"
+        value={sectionDataSingle.achievement2Numbers || ""}
+        onChange={handleInputChange}
+        disabled={!editMode}
+      />
+      <input
+        placeholder="Achievement 2 Heading"
+        name="achievement2Heading"
+        value={sectionDataSingle.achievement2Heading || ""}
+        onChange={handleInputChange}
+        disabled={!editMode}
+      />
+      <input
+        placeholder="Achievement 3 Number"
+        name="achievement3Numbers"
+        value={sectionDataSingle.achievement3Numbers || ""}
+        onChange={handleInputChange}
+        disabled={!editMode}
+      />
+      <input
+        placeholder="Achievement 3 Heading"
+        name="achievement3Heading"
+        value={sectionDataSingle.achievement3Heading || ""}
         onChange={handleInputChange}
         disabled={!editMode}
       />
@@ -100,4 +148,4 @@ let HomeTop = () => {
   );
 };
 
-export default HomeTop;
+export default AboutAchievement;

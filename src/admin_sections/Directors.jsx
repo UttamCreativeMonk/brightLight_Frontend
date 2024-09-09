@@ -4,8 +4,31 @@ import editIcon from "../assets/edit.png";
 import deleteIcon from "../assets/delete.png";
 import update from "../assets/update.png";
 
-let MemberOf = () => {
-  let [sectionDataSingle, setSectionDataSingle] = useState({});
+let Directors = () => {
+  let [sectionDataSingle, setSectionDataSingle] = useState({
+    img: "",
+    heading: "",
+    d1image: "",
+    d1name: "",
+    d1designation: "",
+    d1description: "",
+    d2image: "",
+    d2name: "",
+    d2designation: "",
+    d2description: "",
+    d3image: "",
+    d3name: "",
+    d3designation: "",
+    d3description: "",
+    d4image: "",
+    d4name: "",
+    d4designation: "",
+    d4description: "",
+    d5image: "",
+    d5name: "",
+    d5designation: "",
+    d5description: "",
+  });
   let [editMode, setEditMode] = useState(false);
 
   const handleInputChange = (e) => {
@@ -42,7 +65,7 @@ let MemberOf = () => {
     }
 
     fetch(
-      `https://brightlight-node.onrender.com/member-of/${sectionDataSingle._id}`,
+      `https://brightlight-node.onrender.com/directors/${sectionDataSingle._id}`,
       {
         method: "PUT",
         headers: {
@@ -52,17 +75,19 @@ let MemberOf = () => {
       }
     )
       .then((response) => response.json())
-      .then(() => {
+      .then((data) => {
+        console.log("Update Response:", data);
         alert("Update Successful");
         setEditMode(false);
       })
-      .catch(() => {
+      .catch((error) => {
+        console.error("Error updating data:", error);
         alert("Update Failed");
       });
   };
 
   useEffect(() => {
-    fetch("https://brightlight-node.onrender.com/member-of")
+    fetch("https://brightlight-node.onrender.com/directors")
       .then((res) => res.json())
       .then((data) => {
         if (data && data.length > 0) {
@@ -76,22 +101,42 @@ let MemberOf = () => {
 
   return (
     <div className={styles.singleSectionData}>
-      {/* Form fields for editing */}
-      {[1, 2, 3].map((num) => (
-        <div key={num}>
+      <input
+        placeholder="Heading"
+        name="heading"
+        value={sectionDataSingle.heading || ""}
+        onChange={handleInputChange}
+        disabled={!editMode}
+      />
+      {Array.from({ length: 5 }, (_, index) => index + 1).map((num) => (
+        <div key={num} className={styles.directorItem}>
           <input
-            placeholder={`Heading ${num}`}
-            name={`heading${num}`}
-            value={sectionDataSingle[`heading${num}`] || ""}
+            placeholder={`Director ${num} Name`}
+            name={`d${num}name`}
+            value={sectionDataSingle[`d${num}name`] || ""}
+            onChange={handleInputChange}
+            disabled={!editMode}
+          />
+          <input
+            placeholder={`Director ${num} Designation`}
+            name={`d${num}designation`}
+            value={sectionDataSingle[`d${num}designation`] || ""}
+            onChange={handleInputChange}
+            disabled={!editMode}
+          />
+          <textarea
+            placeholder={`Director ${num} Description`}
+            name={`d${num}description`}
+            value={sectionDataSingle[`d${num}description`] || ""}
             onChange={handleInputChange}
             disabled={!editMode}
           />
           <img
             className={styles.existingImageSmall}
-            src={sectionDataSingle[`heading${num}Img`]}
+            src={sectionDataSingle[`d${num}image`] || ""}
           />
           <input
-            name={`heading${num}Img`}
+            name={`d${num}image`}
             type="file"
             onChange={handleInputChange}
             disabled={!editMode}
@@ -100,14 +145,12 @@ let MemberOf = () => {
       ))}
       <div className={styles.editIcons}>
         {editMode ? (
-          <>
-            <img
-              src={update}
-              className={styles.updateIcon}
-              onClick={handleUpdateClick}
-              alt="Update"
-            />
-          </>
+          <img
+            src={update}
+            className={styles.updateIcon}
+            onClick={handleUpdateClick}
+            alt="Update"
+          />
         ) : (
           <img
             src={editIcon}
@@ -122,4 +165,4 @@ let MemberOf = () => {
   );
 };
 
-export default MemberOf;
+export default Directors;
