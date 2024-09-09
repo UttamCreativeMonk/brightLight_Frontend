@@ -150,58 +150,7 @@ let PrRenewal = () => {
         </div>
       </div>
 
-      <div className={styles.section} id="faqs">
-        <h2 className={styles.sectionTitle}>FAQs Made Simple</h2>
-        <div className={styles.faq}>
-          <div className={styles.faqItem}>
-            <strong>Q. When should I renew my PR card?</strong>
-            <p>
-              A. You should renew your PR card at least 90 days before it
-              expires.
-            </p>
-          </div>
-          <div className={styles.faqItem}>
-            <strong>Q. What documents do I need to renew my PR card?</strong>
-            <p>
-              A. The documents you need to renew your PR card include a copy of
-              your current PR card, passport, proof of residence, and proof of
-              identity.
-            </p>
-          </div>
-          <div className={styles.faqItem}>
-            <strong>Q. How much does it cost to renew my PR card?</strong>
-            <p>
-              A. The application fee is $50 for adults and $25 for children
-              under 18.
-            </p>
-          </div>
-          <div className={styles.faqItem}>
-            <strong>Q. How long does it take to renew my PR card?</strong>
-            <p>
-              A. Processing time is typically 6-8 weeks, but urgent applications
-              may be processed within 2 weeks.
-            </p>
-          </div>
-          <div className={styles.faqItem}>
-            <strong>
-              Q. What if I need to travel outside of Canada before my PR card is
-              renewed?
-            </strong>
-            <p>
-              A. You can travel with your valid PR card until 60 days after the
-              new card is issued. If you leave before issuance, you will need a
-              PRTD to return.
-            </p>
-          </div>
-          <div className={styles.faqItem}>
-            <strong>Q. What if my PR card is lost or stolen?</strong>
-            <p>
-              A. Apply for a replacement PR card. The process is similar to
-              renewal, with an additional fee of $35.
-            </p>
-          </div>
-        </div>
-      </div>
+
 
       {/* <Footer1/> */}
     </>

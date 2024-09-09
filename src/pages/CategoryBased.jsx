@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/CategoryBased.module.css";
-import ServiceImg from "../assets/service-data-image.webp";
 import GirlVisa from "../assets/GirlVisa.png";
 import LinkAncor from "../assets/link-arrows.png";
 import BestChoice from "../sections/BestChoice";
@@ -8,39 +7,39 @@ import Testimonials from "../sections/Testimonials";
 import FAQ from "../sections/FAQ";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
-import RecentBlogs from "../sections/RecentBlogs";
 
-const CategoryBased = () => {
+let CategoryBased = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  let [data, setData] = useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/category-based")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data && data[0]) {
+          setData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  },[]);
   return (
     <>
       <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div className={styles.bannerHeading}>
-            <h1>Category Based Draws</h1>
-            <p>
-              If you're a qualified professional in healthcare, STEM fields,
-              trades, transport or agriculture, French speaker or working in
-              agriculture then this could be your chance to make Canada your new
-              home. Category-Based Draws offer lower CRS score cut-offs, meaning
-              you may receive an invitation to apply for permanent residence
-              sooner than you might under the standard Express Entry process.
-            </p>
+            <h1>{data?.heading}</h1>
+            <p>{data?.description}</p>
           </div>
-
+          {/* // */}
           <div
             className={`${styles.bannerHeadingRotateParent} ${
               isDropdownOpen ? styles.active : ""
@@ -53,296 +52,276 @@ const CategoryBased = () => {
               <h3>QUICK ACCESS</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-the-program")}>
-                About the program
-              </p>
-              <p onClick={() => scrollToSection("benefits")}>Benefits</p>
-              <p onClick={() => scrollToSection("categories")}>Categories</p>
-              <p onClick={() => scrollToSection("how-it-works")}>
-                How it Works
-              </p>
-              <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("draw-history")}>
-                Draw History
-              </p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply
-              </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>
-                Refusal Reasons
-              </p>
-              <p onClick={() => scrollToSection("book-appointment")}>
-                Book Appointment
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
-              <p onClick={() => scrollToSection("faqs")}>FAQs</p>
-              <p onClick={() => scrollToSection("blogs")}>Blogs</p>
+              <p>About the program</p>
+              <p>Benefits</p>
+              <p>Categories</p>
+              <p>How it Works</p>
+              <p>Eligibility</p>
+              <p>Draw History</p>
+              <p>How to Apply</p>
+              <p>Refusal Reasons</p>
+              <p>Book Appointment</p>
+              <p>Why Choose Us</p>
+              <p>Testimonials</p>
+              <p>FAQs</p>
+              <p>Blogs</p>
             </div>
           </div>
+          {/* // */}
         </div>
       </div>
 
-      <div className={styles.canadianParent} id="about-the-program">
+      <div className={styles.canadianParent}>
         <div className={styles.canadianContent}>
-          <h1>Introduction to Program</h1>
-          <p>
-            Category-based draws are an additional type of Express Entry draw.
-            These draws target specific groups of Express Entry candidates who
-            possess certain skills, qualifications, or experience that are in
-            high demand in Canada's labor market. By focusing on specific
-            categories, the Canadian government plans to attract highly skilled
-            and qualified individuals to fill labor shortages and contribute to
-            the country's economic growth.
-          </p>
+          <h1>{data?.aboutHeading}</h1>
+          <p>{data?.aboutDescription}</p>
         </div>
 
         <div className={styles.canadianImg}>
-          <img src={ServiceImg} alt="err" />
+          <img src={data?.aboutImage} />
         </div>
       </div>
 
-      <div className={styles.eligibleParent} id="benefits">
-        <h1>Here are the 6 Categories of Category based draws:</h1>
+      <div className={styles.eligibleParent}>
+        <h1>{data?.drawsHeading}</h1>
         <div className={styles.container}>
           <div className={styles.column}>
             <ul>
-              <li>French-Language proficiency</li>
-              <li>
-                Science, Technology, Engineering, and Math (STEM) occupations
-              </li>
-              <li>Transport Occupations</li>
+              <li>{data?.draw1}</li>
+              <li>{data?.draw2}</li>
+              <li>{data?.draw3}</li>
+              <li>{data?.draw8}</li>
             </ul>
           </div>
           <div className={styles.column}>
             <ul>
-              <li>Healthcare occupations</li>
-              <li>Trade Occupations</li>
-              <li>Agriculture and agri-food occupations</li>
+              <li>{data?.draw4}</li>
+              <li>{data?.draw5}</li>
+              <li>{data?.draw6}</li>
+              <li>{data?.draw7}</li>
             </ul>
           </div>
         </div>
       </div>
 
-      <div className={styles.categoryBasedParent} id="how-it-works">
+      <div className={styles.categoryBasedParent}>
         <div className={styles.categoryBasedMain}>
-          <h1>So how does category-based draws work?</h1>
+          <h1>{data?.workHeading}</h1>
           <div className={styles.categoryBasedContentParent}>
             <div className={styles.categoryBasedContent}>
-              <p>
-                Category-based draws are conducted separately from regular
-                Express Entry draws, which typically invite candidates based on
-                their Comprehensive Ranking System (CRS) score. Instead,
-                category-based draws target specific groups of candidates based
-                on their qualifications, such as work experience in healthcare,
-                French language proficiency, or STEM (Science, Technology,
-                Engineering, and Mathematics) skills.
-              </p>
+              <p>{data?.workDescription}</p>
             </div>
             <div className={styles.categoryBasedImg}>
-              <img src={GirlVisa} alt="logo" />
+              <img src={GirlVisa} />
             </div>
           </div>
         </div>
       </div>
 
-      <div className={styles.eligibilityParent} id="eligibility">
+      <div className={styles.eligibilityParent}>
         <div className={styles.eligibilityMain}>
-          <h1>Eligibility for the program</h1>
-          <h3>Are you eligible for a Category Based draw? Let's find out</h3>
+          <h1>{data?.eligibilityHeading}</h1>
+          <h3>{data?.eligibilitySubHeading}</h3>
 
           <p className={styles.eligibilityPara}>
-            To be eligible for a category-based draw, you must meet all the
-            requirements specified by IRCC for that particular category. Once a
-            category-based draw is announced, IRCC will rank eligible candidates
-            in the Express Entry pool based on their CRS score and select the
-            highest-ranked candidates to receive invitations to apply (ITAs) for
-            permanent residence. The eligibility requirements for category-based
-            draws vary depending on the specific category. However, here are
-            some general eligibility criteria that apply to all categories.
-            These include:
+            {data?.eligibilityDescription}
           </p>
 
           <div className={styles.cardWrapper}>
-            <div className={styles.card}>
-              <p>You must have a valid Express Entry Profile</p>
-            </div>
-            <div className={styles.card}>
-              <p>
-                You must meet the language proficiency requirements for the
-                selected category.
-              </p>
-            </div>
-            <div className={styles.card}>
-              <p>Have relevant work experience in the selected category.</p>
-            </div>
-            <div className={styles.card}>
-              <p>
-                You must meet the educational requirements for the selected
-                category.
-              </p>
-            </div>
+            {data?.e1 ? (
+              <div className={styles.card}>
+                <p>{data?.e1}</p>
+              </div>
+            ) : null}
+            {data?.e2 ? (
+              <div className={styles.card}>
+                <p>{data?.e2}</p>
+              </div>
+            ) : null}
+
+            {data?.e3 ? (
+              <div className={styles.card}>
+                <p>{data?.e3}</p>
+              </div>
+            ) : null}
+
+            {data?.e4 ? (
+              <div className={styles.card}>
+                <p>{data?.e4}</p>
+              </div>
+            ) : null}
           </div>
         </div>
       </div>
 
-      <div className={styles.benifitParent} id="benefits">
+      <div className={styles.benifitParent}>
         <div className={styles.benifitMain}>
-          <h1>Did we mention the benefits?</h1>
-          <h1>Here they are</h1>
+          {data?.benefitsHeading ? <h1>{data?.benefitsHeading}</h1> : null}
 
           <div className={styles.benifitlistParent}>
             <ul>
-              <li>
-                Your chances of getting an ITA is Increased. By focusing on
-                specific groups of candidates, category-based draws often have
-                lower CRS cut-offs compared to general Express Entry draws. This
-                means that candidates with lower CRS scores may still have a
-                chance of receiving an ITA.
-              </li>
-              <li>
-                It is a faster pathway to Canadian Permanent Residence. Once
-                you're selected through a category-based draw, you can proceed
-                directly to the application stage for permanent residence,
-                shortening the overall immigration process.
-              </li>
-              <li>
-                Opportunities for skilled professionals category-based draws are
-                in demand. This means you'll have a clear path to pursue your
-                career in Canada. Whether you're a healthcare worker, a skilled
-                trades person, or an expert in STEM fields, Canada welcomes your
-                talents.
-              </li>
+              {data?.b1 ? <li>{data?.b1}</li> : null}
+              {data?.b2 ? <li>{data?.b2}</li> : null}
+              {data?.b3 ? <li>{data?.b3}</li> : null}
+              {data?.b4 ? <li>{data?.b4}</li> : null}
             </ul>
           </div>
         </div>
       </div>
 
-      <div className={styles.howApplyParent} id="how-to-apply">
+      <div className={styles.howApplyParent}>
         <div className={styles.howApplyMain}>
-          <h1>How to Apply?</h1>
-          <h4>
-            Meet the eligibility criteria? Let's see how you can apply for a
-            category-based draw
-          </h4>
+          {data?.applyHeading ? <h1>{data?.applyHeading}</h1> : null}
+          {data?.applyDescription ? <h4>{data?.applyDescription}</h4> : null}
 
           <div className={styles.stepsGrid}>
             <div className={styles.step}>
-              <div className={styles.headerLineParent}>
-                <div className={styles.headingNumbers}>1</div>
-                <p></p>
-              </div>
-              <div className={styles.stepContent}>
-                <p>
-                  Create an Express Entry profile first. Or even better and
-                  stress-free solution, let us handle your case for you.{" "}
-                  <a href="#">Click here</a>
-                </p>
-              </div>
+              {data?.a1 ? (
+                <>
+                  <div className={styles.headerLineParent}>
+                    <div className={styles.headingNumbers}>1</div>
+                    <p></p>
+                  </div>
+                  <div
+                    className={styles.stepContent}
+                    onClick={
+                      data?.a1l ? (window.location.href = data?.a1l) : null
+                    }
+                    style={{
+                      cursor: data?.a1l ? "pointer" : "none",
+                    }}
+                  >
+                    <p>{data?.a1}</p>
+                  </div>
+                </>
+              ) : null}
             </div>
             <div className={styles.step}>
-              <div className={styles.headerLineParent}>
-                <div className={styles.headingNumbers}>2</div>
-                <p></p>
-              </div>
-              <div className={styles.stepContent}>
-                <p>
-                  Next, IRCC conducts draws irregularly, so keep a check on the
-                  official website or <a href="#">Click here</a> for a prompt
-                  notification.
-                </p>
-              </div>
+              {data?.a2 ? (
+                <>
+                  <div className={styles.headerLineParent}>
+                    <div className={styles.headingNumbers}>2</div>
+                    <p></p>
+                  </div>
+                  <div
+                    className={styles.stepContent}
+                    onClick={
+                      data?.a2l ? (window.location.href = data?.a2l) : null
+                    }
+                    style={{
+                      cursor: data?.a2l ? "pointer" : "none",
+                    }}
+                  >
+                    <p>{data?.a2}</p>
+                  </div>
+                </>
+              ) : null}
             </div>
             <div className={styles.step}>
-              <div className={styles.headerLineParent}>
-                <div className={styles.headingNumbers}>3</div>
-                <p></p>
-              </div>
-              <div className={styles.stepContent}>
-                <p>
-                  The higher your score, the more likely you are to get an ITA.
-                  Improve language skills, gain work experience, and get a
-                  higher education.
-                </p>
-              </div>
+              {data?.a3 ? (
+                <>
+                  <div className={styles.headerLineParent}>
+                    <div className={styles.headingNumbers}>3</div>
+                    <p></p>
+                  </div>
+                  <div
+                    className={styles.stepContent}
+                    onClick={
+                      data?.a3l ? (window.location.href = data?.a3l) : null
+                    }
+                    style={{
+                      cursor: data?.a3l ? "pointer" : "none",
+                    }}
+                  >
+                    <p>{data?.a3}</p>
+                  </div>
+                </>
+              ) : null}
             </div>
             <div className={styles.step}>
-              <div className={styles.headerLineParent}>
-                <div className={styles.headingNumbers}>4</div>
-                <p></p>
-              </div>
-              <div className={styles.stepContent}>
-                <p>
-                  If you meet the criteria and have a high enough score, you
-                  will get an ITA to apply for permanent residence.
-                </p>
-              </div>
+              {data?.a4 ? (
+                <>
+                  <div className={styles.headerLineParent}>
+                    <div className={styles.headingNumbers}>4</div>
+                    <p></p>
+                  </div>
+                  <div
+                    className={styles.stepContent}
+                    onClick={
+                      data?.a4l ? (window.location.href = data?.a4l) : null
+                    }
+                    style={{
+                      cursor: data?.a4l ? "pointer" : "none",
+                    }}
+                  >
+                    <p>{data?.a4}</p>
+                  </div>
+                </>
+              ) : null}
             </div>
             <div className={styles.step}>
-              <div className={styles.headerLineParent}>
-                <div className={styles.headingNumbers}>5</div>
-                <p></p>
-              </div>
-              <div className={styles.stepContent}>
-                <p>
-                  You'll have 60 days to submit your complete application,
-                  including documents like identity proof, language test
-                  results, and work experience verification.
-                </p>
-              </div>
+              {data?.a5 ? (
+                <>
+                  <div className={styles.headerLineParent}>
+                    <div className={styles.headingNumbers}>5</div>
+                    <p></p>
+                  </div>
+                  <div
+                    className={styles.stepContent}
+                    onClick={
+                      data?.a5l ? (window.location.href = data?.a5l) : null
+                    }
+                    style={{
+                      cursor: data?.a5l ? "pointer" : "none",
+                    }}
+                  >
+                    <p>{data?.a5}</p>
+                  </div>
+                </>
+              ) : null}
             </div>
             <div className={styles.step}>
-              <div className={styles.headerLineParent}>
-                <div className={styles.headingNumbers}>6</div>
-                <p></p>
-              </div>
-              <div className={styles.stepContent}>
-                <p>
-                  Once your application is approved, you will receive a
-                  Confirmation of Permanent Residence (COPR), allowing you to
-                  live and work in Canada permanently.
-                </p>
-              </div>
+              {data?.a6 ? (
+                <>
+                  <div className={styles.headerLineParent}>
+                    <div className={styles.headingNumbers}>6</div>
+                    <p></p>
+                  </div>
+                  <div
+                    className={styles.stepContent}
+                    onClick={
+                      data?.a6l ? (window.location.href = data?.a6l) : null
+                    }
+                    style={{
+                      cursor: data?.a6l ? "pointer" : "none",
+                    }}
+                  >
+                    <p>{data?.a6}</p>
+                  </div>
+                </>
+              ) : null}
             </div>
+            {/* / */}
           </div>
+          {/* // */}
         </div>
       </div>
 
-      <div className={styles.refusalParent} id="refusal-reasons">
+      <div className={styles.refusalParent}>
         <div className={styles.refusalMain}>
-          <h1>Reasons of Refusal</h1>
-          <h3>
-            Don't forget to avoid these common category-based draw refusal
-            reasons and increase your chances of approval.
-          </h3>
+          {data?.refusalHeading ? <h1>{data?.refusalHeading}</h1> : null}
+          {data?.refusalDescription ? (
+            <h3>{data?.refusalDescription}</h3>
+          ) : null}
 
           <div className={styles.refusalListParent}>
             <ul>
-              <li>
-                Your applicant does not meet the eligibility criteria for the
-                program you are applying for. The eligibility criteria vary
-                depending on the program, but they typically include age,
-                education, work experience, language proficiency, and financial
-                resources.
-              </li>
-              <li>
-                You shared inaccurate and incomplete information on your Express
-                Entry profile.
-              </li>
-              <li>
-                You have failed to meet the minimum language requirements for
-                the program you are applying for.
-              </li>
-              <li>Your CRS Score is not high enough.</li>
-              <li>
-                Failed to submit all of the required documentation with your
-                application.
-              </li>
-              <li>
-                You have a medical condition that could pose a health risk to
-                yourself or others.
-              </li>
+              {data?.r1 ? <li>{data?.r1}</li> : null}
+              {data?.r2 ? <li>{data?.r2}</li> : null}
+              {data?.r3 ? <li>{data?.r3}</li> : null}
+              {data?.r4 ? <li>{data?.r4}</li> : null}
+              {data?.r5 ? <li>{data?.r5}</li> : null}
+              {data?.r6 ? <li>{data?.r6}</li> : null}
             </ul>
           </div>
         </div>
@@ -350,9 +329,9 @@ const CategoryBased = () => {
 
       <div className={styles.theButtonAncorParent}>
         <div className={styles.theButtonAncor}>
-          <a href="/">
+          <a href={data?.drawHeadingLink}>
             <button>
-              Express Entry Category Based Draws History{" "}
+              {data?.drawHeadingBottom}{" "}
               <span className={styles.theButtonSpan}>
                 <img src={LinkAncor} alt="err" />
               </span>
@@ -361,38 +340,18 @@ const CategoryBased = () => {
         </div>
       </div>
 
-      <div className={styles.appointementParent} id="book-appointment">
+      <div className={styles.appointementParent}>
         <div className={styles.appointementMain}>
-          <h1>Book Appointment</h1>
-          <h5>In Case</h5>
-          <p>
-            You have received a refusal for any of the reasons mentioned above
-            or having doubts regarding your case and application, do not worry.
-            With over a decade of experience, we specialize in handling Express
-            Entry Programs. Our approval rate for these programs are near to
-            100%. We achieve this with a tailored approach to your specific
-            case. We use case law and find similar cases to your circumstances
-            that had positive results, and we use them as precedents in cases we
-            work on. This is why we have a high success rate. At Brightlight
-            Immigration, we have a dedicated team of visa application
-            specialists who can assist you from the start of the application
-            process all the way to obtaining your PR. Start your process now.
-          </p>
+          {data?.bookHeading ? <h1>{data?.bookHeading}</h1> : null}
+
+          {data?.bookSubHeading ? <h5>{data?.bookSubHeading}</h5> : null}
+          {data?.bookDescription ? <h1>{data?.bookDescription}</h1> : null}
         </div>
       </div>
-
       <BestChoice />
-      <div id="testimonials">
-        <Testimonials />
-      </div>
+      <Testimonials />
+      <FAQ />
 
-      <div id="faqs">
-        <FAQ />
-      </div>
-
-      <div id="blogs">
-        <RecentBlogs/>
-      </div>
       <Footer1 />
     </>
   );

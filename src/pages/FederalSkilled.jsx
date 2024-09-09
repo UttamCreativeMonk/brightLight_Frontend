@@ -1,53 +1,107 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/FederalSkilled.module.css";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
 
 const FederalSkilled = () => {
   const [languagePoints, setLanguagePoints] = useState(0);
+  let [listeningPoints, setListeningPoints] = useState(0);
+  let [readingPoints, setReadingPoints] = useState(0);
+  let [writingPoints, setWritingPoints] = useState(0);
   const [educationPoints, setEducationPoints] = useState(0);
   const [agePoints, setAgePoints] = useState(0);
   const [clb5Points, setClb5Points] = useState(0);
   const [employmentPoints, setEmploymentPoints] = useState(0);
   const [experiencePoints, setExperiencePoints] = useState(0);
   const [adaptabilityPoints, setAdaptabilityPoints] = useState(0);
+  let [data, setData] = useState([]);
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/federal-skilled")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   const handleLanguageChange = (e) => {
     const value = e.target.value;
     let points = 0;
 
-    if (value === "clb9") points = 24;
-    else if (value === "clb8") points = 22;
-    else if (value === "clb7") points = 20;
-    else if (value === "belowClb7") points = 0;
+    if (value === "1") points = Math.floor(data.fsq1o1p);
+    else if (value === "2") points = Math.floor(data.fsq1o2p);
+    else if (value === "3") points = Math.floor(data.fsq1o3p);
+    else if (value === "4") points = Math.floor(data.fsq1o4p);
 
     setLanguagePoints(points);
+  };
+
+  const handleListeningChange = (e) => {
+    const value = e.target.value;
+    let points = 0;
+
+    if (value === "1") points = Math.floor(data.fsq2o1p);
+    else if (value === "2") points = Math.floor(data.fsq2o2p);
+    else if (value === "3") points = Math.floor(data.fsq2o3p);
+    else if (value === "4") points = Math.floor(data.fsq2o4p);
+
+    setListeningPoints(points);
+  };
+
+  const handleReadingChange = (e) => {
+    const value = e.target.value;
+    let points = 0;
+
+    if (value === "1") points = Math.floor(data.fsq3o1p);
+    else if (value === "2") points = Math.floor(data.fsq3o2p);
+    else if (value === "3") points = Math.floor(data.fsq3o3p);
+    else if (value === "4") points = Math.floor(data.fsq3o4p);
+
+    setReadingPoints(points);
+  };
+
+  const handleWritingChange = (e) => {
+    const value = e.target.value;
+    let points = 0;
+
+    if (value === "1") points = Math.floor(data.fsq4o1p);
+    else if (value === "2") points = Math.floor(data.fsq4o2p);
+    else if (value === "3") points = Math.floor(data.fsq4o3p);
+    else if (value === "4") points = Math.floor(data.fsq4o4p);
+
+    setWritingPoints(points);
   };
 
   const handleEducationChange = (e) => {
     const educationValue = e.target.value;
 
     switch (educationValue) {
-      case "doctoral":
-        setEducationPoints(25);
+      case "1":
+        setEducationPoints(Math.floor(data.tsq1o1p));
         break;
-      case "masters":
-        setEducationPoints(23);
+      case "2":
+        setEducationPoints(Math.floor(data.tsq1o2p));
         break;
-      case "twoOrMore":
-        setEducationPoints(22);
+      case "3":
+        setEducationPoints(Math.floor(data.tsq1o3p));
         break;
-      case "threeYearProgram":
-        setEducationPoints(21);
+      case "4":
+        setEducationPoints(Math.floor(data.tsq1o4p));
         break;
-      case "twoYearProgram":
-        setEducationPoints(19);
+      case "5":
+        setEducationPoints(Math.floor(data.tsq1o5p));
         break;
-      case "oneYearProgram":
-        setEducationPoints(15);
+      case "6":
+        setEducationPoints(Math.floor(data.tsq1o6p));
         break;
-      case "highSchool":
-        setEducationPoints(5);
+      case "7":
+        setEducationPoints(Math.floor(data.tsq1o7p));
         break;
       default:
         setEducationPoints(0);
@@ -59,20 +113,20 @@ const FederalSkilled = () => {
     const ageValue = e.target.value;
 
     switch (ageValue) {
-      case "lessThan18":
-        setAgePoints(0);
+      case "1":
+        setAgePoints(Math.floor(data?.fosq1o1p));
         break;
-      case "18-35":
-        setAgePoints(12);
+      case "2":
+        setAgePoints(Math.floor(data?.fosq1o2p));
         break;
-      case "36-47":
-        setAgePoints(11);
+      case "3":
+        setAgePoints(Math.floor(data?.fosq1o3p));
         break;
-      case "48-50":
-        setAgePoints(10);
+      case "4":
+        setAgePoints(Math.floor(data?.fosq1o4p));
         break;
-      case "51Plus":
-        setAgePoints(0);
+      case "5":
+        setAgePoints(Math.floor(data?.fosq1o5p));
         break;
       default:
         setAgePoints(0);
@@ -82,13 +136,15 @@ const FederalSkilled = () => {
 
   const handleClb5Change = (e) => {
     const value = e.target.value;
-    const points = value === "yes" ? 4 : 1;
+    const points =
+      value === "1" ? Math.floor(data.ssq1o1p) : Math.floor(data.ssq1o2p);
     setClb5Points(points);
   };
 
   const handleEmploymentChange = (e) => {
     const value = e.target.value;
-    const points = value === "yes" ? 10 : 0; // Assuming 10 points for arranged employment
+    const points =
+      value === "1" ? Math.floor(data.ffsq1o1p) : Math.floor(data.ffsq1o2p);
     setEmploymentPoints(points);
   };
 
@@ -97,17 +153,17 @@ const FederalSkilled = () => {
     let points = 0;
 
     switch (value) {
-      case "1Year":
-        points = 9;
+      case "1":
+        points = Math.floor(data.sxsq1o1p);
         break;
-      case "2-3Years":
-        points = 11;
+      case "2":
+        points = Math.floor(data.sxsq1o2p);
         break;
-      case "4-5Years":
-        points = 13;
+      case "3":
+        points = Math.floor(data.sxsq1o3p);
         break;
-      case "6Years":
-        points = 15;
+      case "4":
+        points = Math.floor(data.sxsq1o4p);
         break;
       default:
         points = 0;
@@ -122,26 +178,26 @@ const FederalSkilled = () => {
     let points = 0;
 
     switch (value) {
-      case "spouseLanguage":
-        points = 5;
+      case "1":
+        points = Math.floor(data.svsq1o1p);
         break;
-      case "yourStudy":
-        points = 5;
+      case "2":
+        points = Math.floor(data.svsq1o2p);
         break;
-      case "spouseStudy":
-        points = 5;
+      case "3":
+        points = Math.floor(data.svsq1o3p);
         break;
-      case "yourWork":
-        points = 5;
+      case "4":
+        points = Math.floor(data.svsq1o4p);
         break;
-      case "spouseWork":
-        points = 5;
+      case "5":
+        points = Math.floor(data.svsq1o5p);
         break;
-      case "arrangedEmployment":
-        points = 10;
+      case "6":
+        points = Math.floor(data.svsq1o6p);
         break;
-      case "relativesInCanada":
-        points = 5;
+      case "7":
+        points = Math.floor(data.svsq1o7p);
         break;
       default:
         points = 0;
@@ -153,6 +209,9 @@ const FederalSkilled = () => {
 
   const totalPoints =
     languagePoints +
+    listeningPoints +
+    readingPoints +
+    writingPoints +
     educationPoints +
     agePoints +
     clb5Points +
@@ -162,610 +221,655 @@ const FederalSkilled = () => {
 
   return (
     <>
-    <Navbar1/>
+      <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.bannerHeading}>
-          <h1>Federal Skilled Worker Program Calculator</h1>
-          <p>
-            To immigrate to Canada as a Federal Skilled Worker (FSW) under the
-            Express Entry Program, you are required to achieve a minimum score
-            of 67 points out of 100 points. If score is less than 67 points -
-            you do not qualify for federal skilled worker program. The points
-            are awarded for different factors also known as six selection
-            factors.
-          </p>
-          <p>
-            Points are calculated based on the information provided by the
-            client. Can X Immigration & Consulting Inc. does not hold any
-            responsibility form getting an ITA from IRCC.
-          </p>
+          {data && <h1>{data?.heading}</h1>}
+          {data && <p>{data?.description}</p>}
+          {data && <p>{data?.description2}</p>}
         </div>
       </div>
-
 
       <div className={styles.containerParent}>
-      <div className={styles.firstSection}>
-      <div className={styles.container}>
-        <div className={styles.header}>
-          <div className={styles.headerLineParent}>
-            <div>1</div>
-            <p className={styles.headerLineParentPara}></p> <h3>First Official Language (Max. 24 Points)</h3>
-          </div>
-          {/* First Official Language (Max. 24 Points) */}
-        </div>
+        <div className={styles.firstSection}>
+          <div className={styles.container}>
+            <div className={styles.header}>
+              <div className={styles.headerLineParent}>
+                <div>1</div>
+                <p className={styles.headerLineParentPara}></p>{" "}
+                {data && <h3>{data?.firstSectionHeading}</h3>}
+              </div>
+            </div>
 
-        <div className={styles.radioGroup}>
-          <div className={styles.subHeader}>
-            <h4>Speaking (CLB Level)</h4>
-          </div>
-          <div className={styles.radioItem}>
-            <label>
-              <input
-                type="radio"
-                name="speaking"
-                value="clb9"
-                onChange={handleLanguageChange}
-              />{" "}
-              CLB 9 and Higher
-            </label>
-          </div>
-          <div className={styles.radioItem}>
-            <label>
-              <input
-                type="radio"
-                name="speaking"
-                value="clb8"
-                onChange={handleLanguageChange}
-              />{" "}
-              CLB 8
-            </label>
-          </div>
-          <div className={styles.radioItem}>
-            <label>
-              <input
-                type="radio"
-                name="speaking"
-                value="clb7"
-                onChange={handleLanguageChange}
-              />{" "}
-              CLB 7
-            </label>
-          </div>
-          <div className={styles.radioItem}>
-            <label>
-              <input
-                type="radio"
-                name="speaking"
-                value="belowClb7"
-                onChange={handleLanguageChange}
-              />{" "}
-              Below CLB 7
-            </label>
-          </div>
-        </div>
+            <div className={styles.radioGroup}>
+              <div className={styles.subHeader}>
+                {data && <h4>{data?.fsq1}</h4>}
+              </div>
+              <div className={styles.radioItem}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="1"
+                      onChange={handleLanguageChange}
+                    />{" "}
+                    {data.fsq1o1}
+                  </label>
+                )}
+              </div>
+              <div className={styles.radioItem}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="2"
+                      onChange={handleLanguageChange}
+                    />{" "}
+                    {data.fsq1o2}
+                  </label>
+                )}
+              </div>
+              <div className={styles.radioItem}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="3"
+                      onChange={handleLanguageChange}
+                    />{" "}
+                    {data.fsq1o3}
+                  </label>
+                )}
+              </div>
+              <div className={styles.radioItem}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="4"
+                      onChange={handleLanguageChange}
+                    />{" "}
+                    {data.fsq1o4}
+                  </label>
+                )}
+              </div>
+            </div>
 
-        <div className={styles.radioGroup}>
-          <div className={styles.subHeader}>
-            <h4>Listening (CLB Level)</h4>
-          </div>
-          <div className={styles.radioItem}>
-            <label>
-              <input
-                type="radio"
-                name="listening"
-                value="clb9"
-                onChange={handleLanguageChange}
-              />{" "}
-              CLB 9 and Higher
-            </label>
-          </div>
-          <div className={styles.radioItem}>
-            <label>
-              <input
-                type="radio"
-                name="listening"
-                value="clb8"
-                onChange={handleLanguageChange}
-              />{" "}
-              CLB 8
-            </label>
-          </div>
-          <div className={styles.radioItem}>
-            <label>
-              <input
-                type="radio"
-                name="listening"
-                value="clb7"
-                onChange={handleLanguageChange}
-              />{" "}
-              CLB 7
-            </label>
-          </div>
-          <div className={styles.radioItem}>
-            <label>
-              <input
-                type="radio"
-                name="listening"
-                value="belowClb7"
-                onChange={handleLanguageChange}
-              />{" "}
-              Below CLB 7
-            </label>
-          </div>
-        </div>
+            <div className={styles.radioGroup}>
+              <div className={styles.subHeader}>
+                {data && <h4>{data?.fsq2}</h4>}
+              </div>
+              <div className={styles.radioItem}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="1"
+                      onChange={handleListeningChange}
+                    />{" "}
+                    {data.fsq2o1}
+                  </label>
+                )}
+              </div>
+              <div className={styles.radioItem}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="2"
+                      onChange={handleListeningChange}
+                    />{" "}
+                    {data.fsq2o2}
+                  </label>
+                )}
+              </div>
+              <div className={styles.radioItem}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="3"
+                      onChange={handleListeningChange}
+                    />{" "}
+                    {data.fsq2o3}
+                  </label>
+                )}
+              </div>
+              <div className={styles.radioItem}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="4"
+                      onChange={handleListeningChange}
+                    />{" "}
+                    {data.fsq2o4}
+                  </label>
+                )}
+              </div>
+            </div>
 
-        <div className={styles.radioGroup}>
-          <div className={styles.subHeader}>
-            <h4>Reading (CLB Level)</h4>
-          </div>
-          <div className={styles.radioItem}>
-            <label>
-              <input
-                type="radio"
-                name="reading"
-                value="clb9"
-                onChange={handleLanguageChange}
-              />{" "}
-              CLB 9 and Higher
-            </label>
-          </div>
-          <div className={styles.radioItem}>
-            <label>
-              <input
-                type="radio"
-                name="reading"
-                value="clb8"
-                onChange={handleLanguageChange}
-              />{" "}
-              CLB 8
-            </label>
-          </div>
-          <div className={styles.radioItem}>
-            <label>
-              <input
-                type="radio"
-                name="reading"
-                value="clb7"
-                onChange={handleLanguageChange}
-              />{" "}
-              CLB 7
-            </label>
-          </div>
-          <div className={styles.radioItem}>
-            <label>
-              <input
-                type="radio"
-                name="reading"
-                value="belowClb7"
-                onChange={handleLanguageChange}
-              />{" "}
-              Below CLB 7
-            </label>
-          </div>
-        </div>
+            <div className={styles.radioGroup}>
+              <div className={styles.subHeader}>
+                {data && <h4>{data?.fsq3}</h4>}
+              </div>
+              <div className={styles.radioItem}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="1"
+                      onChange={handleReadingChange}
+                    />{" "}
+                    {data.fsq3o1}
+                  </label>
+                )}
+              </div>
+              <div className={styles.radioItem}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="2"
+                      onChange={handleReadingChange}
+                    />{" "}
+                    {data.fsq3o2}
+                  </label>
+                )}
+              </div>
+              <div className={styles.radioItem}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="3"
+                      onChange={handleReadingChange}
+                    />{" "}
+                    {data.fsq3o3}
+                  </label>
+                )}
+              </div>
+              <div className={styles.radioItem}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="4"
+                      onChange={handleReadingChange}
+                    />{" "}
+                    {data.fsq3o4}
+                  </label>
+                )}
+              </div>
+            </div>
 
-        <div className={styles.radioGroup}>
-          <div className={styles.subHeader}>
-            <h4>Writing (CLB Level)</h4>
+            <div className={styles.radioGroup}>
+              <div className={styles.subHeader}>
+                {data && <h4>{data?.fsq4}</h4>}
+              </div>
+              <div className={styles.radioItem}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="1"
+                      onChange={handleWritingChange}
+                    />{" "}
+                    {data.fsq4o1}
+                  </label>
+                )}
+              </div>
+              <div className={styles.radioItem}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="2"
+                      onChange={handleWritingChange}
+                    />{" "}
+                    {data.fsq4o2}
+                  </label>
+                )}
+              </div>
+              <div className={styles.radioItem}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="3"
+                      onChange={handleWritingChange}
+                    />{" "}
+                    {data.fsq4o3}
+                  </label>
+                )}
+              </div>
+              <div className={styles.radioItem}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="4"
+                      onChange={handleWritingChange}
+                    />{" "}
+                    {data.fsq4o4}
+                  </label>
+                )}
+              </div>
+            </div>
           </div>
-          <div className={styles.radioItem}>
-            <label>
-              <input
-                type="radio"
-                name="writing"
-                value="clb9"
-                onChange={handleLanguageChange}
-              />{" "}
-              CLB 9 and Higher
-            </label>
-          </div>
-          <div className={styles.radioItem}>
-            <label>
-              <input
-                type="radio"
-                name="writing"
-                value="clb8"
-                onChange={handleLanguageChange}
-              />{" "}
-              CLB 8
-            </label>
-          </div>
-          <div className={styles.radioItem}>
-            <label>
-              <input
-                type="radio"
-                name="writing"
-                value="clb7"
-                onChange={handleLanguageChange}
-              />{" "}
-              CLB 7
-            </label>
-          </div>
-          <div className={styles.radioItem}>
-            <label>
-              <input
-                type="radio"
-                name="writing"
-                value="belowClb7"
-                onChange={handleLanguageChange}
-              />{" "}
-              Below CLB 7
-            </label>
-          </div>
-        </div>
-        {/* 
-        <div className={styles.points}>
-          Points <input type="text" value={languagePoints} readOnly />
-        </div> */}
-      </div>
 
-      <div className={styles.container}>
-        <div className={styles.header}>
-          <div className={styles.headerLineParent}>
-            <div>2</div>
-            <p className={styles.headerLineParentPara}></p> <h3>Do you have at least CLB 5 in all abilities?</h3>
-          </div>
-          {/* 2. Do you have at least CLB 5 in all abilities? */}
-        </div>
-        <div className={styles.radioGroup3}>
-          <div className={styles.radioItem}>
-            <label>
-              <input
-                type="radio"
-                name="clb5"
-                value="yes"
-                onChange={handleClb5Change}
-              />{" "}
-              Yes 
-            </label>
-          </div>
-          <div className={styles.radioItem}>
-            <label>
-              <input
-                type="radio"
-                name="clb5"
-                value="no"
-                onChange={handleClb5Change}
-              />{" "}
-              No 
-            </label>
-          </div>
-        </div>
-        {/* <div className={styles.points}>
+          <div className={styles.container}>
+            <div className={styles.header}>
+              <div className={styles.headerLineParent}>
+                <div>2</div>
+                <p className={styles.headerLineParentPara}></p>{" "}
+                {data && <h3>{data?.secondSectionHeading}</h3>}
+              </div>
+            </div>
+            <div className={styles.radioGroup3}>
+              <div className={styles.radioItem}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="1"
+                      onChange={handleClb5Change}
+                    />{" "}
+                    {data.ssq1o1}
+                  </label>
+                )}
+              </div>
+              <div className={styles.radioItem}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="2"
+                      onChange={handleClb5Change}
+                    />{" "}
+                    {data.ssq1o2}
+                  </label>
+                )}
+              </div>
+            </div>
+            {/* <div className={styles.points}>
           Points <input type="text" value={clb5Points} readOnly />
         </div> */}
-      </div>
+          </div>
 
-      <div className={styles.container}>
-        <div className={styles.header}>
-          <div className={styles.headerLineParent}>
-            <div>3</div>
-            <p></p>
-          </div>
-          <h4>Highest level of Education (Max. 25 Points)</h4>
-        </div>
-        <div className={styles.radioGroup2}>
-          <div className={styles.radioItem2}>
-            <label>
-              <input
-                type="radio"
-                name="education"
-                value="doctoral"
-                onChange={handleEducationChange}
-              />{" "}
-              University Degree at the Doctoral (PhD) level or equal
-            </label>
-          </div>
-          <div className={styles.radioItem2}>
-            <label>
-              <input
-                type="radio"
-                name="education"
-                value="masters"
-                onChange={handleEducationChange}
-              />{" "}
-              University Degree at the master's level or equal or University
-              level entry-to-practice professional degree (or equal)
-            </label>
-          </div>
-          <div className={styles.radioItem2}>
-            <label>
-              <input
-                type="radio"
-                name="education"
-                value="twoOrMore"
-                onChange={handleEducationChange}
-              />{" "}
-              Two or more Canadian post-secondary degrees or diplomas or equal
-              (at least one must be for a program of at least 3 years)
-            </label>
-          </div>
-          <div className={styles.radioItem2}>
-            <label>
-              <input
-                type="radio"
-                name="education"
-                value="threeYearProgram"
-                onChange={handleEducationChange}
-              />{" "}
-              Canadian post-secondary degree or diploma for a program of three
-              years or longer, or equal
-            </label>
-          </div>
-          <div className={styles.radioItem2}>
-            <label>
-              <input
-                type="radio"
-                name="education"
-                value="twoYearProgram"
-                onChange={handleEducationChange}
-              />{" "}
-              Canadian post-secondary degree or diploma for a program of two
-              years or longer, or equal
-            </label>
-          </div>
-          <div className={styles.radioItem2}>
-            <label>
-              <input
-                type="radio"
-                name="education"
-                value="oneYearProgram"
-                onChange={handleEducationChange}
-              />{" "}
-              Canadian post-secondary degree or diploma for a program of one
-              year or longer, or equal
-            </label>
-          </div>
-          <div className={styles.radioItem2}>
-            <label>
-              <input
-                type="radio"
-                name="education"
-                value="highSchool"
-                onChange={handleEducationChange}
-              />{" "}
-              Canadian High School diploma, or equal
-            </label>
-          </div>
-        </div>
-        {/* <div className={styles.points}>
+          <div className={styles.container}>
+            <div className={styles.header}>
+              <div className={styles.headerLineParent}>
+                <div>3</div>
+                <p></p>
+              </div>
+              {data && <h4>{data?.tsq1}</h4>}
+            </div>
+            <div className={styles.radioGroup2}>
+              <div className={styles.radioItem2}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="1"
+                      onChange={handleEducationChange}
+                    />{" "}
+                    {data.tsq1o1}
+                  </label>
+                )}
+              </div>
+              <div className={styles.radioItem2}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="2"
+                      onChange={handleEducationChange}
+                    />{" "}
+                    {data.tsq1o2}
+                  </label>
+                )}
+              </div>
+              <div className={styles.radioItem2}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="3"
+                      onChange={handleEducationChange}
+                    />{" "}
+                    {data.tsq1o3}
+                  </label>
+                )}
+              </div>
+              <div className={styles.radioItem2}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="4"
+                      onChange={handleEducationChange}
+                    />{" "}
+                    {data.tsq1o4}
+                  </label>
+                )}
+              </div>
+              <div className={styles.radioItem2}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="5"
+                      onChange={handleEducationChange}
+                    />{" "}
+                    {data.tsq1o5}
+                  </label>
+                )}
+              </div>
+              <div className={styles.radioItem2}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="6"
+                      onChange={handleEducationChange}
+                    />{" "}
+                    {data.tsq1o6}
+                  </label>
+                )}
+              </div>
+              <div className={styles.radioItem2}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="7"
+                      onChange={handleEducationChange}
+                    />{" "}
+                    {data.tsq1o7}
+                  </label>
+                )}
+              </div>
+            </div>
+            {/* <div className={styles.points}>
           Points <input type="text" value={educationPoints} readOnly />
         </div> */}
-      </div>
-
-      <div className={styles.container}>
-        <div className={styles.header}>
-          <div className={styles.headerLineParent}>
-            <div>4</div>
-            <p></p>
           </div>
-          <h4> Age </h4>
-        </div>
-        <select className={styles.dropdown} onChange={handleAgeChange}>
-          <option value="lessThan18">Less than 18 years</option>
-          <option value="18-35">18 - 35 years</option>
-          <option value="36-47">36 - 47 years</option>
-          <option value="48-50">48 - 50 years</option>
-          <option value="51Plus">51 years or older</option>
-        </select>
-        {/* <div className={styles.points}>
+
+          <div className={styles.container}>
+            <div className={styles.header}>
+              <div className={styles.headerLineParent}>
+                <div>4</div>
+                <p></p>
+              </div>
+              {data && <h4>{data?.fosq1}</h4>}
+            </div>
+            <select className={styles.dropdown} onChange={handleAgeChange}>
+              <option value="1">{data?.fosq1o1}</option>
+              <option value="2">{data?.fosq1o2}</option>
+              <option value="3">{data?.fosq1o3}</option>
+              <option value="4">{data?.fosq1o4}</option>
+              <option value="5">{data?.fosq1o5}</option>
+            </select>
+            {/* <div className={styles.points}>
           Points <input type="text" value={agePoints} readOnly />
         </div> */}
-      </div>
+          </div>
 
-      <div className={styles.container}>
-        <div className={styles.header}>
-          <div className={styles.headerLineParent}>
-            <div>5</div>
-            <p></p>
-          </div>
-          <h4>Arranged Employment in Canada (Max. 10 Points)</h4>
-        </div>
-        <div className={styles.radioGroup3}>
-          <div className={styles.radioItem}>
-            <label>
-              <input
-                type="radio"
-                name="employment"
-                value="yes"
-                onChange={handleEmploymentChange}
-              />{" "}
-              Yes 
-            </label>
-          </div>
-          <div className={styles.radioItem}>
-            <label>
-              <input
-                type="radio"
-                name="employment"
-                value="no"
-                onChange={handleEmploymentChange}
-              />{" "}
-              No 
-            </label>
-          </div>
-        </div>
-        {/* <div className={styles.points}>
+          <div className={styles.container}>
+            <div className={styles.header}>
+              <div className={styles.headerLineParent}>
+                <div>5</div>
+                <p></p>
+              </div>
+              {data && <h4>{data?.ffsq1}</h4>}
+            </div>
+            <div className={styles.radioGroup3}>
+              <div className={styles.radioItem}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="1"
+                      onChange={handleEmploymentChange}
+                    />{" "}
+                    {data.ffsq1o1}
+                  </label>
+                )}
+              </div>
+              <div className={styles.radioItem}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="2"
+                      onChange={handleEmploymentChange}
+                    />{" "}
+                    {data.ffsq1o2}
+                  </label>
+                )}
+              </div>
+            </div>
+            {/* <div className={styles.points}>
           Points <input type="text" value={employmentPoints} readOnly />
         </div> */}
-      </div>
+          </div>
 
-      <div className={styles.container}>
-        <div className={styles.header}>
-          <div className={styles.headerLineParent}>
-            <div>6</div>
-            <p></p>
-          </div>
-          <h4> Work Experience</h4>
-        </div>
-        <div className={styles.radioGroup}>
-          <div className={styles.radioItem}>
-            <label>
-              <input
-                type="radio"
-                name="experience"
-                value="1Year"
-                onChange={handleExperienceChange}
-              />{" "}
-              1 Year 
-            </label>
-          </div>
-          <div className={styles.radioItem}>
-            <label>
-              <input
-                type="radio"
-                name="experience"
-                value="2-3Years"
-                onChange={handleExperienceChange}
-              />{" "}
-              2-3 Years 
-            </label>
-          </div>
-          <div className={styles.radioItem}>
-            <label>
-              <input
-                type="radio"
-                name="experience"
-                value="4-5Years"
-                onChange={handleExperienceChange}
-              />{" "}
-              4-5 Years 
-            </label>
-          </div>
-          <div className={styles.radioItem}>
-            <label>
-              <input
-                type="radio"
-                name="experience"
-                value="6Years"
-                onChange={handleExperienceChange}
-              />{" "}
-              6 Years or More 
-            </label>
-          </div>
-        </div>
-        {/* <div className={styles.points}>
+          <div className={styles.container}>
+            <div className={styles.header}>
+              <div className={styles.headerLineParent}>
+                <div>6</div>
+                <p></p>
+              </div>
+              {data && <h4>{data?.sxsq1}</h4>}
+            </div>
+            <div className={styles.radioGroup}>
+              <div className={styles.radioItem}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="1"
+                      onChange={handleExperienceChange}
+                    />{" "}
+                    {data.sxsq1o1}
+                  </label>
+                )}
+              </div>
+              <div className={styles.radioItem}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="2"
+                      onChange={handleExperienceChange}
+                    />{" "}
+                    {data.sxsq1o2}
+                  </label>
+                )}
+              </div>
+              <div className={styles.radioItem}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="3"
+                      onChange={handleExperienceChange}
+                    />{" "}
+                    {data.sxsq1o3}
+                  </label>
+                )}
+              </div>
+              <div className={styles.radioItem}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="4"
+                      onChange={handleExperienceChange}
+                    />{" "}
+                    {data.sxsq1o4}
+                  </label>
+                )}
+              </div>
+            </div>
+            {/* <div className={styles.points}>
           Points <input type="text" value={experiencePoints} readOnly />
         </div> */}
-      </div>
+          </div>
 
-      <div className={styles.container}>
-        <div className={styles.header}>
-          <div className={styles.headerLineParent}>
-            <div>7</div>
-            <p></p>
-          </div>
-          <h4> Adaptability (Max. 10 Points)</h4>
-        </div>
-        <div className={styles.radioGroup2}>
-          <div className={styles.radioItem2}>
-            <label>
-              <input
-                type="radio"
-                name="adaptability"
-                value="spouseLanguage"
-                onChange={handleAdaptabilityChange}
-              />{" "}
-              Your accompanying spouse/common-law partner's language level
-              (minimum CLB 4) 
-            </label>
-          </div>
-          <div className={styles.radioItem2}>
-            <label>
-              <input
-                type="radio"
-                name="adaptability"
-                value="yourStudy"
-                onChange={handleAdaptabilityChange}
-              />{" "}
-              Your previous study in Canada (at least 2 academic years of
-              full-time study)
-            </label>
-          </div>
-          <div className={styles.radioItem2}>
-            <label>
-              <input
-                type="radio"
-                name="adaptability"
-                value="spouseStudy"
-                onChange={handleAdaptabilityChange}
-              />{" "}
-              Your spouse/common-law partner's previous study in Canada (at
-              least 2 academic years of full-time study)
-            </label>
-          </div>
-          <div className={styles.radioItem2}>
-            <label>
-              <input
-                type="radio"
-                name="adaptability"
-                value="yourWork"
-                onChange={handleAdaptabilityChange}
-              />{" "}
-              Your past work experience in Canada (at least one year in NOC 0,
-              A, B) 
-            </label>
-          </div>
-          <div className={styles.radioItem2}>
-            <label>
-              <input
-                type="radio"
-                name="adaptability"
-                value="spouseWork"
-                onChange={handleAdaptabilityChange}
-              />{" "}
-              Your spouse/common-law partner's previous work experience in
-              Canada (at least one year in NOC 0, A, B)
-            </label>
-          </div>
-          <div className={styles.radioItem2}>
-            <label>
-              <input
-                type="radio"
-                name="adaptability"
-                value="arrangedEmployment"
-                onChange={handleAdaptabilityChange}
-              />{" "}
-              Arranged Employment in Canada
-            </label>
-          </div>
-          <div className={styles.radioItem2}>
-            <label>
-              <input
-                type="radio"
-                name="adaptability"
-                value="relativesInCanada"
-                onChange={handleAdaptabilityChange}
-              />{" "}
-              Relatives in Canada (parent/grandparent, brother/sister,
-              aunt/uncle, or niece/nephew) 
-            </label>
-          </div>
-        </div>
-        {/* <div className={styles.points}>
+          <div className={styles.container}>
+            <div className={styles.header}>
+              <div className={styles.headerLineParent}>
+                <div>7</div>
+                <p></p>
+              </div>
+              {data && <h4>{data?.svsq1}</h4>}
+            </div>
+            <div className={styles.radioGroup2}>
+              <div className={styles.radioItem2}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="1"
+                      onChange={handleAdaptabilityChange}
+                    />{" "}
+                    {data.svsq1o1}
+                  </label>
+                )}
+              </div>
+              <div className={styles.radioItem2}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="2"
+                      onChange={handleAdaptabilityChange}
+                    />{" "}
+                    {data.svsq1o2}
+                  </label>
+                )}
+              </div>
+              <div className={styles.radioItem2}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="3"
+                      onChange={handleAdaptabilityChange}
+                    />{" "}
+                    {data.svsq1o3}
+                  </label>
+                )}
+              </div>
+              <div className={styles.radioItem2}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="4"
+                      onChange={handleAdaptabilityChange}
+                    />{" "}
+                    {data.svsq1o4}
+                  </label>
+                )}
+              </div>
+              <div className={styles.radioItem2}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="5"
+                      onChange={handleAdaptabilityChange}
+                    />{" "}
+                    {data.svsq1o5}
+                  </label>
+                )}
+              </div>
+              <div className={styles.radioItem2}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="6"
+                      onChange={handleAdaptabilityChange}
+                    />{" "}
+                    {data.svsq1o6}
+                  </label>
+                )}
+              </div>
+              <div className={styles.radioItem2}>
+                {data && (
+                  <label>
+                    <input
+                      type="radio"
+                      name="speaking"
+                      value="7"
+                      onChange={handleAdaptabilityChange}
+                    />{" "}
+                    {data.svsq1o7}
+                  </label>
+                )}
+              </div>
+            </div>
+            {/* <div className={styles.points}>
           Points <input type="text" value={adaptabilityPoints} readOnly />
         </div> */}
-      </div>
-      </div>
-
-      <div className={styles.pointsSection}> 
-      <div className={styles.pointContainer}>
-        <div className={styles.header}>
-          <h2>Total Points under fedral Skilled Worker Program</h2>
           </div>
-        <div className={styles.points}>
-            <h1>
-            {totalPoints}
-            </h1>
-          
         </div>
+
+        <div className={styles.pointsSection}>
+          <div className={styles.pointContainer}>
+            <div className={styles.header}>
+              <h2>Total Points</h2>
+            </div>
+            <div className={styles.points}>
+              <h1>{totalPoints}</h1>
+            </div>
+          </div>
+        </div>
+        {/* // */}
       </div>
 
-      </div>
-{/* // */}
-      </div>
-
-      <Footer1/>
+      <Footer1 />
     </>
   );
 };

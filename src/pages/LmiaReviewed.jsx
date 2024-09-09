@@ -19,6 +19,9 @@ const LmiaReviewed = () => {
   return (
     <>
       <div className={styles.bannerParent}>
+      <header className={styles.header}>
+        <h1>Labour Market Impact Assessment (LMIA)</h1>
+      </header>
         <div className={styles.banner}>
           <div
             className={`${styles.bannerHeadingRotateParent} ${
@@ -35,7 +38,9 @@ const LmiaReviewed = () => {
               <p onClick={() => scrollToSection("about-program")}>
                 About the Program
               </p>
-              <p onClick={() => scrollToSection("key-points")}>Key Points</p>
+              <p onClick={() => scrollToSection("benifits")}>Benifits</p>
+              <p onClick={() => scrollToSection("pathways")}>Pathways</p>
+              <p onClick={() => scrollToSection("benifits")}>Benifits</p>
               <p onClick={() => scrollToSection("how-to-apply")}>
                 How to Apply?
               </p>
@@ -60,10 +65,8 @@ const LmiaReviewed = () => {
 
 
       <div className={styles.container}>
-      <header className={styles.header}>
-        <h1>Labour Market Impact Assessment (LMIA)</h1>
-      </header>
-      <main className={styles.mainContent}>
+
+      <main className={styles.mainContent} id="about-program">
         <section className={styles.section}>
           <h2>What is an LMIA?</h2>
           <p>If you're looking to apply for an LMIA, it's because you are either a foreign worker who wants to apply for a job on a temporary work permit that is available in any Canadian province or an employer who wants to bring in skilled professionals or experienced workers to join their team in Canada.</p>
@@ -73,7 +76,7 @@ const LmiaReviewed = () => {
           <p>At Brightlight Immigration, we do not provide recruitment services. As your official legal consultants, we can represent your case to ESDC and get you the desired favorable response.</p>
         </section>
 
-        <section className={styles.section}>
+        <section className={styles.section} id="benifits">
           <h2>Benefits of the LMIA Program</h2>
           <div className={styles.benefits}>
             <div className={styles.benefit}>
@@ -95,14 +98,14 @@ const LmiaReviewed = () => {
           </div>
         </section>
 
-        <section className={styles.section}>
+        <section className={styles.section} id="pathways">
           <h2>Pathways of LMIA Available</h2>
           <div className={styles.pathways}>
-            <Link to="/high-wage-low-wage-lmia" className={styles.button}>High-wage/Low-wage LMIA</Link>
-            <Link to="/agricultural-stream-lmia" className={styles.button}>Agricultural Stream LMIA</Link>
+            <Link to="/low-wage-lmia" className={styles.button}>High-wage/Low-wage LMIA</Link>
+            {/* <Link to="/agriculture-stream-lmia" className={styles.button}>Agricultural Stream LMIA</Link> */}
             <Link to="/pr-supporting-lmia" className={styles.button}>PR Supporting LMIA with/without WP</Link>
-            <Link to="/global-talent-stream-lmia" className={styles.button}>Global Talent Stream LMIA</Link>
-            <Link to="/caregiver-lmia" className={styles.button}>Caregiver LMIA</Link>
+            <Link to="/global-stream-lmia" className={styles.button}>Global Talent Stream LMIA</Link>
+            {/* <Link to="/caregiver-lmia" className={styles.button}>Caregiver LMIA</Link> */}
           </div>
         </section>
 
@@ -149,44 +152,7 @@ const LmiaReviewed = () => {
           <a href="https://calendly.com/your-link" className={styles.bookAppointment}>Book an Appointment</a>
         </section>
 
-        <section className={styles.section}>
-          <h2>FAQs Made Simple</h2>
-          <div className={styles.faq}>
-            <h3>Q. What is an LMIA?</h3>
-            <p>A Labour Market Impact Assessment (LMIA) is a document that assesses whether hiring a foreign worker will have a positive or neutral impact on the Canadian labor market. If an LMIA is approved, the foreign worker can then apply for a work permit to work in Canada.</p>
-            
-            <h3>Q. What are the different types of LMIAs?</h3>
-            <p>There are two main types of LMIAs:</p>
-            <ul>
-              <li><strong>Positive LMIA:</strong> A positive LMIA means that the government has found that hiring a foreign worker will have a positive or neutral impact on the Canadian labor market. This is the type of LMIA that is required for most temporary and permanent foreign workers.</li>
-              <li><strong>Negative LMIA:</strong> A negative LMIA means that the government has found that hiring a foreign worker will have a negative impact on the Canadian labor market. This type of LMIA is rare and is only issued in very specific circumstances.</li>
-            </ul>
-            
-            <h3>Q. How long does it take to get an LMIA?</h3>
-            <p>The processing time for LMIA applications varies depending on the type of LMIA and the employer's circumstances. However, most LMIA applications are processed within 30 business days.</p>
-            
-            <h3>Q. I am a foreign worker who has already been working in Canada under an LMIA. What do I need to do to renew my work permit?</h3>
-            <p>If you are a foreign worker who has already been working in Canada under an LMIA, you will need to apply for a new work permit at least 30 days before your current work permit expires. The application process for renewing a work permit is similar to the process for applying for a new work permit.</p>
-            
-            <h3>Q. What is the GTS LMIA?</h3>
-            <p>The Global Talent Stream LMIA is a fast-tracked LMIA process that is made to expedite the hiring of foreign workers with exceptional skills and experience in in-demand occupations.</p>
-            
-            <h3>Q. Who is eligible for a GTS LMIA?</h3>
-            <p>Employers who are located in Canada and who are recruiting foreign workers to fill temporary or permanent positions in in-demand occupations are eligible for Global Talent Stream LMIA.</p>
-            
-            <h3>Q. What are the processing times for GTS LMIAs?</h3>
-            <p>Global Talent Stream LMIAs are typically processed within 10 business days.</p>
-            
-            <h3>Q. What is the Caregiver LMIA?</h3>
-            <p>The Caregiver LMIA is an LMIA that is required for employers who want to hire foreign workers to provide care for children, the elderly, or people with disabilities.</p>
-            
-            <h3>Q. Who is eligible for a Caregiver LMIA?</h3>
-            <p>Employers who are located in Canada and need care for a child, elder, or disabled person can apply for an LMIA to recruit foreign workers to fill temporary or permanent positions as caregivers.</p>
-            
-            <h3>Q. What are the processing times for Caregiver LMIAs?</h3>
-            <p>Caregiver LMIAs are typically processed within 30 business days.</p>
-          </div>
-        </section>
+
       </main>
     </div>
 

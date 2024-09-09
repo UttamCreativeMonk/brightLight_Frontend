@@ -77,12 +77,12 @@ function App() {
 
   return (
     <div className="App">
-      {/* <PrRenewal/> */}
+      <PrRenewal/>
       {/* <Citizenship/> */}
       {/* <Reconsideration/> */}
       {/* <AdditionalDocument/> */}
       {/* <ReplyToPflPage/> */}
-      <LmiaReviewed />
+      {/* <LmiaReviewed /> */}
       {/* <OpenWorkPermit/>  // add the links */}
       {/* <AgricultureStreamLmia/> */}
       {/* <GlobalStreamLmia/> */}

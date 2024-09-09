@@ -132,7 +132,7 @@
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
-    padding: 40px;
+    padding: 10px;
     box-sizing: border-box;
   }
   
@@ -151,21 +151,7 @@
     padding-left: 20px;
   }
   
-  .faq {
-    margin-top: 20px;
-  }
-  
-  .faqItem {
-    margin-bottom: 10px;
-  }
-  
-  .footer {
-    margin-top: 40px;
-    padding: 20px;
-    text-align: center;
-    background-color: #007bff;
-    color: white;
-  }
+
   
   @media (max-width: 1440px) {
     .bannerHeadingRotate {
@@ -187,7 +173,7 @@
   
   .header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
   .mainContent {
@@ -195,7 +181,7 @@
   }
   
   .section {
-    margin-bottom: 40px;
+    margin-bottom: 0px;
   }
   
   .section h1, h2 {
@@ -231,3 +217,24 @@
     margin-bottom: 10px;
   }
   
+  .container h2 {
+    color: #00273f;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .header h1 {
+    color: #e8c47c;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  @media (max-width: 400px) {
+    .container h2 {
+      font-size: 20px;
+    }
+  
+    .header h1 {
+      font-size: 25px;
+    }
+  }

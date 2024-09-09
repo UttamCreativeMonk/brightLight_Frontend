@@ -21,6 +21,9 @@ const Citizenship = () => {
     <>
       {/* <Navbar1 /> */}
       <div className={styles.bannerParent}>
+        <header className={styles.header}>
+          <h1>Citizenship - The highest form of legal status in Canada</h1>
+        </header>
         <div className={styles.banner}>
           <div
             className={`${styles.bannerHeadingRotateParent} ${
@@ -62,10 +65,7 @@ const Citizenship = () => {
       </div>
 
       <div className={styles.container}>
-        <header className={styles.header}>
-          <h1>Citizenship - The highest form of legal status in Canada</h1>
-        </header>
-        <main className={styles.mainContent}>
+        <main className={styles.mainContent} id="about-program">
           <section className={styles.section}>
             <h2>Congratulations on your PR Journey!</h2>
             <p>
@@ -79,7 +79,7 @@ const Citizenship = () => {
             </p>
           </section>
 
-          <section className={styles.section}>
+          <section className={styles.section} id="benefits">
             <h2>Benefits of becoming a Canadian Citizen:</h2>
             <ul>
               <li>You now have the right to vote and hold office</li>
@@ -96,7 +96,7 @@ const Citizenship = () => {
             </ul>
           </section>
 
-          <section className={styles.section}>
+          <section className={styles.section} id="eligibility">
             <h2>Eligibility criteria for Canadian Citizenship</h2>
             <p>
               Are you eligible to file your Canadian Citizenship? Let's find
@@ -127,7 +127,7 @@ const Citizenship = () => {
             </p>
           </section>
 
-          <section className={styles.section}>
+          <section className={styles.section} id="how-to-apply">
             <h2>How to apply for Canadian Citizenship?</h2>
             <p>
               Before you apply, make sure you meet the eligibility requirements.
@@ -155,7 +155,7 @@ const Citizenship = () => {
             </p>
           </section>
 
-          <section className={styles.section}>
+          <section className={styles.section} id="refusal-reasons">
             <h2>Reasons for refusal of Canadian Citizenship:</h2>
             <ul>
               <li>
@@ -240,71 +240,6 @@ const Citizenship = () => {
             {/* Add video and written testimonials here */}
           </section>
 
-          <section className={styles.section}>
-            <h2>FAQs made simple</h2>
-            <dl>
-              <dt>How much does it cost to apply for Canadian citizenship?</dt>
-              <dd>
-                The application fee for adults is $630, and the fee for minors
-                is $100.
-              </dd>
-              <dt>
-                How long does it take to process a Canadian citizenship
-                application?
-              </dt>
-              <dd>
-                The processing time for Canadian citizenship applications can
-                vary depending on the complexity of the application and the
-                backlog of applications at the Immigration, Refugees, and
-                Citizenship Canada (IRCC) office. However, it typically takes
-                between 12 and 18 months to process an application.
-              </dd>
-              <dt>Who has to take the Canadian citizenship test?</dt>
-              <dd>
-                If you're between 18 and 54 years old on the day you sign your
-                application, you have to take the citizenship test.
-              </dd>
-              <dt>Who is exempt from the citizenship test in Canada?</dt>
-              <dd>
-                You might be exempt from the citizenship test based on your age:
-                Citizenship test and language requirements: You don't need to
-                meet these requirements if you sign your application when you're
-                under 18 (a minor) or at least 55 years old. Oath of
-                citizenship: Minors under 14 also don't need to take the oath of
-                citizenship.
-              </dd>
-              <dt>What happens if I fail the citizenship test?</dt>
-              <dd>
-                If you fail the citizenship test, you will be able to retake it
-                at a later date. There is no limit to the number of times you
-                can retake the test.
-              </dd>
-              <dt>What happens if I am not proficient in English or French?</dt>
-              <dd>
-                If you are not proficient in English or French, you will be
-                required to take a language test. If you do not pass the
-                language test, you may be required to take additional language
-                classes.
-              </dd>
-              <dt>Which English test is accepted for Canadian citizenship?</dt>
-              <dd>
-                As of 2024 approved English Tests for Canada Immigration are
-                IELTS, CELPIP & PTE
-              </dd>
-              <dt>Can I use expired IELTS for Canadian citizenship?</dt>
-              <dd>
-                If you went through and used a language test in the process of
-                applying for PR, then you can use those results as evidence of
-                proficiency, even if they have since expired.
-              </dd>
-              <dt>What happens if I have a criminal record?</dt>
-              <dd>
-                A criminal record may affect your eligibility for Canadian
-                citizenship. In some cases, a criminal record may be a bar to
-                citizenship.
-              </dd>
-            </dl>
-          </section>
         </main>
       </div>
 
