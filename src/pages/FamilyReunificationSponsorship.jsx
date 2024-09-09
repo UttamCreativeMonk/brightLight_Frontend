@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "../styles/FamilyReunificationSponsorship.module.css";
 import { Link } from "react-router-dom";
-// import Footer1 from "../components/Footer1";
+import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
 
 const FamilyReunificationSponsorship = () => {
@@ -19,6 +19,7 @@ const FamilyReunificationSponsorship = () => {
   };
   return (
     <>
+     <Navbar1/>
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div
@@ -125,10 +126,9 @@ const FamilyReunificationSponsorship = () => {
         <p>[Insert the process section content from the homepage here]</p>
       </section>
 
-
     </div>
 
-
+    <Footer1/>
 
     </>
   );

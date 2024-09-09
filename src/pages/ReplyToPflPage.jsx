@@ -113,7 +113,7 @@ const ReplyToPflPage = () => {
             </ul>
           </section>
 
-          <section className={styles.section}>
+          <section className={styles.section} id="how-to-apply">
             <h2>Still Not Sure?</h2>
             <p>
               If you have received a PFL, don't panic. We can help you with your

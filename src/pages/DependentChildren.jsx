@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "../styles/DependentChildren.module.css";
 import { Link } from "react-router-dom";
-// import Footer1 from "../components/Footer1";
+import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
 
 const DependentChildren = () => {
@@ -19,6 +19,7 @@ const DependentChildren = () => {
   };
   return (
     <>
+     <Navbar1/>
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div
@@ -133,7 +134,7 @@ const DependentChildren = () => {
         <p>[Insert blog content or links here]</p>
       </section>
     </div>
-
+    <Footer1/>
     </>
   );
 };

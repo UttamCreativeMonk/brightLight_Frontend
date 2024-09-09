@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from '../styles/ParentsGrandparents.module.css';
-
+import Navbar1 from "../components/Navbar1";
+import Footer1 from "../components/Footer1";
 const ParentsGrandparents = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -17,7 +18,7 @@ const ParentsGrandparents = () => {
   
     return (
       <>
-        {/* <Navbar1 /> */}
+        <Navbar1 />
         <div className={styles.bannerParent}>
           <div className={styles.banner}>
            
@@ -121,6 +122,8 @@ const ParentsGrandparents = () => {
       </section>
 
     </div>
+
+    <Footer1/>
     </>
   );
 };

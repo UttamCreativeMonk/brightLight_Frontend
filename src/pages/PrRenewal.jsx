@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "../styles/PrRenewal.module.css";
-// import Footer1 from "../components/Footer1";
+import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
 
 let PrRenewal = () => {
@@ -20,7 +20,7 @@ let PrRenewal = () => {
 
   return (
     <>
-      {/* <Navbar1 /> */}
+      <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
 
@@ -152,7 +152,7 @@ let PrRenewal = () => {
 
 
 
-      {/* <Footer1/> */}
+      <Footer1/>
     </>
   );
 };

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from '../styles/StudentVisa.module.css';
-
+import Navbar1 from "../components/Navbar1";
+import Footer1 from "../components/Footer1";
 const StudentVisa = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -17,7 +18,7 @@ const StudentVisa = () => {
   
     return (
       <>
-        {/* <Navbar1 /> */}
+        <Navbar1 />
         <div className={styles.bannerParent}>
           <div className={styles.banner}>
            
@@ -40,15 +41,6 @@ const StudentVisa = () => {
                 <p onClick={() => scrollToSection("key-points")}>Key Points</p>
                 <p onClick={() => scrollToSection("how-to-apply")}>
                   How to Apply?
-                </p>
-                <p onClick={() => scrollToSection("pathways")}>
-                  Pathways
-                </p>
-                <p onClick={() => scrollToSection("book-appointment")}>
-                  Book Appointment
-                </p>
-                <p onClick={() => scrollToSection("why-choose-us")}>
-                  Why Choose Us?
                 </p>
                 <p onClick={() => scrollToSection("testimonials")}>
                   Testimonials
@@ -92,13 +84,15 @@ const StudentVisa = () => {
       </section>
 
       <section className={styles.callToAction}>
-        <h2 className={styles.subheading}>Start Your Journey</h2>
+        <h2 className={styles.subheading} id="how-to-apply">Start Your Journey</h2>
         <p className={styles.callToActionText}>
           Ready to take the next step in your educational journey? Whether you’re planning to study from abroad or already in Canada, our expert team can guide you through the process and ensure you meet all the requirements for a successful student visa application. 
         </p>
         <button className={styles.button}>Book a Consultation</button>
       </section>
     </div>
+
+    <Footer1/>
     </>
   );
 };

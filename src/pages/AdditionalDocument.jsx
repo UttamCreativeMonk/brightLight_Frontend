@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "../styles/AdditionalDocument.module.css";
-// import Footer1 from "../components/Footer1";
+import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
 
 const AdditionalDocument = () => {
@@ -19,7 +19,7 @@ const AdditionalDocument = () => {
 
   return (
     <>
-      {/* <Navbar1 /> */}
+      <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div
@@ -145,7 +145,7 @@ const AdditionalDocument = () => {
         </main>
       </div>
 
-      {/* <Footer1 /> */}
+      <Footer1 />
     </>
   );
 };

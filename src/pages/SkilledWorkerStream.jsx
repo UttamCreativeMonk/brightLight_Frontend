@@ -42,9 +42,9 @@ const SkilledWorkerStream = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
+              {/* <p onClick={() => scrollToSection("about-program")}>
                 About the Program
-              </p>
+              </p> */}
               <p onClick={() => scrollToSection("benefits")}>Benefits</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
               <p onClick={() => scrollToSection("employer_requirements")}>Employer Requirements</p>

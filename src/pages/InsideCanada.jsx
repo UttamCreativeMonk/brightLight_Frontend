@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from '../styles/InsideCanada.module.css';
-
+import Navbar1 from "../components/Navbar1";
+import Footer1 from "../components/Footer1";
 const InsideCanada = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -17,7 +18,7 @@ const InsideCanada = () => {
   
     return (
       <>
-        {/* <Navbar1 /> */}
+        <Navbar1 />
         <div className={styles.bannerParent}>
           <div className={styles.banner}>
            
@@ -40,9 +41,6 @@ const InsideCanada = () => {
                 <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
                 <p onClick={() => scrollToSection("how-to-apply")}>
                   How to Apply?
-                </p>
-                <p onClick={() => scrollToSection("refusal-reasons")}>
-                  Refusal Reasons
                 </p>
                 <p onClick={() => scrollToSection("book-appointment")}>
                   Book Appointment
@@ -140,7 +138,7 @@ const InsideCanada = () => {
         </ul>
       </section>
 
-      <section className={styles.callToAction} >
+      <section className={styles.callToAction} id="why-choose-us">
         <h2 className={styles.subheading}>Still Not Sure?</h2>
         <p className={styles.callToActionText}>
           If you have faced a refusal for any of the reasons mentioned above, don't worry. With over 10 years of experience, we specialize in handling previously refused cases. We have successfully secured approval for students who have had multiple refusals, long gaps in education, and are of mature age.
@@ -159,6 +157,7 @@ const InsideCanada = () => {
         </div>
       </section>
     </div>
+    <Footer1/>
     </>
   );
 };

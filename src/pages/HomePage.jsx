@@ -213,11 +213,11 @@ let HomePage = () => {
       </div>
 
       <div className={styles.bannerParent2}>
-        <img src={loveneetBgImage?.image} alt="err" />
+        <img src={loveneetBgImage?.image}  />
         <div className={styles.bannerParent2ButtonDiv}>
           <button>
             {" "}
-            <img src={LinkedinLogo} alt="err" />
+            <img src={LinkedinLogo} />
           </button>
           <div className={styles.bannerParent2HaveQuestions}>
             <h5>Have Questions ?</h5>
@@ -237,21 +237,21 @@ let HomePage = () => {
             <div className={styles.memberCard}>
               <p>{memberData?.heading1}</p>
               <div className={styles.memberCardImg}>
-                <img src={memberData?.heading1Img} alt="err" />
+                <img src={memberData?.heading1Img} />
               </div>
             </div>
 
             <div className={styles.memberCard}>
               <p>{memberData?.heading2}</p>
               <div className={styles.memberCardImg}>
-                <img src={memberData?.heading2Img} alt="err" />
+                <img src={memberData?.heading2Img}  />
               </div>
             </div>
 
             <div className={styles.memberCard}>
               <p>{memberData?.heading3}</p>
               <div className={styles.memberCardImg}>
-                <img src={memberData?.heading3Img} alt="err" />
+                <img src={memberData?.heading3Img} />
               </div>
             </div>
           </div>
@@ -263,7 +263,7 @@ let HomePage = () => {
           {featuresData.feature1SVG && featuresData.feature1Heading ? (
             <div className={styles.simplifyingDiv}>
               <div className={styles.simplifyingImg}>
-                <img src={featuresData?.feature1SVG} alt="err" />
+                <img src={featuresData?.feature1SVG}  />
               </div>
               <div className={styles.simplifyingContent}>
                 <h1>{featuresData?.feature1Heading}</h1>
@@ -275,7 +275,7 @@ let HomePage = () => {
           {featuresData.feature2SVG && featuresData.feature2Heading ? (
             <div className={styles.simplifyingDiv}>
               <div className={styles.simplifyingImg}>
-                <img src={featuresData?.feature2SVG} alt="err" />
+                <img src={featuresData?.feature2SVG}  />
               </div>
               <div className={styles.simplifyingContent}>
                 <h1>{featuresData?.feature2Heading}</h1>
@@ -287,7 +287,7 @@ let HomePage = () => {
           {featuresData.feature3SVG && featuresData.feature3Heading ? (
             <div className={styles.simplifyingDiv}>
               <div className={styles.simplifyingImg}>
-                <img src={featuresData?.feature3SVG} alt="err" />
+                <img src={featuresData?.feature3SVG}/>
               </div>
               <div className={styles.simplifyingContent}>
                 <h1>{featuresData?.feature3Heading}</h1>
@@ -299,7 +299,7 @@ let HomePage = () => {
           {featuresData.feature4SVG && featuresData.feature4Heading ? (
             <div className={styles.simplifyingDiv}>
               <div className={styles.simplifyingImg}>
-                <img src={featuresData?.feature4SVG} alt="err" />
+                <img src={featuresData?.feature4SVG}  />
               </div>
               <div className={styles.simplifyingContent}>
                 <h1>{featuresData?.feature4Heading}</h1>
@@ -375,17 +375,17 @@ let HomePage = () => {
 
           <div className={styles.aspectsCardParent}>
             <div className={styles.aspectsCard}>
-              <img src={achiementsData?.achievement1SVG} alt="err" />{" "}
+              <img src={achiementsData?.achievement1SVG}  />{" "}
               <h1>{achiementsData?.achievement1Numbers}</h1>{" "}
               <p>{achiementsData?.achievement1Heading}</p>
             </div>
             <div className={styles.aspectsCard}>
-              <img src={achiementsData?.achievement2SVG} alt="err" />{" "}
+              <img src={achiementsData?.achievement2SVG}  />{" "}
               <h1>{achiementsData?.achievement2Numbers}</h1>{" "}
               <p>{achiementsData?.achievement2Heading}</p>
             </div>
             <div className={styles.aspectsCard}>
-              <img src={achiementsData?.achievement3SVG} alt="err" />{" "}
+              <img src={achiementsData?.achievement3SVG}  />{" "}
               <h1>{achiementsData?.achievement3Numbers}</h1>{" "}
               <p>{achiementsData?.achievement3Heading}</p>
             </div>
@@ -402,7 +402,7 @@ let HomePage = () => {
         <div className={styles.sourceMain}>
           <div className={styles.sourceHeadingParent}>
             <div className={styles.sourceHeadingParentFirstDiv}>
-              <img src={WhiteLogo} alt="ERR" />
+              <img src={WhiteLogo} />
             </div>
             <div>
               <h1>Your Source For Staying Informed</h1>

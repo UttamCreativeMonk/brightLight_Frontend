@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "../styles/BridgingOpenWorkPermitLP.module.css";
 import { Link } from "react-router-dom";
-// import Footer1 from "../components/Footer1";
+import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
 
 const BridgingOpenWorkPermitLP = () => {
@@ -19,6 +19,7 @@ const BridgingOpenWorkPermitLP = () => {
   };
   return (
     <>
+     <Navbar1/>
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div
@@ -153,7 +154,7 @@ const BridgingOpenWorkPermitLP = () => {
         {/* Blog content goes here */}
       </section>
     </div>
-         
+    <Footer1/>
     </>
   );
 };

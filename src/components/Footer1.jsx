@@ -100,39 +100,39 @@ const Footer1 = () => {
           <div className={`${styles.rightFooter} ${styles.rightDesktopFooter}`}>
             <p>QUICK ACCESS</p>
             <div className={styles.footerAncor}>
-              <a href="/">PR</a>
+              <a href="/pr-renewal">PR</a>
               <span>.</span>
             </div>
             <div className={styles.footerAncor}>
-              <a href="/">SUPER VISA</a>
+              <a href="/super-visa">SUPER VISA</a>
               <span>.</span>
             </div>
             <div className={styles.footerAncor}>
-              <a href="/">VISITOR VISA</a>
+              <a href="/visitor-visa">VISITOR VISA</a>
               <span>.</span>
             </div>
             <div className={styles.footerAncor}>
-              <a href="/">STUDY VISA</a>
+              <a href="/study-permit-minors">STUDY VISA</a>
               <span>.</span>
             </div>
             <div className={styles.footerAncor}>
-              <a href="/">PNP PROGRAM</a>
+              <a href="/pnp">PNP PROGRAM</a>
               <span>.</span>
             </div>
             <div className={styles.footerAncor}>
-              <a href="/">FAMILY SPONSORSHIP</a>
+              <a href="/family-reunification-sponsorship">FAMILY SPONSORSHIP</a>
               <span>.</span>
             </div>
             <div className={styles.footerAncor}>
-              <a href="/">SPOUSAL VISA</a>
+              <a href="/spousal-open-work-permit">SPOUSAL VISA</a>
               <span>.</span>
             </div>
             <div className={styles.footerAncor}>
-              <a href="/">OPEN WORK PERMIT</a>
+              <a href="/open-work-permit">OPEN WORK PERMIT</a>
               <span>.</span>
             </div>
             <div className={styles.footerAncor}>
-              <a href="/">RECONSIDERATION</a>
+              <a href="/reconsideration">RECONSIDERATION</a>
               <span>.</span>
             </div>
           </div>
@@ -192,39 +192,39 @@ const Footer1 = () => {
             <div className={styles.rightFooter}>
               <p>QUICK ACCESS</p>
               <div className={styles.footerAncor}>
-                <a href="/">PR</a>
+                <a href="/pr-renewal">PR</a>
                 <span>.</span>
               </div>
               <div className={styles.footerAncor}>
-                <a href="/">SUPER VISA</a>
+                <a href="/super-visa">SUPER VISA</a>
                 <span>.</span>
               </div>
               <div className={styles.footerAncor}>
-                <a href="/">VISITOR VISA</a>
+                <a href="/visitor-visa">VISITOR VISA</a>
                 <span>.</span>
               </div>
               <div className={styles.footerAncor}>
-                <a href="/">STUDY VISA</a>
+                <a href="/study-permit-minors">STUDY VISA</a>
                 <span>.</span>
               </div>
               <div className={styles.footerAncor}>
-                <a href="/">PNP PROGRAM</a>
+                <a href="/pnp">PNP PROGRAM</a>
                 <span>.</span>
               </div>
               <div className={styles.footerAncor}>
-                <a href="/">FAMILY SPONSORSHIP</a>
+                <a href="/family-reunification-sponsorship">FAMILY SPONSORSHIP</a>
                 <span>.</span>
               </div>
               <div className={styles.footerAncor}>
-                <a href="/">SPOUSAL VISA</a>
+                <a href="/spousal-open-work-permit">SPOUSAL VISA</a>
                 <span>.</span>
               </div>
               <div className={styles.footerAncor}>
-                <a href="/">OPEN WORK PERMIT</a>
+                <a href="/open-work-permit">OPEN WORK PERMIT</a>
                 <span>.</span>
               </div>
               <div className={styles.footerAncor}>
-                <a href="/">RECONSIDERATION</a>
+                <a href="/reconsideration">RECONSIDERATION</a>
                 <span>.</span>
               </div>
             </div>

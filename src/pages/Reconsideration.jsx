@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "../styles/Reconsideration.module.css";
-// import Footer1 from "../components/Footer1";
+import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
 
 const Reconsideration = () => {
@@ -19,7 +19,7 @@ const Reconsideration = () => {
 
   return (
     <>
-      {/* <Navbar1 /> */}
+      <Navbar1 />
       <div className={styles.bannerParent}>
         <header className={styles.header}>
           <h1>Reconsideration for Refusal Decision</h1>
@@ -218,7 +218,7 @@ const Reconsideration = () => {
         </main>
       </div>
 
-      {/* <Footer1 /> */}
+      <Footer1 />
     </>
   );
 };

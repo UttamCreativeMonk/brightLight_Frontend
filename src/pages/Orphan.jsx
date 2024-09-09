@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from '../styles/Orphan.module.css';
-
+import Footer1 from "../components/Footer1";
+import Navbar1 from "../components/Navbar1";
 const Orphan = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -17,7 +18,7 @@ const Orphan = () => {
   
     return (
       <>
-        {/* <Navbar1 /> */}
+        <Navbar1 />
         <div className={styles.bannerParent}>
           <div className={styles.banner}>
            
@@ -127,6 +128,8 @@ const Orphan = () => {
         <button className={styles.button}>Book Appointment</button>
       </section>
     </div>
+
+    <Footer1/>
     </>
   );
 };

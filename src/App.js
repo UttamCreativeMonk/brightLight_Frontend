@@ -86,7 +86,7 @@ function App() {
       {/* <AdditionalDocument/> */}
       {/* <ReplyToPflPage/> */}
       {/* <LmiaReviewed /> */}
-      {/* <OpenWorkPermit/>  // add the links */}
+      {/* <OpenWorkPermit/>  */}
       {/* <AgricultureStreamLmia/> */}
       {/* <GlobalStreamLmia/> */}
       {/* <LowWageLmia/>   */}
@@ -99,7 +99,7 @@ function App() {
       {/* <Adoption/> */}
       {/* <DependentChildren/> */}
       {/* <HumanitarianCompassionate/> */}
-      {/* <LonelyCanadian/> */}
+      {/* <LonelyCanadian/> // not use this  */}
 
       {/* <Orphan /> */}
       {/* <ParentsGrandparents/> */}
@@ -147,9 +147,9 @@ function App() {
       {/* <PathwaysForCaregiver/> */}
       {/* <PermanentResidencePathwaysCaregiversLP/> */}
 
-{/* 
+
       <Loader />
-      <AllRoutes /> */}
+      <AllRoutes />
     </div>
   );
 }

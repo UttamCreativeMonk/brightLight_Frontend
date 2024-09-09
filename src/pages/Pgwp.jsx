@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "../styles/Pgwp.module.css";
 import { Link } from "react-router-dom";
-// import Footer1 from "../components/Footer1";
+import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
 
 const Pgwp = () => {
@@ -19,6 +19,7 @@ const Pgwp = () => {
   };
   return (
     <>
+     <Navbar1/>
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div
@@ -141,13 +142,13 @@ const Pgwp = () => {
         </div>
       </section>
 
-
-
       <section className={styles.blogs}>
         <h2>Blogs</h2>
         <p>[Content for related blogs]</p>
       </section>
     </div>
+
+    <Footer1/>
     </>
   );
 };

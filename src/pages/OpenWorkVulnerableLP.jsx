@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "../styles/OpenWorkVulnerableLP.module.css";
 import { Link } from "react-router-dom";
-// import Footer1 from "../components/Footer1";
+import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
 
 const OpenWorkVulnerableLP = () => {
@@ -19,6 +19,7 @@ const OpenWorkVulnerableLP = () => {
   };
   return (
     <>
+     <Navbar1/>
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div
@@ -199,9 +200,9 @@ const OpenWorkVulnerableLP = () => {
           <h2>Client Testimonials</h2>
           {/* Add video and written testimonials with options to hide/show */}
         </section>
-
-
       </div>
+
+      <Footer1/>
     </>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "../styles/Citizenship.module.css";
-// import Footer1 from "../components/Footer1";
+import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
 
 const Citizenship = () => {
@@ -19,7 +19,7 @@ const Citizenship = () => {
 
   return (
     <>
-      {/* <Navbar1 /> */}
+      <Navbar1 />
       <div className={styles.bannerParent}>
         <header className={styles.header}>
           <h1>Citizenship - The highest form of legal status in Canada</h1>
@@ -209,7 +209,7 @@ const Citizenship = () => {
             </p>
           </section>
 
-          <section className={styles.section}>
+          <section className={styles.section} id="why-choose-us">
             <h2>Still not sure?</h2>
             <p>
               If you have received a refusal for any of the reasons mentioned
@@ -243,7 +243,7 @@ const Citizenship = () => {
         </main>
       </div>
 
-      {/* <Footer1 /> */}
+      <Footer1 />
     </>
   );
 };

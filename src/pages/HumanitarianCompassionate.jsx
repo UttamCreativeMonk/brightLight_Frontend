@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "../styles/HumanitarianCompassionate.module.css";
 import { Link } from "react-router-dom";
-// import Footer1 from "../components/Footer1";
+import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
 
 const HumanitarianCompassionate = () => {
@@ -19,6 +19,7 @@ const HumanitarianCompassionate = () => {
   };
   return (
     <>
+     <Navbar1/>
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div
@@ -145,7 +146,7 @@ const HumanitarianCompassionate = () => {
         <p>[Insert blog content or links here]</p>
       </section>
     </div>
-
+    <Footer1/>
     </>
   );
 };

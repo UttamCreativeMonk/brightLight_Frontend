@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "../styles/OpenWorkCanadaLP.module.css";
 import { Link } from "react-router-dom";
-// import Footer1 from "../components/Footer1";
+import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
 
 const OpenWorkCanadaLP = () => {
@@ -19,6 +19,7 @@ const OpenWorkCanadaLP = () => {
   };
   return (
     <>
+     <Navbar1/>
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div
@@ -246,8 +247,8 @@ const OpenWorkCanadaLP = () => {
           <p>[Written testimonials content with option to hide]</p>
         </div>
       </section>
-
     </div>
+    <Footer1/>
     </>
   );
 };

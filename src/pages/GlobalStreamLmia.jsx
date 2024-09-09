@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "../styles/GlobalStreamLmia.module.css";
 import { Link } from "react-router-dom";
-// import Footer1 from "../components/Footer1";
+import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
 
 const GlobalStreamLmia = () => {
@@ -19,6 +19,7 @@ const GlobalStreamLmia = () => {
   };
   return (
     <>
+     <Navbar1/>
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div
@@ -206,7 +207,7 @@ const GlobalStreamLmia = () => {
           </ul>
         </section>
 
-        <section className={styles.section}>
+        <section className={styles.section} id="how-to-apply">
           <h2>Still Not Sure?</h2>
           <p>
             If you have received a refusal for any of the reasons mentioned above, do not worry. With over a decade of experience, we specialize in previously refused cases. While we don't provide jobs for LMIA, we can certainly assist you if you have a job offer.
@@ -242,37 +243,10 @@ const GlobalStreamLmia = () => {
           </div>
         </section>
 
-        <section className={styles.section}>
-          <h2>FAQs Made Simple</h2>
-          <ul>
-            <li>
-              <strong>How long does it take to process the Global Talent Stream (GTS) Labour Market Impact Assessment (LMIA)?</strong>
-              <p>GTS LMIA application processing time is faster than any other type of application, ranging from 7 to 10 business days.</p>
-            </li>
-            <li>
-              <strong>How long will the work permit application take if applying with a Global Talent Stream (GTS) Labour Market Impact Assessment?</strong>
-              <p>IRCC often accelerates the processing of work permits for approved applicants, completing the procedure within 10 business days around 80% of the time.</p>
-            </li>
-            <li>
-              <strong>How does GTS LMIA expedite the process of obtaining work permits for foreign workers?</strong>
-              <p>GTS LMIA applications do not require the employer to advertise for 4 weeks like other streams do, as it exempts the employer from advertisement requirements.</p>
-            </li>
-            <li>
-              <strong>What is the difference between high-wage LMIA and Global Talent Stream (GTS) Labour Market Impact Assessment (LMIA)?</strong>
-              <p>GTS LMIA has fewer recruitment effort requirements and much faster processing times for both LMIA and work permits.</p>
-            </li>
-            <li>
-              <strong>What is a Labour Market Benefits Plan (LMBP)?</strong>
-              <p>The LMBP is a mandatory component of the GTS application, requiring employers to outline specific activities that will create positive outcomes for the Canadian labor market.</p>
-            </li>
-            <li>
-              <strong>How is employer compliance monitored in the Global Talent Stream?</strong>
-              <p>Employers must comply with laws regulating employment and recruiting and maintain records associated with the GTS application for 6 years.</p>
-            </li>
-          </ul>
-        </section>
       </main>
     </div>
+
+    <Footer1/>
     </>
   );
 };

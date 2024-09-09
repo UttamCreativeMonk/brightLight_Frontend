@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "../styles/FrancophoneMobilityProgram.module.css";
-// import Footer1 from "../components/Footer1";
+import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
 
 const FrancophoneMobilityProgram = () => {
@@ -19,7 +19,7 @@ const FrancophoneMobilityProgram = () => {
 
   return (
     <>
-      {/* <Navbar1 /> */}
+      <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
          
@@ -173,7 +173,7 @@ const FrancophoneMobilityProgram = () => {
 
     </div>
 
-      {/* <Footer1 /> */}
+      <Footer1 />
     </>
   );
 };
