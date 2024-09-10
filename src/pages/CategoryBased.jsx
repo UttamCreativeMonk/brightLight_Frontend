@@ -29,7 +29,7 @@ let CategoryBased = () => {
       .catch((error) => {
         console.log(error);
       });
-  },[]);
+  }, []);
   return (
     <>
       <Navbar1 />
@@ -345,7 +345,7 @@ let CategoryBased = () => {
           {data?.bookHeading ? <h1>{data?.bookHeading}</h1> : null}
 
           {data?.bookSubHeading ? <h5>{data?.bookSubHeading}</h5> : null}
-          {data?.bookDescription ? <h1>{data?.bookDescription}</h1> : null}
+          {data?.bookDescription ? <p>{data?.bookDescription}</p> : null}
         </div>
       </div>
       <BestChoice />

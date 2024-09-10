@@ -213,18 +213,22 @@ let HomePage = () => {
       </div>
 
       <div className={styles.bannerParent2}>
-        <img src={loveneetBgImage?.image}  />
+        <img src={loveneetBgImage?.image} />
         <div className={styles.bannerParent2ButtonDiv}>
-          <button>
-            {" "}
-            <img src={LinkedinLogo} />
-          </button>
+          <a href="#">
+            <button>
+              <img src={LinkedinLogo} />
+            </button>
+          </a>
+
           <div className={styles.bannerParent2HaveQuestions}>
             <h5>Have Questions ?</h5>
-            <button>
-              <b>RCIC</b>
-              <p>APPOINTEMENT</p>
-            </button>
+            <a href="#">
+              <button>
+                <b>RCIC</b>
+                <p>APPOINTEMENT</p>
+              </button>
+            </a>
           </div>
         </div>
 
@@ -244,7 +248,7 @@ let HomePage = () => {
             <div className={styles.memberCard}>
               <p>{memberData?.heading2}</p>
               <div className={styles.memberCardImg}>
-                <img src={memberData?.heading2Img}  />
+                <img src={memberData?.heading2Img} />
               </div>
             </div>
 
@@ -260,53 +264,26 @@ let HomePage = () => {
 
       <div className={styles.simplifyingParent}>
         <div className={styles.simplifyingMain}>
-          {featuresData.feature1SVG && featuresData.feature1Heading ? (
-            <div className={styles.simplifyingDiv}>
-              <div className={styles.simplifyingImg}>
-                <img src={featuresData?.feature1SVG}  />
-              </div>
-              <div className={styles.simplifyingContent}>
-                <h1>{featuresData?.feature1Heading}</h1>
-                <p>{featuresData?.feature1Description}</p>
-              </div>
-            </div>
-          ) : null}
-
-          {featuresData.feature2SVG && featuresData.feature2Heading ? (
-            <div className={styles.simplifyingDiv}>
-              <div className={styles.simplifyingImg}>
-                <img src={featuresData?.feature2SVG}  />
-              </div>
-              <div className={styles.simplifyingContent}>
-                <h1>{featuresData?.feature2Heading}</h1>
-                <p>{featuresData?.feature2Description}</p>
-              </div>
-            </div>
-          ) : null}
-
-          {featuresData.feature3SVG && featuresData.feature3Heading ? (
-            <div className={styles.simplifyingDiv}>
-              <div className={styles.simplifyingImg}>
-                <img src={featuresData?.feature3SVG}/>
-              </div>
-              <div className={styles.simplifyingContent}>
-                <h1>{featuresData?.feature3Heading}</h1>
-                <p>{featuresData?.feature3Description}</p>
-              </div>
-            </div>
-          ) : null}
-
-          {featuresData.feature4SVG && featuresData.feature4Heading ? (
-            <div className={styles.simplifyingDiv}>
-              <div className={styles.simplifyingImg}>
-                <img src={featuresData?.feature4SVG}  />
-              </div>
-              <div className={styles.simplifyingContent}>
-                <h1>{featuresData?.feature4Heading}</h1>
-                <p>{featuresData?.feature4Description}</p>
-              </div>
-            </div>
-          ) : null}
+          <h1 className={styles.simplifyingHeading}>Why Us?</h1>
+          {featuresData &&
+            [1, 2, 3, 4].map(
+              (num) =>
+                featuresData[`feature${num}SVG`] &&
+                featuresData[`feature${num}Heading`] && (
+                  <div key={num} className={styles.simplifyingDiv}>
+                    <div className={styles.simplifyingImg}>
+                      <img
+                        src={featuresData[`feature${num}SVG`]}
+                        alt={`Feature ${num} Image`}
+                      />
+                    </div>
+                    <div className={styles.simplifyingContent}>
+                      <h2>{featuresData[`feature${num}Heading`]}</h2>
+                      <p>{featuresData[`feature${num}Description`]}</p>
+                    </div>
+                  </div>
+                )
+            )}
         </div>
       </div>
 
@@ -349,7 +326,7 @@ let HomePage = () => {
                     <div className={styles.expertiseDiv}>
                       <h4>{item.title}</h4>
                       <p>{item.desc}</p>
-                      <a href={`/services/${formattedTitle}`}>Know More</a>
+                      <a className={styles.expertiseKmowMore} href={`/services/${formattedTitle}`}>Know More</a>
                     </div>
                   </SwiperSlide>
                 );
@@ -375,17 +352,17 @@ let HomePage = () => {
 
           <div className={styles.aspectsCardParent}>
             <div className={styles.aspectsCard}>
-              <img src={achiementsData?.achievement1SVG}  />{" "}
+              <img src={achiementsData?.achievement1SVG} />{" "}
               <h1>{achiementsData?.achievement1Numbers}</h1>{" "}
               <p>{achiementsData?.achievement1Heading}</p>
             </div>
             <div className={styles.aspectsCard}>
-              <img src={achiementsData?.achievement2SVG}  />{" "}
+              <img src={achiementsData?.achievement2SVG} />{" "}
               <h1>{achiementsData?.achievement2Numbers}</h1>{" "}
               <p>{achiementsData?.achievement2Heading}</p>
             </div>
             <div className={styles.aspectsCard}>
-              <img src={achiementsData?.achievement3SVG}  />{" "}
+              <img src={achiementsData?.achievement3SVG} />{" "}
               <h1>{achiementsData?.achievement3Numbers}</h1>{" "}
               <p>{achiementsData?.achievement3Heading}</p>
             </div>
@@ -463,7 +440,7 @@ let HomePage = () => {
       </div>
       <Blogs />
       <FAQ_Blue />
-      <Footer1/>
+      <Footer1 />
     </>
   );
 };

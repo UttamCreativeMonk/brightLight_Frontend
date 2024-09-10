@@ -22,7 +22,7 @@
 
 .topFlexSection {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   gap: 10px;
   margin-top: 20px;
@@ -60,9 +60,13 @@
   font-size: 50px;
 }
 
+.loveneetContent h4 {
+  color: white;
+}
+
 .loveneetDataFlex p {
   position: relative;
-  top: -5px;
+  top: 5px;
 }
 
 .loveneetDataFlex h5 {
@@ -145,6 +149,22 @@
 
 .searchDiv img {
   width: 17px;
+  cursor: pointer;
+}
+
+.blogTagsSection {
+  width: 100%;
+  margin: 20px 0px 1px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  row-gap: 20px;
+  flex-wrap: wrap;
+}
+
+.blogTagsSection p {
+  font-size: 17px;
 }
 
 .recentBlogsSection {
@@ -154,7 +174,7 @@
 
 .recentBlogsSection h4 {
   color: #132f46;
-  margin-left: 20px;
+  /* margin-left: 20px; */
   margin-bottom: 30px;
 }
 
@@ -184,6 +204,18 @@
 }
 
 .blogDescriptionSection p {
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+.blogDescriptionSection iframe {
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  height: 400px;
+}
+
+.blogDescriptionSection p {
   line-height: 1.8;
   letter-spacing: 1px;
   color: rgb(44, 44, 44);
@@ -206,135 +238,135 @@
   .blogsFlexSection {
     flex-direction: column;
   }
-  .blogImgSection{
+  .blogImgSection {
     width: 100%;
     align-items: center;
     margin: auto;
   }
-  .blogSearchSection{
+  .blogSearchSection {
     width: 90%;
     margin: auto;
   }
-  .blogSearchSection{
+  .blogSearchSection {
     margin-top: 30px;
   }
-  .loveneetDataFlex h3{
+  .loveneetDataFlex h3 {
     font-size: 35px;
   }
-  .loveneetDataFlex p{
+  .loveneetDataFlex p {
     display: none;
   }
-  .loveneetContent h4{
+  .loveneetContent h4 {
     font-size: 18px;
   }
-  .loveneetDataFlex{
+  .loveneetDataFlex {
     flex-direction: column;
     align-items: flex-start;
   }
-  .blogTopSection h1{
+  .blogTopSection h1 {
     font-size: 40px;
   }
 }
 @media all and (max-width: 635px) {
-.loveneetImage{
-  width: 200px;
-}
-.loveneetDataFlex h3{
-  font-size: 30px;
-}
-.imageSection{
-  padding: 10px 5px;
-}
-.haveAQuestion {
-  font-size: 10px;
-}
+  .loveneetImage {
+    width: 200px;
+  }
+  .loveneetDataFlex h3 {
+    font-size: 30px;
+  }
+  .imageSection {
+    padding: 10px 5px;
+  }
+  .haveAQuestion {
+    font-size: 10px;
+  }
 }
 
 @media all and (max-width: 500px) {
-  .loveneetDataFlex h3{
+  .loveneetDataFlex h3 {
     font-size: 25px;
   }
-  .loveneetContent h4{
+  .loveneetContent h4 {
     font-size: 12px;
   }
-  .loveneetImage{
+  .loveneetImage {
     width: 150px;
   }
-  .blogsTopContentSection h1{
+  .blogsTopContentSection h1 {
     font-size: 30px;
   }
-  }
+}
 
 @media all and (max-width: 430px) {
   .blogsFlexSection {
     flex-direction: column;
   }
-  .blogImgSection{
+  .blogImgSection {
     width: 100%;
     align-items: center;
     margin: auto;
   }
-  .blogSearchSection{
+  .blogSearchSection {
     width: 90%;
     /* margin: auto; */
   }
   .blogDescriptionSection p {
     font-size: 12px;
   }
-  .recentBlog h3{
+  .recentBlog h3 {
     font-size: 13px;
   }
 }
 
-@media all and (max-width: 420px){
-  .loveneetDataFlex h3{
+@media all and (max-width: 420px) {
+  .loveneetDataFlex h3 {
     font-size: 20px;
   }
-  .loveneetDataFlex h5{
+  .loveneetDataFlex h5 {
     font-size: 9px;
     font-weight: 300;
   }
-  .loveneetContent h4{
+  .loveneetContent h4 {
     margin: 5px 5px 10px 5px;
   }
-  .imageSection img{
+  .imageSection img {
     width: 65px;
   }
 }
 
-@media all and (max-width: 370px){
-  .loveneetDataFlex h3{
+@media all and (max-width: 370px) {
+  .loveneetDataFlex h3 {
     font-size: 18px;
   }
-  .loveneetDataFlex h5{
+  .loveneetDataFlex h5 {
     font-size: 9px;
     font-weight: 300;
   }
-  .loveneetContent h4{
+  .loveneetContent h4 {
     margin: 5px 5px 10px 5px;
   }
-  .imageSection img{
+  .imageSection img {
     width: 60px;
   }
-  .blogsTopContentSection h1{
+  .blogsTopContentSection h1 {
     font-size: 26px;
   }
 }
-@media all and (max-width: 350px){
-  .loveneetDataFlex h3{
+@media all and (max-width: 350px) {
+  .loveneetDataFlex h3 {
     font-size: 16px;
   }
-  .loveneetDataFlex h5{
+  .loveneetDataFlex h5 {
     font-size: 9px;
     font-weight: 300;
   }
-  .loveneetContent h4{
+  .loveneetContent h4 {
     margin: 5px 5px 10px 5px;
   }
-  .imageSection img{
+  .imageSection img {
     width: 60px;
   }
-  .loveneetLinks{
+  .loveneetLinks {
     flex-direction: column-reverse;
     align-items: center;
     gap: 10px;

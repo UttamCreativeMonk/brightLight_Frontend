@@ -319,7 +319,6 @@ let About = () => {
 
             <div className={styles.pillarFeatureSvg}>
               <img src={RESPONSIBILITY} alt="err" />
-
               <h4>{pillarsSection?.pillar2Heading}</h4>
               <p>{pillarsSection?.pillar2Description}</p>
             </div>

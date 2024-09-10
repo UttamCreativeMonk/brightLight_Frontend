@@ -26,7 +26,7 @@ const Footer1 = () => {
         </div>
         <button>FREE ASSESSMENT</button>
       </div>
-      <p className={styles.upperFooterLowerText}>Lorem ipsum dolor sit amet.</p>
+      <p className={styles.upperFooterLowerText}>VANCOUVER BASED, SERVING GLOBALLY.</p>
 
       <div className={styles.footer}>
         <div className={styles.innerFooter}>

@@ -223,11 +223,11 @@
     margin-bottom: 20px;
   }
   
-  .eligibility h3,h4{
+  /* .eligibility h3,h4{
     margin-top: 30px;
     margin-bottom: 20px;
     color: #00273f;
-  }
+  } */
 
   @media (max-width: 1080px) {
     .container h2 {

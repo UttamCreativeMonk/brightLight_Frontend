@@ -57,6 +57,9 @@
   align-items: center;
   justify-content: flex-end;
   gap: 10px;
+  margin-bottom: 0;
+  font-size: 18px;
+  cursor: pointer;
 }
 
 .searchRightSection div {
@@ -74,8 +77,30 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0px 15px;
+  padding: 0px 10px;
   margin-top: 20px;
+}
+
+.searchBottomNavigationSection p {
+  font-size: 15px;
+  margin-right: 10px;
+}
+
+.searchBottomNavigationSection button {
+  transition: 0.3s all ease-in-out;
+  border: 1px solid white;
+}
+
+.searchBottomNavigationSection button:hover {
+  background-color: white;
+  color: #132f46;
+  border: 1px solid #132f46;
+}
+
+.searchBottomNavigationSection button {
+  font-size: 14px;
+  margin-left: 8px;
+  padding: 10px 15px;
 }
 
 .firstBlog {
@@ -107,18 +132,22 @@
 .firstBlogContentSection h4 {
   color: rgb(190, 190, 190);
   margin-bottom: 20px;
+  margin-top: 0 !important;
+  font-size: 14px;
 }
 
 .firstBlogContentSection h1 {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+  font-size: 30px;
   color: white;
 }
 
 .firstBlogContentSection a {
   color: white;
-  padding: 15px 25px;
+  padding: 10px 25px;
   border: 1px solid white;
   border-radius: 30px;
+  font-size: 14px;
 }
 
 .firstBlogContentSection a:hover {
@@ -165,16 +194,23 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  margin-top: -5px;
 }
 
 .blog div h4 {
   color: gray;
+  font-size: 14px;
+  margin: 0 !important;
 }
 
 .blog h1 {
-  font-size: 25px;
+  font-size: 22px;
   margin-bottom: 20px;
+}
+
+.blog p {
+  font-size: 16px;
 }
 
 .subscribeSection {
@@ -224,12 +260,42 @@
 .quickLinksSection div p {
   color: gray;
   margin-bottom: 10px;
+  font-size: 14px;
   font-weight: 600;
 }
 
 .quickLinksSection div a {
   color: dodgerblue;
+  font-size: 17px;
   text-decoration: underline;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.pagination button {
+  background: #ffffff;
+  border: 1px solid #132f46;
+  color: #132f46;
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+}
+
+.pagination button:hover {
+  background-color: white;
+  border: 1px solid #132f46;
+  color: #132f46;
+}
+
+.pagination button.active {
+  background: #132f46;
+  color: white;
+  border: 1px solid #132f46;
 }
 
 @media all and (max-width: 1450px) {
@@ -265,7 +331,7 @@
     width: 100%;
   }
 }
-@media all and (max-width: 1100px){
+@media all and (max-width: 1100px) {
   .searchRightSection {
     gap: 15px;
   }
@@ -310,6 +376,19 @@
     width: 27%;
   }
 }
+
+@media all and (max-width: 767px) {
+  .searchBottomNavigationSection {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10px;
+    margin-top: 20px;
+  }
+}
+
 @media all and (max-width: 670px) {
   .subscribeSection {
     padding: 0px;
@@ -329,6 +408,9 @@
 }
 
 @media all and (max-width: 500px) {
+  .pagination button {
+    padding: 5px 10px;
+  }
   .blogsTopSection h3 {
     font-size: 16px;
     margin-top: 20px;
@@ -369,10 +451,8 @@
 }
 
 @media all and (max-width: 400px) {
-
   .blogsTopSection h3 {
     font-size: 14px;
-   
   }
   .blogsTopSection img {
     width: 170px;

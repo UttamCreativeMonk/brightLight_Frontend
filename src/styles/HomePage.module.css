@@ -108,18 +108,31 @@
   text-align: center;
   color: #132f46;
 }
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
 
 .bookButton17 {
   font-family: "AvenirNextLTPro", sans-serif;
   margin-top: 40px;
   align-items: center;
   appearance: none;
-  background-color: #fff;
+  background: linear-gradient(145deg, #ffffff, #f6f9fe);
   border-radius: 28px;
-  border-style: none;
   border: 2px solid #00273f;
   box-sizing: border-box;
-  color: #3c4043;
+  color: #00273f;
   cursor: pointer;
   display: inline-flex;
   fill: currentcolor;
@@ -134,19 +147,20 @@
   position: relative;
   text-align: center;
   text-transform: none;
-  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
   width: auto;
   will-change: transform, opacity;
   z-index: 0;
+  animation: pulse 2s infinite;
 }
 
 .bookButton17:hover {
-  background: #f6f9fe;
-  color: #174ea6;
+  background: linear-gradient(145deg, #e0e7ff, #f6f9fe);
+  color: #00273f;
+  transform: translateY(-3px);
 }
 
 .bookButton17:active {
@@ -191,14 +205,53 @@
   gap: 30px;
 }
 
+@keyframes lightEffect {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
 .bannerParent2 button {
   color: white;
   font-size: 20px;
   cursor: pointer;
   background-color: transparent;
-  border: 1px solid white;
+  border: 1px solid transparent; /* Hide the original border */
   padding: 10px 40px;
   border-radius: 5px;
+  position: relative;
+  /* overflow: hidden; */
+}
+
+.bannerParent2 button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  border: 1px solid white;
+  box-sizing: border-box;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+  background-size: 200% 100%;
+  z-index: 1;
+  animation: lightEffect 13s linear infinite;
+  pointer-events: none; /* Ensure the pseudo-element does not interfere with button interactions */
+}
+
+
+.bannerParent2 button span {
+  position: relative;
+  z-index: 2;
 }
 
 .bannerParent2HaveQuestions {
@@ -280,49 +333,70 @@
   padding: 80px 0px;
 }
 
+:root {
+  --primary-color: #132f46;
+  --padding-large: 60px;
+  --margin-large: 50px;
+  --font-size-large: 25px;
+  --line-height-large: 35px;
+}
+
 .simplifyingMain {
   width: 1340px;
   margin: auto;
-  align-items: center;
   text-align: center;
+}
+
+.simplifyingHeading {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  text-align: center;
+  width: 300px;
+  text-align: center;
+  margin: auto;
 }
 
 .simplifyingDiv {
   border-radius: 25px;
   display: flex;
   align-items: flex-start;
-  justify-content: center;
-  border: 2px dotted #132f46;
-  padding: 60px 0px;
-  text-align: left;
-  margin-top: 50px;
-  gap: 60px;
   justify-content: space-evenly;
+  border: 2px dotted var(--primary-color);
+  padding: var(--padding-large) 0;
+  text-align: left;
+  margin-top: var(--margin-large);
+  gap: 60px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.simplifyingImg {
-  display: flex;
-  align-items: flex-start;
+.simplifyingDiv:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .simplifyingImg img {
   width: 100px;
+  transition: transform 0.3s ease;
+}
+
+.simplifyingImg img:hover {
+  transform: scale(1.1);
 }
 
 .simplifyingContent {
   width: 70%;
 }
 
-.simplifyingContent h1 {
-  color: #132f46;
+.simplifyingContent h2 {
+  color: var(--primary-color);
   font-weight: 500;
 }
 
 .simplifyingContent p {
   padding-top: 30px;
-  font-size: 25px;
-  line-height: 35px;
-  color: #132f46;
+  font-size: var(--font-size-large);
+  line-height: var(--line-height-large);
+  color: var(--primary-color);
 }
 
 .fourCardParent {
@@ -481,6 +555,68 @@
 .expertiseContentHeading button {
   cursor: pointer;
 }
+/* Base button styles */
+.expertiseKmowMore {
+  color: #033b5d;
+  border: 2px solid #00273f;
+  background-color: transparent;
+  border-radius: 30px;
+  padding: 15px 40px;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative; /* Required for the pseudo-element positioning */
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+  overflow: hidden; /* Ensures animations do not overflow */
+  text-align: center; /* Centers the text */
+  display: inline-block; /* Ensures the button behaves properly */
+  animation: pulseAnimation 2s infinite; /* Default pulse animation */
+}
+
+/* Hover effects */
+.expertiseKmowMore:hover {
+  color: #ffffff; /* Text color on hover */
+  border-color: #00273f; /* Border color on hover */
+  background-color: #00273f; /* Background color on hover */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4); /* Shadow effect on hover */
+  animation: bounceAnimation 0.5s ease, pulseAnimation 2s infinite; /* Bounce animation on hover */
+  text-decoration: none;
+}
+
+/* Keyframes for pulsing effect */
+@keyframes pulseAnimation {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Keyframes for bouncing effect */
+@keyframes bounceAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Ensures text is centered and no underline on hover */
+.expertiseKmowMore a {
+  text-decoration: none;
+  color: inherit; /* Inherit color from button */
+  display: inline-block; /* Allows scaling and alignment */
+}
 
 .knowButton {
   color: white;
@@ -491,12 +627,41 @@
   font-size: 18px;
   border-radius: 30px;
   margin-top: 20px;
-  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .knowButton a {
   text-decoration: none;
   color: white;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.knowButton:hover {
+  background-color: white;
+  color: black;
+  border-color: black;
+}
+
+.knowButton:hover a {
+  color: black;
+}
+
+/* Keyframes for animation */
+@keyframes buttonPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.knowButton {
+  animation: buttonPulse 1.5s infinite; /* Pulse animation */
 }
 
 .aspectsParent {
@@ -647,6 +812,7 @@
   font-size: 100px;
 }
 
+/* Button styles */
 .sourceContentData button {
   margin-top: 30px;
   margin-bottom: 30px;
@@ -656,8 +822,44 @@
   padding: 15px 40px;
   font-size: 16px;
   color: white;
+  position: relative;
+  overflow: hidden;  
 }
 
+/* Keyframes for the moving border effect */
+@keyframes borderMove {
+  0% {
+    border-color: white;
+    box-shadow: 0 0 0 2px white;
+  }
+  25% {
+    border-color: transparent;
+    box-shadow: 2px 0 0 0 white;
+  }
+  50% {
+    border-color: transparent;
+    box-shadow: 2px 2px 0 0 white;
+  }
+  75% {
+    border-color: transparent;
+    box-shadow: 0 2px 0 0 white;
+  }
+  100% {
+    border-color: transparent;
+    box-shadow: 0 0 0 2px white;
+  }
+}
+
+/* Apply the animation */
+.sourceContentData button {
+  transition: 0.3s all ease-in-out;
+  animation: borderMove 2s linear infinite;
+}
+.sourceContentData button:hover {
+  color: black;
+  background-color: white;
+  /* border:  2px solid black; */
+}
 /* Example CSS */
 .cardContainer {
   display: flex;
@@ -734,11 +936,9 @@
   font-weight: 200;
 }
 
-.title h2{
+.title h2 {
   margin-top: 20px;
 }
-
-
 
 @media all and (max-width: 1450px) {
   .aspectsCardParent {
@@ -1267,7 +1467,7 @@
     width: 300px;
     height: 325px;
   }
-  
+
   .testimonialsVideoSection p {
     font-size: 22px;
   }
@@ -1556,16 +1756,14 @@
     font-size: 12px;
   }
 
-  
   .testimonialsVideoSection img {
     width: 250px;
     height: 275px;
   }
-  
+
   .testimonialsVideoSection p {
     font-size: 20px;
   }
-
 }
 
 @media all and (max-width: 550px) {
@@ -2004,5 +2202,3 @@
     width: 95%;
   }
 }
-
-

@@ -1,50 +1,83 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/PaginationTable.module.css";
 
+const parseDate = (dateString) => {
+  return new Date(dateString);
+};
+
 const PaginationTable = () => {
-  const dummyData = [
-    { occupation: "Contractors and supervisors, landscaping...", nocCode: "7851", teerCategory: "7851" },
-    { occupation: "Agricultural service contractors...", nocCode: "254548", teerCategory: "254548" },
-    { occupation: "Butchers - retail and wholesale", nocCode: "6554", teerCategory: "6554" },
-    { occupation: "April 1, 2024", nocCode: "2487", teerCategory: "2487" },
-    { occupation: "April 1, 2024", nocCode: "298512", teerCategory: "298512" },
-    { occupation: "April 1, 2024", nocCode: "8445", teerCategory: "8445" },
-    { occupation: "April 1, 2024", nocCode: "1548", teerCategory: "1548" },
-    { occupation: "April 1, 2024", nocCode: "21582", teerCategory: "21582" },
-    { occupation: "April 1, 2024", nocCode: "545", teerCategory: "545" },
-    { occupation: "April 1, 2024", nocCode: "2324", teerCategory: "2324" },
-    { occupation: "April 1, 2024", nocCode: "884", teerCategory: "884" },
-  ];
-
+  const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [filter, setFilter] = useState({ occupation: "", nocCode: "", teerCategory: "" });
-  const itemsPerPage = 5;
-
-  const totalPages = Math.ceil(dummyData.length / itemsPerPage);
-
-  const handlePageChange = (page) => {
-    if (page >= 1 && page <= totalPages) {
-      setCurrentPage(page);
-    }
-  };
-
-  const handleFilterChange = (field, value) => {
-    setFilter({ ...filter, [field]: value });
-    setCurrentPage(1); // Reset to the first page on filter change
-  };
-
-  const filteredData = dummyData.filter(row => {
-    return (
-      (filter.occupation === "" || row.occupation.includes(filter.occupation)) &&
-      (filter.nocCode === "" || row.nocCode.includes(filter.nocCode)) &&
-      (filter.teerCategory === "" || row.teerCategory.includes(filter.teerCategory))
-    );
+  const [sortConfig, setSortConfig] = useState({
+    key: "drawNumber",
+    direction: "ascending",
   });
+  const itemsPerPage = 30;
 
-  const currentData = filteredData.slice(
-    (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
-  );
+  useEffect(() => {
+    fetch(
+      "https://www.canada.ca/content/dam/ircc/documents/json/ee_rounds_123_en.json#/rounds"
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        if (data) {
+          setData(data.rounds);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  // Sorting logic
+  const sortedData = React.useMemo(() => {
+    let sortableItems = [...data];
+    if (sortConfig !== null) {
+      sortableItems.sort((a, b) => {
+        let comparison = 0;
+
+        if (sortConfig.key === "drawDateFull") {
+          // Compare dates
+          comparison =
+            parseDate(a[sortConfig.key]) - parseDate(b[sortConfig.key]);
+        } else if (
+          sortConfig.key === "drawSize" ||
+          sortConfig.key === "drawCRS"
+        ) {
+          // Compare numeric values
+          comparison = (a[sortConfig.key] || 0) - (b[sortConfig.key] || 0);
+        } else {
+          // Compare strings
+          comparison = a[sortConfig.key]?.localeCompare(b[sortConfig.key]) || 0;
+        }
+
+        return sortConfig.direction === "ascending" ? comparison : -comparison;
+      });
+    }
+    return sortableItems;
+  }, [data, sortConfig]);
+
+  // Calculate the data to display on the current page
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = sortedData.slice(indexOfFirstItem, indexOfLastItem);
+
+  // Change page
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage);
+  };
+
+  // Change sort order
+  const handleSort = (key) => {
+    let direction = "ascending";
+    if (sortConfig.key === key && sortConfig.direction === "ascending") {
+      direction = "descending";
+    }
+    setSortConfig({ key, direction });
+  };
+
+  // Create page numbers
+  const pageNumbers = Math.ceil(sortedData.length / itemsPerPage);
 
   return (
     <div className={styles.tableContainer}>
@@ -52,73 +85,168 @@ const PaginationTable = () => {
         <thead>
           <tr>
             <th>
-              Occupations
-              <div className={styles.dropdown}>
-                <span className={styles.dropdownArrow}>▼</span>
-                <div className={styles.dropdownContent}>
-                  <button onClick={() => handleFilterChange("occupation", "Contractors")}>Contractors</button>
-                  <button onClick={() => handleFilterChange("occupation", "Agricultural")}>Agricultural</button>
-                  <button onClick={() => handleFilterChange("occupation", "Butchers")}>Butchers</button>
-                  <button onClick={() => handleFilterChange("occupation", "")}>Clear</button>
-                </div>
-              </div>
+              <button
+                className={styles.sortButton}
+                onClick={() => handleSort("drawNumber")}
+              >
+                <span className={styles.headingSpan}>#</span>
+                <span
+                  className={`${styles.dropdownArrow} ${
+                    sortConfig.key === "drawNumber"
+                      ? styles[sortConfig.direction]
+                      : ""
+                  }`}
+                >
+                  {sortConfig.key === "drawNumber"
+                    ? sortConfig.direction === "ascending"
+                      ? "▲"
+                      : "▼"
+                    : "▼"}
+                </span>
+              </button>
             </th>
             <th>
-              2021 NOC Code
-              <div className={styles.dropdown}>
-                <span className={styles.dropdownArrow}>▼</span>
-                <div className={styles.dropdownContent}>
-                  <button onClick={() => handleFilterChange("nocCode", "7851")}>7851</button>
-                  <button onClick={() => handleFilterChange("nocCode", "254548")}>254548</button>
-                  <button onClick={() => handleFilterChange("nocCode", "6554")}>6554</button>
-                  <button onClick={() => handleFilterChange("nocCode", "")}>Clear</button>
-                </div>
-              </div>
+              <button
+                className={styles.sortButton}
+                onClick={() => handleSort("drawDateFull")}
+              >
+                <span className={styles.headingSpan}>Date</span>
+                <span
+                  className={`${styles.dropdownArrow} ${
+                    sortConfig.key === "drawDateFull"
+                      ? styles[sortConfig.direction]
+                      : ""
+                  }`}
+                >
+                  {sortConfig.key === "drawDateFull"
+                    ? sortConfig.direction === "ascending"
+                      ? "▲"
+                      : "▼"
+                    : "▼"}
+                </span>
+              </button>
             </th>
             <th>
-              2021 TEER Category
-              <div className={styles.dropdown}>
-                <span className={styles.dropdownArrow}>▼</span>
-                <div className={styles.dropdownContent}>
-                  <button onClick={() => handleFilterChange("teerCategory", "7851")}>7851</button>
-                  <button onClick={() => handleFilterChange("teerCategory", "254548")}>254548</button>
-                  <button onClick={() => handleFilterChange("teerCategory", "6554")}>6554</button>
-                  <button onClick={() => handleFilterChange("teerCategory", "")}>Clear</button>
-                </div>
-              </div>
+              <button
+                className={styles.sortButton}
+                onClick={() => handleSort("drawName")}
+              >
+                <span className={styles.headingSpan}>Round Type</span>
+                <span
+                  className={`${styles.dropdownArrow} ${
+                    sortConfig.key === "drawName"
+                      ? styles[sortConfig.direction]
+                      : ""
+                  }`}
+                >
+                  {sortConfig.key === "drawName"
+                    ? sortConfig.direction === "ascending"
+                      ? "▲"
+                      : "▼"
+                    : "▼"}
+                </span>
+              </button>
+            </th>
+            <th>
+              <button
+                className={styles.sortButton}
+                onClick={() => handleSort("drawSize")}
+              >
+                <span className={styles.headingSpan}>Invitations Issued</span>
+                <span
+                  className={`${styles.dropdownArrow} ${
+                    sortConfig.key === "drawSize"
+                      ? styles[sortConfig.direction]
+                      : ""
+                  }`}
+                >
+                  {sortConfig.key === "drawSize"
+                    ? sortConfig.direction === "ascending"
+                      ? "▲"
+                      : "▼"
+                    : "▼"}
+                </span>
+              </button>
+            </th>
+            <th>
+              <button
+                className={styles.sortButton}
+                onClick={() => handleSort("drawCRS")}
+              >
+                <span className={styles.headingSpan}>
+                  CRS score of lowest-ranked candidate invited
+                </span>
+                <span
+                  className={`${styles.dropdownArrow} ${
+                    sortConfig.key === "drawCRS"
+                      ? styles[sortConfig.direction]
+                      : ""
+                  }`}
+                >
+                  {sortConfig.key === "drawCRS"
+                    ? sortConfig.direction === "ascending"
+                      ? "▲"
+                      : "▼"
+                    : "▼"}
+                </span>
+              </button>
             </th>
           </tr>
         </thead>
         <tbody>
-          {currentData.length > 0 ? (
-            currentData.map((row, index) => (
-              <tr key={index}>
-                <td>{row.occupation}</td>
-                <td>{row.nocCode}</td>
-                <td>{row.teerCategory}</td>
+          {currentItems.map((item, index) => {
+            const url = item.drawNumberURL?.trim().split("href='")[1];
+            return (
+              <tr className={styles.dataAll} key={index}>
+                <td>
+                  <a href={`https://www.canada.ca/${url}`}>
+                    {item?.drawNumber}
+                  </a>
+                </td>
+                <td>
+                  <p>{item.drawDateFull}</p>
+                </td>
+                <td>
+                  <p>{item.drawName}</p>
+                </td>
+                <td>
+                  <p>{item.drawSize}</p>
+                </td>
+                <td>
+                  <p>{item.drawCRS}</p>
+                </td>
               </tr>
-            ))
-          ) : (
-            <tr>
-              <td colSpan="3">No data available</td>
-            </tr>
-          )}
+            );
+          })}
         </tbody>
       </table>
+
       <div className={styles.pagination}>
-        <button onClick={() => handlePageChange(1)} disabled={currentPage === 1}>
+        <button
+          onClick={() => handlePageChange(1)}
+          disabled={currentPage === 1}
+        >
           {"<<"}
         </button>
-        <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
+        <button
+          onClick={() => handlePageChange(currentPage - 1)}
+          disabled={currentPage === 1}
+        >
           {"<"}
         </button>
         <span>
-          {currentPage} of {totalPages}
+          Page {currentPage} of {pageNumbers}
         </span>
-        <button onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}>
+        <button
+          onClick={() => handlePageChange(currentPage + 1)}
+          disabled={currentPage === pageNumbers}
+        >
           {">"}
         </button>
-        <button onClick={() => handlePageChange(totalPages)} disabled={currentPage === totalPages}>
+        <button
+          onClick={() => handlePageChange(pageNumbers)}
+          disabled={currentPage === pageNumbers}
+        >
           {">>"}
         </button>
       </div>
@@ -127,87 +255,3 @@ const PaginationTable = () => {
 };
 
 export default PaginationTable;
-
-
-// For Fetching From The api Backend the Code is Below //
-
-
-
-// import React, { useState, useEffect } from "react";
-// import styles from "./PaginationTable.module.css";
-
-// const PaginationTable = () => {
-//   const [data, setData] = useState([]);
-//   const [currentPage, setCurrentPage] = useState(1);
-//   const [totalPages, setTotalPages] = useState(1);
-
-//   useEffect(() => {
-//     fetchPageData(currentPage);
-//   }, [currentPage]);
-
-//   const fetchPageData = async (page) => {
-//     try {
-//       const response = await fetch(`/api/data?page=${page}`);
-//       const result = await response.json();
-//       setData(result.data);
-//       setTotalPages(result.totalPages);
-//     } catch (error) {
-//       console.error("Error fetching data:", error);
-//     }
-//   };
-
-//   const handlePageChange = (page) => {
-//     if (page >= 1 && page <= totalPages) {
-//       setCurrentPage(page);
-//     }
-//   };
-
-//   return (
-//     <div className={styles.tableContainer}>
-//       <table className={styles.table}>
-//         <thead>
-//           <tr>
-//             <th>Occupations</th>
-//             <th>2021 NOC Code</th>
-//             <th>2021 TEER Category</th>
-//           </tr>
-//         </thead>
-//         <tbody>
-//           {data.map((row, index) => (
-//             <tr key={index}>
-//               <td>{row.occupation}</td>
-//               <td>{row.nocCode}</td>
-//               <td>{row.teerCategory}</td>
-//             </tr>
-//           ))}
-//         </tbody>
-//       </table>
-//       <div className={styles.pagination}>
-//         <button onClick={() => handlePageChange(1)} disabled={currentPage === 1}>
-//           {"<<"}
-//         </button>
-//         <button
-//           onClick={() => handlePageChange(currentPage - 1)}
-//           disabled={currentPage === 1}
-//         >
-//           {"<"}
-//         </button>
-//         <span>{currentPage} of {totalPages}</span>
-//         <button
-//           onClick={() => handlePageChange(currentPage + 1)}
-//           disabled={currentPage === totalPages}
-//         >
-//           {">"}
-//         </button>
-//         <button
-//           onClick={() => handlePageChange(totalPages)}
-//           disabled={currentPage === totalPages}
-//         >
-//           {">>"}
-//         </button>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default PaginationTable;

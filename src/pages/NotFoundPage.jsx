@@ -7,7 +7,7 @@ import Footer1 from "../components/Footer1";
 let NotFoundPage = () => {
   return (
     <>
-    <Navbar1/>
+    <Navbar1 showBlue={true} />
       <div className={styles.parentNotFound}>
         <div className={styles.mainNotFound}>
             <img className={styles.NotFoundPageimage} src={PageNotFoundImg} alt="Page not Found" />

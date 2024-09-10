@@ -26,6 +26,7 @@
 }
 
 .calculatorIcon {
+  color: #ead9b0;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -201,6 +202,9 @@
 
 .lowerFooterText {
   font-weight: 700;
+}
+.lowerFooterText a{
+  color: #132f46;
 }
 
 /* Navbar1.module.css */
@@ -545,7 +549,7 @@
     display: none;
     position: absolute;
     background-color: #ffffff; /* White background for dropdown items */
-    min-width: 250px; /* Match width with sidebar */
+    /* min-width: 250px; Match width with sidebar */
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     flex-direction: column;
@@ -573,6 +577,36 @@
     background-color: #132f46;
     color: white;
   }
+  .subDropdownContent, .subSubDropdownContent {
+    display: none;
+  }
+  
+  .subDropdownContent.show, .subSubDropdownContent.show {
+    display: block;
+  }
+  
+  .subDropdown, .subSubDropdown {
+    position: relative;
+  }
+  
+  .subDropdownContent, .subSubDropdownContent {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    z-index: 10;
+  }
+  
+  .subDropdownContent {
+    left: 100%;
+  }
+  
+  .subSubDropdownContent {
+    left: 100%;
+    top: 0;
+  }
+  
 }
 
 /* Add these styles to Navbar1.module.css */

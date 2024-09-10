@@ -60,7 +60,14 @@
 
 .sortButton {
   border: none;
-  background-color: #e6e6e6;
+  background-color: transparent;
+  color: #0a3a5b;
+  font-weight: 600;
+}
+
+.sortButton:hover {
+  background-color: transparent;
+  color: #0a3a5b;
 }
 
 .dropdownContent {
@@ -116,6 +123,14 @@
   font-size: 16px;
 }
 
+.dataAll a {
+  text-decoration: underline;
+}
+
+.headingSpan {
+  font-size: 14px;
+}
+
 @media all and (max-width: 1450px) {
   .bannerMain {
     width: 95%;
@@ -130,7 +145,7 @@
 }
 
 @media all and (max-width: 750px) {
-  .bannerMain h1{
+  .bannerMain h1 {
     font-size: 40px;
   }
   .dataAll p {
@@ -142,7 +157,7 @@
 }
 
 @media all and (max-width: 630px) {
-  .bannerMain h1{
+  .bannerMain h1 {
     font-size: 30px;
   }
   .dataAll p {
@@ -178,7 +193,7 @@
 }
 
 @media all and (max-width: 430px) {
-  .bannerMain h1{
+  .bannerMain h1 {
     font-size: 28px;
   }
   .table {
@@ -204,9 +219,8 @@
   }
 }
 
-
 @media all and (max-width: 365px) {
-  .bannerMain h1{
+  .bannerMain h1 {
     font-size: 26px;
   }
   .table {

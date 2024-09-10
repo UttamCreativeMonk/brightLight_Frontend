@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import styles from "../styles/BlogsDetails.module.css";
 import { useEffect, useState } from "react";
 import Navbar1 from "../components/Navbar1";
@@ -9,60 +9,58 @@ import searchIcon from "../assets/search-gray.png";
 
 let BlogDetails = () => {
   let { id } = useParams();
+  let navigate = useNavigate(); // Added useNavigate hook
   let [blog, setBlog] = useState([]);
   let [loveneetData, setLoveneetData] = useState([]);
   let [recentBlogs, setRecentBlogs] = useState([]);
+  let [searchQuery, setSearchQuery] = useState(""); // Added searchQuery state
+
   useEffect(() => {
-    fetch(`https://brightlight-node.onrender.com/blogs/${id}`)
-      .then((res) => {
-        return res.json();
-      })
+    fetch(`https://brightlight-node.onrender.com/adding-blog/${id}`)
+      .then((res) => res.json())
       .then((data) => {
         if (data) {
           setBlog(data);
         }
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch((error) => console.log(error));
 
     fetch("https://brightlight-node.onrender.com/loveneet")
-      .then((res) => {
-        return res.json();
-      })
+      .then((res) => res.json())
       .then((data) => {
         if (data) {
           setLoveneetData(data[0]);
         }
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch((error) => console.log(error));
 
-    fetch("https://brightlight-node.onrender.com/blogs/")
-      .then((res) => {
-        return res.json();
-      })
+    fetch("https://brightlight-node.onrender.com/adding-blog/")
+      .then((res) => res.json())
       .then((data) => {
-        let recentBlogsFilteredData = data.filter((item) => {
-          return item._id != id;
-        });
+        let recentBlogsFilteredData = data.filter((item) => item._id != id);
         if (recentBlogsFilteredData) {
-          setRecentBlogs(recentBlogsFilteredData.slice(0,3));
+          setRecentBlogs(recentBlogsFilteredData.slice(0, 3));
         }
-      });
-  }, []);
+      })
+      .catch((error) => console.log(error));
+  }, [id]);
+
+  let handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  let handleSearchClick = () => {
+    if (searchQuery.trim()) {
+      navigate(`/blogs?search=${encodeURIComponent(searchQuery)}`);
+    }
+  };
+
   return (
     <>
       <Navbar1 />
       <div className={styles.blogTopSection}>
         <div className={styles.blogsTopContentSection}>
           <h1>{blog.blog_heading}</h1>
-          <div className={styles.topFlexSection}>
-            <h4>{blog.category}</h4>
-            <p>|</p>
-            <h4>{blog.date}</h4>
-          </div>
           <div className={styles.loveneetSection}>
             <img src={loveneetData.image} className={styles.loveneetImage} />
             <div className={styles.loveneetContent}>
@@ -77,7 +75,7 @@ let BlogDetails = () => {
                   <img src={Linkedin} />
                 </a>
                 <div>
-                  <p className={styles.haveAQuestion}>Have Questions ?</p>
+                  <p className={styles.haveAQuestion}>Have Questions?</p>
                   <a className={styles.imageSection} href={loveneetData.rcic}>
                     <img src={rcic} />
                   </a>
@@ -93,43 +91,46 @@ let BlogDetails = () => {
         </div>
         <div className={styles.blogSearchSection}>
           <div className={styles.searchDiv}>
-            <input placeholder="Search Blogs" />
-            <img src={searchIcon} />
+            <input
+              placeholder="Search Blogs"
+              value={searchQuery}
+              onChange={handleSearchChange}
+            />
+            <img
+              src={searchIcon}
+              onClick={handleSearchClick}
+              className={styles.searchIcon}
+              alt="Search"
+            />
+          </div>
+          <div className={styles.blogTagsSection}>
+            {blog.tag_1 && <p>{blog.tag_1}</p>}
+            {blog.tag_2 && <p>{blog.tag_2}</p>}
+            {blog.tag_3 && <p>{blog.tag_3}</p>}
           </div>
           {recentBlogs ? (
             <div className={styles.recentBlogsSection}>
               <h4>Recent Blogs</h4>
-              {recentBlogs?.map((item, index) => {
-                return (
-                  <a
-                    href={`/blogs/${item._id}`}
-                    key={index}
-                    style={{ backgroundImage: `url(${item.image}) `}}
-                    className={styles.recentBlog}
-                  >
-                    <h3>{item.blog_heading}</h3>
-                  </a>
-                );
-              })}
+              {recentBlogs?.map((item, index) => (
+                <a
+                  href={`/blogs/${item._id}`}
+                  key={index}
+                  style={{ backgroundImage: `url(${item.image})` }}
+                  className={styles.recentBlog}
+                >
+                  <h3>{item.blog_heading}</h3>
+                </a>
+              ))}
             </div>
           ) : null}
         </div>
       </div>
       <div className={styles.blogDescriptionSection}>
-        {blog.blog_description_para_1 ? (
-          <p>{blog.blog_description_para_1}</p>
-        ) : null}
-        {blog.blog_description_para_2 ? (
-          <p>{blog.blog_description_para_2}</p>
-        ) : null}
-        {blog.blog_description_para_3 ? (
-          <p>{blog.blog_description_para_3}</p>
-        ) : null}
-        {blog.blog_description_para_4 ? (
-          <p>{blog.blog_description_para_4}</p>
+        {blog.blog_content ? (
+          <div dangerouslySetInnerHTML={{ __html: blog.blog_content }} />
         ) : null}
       </div>
-      <Footer1/>
+      <Footer1 />
     </>
   );
 };

@@ -254,29 +254,55 @@
   row-gap: 30px;
 }
 
-.pillarFeatureSvg h4 {
-  text-align: center;
-  color: #cfb681;
-  font-size: 35px;
-  margin: 0px 0px 10px 0px;
-}
-
-.pillarFeatureSvg svg {
-  position: relative;
-  top: -25px;
-}
-
-.pillarFeatureSection p {
-  color: #cfb681;
-  font-size: 22px;
-}
-
 .pillarFeatureSvg {
   width: 60%;
   border-radius: 10px;
   padding: 10px 10px 30px 10px;
   background: linear-gradient(to bottom, #14334c 10%, #030c1412);
+  position: relative; /* Ensures proper positioning for child elements */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
+
+.pillarFeatureSvg h4 {
+  text-align: center;
+  color: #cfb681;
+  font-size: 35px;
+  margin: 0px 0px 10px 0px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.pillarFeatureSvg svg {
+  position: relative;
+  top: -25px;
+  transition: transform 0.3s ease;
+}
+
+.pillarFeatureSection p {
+  color: #cfb681;
+  font-size: 22px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.pillarFeatureSvg:hover {
+  transform: translateY(-10px); /* Moves the entire block upwards on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Adds shadow */
+  background-color: #1c2e3f; /* Optional: Change background color on hover */
+}
+
+.pillarFeatureSvg:hover img {
+  transform: scale(1.05); /* Slightly enlarges the image on hover */
+}
+
+.pillarFeatureSvg:hover h4 {
+ 
+  transform: translateY(-5px); /* Moves text slightly up on hover */
+}
+
+.pillarFeatureSvg:hover p {
+
+  transform: translateY(-3px); /* Moves text slightly up on hover */
+}
+
 
 .weAreParent {
   background-image: url("../assets/we-are-background.png");
@@ -534,6 +560,12 @@
 .meetDirectorMain h1 {
   font-size: 40px;
   color: #132f46;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.meetDirectorMain h1:hover {
+ 
+  transform: scale(1.05); /* Slightly enlarge the text on hover */
 }
 
 .thedirectors {
@@ -542,14 +574,22 @@
   display: flex;
   justify-content: space-around;
   margin-bottom: 50px;
+  transition: opacity 0.5s ease;
 }
 
 .thedirectors img {
   width: 350px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.thedirectors img:hover {
+  transform: scale(1.1); /* Slightly enlarge image on hover */
+
 }
 
 .meetDirectorimgContent {
   width: 45%;
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .meetDirectorimgContent h1 {
@@ -557,12 +597,24 @@
   font-size: 50px;
   line-height: 50px;
   color: #e9c67f;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.meetDirectorimgContent h1:hover {
+ 
+  transform: translateY(-5px); /* Move text slightly up on hover */
 }
 
 .meetDirectorimgContent h3 {
   padding-top: 10px;
   font-size: 22px;
   color: #132f46;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.meetDirectorimgContent h3:hover {
+ 
+  transform: translateY(-3px); /* Move text slightly up on hover */
 }
 
 .meetDirectorimgContent p {
@@ -570,7 +622,14 @@
   color: #132f46;
   padding-top: 30px;
   line-height: 33px;
+  transition: color 0.3s ease, opacity 0.3s ease;
 }
+
+.meetDirectorimgContent p:hover {
+ 
+  opacity: 0.8; /* Slightly reduce opacity on hover */
+}
+
 
 .weAreBig {
   display: block;
@@ -579,6 +638,13 @@
 .weAreSmall {
   display: none;
 }
+
+
+.pillarLogoContent h2{
+  color: white;
+}
+
+
 
 @media all and (max-width: 1500px) {
   .aboutUsTopContentSection {
