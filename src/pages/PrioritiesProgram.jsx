@@ -40,14 +40,11 @@ const PrioritiesProgram = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}> About the Program</p>
               <p onClick={() => scrollToSection("benefits")}>Benefits</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility Criteria</p>
               <p onClick={() => scrollToSection("Priority_Occupation_List")}>Priority Occupation List</p>
               <p onClick={() => scrollToSection("BCPNP_Calculator")}>BCPNP Calculator</p>
-              <p onClick={() => scrollToSection("how-to-apply")}> How to Apply?</p>
               <p onClick={() => scrollToSection("book-appointment")}> Book Appointment</p>
-              <p onClick={() => scrollToSection("Why_Choose_Us")}>Why Choose Us</p>
               <p onClick={() => scrollToSection("Testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("FAQs")}>FAQs</p>
               <p onClick={() => scrollToSection("Blogs")}>Blogs</p>
@@ -512,9 +509,9 @@ const PrioritiesProgram = () => {
             profile and embark on a transformative journey towards achieving
             your Canadian dream.
           </p>
-          <button
+          <button id="book-appointment"
             className={styles.button}
-            onClick={() => (window.location.href = "/appointment")}
+            onClick={() => (window.location.href = "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")}
           >
             Book Appointment
           </button>

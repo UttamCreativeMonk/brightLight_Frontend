@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styles from "../styles/InternationalGraduateProgram.module.css";
 import { Link } from "react-router-dom";
+import Navbar1 from "../components/Navbar1";
+import Footer1 from "../components/Footer1";
+
 
 const InternationalGraduateProgram = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -18,7 +21,7 @@ const InternationalGraduateProgram = () => {
 
   return (
     <>
-      {/* <Navbar1 /> */}
+      <Navbar1 />
       <div className={styles.bannerParent}>
       <header className={styles.header}>
         <h1>British Columbia Provincial Nominee Program - International Graduate Stream</h1>
@@ -41,7 +44,7 @@ const InternationalGraduateProgram = () => {
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
               <p onClick={() => scrollToSection("employer_requirements")}>Employer Requirements</p>
               <p onClick={() => scrollToSection("bcnp-calculator")}>BCPNP Calculator</p>
-              <p onClick={() => scrollToSection("process")}>process</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply</p>
               <p onClick={() => scrollToSection("why_choose_us")}> Why Choose Us?</p>
               <p onClick={() => scrollToSection("book-appointment")}> Book Appointment </p>
             </div>
@@ -133,14 +136,15 @@ const InternationalGraduateProgram = () => {
           <li><strong>Regular Skills Immigration System:</strong> Six months to submit an official application online.</li>
         </ol>
       </section>
-      <section className={styles.section}>
+      <section className={styles.section} id="book-appointment">
         <h2>Still Not Sure?</h2>
         <p>Contact Brightlight Immigration to assess your profile and start your journey towards Canadian permanent residence. With a high approval rate and a tailored approach, we handle BCPNP International Graduate Stream cases with expertise.</p>
-        <button className={styles.button} onClick={() => window.location.href = 'https://example.com/book-appointment'}>
+        <button  className={styles.button} onClick={() => window.location.href = 'https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj'}>
           Book Appointment
         </button>
       </section>
     </div>
+    <Footer1/>
     </>
   );
 };

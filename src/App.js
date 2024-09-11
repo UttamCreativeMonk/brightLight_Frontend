@@ -107,7 +107,7 @@ function App() {
       {/* <ParentsGrandparents/> */}
       {/* <StudentVisa/>   */}
       {/* <InsideCanada/> */}
-      {/* <ChangeCollegeProgram/> //done till here */}
+      {/* <ChangeCollegeProgram/>}
       {/* <VisitorToStudent/> */}
       {/* <OutsideCananda/> */}
       {/* <NonSds/> */}
@@ -116,7 +116,7 @@ function App() {
       {/* <ExtensionsDraft/> */}
       {/* <Flagpoling/> */}
       {/* <RestorationStatusDraft/> */}
-      {/* <SpousalOpenWorkPermit/>*/}
+      {/* <SpousalOpenWorkPermit/> */}
       {/* <CommonLawPartnerPermanent/> */}
       {/* <CommonLawPartnerTemporary/> */}
       {/* <Cby/> */}
@@ -132,7 +132,6 @@ function App() {
       {/* <HealthcareTargetedDraw/> */}
       {/* <StemTargetedDraw/> */}
       {/* <TradeOccupationTargetedDraw/> */}
-      {/* <TransportOccupationTargetedDraw/> */}
       {/* <PilotPrograms/> */}
       {/* <AgriFoodPilotProgram/> */}
       {/* <Rnip/> */}

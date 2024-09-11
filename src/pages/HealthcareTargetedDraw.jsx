@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styles from "../styles/HealthcareTargetedDraw.module.css";
 import { Link } from "react-router-dom";
+import Navbar1 from "../components/Navbar1";
+import Footer1 from "../components/Footer1";
+
 
 
 const HealthcareTargetedDraw = () => {
@@ -19,7 +22,7 @@ const HealthcareTargetedDraw = () => {
 
   return (
     <>
-      {/* <Navbar1 /> */}
+      <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div
@@ -38,7 +41,6 @@ const HealthcareTargetedDraw = () => {
               <p onClick={() => scrollToSection("eligiblity")}>Eligiblity</p>
               <p onClick={() => scrollToSection("eligiblity-occupation")}>Eligiblity Occupation</p>
               <p onClick={() => scrollToSection("previous-draw-history")}>Previous Draw History</p>
-              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
               <p onClick={() => scrollToSection("why-choose-us")}> Why Choose Us?  </p>
               <p onClick={() => scrollToSection("testimonials")}>Testimonials </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
@@ -275,7 +277,7 @@ const HealthcareTargetedDraw = () => {
         <Link to="/previous-draw-history" className={styles.button}>View Previous Draw History</Link>
       </section>
 
-      <section className={styles.applicationProcess}>
+      <section className={styles.applicationProcess} id="how-to-apply">
         <h2 className={styles.subheading}>How to Apply for Express Entry Healthcare Draws</h2>
         <ol>
           <li>Submit your profile to the Express Entry pool</li>
@@ -294,7 +296,7 @@ const HealthcareTargetedDraw = () => {
         <Link to="/contact-us" className={styles.button}>Contact Us</Link>
       </section>
 
-      <section className={styles.whyChooseUs}>
+      <section className={styles.whyChooseUs} id="why-choose-us">
         <h2 className={styles.subheading}>Why Choose Us</h2>
         <p>Brightlight Immigration offers personalized services to maximize your chances of success. Our experienced team provides dedicated support throughout the immigration process, ensuring a smooth and efficient experience.</p>
         {/* Include additional details as necessary */}
@@ -311,6 +313,7 @@ const HealthcareTargetedDraw = () => {
       </section>
     </div>
 
+    <Footer1/>
     </>
   );
 };

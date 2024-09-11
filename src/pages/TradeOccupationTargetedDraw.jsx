@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styles from "../styles/TradeOccupationTargetedDraw.module.css";
 import { Link } from "react-router-dom";
+import Navbar1 from "../components/Navbar1";
+import Footer1 from "../components/Footer1";
+
 
 
 const TradeOccupationTargetedDraw = () => {
@@ -19,7 +22,7 @@ const TradeOccupationTargetedDraw = () => {
 
   return (
     <>
-      {/* <Navbar1 /> */}
+      <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div
@@ -38,7 +41,6 @@ const TradeOccupationTargetedDraw = () => {
               <p onClick={() => scrollToSection("eligible")}>Eligible</p>
               <p onClick={() => scrollToSection("trade-occupations-category")}>Trade Occupations Category</p>
               <p onClick={() => scrollToSection("criteria-trade-occupations-category")}>Criteria-Trade-Occupation</p>
-              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
               <p onClick={() => scrollToSection("why-choose-us")}> Why Choose Us?</p>
               <p onClick={() => scrollToSection("testimonials")}>Testimonials </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
@@ -159,10 +161,10 @@ const TradeOccupationTargetedDraw = () => {
         <h2 className={styles.subheading}>Still Not Sure?</h2>
         <p>Contact Brightlight Immigration today to assess your profile and embark on a transformative journey towards achieving your Canadian dream. With over a decade of experience, we specialize in handling Express Entry Programs. Our approval rate for these programs is nearly 100%. We achieve this with a tailored approach to your specific case. We use case law and find similar cases to your circumstances that had positive results, and we use them as precedents in cases we work on. This is why we have a high success rate.</p>
         <p>At Brightlight Immigration, we have a dedicated team of visa application specialists who can assist you from the start of the application process all the way to obtaining your PR. Start your process now.</p>
-        <a href="/contact" className={styles.button}>Contact Us</a>
+        <a href="/contact-us" className={styles.button}>Contact Us</a>
       </div>
 
-      <div className={styles.whyChooseUs}>
+      <div className={styles.whyChooseUs} id="why-choose-us">
         <h2 className={styles.subheading}>Why Choose Us</h2>
         <p>Here is where you can describe why clients should choose your services over others. Highlight your unique selling points, such as personalized service, high success rates, and expert knowledge.</p>
       </div>
@@ -177,7 +179,7 @@ const TradeOccupationTargetedDraw = () => {
         </div>
       </div>
     </div>
-
+    <Footer1/>
     </>
   );
 };

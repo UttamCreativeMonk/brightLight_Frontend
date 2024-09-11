@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styles from "../styles/PilotPrograms.module.css";
 import { Link } from "react-router-dom";
+import Navbar1 from "../components/Navbar1";
+import Footer1 from "../components/Footer1";
+
 
 
 const PilotPrograms = () => {
@@ -19,7 +22,7 @@ const PilotPrograms = () => {
 
   return (
     <>
-      {/* <Navbar1 /> */}
+      <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div
@@ -77,17 +80,17 @@ const PilotPrograms = () => {
       </div>
 
       <div className={styles.whyChooseUs}>
-        <h2 className={styles.subheading}>Why Choose Us</h2>
+        <h2 className={styles.subheading} id="why-choose-us">Why Choose Us</h2>
         <p>
           At Brightlight Immigration, we provide expert guidance through Canada’s various immigration programs, including Pilot Programs. Our team of experienced consultants is dedicated to helping you navigate the complexities of immigration, ensuring that you have the best chance of success. We tailor our services to meet your unique needs and provide a high level of personalized support throughout the application process.
         </p>
         <p>
           Our success rate speaks for itself, with a near-perfect approval rate for our clients. By choosing us, you benefit from our extensive knowledge, commitment to your case, and proven track record. Let us help you make your Canadian immigration journey a smooth and successful one.
         </p>
-        <a href="/contact" className={styles.button}>Contact Us</a>
+        <a href="/contact-us" className={styles.button}>Contact Us</a>
       </div>
     </div>
-    
+    <Footer1/>
     </>
   );
 };

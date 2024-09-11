@@ -297,12 +297,12 @@ const FederalSkilledWorkerProgram = () => {
             specialists will assist you from the start of the application
             process all the way to obtaining your PR. Start your process now.
           </p>
-          <Link to="/book-appointment" className={styles.button}>
+          <Link id="book-appointment" to="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" className={styles.button}>
             Book Appointment
           </Link>
         </section>
 
-        <section className={styles.whyChooseUs}>
+        <section className={styles.whyChooseUs} id="why-choose-us">
           <h2 className={styles.subheading}>Why Choose Us?</h2>
           <p>
             At Brightlight Immigration, we offer expert guidance and support

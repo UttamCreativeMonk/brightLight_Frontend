@@ -62,8 +62,6 @@ const SkilledWorkerStream = () => {
       </div>
 
       <div className={styles.container}>
-     
-
         <section className={styles.section} id="benefits">
           <h2>Benefits of BC Skilled Worker Stream</h2>
           <ul>
@@ -318,7 +316,7 @@ const SkilledWorkerStream = () => {
           </ol>
         </section>
 
-        <section className={styles.section}>
+        <section className={styles.section} id="book-appointment">
           <h2>Still not sure?</h2>
           <p>
             Contact Brightlight Immigration today to assess your profile and
@@ -337,9 +335,9 @@ const SkilledWorkerStream = () => {
             application process all the way to obtaining your PR. Start your
             process now.
           </p>
-          <button
+          <button 
             className={styles.button}
-            onClick={() => (window.location.href = "/appointment")}
+            onClick={() => (window.location.href = "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")}
           >
             Book Appointment
           </button>

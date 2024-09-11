@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styles from "../styles/AgriFoodPilotProgram.module.css";
 import { Link } from "react-router-dom";
+import Navbar1 from "../components/Navbar1";
+import Footer1 from "../components/Footer1";
+
 
 const AgriFoodPilotProgram = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -23,7 +26,7 @@ const AgriFoodPilotProgram = () => {
 
   return (
     <>
-      {/* <Navbar1 /> */}
+      <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div
@@ -44,9 +47,6 @@ const AgriFoodPilotProgram = () => {
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
               <p onClick={() => scrollToSection("how-to-apply")}>
                 How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>
-                Refusal Reasons
               </p>
               <p onClick={() => scrollToSection("book-appointment")}>
                 Book Appointment
@@ -335,7 +335,7 @@ const AgriFoodPilotProgram = () => {
           </div>
         </section>
 
-        <section className={styles.application}>
+        <section className={styles.application} id="how-to-apply">
           <h2>How to Apply for Canada’s Agri-Food Immigration Pilot</h2>
           <ul>
             <li>
@@ -363,10 +363,10 @@ const AgriFoodPilotProgram = () => {
             precedents in cases we work on. This is why we have a high success
             rate.
           </p>
-          <button className={styles.button}>Book Appointment</button>
+          <a href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj"><button  className={styles.button} id="book-appointment">Book Appointment</button></a>
         </section>
 
-        <section className={styles.testimonials}>
+        <section className={styles.testimonials} id="why-choose-us">
           <h2>Why Choose Us?</h2>
           <p>See what our clients have to say:</p>
           <div className={styles.testimonialVideos}>
@@ -381,6 +381,8 @@ const AgriFoodPilotProgram = () => {
           </div>
         </section>
       </div>
+
+      <Footer1/>
     </>
   );
 };

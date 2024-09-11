@@ -25,6 +25,16 @@ import hamBurgerIconBlue from "../assets/hamBurgerIconBlue.svg";
 import whiteLogo from "../assets/brightlight-logo-white.png";
 
 const Navbar1 = (props) => {
+  const [inputValue, setInputValue] = useState("");
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Prevent the default form submission behavior
+    if (inputValue.trim()) {
+      // Redirect using window.location
+      window.location.href = `/search?q=${encodeURIComponent(
+        inputValue.trim()
+      )}`;
+    }
+  };
   const [isFederalSkilledOpen, setIsFederalSkilledOpen] = useState(false);
   const [isFederalSkilledProgramOpen, setIsFederalSkilledProgramOpen] =
     useState(false);
@@ -562,13 +572,27 @@ const Navbar1 = (props) => {
             </div>
 
             {/* Search Bar */}
-            <div className={styles.searchBar}>
-              <div className={styles.inputWrapper}>
-                <Search className={styles.searchIcon} width={20} height={20} />
-                <input type="text" className={styles.input} />
+            <form onSubmit={handleSubmit}>
+              <div className={styles.searchBar}>
+                <div className={styles.inputWrapper}>
+                  <Search
+                    className={styles.searchIcon}
+                    width={20}
+                    height={20}
+                  />
+                  <input
+                    type="text"
+                    className={styles.input}
+                    value={inputValue}
+                    onChange={(e) => setInputValue(e.target.value)}
+                    required
+                  />
+                </div>
+                <button type="submit" className={styles.button}>
+                  Search here
+                </button>
               </div>
-              <button className={styles.button}>Search here</button>
-            </div>
+            </form>
 
             {/* Hamburger Icon */}
             <div className={styles.hamburger} onClick={toggleSidebar}>
@@ -773,10 +797,15 @@ const Navbar1 = (props) => {
                 </div>
               </div>
 
-              <div className={styles.subDropdown}>
+              <div
+                className={styles.subDropdown}
+                // style={{ marginBottom: "20px", marginTop: "10px" }}
+              >
                 <a href="/calculators" onClick={toggleCalculators}>
                   CALCULATORS
-                  <span className={styles.arrow}>▼</span>
+                  <span className={styles.arrow} style={{ marginLeft: "73px" }}>
+                    ▼
+                  </span>
                 </a>
                 {isCalculatorsOpen && (
                   <div className={styles.subDropdownContent}>

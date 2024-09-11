@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styles from "../styles/InternationalPostGraduateProgram.module.css";
 import { Link } from "react-router-dom";
+import Navbar1 from "../components/Navbar1";
+import Footer1 from "../components/Footer1";
+
 
 const InternationalPostGraduateProgram = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -18,7 +21,7 @@ const InternationalPostGraduateProgram = () => {
 
   return (
     <>
-      {/* <Navbar1 /> */}
+      <Navbar1 />
       <div className={styles.bannerParent}>
         <header className={styles.header}>
           <h1>
@@ -39,7 +42,6 @@ const InternationalPostGraduateProgram = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}> About the Program</p>
               <p onClick={() => scrollToSection("benefits")}>Benefits</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
               <p onClick={() => scrollToSection("employer_requirements")}>Employer Requirements</p>
@@ -155,7 +157,7 @@ const InternationalPostGraduateProgram = () => {
             No job offer from an employer is required to apply to this stream.
           </p>
         </section>
-        <section className={styles.section}>
+        <section className={styles.section} id="how-to-apply">
           <h2>Application Procedure</h2>
           <ol>
             <li>
@@ -195,13 +197,13 @@ const InternationalPostGraduateProgram = () => {
           <button
             className={styles.button}
             onClick={() =>
-              (window.location.href = "https://example.com/book-appointment")
+              (window.location.href = "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
             }  id="book-appointment"
           >
             Book Appointment
           </button>
         </section>
-        <section className={styles.section} >
+        <section className={styles.section}  id="why-choose-us">
           <h2>Why Choose Us?</h2>
           <ul>
             <li>
@@ -223,6 +225,7 @@ const InternationalPostGraduateProgram = () => {
           </ul>
         </section>
       </div>
+      <Footer1/>
     </>
   );
 };

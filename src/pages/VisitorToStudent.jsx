@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import styles from '../styles/VisitorToStudent.module.css';
+import Navbar1 from "../components/Navbar1";
+import Footer1 from "../components/Footer1";
 
 const VisitorToStudent = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -17,7 +19,7 @@ const VisitorToStudent = () => {
   
     return (
       <>
-        {/* <Navbar1 /> */}
+        <Navbar1 /> 
         <div className={styles.bannerParent}>
           <div className={styles.banner}>
            
@@ -104,7 +106,7 @@ const VisitorToStudent = () => {
         </ul>
       </section>
 
-      <section className={styles.applicationProcess}>
+      <section className={styles.applicationProcess} id="how-to-apply">
         <h2 className={styles.subheading}>How to Apply for a Study Permit When Applying as a Visitor</h2>
         <p className={styles.processDescription}>
           You will need to provide the same documents as you would if you were applying from outside Canada. This includes your passport, letter of acceptance from your DLI, proof of financial support, and police certificates. Here are 5 easy steps we help you follow to process your application:
@@ -137,20 +139,22 @@ const VisitorToStudent = () => {
         <p className={styles.callToActionText}>
           If you have faced a refusal for any of the reasons mentioned above, don't worry. With over 10 years of experience, we specialize in handling previously refused cases. We have successfully secured approval for students who have had multiple refusals, long gaps in education, and are of mature age.
         </p>
-        <p className={styles.callToActionText}>
+        <p className={styles.callToActionText} >
           We achieve this by tailoring our approach to your specific case and addressing each concern raised by the officer in previous refusals. Using case law, we identify similar cases with positive outcomes and apply them as precedents. This is why we have a high success rate, with over 90% approval in such cases. At Brightlight Immigration, we have a dedicated team of visa application specialists ready to assist you from the start of the application process to obtaining your visa. Start your process now.
         </p>
-        <a href="/book-appointment" className={styles.button}>Book Appointment</a>
+        <a id="book-appointment" href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" className={styles.button}>Book Appointment</a>
       </section>
 
       <section className={styles.testimonials}>
-        <h2 className={styles.subheading}>Why Choose Us</h2>
+        <h2 className={styles.subheading} id="why-choose-us">Why Choose Us</h2>
         <div className={styles.testimonialsContainer}>
           {/* Implement your video and written testimonials here */}
           {/* Option to hide/display testimonials in backend */}
         </div>
       </section>
     </div>
+
+    <Footer1/>
     </>
   );
 };

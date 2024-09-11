@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styles from "../styles/Rnip.module.css";
 import { Link } from "react-router-dom";
+import Navbar1 from "../components/Navbar1";
+import Footer1 from "../components/Footer1";
+
 
 
 const AgriFoodPilotProgram = () => {
@@ -19,7 +22,7 @@ const AgriFoodPilotProgram = () => {
 
   return (
     <>
-      {/* <Navbar1 /> */}
+      <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div
@@ -64,7 +67,7 @@ const AgriFoodPilotProgram = () => {
           The program's community-driven approach is its strength. Communities themselves assess prospective candidates, ensuring they have the skills and intentions that align perfectly with local needs. This means newcomers don't just fill jobs - they become integral parts of the community fabric, contributing their unique talents and perspectives to enrich the area.
         </p>
         <h2>Participating Communities</h2>
-        <table className={styles.table} id="eligibility">
+        <table className={styles.table} >
           <thead>
             <tr>
               <th>Community</th>
@@ -85,7 +88,7 @@ const AgriFoodPilotProgram = () => {
           </tbody>
         </table>
 
-        <h2>Eligibility Requirements for RNIP</h2>
+        <h2 id="eligibility">Eligibility Requirements for RNIP</h2>
         <p>There are two main parts to eligibility:</p>
         <ol>
           <li>IRCC requirements: You'll need to check if you meet the general criteria set by Immigration, Refugees and Citizenship Canada (IRCC). This could include things like having the right education, work experience, language skills, and more.</li>
@@ -174,7 +177,7 @@ const AgriFoodPilotProgram = () => {
         <h2>Intention to Reside in the Community</h2>
         <p>To participate in the pilot, you must plan to live in the community.</p>
 
-        <h2>How to Apply</h2>
+        <h2 id="how-to-apply">How to Apply</h2>
         <ol>
           <li>Look for a qualifying job offer with a qualifying employer in the qualifying community.</li>
           <li>Ensure your job offer location is within RNIP Communities Boundaries.</li>
@@ -194,12 +197,12 @@ const AgriFoodPilotProgram = () => {
           <li>Improper calculation of hours that count towards work experience.</li>
         </ul>
 
-        <h2>Why Choose Us</h2>
+        <h2 id="why-choose-us">Why Choose Us</h2>
         <p>Include content here.</p>
       </section>
     </div>
 
-
+    <Footer1/>
     </>
   );
 };

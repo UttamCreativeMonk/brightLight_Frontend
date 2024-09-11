@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styles from "../styles/ExtensionsDraft.module.css";
 import { Link } from "react-router-dom";
+import Navbar1 from "../components/Navbar1";
+import Footer1 from "../components/Footer1";
+
 
 const ExtensionsDraft = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -18,7 +21,7 @@ const ExtensionsDraft = () => {
 
   return (
     <>
-      {/* <Navbar1 /> */}
+      <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div
@@ -33,25 +36,12 @@ const ExtensionsDraft = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
-                About the Program
-              </p>
+              <p onClick={() => scrollToSection("about-program")}> About the Program </p>
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>
-                Refusal Reasons
-              </p>
-              <p onClick={() => scrollToSection("book-appointment")}>
-                Book Appointment
-              </p>
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose Us?
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("how-to-apply")}> How to Apply? </p>
+              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
+              <p onClick={() => scrollToSection("why-choose-us")}> Why Choose Us?   </p>
+              <p onClick={() => scrollToSection("testimonials")}> Testimonials </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -100,7 +90,7 @@ const ExtensionsDraft = () => {
           </ul>
         </section>
 
-        <section className={styles.applicationProcess}>
+        <section className={styles.applicationProcess} id="how-to-apply">
           <h2 className={styles.subheading}>
             How to Apply for an Extension of Temporary Status?
           </h2>
@@ -132,7 +122,7 @@ const ExtensionsDraft = () => {
           </ul>
         </section>
 
-        <section className={styles.assistance}>
+        <section className={styles.assistance} >
           <h2 className={styles.subheading}>Still Not Sure?</h2>
           <p>
             If you have received a refusal for any reason, do not worry. With
@@ -151,12 +141,12 @@ const ExtensionsDraft = () => {
             application process all the way to obtaining your visa. Start your
             process now.
           </p>
-          <Link to="/book-appointment" className={styles.button}>
+          <Link id="book-appointment" to="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" className={styles.button}>
             Book Appointment
           </Link>
         </section>
 
-        <section className={styles.whyChooseUs}>
+        <section className={styles.whyChooseUs} id="why-choose-us">
           <h2 className={styles.subheading}>Why Choose Us?</h2>
           <p>
             We offer personalized service and expert advice to ensure your
@@ -180,6 +170,7 @@ const ExtensionsDraft = () => {
           </div>
         </section>
       </div>
+      <Footer1/>
     </>
   );
 };

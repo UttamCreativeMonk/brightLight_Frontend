@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styles from '../styles/Flagpoling.module.css';
 import { Link } from "react-router-dom";
+import Navbar1 from "../components/Navbar1";
+import Footer1 from "../components/Footer1";
+
 
 const Flagpoling = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -18,7 +21,7 @@ const Flagpoling = () => {
   
     return (
       <>
-        {/* <Navbar1 /> */}
+        <Navbar1 />
         <div className={styles.bannerParent}>
           <div className={styles.banner}>
            
@@ -35,24 +38,13 @@ const Flagpoling = () => {
                 <h3>Quick Access</h3>
               </div>
               <div className={styles.bannerHeadingRotatePara}>
-                <p onClick={() => scrollToSection("about-program")}>
-                  About the Program
-                </p>
+                <p onClick={() => scrollToSection("about-program")}>  About the Program  </p>
                 <p onClick={() => scrollToSection("benifits")}>Benifits</p>
                 <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
                 <p onClick={() => scrollToSection("tips")}>Tips</p>
-                <p onClick={() => scrollToSection("how-to-apply")}>
-                  How to Apply?
-                </p>
-                <p onClick={() => scrollToSection("refusal-reasons")}>
-                  Refusal Reasons
-                </p>
-                <p onClick={() => scrollToSection("book-appointment")}>
-                  Book Appointment
-                </p>
-                <p onClick={() => scrollToSection("why-choose-us")}>
-                  Why Choose Us?
-                </p>
+                <p onClick={() => scrollToSection("how-to-apply")}>   How to Apply?   </p>
+                <p onClick={() => scrollToSection("book-appointment")}>    Book Appointment    </p>
+                <p onClick={() => scrollToSection("why-choose-us")}>   Why Choose Us?   </p>
                 <p onClick={() => scrollToSection("testimonials")}>
                   Testimonials
                 </p>
@@ -96,14 +88,14 @@ const Flagpoling = () => {
         <p>While flagpoling can be a helpful tool when used under the right circumstances, it's important to approach it with careful preparation and the right documentation. We strongly advocate for thorough preparation to maximize the benefits of this process. However, it's crucial to remember that flagpoling also comes with inherent risks. Potential denial of entry at both US and Canadian borders could lead to forced removal from Canada back to your home country. Additionally, flagpoling typically involves a detailed interview with a US immigration officer or CBSA border officer.</p>
       </section>
 
-      <section className={styles.assistance}>
+      <section className={styles.assistance} id="how-to-apply">
         <h2 className={styles.subheading}>Still Not Sure?</h2>
         <p>To avoid these risks and ensure a smooth flagpoling experience, we highly recommend hiring representation from a Regulated Canadian Immigration Consultant (RCIC). An RCIC can not only guide you on the necessary documents for flagpoling but also effectively prepare you for the Port of Entry and border interviews conducted by immigration officers.</p>
         <p>Brightlight Immigration is available to represent you at any Point of Entry in the Lower Mainland, British Columbia. Our experienced consultants will ensure you have the necessary documentation, provide tailored guidance, and assist you in effectively communicating your case to immigration officers.</p>
-        <Link to="/book-appointment" className={styles.button}>Book Appointment</Link>
+        <Link id="" to="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" className={styles.button}>Book Appointment</Link>
       </section>
 
-      <section className={styles.whyChooseUs}>
+      <section className={styles.whyChooseUs} id="why-choose-us">
         <h2 className={styles.subheading}>Why Choose Us?</h2>
         <p>We offer expert advice and personalized service to make your flagpoling experience as smooth as possible. Our team of experienced professionals will guide you through the process and ensure that you are well-prepared for every step, from gathering documentation to handling interviews.</p>
       </section>
@@ -122,6 +114,7 @@ const Flagpoling = () => {
         </div>
       </section>
     </div>
+    <Footer1/>
     </>
   );
 };

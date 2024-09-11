@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styles from '../styles/Sds.module.css';
 import { Link } from "react-router-dom";
+import Navbar1 from "../components/Navbar1";
+import Footer1 from "../components/Footer1";
+
 
 const Sds = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -18,7 +21,7 @@ const Sds = () => {
   
     return (
       <>
-        {/* <Navbar1 /> */}
+        <Navbar1 />
         <div className={styles.bannerParent}>
           <div className={styles.banner}>
            
@@ -35,29 +38,17 @@ const Sds = () => {
                 <h3>Quick Access</h3>
               </div>
               <div className={styles.bannerHeadingRotatePara}>
-                <p onClick={() => scrollToSection("about-program")}>
-                  About the Program
-                </p>
+                <p onClick={() => scrollToSection("about-program")}> About the Program</p>
                 <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
                 <p onClick={() => scrollToSection("faster-processing")}>Faster Processing</p>
                 <p onClick={() => scrollToSection("exclusion")}>Exclusion</p>
                 <p onClick={() => scrollToSection("family")}>Family</p>
                 <p onClick={() => scrollToSection("application-submission")}>Application-Submission</p>
-                <p onClick={() => scrollToSection("how-to-apply")}>
-                  How to Apply?
-                </p>
-                <p onClick={() => scrollToSection("refusal-reasons")}>
-                  Refusal Reasons
-                </p>
-                <p onClick={() => scrollToSection("book-appointment")}>
-                  Book Appointment
-                </p>
-                <p onClick={() => scrollToSection("why-choose-us")}>
-                  Why Choose Us?
-                </p>
-                <p onClick={() => scrollToSection("testimonials")}>
-                  Testimonials
-                </p>
+                <p onClick={() => scrollToSection("how-to-apply")}>How to Apply? </p>
+                <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons  </p>
+                <p onClick={() => scrollToSection("book-appointment")}>  Book Appointment </p>
+                <p onClick={() => scrollToSection("why-choose-us")}> Why Choose Us?  </p>
+                <p onClick={() => scrollToSection("testimonials")}>  Testimonials    </p>
                 <p onClick={() => scrollToSection("faqs")}>FAQs</p>
                 <p onClick={() => scrollToSection("blogs")}>Blogs</p>
               </div>
@@ -137,7 +128,7 @@ const Sds = () => {
         <Link to="/bcpnp-calculator" className={styles.button}>Check CLB Score Requirements</Link>
       </section>
 
-      <section className={styles.applicationProcess}>
+      <section className={styles.applicationProcess} id="how-to-apply">
         <h2 className={styles.subheading}>How to Apply for Student Direct Stream (SDS)</h2>
         <p>If you’re considering applying for a study permit through the Student Direct Stream (SDS), here’s what you’ll need:</p>
         <ol>
@@ -312,10 +303,10 @@ const Sds = () => {
           <li>Choice of study program that does not match with past qualifications and experience</li>
         </ul>
         <p>Still not sure? If you have faced a refusal for any of the reasons mentioned above, don't worry. With over 10 years of experience, we specialize in handling previously refused cases. We have successfully secured approval for students who have had multiple refusals, long gaps in education, and are of mature age. We achieve this by tailoring our approach to your specific case and addressing each concern raised by the officer in previous refusals. Using case law, we identify similar cases with positive outcomes and apply them as precedents in the cases we handle. This is why we have a high success rate, with over 90% approval in such cases. At Brightlight Immigration, we have a dedicated team of visa application specialists who can assist you from the start of the application process all the way to obtaining your visa. Start your process now.</p>
-        <Link to="/book-appointment" className={styles.button}>Book Appointment</Link>
+        <Link id="book-appointment" to="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" className={styles.button}>Book Appointment</Link>
       </section>
     </div>
-
+    <Footer1/>
     </>
   );
 };

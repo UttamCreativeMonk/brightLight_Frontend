@@ -25,13 +25,12 @@ let PrevArrow = () => {
 let Blogs = () => {
   let [blogs, setBlogs] = useState([]);
   useEffect(() => {
-    fetch("https://brightlight-node.onrender.com/blogs")
+    fetch("https://brightlight-node.onrender.com/adding-blog")
       .then((res) => {
         return res.json();
       })
       .then((data) => {
         if (data) {
-          // let trimData = data.slice(0, 5);
           setBlogs(data);
         }
       })
@@ -65,10 +64,13 @@ let Blogs = () => {
         <div className={styles.sliderSection}>
           <Slider {...settings}>
             {blogs.map((item, index) => {
-              let truncateText = (text, numWords) => {
-                let words = text.split(" ");
-                if (words.length <= numWords) return text;
-                return words.slice(0, numWords).join(" ") + "...";
+              let stripHtmlTags = (text) =>
+                text ? text.replace(/<[^>]*>/g, "") : "";
+
+              let truncateText = (text, numChars) => {
+                let cleanedText = stripHtmlTags(text);
+                if (cleanedText.length <= numChars) return cleanedText;
+                return cleanedText.slice(0, numChars) + "...";
               };
               return (
                 <a
@@ -79,8 +81,10 @@ let Blogs = () => {
                   <img src={item.image} />
                   <h5>{item.category}</h5>
                   <h2>{item.blog_heading}</h2>
-                  <h6><b>{item.date}</b></h6>
-                  <p>{truncateText(item.blog_description_para_1, 20)}</p>
+                  <h6>
+                    <b>{item.date && item.date.trim().split("T")[0]}</b>
+                  </h6>
+                  <p>{truncateText(item.blog_content, 100)}</p>
                   <button>Read More</button>
                 </a>
               );

@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styles from "../styles/HealthAuthoritiesStream.module.css";
 import { Link } from "react-router-dom";
+import Navbar1 from "../components/Navbar1";
+import Footer1 from "../components/Footer1";
+
 
 const HealthAuthorityStream = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -18,7 +21,7 @@ const HealthAuthorityStream = () => {
 
   return (
     <>
-      {/* <Navbar1 /> */}
+      <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div
@@ -137,10 +140,11 @@ const HealthAuthorityStream = () => {
         <p className={styles.description}>
           At Brightlight Immigration, we have a dedicated team of visa application specialists who can assist you from the start of the application process all the way to obtaining your PR. Start your process now.
         </p>
-        <Link to="/book-appointment" className={styles.button}>Book Appointment</Link>
+        <Link to="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" className={styles.button}>Book Appointment</Link>
 
         <a href="/bcpnp-calculator" className={styles.button}>Calculate Your BCPNP Score</a>
       </div>
+      <Footer1/>
     </>
   );
 };

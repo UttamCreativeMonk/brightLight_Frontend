@@ -179,7 +179,9 @@ let Blogs = () => {
         {currentBlogs.length > 0 ? (
           <div className={styles.blogsGridSection}>
             {currentBlogs.map((item, index) => {
-              let stripHtmlTags = (text) => text.replace(/<[^>]*>/g, "");
+              let stripHtmlTags = (text) =>
+                text ? text.replace(/<[^>]*>/g, "") : "";
+
               let truncateText = (text, numChars) => {
                 let cleanedText = stripHtmlTags(text);
                 if (cleanedText.length <= numChars) return cleanedText;
@@ -191,12 +193,15 @@ let Blogs = () => {
                   className={styles.blog}
                   href={`/blogs/${item._id}`}
                 >
-                  <img src={item.image} />
+                  {item.image && <img src={item.image} />}
+
                   <div>
-                    <h4>{item?.tag_1}</h4>
+                    {item.tag_1 && <h4>{item?.tag_1}</h4>}
+
                     <h4>{item.date && item.date.trim().split("T")[0]}</h4>
                   </div>
-                  <h1>{item.blog_heading}</h1>
+                  {item.blog_heading && <h1>{item.blog_heading}</h1>}
+
                   <p>{truncateText(item?.blog_content, 100)}</p>
                 </a>
               );

@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styles from "../styles/EntryLevelSemiSkilled.module.css";
 import { Link } from "react-router-dom";
+import Navbar1 from "../components/Navbar1";
+import Footer1 from "../components/Footer1";
+
 
 const EntryLevelSemiSkilled = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -18,7 +21,7 @@ const EntryLevelSemiSkilled = () => {
 
   return (
     <>
-      {/* <Navbar1 /> */}
+      <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div
@@ -37,6 +40,7 @@ const EntryLevelSemiSkilled = () => {
                 About the Program
               </p>
               <p onClick={() => scrollToSection("key-points")}>Key Points</p>
+              <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
               <p onClick={() => scrollToSection("how-to-apply")}>
                 How to Apply?
               </p>
@@ -79,7 +83,7 @@ const EntryLevelSemiSkilled = () => {
           <li className={styles.listItem}>No High-Skilled Job Offer Required: You do not need to be employed or have a job offer in a high-skilled occupation.</li>
         </ul>
 
-        <h2 className={styles.subtitle} id="how-to-apply">
+        <h2 className={styles.subtitle} id="eligibility">
           Eligibility Criteria for the British Columbia BCPNP Entry Level and Semi-Skilled (ELSS) Program
         </h2>
         <div className={styles.criteria}>
@@ -200,7 +204,7 @@ const EntryLevelSemiSkilled = () => {
           </li>
         </ul>
 
-        <h2 className={styles.subtitle} id="book-appointment">
+        <h2 className={styles.subtitle}>
           Still Not Sure?
         </h2>
         <p className={styles.description}>
@@ -209,7 +213,7 @@ const EntryLevelSemiSkilled = () => {
         <p className={styles.description}>
           At Brightlight Immigration, we have a dedicated team of visa application specialists who can assist you from the start of the application process all the way to obtaining your PR. Start your process now.
         </p>
-        <Link to="/book-appointment" className={styles.button}>Book Appointment</Link>
+        <Link id="book-appointment" to="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" className={styles.button}>Book Appointment</Link>
 
         <h2 className={styles.subtitle} id="why-choose-us">
           Why Choose Us?
@@ -224,6 +228,7 @@ const EntryLevelSemiSkilled = () => {
           <li className={styles.listItem}>Full Support: From initial application to final PR approval.</li>
         </ul>
       </div>
+      <Footer1/>
     </>
   );
 };

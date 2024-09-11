@@ -164,12 +164,10 @@ let News = () => {
         <div className={styles.firstBlog}>
           <div className={styles.firstBlogContentSection}>
             <h4>{firstBlog.date && firstBlog.date.trim().split("T")[0]}</h4>
-            <h1>{firstBlog.news_heading}</h1>
+            {firstBlog.news_heading && <h1>{firstBlog.news_heading}</h1>}
             <a href={`/news/${firstBlog._id}`}>Read More</a>
           </div>
-          <div>
-            <img src={firstBlog.image} />
-          </div>
+          <div>{firstBlog.image && <img src={firstBlog.image} />}</div>
         </div>
       ) : null}
       <div className={styles.blogsResultSection}>
@@ -190,9 +188,10 @@ let News = () => {
                   className={styles.blog}
                   href={`/news/${item._id}`}
                 >
-                  <img src={item.image} />
+                  {item.image && <img src={item.image} />}
+
                   <div>
-                    <h4>{item?.tag_1}</h4>
+                    {item?.tag_1 && <h4>{item?.tag_1}</h4>}
                     <h4>{item.date && item.date.trim().split("T")[0]}</h4>
                   </div>
                   <h1>{item.news_heading}</h1>
@@ -214,7 +213,7 @@ let News = () => {
             <h3>Quick Links</h3>
             {quickLinksBlogs?.map((item, index) => (
               <div key={index}>
-                <h2>{item.news_heading}</h2>
+                {item.news_heading && <h2>{item.news_heading}</h2>}
                 <p>{item.date && item.date.trim().split("T")[0]}</p>
                 <a href={`/news/${item._id}`}>Read more</a>
               </div>

@@ -86,11 +86,11 @@ const Footer1 = () => {
           <div className={styles.centerFooter}>
             <img src={FooterLogo} />
             <div className={styles.socialMediaFooter}>
-              <TikTokIcon className={styles.socialIcon} />
-              <LinkedInIcon className={styles.socialIcon} />
-              <InstagramIcon className={styles.socialIcon} />
-              <FacebookIcon className={styles.socialIcon} />
-              <YouTubeIcon className={styles.socialIcon} />
+              <TikTokIcon   onClick={() => window.location.href = 'https://www.tiktok.com/@brightlightimmigration?_t=8lzyE6vJG0E&_r=1'} className={styles.socialIcon} />
+              <LinkedInIcon  onClick={() => window.location.href = 'https://ca.linkedin.com/in/loveneet-paneswar-5b2377198'} className={styles.socialIcon} />
+              <InstagramIcon  onClick={() => window.location.href = 'https://www.instagram.com/brightlightimmigration?igsh=b2xmdzh5eDdsc29p'} className={styles.socialIcon} />
+              <FacebookIcon  onClick={() => window.location.href = 'https://www.facebook.com/brightlightimmigration'} className={styles.socialIcon} />
+              <YouTubeIcon  onClick={() => window.location.href = 'https://www.youtube.com/channel/UC2NJoKhIOconAE_IFCxX7uA'} className={styles.socialIcon} />
             </div>
             <div className={styles.privacyDiv}>
               <a href="/privacy-policy">PRIVACY POLICY</a> | <a href="/terms-&-conditions">TERMS & CONDITION</a>

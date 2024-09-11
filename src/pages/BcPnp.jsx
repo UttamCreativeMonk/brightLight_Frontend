@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styles from "../styles/BcPnp.module.css";
 import { Link } from "react-router-dom";
+import Navbar1 from "../components/Navbar1";
+import Footer1 from "../components/Footer1";
+
 
 const BcPnp = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -18,7 +21,7 @@ const BcPnp = () => {
 
   return (
     <>
-      {/* <Navbar1 /> */}
+      <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div
@@ -146,7 +149,7 @@ const BcPnp = () => {
               </li>
             </ul>
           </li>
-          <li className={styles.listItem} id="how-to-apply">
+          <li className={styles.listItem} >
             Operational Requirements:
             <ul className={styles.nestedList}>
               <li className={styles.nestedListItem}>
@@ -222,7 +225,7 @@ const BcPnp = () => {
           </li>
         </ul>
 
-        <h2 className={styles.subtitle}>How to Apply for BCPNP?</h2>
+        <h2 className={styles.subtitle} id="how-to-apply">How to Apply for BCPNP?</h2>
         <ul className={styles.list}>
           <li className={styles.listItem}>
             Create an online profile and provide information about your skills,
@@ -247,7 +250,7 @@ const BcPnp = () => {
           </li>
         </ul>
 
-        <h2 className={styles.subtitle}>
+        <h2 className={styles.subtitle} id="refusal-reasons" >
           Common Reasons for Refusals in BCPNP
         </h2>
         <ul className={styles.list}>
@@ -264,7 +267,7 @@ const BcPnp = () => {
           </li>
         </ul>
 
-        <h2 className={styles.subtitle}>Still Not Sure?</h2>
+        <h2 className={styles.subtitle} id="why-choose-us">Still Not Sure?</h2>
         <p className={styles.description}>
           If you have received a refusal for any of the reasons mentioned above,
           do not worry. With over a decade of experience, we specialize in
@@ -280,11 +283,12 @@ const BcPnp = () => {
           At Brightlight Immigration, we have a dedicated team of visa
           application specialists who can assist you from the start of the
           application process all the way to obtaining your visa.{" "}
-          <a href="/book-appointment" className={styles.button}>
+          <a id="book-appointment" href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" className={styles.button}>
             Book Appointment
           </a>
         </p>
       </div>
+      <Footer1/>
     </>
   );
 };

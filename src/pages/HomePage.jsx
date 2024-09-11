@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import styles from "../styles/HomePage.module.css";
 import WhiteLogo from "../assets/bright-source.webp";
 import LinkedinLogo from "../assets/bannerLinkedinLogo.png";
@@ -7,7 +8,6 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
 import Navbar1 from "../components/Navbar1";
@@ -17,6 +17,8 @@ import Testimonials_White from "../sections/Testimonials_White";
 import Blogs from "../sections/Blogs";
 
 let HomePage = () => {
+  let [newsSectionData, setNewsSectionData] = useState([]);
+  let [newsData, setNewsData] = useState([]);
   let [topSection, setTopSection] = useState([]);
   let [headline1Rest, setHeadline1Rest] = useState("");
   let [headline1Last, setHeadline1Last] = useState("");
@@ -28,13 +30,19 @@ let HomePage = () => {
   let [achiementsData, setAchievementsData] = useState([]);
   let [servicesData, setServicesData] = useState([]);
   let [services, setServices] = useState([]);
+  let [loaded, setLoaded] = useState(false); // To manage loading state
+  const expertiseContentParentRef = useRef(null);
+
+  const simplifyingRef = useRef(null); // Ref for the simplifying section
 
   useEffect(() => {
-    fetch("https://brightlight-node.onrender.com/home-top")
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
+    // Load data
+    const fetchData = async () => {
+      try {
+        let response = await fetch(
+          "https://brightlight-node.onrender.com/home-top"
+        );
+        let data = await response.json();
         if (data) {
           let headlineText = data[0].headline1;
           let words = headlineText.split(" ");
@@ -51,130 +59,231 @@ let HomePage = () => {
           setHeadline2Rest(restOfText2);
           setHeadline2Last(lastWord2);
         }
-      });
+        fetch("https://brightlight-node.onrender.com/news-section")
+          .then((res) => {
+            return res.json();
+          })
+          .then((data) => {
+            if (data) {
+              setNewsSectionData(data[0]);
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+          });
 
-    fetch("https://brightlight-node.onrender.com/member-of")
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
+        fetch("https://brightlight-node.onrender.com/news")
+          .then((res) => {
+            return res.json();
+          })
+          .then((data) => {
+            if (data) {
+              setNewsData(data.slice(0, 2));
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+
+        response = await fetch(
+          "https://brightlight-node.onrender.com/member-of"
+        );
+        data = await response.json();
         if (data) {
           setMemberData(data[0]);
         }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
 
-    fetch("https://brightlight-node.onrender.com/features")
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
+        response = await fetch(
+          "https://brightlight-node.onrender.com/features"
+        );
+        data = await response.json();
         if (data) {
           setFeaturesData(data[0]);
         }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
 
-    fetch("https://brightlight-node.onrender.com/loveneetBg")
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
+        response = await fetch(
+          "https://brightlight-node.onrender.com/loveneetBg"
+        );
+        data = await response.json();
         if (data) {
           setLoveneetBgImage(data[0]);
         }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
 
-    fetch("https://brightlight-node.onrender.com/achievements-section")
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
+        response = await fetch(
+          "https://brightlight-node.onrender.com/achievements-section"
+        );
+        data = await response.json();
         if (data) {
           setAchievementsData(data[0]);
         }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
 
-    fetch("https://brightlight-node.onrender.com/services-section")
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
+        response = await fetch(
+          "https://brightlight-node.onrender.com/services-section"
+        );
+        data = await response.json();
         if (data) {
           let filteredArray = [];
-          if (data[0].service1svg && data[0].service1name) {
-            filteredArray.push({
-              title: data[0].service1name,
-              img: data[0].service1svg,
-              desc: data[0].service1desc,
-            });
-          }
-          if (data[0].service2svg && data[0].service2name) {
-            filteredArray.push({
-              title: data[0].service2name,
-              img: data[0].service2svg,
-              desc: data[0].service2desc,
-            });
-          }
-          if (data[0].service3svg && data[0].service3name) {
-            filteredArray.push({
-              title: data[0].service3name,
-              img: data[0].service3svg,
-              desc: data[0].service3desc,
-            });
-          }
-          if (data[0].service4svg && data[0].service4name) {
-            filteredArray.push({
-              title: data[0].service4name,
-              img: data[0].service4svg,
-              desc: data[0].service4desc,
-            });
-          }
-          if (data[0].service5svg && data[0].service5name) {
-            filteredArray.push({
-              title: data[0].service5name,
-              img: data[0].service5svg,
-              desc: data[0].service5desc,
-            });
-          }
-          if (data[0].service6svg && data[0].service6name) {
-            filteredArray.push({
-              title: data[0].service6name,
-              img: data[0].service6svg,
-              desc: data[0].service6desc,
-            });
-          }
-          if (data[0].service7svg && data[0].service7name) {
-            filteredArray.push({
-              title: data[0].service7name,
-              img: data[0].service7svg,
-              desc: data[0].service7desc,
-            });
-          }
-          if (data[0].service8svg && data[0].service8name) {
-            filteredArray.push({
-              title: data[0].service8name,
-              img: data[0].service8svg,
-              desc: data[0].service8desc,
-            });
+          for (let i = 1; i <= 8; i++) {
+            let serviceSvg = data[0][`service${i}svg`];
+            let serviceName = data[0][`service${i}name`];
+            let serviceDesc = data[0][`service${i}desc`];
+
+            if (serviceSvg && serviceName) {
+              filteredArray.push({
+                title: serviceName,
+                img: serviceSvg,
+                desc: serviceDesc,
+              });
+            }
           }
           setServices(filteredArray);
           setServicesData(data[0]);
         }
-      })
-      .catch((error) => {
+
+        setLoaded(true); // Set loaded to true after fetching data
+      } catch (error) {
         console.log(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add(styles.visible);
+          // Optionally, stop observing once it's visible
+          observer.unobserve(entry.target);
+        }
+      },
+      {
+        root: null, // observing within the viewport
+        rootMargin: "0px",
+        threshold: 0.1, // Adjust the threshold as needed
+      }
+    );
+
+    if (simplifyingRef.current) {
+      observer.observe(simplifyingRef.current);
+    }
+
+    return () => {
+      if (simplifyingRef.current) {
+        observer.unobserve(simplifyingRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        console.log("Element: ", entry.target); // Debugging line
+        if (entry.isIntersecting) {
+          console.log("Element is visible"); // Debugging line
+          entry.target.classList.add(styles.visible);
+          observer.unobserve(entry.target);
+        }
       });
+    }, observerOptions);
+
+    if (expertiseContentParentRef.current) {
+      observer.observe(expertiseContentParentRef.current);
+    }
+
+    return () => {
+      if (expertiseContentParentRef.current) {
+        observer.unobserve(expertiseContentParentRef.current);
+      }
+    };
+  }, []);
+
+  const sourceContentParentRef = useRef(null);
+  const sourceContentRefs = useRef([]);
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add(styles.visible);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    if (sourceContentParentRef.current) {
+      observer.observe(sourceContentParentRef.current);
+    }
+
+    sourceContentRefs.current.forEach((ref) => {
+      if (ref) {
+        observer.observe(ref);
+      }
+    });
+
+    return () => {
+      if (sourceContentParentRef.current) {
+        observer.unobserve(sourceContentParentRef.current);
+      }
+      sourceContentRefs.current.forEach((ref) => {
+        if (ref) {
+          observer.unobserve(ref);
+        }
+      });
+    };
+  }, []);
+  const aspectsCardParentRef = useRef(null);
+  const aspectsCardRefs = useRef([]);
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add(styles.visible);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    if (aspectsCardParentRef.current) {
+      observer.observe(aspectsCardParentRef.current);
+    }
+
+    aspectsCardRefs.current.forEach((ref) => {
+      if (ref) {
+        observer.observe(ref);
+      }
+    });
+
+    return () => {
+      if (aspectsCardParentRef.current) {
+        observer.unobserve(aspectsCardParentRef.current);
+      }
+      aspectsCardRefs.current.forEach((ref) => {
+        if (ref) {
+          observer.unobserve(ref);
+        }
+      });
+    };
   }, []);
 
   return (
@@ -182,28 +291,67 @@ let HomePage = () => {
       <Navbar1 showBlue={true} />
       <div className={styles.bannerParent}>
         <div className={styles.bannerMain}>
-          <div className={styles.bannerHeading}>
-            <h1>
-              {headline1Rest}{" "}
-              <span className={styles.bannerBlueHeading}>{headline1Last}</span>
-            </h1>
-            <h1>
-              {headline2Rest}{" "}
-              <span className={styles.bannerBlueHeading}>{headline2Last}</span>
-            </h1>
-            <h2>{topSection?.SmallHeadline1}</h2>
-          </div>
-
-          <div className={styles.cardContainer}>
-            {services.map((card, index) => (
-              <div key={index} className={styles.card}>
-                <img src={card.img} alt={card.title} className={styles.icon} />
-                <div className={styles.title}>
-                  <h2>{card.title}</h2>
+          <TransitionGroup>
+            {loaded && (
+              <CSSTransition
+                timeout={1000}
+                classNames={{
+                  enter: styles.fadeIn,
+                  enterActive: styles.fadeIn,
+                  exit: styles.fadeIn,
+                  exitActive: styles.fadeIn,
+                }}
+              >
+                <div className={styles.bannerHeading}>
+                  <h1 className={styles.slideInFromLeft}>
+                    {headline1Rest}{" "}
+                    <span className={styles.bannerBlueHeading}>
+                      {headline1Last}
+                    </span>
+                  </h1>
+                  <h1 className={styles.slideInFromRight}>
+                    {headline2Rest}{" "}
+                    <span className={styles.bannerBlueHeading}>
+                      {headline2Last}
+                    </span>
+                  </h1>
+                  <h2 className={styles.slideInFromBottom}>
+                    {topSection?.SmallHeadline1}
+                  </h2>
                 </div>
-              </div>
-            ))}
-          </div>
+              </CSSTransition>
+            )}
+          </TransitionGroup>
+
+          <TransitionGroup>
+            {loaded && (
+              <CSSTransition
+                timeout={1000}
+                classNames={{
+                  enter: styles.fadeIn,
+                  enterActive: styles.fadeIn,
+                  exit: styles.fadeIn,
+                  exitActive: styles.fadeIn,
+                }}
+              >
+                <div className={styles.cardContainer}>
+                  {services.map((card, index) => (
+                    <div key={index} className={styles.card}>
+                      <img
+                        src={card.img}
+                        alt={card.title}
+                        className={styles.icon}
+                      />
+                      <div className={styles.title}>
+                        <h2>{card.title}</h2>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CSSTransition>
+            )}
+          </TransitionGroup>
+
           <a href="/more-services">
             <button className={styles.bookButton17} role="button">
               More Services
@@ -263,7 +411,7 @@ let HomePage = () => {
       </div>
 
       <div className={styles.simplifyingParent}>
-        <div className={styles.simplifyingMain}>
+        <div ref={simplifyingRef} className={`${styles.simplifyingMain}`}>
           <h1 className={styles.simplifyingHeading}>Why Us?</h1>
           {featuresData &&
             [1, 2, 3, 4].map(
@@ -290,7 +438,10 @@ let HomePage = () => {
       <OurProcess />
 
       <div className={styles.expertiseParent}>
-        <div className={styles.expertiseContentParent}>
+        <div
+          className={`${styles.expertiseContentParent}`}
+          ref={expertiseContentParentRef}
+        >
           <div className={styles.expertiseContentHeading}>
             <h1>{servicesData?.heading}</h1>
             <p>{servicesData?.description}</p>
@@ -326,17 +477,19 @@ let HomePage = () => {
                     <div className={styles.expertiseDiv}>
                       <h4>{item.title}</h4>
                       <p>{item.desc}</p>
-                      <a className={styles.expertiseKmowMore} href={`/services/${formattedTitle}`}>Know More</a>
+                      <a
+                        className={styles.expertiseKmowMore}
+                        href={`/services/${formattedTitle}`}
+                      >
+                        Know More
+                      </a>
                     </div>
                   </SwiperSlide>
                 );
               })}
 
-              <div class="slider-controler" className={styles.slider_controler}>
-                <div
-                  class="swiper_pagination"
-                  className={styles.swiper_pagination}
-                ></div>
+              <div className={styles.slider_controler}>
+                <div className={styles.swiper_pagination}></div>
               </div>
             </Swiper>
           </div>
@@ -350,20 +503,29 @@ let HomePage = () => {
             <h2>{achiementsData?.description}</h2>
           </div>
 
-          <div className={styles.aspectsCardParent}>
-            <div className={styles.aspectsCard}>
-              <img src={achiementsData?.achievement1SVG} />{" "}
-              <h1>{achiementsData?.achievement1Numbers}</h1>{" "}
+          <div className={styles.aspectsCardParent} ref={aspectsCardParentRef}>
+            <div
+              className={`${styles.aspectsCard} ${styles.fadeFromLeft}`}
+              ref={(el) => (aspectsCardRefs.current[0] = el)}
+            >
+              <img src={achiementsData?.achievement1SVG} alt="Achievement 1" />
+              <h1>{achiementsData?.achievement1Numbers}</h1>
               <p>{achiementsData?.achievement1Heading}</p>
             </div>
-            <div className={styles.aspectsCard}>
-              <img src={achiementsData?.achievement2SVG} />{" "}
-              <h1>{achiementsData?.achievement2Numbers}</h1>{" "}
+            <div
+              className={`${styles.aspectsCard} ${styles.fadeFromBottom}`}
+              ref={(el) => (aspectsCardRefs.current[1] = el)}
+            >
+              <img src={achiementsData?.achievement2SVG} alt="Achievement 2" />
+              <h1>{achiementsData?.achievement2Numbers}</h1>
               <p>{achiementsData?.achievement2Heading}</p>
             </div>
-            <div className={styles.aspectsCard}>
-              <img src={achiementsData?.achievement3SVG} />{" "}
-              <h1>{achiementsData?.achievement3Numbers}</h1>{" "}
+            <div
+              className={`${styles.aspectsCard} ${styles.fadeFromRight}`}
+              ref={(el) => (aspectsCardRefs.current[2] = el)}
+            >
+              <img src={achiementsData?.achievement3SVG} alt="Achievement 3" />
+              <h1>{achiementsData?.achievement3Numbers}</h1>
               <p>{achiementsData?.achievement3Heading}</p>
             </div>
           </div>
@@ -372,9 +534,6 @@ let HomePage = () => {
 
       <Testimonials_White />
 
-      {/* <Testimonials />
-      <FAQ /> */}
-
       <div className={styles.sourceParent}>
         <div className={styles.sourceMain}>
           <div className={styles.sourceHeadingParent}>
@@ -382,60 +541,73 @@ let HomePage = () => {
               <img src={WhiteLogo} />
             </div>
             <div>
-              <h1>Your Source For Staying Informed</h1>
-              <p>IMMIGRATION NEWS & TRENDS</p>
+              {newsSectionData && <h1>{newsSectionData.heading}</h1>}
+              {newsSectionData && <p>{newsSectionData.description}</p>}
             </div>
           </div>
-          <div className={styles.sourceContentParent}>
-            <div className={styles.sourceContent}>
-              <div className={styles.sourceContentDate}>
-                <p>VISA</p>
-                <h2>NOV</h2>
-                <h1>30</h1>
-              </div>
-              <div className={styles.sourceContentData}>
-                <h3>
-                  Minister Miller reveals strategy to improve Canada’s
-                  immigration system
-                </h3>
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy of the printing and typesetting industry. Lorem
-                  Ipsum has been the industry's standard dummy text since the
-                  1500s, wheLorem industry. Lorem Ipsum has been the industry's
-                  standard dummy text since the 1500s, whe Lorem Ipsum is simply
-                  dummy text of.
-                </p>
-                <button>Read more</button>
-              </div>
-            </div>
-            <hr />
-            <div className={styles.sourceContent}>
-              <div className={styles.sourceContentDate}>
-                <p>STUDY</p>
-                <h2>MAY</h2>
-                <h1>30</h1>
-              </div>
-              <div className={styles.sourceContentData}>
-                <h3>
-                  Canada caps international student admissions, tightens
-                  eligibility for work permits
-                </h3>
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy of the printing and typesetting industry. Lorem
-                  Ipsum has been the industry's standard dummy text since the
-                  1500s, wheLorem industry. Lorem Ipsum has been the industry's
-                  standard dummy text since the 1500s, whe Lorem Ipsum is simply
-                  dummy text of.
-                </p>
-                <button>Read more</button>
-              </div>
-            </div>
+          <div
+            className={styles.sourceContentParent}
+            ref={sourceContentParentRef}
+          >
+            {newsData?.map((item, index) => {
+              function truncateText(text, wordLimit) {
+                const words = text.split(" ");
+                if (words.length <= wordLimit) {
+                  return text;
+                }
+                return words.slice(0, wordLimit).join(" ") + "...";
+              }
+              let month = item.date.trim().split("T")[0].split("-")[1];
+              let date = item.date.trim().split("T")[0].split("-")[2];
+              let monthName = () => {
+                if (month == "01") {
+                  return "JAN";
+                } else if (month == "02") {
+                  return "FEB";
+                } else if (month == "03") {
+                  return "MAR";
+                } else if (month == "04") {
+                  return "APR";
+                } else if (month == "05") {
+                  return "MAY";
+                } else if (month == "06") {
+                  return "JUN";
+                } else if (month == "07") {
+                  return "JUL";
+                } else if (month == "08") {
+                  return "AUG";
+                } else if (month == "09") {
+                  return "SEP";
+                } else if (month == "10") {
+                  return "OCT";
+                } else if (month == "11") {
+                  return "NOV";
+                } else if (month == "12") {
+                  return "DEC";
+                }
+              };
+              return (
+                <>
+                  <div
+                    key={index}
+                    className={`${styles.sourceContent} ${styles.fadeFromLeft}`}
+                    ref={(el) => (sourceContentRefs.current[index] = el)}
+                  >
+                    <div className={styles.sourceContentDate}>
+                      <p>{item.tag_1}</p>
+                      <h2>{monthName(item.date)}</h2>
+                      <h1>{date}</h1>
+                    </div>
+                    <div className={styles.sourceContentData}>
+                      <h3>{item.news_heading}</h3>
+                      <p>{truncateText(item.news_content, 30)}</p>
+                      <a href={`/news/${item._id}`}>Read more</a>
+                    </div>
+                  </div>
+                </>
+              );
+            })}
           </div>
-          <hr />
         </div>
       </div>
       <Blogs />

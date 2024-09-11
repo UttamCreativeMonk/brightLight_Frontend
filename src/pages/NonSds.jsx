@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styles from '../styles/NonSds.module.css';
 import { Link } from 'react-router-dom';
+import Navbar1 from "../components/Navbar1";
+import Footer1 from "../components/Footer1";
+
 
 const NonSds = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -18,7 +21,7 @@ const NonSds = () => {
   
     return (
       <>
-        {/* <Navbar1 /> */}
+        <Navbar1 />
         <div className={styles.bannerParent}>
           <div className={styles.banner}>
            
@@ -155,7 +158,7 @@ const NonSds = () => {
         </div>
       </section>
 
-      <section className={styles.applicationProcess}>
+      <section className={styles.applicationProcess} id="how-to-apply">
         <h2 className={styles.subheading}>Application Process</h2>
         <p>The application process for a Non-SDS Canada or General Student Visa involves you submitting your complete application package to the Canadian government. This package should typically include:</p>
         <ul>
@@ -285,15 +288,17 @@ const NonSds = () => {
         </ul>
       </section>
 
-      <section className={styles.bookAppointment}>
+      <section className={styles.bookAppointment} id="book-appointment">
         <h2 className={styles.subheading}>Book an Appointment</h2>
         <p>
           If you have faced a refusal for any of the reasons mentioned above, don't worry. With over 10 years of experience, we specialize in handling previously refused cases. We have successfully secured approval for students who have had multiple refusals, long gaps in education, and are of mature age.
           We achieve this by tailoring our approach to your specific case and addressing each concern raised by the officer in previous refusals. Using case law, we identify similar cases with positive outcomes and apply them as precedents in the cases we handle. This is why we have a high success rate, with over 90% approval in such cases. At Brightlight Immigration, we have a dedicated team of visa application specialists who can assist you from the start of the application process all the way to obtaining your visa. Start your process now.
         </p>
-        <Link to="/book-appointment" className={styles.button}>Book Appointment</Link>
+        <Link  to="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" className={styles.button}>Book Appointment</Link>
       </section>
     </div>
+
+    <Footer1/>
     </>
   );
 };

@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styles from '../styles/RestorationStatusDraft.module.css';
 import { Link } from "react-router-dom";
+import Navbar1 from "../components/Navbar1";
+import Footer1 from "../components/Footer1";
+
 
 const RestorationStatusDraft = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -18,7 +21,7 @@ const RestorationStatusDraft = () => {
   
     return (
       <>
-        {/* <Navbar1 /> */}
+        <Navbar1 />
         <div className={styles.bannerParent}>
           <div className={styles.banner}>
            
@@ -35,23 +38,12 @@ const RestorationStatusDraft = () => {
                 <h3>Quick Access</h3>
               </div>
               <div className={styles.bannerHeadingRotatePara}>
-                <p onClick={() => scrollToSection("about-program")}>
-                  About the Program
-                </p>
+                <p onClick={() => scrollToSection("about-program")}>  About the Program     </p>
                 <p onClick={() => scrollToSection("check-status")}>Check Status</p>
-                <p onClick={() => scrollToSection("how-to-apply")}>
-                  How to Apply?
-                </p>
-                <p onClick={() => scrollToSection("requirement")}>
-                  Requirement
-                </p>
-                <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
-                <p onClick={() => scrollToSection("book-appointment")}>
-                  Book Appointment
-                </p>
-                <p onClick={() => scrollToSection("why-choose-us")}>
-                  Why Choose Us?
-                </p>
+                <p onClick={() => scrollToSection("how-to-apply")}>   How to Apply?       </p>
+                <p onClick={() => scrollToSection("requirement")}>  Requirement      </p>
+                <p onClick={() => scrollToSection("book-appointment")}>  Book Appointment       </p>
+                <p onClick={() => scrollToSection("why-choose-us")}>  Why Choose Us?     </p>
                 <p onClick={() => scrollToSection("testimonials")}>
                   Testimonials
                 </p>
@@ -90,7 +82,7 @@ const RestorationStatusDraft = () => {
         <p><strong>Important Tip:</strong> Restoration of status cannot be granted at any Canadian port of entry, so you must apply while you are still in the country.</p>
       </section>
 
-      <section className={styles.applicationProcess}>
+      <section className={styles.applicationProcess} id="how-to-apply">
         <h2 className={styles.subheading}>How to Apply for Restoration of Status</h2>
         <p>To apply for status restoration, you will need to provide specific documents and information to Immigration, Refugees and Citizenship Canada (IRCC). The specific requirements vary based on the type of restoration you are seeking, whether it's for a visitor, student, or worker. It is crucial to complete the correct forms for your restoration type and submit the necessary documents to increase the chances of your application being approved. Here are a few general guidelines:</p>
         <ul>
@@ -113,15 +105,16 @@ const RestorationStatusDraft = () => {
         </ul>
       </section>
 
-      <section className={styles.assistance}>
+      <section className={styles.assistance} id="why-choose-us">
         <h2 className={styles.subheading}>Still Not Sure?</h2>
         <p>If you have received a refusal for any reason, do not worry. With over a decade of experience, we specialize in previously refused cases. We have obtained approvals for clients who had multiple previous refusals.</p>
         <p>We achieve this with a tailored approach to your specific case, addressing each concern that the officer has listed in previous refusals. We use case law and find similar cases to your circumstances that had positive results, and we use them as precedents in the cases we work on. This is why we have a high success rate.</p>
         <p>At Brightlight Immigration, we have a dedicated team of visa application specialists who can assist you from the start of the application process all the way to obtaining your visa. Start your process now.</p>
-        <Link to="/book-appointment" className={styles.button}>Book Appointment</Link>
+        <Link id="book-appointment" to="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" className={styles.button}>Book Appointment</Link>
       </section>
-
     </div>
+
+    <Footer1/>
 
     </>
   );

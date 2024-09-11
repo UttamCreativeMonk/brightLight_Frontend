@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import styles from "../styles/About.module.css";
 import AboutLogo from "../assets/brightlight-main-logo.webp";
 import INTEGRITY from "../assets/integrity1.png";
@@ -106,12 +106,6 @@ let About = () => {
     fetch("https://brightlight-node.onrender.com/weAreSmall")
       .then((res) => {
         return res.json();
-      })
-      .then((data) => {
-        console.log(data[0]);
-        if (data) {
-          setWeAreSmall(data[0]);
-        }
       })
       .catch((error) => {
         console.log(error);
@@ -240,18 +234,18 @@ let About = () => {
       <div className={styles.aboutBanner}>
         <div className={styles.aboutUsTopContentSection}>
           <div className={styles.aboutLogo}>
-            <img src={AboutLogo} alt="err" />
+            <img src={AboutLogo} />
           </div>
           <div className={styles.aboutHeading}>
             <h1>{topSectionData?.heading}</h1>
           </div>
           <div className={styles.aboutUsFeaturesSection}>
             <div className={styles.aboutUsFeature}>
-              <img src={Twelve} alt="err" />
+              <img src={Twelve}  />
               <p>{topSectionData?.feature1Heading}</p>
             </div>
             <div className={styles.aboutUsFeature}>
-              <img src={Comprehensive} alt="err" />
+              <img src={Comprehensive}  />
 
               <p>{topSectionData?.feature2Heading}</p>
             </div>
@@ -265,7 +259,7 @@ let About = () => {
       <div className={styles.foundationMainSection}>
         <div className={styles.foundation}>
           <div className={`${styles.foundationInside} ${styles.foundation1}`}>
-            <img src={foundationImage?.image} alt="err" />
+            <img src={foundationImage?.image}  />
             <div className={`${styles.designContent} ${styles.designContent1}`}>
               <h1>{foundationSection?.heading}</h1>
               <h3 className={styles.borderBottomFoundation}>
@@ -288,7 +282,7 @@ let About = () => {
           </div>
           <div className={styles.visionInside}>
             <div className={styles.visionInsideImg}>
-              <img src={visionImage?.image} alt="err" />
+              <img src={visionImage?.image}  />
             </div>
             <div className={styles.designContent}>
               <h1>{visionSection?.heading}</h1>
@@ -303,7 +297,7 @@ let About = () => {
       <div className={styles.pillarParent}>
         <div className={styles.pillarSection}>
           <div className={styles.pillarLogo}>
-            <img src={pillarsImage?.image} alt="err" />
+            <img src={pillarsImage?.image}  />
             <div className={styles.pillarLogoContent}>
               <h2>{pillarsSection?.heading}</h2>
               <p>{pillarsSection?.description1}</p>
@@ -312,19 +306,19 @@ let About = () => {
 
           <div className={styles.pillarFeatureSection}>
             <div className={styles.pillarFeatureSvg}>
-              <img src={INTEGRITY} alt="err" />
+              <img src={INTEGRITY}  />
               <h4>{pillarsSection?.pillar1Heading}</h4>
               <p>{pillarsSection?.pillar1Description}</p>
             </div>
 
             <div className={styles.pillarFeatureSvg}>
-              <img src={RESPONSIBILITY} alt="err" />
+              <img src={RESPONSIBILITY}  />
               <h4>{pillarsSection?.pillar2Heading}</h4>
               <p>{pillarsSection?.pillar2Description}</p>
             </div>
 
             <div className={styles.pillarFeatureSvg}>
-              <img src={Reliability} alt="err" />
+              <img src={Reliability}  />
               <h4>{pillarsSection?.pillar3Heading}</h4>
               <p>{pillarsSection?.pillar3Description}</p>
             </div>
@@ -345,7 +339,7 @@ let About = () => {
             </div>
 
             <div className={styles.meetDirectorImg}>
-              <img src={directorsSection?.d1image} alt="err" />
+              <img src={directorsSection?.d1image}  />
             </div>
           </div>
         ) : null}
@@ -353,7 +347,7 @@ let About = () => {
         {directorsSection?.d2name && directorsSection?.d2image ? (
           <div className={styles.thedirectors}>
             <div className={styles.meetDirectorImg}>
-              <img src={directorsSection?.d2image} alt="err" />
+              <img src={directorsSection?.d2image}  />
             </div>
             <div className={styles.meetDirectorimgContent}>
               <h1>{directorsSection?.d2name}</h1>
@@ -372,7 +366,7 @@ let About = () => {
             </div>
 
             <div className={styles.meetDirectorImg}>
-              <img src={directorsSection?.d3image} alt="err" />
+              <img src={directorsSection?.d3image}  />
             </div>
           </div>
         ) : null}
@@ -380,7 +374,7 @@ let About = () => {
         {directorsSection?.d4name && directorsSection?.d4image ? (
           <div className={styles.thedirectors}>
             <div className={styles.meetDirectorImg}>
-              <img src={directorsSection?.d4image} alt="err" />
+              <img src={directorsSection?.d4image}  />
             </div>
             <div className={styles.meetDirectorimgContent}>
               <h1>{directorsSection?.d4name}</h1>
@@ -399,7 +393,7 @@ let About = () => {
             </div>
 
             <div className={styles.meetDirectorImg}>
-              <img src={directorsSection?.d5image} alt="err" />
+              <img src={directorsSection?.d5image}  />
             </div>
           </div>
         ) : null}
@@ -407,8 +401,8 @@ let About = () => {
 
       <div className={styles.weAreParent}>
         <div className={styles.weAreParentImg}>
-          <img src={weAre?.img} alt="err" className={styles.weAreBig}/>
-          <img src={weAreSmall?.image} alt="err" className={styles.weAreSmall}/>
+          <img src={weAre?.img} className={styles.weAreBig}/>
+          <img src={weAreSmall?.image}  className={styles.weAreSmall}/>
         </div>
       </div>
 
@@ -421,19 +415,19 @@ let About = () => {
 
           <div className={styles.ourAchivementCardParent}>
             <div className={styles.ourAchivementCard}>
-              <img src={VisaImg} alt="err" />
+              <img src={VisaImg}  />
               <h2>{achievements?.achievement1Numbers}</h2>
               <p>{achievements?.achievement1Heading}</p>
             </div>
 
             <div className={styles.ourAchivementCard}>
-              <img src={TickBlue} alt="err" />
+              <img src={TickBlue}  />
               <h2>{achievements?.achievement2Numbers}</h2>
               <p>{achievements?.achievement2Heading}</p>
             </div>
 
             <div className={styles.ourAchivementCard}>
-              <img src={SmileBlue} alt="err" />
+              <img src={SmileBlue}  />
               <h2>{achievements?.achievement3Numbers}</h2>
               <p>{achievements?.achievement3Heading}</p>
             </div>
@@ -451,7 +445,7 @@ let About = () => {
           <p>{socialMediaData?.description2}</p>
 
           <div className={styles.socialMoblileImgDiv}>
-            <img src={socialMedia?.image} alt="err" />
+            <img src={socialMedia?.image}  />
           </div>
 
           <div className={styles.socialPresenceIconsParent}>
@@ -459,31 +453,31 @@ let About = () => {
             <div className={styles.socialPresenceIcons}>
               {socialMediaData?.tiktokLink ? (
                 <a href="#">
-                  <img src={TiktokBlue} alt="err" />
+                  <img src={TiktokBlue}  />
                 </a>
               ) : null}
 
               {socialMediaData?.linkedinLink ? (
                 <a href={socialMediaData?.description2}>
-                  <img src={LinkedinBlue} alt="err" />
+                  <img src={LinkedinBlue}  />
                 </a>
               ) : null}
 
               {socialMediaData?.instagramLink ? (
                 <a href={socialMediaData?.instagramLink}>
-                  <img src={InstaBlue} alt="err" />
+                  <img src={InstaBlue}  />
                 </a>
               ) : null}
 
               {socialMediaData?.facebookLink ? (
                 <a href={socialMediaData?.facebookLink}>
-                  <img src={FacebookBlue} alt="err" />
+                  <img src={FacebookBlue} />
                 </a>
               ) : null}
 
               {socialMediaData?.youtubeLink ? (
                 <a href={socialMediaData?.youtubeLink}>
-                  <img src={YoutubeBlue} alt="err" />
+                  <img src={YoutubeBlue} />
                 </a>
               ) : null}
             </div>

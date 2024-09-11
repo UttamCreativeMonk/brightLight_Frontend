@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styles from "../styles/CommonLawPartnerPermanent.module.css";
 import { Link } from "react-router-dom";
+import Navbar1 from "../components/Navbar1";
+import Footer1 from "../components/Footer1";
+
 
 const CommonLawPartnerPermanent = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -18,7 +21,7 @@ const CommonLawPartnerPermanent = () => {
 
   return (
     <>
-      {/* <Navbar1 /> */}
+      <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div
@@ -61,12 +64,12 @@ const CommonLawPartnerPermanent = () => {
       </div>
 
       <div className={styles.container}>
-        <h1 className={styles.heading} id="about-program">
+        <h1 className={styles.heading} >
           Open Work Permit for Spouse or Common-law Partner of a Permanent
           Resident/Canadian Citizen
         </h1>
 
-        <section className={styles.introduction}>
+        <section className={styles.introduction} id="about-program">
           <p>
             The processing time for a PR application can be longer than usually
             expected. There are various reasons for this to happen. The common
@@ -198,12 +201,12 @@ const CommonLawPartnerPermanent = () => {
             specialize in handling complex cases and offer tailored solutions to
             increase your chances of approval.
           </p>
-          <Link to="/book-appointment" className={styles.button}>
+          <Link id="book-appointment" to="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" className={styles.button}>
             Book an Appointment
           </Link>
         </section>
 
-        <section className={styles.whyChooseUs}>
+        <section className={styles.whyChooseUs} id="why-choose-us">
           <h2 className={styles.subheading}>Why Choose Us?</h2>
           <p>
             At Brightlight Immigration, we provide expert guidance and support
@@ -223,6 +226,7 @@ const CommonLawPartnerPermanent = () => {
           </div>
         </section>
       </div>
+      <Footer1/>
     </>
   );
 };

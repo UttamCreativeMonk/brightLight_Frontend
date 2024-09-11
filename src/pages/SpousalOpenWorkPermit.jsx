@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styles from "../styles/SpousalOpenWorkPermit.module.css";
 import { Link } from "react-router-dom";
+import Navbar1 from "../components/Navbar1";
+import Footer1 from "../components/Footer1";
+
 
 const SpousalOpenWorkPermit = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -18,7 +21,7 @@ const SpousalOpenWorkPermit = () => {
 
   return (
     <>
-      {/* <Navbar1 /> */}
+      <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div
@@ -40,9 +43,6 @@ const SpousalOpenWorkPermit = () => {
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
               <p onClick={() => scrollToSection("how-to-apply")}>
                 How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>
-                Refusal Reasons
               </p>
               <p onClick={() => scrollToSection("book-appointment")}>
                 Book Appointment
@@ -82,26 +82,26 @@ const SpousalOpenWorkPermit = () => {
         </ul>
       </section>
 
-      {/* <section className={styles.pathways}>
+      <section className={styles.pathways}>
         <h2 className={styles.subheading}>Pathways under Spousal Open Work Permit (SOWP)</h2>
         <ul>
           <li>
-            <Link to="/spouse-temporary-worker" className={styles.link}>
+            <Link to="/common-law-partner-temporary" className={styles.link}>
               Spouse or Common-law Partner of a Temporary Foreign Worker
             </Link>
           </li>
           <li>
-            <Link to="/spouse-international-student" className={styles.link}>
+            <Link to="/international-graduate-program" className={styles.link}>
               Spouse or Common-law Partner of an International Student
             </Link>
           </li>
           <li>
-            <Link to="/pr-open-work-permit" className={styles.link}>
+            <Link to="/spousal-open-work-permit" className={styles.link}>
               Open Work Permit for Spouses of Canadian/PR
             </Link>
           </li>
         </ul>
-      </section> */}
+      </section>
 
       <section className={styles.eligibility} id="eligibility">
         <h2 className={styles.subheading}>Eligibility Criteria for Spousal Open Work Permit (SOWP)</h2>
@@ -191,10 +191,10 @@ const SpousalOpenWorkPermit = () => {
         <p>If you have received a refusal for any of the reasons mentioned above, do not worry. With over a decade of experience, we specialize in previously refused cases. We have obtained approvals for clients who had multiple previous refusals.</p>
         <p>We achieve this with a tailored approach to your specific case, addressing each concern that the officer has listed in previous refusals. We use case law and find similar cases to your circumstances that had positive results, and we use them as precedents in the cases we work on. This is why we have a high success rate.</p>
         <p>At Brightlight Immigration, we have a dedicated team of visa application specialists who can assist you from the start of the application process all the way to obtaining your visa. Start your process now.</p>
-        <Link to="/book-appointment" className={styles.button}>Book Appointment</Link>
+        <Link id="book-appointment" to="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" className={styles.button}>Book Appointment</Link>
       </section>
 
-      <section className={styles.whyChooseUs}>
+      <section className={styles.whyChooseUs} id="why-choose-us">
         <h2 className={styles.subheading}>Why Choose Us?</h2>
         <p>At Brightlight Immigration, we are committed to providing you with expert assistance throughout your immigration journey. Our experienced team is dedicated to achieving the best possible outcomes for our clients.</p>
         {/* You can add testimonials and video testimonials here */}
@@ -209,8 +209,9 @@ const SpousalOpenWorkPermit = () => {
           </div>
         </div>
       </section>
-
     </div>
+
+    <Footer1/>
 
     </>
   );

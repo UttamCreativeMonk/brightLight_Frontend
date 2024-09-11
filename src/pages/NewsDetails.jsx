@@ -25,15 +25,6 @@ let NewsDetails = () => {
       })
       .catch((error) => console.log(error));
 
-    fetch("https://brightlight-node.onrender.com/loveneet")
-      .then((res) => res.json())
-      .then((data) => {
-        if (data) {
-          setLoveneetData(data[0]);
-        }
-      })
-      .catch((error) => console.log(error));
-
     fetch("https://brightlight-node.onrender.com/news/")
       .then((res) => res.json())
       .then((data) => {
@@ -61,27 +52,6 @@ let NewsDetails = () => {
       <div className={styles.blogTopSection}>
         <div className={styles.blogsTopContentSection}>
           <h1>{blog.news_heading}</h1>
-          <div className={styles.loveneetSection}>
-            <img src={loveneetData.image} className={styles.loveneetImage} />
-            <div className={styles.loveneetContent}>
-              <div className={styles.loveneetDataFlex}>
-                <h3>By {loveneetData.name}</h3>
-                <h5>{loveneetData.post}</h5>
-              </div>
-              <h4>{loveneetData.tagline}</h4>
-              <div className={styles.loveneetLinks}>
-                <a className={styles.imageSection} href={loveneetData.linkedin}>
-                  <img src={Linkedin} />
-                </a>
-                <div>
-                  <p className={styles.haveAQuestion}>Have Questions?</p>
-                  <a className={styles.imageSection} href={loveneetData.rcic}>
-                    <img src={rcic} />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
       <div className={styles.blogsFlexSection}>

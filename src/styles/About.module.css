@@ -284,23 +284,23 @@
 }
 
 .pillarFeatureSvg:hover {
-  transform: translateY(-10px); /* Moves the entire block upwards on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Adds shadow */
-  background-color: #1c2e3f; /* Optional: Change background color on hover */
+  transform: translateY(-10px); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: #1c2e3f;
 }
 
 .pillarFeatureSvg:hover img {
-  transform: scale(1.05); /* Slightly enlarges the image on hover */
+  transform: scale(1.05);
 }
 
 .pillarFeatureSvg:hover h4 {
  
-  transform: translateY(-5px); /* Moves text slightly up on hover */
+  transform: translateY(-5px);
 }
 
 .pillarFeatureSvg:hover p {
 
-  transform: translateY(-3px); /* Moves text slightly up on hover */
+  transform: translateY(-3px);
 }
 
 
@@ -644,6 +644,61 @@
   color: white;
 }
 
+/* Animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Animation classes */
+.aboutLogoAnimation {
+  animation: slideInFromLeft 2s ease-out forwards;
+}
+
+.aboutHeadingAnimation {
+  animation: fadeIn 2s ease-out forwards;
+  animation-delay: 2s;
+}
+
+.aboutUsFeaturesSectionAnimation {
+  animation: fadeIn 2s ease-out forwards;
+  animation-delay: 2s;
+}
+
+.bannerParaAnimation {
+  animation: slideInFromRight 1s ease-out forwards;
+  animation-delay: 2.5s;
+}
+
+.fadeIn {
+  animation: fadeIn 2s ease-out forwards;
+}
 
 
 @media all and (max-width: 1500px) {

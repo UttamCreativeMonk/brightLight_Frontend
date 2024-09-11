@@ -5,6 +5,7 @@ let BestChoice = () => {
   let [planeTop, setPlaneTop] = useState(150);
   let [isTrackImageVisible, setIsTrackImageVisible] = useState(false);
   let trackImageRef = useRef(null);
+  let bestChoiceHeadingRef = useRef(null);
   let [bestChoiceHeading, setBestChoiceHeading] = useState([]);
   let [bestChoiceImage, setBestChoiceImage] = useState([]);
   let [plane, setPlane] = useState([]);
@@ -13,6 +14,11 @@ let BestChoice = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsTrackImageVisible(entry.isIntersecting);
+        if (entry.isIntersecting) {
+          entry.target.classList.add(styles.visible);
+        } else {
+          entry.target.classList.remove(styles.visible);
+        }
       },
       { threshold: 0.17 }
     );
@@ -21,9 +27,16 @@ let BestChoice = () => {
       observer.observe(trackImageRef.current);
     }
 
+    if (bestChoiceHeadingRef.current) {
+      observer.observe(bestChoiceHeadingRef.current);
+    }
+
     return () => {
       if (trackImageRef.current) {
         observer.unobserve(trackImageRef.current);
+      }
+      if (bestChoiceHeadingRef.current) {
+        observer.unobserve(bestChoiceHeadingRef.current);
       }
     };
   }, []);
@@ -35,18 +48,26 @@ let BestChoice = () => {
       if (!isTrackImageVisible) return;
 
       const currentScrollY = window.scrollY;
+      // Determine if scrolling up or down and update planeTop
       if (currentScrollY > lastScrollY) {
-        setPlaneTop((prevTop) => prevTop + 12.5);
+        if (window.innerWidth < 700) {
+          setPlaneTop((prevTop) => prevTop + 5);
+        } else {
+          setPlaneTop((prevTop) => prevTop + 12.5);
+        }
       } else {
         // Scrolling up
-        setPlaneTop((prevTop) => prevTop - 12.5);
+        if (window.innerWidth < 700) {
+          setPlaneTop((prevTop) => prevTop - 5);
+        } else {
+          setPlaneTop((prevTop) => prevTop - 12.5);
+        }
       }
       lastScrollY = currentScrollY;
     };
 
     window.addEventListener("scroll", handleScroll);
 
-    // Cleanup the event listener on component unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -54,61 +75,51 @@ let BestChoice = () => {
 
   useEffect(() => {
     fetch("https://brightlight-node.onrender.com/aboutUsBestChoiceSection")
-      .then((res) => {
-        return res.json();
-      })
+      .then((res) => res.json())
       .then((data) => {
         if (data) {
           setBestChoiceHeading(data[0]);
         }
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch((error) => console.log(error));
 
     fetch("https://brightlight-node.onrender.com/bestChoice")
-      .then((res) => {
-        return res.json();
-      })
+      .then((res) => res.json())
       .then((data) => {
         if (data) {
           setBestChoiceImage(data[0]);
         }
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch((error) => console.log(error));
 
     fetch("https://brightlight-node.onrender.com/plane")
-      .then((res) => {
-        return res.json();
-      })
+      .then((res) => res.json())
       .then((data) => {
         if (data) {
           setPlane(data[0]);
         }
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch((error) => console.log(error));
   }, []);
+
   return (
     <div className={styles.bestChoiceParent}>
       <div className={styles.bestChoice}>
-        <div className={styles.bestChoiceHeading}>
+        <div
+          className={`${styles.bestChoiceHeading} ${styles.fadeIn}`}
+          ref={bestChoiceHeadingRef}
+        >
           <h2>{bestChoiceHeading?.heading}</h2>
         </div>
         <img
           src={plane?.image}
-          alt="err"
           className={styles.plane}
           style={{ top: `${planeTop}px` }}
         />
         <img
           src={bestChoiceImage?.image}
           ref={trackImageRef}
-          alt="err"
-          className={styles.trackImage}
+          className={`${styles.trackImage} ${styles.fadeIn}`}
         />
       </div>
     </div>

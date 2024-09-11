@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styles from "../styles/Pnp.module.css";
 import { Link } from "react-router-dom";
+import Navbar1 from "../components/Navbar1";
+import Footer1 from "../components/Footer1";
+
 
 const Pnp = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -18,7 +21,7 @@ const Pnp = () => {
 
   return (
     <>
-      {/* <Navbar1 /> */}
+      <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div
@@ -136,7 +139,7 @@ const Pnp = () => {
             programs and eligibility criteria, so it is important to research
             your options carefully. Or, for a stress free solution, let us
             handle your case for you.{" "}
-            <a href="https://www.example.com" className={styles.link}>
+            <a href="/pnp" className={styles.link}>
               Click here
             </a>
           </li>
@@ -168,7 +171,7 @@ const Pnp = () => {
           </li>
         </ul>
 
-        <h3 className={styles.heading3}>Still not sure?</h3>
+        <h3 className={styles.heading3} id="why-choose-us">Still not sure?</h3>
         <p className={styles.paragraph}>
           If you have received a refusal for any of the reasons mentioned above,
           do not worry. With over a decade of experience, we specialize in
@@ -186,10 +189,10 @@ const Pnp = () => {
           application process all the way to obtaining your visa. Start your
           process now.
         </p>
-        <button
+        <button id="book-appointment"
           className={styles.button}
           onClick={() =>
-            (window.location.href = "https://www.example.com/appointment")
+            (window.location.href = "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
           }
         >
           Book Appointment
@@ -198,6 +201,7 @@ const Pnp = () => {
         <h3 className={styles.heading3}>Why Choose Us</h3>
         <p className={styles.paragraph}>Clients Testimonials.</p>
       </div>
+      <Footer1/>
     </>
   );
 };

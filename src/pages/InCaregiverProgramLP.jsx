@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "../styles/InCaregiverProgramLP.module.css";
+import Navbar1 from "../components/Navbar1";
+import Footer1 from "../components/Footer1";
+
 
 const InCaregiverProgramLP = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -18,6 +21,7 @@ const InCaregiverProgramLP = () => {
 
   return (
     <>
+      <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div
@@ -38,18 +42,8 @@ const InCaregiverProgramLP = () => {
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
               <p onClick={() => scrollToSection("categories")}>Categories</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>
-                Refusal Reasons
-              </p>
-              <p onClick={() => scrollToSection("book-appointment")}>
-                Book Appointment
-              </p>
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose Us?
-              </p>
+              <p onClick={() => scrollToSection("how-to-apply")}>  How to Apply?</p>
+              <p onClick={() => scrollToSection("why-choose-us")}>      Why Choose Us?    </p>
               <p onClick={() => scrollToSection("testimonials")}>
                 Testimonials
               </p>
@@ -231,7 +225,7 @@ const InCaregiverProgramLP = () => {
           </p>
         </section>
 
-        <section className={styles.howToApply}>
+        <section className={styles.howToApply} id="how-to-apply">
           <h2>How to Apply for In Home Caregiver Program?</h2>
           <h3>As an Employer:</h3>
           <ol>
@@ -322,7 +316,7 @@ const InCaregiverProgramLP = () => {
           </p>
         </section>
 
-        <section className={styles.whyChooseUs}>
+        <section className={styles.whyChooseUs} id="why-choose-us">
           <h2>Why Choose Us</h2>
           <p>
             Discover why Brightlight Immigration is the right choice for your
@@ -354,6 +348,7 @@ const InCaregiverProgramLP = () => {
           </div>
         </section>
       </div>
+      <Footer1/>
     </>
   );
 };

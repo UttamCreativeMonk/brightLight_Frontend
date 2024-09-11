@@ -83,13 +83,13 @@ import PathwaysForCaregiver from "../pages/PathwaysForCaregiver";
 import PermanentResidencePathwaysCaregiversLP from "../pages/PermanentResidencePathwaysCaregiversLP";
 import News from "../pages/News";
 import NewsDetails from "../pages/NewsDetails";
+import Search from "../pages/Search";
 
 let AllRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/about-us" element={<About />} />
-      <Route path="/contact-us" element={<Contact />} />
       <Route path="/bcpnp-calculator" element={<BCPNPCalculator />} />
       <Route path="/federal-skilled" element={<FederalSkilled />} />
       <Route path="/contact-us" element={<Contact />} />
@@ -255,6 +255,7 @@ let AllRoutes = () => {
         path="/permanent-residence-pathways-caregivers-lp"
         element={<PermanentResidencePathwaysCaregiversLP />}
       />
+      <Route path="/search" element={<Search />} />
     </Routes>
   );
 };

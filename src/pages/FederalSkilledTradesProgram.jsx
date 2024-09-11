@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styles from "../styles/FederalSkilledTradesProgram.module.css";
 import { Link } from "react-router-dom";
+import Navbar1 from "../components/Navbar1";
+import Footer1 from "../components/Footer1";
+
 
 
 const FederalSkilledTradesProgram = () => {
@@ -19,7 +22,7 @@ const FederalSkilledTradesProgram = () => {
 
   return (
     <>
-      {/* <Navbar1 /> */}
+      <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div
@@ -102,7 +105,7 @@ const FederalSkilledTradesProgram = () => {
         </p>
       </section>
 
-      <section className={styles.applicationProcess}>
+      <section className={styles.applicationProcess} id="how-to-apply">
         <h2 className={styles.subheading}>How to Apply for the Federal Skilled Trades Program (FSTP)</h2>
         <ol>
           <li>Create an Express Entry profile and submit it to Immigration, Refugees and Citizenship Canada (IRCC). For a stress-free solution, let us handle your case for you. <Link to="https://book.brightlightimmigration.ca/calendar-page" className={styles.link}>Click here</Link>.</li>
@@ -125,17 +128,17 @@ const FederalSkilledTradesProgram = () => {
       </section>
 
       <section className={styles.support}>
-        <h2 className={styles.subheading} id="why-choose-us">Still Not Sure?</h2>
+        <h2 className={styles.subheading}>Still Not Sure?</h2>
         <p>
           If you have received a refusal for any of the reasons mentioned above or have doubts regarding your case and application, do not worry. With over a decade of experience, we specialize in handling Express Entry Programs. Our approval rate for these programs is nearly 100%, achieved through a tailored approach to your specific case and using similar successful cases as precedents.
         </p>
         <p>
           At Brightlight Immigration, our dedicated team of visa application specialists will assist you from the start of the application process all the way to obtaining your PR. Start your process now.
         </p>
-        <Link to="/book-appointment" className={styles.button}>Book Appointment</Link>
+        <Link id="book-appointment" to="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" className={styles.button}>Book Appointment</Link>
       </section>
 
-      <section className={styles.whyChooseUs}>
+      <section className={styles.whyChooseUs} id="why-choose-us">
         <h2 className={styles.subheading}>Why Choose Us?</h2>
         <p>
           At Brightlight Immigration, we offer expert guidance and support throughout your immigration journey. Our dedicated team is committed to achieving the best possible outcomes for our clients.
@@ -151,6 +154,7 @@ const FederalSkilledTradesProgram = () => {
         </div>
       </section>
     </div>
+    <Footer1/>
     </>
   );
 };

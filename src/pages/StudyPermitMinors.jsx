@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styles from '../styles/StudyPermitMinors.module.css';
 import { Link } from "react-router-dom";
+import Navbar1 from "../components/Navbar1";
+import Footer1 from "../components/Footer1";
+
 
 const StudyPermitMinors = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -18,7 +21,7 @@ const StudyPermitMinors = () => {
   
     return (
       <>
-        {/* <Navbar1 /> */}
+        <Navbar1 />
         <div className={styles.bannerParent}>
           <div className={styles.banner}> 
             <div
@@ -38,9 +41,7 @@ const StudyPermitMinors = () => {
                 </p>
                 <p onClick={() => scrollToSection("exeption")}>Exeption</p>
                 <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-                <p onClick={() => scrollToSection("how-to-apply")}>
-                  How to Apply?
-                </p>
+                <p onClick={() => scrollToSection("how-to-apply")}> How to Apply?   </p>
                 <p onClick={() => scrollToSection("refusal-reasons")}>
                   Refusal Reasons
                 </p>
@@ -111,10 +112,10 @@ const StudyPermitMinors = () => {
         </ul>
       </section>
 
-      <section className={styles.assistance}>
+      <section className={styles.assistance} id="why-choose-us">
         <h2 className={styles.subheading}>Still Not Sure?</h2>
         <p>If you or your child have faced a refusal for any of the reasons mentioned above, don't worry. With over 10 years of experience, we specialize in handling previously refused cases. We have successfully secured approval for students who have had multiple refusals, long gaps in education, and are of mature age. We achieve this by tailoring our approach to your specific case and addressing each concern raised by the officer in previous refusals. Using case law, we identify similar cases with positive outcomes and apply them as precedents in the cases we handle. This is why we have a high success rate, with over 90% approval in such cases. At Brightlight Immigration, we have a dedicated team of visa application specialists who can assist you from the start of the application process all the way to obtaining your visa. Start your process now.</p>
-        <Link to="/book-appointment" className={styles.button}>Book Appointment</Link>
+        <Link id="book-appointment" to="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" className={styles.button}>Book Appointment</Link>
       </section>
 
       <section className={styles.whyChooseUs}>
@@ -136,6 +137,7 @@ const StudyPermitMinors = () => {
         </div>
       </section>
     </div>
+    <Footer1/>
     </>
   );
 };

@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styles from "../styles/FrenchTargetedDraw.module.css";
 import { Link } from "react-router-dom";
+import Navbar1 from "../components/Navbar1";
+import Footer1 from "../components/Footer1";
+
 
 
 const FrenchTargetedDraw = () => {
@@ -19,7 +22,7 @@ const FrenchTargetedDraw = () => {
 
   return (
     <>
-      {/* <Navbar1 /> */}
+      <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div
@@ -39,10 +42,6 @@ const FrenchTargetedDraw = () => {
               </p>
               <p onClick={() => scrollToSection("benefits")}>Benefits</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p> 
-              <p onClick={() => scrollToSection("refusal-reasons")}>
-                Refusal Reasons
-              </p>
               <p onClick={() => scrollToSection("book-appointment")}>
                 Book Appointment
               </p>
@@ -113,10 +112,10 @@ const FrenchTargetedDraw = () => {
         <h2 className={styles.subheading}>Still Not Sure?</h2>
         <p>Contact Brightlight Immigration today to assess your profile and embark on a transformative journey towards achieving your Canadian dream. With over a decade of experience, we specialize in handling Express Entry Programs. Our approval rate for these programs is nearly 100%. We achieve this with a tailored approach to your specific case, using similar successful cases as precedents.</p>
         <p>At Brightlight Immigration, we have a dedicated team of visa application specialists who can assist you from the start of the application process all the way to obtaining your PR. Start your process now.</p>
-        <Link to="/book-appointment" className={styles.button}>Book Appointment</Link>
+        <Link id="book-appointment" to="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" className={styles.button}>Book Appointment</Link>
       </section>
 
-      <section className={styles.whyChooseUs}>
+      <section className={styles.whyChooseUs} id="why-choose-us">
         <h2 className={styles.subheading}>Why Choose Us?</h2>
         <p>At Brightlight Immigration, we offer expert guidance and support throughout your immigration journey. Our dedicated team is committed to achieving the best possible outcomes for our clients.</p>
         <div className={styles.testimonials}>
@@ -130,6 +129,8 @@ const FrenchTargetedDraw = () => {
         </div>
       </section>
     </div>
+
+    <Footer1/>
     </>
   );
 };

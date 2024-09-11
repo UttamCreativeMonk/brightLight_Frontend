@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styles from "../styles/DualIntentVisa.module.css";
 import { Link } from "react-router-dom";
+import Navbar1 from "../components/Navbar1";
+import Footer1 from "../components/Footer1";
+
 
 const DualIntentVisa = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -18,7 +21,7 @@ const DualIntentVisa = () => {
 
   return (
     <>
-      {/* <Navbar1 /> */}
+      <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div
@@ -33,13 +36,10 @@ const DualIntentVisa = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
-                About the Program
-              </p>
+              <p onClick={() => scrollToSection("about-program")}> About the Program </p>
               <p onClick={() => scrollToSection("key-points")}>Key Points</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>   How to Apply? </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons   </p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons </p>
               <p onClick={() => scrollToSection("book-appointment")}> Book Appointment</p>
               <p onClick={() => scrollToSection("why-choose-us")}> Why Choose Us?</p>
               <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
@@ -118,11 +118,11 @@ const DualIntentVisa = () => {
         <p>
           At Brightlight Immigration, our dedicated team of visa application specialists will assist you throughout the application process to help you obtain your visa. Start your process now.
         </p>
-        <Link to="/book-appointment" className={styles.button}>Book Appointment</Link>
+        <Link id="book-appointment" to="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" className={styles.button}>Book Appointment</Link>
       </section>
 
       <section className={styles.whyChooseUs}>
-        <h2 className={styles.subheading}>Why Choose Us?</h2>
+        <h2 className={styles.subheading} id="why-choose-us">Why Choose Us?</h2>
         <p>
           At Brightlight Immigration, we provide expert guidance and support throughout your immigration journey. Our dedicated team is committed to achieving the best possible outcomes for our clients.
         </p>
@@ -137,6 +137,7 @@ const DualIntentVisa = () => {
         </div>
       </section>
     </div>
+    <Footer1/>
     </>
   );
 };
