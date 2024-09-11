@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import styles from "../styles/TemporaryResidentPermitDraft.module.css";
 import { Link } from "react-router-dom";
-
+import Navbar1 from "../components/Navbar1";
+import Footer1 from "../components/Footer1";
 const TemporaryResidentPermitDraft = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -18,7 +19,7 @@ const TemporaryResidentPermitDraft = () => {
 
   return (
     <>
-      {/* <Navbar1 /> */}
+      <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div
@@ -120,7 +121,7 @@ const TemporaryResidentPermitDraft = () => {
         </div>
       </section>
     </div>
-
+    <Footer1/>
     </>
   );
 };

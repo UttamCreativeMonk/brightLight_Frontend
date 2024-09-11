@@ -56,23 +56,24 @@ const Navbar1 = (props) => {
   let [doubleNested4, setDoubleNested4] = useState(false);
   let [doubleNested7, setDoubleNested7] = useState(false);
 
+
+
+
   const [isTemporaryResidencyOpen, setTemporaryResidencyOpen] = useState(false);
   const [isVisitorVisaOpen, setVisitorVisaOpen] = useState(false);
   const [isStudentVisaOpen, setStudentVisaOpen] = useState(false);
   const [isOutsideCanadaOpen, setOutsideCanadaOpen] = useState(false);
   const [isInsideCanadaOpen, setInsideCanadaOpen] = useState(false);
-  const [isFamilyReunificationOpen, setFamilyReunificationOpen] =
-    useState(false);
+  const [isFamilyReunificationOpen, setFamilyReunificationOpen] = useState(false);
   const [isSpousalPermitOpen, setSpousalPermitOpen] = useState(false);
 
-  const toggleTemporaryResidency = () =>
-    setTemporaryResidencyOpen(!isTemporaryResidencyOpen);
+
+  const toggleTemporaryResidency = () => setTemporaryResidencyOpen(!isTemporaryResidencyOpen);
   const toggleVisitorVisa = () => setVisitorVisaOpen(!isVisitorVisaOpen);
   const toggleStudentVisa = () => setStudentVisaOpen(!isStudentVisaOpen);
   const toggleOutsideCanada = () => setOutsideCanadaOpen(!isOutsideCanadaOpen);
   const toggleInsideCanada = () => setInsideCanadaOpen(!isInsideCanadaOpen);
-  const toggleFamilyReunification = () =>
-    setFamilyReunificationOpen(!isFamilyReunificationOpen);
+  const toggleFamilyReunification = () => setFamilyReunificationOpen(!isFamilyReunificationOpen);
   const toggleSpousalPermit = () => setSpousalPermitOpen(!isSpousalPermitOpen);
 
   // Adding your required states for "Super Visa" and "Dual Intent Visa" subheadings
@@ -583,201 +584,192 @@ const Navbar1 = (props) => {
           >
             {/* ///// */}
             <div className={styles.sidebarContent}>
-              <div className={styles.closeBtn} onClick={toggleSidebar}>
-                &times;
-              </div>
-              <div className={styles.dropdown}>
-                <a href="#" className={styles.dropbtn}>
-                  SERVICES
-                  <span className={styles.arrow}>▼</span>
-                </a>
-                <div className={styles.dropdownContent}>
-                  {/* Federal Skilled with Clickable Dropdown */}
-                  <div className={styles.subDropdown}>
-                    <a
-                      href="/permanent-residency"
-                      onClick={toggleFederalSkilled}
-                    >
-                      Permanent Residency
-                      <span className={styles.arrow}>▼</span>
-                    </a>
-                    {isFederalSkilledOpen && (
-                      <div className={styles.subDropdownContent}>
-                        <div className={styles.subSubDropdown}>
-                          <a
-                            href="/express-entry"
-                            onClick={toggleFederalSkilledProgram}
-                          >
-                            Express Entry
-                            <span className={styles.arrow}>▼</span>
-                          </a>
-                          {isFederalSkilledProgramOpen && (
-                            <div className={styles.subSubDropdownContent}>
-                              <a href="/federal-skilled-worker-program">FSWP</a>
-                              <a href="/federal-skilled-trades-program">FSTP</a>
-                              <a href="/canadian-experience-class">CEC</a>
-                              <a href="/category-based">Category Based</a>
-                            </div>
-                          )}
-                        </div>
-                        <div className={styles.subSubDropdown}>
-                          <a
-                            href="/pilot-programs"
-                            onClick={toggleFederalSkilledProgram}
-                          >
-                            Pilot Programs
-                            <span className={styles.arrow}>▼</span>
-                          </a>
-                          {isFederalSkilledProgramOpen && (
-                            <div className={styles.subSubDropdownContent}>
-                              <a href="/agri-food-pilot-program">
-                                Low Wage Lmia
-                              </a>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Temporary Residency with Subheadings */}
-                  <div className={styles.subDropdown}>
-                    <a
-                      href="/temporary-resident-permit-draft"
-                      onClick={toggleTemporaryResidency}
-                    >
-                      Temporary Residency
-                      <span className={styles.arrow}>▼</span>
-                    </a>
-                    {isTemporaryResidencyOpen && (
-                      <div className={styles.subDropdownContent}>
-                        <a href="/super-visa">Super Visa</a>
-
-                        <div className={styles.subSubDropdown}>
-                          <a href="/visitor-visa" onClick={toggleVisitorVisa}>
-                            Visitor Visa
-                            <span className={styles.arrow}>▼</span>
-                          </a>
-                          {isVisitorVisaOpen && (
-                            <div className={styles.subSubDropdownContent}>
-                              <a href="/business-visitor-visa">
-                                Business Visitor Visa
-                              </a>
-                              <a href="/dual-intent-visa">Dual Intent Visa</a>
-                            </div>
-                          )}
-                        </div>
-
-                        <a href="/temporary-resident-permit-draft">
-                          Temporary Resident Permits
-                        </a>
-                        <a href="/restoration-status-draft">Restoration</a>
-                        <a href="/extensions-draft">Extend Stay</a>
-                        <a href="/flagpoling">Flagpoling</a>
-
-                        <div className={styles.subSubDropdown}>
-                          <a
-                            href="/spousal-open-work-permit"
-                            onClick={toggleSpousalPermit}
-                          >
-                            Spousal Permit
-                            <span className={styles.arrow}>▼</span>
-                          </a>
-                          {isSpousalPermitOpen && (
-                            <div className={styles.subSubDropdownContent}>
-                              <a href="/common-law-partner-permanent">
-                                Spouse/Partner of Permanent Resident
-                              </a>
-                              <a href="/common-law-partner-temporary">
-                                Spouse/Partner of Temporary Foreign Worker
-                              </a>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Student Visa with Subheadings */}
-                  <div className={styles.subDropdown}>
-                    <a href="/student-visa" onClick={toggleStudentVisa}>
-                      Student Visa
-                      <span className={styles.arrow}>▼</span>
-                    </a>
-                    {isStudentVisaOpen && (
-                      <div className={styles.subDropdownContent}>
-                        <div className={styles.subSubDropdown}>
-                          <a
-                            href="/outside-canada"
-                            onClick={toggleOutsideCanada}
-                          >
-                            Outside Canada
-                            <span className={styles.arrow}>▼</span>
-                          </a>
-                          {isOutsideCanadaOpen && (
-                            <div className={styles.subSubDropdownContent}>
-                              <a href="/sds">SDS</a>
-                              <a href="/non-sds">NON SDS</a>
-                            </div>
-                          )}
-                        </div>
-
-                        <div className={styles.subSubDropdown}>
-                          <a href="/inside-canada" onClick={toggleInsideCanada}>
-                            Inside Canada
-                            <span className={styles.arrow}>▼</span>
-                          </a>
-                          {isInsideCanadaOpen && (
-                            <div className={styles.subSubDropdownContent}>
-                              <a href="/change-college-program">
-                                Change of College Program
-                              </a>
-                              <a href="/visitor-to-student">
-                                Visitor to Student
-                              </a>
-                            </div>
-                          )}
-                        </div>
-
-                        <a href="/study-permit-minors">Study Permit Minors</a>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Family Reunification with Subheadings */}
-                  <div className={styles.subDropdown}>
-                    <a
-                      href="/family-reunification-sponsorship"
-                      onClick={toggleFamilyReunification}
-                    >
-                      Family Reunification
-                      <span className={styles.arrow}>▼</span>
-                    </a>
-                    {isFamilyReunificationOpen && (
-                      <div className={styles.subDropdownContent}>
-                        <a href="/spousal-open-work-permit">Spousal Permit</a>
-                        <a href="/dependent-children">Dependent Children</a>
-                        <a href="/humanitarian-compassionate">H & C</a>
-                        <a href="/orphan">Orphan</a>
-                        <a href="/adoption">Adoption</a>
-                        <a href="/spouse">Spouse</a>
-                      </div>
-                    )}
-                  </div>
+  <div className={styles.closeBtn} onClick={toggleSidebar}>
+    &times;
+  </div>
+  <div className={styles.dropdown}>
+    <a href="#" className={styles.dropbtn}>
+      SERVICES
+      <span className={styles.arrow}>▼</span>
+    </a>
+    <div className={styles.dropdownContent}>
+      {/* Federal Skilled with Clickable Dropdown */}
+      <div className={styles.subDropdown}>
+        <a
+          href="/permanent-residency"
+          onClick={toggleFederalSkilled}
+        >
+          Permanent Residency
+          <span className={styles.arrow}>▼</span>
+        </a>
+        {isFederalSkilledOpen && (
+          <div className={styles.subDropdownContent}>
+            <div className={styles.subSubDropdown}>
+              <a
+                href="/express-entry"
+                onClick={toggleFederalSkilledProgram}
+              >
+                Express Entry
+                <span className={styles.arrow}>▼</span>
+              </a>
+              {isFederalSkilledProgramOpen && (
+                <div className={styles.subSubDropdownContent}>
+                  <a href="/federal-skilled-worker-program">FSWP</a>
+                  <a href="/federal-skilled-trades-program">FSTP</a>
+                  <a href="/canadian-experience-class">CEC</a>
+                  <a href="/category-based">Category Based</a>
                 </div>
-              </div>
-
-              {/* Separate links below the SERVICES section */}
-              <a href="/blogs" className={styles.sidebarLink}>
-                BLOGS
-              </a>
-              <a href="/" className={styles.sidebarLink}>
-                NEWS
-              </a>
-              <a href="/contact-us" className={styles.sidebarLink}>
-                CONTACT
-              </a>
+              )}
             </div>
+            <div className={styles.subSubDropdown}>
+              <a
+                href="/pilot-programs"
+                onClick={toggleFederalSkilledProgram}
+              >
+                Pilot Programs
+                <span className={styles.arrow}>▼</span>
+              </a>
+              {isFederalSkilledProgramOpen && (
+                <div className={styles.subSubDropdownContent}>
+                  <a href="/agri-food-pilot-program">Low Wage Lmia</a>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Temporary Residency with Subheadings */}
+      <div className={styles.subDropdown}>
+        <a
+          href="/temporary-resident-permit-draft"
+          onClick={toggleTemporaryResidency}
+        >
+          Temporary Residency
+          <span className={styles.arrow}>▼</span>
+        </a>
+        {isTemporaryResidencyOpen && (
+          <div className={styles.subDropdownContent}>
+            <a href="/super-visa">Super Visa</a>
+
+            <div className={styles.subSubDropdown}>
+              <a
+                href="/visitor-visa"
+                onClick={toggleVisitorVisa}
+              >
+                Visitor Visa
+                <span className={styles.arrow}>▼</span>
+              </a>
+              {isVisitorVisaOpen && (
+                <div className={styles.subSubDropdownContent}>
+                  <a href="/business-visitor-visa">Business Visitor Visa</a>
+                  <a href="/dual-intent-visa">Dual Intent Visa</a>
+                </div>
+              )}
+            </div>
+
+            <a href="/temporary-resident-permit-draft">Temporary Resident Permits</a>
+            <a href="/restoration-status-draft">Restoration</a>
+            <a href="/extensions-draft">Extend Stay</a>
+            <a href="/flagpoling">Flagpoling</a>
+
+            <div className={styles.subSubDropdown}>
+              <a
+                href="/spousal-open-work-permit"
+                onClick={toggleSpousalPermit}
+              >
+                Spousal Permit
+                <span className={styles.arrow}>▼</span>
+              </a>
+              {isSpousalPermitOpen && (
+                <div className={styles.subSubDropdownContent}>
+                  <a href="/common-law-partner-permanent">Spouse/Partner of Permanent Resident</a>
+                  <a href="/common-law-partner-temporary">Spouse/Partner of Temporary Foreign Worker</a>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Student Visa with Subheadings */}
+      <div className={styles.subDropdown}>
+        <a
+          href="/student-visa"
+          onClick={toggleStudentVisa}
+        >
+          Student Visa
+          <span className={styles.arrow}>▼</span>
+        </a>
+        {isStudentVisaOpen && (
+          <div className={styles.subDropdownContent}>
+            <div className={styles.subSubDropdown}>
+              <a
+                href="/outside-canada"
+                onClick={toggleOutsideCanada}
+              >
+                Outside Canada
+                <span className={styles.arrow}>▼</span>
+              </a>
+              {isOutsideCanadaOpen && (
+                <div className={styles.subSubDropdownContent}>
+                  <a href="/sds">SDS</a>
+                  <a href="/non-sds">NON SDS</a>
+                </div>
+              )}
+            </div>
+
+            <div className={styles.subSubDropdown}>
+              <a
+                href="/inside-canada"
+                onClick={toggleInsideCanada}
+              >
+                Inside Canada
+                <span className={styles.arrow}>▼</span>
+              </a>
+              {isInsideCanadaOpen && (
+                <div className={styles.subSubDropdownContent}>
+                  <a href="/change-college-program">Change of College Program</a>
+                  <a href="/visitor-to-student">Visitor to Student</a>
+                </div>
+              )}
+            </div>
+
+            <a href="/study-permit-minors">Study Permit Minors</a>
+          </div>
+        )}
+      </div>
+
+      {/* Family Reunification with Subheadings */}
+      <div className={styles.subDropdown}>
+        <a
+          href="/family-reunification-sponsorship"
+          onClick={toggleFamilyReunification}
+        >
+          Family Reunification
+          <span className={styles.arrow}>▼</span>
+        </a>
+        {isFamilyReunificationOpen && (
+          <div className={styles.subDropdownContent}>
+            <a href="/spousal-open-work-permit">Spousal Permit</a>
+            <a href="/dependent-children">Dependent Children</a>
+            <a href="/humanitarian-compassionate">H & C</a>
+            <a href="/orphan">Orphan</a>
+            <a href="/adoption">Adoption</a>
+            <a href="/spouse">Spouse</a>
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+
+  {/* Separate links below the SERVICES section */}
+  <a href="/blogs" className={styles.sidebarLink}>BLOGS</a>
+  <a href="/" className={styles.sidebarLink}>NEWS</a>
+  <a href="/contact-us" className={styles.sidebarLink}>CONTACT</a>
+</div>
+
+
           </div>
 
           <div className={styles.contactNavbar}>
@@ -800,14 +792,8 @@ const Navbar1 = (props) => {
                   className={styles.lowerFooterText}
                   style={showBlue ? { color: "#164c95" } : { color: "white" }}
                 >
-                  <a
-                    href="https://g.co/kgs/9BZVS85"
-                    className={styles.lowerFooterText}
-                    style={showBlue ? { color: "#164c95" } : { color: "white" }}
-                  >
-                    {" "}
-                    Vancouver
-                  </a>
+                  <a href="https://g.co/kgs/9BZVS85" className={styles.lowerFooterText}
+                  style={showBlue ? { color: "#164c95" } : { color: "white" }}> Vancouver</a>
                 </span>
               </div>
               <div className={styles.email}>

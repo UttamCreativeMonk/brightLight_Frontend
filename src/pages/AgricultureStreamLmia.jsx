@@ -233,7 +233,7 @@ const AgricultureStreamLmia = () => {
             </p>
           </section>
 
-          <section className={styles.section}>
+          <section className={styles.section} id="how-to-apply">
             <h2>How to Apply for Agricultural Stream LMIA</h2>
             <ol>
               <li>
@@ -310,7 +310,7 @@ const AgricultureStreamLmia = () => {
             </ul>
           </section>
 
-          <section className={styles.section}>
+          <section className={styles.section} id="why-choose-us">
             <h2>Still Not Sure?</h2>
             <p>
               If you have received a refusal for any of the reasons mentioned
@@ -333,10 +333,7 @@ const AgricultureStreamLmia = () => {
             </p>
           </section>
 
-          <section className={styles.section} id="how-to-apply">
-            <h2>Why Choose Us?</h2>
-            {/* Content about why choose your services */}
-          </section>
+
 
           <section className={styles.section}>
             <h2>Clients Testimonials</h2>

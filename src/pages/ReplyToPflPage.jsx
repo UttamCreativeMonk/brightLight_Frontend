@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import styles from "../styles/ReplyToPflPage.module.css";
+import Navbar1 from "../components/Navbar1";
+import Footer1 from "../components/Footer1";
 
 const ReplyToPflPage = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -17,6 +19,7 @@ const ReplyToPflPage = () => {
 
   return (
     <>
+    <Navbar1/>
       <div className={styles.bannerParent}>
         <header className={styles.header}>
           <h1>Procedural Fairness Letter (PFL)</h1>
@@ -40,15 +43,6 @@ const ReplyToPflPage = () => {
               <p onClick={() => scrollToSection("recieved-a-pfl")}>Recieved a PFL</p>
               <p onClick={() => scrollToSection("how-to-apply")}>
                 How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>
-                Refusal Reasons
-              </p>
-              <p onClick={() => scrollToSection("book-appointment")}>
-                Book Appointment
-              </p>
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose Us?
               </p>
               <p onClick={() => scrollToSection("testimonials")}>
                 Testimonials
@@ -129,19 +123,16 @@ const ReplyToPflPage = () => {
             </p>
           </section>
 
-          <section className={styles.section}>
-            <h2>Why Choose Us</h2>
-            {/* Add content here */}
-          </section>
+
 
           <section className={styles.section}>
             <h2>Clients Testimonials</h2>
             {/* Add video and written testimonials here */}
           </section>
-
-
         </main>
       </div>
+
+      <Footer1/>
     </>
   );
 };

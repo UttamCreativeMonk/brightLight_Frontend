@@ -151,7 +151,10 @@ const Citizenship = () => {
               We know what it means to you to become a Canadian citizen. We
               would be honored to help you through the application process and
               to get you ready for your citizenship ceremony.{" "}
-              <a href="#bookAppointment">Click here</a> (hyperlink to Calendly)
+              <a href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj">
+                Click here
+              </a>{" "}
+              (hyperlink to Calendly)
             </p>
           </section>
 
@@ -205,7 +208,9 @@ const Citizenship = () => {
               </li>
             </ul>
             <p>
-              <a href="#bookAppointment">Book Appointment</a>
+              <a href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj">
+                Book Appointment
+              </a>
             </p>
           </section>
 
@@ -230,16 +235,11 @@ const Citizenship = () => {
             </p>
           </section>
 
-          <section className={styles.section}>
-            <h2>Why choose us section</h2>
-            {/* Add content here */}
-          </section>
 
           <section className={styles.section}>
             <h2>Clients Testimonials</h2>
             {/* Add video and written testimonials here */}
           </section>
-
         </main>
       </div>
 

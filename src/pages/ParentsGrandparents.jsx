@@ -45,9 +45,7 @@ const ParentsGrandparents = () => {
                 <p onClick={() => scrollToSection("refusal-reasons")}>
                   Refusal Reasons
                 </p>
-                <p onClick={() => scrollToSection("book-appointment")}>
-                  Book Appointment
-                </p>
+
                 <p onClick={() => scrollToSection("why-choose-us")}>
                   Why Choose Us?
                 </p>

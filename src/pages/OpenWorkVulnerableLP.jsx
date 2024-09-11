@@ -19,7 +19,7 @@ const OpenWorkVulnerableLP = () => {
   };
   return (
     <>
-     <Navbar1/>
+      <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div
@@ -38,19 +38,12 @@ const OpenWorkVulnerableLP = () => {
                 About the Program
               </p>
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
-              <p onClick={() => scrollToSection("application-process")}>Application Process</p>
+              <p onClick={() => scrollToSection("application-process")}>
+                Application Process
+              </p>
               <p onClick={() => scrollToSection("evidence")}>Evidence</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("consultation")}>Consultation</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>
-                Refusal Reasons
-              </p>
-              <p onClick={() => scrollToSection("book-appointment")}>
-                Book Appointment
-              </p>
+
               <p onClick={() => scrollToSection("why-choose-us")}>
                 Why Choose Us?
               </p>
@@ -172,7 +165,7 @@ const OpenWorkVulnerableLP = () => {
           </ol>
         </section>
 
-        <section className={styles.consultation} id="consultation">
+        <section className={styles.consultation} id="why-choose-us">
           <h2>Still Not Sure?</h2>
           <p>
             If you have received a refusal for any of the reasons mentioned
@@ -191,18 +184,13 @@ const OpenWorkVulnerableLP = () => {
           </p>
         </section>
 
-        <section className={styles.whyChooseUs}>
-          <h2>Why Choose Us</h2>
-          {/* Add content for "Why choose us" section */}
-        </section>
-
         <section className={styles.testimonials}>
           <h2>Client Testimonials</h2>
           {/* Add video and written testimonials with options to hide/show */}
         </section>
       </div>
 
-      <Footer1/>
+      <Footer1 />
     </>
   );
 };

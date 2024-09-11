@@ -38,19 +38,16 @@ const Adoption = () => {
                 About the Program
               </p>
               <p onClick={() => scrollToSection("types-of-adoption")}>Types of Adoption</p>
-              <p onClick={() => scrollToSection("intra-country")}>Intra Country</p>
-              <p onClick={() => scrollToSection("inter-country")}>Inter Country</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("consultation")}>Consultation</p>
+
+
               <p onClick={() => scrollToSection("how-to-apply")}>
                 How to Apply?
               </p>
               <p onClick={() => scrollToSection("refusal-reasons")}>
                 Refusal Reasons
               </p>
-              <p onClick={() => scrollToSection("book-appointment")}>
-                Book Appointment
-              </p>
+
               <p onClick={() => scrollToSection("why-choose-us")}>
                 Why Choose Us?
               </p>
@@ -132,15 +129,10 @@ const Adoption = () => {
         </ul>
       </section>
 
-      <section className={styles.consultation} id="consultation">
+      <section className={styles.consultation} id="why-choose-us">
         <h2>Still Not Sure?</h2>
         <p>If you have received a refusal for any of the reasons mentioned above, do not worry. With over a decade of experience, we specialize in previously refused cases. We have successfully obtained approvals for clients with multiple previous refusals by using a tailored approach, addressing each concern listed in previous refusals, and applying case law precedents. Our high success rate is a testament to our expertise.</p>
         <p>At Brightlight Immigration, we have a dedicated team of visa application specialists who can assist you from the start of the application process all the way to obtaining your visa. <a href="#book-appointment" className={styles.button}>Start your process now</a></p>
-      </section>
-
-      <section className={styles.whyChooseUs}>
-        <h2>Why Choose Us?</h2>
-        <p>[Insert the "Why Choose Us" section content here]</p>
       </section>
 
       <section className={styles.blogs}>

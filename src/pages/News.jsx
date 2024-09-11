@@ -1,15 +1,14 @@
 import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
-import styles from "../styles/BlogsPage.module.css";
+import styles from "../styles/News.module.css";
 import brightSource from "../assets/bright-source-blue.png";
 import paperPlane from "../assets/paperplane.png";
 import { ReactComponent as Search } from "../assets/search-white.svg";
 import { useEffect, useState } from "react";
 import subscribe from "../assets/subscribe.jpg";
 import { useLocation, useNavigate } from "react-router-dom";
-import BrightBlogs from "../assets/brightblogs.webp";
 
-let Blogs = () => {
+let News = () => {
   let [firstBlog, setFirstBlog] = useState([]);
   let [remainingBlogs, setRemainingBlogs] = useState([]);
   let [displayedBlogs, setDisplayedBlogs] = useState([]);
@@ -28,7 +27,7 @@ let Blogs = () => {
     setSearchQuery(query);
     setSortOption(sort);
 
-    fetch("https://brightlight-node.onrender.com/adding-blog")
+    fetch("https://brightlight-node.onrender.com/news")
       .then((res) => res.json())
       .then((data) => {
         if (data.length > 0) {
@@ -38,7 +37,6 @@ let Blogs = () => {
           let remainingItems = data.slice(0, -1);
           setRemainingBlogs(remainingItems);
 
-          // Apply sorting and search to blogs
           let sortedBlogs = sortBlogs(remainingItems, sort);
           setDisplayedBlogs(applySearch(sortedBlogs, query));
           setQuickLinksBlogs(remainingItems.slice(0, 3));
@@ -48,7 +46,6 @@ let Blogs = () => {
   }, [location.search]);
 
   useEffect(() => {
-    // Sort or shuffle the blogs whenever sortOption, remainingBlogs, or searchQuery changes
     let sortedBlogs = sortBlogs(remainingBlogs, sortOption);
     setDisplayedBlogs(applySearch(sortedBlogs, searchQuery));
   }, [sortOption, remainingBlogs, searchQuery]);
@@ -94,12 +91,12 @@ let Blogs = () => {
 
   let handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
-    window.scrollTo(0, 0); // Scroll to top of the page
+    window.scrollTo(0, 0);
   };
 
   let handleSortChange = (option) => {
     setSortOption(option);
-    setCurrentPage(1); // Reset to first page on sort change
+    setCurrentPage(1);
     navigate(`?search=${searchQuery}&sort=${option}`);
   };
 
@@ -111,14 +108,14 @@ let Blogs = () => {
 
   let handleClearSearch = () => {
     setSearchQuery("");
-    navigate("?sort=" + sortOption); // Clear the search parameter while keeping the sort parameter
+    navigate("?sort=" + sortOption);
   };
 
   return (
     <>
       <Navbar1 showBlue={true} />
       <div className={styles.blogsTopSection}>
-        <img src={BrightBlogs} />
+        <img src={brightSource} />
         <h3>
           We're your go-to spot for easy-to-digest blogs about Canadian
           immigration. Think of us as your helpful guide, breaking down the ins
@@ -150,7 +147,7 @@ let Blogs = () => {
               ? `1-${Math.min(currentBlogs.length, displayedBlogs.length)} `
               : "0 "}
             results out of {displayedBlogs.length} for{" "}
-            {searchQuery || "All Blogs"}
+            {searchQuery || "All News"}
           </p>
           <div>
             <p>
@@ -167,8 +164,8 @@ let Blogs = () => {
         <div className={styles.firstBlog}>
           <div className={styles.firstBlogContentSection}>
             <h4>{firstBlog.date && firstBlog.date.trim().split("T")[0]}</h4>
-            <h1>{firstBlog.blog_heading}</h1>
-            <a href={`/blogs/${firstBlog._id}`}>Read More</a>
+            <h1>{firstBlog.news_heading}</h1>
+            <a href={`/news/${firstBlog._id}`}>Read More</a>
           </div>
           <div>
             <img src={firstBlog.image} />
@@ -179,7 +176,9 @@ let Blogs = () => {
         {currentBlogs.length > 0 ? (
           <div className={styles.blogsGridSection}>
             {currentBlogs.map((item, index) => {
-              let stripHtmlTags = (text) => text.replace(/<[^>]*>/g, "");
+              let stripHtmlTags = (text) =>
+                text ? text.replace(/<[^>]*>/g, "") : "";
+
               let truncateText = (text, numChars) => {
                 let cleanedText = stripHtmlTags(text);
                 if (cleanedText.length <= numChars) return cleanedText;
@@ -189,21 +188,21 @@ let Blogs = () => {
                 <a
                   key={index}
                   className={styles.blog}
-                  href={`/blogs/${item._id}`}
+                  href={`/news/${item._id}`}
                 >
                   <img src={item.image} />
                   <div>
                     <h4>{item?.tag_1}</h4>
                     <h4>{item.date && item.date.trim().split("T")[0]}</h4>
                   </div>
-                  <h1>{item.blog_heading}</h1>
-                  <p>{truncateText(item?.blog_content, 100)}</p>
+                  <h1>{item.news_heading}</h1>
+                  <p>{truncateText(item?.news_content, 100)}</p>
                 </a>
               );
             })}
           </div>
         ) : (
-          <p className={styles.noBlogsFound}>No blogs found for the search.</p>
+          <p className={styles.noBlogsFound}>No News found for the search.</p>
         )}
         <div className={styles.rightSection}>
           <div className={styles.subscribeSection}>
@@ -215,9 +214,9 @@ let Blogs = () => {
             <h3>Quick Links</h3>
             {quickLinksBlogs?.map((item, index) => (
               <div key={index}>
-                <h2>{item.blog_heading}</h2>
+                <h2>{item.news_heading}</h2>
                 <p>{item.date && item.date.trim().split("T")[0]}</p>
-                <a href={`/blogs/${item._id}`}>Read more</a>
+                <a href={`/news/${item._id}`}>Read more</a>
               </div>
             ))}
           </div>
@@ -239,4 +238,4 @@ let Blogs = () => {
   );
 };
 
-export default Blogs;
+export default News;

@@ -111,7 +111,7 @@ const AdditionalDocument = () => {
               </li>
               <li>
                 If you're unsure about any aspect of the process, let us handle
-                your case for you. <a href="#bookAppointment">Click here</a>
+                your case for you. <a id="book-appointment" href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj">Click here</a>
               </li>
             </ul>
           </section>
@@ -133,10 +133,6 @@ const AdditionalDocument = () => {
             </p>
           </section>
 
-          <section className={styles.section}>
-            <h2>Why Choose Us</h2>
-            {/* Add content here */}
-          </section>
 
           <section className={styles.section}>
             <h2>Clients Testimonials</h2>

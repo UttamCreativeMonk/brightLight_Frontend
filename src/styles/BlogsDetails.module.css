@@ -244,7 +244,7 @@
     margin: auto;
   }
   .blogSearchSection {
-    width: 90%;
+    width: 100%;
     margin: auto;
   }
   .blogSearchSection {
@@ -307,8 +307,7 @@
     margin: auto;
   }
   .blogSearchSection {
-    width: 90%;
-    /* margin: auto; */
+    width: 100%;
   }
   .blogDescriptionSection p {
     font-size: 12px;

@@ -67,6 +67,8 @@ import SkilledWorkerStream from "./pages/SkilledWorkerStream";
 import InCaregiverProgramLP from "./pages/InCaregiverProgramLP";
 import PathwaysForCaregiver from "./pages/PathwaysForCaregiver";
 import PermanentResidencePathwaysCaregiversLP from "./pages/PermanentResidencePathwaysCaregiversLP";
+import NewsDetails from "./pages/NewsDetails";
+import News from "./pages/News";
 
 
 
@@ -105,7 +107,7 @@ function App() {
       {/* <ParentsGrandparents/> */}
       {/* <StudentVisa/>   */}
       {/* <InsideCanada/> */}
-      {/* <ChangeCollegeProgram/> */}
+      {/* <ChangeCollegeProgram/> //done till here */}
       {/* <VisitorToStudent/> */}
       {/* <OutsideCananda/> */}
       {/* <NonSds/> */}
@@ -147,6 +149,8 @@ function App() {
       {/* <PathwaysForCaregiver/> */}
       {/* <PermanentResidencePathwaysCaregiversLP/> */}
 
+      {/* <NewsDetails/> */}
+      {/* <News/> */}
 
       <Loader />
       <AllRoutes />

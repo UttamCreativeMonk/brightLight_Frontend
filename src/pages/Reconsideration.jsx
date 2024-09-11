@@ -181,11 +181,11 @@ const Reconsideration = () => {
               </li>
             </ul>
             <p>
-              <a href="#bookAppointment">Book Appointment</a>
+              <a id="book-appointment" href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj">Book Appointment</a>
             </p>
           </section>
 
-          <section className={styles.section}>
+          <section className={styles.section} id="why-choose-us">
             <h2>Still Not Sure?</h2>
             <p>
               If you have received a refusal for any of the reasons mentioned
@@ -206,10 +206,7 @@ const Reconsideration = () => {
             </p>
           </section>
 
-          <section className={styles.section}>
-            <h2>Why Choose Us</h2>
-            {/* Add content here */}
-          </section>
+
 
           <section className={styles.section}>
             <h2>Clients Testimonials</h2>

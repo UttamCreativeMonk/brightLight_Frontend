@@ -37,19 +37,11 @@ const OpenWorkPermit = () => {
               <p onClick={() => scrollToSection("about-program")}>
                 About the Program
               </p>
-              <p onClick={() => scrollToSection("key-points")}>Key Points</p>
+              <p onClick={() => scrollToSection("categories")}>Categories</p>
               <p onClick={() => scrollToSection("how-to-apply")}>
                 How to Apply?
               </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>
-                Refusal Reasons
-              </p>
-              <p onClick={() => scrollToSection("book-appointment")}>
-                Book Appointment
-              </p>
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose Us?
-              </p>
+
               <p onClick={() => scrollToSection("testimonials")}>
                 Testimonials
               </p>
@@ -76,7 +68,7 @@ const OpenWorkPermit = () => {
             </p>
           </section>
 
-          <section className={styles.section}>
+          <section className={styles.section} id="categories">
             <h2>Categories Under Open Work Permit</h2>
             <div className={styles.categories}>
               <Link to="/pgwp" className={styles.button}>
@@ -103,7 +95,7 @@ const OpenWorkPermit = () => {
             </div>
           </section>
 
-          <section className={styles.section}>
+          <section className={styles.section} id="how-to-apply">
             <h2>Here’s How We Can Help You</h2>
             <p>
               Our process is designed to assist you from start to finish,

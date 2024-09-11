@@ -40,17 +40,10 @@ const Pgwp = () => {
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
               <p onClick={() => scrollToSection("application-process")}>Application Process</p>
-              <p onClick={() => scrollToSection("consultation")}>KeyPoints</p>
-              {/* <p onClick={() => scrollToSection("keypoints")}>KeyPoints</p> */}
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
               <p onClick={() => scrollToSection("refusal-reasons")}>
                 Refusal Reasons
               </p>
-              <p onClick={() => scrollToSection("book-appointment")}>
-                Book Appointment
-              </p>
+
               <p onClick={() => scrollToSection("why-choose-us")}>
                 Why Choose Us?
               </p>
@@ -119,16 +112,12 @@ const Pgwp = () => {
         </ul>
       </section>
 
-      <section className={styles.consultation} id="consultation">
+      <section className={styles.consultation}id="why-choose-us" >
         <h2>Still Not Sure?</h2>
         <p>If you have received a refusal for any of the reasons mentioned above, do not worry. With over a decade of experience, we specialize in previously refused cases. We have successfully obtained approvals for clients with multiple previous refusals through a tailored approach, addressing each concern listed in previous refusals and using case law as precedents. This high success rate is why our clients trust us.</p>
         <p>At Brightlight Immigration, our dedicated team of visa application specialists can assist you from start to finish. Start your process now!</p>
       </section>
 
-      <section className={styles.whyChooseUs}>
-        <h2>Why Choose Us</h2>
-        <p>[Content for why choose us]</p>
-      </section>
 
       <section className={styles.testimonials}>
         <h2>Clients Testimonials</h2>

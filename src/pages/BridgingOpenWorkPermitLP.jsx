@@ -39,16 +39,10 @@ const BridgingOpenWorkPermitLP = () => {
               </p>
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
               <p onClick={() => scrollToSection("application-process")}>Application Process</p>
-              <p onClick={() => scrollToSection("advice")}>Advice</p>
+
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
               <p onClick={() => scrollToSection("how-to-apply")}>
                 How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>
-                Refusal Reasons
-              </p>
-              <p onClick={() => scrollToSection("book-appointment")}>
-                Book Appointment
               </p>
               <p onClick={() => scrollToSection("why-choose-us")}>
                 Why Choose Us?
@@ -136,7 +130,7 @@ const BridgingOpenWorkPermitLP = () => {
           <li>Wait for IRCC to process your application.</li>
         </ol>
       </section>
-      <section className={styles.advice} id="advice">
+      <section className={styles.advice} id="why-choose-us">
         <h2>Still not sure?</h2>
         <p>If you have received a refusal for any of the reasons mentioned above, do not worry. With over a decade of experience, we specialize in previously refused cases. While we don't provide jobs for LMIA, we can certainly assist you if you have a job offer. We have obtained approvals for clients who had multiple previous refusals. We achieve this with a tailored approach to your specific case, addressing each concern that the officer has listed in previous refusals. We use case law and find similar cases to your circumstances that had positive results, and we use them as precedents in cases we work on. This is why we have a high success rate. At Brightlight Immigration, we have a dedicated team of visa application specialists who can assist you from the start of the application process to obtaining your visa. Start your process now.</p>
       </section>

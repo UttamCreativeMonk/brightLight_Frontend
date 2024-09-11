@@ -81,7 +81,8 @@ import PrRenewal from "../pages/PrRenewal";
 import InCaregiverProgramLP from "../pages/InCaregiverProgramLP";
 import PathwaysForCaregiver from "../pages/PathwaysForCaregiver";
 import PermanentResidencePathwaysCaregiversLP from "../pages/PermanentResidencePathwaysCaregiversLP";
-
+import News from "../pages/News";
+import NewsDetails from "../pages/NewsDetails";
 
 let AllRoutes = () => {
   return (
@@ -93,87 +94,168 @@ let AllRoutes = () => {
       <Route path="/federal-skilled" element={<FederalSkilled />} />
       <Route path="/contact-us" element={<Contact />} />
       <Route path="/express-entry" element={<ExpressEntry />} />
-      <Route path="/permanent-residency" element={<PermanentResidency/>} />
-      <Route path="/transport-occupation" element={<TransportOccupationTwo />} />
+      <Route path="/permanent-residency" element={<PermanentResidency />} />
+      <Route
+        path="/transport-occupation"
+        element={<TransportOccupationTwo />}
+      />
       <Route path="/blogs" element={<Blogs />} />
-      <Route path="/blogs/:id" element={<BlogDetails/>} />
-      <Route path="/category-based" element={<CategoryBased/>} />
-      <Route path="/clb-ilets-calculator" element={<CLBILETSCalculator/>} />
-      <Route path="/previous-draw-history" element={<PreviousDrawHistory/>} />
+      <Route path="/blogs/:id" element={<BlogDetails />} />
+
+      <Route path="/news" element={<News />} />
+      <Route path="/news/:id" element={<NewsDetails />} />
+
+      <Route path="/category-based" element={<CategoryBased />} />
+      <Route path="/clb-ilets-calculator" element={<CLBILETSCalculator />} />
+      <Route path="/previous-draw-history" element={<PreviousDrawHistory />} />
       <Route path="/users/admin/dashboard" element={<Admin />} />
-      <Route path="/more-services" element={<MoreServices/>} />
-   
-      <Route path="/privacy-policy" element={<PrivacyPolicy/>} />
-      <Route path="/terms-&-conditions" element={<TermsAndConditions/>} />
-      
+      <Route path="/more-services" element={<MoreServices />} />
+
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/terms-&-conditions" element={<TermsAndConditions />} />
+
       <Route path="*" element={<NotFoundPage />} />
 
-      <Route path="/skilled-worker-stream" element={<SkilledWorkerStream/>} />
-      <Route path="/priorities-program" element={<PrioritiesProgram/>} />
-      <Route path="/international-post-graduate-program" element={<InternationalPostGraduateProgram/>} />
-      <Route path="/international-graduate-program" element={<InternationalGraduateProgram/>} />
-      <Route path="/health-authority-stream" element={<HealthAuthorityStream/>} />
-      <Route path="/entry-level-semi-skilled" element={<EntryLevelSemiSkilled/>} />
-      <Route path="/bc-pnp" element={<BcPnp/>} />
-      <Route path="/pnp" element={<Pnp/>} />
-      <Route path="/rnip" element={<Rnip/>} />
-      <Route path="/agri-food-pilot-program" element={<AgriFoodPilotProgram/>} />
-      <Route path="/pilot-programs" element={<PilotPrograms/>} />
-      <Route path="/transport-occupation-targeted-draw" element={<TransportOccupationTargetedDraw/>} />
-      <Route path="/trade-occupation-targeted-draw" element={<TradeOccupationTargetedDraw/>} />
-      <Route path="/stem-targeted-draw" element={<StemTargetedDraw/>} />
-      <Route path="/french-targeted-draw" element={<FrenchTargetedDraw/>} />
-      <Route path="/federal-skilled-worker-program" element={<FederalSkilledWorkerProgram/>} />
-      <Route path="/federal-skilled-trades-program" element={<FederalSkilledTradesProgram/>} />
-      <Route path="/canadian-experience-class" element={<CanadianExperienceClass/>} />
-      <Route path="/dual-intent-visa" element={<DualIntentVisa/>} />
-      <Route path="/business-visitor-visa" element={<BusinessVisitorVisa/>} />
-      <Route path="/visitor-visa" element={<VisitorVisa/>} />
-      <Route path="/temporary-resident-permit-draft" element={<TemporaryResidentPermitDraft/>} />
-      <Route path="/super-visa" element={<SuperVisa/>} />
-      <Route path="/cby" element={<Cby/>} />
-      <Route path="/common-law-partner-temporary" element={<CommonLawPartnerTemporary/>} />
-      <Route path="/restoration-status-draft" element={<RestorationStatusDraft/>} />
-      <Route path="/common-law-partner-permanent" element={<CommonLawPartnerPermanent/>} />
-      <Route path="/spousal-open-work-permit" element={<SpousalOpenWorkPermit/>} />
-      <Route path="/flagpoling" element={<Flagpoling/>} />
-      <Route path="/extensions-draft" element={<ExtensionsDraft/>} />
-      <Route path="/study-permit-minors" element={<StudyPermitMinors/>} />
-      <Route path="/sds" element={<Sds/>} />
-      <Route path="/non-sds" element={<NonSds/>} />
-      <Route path="/outside-cananda" element={<OutsideCananda/>} />
-      <Route path="/visitor-to-student" element={<VisitorToStudent/>} />
-      <Route path="/change-college-program" element={<ChangeCollegeProgram/>} />
-      <Route path="/inside-canada" element={<InsideCanada/>} />
-      <Route path="/student-visa" element={<StudentVisa/>} />
-      <Route path="/ParentsGrandparents" element={<ParentsGrandparents/>} />
-      <Route path="/orphan" element={<Orphan/>} />
-      <Route path="/lonely-canadian" element={<LonelyCanadian/>} />
-      <Route path="/humanitarian-compassionate" element={<HumanitarianCompassionate/>} />
-      <Route path="/dependent-children" element={<DependentChildren/>} />
-      <Route path="/adoption" element={<Adoption/>} />
-      <Route path="/family-reunification-sponsorship" element={<FamilyReunificationSponsorship/>} />
-      <Route path="/pgwp" element={<Pgwp/>} />
-      <Route path="/openWork-canada-lp" element={<OpenWorkCanadaLP/>} />
-      <Route path="/open-work-vulnerable-lp" element={<OpenWorkVulnerableLP/>} />
-      <Route path="/francophone-mobility-program" element={<FrancophoneMobilityProgram/>} />
-      <Route path="/bridging-open-work-permit-lp" element={<BridgingOpenWorkPermitLP/>} />
-      <Route path="/low-wage-lmia" element={<LowWageLmia/>} />
-      <Route path="/global-stream-lmia" element={<GlobalStreamLmia/>} />
-      <Route path="/agriculture-stream-lmia" element={<AgricultureStreamLmia/>} />
-      <Route path="/open-work-permit" element={<OpenWorkPermit/>} />
-      <Route path="/lmia-reviewed" element={<LmiaReviewed/>} />
-      <Route path="/reply-to-pfl-page" element={<ReplyToPflPage/>} />
-      <Route path="/additional-document" element={<AdditionalDocument/>} />
-      <Route path="/reconsideration" element={<Reconsideration/>} />
-      <Route path="/citizenship" element={<Citizenship/>} />
-      <Route path="/pr-renewal" element={<PrRenewal/>} />
+      <Route path="/skilled-worker-stream" element={<SkilledWorkerStream />} />
+      <Route path="/priorities-program" element={<PrioritiesProgram />} />
+      <Route
+        path="/international-post-graduate-program"
+        element={<InternationalPostGraduateProgram />}
+      />
+      <Route
+        path="/international-graduate-program"
+        element={<InternationalGraduateProgram />}
+      />
+      <Route
+        path="/health-authority-stream"
+        element={<HealthAuthorityStream />}
+      />
+      <Route
+        path="/entry-level-semi-skilled"
+        element={<EntryLevelSemiSkilled />}
+      />
+      <Route path="/bc-pnp" element={<BcPnp />} />
+      <Route path="/pnp" element={<Pnp />} />
+      <Route path="/rnip" element={<Rnip />} />
+      <Route
+        path="/agri-food-pilot-program"
+        element={<AgriFoodPilotProgram />}
+      />
+      <Route path="/pilot-programs" element={<PilotPrograms />} />
+      <Route
+        path="/transport-occupation-targeted-draw"
+        element={<TransportOccupationTargetedDraw />}
+      />
+      <Route
+        path="/trade-occupation-targeted-draw"
+        element={<TradeOccupationTargetedDraw />}
+      />
+      <Route path="/stem-targeted-draw" element={<StemTargetedDraw />} />
+      <Route path="/french-targeted-draw" element={<FrenchTargetedDraw />} />
+      <Route
+        path="/federal-skilled-worker-program"
+        element={<FederalSkilledWorkerProgram />}
+      />
+      <Route
+        path="/federal-skilled-trades-program"
+        element={<FederalSkilledTradesProgram />}
+      />
+      <Route
+        path="/canadian-experience-class"
+        element={<CanadianExperienceClass />}
+      />
+      <Route path="/dual-intent-visa" element={<DualIntentVisa />} />
+      <Route path="/business-visitor-visa" element={<BusinessVisitorVisa />} />
+      <Route path="/visitor-visa" element={<VisitorVisa />} />
+      <Route
+        path="/temporary-resident-permit-draft"
+        element={<TemporaryResidentPermitDraft />}
+      />
+      <Route path="/super-visa" element={<SuperVisa />} />
+      <Route path="/cby" element={<Cby />} />
+      <Route
+        path="/common-law-partner-temporary"
+        element={<CommonLawPartnerTemporary />}
+      />
+      <Route
+        path="/restoration-status-draft"
+        element={<RestorationStatusDraft />}
+      />
+      <Route
+        path="/common-law-partner-permanent"
+        element={<CommonLawPartnerPermanent />}
+      />
+      <Route
+        path="/spousal-open-work-permit"
+        element={<SpousalOpenWorkPermit />}
+      />
+      <Route path="/flagpoling" element={<Flagpoling />} />
+      <Route path="/extensions-draft" element={<ExtensionsDraft />} />
+      <Route path="/study-permit-minors" element={<StudyPermitMinors />} />
+      <Route path="/sds" element={<Sds />} />
+      <Route path="/non-sds" element={<NonSds />} />
+      <Route path="/outside-cananda" element={<OutsideCananda />} />
+      <Route path="/visitor-to-student" element={<VisitorToStudent />} />
+      <Route
+        path="/change-college-program"
+        element={<ChangeCollegeProgram />}
+      />
+      <Route path="/inside-canada" element={<InsideCanada />} />
+      <Route path="/student-visa" element={<StudentVisa />} />
+      <Route path="/ParentsGrandparents" element={<ParentsGrandparents />} />
+      <Route path="/orphan" element={<Orphan />} />
+      <Route path="/lonely-canadian" element={<LonelyCanadian />} />
+      <Route
+        path="/humanitarian-compassionate"
+        element={<HumanitarianCompassionate />}
+      />
+      <Route path="/dependent-children" element={<DependentChildren />} />
+      <Route path="/adoption" element={<Adoption />} />
+      <Route
+        path="/family-reunification-sponsorship"
+        element={<FamilyReunificationSponsorship />}
+      />
+      <Route path="/pgwp" element={<Pgwp />} />
+      <Route path="/openWork-canada-lp" element={<OpenWorkCanadaLP />} />
+      <Route
+        path="/open-work-vulnerable-lp"
+        element={<OpenWorkVulnerableLP />}
+      />
+      <Route
+        path="/francophone-mobility-program"
+        element={<FrancophoneMobilityProgram />}
+      />
+      <Route
+        path="/bridging-open-work-permit-lp"
+        element={<BridgingOpenWorkPermitLP />}
+      />
+      <Route path="/low-wage-lmia" element={<LowWageLmia />} />
+      <Route path="/global-stream-lmia" element={<GlobalStreamLmia />} />
+      <Route
+        path="/agriculture-stream-lmia"
+        element={<AgricultureStreamLmia />}
+      />
+      <Route path="/open-work-permit" element={<OpenWorkPermit />} />
+      <Route path="/lmia-reviewed" element={<LmiaReviewed />} />
+      <Route path="/reply-to-pfl-page" element={<ReplyToPflPage />} />
+      <Route path="/additional-document" element={<AdditionalDocument />} />
+      <Route path="/reconsideration" element={<Reconsideration />} />
+      <Route path="/citizenship" element={<Citizenship />} />
+      <Route path="/pr-renewal" element={<PrRenewal />} />
 
-      <Route path="/in-home-caregiver-program-lp" element={<InCaregiverProgramLP/>} />
-      <Route path="/pathways-for-caregiver" element={<PathwaysForCaregiver/>} />
-      <Route path="/permanent-residence-pathways-caregivers-lp" element={<PermanentResidencePathwaysCaregiversLP/>} />
+      <Route
+        path="/in-home-caregiver-program-lp"
+        element={<InCaregiverProgramLP />}
+      />
+      <Route
+        path="/pathways-for-caregiver"
+        element={<PathwaysForCaregiver />}
+      />
+      <Route
+        path="/permanent-residence-pathways-caregivers-lp"
+        element={<PermanentResidencePathwaysCaregiversLP />}
+      />
     </Routes>
-    
   );
 };
 

@@ -44,9 +44,7 @@ const GlobalStreamLmia = () => {
               <p onClick={() => scrollToSection("how-to-apply")}>
                 How to Apply?
               </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>
-                Refusal Reasons
-              </p>
+   
               <p onClick={() => scrollToSection("book-appointment")}>
                 Book Appointment
               </p>
@@ -183,7 +181,7 @@ const GlobalStreamLmia = () => {
           </ul>
         </section>
 
-        <section className={styles.section}>
+        <section className={styles.section} id="how-to-apply">
           <h2>How to Apply for Global Talent Stream (GTS) LMIA</h2>
           <ol>
             <li>Have an initial assessment performed by us to verify if the employer is eligible to apply for LMIA for a specific position and how many positions are allowed.</li>
@@ -220,7 +218,7 @@ const GlobalStreamLmia = () => {
           </p>
         </section>
 
-        <section className={styles.section}>
+        <section className={styles.section} id="why-choose-us">
           <h2>Why Choose Us</h2>
           <p>
             At Brightlight Immigration, we offer comprehensive services and a high success rate due to our tailored approach and expert knowledge in immigration law. We provide step-by-step guidance through the entire process, ensuring that every aspect of your application is handled with the utmost care.

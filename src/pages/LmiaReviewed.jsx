@@ -181,7 +181,7 @@ const LmiaReviewed = () => {
             </div>
           </section>
 
-          <section className={styles.section}>
+          <section className={styles.section} id="how-to-apply">
             <h2>How to Apply for LMIA</h2>
             <div className={styles.applicationProcess}>
               <h3>As an Employer</h3>
@@ -224,7 +224,7 @@ const LmiaReviewed = () => {
             </div>
           </section>
 
-          <section className={styles.section}>
+          <section className={styles.section} id="refusal-reasons">
             <h2>Common Reasons for LMIA Refusal</h2>
             <ul>
               <li>
@@ -262,7 +262,7 @@ const LmiaReviewed = () => {
             </ul>
           </section>
 
-          <section className={styles.section}>
+          <section className={styles.section} id="why-choose-us">
             <h2>Still Not Sure?</h2>
             <p>
               If you have received a refusal for any of the reasons mentioned

@@ -39,7 +39,6 @@ const OpenWorkCanadaLP = () => {
               </p>
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
               <p onClick={() => scrollToSection("application-process")}>Application Process</p>
-              <p onClick={() => scrollToSection("consultation")}>Consultation</p>
               <p onClick={() => scrollToSection("application-process")}>Application Process</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
               <p onClick={() => scrollToSection("age-chart")}>Age Chart</p>
@@ -49,9 +48,7 @@ const OpenWorkCanadaLP = () => {
               <p onClick={() => scrollToSection("refusal-reasons")}>
                 Refusal Reasons
               </p>
-              <p onClick={() => scrollToSection("book-appointment")}>
-                Book Appointment
-              </p>
+
               <p onClick={() => scrollToSection("why-choose-us")}>
                 Why Choose Us?
               </p>
@@ -226,15 +223,11 @@ const OpenWorkCanadaLP = () => {
         </ul>
       </section>
 
-      <section className={styles.consultation} id="consultation">
+      <section className={styles.consultation} id="why-choose-us">
         <h2>Still Not Sure?</h2>
         <p>If you have received a refusal for any of the reasons mentioned above, do not worry. With over a decade of experience, we specialize in previously refused cases. While we don't provide jobs for LMIA, we can assist if you have a job offer. We have successfully obtained approvals for clients with previous refusals through a tailored approach, addressing each concern listed in refusals, and using case law as precedents. Contact us at Brightlight Immigration for expert assistance from start to finish.</p>
       </section>
 
-      <section className={styles.whyChooseUs}>
-        <h2>Why Choose Us</h2>
-        <p>[Content for why choose us]</p>
-      </section>
 
       <section className={styles.testimonials}>
         <h2>Clients Testimonials</h2>
