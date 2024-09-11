@@ -248,7 +248,6 @@
   pointer-events: none; /* Ensure the pseudo-element does not interfere with button interactions */
 }
 
-
 .bannerParent2 button span {
   position: relative;
   z-index: 2;
@@ -306,6 +305,25 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s all ease-in-out;
+  position: relative;
+  top: 50px;
+}
+
+.memberCard.showMemberCard {
+  opacity: 1;
+  visibility: visible;
+  top: 0px;
+}
+
+.memberCard:nth-child(2).showMemberCard {
+  transition-delay: 0.3s;
+}
+
+.memberCard:nth-child(3).showMemberCard {
+  transition-delay: 0.6s;
 }
 
 .memberCard p {
@@ -331,6 +349,17 @@
   background-image: url("../assets/aboutLeaf.png");
   width: 100%;
   padding: 80px 0px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s all ease-in-out;
+  position: relative;
+  top: 50px;
+}
+
+.simplifyingParent.showFeaturesSection {
+  opacity: 1;
+  visibility: visible;
+  top: 0px;
 }
 
 :root {
@@ -366,7 +395,27 @@
   text-align: left;
   margin-top: var(--margin-large);
   gap: 60px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: 0.3s all ease-in-out;
+  position: relative;
+  top: 50px;
+}
+
+.simplifyingDiv.showSimplifySection {
+  opacity: 1;
+  visibility: visible;
+  top: 0px;
+}
+
+.showSimplifySection:nth-child(2) {
+  transition-delay: 300ms;
+}
+
+.showSimplifySection:nth-child(3) {
+  transition-delay: 600ms;
+}
+
+.showSimplifySection:nth-child(4) {
+  transition-delay: 900ms;
 }
 
 .simplifyingDiv:hover {
@@ -824,7 +873,7 @@
   font-size: 16px;
   color: white;
   position: relative;
-  overflow: hidden;  
+  overflow: hidden;
 }
 
 /* Keyframes for the moving border effect */
@@ -997,7 +1046,7 @@
 
 /* /////    */
 
- /* Add this to your CSS file */
+/* Add this to your CSS file */
 
 @keyframes slideInFromLeft {
   from {
@@ -1021,22 +1070,18 @@
   transform: translateX(0);
 } */
 
-
-
 /* Define transition styles in your CSS module */
 /* /* HomePage.module.css */
 .expertiseContentParent {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 2.5s ease, transform 2.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .expertiseContentParent.visible {
   opacity: 1;
   transform: translateY(0);
 }
-
-
 
 /* HomePage.module.css */
 .sourceContentParent {
@@ -1050,7 +1095,6 @@
   transform: translateX(0);
 }
 
-
 .aspectsCardParent {
   opacity: 0;
 
@@ -1061,9 +1105,6 @@
   opacity: 1;
   transform: translateY(0);
 }
-
-
-
 
 @media all and (max-width: 1450px) {
   .aspectsCardParent {
@@ -2189,10 +2230,10 @@
   .bannerParent2 button {
     padding: 5px 20px;
   }
-  .simplifyingHeading{
+  .simplifyingHeading {
     text-align: center;
   }
-  .simplifyingMain h1{
+  .simplifyingMain h1 {
     text-align: center;
   }
 }

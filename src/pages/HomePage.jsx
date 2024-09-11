@@ -32,8 +32,59 @@ let HomePage = () => {
   let [services, setServices] = useState([]);
   let [loaded, setLoaded] = useState(false); // To manage loading state
   const expertiseContentParentRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+  const [isFeaturesVisible, setIsFeaturesVisible] = useState(false);
+  const featuresSectionRef = useRef(null);
+
+  const [isTestimonialsVisible, setIsTestimonialsVisible] = useState(false);
+  const testimonialsSectionRef = useRef(null);
 
   const simplifyingRef = useRef(null); // Ref for the simplifying section
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Check if 80% of the section is visible
+        setIsVisible(entry.intersectionRatio >= 0.8);
+      },
+      {
+        threshold: 0.8,
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Check if 80% of the section is visible
+        setIsFeaturesVisible(entry.intersectionRatio >= 0.3);
+      },
+      {
+        threshold: 0.3,
+      }
+    );
+
+    if (featuresSectionRef.current) {
+      observer.observe(featuresSectionRef.current);
+    }
+
+    return () => {
+      if (featuresSectionRef.current) {
+        observer.unobserve(featuresSectionRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     // Load data
@@ -335,18 +386,43 @@ let HomePage = () => {
                 }}
               >
                 <div className={styles.cardContainer}>
-                  {services.map((card, index) => (
-                    <div key={index} className={styles.card}>
-                      <img
-                        src={card.img}
-                        alt={card.title}
-                        className={styles.icon}
-                      />
-                      <div className={styles.title}>
-                        <h2>{card.title}</h2>
+                  {services.map((card, index) => {
+                    let link = (title) => {
+                      if (title == "Permanent Residency") {
+                        return "/permanent-residency";
+                      } else if (title == "BCPNP") {
+                        return "/bcpnp-calculator";
+                      } else if (title == "Visitor Visa") {
+                        return "/visitor-visa";
+                      } else if (title == "Study Visa") {
+                        return "/student-visa";
+                      } else if (title == "Family Sponsorship") {
+                        return "/family-reunification-sponsorship";
+                      } else if (title == "Work Permit") {
+                        return "/open-work-permit";
+                      } else if (title == "PFL") {
+                        return "/reply-to-pfl-page";
+                      }
+                    };
+                    return (
+                      <div
+                        key={index}
+                        className={styles.card}
+                        onClick={() =>
+                          (window.location.href = link(card.title))
+                        }
+                      >
+                        <img
+                          src={card.img}
+                          alt={card.title}
+                          className={styles.icon}
+                        />
+                        <div className={styles.title}>
+                          <h2>{card.title}</h2>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </CSSTransition>
             )}
@@ -383,24 +459,36 @@ let HomePage = () => {
         <div className={styles.bannerMain2}></div>
       </div>
 
-      <div className={styles.memberParent}>
+      <div className={styles.memberParent} ref={sectionRef}>
         <div className={styles.memberMain}>
           <div className={styles.memberCardParent}>
-            <div className={styles.memberCard}>
+            <div
+              className={`${styles.memberCard} ${
+                isVisible ? styles.showMemberCard : ""
+              }`}
+            >
               <p>{memberData?.heading1}</p>
               <div className={styles.memberCardImg}>
                 <img src={memberData?.heading1Img} />
               </div>
             </div>
 
-            <div className={styles.memberCard}>
+            <div
+              className={`${styles.memberCard} ${
+                isVisible ? styles.showMemberCard : ""
+              }`}
+            >
               <p>{memberData?.heading2}</p>
               <div className={styles.memberCardImg}>
                 <img src={memberData?.heading2Img} />
               </div>
             </div>
 
-            <div className={styles.memberCard}>
+            <div
+              className={`${styles.memberCard} ${
+                isVisible ? styles.showMemberCard : ""
+              }`}
+            >
               <p>{memberData?.heading3}</p>
               <div className={styles.memberCardImg}>
                 <img src={memberData?.heading3Img} />
@@ -410,7 +498,12 @@ let HomePage = () => {
         </div>
       </div>
 
-      <div className={styles.simplifyingParent}>
+      <div
+        className={`${styles.simplifyingParent} ${
+          isFeaturesVisible ? styles.showFeaturesSection : null
+        }`}
+        ref={featuresSectionRef}
+      >
         <div ref={simplifyingRef} className={`${styles.simplifyingMain}`}>
           <h1 className={styles.simplifyingHeading}>Why Us?</h1>
           {featuresData &&
@@ -418,7 +511,12 @@ let HomePage = () => {
               (num) =>
                 featuresData[`feature${num}SVG`] &&
                 featuresData[`feature${num}Heading`] && (
-                  <div key={num} className={styles.simplifyingDiv}>
+                  <div
+                    key={num}
+                    className={`${styles.simplifyingDiv} ${
+                      isFeaturesVisible ? styles.showSimplifySection : null
+                    }`}
+                  >
                     <div className={styles.simplifyingImg}>
                       <img
                         src={featuresData[`feature${num}SVG`]}
@@ -469,6 +567,23 @@ let HomePage = () => {
               className={styles.swiper_container}
             >
               {services?.map((item, index) => {
+                let link = (title) => {
+                  if (title == "Permanent Residency") {
+                    return "/permanent-residency";
+                  } else if (title == "BCPNP") {
+                    return "/bcpnp-calculator";
+                  } else if (title == "Visitor Visa") {
+                    return "/visitor-visa";
+                  } else if (title == "Study Visa") {
+                    return "/student-visa";
+                  } else if (title == "Family Sponsorship") {
+                    return "/family-reunification-sponsorship";
+                  } else if (title == "Work Permit") {
+                    return "/open-work-permit";
+                  } else if (title == "PFL") {
+                    return "/reply-to-pfl-page";
+                  }
+                };
                 let formattedTitle = item.title
                   .toLowerCase()
                   .replace(/\s+/g, "-");
@@ -479,7 +594,7 @@ let HomePage = () => {
                       <p>{item.desc}</p>
                       <a
                         className={styles.expertiseKmowMore}
-                        href={`/services/${formattedTitle}`}
+                        href={`${link(item.title)}`}
                       >
                         Know More
                       </a>
@@ -531,7 +646,6 @@ let HomePage = () => {
           </div>
         </div>
       </div>
-
       <Testimonials_White />
 
       <div className={styles.sourceParent}>
