@@ -855,6 +855,7 @@
 .sourceContentData button {
   transition: 0.3s all ease-in-out;
   animation: borderMove 2s linear infinite;
+  margin-bottom: 20px;
 }
 .sourceContentData button:hover {
   color: black;

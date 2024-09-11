@@ -272,7 +272,7 @@
   }
 
   .upperFooter h1 {
-    font-size: 18px;
+    font-size: 17px;
     text-align: left;
   }
 
@@ -319,4 +319,8 @@
   .centerFooter img {
     width: 300px;
   }
+  
+.footer {
+  padding-top:120px;
+}
 }
