@@ -65,6 +65,7 @@ import InternationalPostGraduateProgram from "./pages/InternationalPostGraduateP
 import PrioritiesProgram from "./pages/PrioritiesProgram";
 import SkilledWorkerStream from "./pages/SkilledWorkerStream";
 import InCaregiverProgramLP from "./pages/InCaregiverProgramLP";
+import WorkPermit from "./pages/WorkPermit";
 import PathwaysForCaregiver from "./pages/PathwaysForCaregiver";
 import PermanentResidencePathwaysCaregiversLP from "./pages/PermanentResidencePathwaysCaregiversLP";
 import NewsDetails from "./pages/NewsDetails";
@@ -143,6 +144,7 @@ function App() {
       {/* <InternationalPostGraduateProgram/> */}
       {/* <PrioritiesProgram/>   */}
       {/* <SkilledWorkerStream/> */}
+      {/* <WorkPermit/> */}
 
       {/* <InCaregiverProgramLP/> */}
       {/* <PathwaysForCaregiver/> */}
@@ -151,7 +153,7 @@ function App() {
       {/* <NewsDetails/> */}
       {/* <News/> */}
 
-      <Loader />
+      {/* <Loader /> */}
       <AllRoutes />
     </div>
   );

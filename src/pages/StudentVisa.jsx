@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import styles from '../styles/StudentVisa.module.css';
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
+import Testimonials from "../sections/Testimonials";
+import RecentBlogs from "../sections/RecentBlogs";
+import FAQ from "../sections/FAQ";
+
 const StudentVisa = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -88,9 +92,19 @@ const StudentVisa = () => {
         <p className={styles.callToActionText}>
           Ready to take the next step in your educational journey? Whether you’re planning to study from abroad or already in Canada, our expert team can guide you through the process and ensure you meet all the requirements for a successful student visa application. 
         </p>
-        <button className={styles.button}>Book a Consultation</button>
+        <button className={styles.button} onClick={() => window.location.href = "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" }>Book a Consultation</button>
       </section>
     </div>
+
+    <div id="testimonials"> 
+        <Testimonials/>
+      </div>
+      <div id="faqs">
+        <FAQ/>
+      </div>
+      <div id="blogs">
+        <RecentBlogs/>
+      </div>
 
     <Footer1/>
     </>

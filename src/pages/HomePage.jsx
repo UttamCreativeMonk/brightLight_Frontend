@@ -391,7 +391,7 @@ let HomePage = () => {
                       if (title == "Permanent Residency") {
                         return "/permanent-residency";
                       } else if (title == "BCPNP") {
-                        return "/bcpnp-calculator";
+                        return "/bc-pnp";
                       } else if (title == "Visitor Visa") {
                         return "/visitor-visa";
                       } else if (title == "Study Visa") {
@@ -399,7 +399,7 @@ let HomePage = () => {
                       } else if (title == "Family Sponsorship") {
                         return "/family-reunification-sponsorship";
                       } else if (title == "Work Permit") {
-                        return "/open-work-permit";
+                        return "/work-permit";
                       } else if (title == "PFL") {
                         return "/reply-to-pfl-page";
                       }

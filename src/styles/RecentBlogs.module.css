@@ -26,8 +26,8 @@
 
 .blogs {
   width: 32%;
-  position: relative; /* Ensure positioning context for absolute child elements */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and box-shadow */
+  position: relative; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .blogs:hover {
@@ -57,6 +57,10 @@
 .blogs p {
   color: gray;
   font-weight: 600;
+}
+.blog:hover {
+  transform: translateY(-10px); /* Adjust this value as needed */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 

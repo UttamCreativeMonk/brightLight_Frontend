@@ -3,6 +3,9 @@ import styles from "../styles/BcPnp.module.css";
 import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
+import Testimonials from "../sections/Testimonials";
+import RecentBlogs from "../sections/RecentBlogs";
+import FAQ from "../sections/FAQ";
 
 
 const BcPnp = () => {
@@ -287,6 +290,16 @@ const BcPnp = () => {
             Book Appointment
           </a>
         </p>
+      </div>
+
+      <div id="testimonials"> 
+        <Testimonials/>
+      </div>
+      <div id="faq">
+        <FAQ/>
+      </div>
+      <div id="blogs">
+        <RecentBlogs/>
       </div>
       <Footer1/>
     </>

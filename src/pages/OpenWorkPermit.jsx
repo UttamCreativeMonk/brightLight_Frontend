@@ -3,6 +3,10 @@ import styles from "../styles/OpenWorkPermit.module.css";
 import { Link } from "react-router-dom";
 import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
+import Testimonials from "../sections/Testimonials";
+import RecentBlogs from "../sections/RecentBlogs";
+import FAQ from "../sections/FAQ";
+
 
 const OpenWorkPermit = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -125,6 +129,17 @@ const OpenWorkPermit = () => {
             </ul>
           </section>
         </main>
+      </div>
+
+
+      <div id="testimonials"> 
+        <Testimonials/>
+      </div>
+      <div id="faqs">
+        <FAQ/>
+      </div>
+      <div id="blogs">
+        <RecentBlogs/>
       </div>
 
       <Footer1/>

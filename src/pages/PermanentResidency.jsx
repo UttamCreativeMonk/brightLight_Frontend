@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import styles from "../styles/PermanentResidency.module.css";
 import ServiceImg from "../assets/service-data-image.webp";
 import studyVisaImg from "../assets/graduatedStudent.png";
 import OurProcess from "../sections/OurProcess";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
-import RecentBlogs from '../sections/RecentBlogs';
+import RecentBlogs from "../sections/RecentBlogs";
+import Testimonials from "../sections/Testimonials";
 
 const PermanentResidency = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -48,9 +49,14 @@ const PermanentResidency = () => {
               <h3>QUICK ACCESS</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the program</p>
-              <p onClick={() => scrollToSection("Pathways-becoming-PR")}>Pathways to PR</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the program
+              </p>
+              <p onClick={() => scrollToSection("Pathways-becoming-PR")}>
+                Pathways to PR
+              </p>
               <p onClick={() => scrollToSection("Our-process")}>Our process</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
           </div>
@@ -113,11 +119,15 @@ const PermanentResidency = () => {
         <OurProcess />
       </div>
 
+      <div id="testimonials">
+        <Testimonials />
+      </div>
+
       <div id="blogs">
         <RecentBlogs />
       </div>
-      
-      <Footer1/>
+
+      <Footer1 />
     </>
   );
 };

@@ -48,6 +48,7 @@
   text-decoration: none;
   border: none;
   background: linear-gradient(to bottom, transparent, #ececec);
+  transition: 0.3s all ease-in-out;
 }
 
 .blog:hover {
@@ -181,7 +182,10 @@
     transform: translateY(0);
   }
 }
-
+.blog:hover {
+  transform: translateY(-10px); /* Adjust this value as needed */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
 @media all and (max-width: 1470px) {
   .blogsParent {

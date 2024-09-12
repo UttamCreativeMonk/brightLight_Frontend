@@ -3,6 +3,10 @@ import styles from "../styles/FamilyReunificationSponsorship.module.css";
 import { Link } from "react-router-dom";
 import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
+import Testimonials from "../sections/Testimonials";
+import RecentBlogs from "../sections/RecentBlogs";
+import FAQ from "../sections/FAQ";
+
 
 const FamilyReunificationSponsorship = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -72,13 +76,12 @@ const FamilyReunificationSponsorship = () => {
       <section className={styles.categories} id="categories">
         <h2>Categories Who Can Be Sponsored</h2>
         <ul>
-          <li><a href="#spouses" className={styles.button}>Spouses and Common-Law Partners</a></li>
-          <li><a href="#dependent-children" className={styles.button}>Dependent Children</a></li>
-          <li><a href="#humanitarian" className={styles.button}>Humanitarian and Compassionate</a></li>
-          <li><a href="#orphan" className={styles.button}>Orphan</a></li>
-          <li><a href="#adoption" className={styles.button}>Adoption</a></li>
-          <li><a href="#lonely-canadian" className={styles.button}>Lonely Canadian</a></li>
-          <li><a href="#parents-grandparents" className={styles.button}>Parents and Grandparents</a></li>
+          <li><a href="/common-law-partner-permanent" className={styles.button}>Spouses and Common-Law Partners</a></li>
+          <li><a href="/dependent-children" className={styles.button}>Dependent Children</a></li>
+          <li><a href="/humanitarian-compassionate" className={styles.button}>Humanitarian and Compassionate</a></li>
+          <li><a href="/orphan" className={styles.button}>Orphan</a></li>
+          <li><a href="/adoption" className={styles.button}>Adoption</a></li>
+          <li><a href="/ParentsGrandparents" className={styles.button}>Parents and Grandparents</a></li>
         </ul>
       </section>
 
@@ -124,7 +127,15 @@ const FamilyReunificationSponsorship = () => {
       </section>
 
     </div>
-
+    <div id="testimonials"> 
+        <Testimonials/>
+      </div>
+      <div id="faqs">
+        <FAQ/>
+      </div>
+      <div id="blogs">
+        <RecentBlogs/>
+      </div>
     <Footer1/>
 
     </>

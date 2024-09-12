@@ -175,6 +175,7 @@
 
 .button:hover {
   background-color: #0056b3;
+  text-decoration: none;
 }
 
 /* ul {
@@ -196,14 +197,14 @@
 
 .container h2 {
   color: #00273f;
-  margin-top: 30px;
-  margin-bottom: 20px;
+  margin-top: 80px;
+  margin-bottom: 50px;
 }
 
 .heading {
   color: #e8c47c;
-  margin-top: 30px;
-  margin-bottom: 20px;
+  margin-top: 50px;
+  margin-bottom: 80px;
 }
 
 @media (max-width: 400px) {

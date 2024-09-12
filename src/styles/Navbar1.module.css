@@ -138,6 +138,12 @@
   white-space: nowrap;
 }
 
+.searchBar button:hover {
+  background-color: #dec18f; /* Button background color */
+  color: white;
+  cursor: pointer;
+}
+
 .contactNavbar {
   display: flex;
   justify-content: space-between;
@@ -203,7 +209,7 @@
 .lowerFooterText {
   font-weight: 700;
 }
-.lowerFooterText a{
+.lowerFooterText a {
   color: #132f46;
 }
 
@@ -342,7 +348,7 @@
   z-index: 4;
 }
 
-.doubleNested{
+.doubleNested {
   position: absolute;
   width: 200px;
   opacity: 0;
@@ -363,11 +369,21 @@
   top: 0px;
   left: 180px;
 }
-.permanentNestedSection.showNested {
+.peraanentNestedSection.showNested {
   opacity: 1;
   visibility: visible;
   top: 0px;
   left: 180px;
+}
+
+.arrow {
+  font-size: 12px;
+}
+
+.subDropdown a {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
 }
 
 @media all and (max-width: 1439px) {
@@ -393,14 +409,14 @@
 
 @media all and (max-width: 1290px) {
   .firstNavbar {
-    width: 95%;
+    width: 90%;
   }
   .secondNavbar {
-    width: 95%;
+    width: 90%;
     padding: 30px 50px;
   }
   .contactNavbar {
-    width: 95%;
+    width: 90%;
   }
 }
 
@@ -414,7 +430,7 @@
   }
 
   .firstNavbar {
-    width: 95%;
+    width: 90%;
   }
   .firstNavbar .ancor {
     gap: 40px;
@@ -422,11 +438,11 @@
   }
 
   .secondNavbar {
-    width: 95%;
+    width: 100%;
     padding: 30px 0px;
   }
   .contactNavbar {
-    width: 95%;
+    width: 90%;
   }
 
   .bottomSectionNavbar {
@@ -460,7 +476,7 @@
   .dropdownContent {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: white;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
@@ -475,17 +491,17 @@
   }
 
   .dropdownContent a:hover {
-    background-color: #f1f1f1;
+    background-color: white;
   }
 
   .dropdown:hover .dropdownContent {
     display: block;
   }
 
-  .dropdown:hover .dropbtn {
+  /* .dropdown:hover .dropbtn {
     background-color: #132f46;
     color: white;
-  }
+  } */
 
   /*/ FIXING ALLIGNMENT OF SIDE-BAR // */
 
@@ -493,7 +509,7 @@
     display: flex;
     flex-direction: column;
     padding: 20px;
-    background-color: #f7f7f7; /* Lighter background for better contrast */
+    background-color: white; /* Lighter background for better contrast */
     width: 250px; /* Fixed width for better alignment */
     height: 100vh; /* Full height sidebar */
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
@@ -507,11 +523,11 @@
     padding: 10px 0; /* Padding for larger clickable area */
     /* background-color: #f7f7f7; */
     transition: background-color 0.3s ease; /* Smooth hover transition */
-    background-color: #f7f7f7;
+    background-color: white;
   }
 
   .sidebarContent a:hover {
-    background-color: #ddd;
+    background-color: white;
   }
 
   .closeBtn {
@@ -524,8 +540,7 @@
 
   .dropdown {
     position: relative;
-    display: block; /* Ensure block display for full-width dropdown */
-    margin-bottom: 15px; /* Space below dropdown */
+    display: block;
   }
 
   .dropbtn {
@@ -535,7 +550,7 @@
     text-decoration: none;
     padding: 10px;
     color: #333;
-    background-color: #e7e7e7; /* Light background for dropbtn */
+    background-color: white; /* Light background for dropbtn */
     border-radius: 4px; /* Rounded corners for a modern look */
     transition: background-color 0.3s ease; /* Smooth hover transition */
   }
@@ -548,13 +563,14 @@
   .dropdownContent {
     display: none;
     position: absolute;
-    background-color: #ffffff; /* White background for dropdown items */
+    background-color: white; /* White background for dropdown items */
     /* min-width: 250px; Match width with sidebar */
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     flex-direction: column;
     border-radius: 4px; /* Rounded corners for dropdown */
     /* overflow: hidden;  */
+    width: 100%;
   }
 
   .dropdownContent a {
@@ -566,30 +582,34 @@
   }
 
   .dropdownContent a:hover {
-    background-color: #f1f1f1;
+    background-color: white;
   }
 
   .dropdown:hover .dropdownContent {
     display: block;
   }
 
-  .dropdown:hover .dropbtn {
+  /* .dropdown:hover .dropbtn {
     background-color: #132f46;
     color: white;
-  }
-  .subDropdownContent, .subSubDropdownContent {
+  } */
+  .subDropdownContent,
+  .subSubDropdownContent {
     display: none;
   }
-  
-  .subDropdownContent.show, .subSubDropdownContent.show {
+
+  .subDropdownContent.show,
+  .subSubDropdownContent.show {
     display: block;
   }
-  
-  .subDropdown, .subSubDropdown {
+
+  .subDropdown,
+  .subSubDropdown {
     position: relative;
   }
-  
-  .subDropdownContent, .subSubDropdownContent {
+
+  .subDropdownContent,
+  .subSubDropdownContent {
     position: absolute;
     left: 100%;
     top: 0;
@@ -597,16 +617,15 @@
     border: 1px solid #ddd;
     z-index: 10;
   }
-  
+
   .subDropdownContent {
     left: 100%;
   }
-  
+
   .subSubDropdownContent {
     left: 100%;
     top: 0;
   }
-  
 }
 
 /* Add these styles to Navbar1.module.css */
@@ -628,7 +647,7 @@
   right: -250px;
   width: 250px;
   height: 100%;
-  background-color: #fff;
+  background-color: white;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
   transition: right 0.3s ease;
   z-index: 1000;
@@ -648,7 +667,7 @@
   text-decoration: none;
   color: #333;
   margin-bottom: 10px;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .closeBtn {
@@ -687,8 +706,8 @@
   }
   .searchBar button {
     padding: 9px 17px;
-    height: 100%;
     font-size: 10px;
+    height: 100%;
   }
   .searchBar {
     height: 45px;
@@ -736,11 +755,10 @@
     width: 100%;
     padding: 0px;
   }
-  .secondNavbar form{
+  .secondNavbar form {
     margin-left: auto;
     margin-right: 10px;
   }
- 
   .inputWrapper {
     background-color: transparent;
   }
@@ -805,17 +823,16 @@
   }
   .searchBar button {
     padding: 10px 13px;
-    font-size: 10px;
+    font-size: 7px;
   }
   .searchBar {
     height: 40px;
   }
   .searchIcon {
-    width: 13px;
-    height: 13px;
+    width: 10px;
+    height: 10px;
   }
 }
-
 
 .subDropdown {
   position: relative;
@@ -828,8 +845,10 @@
   left: 0;
   z-index: 1000;
   background-color: white;
-  border: 1px solid #ccc;
+  border: none;
+  width: 100%;
   padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .subSubDropdown {
@@ -843,7 +862,7 @@
   left: 0;
   z-index: 1000;
   background-color: white;
-  border: 1px solid #ccc;
+  border: none;
   padding: 10px;
 }
 

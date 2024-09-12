@@ -84,6 +84,7 @@ import PermanentResidencePathwaysCaregiversLP from "../pages/PermanentResidenceP
 import News from "../pages/News";
 import NewsDetails from "../pages/NewsDetails";
 import Search from "../pages/Search";
+import WorkPermit from "../pages/WorkPermit";
 
 let AllRoutes = () => {
   return (
@@ -242,6 +243,7 @@ let AllRoutes = () => {
       <Route path="/reconsideration" element={<Reconsideration />} />
       <Route path="/citizenship" element={<Citizenship />} />
       <Route path="/pr-renewal" element={<PrRenewal />} />
+      <Route path="/work-permit" element={<WorkPermit />} />
 
       <Route
         path="/in-home-caregiver-program-lp"

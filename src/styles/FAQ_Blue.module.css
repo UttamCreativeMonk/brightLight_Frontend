@@ -92,6 +92,11 @@
   fill: white;
 }
 
+.questionSection:hover {
+  transform: translateY(-5px); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 @media (max-width: 1380px) {
 .faqParentSection {
   width: 95%;

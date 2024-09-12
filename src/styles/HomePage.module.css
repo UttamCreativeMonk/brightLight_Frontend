@@ -909,6 +909,7 @@
 .sourceContentData a:hover {
   color: black;
   background-color: white;
+  text-decoration: none;
   /* border:  2px solid black; */
 }
 /* Example CSS */
@@ -1087,7 +1088,7 @@
 .sourceContentParent {
   opacity: 0;
   /* transform: translateX(20px); Adjust for initial position */
-  transition: opacity 2.5s ease, transform 2.5s ease;
+  transition: opacity 2s ease, transform 2s ease;
 }
 
 .sourceContentParent.visible {

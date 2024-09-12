@@ -132,6 +132,9 @@
   .title {
     font-size: 2.1em;
     margin-bottom: 50px;
+    color: #e8c47c;
+    margin-top: 50px;
+    text-align: center;
   }
   
   .description {
@@ -171,7 +174,8 @@
   }
   
   .button:hover {
-    background-color: #0056b3;
+    background-color: #517397;
+    text-decoration: none;
   }
   
   .link {
@@ -213,13 +217,16 @@
   }
 
   .container h2{
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 150px;
+    margin-bottom: 80px;
+    text-align: center;
+    color: #00273f;
   }
 
   .container h3{
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
   }
 
   @media (max-width: 400px) {
