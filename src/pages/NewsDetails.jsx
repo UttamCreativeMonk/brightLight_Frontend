@@ -3,15 +3,12 @@ import styles from "../styles/NewsDetails.module.css";
 import { useEffect, useState } from "react";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
-import Linkedin from "../assets/bannerLinkedinLogo.png";
-import rcic from "../assets/rcic.png";
 import searchIcon from "../assets/search-gray.png";
 
 let NewsDetails = () => {
   let { id } = useParams();
   let navigate = useNavigate();
-  let [blog, setBlog] = useState([]);
-  let [loveneetData, setLoveneetData] = useState([]);
+  let [blog, setBlog] = useState({});
   let [recentBlogs, setRecentBlogs] = useState([]);
   let [searchQuery, setSearchQuery] = useState("");
 
@@ -20,6 +17,9 @@ let NewsDetails = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data) {
+          if (data.news_content) {
+            data.news_content = data.news_content.replace(/\n/g, "<br/>");
+          }
           setBlog(data);
         }
       })
@@ -28,7 +28,7 @@ let NewsDetails = () => {
     fetch("https://brightlight-node.onrender.com/news/")
       .then((res) => res.json())
       .then((data) => {
-        let recentBlogsFilteredData = data.filter((item) => item._id != id);
+        let recentBlogsFilteredData = data.filter((item) => item._id !== id);
         if (recentBlogsFilteredData) {
           setRecentBlogs(recentBlogsFilteredData.slice(0, 3));
         }
@@ -56,7 +56,7 @@ let NewsDetails = () => {
       </div>
       <div className={styles.blogsFlexSection}>
         <div className={styles.blogImgSection}>
-          <img src={blog.image} />
+          <img src={blog.image} alt="Blog" />
         </div>
         <div className={styles.blogSearchSection}>
           <div className={styles.searchDiv}>
@@ -77,13 +77,13 @@ let NewsDetails = () => {
             {blog.tag_2 && <p>{blog.tag_2}</p>}
             {blog.tag_3 && <p>{blog.tag_3}</p>}
           </div>
-          {recentBlogs ? (
+          {recentBlogs.length > 0 && (
             <div className={styles.recentBlogsSection}>
               <h4>Recent News</h4>
-              {recentBlogs?.map((item, index) => (
+              {recentBlogs.map((item) => (
                 <a
                   href={`/news/${item._id}`}
-                  key={index}
+                  key={item._id}
                   style={{ backgroundImage: `url(${item.image})` }}
                   className={styles.recentBlog}
                 >
@@ -91,7 +91,7 @@ let NewsDetails = () => {
                 </a>
               ))}
             </div>
-          ) : null}
+          )}
         </div>
       </div>
       <div className={styles.blogDescriptionSection}>

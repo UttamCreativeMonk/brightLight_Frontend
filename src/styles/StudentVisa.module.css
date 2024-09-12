@@ -215,6 +215,7 @@
   color: #00273f;
   margin-top: 80px;
   margin-bottom: 50px;
+  text-align: center;
 }
 
 .heading {
@@ -231,6 +232,8 @@
 @media (max-width: 400px) {
   .container h2 {
     font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 40px;
   }
 
   .heading {

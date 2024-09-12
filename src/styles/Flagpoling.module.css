@@ -167,16 +167,15 @@
   
   .button:hover {
     background-color: #0056b3;
+    text-align: center;
   }
-  
-  .testimonialSection {
-    margin-bottom: 20px;
-  }
+
   
   .container h2 {
     color: #00273f;
-    margin-top: 30px;
-    margin-bottom: 20px;
+    margin-top: 35px;
+    margin-bottom: 80px;
+    text-align: center;
   }
   
   .heading {
@@ -188,6 +187,8 @@
   @media (max-width: 1080px) {
     .container h2 {
       font-size: 20px;
+      margin-top: 10px;
+      margin-bottom: 40px;
     }
   
     .heading {

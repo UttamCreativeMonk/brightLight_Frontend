@@ -108,8 +108,8 @@ function App() {
       {/* <ParentsGrandparents/> */}
       {/* <StudentVisa/>   */}
       {/* <InsideCanada/> */}
-      {/* <ChangeCollegeProgram/>}
-      {/* <VisitorToStudent/> */}
+      {/* <ChangeCollegeProgram/> */}
+       {/* <VisitorToStudent/>  */}
       {/* <OutsideCananda/> */}
       {/* <NonSds/> */}
       {/* <Sds/> */}
@@ -132,7 +132,7 @@ function App() {
       {/* <FrenchTargetedDraw/> */}
       {/* <HealthcareTargetedDraw/> */}
       {/* <StemTargetedDraw/> */}
-      {/* <TradeOccupationTargetedDraw/> */}
+      {/* <TradeOccupationTargetedDraw/>   from this */}
       {/* <PilotPrograms/> */}
       {/* <AgriFoodPilotProgram/> */}
       {/* <Rnip/> */}

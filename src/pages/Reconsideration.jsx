@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import styles from "../styles/Reconsideration.module.css";
 import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
+import Testimonials from "../sections/Testimonials";
+import RecentBlogs from "../sections/RecentBlogs";
+import FAQ from "../sections/FAQ";
+
 
 const Reconsideration = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -97,7 +101,7 @@ const Reconsideration = () => {
             </p>
           </section>
 
-          <section className={styles.section} id="how-to-apply">
+          <section className={styles.section} id="eligibilty">
             <h2>Eligibility for Reconsideration</h2>
             <p>
               Are you considering reconsideration requests? See if you meet the
@@ -121,7 +125,7 @@ const Reconsideration = () => {
             </ul>
           </section>
 
-          <section className={styles.section} id="eligibilty">
+          <section className={styles.section} id="how-to-apply">
             <h2>How to Apply for Reconsideration</h2>
             <p>
               Meet the eligibility criteria? Let's see how you can request a
@@ -205,16 +209,17 @@ const Reconsideration = () => {
               process now.
             </p>
           </section>
-
-
-
-          <section className={styles.section}>
-            <h2>Clients Testimonials</h2>
-            {/* Add video and written testimonials here */}
-          </section>
         </main>
       </div>
-
+      <div id="testimonials"> 
+        <Testimonials/>
+      </div>
+      <div id="faqs">
+        <FAQ/>
+      </div>
+      <div id="blogs">
+        <RecentBlogs/>
+      </div>
       <Footer1 />
     </>
   );

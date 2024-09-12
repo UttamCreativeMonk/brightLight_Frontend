@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import styles from "../styles/FrancophoneMobilityProgram.module.css";
 import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
+import Testimonials from "../sections/Testimonials";
+import RecentBlogs from "../sections/RecentBlogs";
+import FAQ from "../sections/FAQ";
+
 
 const FrancophoneMobilityProgram = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -132,7 +136,7 @@ const FrancophoneMobilityProgram = () => {
               CLB 5 or higher is the threshold.
             </li>
           </ul>
-          <button className={styles.tefButton}>French CLB Calculator</button>
+          <button onClick={() => window.location.href = '/french-targeted-draw'} className={styles.tefButton}>French CLB Calculator</button>
         </section>
 
         <section
@@ -273,18 +277,17 @@ const FrancophoneMobilityProgram = () => {
             application process to obtaining your visa. Start your process now.
           </p>
         </section>
-
-        <section className={styles.whyChooseUs}>
-          <h2>Why Choose Us</h2>
-          {/* Add content for "Why choose us" section */}
-        </section>
-
-        <section className={styles.testimonials}>
-          <h2>Client Testimonials</h2>
-          {/* Add video and written testimonials with options to hide/show */}
-        </section>
       </div>
 
+      <div id="testimonials"> 
+        <Testimonials/>
+      </div>
+      <div id="faqs">
+        <FAQ/>
+      </div>
+      <div id="blogs">
+        <RecentBlogs/>
+      </div>
       <Footer1 />
     </>
   );

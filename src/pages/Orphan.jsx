@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import styles from '../styles/Orphan.module.css';
 import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
+import Testimonials from "../sections/Testimonials";
+import RecentBlogs from "../sections/RecentBlogs";
+import FAQ from "../sections/FAQ";
+
+
 const Orphan = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -120,9 +125,19 @@ const Orphan = () => {
         <p className={styles.paragraph}>
           At Brightlight Immigration, we have a dedicated team of visa application specialists who can assist you from the start of the application process all the way to obtaining your visa. Start your process now.
         </p>
-        <button className={styles.button}>Book Appointment</button>
+        <button className={styles.button} onClick={() => window.location.href = 'https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj'}>Book Appointment</button>
       </section>
     </div>
+
+    <div id="testimonials"> 
+        <Testimonials/>
+      </div>
+      <div id="faqs">
+        <FAQ/>
+      </div>
+      <div id="blogs">
+        <RecentBlogs/>
+      </div>
 
     <Footer1/>
     </>

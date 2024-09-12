@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import styles from '../styles/InsideCanada.module.css';
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
+import Testimonials from "../sections/Testimonials";
+import RecentBlogs from "../sections/RecentBlogs";
+import FAQ from "../sections/FAQ";
+
+
 const InsideCanada = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -85,13 +90,13 @@ const InsideCanada = () => {
         </ul>
       </section>
 
-      {/* <section className={styles.programs}>
+      <section className={styles.programs}>
         <h2 className={styles.subheading}>Programs to Consider</h2>
         <div className={styles.buttonContainer}>
           <a href="/visitor-to-student" className={styles.button}>Visitor to Student Status</a>
-          <a href="/change-college" className={styles.button}>Change of College or Existing Program (DLI Change)</a>
+          <a href="/change-college-program" className={styles.button}>Change of College or Existing Program (DLI Change)</a>
         </div>
-      </section> */}
+      </section>
 
       <section className={styles.eligibility} id="eligibility">
         <h2 className={styles.subheading}>Eligibility Criteria for Student Visa - Inside Canada</h2>
@@ -146,17 +151,18 @@ const InsideCanada = () => {
         <p className={styles.callToActionText}>
           We achieve this by tailoring our approach to your specific case and addressing each concern raised by the officer in previous refusals. Using case law, we identify similar cases with positive outcomes and apply them as precedents. This is why we have a high success rate, with over 90% approval in such cases. At Brightlight Immigration, we have a dedicated team of visa application specialists ready to assist you from the start of the application process to obtaining your visa. Start your process now.
         </p>
-        <a href="/book-appointment" className={styles.button}>Book Appointment</a>
-      </section>
-
-      <section className={styles.testimonials}>
-        <h2 className={styles.subheading}>Why Choose Us</h2>
-        <div className={styles.testimonialsContainer}>
-          {/* Implement your video and written testimonials here */}
-          {/* Option to hide/display testimonials in backend */}
-        </div>
+        <a href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" className={styles.button}>Book Appointment</a>
       </section>
     </div>
+    <div id="testimonials"> 
+        <Testimonials/>
+      </div>
+      <div id="faqs">
+        <FAQ/>
+      </div>
+      <div id="blogs">
+        <RecentBlogs/>
+      </div>
     <Footer1/>
     </>
   );

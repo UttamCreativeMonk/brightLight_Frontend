@@ -3,6 +3,10 @@ import styles from "../styles/LowWageLmia.module.css";
 import { Link } from "react-router-dom";
 import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
+import Testimonials from "../sections/Testimonials";
+import RecentBlogs from "../sections/RecentBlogs";
+import FAQ from "../sections/FAQ";
+
 
 const LowWageLmia = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -38,9 +42,7 @@ const LowWageLmia = () => {
                 About the Program
               </p>
               <p onClick={() => scrollToSection("noc")}>NOC</p>
-              <p onClick={() => scrollToSection("provincialWage")}>NOC</p>
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
-              <p onClick={() => scrollToSection("application-steps")}>Application Steps</p>
               <p onClick={() => scrollToSection("differences")}>Differences</p>
 
               <p onClick={() => scrollToSection("how-to-apply")}>
@@ -125,7 +127,7 @@ const LowWageLmia = () => {
           <li>The employer can apply for an unnamed LMIA and then add the name of the finalized workers to the LMIA later on after the LMIA is approved.</li>
         </ul>
       </section>
-      <section className={styles.applicationSteps} id="application-steps">
+      <section className={styles.applicationSteps} id="how-to-apply">
         <h2>How to Apply for Low-wage/High-wage LMIA:</h2>
         <ol>
           <li>Have an initial assessment performed by us to verify if the employer is eligible to apply for LMIA for a specific position and how many positions are allowed.</li>
@@ -231,17 +233,16 @@ const LowWageLmia = () => {
         <p>If you have received a refusal for any of the reasons mentioned above, do not worry. With over a decade of experience, we specialize in previously refused cases. While we don't provide jobs for LMIA, we can certainly assist you if you have a job offer. We have obtained approvals for clients who had multiple previous refusals. We achieve this with a tailored approach to your specific case, addressing each concern that the officer has listed in previous refusals. We use case law and find similar cases to your circumstances that had positive results, and we use them as precedents in cases we work on. This is why we have a high success rate.</p>
         <p>At Brightlight Immigration, we have a dedicated team of visa application specialists who can assist you from the start of the application process to obtaining your visa. Start your process now.</p>
       </section>
-      
-      <section className={styles.testimonials}>
-        <h2>Client Testimonials</h2>
-        {/* Add video and written testimonials with options to hide/show */}
-      </section>
-
-      <section className={styles.blogs}>
-        <h2>Blogs</h2>
-        {/* Add blog content or links */}
-      </section>
     </div>
+    <div id="testimonials"> 
+        <Testimonials/>
+      </div>
+      <div id="faqs">
+        <FAQ/>
+      </div>
+      <div id="blogs">
+        <RecentBlogs/>
+      </div>
     <Footer1/>
     </>
   );

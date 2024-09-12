@@ -220,6 +220,7 @@
   letter-spacing: 1px;
   color: rgb(44, 44, 44);
   margin-bottom: 30px;
+  margin-top: 20px;
 }
 
 @media all and (max-width: 1450px) {

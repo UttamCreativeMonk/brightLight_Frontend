@@ -3,6 +3,10 @@ import styles from "../styles/BridgingOpenWorkPermitLP.module.css";
 import { Link } from "react-router-dom";
 import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
+import Testimonials from "../sections/Testimonials";
+import RecentBlogs from "../sections/RecentBlogs";
+import FAQ from "../sections/FAQ";
+
 
 const BridgingOpenWorkPermitLP = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -134,20 +138,16 @@ const BridgingOpenWorkPermitLP = () => {
         <h2>Still not sure?</h2>
         <p>If you have received a refusal for any of the reasons mentioned above, do not worry. With over a decade of experience, we specialize in previously refused cases. While we don't provide jobs for LMIA, we can certainly assist you if you have a job offer. We have obtained approvals for clients who had multiple previous refusals. We achieve this with a tailored approach to your specific case, addressing each concern that the officer has listed in previous refusals. We use case law and find similar cases to your circumstances that had positive results, and we use them as precedents in cases we work on. This is why we have a high success rate. At Brightlight Immigration, we have a dedicated team of visa application specialists who can assist you from the start of the application process to obtaining your visa. Start your process now.</p>
       </section>
-      <section className={styles.whyChooseUs}>
-        <h2>Why choose us section</h2>
-        {/* Content for "Why choose us" goes here */}
-      </section>
-      <section className={styles.testimonials}>
-        <h2>Clients Testimonials</h2>
-        <p>Video testimonials and written testimonials. (option to hide any of them should be there in backend)</p>
-      </section>
-
-      <section className={styles.blogs}>
-        <h2>Blogs</h2>
-        {/* Blog content goes here */}
-      </section>
     </div>
+    <div id="testimonials"> 
+        <Testimonials/>
+      </div>
+      <div id="faqs">
+        <FAQ/>
+      </div>
+      <div id="blogs">
+        <RecentBlogs/>
+      </div>
     <Footer1/>
     </>
   );

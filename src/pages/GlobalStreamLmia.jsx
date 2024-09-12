@@ -3,6 +3,10 @@ import styles from "../styles/GlobalStreamLmia.module.css";
 import { Link } from "react-router-dom";
 import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
+import Testimonials from "../sections/Testimonials";
+import RecentBlogs from "../sections/RecentBlogs";
+import FAQ from "../sections/FAQ";
+
 
 const GlobalStreamLmia = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -21,6 +25,9 @@ const GlobalStreamLmia = () => {
     <>
      <Navbar1/>
       <div className={styles.bannerParent}>
+              <header className={styles.header} >
+        <h1>Global Talent Stream (GTS) LMIA</h1>
+      </header>
         <div className={styles.banner}>
           <div
             className={`${styles.bannerHeadingRotateParent} ${
@@ -62,11 +69,9 @@ const GlobalStreamLmia = () => {
       </div>
 
       <div className={styles.container}>
-      <header className={styles.header} id="about-program">
-        <h1>Global Talent Stream (GTS) LMIA</h1>
-      </header>
 
-      <main className={styles.mainContent}>
+
+      <main className={styles.mainContent} id="about-program">
         <section className={styles.section}>
           <h2>Overview</h2>
           <p>
@@ -91,15 +96,11 @@ const GlobalStreamLmia = () => {
           <ol>
             <li>
               <strong>Category A - Referred by one of the stream's designated referral partners</strong>
-              <button className={styles.linkButton} onClick={() => document.getElementById('childcare').scrollIntoView({ behavior: 'smooth' })}>
-                Go to Childcare Section
-              </button>
+
             </li>
             <li>
               <strong>Category B - In-demand occupations on the global talent occupations list</strong>
-              <button className={styles.linkButton} onClick={() => document.getElementById('childcare').scrollIntoView({ behavior: 'smooth' })}>
-                Go to Childcare Section
-              </button>
+
             </li>
           </ol>
 
@@ -225,24 +226,18 @@ const GlobalStreamLmia = () => {
           </p>
         </section>
 
-        <section className={styles.section}>
-          <h2>Clients Testimonials</h2>
-          <div className={styles.testimonials}>
-            <div className={styles.videoTestimonials}>
-              <h3>Video Testimonials</h3>
-              {/* Placeholder for video testimonials */}
-              <div className={styles.videoPlaceholder}>Video content here...</div>
-            </div>
-            <div className={styles.writtenTestimonials}>
-              <h3>Written Testimonials</h3>
-              {/* Placeholder for written testimonials */}
-              <div className={styles.writtenPlaceholder}>Written content here...</div>
-            </div>
-          </div>
-        </section>
-
       </main>
     </div>
+
+    <div id="testimonials"> 
+        <Testimonials/>
+      </div>
+      <div id="faqs">
+        <FAQ/>
+      </div>
+      <div id="blogs">
+        <RecentBlogs/>
+      </div>
 
     <Footer1/>
     </>

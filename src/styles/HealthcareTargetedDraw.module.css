@@ -197,10 +197,6 @@
     /* margin-bottom: 30px; */
   }
   
-  .button:hover {
-    background-color: #0056b3;
-  }
-  
   .support, .whyChooseUs {
     text-align: center;
   }
@@ -224,17 +220,21 @@
   }
   
   .container h2 {
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 50px;
+    margin-bottom: 80px;
+    text-align: center;
     color: #00273f;
   }
 
   @media (max-width: 400px) {
     .heading{
       font-size: 20px;
+      
     }
       
   .container h2 {
 font-size: 20px;
+margin-top: 10px;
+margin-bottom: 40px;
   }
   }

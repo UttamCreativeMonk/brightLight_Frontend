@@ -3,6 +3,10 @@ import styles from '../styles/OutsideCananda.module.css';
 import { Link } from 'react-router-dom';
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
+import Testimonials from "../sections/Testimonials";
+import RecentBlogs from "../sections/RecentBlogs";
+import FAQ from "../sections/FAQ";
+
 
 
 const OutsideCananda = () => {
@@ -80,15 +84,17 @@ const OutsideCananda = () => {
         </p>
         <a id="book-appointment" href="book-appointmenthttps://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" className={styles.button}>Book Appointment</a>
       </section>
-
-      <section className={styles.testimonials}>
-        <h2 className={styles.subheading}>Clients Testimonials</h2>
-        <div className={styles.testimonialsContainer}>
-          {/* Implement your video and written testimonials here */}
-          {/* Option to hide/display testimonials in backend */}
-        </div>
-      </section>
     </div>
+
+    <div id="testimonials"> 
+        <Testimonials/>
+      </div>
+      <div id="faqs">
+        <FAQ/>
+      </div>
+      <div id="blogs">
+        <RecentBlogs/>
+      </div>
     <Footer1/>
     </>
   );

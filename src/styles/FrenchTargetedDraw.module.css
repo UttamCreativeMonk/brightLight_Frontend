@@ -198,9 +198,6 @@
   font-size: 1rem;
 }
 
-.button:hover {
-  background-color: #0056b3;
-}
 
 .testimonials {
   margin-top: 20px;
@@ -214,7 +211,8 @@
 .container h2 {
   color: #00273f;
   margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 80px;
+  text-align: center;
 }
 
 .heading {
@@ -236,6 +234,8 @@
 @media (max-width: 500px) {
   .container h2 {
     font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 40px;
   }
 
   .heading {

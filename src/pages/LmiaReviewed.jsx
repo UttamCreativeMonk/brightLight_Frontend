@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import styles from "../styles/LmiaReviewed.module.css";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
+import Testimonials from "../sections/Testimonials";
+import RecentBlogs from "../sections/RecentBlogs";
+import FAQ from "../sections/FAQ";
+
 
 const LmiaReviewed = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -41,7 +45,6 @@ const LmiaReviewed = () => {
               <p onClick={() => scrollToSection("about-program")}>
                 About the Program
               </p>
-              <p onClick={() => scrollToSection("benifits")}>Benifits</p>
               <p onClick={() => scrollToSection("pathways")}>Pathways</p>
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
               <p onClick={() => scrollToSection("how-to-apply")}>
@@ -284,13 +287,22 @@ const LmiaReviewed = () => {
               now.
             </p>
             <a
-              href="https://calendly.com/your-link"
+              href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj"
               className={styles.bookAppointment}
             >
               Book an Appointment
             </a>
           </section>
         </main>
+      </div>
+      <div id="testimonials"> 
+        <Testimonials/>
+      </div>
+      <div id="faqs">
+        <FAQ/>
+      </div>
+      <div id="blogs">
+        <RecentBlogs/>
       </div>
       <Footer1 />
     </>

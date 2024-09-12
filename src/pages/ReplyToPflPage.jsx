@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import styles from "../styles/ReplyToPflPage.module.css";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
+import Testimonials from "../sections/Testimonials";
+import RecentBlogs from "../sections/RecentBlogs";
+import FAQ from "../sections/FAQ";
+
 
 const ReplyToPflPage = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -130,6 +134,16 @@ const ReplyToPflPage = () => {
             {/* Add video and written testimonials here */}
           </section>
         </main>
+      </div>
+
+      <div id="testimonials"> 
+        <Testimonials/>
+      </div>
+      <div id="faqs">
+        <FAQ/>
+      </div>
+      <div id="blogs">
+        <RecentBlogs/>
       </div>
 
       <Footer1/>

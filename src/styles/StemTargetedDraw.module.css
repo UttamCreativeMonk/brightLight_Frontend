@@ -171,10 +171,7 @@
     margin-bottom: 10px;
   }
    */
-  a.link {
-    color: #0056b3;
-    text-decoration: none;
-  }
+
   
   a.link:hover {
     text-decoration: underline;
@@ -192,10 +189,7 @@
     margin-top: 10px;
   }
   
-  .button:hover {
-    background-color: #004494;
-  }
-  
+
   .table {
     width: 100%;
     border-collapse: collapse;
@@ -232,8 +226,9 @@
   }
   
   .container h2{
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 50px;
+    margin-bottom: 80px;
+    text-align: center;
   }
 
   .heading{
@@ -246,8 +241,12 @@
   @media (max-width: 400px) {
 .heading{
   font-size: 26px;
+  
 }
 .container h2{
   font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  
 }
   }

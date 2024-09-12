@@ -3,6 +3,9 @@ import styles from '../styles/Flagpoling.module.css';
 import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
+import Testimonials from "../sections/Testimonials";
+import RecentBlogs from "../sections/RecentBlogs";
+import FAQ from "../sections/FAQ";
 
 
 const Flagpoling = () => {
@@ -24,8 +27,6 @@ const Flagpoling = () => {
         <Navbar1 />
         <div className={styles.bannerParent}>
           <div className={styles.banner}>
-           
-  
             <div
               className={`${styles.bannerHeadingRotateParent} ${
                 isDropdownOpen ? styles.active : ""
@@ -99,21 +100,17 @@ const Flagpoling = () => {
         <h2 className={styles.subheading}>Why Choose Us?</h2>
         <p>We offer expert advice and personalized service to make your flagpoling experience as smooth as possible. Our team of experienced professionals will guide you through the process and ensure that you are well-prepared for every step, from gathering documentation to handling interviews.</p>
       </section>
-
-      <section className={styles.testimonials}>
-        <h2 className={styles.subheading}>Clients Testimonials</h2>
-        <div className={styles.testimonialSection}>
-          <h3>Video Testimonials</h3>
-          {/* Conditional rendering based on backend configuration */}
-          {/* <VideoTestimonials /> */}
-        </div>
-        <div className={styles.testimonialSection}>
-          <h3>Written Testimonials</h3>
-          {/* Conditional rendering based on backend configuration */}
-          {/* <WrittenTestimonials /> */}
-        </div>
-      </section>
     </div>
+
+    <div id="testimonials"> 
+        <Testimonials/>
+      </div>
+      <div id="faqs">
+        <FAQ/>
+      </div>
+      <div id="blogs">
+        <RecentBlogs/>
+      </div>
     <Footer1/>
     </>
   );

@@ -179,8 +179,9 @@
 
   .container h2 {
     color: #00273f;
-    margin-top: 30px;
-    margin-bottom: 20px;
+    margin-top: 50px;
+    margin-bottom: 80px;
+    text-align: center;
   }
   
   .header h1{
@@ -206,6 +207,8 @@
   @media (max-width: 400px) {
     .container h2 {
       font-size: 20px;
+      margin-top: 10px;
+      margin-bottom: 40px;
     }
   
     .header h1 {

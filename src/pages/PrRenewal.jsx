@@ -2,6 +2,10 @@ import React, { useEffect, useState } from "react";
 import styles from "../styles/PrRenewal.module.css";
 import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
+import Testimonials from "../sections/Testimonials";
+import RecentBlogs from "../sections/RecentBlogs";
+import FAQ from "../sections/FAQ";
+
 
 let PrRenewal = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -44,10 +48,7 @@ let PrRenewal = () => {
               <p onClick={() => scrollToSection("refusal-reason")}>
                 Refusal Reason
               </p>
-              <p onClick={() => scrollToSection("appointment")}>Appointment</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose us
-              </p>
+              <p onClick={() => scrollToSection("appointment")}>Book Appointment</p>
               <p onClick={() => scrollToSection("testimonials")}>
                 Testimonials
               </p>
@@ -130,24 +131,18 @@ let PrRenewal = () => {
           of the application process all the way to obtaining your visa. Start
           your PR Card renewal process now.
         </p>
+        <button onClick={() => window.location.href = 'https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj'}>Book Appointment</button>
       </div>
 
-      <div className={styles.section} id="why-choose-us">
-        <h2 className={styles.sectionTitle}>Why Choose Us</h2>
-        <p className={styles.sectionContent}>
-          [Content about why to choose the service provider.]
-        </p>
+      <div id="testimonials"> 
+        <Testimonials/>
       </div>
-
-      <div className={styles.section} id="testimonials">
-        <h2 className={styles.sectionTitle}>Clients Testimonials</h2>
-        <div className={styles.videoParent}>
-          <video src="[path-to-video]" controls></video>
-          <p>[Written testimonials]</p>
-        </div>
+      <div id="faqs">
+        <FAQ/>
       </div>
-
-
+      <div id="blogs">
+        <RecentBlogs/>
+      </div>
 
       <Footer1/>
     </>

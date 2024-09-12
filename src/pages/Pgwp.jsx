@@ -3,6 +3,10 @@ import styles from "../styles/Pgwp.module.css";
 import { Link } from "react-router-dom";
 import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
+import Testimonials from "../sections/Testimonials";
+import RecentBlogs from "../sections/RecentBlogs";
+import FAQ from "../sections/FAQ";
+
 
 const Pgwp = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -43,7 +47,6 @@ const Pgwp = () => {
               <p onClick={() => scrollToSection("refusal-reasons")}>
                 Refusal Reasons
               </p>
-
               <p onClick={() => scrollToSection("why-choose-us")}>
                 Why Choose Us?
               </p>
@@ -117,26 +120,17 @@ const Pgwp = () => {
         <p>If you have received a refusal for any of the reasons mentioned above, do not worry. With over a decade of experience, we specialize in previously refused cases. We have successfully obtained approvals for clients with multiple previous refusals through a tailored approach, addressing each concern listed in previous refusals and using case law as precedents. This high success rate is why our clients trust us.</p>
         <p>At Brightlight Immigration, our dedicated team of visa application specialists can assist you from start to finish. Start your process now!</p>
       </section>
-
-
-      <section className={styles.testimonials}>
-        <h2>Clients Testimonials</h2>
-        <div>
-          <h3>Video Testimonials</h3>
-          <p>[Video testimonials content with option to hide]</p>
-        </div>
-        <div>
-          <h3>Written Testimonials</h3>
-          <p>[Written testimonials content with option to hide]</p>
-        </div>
-      </section>
-
-      <section className={styles.blogs}>
-        <h2>Blogs</h2>
-        <p>[Content for related blogs]</p>
-      </section>
     </div>
 
+    <div id="testimonials"> 
+        <Testimonials/>
+      </div>
+      <div id="faqs">
+        <FAQ/>
+      </div>
+      <div id="blogs">
+        <RecentBlogs/>
+      </div>
     <Footer1/>
     </>
   );

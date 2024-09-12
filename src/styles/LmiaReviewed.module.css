@@ -125,9 +125,7 @@
   }
 }
 
-/* src/components/LmiaReviewedPage.module.css */
 
-/* src/components/LmiaReviewedPage.module.css */
 
 .container {
   max-width: 1200px;
@@ -200,9 +198,12 @@
   background-color: #00273f;
   border-radius: 5px;
 }
+.section a:hover{
+  background-color: #216b88;
+}
 
 .section.button:hover {
-  background-color: #003c3f;
+  background-color: #2f6568;
 }
 
 .applicationProcess ul {
@@ -224,7 +225,10 @@
 .bookAppointment:hover {
   background-color: #216b88;
 }
-
+/* 
+.container h2{
+  text-align: center;
+} */
 
 
 @media (max-width: 1080px) {
@@ -239,8 +243,9 @@
 
   .container h2 {
     color: #00273f;
-    margin-top: 30px;
-    margin-bottom: 20px;
+    margin-top: 50px;
+    margin-bottom: 80px;
+    text-align: center !important;
   }
 
   .container h3 {
@@ -266,21 +271,11 @@
   }
   
 
-.container h2 {
-  color: #00273f;
-  margin-top: 30px;
-  margin-bottom: 20px;
-}
-
-.header h1 {
-  color: #e8c47c;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
 @media (max-width: 400px) {
   .container h2 {
     font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
   }
 
   .header h1 {

@@ -85,6 +85,8 @@ import News from "../pages/News";
 import NewsDetails from "../pages/NewsDetails";
 import Search from "../pages/Search";
 import WorkPermit from "../pages/WorkPermit";
+import Login from "../components/Login";
+import PrivateRoute from "../components/PrivateRoute";
 
 let AllRoutes = () => {
   return (
@@ -109,7 +111,7 @@ let AllRoutes = () => {
       <Route path="/category-based" element={<CategoryBased />} />
       <Route path="/clb-ilets-calculator" element={<CLBILETSCalculator />} />
       <Route path="/previous-draw-history" element={<PreviousDrawHistory />} />
-      <Route path="/users/admin/dashboard" element={<Admin />} />
+      <Route  path="/users/admin/dashboard"  element={<PrivateRoute element={Admin} />}   />
       <Route path="/more-services" element={<MoreServices />} />
 
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
@@ -258,6 +260,8 @@ let AllRoutes = () => {
         element={<PermanentResidencePathwaysCaregiversLP />}
       />
       <Route path="/search" element={<Search />} />
+
+      <Route path="/auth/dashboard/login/admin" element={<Login />} />
     </Routes>
   );
 };

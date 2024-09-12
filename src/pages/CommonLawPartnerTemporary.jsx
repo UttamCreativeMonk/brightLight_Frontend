@@ -3,6 +3,10 @@ import styles from "../styles/CommonLawPartnerTemporary.module.css";
 import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
+import Testimonials from "../sections/Testimonials";
+import RecentBlogs from "../sections/RecentBlogs";
+import FAQ from "../sections/FAQ";
+
 
 const CommonLawPartnerTemporary = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -373,18 +377,19 @@ const CommonLawPartnerTemporary = () => {
             to achieving the best possible outcomes for our clients.
           </p>
           {/* Include testimonials and video testimonials here */}
-          <div className={styles.testimonials}>
-            <h3>Client Testimonials</h3>
-            {/* Conditionally render testimonials based on backend settings */}
-            <div className={styles.videoTestimonials}>
-              {/* Video testimonials */}
-            </div>
-            <div className={styles.writtenTestimonials}>
-              {/* Written testimonials */}
-            </div>
-          </div>
         </section>
       </div>
+
+      <div id="testimonials"> 
+        <Testimonials/>
+      </div>
+      <div id="faqs">
+        <FAQ/>
+      </div>
+      <div id="blogs">
+        <RecentBlogs/>
+      </div>
+      <Footer1/>
     </>
   );
 };

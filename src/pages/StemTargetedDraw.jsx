@@ -3,6 +3,10 @@ import styles from "../styles/StemTargetedDraw.module.css";
 import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
+import Testimonials from "../sections/Testimonials";
+import RecentBlogs from "../sections/RecentBlogs";
+import FAQ from "../sections/FAQ";
+
 
 const StemTargetedDraw = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);

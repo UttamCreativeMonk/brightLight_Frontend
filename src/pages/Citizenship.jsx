@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import styles from "../styles/Citizenship.module.css";
 import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
+import Testimonials from "../sections/Testimonials";
+import RecentBlogs from "../sections/RecentBlogs";
+import FAQ from "../sections/FAQ";
+
 
 const Citizenship = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -47,9 +51,6 @@ const Citizenship = () => {
               </p>
               <p onClick={() => scrollToSection("refusal-reasons")}>
                 Refusal Reasons
-              </p>
-              <p onClick={() => scrollToSection("book-appointment")}>
-                Book Appointment
               </p>
               <p onClick={() => scrollToSection("why-choose-us")}>
                 Why Choose Us?
@@ -150,11 +151,11 @@ const Citizenship = () => {
             <p>
               We know what it means to you to become a Canadian citizen. We
               would be honored to help you through the application process and
-              to get you ready for your citizenship ceremony.{" "}
+              to get you ready for your citizenship ceremony.
               <a href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj">
                 Click here
-              </a>{" "}
-              (hyperlink to Calendly)
+              </a>
+
             </p>
           </section>
 
@@ -208,9 +209,7 @@ const Citizenship = () => {
               </li>
             </ul>
             <p>
-              <a href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj">
-                Book Appointment
-              </a>
+
             </p>
           </section>
 
@@ -234,15 +233,18 @@ const Citizenship = () => {
               process now.
             </p>
           </section>
-
-
-          <section className={styles.section}>
-            <h2>Clients Testimonials</h2>
-            {/* Add video and written testimonials here */}
-          </section>
         </main>
       </div>
 
+      <div id="testimonials"> 
+        <Testimonials/>
+      </div>
+      <div id="faqs">
+        <FAQ/>
+      </div>
+      <div id="blogs">
+        <RecentBlogs/>
+      </div>
       <Footer1 />
     </>
   );

@@ -30,6 +30,10 @@ import PillarsImg from "../admin_sections/PillarsImg";
 import ContactTop from "../admin_sections/ContactTop";
 import Privacy from "../admin_sections/Privacy";
 import Terms from "../admin_sections/Terms";
+import AllBlogs from "../admin_sections/AllBlogs";
+import AddBlog from "../admin_sections/AddBlog";
+import AllNews from "../admin_sections/AllNews";
+import AddNews from "../admin_sections/AddNews";
 
 let Admin = () => {
   let [showDropdown, setShowDropdown] = useState(false);
@@ -113,6 +117,15 @@ let Admin = () => {
               onClick={() => handlePageClick("blogs")}
             >
               <p>Blogs</p>
+            </div>
+
+            <div
+              className={`${styles.page} ${
+                activePage === "news" ? styles.activePage : ""
+              }`}
+              onClick={() => handlePageClick("news")}
+            >
+              <p>News</p>
             </div>
           </div>
           <div className={styles.rightPanel}>
@@ -461,8 +474,69 @@ let Admin = () => {
                 </div>
               </div>
             )}
+
+            {activePage === "blogs" && (
+              <div className={styles.sections}>
+                <div
+                  className={`${styles.section} ${
+                    activeSection === "all-blogs" ? styles.activeSection : ""
+                  }`}
+                  onClick={() => handleSectionClick("all-blogs")}
+                >
+                  All Blogs
+                </div>
+
+                <div
+                  className={`${styles.section} ${
+                    activeSection === "add-blog" ? styles.activeSection : ""
+                  }`}
+                  onClick={() => handleSectionClick("add-blog")}
+                >
+                  Add Blog
+                </div>
+              </div>
+            )}
+
+            {activePage === "news" && (
+              <div className={styles.sections}>
+                <div
+                  className={`${styles.section} ${
+                    activeSection === "all-news" ? styles.activeSection : ""
+                  }`}
+                  onClick={() => handleSectionClick("all-news")}
+                >
+                  All News
+                </div>
+
+                <div
+                  className={`${styles.section} ${
+                    activeSection === "add-news" ? styles.activeSection : ""
+                  }`}
+                  onClick={() => handleSectionClick("add-news")}
+                >
+                  Add News
+                </div>
+              </div>
+            )}
+
             {activePage === "contact" && activeSection === "contact-top" && (
               <ContactTop />
+            )}
+
+            {activePage === "blogs" && activeSection === "all-blogs" && (
+              <AllBlogs />
+            )}
+
+            {activePage === "blogs" && activeSection === "add-blog" && (
+              <AddBlog />
+            )}
+
+            {activePage === "news" && activeSection === "all-news" && (
+              <AllNews />
+            )}
+
+            {activePage === "news" && activeSection === "add-news" && (
+              <AddNews />
             )}
 
             {activePage === "privacy-policy" && <Privacy />}

@@ -3,6 +3,9 @@ import styles from "../styles/ExtensionsDraft.module.css";
 import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
+import Testimonials from "../sections/Testimonials";
+import RecentBlogs from "../sections/RecentBlogs";
+import FAQ from "../sections/FAQ";
 
 
 const ExtensionsDraft = () => {
@@ -155,20 +158,16 @@ const ExtensionsDraft = () => {
             addressing all your concerns and providing you with peace of mind.
           </p>
         </section>
+      </div>
 
-        <section className={styles.testimonials}>
-          <h2 className={styles.subheading}>Clients Testimonials</h2>
-          <div className={styles.testimonialSection}>
-            <h3>Video Testimonials</h3>
-            {/* Conditional rendering based on backend configuration */}
-            {/* <VideoTestimonials /> */}
-          </div>
-          <div className={styles.testimonialSection}>
-            <h3>Written Testimonials</h3>
-            {/* Conditional rendering based on backend configuration */}
-            {/* <WrittenTestimonials /> */}
-          </div>
-        </section>
+      <div id="testimonials"> 
+        <Testimonials/>
+      </div>
+      <div id="faqs">
+        <FAQ/>
+      </div>
+      <div id="blogs">
+        <RecentBlogs/>
       </div>
       <Footer1/>
     </>

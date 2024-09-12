@@ -170,21 +170,14 @@
 
 .button:hover {
   background-color: #0056b3;
-}
-
-.testimonials {
-  margin-top: 20px;
-}
-
-.videoTestimonials,
-.writtenTestimonials {
-  margin-top: 20px;
+  text-align: center;
 }
 
 .container h2 {
   color: #00273f;
-  margin-top: 30px;
-  margin-bottom: 20px;
+  margin-top: 50px;
+  margin-bottom: 80px;
+  text-align: center;
 }
 .heading {
   color: #e8c47c;
@@ -195,6 +188,8 @@
 @media (max-width: 400px) {
   .container h2 {
     font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 40px;
   }
   .heading {
     font-size: 30px;

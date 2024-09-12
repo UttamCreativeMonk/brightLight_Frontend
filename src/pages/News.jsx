@@ -117,9 +117,10 @@ let News = () => {
       <div className={styles.blogsTopSection}>
         <img src={brightSource} />
         <h3>
-          We're your go-to spot for easy-to-digest blogs about Canadian
-          immigration. Think of us as your helpful guide, breaking down the ins
-          and outs of moving to Canada with simple words and stories.
+          Find the newest Canadian immigration news on our website. We give you
+          the latest updates, changes in rules, and important stories. Stay
+          informed about your immigration process by checking our site every
+          day. We explain everything clearly and briefly to help you understand.
         </h3>
       </div>
       <div className={styles.searchSection}>

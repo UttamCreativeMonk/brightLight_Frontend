@@ -9,17 +9,20 @@ import searchIcon from "../assets/search-gray.png";
 
 let BlogDetails = () => {
   let { id } = useParams();
-  let navigate = useNavigate(); // Added useNavigate hook
+  let navigate = useNavigate();
   let [blog, setBlog] = useState([]);
   let [loveneetData, setLoveneetData] = useState([]);
   let [recentBlogs, setRecentBlogs] = useState([]);
-  let [searchQuery, setSearchQuery] = useState(""); // Added searchQuery state
+  let [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     fetch(`https://brightlight-node.onrender.com/adding-blog/${id}`)
       .then((res) => res.json())
       .then((data) => {
         if (data) {
+          if (data.blog_content) {
+            data.blog_content = data.blog_content.replace(/\n/g, "<br/>");
+          }
           setBlog(data);
         }
       })
@@ -66,7 +69,7 @@ let BlogDetails = () => {
             <div className={styles.loveneetContent}>
               <div className={styles.loveneetDataFlex}>
                 <h3>By {loveneetData.name}</h3>
-              
+
                 <h5>{loveneetData.post}</h5>
               </div>
               <h4>{loveneetData.tagline}</h4>

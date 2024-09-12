@@ -3,6 +3,10 @@ import styles from "../styles/HumanitarianCompassionate.module.css";
 import { Link } from "react-router-dom";
 import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
+import Testimonials from "../sections/Testimonials";
+import RecentBlogs from "../sections/RecentBlogs";
+import FAQ from "../sections/FAQ";
+
 
 const HumanitarianCompassionate = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -210,31 +214,21 @@ const HumanitarianCompassionate = () => {
             At Brightlight Immigration, we have a dedicated team of visa
             application specialists who can assist you from the start of the
             application process all the way to obtaining your visa.{" "}
-            <a href="#book-appointment" className={styles.button}>
+            <a href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" className={styles.button}>
               Start your process now
             </a>
           </p>
         </section>
+      </div>
 
-        <section className={styles.testimonials}>
-          <h2>Clients Testimonials</h2>
-          <div className={styles.videoTestimonials}>
-            <h3>Video Testimonials</h3>
-            {/* Insert video testimonials here */}
-          </div>
-          <div className={styles.writtenTestimonials}>
-            <h3>Written Testimonials</h3>
-            {/* Insert written testimonials here */}
-          </div>
-          <button className={styles.toggleButton}>
-            Toggle Testimonials Visibility
-          </button>
-        </section>
-
-        <section className={styles.blogs}>
-          <h2>Blogs</h2>
-          <p>[Insert blog content or links here]</p>
-        </section>
+      <div id="testimonials"> 
+        <Testimonials/>
+      </div>
+      <div id="faqs">
+        <FAQ/>
+      </div>
+      <div id="blogs">
+        <RecentBlogs/>
       </div>
       <Footer1 />
     </>

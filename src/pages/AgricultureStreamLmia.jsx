@@ -3,6 +3,9 @@ import styles from "../styles/AgricultureStreamLmia.module.css";
 import { Link } from "react-router-dom";
 import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
+import Testimonials from "../sections/Testimonials";
+import RecentBlogs from "../sections/RecentBlogs";
+import FAQ from "../sections/FAQ";
 
 const AgricultureStreamLmia = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -21,6 +24,9 @@ const AgricultureStreamLmia = () => {
     <>
       <Navbar1 />
       <div className={styles.bannerParent}>
+        <header className={styles.header} >
+          <h1>Agricultural Stream LMIA</h1>
+        </header>
         <div className={styles.banner}>
           <div
             className={`${styles.bannerHeadingRotateParent} ${
@@ -71,11 +77,8 @@ const AgricultureStreamLmia = () => {
       </div>
 
       <div className={styles.container}>
-        <header className={styles.header} id="about-program">
-          <h1>Agricultural Stream LMIA</h1>
-        </header>
         <main className={styles.mainContent}>
-          <section className={styles.section}>
+          <section className={styles.section} id="about-program">
             <h2>Overview</h2>
             <p>
               This type of LMIA allows employers to hire foreign workers to fill
@@ -332,18 +335,20 @@ const AgricultureStreamLmia = () => {
               now.
             </p>
           </section>
-
-
-
-          <section className={styles.section}>
-            <h2>Clients Testimonials</h2>
-            {/* Embed video testimonials and include written testimonials */}
-            {/* Option to hide any testimonial in the backend */}
-          </section>
         </main>
       </div>
 
-      <Footer1/>
+      <div id="testimonials">
+        <Testimonials />
+      </div>
+      <div id="faqs">
+        <FAQ />
+      </div>
+      <div id="blogs">
+        <RecentBlogs />
+      </div>
+
+      <Footer1 />
     </>
   );
 };

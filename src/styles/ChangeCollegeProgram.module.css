@@ -139,7 +139,7 @@
   .intro {
     font-size: 1.2rem;
     margin-bottom: 30px;
-    text-align: center;
+ 
   }
   
   .eligibility {
@@ -150,7 +150,7 @@
     font-size: 1.8rem;
     margin-bottom: 15px;
     color: #333;
-    text-align: center;
+
   }
   
   .eligibilityList {
@@ -163,6 +163,11 @@
   
   .process {
     margin-bottom: 40px;
+  }
+  .process p{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
   }
   
   .processDescription {
@@ -191,7 +196,7 @@
   }
   
   .callToAction {
-    text-align: center;
+
     margin-bottom: 40px;
   }
   
@@ -224,8 +229,9 @@
  
   .container h2 {
     color: #00273f;
-    margin-top: 30px;
-    margin-bottom: 20px;
+    margin-top: 50px;
+    margin-bottom: 80px;
+    text-align: center;
   }
   
   .heading {
@@ -237,10 +243,12 @@
   @media (max-width: 400px) {
     .container h2 {
       font-size: 20px;
+      margin-top: 10px;
+      margin-bottom: 40px;
     }
   
     .heading {
-      font-size: 30px;
+      font-size: 28px;
     }
   }
   

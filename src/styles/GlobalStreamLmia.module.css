@@ -190,43 +190,30 @@
     background-color: #005bb5;
   }
   
-  .testimonials {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-  }
-  
-  .videoTestimonials, .writtenTestimonials {
-    width: 48%;
-  }
-  
-  .videoPlaceholder, .writtenPlaceholder {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    padding: 20px;
-    text-align: center;
-  }
-  
+
   .section li strong{
     color: #00273f;
   }
 
   .container h2 {
     color: #00273f;
-    margin-top: 30px;
-    margin-bottom: 20px;
+    margin-top: 50px;
+    margin-bottom: 80px;
+    text-align: center;
   }
   
   .header h1{
     color: #e8c47c;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
   }
 
 
   @media (max-width: 400px) {
     .container h2 {
       font-size: 20px;
+      margin-bottom: 40px;
+      margin-top: 10px;
     }
   
     .header h1{

@@ -3,6 +3,10 @@ import styles from "../styles/SuperVisa.module.css";
 import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
+import Testimonials from "../sections/Testimonials";
+import RecentBlogs from "../sections/RecentBlogs";
+import FAQ from "../sections/FAQ";
+
 
 const SuperVisa = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -262,16 +266,17 @@ const SuperVisa = () => {
             throughout your immigration journey. Our dedicated team is committed
             to achieving the best possible outcomes for our clients.
           </p>
-          <div className={styles.testimonials}>
-            <h3>Client Testimonials</h3>
-            <div className={styles.videoTestimonials}>
-              {/* Video testimonials */}
-            </div>
-            <div className={styles.writtenTestimonials}>
-              {/* Written testimonials */}
-            </div>
-          </div>
         </section>
+      </div>
+
+      <div id="testimonials"> 
+        <Testimonials/>
+      </div>
+      <div id="faqs">
+        <FAQ/>
+      </div>
+      <div id="blogs">
+        <RecentBlogs/>
       </div>
 
       <Footer1 />

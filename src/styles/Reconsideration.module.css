@@ -146,13 +146,6 @@ section ul {
   padding-left: 20px;
 }
 
-.footer {
-  margin-top: 40px;
-  padding: 20px;
-  text-align: center;
-  background-color: #007bff;
-  color: white;
-}
 
 @media (max-width: 1440px) {
   .bannerHeadingRotate {
@@ -174,11 +167,12 @@ section ul {
 
 .header {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 .header h1 {
     font-size: 2.5rem;
+    text-align: center;
 }
 
 .introduction, .eligibility, .howToApply, .reasonsForRefusal, .bookAppointment, .faq {
@@ -190,6 +184,7 @@ section ul {
     border-bottom: 2px solid #000;
     padding-bottom: 10px;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 /* .section ul, ol {
@@ -208,15 +203,6 @@ section ul {
 .bookAppointment button:hover {
     background-color: #0056b3;
 }
-
-
-.footer {
-    text-align: center;
-    font-size: 0.875rem;
-    color: #666;
-    margin-top: 20px;
-}
-
 
 
 
@@ -255,16 +241,18 @@ section ul {
   .section ul {
     list-style-type: disc;
     margin-left: 20px;
+    margin-bottom: 40px;
   }
   
  .section a {
-    color: #007BFF;
+    color: #ffffff;
     text-decoration: none;
+    background-color: #00273f;
+    padding: 10px;
+    border-radius: 5px;
+    /* margin-top: 30px; */
   }
   
-  a:hover {
-    text-decoration: underline;
-  }
   
  .section dl {
     margin: 0;
@@ -290,12 +278,13 @@ section ul {
   .header h1 {
     color: #e8c47c;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 80px;
   }
   
   @media (max-width: 400px) {
     .container h2 {
       font-size: 20px;
+      margin-top: 30px;
     }
   
     .header h1 {

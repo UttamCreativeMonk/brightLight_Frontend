@@ -160,10 +160,7 @@
     margin-left: 20px;
   } */
 
-.link {
-  color: #007bff;
-  text-decoration: none;
-}
+
 
 .link:hover {
   text-decoration: underline;
@@ -180,23 +177,12 @@
   font-size: 1rem;
 }
 
-.button:hover {
-  background-color: #0056b3;
-}
-
-.testimonials {
-  margin-top: 20px;
-}
-
-.videoTestimonials,
-.writtenTestimonials {
-  margin-top: 20px;
-}
 
 .container h2 {
   color: #00273f;
-  margin-top: 80px;
-  margin-bottom: 20px;
+  margin-top: 50px;
+  margin-bottom: 80px;
+  text-align: center;
 }
 
 .heading {
@@ -210,20 +196,18 @@
   margin-top: 40px;
 }
 
-.applicationProcess li{
+.applicationProcess li {
   margin-top: 20px;
 }
 
-
 @media (max-width: 400px) {
-
   .container h2 {
-font-size: 20px;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 40px;
   }
-  
+
   .heading {
     font-size: 30px;
   }
-  
-
 }

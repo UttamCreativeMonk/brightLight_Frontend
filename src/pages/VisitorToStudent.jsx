@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import styles from '../styles/VisitorToStudent.module.css';
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
+import Testimonials from "../sections/Testimonials";
+import RecentBlogs from "../sections/RecentBlogs";
+import FAQ from "../sections/FAQ";
+
 
 const VisitorToStudent = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -144,15 +148,17 @@ const VisitorToStudent = () => {
         </p>
         <a id="book-appointment" href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" className={styles.button}>Book Appointment</a>
       </section>
-
-      <section className={styles.testimonials}>
-        <h2 className={styles.subheading} id="why-choose-us">Why Choose Us</h2>
-        <div className={styles.testimonialsContainer}>
-          {/* Implement your video and written testimonials here */}
-          {/* Option to hide/display testimonials in backend */}
-        </div>
-      </section>
     </div>
+
+    <div id="testimonials"> 
+        <Testimonials/>
+      </div>
+      <div id="faqs">
+        <FAQ/>
+      </div>
+      <div id="blogs">
+        <RecentBlogs/>
+      </div>
 
     <Footer1/>
     </>

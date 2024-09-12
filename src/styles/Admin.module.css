@@ -7,6 +7,10 @@
   justify-content: space-between;
 }
 
+.dashboard input:focus {
+  outline: none;
+}
+
 .topBar {
   width: 1440px;
   margin: auto;
@@ -34,6 +38,7 @@
   width: 69%;
   padding: 30px 20px;
   background-color: white;
+  border-radius: 5px;
 }
 
 .logo {
@@ -187,15 +192,53 @@
   border: 1px solid rgb(232, 232, 232);
 }
 
+.blogItem {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.blogItem h4 {
+  margin-bottom: 20px;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.blogItem .blogImage {
+  width: 200px;
+  border-radius: 10px;
+}
+
+.editForm input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid rgb(236, 236, 236);
+  border-radius: 5px;
+}
+
+.noBlogsPara {
+  font-size: 14px;
+}
+
+.editForm textarea {
+  width: 100%;
+  height: 250px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(236, 236, 236);
+}
+
 .editIcons {
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
-  gap: 30px;
+  gap: 20px;
+  margin-bottom: 10px;
 }
 
 .editIcons img {
-  width: 20px;
+  width: 17px;
   cursor: pointer;
 }
 
