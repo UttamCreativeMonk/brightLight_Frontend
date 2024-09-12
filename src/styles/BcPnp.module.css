@@ -217,7 +217,7 @@
   }
 
   .container h2{
-    margin-top: 150px;
+    margin-top: 50px;
     margin-bottom: 80px;
     text-align: center;
     color: #00273f;
@@ -232,6 +232,8 @@
   @media (max-width: 400px) {
     .container h2{
       font-size: 20px;
+      margin-top: 10px;
+      margin-bottom: 40px;
     }
     .title{
       font-size: 26px;

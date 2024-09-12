@@ -153,7 +153,10 @@
   
   .section h2 {
     font-size: 2em;
-    margin-bottom: 20px;
+    margin-bottom: 80px;
+    margin-top: 50px;
+    text-align: center;
+    color: #00273f;
   }
   
   /* .section ul, .section ol {
@@ -194,5 +197,7 @@
     }
     .section h2{
         font-size: 22px;
+        margin-top: 10px;
+        margin-bottom: 40px;
     }
   }

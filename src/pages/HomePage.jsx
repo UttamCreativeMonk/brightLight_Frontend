@@ -545,7 +545,7 @@ let HomePage = () => {
             <p>{servicesData?.description}</p>
 
             <button className={styles.knowButton}>
-              <a href="/">Know More</a>
+              <a href="/more-services">Know More</a>
             </button>
           </div>
 
@@ -579,7 +579,7 @@ let HomePage = () => {
                   } else if (title == "Family Sponsorship") {
                     return "/family-reunification-sponsorship";
                   } else if (title == "Work Permit") {
-                    return "/open-work-permit";
+                    return "/work-permit";
                   } else if (title == "PFL") {
                     return "/reply-to-pfl-page";
                   }

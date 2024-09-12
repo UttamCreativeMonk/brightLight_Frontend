@@ -132,7 +132,7 @@ function App() {
       {/* <FrenchTargetedDraw/> */}
       {/* <HealthcareTargetedDraw/> */}
       {/* <StemTargetedDraw/> */}
-      {/* <TradeOccupationTargetedDraw/>   from this */}
+      {/* <TradeOccupationTargetedDraw/>    */}
       {/* <PilotPrograms/> */}
       {/* <AgriFoodPilotProgram/> */}
       {/* <Rnip/> */}

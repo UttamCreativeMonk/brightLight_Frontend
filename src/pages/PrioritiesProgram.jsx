@@ -3,6 +3,9 @@ import styles from "../styles/PrioritiesProgram.module.css";
 import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
+import Testimonials from "../sections/Testimonials";
+import RecentBlogs from "../sections/RecentBlogs";
+import FAQ from "../sections/FAQ";
 
 const PrioritiesProgram = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -23,10 +26,10 @@ const PrioritiesProgram = () => {
       <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
-        <header className={styles.header}>
-          <h1>British Columbia Provincial Nominee Program (BC PNP)</h1>
-          <h2>Targeted Draws for Program Priorities Occupations</h2>
-        </header>
+          <header className={styles.header}>
+            <h1>British Columbia Provincial Nominee Program (BC PNP)</h1>
+            <h2>Targeted Draws for Program Priorities Occupations</h2>
+          </header>
 
           <div
             className={`${styles.bannerHeadingRotateParent} ${
@@ -41,11 +44,22 @@ const PrioritiesProgram = () => {
             </div>
             <div className={styles.bannerHeadingRotatePara}>
               <p onClick={() => scrollToSection("benefits")}>Benefits</p>
-              <p onClick={() => scrollToSection("eligibility")}>Eligibility Criteria</p>
-              <p onClick={() => scrollToSection("Priority_Occupation_List")}>Priority Occupation List</p>
-              <p onClick={() => scrollToSection("BCPNP_Calculator")}>BCPNP Calculator</p>
-              <p onClick={() => scrollToSection("book-appointment")}> Book Appointment</p>
-              <p onClick={() => scrollToSection("Testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("eligibility")}>
+                Eligibility Criteria
+              </p>
+              <p onClick={() => scrollToSection("Priority_Occupation_List")}>
+                Priority Occupation List
+              </p>
+              <p onClick={() => scrollToSection("BCPNP_Calculator")}>
+                BCPNP Calculator
+              </p>
+              <p onClick={() => scrollToSection("book-appointment")}>
+                {" "}
+                Book Appointment
+              </p>
+              <p onClick={() => scrollToSection("Testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("FAQs")}>FAQs</p>
               <p onClick={() => scrollToSection("Blogs")}>Blogs</p>
             </div>
@@ -54,7 +68,6 @@ const PrioritiesProgram = () => {
       </div>
 
       <div className={styles.container}>
-       
         <section className={styles.section} id="benefits">
           <h3>Benefits of Priority Occupations List</h3>
           <ul>
@@ -509,26 +522,29 @@ const PrioritiesProgram = () => {
             profile and embark on a transformative journey towards achieving
             your Canadian dream.
           </p>
-          <button id="book-appointment"
+          <button
+            id="book-appointment"
             className={styles.button}
-            onClick={() => (window.location.href = "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")}
+            onClick={() =>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
           >
             Book Appointment
           </button>
         </section>
-
-        <section className={styles.testimonials}>
-          <h3>Clients Testimonials</h3>
-          {/* Add testimonials here */}
-        </section>
-
-        <section className={styles.whyChooseUs}>
-          <h3>Why Choose Us</h3>
-          {/* Add content here */}
-        </section>
       </div>
 
-      <Footer1/>
+      <div id="testimonials">
+        <Testimonials />
+      </div>
+      <div id="faqs">
+        <FAQ />
+      </div>
+      <div id="blogs">
+        <RecentBlogs />
+      </div>
+      <Footer1 />
     </>
   );
 };

@@ -3,6 +3,11 @@ import { Link } from "react-router-dom";
 import styles from "../styles/PathwaysForCaregiver.module.css";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
+import Testimonials from "../sections/Testimonials";
+import RecentBlogs from "../sections/RecentBlogs";
+import FAQ from "../sections/FAQ";
+import OurProcess from "../sections/OurProcess";
+
 
 const PathwaysForCaregiver = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -135,10 +140,17 @@ const PathwaysForCaregiver = () => {
             process.
           </li>
         </ol>
-        <h2 className={styles.subtitle}>Here’s how we can help you:</h2>
-        <p className={styles.description}>
-          (Our process section from the homepage goes here as well).
-        </p>
+      </div>
+      <h2 className={styles.lastSubtitle}>Here’s how we can help you:</h2>
+      <OurProcess/>
+      <div id="testimonials"> 
+        <Testimonials/>
+      </div>
+      <div id="faqs">
+        <FAQ/>
+      </div>
+      <div id="blogs">
+        <RecentBlogs/>
       </div>
       <Footer1 />
     </>

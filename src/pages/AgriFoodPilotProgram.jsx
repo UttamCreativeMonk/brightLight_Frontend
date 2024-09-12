@@ -3,6 +3,9 @@ import styles from "../styles/AgriFoodPilotProgram.module.css";
 import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
+import Testimonials from "../sections/Testimonials";
+import RecentBlogs from "../sections/RecentBlogs";
+import FAQ from "../sections/FAQ";
 
 
 const AgriFoodPilotProgram = () => {
@@ -363,23 +366,22 @@ const AgriFoodPilotProgram = () => {
             precedents in cases we work on. This is why we have a high success
             rate.
           </p>
-          <a href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj"><button  className={styles.button} id="book-appointment">Book Appointment</button></a>
+          <a href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj"><button  className={styles.book_button} id="book-appointment">Book Appointment</button></a>
         </section>
 
         <section className={styles.testimonials} id="why-choose-us">
           <h2>Why Choose Us?</h2>
           <p>See what our clients have to say:</p>
-          <div className={styles.testimonialVideos}>
-            <div className={styles.videoContainer}>
-              <h3>Video Testimonials</h3>
-              {/* Add video embeds or links here */}
-            </div>
-          </div>
-          <div className={styles.testimonialTexts}>
-            <h3>Written Testimonials</h3>
-            {/* Add written testimonials here */}
-          </div>
         </section>
+      </div>
+      <div id="testimonials"> 
+        <Testimonials/>
+      </div>
+      <div id="faqs">
+        <FAQ/>
+      </div>
+      <div id="blogs">
+        <RecentBlogs/>
       </div>
 
       <Footer1/>

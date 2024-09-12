@@ -157,11 +157,13 @@
   .section h2 {
     font-size: 2em;
     color: #00273f;
+    text-align: center;
   }
   
   .section h3 {
     font-size: 1.5em;
     color: #00273f;
+    text-align: center;
   }
   
   .section p {
@@ -170,7 +172,7 @@
   }
   
   .benefits {
-    display: flex;
+    /* display: flex; */
     justify-content: space-between;
     margin-top: 20px;
   }
@@ -239,48 +241,34 @@
   
     .container h2 {
       color: #00273f;
-      margin-top: 30px;
-      margin-bottom: 20px;
+      margin-top: 50px;
+      margin-bottom: 80px;
+      text-align: center;
     }
   
     .container h3 {
-      margin-top: 30px;
-      margin-bottom: 20px;
+      margin-top: 50px;
+      margin-bottom: 80px;
+      text-align: center;
+      color: #00273f;
     }
     
-    .header h1 {
-      color: #e8c47c;
-      margin-top: 20px;
-      margin-bottom: 20px;
-    }
-    
-  
-    @media (max-width: 400px) {
-      .container h2 {
-        font-size: 20px;
-      }
-    
-      .header h1{
-        font-size: 26px;
-      }
-    }
-    
-  
-  .container h2 {
-    color: #00273f;
-    margin-top: 30px;
-    margin-bottom: 20px;
-  }
   
   .header h1 {
     color: #e8c47c;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
   }
   
   @media (max-width: 400px) {
     .container h2 {
       font-size: 20px;
+      margin-top: 10px;
+      margin-bottom: 40px;
+    }
+    .container h3{
+      margin-top: 40px;
+      margin-bottom: 20px;
     }
   
     .header h1 {

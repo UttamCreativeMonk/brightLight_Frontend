@@ -136,14 +136,17 @@
     box-sizing: border-box;
   }
   
-  .header {
+  .title {
     text-align: center;
     margin-bottom: 40px;
   }
   
-  .header h1 {
+  .title h1 {
     font-size: 2.5em;
     color: #e8c47c;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 80px;
   }
   
   .mainContent {
@@ -157,11 +160,17 @@
   .section h2 {
     font-size: 2em;
     color: #00273f;
+    margin-top: 50px;
+    margin-bottom: 80px;
+    text-align: center;
   }
   
   .section h3 {
     font-size: 1.5em;
     color: #00273f;
+    margin-top: 50px;
+    margin-bottom: 80px;
+    text-align: center;
   }
   
   .section p {
@@ -248,10 +257,10 @@
       margin-bottom: 20px;
     }
     
-    .header h1 {
+    .title h1 {
       color: #e8c47c;
-      margin-top: 20px;
-      margin-bottom: 20px;
+      margin-top: 50px;
+    margin-bottom: 80px;
     }
     
   
@@ -260,7 +269,7 @@
         font-size: 20px;
       }
     
-      .header h1{
+      .title h1{
         font-size: 26px;
       }
     }
@@ -268,14 +277,14 @@
   
   .container h2 {
     color: #00273f;
-    margin-top: 30px;
-    margin-bottom: 20px;
+    margin-top: 70px;
+    margin-bottom: 50px;
   }
   
   .container h1 {
     color: #e8c47c;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 50px;
+    margin-bottom: 80px;
   }
   
   @media (max-width: 400px) {

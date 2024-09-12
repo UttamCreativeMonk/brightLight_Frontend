@@ -186,24 +186,29 @@
 
 
   .container h2{
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 50px;
+    margin-bottom: 80px;
+    text-align: center;
   }
 
   .container h3{
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 50px;
+    margin-bottom: 70px;
+    text-align: center;
+    color: #00273f;
   }
   .heading1{
     margin-bottom: 30px;
+    text-align: center;
+    color: #00273f;
   }
 
   
   @media (max-width: 400px) {
     .container h2{
       font-size: 22px;
-      margin-top: 20px;
-      margin-bottom: 20px;
+      margin-top: 10px;
+      margin-bottom: 30px;
     }
 
     .container h3{

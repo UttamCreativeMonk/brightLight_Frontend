@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import styles from "../styles/InCaregiverProgramLP.module.css";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
+import Testimonials from "../sections/Testimonials";
+import RecentBlogs from "../sections/RecentBlogs";
+import FAQ from "../sections/FAQ";
+
 
 
 const InCaregiverProgramLP = () => {
@@ -324,29 +328,15 @@ const InCaregiverProgramLP = () => {
             to ensure the best possible outcome for your application.
           </p>
         </section>
-
-        <section className={styles.testimonials}>
-          <h2>Client Testimonials</h2>
-          <div className={styles.testimonialContainer}>
-            <div className={styles.videoTestimonials}>
-              <h3>Video Testimonials</h3>
-              {/* Video testimonials can be conditionally rendered based on backend settings */}
-              <div className={styles.testimonialContent}>
-                {/* Example placeholder for video testimonials */}
-                <p>Video testimonials will be displayed here.</p>
-              </div>
-            </div>
-
-            <div className={styles.writtenTestimonials}>
-              <h3>Written Testimonials</h3>
-              {/* Written testimonials can be conditionally rendered based on backend settings */}
-              <div className={styles.testimonialContent}>
-                {/* Example placeholder for written testimonials */}
-                <p>Written testimonials will be displayed here.</p>
-              </div>
-            </div>
-          </div>
-        </section>
+      </div>
+      <div id="testimonials"> 
+        <Testimonials/>
+      </div>
+      <div id="faqs">
+        <FAQ/>
+      </div>
+      <div id="blogs">
+        <RecentBlogs/>
       </div>
       <Footer1/>
     </>

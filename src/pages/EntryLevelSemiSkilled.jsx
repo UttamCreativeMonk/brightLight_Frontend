@@ -3,6 +3,9 @@ import styles from "../styles/EntryLevelSemiSkilled.module.css";
 import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
+import Testimonials from "../sections/Testimonials";
+import RecentBlogs from "../sections/RecentBlogs";
+import FAQ from "../sections/FAQ";
 
 
 const EntryLevelSemiSkilled = () => {
@@ -227,6 +230,16 @@ const EntryLevelSemiSkilled = () => {
           <li className={styles.listItem}>Case Law Utilization: Leveraging precedents from similar cases.</li>
           <li className={styles.listItem}>Full Support: From initial application to final PR approval.</li>
         </ul>
+      </div>
+
+      <div id="testimonials"> 
+        <Testimonials/>
+      </div>
+      <div id="faqs">
+        <FAQ/>
+      </div>
+      <div id="blogs">
+        <RecentBlogs/>
       </div>
       <Footer1/>
     </>

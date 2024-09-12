@@ -225,9 +225,20 @@
     background-color: #216b88;
   }
   
-  
+    
+  .lastSubtitle{
+    width: 1440px;
+    text-align: center;
+    margin: auto;
+    color: #00273f;
+    margin-top: 80px;
+    margin-bottom: -50px;
+  }
   
   @media (max-width: 1080px) {
+    .lastSubtitle{
+      width: 95%;
+    }
   
     .benefits{
       flex-direction: column;
@@ -264,23 +275,27 @@
         font-size: 26px;
       }
     }
-    
+  
   
   .container h2 {
     color: #00273f;
-    margin-top: 30px;
-    margin-bottom: 20px;
+    margin-top: 50px;
+    margin-bottom: 80px;
+    text-align: center;
   }
   
   .container h1 {
     color: #e8c47c;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 40px;
+    text-align: center;
+    margin-bottom: 40px;
   }
   
   @media (max-width: 400px) {
     .container h2 {
       font-size: 20px;
+      margin-top: 10px;
+      margin-bottom: 40px;
     }
   
     .container h1 {

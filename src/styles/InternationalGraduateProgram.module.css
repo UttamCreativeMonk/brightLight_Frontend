@@ -168,7 +168,7 @@
   } */
   
   .button {
-    background-color: #007bff;
+    background-color: #00273f;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -182,13 +182,15 @@
   }
 
   .section h2{
-    margin-top: 40px;
-    margin-bottom: 30px;
+    margin-top: 50px;
+    margin-bottom: 80px;
+    text-align: center;
   }
   
   .criteria h3{
     margin-top: 20px;
     margin-bottom: 20px;
+    /* text-align: center; */
   }
 .section li{
   margin-top: 24px;
@@ -207,6 +209,9 @@
   @media (max-width: 400px) {
     .section h2{
       font-size: 20px;
+      margin-top: 10px;
+      margin-bottom: 40px;
+      text-align: center;
     }
     .header h1{
       font-size: 20px;

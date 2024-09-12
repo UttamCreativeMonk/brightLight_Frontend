@@ -8,6 +8,7 @@ import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
 
 
+
 const BcPnp = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -295,7 +296,7 @@ const BcPnp = () => {
       <div id="testimonials"> 
         <Testimonials/>
       </div>
-      <div id="faq">
+      <div id="faqs">
         <FAQ/>
       </div>
       <div id="blogs">

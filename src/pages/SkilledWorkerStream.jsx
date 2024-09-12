@@ -3,6 +3,10 @@ import styles from "../styles/SkilledWorkerStream.module.css";
 import { Link } from "react-router-dom";
 import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
+import Testimonials from "../sections/Testimonials";
+import RecentBlogs from "../sections/RecentBlogs";
+import FAQ from "../sections/FAQ";
+
 
 const SkilledWorkerStream = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -353,7 +357,15 @@ const SkilledWorkerStream = () => {
           </p>
         </section>
       </div>
-
+      <div id="testimonials"> 
+        <Testimonials/>
+      </div>
+      <div id="faqs">
+        <FAQ/>
+      </div>
+      <div id="blogs">
+        <RecentBlogs/>
+      </div>
       <Footer1/>
     </>
   );

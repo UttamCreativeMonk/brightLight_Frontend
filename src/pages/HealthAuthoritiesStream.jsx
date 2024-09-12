@@ -3,6 +3,10 @@ import styles from "../styles/HealthAuthoritiesStream.module.css";
 import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
+import Testimonials from "../sections/Testimonials";
+import RecentBlogs from "../sections/RecentBlogs";
+import FAQ from "../sections/FAQ";
+
 
 
 const HealthAuthorityStream = () => {
@@ -49,6 +53,11 @@ const HealthAuthorityStream = () => {
               <p onClick={() => scrollToSection("book-appointment")}>
                 Book Appointment
               </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
+              <p onClick={() => scrollToSection("faqs")}>FAQs</p>
+              <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
           </div>
         </div>
@@ -143,6 +152,16 @@ const HealthAuthorityStream = () => {
         <Link to="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" className={styles.button}>Book Appointment</Link>
 
         <a href="/bcpnp-calculator" className={styles.button}>Calculate Your BCPNP Score</a>
+      </div>
+
+      <div id="testimonials"> 
+        <Testimonials/>
+      </div>
+      <div id="faqs">
+        <FAQ/>
+      </div>
+      <div id="blogs">
+        <RecentBlogs/>
       </div>
       <Footer1/>
     </>

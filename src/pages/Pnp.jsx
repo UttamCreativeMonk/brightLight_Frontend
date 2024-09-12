@@ -3,6 +3,10 @@ import styles from "../styles/Pnp.module.css";
 import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
+import Testimonials from "../sections/Testimonials";
+import RecentBlogs from "../sections/RecentBlogs";
+import FAQ from "../sections/FAQ";
+
 
 
 const Pnp = () => {
@@ -41,7 +45,6 @@ const Pnp = () => {
               <p onClick={() => scrollToSection("how-to-apply")}> How to Apply? </p>
               <p onClick={() => scrollToSection("refusal-reasons")}> Refusal Reasons </p>
               <p onClick={() => scrollToSection("book-appointment")}> Book Appointment</p>
-              <p onClick={() => scrollToSection("why-choose-us")}> Why Choose Us?</p>
               <p onClick={() => scrollToSection("testimonials")}> Testimonials </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
@@ -197,9 +200,16 @@ const Pnp = () => {
         >
           Book Appointment
         </button>
+      </div>
 
-        <h3 className={styles.heading3}>Why Choose Us</h3>
-        <p className={styles.paragraph}>Clients Testimonials.</p>
+      <div id="testimonials"> 
+        <Testimonials/>
+      </div>
+      <div id="faqs">
+        <FAQ/>
+      </div>
+      <div id="blogs">
+        <RecentBlogs/>
       </div>
       <Footer1/>
     </>
