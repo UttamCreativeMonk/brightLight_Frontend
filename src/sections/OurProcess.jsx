@@ -4,6 +4,8 @@ import GoldenPointer from "../assets/golden-pointer.png";
 import Runway from "../assets/runway.png";
 import Plane from "../assets/plane.png";
 import { useEffect, useState } from "react";
+import ogImage from "../assets/ogImage.png";
+import { Helmet } from "react-helmet-async";
 
 let OurProcess = () => {
   let [planePosition, setPlanePosition] = useState(0);
@@ -24,137 +26,162 @@ let OurProcess = () => {
   }, []);
 
   return (
-    <div className={styles.ourProcessSection}>
-      <div className={styles.fourCardParent}>
-        <div className={styles.fourCard}>
-          <div className={styles.fourCardHeading}>
-            <h1>{ourProcessData?.heading}</h1>
-            <p>{ourProcessData?.description}</p>
-          </div>
-          <div className={styles.fourCardImgParent}>
-            <div className={styles.fourCardImg}>
-              <div
-                className={`${styles.fourCardMain} ${styles.blueCard}`}
-                onMouseEnter={() => setPlanePosition(270)}
-              >
-                <div className={styles.pointerImageSection}>
-                  <img src={BluePointer} alt="err" />
-                  <p>1</p>
+    <>
+      <Helmet>
+        <title>Our Services - Brightlight Immigration</title>
+        <meta
+          name="description"
+          content="Explore the range of immigration services offered by Brightlight Immigration. From visa applications to legal advice, learn how our expertise can help you navigate your immigration journey effectively."
+        />
+        <meta
+          name="title"
+          property="og:title"
+          content="Our Services - Brightlight Immigration"
+        />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:type" content="image/png" />
+        <meta
+          property="og:description"
+          content="Discover the comprehensive immigration services provided by Brightlight Immigration. Get an overview of our offerings including visa processing, consultancy, and support tailored to your needs."
+        />
+        <meta
+          name="Keywords"
+          content="Immigration Services, Brightlight Immigration, Visa Applications, Immigration Consultancy, Immigration Support"
+        />
+      </Helmet>
+
+      <div className={styles.ourProcessSection}>
+        <div className={styles.fourCardParent}>
+          <div className={styles.fourCard}>
+            <div className={styles.fourCardHeading}>
+              <h1>{ourProcessData?.heading}</h1>
+              <p>{ourProcessData?.description}</p>
+            </div>
+            <div className={styles.fourCardImgParent}>
+              <div className={styles.fourCardImg}>
+                <div
+                  className={`${styles.fourCardMain} ${styles.blueCard}`}
+                  onMouseEnter={() => setPlanePosition(270)}
+                >
+                  <div className={styles.pointerImageSection}>
+                    <img src={BluePointer} alt="err" />
+                    <p>1</p>
+                  </div>
+                  <h3>{ourProcessData?.step1heading}</h3>
+                  <ul>
+                    <li>
+                      {ourProcessData?.step1p1 ? ourProcessData.step1p1 : null}
+                    </li>
+                    <li>
+                      {ourProcessData?.step1p2 ? ourProcessData.step1p2 : null}
+                    </li>
+                    <li>
+                      {ourProcessData?.step1p3 ? ourProcessData.step1p3 : null}
+                    </li>
+                    <li>
+                      {ourProcessData?.step1p4 ? ourProcessData.step1p4 : null}
+                    </li>
+                    <li>
+                      {ourProcessData?.step1p5 ? ourProcessData.step1p5 : null}
+                    </li>
+                  </ul>
                 </div>
-                <h3>{ourProcessData?.step1heading}</h3>
-                <ul>
-                  <li>
-                    {ourProcessData?.step1p1 ? ourProcessData.step1p1 : null}
-                  </li>
-                  <li>
-                    {ourProcessData?.step1p2 ? ourProcessData.step1p2 : null}
-                  </li>
-                  <li>
-                    {ourProcessData?.step1p3 ? ourProcessData.step1p3 : null}
-                  </li>
-                  <li>
-                    {ourProcessData?.step1p4 ? ourProcessData.step1p4 : null}
-                  </li>
-                  <li>
-                    {ourProcessData?.step1p5 ? ourProcessData.step1p5 : null}
-                  </li>
-                </ul>
-              </div>
-              <div
-                className={`${styles.fourCardMain} ${styles.goldenCard}`}
-                onMouseEnter={() => setPlanePosition(480)}
-              >
-                <div className={styles.pointerImageSection}>
-                  <img src={GoldenPointer} alt="err" />
-                  <p>2</p>
+                <div
+                  className={`${styles.fourCardMain} ${styles.goldenCard}`}
+                  onMouseEnter={() => setPlanePosition(480)}
+                >
+                  <div className={styles.pointerImageSection}>
+                    <img src={GoldenPointer} alt="err" />
+                    <p>2</p>
+                  </div>
+                  <h3>{ourProcessData?.step2heading}</h3>
+                  <ul>
+                    <li>
+                      {ourProcessData?.step2p1 ? ourProcessData.step2p1 : null}
+                    </li>
+                    <li>
+                      {ourProcessData?.step2p2 ? ourProcessData.step2p2 : null}
+                    </li>
+                    <li>
+                      {ourProcessData?.step2p3 ? ourProcessData.step2p3 : null}
+                    </li>
+                    <li>
+                      {ourProcessData?.step2p4 ? ourProcessData.step2p4 : null}
+                    </li>
+                    <li>
+                      {ourProcessData?.step2p5 ? ourProcessData.step2p5 : null}
+                    </li>
+                  </ul>
                 </div>
-                <h3>{ourProcessData?.step2heading}</h3>
-                <ul>
-                  <li>
-                    {ourProcessData?.step2p1 ? ourProcessData.step2p1 : null}
-                  </li>
-                  <li>
-                    {ourProcessData?.step2p2 ? ourProcessData.step2p2 : null}
-                  </li>
-                  <li>
-                    {ourProcessData?.step2p3 ? ourProcessData.step2p3 : null}
-                  </li>
-                  <li>
-                    {ourProcessData?.step2p4 ? ourProcessData.step2p4 : null}
-                  </li>
-                  <li>
-                    {ourProcessData?.step2p5 ? ourProcessData.step2p5 : null}
-                  </li>
-                </ul>
-              </div>
-              <div
-                className={`${styles.fourCardMain} ${styles.blueCard}`}
-                onMouseEnter={() => setPlanePosition(690)}
-              >
-                <div className={styles.pointerImageSection}>
-                  <img src={BluePointer} alt="err" />
-                  <p>3</p>
+                <div
+                  className={`${styles.fourCardMain} ${styles.blueCard}`}
+                  onMouseEnter={() => setPlanePosition(690)}
+                >
+                  <div className={styles.pointerImageSection}>
+                    <img src={BluePointer} alt="err" />
+                    <p>3</p>
+                  </div>
+                  <h3>{ourProcessData?.step3heading}</h3>
+                  <ul>
+                    <li>
+                      {ourProcessData?.step3p1 ? ourProcessData.step3p1 : null}
+                    </li>
+                    <li>
+                      {ourProcessData?.step3p2 ? ourProcessData.step3p2 : null}
+                    </li>
+                    <li>
+                      {ourProcessData?.step3p3 ? ourProcessData.step3p3 : null}
+                    </li>
+                    <li>
+                      {ourProcessData?.step3p4 ? ourProcessData.step3p4 : null}
+                    </li>
+                    <li>
+                      {ourProcessData?.step3p5 ? ourProcessData.step3p5 : null}
+                    </li>
+                  </ul>
                 </div>
-                <h3>{ourProcessData?.step3heading}</h3>
-                <ul>
-                  <li>
-                    {ourProcessData?.step3p1 ? ourProcessData.step3p1 : null}
-                  </li>
-                  <li>
-                    {ourProcessData?.step3p2 ? ourProcessData.step3p2 : null}
-                  </li>
-                  <li>
-                    {ourProcessData?.step3p3 ? ourProcessData.step3p3 : null}
-                  </li>
-                  <li>
-                    {ourProcessData?.step3p4 ? ourProcessData.step3p4 : null}
-                  </li>
-                  <li>
-                    {ourProcessData?.step3p5 ? ourProcessData.step3p5 : null}
-                  </li>
-                </ul>
-              </div>
-              <div
-                className={`${styles.fourCardMain} ${styles.goldenCard}`}
-                onMouseEnter={() => setPlanePosition(890)}
-              >
-                <div className={styles.pointerImageSection}>
-                  <img src={GoldenPointer} alt="err" />
-                  <p>4</p>
+                <div
+                  className={`${styles.fourCardMain} ${styles.goldenCard}`}
+                  onMouseEnter={() => setPlanePosition(890)}
+                >
+                  <div className={styles.pointerImageSection}>
+                    <img src={GoldenPointer} alt="err" />
+                    <p>4</p>
+                  </div>
+                  <h3>{ourProcessData?.step4heading}</h3>
+                  <ul>
+                    <li>
+                      {ourProcessData?.step4p1 ? ourProcessData.step4p1 : null}
+                    </li>
+                    <li>
+                      {ourProcessData?.step4p2 ? ourProcessData.step4p2 : null}
+                    </li>
+                    <li>
+                      {ourProcessData?.step4p3 ? ourProcessData.step4p3 : null}
+                    </li>
+                    <li>
+                      {ourProcessData?.step4p4 ? ourProcessData.step4p4 : null}
+                    </li>
+                    <li>
+                      {ourProcessData?.step4p5 ? ourProcessData.step4p5 : null}
+                    </li>
+                  </ul>
                 </div>
-                <h3>{ourProcessData?.step4heading}</h3>
-                <ul>
-                  <li>
-                    {ourProcessData?.step4p1 ? ourProcessData.step4p1 : null}
-                  </li>
-                  <li>
-                    {ourProcessData?.step4p2 ? ourProcessData.step4p2 : null}
-                  </li>
-                  <li>
-                    {ourProcessData?.step4p3 ? ourProcessData.step4p3 : null}
-                  </li>
-                  <li>
-                    {ourProcessData?.step4p4 ? ourProcessData.step4p4 : null}
-                  </li>
-                  <li>
-                    {ourProcessData?.step4p5 ? ourProcessData.step4p5 : null}
-                  </li>
-                </ul>
               </div>
             </div>
-          </div>
-          <div className={styles.runwayParent}>
-            <img src={Runway} alt="err" />
-            <img
-              src={Plane}
-              className={styles.plane}
-              alt="err"
-              style={{ left:`${planePosition}px` }}
-            />
+            <div className={styles.runwayParent}>
+              <img src={Runway} alt="err" />
+              <img
+                src={Plane}
+                className={styles.plane}
+                alt="err"
+                style={{ left: `${planePosition}px` }}
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

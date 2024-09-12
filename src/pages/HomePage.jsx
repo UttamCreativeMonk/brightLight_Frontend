@@ -15,6 +15,8 @@ import Footer1 from "../components/Footer1";
 import FAQ_Blue from "../sections/FAQ_Blue";
 import Testimonials_White from "../sections/Testimonials_White";
 import Blogs from "../sections/Blogs";
+import ogImage from "../assets/ogImage.png";
+import { Helmet } from "react-helmet-async";
 
 let HomePage = () => {
   let [newsSectionData, setNewsSectionData] = useState([]);
@@ -74,7 +76,6 @@ let HomePage = () => {
       {
         threshold: 0.3,
       }
-      
     );
 
     if (featuresSectionRef.current) {
@@ -125,7 +126,7 @@ let HomePage = () => {
             console.log(error);
           });
 
-          fetch("https://brightlight-node.onrender.com/loveneet")
+        fetch("https://brightlight-node.onrender.com/loveneet")
           .then((res) => {
             return res.json();
           })
@@ -354,6 +355,25 @@ let HomePage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Brightlight Immigration</title>
+        <meta
+          name="description"
+          content="BrightLight Immigration services is that we understand the value of correct and honest advice and how it can lead you to right path."
+        />
+        <meta
+          name="title"
+          property="og:title"
+          content="Brightlight Immigration"
+        />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:type" content="image/png" />
+        <meta
+          property="og:description"
+          content="BrightLight Immigration services is that we understand the value of correct and honest advice and how it can lead you to right path."
+        />
+        <meta name="Keywords" content="" />
+      </Helmet>
       <Navbar1 showBlue={true} />
       <div className={styles.bannerParent}>
         <div className={styles.bannerMain}>

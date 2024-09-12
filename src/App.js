@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import "./App.css";
 
+import { HelmetProvider } from "react-helmet-async";
+
 import AllRoutes from "./routes/AllRoutes";
 import Loader from "./components/Loader";
 import PrRenewal from "./pages/PrRenewal";
@@ -71,8 +73,6 @@ import PermanentResidencePathwaysCaregiversLP from "./pages/PermanentResidencePa
 import NewsDetails from "./pages/NewsDetails";
 import News from "./pages/News";
 
-
-
 function App() {
   // useEffect(()=>{
   //   window.scrollTo({
@@ -109,7 +109,7 @@ function App() {
       {/* <StudentVisa/>   */}
       {/* <InsideCanada/> */}
       {/* <ChangeCollegeProgram/> */}
-       {/* <VisitorToStudent/>  */}
+      {/* <VisitorToStudent/>  */}
       {/* <OutsideCananda/> */}
       {/* <NonSds/> */}
       {/* <Sds/> */}
@@ -154,7 +154,9 @@ function App() {
       {/* <News/> */}
 
       {/* <Loader /> */}
-      <AllRoutes />
+      <HelmetProvider>
+        <AllRoutes />
+      </HelmetProvider>
     </div>
   );
 }
