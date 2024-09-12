@@ -132,7 +132,7 @@ let Terms = () => {
             alt="Edit"
           />
         )}
-        <img src={deleteIcon} alt="Delete" />
+        
       </div>
     </div>
   );

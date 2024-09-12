@@ -134,7 +134,7 @@ let Services = () => {
             onClick={handleEditClick}
           />
         )}
-        <img src={deleteIcon} />
+        
       </div>
     </div>
   );

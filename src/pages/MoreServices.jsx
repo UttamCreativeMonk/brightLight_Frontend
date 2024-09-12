@@ -94,7 +94,7 @@ import Footer1 from "../components/Footer1";
       <div className={styles.bannerParent}>
         <div className={styles.bannerMain}>
           <div className={styles.bannerHeading}>
-            <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+            <h1>What we Do</h1>
             <p>
               Bright Light Immigration Inc. is a trusted immigration consulting
               firm based in Vancouver, serving Globally. We provide

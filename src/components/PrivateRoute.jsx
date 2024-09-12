@@ -12,7 +12,7 @@ const PrivateRoute = ({ element: Element }) => {
     if (isAuthenticated || isLoggedIn) {
       return <Element />;
     } else {
-      return <Navigate to="/login" state={{ from: location }} replace />;
+      return <Navigate to="/auth/dashboard/login/admin" state={{ from: location }} replace />;
     }
   };
 

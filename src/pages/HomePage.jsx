@@ -18,6 +18,7 @@ import Blogs from "../sections/Blogs";
 
 let HomePage = () => {
   let [newsSectionData, setNewsSectionData] = useState([]);
+  let [linkedinLink, setLinkedingLink] = useState([]);
   let [newsData, setNewsData] = useState([]);
   let [topSection, setTopSection] = useState([]);
   let [headline1Rest, setHeadline1Rest] = useState("");
@@ -73,6 +74,7 @@ let HomePage = () => {
       {
         threshold: 0.3,
       }
+      
     );
 
     if (featuresSectionRef.current) {
@@ -117,6 +119,19 @@ let HomePage = () => {
           .then((data) => {
             if (data) {
               setNewsSectionData(data[0]);
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+
+          fetch("https://brightlight-node.onrender.com/loveneet")
+          .then((res) => {
+            return res.json();
+          })
+          .then((data) => {
+            if (data) {
+              setLinkedingLink(data[0].linkedin);
             }
           })
           .catch((error) => {
@@ -439,7 +454,7 @@ let HomePage = () => {
       <div className={styles.bannerParent2}>
         <img src={loveneetBgImage?.image} />
         <div className={styles.bannerParent2ButtonDiv}>
-          <a href="#">
+          <a href={linkedinLink}>
             <button>
               <img src={LinkedinLogo} />
             </button>

@@ -112,7 +112,7 @@ let OurProcess = () => {
             alt="Edit"
           />
         )}
-        <img src={deleteIcon} alt="Delete" />
+        
       </div>
     </div>
   );

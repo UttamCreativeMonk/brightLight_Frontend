@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import editIcon from "../assets/edit.png";
 import deleteIcon from "../assets/delete.png";
 import update from "../assets/update.png";
+import swal from 'sweetalert2'
 
 let AboutAchievement = () => {
   let [sectionDataSingle, setSectionDataSingle] = useState({
@@ -142,7 +143,6 @@ let AboutAchievement = () => {
             alt="Edit"
           />
         )}
-        <img src={deleteIcon} alt="Delete" />
       </div>
     </div>
   );

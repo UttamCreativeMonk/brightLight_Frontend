@@ -34,8 +34,11 @@ import AllBlogs from "../admin_sections/AllBlogs";
 import AddBlog from "../admin_sections/AddBlog";
 import AllNews from "../admin_sections/AllNews";
 import AddNews from "../admin_sections/AddNews";
+import { useAuth } from "../context/AuthContext";
+
 
 let Admin = () => {
+  let { logout } = useAuth();
   let [showDropdown, setShowDropdown] = useState(false);
   let [activePage, setActivePage] = useState("home");
   let [activeSection, setActiveSection] = useState("home-top");
@@ -51,7 +54,10 @@ let Admin = () => {
   let handleSectionClick = (section) => {
     setActiveSection(section);
   };
-
+  let handleLogout = () => {
+    logout();
+    window.location.href = "/auth/dashboard/login/admin";
+  };
   return (
     <>
       <div className={styles.grayBg}>
@@ -64,7 +70,7 @@ let Admin = () => {
                 showDropdown ? styles.active : ""
               }`}
             >
-              <p>Log Out</p>
+           <p onClick={handleLogout}>Log Out</p>
             </div>
           </div>
         </div>

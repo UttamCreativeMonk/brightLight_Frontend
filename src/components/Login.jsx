@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "../styles/Login.module.css";
 import { useAuth } from "../context/AuthContext";
+import brightLightLogo from "../assets/ogImage.png";
 
 let predefinedUsername = "brightlight_immigration_user";
 let predefinedPassword = "ephgstsyvbwnuxeb";

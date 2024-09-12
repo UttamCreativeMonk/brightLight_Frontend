@@ -262,3 +262,21 @@
     width: 95%;
   }
 }
+
+@media all and (max-width: 750px) {
+  .dashboard {
+    flex-direction: column;
+    row-gap: 50px;
+  }
+
+  .leftPanel {
+    width: 100%;
+  }
+
+  .rightPanel {
+    width: 100%;
+  }
+}
+.leftPanel p {
+  text-align: center;
+}

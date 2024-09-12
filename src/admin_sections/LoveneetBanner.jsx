@@ -51,29 +51,6 @@ let LoveneetBanner = () => {
       });
   };
 
-  const handleDeleteClick = () => {
-    if (!sectionDataSingle._id) {
-      console.error("No ID found for delete.");
-      return;
-    }
-
-    fetch(
-      `https://brightlight-node.onrender.com/loveneetBg/${sectionDataSingle._id}`,
-      {
-        method: "DELETE",
-      }
-    )
-      .then((response) => response.json())
-      .then(() => {
-        alert("Delete Successful");
-        setSectionDataSingle({});
-      })
-      .catch((error) => {
-        alert("Delete Failed");
-        console.error("Error deleting data:", error);
-      });
-  };
-
   useEffect(() => {
     fetch("https://brightlight-node.onrender.com/loveneetBg")
       .then((res) => res.json())
@@ -99,12 +76,6 @@ let LoveneetBanner = () => {
               className={styles.updateIcon}
               onClick={handleUpdateClick}
               alt="Update"
-            />
-            <img
-              src={deleteIcon}
-              className={styles.deleteIcon}
-              onClick={handleDeleteClick}
-              alt="Delete"
             />
           </div>
         </>

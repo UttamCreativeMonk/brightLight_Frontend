@@ -140,7 +140,7 @@ let Achievements = () => {
             onClick={handleEditClick}
           />
         )}
-        <img src={deleteIcon} />
+        
       </div>
     </div>
   );

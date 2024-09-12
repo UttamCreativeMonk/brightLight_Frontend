@@ -147,7 +147,7 @@ let Testimonials = () => {
             onClick={handleEditClick}
           />
         )}
-        <img src={deleteIcon} />
+        
       </div>
     </div>
   );

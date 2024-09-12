@@ -51,29 +51,6 @@ let PillarsImg = () => {
       });
   };
 
-  const handleDeleteClick = () => {
-    if (!sectionDataSingle._id) {
-      console.error("No ID found for delete.");
-      return;
-    }
-
-    fetch(
-      `https://brightlight-node.onrender.com/ourPillarsSection/${sectionDataSingle._id}`,
-      {
-        method: "DELETE",
-      }
-    )
-      .then((response) => response.json())
-      .then(() => {
-        alert("Delete Successful");
-        setSectionDataSingle({});
-      })
-      .catch((error) => {
-        alert("Delete Failed");
-        console.error("Error deleting data:", error);
-      });
-  };
-
   useEffect(() => {
     fetch("https://brightlight-node.onrender.com/ourPillarsSection")
       .then((res) => res.json())
@@ -100,12 +77,7 @@ let PillarsImg = () => {
               onClick={handleUpdateClick}
               alt="Update"
             />
-            <img
-              src={deleteIcon}
-              className={styles.deleteIcon}
-              onClick={handleDeleteClick}
-              alt="Delete"
-            />
+            
           </div>
         </>
       ) : (
