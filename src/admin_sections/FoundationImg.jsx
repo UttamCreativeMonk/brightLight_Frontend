@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import editIcon from "../assets/edit.png";
 import deleteIcon from "../assets/delete.png";
 import update from "../assets/update.png";
-import { toast, Bounce } from "react-toastify";
+import {ToastContainer, toast, Bounce } from "react-toastify";
 
 let FoundationImg = () => {
   const [sectionDataSingle, setSectionDataSingle] = useState({});
@@ -75,6 +75,7 @@ let FoundationImg = () => {
 
   return (
     <div className={styles.singleSectionData}>
+      <ToastContainer/>
       <img className={styles.existingImage} src={sectionDataSingle.image} />
       {editMode ? (
         <>

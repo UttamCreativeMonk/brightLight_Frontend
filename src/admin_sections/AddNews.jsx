@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import editIcon from "../assets/edit.png";
 import deleteIcon from "../assets/delete.png";
 import update from "../assets/update.png";
-import { toast, Bounce } from "react-toastify";
+import {ToastContainer, toast, Bounce } from "react-toastify";
 
 const AddNews = () => {
   let notifySuccess = () => {
@@ -128,6 +128,7 @@ const AddNews = () => {
 
   return (
     <div className={styles.singleSectionData}>
+      <ToastContainer/>
       <input
         placeholder="News Heading"
         name="news_heading"

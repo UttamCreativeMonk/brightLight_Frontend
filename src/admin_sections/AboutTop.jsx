@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import editIcon from "../assets/edit.png";
 import deleteIcon from "../assets/delete.png";
 import update from "../assets/update.png";
-import { toast, Bounce } from "react-toastify";
+import {ToastContainer, toast, Bounce } from "react-toastify";
 
 let AboutTop = () => {
   let notifySuccess = () => {
@@ -117,6 +117,7 @@ let AboutTop = () => {
 
   return (
     <div className={styles.singleSectionData}>
+      <ToastContainer/>
       <input
         placeholder="Heading"
         name="heading"

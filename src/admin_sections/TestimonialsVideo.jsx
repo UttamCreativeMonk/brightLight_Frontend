@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import editIcon from "../assets/edit.png";
 import deleteIcon from "../assets/delete.png";
 import update from "../assets/update.png";
-import { toast, Bounce } from "react-toastify";
+import {ToastContainer, toast, Bounce } from "react-toastify";
 
 let TestimonialsVideo = () => {
   let notifySuccess = () => {
@@ -111,6 +111,7 @@ let TestimonialsVideo = () => {
 
   return (
     <div className={styles.singleSectionData}>
+      <ToastContainer/>
       {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
         <div key={num}>
           <input

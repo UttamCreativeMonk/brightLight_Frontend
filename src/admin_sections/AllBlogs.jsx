@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import editIcon from "../assets/edit.png";
 import deleteIcon from "../assets/delete.png";
 import update from "../assets/update.png";
-import { toast, Bounce } from "react-toastify";
+import {ToastContainer, toast, Bounce } from "react-toastify";
 
 const AllBlogs = () => {
   let notifySuccess = () => {
@@ -192,6 +192,7 @@ const AllBlogs = () => {
 
   return (
     <div className={styles.blogList}>
+ <ToastContainer/>
       {blogs.length === 0 ? (
         <p className={styles.noBlogsPara}>No blogs available</p>
       ) : (

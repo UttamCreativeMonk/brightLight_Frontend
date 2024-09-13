@@ -3,8 +3,7 @@ import { useState, useEffect } from "react";
 import editIcon from "../assets/edit.png";
 import deleteIcon from "../assets/delete.png";
 import update from "../assets/update.png";
-import { toast, Bounce } from "react-toastify";
-
+import {ToastContainer, toast, Bounce } from "react-toastify";
 let Features = () => {
   let notifySuccess = () => {
     toast.success("Success", {
@@ -127,6 +126,7 @@ let Features = () => {
 
   return (
     <div className={styles.singleSectionData}>
+      <ToastContainer/>
       {["feature1", "feature2", "feature3", "feature4"].map(
         (feature, index) => (
           <div key={index}>

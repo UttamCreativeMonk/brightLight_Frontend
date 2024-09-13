@@ -249,5 +249,8 @@
   .blogsTopSection img {
     width: 160px;
   }
+  .knowMoreAnchor {
+   left: 0px;
+  }
   
 }
