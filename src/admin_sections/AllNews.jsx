@@ -3,8 +3,64 @@ import { useState, useEffect } from "react";
 import editIcon from "../assets/edit.png";
 import deleteIcon from "../assets/delete.png";
 import update from "../assets/update.png";
+import { toast, Bounce } from "react-toastify";
 
 const AllNews = () => {
+  let notifySuccess = () => {
+    toast.success("Success", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      transition: Bounce,
+    });
+  };
+
+  let notifyError = () => {
+    toast.error("Request Rejected, Please try again later.", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      transition: Bounce,
+    });
+  };
+
+  let notifySize = () => {
+    toast.error("Large Image Size Recieved.", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      transition: Bounce,
+    });
+  };
+
+  let notifyDelete = () => {
+    toast.success("Success", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      transition: Bounce,
+    });
+  }
   const [blogs, setBlogs] = useState([]);
   const [editBlogId, setEditBlogId] = useState(null);
   const [newBlogData, setNewBlogData] = useState({
@@ -75,9 +131,18 @@ const AllNews = () => {
       },
       body: JSON.stringify(newBlogData),
     })
-      .then((response) => response.json())
+    .then((response) => {
+      if (response.status === 413) {
+        notifySize();
+        throw new Error("Payload too large");
+      } else if (!response.ok) {
+        notifyError();
+        throw new Error("Network response was not ok.");
+      }
+      return response.json();
+    })
       .then(() => {
-        alert("Update Successful");
+        notifySuccess();
         setEditBlogId(null);
         setNewBlogData({
           news_heading: "",
@@ -100,8 +165,7 @@ const AllNews = () => {
           });
       })
       .catch((error) => {
-        alert("Update Failed");
-        console.error("Error updating data:", error);
+        setEditMode(false);
       });
   };
 
@@ -111,8 +175,7 @@ const AllNews = () => {
       method: "DELETE",
     })
       .then(() => {
-        alert("Delete Successful");
-        // Refetch blogs
+        notifyDelete();
         fetch("https://brightlight-node.onrender.com/adding-blog")
           .then((res) => res.json())
           .then((data) => {
@@ -123,8 +186,7 @@ const AllNews = () => {
           });
       })
       .catch((error) => {
-        alert("Delete Failed");
-        console.error("Error deleting data:", error);
+        notifyError();
       });
   };
 

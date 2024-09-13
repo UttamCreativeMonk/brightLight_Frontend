@@ -450,7 +450,7 @@ const Navbar1 = (props) => {
                       <a href="/humanitarian-compassionate">H & C</a>
                       <a href="/orphan">Orphan</a>
                       <a href="/adoption">Adoption</a>
-                      {/* <a href="/spouse">Spouse</a> */}
+                      <a href="/spouse">Spouse</a>
                     </div>
                   </div>
 
@@ -546,7 +546,7 @@ const Navbar1 = (props) => {
               {/* CALCULATORS Menu with Dropdown */}
               <div className={styles.relativeDiv}>
                 <a
-                  href="#"
+                  href="/"
                   onMouseEnter={() => setShowCalculatorsDropdown(true)}
                   onMouseLeave={() => setShowCalculatorsDropdown(false)}
                 >
@@ -624,25 +624,21 @@ const Navbar1 = (props) => {
                 <div className={styles.dropdownContent}>
                   {/* Federal Skilled with Clickable Dropdown */}
                   <div className={styles.subDropdown}>
-                    <a
-                      href="/permanent-residency"
-                      onClick={toggleFederalSkilled}
-                    >
+                    <a href="#" onClick={toggleFederalSkilled}>
                       Permanent Residency
                       <span className={styles.arrow}>▼</span>
                     </a>
                     {isFederalSkilledOpen && (
                       <div className={styles.subDropdownContent}>
                         <div className={styles.subSubDropdown}>
-                          <a
-                            href="/express-entry"
-                            onClick={toggleFederalSkilledProgram}
-                          >
+                          <a href="/permanent-residency">Permanent Residency</a>
+                          <a href="#" onClick={toggleFederalSkilledProgram}>
                             Express Entry
                             <span className={styles.arrow}>▼</span>
                           </a>
                           {isFederalSkilledProgramOpen && (
                             <div className={styles.subSubDropdownContent}>
+                              <a href="/express-entry">Express Entry</a>
                               <a href="/federal-skilled-worker-program">FSWP</a>
                               <a href="/federal-skilled-trades-program">FSTP</a>
                               <a href="/canadian-experience-class">CEC</a>
@@ -651,15 +647,13 @@ const Navbar1 = (props) => {
                           )}
                         </div>
                         <div className={styles.subSubDropdown}>
-                          <a
-                            href="/pilot-programs"
-                            onClick={toggleFederalSkilledProgram}
-                          >
+                          <a href="#" onClick={toggleFederalSkilledProgram}>
                             Pilot Programs
                             <span className={styles.arrow}>▼</span>
                           </a>
                           {isFederalSkilledProgramOpen && (
                             <div className={styles.subSubDropdownContent}>
+                              <a href="/pilot-programs">Pilot Programs</a>
                               <a href="/agri-food-pilot-program">
                                 Low Wage Lmia
                               </a>
@@ -672,24 +666,25 @@ const Navbar1 = (props) => {
 
                   {/* Temporary Residency with Subheadings */}
                   <div className={styles.subDropdown}>
-                    <a
-                      href="/temporary-resident-permit-draft"
-                      onClick={toggleTemporaryResidency}
-                    >
+                    <a href="#" onClick={toggleTemporaryResidency}>
                       Temporary Residency
                       <span className={styles.arrow}>▼</span>
                     </a>
                     {isTemporaryResidencyOpen && (
                       <div className={styles.subDropdownContent}>
+                        <a href="/temporary-resident-permit-draft">
+                          Temporary Residency
+                        </a>
                         <a href="/super-visa">Super Visa</a>
 
                         <div className={styles.subSubDropdown}>
-                          <a href="/visitor-visa" onClick={toggleVisitorVisa}>
+                          <a href="#" onClick={toggleVisitorVisa}>
                             Visitor Visa
                             <span className={styles.arrow}>▼</span>
                           </a>
                           {isVisitorVisaOpen && (
                             <div className={styles.subSubDropdownContent}>
+                              <a href="/visitor-visa">Visitor Visa</a>
                               <a href="/business-visitor-visa">
                                 Business Visitor Visa
                               </a>
@@ -706,15 +701,15 @@ const Navbar1 = (props) => {
                         <a href="/flagpoling">Flagpoling</a>
 
                         <div className={styles.subSubDropdown}>
-                          <a
-                            href="/spousal-open-work-permit"
-                            onClick={toggleSpousalPermit}
-                          >
+                          <a href="#" onClick={toggleSpousalPermit}>
                             Spousal Permit
                             <span className={styles.arrow}>▼</span>
                           </a>
                           {isSpousalPermitOpen && (
                             <div className={styles.subSubDropdownContent}>
+                              <a href="/spousal-open-work-permit">
+                                Spousal Permit
+                              </a>
                               <a href="/common-law-partner-permanent">
                                 Spouse/Partner of Permanent Resident
                               </a>
@@ -730,22 +725,21 @@ const Navbar1 = (props) => {
 
                   {/* Student Visa with Subheadings */}
                   <div className={styles.subDropdown}>
-                    <a href="/student-visa" onClick={toggleStudentVisa}>
+                    <a href="#" onClick={toggleStudentVisa}>
                       Student Visa
                       <span className={styles.arrow}>▼</span>
                     </a>
                     {isStudentVisaOpen && (
                       <div className={styles.subDropdownContent}>
                         <div className={styles.subSubDropdown}>
-                          <a
-                            href="/outside-canada"
-                            onClick={toggleOutsideCanada}
-                          >
+                          <a href="/student-visa">Student Visa</a>
+                          <a href="#" onClick={toggleOutsideCanada}>
                             Outside Canada
                             <span className={styles.arrow}>▼</span>
                           </a>
                           {isOutsideCanadaOpen && (
                             <div className={styles.subSubDropdownContent}>
+                              <a href="/outside-canada">Outside Canada</a>
                               <a href="/sds">SDS</a>
                               <a href="/non-sds">NON SDS</a>
                             </div>
@@ -753,12 +747,13 @@ const Navbar1 = (props) => {
                         </div>
 
                         <div className={styles.subSubDropdown}>
-                          <a href="/inside-canada" onClick={toggleInsideCanada}>
+                          <a href="#" onClick={toggleInsideCanada}>
                             Inside Canada
                             <span className={styles.arrow}>▼</span>
                           </a>
                           {isInsideCanadaOpen && (
                             <div className={styles.subSubDropdownContent}>
+                              <a href="/inside-canada">Inside Canada</a>
                               <a href="/change-college-program">
                                 Change of College Program
                               </a>
@@ -776,32 +771,29 @@ const Navbar1 = (props) => {
 
                   {/* Family Reunification with Subheadings */}
                   <div className={styles.subDropdown}>
-                    <a
-                      href="/family-reunification-sponsorship"
-                      onClick={toggleFamilyReunification}
-                    >
+                    <a href="#" onClick={toggleFamilyReunification}>
                       Family Reunification
                       <span className={styles.arrow}>▼</span>
                     </a>
                     {isFamilyReunificationOpen && (
                       <div className={styles.subDropdownContent}>
+                        <a href="/family-reunification-sponsorship">
+                          Family Reunification
+                        </a>
                         <a href="/spousal-open-work-permit">Spousal Permit</a>
                         <a href="/dependent-children">Dependent Children</a>
                         <a href="/humanitarian-compassionate">H & C</a>
                         <a href="/orphan">Orphan</a>
                         <a href="/adoption">Adoption</a>
-                        {/* <a href="/spouse">Spouse</a> */}
+                        <a href="/spouse">Spouse</a>
                       </div>
                     )}
                   </div>
                 </div>
               </div>
 
-              <div
-                className={styles.subDropdown}
-                // style={{ marginBottom: "20px", marginTop: "10px" }}
-              >
-                <a href="/calculators" onClick={toggleCalculators}>
+              <div className={styles.subDropdown}>
+                <a href="#" onClick={toggleCalculators}>
                   CALCULATORS
                   <span className={styles.arrow} style={{ marginLeft: "73px" }}>
                     ▼
@@ -809,6 +801,7 @@ const Navbar1 = (props) => {
                 </a>
                 {isCalculatorsOpen && (
                   <div className={styles.subDropdownContent}>
+                    <a href="/calculators">CALCULATORS</a>
                     <a href="/Federal-Skilled">FSW Calculator</a>
                     <a href="/clb-ilets-calculator">CLB ILET's Calculator</a>
                     <a href="/bcpnp-calculator">BCPNP Calculator</a>

@@ -3,8 +3,50 @@ import { useState, useEffect } from "react";
 import editIcon from "../assets/edit.png";
 import deleteIcon from "../assets/delete.png";
 import update from "../assets/update.png";
+import { toast, Bounce } from "react-toastify";
 
 const AddBlog = () => {
+  let notifySuccess = () => {
+    toast.success("Success", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      transition: Bounce,
+    });
+  };
+
+  let notifyError = () => {
+    toast.error("Request Rejected, Please try again later.", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      transition: Bounce,
+    });
+  };
+
+  let notifySize = () => {
+    toast.error("Large Image Size Recieved.", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      transition: Bounce,
+    });
+  };
   const [sectionDataSingle, setSectionDataSingle] = useState({
     blog_heading: "",
     image: "",
@@ -55,10 +97,18 @@ const AddBlog = () => {
       method: "POST",
       body: formData,
     })
-      .then((response) => response.json())
+    .then((response) => {
+      if (response.status === 413) {
+        notifySize();
+        throw new Error("Payload too large");
+      } else if (!response.ok) {
+        notifyError();
+        throw new Error("Network response was not ok.");
+      }
+      return response.json();
+    })
       .then((data) => {
-        console.log("Add Response:", data);
-        alert("Blog Added Successfully");
+        notifySuccess();
         setEditMode(false);
         // Optionally clear the form
         setSectionDataSingle({
@@ -73,8 +123,7 @@ const AddBlog = () => {
         });
       })
       .catch((error) => {
-        console.error("Error adding data:", error);
-        alert("Add Failed");
+        notifyError();
       });
   };
 

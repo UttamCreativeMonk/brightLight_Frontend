@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import editIcon from "../assets/edit.png";
 import deleteIcon from "../assets/delete.png";
 import update from "../assets/update.png";
+import { toast, Bounce } from "react-toastify";
 
 let FoundationImg = () => {
   const [sectionDataSingle, setSectionDataSingle] = useState({});
@@ -40,14 +41,22 @@ let FoundationImg = () => {
         body: formData,
       }
     )
-      .then((response) => response.json())
+    .then((response) => {
+      if (response.status === 413) {
+        notifySize();
+        throw new Error("Payload too large");
+      } else if (!response.ok) {
+        notifyError();
+        throw new Error("Network response was not ok.");
+      }
+      return response.json();
+    })
       .then(() => {
-        alert("Update Successful");
+        notifySuccess();
         setEditMode(false);
       })
       .catch((error) => {
-        alert("Update Failed");
-        console.error("Error updating data:", error);
+        notifyError();
       });
   };
 

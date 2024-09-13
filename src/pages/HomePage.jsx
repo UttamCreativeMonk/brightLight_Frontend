@@ -657,7 +657,7 @@ let HomePage = () => {
               className={`${styles.aspectsCard} ${styles.fadeFromLeft}`}
               ref={(el) => (aspectsCardRefs.current[0] = el)}
             >
-              <img src={achiementsData?.achievement1SVG} alt="Achievement 1" />
+              <img src={achiementsData?.achievement1SVG}  />
               <h1>{achiementsData?.achievement1Numbers}</h1>
               <p>{achiementsData?.achievement1Heading}</p>
             </div>
@@ -665,7 +665,7 @@ let HomePage = () => {
               className={`${styles.aspectsCard} ${styles.fadeFromBottom}`}
               ref={(el) => (aspectsCardRefs.current[1] = el)}
             >
-              <img src={achiementsData?.achievement2SVG} alt="Achievement 2" />
+              <img src={achiementsData?.achievement2SVG} />
               <h1>{achiementsData?.achievement2Numbers}</h1>
               <p>{achiementsData?.achievement2Heading}</p>
             </div>
@@ -673,7 +673,7 @@ let HomePage = () => {
               className={`${styles.aspectsCard} ${styles.fadeFromRight}`}
               ref={(el) => (aspectsCardRefs.current[2] = el)}
             >
-              <img src={achiementsData?.achievement3SVG} alt="Achievement 3" />
+              <img src={achiementsData?.achievement3SVG}  />
               <h1>{achiementsData?.achievement3Numbers}</h1>
               <p>{achiementsData?.achievement3Heading}</p>
             </div>

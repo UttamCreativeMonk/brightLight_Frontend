@@ -72,6 +72,8 @@ import PathwaysForCaregiver from "./pages/PathwaysForCaregiver";
 import PermanentResidencePathwaysCaregiversLP from "./pages/PermanentResidencePathwaysCaregiversLP";
 import NewsDetails from "./pages/NewsDetails";
 import News from "./pages/News";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   // useEffect(()=>{
@@ -83,6 +85,7 @@ function App() {
 
   return (
     <div className="App">
+      <ToastContainer />
       {/* <PrRenewal/> */}
       {/* <Citizenship/> */}
       {/* <Reconsideration/> */}
