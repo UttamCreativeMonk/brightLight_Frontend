@@ -7,7 +7,8 @@ import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
 import RecentBlogs from "../sections/RecentBlogs";
 import Testimonials from "../sections/Testimonials";
-
+import ogImage from "../assets/ogImage.png";
+import { Helmet } from "react-helmet-async";
 const PermanentResidency = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -24,6 +25,29 @@ const PermanentResidency = () => {
 
   return (
     <>
+    <Helmet>
+  <title>Permanent Residency in Canada - Brightlight Immigration</title>
+  <meta
+    name="description"
+    content="Explore how Brightlight Immigration can help you achieve permanent residency in Canada. Learn about the process, requirements, and how our expert team provides guidance and support throughout your immigration journey."
+  />
+  <meta
+    name="title"
+    property="og:title"
+    content="Permanent Residency in Canada - Brightlight Immigration"
+  />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:type" content="image/png" />
+  <meta
+    property="og:description"
+    content="Discover the steps to obtaining permanent residency in Canada with Brightlight Immigration. Our dedicated team offers expert advice and support to help you navigate the immigration process successfully."
+  />
+  <meta
+    name="Keywords"
+    content="Permanent Residency, Canada, Immigration Services, Brightlight Immigration, Immigration Process"
+  />
+</Helmet>
+
       <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>

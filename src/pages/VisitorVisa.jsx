@@ -6,6 +6,8 @@ import Footer1 from "../components/Footer1";
 import Testimonials from "../sections/Testimonials";
 import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
+import ogImage from "../assets/ogImage.png";
+import { Helmet } from "react-helmet-async";
 
 const VisitorVisa = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -23,6 +25,29 @@ const VisitorVisa = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Visitor Visa - Brightlight Immigration</title>
+        <meta
+          name="description"
+          content="Learn how Brightlight Immigration can assist you with obtaining a Visitor Visa. Discover the application process, eligibility criteria, and how our expert team provides guidance and support to ensure a smooth visa application experience."
+        />
+        <meta
+          name="title"
+          property="og:title"
+          content="Visitor Visa - Brightlight Immigration"
+        />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:type" content="image/png" />
+        <meta
+          property="og:description"
+          content="Find out how Brightlight Immigration can help you secure a Visitor Visa. Our dedicated team offers expert advice and support throughout the application process to help you visit your desired destination with ease."
+        />
+        <meta
+          name="Keywords"
+          content="Visitor Visa, Immigration Services, Brightlight Immigration, Visa Application, Travel Visa, Immigration Support"
+        />
+      </Helmet>
+
       <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>

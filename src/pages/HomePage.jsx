@@ -252,9 +252,7 @@ let HomePage = () => {
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        console.log("Element: ", entry.target); // Debugging line
         if (entry.isIntersecting) {
-          console.log("Element is visible"); // Debugging line
           entry.target.classList.add(styles.visible);
           observer.unobserve(entry.target);
         }
@@ -374,6 +372,7 @@ let HomePage = () => {
         />
         <meta name="Keywords" content="" />
       </Helmet>
+
       <Navbar1 showBlue={true} />
       <div className={styles.bannerParent}>
         <div className={styles.bannerMain}>

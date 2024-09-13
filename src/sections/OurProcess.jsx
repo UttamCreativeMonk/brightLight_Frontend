@@ -4,8 +4,6 @@ import GoldenPointer from "../assets/golden-pointer.png";
 import Runway from "../assets/runway.png";
 import Plane from "../assets/plane.png";
 import { useEffect, useState } from "react";
-import ogImage from "../assets/ogImage.png";
-import { Helmet } from "react-helmet-async";
 
 let OurProcess = () => {
   let [planePosition, setPlanePosition] = useState(0);
@@ -27,28 +25,7 @@ let OurProcess = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Our Services - Brightlight Immigration</title>
-        <meta
-          name="description"
-          content="Explore the range of immigration services offered by Brightlight Immigration. From visa applications to legal advice, learn how our expertise can help you navigate your immigration journey effectively."
-        />
-        <meta
-          name="title"
-          property="og:title"
-          content="Our Services - Brightlight Immigration"
-        />
-        <meta property="og:image" content={ogImage} />
-        <meta property="og:image:type" content="image/png" />
-        <meta
-          property="og:description"
-          content="Discover the comprehensive immigration services provided by Brightlight Immigration. Get an overview of our offerings including visa processing, consultancy, and support tailored to your needs."
-        />
-        <meta
-          name="Keywords"
-          content="Immigration Services, Brightlight Immigration, Visa Applications, Immigration Consultancy, Immigration Support"
-        />
-      </Helmet>
+
 
       <div className={styles.ourProcessSection}>
         <div className={styles.fourCardParent}>

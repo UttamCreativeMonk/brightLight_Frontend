@@ -6,8 +6,8 @@ import Footer1 from "../components/Footer1";
 import Testimonials from "../sections/Testimonials";
 import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
-
-
+import ogImage from "../assets/ogImage.png";
+import { Helmet } from "react-helmet-async";
 
 const BcPnp = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -25,6 +25,32 @@ const BcPnp = () => {
 
   return (
     <>
+      <Helmet>
+        <title>
+          BC PNP - British Columbia Provincial Nominee Program - Brightlight
+          Immigration
+        </title>
+        <meta
+          name="description"
+          content="Discover how Brightlight Immigration can assist you with the British Columbia Provincial Nominee Program (BC PNP). Learn about eligibility, application procedures, and how our experienced team can guide you through every step of the BC PNP process."
+        />
+        <meta
+          name="title"
+          property="og:title"
+          content="BC PNP - British Columbia Provincial Nominee Program - Brightlight Immigration"
+        />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:type" content="image/png" />
+        <meta
+          property="og:description"
+          content="Explore the British Columbia Provincial Nominee Program (BC PNP) with Brightlight Immigration. Our expert team provides comprehensive support and advice to help you navigate the BC PNP application process and achieve your immigration goals."
+        />
+        <meta
+          name="Keywords"
+          content="BC PNP, British Columbia Provincial Nominee Program, Immigration Services, Brightlight Immigration, BC PNP Application, Immigration Support"
+        />
+      </Helmet>
+
       <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
@@ -40,13 +66,29 @@ const BcPnp = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}> About the Program</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                {" "}
+                About the Program
+              </p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons </p>
-              <p onClick={() => scrollToSection("book-appointment")}> Book Appointment </p>
-              <p onClick={() => scrollToSection("why-choose-us")}> Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}> Testimonials</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>
+                Refusal Reasons{" "}
+              </p>
+              <p onClick={() => scrollToSection("book-appointment")}>
+                {" "}
+                Book Appointment{" "}
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                {" "}
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                {" "}
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -73,7 +115,7 @@ const BcPnp = () => {
           Canada.
         </p>
 
-        <h2 className={styles.subtitle} >
+        <h2 className={styles.subtitle}>
           Streams under British Columbia Provincial Nominee Program (BC PNP)
         </h2>
         <div className={styles.streams}>
@@ -100,7 +142,9 @@ const BcPnp = () => {
           </a>
         </div>
 
-        <h2 className={styles.subtitle} id="eligibility">Eligibility Criteria</h2>
+        <h2 className={styles.subtitle} id="eligibility">
+          Eligibility Criteria
+        </h2>
         <h3 className={styles.subheading}>Candidate’s Criteria</h3>
         <p className={styles.description}>
           Please review the eligibility criteria for each stream, as it varies
@@ -153,7 +197,7 @@ const BcPnp = () => {
               </li>
             </ul>
           </li>
-          <li className={styles.listItem} >
+          <li className={styles.listItem}>
             Operational Requirements:
             <ul className={styles.nestedList}>
               <li className={styles.nestedListItem}>
@@ -229,7 +273,9 @@ const BcPnp = () => {
           </li>
         </ul>
 
-        <h2 className={styles.subtitle} id="how-to-apply">How to Apply for BCPNP?</h2>
+        <h2 className={styles.subtitle} id="how-to-apply">
+          How to Apply for BCPNP?
+        </h2>
         <ul className={styles.list}>
           <li className={styles.listItem}>
             Create an online profile and provide information about your skills,
@@ -254,7 +300,7 @@ const BcPnp = () => {
           </li>
         </ul>
 
-        <h2 className={styles.subtitle} id="refusal-reasons" >
+        <h2 className={styles.subtitle} id="refusal-reasons">
           Common Reasons for Refusals in BCPNP
         </h2>
         <ul className={styles.list}>
@@ -271,7 +317,9 @@ const BcPnp = () => {
           </li>
         </ul>
 
-        <h2 className={styles.subtitle} id="why-choose-us">Still Not Sure?</h2>
+        <h2 className={styles.subtitle} id="why-choose-us">
+          Still Not Sure?
+        </h2>
         <p className={styles.description}>
           If you have received a refusal for any of the reasons mentioned above,
           do not worry. With over a decade of experience, we specialize in
@@ -287,22 +335,26 @@ const BcPnp = () => {
           At Brightlight Immigration, we have a dedicated team of visa
           application specialists who can assist you from the start of the
           application process all the way to obtaining your visa.{" "}
-          <a id="book-appointment" href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" className={styles.button}>
+          <a
+            id="book-appointment"
+            href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj"
+            className={styles.button}
+          >
             Book Appointment
           </a>
         </p>
       </div>
 
-      <div id="testimonials"> 
-        <Testimonials/>
+      <div id="testimonials">
+        <Testimonials />
       </div>
       <div id="faqs">
-        <FAQ/>
+        <FAQ />
       </div>
       <div id="blogs">
-        <RecentBlogs/>
+        <RecentBlogs />
       </div>
-      <Footer1/>
+      <Footer1 />
     </>
   );
 };

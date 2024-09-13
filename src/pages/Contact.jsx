@@ -62,21 +62,21 @@ let Contact = () => {
         <div className={styles.contactForm}>
           <div className={styles.inputBarFlexSection}>
             <div className={styles.inputBar}>
-              <input type="text" placeholder="Your Name" />
+              <input type="text" placeholder="Your Name" required />
               <span>*</span>
             </div>
             <div className={styles.inputBar}>
-              <input type="text" placeholder="Your Name" />
+              <input type="email" placeholder="Email Address" required />
               <span>*</span>
             </div>
           </div>
           <div className={styles.inputBarFlexSection}>
             <div className={styles.inputBar}>
-              <input type="text" placeholder="Your Name" />
+              <input type="number" placeholder="Phone Number" required />
               <span>*</span>
             </div>
             <div className={styles.inputBar}>
-              <input type="text" placeholder="Your Name" />
+              <input type="text" placeholder="Area of Intrest" required />
               <span>*</span>
             </div>
           </div>
@@ -107,8 +107,8 @@ let Contact = () => {
           </button>
           <div className={styles.agreeMessageDiv}>
             <span>By clicking, you agree to our</span>{" "}
-            <a href="/">Terms & Conditions</a> ,{" "}
-            <a href="/">Privacy and Data Protection Policy</a>
+            <a href="/terms-&-conditions">Terms & Conditions</a> ,{" "}
+            <a href="/privacy-policy">Privacy and Policy</a>
           </div>
         </div>
       </div>

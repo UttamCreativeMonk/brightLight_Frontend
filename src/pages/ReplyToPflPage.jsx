@@ -5,7 +5,8 @@ import Footer1 from "../components/Footer1";
 import Testimonials from "../sections/Testimonials";
 import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
-
+import ogImage from "../assets/ogImage.png";
+import { Helmet } from "react-helmet-async";
 
 const ReplyToPflPage = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -23,7 +24,30 @@ const ReplyToPflPage = () => {
 
   return (
     <>
-    <Navbar1/>
+      <Helmet>
+        <title>Reply to PFL - Brightlight Immigration</title>
+        <meta
+          name="description"
+          content="Learn how Brightlight Immigration can assist you with replying to a Procedural Fairness Letter (PFL). Discover the process, importance, and how our expert team provides support to ensure a well-prepared and effective response."
+        />
+        <meta
+          name="title"
+          property="og:title"
+          content="Reply to PFL - Brightlight Immigration"
+        />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:type" content="image/png" />
+        <meta
+          property="og:description"
+          content="Find out how Brightlight Immigration can help you address a Procedural Fairness Letter (PFL). Our experienced team offers comprehensive support to guide you through crafting a strong response and navigating the immigration process."
+        />
+        <meta
+          name="Keywords"
+          content="Reply to PFL, Procedural Fairness Letter, Immigration Services, Brightlight Immigration, PFL Response, Immigration Support, Legal Advice"
+        />
+      </Helmet>
+
+      <Navbar1 />
       <div className={styles.bannerParent}>
         <header className={styles.header}>
           <h1>Procedural Fairness Letter (PFL)</h1>
@@ -44,7 +68,9 @@ const ReplyToPflPage = () => {
               <p onClick={() => scrollToSection("about-program")}>
                 About the Program
               </p>
-              <p onClick={() => scrollToSection("recieved-a-pfl")}>Recieved a PFL</p>
+              <p onClick={() => scrollToSection("recieved-a-pfl")}>
+                Recieved a PFL
+              </p>
               <p onClick={() => scrollToSection("how-to-apply")}>
                 How to Apply?
               </p>
@@ -127,8 +153,6 @@ const ReplyToPflPage = () => {
             </p>
           </section>
 
-
-
           <section className={styles.section}>
             <h2>Clients Testimonials</h2>
             {/* Add video and written testimonials here */}
@@ -136,17 +160,17 @@ const ReplyToPflPage = () => {
         </main>
       </div>
 
-      <div id="testimonials"> 
-        <Testimonials/>
+      <div id="testimonials">
+        <Testimonials />
       </div>
       <div id="faqs">
-        <FAQ/>
+        <FAQ />
       </div>
       <div id="blogs">
-        <RecentBlogs/>
+        <RecentBlogs />
       </div>
 
-      <Footer1/>
+      <Footer1 />
     </>
   );
 };

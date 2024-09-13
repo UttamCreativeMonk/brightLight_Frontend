@@ -51,6 +51,8 @@
 
 .upperFooter button:hover {
   opacity: 0.8;
+  transform: translateY(-3px); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .upperFooterLowerText {
@@ -159,6 +161,13 @@
 .rightFooter {
   width: 30%;
   text-align: right;
+  transition: 0.3 and color ease-in-out;
+}
+.rightFooter a:hover{
+  color: #ead9b0;
+  text-decoration: none;
+  transform: translateY(-2px); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .socialMediaFooter {
@@ -183,6 +192,15 @@
   color: white;
   font-size: 13px;
   font-weight: 600;
+  transition: 0.3 and color ease-in-out;
+}
+
+.privacyDiv a:hover{
+  color: #ead9b0;
+  text-decoration: none;
+  transform: translateY(-2px); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
 }
 
 @media all and (max-width: 1500px) {

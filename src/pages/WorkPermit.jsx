@@ -6,6 +6,8 @@ import Footer1 from "../components/Footer1";
 import Testimonials from "../sections/Testimonials";
 import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
+import ogImage from "../assets/ogImage.png";
+import { Helmet } from "react-helmet-async";
 
 let WorkPermit = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -23,6 +25,29 @@ let WorkPermit = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Work Permit - Brightlight Immigration</title>
+        <meta
+          name="description"
+          content="Discover how Brightlight Immigration can help you secure a Work Permit. Learn about the application process, eligibility criteria, and how our expert team provides guidance and support to help you work legally in your desired location."
+        />
+        <meta
+          name="title"
+          property="og:title"
+          content="Work Permit - Brightlight Immigration"
+        />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:type" content="image/png" />
+        <meta
+          property="og:description"
+          content="Find out how Brightlight Immigration can assist with obtaining a Work Permit. Our dedicated team offers comprehensive support and expert advice to navigate the application process and secure your work authorization."
+        />
+        <meta
+          name="Keywords"
+          content="Work Permit, Immigration Services, Brightlight Immigration, Work Visa, Employment Authorization, Visa Application, Immigration Support"
+        />
+      </Helmet>
+
       <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>

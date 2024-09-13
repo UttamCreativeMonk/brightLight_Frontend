@@ -3,7 +3,10 @@ import styles from "../styles/MoreServices.module.css";
 import Navbar1 from "../components/Navbar1";
 import homeLocationImg from "../assets/homeLocation.png";
 import graduatedStudentImg from "../assets/graduatedStudent.png";
+import TemporaryImg from "../assets/more-services-temporary-house.png";
 import parentsImg from "../assets/parents.png";
+import PrRenewalImg from "../assets/more-services-PR-renewal.png";
+import CitizenshipImg from "../assets/more-services-citizenship.png";
 import workPermitImg from "../assets/workPermit.png";
 import Footer1 from "../components/Footer1";
 
@@ -24,7 +27,7 @@ import Footer1 from "../components/Footer1";
     },
     "Temporary Residence": {
       text: " The Temporary Resident Permit (TRP) is a legal document issued by Citizenship and Immigration Canada (CIC) that allows individuals who  are inadmissible to Canada to temporarily visit and stay in the country under very specific circumstances.",
-      image: "/path-to-another-image.png",
+      image: TemporaryImg,
       subcategories: ["Visitor Visa", "Work Permit"],
       dropdowns: {
         "Study Permit":"As parents, we all aspire to provide our children with the best possible foundation for their future. Canada offers a unique and  enriching educational experience that can set your child on a path   to success and global citizenship. A study permit for minors allows  a child under the age of 18 to attend any type of educational institution in Canada, including elementary schools, secondary schools, vocational schools, colleges, and universities. Minors who  want to study in Canada for more than 6 months must apply for a      study permit before they enter the country.",
@@ -47,10 +50,10 @@ import Footer1 from "../components/Footer1";
       image: parentsImg,
       subcategories: ["Family Reunification & Sponsorship", "Work Permit"],
       dropdowns: {
-        "Study Permit": "Details about the Study Permit.",
+        "Spousal Permit": "With a Spousal Open Work Permit (SOWP), your spouse can accompany you in Canada, allowing them to flourish professionally and contribute to your family's well-being.",
         "Family Reunification & Sponsorship":
-          "Details about the Family Reunification & Sponsorship.",
-        "Work Permit": "Details about the Work Permit.",
+          "  Canada is renowned for its welcoming spirit and commitment to diversity, making it a haven for immigrants looking for a better    life. When it comes to family reunification, Canada has established a comprehensive program that allows Canadian citizens and permanent  residents to bring their loved ones to the country.",
+        "H & C": "Unlike traditional immigration programs that prioritize factors likeeducation, work experience, and language proficiency, the Humanitarian and Compassionate (H&C) program focuses on the human element, acknowledging that life's challenges can be tough and unpredictable.",
       },
     },
     "Work Permit": {
@@ -63,20 +66,15 @@ import Footer1 from "../components/Footer1";
     },
 
     "PR Renewal": {
-      text: "PR Renewal.",
-      image: "/path-to-PR Renewal.png",
-      subcategories: ["PR Renewal"],
-      dropdowns: {
-        "PR Renewal": "You have lived in Canada for at least 2 years out of the last 5 years.",
-      },
+      text: "You have lived in Canada for at least 2 years out of the last 5 years.You can apply for renewal up to 90 days before your current PR card expires. You shouldn’t be under an active removal order by a Canadian immigration judge. If you have already become a Canadian citizen, you do not need to renew your PR card.",
+      image: PrRenewalImg,
+      subcategories: [""],
+ 
     },
     "Citizenship": {
-      text: "Citizenship.",
-      image: "/path-to-Citizenship.png",
-      subcategories: ["Citizenship"],
-      dropdowns: {
-        Citizenship: "After completing your 3 years (or staying physically in Canada for at least 1,095 days) of PR journey in Canada, you are now  officially going to become a Canadian Citizen. Congratulations.  All you are left to do is complete the Canadian Citizenship  application through IRCC and enjoy the highest form of legal   status in Canada. This is the last step for you to become a   Canadian.",
-      },
+      text: "After completing your 3 years (or staying physically in Canada for at least 1,095 days) of PR journey in Canada, you are now  officially going to become a Canadian Citizen. Congratulations.  All you are left to do is complete the Canadian Citizenship  application through IRCC and enjoy the highest form of legal   status in Canada. This is the last step for you to become a   Canadian.",
+      image: CitizenshipImg,
+      subcategories: [""],
     },
   };
 

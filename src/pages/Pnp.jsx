@@ -142,9 +142,9 @@ const Pnp = () => {
             programs and eligibility criteria, so it is important to research
             your options carefully. Or, for a stress free solution, let us
             handle your case for you.{" "}
-            <a href="/pnp" className={styles.link}>
+            {/* <a href="/pnp" className={styles.link}>
               Click here
-            </a>
+            </a> */}
           </li>
           <li className={styles.listItem}>
             Submit all of the required documents for that particular province.

@@ -5,6 +5,8 @@ import Footer1 from "../components/Footer1";
 import Testimonials from "../sections/Testimonials";
 import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
+import ogImage from "../assets/ogImage.png";
+import { Helmet } from "react-helmet-async";
 
 const StudentVisa = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -22,6 +24,29 @@ const StudentVisa = () => {
 
   return (
     <>
+    <Helmet>
+  <title>Study Visa - Brightlight Immigration</title>
+  <meta
+    name="description"
+    content="Find out how Brightlight Immigration can assist you with obtaining a Study Visa. Explore the application process, eligibility requirements, and how our expert team provides guidance and support to help you achieve your educational goals abroad."
+  />
+  <meta
+    name="title"
+    property="og:title"
+    content="Study Visa - Brightlight Immigration"
+  />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:type" content="image/png" />
+  <meta
+    property="og:description"
+    content="Learn how Brightlight Immigration can help you secure a Study Visa. Our dedicated team offers comprehensive support and expert advice to navigate the application process and ensure a successful educational journey overseas."
+  />
+  <meta
+    name="Keywords"
+    content="Study Visa, Immigration Services, Brightlight Immigration, Visa Application, Student Visa, Educational Visa, Immigration Support"
+  />
+</Helmet>
+
       <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>

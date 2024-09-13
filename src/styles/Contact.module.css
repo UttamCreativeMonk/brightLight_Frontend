@@ -5,11 +5,11 @@
   color: #132f46;
   margin-top: 50px;
   margin-bottom: 50px;
-  padding-top: 120px;
+  padding-top: 200px;
 }
 
 .contactTopSection h1 {
-  margin-bottom: 30px;
+  margin-bottom: 80px;
   font-size: 50px;
 }
 
@@ -38,7 +38,7 @@
   background-position: center center;
   background-size: cover;
   object-fit: cover;
-  padding: 100px 0px;
+  padding: 80px 0px;
 }
 
 .contactMap {
@@ -489,6 +489,9 @@
 @media all and (max-width: 400px) {
   .contactTopSection {
     width: 300px;
+  }
+  .contactTopSection h1{
+    margin-bottom: 40px;
   }
   .contactForm {
     width: 300px;

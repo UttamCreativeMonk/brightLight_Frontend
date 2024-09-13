@@ -799,9 +799,24 @@
   justify-content: space-between;
 }
 
+@keyframes pulse-border {
+  0% {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+  50% {
+    box-shadow: 0 0 15px #ffffff; /* Adjust color and size */
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
 .sourceHeadingParent img {
   width: 330px;
+  border: 3px solid transparent; 
+  animation: pulse-border 3s infinite;
 }
+
 
 .sourceHeadingParent h1 {
   color: white;

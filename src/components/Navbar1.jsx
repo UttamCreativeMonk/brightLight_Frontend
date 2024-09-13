@@ -450,7 +450,7 @@ const Navbar1 = (props) => {
                       <a href="/humanitarian-compassionate">H & C</a>
                       <a href="/orphan">Orphan</a>
                       <a href="/adoption">Adoption</a>
-                      <a href="/spouse">Spouse</a>
+                      {/* <a href="/spouse">Spouse</a> */}
                     </div>
                   </div>
 
@@ -546,7 +546,7 @@ const Navbar1 = (props) => {
               {/* CALCULATORS Menu with Dropdown */}
               <div className={styles.relativeDiv}>
                 <a
-                  href="/"
+                  href="#"
                   onMouseEnter={() => setShowCalculatorsDropdown(true)}
                   onMouseLeave={() => setShowCalculatorsDropdown(false)}
                 >
@@ -790,7 +790,7 @@ const Navbar1 = (props) => {
                         <a href="/humanitarian-compassionate">H & C</a>
                         <a href="/orphan">Orphan</a>
                         <a href="/adoption">Adoption</a>
-                        <a href="/spouse">Spouse</a>
+                        {/* <a href="/spouse">Spouse</a> */}
                       </div>
                     )}
                   </div>
