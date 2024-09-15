@@ -272,15 +272,15 @@ let Testimonials_White = () => {
                     <iframe
                       width="560"
                       height="315"
-                      src={`https://www.youtube.com/embed/${videoId1}`}
+                      src={`https://www.youtube.com/embed/${videoId3}`}
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
-                      title={videosData.video1name}
+                      title={videosData.video3name}
                     ></iframe>
                   ) : (
                     <p>Invalid video URL</p>
                   )}
-                  <p>{videosData.video1name}</p>
+                  <p>{videosData.video3name}</p>
                 </SwiperSlide>
               ) : null}
 

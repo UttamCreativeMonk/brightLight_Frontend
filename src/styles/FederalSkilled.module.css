@@ -161,7 +161,10 @@
 
 .pointsSection {
   margin: 50px auto;
-  width: 32%;
+  width: 350px;
+  position: sticky;
+  top: 100px;
+  left: 20%;
 }
 
 .pointContainer {
@@ -189,6 +192,13 @@
 .points h1 {
   font-size: 60px;
   color: white;
+}
+
+@media all and (max-width: 1200px){
+  .pointsSection {
+    margin: 50px auto;
+    width: 300px;
+  }
 }
 
 @media all and (max-width: 1440px) {

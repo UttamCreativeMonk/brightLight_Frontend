@@ -13,6 +13,7 @@ const PaginationTable = () => {
     direction: "ascending",
   });
   const itemsPerPage = 30;
+  const [filter, setFilter] = useState(""); 
 
   useEffect(() => {
     fetch(
@@ -30,6 +31,10 @@ const PaginationTable = () => {
   }, []);
 
   // Sorting logic
+  const filteredData = sortedData.filter((item) =>
+    item.drawName.toLowerCase().includes(filter.toLowerCase())
+  );
+
   const sortedData = React.useMemo(() => {
     let sortableItems = [...data];
     if (sortConfig !== null) {
@@ -60,7 +65,7 @@ const PaginationTable = () => {
   // Calculate the data to display on the current page
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = sortedData.slice(indexOfFirstItem, indexOfLastItem);
+  const currentItems = filteredData.slice(indexOfFirstItem, indexOfLastItem);
 
   // Change page
   const handlePageChange = (newPage) => {
@@ -77,10 +82,20 @@ const PaginationTable = () => {
   };
 
   // Create page numbers
-  const pageNumbers = Math.ceil(sortedData.length / itemsPerPage);
+  const pageNumbers = Math.ceil(filteredData.length / itemsPerPage);
 
   return (
     <div className={styles.tableContainer}>
+      <div className={styles.filterContainer}>
+          <p>Filter Data based on Search:</p>
+          <input
+            type="text"
+            placeholder="Filter by Round Type"
+            value={filter}
+            onChange={(e) => setFilter(e.target.value)}
+            className={styles.filterInput}
+          />
+        </div>
       <table className={styles.table}>
         <thead>
           <tr>

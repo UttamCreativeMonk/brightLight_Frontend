@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import editIcon from "../assets/edit.png";
 import deleteIcon from "../assets/delete.png";
 import update from "../assets/update.png";
-import {ToastContainer, toast, Bounce } from "react-toastify";
+import { ToastContainer, toast, Bounce } from "react-toastify";
 
 let Testimonials = () => {
   let notifySuccess = () => {
@@ -47,23 +47,18 @@ let Testimonials = () => {
       transition: Bounce,
     });
   };
+
   let [sectionDataSingle, setSectionDataSingle] = useState({});
   let [editMode, setEditMode] = useState(false);
 
   const handleInputChange = (e) => {
     if (e.target.type === "file") {
       const file = e.target.files[0];
-      const reader = new FileReader();
-
-      reader.onloadend = () => {
-        setSectionDataSingle({
-          ...sectionDataSingle,
-          [e.target.name]: reader.result, // Convert file to Base64 and store in state
-        });
-      };
-
       if (file) {
-        reader.readAsDataURL(file);
+        setSectionDataSingle((prevData) => ({
+          ...prevData,
+          [e.target.name]: file,
+        }));
       }
     } else {
       setSectionDataSingle({
@@ -82,36 +77,39 @@ let Testimonials = () => {
       console.error("No ID found for update.");
       return;
     }
-  
+
+    const formData = new FormData();
+    for (const key in sectionDataSingle) {
+      formData.append(key, sectionDataSingle[key]);
+    }
+
     fetch(
       `https://brightlight-node.onrender.com/testimonials-section/${sectionDataSingle._id}`,
       {
-        method: "PATCH", // Change from PUT to PATCH
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(sectionDataSingle),
+        method: "PATCH",
+        body: formData,
       }
     )
-    .then((response) => {
-      if (response.status === 413) {
-        notifySize();
-        throw new Error("Payload too large");
-      } else if (!response.ok) {
+      .then((response) => {
+        console.log(response);
+        if (response.status === 413) {
+          notifySize();
+          throw new Error("Payload too large");
+        } else if (!response.ok) {
+          notifyError();
+          throw new Error("Network response was not ok.");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        notifySuccess();
+        setEditMode(false);
+      })
+      .catch((error) => {
         notifyError();
-        throw new Error("Network response was not ok.");
-      }
-      return response.json();
-    })
-    .then((data) => {
-      notifySuccess();
-      setEditMode(false);
-    })
-    .catch((error) => {
-      notifyError();
-    });
+      });
   };
-  
 
   useEffect(() => {
     fetch("https://brightlight-node.onrender.com/testimonials-section")
@@ -128,7 +126,7 @@ let Testimonials = () => {
 
   return (
     <div className={styles.singleSectionData}>
-      <ToastContainer/>
+      <ToastContainer />
       <div>
         <input
           placeholder="Heading"
@@ -198,7 +196,6 @@ let Testimonials = () => {
             onClick={handleEditClick}
           />
         )}
-        
       </div>
     </div>
   );

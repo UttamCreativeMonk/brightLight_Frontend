@@ -69,6 +69,27 @@ const Search = () => {
 
   const hasResults = servicesData.length > 0 || blogsData.length > 0 || newsData.length > 0;
 
+  const getLink = (title) => {
+    switch (title) {
+      case "Permanent Residency":
+        return "/permanent-residency";
+      case "BCPNP":
+        return "/bc-pnp";
+      case "Visitor Visa":
+        return "/visitor-visa";
+      case "Study Visa":
+        return "/student-visa";
+      case "Family Sponsorship":
+        return "/family-reunification-sponsorship";
+      case "Work Permit":
+        return "/work-permit";
+      case "PFL":
+        return "/reply-to-pfl-page";
+      default:
+        return "#";
+    }
+  };
+
   return (
     <>
       <Navbar1 showBlue={true} />
@@ -82,9 +103,9 @@ const Search = () => {
             {servicesData.length > 0 && (
               <div className={styles.servicesSection}>
                 <h2>Services</h2>
-                <div className={styles.servicesGridSection}>
+                <div className={styles.servicesGridSection} >
                   {servicesData.map((item, index) => (
-                    <div key={index}>
+                    <div key={index} onClick={() => (window.location.href = getLink(item.name))}>
                       {item.name && <h3>{item.name}</h3>}
                       {item.description && <p>{truncateDescription(item.description)}</p>}
                     </div>

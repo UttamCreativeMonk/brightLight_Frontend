@@ -131,6 +131,24 @@
   font-size: 14px;
 }
 
+.filterContainer {
+  margin: 20px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.filterContainer input {
+  border: 1px solid rgb(202, 202, 202);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.filterContainer input:focus {
+  outline: none;
+}
+
 @media all and (max-width: 1450px) {
   .bannerMain {
     width: 95%;

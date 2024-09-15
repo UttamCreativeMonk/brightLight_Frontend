@@ -4,13 +4,63 @@ import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
 import ogImage from "../assets/ogImage.png";
 import { Helmet } from "react-helmet-async";
+import { ToastContainer, toast, Bounce } from "react-toastify";
 
 let Contact = () => {
-  let [data, setData] = useState([]);
   let [metaData, setMetaData] = useState([]);
+
+  let notifySuccess = () => {
+    toast.success("Success", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      transition: Bounce,
+    });
+  };
+
+  let notifyError = () => {
+    toast.error("Request Rejected, Please try again later.", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      transition: Bounce,
+    });
+  };
+  let [data, setData] = useState([]);
   let [activeDiv, setActiveDiv] = useState("insideCanada");
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    interest: "",
+    message: "",
+  });
+
   useEffect(() => {
     setActiveDiv("insideCanada");
+    fetch("https://brightlight-node.onrender.com/contact-page")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data) {
+          setData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+  useEffect(() => {
     fetch("https://brightlight-node.onrender.com/contact-meta")
     .then((res) => {
       return res.json();
@@ -26,24 +76,61 @@ let Contact = () => {
   }, []);
 
   let handleActiveDiv = () => {
-    if (activeDiv == "insideCanada") {
-      setActiveDiv("outsideCanada");
-    } else {
-      setActiveDiv("insideCanada");
+    setActiveDiv(
+      activeDiv === "insideCanada" ? "outsideCanada" : "insideCanada"
+    );
+  };
+
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch(
+        "https://brightlight-node.onrender.com/send-email",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            from: formData.email,
+            to: "info@brightlightimmigration.ca",
+            subject: "Contact Form Submission",
+            text: `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nArea of Interest: ${formData.interest}\nMessage: ${formData.message}`,
+          }),
+        }
+      );
+
+      const result = await response.json();
+      if (response.ok) {
+        notifySuccess();
+      } else {
+        notifyError();
+      }
+    } catch (error) {
+      notifyError();
     }
   };
+
   return (
     <>
- <Helmet>
+      <ToastContainer />
+      <Helmet>
         <title>
-          {metaData.metaTitle
+          {metaData?.metaTitle
             ? metaData?.metaTitle
             : "Brightlight Immigration"}
         </title>
         <meta
           name="description"
           content={
-            metaData.metaDesc
+            metaData?.metaDesc
               ? metaData?.metaDesc
               : "Learn about Brightlight Immigration, our mission, values, and the dedicated team behind our immigration services. We are committed to providing honest and accurate advice to guide you through your immigration journey."
           }
@@ -52,7 +139,7 @@ let Contact = () => {
           name="title"
           property="og:title"
           content={
-            metaData.metaOgTitle
+        metaData?.metaOgTitle
               ? metaData?.metaOgTitle
               : " Brightlight Immigration"
           }
@@ -62,7 +149,7 @@ let Contact = () => {
         <meta
           property="og:description"
           content={
-            metaData.metaOgDesc
+            metaData?.metaOgDesc
               ? metaData?.metaOgDesc
               : "Discover the story behind Brightlight Immigration, our commitment to providing honest and accurate advice, and how our team can assist you with your immigration needs."
           }
@@ -70,7 +157,7 @@ let Contact = () => {
         <meta
           name="Keywords"
           content={
-            metaData.metaKeywords
+            metaData?.metaKeywords
               ? metaData?.metaKeywords
               : "About Us, Brightlight Immigration, Immigration Services, Mission, Team"
           }
@@ -85,51 +172,91 @@ let Contact = () => {
       </div>
       <div className={styles.contactMapSection}>
         <div className={styles.contactForm}>
-          <div className={styles.inputBarFlexSection}>
-            <div className={styles.inputBar}>
-              <input type="text" placeholder="Your Name" required />
+          <form onSubmit={handleSubmit}>
+            <div className={styles.inputBarFlexSection}>
+              <div className={styles.inputBar}>
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
+                />
+                <span>*</span>
+              </div>
+              <div className={styles.inputBar}>
+                <input
+                  type="email"
+                  placeholder="Email Address"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                />
+                <span>*</span>
+              </div>
+            </div>
+            <div className={styles.inputBarFlexSection}>
+              <div className={styles.inputBar}>
+                <input
+                  type="number"
+                  placeholder="Phone Number"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  required
+                />
+                <span>*</span>
+              </div>
+              <div className={styles.inputBar}>
+                <input
+                  type="text"
+                  placeholder="Area of Interest"
+                  name="interest"
+                  value={formData.interest}
+                  onChange={handleInputChange}
+                  required
+                />
+                <span>*</span>
+              </div>
+            </div>
+            <div className={styles.formCategory}>
+              <div
+                onClick={handleActiveDiv}
+                className={
+                  activeDiv === "insideCanada"
+                    ? styles.active
+                    : styles.notActive
+                }
+              >
+                <p>Inside Canada</p>
+              </div>
+              <div
+                onClick={handleActiveDiv}
+                className={
+                  activeDiv === "outsideCanada"
+                    ? styles.active
+                    : styles.notActive
+                }
+              >
+                <p>Outside Canada</p>
+              </div>
+            </div>
+            <div className={styles.contactMessageBox}>
+              <textarea
+                placeholder="How can we help ?"
+                name="message"
+                value={formData.message}
+                onChange={handleInputChange}
+                required
+              />
               <span>*</span>
             </div>
-            <div className={styles.inputBar}>
-              <input type="email" placeholder="Email Address" required />
-              <span>*</span>
-            </div>
-          </div>
-          <div className={styles.inputBarFlexSection}>
-            <div className={styles.inputBar}>
-              <input type="number" placeholder="Phone Number" required />
-              <span>*</span>
-            </div>
-            <div className={styles.inputBar}>
-              <input type="text" placeholder="Area of Intrest" required />
-              <span>*</span>
-            </div>
-          </div>
-          <div className={styles.formCategory}>
-            <div
-              onClick={handleActiveDiv}
-              className={
-                activeDiv == "insideCanada" ? styles.active : styles.notActive
-              }
-            >
-              <p>Inside Canada</p>
-            </div>
-            <div
-              onClick={handleActiveDiv}
-              className={
-                activeDiv == "outsideCanada" ? styles.active : styles.notActive
-              }
-            >
-              <p>Outside Canada</p>
-            </div>
-          </div>
-          <div className={styles.contactMessageBox}>
-            <textarea placeholder="How can we help ?" />
-            <span>*</span>
-          </div>
-          <button className={styles.sendMessageButton}>
-            Send Your Message
-          </button>
+            <button type="submit" className={styles.sendMessageButton}>
+              Send Your Message
+            </button>
+          </form>
           <div className={styles.agreeMessageDiv}>
             <span>By clicking, you agree to our</span>{" "}
             <a href="/terms-&-conditions">Terms & Conditions</a> ,{" "}

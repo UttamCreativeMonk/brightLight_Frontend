@@ -16,6 +16,7 @@ const PreviousDrawHistory = () => {
     key: "drawNumber",
     direction: "ascending",
   });
+  const [filter, setFilter] = useState(""); // State for filter
   const itemsPerPage = 30;
 
   useEffect(() => {
@@ -61,10 +62,15 @@ const PreviousDrawHistory = () => {
     return sortableItems;
   }, [data, sortConfig]);
 
+  // Filtered data
+  const filteredData = sortedData.filter((item) =>
+    item.drawName.toLowerCase().includes(filter.toLowerCase())
+  );
+
   // Calculate the data to display on the current page
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = sortedData.slice(indexOfFirstItem, indexOfLastItem);
+  const currentItems = filteredData.slice(indexOfFirstItem, indexOfLastItem);
 
   // Change page
   const handlePageChange = (newPage) => {
@@ -79,7 +85,8 @@ const PreviousDrawHistory = () => {
     }
     setSortConfig({ key, direction });
   };
-  const pageNumbers = Math.ceil(sortedData.length / itemsPerPage);
+
+  const pageNumbers = Math.ceil(filteredData.length / itemsPerPage);
 
   return (
     <>
@@ -91,6 +98,17 @@ const PreviousDrawHistory = () => {
       </div>
 
       <div className={styles.tableContainer}>
+        <div className={styles.filterContainer}>
+          <p>Filter Data based on Search:</p>
+          <input
+            type="text"
+            placeholder="Filter by Round Type"
+            value={filter}
+            onChange={(e) => setFilter(e.target.value)}
+            className={styles.filterInput}
+          />
+        </div>
+
         <table className={styles.table}>
           <thead>
             <tr>

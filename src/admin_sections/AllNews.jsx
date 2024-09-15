@@ -4,7 +4,7 @@ import editIcon from "../assets/edit.png";
 import deleteIcon from "../assets/delete.png";
 import update from "../assets/update.png";
 
-import {ToastContainer, toast, Bounce } from "react-toastify";
+import { ToastContainer, toast, Bounce } from "react-toastify";
 
 const AllNews = () => {
   let notifySuccess = () => {
@@ -61,7 +61,7 @@ const AllNews = () => {
       theme: "colored",
       transition: Bounce,
     });
-  }
+  };
   const [blogs, setBlogs] = useState([]);
   const [editBlogId, setEditBlogId] = useState(null);
   const [newBlogData, setNewBlogData] = useState({
@@ -89,26 +89,19 @@ const AllNews = () => {
 
   // Handle input change
   const handleInputChange = (e) => {
-    setNewBlogData({
-      ...newBlogData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  // Handle image change
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    const reader = new FileReader();
-
-    reader.onloadend = () => {
+    if (e.target.type === "file") {
+      const file = e.target.files[0];
+      if (file) {
+        setNewBlogData((prevData) => ({
+          ...prevData,
+          [e.target.name]: file,
+        }));
+      }
+    } else {
       setNewBlogData({
         ...newBlogData,
-        image: reader.result, // Convert file to Base64 and store in state
+        [e.target.name]: e.target.value,
       });
-    };
-
-    if (file) {
-      reader.readAsDataURL(file);
     }
   };
 
@@ -125,23 +118,29 @@ const AllNews = () => {
       return;
     }
 
-    fetch(`https://brightlight-node.onrender.com/news/${editBlogId}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newBlogData),
-    })
-    .then((response) => {
-      if (response.status === 413) {
-        notifySize();
-        throw new Error("Payload too large");
-      } else if (!response.ok) {
-        notifyError();
-        throw new Error("Network response was not ok.");
+    const formData = new FormData();
+    for (const key in newBlogData) {
+      if (key === "image" && newBlogData[key]) {
+        formData.append("image", newBlogData[key]);
+      } else {
+        formData.append(key, newBlogData[key]);
       }
-      return response.json();
+    }
+
+    fetch(`https://brightlight-node.onrender.com/news/${editBlogId}`, {
+      method: "PATCH",
+      body: formData,
     })
+      .then((response) => {
+        if (response.status === 413) {
+          notifySize();
+          throw new Error("Payload too large");
+        } else if (!response.ok) {
+          notifyError();
+          throw new Error("Network response was not ok.");
+        }
+        return response.json();
+      })
       .then(() => {
         notifySuccess();
         setEditBlogId(null);
@@ -164,9 +163,6 @@ const AllNews = () => {
           .catch((error) => {
             console.log("Error fetching data:", error);
           });
-      })
-      .catch((error) => {
-      notifyError();
       });
   };
 
@@ -193,7 +189,7 @@ const AllNews = () => {
 
   return (
     <div className={styles.blogList}>
-      <ToastContainer/>
+      <ToastContainer />
       {blogs.length === 0 ? (
         <p className={styles.noBlogsPara}>No News available</p>
       ) : (
@@ -247,7 +243,8 @@ const AllNews = () => {
                 <input
                   type="file"
                   accept="image/*"
-                  onChange={handleImageChange}
+                  onChange={handleInputChange}
+                  name="image"
                 />
                 {newBlogData.image && (
                   <img

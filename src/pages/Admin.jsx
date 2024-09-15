@@ -35,7 +35,23 @@ import AddBlog from "../admin_sections/AddBlog";
 import AllNews from "../admin_sections/AllNews";
 import AddNews from "../admin_sections/AddNews";
 import { useAuth } from "../context/AuthContext";
-
+import HomeMeta from "../admin_sections/HomeMeta";
+import AboutMeta from "../admin_sections/AboutMeta";
+import ContactMeta from "../admin_sections/ContactMeta";
+import NewsMeta from "../admin_sections/NewsMeta";
+import BlogsMeta from "../admin_sections/BlogsMeta";
+import FederalSkilled from "../admin_sections/Federal";
+import FederalMeta from "../admin_sections/FederalMeta";
+import TransportOccupation from "../admin_sections/Transport";
+import TransportMeta from "../admin_sections/TransportMeta";
+import CategoryMeta from "../admin_sections/CategoryMeta";
+import CategoryBased from "../admin_sections/Category";
+import CLB from "../admin_sections/CLB";
+import CLBMeta from "../admin_sections/CLBMeta";
+import BCPNP from "../admin_sections/BCPNP";
+import BCPNPMeta from "../admin_sections/BCPNPMeta";
+import ExpressEntry from "../admin_sections/Express";
+import ExpressMeta from "../admin_sections/ExpressMeta";
 
 let Admin = () => {
   let { logout } = useAuth();
@@ -70,7 +86,7 @@ let Admin = () => {
                 showDropdown ? styles.active : ""
               }`}
             >
-           <p onClick={handleLogout}>Log Out</p>
+              <p onClick={handleLogout}>Log Out</p>
             </div>
           </div>
         </div>
@@ -132,6 +148,60 @@ let Admin = () => {
               onClick={() => handlePageClick("news")}
             >
               <p>News</p>
+            </div>
+
+            <div
+              className={`${styles.page} ${
+                activePage === "federal" ? styles.activePage : ""
+              }`}
+              onClick={() => handlePageClick("federal")}
+            >
+              <p>Federal Skilled</p>
+            </div>
+
+            <div
+              className={`${styles.page} ${
+                activePage === "transport" ? styles.activePage : ""
+              }`}
+              onClick={() => handlePageClick("transport")}
+            >
+              <p>Transport Occupation</p>
+            </div>
+
+            <div
+              className={`${styles.page} ${
+                activePage === "category" ? styles.activePage : ""
+              }`}
+              onClick={() => handlePageClick("category")}
+            >
+              <p>Category Based Draws</p>
+            </div>
+
+            <div
+              className={`${styles.page} ${
+                activePage === "clb" ? styles.activePage : ""
+              }`}
+              onClick={() => handlePageClick("clb")}
+            >
+              <p>CLB Calculator</p>
+            </div>
+
+            <div
+              className={`${styles.page} ${
+                activePage === "bcpnp" ? styles.activePage : ""
+              }`}
+              onClick={() => handlePageClick("bcpnp")}
+            >
+              <p>BCPNP Calculator</p>
+            </div>
+
+            <div
+              className={`${styles.page} ${
+                activePage === "express" ? styles.activePage : ""
+              }`}
+              onClick={() => handlePageClick("express")}
+            >
+              <p>Express Entry</p>
             </div>
           </div>
           <div className={styles.rightPanel}>
@@ -231,6 +301,15 @@ let Admin = () => {
                 >
                   Blogs Section
                 </div>
+
+                <div
+                  className={`${styles.section} ${
+                    activeSection === "section12" ? styles.activeSection : ""
+                  }`}
+                  onClick={() => handleSectionClick("section12")}
+                >
+                  Page Meta
+                </div>
               </div>
             )}
             {activePage === "home" && activeSection === "home-top" && (
@@ -273,6 +352,10 @@ let Admin = () => {
 
             {activePage === "home" && activeSection === "section11" && (
               <Blogs />
+            )}
+
+            {activePage === "home" && activeSection === "section12" && (
+              <HomeMeta />
             )}
 
             {activePage === "about" && (
@@ -415,6 +498,15 @@ let Admin = () => {
                 >
                   Pillar Image
                 </div>
+
+                <div
+                  className={`${styles.section} ${
+                    activeSection === "pageMeta" ? styles.activeSection : ""
+                  }`}
+                  onClick={() => handleSectionClick("pageMeta")}
+                >
+                  Page Meta
+                </div>
               </div>
             )}
 
@@ -468,6 +560,10 @@ let Admin = () => {
               <PillarsImg />
             )}
 
+            {activePage === "about" && activeSection === "pageMeta" && (
+              <AboutMeta />
+            )}
+
             {activePage === "contact" && (
               <div className={styles.sections}>
                 <div
@@ -477,6 +573,61 @@ let Admin = () => {
                   onClick={() => handleSectionClick("contact-top")}
                 >
                   Top Heading Section
+                </div>
+
+                <div
+                  className={`${styles.section} ${
+                    activeSection === "page-meta" ? styles.activeSection : ""
+                  }`}
+                  onClick={() => handleSectionClick("page-meta")}
+                >
+                  Page Meta
+                </div>
+              </div>
+            )}
+
+            {activePage === "express" && (
+              <div className={styles.sections}>
+                <div
+                  className={`${styles.section} ${
+                    activeSection === "express-content"
+                      ? styles.activeSection
+                      : ""
+                  }`}
+                  onClick={() => handleSectionClick("express-content")}
+                >
+                  Express Entry Content
+                </div>
+
+                <div
+                  className={`${styles.section} ${
+                    activeSection === "express-meta" ? styles.activeSection : ""
+                  }`}
+                  onClick={() => handleSectionClick("express-meta")}
+                >
+                  Page Meta
+                </div>
+              </div>
+            )}
+
+            {activePage === "bcpnp" && (
+              <div className={styles.sections}>
+                <div
+                  className={`${styles.section} ${
+                    activeSection === "content" ? styles.activeSection : ""
+                  }`}
+                  onClick={() => handleSectionClick("content")}
+                >
+                  BCPNP Content
+                </div>
+
+                <div
+                  className={`${styles.section} ${
+                    activeSection === "bcpnp-meta" ? styles.activeSection : ""
+                  }`}
+                  onClick={() => handleSectionClick("bcpnp-meta")}
+                >
+                  Page Meta
                 </div>
               </div>
             )}
@@ -500,6 +651,37 @@ let Admin = () => {
                 >
                   Add Blog
                 </div>
+
+                <div
+                  className={`${styles.section} ${
+                    activeSection === "blogs-meta" ? styles.activeSection : ""
+                  }`}
+                  onClick={() => handleSectionClick("blogs-meta")}
+                >
+                  Page Meta
+                </div>
+              </div>
+            )}
+
+            {activePage === "clb" && (
+              <div className={styles.sections}>
+                <div
+                  className={`${styles.section} ${
+                    activeSection === "clb-content" ? styles.activeSection : ""
+                  }`}
+                  onClick={() => handleSectionClick("clb-content")}
+                >
+                  Page Content
+                </div>
+
+                <div
+                  className={`${styles.section} ${
+                    activeSection === "clb-meta" ? styles.activeSection : ""
+                  }`}
+                  onClick={() => handleSectionClick("clb-meta")}
+                >
+                  Page Meta
+                </div>
               </div>
             )}
 
@@ -522,11 +704,128 @@ let Admin = () => {
                 >
                   Add News
                 </div>
+
+                <div
+                  className={`${styles.section} ${
+                    activeSection === "news-meta" ? styles.activeSection : ""
+                  }`}
+                  onClick={() => handleSectionClick("news-meta")}
+                >
+                  Page Meta
+                </div>
+              </div>
+            )}
+
+            {activePage === "federal" && (
+              <div className={styles.sections}>
+                <div
+                  className={`${styles.section} ${
+                    activeSection === "Page-Content" ? styles.activeSection : ""
+                  }`}
+                  onClick={() => handleSectionClick("Page-Content")}
+                >
+                  Page Content
+                </div>
+                <div
+                  className={`${styles.section} ${
+                    activeSection === "federal-meta" ? styles.activeSection : ""
+                  }`}
+                  onClick={() => handleSectionClick("federal-meta")}
+                >
+                  Federal Skilled Meta
+                </div>
+              </div>
+            )}
+
+            {activePage === "transport" && (
+              <div className={styles.sections}>
+                <div
+                  className={`${styles.section} ${
+                    activeSection === "Transport" ? styles.activeSection : ""
+                  }`}
+                  onClick={() => handleSectionClick("Transport")}
+                >
+                  Page Content
+                </div>
+                <div
+                  className={`${styles.section} ${
+                    activeSection === "transport-meta"
+                      ? styles.activeSection
+                      : ""
+                  }`}
+                  onClick={() => handleSectionClick("transport-meta")}
+                >
+                  Transport Occupation Meta
+                </div>
+              </div>
+            )}
+
+            {activePage === "category" && (
+              <div className={styles.sections}>
+                <div
+                  className={`${styles.section} ${
+                    activeSection === "category-content"
+                      ? styles.activeSection
+                      : ""
+                  }`}
+                  onClick={() => handleSectionClick("category-content")}
+                >
+                  Page Content
+                </div>
+                <div
+                  className={`${styles.section} ${
+                    activeSection === "category-meta"
+                      ? styles.activeSection
+                      : ""
+                  }`}
+                  onClick={() => handleSectionClick("category-meta")}
+                >
+                  Category Based Draws Meta
+                </div>
               </div>
             )}
 
             {activePage === "contact" && activeSection === "contact-top" && (
               <ContactTop />
+            )}
+
+            {activePage === "federal" && activeSection === "Page-Content" && (
+              <FederalSkilled />
+            )}
+
+            {activePage === "federal" && activeSection === "federal-meta" && (
+              <FederalMeta />
+            )}
+
+            {activePage === "express" &&
+              activeSection === "express-content" && <ExpressEntry />}
+
+            {activePage === "express" && activeSection === "express-meta" && (
+              <ExpressMeta />
+            )}
+
+            {activePage === "bcpnp" && activeSection === "content" && <BCPNP />}
+
+            {activePage === "bcpnp" && activeSection === "bcpnp-meta" && (
+              <BCPNPMeta />
+            )}
+
+            {activePage === "category" &&
+              activeSection === "category-content" && <CategoryBased />}
+
+            {activePage === "category" && activeSection === "category-meta" && (
+              <CategoryMeta />
+            )}
+
+            {activePage === "transport" && activeSection === "Transport" && (
+              <TransportOccupation />
+            )}
+
+            {activePage === "transport" &&
+              activeSection === "transport-meta" && <TransportMeta />}
+
+            {activePage === "contact" && activeSection === "page-meta" && (
+              <ContactMeta />
             )}
 
             {activePage === "blogs" && activeSection === "all-blogs" && (
@@ -537,12 +836,26 @@ let Admin = () => {
               <AddBlog />
             )}
 
+            {activePage === "blogs" && activeSection === "blogs-meta" && (
+              <BlogsMeta />
+            )}
+
             {activePage === "news" && activeSection === "all-news" && (
               <AllNews />
             )}
 
             {activePage === "news" && activeSection === "add-news" && (
               <AddNews />
+            )}
+
+            {activePage === "news" && activeSection === "news-meta" && (
+              <NewsMeta />
+            )}
+
+            {activePage === "clb" && activeSection === "clb-content" && <CLB />}
+
+            {activePage === "clb" && activeSection === "clb-meta" && (
+              <CLBMeta />
             )}
 
             {activePage === "privacy-policy" && <Privacy />}
