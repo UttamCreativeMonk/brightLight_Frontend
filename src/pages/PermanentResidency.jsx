@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../styles/PermanentResidency.module.css";
 import ServiceImg from "../assets/service-data-image.webp";
 import studyVisaImg from "../assets/graduatedStudent.png";
@@ -9,12 +9,16 @@ import RecentBlogs from "../sections/RecentBlogs";
 import Testimonials from "../sections/Testimonials";
 import ogImage from "../assets/ogImage.png";
 import { Helmet } from "react-helmet-async";
+
 const PermanentResidency = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  let [metaData, setMetaData] = useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
+
+
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -22,32 +26,65 @@ const PermanentResidency = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/permanent-meta")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   return (
     <>
-    <Helmet>
-  <title>Permanent Residency in Canada - Brightlight Immigration</title>
-  <meta
-    name="description"
-    content="Explore how Brightlight Immigration can help you achieve permanent residency in Canada. Learn about the process, requirements, and how our expert team provides guidance and support throughout your immigration journey."
-  />
-  <meta
-    name="title"
-    property="og:title"
-    content="Permanent Residency in Canada - Brightlight Immigration"
-  />
-  <meta property="og:image" content={ogImage} />
-  <meta property="og:image:type" content="image/png" />
-  <meta
-    property="og:description"
-    content="Discover the steps to obtaining permanent residency in Canada with Brightlight Immigration. Our dedicated team offers expert advice and support to help you navigate the immigration process successfully."
-  />
-  <meta
-    name="Keywords"
-    content="Permanent Residency, Canada, Immigration Services, Brightlight Immigration, Immigration Process"
-  />
-</Helmet>
-
+<Helmet>
+        <title>
+          {metaData?.metaTitle
+            ? metaData?.metaTitle
+            : "Brightlight Immigration"}
+        </title>
+        <meta
+          name="description"
+          content={
+            metaData?.metaDesc
+              ? metaData?.metaDesc
+              : "Learn about Brightlight Immigration, our mission, values, and the dedicated team behind our immigration services. We are committed to providing honest and accurate advice to guide you through your immigration journey."
+          }
+        />
+        <meta
+          name="title"
+          property="og:title"
+          content={
+            metaData?.metaOgTitle
+              ? metaData?.metaOgTitle
+              : " Brightlight Immigration"
+          }
+        />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:type" content="image/png" />
+        <meta
+          property="og:description"
+          content={
+            metaData?.metaOgDesc
+              ? metaData?.metaOgDesc
+              : "Discover the story behind Brightlight Immigration, our commitment to providing honest and accurate advice, and how our team can assist you with your immigration needs."
+          }
+        />
+        <meta
+          name="Keywords"
+          content={
+            metaData?.metaKeywords
+              ? metaData?.metaKeywords
+              : "About Us, Brightlight Immigration, Immigration Services, Mission, Team"
+          }
+        />
+      </Helmet>
       <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
@@ -80,7 +117,9 @@ const PermanentResidency = () => {
                 Pathways to PR
               </p>
               <p onClick={() => scrollToSection("Our-process")}>Our process</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
           </div>

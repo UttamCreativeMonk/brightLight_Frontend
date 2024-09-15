@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import styles from "../styles/FamilyReunificationSponsorship.module.css";
 import { Link } from "react-router-dom";
 import Footer1 from "../components/Footer1";
@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet-async";
 
 const FamilyReunificationSponsorship = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  let [metaData, setMetaData] = useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -22,31 +23,65 @@ const FamilyReunificationSponsorship = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  useEffect(()=>{
+    fetch("https://brightlight-node.onrender.com/family-meta")
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      if (data) {
+        setMetaData(data[0]);
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  },[])
   return (
     <>
-      <Helmet>
-        <title>Family Sponsorship - Brightlight Immigration</title>
+<Helmet>
+        <title>
+          {metaData?.metaTitle
+            ? metaData?.metaTitle
+            : "Brightlight Immigration"}
+        </title>
         <meta
           name="description"
-          content="Explore how Brightlight Immigration can assist you with Family Sponsorship. Learn about the application process, eligibility requirements, and how our expert team provides support to help you reunite with your loved ones in Canada."
+          content={
+            metaData?.metaDesc
+              ? metaData?.metaDesc
+              : "Learn about Brightlight Immigration, our mission, values, and the dedicated team behind our immigration services. We are committed to providing honest and accurate advice to guide you through your immigration journey."
+          }
         />
         <meta
           name="title"
           property="og:title"
-          content="Family Sponsorship - Brightlight Immigration"
+          content={
+            metaData?.metaOgTitle
+              ? metaData?.metaOgTitle
+              : " Brightlight Immigration"
+          }
         />
         <meta property="og:image" content={ogImage} />
         <meta property="og:image:type" content="image/png" />
         <meta
           property="og:description"
-          content="Find out how Brightlight Immigration can help with Family Sponsorship. Our dedicated team offers expert guidance and comprehensive support to help you navigate the process and bring your family together in Canada."
+          content={
+            metaData?.metaOgDesc
+              ? metaData?.metaOgDesc
+              : "Discover the story behind Brightlight Immigration, our commitment to providing honest and accurate advice, and how our team can assist you with your immigration needs."
+          }
         />
         <meta
           name="Keywords"
-          content="Family Sponsorship, Immigration Services, Brightlight Immigration, Sponsorship Application, Family Reunification, Immigration Support"
+          content={
+            metaData?.metaKeywords
+              ? metaData?.metaKeywords
+              : "About Us, Brightlight Immigration, Immigration Services, Mission, Team"
+          }
         />
       </Helmet>
-
       <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>

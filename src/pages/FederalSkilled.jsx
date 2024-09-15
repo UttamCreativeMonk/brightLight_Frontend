@@ -2,9 +2,13 @@ import React, { useEffect, useState } from "react";
 import styles from "../styles/FederalSkilled.module.css";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
+import ogImage from "../assets/ogImage.png";
+import { Helmet } from "react-helmet-async";
+
 
 const FederalSkilled = () => {
   const [languagePoints, setLanguagePoints] = useState(0);
+  let [metaData, setMetaData] = useState([]);
   let [listeningPoints, setListeningPoints] = useState(0);
   let [readingPoints, setReadingPoints] = useState(0);
   let [writingPoints, setWritingPoints] = useState(0);
@@ -23,6 +27,18 @@ const FederalSkilled = () => {
       .then((data) => {
         if (data) {
           setData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+      fetch("https://brightlight-node.onrender.com/federal-meta")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setMetaData(data[0]);
         }
       })
       .catch((error) => {
@@ -221,6 +237,48 @@ const FederalSkilled = () => {
 
   return (
     <>
+<Helmet>
+        <title>
+          {metaData?.metaTitle
+            ? metaData?.metaTitle
+            : "Brightlight Immigration"}
+        </title>
+        <meta
+          name="description"
+          content={
+            metaData?.metaDesc
+              ? metaData?.metaDesc
+              : "Learn about Brightlight Immigration, our mission, values, and the dedicated team behind our immigration services. We are committed to providing honest and accurate advice to guide you through your immigration journey."
+          }
+        />
+        <meta
+          name="title"
+          property="og:title"
+          content={
+            metaData?.metaOgTitle
+              ? metaData?.metaOgTitle
+              : " Brightlight Immigration"
+          }
+        />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:type" content="image/png" />
+        <meta
+          property="og:description"
+          content={
+            metaData?.metaOgDesc
+              ? metaData?.metaOgDesc
+              : "Discover the story behind Brightlight Immigration, our commitment to providing honest and accurate advice, and how our team can assist you with your immigration needs."
+          }
+        />
+        <meta
+          name="Keywords"
+          content={
+            metaData?.metaKeywords
+              ? metaData?.metaKeywords
+              : "About Us, Brightlight Immigration, Immigration Services, Mission, Team"
+          }
+        />
+      </Helmet>
       <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.bannerHeading}>
@@ -510,9 +568,7 @@ const FederalSkilled = () => {
                 )}
               </div>
             </div>
-            {/* <div className={styles.points}>
-          Points <input type="text" value={clb5Points} readOnly />
-        </div> */}
+
           </div>
 
           <div className={styles.container}>
@@ -616,9 +672,7 @@ const FederalSkilled = () => {
                 )}
               </div>
             </div>
-            {/* <div className={styles.points}>
-          Points <input type="text" value={educationPoints} readOnly />
-        </div> */}
+
           </div>
 
           <div className={styles.container}>
@@ -636,9 +690,7 @@ const FederalSkilled = () => {
               <option value="4">{data?.fosq1o4}</option>
               <option value="5">{data?.fosq1o5}</option>
             </select>
-            {/* <div className={styles.points}>
-          Points <input type="text" value={agePoints} readOnly />
-        </div> */}
+
           </div>
 
           <div className={styles.container}>
@@ -677,9 +729,7 @@ const FederalSkilled = () => {
                 )}
               </div>
             </div>
-            {/* <div className={styles.points}>
-          Points <input type="text" value={employmentPoints} readOnly />
-        </div> */}
+
           </div>
 
           <div className={styles.container}>
@@ -744,9 +794,7 @@ const FederalSkilled = () => {
                 )}
               </div>
             </div>
-            {/* <div className={styles.points}>
-          Points <input type="text" value={experiencePoints} readOnly />
-        </div> */}
+
           </div>
 
           <div className={styles.container}>
@@ -850,9 +898,7 @@ const FederalSkilled = () => {
                 )}
               </div>
             </div>
-            {/* <div className={styles.points}>
-          Points <input type="text" value={adaptabilityPoints} readOnly />
-        </div> */}
+
           </div>
         </div>
 

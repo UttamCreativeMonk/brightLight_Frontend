@@ -6,6 +6,9 @@ import Footer1 from "../components/Footer1";
 import Linkedin from "../assets/bannerLinkedinLogo.png";
 import rcic from "../assets/rcic.png";
 import searchIcon from "../assets/search-gray.png";
+import ogImage from "../assets/ogImage.png";
+import { Helmet } from "react-helmet-async";
+
 
 let BlogDetails = () => {
   let { id } = useParams();
@@ -20,9 +23,6 @@ let BlogDetails = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data) {
-          if (data.blog_content) {
-            data.blog_content = data.blog_content.replace(/\n/g, "<br/>");
-          }
           setBlog(data);
         }
       })
@@ -60,6 +60,41 @@ let BlogDetails = () => {
 
   return (
     <>
+    <Helmet>
+        <title>
+          {blog?.metaTitle
+            ? blog?.metaTitle
+            : "About Us - Brightlight Immigration"}
+        </title>
+        <meta
+          name="description"
+          content={
+            blog?.metaDescription
+              ? blog?.metaDescription
+              : "Learn about Brightlight Immigration, our mission, values, and the dedicated team behind our immigration services. We are committed to providing honest and accurate advice to guide you through your immigration journey."
+          }
+        />
+        <meta
+          name="title"
+          property="og:title"
+          content={
+            blog?.metaTitle
+              ? blog?.metaTitle
+              : "About Us - Brightlight Immigration"
+          }
+        />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:type" content="image/png" />
+        <meta
+          property="og:description"
+          content={
+            blog?.metaDescription
+              ? blog?.metaDescription
+              : "Discover the story behind Brightlight Immigration, our commitment to providing honest and accurate advice, and how our team can assist you with your immigration needs."
+          }
+        />
+
+      </Helmet>
       <Navbar1 />
       <div className={styles.blogTopSection}>
         <div className={styles.blogsTopContentSection}>

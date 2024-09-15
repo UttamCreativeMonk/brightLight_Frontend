@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect } from "react";
 import styles from "../styles/WorkPermit.module.css";
 import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet-async";
 
 let WorkPermit = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  let [metaData, setMetaData] = useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -21,30 +22,67 @@ let WorkPermit = () => {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+
+  
   };
+
+  useEffect(()=>{
+    fetch("https://brightlight-node.onrender.com/work-meta")
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      if (data) {
+        setMetaData(data[0]);
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  },[])
 
   return (
     <>
-      <Helmet>
-        <title>Work Permit - Brightlight Immigration</title>
+<Helmet>
+        <title>
+          {metaData?.metaTitle
+            ? metaData?.metaTitle
+            : "Brightlight Immigration"}
+        </title>
         <meta
           name="description"
-          content="Discover how Brightlight Immigration can help you secure a Work Permit. Learn about the application process, eligibility criteria, and how our expert team provides guidance and support to help you work legally in your desired location."
+          content={
+            metaData?.metaDesc
+              ? metaData?.metaDesc
+              : "Learn about Brightlight Immigration, our mission, values, and the dedicated team behind our immigration services. We are committed to providing honest and accurate advice to guide you through your immigration journey."
+          }
         />
         <meta
           name="title"
           property="og:title"
-          content="Work Permit - Brightlight Immigration"
+          content={
+            metaData?.metaOgTitle
+              ? metaData?.metaOgTitle
+              : " Brightlight Immigration"
+          }
         />
         <meta property="og:image" content={ogImage} />
         <meta property="og:image:type" content="image/png" />
         <meta
           property="og:description"
-          content="Find out how Brightlight Immigration can assist with obtaining a Work Permit. Our dedicated team offers comprehensive support and expert advice to navigate the application process and secure your work authorization."
+          content={
+            metaData?.metaOgDesc
+              ? metaData?.metaOgDesc
+              : "Discover the story behind Brightlight Immigration, our commitment to providing honest and accurate advice, and how our team can assist you with your immigration needs."
+          }
         />
         <meta
           name="Keywords"
-          content="Work Permit, Immigration Services, Brightlight Immigration, Work Visa, Employment Authorization, Visa Application, Immigration Support"
+          content={
+            metaData?.metaKeywords
+              ? metaData?.metaKeywords
+              : "About Us, Brightlight Immigration, Immigration Services, Mission, Team"
+          }
         />
       </Helmet>
 

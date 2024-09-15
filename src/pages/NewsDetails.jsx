@@ -4,6 +4,9 @@ import { useEffect, useState } from "react";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
 import searchIcon from "../assets/search-gray.png";
+import ogImage from "../assets/ogImage.png";
+import { Helmet } from "react-helmet-async";
+
 
 let NewsDetails = () => {
   let { id } = useParams();
@@ -17,9 +20,6 @@ let NewsDetails = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data) {
-          if (data.news_content) {
-            data.news_content = data.news_content.replace(/\n/g, "<br/>");
-          }
           setBlog(data);
         }
       })
@@ -48,6 +48,41 @@ let NewsDetails = () => {
 
   return (
     <>
+           <Helmet>
+        <title>
+          {blog?.metaTitle
+            ? blog?.metaTitle
+            : "Brightlight Immigration"}
+        </title>
+        <meta
+          name="description"
+          content={
+            blog?.metaDescription
+              ? blog?.metaDescription
+              : "Learn about Brightlight Immigration, our mission, values, and the dedicated team behind our immigration services. We are committed to providing honest and accurate advice to guide you through your immigration journey."
+          }
+        />
+        <meta
+          name="title"
+          property="og:title"
+          content={
+            blog?.metaTitle
+              ? blog?.metaTitle
+              : "Brightlight Immigration"
+          }
+        />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:type" content="image/png" />
+        <meta
+          property="og:description"
+          content={
+            blog?.metaDescription
+              ? blog?.metaDescription
+              : "Discover the story behind Brightlight Immigration, our commitment to providing honest and accurate advice, and how our team can assist you with your immigration needs."
+          }
+        />
+
+      </Helmet>
       <Navbar1 />
       <div className={styles.blogTopSection}>
         <div className={styles.blogsTopContentSection}>
@@ -56,7 +91,7 @@ let NewsDetails = () => {
       </div>
       <div className={styles.blogsFlexSection}>
         <div className={styles.blogImgSection}>
-          <img src={blog.image} alt="Blog" />
+          <img src={blog.image} alt="News" />
         </div>
         <div className={styles.blogSearchSection}>
           <div className={styles.searchDiv}>

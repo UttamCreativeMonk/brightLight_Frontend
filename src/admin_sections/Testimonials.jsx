@@ -82,11 +82,11 @@ let Testimonials = () => {
       console.error("No ID found for update.");
       return;
     }
-
+  
     fetch(
       `https://brightlight-node.onrender.com/testimonials-section/${sectionDataSingle._id}`,
       {
-        method: "PUT",
+        method: "PATCH", // Change from PUT to PATCH
         headers: {
           "Content-Type": "application/json"
         },
@@ -103,14 +103,15 @@ let Testimonials = () => {
       }
       return response.json();
     })
-      .then((data) => {
-        notifySuccess();
-        setEditMode(false);
-      })
-      .catch((error) => {
-        notifyError();
-      });
+    .then((data) => {
+      notifySuccess();
+      setEditMode(false);
+    })
+    .catch((error) => {
+      notifyError();
+    });
   };
+  
 
   useEffect(() => {
     fetch("https://brightlight-node.onrender.com/testimonials-section")

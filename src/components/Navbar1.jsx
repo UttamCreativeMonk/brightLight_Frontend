@@ -111,7 +111,7 @@ const Navbar1 = (props) => {
         <div className={styles.firstNavbar}>
           <div className={styles.calculatorIcon}>
             <IconGear className={styles.iconGearIcon} width={25} height={25} />
-            <p>Immigration Tools</p>
+            <p onClick={() => window.location.href = '/clb-ilets-calculator'} >Immigration Tools</p>
             <RightArrow
               className={styles.RightArrowIcon}
               width={10}
@@ -167,7 +167,7 @@ const Navbar1 = (props) => {
             <div className={styles.mainNavbar}>
               <div className={styles.relativeDiv}>
                 <a
-                  href="/"
+                  href="#"
                   onMouseEnter={() => setShowServicesDropdown(true)}
                   onMouseLeave={() => setShowServicesDropdown(false)}
                 >
@@ -450,7 +450,7 @@ const Navbar1 = (props) => {
                       <a href="/humanitarian-compassionate">H & C</a>
                       <a href="/orphan">Orphan</a>
                       <a href="/adoption">Adoption</a>
-                      <a href="/spouse">Spouse</a>
+                      {/* <a href="/spouse">Spouse</a> */}
                     </div>
                   </div>
 
@@ -546,7 +546,7 @@ const Navbar1 = (props) => {
               {/* CALCULATORS Menu with Dropdown */}
               <div className={styles.relativeDiv}>
                 <a
-                  href="/"
+                  href="#"
                   onMouseEnter={() => setShowCalculatorsDropdown(true)}
                   onMouseLeave={() => setShowCalculatorsDropdown(false)}
                 >
@@ -561,7 +561,7 @@ const Navbar1 = (props) => {
                   onMouseEnter={() => setShowCalculatorsDropdown(true)}
                   onMouseLeave={() => setShowCalculatorsDropdown(false)}
                 >
-                  <a href="/Federal-Skilled">FSW Calculator</a>
+                  <a href="/Federal-Skilled">FS Calculator</a>
                   <a href="/clb-ilets-calculator">Clb Ilets Calculator</a>
                   <a href="/bcpnp-calculator">BCPNP Calculator</a>
                 </div>
@@ -785,7 +785,7 @@ const Navbar1 = (props) => {
                         <a href="/humanitarian-compassionate">H & C</a>
                         <a href="/orphan">Orphan</a>
                         <a href="/adoption">Adoption</a>
-                        <a href="/spouse">Spouse</a>
+                        {/* <a href="/spouse">Spouse</a> */}
                       </div>
                     )}
                   </div>
@@ -801,8 +801,8 @@ const Navbar1 = (props) => {
                 </a>
                 {isCalculatorsOpen && (
                   <div className={styles.subDropdownContent}>
-                    <a href="/calculators">CALCULATORS</a>
-                    <a href="/Federal-Skilled">FSW Calculator</a>
+                    {/* <a href="/calculators">CALCULATORS</a> */}
+                    <a href="/Federal-Skilled">FS Calculator</a>
                     <a href="/clb-ilets-calculator">CLB ILET's Calculator</a>
                     <a href="/bcpnp-calculator">BCPNP Calculator</a>
                   </div>

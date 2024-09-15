@@ -2,9 +2,13 @@ import React, { useState, useEffect } from "react";
 import styles from "../styles/CLBILETSCalculator.module.css";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
+import ogImage from "../assets/ogImage.png";
+import { Helmet } from "react-helmet-async";
+
 
 const CLBILETSCalculator = () => {
   let [selected, setSelected] = useState(1);
+  let [metaData, setMetaData] = useState([]);
   let [data, setData] = useState([]);
   const [scores, setScores] = useState({
     listening: 1.0,
@@ -132,6 +136,21 @@ const CLBILETSCalculator = () => {
       default:
         break;
     }
+    useEffect(()=>{
+      fetch("https://brightlight-node.onrender.com/clb-meta")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    },[])
+  
   };
 
   const [selectedCLB3, setSelectedCLB3] = useState("1");

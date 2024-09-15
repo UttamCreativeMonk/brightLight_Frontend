@@ -4,23 +4,25 @@ import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
 import ogImage from "../assets/ogImage.png";
 import { Helmet } from "react-helmet-async";
+
 let Contact = () => {
   let [data, setData] = useState([]);
+  let [metaData, setMetaData] = useState([]);
   let [activeDiv, setActiveDiv] = useState("insideCanada");
   useEffect(() => {
     setActiveDiv("insideCanada");
-    fetch("https://brightlight-node.onrender.com/contact-page")
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        if (data) {
-          setData(data[0]);
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    fetch("https://brightlight-node.onrender.com/contact-meta")
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      if (data) {
+        setMetaData(data[0]);
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
   }, []);
 
   let handleActiveDiv = () => {
@@ -32,25 +34,48 @@ let Contact = () => {
   };
   return (
     <>
-<Helmet>
-    <title>Contact Us - Brightlight Immigration</title>
-    <meta
-      name="description"
-      content="Get in touch with Brightlight Immigration for all your immigration inquiries. Find our contact information, including phone numbers, email addresses, and office locations, to connect with our team."
-    />
-    <meta
-      name="title"
-      property="og:title"
-      content="Contact Us - Brightlight Immigration"
-    />
-    <meta property="og:image" content={ogImage} />
-    <meta property="og:image:type" content="image/png" />
-    <meta
-      property="og:description"
-      content="Reach out to Brightlight Immigration for any questions or support. Our contact page provides all the details you need to connect with us directly."
-    />
-    <meta name="Keywords" content="Contact Us, Brightlight Immigration, Contact Information, Immigration Support, Get in Touch" />
-</Helmet>
+ <Helmet>
+        <title>
+          {metaData.metaTitle
+            ? metaData?.metaTitle
+            : "Brightlight Immigration"}
+        </title>
+        <meta
+          name="description"
+          content={
+            metaData.metaDesc
+              ? metaData?.metaDesc
+              : "Learn about Brightlight Immigration, our mission, values, and the dedicated team behind our immigration services. We are committed to providing honest and accurate advice to guide you through your immigration journey."
+          }
+        />
+        <meta
+          name="title"
+          property="og:title"
+          content={
+            metaData.metaOgTitle
+              ? metaData?.metaOgTitle
+              : " Brightlight Immigration"
+          }
+        />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:type" content="image/png" />
+        <meta
+          property="og:description"
+          content={
+            metaData.metaOgDesc
+              ? metaData?.metaOgDesc
+              : "Discover the story behind Brightlight Immigration, our commitment to providing honest and accurate advice, and how our team can assist you with your immigration needs."
+          }
+        />
+        <meta
+          name="Keywords"
+          content={
+            metaData.metaKeywords
+              ? metaData?.metaKeywords
+              : "About Us, Brightlight Immigration, Immigration Services, Mission, Team"
+          }
+        />
+      </Helmet>
 
       <Navbar1 showBlue={true} />
       <div className={styles.contactTopSection}>

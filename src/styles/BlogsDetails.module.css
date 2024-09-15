@@ -55,6 +55,9 @@
   justify-content: flex-start;
   gap: 10px;
 }
+.blogDescriptionSection *{
+  margin: 30px 0px;
+}
 
 .loveneetDataFlex h3 {
   font-size: 50px;
@@ -219,7 +222,7 @@
   line-height: 1.8;
   letter-spacing: 1px;
   color: rgb(44, 44, 44);
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   margin-top: 20px;
 }
 

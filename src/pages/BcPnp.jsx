@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/BcPnp.module.css";
 import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
@@ -10,6 +10,8 @@ import ogImage from "../assets/ogImage.png";
 import { Helmet } from "react-helmet-async";
 
 const BcPnp = () => {
+  let [metaData, setMetaData] = useState([]);
+
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -22,32 +24,65 @@ const BcPnp = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+  useEffect(()=>{
+    fetch("https://brightlight-node.onrender.com/bp-meta")
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      if (data) {
+        setMetaData(data[0]);
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  },[])
+
+
 
   return (
     <>
-      <Helmet>
+<Helmet>
         <title>
-          BC PNP - British Columbia Provincial Nominee Program - Brightlight
-          Immigration
+          {metaData?.metaTitle
+            ? metaData?.metaTitle
+            : "Brightlight Immigration"}
         </title>
         <meta
           name="description"
-          content="Discover how Brightlight Immigration can assist you with the British Columbia Provincial Nominee Program (BC PNP). Learn about eligibility, application procedures, and how our experienced team can guide you through every step of the BC PNP process."
+          content={
+            metaData?.metaDesc
+              ? metaData?.metaDesc
+              : "Learn about Brightlight Immigration, our mission, values, and the dedicated team behind our immigration services. We are committed to providing honest and accurate advice to guide you through your immigration journey."
+          }
         />
         <meta
           name="title"
           property="og:title"
-          content="BC PNP - British Columbia Provincial Nominee Program - Brightlight Immigration"
+          content={
+            metaData?.metaOgTitle
+              ? metaData?.metaOgTitle
+              : " Brightlight Immigration"
+          }
         />
         <meta property="og:image" content={ogImage} />
         <meta property="og:image:type" content="image/png" />
         <meta
           property="og:description"
-          content="Explore the British Columbia Provincial Nominee Program (BC PNP) with Brightlight Immigration. Our expert team provides comprehensive support and advice to help you navigate the BC PNP application process and achieve your immigration goals."
+          content={
+            metaData?.metaOgDesc
+              ? metaData?.metaOgDesc
+              : "Discover the story behind Brightlight Immigration, our commitment to providing honest and accurate advice, and how our team can assist you with your immigration needs."
+          }
         />
         <meta
           name="Keywords"
-          content="BC PNP, British Columbia Provincial Nominee Program, Immigration Services, Brightlight Immigration, BC PNP Application, Immigration Support"
+          content={
+            metaData?.metaKeywords
+              ? metaData?.metaKeywords
+              : "About Us, Brightlight Immigration, Immigration Services, Mission, Team"
+          }
         />
       </Helmet>
 

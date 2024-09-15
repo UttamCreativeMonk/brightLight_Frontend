@@ -2,9 +2,14 @@ import React, { useState } from "react";
 import styles from "../styles/BCPNPCalculator.module.css";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
+import ogImage from "../assets/ogImage.png";
+import { Helmet } from "react-helmet-async";
+
 
 const BCPNPCalculator = () => {
   const [points, setPoints] = useState(0);
+
+  let [metaData, setMetaData] = useState([]);
   const [canadaExperiencePoints, setCanadaExperiencePoints] = useState(0);
   const [currentJobPoints, setCurrentJobPoints] = useState(0);
   const [educationPoints, setEducationPoints] = useState(0);
@@ -235,10 +240,69 @@ const BCPNPCalculator = () => {
         setLanguageProficiencyRegionPoints(0);
         break;
     }
+
+  
   };
+
+  useEffect(()=>{
+    fetch("https://brightlight-node.onrender.com/bcpnp-meta")
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      if (data) {
+        setMetaData(data[0]);
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  },[])
 
   return (
     <>
+    <Helmet>
+        <title>
+          {metaData.metaTitle
+            ? metaData?.metaTitle
+            : "Brightlight Immigration"}
+        </title>
+        <meta
+          name="description"
+          content={
+            metaData.metaDesc
+              ? metaData?.metaDesc
+              : "Learn about Brightlight Immigration, our mission, values, and the dedicated team behind our immigration services. We are committed to providing honest and accurate advice to guide you through your immigration journey."
+          }
+        />
+        <meta
+          name="title"
+          property="og:title"
+          content={
+            metaData.metaOgTitle
+              ? metaData?.metaOgTitle
+              : "About Us - Brightlight Immigration"
+          }
+        />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:type" content="image/png" />
+        <meta
+          property="og:description"
+          content={
+            metaData.metaOgDesc
+              ? metaData?.metaOgDesc
+              : "Discover the story behind Brightlight Immigration, our commitment to providing honest and accurate advice, and how our team can assist you with your immigration needs."
+          }
+        />
+        <meta
+          name="Keywords"
+          content={
+            metaData.metaKeywords
+              ? metaData?.metaKeywords
+              : "About Us, Brightlight Immigration, Immigration Services, Mission, Team"
+          }
+        />
+      </Helmet>
       <Navbar1 />
       {/* Section 1: Work Experience in B.C. Job Offer */}
       <div className={styles.bannerParent}>

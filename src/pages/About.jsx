@@ -23,6 +23,9 @@ import { Helmet } from "react-helmet-async";
 
 let About = () => {
   let [topSectionData, setTopSectionData] = useState([]);
+
+  let [metaData, setMetaData] = useState([]);
+
   let [foundationSection, setFoundationSection] = useState([]);
   let [visionSection, setVisionSection] = useState([]);
   let [pillarsSection, setPillarsSection] = useState([]);
@@ -229,29 +232,62 @@ let About = () => {
       .catch((error) => {
         console.log(error);
       });
+      fetch("https://brightlight-node.onrender.com/about-meta")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    
   }, []);
   return (
     <>
       <Helmet>
-        <title>About Us - Brightlight Immigration</title>
+        <title>
+          {metaData.metaTitle
+            ? metaData?.metaTitle
+            : "About Us - Brightlight Immigration"}
+        </title>
         <meta
           name="description"
-          content="Learn about Brightlight Immigration, our mission, values, and the dedicated team behind our immigration services. We are committed to providing honest and accurate advice to guide you through your immigration journey."
+          content={
+            metaData.metaDesc
+              ? metaData?.metaDesc
+              : "Learn about Brightlight Immigration, our mission, values, and the dedicated team behind our immigration services. We are committed to providing honest and accurate advice to guide you through your immigration journey."
+          }
         />
         <meta
           name="title"
           property="og:title"
-          content="About Us - Brightlight Immigration"
+          content={
+            metaData.metaOgTitle
+              ? metaData?.metaOgTitle
+              : "About Us - Brightlight Immigration"
+          }
         />
         <meta property="og:image" content={ogImage} />
         <meta property="og:image:type" content="image/png" />
         <meta
           property="og:description"
-          content="Discover the story behind Brightlight Immigration, our commitment to providing honest and accurate advice, and how our team can assist you with your immigration needs."
+          content={
+            metaData.metaOgDesc
+              ? metaData?.metaOgDesc
+              : "Discover the story behind Brightlight Immigration, our commitment to providing honest and accurate advice, and how our team can assist you with your immigration needs."
+          }
         />
         <meta
           name="Keywords"
-          content="About Us, Brightlight Immigration, Immigration Services, Mission, Team"
+          content={
+            metaData.metaKeywords
+              ? metaData?.metaKeywords
+              : "About Us, Brightlight Immigration, Immigration Services, Mission, Team"
+          }
         />
       </Helmet>
 

@@ -7,7 +7,7 @@ const Loader = () => {
   useEffect(() => { 
     fetch("https://brightlight-node.onrender.com")
       .then((res) => {
-        return res.json();
+        return res.text();
       })
       .then(() => {
         setTimeout(() => {

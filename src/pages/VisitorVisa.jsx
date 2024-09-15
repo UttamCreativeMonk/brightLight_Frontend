@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect } from "react";
 import styles from "../styles/VisitorVisa.module.css";
 import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet-async";
 
 const VisitorVisa = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  let [metaData, setMetaData] = useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -20,31 +21,66 @@ const VisitorVisa = () => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
-    }
+    }  
   };
+
+  useEffect(()=>{
+    fetch("https://brightlight-node.onrender.com/visitor-meta")
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      if (data) {
+        setMetaData(data[0]);
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  },[])
 
   return (
     <>
-      <Helmet>
-        <title>Visitor Visa - Brightlight Immigration</title>
+<Helmet>
+        <title>
+          {metaData?.metaTitle
+            ? metaData?.metaTitle
+            : "Brightlight Immigration"}
+        </title>
         <meta
           name="description"
-          content="Learn how Brightlight Immigration can assist you with obtaining a Visitor Visa. Discover the application process, eligibility criteria, and how our expert team provides guidance and support to ensure a smooth visa application experience."
+          content={
+            metaData?.metaDesc
+              ? metaData?.metaDesc
+              : "Learn about Brightlight Immigration, our mission, values, and the dedicated team behind our immigration services. We are committed to providing honest and accurate advice to guide you through your immigration journey."
+          }
         />
         <meta
           name="title"
           property="og:title"
-          content="Visitor Visa - Brightlight Immigration"
+          content={
+            metaData?.metaOgTitle
+              ? metaData?.metaOgTitle
+              : " Brightlight Immigration"
+          }
         />
         <meta property="og:image" content={ogImage} />
         <meta property="og:image:type" content="image/png" />
         <meta
           property="og:description"
-          content="Find out how Brightlight Immigration can help you secure a Visitor Visa. Our dedicated team offers expert advice and support throughout the application process to help you visit your desired destination with ease."
+          content={
+            metaData?.metaOgDesc
+              ? metaData?.metaOgDesc
+              : "Discover the story behind Brightlight Immigration, our commitment to providing honest and accurate advice, and how our team can assist you with your immigration needs."
+          }
         />
         <meta
           name="Keywords"
-          content="Visitor Visa, Immigration Services, Brightlight Immigration, Visa Application, Travel Visa, Immigration Support"
+          content={
+            metaData?.metaKeywords
+              ? metaData?.metaKeywords
+              : "About Us, Brightlight Immigration, Immigration Services, Mission, Team"
+          }
         />
       </Helmet>
 

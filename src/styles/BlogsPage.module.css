@@ -369,9 +369,6 @@
   .quickLinksSection div a {
     font-size: 14px;
   }
-  .blogsGridSection {
-    width: 70%;
-  }
   .rightSection {
     width: 27%;
   }
@@ -451,11 +448,16 @@
 }
 
 @media all and (max-width: 400px) {
+  .blogsGridSection {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+  }
   .blogsTopSection h3 {
     font-size: 14px;
   }
   .blogsTopSection img {
-    width: 170px;
+    width: 120px;
   }
   .firstBlogContentSection h1 {
     font-size: 20px;
@@ -465,11 +467,14 @@
     padding: 8px 16px;
     font-size: 14px;
   }
+  .blog{
+    width: 90%;
+  }
   .blog h1 {
     font-size: 11px;
   }
   .blog h4 {
-    font-size: 9px;
+    font-size: 7px;
   }
   .blog p {
     font-size: 10px;
@@ -492,4 +497,7 @@
   .quickLinksSection h3 {
     font-size: 11px;
   }
+  .blog div h4 {
+    font-size: 9px;
+}
 }

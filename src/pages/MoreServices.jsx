@@ -18,7 +18,7 @@ import Footer1 from "../components/Footer1";
     "Permanent Residency": {
       text: " Canada welcomes thousands of skilled individuals from around the world every year. With a thriving economy, high living standards, and better opportunities, it's no wonder so many aspire to call it  home.",
       image: homeLocationImg,
-      subcategories: ["FSWP", "FSTP", "CEC", "Category based"],
+      subcategories: [""],
       dropdowns: {
         "Pilot Program": "The diverse economy of Canada offers various opportunities to advance your career in fields such as agriculture and more.",
         PNP: "While the federal Express Entry system remains a popular pathway toCanadian permanent residence, the Provincial Nominee Program (PNP) offers a unique and often faster track for individuals interested in  settling in a specific province or territory.",

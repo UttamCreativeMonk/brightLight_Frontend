@@ -45,6 +45,9 @@ let HomePage = () => {
 
   const simplifyingRef = useRef(null); // Ref for the simplifying section
 
+  let [metaData, setMetaData] = useState([]);
+
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -279,6 +282,18 @@ let HomePage = () => {
       rootMargin: "0px",
       threshold: 0.1,
     };
+    fetch("https://brightlight-node.onrender.com/home-meta")
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      if (data) {
+        setMetaData(data[0]);
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -353,24 +368,47 @@ let HomePage = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Brightlight Immigration</title>
+<Helmet>
+        <title>
+          {metaData?.metaTitle
+            ? metaData?.metaTitle
+            : "Brightlight Immigration"}
+        </title>
         <meta
           name="description"
-          content="BrightLight Immigration services is that we understand the value of correct and honest advice and how it can lead you to right path."
+          content={
+            metaData?.metaDesc
+              ? metaData?.metaDesc
+              : "Learn about Brightlight Immigration, our mission, values, and the dedicated team behind our immigration services. We are committed to providing honest and accurate advice to guide you through your immigration journey."
+          }
         />
         <meta
           name="title"
           property="og:title"
-          content="Brightlight Immigration"
+          content={
+            metaData?.metaOgTitle
+              ? metaData?.metaOgTitle
+              : " Brightlight Immigration"
+          }
         />
         <meta property="og:image" content={ogImage} />
         <meta property="og:image:type" content="image/png" />
         <meta
           property="og:description"
-          content="BrightLight Immigration services is that we understand the value of correct and honest advice and how it can lead you to right path."
+          content={
+            metaData?.metaOgDesc
+              ? metaData?.metaOgDesc
+              : "Discover the story behind Brightlight Immigration, our commitment to providing honest and accurate advice, and how our team can assist you with your immigration needs."
+          }
         />
-        <meta name="Keywords" content="" />
+        <meta
+          name="Keywords"
+          content={
+            metaData?.metaKeywords
+              ? metaData?.metaKeywords
+              : "About Us, Brightlight Immigration, Immigration Services, Mission, Team"
+          }
+        />
       </Helmet>
 
       <Navbar1 showBlue={true} />
@@ -698,13 +736,14 @@ let HomePage = () => {
             ref={sourceContentParentRef}
           >
             {newsData?.map((item, index) => {
-              function truncateText(text, wordLimit) {
-                const words = text.split(" ");
-                if (words.length <= wordLimit) {
-                  return text;
-                }
-                return words.slice(0, wordLimit).join(" ") + "...";
-              }
+             let stripHtmlTags = (text) =>
+              text ? text.replace(/<[^>]*>/g, "") : "";
+
+            let truncateText = (text, numChars) => {
+              let cleanedText = stripHtmlTags(text);
+              if (cleanedText.length <= numChars) return cleanedText;
+              return cleanedText.slice(0, numChars) + "...";
+            };
               let month = item.date.trim().split("T")[0].split("-")[1];
               let date = item.date.trim().split("T")[0].split("-")[2];
               let monthName = () => {
@@ -748,7 +787,7 @@ let HomePage = () => {
                     </div>
                     <div className={styles.sourceContentData}>
                       <h3>{item.news_heading}</h3>
-                      <p>{truncateText(item.news_content, 30)}</p>
+                      <p>{truncateText(item.news_content, 150)}</p>
                       <a href={`/news/${item._id}`}>Read more</a>
                     </div>
                   </div>

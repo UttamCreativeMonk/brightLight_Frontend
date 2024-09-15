@@ -156,7 +156,7 @@ const AllNews = () => {
           metaDescription: "",
         });
         // Refetch blogs
-        fetch("https://brightlight-node.onrender.com/adding-blog")
+        fetch("https://brightlight-node.onrender.com/news")
           .then((res) => res.json())
           .then((data) => {
             setBlogs(data);
@@ -166,18 +166,18 @@ const AllNews = () => {
           });
       })
       .catch((error) => {
-        setEditMode(false);
+      notifyError();
       });
   };
 
   // Handle delete click
   const handleDeleteClick = (blogId) => {
-    fetch(`https://brightlight-node.onrender.com/adding-blog/${blogId}`, {
+    fetch(`https://brightlight-node.onrender.com/news/${blogId}`, {
       method: "DELETE",
     })
       .then(() => {
         notifyDelete();
-        fetch("https://brightlight-node.onrender.com/adding-blog")
+        fetch("https://brightlight-node.onrender.com/news")
           .then((res) => res.json())
           .then((data) => {
             setBlogs(data);

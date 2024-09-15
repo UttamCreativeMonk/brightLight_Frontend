@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import styles from "../styles/ReplyToPflPage.module.css";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
@@ -10,6 +10,7 @@ import { Helmet } from "react-helmet-async";
 
 const ReplyToPflPage = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  let [metaData, setMetaData] = useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -22,28 +23,63 @@ const ReplyToPflPage = () => {
     }
   };
 
+  useEffect(()=>{
+    fetch("https://brightlight-node.onrender.com/pfl-meta")
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      if (data) {
+        setMetaData(data[0]);
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  },[])
+
   return (
     <>
-      <Helmet>
-        <title>Reply to PFL - Brightlight Immigration</title>
+<Helmet>
+        <title>
+          {metaData?.metaTitle
+            ? metaData?.metaTitle
+            : "Brightlight Immigration"}
+        </title>
         <meta
           name="description"
-          content="Learn how Brightlight Immigration can assist you with replying to a Procedural Fairness Letter (PFL). Discover the process, importance, and how our expert team provides support to ensure a well-prepared and effective response."
+          content={
+            metaData?.metaDesc
+              ? metaData?.metaDesc
+              : "Learn about Brightlight Immigration, our mission, values, and the dedicated team behind our immigration services. We are committed to providing honest and accurate advice to guide you through your immigration journey."
+          }
         />
         <meta
           name="title"
           property="og:title"
-          content="Reply to PFL - Brightlight Immigration"
+          content={
+            metaData?.metaOgTitle
+              ? metaData?.metaOgTitle
+              : " Brightlight Immigration"
+          }
         />
         <meta property="og:image" content={ogImage} />
         <meta property="og:image:type" content="image/png" />
         <meta
           property="og:description"
-          content="Find out how Brightlight Immigration can help you address a Procedural Fairness Letter (PFL). Our experienced team offers comprehensive support to guide you through crafting a strong response and navigating the immigration process."
+          content={
+            metaData?.metaOgDesc
+              ? metaData?.metaOgDesc
+              : "Discover the story behind Brightlight Immigration, our commitment to providing honest and accurate advice, and how our team can assist you with your immigration needs."
+          }
         />
         <meta
           name="Keywords"
-          content="Reply to PFL, Procedural Fairness Letter, Immigration Services, Brightlight Immigration, PFL Response, Immigration Support, Legal Advice"
+          content={
+            metaData?.metaKeywords
+              ? metaData?.metaKeywords
+              : "About Us, Brightlight Immigration, Immigration Services, Mission, Team"
+          }
         />
       </Helmet>
 

@@ -53,11 +53,9 @@ let Blogs = () => {
           <div className={styles.blogsHeading}>
             <h1>Our Thougtful Narratives</h1>
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Quibusdam voluptate incidunt nesciunt beatae assumenda, at id
-              maiores, quia molestiae sapiente obcaecati odio, omnis earum
-              laudantium consectetur sequi voluptatum repellendus porro nemo
-              quae quo voluptatem magnam debitis. Eos, placeat. Iste, deserunt?
+              Navigating the Complex Landscape of Immigration: Essential
+              Insights and Resources for Clients Seeking a Smooth Transition to
+              New Opportunities
             </p>
           </div>
         </div>

@@ -156,7 +156,7 @@ function App() {
       {/* <NewsDetails/> */}
       {/* <News/> */}
 
-      {/* <Loader /> */}
+      <Loader />
       <HelmetProvider>
         <AllRoutes />
       </HelmetProvider>
