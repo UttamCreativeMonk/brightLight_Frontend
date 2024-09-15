@@ -21,7 +21,7 @@ const Loader = () => {
 
     let loadTimeout = setTimeout(() => {
       setIsLoaded(true);
-    }, 3700);
+    }, 4000);
   }, []);
 
   return (

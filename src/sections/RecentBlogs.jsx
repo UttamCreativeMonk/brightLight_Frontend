@@ -5,7 +5,7 @@ import { useEffect } from "react";
 let RecentBlogs = () => {
   let [blogs, setBlogs] = useState([]);
   useEffect(() => {
-    fetch("https://brightlight-node.onrender.com/blogs")
+    fetch("https://brightlight-node.onrender.com/adding-blog")
       .then((res) => {
         return res.json();
       })
@@ -31,7 +31,15 @@ let RecentBlogs = () => {
       <div className={styles.recentBlogMainSection}>
         <h1>Featured Blogs</h1>
         <div className={styles.blogsGridSection}>
-          {blogs.map((item, index) => {
+          {blogs?.map((item, index) => {
+            let stripHtmlTags = (text) =>
+              text ? text.replace(/<[^>]*>/g, "") : "";
+
+            let truncateText = (text, numChars) => {
+              let cleanedText = stripHtmlTags(text);
+              if (cleanedText.length <= numChars) return cleanedText;
+              return cleanedText.slice(0, numChars) + "...";
+            };
             return (
               <a
                 key={index}
@@ -39,9 +47,11 @@ let RecentBlogs = () => {
                 className={styles.blogs}
               >
                 <img src={item.image} />
-                <h4>{item.category}</h4>
                 <h2>{item.blog_heading}</h2>
-                <p>{item.date}</p>
+                <h6>
+                  <b>{item.date && item.date.trim().split("T")[0]}</b>
+                </h6>
+                <p>{truncateText(item.blog_content, 100)}</p>
               </a>
             );
           })}

@@ -61,7 +61,7 @@ let Blogs = () => {
         </div>
         <div className={styles.sliderSection}>
           <Slider {...settings}>
-            {blogs.map((item, index) => {
+            {blogs?.map((item, index) => {
               let stripHtmlTags = (text) =>
                 text ? text.replace(/<[^>]*>/g, "") : "";
 
@@ -77,7 +77,6 @@ let Blogs = () => {
                   href={`/blogs/${item._id}`}
                 >
                   <img src={item.image} />
-                  <h5>{item.category}</h5>
                   <h2>{item.blog_heading}</h2>
                   <h6>
                     <b>{item.date && item.date.trim().split("T")[0]}</b>

@@ -53,6 +53,9 @@
   border: none;
   background-color: white;
 }
+.expertiseDiv h4{
+  color: #e0b969;
+}
 
 .expertiseDiv p {
   color: #132f46 !important;
@@ -223,7 +226,12 @@
   padding: 10px 40px;
   border-radius: 5px;
   position: relative;
+  transition: 0.2s ease-in-out;
   /* overflow: hidden; */
+}
+
+.bannerParent2 button:hover {
+  background-color: #1d629a;
 }
 
 .bannerParent2 button::before {
@@ -2373,8 +2381,7 @@
     text-align: center;
   }
 
-  .card img {
-    width: 48%;
+  .card img {    width: 48%;
   }
   .title {
     font-size: 7px;
