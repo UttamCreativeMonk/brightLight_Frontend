@@ -148,10 +148,15 @@
     border: 1px solid white;
     border-radius: 30px;
     font-size: 14px;
+    transition: 0.3 ease-in-out;
   }
   
   .firstBlogContentSection a:hover {
     text-decoration: none;
+    transition: 0.3 ease-in-out;
+    color: #132f46;
+    background-color: white;
+    border: 1px solid #132f46;
   }
   
   .blogsResultSection {
@@ -178,16 +183,22 @@
   
   .blog {
     width: 100%;
+    transition: 0.3s ease-in-out;
   }
   
   .blog:hover {
     text-decoration: none;
+    transform: translateY(-8px); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
   .blog img {
     width: 100%;
     margin-bottom: 20px;
     border-radius: 10px;
+  }
+  .sortButtonHover{
+    cursor: pointer;
   }
   
   .blog div {

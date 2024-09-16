@@ -153,10 +153,8 @@ let News = () => {
           <div>
             <p>
               Sort By{" "}
-              <button onClick={() => handleSortChange("newest")}>Newest</button>{" "}
-              <button onClick={() => handleSortChange("relevance")}>
-                Relevance
-              </button>
+              <button className={styles.sortButtonHover} onClick={() => handleSortChange("newest")}>Newest</button>{" "}
+              <button  className={styles.sortButtonHover}  onClick={() => handleSortChange("relevance")}>  Relevance </button>
             </p>
           </div>
         </div>

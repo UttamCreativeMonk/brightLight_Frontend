@@ -53,6 +53,12 @@
 
 .blog:hover {
   text-decoration: none;
+  transform: translateY(-8px); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sortButtonHover{
+  cursor: pointer;
 }
 
 .sliderSection {
@@ -122,6 +128,7 @@
     opacity: 1;
   }
 }
+
 
 
 /* Base button styles */
