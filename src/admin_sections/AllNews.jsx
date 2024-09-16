@@ -226,7 +226,7 @@ const AllNews = () => {
                       src={deleteIcon}
                       className={styles.deleteIcon}
                       onClick={() => handleDeleteClick(blog._id)}
-                      alt="Delete"
+                      alt="Dlt"
                     />
                   </>
                 )}

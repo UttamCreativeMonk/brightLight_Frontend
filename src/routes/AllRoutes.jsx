@@ -261,7 +261,7 @@ let AllRoutes = () => {
       />
       <Route path="/search" element={<Search />} />
 
-      <Route path="/auth/dashboard/login/admin" element={<Login />} />
+      <Route path="/auth/dashboard/login/admin" element={<Login/>} />
     </Routes>
   );
 };
