@@ -5,7 +5,6 @@ import Footer1 from "../components/Footer1";
 import ogImage from "../assets/ogImage.png";
 import { Helmet } from "react-helmet-async";
 
-
 const CLBILETSCalculator = () => {
   let [selected, setSelected] = useState(1);
   let [metaData, setMetaData] = useState([]);
@@ -34,7 +33,7 @@ const CLBILETSCalculator = () => {
   const [selectedCLB2, setSelectedCLB2] = useState("1");
 
   const handleCLBClick2 = (level) => {
-    setSelectedCLB(level);
+    setSelectedCLB2(level);
 
     switch (level) {
       case "1":
@@ -136,8 +135,10 @@ const CLBILETSCalculator = () => {
       default:
         break;
     }
-    useEffect(()=>{
-      fetch("https://brightlight-node.onrender.com/clb-meta")
+  };
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/clb-meta")
       .then((res) => {
         return res.json();
       })
@@ -149,14 +150,12 @@ const CLBILETSCalculator = () => {
       .catch((error) => {
         console.log(error);
       });
-    },[])
-  
-  };
+  }, []);
 
   const [selectedCLB3, setSelectedCLB3] = useState("1");
 
   const handleCLBClick3 = (level) => {
-    setSelectedCLB(level);
+    setSelectedCLB3(level);
 
     switch (level) {
       case "1":
@@ -266,7 +265,6 @@ const CLBILETSCalculator = () => {
         return res.json();
       })
       .then((data) => {
-        console.log(data[0]);
         if (data && data[0]) {
           setData(data[0]);
         }

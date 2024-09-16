@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/BCPNPCalculator.module.css";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
@@ -7,9 +7,11 @@ import ogImage from "../assets/ogImage.png";
 import { Helmet } from "react-helmet-async";
 
 const BCPNPCalculator = () => {
-  const [points, setPoints] = useState(0);
-
   let [metaData, setMetaData] = useState([]);
+
+  const firstSectionRef = useRef(null);
+  const [firstSectionHeight, setFirstSectionHeight] = useState("auto");
+  const [points, setPoints] = useState(0);
   const [canadaExperiencePoints, setCanadaExperiencePoints] = useState(0);
   const [currentJobPoints, setCurrentJobPoints] = useState(0);
   const [educationPoints, setEducationPoints] = useState(0);
@@ -20,9 +22,34 @@ const BCPNPCalculator = () => {
   const [languageProficiencyPoints, setLanguageProficiencyPoints] = useState(0);
   const [hourlyWagePoints, setHourlyWagePoints] = useState(0);
   const [employmentAreaPoints, setEmploymentAreaPoints] = useState(0);
-  const [languageProficiencyRegionPoints, setLanguageProficiencyRegionPoints] =
-    useState(0);
+  const [languageProficiencyRegionPoints, setLanguageProficiencyRegionPoints] = useState(0);
+  let [data, setData] = useState([]);
 
+  useEffect(() => {
+    const setHeightAfterDelay = () => {
+      if (firstSectionRef.current) {
+        const height = firstSectionRef.current.offsetHeight - 50;
+        setFirstSectionHeight(height);
+      }
+    };
+    const timer = setTimeout(setHeightAfterDelay, 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/bcpnp")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
   const [isStickyEnabled, setIsStickyEnabled] = useState(
     window.innerWidth >= 1080
   );
@@ -44,26 +71,26 @@ const BCPNPCalculator = () => {
     const experienceValue = e.target.value;
 
     switch (experienceValue) {
-      case "5+":
-        setPoints(15);
+      case "1":
+        setPoints(Math.floor(data?.fsq1o1p));
         break;
-      case "4-5":
-        setPoints(12);
+      case "2":
+        setPoints(Math.floor(data?.fsq1o2p));
         break;
-      case "3-4":
-        setPoints(9);
+      case "3":
+        setPoints(Math.floor(data?.fsq1o3p));
         break;
-      case "2-3":
-        setPoints(6);
+      case "4":
+        setPoints(Math.floor(data?.fsq1o4p));
         break;
-      case "1-2":
-        setPoints(3);
+      case "5":
+        setPoints(Math.floor(data?.fsq1o5p));
         break;
-      case "<1":
-        setPoints(1);
+      case "6":
+        setPoints(Math.floor(data?.fsq1o6p));
         break;
-      case "0":
-        setPoints(0);
+      case "7":
+        setPoints(Math.floor(data?.fsq1o7p));
         break;
       default:
         setPoints(0);
@@ -75,10 +102,10 @@ const BCPNPCalculator = () => {
   const handleCanadaExperienceChange = (e) => {
     const canadaExperienceValue = e.target.value;
 
-    if (canadaExperienceValue === "yes") {
-      setCanadaExperiencePoints(6); // Mimic the case '2-3'
+    if (canadaExperienceValue === "1") {
+      setCanadaExperiencePoints(Math.floor(data?.ssq1o1p)); // Mimic the case '2-3'
     } else {
-      setCanadaExperiencePoints(0); // Mimic the case '0'
+      setCanadaExperiencePoints(Math.floor(data?.ssq1o2p)); // Mimic the case '0'
     }
   };
 
@@ -86,10 +113,10 @@ const BCPNPCalculator = () => {
   const handleCurrentJobChange = (e) => {
     const currentJobValue = e.target.value;
 
-    if (currentJobValue === "yes") {
-      setCurrentJobPoints(4);
+    if (currentJobValue === "1") {
+      setCurrentJobPoints(Math.floor(data?.tsq1o1p));
     } else {
-      setCurrentJobPoints(1);
+      setCurrentJobPoints(Math.floor(data?.tsq1o2p));
     }
   };
 
@@ -98,26 +125,26 @@ const BCPNPCalculator = () => {
     const educationValue = e.target.value;
 
     switch (educationValue) {
-      case "doctoral":
-        setEducationPoints(20);
+      case "1":
+        setEducationPoints(Math.floor(data?.fosq1o1p));
         break;
-      case "masters":
-        setEducationPoints(18);
+      case "2":
+        setEducationPoints(Math.floor(data?.fosq1o2p));
         break;
-      case "postGradCert":
-        setEducationPoints(16);
+      case "3":
+        setEducationPoints(Math.floor(data?.fosq1o3p));
         break;
-      case "bachelors":
-        setEducationPoints(14);
+      case "4":
+        setEducationPoints(Math.floor(data?.fosq1o4p));
         break;
-      case "associate":
-        setEducationPoints(12);
+      case "5":
+        setEducationPoints(Math.floor(data?.fosq1o5p));
         break;
-      case "diplomaCert":
-        setEducationPoints(10);
+      case "6":
+        setEducationPoints(Math.floor(data?.fosq1o6p));
         break;
-      case "secondarySchool":
-        setEducationPoints(5);
+      case "7":
+        setEducationPoints(Math.floor(data?.fosq1o7p));
         break;
       default:
         setEducationPoints(0);
@@ -129,10 +156,10 @@ const BCPNPCalculator = () => {
   const handleBcEducationChange = (e) => {
     const bcEducationValue = e.target.value;
 
-    if (bcEducationValue === "yes") {
-      setBcEducationPoints(3);
+    if (bcEducationValue === "1") {
+      setBcEducationPoints(Math.floor(data?.ffsq1o1p));
     } else {
-      setBcEducationPoints(0);
+      setBcEducationPoints(Math.floor(data?.ffsq1o2p));
     }
   };
 
@@ -140,10 +167,10 @@ const BCPNPCalculator = () => {
   const handleCanadaEducationChange = (e) => {
     const canadaEducationValue = e.target.value;
 
-    if (canadaEducationValue === "yes") {
-      setCanadaEducationPoints(5);
+    if (canadaEducationValue === "1") {
+      setCanadaEducationPoints(Math.floor(data?.sxsq1o1p));
     } else {
-      setCanadaEducationPoints(0);
+      setCanadaEducationPoints(Math.floor(data?.sxsq1o2p));
     }
   };
 
@@ -151,10 +178,10 @@ const BCPNPCalculator = () => {
   const handleOccupationChange = (e) => {
     const occupationValue = e.target.value;
 
-    if (occupationValue === "yes") {
-      setOccupationPoints(6);
+    if (occupationValue === "1") {
+      setOccupationPoints(Math.floor(data?.svsq1o1p));
     } else {
-      setOccupationPoints(3);
+      setOccupationPoints(Math.floor(data?.svsq1o2p));
     }
   };
 
@@ -163,32 +190,32 @@ const BCPNPCalculator = () => {
     const languageValue = e.target.value;
 
     switch (languageValue) {
-      case "10+":
-        setLanguagePoints(20);
+      case "1":
+        setLanguagePoints(Math.floor(data?.egsq1o1p));
         break;
-      case "9":
-        setLanguagePoints(18);
+      case "2":
+        setLanguagePoints(Math.floor(data?.egsq1o2p));
         break;
-      case "8":
-        setLanguagePoints(16);
-        break;
-      case "7":
-        setLanguagePoints(14);
-        break;
-      case "6":
-        setLanguagePoints(12);
-        break;
-      case "5":
-        setLanguagePoints(10);
+      case "3":
+        setLanguagePoints(Math.floor(data?.egsq1o3p));
         break;
       case "4":
-        setLanguagePoints(8);
+        setLanguagePoints(Math.floor(data?.egsq1o4p));
         break;
-      case "lessThan4":
-        setLanguagePoints(5);
+      case "5":
+        setLanguagePoints(Math.floor(data?.egsq1o5p));
         break;
-      case "noTest":
-        setLanguagePoints(0);
+      case "6":
+        setLanguagePoints(Math.floor(data?.egsq1o6p));
+        break;
+      case "7":
+        setLanguagePoints(Math.floor(data?.egsq1o7p));
+        break;
+      case "8":
+        setLanguagePoints(Math.floor(data?.egsq1o8p));
+        break;
+      case "9":
+        setLanguagePoints(Math.floor(data?.egsq1o9p));
         break;
       default:
         setLanguagePoints(0);
@@ -200,10 +227,10 @@ const BCPNPCalculator = () => {
   const handleLanguageProficiencyChange = (e) => {
     const languageProficiencyValue = e.target.value;
 
-    if (languageProficiencyValue === "yes") {
-      setLanguageProficiencyPoints(5);
+    if (languageProficiencyValue === "1") {
+      setLanguageProficiencyPoints(Math.floor(data?.nnsq1o1p));
     } else {
-      setLanguageProficiencyPoints(3);
+      setLanguageProficiencyPoints(Math.floor(data?.nnsq1o2p));
     }
   };
 
@@ -223,14 +250,14 @@ const BCPNPCalculator = () => {
     const areaValue = e.target.value;
 
     switch (areaValue) {
-      case "area1":
-        setEmploymentAreaPoints(10);
+      case "1":
+        setEmploymentAreaPoints(Math.floor(data?.elsq1o1p));
         break;
-      case "area2":
-        setEmploymentAreaPoints(7);
+      case "2":
+        setEmploymentAreaPoints(Math.floor(data?.elsq1o2p));
         break;
-      case "area3":
-        setEmploymentAreaPoints(5);
+      case "3":
+        setEmploymentAreaPoints(Math.floor(data?.elsq1o3p));
         break;
       default:
         setEmploymentAreaPoints(0);
@@ -243,21 +270,20 @@ const BCPNPCalculator = () => {
     const proficiencyRegionValue = e.target.value;
 
     switch (proficiencyRegionValue) {
-      case "regionalExperience":
-        setLanguageProficiencyRegionPoints(5);
+      case "1":
+        setLanguageProficiencyRegionPoints(Math.floor(data?.twsq1o1p));
         break;
-      case "regionalAlumni":
-        setLanguageProficiencyRegionPoints(7);
+      case "2":
+        setLanguageProficiencyRegionPoints(Math.floor(data?.twsq1o2p));
         break;
-      case "notApplicable":
-        setLanguageProficiencyRegionPoints(3);
+      case "3":
+        setLanguageProficiencyRegionPoints(Math.floor(data?.twsq1o3p));
         break;
       default:
         setLanguageProficiencyRegionPoints(0);
         break;
     }
   };
-
   useEffect(()=>{
     fetch("https://brightlight-node.onrender.com/bcpnp-meta")
     .then((res) => {
@@ -274,7 +300,7 @@ const BCPNPCalculator = () => {
   },[])
   return (
     <>
-        <Helmet>
+     <Helmet>
         <title>
           {metaData.metaTitle
             ? metaData?.metaTitle
@@ -312,519 +338,562 @@ const BCPNPCalculator = () => {
           content={
             metaData.metaKeywords
               ? metaData?.metaKeywords
-              : "About Us, Brightlight Immigration, Immigration Services, Mission, Team"
+              : " Brightlight Immigration, Immigration Services, Mission, Team"
           }
         />
       </Helmet>
+
       <Navbar1 />
       {/* Section 1: Work Experience in B.C. Job Offer */}
       <div className={styles.bannerParent}>
         <div className={styles.bannerHeading}>
-          <h1>B.C PNP Calculator 2024</h1>
-          <p>
-            Points are calculated based on job offer, work experience, language
-            ability, and education.
-          </p>
+          {data && <h1>{data?.heading}</h1>}
+          {data && <p>{data?.description}</p>}
         </div>
       </div>
 
       <StickyContainer>
-        <div className={styles.containerParent}>
-          <div className={styles.firstSection}>
-            <div className={styles.container}>
+      <div className={styles.containerParent}>
+        <div
+          className={styles.firstSection}
+          ref={firstSectionRef}
+          style={{ height: `${firstSectionHeight}px` }}
+        >
+          <div className={styles.container}>
+            {data?.fsq1 && (
               <div className={styles.header}>
                 <div className={styles.headerLineParent}>
                   <div className={styles.headingNumbers}>1</div>
                   <p></p>
                 </div>
-                <h5>
-                  Directly Related Work Experience in the Occupation of B.C. Job
-                  Offer:
-                </h5>
+                <h5>{data?.fsq1}</h5>
               </div>
-              <div className={styles.radioGroup}>
-                <div className={styles.radioItem}>
-                  <label>
-                    <input
-                      type="radio"
-                      name="experience"
-                      value="5+"
-                      onChange={handleExperienceChange}
-                    />{" "}
-                    5 or more years
-                  </label>
-                </div>
-                <div className={styles.radioItem}>
-                  <label>
-                    <input
-                      type="radio"
-                      name="experience"
-                      value="4-5"
-                      onChange={handleExperienceChange}
-                    />{" "}
-                    At least 4 but less than 5 years
-                  </label>
-                </div>
-                <div className={styles.radioItem}>
-                  <label>
-                    <input
-                      type="radio"
-                      name="experience"
-                      value="3-4"
-                      onChange={handleExperienceChange}
-                    />{" "}
-                    At least 3 but less than 4 years
-                  </label>
-                </div>
-                <div className={styles.radioItem}>
-                  <label>
-                    <input
-                      type="radio"
-                      name="experience"
-                      value="2-3"
-                      onChange={handleExperienceChange}
-                    />{" "}
-                    At least 2 but less than 3 years
-                  </label>
-                </div>
-                <div className={styles.radioItem}>
-                  <label>
-                    <input
-                      type="radio"
-                      name="experience"
-                      value="1-2"
-                      onChange={handleExperienceChange}
-                    />{" "}
-                    At least 1 but less than 2 years
-                  </label>
-                </div>
-                <div className={styles.radioItem}>
-                  <label>
-                    <input
-                      type="radio"
-                      name="experience"
-                      value="<1"
-                      onChange={handleExperienceChange}
-                    />{" "}
-                    Less than a year
-                  </label>
-                </div>
-                <div className={styles.radioItem}>
-                  <label>
-                    <input
-                      type="radio"
-                      name="experience"
-                      value="0"
-                      onChange={handleExperienceChange}
-                    />{" "}
-                    No Experience
-                  </label>
-                </div>
-              </div>
-              <div className={styles.points}>
-                {/* Points <input type="text" value={points} readOnly /> */}
-              </div>
-            </div>
+            )}
 
-            {/* Section 2: At Least 1 Year of Directly Related Experience in Canada */}
-            <div className={styles.container}>
+            <div className={styles.radioGroup}>
+              {data?.fsq1o1 && (
+                <div className={styles.radioItem}>
+                  <label>
+                    <input
+                      type="radio"
+                      name="experience"
+                      value="1"
+                      onChange={handleExperienceChange}
+                    />{" "}
+                    {data?.fsq1o1}
+                  </label>
+                </div>
+              )}
+
+              {data?.fsq1o2 && (
+                <div className={styles.radioItem}>
+                  <label>
+                    <input
+                      type="radio"
+                      name="experience"
+                      value="2"
+                      onChange={handleExperienceChange}
+                    />{" "}
+                    {data?.fsq1o2}
+                  </label>
+                </div>
+              )}
+
+              {data?.fsq1o3 && (
+                <div className={styles.radioItem}>
+                  <label>
+                    <input
+                      type="radio"
+                      name="experience"
+                      value="3"
+                      onChange={handleExperienceChange}
+                    />{" "}
+                    {data?.fsq1o3}
+                  </label>
+                </div>
+              )}
+
+              {data?.fsq1o4 && (
+                <div className={styles.radioItem}>
+                  <label>
+                    <input
+                      type="radio"
+                      name="experience"
+                      value="4"
+                      onChange={handleExperienceChange}
+                    />{" "}
+                    {data?.fsq1o4}
+                  </label>
+                </div>
+              )}
+
+              {data?.fsq1o5 && (
+                <div className={styles.radioItem}>
+                  <label>
+                    <input
+                      type="radio"
+                      name="experience"
+                      value="5"
+                      onChange={handleExperienceChange}
+                    />{" "}
+                    {data?.fsq1o5}
+                  </label>
+                </div>
+              )}
+
+              {data?.fsq1o6 && (
+                <div className={styles.radioItem}>
+                  <label>
+                    <input
+                      type="radio"
+                      name="experience"
+                      value="6"
+                      onChange={handleExperienceChange}
+                    />{" "}
+                    {data?.fsq1o6}
+                  </label>
+                </div>
+              )}
+
+              {data?.fsq1o7 && (
+                <div className={styles.radioItem}>
+                  <label>
+                    <input
+                      type="radio"
+                      name="experience"
+                      value="7"
+                      onChange={handleExperienceChange}
+                    />{" "}
+                    {data?.fsq1o7}
+                  </label>
+                </div>
+              )}
+            </div>
+            <div className={styles.points}>
+              {/* Points <input type="text" value={points} readOnly /> */}
+            </div>
+          </div>
+
+          {/* Section 2: At Least 1 Year of Directly Related Experience in Canada */}
+          <div className={styles.container}>
+            {data?.ssq1 && (
               <div className={styles.header}>
                 <div className={styles.headerLineParent}>
                   {" "}
                   <div className={styles.headingNumbers}>2</div>
                   <p></p>{" "}
                 </div>
-                <h4> ADDITIONAL POINTS FOR WORK EXPERIENCE</h4>
-                <h5>
-                  {" "}
-                  At least 1 year of directly related experience in Canada?
-                </h5>
+                <h4>{data?.secondSectionHeading}</h4>
+                <h5>{data?.ssq1}</h5>
               </div>
-              <div className={styles.radioGroup}>
-                <div className={styles.radioItem}>
-                  <label>
-                    <input
-                      type="radio"
-                      name="canadaExperience"
-                      value="yes"
-                      onChange={handleCanadaExperienceChange}
-                    />{" "}
-                    Yes
-                  </label>
-                </div>
-                <div className={styles.radioItem}>
-                  <label>
-                    <input
-                      type="radio"
-                      name="canadaExperience"
-                      value="no"
-                      onChange={handleCanadaExperienceChange}
-                    />{" "}
-                    No
-                  </label>
-                </div>
+            )}
+
+            <div className={styles.radioGroup}>
+              <div className={styles.radioItem}>
+                <label>
+                  <input
+                    type="radio"
+                    name="canadaExperience"
+                    value="1"
+                    onChange={handleCanadaExperienceChange}
+                  />{" "}
+                  {data?.ssq1o1}
+                </label>
               </div>
-              <div className={styles.points}>
-                {/* Points <input type="text" value={canadaExperiencePoints} readOnly /> */}
+              <div className={styles.radioItem}>
+                <label>
+                  <input
+                    type="radio"
+                    name="canadaExperience"
+                    value="2"
+                    onChange={handleCanadaExperienceChange}
+                  />{" "}
+                  {data?.ssq1o2}
+                </label>
               </div>
             </div>
+            <div className={styles.points}>
+              {/* Points <input type="text" value={canadaExperiencePoints} readOnly /> */}
+            </div>
+          </div>
 
-            {/* Section 3: Currently Working Full-Time in B.C. */}
-            <div className={styles.container}>
+          {/* Section 3: Currently Working Full-Time in B.C. */}
+          <div className={styles.container}>
+            {data?.tsq1 && (
               <div className={styles.header}>
                 <div className={styles.headerLineParent}>
                   {" "}
                   <div className={styles.headingNumbers}>3</div>
                   <p></p>{" "}
                 </div>
-                <h5>
-                  {" "}
-                  Currently working full-time in B.C. for the employer in the
-                  occupation identified in the BC PNP registration?
-                </h5>
+                <h5>{data?.tsq1}</h5>
               </div>
-              <div className={styles.radioGroup}>
-                <div className={styles.radioItem}>
-                  <label>
-                    <input
-                      type="radio"
-                      name="currentJob"
-                      value="yes"
-                      onChange={handleCurrentJobChange}
-                    />{" "}
-                    Yes
-                  </label>
-                </div>
-                <div className={styles.radioItem}>
-                  <label>
-                    <input
-                      type="radio"
-                      name="currentJob"
-                      value="no"
-                      onChange={handleCurrentJobChange}
-                    />{" "}
-                    No
-                  </label>
-                </div>
-              </div>
-              <div className={styles.points}>
-                {/* Points <input type="text" value={currentJobPoints} readOnly /> */}
-              </div>
-            </div>
+            )}
 
-            {/* Section 4: Education Level */}
-            <div className={styles.container}>
+            <div className={styles.radioGroup}>
+              {data?.tsq1o1 && (
+                <div className={styles.radioItem}>
+                  <label>
+                    <input
+                      type="radio"
+                      name="currentJob"
+                      value="1"
+                      onChange={handleCurrentJobChange}
+                    />{" "}
+                    {data?.tsq1o1}
+                  </label>
+                </div>
+              )}
+
+              {data?.tsq1o2 && (
+                <div className={styles.radioItem}>
+                  <label>
+                    <input
+                      type="radio"
+                      name="currentJob"
+                      value="2"
+                      onChange={handleCurrentJobChange}
+                    />{" "}
+                    {data?.tsq1o2}
+                  </label>
+                </div>
+              )}
+            </div>
+            <div className={styles.points}>
+              {/* Points <input type="text" value={currentJobPoints} readOnly /> */}
+            </div>
+          </div>
+
+          {/* Section 4: Education Level */}
+          <div className={styles.container}>
+            {data?.fosq1 && (
               <div className={styles.headerLineParent}>
                 {" "}
                 <div className={styles.headingNumbers}>4</div>
                 <p></p>{" "}
               </div>
-              <div className={styles.header}>
-                <h5>Choose your Education Level</h5>
-              </div>
-              <div className={styles.radioGroup}>
-                <div className={styles.radioItem}>
-                  <label>
-                    <input
-                      type="radio"
-                      name="education"
-                      value="doctoral"
-                      onChange={handleEducationChange}
-                    />{" "}
-                    Doctoral Degree
-                  </label>
-                </div>
-                <div className={styles.radioItem}>
-                  <label>
-                    <input
-                      type="radio"
-                      name="education"
-                      value="masters"
-                      onChange={handleEducationChange}
-                    />{" "}
-                    Master's Degree
-                  </label>
-                </div>
-                <div className={styles.radioItem}>
-                  <label>
-                    <input
-                      type="radio"
-                      name="education"
-                      value="postGradCert"
-                      onChange={handleEducationChange}
-                    />{" "}
-                    Post Graduation Certificate or Diploma
-                  </label>
-                </div>
-                <div className={styles.radioItem}>
-                  <label>
-                    <input
-                      type="radio"
-                      name="education"
-                      value="bachelors"
-                      onChange={handleEducationChange}
-                    />{" "}
-                    Bachelor's Degree
-                  </label>
-                </div>
-                <div className={styles.radioItem}>
-                  <label>
-                    <input
-                      type="radio"
-                      name="education"
-                      value="associate"
-                      onChange={handleEducationChange}
-                    />{" "}
-                    Associate Degree
-                  </label>
-                </div>
-                <div className={styles.radioItem}>
-                  <label>
-                    <input
-                      type="radio"
-                      name="education"
-                      value="diplomaCert"
-                      onChange={handleEducationChange}
-                    />{" "}
-                    Post-Secondary Diploma/Certificate (Trades or Non-Trades)
-                  </label>
-                </div>
-                <div className={styles.radioItem}>
-                  <label>
-                    <input
-                      type="radio"
-                      name="education"
-                      value="secondarySchool"
-                      onChange={handleEducationChange}
-                    />{" "}
-                    Secondary School (High School) or less
-                  </label>
-                </div>
-              </div>
-              <div className={styles.points}>
-                {/* Points <input type="text" value={educationPoints} readOnly /> */}
-              </div>
-            </div>
+            )}
 
-            {/* Section 5: Post-Secondary Education Completed in B.C. */}
-            <div className={styles.container}>
+            {data?.fosq1 && (
+              <div className={styles.header}>
+                <h5>{data?.fosq1}</h5>
+              </div>
+            )}
+
+            <div className={styles.radioGroup}>
+              {data?.fosq1o1 && (
+                <div className={styles.radioItem}>
+                  <label>
+                    <input
+                      type="radio"
+                      name="education"
+                      value="1"
+                      onChange={handleEducationChange}
+                    />{" "}
+                    {data?.fosq1o1}
+                  </label>
+                </div>
+              )}
+
+              {data?.fosq1o2 && (
+                <div className={styles.radioItem}>
+                  <label>
+                    <input
+                      type="radio"
+                      name="education"
+                      value="2"
+                      onChange={handleEducationChange}
+                    />{" "}
+                    {data?.fosq1o2}
+                  </label>
+                </div>
+              )}
+
+              {data?.fosq1o3 && (
+                <div className={styles.radioItem}>
+                  <label>
+                    <input
+                      type="radio"
+                      name="education"
+                      value="3"
+                      onChange={handleEducationChange}
+                    />{" "}
+                    {data?.fosq1o3}
+                  </label>
+                </div>
+              )}
+
+              {data?.fosq1o4 && (
+                <div className={styles.radioItem}>
+                  <label>
+                    <input
+                      type="radio"
+                      name="education"
+                      value="4"
+                      onChange={handleEducationChange}
+                    />{" "}
+                    {data?.fosq1o4}
+                  </label>
+                </div>
+              )}
+              {data?.fosq1o5 && (
+                <div className={styles.radioItem}>
+                  <label>
+                    <input
+                      type="radio"
+                      name="education"
+                      value="5"
+                      onChange={handleEducationChange}
+                    />{" "}
+                    {data?.fosq1o5}
+                  </label>
+                </div>
+              )}
+
+              {data?.fosq1o6 && (
+                <div className={styles.radioItem}>
+                  <label>
+                    <input
+                      type="radio"
+                      name="education"
+                      value="6"
+                      onChange={handleEducationChange}
+                    />{" "}
+                    {data?.fosq1o6}
+                  </label>
+                </div>
+              )}
+              {data?.fosq1o7 && (
+                <div className={styles.radioItem}>
+                  <label>
+                    <input
+                      type="radio"
+                      name="education"
+                      value="7"
+                      onChange={handleEducationChange}
+                    />{" "}
+                    {data?.fosq1o7}
+                  </label>
+                </div>
+              )}
+            </div>
+            <div className={styles.points}>
+              {/* Points <input type="text" value={educationPoints} readOnly /> */}
+            </div>
+          </div>
+
+          {/* Section 5: Post-Secondary Education Completed in B.C. */}
+          <div className={styles.container}>
+            {data?.fifthSectionHeading && (
               <div className={styles.header}>
                 <div className={styles.headerLineParent}>
                   {" "}
                   <div className={styles.headingNumbers}>5</div>
                   <p></p>{" "}
                 </div>
-                <h4>ADDITIONAL POINT FOR EDUCATION IN B.C. OR CANADA</h4>
-                <h5>Post-Secondary Education Completed in B.C.?</h5>
+                <h4>{data?.fifthSectionHeading}</h4>
+                <h5>{data?.ffsq1}</h5>
               </div>
-              <div className={styles.radioGroup}>
-                <div className={styles.radioItem}>
-                  <label>
-                    <input
-                      type="radio"
-                      name="bcEducation"
-                      value="yes"
-                      onChange={handleBcEducationChange}
-                    />{" "}
-                    Yes
-                  </label>
-                </div>
-                <div className={styles.radioItem}>
-                  <label>
-                    <input
-                      type="radio"
-                      name="bcEducation"
-                      value="no"
-                      onChange={handleBcEducationChange}
-                    />{" "}
-                    No
-                  </label>
-                </div>
-              </div>
-              <div className={styles.points}>
-                {/* Points <input type="text" value={bcEducationPoints} readOnly /> */}
-              </div>
-            </div>
+            )}
 
-            {/* Section 6: Post-Secondary Education Completed in Canada (Outside B.C.) */}
-            <div className={styles.container}>
+            <div className={styles.radioGroup}>
+              {data?.ffsq1o1 && (
+                <div className={styles.radioItem}>
+                  <label>
+                    <input
+                      type="radio"
+                      name="bcEducation"
+                      value="1"
+                      onChange={handleBcEducationChange}
+                    />{" "}
+                    {data?.ffsq1o1}
+                  </label>
+                </div>
+              )}
+
+              {data?.ffsq1o2 && (
+                <div className={styles.radioItem}>
+                  <label>
+                    <input
+                      type="radio"
+                      name="bcEducation"
+                      value="2"
+                      onChange={handleBcEducationChange}
+                    />{" "}
+                    {data?.ffsq1o2}
+                  </label>
+                </div>
+              )}
+            </div>
+            <div className={styles.points}>
+              {/* Points <input type="text" value={bcEducationPoints} readOnly /> */}
+            </div>
+          </div>
+
+          {/* Section 6: Post-Secondary Education Completed in Canada (Outside B.C.) */}
+          <div className={styles.container}>
+            {data?.sixthSectionHeading && (
               <div className={styles.header}>
                 <div className={styles.headerLineParent}>
                   {" "}
                   <div className={styles.headingNumbers}>6</div>
                   <p></p>{" "}
                 </div>
-                <h4>ADDITIONAL POINT FOR EDUCATION IN B.C. OR CANADA</h4>
-                <h5>
-                  {" "}
-                  Post-Secondary Education Completed in Canada (Outside B.C.)?
-                </h5>
+                <h4>{data?.sixthSectionHeading}</h4>
+                <h5>{data?.sxsq1}</h5>
               </div>
-              <div className={styles.radioGroup}>
-                <div className={styles.radioItem}>
-                  <label>
-                    <input
-                      type="radio"
-                      name="canadaEducation"
-                      value="yes"
-                      onChange={handleCanadaEducationChange}
-                    />{" "}
-                    Yes
-                  </label>
-                </div>
-                <div className={styles.radioItem}>
-                  <label>
-                    <input
-                      type="radio"
-                      name="canadaEducation"
-                      value="no"
-                      onChange={handleCanadaEducationChange}
-                    />{" "}
-                    No
-                  </label>
-                </div>
-              </div>
-              <div className={styles.points}>
-                {/* Points <input type="text" value={canadaEducationPoints} readOnly /> */}
-              </div>
-            </div>
+            )}
 
-            {/* Section 7: Are you working in one of the following occupations? */}
-            <div className={styles.container}>
+            <div className={styles.radioGroup}>
+              {data?.sxsq1o1 && (
+                <div className={styles.radioItem}>
+                  <label>
+                    <input
+                      type="radio"
+                      name="canadaEducation"
+                      value="1"
+                      onChange={handleCanadaEducationChange}
+                    />{" "}
+                    {data?.sxsq1o1}
+                  </label>
+                </div>
+              )}
+
+              {data?.sxsq1o2 && (
+                <div className={styles.radioItem}>
+                  <label>
+                    <input
+                      type="radio"
+                      name="canadaEducation"
+                      value="2"
+                      onChange={handleCanadaEducationChange}
+                    />{" "}
+                    {data?.sxsq1o2}
+                  </label>
+                </div>
+              )}
+            </div>
+            <div className={styles.points}>
+              {/* Points <input type="text" value={canadaEducationPoints} readOnly /> */}
+            </div>
+          </div>
+
+          {/* Section 7: Are you working in one of the following occupations? */}
+          <div className={styles.container}>
+            {data?.seventhSectionHeading && (
               <div className={styles.header}>
                 <div className={styles.headerLineParent}>
                   {" "}
                   <div className={styles.headingNumbers}>7</div>
                   <p></p>{" "}
                 </div>
-                <h4>ADDITIONAL POINT FOR PROFFESIONAL DESIGNATION IN B.C.</h4>
-                <h5>Are you working in one of the following occupations?</h5>
+                <h4>{data?.seventhSectionHeading}</h4>
+                <h5>{data?.svsq1}</h5>
               </div>
-              <div className={styles.radioGroup}>
-                <div className={styles.radioItem}>
-                  <label>
-                    <input
-                      type="radio"
-                      name="occupation"
-                      value="yes"
-                      onChange={handleOccupationChange}
-                    />{" "}
-                    Yes
-                  </label>
-                </div>
-                <div className={styles.radioItem}>
-                  <label>
-                    <input
-                      type="radio"
-                      name="occupation"
-                      value="no"
-                      onChange={handleOccupationChange}
-                    />{" "}
-                    No
-                  </label>
-                </div>
-              </div>
-              <div className={styles.points}>
-                {/* Points <input type="text" value={occupationPoints} readOnly /> */}
-              </div>
-              <div className={styles.divPofSeven}>
-                <p>
-                  Any Trade (Valid trade certificate issued by Skilled TradesBC
-                  or trades apprentices registered with Skilled Trades BC)
-                </p>
-                <p>NOC 33100 (Dental Assistants)</p>
-                <p>NOC 32111 (Dental Hygienists)</p>
-                <p>NOC 32112 (Dental Technicians)</p>
-                <p>NOC 32110 (Denturists)</p>
-                <p>NOC 42202 (Early Childhood Educators)</p>
-                <p>NOC 33102 (Health Care Aide)</p>
-                <p>NOC 32124 (Pharmacy Technicians)</p>
-                <p>NOC 32101 (Practical Nurses)</p>
-                <p>
-                  NOC 32200 (Traditional Chinese medicine practitioners and
-                  acupuncturists)
-                </p>
-                <p>NOC 32104 (Veterinary technicians)</p>
-              </div>
-            </div>
+            )}
 
-            {/* Section 8: Language Points */}
-            <div className={styles.container}>
+            <div className={styles.radioGroup}>
+              {data?.svsq1o1 && (
+                <div className={styles.radioItem}>
+                  <label>
+                    <input
+                      type="radio"
+                      name="occupation"
+                      value="1"
+                      onChange={handleOccupationChange}
+                    />{" "}
+                    {data?.svsq1o1}
+                  </label>
+                </div>
+              )}
+
+              {data?.svsq1o2 && (
+                <div className={styles.radioItem}>
+                  <label>
+                    <input
+                      type="radio"
+                      name="occupation"
+                      value="2"
+                      onChange={handleOccupationChange}
+                    />{" "}
+                    {data?.svsq1o2}
+                  </label>
+                </div>
+              )}
+            </div>
+            <div className={styles.points}>
+              {/* Points <input type="text" value={occupationPoints} readOnly /> */}
+            </div>
+            <div className={styles.divPofSeven}>
+              {data?.svt1 && <p>{data?.svt1}</p>}
+              {data?.svt2 && <p>{data?.svt2}</p>}
+              {data?.svt3 && <p>{data?.svt3}</p>}
+              {data?.svt4 && <p>{data?.svt4}</p>}
+              {data?.svt5 && <p>{data?.svt5}</p>}
+              {data?.svt6 && <p>{data?.svt6}</p>}
+              {data?.svt7 && <p>{data?.svt7}</p>}
+              {data?.svt8 && <p>{data?.svt8}</p>}
+              {data?.svt9 && <p>{data?.svt9}</p>}
+              {data?.svt10 && <p>{data?.svt10}</p>}
+              {data?.svt11 && <p>{data?.svt11}</p>}
+            </div>
+          </div>
+
+          {/* Section 8: Language Points */}
+          <div className={styles.container}>
+            {data?.egsq1 && (
               <div className={styles.header}>
                 <div className={styles.headerLineParent}>
                   {" "}
                   <div className={styles.headingNumbers}>8</div>
                   <p></p>{" "}
                 </div>
-                <h5> Language Points (Canadian Language Benchmark Level):</h5>
+                <h5>{data?.egsq1}</h5>
               </div>
-              <div className={styles.radioGroup}>
+            )}
+
+            <div className={styles.radioGroup}>
+              {data?.egsq1o1 && (
                 <div className={styles.radioItem}>
                   <label>
                     <input
                       type="radio"
                       name="language"
-                      value="10+"
+                      value="1"
                       onChange={handleLanguageChange}
                     />{" "}
-                    10+
+                    {data?.egsq1o1}
                   </label>
                 </div>
+              )}
+
+              {data?.egsq1o2 && (
                 <div className={styles.radioItem}>
                   <label>
                     <input
                       type="radio"
                       name="language"
-                      value="9"
+                      value="2"
                       onChange={handleLanguageChange}
                     />{" "}
-                    9
+                    {data?.egsq1o2}
                   </label>
                 </div>
+              )}
+              {data?.egsq1o3 && (
                 <div className={styles.radioItem}>
                   <label>
                     <input
                       type="radio"
                       name="language"
-                      value="8"
+                      value="3"
                       onChange={handleLanguageChange}
                     />{" "}
-                    8
+                    {data?.egsq1o3}
                   </label>
                 </div>
-                <div className={styles.radioItem}>
-                  <label>
-                    <input
-                      type="radio"
-                      name="language"
-                      value="7"
-                      onChange={handleLanguageChange}
-                    />{" "}
-                    7
-                  </label>
-                </div>
-                <div className={styles.radioItem}>
-                  <label>
-                    <input
-                      type="radio"
-                      name="language"
-                      value="6"
-                      onChange={handleLanguageChange}
-                    />{" "}
-                    6
-                  </label>
-                </div>
-                <div className={styles.radioItem}>
-                  <label>
-                    <input
-                      type="radio"
-                      name="language"
-                      value="5"
-                      onChange={handleLanguageChange}
-                    />{" "}
-                    5
-                  </label>
-                </div>
+              )}
+              {data?.egsq1o4 && (
                 <div className={styles.radioItem}>
                   <label>
                     <input
@@ -833,81 +902,131 @@ const BCPNPCalculator = () => {
                       value="4"
                       onChange={handleLanguageChange}
                     />{" "}
-                    4
+                    {data?.egsq1o4}
                   </label>
                 </div>
+              )}
+              {data?.egsq1o5 && (
                 <div className={styles.radioItem}>
                   <label>
                     <input
                       type="radio"
                       name="language"
-                      value="lessThan4"
+                      value="5"
                       onChange={handleLanguageChange}
                     />{" "}
-                    Less than 4
+                    {data?.egsq1o5}
                   </label>
                 </div>
+              )}
+              {data?.egsq1o6 && (
                 <div className={styles.radioItem}>
                   <label>
                     <input
                       type="radio"
                       name="language"
-                      value="noTest"
+                      value="6"
                       onChange={handleLanguageChange}
                     />{" "}
-                    No Test
+                    {data?.egsq1o6}
                   </label>
                 </div>
-              </div>
-              <div className={styles.points}>
-                {/* Points <input type="text" value={languagePoints} readOnly /> */}
-              </div>
+              )}
+              {data?.egsq1o7 && (
+                <div className={styles.radioItem}>
+                  <label>
+                    <input
+                      type="radio"
+                      name="language"
+                      value="7"
+                      onChange={handleLanguageChange}
+                    />{" "}
+                    {data?.egsq1o7}
+                  </label>
+                </div>
+              )}
+              {data?.egsq1o8 && (
+                <div className={styles.radioItem}>
+                  <label>
+                    <input
+                      type="radio"
+                      name="language"
+                      value="8"
+                      onChange={handleLanguageChange}
+                    />{" "}
+                    {data?.egsq1o8}
+                  </label>
+                </div>
+              )}
+              {data?.egsq1o9 && (
+                <div className={styles.radioItem}>
+                  <label>
+                    <input
+                      type="radio"
+                      name="language"
+                      value="9"
+                      onChange={handleLanguageChange}
+                    />{" "}
+                    {data?.egsq1o9}
+                  </label>
+                </div>
+              )}
             </div>
+            <div className={styles.points}>
+              {/* Points <input type="text" value={languagePoints} readOnly /> */}
+            </div>
+          </div>
 
-            {/* Section 9: Language Proficiency in both English and French */}
-            <div className={styles.container}>
+          {/* Section 9: Language Proficiency in both English and French */}
+          <div className={styles.container}>
+            {data?.nnsq1 && (
               <div className={styles.header}>
                 <div className={styles.headerLineParent}>
                   {" "}
                   <div className={styles.headingNumbers}>9</div>
                   <p></p>{" "}
                 </div>
-                <h4>ADDITIONAL POINT FOR LANGUAGE PROFICIENCY</h4>
-                <h5>
-                  Language Proficiency in both English and French (CLB 4 or
-                  higher in each of 4 competencies on both tests)
-                </h5>
+                <h4>{data?.ninthSectionHeading}</h4>
+                <h5>{data?.nnsq1}</h5>
               </div>
-              <div className={styles.radioGroup}>
+            )}
+
+            <div className={styles.radioGroup}>
+              {data?.nnsq1o1 && (
                 <div className={styles.radioItem}>
                   <label>
                     <input
                       type="radio"
                       name="languageProficiency"
-                      value="yes"
+                      value="1"
                       onChange={handleLanguageProficiencyChange}
                     />{" "}
-                    Yes
+                    {data?.nnsq1o1}
                   </label>
                 </div>
+              )}
+
+              {data?.nnsq1o2 && (
                 <div className={styles.radioItem}>
                   <label>
                     <input
                       type="radio"
                       name="languageProficiency"
-                      value="no"
+                      value="2"
                       onChange={handleLanguageProficiencyChange}
                     />{" "}
-                    No
+                    {data?.nnsq1o2}
                   </label>
                 </div>
-              </div>
-              {/* <div className={styles.points}>
+              )}
+            </div>
+            {/* <div className={styles.points}>
               Points <input type="text" value={languageProficiencyPoints} readOnly />
             </div> */}
-            </div>
+          </div>
 
-            {/* Section 10: Hourly Wage of the B.C. Job Offer */}
+          {/* Section 10: Hourly Wage of the B.C. Job Offer */}
+          {data?.tenthHeading && (
             <div className={styles.container}>
               <div className={styles.header}>
                 <div className={styles.headerLineParent}>
@@ -916,7 +1035,7 @@ const BCPNPCalculator = () => {
                   <p></p>{" "}
                 </div>
                 <h5>
-                  Hourly Wage of the B.C. Job Offer: ${" "}
+                  {data?.tenthHeading}{" "}
                   <input
                     className={styles.enterWageInput}
                     type="number"
@@ -930,120 +1049,140 @@ const BCPNPCalculator = () => {
                 {/* Points <input type="text" value={hourlyWagePoints} readOnly /> */}
               </div>
             </div>
+          )}
 
-            {/* Section 11: Area of Employment within B.C. */}
-            <div className={styles.container}>
+          {/* Section 11: Area of Employment within B.C. */}
+          <div className={styles.container}>
+            {data?.elsq1 && (
               <div className={styles.headerLineParent}>
                 {" "}
                 <div className={styles.headingNumbers}>11</div>
                 <p></p>{" "}
               </div>
-              <div className={styles.header}>
-                <h5>Area of Employment within B.C.</h5>
-              </div>
-              <div className={styles.radioGroup}>
-                <div className={styles.radioItem}>
-                  <label>
-                    <input
-                      type="radio"
-                      name="employmentArea"
-                      value="area1"
-                      onChange={handleEmploymentAreaChange}
-                    />{" "}
-                    Area 1: Metro Vancouver Regional District
-                  </label>
-                </div>
-                <div className={styles.radioItem}>
-                  <label>
-                    <input
-                      type="radio"
-                      name="employmentArea"
-                      value="area2"
-                      onChange={handleEmploymentAreaChange}
-                    />{" "}
-                    Area 2: Squamish, Abbotsford, Agassiz, Mission, and
-                    Chilliwack
-                  </label>
-                </div>
-                <div className={styles.radioItem}>
-                  <label>
-                    <input
-                      type="radio"
-                      name="employmentArea"
-                      value="area3"
-                      onChange={handleEmploymentAreaChange}
-                    />{" "}
-                    Area 3: Areas of B.C. not included in Area 1 or 2
-                  </label>
-                </div>
-              </div>
-              <div className={styles.points}>
-                {/* Points <input type="text" value={employmentAreaPoints} readOnly /> */}
-              </div>
-            </div>
+            )}
 
-            {/* Section 12: Language Proficiency Region */}
-            <div className={styles.container}>
+            {data?.elsq1 && (
+              <div className={styles.header}>
+                <h5>{data?.elsq1}</h5>
+              </div>
+            )}
+
+            <div className={styles.radioGroup}>
+              {data?.elsq1o1 && (
+                <div className={styles.radioItem}>
+                  <label>
+                    <input
+                      type="radio"
+                      name="employmentArea"
+                      value="1"
+                      onChange={handleEmploymentAreaChange}
+                    />{" "}
+                    {data?.elsq1o1}
+                  </label>
+                </div>
+              )}
+
+              {data?.elsq1o2 && (
+                <div className={styles.radioItem}>
+                  <label>
+                    <input
+                      type="radio"
+                      name="employmentArea"
+                      value="2"
+                      onChange={handleEmploymentAreaChange}
+                    />{" "}
+                    {data?.elsq1o2}
+                  </label>
+                </div>
+              )}
+
+              {data?.elsq1o3 && (
+                <div className={styles.radioItem}>
+                  <label>
+                    <input
+                      type="radio"
+                      name="employmentArea"
+                      value="3"
+                      onChange={handleEmploymentAreaChange}
+                    />{" "}
+                    {data?.elsq1o3}
+                  </label>
+                </div>
+              )}
+            </div>
+            <div className={styles.points}>
+              {/* Points <input type="text" value={employmentAreaPoints} readOnly /> */}
+            </div>
+          </div>
+
+          {/* Section 12: Language Proficiency Region */}
+          <div className={styles.container}>
+            {data?.twsq1 && (
               <div className={styles.header}>
                 <div className={styles.headerLineParent}>
                   {" "}
                   <div className={styles.headingNumbers}>12</div>
                   <p></p>{" "}
                 </div>
-                <h5>
-                  Language Proficiency in both English and French (CLB 4 or
-                  higher in each of 4 competencies on both tests)
-                </h5>
+                <h5>{data?.twsq1}</h5>
               </div>
-              <div className={styles.radioGroup}>
+            )}
+
+            <div className={styles.radioGroup}>
+              {data?.twsq1o1 && (
                 <div className={styles.radioItem}>
                   <label>
                     <input
                       type="radio"
                       name="languageProficiencyRegion"
-                      value="regionalExperience"
+                      value="1"
                       onChange={handleLanguageProficiencyRegionChange}
                     />{" "}
-                    Regional Experience
+                    {data?.twsq1o1}
                   </label>
                 </div>
+              )}
+
+              {data?.twsq1o2 && (
                 <div className={styles.radioItem}>
                   <label>
                     <input
                       type="radio"
                       name="languageProficiencyRegion"
-                      value="regionalAlumni"
+                      value="2"
                       onChange={handleLanguageProficiencyRegionChange}
                     />{" "}
-                    Regional Alumni
+                    {data?.twsq1o2}
                   </label>
                 </div>
+              )}
+              {data?.twsq1o3 && (
                 <div className={styles.radioItem}>
                   <label>
                     <input
                       type="radio"
                       name="languageProficiencyRegion"
-                      value="notApplicable"
+                      value="3"
                       onChange={handleLanguageProficiencyRegionChange}
                     />{" "}
-                    Not Applicable
+                    {data?.twsq1o3}
                   </label>
                 </div>
-              </div>
-              <div className={styles.points}>
-                {/* Points
+              )}
+            </div>
+            <div className={styles.points}>
+              {/* Points
               <input
                 type="text"
                 value={languageProficiencyRegionPoints}
                 readOnly
               /> */}
-              </div>
             </div>
           </div>
+        </div>
 
-          {/* Total Points */}
 
-          {isStickyEnabled ? (
+        {isStickyEnabled ? (
             <Sticky>
               {({ style }) => (
                 <div
@@ -1052,7 +1191,7 @@ const BCPNPCalculator = () => {
                     ...style,
                     background: "white",
                     left: "70%",
-                    width: "300px",
+                    width: "300px"
                   }}
                 >
                   <div className={styles.pointContainer}>
@@ -1060,20 +1199,20 @@ const BCPNPCalculator = () => {
                       <h2>Total Points</h2>
                     </div>
                     <div className={styles.points}>
-                      <h1>
-                        {points +
-                          canadaExperiencePoints +
-                          currentJobPoints +
-                          educationPoints +
-                          bcEducationPoints +
-                          canadaEducationPoints +
-                          occupationPoints +
-                          languagePoints +
-                          languageProficiencyPoints +
-                          hourlyWagePoints +
-                          employmentAreaPoints +
-                          languageProficiencyRegionPoints}
-                      </h1>
+                    <h1>
+                {points +
+                  canadaExperiencePoints +
+                  currentJobPoints +
+                  educationPoints +
+                  bcEducationPoints +
+                  canadaEducationPoints +
+                  occupationPoints +
+                  languagePoints +
+                  languageProficiencyPoints +
+                  hourlyWagePoints +
+                  employmentAreaPoints +
+                  languageProficiencyRegionPoints}
+              </h1>
                     </div>
                   </div>
                 </div>
@@ -1089,28 +1228,27 @@ const BCPNPCalculator = () => {
                   <h2>Total Points</h2>
                 </div>
                 <div className={styles.points}>
-                  <h1>
-                    <h1>
-                      {points +
-                        canadaExperiencePoints +
-                        currentJobPoints +
-                        educationPoints +
-                        bcEducationPoints +
-                        canadaEducationPoints +
-                        occupationPoints +
-                        languagePoints +
-                        languageProficiencyPoints +
-                        hourlyWagePoints +
-                        employmentAreaPoints +
-                        languageProficiencyRegionPoints}
-                    </h1>
-                  </h1>
+                <h1>
+                {points +
+                  canadaExperiencePoints +
+                  currentJobPoints +
+                  educationPoints +
+                  bcEducationPoints +
+                  canadaEducationPoints +
+                  occupationPoints +
+                  languagePoints +
+                  languageProficiencyPoints +
+                  hourlyWagePoints +
+                  employmentAreaPoints +
+                  languageProficiencyRegionPoints}
+              </h1>
                 </div>
               </div>
             </div>
           )}
-          {/* // */}
-        </div>
+
+        {/* // */}
+      </div>
       </StickyContainer>
       <Footer1 />
     </>
