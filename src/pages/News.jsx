@@ -75,8 +75,8 @@ let News = () => {
     if (!query) return blogs;
     return blogs.filter(
       (blog) =>
-        blog.blog_heading.toLowerCase().includes(query.toLowerCase()) ||
-        blog.blog_content.toLowerCase().includes(query.toLowerCase())
+        blog.news_heading.toLowerCase().includes(query.toLowerCase()) ||
+        blog.news_content.toLowerCase().includes(query.toLowerCase())
     );
   };
 

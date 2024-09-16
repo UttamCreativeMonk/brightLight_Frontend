@@ -12,7 +12,7 @@ const Loader = () => {
       .then(() => {
         setTimeout(() => {
           setIsLoaded(true);
-        }, 500);
+        }, 4000);
         return;
       })
       .catch((error) => {
