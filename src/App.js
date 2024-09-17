@@ -5,6 +5,10 @@ import { HelmetProvider } from "react-helmet-async";
 
 import AllRoutes from "./routes/AllRoutes";
 import Loader from "./components/Loader";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import PrRenewal from "./pages/PrRenewal";
 import Citizenship from "./pages/Citizenship";
 import Reconsideration from "./pages/Reconsideration";
@@ -72,91 +76,21 @@ import PathwaysForCaregiver from "./pages/PathwaysForCaregiver";
 import PermanentResidencePathwaysCaregiversLP from "./pages/PermanentResidencePathwaysCaregiversLP";
 import NewsDetails from "./pages/NewsDetails";
 import News from "./pages/News";
-import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
-  // useEffect(()=>{
-  //   window.scrollTo({
-  //     top: 0,
-  //     behavior: "smooth"
-  //   })
-  // },[]);
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
 
   return (
     <div className="App">
       <ToastContainer />
-      {/* <PrRenewal/> */}
-      {/* <Citizenship/> */}
-      {/* <Reconsideration/> */}
-      {/* <AdditionalDocument/> */}
-      {/* <ReplyToPflPage/> */}
-      {/* <LmiaReviewed /> */}
-      {/* <OpenWorkPermit/>  */}
-      {/* <AgricultureStreamLmia/> */}
-      {/* <GlobalStreamLmia/> */}
-      {/* <LowWageLmia/>   */}
-      {/* <BridgingOpenWorkPermitLP /> */}
-      {/* <FrancophoneMobilityProgram/> */}
-      {/* <OpenWorkVulnerableLP/> */}
-      {/* <OpenWorkCanadaLP/> */}
-      {/* <Pgwp/> */}
-      {/* <FamilyReunificationSponsorship/> */}
-      {/* <Adoption/> */}
-      {/* <DependentChildren/> */}
-      {/* <HumanitarianCompassionate/> */}
-      {/* <LonelyCanadian/> // not use this  */}
-
-      {/* <Orphan /> */}
-      {/* <ParentsGrandparents/> */}
-      {/* <StudentVisa/>   */}
-      {/* <InsideCanada/> */}
-      {/* <ChangeCollegeProgram/> */}
-      {/* <VisitorToStudent/>  */}
-      {/* <OutsideCananda/> */}
-      {/* <NonSds/> */}
-      {/* <Sds/> */}
-      {/* <StudyPermitMinors/> */}
-      {/* <ExtensionsDraft/> */}
-      {/* <Flagpoling/> */}
-      {/* <RestorationStatusDraft/> */}
-      {/* <SpousalOpenWorkPermit/> */}
-      {/* <CommonLawPartnerPermanent/> */}
-      {/* <CommonLawPartnerTemporary/> */}
-      {/* <Cby/> */}
-      {/* <SuperVisa/> */}
-      {/* <TemporaryResidentPermitDraft/> */}
-      {/* <VisitorVisa/> */}
-      {/* <BusinessVisitorVisa/> */}
-      {/* <DualIntentVisa/> */}
-      {/* <CanadianExperienceClass/> */}
-      {/* <FederalSkilledTradesProgram/> */}
-      {/* <FederalSkilledWorkerProgram/> */}
-      {/* <FrenchTargetedDraw/> */}
-      {/* <HealthcareTargetedDraw/> */}
-      {/* <StemTargetedDraw/> */}
-      {/* <TradeOccupationTargetedDraw/>    */}
-      {/* <PilotPrograms/> */}
-      {/* <AgriFoodPilotProgram/> */}
-      {/* <Rnip/> */}
-      {/* <Pnp/> */}
-      {/* <BcPnp/> */}
-      {/* <EntryLevelSemiSkilled/> */}
-      {/* <HealthAuthoritiesStream/> */}
-      {/* <InternationalGraduateProgram/> */}
-      {/* <InternationalPostGraduateProgram/> */}
-      {/* <PrioritiesProgram/>   */}
-      {/* <SkilledWorkerStream/> */}
-      {/* <WorkPermit/> */}
-
-      {/* <InCaregiverProgramLP/> */}
-      {/* <PathwaysForCaregiver/> */}
-      {/* <PermanentResidencePathwaysCaregiversLP/> */}
-
-      {/* <NewsDetails/> */}
-      {/* <News/> */}
-
       <Loader />
+      
       <HelmetProvider>
         <AllRoutes />
       </HelmetProvider>

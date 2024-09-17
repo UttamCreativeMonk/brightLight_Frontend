@@ -17,7 +17,7 @@
 
 .bannerMain h1 {
   font-size: 70px;
-  color: white;
+  color: #dec18f;
 }
 
 .tableContainer {
@@ -148,6 +148,18 @@
 .filterContainer input:focus {
   outline: none;
 }
+
+.filterSelect {
+  border: 1px solid rgb(202, 202, 202);
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.filterSelect:focus {
+  outline: none;
+}
+
 
 @media all and (max-width: 1450px) {
   .bannerMain {

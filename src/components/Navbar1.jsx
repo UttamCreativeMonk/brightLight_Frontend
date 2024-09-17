@@ -111,7 +111,9 @@ const Navbar1 = (props) => {
         <div className={styles.firstNavbar}>
           <div className={styles.calculatorIcon}>
             <IconGear className={styles.iconGearIcon} width={25} height={25} />
-            <p onClick={() => window.location.href = '/clb-ilets-calculator'} >Immigration Tools</p>
+            <p onClick={() => (window.location.href = "/clb-ilets-calculator")}>
+              Immigration Tools
+            </p>
             <RightArrow
               className={styles.RightArrowIcon}
               width={10}
@@ -165,7 +167,9 @@ const Navbar1 = (props) => {
             )}
 
             <div className={styles.mainNavbar}>
+            <a href="/" className={styles.sidebarLink}>HOME</a>
               <div className={styles.relativeDiv}>
+
                 <a
                   href="#"
                   onMouseEnter={() => setShowServicesDropdown(true)}
@@ -526,14 +530,9 @@ const Navbar1 = (props) => {
                       <a href="/citizenship">Citizenship</a>
                     </div>
                   </div>
-                  {/*  */}
-                  {/* /// */}
-                  {/* 
-                  <a href="/federal-skilled">Federal Skilled</a>
-                  <a href="/express-entry">Express Entry</a>
-                  <a href="/transport-occupation">Transport Occupation</a>
-                  <a href="/category-based">Category Based</a>
-                  <a href="/previous-draw-history">Previous Draw History</a> */}
+                  <div className={`${styles.relativeDiv} ${styles.flex}`}>
+                    <a href="/previous-draw-history">Prevoius Draw History</a>
+                  </div>
                 </div>
               </div>
 
@@ -616,6 +615,7 @@ const Navbar1 = (props) => {
               <div className={styles.closeBtn} onClick={toggleSidebar}>
                 &times;
               </div>
+              <a href="/" className={styles.sidebarLink}>HOME</a>
               <div className={styles.dropdown}>
                 <a href="#" className={styles.dropbtn}>
                   SERVICES
@@ -788,6 +788,9 @@ const Navbar1 = (props) => {
                         {/* <a href="/spouse">Spouse</a> */}
                       </div>
                     )}
+                  </div>
+                  <div className={`${styles.relativeDiv} ${styles.flex}`}>
+                    <a href="/previous-draw-history">Previous Draw History</a>
                   </div>
                 </div>
               </div>

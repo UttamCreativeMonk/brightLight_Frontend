@@ -5,7 +5,6 @@ import Footer1 from "../components/Footer1";
 
 // Function to parse dates
 const parseDate = (dateString) => {
-  // Adjust the date parsing format according to your date format
   return new Date(dateString);
 };
 
@@ -16,7 +15,7 @@ const PreviousDrawHistory = () => {
     key: "drawNumber",
     direction: "ascending",
   });
-  const [filter, setFilter] = useState(""); // State for filter
+  const [selectedRoundType, setSelectedRoundType] = useState(""); // State for round type filter
   const itemsPerPage = 30;
 
   useEffect(() => {
@@ -34,6 +33,14 @@ const PreviousDrawHistory = () => {
       });
   }, []);
 
+  // Extract unique round types
+  const getUniqueRoundTypes = (data) => {
+    const roundTypes = data.map(item => item.drawName);
+    return [...new Set(roundTypes)];
+  };
+
+  const uniqueRoundTypes = React.useMemo(() => getUniqueRoundTypes(data), [data]);
+
   // Sorting logic
   const sortedData = React.useMemo(() => {
     let sortableItems = [...data];
@@ -42,17 +49,14 @@ const PreviousDrawHistory = () => {
         let comparison = 0;
 
         if (sortConfig.key === "drawDateFull") {
-          // Compare dates
           comparison =
             parseDate(a[sortConfig.key]) - parseDate(b[sortConfig.key]);
         } else if (
           sortConfig.key === "drawSize" ||
           sortConfig.key === "drawCRS"
         ) {
-          // Compare numeric values
           comparison = (a[sortConfig.key] || 0) - (b[sortConfig.key] || 0);
         } else {
-          // Compare strings
           comparison = a[sortConfig.key]?.localeCompare(b[sortConfig.key]) || 0;
         }
 
@@ -62,10 +66,12 @@ const PreviousDrawHistory = () => {
     return sortableItems;
   }, [data, sortConfig]);
 
-  // Filtered data
-  const filteredData = sortedData.filter((item) =>
-    item.drawName.toLowerCase().includes(filter.toLowerCase())
-  );
+  // Filtered data based on selected round type
+  const filteredData = React.useMemo(() => {
+    return sortedData.filter(item =>
+      selectedRoundType === "" || item.drawName === selectedRoundType
+    );
+  }, [sortedData, selectedRoundType]);
 
   // Calculate the data to display on the current page
   const indexOfLastItem = currentPage * itemsPerPage;
@@ -99,14 +105,19 @@ const PreviousDrawHistory = () => {
 
       <div className={styles.tableContainer}>
         <div className={styles.filterContainer}>
-          <p>Filter Data based on Search:</p>
-          <input
-            type="text"
-            placeholder="Filter by Round Type"
-            value={filter}
-            onChange={(e) => setFilter(e.target.value)}
-            className={styles.filterInput}
-          />
+          <p>Filter Data by Round Type:</p>
+          <select
+            value={selectedRoundType}
+            onChange={(e) => setSelectedRoundType(e.target.value)}
+            className={styles.filterSelect}
+          >
+            <option value="">All</option>
+            {uniqueRoundTypes.map((type, index) => (
+              <option key={index} value={type}>
+                {type}
+              </option>
+            ))}
+          </select>
         </div>
 
         <table className={styles.table}>

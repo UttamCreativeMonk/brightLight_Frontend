@@ -273,6 +273,52 @@
   margin-bottom: 40px;
 }
 
+
+/* Contact.module.css */
+
+/* Keyframes for animations */
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Animation class */
+.slideInFromTop {
+  animation: slideInFromTop 0.8s ease-out forwards;
+}
+.slideInFromLeft {
+  animation: slideInFromLeft 0.8s ease-out forwards;
+}
+
+/* Hidden class for initial state */
+.hidden {
+  opacity: 0;
+  transition: opacity 0.8s ease-out;
+}
+
+/* Ensure elements are relatively positioned for transitions */
+.section {
+  position: relative;
+}
+
+
 @media all and (max-width: 1450px) {
   .contactTopSection {
     width: 1200px;

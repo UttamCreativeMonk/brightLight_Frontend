@@ -118,6 +118,39 @@ let Contact = () => {
     }
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = [
+        { selector: `.${styles.contactTopSection}`, animationClass: styles.slideInFromTop },
+        { selector: `.${styles.inputBar}`, animationClass: styles.slideInFromLeft },
+        { selector: `.${styles.formCategory}`, animationClass: styles.slideInFromLeft },
+        { selector: `.${styles.contactMessageBox}`, animationClass: styles.slideInFromLeft },
+        { selector: `.${styles.officeDetailsSection}`, animationClass: styles.slideInFromTop },
+      ];
+
+      sections.forEach(({ selector, animationClass }) => {
+        const elements = document.querySelectorAll(selector);
+        elements.forEach((element) => {
+          const rect = element.getBoundingClientRect();
+          const windowHeight = window.innerHeight;
+
+          if (rect.top <= windowHeight * 0.75) {
+            element.classList.add(animationClass);
+            element.classList.remove(styles.hidden);
+          } else {
+            element.classList.remove(animationClass);
+            element.classList.add(styles.hidden);
+          }
+        });
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
       <ToastContainer />
@@ -165,16 +198,16 @@ let Contact = () => {
       </Helmet>
 
       <Navbar1 showBlue={true} />
-      <div className={styles.contactTopSection}>
+      <div className={styles.contactTopSection} >
         <h1>{data?.page_heading}</h1>
         <h3>{data?.form_section_heading}</h3>
         <p>{data?.form_section_description}</p>
       </div>
       <div className={styles.contactMapSection}>
-        <div className={styles.contactForm}>
+        <div className={styles.contactForm} >
           <form onSubmit={handleSubmit}>
             <div className={styles.inputBarFlexSection}>
-              <div className={styles.inputBar}>
+              <div className={`${styles.inputBar} ${styles.hidden}`}>
                 <input
                   type="text"
                   placeholder="Your Name"
@@ -221,7 +254,7 @@ let Contact = () => {
                 <span>*</span>
               </div>
             </div>
-            <div className={styles.formCategory}>
+            <div className={`${styles.formCategory} ${styles.hidden}`}>
               <div
                 onClick={handleActiveDiv}
                 className={
@@ -243,7 +276,7 @@ let Contact = () => {
                 <p>Outside Canada</p>
               </div>
             </div>
-            <div className={styles.contactMessageBox}>
+            <div className={`${styles.contactMessageBox} ${styles.hidden}`}>
               <textarea
                 placeholder="How can we help ?"
                 name="message"
@@ -264,7 +297,8 @@ let Contact = () => {
           </div>
         </div>
       </div>
-      <div className={styles.officeDetailsSection}>
+
+      <div className={`${styles.officeDetailsSection} ${styles.hidden}`}>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27462.752602531727!2d76.74414563737653!3d30.63835165105361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390febb05ee7e45b%3A0xa17a586890ee2175!2sGmada%20Aerocity%2C%20Sahibzada%20Ajit%20Singh%20Nagar%2C%20Punjab!5e0!3m2!1sen!2sin!4v1723022976691!5m2!1sen!2sin"
           loading="lazy"

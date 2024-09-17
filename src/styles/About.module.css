@@ -712,6 +712,55 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* //   ///  ///   */
+
+/* About.module.css */
+
+/* About.module.css */
+
+/* Keyframes for animations */
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Apply the animations */
+.slideInFromLeft {
+  animation: slideInFromLeft 0.8s ease-out forwards;
+}
+
+.slideInFromTop {
+  animation: slideInFromTop 0.8s ease-out forwards;
+}
+
+/* Default state: hidden off-screen */
+.hidden {
+  opacity: 0;
+  transition: opacity 0.8s ease-out;
+}
+
+/* Ensure elements are relatively positioned for transitions */
+.section {
+  position: relative;
+}
+
 @media all and (max-width: 1500px) {
   .aboutUsTopContentSection {
     width: 1400px;
