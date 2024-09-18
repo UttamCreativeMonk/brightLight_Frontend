@@ -24,23 +24,23 @@ const TransportOccupationTwo = () => {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
-    useEffect(()=>{
-      fetch("https://brightlight-node.onrender.com/transport-meta")
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        if (data) {
-          setMetaData(data[0]);
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-    },[])
+
   
   };
-
+  useEffect(()=>{
+    fetch("https://brightlight-node.onrender.com/transport-meta")
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      if (data) {
+        setMetaData(data[0]);
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  },[])
   return (
     <>
 <Helmet>

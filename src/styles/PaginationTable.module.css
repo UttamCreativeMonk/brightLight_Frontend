@@ -12,6 +12,14 @@
   color: white;
 }
 
+.paginationBorder button{
+  border: none;
+  background-color: transparent;
+}
+
+.pageNumberPagination{
+  color: white;
+}
 .table th,
 .table td {
   padding: 12px;
@@ -53,6 +61,8 @@
   background: none;
   width: 100%;
   cursor: pointer;
+  text-decoration: none;
+  border: none;
 }
 
 .dropdownContent button:hover {
@@ -61,6 +71,10 @@
 
 .dropdown:hover .dropdownContent {
   display: block;
+}
+
+.filterContainer p{
+  color: white;
 }
 
 .pagination {
@@ -106,4 +120,19 @@
 
 .filterContainer input:focus {
   outline: none;
+}
+
+.filterSelect {
+  border: 1px solid rgb(202, 202, 202);
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.filterSelect:focus {
+  outline: none;
+}
+
+.dataAll a{
+  color: white;
 }

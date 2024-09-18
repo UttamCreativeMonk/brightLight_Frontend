@@ -38,20 +38,7 @@
   z-index: 3;
   top: 150px;
   left: 5px;
-  transition: 0.2s top ease;
-}
-
-.bestChoiceHeading,
-.trackImage {
-  opacity: 0;
-
-  transition: opacity 1.5s ease, transform 1.5s ease;
-}
-
-.bestChoiceHeading.visible,
-.trackImage.visible {
-  opacity: 1;
-  transform: translateY(0);
+  transition: 0.1s top ease;
 }
 @media (max-width: 1360px) {
   .bestChoice {
@@ -124,5 +111,3 @@
     font-size: 15px;
   }
 }
-
-

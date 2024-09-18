@@ -40,6 +40,17 @@ let About = () => {
   let [globallyData, setGloballyData] = useState([]);
   let [globallyImg, setGloballyImg] = useState([]);
   let [weAreSmall, setWeAreSmall] = useState([]);
+
+  const foundationRef = useRef(null);
+  const visionRef = useRef(null);
+  const pillarsRef = useRef(null);
+  const directorsRef = useRef(null);
+  const weAreRef = useRef(null);
+  const achievementsRef = useRef(null);
+  const socialPresenceRef = useRef(null);
+  const globallyRef = useRef(null);
+
+
   useEffect(() => {
     fetch("https://brightlight-node.onrender.com/aboutUsTopSection")
       .then((res) => {
@@ -252,20 +263,19 @@ let About = () => {
   useEffect(() => {
     const handleScroll = () => {
       const sections = [
-        { selector: `.${styles.aboutUsTopContentSection}`, animationClass: styles.slideInFromLeft },
-        { selector: `.${styles.foundation}`, animationClass: styles.slideInFromTop },
-        { selector: `.${styles.vision}`, animationClass: styles.slideInFromLeft },
-        { selector: `.${styles.pillarSection}`, animationClass: styles.slideInFromTop },
-        { selector: `.${styles.meetDirectorsParent}`, animationClass: styles.slideInFromLeft },
-        { selector: `.${styles.weAreParent}`, animationClass: styles.slideInFromTop },
-        { selector: `.${styles.ourAchivementSection}`, animationClass: styles.slideInFromTop },
-        { selector: `.${styles.socialPresence}`, animationClass: styles.slideInFromTop },
-        { selector: `.${styles.vancouver}`, animationClass: styles.slideInFromLeft }
+        { ref: foundationRef, animationClass: styles.slideInFromTop },
+        { ref: visionRef, animationClass: styles.slideInFromLeft },
+        { ref: pillarsRef, animationClass: styles.slideInFromTop },
+        { ref: directorsRef, animationClass: styles.slideInFromLeft },
+        { ref: weAreRef, animationClass: styles.slideInFromTop },
+        { ref: achievementsRef, animationClass: styles.slideInFromTop },
+        { ref: socialPresenceRef, animationClass: styles.slideInFromTop },
+        { ref: globallyRef, animationClass: styles.slideInFromLeft },
       ];
 
-      sections.forEach(({ selector, animationClass }) => {
-        const elements = document.querySelectorAll(selector);
-        elements.forEach((element) => {
+      sections.forEach(({ ref, animationClass }) => {
+        const element = ref.current;
+        if (element) {
           const rect = element.getBoundingClientRect();
           const windowHeight = window.innerHeight;
 
@@ -276,7 +286,7 @@ let About = () => {
             element.classList.remove(animationClass);
             element.classList.add(styles.hidden);
           }
-        });
+        }
       });
     };
 
@@ -285,6 +295,7 @@ let About = () => {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   return (
     <>
       <Helmet>
@@ -332,7 +343,7 @@ let About = () => {
 
       <Navbar1 />
       <div className={styles.aboutBanner} >
-      <div className={`${styles.aboutUsTopContentSection} ${styles.hidden}`}>
+      <div className={styles.aboutUsTopContentSection}>
           <div className={styles.aboutLogo}>
             <img src={AboutLogo} />
           </div>
@@ -357,7 +368,7 @@ let About = () => {
       </div>
 
       <div className={styles.foundationMainSection}>
-      <div className={`${styles.foundation} ${styles.hidden}`}>
+      <div ref={foundationRef} className={`${styles.foundation} ${styles.hidden}`}>
           <div className={`${styles.foundationInside} ${styles.foundation1}`}>
             <img src={foundationImage?.image} />
             <div className={`${styles.designContent} ${styles.designContent1}`}>
@@ -376,7 +387,7 @@ let About = () => {
       </div>
 
       <div className={styles.visionMainSection}>
-      <div className={`${styles.vision} ${styles.hidden}`}>
+      <div ref={visionRef} className={`${styles.vision} ${styles.hidden}`}>
           <div className={styles.visionContentSection}>
             <p>{visionSection?.description}</p>
           </div>
@@ -395,7 +406,7 @@ let About = () => {
       </div>
 
       <div className={styles.pillarParent}>
-      <div className={`${styles.pillarSection} ${styles.hidden}`}>
+      <div ref={pillarsRef} className={`${styles.pillarSection} ${styles.hidden}`}>
           <div className={styles.pillarLogo}>
             <img src={pillarsImage?.image} />
             <div className={styles.pillarLogoContent}>
@@ -426,7 +437,7 @@ let About = () => {
         </div>
       </div>
 
-      <div className={`${styles.meetDirectorsParent} ${styles.hidden}`}>
+      <div ref={directorsRef} className={`${styles.meetDirectorsParent} ${styles.hidden}`}>
       <div className={styles.meetDirectorMain}>
           <h1>{directorsSection?.heading}</h1>
         </div>
@@ -499,7 +510,7 @@ let About = () => {
         ) : null}
       </div>
 
-      <div className={styles.weAreParent}>
+      <div ref={weAreRef} className={styles.weAreParent}>
         <div className={styles.weAreParentImg}>
           <img src={weAre?.img} className={styles.weAreBig} />
           <img src={weAreSmall?.image} className={styles.weAreSmall} />
@@ -589,7 +600,7 @@ let About = () => {
         className={styles.vancouverParent}
         style={{ backgroundImage: `url(${globallyImg?.image})` }}
       >
-       <div className={`${styles.vancouver} ${styles.hidden}`}>
+       <div ref={globallyRef} className={`${styles.vancouver} ${styles.hidden}`}>
           <h1>{globallyData?.heading}</h1>
         </div>
       </div>

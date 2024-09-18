@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import styles from "../styles/Contact.module.css";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
@@ -8,7 +8,6 @@ import { ToastContainer, toast, Bounce } from "react-toastify";
 
 let Contact = () => {
   let [metaData, setMetaData] = useState([]);
-
   let notifySuccess = () => {
     toast.success("Success", {
       position: "top-center",
@@ -36,6 +35,7 @@ let Contact = () => {
       transition: Bounce,
     });
   };
+
   let [data, setData] = useState([]);
   let [activeDiv, setActiveDiv] = useState("insideCanada");
 
@@ -46,6 +46,12 @@ let Contact = () => {
     interest: "",
     message: "",
   });
+
+  const contactTopSectionRef = useRef(null);
+  const inputBarRef = useRef(null);
+  const formCategoryRef = useRef(null);
+  const contactMessageBoxRef = useRef(null);
+  const officeDetailsSectionRef = useRef(null);
 
   useEffect(() => {
     setActiveDiv("insideCanada");
@@ -60,19 +66,20 @@ let Contact = () => {
         console.log(error);
       });
   }, []);
+
   useEffect(() => {
     fetch("https://brightlight-node.onrender.com/contact-meta")
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => {
-      if (data) {
-        setMetaData(data[0]);
-      }
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
   let handleActiveDiv = () => {
@@ -80,7 +87,6 @@ let Contact = () => {
       activeDiv === "insideCanada" ? "outsideCanada" : "insideCanada"
     );
   };
-
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -121,16 +127,16 @@ let Contact = () => {
   useEffect(() => {
     const handleScroll = () => {
       const sections = [
-        { selector: `.${styles.contactTopSection}`, animationClass: styles.slideInFromTop },
-        { selector: `.${styles.inputBar}`, animationClass: styles.slideInFromLeft },
-        { selector: `.${styles.formCategory}`, animationClass: styles.slideInFromLeft },
-        { selector: `.${styles.contactMessageBox}`, animationClass: styles.slideInFromLeft },
-        { selector: `.${styles.officeDetailsSection}`, animationClass: styles.slideInFromTop },
+        { ref: contactTopSectionRef, animationClass: styles.slideInFromTop },
+        { ref: inputBarRef, animationClass: styles.slideInFromLeft },
+        { ref: formCategoryRef, animationClass: styles.slideInFromLeft },
+        { ref: contactMessageBoxRef, animationClass: styles.slideInFromLeft },
+        { ref: officeDetailsSectionRef, animationClass: styles.slideInFromTop },
       ];
 
-      sections.forEach(({ selector, animationClass }) => {
-        const elements = document.querySelectorAll(selector);
-        elements.forEach((element) => {
+      sections.forEach(({ ref, animationClass }) => {
+        const element = ref.current;
+        if (element) {
           const rect = element.getBoundingClientRect();
           const windowHeight = window.innerHeight;
 
@@ -141,7 +147,7 @@ let Contact = () => {
             element.classList.remove(animationClass);
             element.classList.add(styles.hidden);
           }
-        });
+        }
       });
     };
 
@@ -172,7 +178,7 @@ let Contact = () => {
           name="title"
           property="og:title"
           content={
-        metaData?.metaOgTitle
+            metaData?.metaOgTitle
               ? metaData?.metaOgTitle
               : " Brightlight Immigration"
           }
@@ -198,16 +204,16 @@ let Contact = () => {
       </Helmet>
 
       <Navbar1 showBlue={true} />
-      <div className={styles.contactTopSection} >
+      <div ref={contactTopSectionRef} className={styles.contactTopSection}>
         <h1>{data?.page_heading}</h1>
         <h3>{data?.form_section_heading}</h3>
         <p>{data?.form_section_description}</p>
       </div>
       <div className={styles.contactMapSection}>
-        <div className={styles.contactForm} >
+        <div className={styles.contactForm}>
           <form onSubmit={handleSubmit}>
             <div className={styles.inputBarFlexSection}>
-              <div className={`${styles.inputBar} ${styles.hidden}`}>
+              <div ref={inputBarRef} className={`${styles.inputBar} ${styles.hidden}`}>
                 <input
                   type="text"
                   placeholder="Your Name"
@@ -230,7 +236,7 @@ let Contact = () => {
                 <span>*</span>
               </div>
             </div>
-            <div className={styles.inputBarFlexSection}>
+            <div className={styles.inputBarFlexSection} >
               <div className={styles.inputBar}>
                 <input
                   type="number"
@@ -254,7 +260,7 @@ let Contact = () => {
                 <span>*</span>
               </div>
             </div>
-            <div className={`${styles.formCategory} ${styles.hidden}`}>
+            <div ref={formCategoryRef} className={`${styles.formCategory} ${styles.hidden}`}>
               <div
                 onClick={handleActiveDiv}
                 className={
@@ -276,7 +282,7 @@ let Contact = () => {
                 <p>Outside Canada</p>
               </div>
             </div>
-            <div className={`${styles.contactMessageBox} ${styles.hidden}`}>
+            <div ref={contactMessageBoxRef} className={`${styles.contactMessageBox} ${styles.hidden}`}>
               <textarea
                 placeholder="How can we help ?"
                 name="message"
@@ -298,7 +304,7 @@ let Contact = () => {
         </div>
       </div>
 
-      <div className={`${styles.officeDetailsSection} ${styles.hidden}`}>
+      <div ref={officeDetailsSectionRef} className={`${styles.officeDetailsSection} ${styles.hidden}`}>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27462.752602531727!2d76.74414563737653!3d30.63835165105361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390febb05ee7e45b%3A0xa17a586890ee2175!2sGmada%20Aerocity%2C%20Sahibzada%20Ajit%20Singh%20Nagar%2C%20Punjab!5e0!3m2!1sen!2sin!4v1723022976691!5m2!1sen!2sin"
           loading="lazy"
@@ -336,4 +342,5 @@ let Contact = () => {
     </>
   );
 };
+
 export default Contact;
