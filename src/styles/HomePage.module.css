@@ -413,7 +413,7 @@
   visibility: visible;
   top: 0px;
 }
-
+/* 
 .showSimplifySection:nth-child(2) {
   transition-delay: 300ms;
 }
@@ -424,7 +424,7 @@
 
 .showSimplifySection:nth-child(4) {
   transition-delay: 900ms;
-}
+} */
 
 .simplifyingDiv:hover {
   transform: translateY(-10px);
