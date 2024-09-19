@@ -23,6 +23,7 @@
 
 .upperFooter div {
   width: 40%;
+  margin-left: 5px;
 }
 
 .upperFooter h1 {
@@ -67,7 +68,7 @@
   background-color: #132f46;
   color: white;
   padding-top: 200px;
-  padding-bottom: 50px;
+  padding-bottom: 1px;
 }
 
 .innerFooter {
@@ -163,6 +164,9 @@
   text-align: right;
   transition: 0.3 and color ease-in-out;
 }
+.rightFooter a{
+  font-weight: bold;
+}
 .rightFooter a:hover{
   color: #ead9b0;
   text-decoration: none;
@@ -202,6 +206,62 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
 }
+
+
+.freeAssesmentButton{
+  width: 150px;
+  display: block;
+  margin: auto;
+  position: relative;
+  padding: 15px 20px;
+  border-radius: 40px;
+  border: 3px solid #132f46;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #132f46;
+  background-color: transparent;
+  transition: all 0.3s ease; 
+  animation: pulseAnimation 2s infinite; 
+}
+
+/* Hover effects */
+.freeAssesmentButton:hover {
+  text-decoration: none;
+  border-color: #ffffff; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  animation: bounceAnimation 0.6s ease;
+}
+
+/* Keyframes for pulsing effect */
+@keyframes pulseAnimation {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Keyframes for bouncing effect */
+@keyframes bounceAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 
 @media all and (max-width: 1500px) {
   .innerFooter {

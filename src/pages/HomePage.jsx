@@ -47,7 +47,6 @@ let HomePage = () => {
 
   let [metaData, setMetaData] = useState([]);
 
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -283,17 +282,17 @@ let HomePage = () => {
       threshold: 0.1,
     };
     fetch("https://brightlight-node.onrender.com/home-meta")
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => {
-      if (data) {
-        setMetaData(data[0]);
-      }
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -368,7 +367,7 @@ let HomePage = () => {
 
   return (
     <>
-<Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle
@@ -406,7 +405,7 @@ let HomePage = () => {
           content={
             metaData?.metaKeywords
               ? metaData?.metaKeywords
-              : "About Us, Brightlight Immigration, Immigration Services, Mission, Team"
+              : " Brightlight Immigration, Immigration Services, Mission, Team"
           }
         />
       </Helmet>
@@ -643,7 +642,7 @@ let HomePage = () => {
                   if (title == "Permanent Residency") {
                     return "/permanent-residency";
                   } else if (title == "BCPNP") {
-                    return "/bcpnp-calculator";
+                    return "/bc-pnp";
                   } else if (title == "Visitor Visa") {
                     return "/visitor-visa";
                   } else if (title == "Study Visa") {
@@ -695,7 +694,7 @@ let HomePage = () => {
               className={`${styles.aspectsCard} ${styles.fadeFromLeft}`}
               ref={(el) => (aspectsCardRefs.current[0] = el)}
             >
-              <img src={achiementsData?.achievement1SVG}  />
+              <img src={achiementsData?.achievement1SVG} />
               <h1>{achiementsData?.achievement1Numbers}</h1>
               <p>{achiementsData?.achievement1Heading}</p>
             </div>
@@ -711,7 +710,7 @@ let HomePage = () => {
               className={`${styles.aspectsCard} ${styles.fadeFromRight}`}
               ref={(el) => (aspectsCardRefs.current[2] = el)}
             >
-              <img src={achiementsData?.achievement3SVG}  />
+              <img src={achiementsData?.achievement3SVG} />
               <h1>{achiementsData?.achievement3Numbers}</h1>
               <p>{achiementsData?.achievement3Heading}</p>
             </div>
@@ -736,14 +735,14 @@ let HomePage = () => {
             ref={sourceContentParentRef}
           >
             {newsData?.map((item, index) => {
-             let stripHtmlTags = (text) =>
-              text ? text.replace(/<[^>]*>/g, "") : "";
+              let stripHtmlTags = (text) =>
+                text ? text.replace(/<[^>]*>/g, "") : "";
 
-            let truncateText = (text, numChars) => {
-              let cleanedText = stripHtmlTags(text);
-              if (cleanedText.length <= numChars) return cleanedText;
-              return cleanedText.slice(0, numChars) + "...";
-            };
+              let truncateText = (text, numChars) => {
+                let cleanedText = stripHtmlTags(text);
+                if (cleanedText.length <= numChars) return cleanedText;
+                return cleanedText.slice(0, numChars) + "...";
+              };
               let month = item.date.trim().split("T")[0].split("-")[1];
               let date = item.date.trim().split("T")[0].split("-")[2];
               let monthName = () => {
@@ -794,6 +793,12 @@ let HomePage = () => {
                 </>
               );
             })}
+            <button
+              className={styles.moreNewsUpdates}
+              onClick={() => (window.location.href = "/news")}
+            >
+              More News & Updates
+            </button>
           </div>
         </div>
       </div>

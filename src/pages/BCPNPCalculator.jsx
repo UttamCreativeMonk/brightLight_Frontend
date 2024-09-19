@@ -1215,6 +1215,33 @@ const BCPNPCalculator = () => {
               </h1>
                     </div>
                   </div>
+                  <div className={styles.disclaimer}>
+                    <p>
+                      <span className={styles.colorRedDis}>Disclaimer:</span>{" "}
+                      This calculator is intended to provide general information
+                      and should not be relied upon as a substitute for
+                      professional advice. While we have taken great care to
+                      ensure the accuracy of the calculations provided, we
+                      cannot guarantee their correctness or completeness. The
+                      results provided by this calculator are based on input
+                      provided by the user and do not take into account all
+                      possible factors that may affect the calculation.
+                      Therefore, we cannot be held responsible for any errors or
+                      omissions in the information provided by this calculator.
+                      By using this calculator, you agree to indemnify and hold
+                      us harmless from claims, damages, or liabilities arising
+                      from the use of this calculator or the information it
+                      provides.
+                    </p>
+                  </div>
+
+                  <div className={styles.actionButton}>
+                    <h2>RCIC Appointment</h2>
+                    <p>
+                      To find out if you are eligible for PR, under FSWP Program
+                      book an appointment with our RCIC.
+                    </p>
+                  </div>
                 </div>
               )}
             </Sticky>
@@ -1244,6 +1271,33 @@ const BCPNPCalculator = () => {
               </h1>
                 </div>
               </div>
+              <div className={styles.disclaimer}>
+                    <p>
+                      <span className={styles.colorRedDis}>Disclaimer:</span>{" "}
+                      This calculator is intended to provide general information
+                      and should not be relied upon as a substitute for
+                      professional advice. While we have taken great care to
+                      ensure the accuracy of the calculations provided, we
+                      cannot guarantee their correctness or completeness. The
+                      results provided by this calculator are based on input
+                      provided by the user and do not take into account all
+                      possible factors that may affect the calculation.
+                      Therefore, we cannot be held responsible for any errors or
+                      omissions in the information provided by this calculator.
+                      By using this calculator, you agree to indemnify and hold
+                      us harmless from claims, damages, or liabilities arising
+                      from the use of this calculator or the information it
+                      provides.
+                    </p>
+                  </div>
+
+                  <div className={styles.actionButton}>
+                    <h2>RCIC Appointment</h2>
+                    <p>
+                      To find out if you are eligible for PR, under FSWP Program
+                      book an appointment with our RCIC.
+                    </p>
+                  </div>
             </div>
           )}
 

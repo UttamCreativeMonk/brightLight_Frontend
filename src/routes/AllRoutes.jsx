@@ -87,6 +87,7 @@ import Search from "../pages/Search";
 import WorkPermit from "../pages/WorkPermit";
 import Login from "../components/Login";
 import PrivateRoute from "../components/PrivateRoute";
+import Immigration from "../pages/Immigration";
 
 let AllRoutes = () => {
   return (
@@ -111,7 +112,10 @@ let AllRoutes = () => {
       <Route path="/category-based" element={<CategoryBased />} />
       <Route path="/clb-ilets-calculator" element={<CLBILETSCalculator />} />
       <Route path="/previous-draw-history" element={<PreviousDrawHistory />} />
-      <Route  path="/users/admin/dashboard"  element={<PrivateRoute element={Admin} />}   />
+      <Route
+        path="/users/admin/dashboard"
+        element={<PrivateRoute element={Admin} />}
+      />
       <Route path="/more-services" element={<MoreServices />} />
 
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
@@ -259,9 +263,12 @@ let AllRoutes = () => {
         path="/permanent-residence-pathways-caregivers-lp"
         element={<PermanentResidencePathwaysCaregiversLP />}
       />
+
+      <Route path="/immigration-tools" element={<Immigration />} />
+
       <Route path="/search" element={<Search />} />
 
-      <Route path="/auth/dashboard/login/admin" element={<Login/>} />
+      <Route path="/auth/dashboard/login/admin" element={<Login />} />
     </Routes>
   );
 };

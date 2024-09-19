@@ -30,6 +30,7 @@
   padding-top: 30px;
   font-weight: 500;
   color: #132f46;
+  font-weight: bold;
 }
 
 .bannerBlueHeading {
@@ -158,6 +159,7 @@
   will-change: transform, opacity;
   z-index: 0;
   animation: pulse 2s infinite;
+  font-weight: bolder;
 }
 
 .bookButton17:hover {
@@ -222,12 +224,12 @@
   font-size: 20px;
   cursor: pointer;
   background-color: transparent;
-  border: 1px solid transparent; /* Hide the original border */
+  border: 1px solid transparent;
   padding: 10px 40px;
   border-radius: 5px;
   position: relative;
   transition: 0.2s ease-in-out;
-  /* overflow: hidden; */
+
 }
 
 .bannerParent2 button:hover {
@@ -255,6 +257,81 @@
   animation: lightEffect 13s linear infinite;
   pointer-events: none; /* Ensure the pseudo-element does not interfere with button interactions */
 }
+
+/* //// */
+
+
+.bannerParent2 button{
+  background-color: transparent;
+  transition: all 0.3s ease; 
+  animation: pulseAnimation 2s infinite; 
+}
+
+/* Hover effects */
+.bannerParent2 button:hover {
+  text-decoration: none;
+  border-color: #ffffff; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  animation: bounceAnimation 0.6s ease;
+}
+
+/* Keyframes for pulsing effect */
+@keyframes pulseAnimation {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Keyframes for bouncing effect */
+@keyframes bounceAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.moreNewsUpdates{
+  width: 150px;
+  display: block;
+  margin: auto;
+  margin-top: 100px;
+  position: relative;
+  padding: 15px 10px;
+  border-radius: 40px;
+  border: 3px solid #132f46;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #132f46;
+  background-color: white;
+  transition: all 0.3s ease; 
+  animation: pulseAnimation 2s infinite;
+  cursor: pointer;
+}
+
+.moreNewsUpdates:hover{
+  text-decoration: none;
+  border-color: #43494e; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+  animation: bounceAnimation 0.6s ease; /* Bounce animation on hover */
+}
+
+
+/* ////// /  / */
 
 .bannerParent2 button span {
   position: relative;
@@ -285,8 +362,10 @@
   color: white;
   font-weight: 400;
   margin-bottom: 10px;
+  font-weight: bold;
 }
 
+/* /// */
 .memberParent {
   background-color: #132f46;
   /* padding: 100px 0px; */
@@ -335,8 +414,9 @@
 }
 
 .memberCard p {
-  padding-bottom: 40px;
-  font-size: 22px;
+  padding-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .memberCardImg {
@@ -1068,6 +1148,8 @@
 
 .slideInFromBottom {
   animation: slideInFromBottom 1s ease-out;
+  font-weight: bolder;
+
 }
 
 /* /////    */

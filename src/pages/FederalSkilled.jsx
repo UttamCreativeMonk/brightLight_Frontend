@@ -34,7 +34,7 @@ const FederalSkilled = () => {
         console.log(error);
       });
 
-      fetch("https://brightlight-node.onrender.com/federal-meta")
+    fetch("https://brightlight-node.onrender.com/federal-meta")
       .then((res) => {
         return res.json();
       })
@@ -255,7 +255,7 @@ const FederalSkilled = () => {
 
   return (
     <>
-    <Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle
@@ -306,635 +306,616 @@ const FederalSkilled = () => {
         </div>
       </div>
 
-      
       <StickyContainer>
-      <div className={styles.containerParent}>
-        <div className={styles.firstSection}>
-          <div className={styles.container}>
-            <div className={styles.header}>
-              <div className={styles.headerLineParent}>
-                <div>1</div>
-                <p className={styles.headerLineParentPara}></p>{" "}
-                {data && <h3>{data?.firstSectionHeading}</h3>}
+        <div className={styles.containerParent}>
+          <div className={styles.firstSection}>
+            <div className={styles.container}>
+              <div className={styles.header}>
+                <div className={styles.headerLineParent}>
+                  <div>1</div>
+                  <p className={styles.headerLineParentPara}></p>{" "}
+                  {data && <h3>{data?.firstSectionHeading}</h3>}
+                </div>
+              </div>
+
+              <div className={styles.radioGroup}>
+                <div className={styles.subHeader}>
+                  {data && <h4>{data?.fsq1}</h4>}
+                </div>
+                <div className={styles.radioItem}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="language" // updated name attribute
+                        value="1"
+                        onChange={handleLanguageChange}
+                      />{" "}
+                      {data.fsq1o1}
+                    </label>
+                  )}
+                </div>
+                <div className={styles.radioItem}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="language" // updated name attribute
+                        value="2"
+                        onChange={handleLanguageChange}
+                      />{" "}
+                      {data.fsq1o2}
+                    </label>
+                  )}
+                </div>
+                <div className={styles.radioItem}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="language" // updated name attribute
+                        value="3"
+                        onChange={handleLanguageChange}
+                      />{" "}
+                      {data.fsq1o3}
+                    </label>
+                  )}
+                </div>
+                <div className={styles.radioItem}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="language" // updated name attribute
+                        value="4"
+                        onChange={handleLanguageChange}
+                      />{" "}
+                      {data.fsq1o4}
+                    </label>
+                  )}
+                </div>
+              </div>
+
+              <div className={styles.radioGroup}>
+                <div className={styles.subHeader}>
+                  {data && <h4>{data?.fsq2}</h4>}
+                </div>
+                <div className={styles.radioItem}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="listening" // updated name attribute
+                        value="1"
+                        onChange={handleListeningChange}
+                      />{" "}
+                      {data.fsq2o1}
+                    </label>
+                  )}
+                </div>
+                <div className={styles.radioItem}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="listening" // updated name attribute
+                        value="2"
+                        onChange={handleListeningChange}
+                      />{" "}
+                      {data.fsq2o2}
+                    </label>
+                  )}
+                </div>
+                <div className={styles.radioItem}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="listening" // updated name attribute
+                        value="3"
+                        onChange={handleListeningChange}
+                      />{" "}
+                      {data.fsq2o3}
+                    </label>
+                  )}
+                </div>
+                <div className={styles.radioItem}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="listening" // updated name attribute
+                        value="4"
+                        onChange={handleListeningChange}
+                      />{" "}
+                      {data.fsq2o4}
+                    </label>
+                  )}
+                </div>
+              </div>
+
+              <div className={styles.radioGroup}>
+                <div className={styles.subHeader}>
+                  {data && <h4>{data?.fsq3}</h4>}
+                </div>
+                <div className={styles.radioItem}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="reading" // updated name attribute
+                        value="1"
+                        onChange={handleReadingChange}
+                      />{" "}
+                      {data.fsq3o1}
+                    </label>
+                  )}
+                </div>
+                <div className={styles.radioItem}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="reading" // updated name attribute
+                        value="2"
+                        onChange={handleReadingChange}
+                      />{" "}
+                      {data.fsq3o2}
+                    </label>
+                  )}
+                </div>
+                <div className={styles.radioItem}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="reading" // updated name attribute
+                        value="3"
+                        onChange={handleReadingChange}
+                      />{" "}
+                      {data.fsq3o3}
+                    </label>
+                  )}
+                </div>
+                <div className={styles.radioItem}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="reading" // updated name attribute
+                        value="4"
+                        onChange={handleReadingChange}
+                      />{" "}
+                      {data.fsq3o4}
+                    </label>
+                  )}
+                </div>
+              </div>
+
+              <div className={styles.radioGroup}>
+                <div className={styles.subHeader}>
+                  {data && <h4>{data?.fsq4}</h4>}
+                </div>
+                <div className={styles.radioItem}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="writing" // updated name attribute
+                        value="1"
+                        onChange={handleWritingChange}
+                      />{" "}
+                      {data.fsq4o1}
+                    </label>
+                  )}
+                </div>
+                <div className={styles.radioItem}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="writing" // updated name attribute
+                        value="2"
+                        onChange={handleWritingChange}
+                      />{" "}
+                      {data.fsq4o2}
+                    </label>
+                  )}
+                </div>
+                <div className={styles.radioItem}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="writing" // updated name attribute
+                        value="3"
+                        onChange={handleWritingChange}
+                      />{" "}
+                      {data.fsq4o3}
+                    </label>
+                  )}
+                </div>
+                <div className={styles.radioItem}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="writing" // updated name attribute
+                        value="4"
+                        onChange={handleWritingChange}
+                      />{" "}
+                      {data.fsq4o4}
+                    </label>
+                  )}
+                </div>
               </div>
             </div>
 
-            <div className={styles.radioGroup}>
-              <div className={styles.subHeader}>
-                {data && <h4>{data?.fsq1}</h4>}
+            <div className={styles.container}>
+              <div className={styles.header}>
+                <div className={styles.headerLineParent}>
+                  <div>2</div>
+                  <p className={styles.headerLineParentPara}></p>{" "}
+                  {data && <h3>{data?.secondSectionHeading}</h3>}
+                </div>
               </div>
-              <div className={styles.radioItem}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="1"
-                      onChange={handleLanguageChange}
-                    />{" "}
-                    {data.fsq1o1}
-                  </label>
-                )}
-              </div>
-              <div className={styles.radioItem}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="2"
-                      onChange={handleLanguageChange}
-                    />{" "}
-                    {data.fsq1o2}
-                  </label>
-                )}
-              </div>
-              <div className={styles.radioItem}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="3"
-                      onChange={handleLanguageChange}
-                    />{" "}
-                    {data.fsq1o3}
-                  </label>
-                )}
-              </div>
-              <div className={styles.radioItem}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="4"
-                      onChange={handleLanguageChange}
-                    />{" "}
-                    {data.fsq1o4}
-                  </label>
-                )}
+              <div className={styles.radioGroup3}>
+                <div className={styles.radioItem}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="speaking1"
+                        value="1"
+                        onChange={handleClb5Change}
+                      />{" "}
+                      {data.ssq1o1}
+                    </label>
+                  )}
+                </div>
+                <div className={styles.radioItem}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="speaking1"
+                        value="2"
+                        onChange={handleClb5Change}
+                      />{" "}
+                      {data.ssq1o2}
+                    </label>
+                  )}
+                </div>
               </div>
             </div>
 
-            <div className={styles.radioGroup}>
-              <div className={styles.subHeader}>
-                {data && <h4>{data?.fsq2}</h4>}
+            <div className={styles.container}>
+              <div className={styles.header}>
+                <div className={styles.headerLineParent}>
+                  <div>3</div>
+                  <p></p>
+                </div>
+                {data && <h4>{data?.tsq1}</h4>}
               </div>
-              <div className={styles.radioItem}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="1"
-                      onChange={handleListeningChange}
-                    />{" "}
-                    {data.fsq2o1}
-                  </label>
-                )}
-              </div>
-              <div className={styles.radioItem}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="2"
-                      onChange={handleListeningChange}
-                    />{" "}
-                    {data.fsq2o2}
-                  </label>
-                )}
-              </div>
-              <div className={styles.radioItem}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="3"
-                      onChange={handleListeningChange}
-                    />{" "}
-                    {data.fsq2o3}
-                  </label>
-                )}
-              </div>
-              <div className={styles.radioItem}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="4"
-                      onChange={handleListeningChange}
-                    />{" "}
-                    {data.fsq2o4}
-                  </label>
-                )}
-              </div>
-            </div>
-
-            <div className={styles.radioGroup}>
-              <div className={styles.subHeader}>
-                {data && <h4>{data?.fsq3}</h4>}
-              </div>
-              <div className={styles.radioItem}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="1"
-                      onChange={handleReadingChange}
-                    />{" "}
-                    {data.fsq3o1}
-                  </label>
-                )}
-              </div>
-              <div className={styles.radioItem}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="2"
-                      onChange={handleReadingChange}
-                    />{" "}
-                    {data.fsq3o2}
-                  </label>
-                )}
-              </div>
-              <div className={styles.radioItem}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="3"
-                      onChange={handleReadingChange}
-                    />{" "}
-                    {data.fsq3o3}
-                  </label>
-                )}
-              </div>
-              <div className={styles.radioItem}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="4"
-                      onChange={handleReadingChange}
-                    />{" "}
-                    {data.fsq3o4}
-                  </label>
-                )}
+              <div className={styles.radioGroup2}>
+                <div className={styles.radioItem2}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="speaking11"
+                        value="1"
+                        onChange={handleEducationChange}
+                      />{" "}
+                      {data.tsq1o1}
+                    </label>
+                  )}
+                </div>
+                <div className={styles.radioItem2}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="speaking12"
+                        value="2"
+                        onChange={handleEducationChange}
+                      />{" "}
+                      {data.tsq1o2}
+                    </label>
+                  )}
+                </div>
+                <div className={styles.radioItem2}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="speaking13"
+                        value="3"
+                        onChange={handleEducationChange}
+                      />{" "}
+                      {data.tsq1o3}
+                    </label>
+                  )}
+                </div>
+                <div className={styles.radioItem2}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="speaking14"
+                        value="4"
+                        onChange={handleEducationChange}
+                      />{" "}
+                      {data.tsq1o4}
+                    </label>
+                  )}
+                </div>
+                <div className={styles.radioItem2}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="speaking15"
+                        value="5"
+                        onChange={handleEducationChange}
+                      />{" "}
+                      {data.tsq1o5}
+                    </label>
+                  )}
+                </div>
+                <div className={styles.radioItem2}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="speaking16"
+                        value="6"
+                        onChange={handleEducationChange}
+                      />{" "}
+                      {data.tsq1o6}
+                    </label>
+                  )}
+                </div>
+                <div className={styles.radioItem2}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="speaking17"
+                        value="7"
+                        onChange={handleEducationChange}
+                      />{" "}
+                      {data.tsq1o7}
+                    </label>
+                  )}
+                </div>
               </div>
             </div>
 
-            <div className={styles.radioGroup}>
-              <div className={styles.subHeader}>
-                {data && <h4>{data?.fsq4}</h4>}
+            <div className={styles.container}>
+              <div className={styles.header}>
+                <div className={styles.headerLineParent}>
+                  <div>4</div>
+                  <p></p>
+                </div>
+                {data && <h4>{data?.fosq1}</h4>}
               </div>
-              <div className={styles.radioItem}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="1"
-                      onChange={handleWritingChange}
-                    />{" "}
-                    {data.fsq4o1}
-                  </label>
-                )}
+              <select className={styles.dropdown} onChange={handleAgeChange}>
+                <option value="1">{data?.fosq1o1}</option>
+                <option value="2">{data?.fosq1o2}</option>
+                <option value="3">{data?.fosq1o3}</option>
+                <option value="4">{data?.fosq1o4}</option>
+                <option value="5">{data?.fosq1o5}</option>
+              </select>
+            </div>
+
+            <div className={styles.container}>
+              <div className={styles.header}>
+                <div className={styles.headerLineParent}>
+                  <div>5</div>
+                  <p></p>
+                </div>
+                {data && <h4>{data?.ffsq1}</h4>}
               </div>
-              <div className={styles.radioItem}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="2"
-                      onChange={handleWritingChange}
-                    />{" "}
-                    {data.fsq4o2}
-                  </label>
-                )}
+              <div className={styles.radioGroup3}>
+                <div className={styles.radioItem}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="speaking111"
+                        value="1"
+                        onChange={handleEmploymentChange}
+                      />{" "}
+                      {data.ffsq1o1}
+                    </label>
+                  )}
+                </div>
+                <div className={styles.radioItem}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="speaking111"
+                        value="2"
+                        onChange={handleEmploymentChange}
+                      />{" "}
+                      {data.ffsq1o2}
+                    </label>
+                  )}
+                </div>
               </div>
-              <div className={styles.radioItem}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="3"
-                      onChange={handleWritingChange}
-                    />{" "}
-                    {data.fsq4o3}
-                  </label>
-                )}
+            </div>
+
+            <div className={styles.container}>
+              <div className={styles.header}>
+                <div className={styles.headerLineParent}>
+                  <div>6</div>
+                  <p></p>
+                </div>
+                {data && <h4>{data?.sxsq1}</h4>}
               </div>
-              <div className={styles.radioItem}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="4"
-                      onChange={handleWritingChange}
-                    />{" "}
-                    {data.fsq4o4}
-                  </label>
-                )}
+              <div className={styles.radioGroup}>
+                <div className={styles.radioItem}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="speaking11111"
+                        value="1"
+                        onChange={handleExperienceChange}
+                      />{" "}
+                      {data.sxsq1o1}
+                    </label>
+                  )}
+                </div>
+                <div className={styles.radioItem}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="speaking11111"
+                        value="2"
+                        onChange={handleExperienceChange}
+                      />{" "}
+                      {data.sxsq1o2}
+                    </label>
+                  )}
+                </div>
+                <div className={styles.radioItem}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="speaking11111"
+                        value="3"
+                        onChange={handleExperienceChange}
+                      />{" "}
+                      {data.sxsq1o3}
+                    </label>
+                  )}
+                </div>
+                <div className={styles.radioItem}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="speaking1111"
+                        value="4"
+                        onChange={handleExperienceChange}
+                      />{" "}
+                      {data.sxsq1o4}
+                    </label>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.container}>
+              <div className={styles.header}>
+                <div className={styles.headerLineParent}>
+                  <div>7</div>
+                  <p></p>
+                </div>
+                {data && <h4>{data?.svsq1}</h4>}
+              </div>
+              <div className={styles.radioGroup2}>
+                <div className={styles.radioItem2}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="speaking2"
+                        value="1"
+                        onChange={handleAdaptabilityChange}
+                      />{" "}
+                      {data.svsq1o1}
+                    </label>
+                  )}
+                </div>
+                <div className={styles.radioItem2}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="speaking2"
+                        value="2"
+                        onChange={handleAdaptabilityChange}
+                      />{" "}
+                      {data.svsq1o2}
+                    </label>
+                  )}
+                </div>
+                <div className={styles.radioItem2}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="speaking2"
+                        value="3"
+                        onChange={handleAdaptabilityChange}
+                      />{" "}
+                      {data.svsq1o3}
+                    </label>
+                  )}
+                </div>
+                <div className={styles.radioItem2}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="speaking2"
+                        value="4"
+                        onChange={handleAdaptabilityChange}
+                      />{" "}
+                      {data.svsq1o4}
+                    </label>
+                  )}
+                </div>
+                <div className={styles.radioItem2}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="speaking2"
+                        value="5"
+                        onChange={handleAdaptabilityChange}
+                      />{" "}
+                      {data.svsq1o5}
+                    </label>
+                  )}
+                </div>
+                <div className={styles.radioItem2}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="speaking2"
+                        value="6"
+                        onChange={handleAdaptabilityChange}
+                      />{" "}
+                      {data.svsq1o6}
+                    </label>
+                  )}
+                </div>
+                <div className={styles.radioItem2}>
+                  {data && (
+                    <label>
+                      <input
+                        type="radio"
+                        name="speaking2"
+                        value="7"
+                        onChange={handleAdaptabilityChange}
+                      />{" "}
+                      {data.svsq1o7}
+                    </label>
+                  )}
+                </div>
               </div>
             </div>
           </div>
 
-          <div className={styles.container}>
-            <div className={styles.header}>
-              <div className={styles.headerLineParent}>
-                <div>2</div>
-                <p className={styles.headerLineParentPara}></p>{" "}
-                {data && <h3>{data?.secondSectionHeading}</h3>}
-              </div>
-            </div>
-            <div className={styles.radioGroup3}>
-              <div className={styles.radioItem}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="1"
-                      onChange={handleClb5Change}
-                    />{" "}
-                    {data.ssq1o1}
-                  </label>
-                )}
-              </div>
-              <div className={styles.radioItem}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="2"
-                      onChange={handleClb5Change}
-                    />{" "}
-                    {data.ssq1o2}
-                  </label>
-                )}
-              </div>
-            </div>
-            {/* <div className={styles.points}>
-          Points <input type="text" value={clb5Points} readOnly />
-        </div> */}
-          </div>
-
-          <div className={styles.container}>
-            <div className={styles.header}>
-              <div className={styles.headerLineParent}>
-                <div>3</div>
-                <p></p>
-              </div>
-              {data && <h4>{data?.tsq1}</h4>}
-            </div>
-            <div className={styles.radioGroup2}>
-              <div className={styles.radioItem2}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="1"
-                      onChange={handleEducationChange}
-                    />{" "}
-                    {data.tsq1o1}
-                  </label>
-                )}
-              </div>
-              <div className={styles.radioItem2}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="2"
-                      onChange={handleEducationChange}
-                    />{" "}
-                    {data.tsq1o2}
-                  </label>
-                )}
-              </div>
-              <div className={styles.radioItem2}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="3"
-                      onChange={handleEducationChange}
-                    />{" "}
-                    {data.tsq1o3}
-                  </label>
-                )}
-              </div>
-              <div className={styles.radioItem2}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="4"
-                      onChange={handleEducationChange}
-                    />{" "}
-                    {data.tsq1o4}
-                  </label>
-                )}
-              </div>
-              <div className={styles.radioItem2}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="5"
-                      onChange={handleEducationChange}
-                    />{" "}
-                    {data.tsq1o5}
-                  </label>
-                )}
-              </div>
-              <div className={styles.radioItem2}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="6"
-                      onChange={handleEducationChange}
-                    />{" "}
-                    {data.tsq1o6}
-                  </label>
-                )}
-              </div>
-              <div className={styles.radioItem2}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="7"
-                      onChange={handleEducationChange}
-                    />{" "}
-                    {data.tsq1o7}
-                  </label>
-                )}
-              </div>
-            </div>
-            {/* <div className={styles.points}>
-          Points <input type="text" value={educationPoints} readOnly />
-        </div> */}
-          </div>
-
-          <div className={styles.container}>
-            <div className={styles.header}>
-              <div className={styles.headerLineParent}>
-                <div>4</div>
-                <p></p>
-              </div>
-              {data && <h4>{data?.fosq1}</h4>}
-            </div>
-            <select className={styles.dropdown} onChange={handleAgeChange}>
-              <option value="1">{data?.fosq1o1}</option>
-              <option value="2">{data?.fosq1o2}</option>
-              <option value="3">{data?.fosq1o3}</option>
-              <option value="4">{data?.fosq1o4}</option>
-              <option value="5">{data?.fosq1o5}</option>
-            </select>
-            {/* <div className={styles.points}>
-          Points <input type="text" value={agePoints} readOnly />
-        </div> */}
-          </div>
-
-          <div className={styles.container}>
-            <div className={styles.header}>
-              <div className={styles.headerLineParent}>
-                <div>5</div>
-                <p></p>
-              </div>
-              {data && <h4>{data?.ffsq1}</h4>}
-            </div>
-            <div className={styles.radioGroup3}>
-              <div className={styles.radioItem}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="1"
-                      onChange={handleEmploymentChange}
-                    />{" "}
-                    {data.ffsq1o1}
-                  </label>
-                )}
-              </div>
-              <div className={styles.radioItem}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="2"
-                      onChange={handleEmploymentChange}
-                    />{" "}
-                    {data.ffsq1o2}
-                  </label>
-                )}
-              </div>
-            </div>
-            {/* <div className={styles.points}>
-          Points <input type="text" value={employmentPoints} readOnly />
-        </div> */}
-          </div>
-
-          <div className={styles.container}>
-            <div className={styles.header}>
-              <div className={styles.headerLineParent}>
-                <div>6</div>
-                <p></p>
-              </div>
-              {data && <h4>{data?.sxsq1}</h4>}
-            </div>
-            <div className={styles.radioGroup}>
-              <div className={styles.radioItem}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="1"
-                      onChange={handleExperienceChange}
-                    />{" "}
-                    {data.sxsq1o1}
-                  </label>
-                )}
-              </div>
-              <div className={styles.radioItem}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="2"
-                      onChange={handleExperienceChange}
-                    />{" "}
-                    {data.sxsq1o2}
-                  </label>
-                )}
-              </div>
-              <div className={styles.radioItem}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="3"
-                      onChange={handleExperienceChange}
-                    />{" "}
-                    {data.sxsq1o3}
-                  </label>
-                )}
-              </div>
-              <div className={styles.radioItem}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="4"
-                      onChange={handleExperienceChange}
-                    />{" "}
-                    {data.sxsq1o4}
-                  </label>
-                )}
-              </div>
-            </div>
-            {/* <div className={styles.points}>
-          Points <input type="text" value={experiencePoints} readOnly />
-        </div> */}
-          </div>
-
-          <div className={styles.container}>
-            <div className={styles.header}>
-              <div className={styles.headerLineParent}>
-                <div>7</div>
-                <p></p>
-              </div>
-              {data && <h4>{data?.svsq1}</h4>}
-            </div>
-            <div className={styles.radioGroup2}>
-              <div className={styles.radioItem2}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="1"
-                      onChange={handleAdaptabilityChange}
-                    />{" "}
-                    {data.svsq1o1}
-                  </label>
-                )}
-              </div>
-              <div className={styles.radioItem2}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="2"
-                      onChange={handleAdaptabilityChange}
-                    />{" "}
-                    {data.svsq1o2}
-                  </label>
-                )}
-              </div>
-              <div className={styles.radioItem2}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="3"
-                      onChange={handleAdaptabilityChange}
-                    />{" "}
-                    {data.svsq1o3}
-                  </label>
-                )}
-              </div>
-              <div className={styles.radioItem2}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="4"
-                      onChange={handleAdaptabilityChange}
-                    />{" "}
-                    {data.svsq1o4}
-                  </label>
-                )}
-              </div>
-              <div className={styles.radioItem2}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="5"
-                      onChange={handleAdaptabilityChange}
-                    />{" "}
-                    {data.svsq1o5}
-                  </label>
-                )}
-              </div>
-              <div className={styles.radioItem2}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="6"
-                      onChange={handleAdaptabilityChange}
-                    />{" "}
-                    {data.svsq1o6}
-                  </label>
-                )}
-              </div>
-              <div className={styles.radioItem2}>
-                {data && (
-                  <label>
-                    <input
-                      type="radio"
-                      name="speaking"
-                      value="7"
-                      onChange={handleAdaptabilityChange}
-                    />{" "}
-                    {data.svsq1o7}
-                  </label>
-                )}
-              </div>
-            </div>
-            {/* <div className={styles.points}>
-          Points <input type="text" value={adaptabilityPoints} readOnly />
-        </div> */}
-          </div>
-        </div>
-
-        {isStickyEnabled ? (
+          {isStickyEnabled ? (
             <Sticky>
               {({ style }) => (
                 <div
@@ -943,7 +924,7 @@ const FederalSkilled = () => {
                     ...style,
                     background: "white",
                     left: "70%",
-                    width: "300px"
+                    width: "300px",
                   }}
                 >
                   <div className={styles.pointContainer}>
@@ -953,6 +934,33 @@ const FederalSkilled = () => {
                     <div className={styles.points}>
                       <h1>{totalPoints}</h1>
                     </div>
+                  </div>
+                  <div className={styles.disclaimer}>
+                    <p>
+                      <span className={styles.colorRedDis}>Disclaimer:</span>{" "}
+                      This calculator is intended to provide general information
+                      and should not be relied upon as a substitute for
+                      professional advice. While we have taken great care to
+                      ensure the accuracy of the calculations provided, we
+                      cannot guarantee their correctness or completeness. The
+                      results provided by this calculator are based on input
+                      provided by the user and do not take into account all
+                      possible factors that may affect the calculation.
+                      Therefore, we cannot be held responsible for any errors or
+                      omissions in the information provided by this calculator.
+                      By using this calculator, you agree to indemnify and hold
+                      us harmless from claims, damages, or liabilities arising
+                      from the use of this calculator or the information it
+                      provides.
+                    </p>
+                  </div>
+
+                  <div className={styles.actionButton}>
+                    <h2>RCIC Appointment</h2>
+                    <p>
+                      To find out if you are eligible for PR, under FSWP Program
+                      book an appointment with our RCIC.
+                    </p>
                   </div>
                 </div>
               )}
@@ -970,9 +978,34 @@ const FederalSkilled = () => {
                   <h1>{totalPoints}</h1>
                 </div>
               </div>
+              <div className={styles.disclaimer}>
+                <p>
+                  <span className={styles.colorRedDis}>Disclaimer:</span> This
+                  calculator is intended to provide general information and
+                  should not be relied upon as a substitute for professional
+                  advice. While we have taken great care to ensure the accuracy
+                  of the calculations provided, we cannot guarantee their
+                  correctness or completeness. The results provided by this
+                  calculator are based on input provided by the user and do not
+                  take into account all possible factors that may affect the
+                  calculation. Therefore, we cannot be held responsible for any
+                  errors or omissions in the information provided by this
+                  calculator. By using this calculator, you agree to indemnify
+                  and hold us harmless from claims, damages, or liabilities
+                  arising from the use of this calculator or the information it
+                  provides.
+                </p>
+              </div>
+              <div className={styles.actionButton}>
+                <h2>RCIC Appointment</h2>
+                <p>
+                  To find out if you are eligible for PR, under FSWP Program
+                  book an appointment with our RCIC.
+                </p>
+              </div>
             </div>
           )}
-      </div>
+        </div>
       </StickyContainer>
 
       <Footer1 />

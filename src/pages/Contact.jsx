@@ -6,9 +6,10 @@ import ogImage from "../assets/ogImage.png";
 import { Helmet } from "react-helmet-async";
 import { ToastContainer, toast, Bounce } from "react-toastify";
 
-let Contact = () => {
+const Contact = () => {
   let [metaData, setMetaData] = useState([]);
-  let notifySuccess = () => {
+  
+  const notifySuccess = () => {
     toast.success("Success", {
       position: "top-center",
       autoClose: 3000,
@@ -22,7 +23,7 @@ let Contact = () => {
     });
   };
 
-  let notifyError = () => {
+  const notifyError = () => {
     toast.error("Request Rejected, Please try again later.", {
       position: "top-center",
       autoClose: 3000,
@@ -36,8 +37,8 @@ let Contact = () => {
     });
   };
 
-  let [data, setData] = useState([]);
-  let [activeDiv, setActiveDiv] = useState("insideCanada");
+  const [data, setData] = useState([]);
+  const [activeDiv, setActiveDiv] = useState("insideCanada");
 
   const [formData, setFormData] = useState({
     name: "",
@@ -69,9 +70,7 @@ let Contact = () => {
 
   useEffect(() => {
     fetch("https://brightlight-node.onrender.com/contact-meta")
-      .then((res) => {
-        return res.json();
-      })
+      .then((res) => res.json())
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
@@ -82,7 +81,7 @@ let Contact = () => {
       });
   }, []);
 
-  let handleActiveDiv = () => {
+  const handleActiveDiv = () => {
     setActiveDiv(
       activeDiv === "insideCanada" ? "outsideCanada" : "insideCanada"
     );
@@ -162,16 +161,14 @@ let Contact = () => {
       <ToastContainer />
       <Helmet>
         <title>
-          {metaData?.metaTitle
-            ? metaData?.metaTitle
-            : "Brightlight Immigration"}
+          {metaData?.metaTitle ? metaData?.metaTitle : "Brightlight Immigration"}
         </title>
         <meta
           name="description"
           content={
             metaData?.metaDesc
               ? metaData?.metaDesc
-              : "Learn about Brightlight Immigration, our mission, values, and the dedicated team behind our immigration services. We are committed to providing honest and accurate advice to guide you through your immigration journey."
+              : "Learn about Brightlight Immigration, our mission, values, and the dedicated team behind our immigration services."
           }
         />
         <meta
@@ -180,7 +177,7 @@ let Contact = () => {
           content={
             metaData?.metaOgTitle
               ? metaData?.metaOgTitle
-              : " Brightlight Immigration"
+              : "Brightlight Immigration"
           }
         />
         <meta property="og:image" content={ogImage} />
@@ -190,7 +187,7 @@ let Contact = () => {
           content={
             metaData?.metaOgDesc
               ? metaData?.metaOgDesc
-              : "Discover the story behind Brightlight Immigration, our commitment to providing honest and accurate advice, and how our team can assist you with your immigration needs."
+              : "Discover the story behind Brightlight Immigration, and how our team can assist you with your immigration needs."
           }
         />
         <meta
@@ -198,7 +195,7 @@ let Contact = () => {
           content={
             metaData?.metaKeywords
               ? metaData?.metaKeywords
-              : "About Us, Brightlight Immigration, Immigration Services, Mission, Team"
+              : "About Us, Brightlight Immigration, Immigration Services"
           }
         />
       </Helmet>
@@ -209,11 +206,15 @@ let Contact = () => {
         <h3>{data?.form_section_heading}</h3>
         <p>{data?.form_section_description}</p>
       </div>
+
       <div className={styles.contactMapSection}>
         <div className={styles.contactForm}>
           <form onSubmit={handleSubmit}>
             <div className={styles.inputBarFlexSection}>
-              <div ref={inputBarRef} className={`${styles.inputBar} ${styles.hidden}`}>
+              <div
+                ref={inputBarRef}
+                className={`${styles.inputBar} ${styles.hidden}`}
+              >
                 <input
                   type="text"
                   placeholder="Your Name"
@@ -236,7 +237,8 @@ let Contact = () => {
                 <span>*</span>
               </div>
             </div>
-            <div className={styles.inputBarFlexSection} >
+
+            <div className={styles.inputBarFlexSection}>
               <div className={styles.inputBar}>
                 <input
                   type="number"
@@ -248,19 +250,53 @@ let Contact = () => {
                 />
                 <span>*</span>
               </div>
+
               <div className={styles.inputBar}>
-                <input
-                  type="text"
-                  placeholder="Area of Interest"
+                <select
                   name="interest"
                   value={formData.interest}
                   onChange={handleInputChange}
                   required
-                />
+                >
+                  <option value="">Select Area of Interest</option>
+                  <option value="Express Entry">Express Entry</option>
+                  <option value="PNP">PNP</option>
+                  <option value="ATIP/GCMS Notes">ATIP/GCMS Notes</option>
+                  <option value="LMIA Application for Employer">
+                    LMIA Application for Employer
+                  </option>
+                  <option value="Work Permit">Work Permit</option>
+                  <option value="Spousal Sponsorship">
+                    Spousal Sponsorship
+                  </option>
+                  <option value="Study Visa - Outside Canada">
+                    Study Visa - Outside Canada
+                  </option>
+                  <option value="Study Visa - Inside Canada">
+                    Study Visa - Inside Canada
+                  </option>
+                  <option value="Post Graduate Work Permit (PGWP)">
+                    Post Graduate Work Permit (PGWP)
+                  </option>
+                  <option value="Business Visa">Business Visa</option>
+                  <option value="Visitor Visa">Visitor Visa</option>
+                  <option value="Super Visa">Super Visa</option>
+                  <option value="Family Sponsorship">Family Sponsorship</option>
+                  <option value="Open Work Permit">Open Work Permit</option>
+                  <option value="Citizenship">Citizenship</option>
+                  <option value="College Admission/College Change">
+                    College Admission/College Change
+                  </option>
+                  <option value="PR Card Renewal">PR Card Renewal</option>
+                  <option value="Other">Other</option>
+                </select>
                 <span>*</span>
               </div>
             </div>
-            <div ref={formCategoryRef} className={`${styles.formCategory} ${styles.hidden}`}>
+            <div
+              ref={formCategoryRef}
+              className={`${styles.formCategory} ${styles.hidden}`}
+            >
               <div
                 onClick={handleActiveDiv}
                 className={
@@ -282,7 +318,10 @@ let Contact = () => {
                 <p>Outside Canada</p>
               </div>
             </div>
-            <div ref={contactMessageBoxRef} className={`${styles.contactMessageBox} ${styles.hidden}`}>
+            <div
+              ref={contactMessageBoxRef}
+              className={`${styles.contactMessageBox} ${styles.hidden}`}
+            >
               <textarea
                 placeholder="How can we help ?"
                 name="message"
@@ -304,7 +343,10 @@ let Contact = () => {
         </div>
       </div>
 
-      <div ref={officeDetailsSectionRef} className={`${styles.officeDetailsSection} ${styles.hidden}`}>
+      <div
+        ref={officeDetailsSectionRef}
+        className={`${styles.officeDetailsSection} ${styles.hidden}`}
+      >
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27462.752602531727!2d76.74414563737653!3d30.63835165105361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390febb05ee7e45b%3A0xa17a586890ee2175!2sGmada%20Aerocity%2C%20Sahibzada%20Ajit%20Singh%20Nagar%2C%20Punjab!5e0!3m2!1sen!2sin!4v1723022976691!5m2!1sen!2sin"
           loading="lazy"

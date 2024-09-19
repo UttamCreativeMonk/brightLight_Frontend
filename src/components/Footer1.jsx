@@ -24,7 +24,7 @@ const Footer1 = () => {
             Canada
           </p>
         </div>
-        <button onClick={() => window.location.href = 'https://college-ic.ca/?l=en-CA'}>FREE ASSESSMENT</button>
+        <button className={styles.freeAssesmentButton} onClick={() => window.location.href = 'https://college-ic.ca/?l=en-CA'}>FREE ASSESSMENT</button>
       </div>
       <p className={styles.upperFooterLowerText}>VANCOUVER BASED, SERVING GLOBALLY.</p>
 
@@ -161,7 +161,7 @@ const Footer1 = () => {
                   />
                   <p>OUR ADDRESS</p>
                 </div>
-                <p>6638 152A St Unit #114, Surrey, BC V3S 5X5</p>
+                <p>15315 66 Ave unit 327, Surrey, BC V3S 2A1</p>
               </div>
 
               <div className={styles.leftDiv}>

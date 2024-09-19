@@ -1,7 +1,8 @@
 .bannerParent {
   background-image: url("../assets/canadaBlue.jpeg");
   width: 100%;
-  padding: 230px 0px; 
+  padding: 100px 0px; 
+  padding-top: 230px;
 }
 
 .bannerHeading {
@@ -55,7 +56,7 @@
 }
 
 .pointContainer {
-  height: 300px;
+  /* height: 300px; */
   width: 100%;
   margin: auto;
   padding: 30px 0px;
@@ -154,10 +155,42 @@
 .container {
   margin: 50px auto;
   padding: 20px;
-  border: 1px solid #ddd;
+  border: 1px solid #132f46;
   border-radius: 20px;
   background-color: #fff;
 }
+
+
+.disclaimer{
+  margin-top: 20px;
+}
+.disclaimer p{
+  font-size: 12px;
+}
+.colorRedDis{
+  color: rgb(163, 13, 13);
+}
+
+.actionButton{
+  border: 2px solid #132f46;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 50px;
+  padding: 20px 10px;
+  cursor: pointer;
+}
+
+.actionButton h2{
+font-size: 22px;
+text-align: center;
+
+}
+
+.actionButton p{
+  font-size: 14px;
+  text-align: center;
+  margin-top: 5px;
+  }
 
  
 @media all and (max-width: 1200px){

@@ -23,9 +23,8 @@
 
 .bannerHeading p {
   font-weight: 300;
-  font-size: 35px;
-  padding-bottom: 50px;
-  line-height: 50px;
+  font-size: 28px;
+  line-height: 45px;
 }
 
 .container {
@@ -33,7 +32,7 @@
   margin: 50px auto;
   align-items: center;
   padding: 20px;
-  border: 1px solid #ddd;
+  border: 1px solid #132f46;
   border-radius: 20px;
   background-color: #fff;
 }
@@ -193,6 +192,37 @@
   font-size: 60px;
   color: white;
 }
+
+.disclaimer{
+  margin-top: 20px;
+}
+.disclaimer p{
+  font-size: 12px;
+}
+.colorRedDis{
+  color: rgb(163, 13, 13);
+}
+
+.actionButton{
+  border: 2px solid #132f46;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 50px;
+  padding: 20px 10px;
+  cursor: pointer;
+}
+
+.actionButton h2{
+font-size: 22px;
+text-align: center;
+
+}
+
+.actionButton p{
+  font-size: 14px;
+  text-align: center;
+  margin-top: 5px;
+  }
 
 @media all and (max-width: 1200px){
   .pointsSection {

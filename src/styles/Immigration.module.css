@@ -1,0 +1,62 @@
+.bannerParent{
+    background-image: url("../assets/immigrationPage.jpg");
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 120px 0px;
+    padding-top: 230px;
+}
+
+.bannerMain{
+    width: 1440px;
+    margin: auto;
+    text-align: center;
+}
+
+.bannerHeading{
+    width: 800px;
+    text-align: left;
+    background-color: whitesmoke;
+    border-radius: 40px;
+    padding: 20px 30px;
+}
+
+.bannerHeading h3{
+    color: #e8c47c;
+    font-size: 22px;
+}
+
+.bannerHeading h1{
+    color: #00273f;
+  margin-top: 50px;
+}
+
+
+.bannerHeading p{
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+
+.containerParent{
+    padding: 50px 0px;
+    width: 1440px;
+    margin: auto;
+}
+
+.cardParent{
+    display: grid;
+    grid-template-columns: repeat(4,24%);
+    justify-content: space-between;
+    align-items: flex-start;
+    row-gap: 20px;
+}
+
+.cardParent div{
+    width: 100%;
+    border: 1px solid red;
+}
+
+.cardParent div img{
+    width: 30px;
+}

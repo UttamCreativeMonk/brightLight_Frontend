@@ -17,6 +17,10 @@ let Testimonials_White = () => {
   let [videosData, setVideosData] = useState([]);
   let [data, setData] = useState([]);
   let [reviewData, setReviewData] = useState([]);
+  const [currentReview, setCurrentReview] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+
   useEffect(() => {
     fetch("https://brightlight-node.onrender.com/videos-section")
       .then((res) => {
@@ -163,14 +167,29 @@ let Testimonials_White = () => {
     ? getVideoIdFromUrl(videosData.video10)
     : null;
 
-  let [currentReview, setCurrentReview] = useState(0);
-  let handlePreviousReview = () => {
-    setCurrentReview((prev) => Math.max(prev - 1, 0));
-  };
 
-  let handleNextReview = () => {
-    setCurrentReview((prev) => Math.min(prev + 1, reviewData.length - 1));
-  };
+    const handleNextReview = () => {
+      if (isAnimating) return; // Prevent spamming of clicks during animation
+  
+      setIsAnimating(true);
+      setTimeout(() => {
+        setCurrentReview((prev) => (prev + 1) % reviewData.length);
+        setIsAnimating(false);
+      }, 500); // Timeout should match the CSS animation duration
+    };
+  
+    const handlePreviousReview = () => {
+      if (isAnimating) return;
+  
+      setIsAnimating(true);
+      setTimeout(() => {
+        setCurrentReview(
+          (prev) => (prev - 1 + reviewData.length) % reviewData.length
+        );
+        setIsAnimating(false);
+      }, 500);
+    };
+  
   return (
     <>
       <div className={styles.testimonialsSection}>
@@ -181,36 +200,37 @@ let Testimonials_White = () => {
             <p>{data?.googleRatings}/5</p>
           </div>
           <div className={styles.clientReviewsOverflowSection}>
-            <div className={styles.clientTestimonialsSection}>
-              <div className={styles.clientImageSection}>
-                <img
-                  src={reviewData[currentReview]?.image}
-                  alt={reviewData[currentReview]?.person_name}
-                />
-              </div>
-              <div className={styles.reviewDetails}>
-                <h3>{reviewData[currentReview]?.review}</h3>
-                <h2>{reviewData[currentReview]?.person_name}</h2>
-                <div className={styles.reviewsStarsSection}>
-                  {Array.from(
-                    { length: reviewData[currentReview]?.review_stars },
-                    (_, i) => (
-                      <ReviewStar key={i} width={25} height={25} />
-                    )
-                  )}
-                </div>
+          <div className={`${styles.clientTestimonialsSection} ${isAnimating ? styles.animating : ''}`}>
+      <div className={styles.clientImageSection}>
+        <img
+          src={reviewData[currentReview]?.image}
+          alt={reviewData[currentReview]?.person_name}
+        />
+      </div>
+      <div className={styles.reviewDetails}>
+        <h3>{reviewData[currentReview]?.review}</h3>
+        <h2>{reviewData[currentReview]?.person_name}</h2>
+        <div className={styles.reviewsStarsSection}>
+          {Array.from({ length: reviewData[currentReview]?.review_stars }, (_, i) => (
+            <ReviewStar key={i} width={25} height={25} />
+          ))}
+        </div>
 
-                <div className={styles.reviewsPaginationSection}>
-                  <Arrow
-                    width={20}
-                    height={20}
-                    onClick={handlePreviousReview}
-                  />
-                  <p>{`${currentReview + 1} / ${reviewData.length}`}</p>
-                  <Arrow width={20} height={20} onClick={handleNextReview} />
-                </div>
-              </div>
-            </div>
+        <div className={styles.reviewsPaginationSection}>
+          <Arrow
+            width={20}
+            height={20}
+            onClick={handlePreviousReview}
+          />
+          <p>{`${currentReview + 1} / ${reviewData.length}`}</p>
+          <Arrow
+            width={20}
+            height={20}
+            onClick={handleNextReview}
+          />
+        </div>
+      </div>
+    </div>
           </div>
 
           <div className={styles.testimonialsVideoSection}>
