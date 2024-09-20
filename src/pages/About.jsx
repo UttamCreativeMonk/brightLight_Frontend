@@ -20,6 +20,7 @@ import Navbar1 from "../components/Navbar1.jsx";
 import Footer1 from "../components/Footer1";
 import ogImage from "../assets/ogImage.png";
 import { Helmet } from "react-helmet-async";
+import Odometer from "../components/Odometer";
 
 let About = () => {
   let [topSectionData, setTopSectionData] = useState([]);
@@ -527,19 +528,19 @@ let About = () => {
           <div className={styles.ourAchivementCardParent}>
             <div className={styles.ourAchivementCard}>
               <img src={VisaImg} />
-              <h2>{achievements?.achievement1Numbers}</h2>
+              <h2><Odometer value={15745}/>+</h2>
               <p>{achievements?.achievement1Heading}</p>
             </div>
 
             <div className={styles.ourAchivementCard}>
               <img src={TickBlue} />
-              <h2>{achievements?.achievement2Numbers}</h2>
+              <h2><Odometer value={10112}/>+</h2>
               <p>{achievements?.achievement2Heading}</p>
             </div>
 
             <div className={styles.ourAchivementCard}>
               <img src={SmileBlue} />
-              <h2>{achievements?.achievement3Numbers}</h2>
+              <h2><Odometer value={10121}/>+</h2>
               <p>{achievements?.achievement3Heading}</p>
             </div>
           </div>

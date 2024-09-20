@@ -8,7 +8,7 @@ import { ReactComponent as Nextarrow } from "../assets/right-arrow-blue.svg";
 
 let NextArrow = () => {
   return (
-    <button>
+    <button className={styles.nextBlogButton}>
       <Nextarrow />
     </button>
   );
@@ -16,7 +16,7 @@ let NextArrow = () => {
 
 let PrevArrow = () => {
   return (
-    <button>
+    <button  className={styles.nextBlogButton}>
       <Prevarrow />
     </button>
   );

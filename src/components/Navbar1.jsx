@@ -111,7 +111,7 @@ const Navbar1 = (props) => {
         <div className={styles.firstNavbar}>
           <div className={styles.calculatorIcon}>
             <IconGear className={styles.iconGearIcon} width={25} height={25} />
-            <p onClick={() => (window.location.href = "/clb-ilets-calculator")}>
+            <p onClick={() => (window.location.href = "/immigration-tools")}>
               Immigration Tools
             </p>
             <RightArrow
@@ -167,9 +167,10 @@ const Navbar1 = (props) => {
             )}
 
             <div className={styles.mainNavbar}>
-            <a href="/" className={styles.sidebarLink}>HOME</a>
+              <a href="/" className={styles.sidebarLink}>
+                HOME
+              </a>
               <div className={styles.relativeDiv}>
-
                 <a
                   href="#"
                   onMouseEnter={() => setShowServicesDropdown(true)}
@@ -243,7 +244,7 @@ const Navbar1 = (props) => {
                           onMouseEnter={() => setDoubleNested4(true)}
                           onMouseLeave={() => setDoubleNested4(false)}
                         >
-                          <a href="/agri-food-pilot-program">Low Wage Lmia</a>
+                          <a href="/agri-food-pilot-program">Agri Food Pilot</a>
                         </div>
                       </div>
 
@@ -264,6 +265,9 @@ const Navbar1 = (props) => {
                         >
                           <a href="/bridging-open-work-permit-lp">BCPNP</a>
                         </div>
+                      </div>
+                      <div>
+                        <a href="/rnip">RNIP</a>
                       </div>
                     </div>
                   </div>
@@ -307,6 +311,9 @@ const Navbar1 = (props) => {
                           </a>
                           <a href="/dual-intent-visa">Dual Intent Visa</a>
                           <a href="/super-visa">Super Visa</a>
+                          <a href="/reconsideration">
+                            Reconsideration for Refusal
+                          </a>
                         </div>
                       </div>
 
@@ -344,13 +351,16 @@ const Navbar1 = (props) => {
                             setDoubleNestedSpousalPermit(false)
                           }
                         >
-                          <a href="/common-law-partner-permanent">
-                            Spouse/Partner of Permanent Resident
+                          <a href="/spousal-open-work-permit">
+                            For Spouse of Worker
                           </a>
-                          <a href="/common-law-partner-temporary">
-                            Spouse/Partner of Temporary Foreign Worker
+                          <a href="/international-graduate-program">
+                            For Spouse of Student
                           </a>
-                          <a href="/cby">Cby</a>
+                          <a href="/open-work-permit">
+                            PR Open Work Permit, Inland
+                          </a>
+                          {/* <a href="/cby">Cby</a> */}
                         </div>
                       </div>
                     </div>
@@ -615,7 +625,9 @@ const Navbar1 = (props) => {
               <div className={styles.closeBtn} onClick={toggleSidebar}>
                 &times;
               </div>
-              <a href="/" className={styles.sidebarLink}>HOME</a>
+              <a href="/" className={styles.sidebarLink}>
+                HOME
+              </a>
               <div className={styles.dropdown}>
                 <a href="#" className={styles.dropbtn}>
                   SERVICES
@@ -655,10 +667,13 @@ const Navbar1 = (props) => {
                             <div className={styles.subSubDropdownContent}>
                               <a href="/pilot-programs">Pilot Programs</a>
                               <a href="/agri-food-pilot-program">
-                                Low Wage Lmia
+                                Agri Food Pilot
                               </a>
                             </div>
                           )}
+                        </div>
+                        <div>
+                          <a href="/rnip">RNIP</a>
                         </div>
                       </div>
                     )}
@@ -689,6 +704,9 @@ const Navbar1 = (props) => {
                                 Business Visitor Visa
                               </a>
                               <a href="/dual-intent-visa">Dual Intent Visa</a>
+                              <a href="/reconsideration">
+                                Reconsideration for Refusal
+                              </a>
                             </div>
                           )}
                         </div>
@@ -708,13 +726,13 @@ const Navbar1 = (props) => {
                           {isSpousalPermitOpen && (
                             <div className={styles.subSubDropdownContent}>
                               <a href="/spousal-open-work-permit">
-                                Spousal Permit
+                                For Spouse of Worker
                               </a>
-                              <a href="/common-law-partner-permanent">
-                                Spouse/Partner of Permanent Resident
+                              <a href="/international-graduate-program">
+                                For Spouse of Student
                               </a>
-                              <a href="/common-law-partner-temporary">
-                                Spouse/Partner of Temporary Foreign Worker
+                              <a href="/open-work-permit">
+                                PR Open Work Permit, Inland
                               </a>
                             </div>
                           )}

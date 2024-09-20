@@ -76,6 +76,7 @@ import PathwaysForCaregiver from "./pages/PathwaysForCaregiver";
 import PermanentResidencePathwaysCaregiversLP from "./pages/PermanentResidencePathwaysCaregiversLP";
 import NewsDetails from "./pages/NewsDetails";
 import News from "./pages/News";
+import Odometer from "./components/Odometer";
 
 
 function App() {
@@ -89,8 +90,8 @@ function App() {
   return (
     <div className="App">
       <ToastContainer />
+
       {/* <Loader /> */}
-      
       <HelmetProvider>
         <AllRoutes />
       </HelmetProvider>

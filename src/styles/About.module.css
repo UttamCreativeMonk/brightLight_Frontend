@@ -380,7 +380,9 @@
 
 .ourAchivementCard h2 {
   font-size: 70px;
-  margin-top: 40px;
+  padding-top: 40px;
+  display: flex;
+  align-items: center;
 }
 
 .ourAchivementCard p {

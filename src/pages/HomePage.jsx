@@ -17,6 +17,7 @@ import Testimonials_White from "../sections/Testimonials_White";
 import Blogs from "../sections/Blogs";
 import ogImage from "../assets/ogImage.png";
 import { Helmet } from "react-helmet-async";
+import Odometer from "../components/Odometer";
 
 let HomePage = () => {
   let [newsSectionData, setNewsSectionData] = useState([]);
@@ -607,80 +608,90 @@ let HomePage = () => {
       <OurProcess />
 
       <div className={styles.expertiseParent}>
-        <div
-          className={`${styles.expertiseContentParent}`}
-          ref={expertiseContentParentRef}
-        >
-          <div className={styles.expertiseContentHeading}>
-            <h1>{servicesData?.heading}</h1>
-            <p>{servicesData?.description}</p>
+  <div
+    className={`${styles.expertiseContentParent}`}
+    ref={expertiseContentParentRef}
+  >
+    <div className={styles.expertiseContentHeading}>
+      <h1>{servicesData?.heading}</h1>
+      <p>{servicesData?.description}</p>
 
-            <button className={styles.knowButton}>
-              <a href="/more-services">Know More</a>
-            </button>
-          </div>
+      <button className={styles.knowButton}>
+        <a href="/more-services">Know More</a>
+      </button>
+    </div>
 
-          <div className={styles.testimonialsVideoSection}>
-            <Swiper
-              effect={"coverflow"}
-              grabCursor={true}
-              centeredSlides={true}
-              loop={true}
-              slidesPerView={"auto"}
-              coverflowEffect={{
-                rotate: 0,
-                stretch: 0,
-                depth: 100,
-                modifier: 2.5,
-              }}
-              pagination={{ el: ".swiper_pagination", clickable: true }}
-              modules={[EffectCoverflow, Pagination, Navigation]}
-              className={styles.swiper_container}
-            >
-              {services?.map((item, index) => {
-                let link = (title) => {
-                  if (title == "Permanent Residency") {
-                    return "/permanent-residency";
-                  } else if (title == "BCPNP") {
-                    return "/bc-pnp";
-                  } else if (title == "Visitor Visa") {
-                    return "/visitor-visa";
-                  } else if (title == "Study Visa") {
-                    return "/student-visa";
-                  } else if (title == "Family Sponsorship") {
-                    return "/family-reunification-sponsorship";
-                  } else if (title == "Work Permit") {
-                    return "/work-permit";
-                  } else if (title == "PFL") {
-                    return "/reply-to-pfl-page";
-                  }
-                };
-                let formattedTitle = item.title
-                  .toLowerCase()
-                  .replace(/\s+/g, "-");
-                return (
-                  <SwiperSlide key={index}>
-                    <div className={styles.expertiseDiv}>
-                      <h4>{item.title}</h4>
-                      <p>{item.desc}</p>
-                      <a
-                        className={styles.expertiseKmowMore}
-                        href={`${link(item.title)}`}
-                      >
-                        Know More
-                      </a>
-                    </div>
-                  </SwiperSlide>
-                );
-              })}
-
-              <div className={styles.slider_controler}>
-                <div className={styles.swiper_pagination}></div>
+    <div className={styles.testimonialsVideoSection}>
+      <Swiper
+        effect={"coverflow"}
+        grabCursor={true}
+        centeredSlides={true}
+        loop={true}
+        slidesPerView={"auto"}
+        coverflowEffect={{
+          rotate: 0,
+          stretch: 0,
+          depth: 100,
+          modifier: 2.5,
+        }}
+        pagination={{ el: ".swiper_pagination", clickable: true }}
+        navigation={{
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        }}
+        modules={[EffectCoverflow, Pagination, Navigation]}
+        className={styles.swiper_container}
+      >
+        {services?.map((item, index) => {
+          let link = (title) => {
+            switch (title) {
+              case "Permanent Residency":
+                return "/permanent-residency";
+              case "BCPNP":
+                return "/bc-pnp";
+              case "Visitor Visa":
+                return "/visitor-visa";
+              case "Study Visa":
+                return "/student-visa";
+              case "Family Sponsorship":
+                return "/family-reunification-sponsorship";
+              case "Work Permit":
+                return "/work-permit";
+              case "PFL":
+                return "/reply-to-pfl-page";
+              default:
+                return "#";
+            }
+          };
+          return (
+            <SwiperSlide key={index}>
+              <div className={styles.expertiseDiv}>
+                <h4>{item.title}</h4>
+                <p>{item.desc}</p>
+                <a
+                  className={styles.expertiseKmowMore}
+                  href={`${link(item.title)}`}
+                >
+                  Know More
+                </a>
               </div>
-            </Swiper>
-          </div>
+            </SwiperSlide>
+          );
+        })}
+        
+        <div className={styles.slider_controler}>
+          <div className={styles.swiper_pagination}></div>
         </div>
+      </Swiper>
+
+      {/* Navigation buttons placed below the Swiper */}
+      <div className={styles.navigationButtons}>
+        <div className="swiper-button-prev"></div>
+        <div className="swiper-button-next"></div>
       </div>
+    </div>
+  </div>
+</div>
 
       <div className={styles.aspectsParent}>
         <div className={styles.aspectsMain}>
@@ -695,7 +706,7 @@ let HomePage = () => {
               ref={(el) => (aspectsCardRefs.current[0] = el)}
             >
               <img src={achiementsData?.achievement1SVG} />
-              <h1>{achiementsData?.achievement1Numbers}</h1>
+              <h1><Odometer value={10257}/>+</h1>
               <p>{achiementsData?.achievement1Heading}</p>
             </div>
             <div
@@ -703,7 +714,7 @@ let HomePage = () => {
               ref={(el) => (aspectsCardRefs.current[1] = el)}
             >
               <img src={achiementsData?.achievement2SVG} />
-              <h1>{achiementsData?.achievement2Numbers}</h1>
+              <h1><Odometer value={10112}/>+</h1>
               <p>{achiementsData?.achievement2Heading}</p>
             </div>
             <div
@@ -711,7 +722,7 @@ let HomePage = () => {
               ref={(el) => (aspectsCardRefs.current[2] = el)}
             >
               <img src={achiementsData?.achievement3SVG} />
-              <h1>{achiementsData?.achievement3Numbers}</h1>
+              <h1><Odometer value={10121}/>+</h1>
               <p>{achiementsData?.achievement3Heading}</p>
             </div>
           </div>

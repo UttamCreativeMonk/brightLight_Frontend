@@ -305,12 +305,12 @@
 }
 
 .moreNewsUpdates{
-  width: 150px;
+  width: 220px;
   display: block;
   margin: auto;
   margin-top: 100px;
   position: relative;
-  padding: 15px 10px;
+  padding: 25px 10px;
   border-radius: 40px;
   border: 3px solid #132f46;
   text-align: center;
@@ -665,7 +665,8 @@
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 100px 0px;
+  padding-top: 80px ;
+  padding-bottom: 10px;
 }
 
 .expertiseContentParent {
@@ -808,7 +809,7 @@
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 100px 0px;
+  padding: 50px 0px;
 }
 
 .aspectsMain {
@@ -855,6 +856,9 @@
 .aspectsCard h1 {
   font-size: 50px;
   padding-top: 20px;
+  /* padding-top: 40px; */
+  display: flex;
+  align-items: center;
 }
 
 .aspectsCard p {
@@ -1189,6 +1193,27 @@
 .expertiseContentParent.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.navigationButtons {
+  display: flex;
+  justify-content: center; /* Center the buttons */
+  margin-top: 20px; /* Add space above buttons */
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  cursor: pointer;
+  margin: 0 10px; /* Space between buttons */
+  padding: 10px; /* Adjust button size */
+  background-color: #ffffff; /* Change button color */
+  color: #fff; /* Text color */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: #ffffff; /* Darker shade on hover */
 }
 
 /* HomePage.module.css */
@@ -2347,6 +2372,11 @@
 }
 
 @media all and (max-width: 365px) {
+  .moreNewsUpdates{
+    width: 180px;
+    padding: 15px 10px;
+
+  }
   .memberParent {
     padding-top: 20px;
     padding-bottom: 20px;

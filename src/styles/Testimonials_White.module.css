@@ -1,6 +1,6 @@
 .testimonialsSection {
   width: 100%;
-  padding: 150px 0px;
+  padding: 50px 0px;
   background-image: url("../assets/aboutLeaf.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -234,6 +234,28 @@
   opacity: 1;
   transition: transform 0.5s ease, opacity 0.5s ease;
 }
+
+.navigationButtons {
+  display: flex;
+  justify-content: center; /* Center the buttons */
+  margin-top: 20px; /* Space above buttons */
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  cursor: pointer;
+  margin: 0 10px; /* Space between buttons */
+  padding: 10px; /* Adjust button size */
+  background-color: #007bff; /* Button color */
+  color: #fff; /* Text color */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
 
 
 @media all and (max-width: 1460px) {
