@@ -151,7 +151,7 @@ const Contact = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Initial check
+    handleScroll(); // Initial checkk
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
