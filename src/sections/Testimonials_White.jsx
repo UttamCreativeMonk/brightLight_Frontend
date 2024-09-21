@@ -7,7 +7,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
 import aboutBanner from "../assets/about-banner.png";
 
-
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
@@ -20,7 +19,6 @@ let Testimonials_White = () => {
   const [currentReview, setCurrentReview] = useState(0);
   const swiperRef = useRef(null);
   const [isAnimating, setIsAnimating] = useState(false);
-
 
   useEffect(() => {
     fetch("https://brightlight-node.onrender.com/videos-section")
@@ -168,42 +166,40 @@ let Testimonials_White = () => {
     ? getVideoIdFromUrl(videosData.video10)
     : null;
 
+  const handleNextReview = () => {
+    if (isAnimating) return; // Prevent spamming of clicks during animation
 
-    const handleNextReview = () => {
-      if (isAnimating) return; // Prevent spamming of clicks during animation
-  
-      setIsAnimating(true);
-      setTimeout(() => {
-        setCurrentReview((prev) => (prev + 1) % reviewData.length);
-        setIsAnimating(false);
-      }, 500); // Timeout should match the CSS animation duration
-    };
-  
-    const handlePreviousReview = () => {
-      if (isAnimating) return;
-  
-      setIsAnimating(true);
-      setTimeout(() => {
-        setCurrentReview(
-          (prev) => (prev - 1 + reviewData.length) % reviewData.length
-        );
-        setIsAnimating(false);
-      }, 500);
-    };
+    setIsAnimating(true);
+    setTimeout(() => {
+      setCurrentReview((prev) => (prev + 1) % reviewData.length);
+      setIsAnimating(false);
+    }, 500); // Timeout should match the CSS animation duration
+  };
 
+  const handlePreviousReview = () => {
+    if (isAnimating) return;
 
-    const handleNextVideo = () => {
-      if (swiperRef.current) {
-        swiperRef.current.swiper.slideNext();
-      }
-    };
-  
-    const handlePreviousVideo = () => {
-      if (swiperRef.current) {
-        swiperRef.current.swiper.slidePrev();
-      }
-    };
-  
+    setIsAnimating(true);
+    setTimeout(() => {
+      setCurrentReview(
+        (prev) => (prev - 1 + reviewData.length) % reviewData.length
+      );
+      setIsAnimating(false);
+    }, 500);
+  };
+
+  const handleNextVideo = () => {
+    if (swiperRef.current) {
+      swiperRef.current.swiper.slideNext();
+    }
+  };
+
+  const handlePreviousVideo = () => {
+    if (swiperRef.current) {
+      swiperRef.current.swiper.slidePrev();
+    }
+  };
+
   return (
     <>
       <div className={styles.testimonialsSection}>
@@ -214,84 +210,97 @@ let Testimonials_White = () => {
             <p>{data?.googleRatings}/5</p>
           </div>
           <div className={styles.clientReviewsOverflowSection}>
-          <div className={`${styles.clientTestimonialsSection} ${isAnimating ? styles.animating : ''}`}>
-      <div className={styles.clientImageSection}>
-        <img
-          src={reviewData[currentReview]?.image}
-          alt={reviewData[currentReview]?.person_name}
-        />
-      </div>
-      <div className={styles.reviewDetails}>
-        <h3>{reviewData[currentReview]?.review}</h3>
-        <h2>{reviewData[currentReview]?.person_name}</h2>
-        <div className={styles.reviewsStarsSection}>
-          {Array.from({ length: reviewData[currentReview]?.review_stars }, (_, i) => (
-            <ReviewStar key={i} width={25} height={25} />
-          ))}
-        </div>
+            <div
+              className={`${styles.clientTestimonialsSection} ${
+                isAnimating ? styles.animating : ""
+              }`}
+            >
+              <div className={styles.clientImageSection}>
+                <img
+                  src={reviewData[currentReview]?.image}
+                  alt={reviewData[currentReview]?.person_name}
+                />
+              </div>
+              <div className={styles.reviewDetails}>
+                <h3>{reviewData[currentReview]?.review}</h3>
+                <h2>{reviewData[currentReview]?.person_name}</h2>
+                <div className={styles.reviewsStarsSection}>
+                  {Array.from(
+                    { length: reviewData[currentReview]?.review_stars },
+                    (_, i) => (
+                      <ReviewStar key={i} width={25} height={25} />
+                    )
+                  )}
+                </div>
 
-        <div className={styles.reviewsPaginationSection}>
-          <Arrow
-            width={20}
-            height={20}
-            onClick={handlePreviousReview}
-          />
-          <p>{`${currentReview + 1} / ${reviewData.length}`}</p>
-          <Arrow
-            width={20}
-            height={20}
-            onClick={handleNextReview}
-          />
-        </div>
-      </div>
-    </div>
+                <div className={styles.reviewsPaginationSection}>
+                  <Arrow
+                    width={20}
+                    height={20}
+                    onClick={handlePreviousReview}
+                  />
+                  <p>{`${currentReview + 1} / ${reviewData.length}`}</p>
+                  <Arrow width={20} height={20} onClick={handleNextReview} />
+                </div>
+              </div>
+            </div>
           </div>
 
-        <div className={styles.testimonialsVideoSection}>
-          <Swiper
-            ref={swiperRef}
-            effect={"coverflow"}
-            grabCursor={true}
-            centeredSlides={true}
-            loop={true}
-            slidesPerView={"auto"}
-            coverflowEffect={{
-              rotate: 0,
-              stretch: 0,
-              depth: 100,
-              modifier: 2.5,
-            }}
-            pagination={{ el: ".swiper_pagination_2", clickable: true }}
-            modules={[EffectCoverflow, Pagination, Navigation]}
-            className={styles.swiper_container}
-          >
-            {Array.from({ length: 10 }, (_, i) => (
-              videosData[`video${i + 1}`] && videosData[`video${i + 1}name`] && (
-                <SwiperSlide key={i}>
-                  <iframe
-                    width="560"
-                    height="315"
-                    src={`https://www.youtube.com/embed/${getVideoIdFromUrl(videosData[`video${i + 1}`])}`}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    title={videosData[`video${i + 1}name`]}
-                  ></iframe>
-                  <p>{videosData[`video${i + 1}name`]}</p>
-                </SwiperSlide>
-              )
-            ))}
-          </Swiper>
+          <div className={styles.testimonialsVideoSection}>
+            <Swiper
+              ref={swiperRef}
+              effect={"coverflow"}
+              grabCursor={true}
+              centeredSlides={true}
+              loop={true}
+              slidesPerView={"auto"}
+              coverflowEffect={{
+                rotate: 0,
+                stretch: 0,
+                depth: 100,
+                modifier: 2.5,
+              }}
+              pagination={{ el: ".swiper_pagination_2", clickable: true }}
+              modules={[EffectCoverflow, Pagination, Navigation]}
+              className={styles.swiper_container}
+            >
+              {Array.from(
+                { length: 10 },
+                (_, i) =>
+                  videosData[`video${i + 1}`] &&
+                  videosData[`video${i + 1}name`] && (
+                    <SwiperSlide key={i}>
+                      <iframe
+                        width="560"
+                        height="315"
+                        src={`https://www.youtube.com/embed/${getVideoIdFromUrl(
+                          videosData[`video${i + 1}`]
+                        )}`}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        title={videosData[`video${i + 1}name`]}
+                      ></iframe>
+                      <p>{videosData[`video${i + 1}name`]}</p>
+                    </SwiperSlide>
+                  )
+              )}
+            </Swiper>
 
-          {/* Navigation Buttons */}
-          <div className={styles.navigationButtons}>
-            <button onClick={handlePreviousVideo} className={styles.prevButton}>Previous</button>
-            <button onClick={handleNextVideo} className={styles.nextButton}>Next</button>
+            {/* Navigation Buttons */}
+            <div className={styles.navigationButtons}>
+              <button
+                onClick={handlePreviousVideo}
+                className={styles.prevButton}
+              >
+                <span>{"<"}</span>
+              </button>
+              <button onClick={handleNextVideo} className={styles.nextButton}>
+                <span>{">"}</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-        
-      
     </>
   );
 };

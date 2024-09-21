@@ -3,7 +3,7 @@
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 100px 0px;
+  padding: 50px 0px;
   padding-top: 200px;
 }
 
@@ -859,6 +859,7 @@
   /* padding-top: 40px; */
   display: flex;
   align-items: center;
+  align-items: flex-start;
 }
 
 .aspectsCard p {
@@ -1197,24 +1198,25 @@
 
 .navigationButtons {
   display: flex;
-  justify-content: center; /* Center the buttons */
-  margin-top: 20px; /* Add space above buttons */
+  justify-content: center; /* Center the buttons horizontally */
+  margin-top: 20px; /* Adds space between the Swiper and buttons */
 }
 
 .swiper-button-prev,
 .swiper-button-next {
-  cursor: pointer;
+  position: relative; /* Remove absolute positioning */
   margin: 0 10px; /* Space between buttons */
-  padding: 10px; /* Adjust button size */
-  background-color: #ffffff; /* Change button color */
-  color: #fff; /* Text color */
-  border-radius: 5px; /* Rounded corners */
+  background-color: #000; /* Optional: Styling for buttons */
+  color: #fff; /* Optional: Button text color */
+  padding: 10px; /* Optional: Add padding */
+  border-radius: 50%; /* Optional: Round buttons */
 }
 
-.swiper-button-prev:hover,
-.swiper-button-next:hover {
-  background-color: #ffffff; /* Darker shade on hover */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 16px; /* Adjust size of button arrows */
 }
+
 
 /* HomePage.module.css */
 .sourceContentParent {

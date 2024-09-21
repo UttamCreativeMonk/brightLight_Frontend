@@ -212,3 +212,32 @@ img {
 .slick-next:before, .slick-prev:before {
   font-size: 40px !important;
 }
+
+.navigation_button_02 .swiper-button-prev, .swiper-button-next{
+  top: auto !important;
+  bottom: -60px !important;
+}
+
+.navigation_button_02 .swiper-button-prev, .swiper-rtl .swiper-button-next{
+  left: 45% !important;
+}
+
+.navigation_button_02 .swiper-button-next, .swiper-rtl .swiper-button-prev{
+  right: 45% !important;
+}
+
+.navigation_button_02 .swiper-button-prev, .swiper-button-next{
+  color: white !important;
+}
+
+
+@media all and (max-width: 900px) {
+  .navigation_button_02 .swiper-button-prev, .swiper-rtl .swiper-button-next{
+    left: 38% !important;
+  }
+  
+  .navigation_button_02 .swiper-button-next, .swiper-rtl .swiper-button-prev{
+    right: 38% !important;
+  }
+
+}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/Navbar1.module.css";
 import { ReactComponent as IconGear } from "../assets/gearIcon.svg";
 import { ReactComponent as RightArrow } from "../assets/rightArrow.svg";
@@ -49,6 +49,7 @@ const Navbar1 = (props) => {
     setIsFederalSkilledProgramOpen(!isFederalSkilledProgramOpen);
   };
   const { showBlue } = props;
+  let [hideContactNavbar, setHideContactNavbar] = useState(false);
   const [showAboutDropdown, setShowAboutDropdown] = useState(false);
   const [showServicesDropdown, setShowServicesDropdown] = useState(false);
   const [showCalculatorsDropdown, setShowCalculatorsDropdown] = useState(false);
@@ -65,6 +66,20 @@ const Navbar1 = (props) => {
   let [doubleNested3, setDoubleNested3] = useState(false);
   let [doubleNested4, setDoubleNested4] = useState(false);
   let [doubleNested7, setDoubleNested7] = useState(false);
+
+  useEffect(() => {
+    let handleScroll = () => {
+      if (window.scrollY > 100) {
+        setHideContactNavbar(true);
+      } else {
+        setHideContactNavbar(false);
+      }
+    };
+
+    document.addEventListener("scroll", handleScroll);
+
+    return () => document.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const [isTemporaryResidencyOpen, setTemporaryResidencyOpen] = useState(false);
   const [isVisitorVisaOpen, setVisitorVisaOpen] = useState(false);
@@ -843,7 +858,9 @@ const Navbar1 = (props) => {
             </div>
           </div>
 
-          <div className={styles.contactNavbar}>
+          <div className={`${styles.contactNavbar} ${
+            hideContactNavbar ? styles.hideContactNumber : null
+          }`}>
             <div className={styles.contactInfo}>
               <div className={styles.location}>
                 {showBlue ? (

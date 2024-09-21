@@ -219,7 +219,7 @@
     align-items: flex-start;
   }
   .goldenCard{
-    margin-top: 190px;
+    margin-top: 150px;
   }
   .fourCardMain{
     width: 300px;
@@ -251,9 +251,7 @@
     row-gap: 120px;
     align-items: flex-start;
   }
-  .goldenCard{
-    margin-top: 190px;
-  }
+
   .fourCardMain{
     width: 260px;
     padding: 0px 20px;
@@ -361,7 +359,7 @@
     margin-left: 0px;
   }
   .goldenCard{
-    margin-top: 170px;
+    margin-top: 140px;
   }
   .fourCardHeading h1{
     font-size: 40px;
@@ -476,7 +474,7 @@
     font-size: 12px;
   }
   .goldenCard{
-    margin-top: 120px;
+    margin-top: 100px;
   }
   .fourCardImgParent{
     margin-top: 40px;

@@ -237,25 +237,22 @@
 
 .navigationButtons {
   display: flex;
-  justify-content: center; /* Center the buttons */
-  margin-top: 20px; /* Space above buttons */
+  justify-content: center; 
+  margin-top: 20px;
 }
 
-.swiper-button-prev,
-.swiper-button-next {
+.navigationButtons button{
+  color: #132f46;
+  border: none;
+  font-size: 80px;
   cursor: pointer;
-  margin: 0 10px; /* Space between buttons */
-  padding: 10px; /* Adjust button size */
-  background-color: #007bff; /* Button color */
-  color: #fff; /* Text color */
-  border-radius: 5px; /* Rounded corners */
 }
 
-.swiper-button-prev:hover,
-.swiper-button-next:hover {
-  background-color: #0056b3; /* Darker shade on hover */
+@media all and (max-width:450px) {
+  .navigationButtons button{
+    font-size: 70px;
+  }
 }
-
 
 
 @media all and (max-width: 1460px) {

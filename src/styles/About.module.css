@@ -380,10 +380,16 @@
 
 .ourAchivementCard h2 {
   font-size: 70px;
-  padding-top: 40px;
+  padding-top: 30px;
   display: flex;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
 }
+
+/* .ourAchivementCard h2 div{
+  width: 110px;
+  margin: 0;
+} */
 
 .ourAchivementCard p {
   font-size: 30px;
@@ -1103,6 +1109,15 @@
 
   .thedirectors {
     margin-top: 90px;
+  }
+}
+
+@media all and (max-width: 1150px){
+  .ourAchivementCardPlus{
+    font-size: 42px;
+  }
+  .ourAchivementCardPlus{
+    margin-left: -20px;
   }
 }
 
@@ -2396,7 +2411,7 @@
 
   .ourAchivementCard h2 {
     font-size: 50px;
-    margin-top: 10px;
+    margin-top: 1px;
   }
 
   .ourAchivementCard p {
@@ -2569,7 +2584,7 @@
 
   .ourAchivementCard h2 {
     font-size: 50px;
-    margin-top: 10px;
+    margin-top: 1px;
   }
 
   .ourAchivementCard p {
@@ -2755,7 +2770,7 @@
 
   .ourAchivementCard h2 {
     font-size: 50px;
-    margin-top: 10px;
+    margin-top: 1px;
   }
 
   .ourAchivementCard p {
