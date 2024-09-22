@@ -1,9 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "../styles/Testimonials.module.css";
 import google from "../assets/google-review.webp";
 import { ReactComponent as ReviewStar } from "../assets/review_star.svg";
 import { ReactComponent as Arrow } from "../assets/right-arrow-white.svg";
-import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
 import aboutBanner from "../assets/about-banner.png";
@@ -18,6 +17,7 @@ let Testimonials_White = () => {
   let [data, setData] = useState([]);
   let [reviewData, setReviewData] = useState([]);
   const [currentReview, setCurrentReview] = useState(0);
+  const swiperRef = useRef(null);
   const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
@@ -188,6 +188,18 @@ let Testimonials_White = () => {
     }, 500);
   };
 
+  const handleNextVideo = () => {
+    if (swiperRef.current) {
+      swiperRef.current.swiper.slideNext();
+    }
+  };
+
+  const handlePreviousVideo = () => {
+    if (swiperRef.current) {
+      swiperRef.current.swiper.slidePrev();
+    }
+  };
+
   return (
     <>
       <div className={styles.testimonialsSection}>
@@ -236,6 +248,7 @@ let Testimonials_White = () => {
 
           <div className={styles.testimonialsVideoSection}>
             <Swiper
+              ref={swiperRef}
               effect={"coverflow"}
               grabCursor={true}
               centeredSlides={true}
@@ -251,193 +264,39 @@ let Testimonials_White = () => {
               modules={[EffectCoverflow, Pagination, Navigation]}
               className={styles.swiper_container}
             >
-              {videosData.video1 && videosData.video1name ? (
-                <SwiperSlide>
-                  {videoId1 ? (
-                    <iframe
-                      width="560"
-                      height="315"
-                      src={`https://www.youtube.com/embed/${videoId1}`}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      title={videosData.video1name}
-                    ></iframe>
-                  ) : (
-                    <p>Invalid video URL</p>
-                  )}
-                  <p>{videosData.video1name}</p>
-                </SwiperSlide>
-              ) : null}
-
-              {videosData.video2 && videosData.video2name ? (
-                <SwiperSlide>
-                  {videoId2 ? (
-                    <iframe
-                      width="560"
-                      height="315"
-                      src={`https://www.youtube.com/embed/${videoId2}`}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      title={videosData.video2name}
-                    ></iframe>
-                  ) : (
-                    <p>Invalid video URL</p>
-                  )}
-                  <p>{videosData.video2name}</p>
-                </SwiperSlide>
-              ) : null}
-
-              {videosData.video3 && videosData.video3name ? (
-                <SwiperSlide>
-                  {videoId3 ? (
-                    <iframe
-                      width="560"
-                      height="315"
-                      src={`https://www.youtube.com/embed/${videoId3}`}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      title={videosData.video3name}
-                    ></iframe>
-                  ) : (
-                    <p>Invalid video URL</p>
-                  )}
-                  <p>{videosData.video3name}</p>
-                </SwiperSlide>
-              ) : null}
-
-              {videosData.video4 && videosData.video4name ? (
-                <SwiperSlide>
-                  {videoId4 ? (
-                    <iframe
-                      width="560"
-                      height="315"
-                      src={`https://www.youtube.com/embed/${videoId4}`}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      title={videosData.video4name}
-                    ></iframe>
-                  ) : (
-                    <p>Invalid video URL</p>
-                  )}
-                  <p>{videosData.video4name}</p>
-                </SwiperSlide>
-              ) : null}
-
-              {videosData.video5 && videosData.video5name ? (
-                <SwiperSlide>
-                  {videoId5 ? (
-                    <iframe
-                      width="560"
-                      height="315"
-                      src={`https://www.youtube.com/embed/${videoId5}`}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      title={videosData.video5name}
-                    ></iframe>
-                  ) : (
-                    <p>Invalid video URL</p>
-                  )}
-                  <p>{videosData.video5name}</p>
-                </SwiperSlide>
-              ) : null}
-
-              {videosData.video6 && videosData.video6name ? (
-                <SwiperSlide>
-                  {videoId6 ? (
-                    <iframe
-                      width="560"
-                      height="315"
-                      src={`https://www.youtube.com/embed/${videoId6}`}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      title={videosData.video6name}
-                    ></iframe>
-                  ) : (
-                    <p>Invalid video URL</p>
-                  )}
-                  <p>{videosData.video6name}</p>
-                </SwiperSlide>
-              ) : null}
-
-              {videosData.video7 && videosData.video7name ? (
-                <SwiperSlide>
-                  {videoId7 ? (
-                    <iframe
-                      width="560"
-                      height="315"
-                      src={`https://www.youtube.com/embed/${videoId7}`}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      title={videosData.video7name}
-                    ></iframe>
-                  ) : (
-                    <p>Invalid video URL</p>
-                  )}
-                  <p>{videosData.video7name}</p>
-                </SwiperSlide>
-              ) : null}
-
-              {videosData.video8 && videosData.video8name ? (
-                <SwiperSlide>
-                  {videoId8 ? (
-                    <iframe
-                      width="560"
-                      height="315"
-                      src={`https://www.youtube.com/embed/${videoId8}`}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      title={videosData.video8name}
-                    ></iframe>
-                  ) : (
-                    <p>Invalid video URL</p>
-                  )}
-                  <p>{videosData.video8name}</p>
-                </SwiperSlide>
-              ) : null}
-
-              {videosData.video9 && videosData.video9name ? (
-                <SwiperSlide>
-                  {videoId9 ? (
-                    <iframe
-                      width="560"
-                      height="315"
-                      src={`https://www.youtube.com/embed/${videoId9}`}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      title={videosData.video9name}
-                    ></iframe>
-                  ) : (
-                    <p>Invalid video URL</p>
-                  )}
-                  <p>{videosData.video9name}</p>
-                </SwiperSlide>
-              ) : null}
-
-              {videosData.video10 && videosData.video10name ? (
-                <SwiperSlide>
-                  {videoId10 ? (
-                    <iframe
-                      width="560"
-                      height="315"
-                      src={`https://www.youtube.com/embed/${videoId10}`}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      title={videosData.video10name}
-                    ></iframe>
-                  ) : (
-                    <p>Invalid video URL</p>
-                  )}
-                  <p>{videosData.video10name}</p>
-                </SwiperSlide>
-              ) : null}
-
-              <div class="slider-controler" className={styles.slider_controler}>
-                <div
-                  class="swiper_pagination_2"
-                  className={styles.swiper_pagination}
-                ></div>
-              </div>
+              {Array.from(
+                { length: 10 },
+                (_, i) =>
+                  videosData[`video${i + 1}`] &&
+                  videosData[`video${i + 1}name`] && (
+                    <SwiperSlide key={i}>
+                      <iframe
+                        width="560"
+                        height="315"
+                        src={`https://www.youtube.com/embed/${getVideoIdFromUrl(
+                          videosData[`video${i + 1}`]
+                        )}`}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        title={videosData[`video${i + 1}name`]}
+                      ></iframe>
+                      <p>{videosData[`video${i + 1}name`]}</p>
+                    </SwiperSlide>
+                  )
+              )}
             </Swiper>
+
+            {/* Navigation Buttons */}
+            <div className={styles.navigationButtons}>
+              <button
+                onClick={handlePreviousVideo}
+                className={styles.prevButton}>
+                <span>{"<"}</span>
+              </button>
+              <button onClick={handleNextVideo} className={styles.nextButton}>
+                <span>{">"}</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>

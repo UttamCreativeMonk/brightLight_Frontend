@@ -11,7 +11,6 @@ import ExpressWhite from "../assets/express-immigration-white.png";
 import Sandclock from "../assets/sandclock-immigration.png";
 import SandclockWhite from "../assets/sandclock-immigration-white.png";
 
-
 let Immigration = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
@@ -20,51 +19,64 @@ let Immigration = () => {
       img: Assessment,
       hoverImg: AssessmentWhite,
       title: "Free Assessment",
-      description: "Book a Free Assessment with us to help you and your family members find eligibility in various Canadian immigration pathways. Book now!"
+      description: "Book a Free Assessment with us to help you and your family members find eligibility in various Canadian immigration pathways. Book now!",
+      link: "/free-assessment"
     },
     {
       img: Calculator,
       hoverImg: CalculatorWhite,
       title: "FSWP Calculator",
-      description: "Our online FSWP calculator helps you to check your eligibility under the Federal Skilled Worker (FSW) Program."
+      description: "Our online FSWP calculator helps you to check your eligibility under the Federal Skilled Worker (FSW) Program.",
+      link: "/Federal-Skilled"
     },
     {
       img: Calculator,
       hoverImg: CalculatorWhite,
       title: "BCPNP Calculator",
-      description: "Our online BCPNP calculator helps you to calculate your scores under various BCPNP pathways. Click here to check your BCPNP score today! CLB Calculator for IELTS"
+      description: "Our online BCPNP calculator helps you to calculate your scores under various BCPNP pathways. Click here to check your BCPNP score today!",
+      link: "/bcpnp-calculator"
     },
     {
       img: Calculator,
       hoverImg: CalculatorWhite,
       title: "CLB Calculator for IELTS",
-      description: "Our online IELTS CLB calculator helps you to calculate your CLB Level for your IELTS result. Click here to check your IELTS CLB today!"
+      description: "Our online IELTS CLB calculator helps you to calculate your CLB Level for your IELTS result. Click here to check your IELTS CLB today!",
+      link: "/clb-ilets-calculator"
     },
     {
       img: Calculator,
       hoverImg: CalculatorWhite,
       title: "CLB Calculator for CELPIP",
-      description: "Our online CELPIP calculator helps you to calculate your CLB Level for your CELPIP result. Click here to check your CELPIP CLB today!"
+      description: "Our online CELPIP calculator helps you to calculate your CLB Level for your CELPIP result. Click here to check your CELPIP CLB today!",
+      link: "/clb-ilets-calculator"
     },
     {
       img: Calculator,
       hoverImg: CalculatorWhite,
       title: "CLB Calculator for French (TEF)",
-      description: "Our online TEF CLB calculator helps you to calculate your French CLB Level for your TEF result. Click here to check your TEF CLB today!"
+      description: "Our online TEF CLB calculator helps you to calculate your French CLB Level for your TEF result. Click here to check your TEF CLB today!",
+      link: "/clb-ilets-calculator"
     },
     {
       img: Express,
       hoverImg: ExpressWhite,
       title: "Express Entry CRS Draw History",
-      description: "Check all the Draw history for Express Entry, including latest Draws, Updated Regularly!"
+      description: "Check all the Draw history for Express Entry, including latest Draws, Updated Regularly!",
+      link: "/express-entry"
     },
     {
       img: Sandclock,
       hoverImg: SandclockWhite,
       title: "Coming Soon",
-      description: "Coming Soon"
+      description: "Coming Soon",
+      link: "#"
     }
   ];
+
+  const handleCardClick = (link) => {
+    // Use window.location.href to redirect to the page
+    window.location.href = link;
+  };
 
   return (
     <>
@@ -90,6 +102,8 @@ let Immigration = () => {
                 key={index}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
+                onClick={() => handleCardClick(tool.link)} // Redirect on click
+                style={{ cursor: "pointer" }} // Add cursor pointer to indicate clickability
               >
                 <img src={hoveredIndex === index ? tool.hoverImg : tool.img} alt={tool.title} />
                 <h2>{tool.title}</h2>

@@ -69,7 +69,7 @@ const Navbar1 = (props) => {
 
   useEffect(() => {
     let handleScroll = () => {
-      if (window.scrollY > 100) {
+      if (window.scrollY > 150) {
         setHideContactNavbar(true);
       } else {
         setHideContactNavbar(false);
@@ -165,7 +165,9 @@ const Navbar1 = (props) => {
           </div>
         </div>
 
-        <div className={styles.bottomSectionNavbar}>
+        <div className={`${styles.bottomSectionNavbar} ${
+          hideContactNavbar ? styles.makeNavbarFixed : null
+        }`}>
           <div className={styles.secondNavbar}>
             <a href="/" className={`${styles.logo} ${styles.logoDesktop}`}>
               <img src={BrightlightBlueLogo} alt="Brightlight Blue Logo" />

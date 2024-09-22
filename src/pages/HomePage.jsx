@@ -19,7 +19,11 @@ import ogImage from "../assets/ogImage.png";
 import { Helmet } from "react-helmet-async";
 import Odometer from "../components/Odometer";
 
+
+
 let HomePage = () => {
+  const swiperRef = useRef(null);
+
   let [newsSectionData, setNewsSectionData] = useState([]);
   let [linkedinLink, setLinkedingLink] = useState([]);
   let [newsData, setNewsData] = useState([]);
@@ -365,7 +369,24 @@ let HomePage = () => {
       });
     };
   }, []);
+  useEffect(() => {
+    const scrollTwice = () => {
+      if (swiperRef.current) {
+        // Scroll to the next slide twice
+        swiperRef.current.slideNext();
+        setTimeout(() => {
+          swiperRef.current.slideNext();
+        }, 500); // Adjust timing if necessary
+      }
+    };
 
+    // Run the scroll function after page load (when the loader ends)
+    window.addEventListener("load", scrollTwice);
+
+    return () => {
+      window.removeEventListener("load", scrollTwice);
+    };
+  }, []);
   return (
     <>
       <Helmet>
@@ -608,90 +629,86 @@ let HomePage = () => {
       <OurProcess />
 
       <div className={styles.expertiseParent}>
-        <div
-          className={`${styles.expertiseContentParent}`}
-          ref={expertiseContentParentRef} >
-          <div className={styles.expertiseContentHeading}>
-            <h1>{servicesData?.heading}</h1>
-            <p>{servicesData?.description}</p>
+      <div className={styles.expertiseContentParent} ref={expertiseContentParentRef}>
+        <div className={styles.expertiseContentHeading}>
+          <h1>{servicesData?.heading}</h1>
+          <p>{servicesData?.description}</p>
 
-            <button className={styles.knowButton}>
-              <a href="/more-services">Know More</a>
-            </button>
-          </div>
+          <button className={styles.knowButton}>
+            <a href="/more-services">Know More</a>
+          </button>
+        </div>
 
-          <div className={styles.testimonialsVideoSection}>
-            <Swiper
-              effect={"coverflow"}
-              grabCursor={true}
-              centeredSlides={true}
-              loop={true}
-              slidesPerView={"auto"}
-              coverflowEffect={{
-                rotate: 0,
-                stretch: 0,
-                depth: 100,
-                modifier: 2.5,
-              }}
-              pagination={{ el: ".swiper_pagination", clickable: true }}
-              navigation={{
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-              }}
-              modules={[EffectCoverflow, Pagination, Navigation]}
-              className={styles.swiper_container}
-            >
-              {services?.map((item, index) => {
-                let link = (title) => {
-                  switch (title) {
-                    case "Permanent Residency":
-                      return "/permanent-residency";
-                    case "BCPNP":
-                      return "/bc-pnp";
-                    case "Visitor Visa":
-                      return "/visitor-visa";
-                    case "Study Visa":
-                      return "/student-visa";
-                    case "Family Sponsorship":
-                      return "/family-reunification-sponsorship";
-                    case "Work Permit":
-                      return "/work-permit";
-                    case "PFL":
-                      return "/reply-to-pfl-page";
-                    default:
-                      return "#";
-                  }
-                };
-                return (
-                  <SwiperSlide key={index}>
-                    <div className={styles.expertiseDiv}>
-                      <h4>{item.title}</h4>
-                      <p>{item.desc}</p>
-                      <a
-                        className={styles.expertiseKmowMore}
-                        href={`${link(item.title)}`}
-                      >
-                        Know More
-                      </a>
-                    </div>
-                  </SwiperSlide>
-                );
-              })}
+        <div className={styles.testimonialsVideoSection}>
+          <Swiper
+            effect={"coverflow"}
+            grabCursor={true}
+            centeredSlides={true}
+            loop={true}
+            slidesPerView={"auto"}
+            coverflowEffect={{
+              rotate: 0,
+              stretch: 0,
+              depth: 100,
+              modifier: 2.5,
+            }}
+            pagination={{ el: ".swiper_pagination", clickable: true }}
+            navigation={{
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            }}
+            modules={[EffectCoverflow, Pagination, Navigation]}
+            className={styles.swiper_container}
+            onSwiper={(swiper) => (swiperRef.current = swiper)} // Store swiper instance
+          >
+            {services?.map((item, index) => {
+              let link = (title) => {
+                switch (title) {
+                  case "Permanent Residency":
+                    return "/permanent-residency";
+                  case "BCPNP":
+                    return "/bc-pnp";
+                  case "Visitor Visa":
+                    return "/visitor-visa";
+                  case "Study Visa":
+                    return "/student-visa";
+                  case "Family Sponsorship":
+                    return "/family-reunification-sponsorship";
+                  case "Work Permit":
+                    return "/work-permit";
+                  case "PFL":
+                    return "/reply-to-pfl-page";
+                  default:
+                    return "#";
+                }
+              };
+              return (
+                <SwiperSlide key={index}>
+                  <div className={styles.expertiseDiv}>
+                    <h4>{item.title}</h4>
+                    <p>{item.desc}</p>
+                    <a className={styles.expertiseKmowMore} href={`${link(item.title)}`}>
+                      Know More
+                    </a>
+                  </div>
+                </SwiperSlide>
+              );
+            })}
 
-              <div className={styles.slider_controler}>
-                <div className={styles.swiper_pagination}></div>
-              </div>
-            </Swiper>
-
-            {/* Navigation buttons placed below the Swiper */}
-
-          </div>
-          <div className={styles.navigationButtons} class="navigation_button_02">
-              <div className="swiper-button-prev"></div>
-              <div className="swiper-button-next"></div>
+            <div className={styles.slider_controler}>
+              <div className={styles.swiper_pagination}></div>
             </div>
+          </Swiper>
+
+          {/* Navigation buttons placed below the Swiper */}
+        </div>
+
+        <div className={styles.navigationButtons} class="navigation_button_02">
+          <div className="swiper-button-prev"></div>
+          <div className="swiper-button-next"></div>
         </div>
       </div>
+    </div>
 
       <div className={styles.aspectsParent}>
         <div className={styles.aspectsMain}>

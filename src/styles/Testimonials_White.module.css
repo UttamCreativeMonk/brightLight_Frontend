@@ -246,6 +246,7 @@
   border: none;
   font-size: 80px;
   cursor: pointer;
+  background-color: transparent;
 }
 
 @media all and (max-width:450px) {
