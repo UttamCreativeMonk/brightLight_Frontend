@@ -13,12 +13,26 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 let Testimonials_White = () => {
+  const videoSwiperRef = useRef(null); // New ref for video swiper
+const autoSlideIntervalRef = useRef(null); // Add this line
+
   let [videosData, setVideosData] = useState([]);
   let [data, setData] = useState([]);
   let [reviewData, setReviewData] = useState([]);
   const [currentReview, setCurrentReview] = useState(0);
   const swiperRef = useRef(null);
   const [isAnimating, setIsAnimating] = useState(false);
+  useEffect(() => {
+    // Existing fetch logic...
+
+    // Start the automatic slide after loading
+    autoSlideIntervalRef.current = setInterval(() => {
+      handleNextVideo();
+    }, 3000); // Change slide every 3 seconds
+
+    // Clear the interval on component unmount
+    return () => clearInterval(autoSlideIntervalRef.current);
+  }, []);
 
   useEffect(() => {
     fetch("https://brightlight-node.onrender.com/videos-section")
@@ -189,8 +203,8 @@ let Testimonials_White = () => {
   };
 
   const handleNextVideo = () => {
-    if (swiperRef.current) {
-      swiperRef.current.swiper.slideNext();
+    if (videoSwiperRef.current) {
+      videoSwiperRef.current.swiper.slideNext();
     }
   };
 
@@ -248,7 +262,7 @@ let Testimonials_White = () => {
 
           <div className={styles.testimonialsVideoSection}>
             <Swiper
-              ref={swiperRef}
+              ref={videoSwiperRef} // Use the new ref
               effect={"coverflow"}
               grabCursor={true}
               centeredSlides={true}
@@ -290,7 +304,8 @@ let Testimonials_White = () => {
             <div className={styles.navigationButtons}>
               <button
                 onClick={handlePreviousVideo}
-                className={styles.prevButton}>
+                className={styles.prevButton}
+              >
                 <span>{"<"}</span>
               </button>
               <button onClick={handleNextVideo} className={styles.nextButton}>
