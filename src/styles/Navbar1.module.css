@@ -222,6 +222,7 @@
 
 .bottomSectionNavbar {
   position: absolute;
+  top: auto;
   bottom: -150px; 
   transition: all 0.3s ease-in-out;
   z-index: 10;
