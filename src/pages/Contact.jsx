@@ -8,7 +8,7 @@ import { ToastContainer, toast, Bounce } from "react-toastify";
 
 const Contact = () => {
   let [metaData, setMetaData] = useState([]);
-  
+
   const notifySuccess = () => {
     toast.success("Success", {
       position: "top-center",
@@ -161,7 +161,9 @@ const Contact = () => {
       <ToastContainer />
       <Helmet>
         <title>
-          {metaData?.metaTitle ? metaData?.metaTitle : "Brightlight Immigration"}
+          {metaData?.metaTitle
+            ? metaData?.metaTitle
+            : "Brightlight Immigration"}
         </title>
         <meta
           name="description"
@@ -348,9 +350,9 @@ const Contact = () => {
         className={`${styles.officeDetailsSection} ${styles.hidden}`}
       >
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27462.752602531727!2d76.74414563737653!3d30.63835165105361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390febb05ee7e45b%3A0xa17a586890ee2175!2sGmada%20Aerocity%2C%20Sahibzada%20Ajit%20Singh%20Nagar%2C%20Punjab!5e0!3m2!1sen!2sin!4v1723022976691!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2611.079363084726!2d-122.8000042230304!3d49.12312788203902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5485d9bc1ae6becd%3A0xaf29d4bfe0aceaae!2sBrightlight%20Immigration!5e0!3m2!1sen!2sin!4v1724923112723!5m2!1sen!2sin"
+          allowfullscreen=""
           loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
         <div className={styles.officeSection}>
           <div className={styles.officeInfoSection}>

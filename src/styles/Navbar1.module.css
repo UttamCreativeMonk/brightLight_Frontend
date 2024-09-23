@@ -421,6 +421,20 @@
   color: #dec18f;
   transition: 0.3s color ease-in-out;
 }
+.dropdownArrow {
+  margin-left: 5px; /* Adjust as needed */
+}
+
+.categoryBasedDropdown {
+  display: none; /* Hide by default */
+}
+
+.showNested {
+  display: block; /* Show when active */
+  position: absolute; /* Position as needed */
+  background-color: white; /* Adjust background */
+  z-index: 1000; /* Ensure it’s on top */
+}
 
 @media all and (max-width: 1439px) {
   .firstNavbar {
@@ -457,6 +471,9 @@
 }
 
 @media all and (max-width: 1080px) {
+  .firstNavbar .ancor{
+    display: none;
+  }
   .logoDesktop {
     display: none;
   }
@@ -467,6 +484,7 @@
 
   .firstNavbar {
     width: 90%;
+    justify-content: center;
   }
   .firstNavbar .ancor {
     gap: 40px;

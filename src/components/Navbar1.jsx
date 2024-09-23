@@ -142,8 +142,7 @@ const Navbar1 = (props) => {
               <a
                 href="/about-us"
                 onMouseEnter={() => setShowAboutDropdown(true)}
-                onMouseLeave={() => setShowAboutDropdown(false)}
-              >
+                onMouseLeave={() => setShowAboutDropdown(false)}>
                 ABOUT
               </a>
             </div>
@@ -816,9 +815,7 @@ const Navbar1 = (props) => {
                     </a>
                     {isFamilyReunificationOpen && (
                       <div className={styles.subDropdownContent}>
-                        <a href="/family-reunification-sponsorship">
-                          Family Reunification
-                        </a>
+                        <a href="/family-reunification-sponsorship">Family Reunification</a>
                         <a href="/spousal-open-work-permit">Spousal Permit</a>
                         <a href="/dependent-children">Dependent Children</a>
                         <a href="/humanitarian-compassionate">H & C</a>
@@ -857,6 +854,9 @@ const Navbar1 = (props) => {
               </a>
               <a href="/news" className={styles.sidebarLink}>
                 NEWS
+              </a>
+              <a href="/about-us" className={styles.sidebarLink}>
+               ABOUT
               </a>
               <a href="/contact-us" className={styles.sidebarLink}>
                 CONTACT

@@ -130,6 +130,7 @@
 
 import React, { useEffect, useState, useRef } from "react";
 import styles from "../styles/BestChoice.module.css";
+import UpdateBestChoice from "../assets/best-choice-update.png";
 
 let BestChoice = () => {
   let [planeTop, setPlaneTop] = useState(150);
@@ -235,7 +236,7 @@ let BestChoice = () => {
           style={{ top: `${planeTop}px` }}
         />
         <img
-          src={bestChoiceImage?.image}
+          src={UpdateBestChoice}
           ref={trackImageRef}
           alt="err"
           className={styles.trackImage}

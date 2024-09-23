@@ -563,17 +563,17 @@ let About = () => {
           <div className={styles.socialPresenceIconsParent}>
             <p>Find Us On</p>
             <div className={styles.socialPresenceIcons}>
-              {socialMediaData?.tiktokLink ? (
-                <a href="#">
+              {/* {socialMediaData?.tiktokLink ? ( */}
+                <a href="https://www.tiktok.com/@brightlightimmigration?_t=8lzyE6vJG0E&_r=1">
                   <img src={TiktokBlue} />
                 </a>
-              ) : null}
+              {/* ) : null} */}
 
-              {socialMediaData?.linkedinLink ? (
-                <a href={socialMediaData?.description2}>
+              {/* {socialMediaData?.linkedinLink ? ( */}
+                <a href="https://ca.linkedin.com/in/loveneet-paneswar-5b2377198">
                   <img src={LinkedinBlue} />
                 </a>
-              ) : null}
+              {/* ) : null} */}
 
               {socialMediaData?.instagramLink ? (
                 <a href={socialMediaData?.instagramLink}>
