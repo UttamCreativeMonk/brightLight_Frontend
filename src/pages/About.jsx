@@ -528,7 +528,7 @@ let About = () => {
           <div className={styles.ourAchivementCardParent}>
             <div className={styles.ourAchivementCard}>
               <img src={VisaImg} />
-              <h2><Odometer value={15745}/><span className={styles.ourAchivementCardPlus}>+</span></h2>
+              <h2><Odometer value={10257}/><span className={styles.ourAchivementCardPlus}>+</span></h2>
               <p>{achievements?.achievement1Heading}</p>
             </div>
 
