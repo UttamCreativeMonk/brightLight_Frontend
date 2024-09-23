@@ -381,6 +381,38 @@ const CLBILETSCalculator = () => {
     }
   };
 
+  const setSelectedAndUpdateURL = (selected) => {
+    // Update the selected state
+    setSelected(selected); // Ensure you have this function defined somewhere in your component
+
+    // Create a new URLSearchParams object from the current URL
+    const params = new URLSearchParams(window.location.search);
+
+    // Set the corresponding parameter based on selected
+    params.set("selected", `type${selected}`);
+
+    // Update the URL without reloading the page
+    window.history.pushState(
+      {},
+      "",
+      `${window.location.pathname}?${params.toString()}`
+    );
+  };
+
+  useEffect(() => {
+    // Get the URL parameters
+    const params = new URLSearchParams(window.location.search);
+    const selectedParam = params.get("selected");
+
+    if (selectedParam == "type1") {
+      setSelected(1);
+    } else if (selectedParam == "type2") {
+      setSelected(2);
+    } else {
+      setSelected(3);
+    }
+  }, []);
+
   return (
     <>
       <Navbar1 />
@@ -397,14 +429,29 @@ const CLBILETSCalculator = () => {
         {data && <h1>{data?.subHeading}</h1>}
         <div className={styles.calculatorButtonsDiv}>
           <div className={styles.calculatorButtons}>
-            <button onClick={() => setSelected(1)}>{data?.c1}</button>
+            <button
+              className={`${styles.tabButton} ${
+                selected == `1` ? styles.active : null
+              }`}
+              onClick={() => setSelectedAndUpdateURL(1)}
+            >
+              {data?.c1}
+            </button>
           </div>
 
           <div className={styles.calculatorButtons}>
-            <button onClick={() => setSelected(2)}>{data?.c2}</button>
+            <button className={`${styles.tabButton} ${
+                selected == `2` ? styles.active : null
+              }`} onClick={() => setSelectedAndUpdateURL(2)}>
+              {data?.c2}
+            </button>
           </div>
           <div className={styles.calculatorButtons}>
-            <button onClick={() => setSelected(3)}>{data?.c3}</button>
+            <button className={`${styles.tabButton} ${
+                selected == `3` ? styles.active : null
+              }`} onClick={() => setSelectedAndUpdateURL(3)}>
+              {data?.c3}
+            </button>
           </div>
         </div>
       </div>

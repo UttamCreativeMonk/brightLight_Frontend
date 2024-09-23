@@ -8,6 +8,7 @@ import { Helmet } from "react-helmet-async";
 
 const BCPNPCalculator = () => {
   let [metaData, setMetaData] = useState([]);
+  const [isFooterVisible, setIsFooterVisible] = useState(false);
 
   const firstSectionRef = useRef(null);
   const [firstSectionHeight, setFirstSectionHeight] = useState("auto");
@@ -298,6 +299,37 @@ const BCPNPCalculator = () => {
       console.log(error);
     });
   },[])
+
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const footer = document.querySelector('footer'); // Adjust the selector to match your footer class
+      if (footer) {
+        const footerRect = footer.getBoundingClientRect();
+        setIsFooterVisible(footerRect.top <= window.innerHeight);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const totalPoints =
+    points +
+  canadaExperiencePoints +
+    currentJobPoints +
+    educationPoints +
+   bcEducationPoints +
+    canadaEducationPoints +
+   occupationPoints +
+   languagePoints +
+    languageProficiencyPoints +
+    hourlyWagePoints +
+   employmentAreaPoints +
+    languageProficiencyRegionPoints;
+
+
   return (
     <>
      <Helmet>
@@ -1183,126 +1215,106 @@ const BCPNPCalculator = () => {
 
 
         {isStickyEnabled ? (
-            <Sticky>
-              {({ style }) => (
-                <div
-                  className={styles.pointsSection}
-                  style={{
-                    ...style,
-                    background: "white",
-                    left: "70%",
-                    width: "300px"
-                  }}
-                >
-                  <div className={styles.pointContainer}>
-                    <div className={styles.header}>
-                      <h2>Total Points</h2>
-                    </div>
-                    <div className={styles.points}>
-                    <h1>
-                {points +
-                  canadaExperiencePoints +
-                  currentJobPoints +
-                  educationPoints +
-                  bcEducationPoints +
-                  canadaEducationPoints +
-                  occupationPoints +
-                  languagePoints +
-                  languageProficiencyPoints +
-                  hourlyWagePoints +
-                  employmentAreaPoints +
-                  languageProficiencyRegionPoints}
-              </h1>
-                    </div>
+          <Sticky>
+            {({ style }) => (
+              <div
+                className={styles.pointsSection}
+                style={{
+                  ...style,
+                  background: 'white',
+                  left: '70%',
+                  width: '300px',
+                  top: '90px',
+                }}
+              >
+                <div className={styles.pointContainer}>
+                  <div className={styles.header}>
+                    <h2>Total Points</h2>
                   </div>
-                  <div className={styles.disclaimer}>
-                    <p>
-                      <span className={styles.colorRedDis}>Disclaimer:</span>{" "}
-                      This calculator is intended to provide general information
-                      and should not be relied upon as a substitute for
-                      professional advice. While we have taken great care to
-                      ensure the accuracy of the calculations provided, we
-                      cannot guarantee their correctness or completeness. The
-                      results provided by this calculator are based on input
-                      provided by the user and do not take into account all
-                      possible factors that may affect the calculation.
-                      Therefore, we cannot be held responsible for any errors or
-                      omissions in the information provided by this calculator.
-                      By using this calculator, you agree to indemnify and hold
-                      us harmless from claims, damages, or liabilities arising
-                      from the use of this calculator or the information it
-                      provides.
-                    </p>
+                  <div className={styles.points}>
+                    <h1>{totalPoints}</h1>
                   </div>
+                </div>
+                {!isFooterVisible && (
+                  <>
+                    <div className={styles.disclaimer}>
+                      <p>
+                        <span className={styles.colorRedDis}>Disclaimer:</span>{' '}
+                        This calculator is intended to provide general information
+                        and should not be relied upon as a substitute for
+                        professional advice. While we have taken great care to
+                        ensure the accuracy of the calculations provided, we
+                        cannot guarantee their correctness or completeness. The
+                        results provided by this calculator are based on input
+                        provided by the user and do not take into account all
+                        possible factors that may affect the calculation.
+                        Therefore, we cannot be held responsible for any errors
+                        or omissions in the information provided by this
+                        calculator. By using this calculator, you agree to
+                        indemnify and hold us harmless from claims, damages, or
+                        liabilities arising from the use of this calculator or
+                        the information it provides.
+                      </p>
+                    </div>
 
-                  <div className={styles.actionButton}>
-                    <h2>RCIC Appointment</h2>
-                    <p>
-                      To find out if you are eligible for PR, under FSWP Program
-                      book an appointment with our RCIC.
-                    </p>
-                  </div>
-                </div>
-              )}
-            </Sticky>
-          ) : (
-            <div
-              className={styles.pointsSection}
-              style={{ background: "white" }}
-            >
-              <div className={styles.pointContainer}>
-                <div className={styles.header}>
-                  <h2>Total Points</h2>
-                </div>
-                <div className={styles.points}>
-                <h1>
-                {points +
-                  canadaExperiencePoints +
-                  currentJobPoints +
-                  educationPoints +
-                  bcEducationPoints +
-                  canadaEducationPoints +
-                  occupationPoints +
-                  languagePoints +
-                  languageProficiencyPoints +
-                  hourlyWagePoints +
-                  employmentAreaPoints +
-                  languageProficiencyRegionPoints}
-              </h1>
-                </div>
+                    <div className={styles.actionButton}>
+                      <h2>RCIC Appointment</h2>
+                      <p>
+                        To find out if you are eligible for PR, under FSWP Program
+                        book an appointment with our RCIC.
+                      </p>
+                    </div>
+                  </>
+                )}
               </div>
-              <div className={styles.disclaimer}>
-                    <p>
-                      <span className={styles.colorRedDis}>Disclaimer:</span>{" "}
-                      This calculator is intended to provide general information
-                      and should not be relied upon as a substitute for
-                      professional advice. While we have taken great care to
-                      ensure the accuracy of the calculations provided, we
-                      cannot guarantee their correctness or completeness. The
-                      results provided by this calculator are based on input
-                      provided by the user and do not take into account all
-                      possible factors that may affect the calculation.
-                      Therefore, we cannot be held responsible for any errors or
-                      omissions in the information provided by this calculator.
-                      By using this calculator, you agree to indemnify and hold
-                      us harmless from claims, damages, or liabilities arising
-                      from the use of this calculator or the information it
-                      provides.
-                    </p>
-                  </div>
-
-                  <div className={styles.actionButton}>
-                    <h2>RCIC Appointment</h2>
-                    <p>
-                      To find out if you are eligible for PR, under FSWP Program
-                      book an appointment with our RCIC.
-                    </p>
-                  </div>
+            )}
+          </Sticky>
+        ) : (
+          <div
+            className={styles.pointsSection}
+            style={{ background: 'white' }}
+          >
+            <div className={styles.pointContainer}>
+              <div className={styles.header}>
+                <h2>Total Points</h2>
+              </div>
+              <div className={styles.points}>
+                <h1>{totalPoints}</h1>
+              </div>
             </div>
-          )}
+            {!isFooterVisible && (
+              <>
+                <div className={styles.disclaimer}>
+                  <p>
+                    <span className={styles.colorRedDis}>Disclaimer:</span> This
+                    calculator is intended to provide general information and
+                    should not be relied upon as a substitute for professional
+                    advice. While we have taken great care to ensure the accuracy
+                    of the calculations provided, we cannot guarantee their
+                    correctness or completeness. The results provided by this
+                    calculator are based on input provided by the user and do not
+                    take into account all possible factors that may affect the
+                    calculation. Therefore, we cannot be held responsible for any
+                    errors or omissions in the information provided by this
+                    calculator. By using this calculator, you agree to indemnify
+                    and hold us harmless from claims, damages, or liabilities
+                    arising from the use of this calculator or the information it
+                    provides.
+                  </p>
+                </div>
 
-        {/* // */}
-      </div>
+                <div className={styles.actionButton}>
+                  <h2>RCIC Appointment</h2>
+                  <p>
+                    To find out if you are eligible for PR, under FSWP Program
+                    book an appointment with our RCIC.
+                  </p>
+                </div>
+              </>
+            )}
+          </div>
+        )}
+        </div>
       </StickyContainer>
       <Footer1 />
     </>

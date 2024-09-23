@@ -61,6 +61,11 @@
   color: white;
 }
 
+.calculatorButtons button.active {
+  background-color: #12233d;
+  color: white;
+}
+
 .container {
   width: 1440px;
   margin: 0 auto;

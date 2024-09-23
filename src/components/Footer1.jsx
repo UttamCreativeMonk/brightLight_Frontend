@@ -14,7 +14,7 @@ import { ReactComponent as YouTubeIcon } from "../assets/youtube.svg";
 
 const Footer1 = () => {
   return (
-    <footer>
+    <footer id="footer" >
       <div className={styles.upperFooter}>
         <img src={UpperFooterImage} alt="Footer background" />
         <div>

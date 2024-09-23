@@ -41,21 +41,21 @@ let Immigration = () => {
       hoverImg: CalculatorWhite,
       title: "CLB Calculator for IELTS",
       description: "Our online IELTS CLB calculator helps you to calculate your CLB Level for your IELTS result. Click here to check your IELTS CLB today!",
-      link: "/clb-ilets-calculator"
+      link: "/clb-ilets-calculator?selected=type1"
     },
     {
       img: Calculator,
       hoverImg: CalculatorWhite,
       title: "CLB Calculator for CELPIP",
       description: "Our online CELPIP calculator helps you to calculate your CLB Level for your CELPIP result. Click here to check your CELPIP CLB today!",
-      link: "/clb-ilets-calculator"
+      link: "/clb-ilets-calculator?selected=type3"
     },
     {
       img: Calculator,
       hoverImg: CalculatorWhite,
       title: "CLB Calculator for French (TEF)",
       description: "Our online TEF CLB calculator helps you to calculate your French CLB Level for your TEF result. Click here to check your TEF CLB today!",
-      link: "/clb-ilets-calculator"
+      link: "/clb-ilets-calculator?selected=type2"
     },
     {
       img: Express,
