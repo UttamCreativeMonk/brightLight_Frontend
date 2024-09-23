@@ -91,7 +91,7 @@ function App() {
     <div className="App">
       <ToastContainer />
 
-      {/* <Loader /> */}
+      <Loader />
       <HelmetProvider>
         <AllRoutes />
       </HelmetProvider>
