@@ -167,7 +167,7 @@ let Testimonials_White = () => {
     : null;
 
   const handleNextReview = () => {
-    if (isAnimating) return; // Prevent spamming of clicks during animation
+    if (isAnimating) return; // Prevent spamming of clicks during animatio
 
     setIsAnimating(true);
     setTimeout(() => {
