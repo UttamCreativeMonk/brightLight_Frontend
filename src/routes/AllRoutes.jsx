@@ -185,13 +185,14 @@ let AllRoutes = () => {
         element={<CommonLawPartnerTemporary />}
       />
       <Route
-        path="/restoration-status-draft"
-        element={<RestorationStatusDraft />}
-      />
-      <Route
         path="/common-law-partner-permanent"
         element={<CommonLawPartnerPermanent />}
       />
+      <Route
+        path="/restoration-status-draft"
+        element={<RestorationStatusDraft />}
+      />
+
       <Route
         path="/spousal-open-work-permit"
         element={<SpousalOpenWorkPermit />}

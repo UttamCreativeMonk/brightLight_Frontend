@@ -42,7 +42,7 @@ const PermanentResidencePathwaysCaregiversLP = () => {
                 About the Program
               </p>
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
-              <p onClick={() => scrollToSection("pathways")}>Pathways</p>
+              {/* <p onClick={() => scrollToSection("pathways")}>Pathways</p> */}
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
               <p onClick={() => scrollToSection("why-choose-us")}>
                 Why Choose Us?
