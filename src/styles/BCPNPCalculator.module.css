@@ -231,7 +231,8 @@ text-align: center;
     font-size: 14px;
   }
   .pointsSection {
-    width: 95%;
+    width: 99%;
+    margin: auto;
   }
   .pointContainer {
     padding: 30px 50px;

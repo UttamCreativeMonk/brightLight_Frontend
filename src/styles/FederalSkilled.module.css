@@ -271,6 +271,7 @@ text-align: center;
   .pointsSection {
     width: 99%;
     align-items: center;
+    margin: auto;
   }
 
   .pointContainer {
