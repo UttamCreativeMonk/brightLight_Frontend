@@ -64,7 +64,7 @@ const InsideCanada = () => {
         </div>
 
         <div className={styles.container}>
-      <h1 className={styles.heading} id="">Study Permit: Inside Canada</h1>
+      <h1 className={styles.heading} id="about-program">Study Permit: Inside Canada</h1>
       <p className={styles.intro}>
         While the standard procedure for obtaining a Canadian student visa is to apply from outside Canada, there are exceptions. You may be eligible to apply for a student visa while already residing in Canada or if you wish to change your college or program.
       </p>
@@ -154,11 +154,12 @@ const InsideCanada = () => {
         <a href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" className={styles.button}>Book Appointment</a>
       </section>
     </div>
-    <div id="testimonials"> 
-        <Testimonials/>
-      </div>
+
       <div id="faqs">
         <FAQ/>
+      </div>
+      <div id="testimonials"> 
+        <Testimonials/>
       </div>
       <div id="blogs">
         <RecentBlogs/>

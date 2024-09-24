@@ -48,7 +48,7 @@
   
   .bannerHeadingRotatePara p {
     text-align: left;
-    padding-bottom: 24px;
+    padding-bottom: 18px;
     font-size: 30px;
   }
   
@@ -127,6 +127,7 @@
     max-width: 1440px;
     margin: 0 auto;
     padding: 20px;
+    text-align: center;
   }
   
   .header {
@@ -160,7 +161,7 @@
   }
   
   .categories a:hover {
-    background-color: #007bff;
+ opacity: 0.9;
     color: white;
      text-decoration: none;
   }
@@ -193,7 +194,7 @@
   }
   
   .consultation a:hover {
-    background-color: #0056b3;
+  opacity: 0.9;
     text-decoration: none;
   }
   
@@ -205,15 +206,15 @@
     
   .container h2 {
     color: #00273f;
-    margin-top: 80px;
-    margin-bottom: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     text-align: center;
   }
   
   .header h1{
     color: #e8c47c;
-    margin-top: 50px;
-    margin-bottom: 80px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
   
   @media (max-width: 400px) {

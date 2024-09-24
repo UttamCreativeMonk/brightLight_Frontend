@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import styles from "../styles/LonelyCanadian.module.css";
 import { Link } from "react-router-dom";
-// import Footer1 from "../components/Footer1";
+import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
-
+import Testimonials from "../sections/Testimonials";
+import RecentBlogs from "../sections/RecentBlogs";
+import FAQ from "../sections/FAQ";
 const LonelyCanadian = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -19,6 +21,7 @@ const LonelyCanadian = () => {
   };
   return (
     <>
+    <Navbar1/>
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div
@@ -33,19 +36,16 @@ const LonelyCanadian = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
-                About the Program
-              </p>
+              <p onClick={() => scrollToSection("about-program")}>About the Program </p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("benifits")}>Benifits</p>
               <p onClick={() => scrollToSection("duration")}>Duration</p>
               <p onClick={() => scrollToSection("application-process")}>Application Process</p>
               <p onClick={() => scrollToSection("alternatives")}>Alternatives</p>
 
-              <p onClick={() => scrollToSection("how-to-apply")}>
+              <p onClick={() => scrollToSection("bankruptcy")}>
                 How to Apply?
               </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>
+              <p onClick={() => scrollToSection("sponsor-siblings")}>
                 Refusal Reasons
               </p>
               <p onClick={() => scrollToSection("book-appointment")}>
@@ -190,32 +190,19 @@ const LonelyCanadian = () => {
         <p>Mail all application documents to the address provided in the instruction guide of your package.</p>
       </section>
 
-      <section className={styles.whyChooseUs}>
-        <h2>Why Choose Us?</h2>
-        <p>[Insert the "Why Choose Us" section content here]</p>
-      </section>
 
-      <section className={styles.testimonials}>
-        <h2>Clients Testimonials</h2>
-        <div className={styles.videoTestimonials}>
-          <h3>Video Testimonials</h3>
-          {/* Insert video testimonials here */}
-        </div>
-        <div className={styles.writtenTestimonials}>
-          <h3>Written Testimonials</h3>
-          {/* Insert written testimonials here */}
-        </div>
-        <button className={styles.toggleButton}>Toggle Testimonials Visibility</button>
-      </section>
-
-
-
-      <section className={styles.blogs}>
-        <h2>Blogs</h2>
-        {/* Insert links or summaries of relevant blog posts here */}
-      </section>
     </div>
 
+    <div id="faqs">
+        <FAQ />
+      </div>
+      <div id="testimonials">
+        <Testimonials />
+      </div>
+      <div id="blogs">
+        <RecentBlogs />
+      </div>
+      <Footer1 />
     </>
   );
 };

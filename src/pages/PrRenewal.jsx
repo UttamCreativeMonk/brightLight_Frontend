@@ -6,7 +6,6 @@ import Testimonials from "../sections/Testimonials";
 import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
 
-
 let PrRenewal = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [data, setData] = useState({});
@@ -27,8 +26,6 @@ let PrRenewal = () => {
       <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
-
-
           <div
             className={`${styles.bannerHeadingRotateParent} ${
               isDropdownOpen ? styles.active : ""
@@ -48,7 +45,9 @@ let PrRenewal = () => {
               <p onClick={() => scrollToSection("refusal-reason")}>
                 Refusal Reason
               </p>
-              <p onClick={() => scrollToSection("appointment")}>Book Appointment</p>
+              <p onClick={() => scrollToSection("appointment")}>
+                Book Appointment
+              </p>
               <p onClick={() => scrollToSection("testimonials")}>
                 Testimonials
               </p>
@@ -131,20 +130,27 @@ let PrRenewal = () => {
           of the application process all the way to obtaining your visa. Start
           your PR Card renewal process now.
         </p>
-        <button onClick={() => window.location.href = 'https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj'}>Book Appointment</button>
-      </div>
-
-      <div id="testimonials"> 
-        <Testimonials/>
+        <button
+          onClick={() =>
+            (window.location.href =
+              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+          }
+        >
+          Book Appointment
+        </button>
       </div>
       <div id="faqs">
-        <FAQ/>
+        <FAQ />
       </div>
-      <div id="blogs">
-        <RecentBlogs/>
+      <div id="testimonials">
+        <Testimonials />
       </div>
 
-      <Footer1/>
+      <div id="blogs">
+        <RecentBlogs />
+      </div>
+
+      <Footer1 />
     </>
   );
 };

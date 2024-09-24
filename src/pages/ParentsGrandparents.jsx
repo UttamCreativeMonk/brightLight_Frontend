@@ -219,11 +219,11 @@ const ParentsGrandparents = () => {
         </section>
       </div>
 
-      <div id="testimonials">
-        <Testimonials />
-      </div>
       <div id="faqs">
         <FAQ />
+      </div>
+      <div id="testimonials">
+        <Testimonials />
       </div>
       <div id="blogs">
         <RecentBlogs />

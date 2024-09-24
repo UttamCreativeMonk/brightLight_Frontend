@@ -6,7 +6,6 @@ import Testimonials from "../sections/Testimonials";
 import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
 
-
 const Citizenship = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -155,7 +154,6 @@ const Citizenship = () => {
               <a href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj">
                 Click here
               </a>
-
             </p>
           </section>
 
@@ -208,9 +206,7 @@ const Citizenship = () => {
                 may be refused.
               </li>
             </ul>
-            <p>
-
-            </p>
+            <p></p>
           </section>
 
           <section className={styles.section} id="why-choose-us">
@@ -236,14 +232,15 @@ const Citizenship = () => {
         </main>
       </div>
 
-      <div id="testimonials"> 
-        <Testimonials/>
-      </div>
       <div id="faqs">
-        <FAQ/>
+        <FAQ />
+      </div>
+
+      <div id="testimonials">
+        <Testimonials />
       </div>
       <div id="blogs">
-        <RecentBlogs/>
+        <RecentBlogs />
       </div>
       <Footer1 />
     </>

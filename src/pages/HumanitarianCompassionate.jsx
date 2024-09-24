@@ -7,7 +7,6 @@ import Testimonials from "../sections/Testimonials";
 import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
 
-
 const HumanitarianCompassionate = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -43,10 +42,6 @@ const HumanitarianCompassionate = () => {
               </p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
               <p onClick={() => scrollToSection("application")}>Application</p>
-
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
               <p onClick={() => scrollToSection("refusal-reasons")}>
                 Refusal Reasons
               </p>
@@ -214,21 +209,24 @@ const HumanitarianCompassionate = () => {
             At Brightlight Immigration, we have a dedicated team of visa
             application specialists who can assist you from the start of the
             application process all the way to obtaining your visa.{" "}
-            <a href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" className={styles.button}>
+            <a
+              href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj"
+              className={styles.button}
+            >
               Start your process now
             </a>
           </p>
         </section>
       </div>
 
-      <div id="testimonials"> 
-        <Testimonials/>
-      </div>
       <div id="faqs">
-        <FAQ/>
+        <FAQ />
+      </div>
+      <div id="testimonials">
+        <Testimonials />
       </div>
       <div id="blogs">
-        <RecentBlogs/>
+        <RecentBlogs />
       </div>
       <Footer1 />
     </>

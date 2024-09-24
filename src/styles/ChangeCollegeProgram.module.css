@@ -48,7 +48,7 @@
   
   .bannerHeadingRotatePara p {
     text-align: left;
-    padding-bottom: 24px;
+    padding-bottom: 18px;
     font-size: 30px;
   }
   
@@ -127,6 +127,7 @@
     max-width: 1440px;
     margin: 0 auto;
     padding: 20px;
+    text-align: center;
   }
   
   .heading {
@@ -143,7 +144,7 @@
   }
   
   .eligibility {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
   .subheading {
@@ -156,13 +157,13 @@
   .eligibilityList {
     list-style-type: disc;
     margin: 0 auto;
-    max-width: 800px;
+
     padding: 0;
     font-size: 1.1rem;
   }
   
   .process {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   .process p{
     text-align: center;
@@ -178,26 +179,25 @@
   .processList {
     list-style-type: disc;
     margin: 0 auto;
-    max-width: 800px;
+
     padding: 0;
     font-size: 1.1rem;
   }
   
   .refusals {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
   .refusalList {
     list-style-type: disc;
-    margin: 0 auto;
-    max-width: 800px;
+
     padding: 0;
     font-size: 1.1rem;
   }
   
   .callToAction {
 
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
   .callToActionText {
@@ -219,18 +219,18 @@
   }
   
   .button:hover {
-    background-color: #0056b3;
+  opacity: 0.9;text-decoration: none;
   }
   
   .testimonials {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
  
   .container h2 {
     color: #00273f;
-    margin-top: 50px;
-    margin-bottom: 80px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     text-align: center;
   }
   

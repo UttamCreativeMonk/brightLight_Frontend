@@ -1,4 +1,4 @@
-import React, { useState , useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../styles/ReplyToPflPage.module.css";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
@@ -23,24 +23,24 @@ const ReplyToPflPage = () => {
     }
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     fetch("https://brightlight-node.onrender.com/pfl-meta")
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => {
-      if (data) {
-        setMetaData(data[0]);
-      }
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-  },[])
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   return (
     <>
-<Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle

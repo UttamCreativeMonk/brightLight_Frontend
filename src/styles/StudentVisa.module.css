@@ -48,7 +48,7 @@
 
 .bannerHeadingRotatePara p {
   text-align: left;
-  padding-bottom: 24px;
+  padding-bottom: 18px;
   font-size: 30px;
 }
 
@@ -126,6 +126,7 @@
   max-width: 1440px;
   margin: 0 auto;
   padding: 20px;
+  text-align: center;
 }
 
 .heading {
@@ -142,7 +143,7 @@
 }
 
 .pathways {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .subheading {
@@ -208,20 +209,20 @@
 }
 
 .button:hover {
-  background-color: #0056b3;
+opacity: 0.9;
 }
 
 .container h2 {
   color: #00273f;
-  margin-top: 80px;
-  margin-bottom: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
 .heading {
   color: #e8c47c;
-  margin-top: 80px;
-  margin-bottom: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .pathwayContainer a:hover {
   text-decoration: none;

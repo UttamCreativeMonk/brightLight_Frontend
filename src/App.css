@@ -5,7 +5,7 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-*::-webkit-scrollbar{
+*::-webkit-scrollbar {
   display: none;
 }
 
@@ -45,18 +45,31 @@ img {
   font-style: normal;
 }
 
-h1,h2,h3,h4,h5,h6,button,dd,dt,table{
-  font-family: 'AvenirNextLTPro', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+dd,
+dt,
+table {
+  font-family: "AvenirNextLTPro", sans-serif;
 }
 
-span,p,a,input,li,thead{
-  font-family: 'Manrope-Regular', sans-serif;
+span,
+p,
+a,
+input,
+li,
+thead {
+  font-family: "Manrope-Regular", sans-serif;
 }
 
 ul li:empty {
   display: none;
 }
-
 
 .swiper-slide {
   flex-shrink: 1 !important;
@@ -88,12 +101,12 @@ ul li:empty {
   background-image: none !important;
 }
 
-.slick-slide{
+.slick-slide {
   width: 300px !important;
   margin-right: 50px;
 }
 
-.slick-track{
+.slick-track {
   display: flex;
 }
 
@@ -209,35 +222,53 @@ img {
   color: #132f46 !important;
 }
 
-.slick-next:before, .slick-prev:before {
+.slick-next:before,
+.slick-prev:before {
   font-size: 40px !important;
 }
 
-.navigation_button_02 .swiper-button-prev, .swiper-button-next{
+.navigation_button_02 .swiper-button-prev,
+.swiper-button-next {
   top: auto !important;
   bottom: -60px !important;
+  padding: 10px !important;
+  border-radius: 50% !important;
+  background-color: white !important;
+  width: 50px !important;
+  height: 50px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
-.navigation_button_02 .swiper-button-prev, .swiper-rtl .swiper-button-next{
+.swiper-button-prev:after, .swiper-button-next:after{
+  font-size: 20px !important;
+  font-weight: 1000 !important;
+}
+
+.navigation_button_02 .swiper-button-prev,
+.swiper-rtl .swiper-button-next {
   left: 45% !important;
 }
 
-.navigation_button_02 .swiper-button-next, .swiper-rtl .swiper-button-prev{
+.navigation_button_02 .swiper-button-next,
+.swiper-rtl .swiper-button-prev {
   right: 45% !important;
 }
 
-.navigation_button_02 .swiper-button-prev, .swiper-button-next{
-  color: white !important;
+.navigation_button_02 .swiper-button-prev,
+.swiper-button-next {
+  color: #132f46 !important;
 }
 
-
 @media all and (max-width: 900px) {
-  .navigation_button_02 .swiper-button-prev, .swiper-rtl .swiper-button-next{
+  .navigation_button_02 .swiper-button-prev,
+  .swiper-rtl .swiper-button-next {
     left: 38% !important;
   }
-  
-  .navigation_button_02 .swiper-button-next, .swiper-rtl .swiper-button-prev{
+
+  .navigation_button_02 .swiper-button-next,
+  .swiper-rtl .swiper-button-prev {
     right: 38% !important;
   }
-
 }

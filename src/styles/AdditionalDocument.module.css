@@ -48,7 +48,7 @@
   
   .bannerHeadingRotatePara p {
     text-align: left;
-    padding-bottom: 24px;
+    padding-bottom: 18px;
     font-size: 30px;
   }
   
@@ -231,16 +231,26 @@
 
   .container h2 {
     color: #00273f;
-    margin-top: 30px;
+    margin-top: 10px;
     margin-bottom: 20px;
   }
   
   .header h1 {
     color: #e8c47c;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 20px;
   }
-  
+  .container{
+    text-align: center;
+  }
+
+.section li{
+  margin-top: 10px;
+}
+.section p{
+  margin-top: 10px;
+}
+
   @media (max-width: 400px) {
     .container h2 {
       font-size: 20px;

@@ -981,7 +981,13 @@ const FederalSkilled = () => {
                           provides.
                         </p>
                       </div>
-                      <div className={styles.actionButton}>
+                      <div
+                        onClick={() =>
+                          (window.location.href =
+                            "https://api.leadconnectorhq.com/widget/booking/BVqmhNlxRMadz10ir6aM")
+                        }
+                        className={styles.actionButton}
+                      >
                         <h2>RCIC Appointment</h2>
                         <p>
                           To find out if you are eligible for PR, under FSWP
@@ -1027,7 +1033,13 @@ const FederalSkilled = () => {
                       provides.
                     </p>
                   </div>
-                  <div className={styles.actionButton}>
+                  <div
+                    onClick={() =>
+                      (window.location.href =
+                        "https://api.leadconnectorhq.com/widget/booking/BVqmhNlxRMadz10ir6aM")
+                    }
+                    className={styles.actionButton}
+                  >
                     <h2>RCIC Appointment</h2>
                     <p>
                       To find out if you are eligible for PR, under FSWP Program

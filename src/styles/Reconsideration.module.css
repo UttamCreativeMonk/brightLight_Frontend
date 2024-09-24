@@ -47,7 +47,7 @@
 
 .bannerHeadingRotatePara p {
   text-align: left;
-  padding-bottom: 24px;
+  padding-bottom: 18px;
   font-size: 30px;
 }
 
@@ -146,7 +146,6 @@ section ul {
   padding-left: 20px;
 }
 
-
 @media (max-width: 1440px) {
   .bannerHeadingRotate {
     font-size: 1.2rem;
@@ -157,137 +156,149 @@ section ul {
   }
 }
 
-
-
 .container {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 20px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .header {
-    text-align: center;
-    margin-bottom: 50px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .header h1 {
-    font-size: 2.5rem;
-    text-align: center;
+  font-size: 2.5rem;
+  text-align: center;
 }
 
-.introduction, .eligibility, .howToApply, .reasonsForRefusal, .bookAppointment, .faq {
-    margin-bottom: 40px;
+.introduction,
+.eligibility,
+.howToApply,
+.reasonsForRefusal,
+.bookAppointment,
+.faq {
+  margin-bottom: 10px;
 }
 
 .section h2 {
-    font-size: 2rem;
-    border-bottom: 2px solid #000;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-    text-align: center;
+  font-size: 2rem;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 /* .section ul, ol {
     padding-left: 20px;
 } */
-
-.bookAppointment button {
+/* 
+#bookAppointment  {
     background-color: #00273f;
     color: white;
     border: none;
     padding: 10px 20px;
     font-size: 1rem;
     cursor: pointer;
+    margin-top: 20px;
 }
 
-.bookAppointment button:hover {
+#bookAppointment:hover {
     background-color: #0056b3;
+    text-decoration: none;
 }
-
-
-
+ */
 
 /* src/components/ReconsiderationPage.module.css */
 
 .container {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-  
-  .header {
-    text-align: center;
-    margin-bottom: 40px;
-  }
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
 
-  .header h1{
-    color: #00273f;
-  }
-  
-  .mainContent {
-    line-height: 1.6;
-  }
-  
-  .section {
-    margin-bottom: 10px;
-  }
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-  .section h2{
-    color: #00273f;
-  }
-  
-  
-  .section ul {
-    list-style-type: disc;
-    margin-left: 20px;
-    margin-bottom: 40px;
-  }
-  
- .section a {
-    color: #ffffff;
-    text-decoration: none;
-    background-color: #00273f;
-    padding: 10px;
-    border-radius: 5px;
-    /* margin-top: 30px; */
-  }
-  
-  
- .section dl {
-    margin: 0;
-  }
-  
- .section dt {
-    font-weight: bold;
-    margin-top: 10px;
-  }
-  
- .section dd {
-    margin-left: 20px;
-    margin-bottom: 10px;
-  }
-  
+.header h1 {
+  color: #00273f;
+}
 
+.mainContent {
+  line-height: 1.6;
+}
+
+.section {
+  margin-bottom: 10px;
+}
+
+.section h2 {
+  color: #00273f;
+}
+
+.section ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.section a {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #00273f;
+  padding: 10px;
+  border-radius: 5px;
+ 
+}
+
+.section a:hover {
+  opacity: 0.9;
+  text-decoration: none;
+}
+.bookButtonPara{
+ margin-top: 30px;
+}
+
+.section dl {
+  margin: 0;
+}
+
+.section dt {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.section dd {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+.mainContent {
+  text-align: center;
+}
+.mainContent p {
+  margin-top: 10px;
+}
+.container h2 {
+  color: #00273f;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  color: #e8c47c;
+  margin-top: 20px;
+  margin-bottom: 80px;
+}
+
+@media (max-width: 400px) {
   .container h2 {
-    color: #00273f;
+    font-size: 20px;
     margin-top: 30px;
-    margin-bottom: 20px;
   }
-  
+
   .header h1 {
-    color: #e8c47c;
-    margin-top: 20px;
-    margin-bottom: 80px;
+    font-size: 26px;
   }
-  
-  @media (max-width: 400px) {
-    .container h2 {
-      font-size: 20px;
-      margin-top: 30px;
-    }
-  
-    .header h1 {
-      font-size: 26px;
-    }
-  }
+}

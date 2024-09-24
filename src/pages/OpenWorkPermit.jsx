@@ -7,7 +7,6 @@ import Testimonials from "../sections/Testimonials";
 import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
 
-
 const OpenWorkPermit = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -23,9 +22,12 @@ const OpenWorkPermit = () => {
   };
   return (
     <>
-    <Navbar1/>
+      <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
+        <header className={styles.header} >
+          <h1>Open Work Permit</h1>
+        </header>
           <div
             className={`${styles.bannerHeadingRotateParent} ${
               isDropdownOpen ? styles.active : ""
@@ -57,11 +59,9 @@ const OpenWorkPermit = () => {
       </div>
 
       <div className={styles.container}>
-        <header className={styles.header} id="about-program">
-          <h1>Open Work Permit</h1>
-        </header>
+
         <main className={styles.mainContent}>
-          <section className={styles.section}>
+          <section className={styles.section} id="about-program">
             <h2>What is an Open Work Permit?</h2>
             <p>
               A Canadian Open Work Permit is a temporary document that allows
@@ -78,22 +78,21 @@ const OpenWorkPermit = () => {
               <Link to="/pgwp" className={styles.button}>
                 Post-Graduate Work Permit (PGWP)
               </Link>
-              <Link to="/bridging-open-work-permit-lp" className={styles.button}>
+              <Link
+                to="/bridging-open-work-permit-lp"
+                className={styles.button}
+              >
                 Bridging Open Work Permit (BOWP)
               </Link>
               <Link to="/spousal-open-work-permit" className={styles.button}>
                 Spousal Open Work Permit (SOWP)
               </Link>
-              <Link
-                to="/open-work-vulnerable-lp"
-                className={styles.button}
-              >
+              <Link to="/open-work-vulnerable-lp" className={styles.button}>
                 Open Work Permit for Vulnerable Workers
               </Link>
               <Link
                 to="/francophone-mobility-program"
-                className={styles.button}
-              >
+                className={styles.button} >
                 Francophone Mobility Work Permit
               </Link>
             </div>
@@ -131,18 +130,19 @@ const OpenWorkPermit = () => {
         </main>
       </div>
 
-
-      <div id="testimonials"> 
-        <Testimonials/>
-      </div>
       <div id="faqs">
-        <FAQ/>
-      </div>
-      <div id="blogs">
-        <RecentBlogs/>
+        <FAQ />
       </div>
 
-      <Footer1/>
+      <div id="testimonials">
+        <Testimonials />
+      </div>
+
+      <div id="blogs">
+        <RecentBlogs />
+      </div>
+
+      <Footer1 />
     </>
   );
 };

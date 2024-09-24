@@ -43,11 +43,6 @@ const DependentChildren = () => {
               <p onClick={() => scrollToSection("application-process")}>
                 Application Process
               </p>
-              <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
               <p onClick={() => scrollToSection("refusal-reasons")}>
                 Refusal Reasons
               </p>
@@ -82,7 +77,7 @@ const DependentChildren = () => {
 
         <section className={styles.eligibility} id="eligibility">
           <h2>Eligibility Requirements</h2>
-          <h3>For the Dependent Child:</h3>
+          <h3 className={styles.marginTop}>For the Dependent Child:</h3>
           <ul>
             <li>
               The child must be under the age of 22 on the date the sponsorship
@@ -98,7 +93,7 @@ const DependentChildren = () => {
               throughout the sponsorship process.
             </li>
           </ul>
-          <h3>For the Sponsor:</h3>
+          <h3 className={styles.marginTop}>For the Sponsor:</h3>
           <ul>
             <li>
               You must have an annual income that meets the Canadian income
@@ -168,18 +163,22 @@ const DependentChildren = () => {
             At Brightlight Immigration, we have a dedicated team of visa
             application specialists who can assist you from the start of the
             application process to obtaining your visa.{" "}
-            <a href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" className={styles.button}>
+            <a
+              href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj"
+              className={styles.button}
+            >
               Start your process now
             </a>
           </p>
         </section>
       </div>
-      <div id="testimonials">
-        <Testimonials />
-      </div>
       <div id="faqs">
         <FAQ />
       </div>
+      <div id="testimonials">
+        <Testimonials />
+      </div>
+
       <div id="blogs">
         <RecentBlogs />
       </div>

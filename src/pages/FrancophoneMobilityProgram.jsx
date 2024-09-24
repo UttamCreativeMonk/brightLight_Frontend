@@ -6,7 +6,6 @@ import Testimonials from "../sections/Testimonials";
 import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
 
-
 const FrancophoneMobilityProgram = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -136,7 +135,12 @@ const FrancophoneMobilityProgram = () => {
               CLB 5 or higher is the threshold.
             </li>
           </ul>
-          <button onClick={() => window.location.href = '/french-targeted-draw'} className={styles.tefButton}>French CLB Calculator</button>
+          <button
+            onClick={() => (window.location.href = "/french-targeted-draw")}
+            className={styles.tefButton}
+          >
+            French CLB Calculator
+          </button>
         </section>
 
         <section
@@ -279,14 +283,14 @@ const FrancophoneMobilityProgram = () => {
         </section>
       </div>
 
-      <div id="testimonials"> 
-        <Testimonials/>
-      </div>
       <div id="faqs">
-        <FAQ/>
+        <FAQ />
+      </div>
+      <div id="testimonials">
+        <Testimonials />
       </div>
       <div id="blogs">
-        <RecentBlogs/>
+        <RecentBlogs />
       </div>
       <Footer1 />
     </>

@@ -1,4 +1,4 @@
-import React, { useState , useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../styles/FamilyReunificationSponsorship.module.css";
 import { Link } from "react-router-dom";
 import Footer1 from "../components/Footer1";
@@ -24,23 +24,23 @@ const FamilyReunificationSponsorship = () => {
     }
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     fetch("https://brightlight-node.onrender.com/family-meta")
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => {
-      if (data) {
-        setMetaData(data[0]);
-      }
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-  },[])
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
   return (
     <>
-<Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle
@@ -266,7 +266,7 @@ const FamilyReunificationSponsorship = () => {
             At Brightlight Immigration, we have a dedicated team of visa
             application specialists who can assist you from the start of the
             application process all the way to obtaining your visa.{" "}
-            <a href="#book-appointment" className={styles.button}>
+            <a href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" className={styles.button}>
               Start your process now
             </a>
           </p>
@@ -277,11 +277,12 @@ const FamilyReunificationSponsorship = () => {
           <p>[Insert the process section content from the homepage here]</p>
         </section>
       </div>
-      <div id="testimonials">
-        <Testimonials />
-      </div>
+
       <div id="faqs">
         <FAQ />
+      </div>
+      <div id="testimonials">
+        <Testimonials />
       </div>
       <div id="blogs">
         <RecentBlogs />

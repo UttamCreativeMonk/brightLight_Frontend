@@ -7,7 +7,6 @@ import Testimonials from "../sections/Testimonials";
 import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
 
-
 const BridgingOpenWorkPermitLP = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -23,7 +22,7 @@ const BridgingOpenWorkPermitLP = () => {
   };
   return (
     <>
-     <Navbar1/>
+      <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div
@@ -42,9 +41,9 @@ const BridgingOpenWorkPermitLP = () => {
                 About the Program
               </p>
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
-              <p onClick={() => scrollToSection("application-process")}>Application Process</p>
-
-              <p onClick={() => scrollToSection("benifits")}>Benifits</p>
+              <p onClick={() => scrollToSection("application-process")}>
+                Eligibility
+              </p>
               <p onClick={() => scrollToSection("how-to-apply")}>
                 How to Apply?
               </p>
@@ -61,94 +60,200 @@ const BridgingOpenWorkPermitLP = () => {
         </div>
       </div>
 
-      <div className={styles.container}>
-      <header className={styles.header} id="about-program">
-        <h1>Bridging Open Work Permit</h1>
-      </header>
-      <section className={styles.intro}>
-        <p>You can continue work in Canada while waiting for your permanent residency application (APR) to be approved. For this, you will have to apply for a bridging open work permit depending on the type of permanent residency application you have submitted. This type of work permit will “bridge” the gap between the expiry of your current work permit and the final decision on your permanent residency application.</p>
-      </section>
-      <section className={styles.benefits} id="benifits">
-        <h2>Benefits of Bridging Open Work Permit</h2>
-        <ul>
-          <li>No interruption in your employment while you wait for the results of your permanent residence application.</li>
-          <li>The condition that you can apply for bridging open work permit only if your work permit is set to expire within four months has been removed.</li>
-          <li>Your work permit will remain valid even if your permanent residency application has been rejected or refused.</li>
-          <li>You can apply even if you are on maintained status or eligible for restoration.</li>
-        </ul>
-      </section>
-      <section className={styles.application} id="application-process">
-        <h2>Eligibility criteria for Bridging Open Work Permit:</h2>
-        <p>To be eligible for a bridging open work permit (BOWP), you must:</p>
-        <ul>
-          <li>Currently be in Canada after being authorized to enter as a worker.</li>
-          <li>Meet one of the following criteria at the time of submission:
+      <div className={styles.containerParent}>
+        <div className={styles.container}>
+          <header className={styles.header} id="about-program">
+            <h1>Bridging Open Work Permit</h1>
+          </header>
+          <section className={styles.intro}>
+            <p>
+              You can continue work in Canada while waiting for your permanent
+              residency application (APR) to be approved. For this, you will
+              have to apply for a bridging open work permit depending on the
+              type of permanent residency application you have submitted. This
+              type of work permit will “bridge” the gap between the expiry of
+              your current work permit and the final decision on your permanent
+              residency application.
+            </p>
+          </section>
+          <section className={styles.benefits} id="benifits">
+            <h2>Benefits of Bridging Open Work Permit</h2>
             <ul>
-              <li>Have valid temporary resident status and authorization to work as the holder of a valid work permit.</li>
-              <li>Have maintained status and authorization to work as a result of submitting an application to renew your work permit.</li>
-              <li>Be eligible to restore your temporary resident status.</li>
+              <li>
+                No interruption in your employment while you wait for the
+                results of your permanent residence application.
+              </li>
+              <li>
+                The condition that you can apply for bridging open work permit
+                only if your work permit is set to expire within four months has
+                been removed.
+              </li>
+              <li>
+                Your work permit will remain valid even if your permanent
+                residency application has been rejected or refused.
+              </li>
+              <li>
+                You can apply even if you are on maintained status or eligible
+                for restoration.
+              </li>
             </ul>
-          </li>
-          <li>Have submitted an APR as the principal applicant under one of the following classes or pilots:
+          </section>
+          <section className={styles.application} id="application-process">
+            <h2>Eligibility criteria for Bridging Open Work Permit:</h2>
+            <p>
+              To be eligible for a bridging open work permit (BOWP), you must:
+            </p>
             <ul>
-              <li>Federal skilled worker class (FSWC)</li>
-              <li>Canadian experience class (CEC)</li>
-              <li>Federal skilled trades class (FSTC)</li>
-              <li>Caring for children class or caring for people with high medical needs class (before June 18, 2019)</li>
-              <li>Provincial Nominee Program (PNP) for applicants for whom there are no employer restrictions on nominations</li>
-              <li>Agri-Food Pilot (AFP)</li>
-              <li>Quebec skilled worker class (QSWC) with valid Certificat de sélection du Québec (CSQ) at the time of PR application submission.</li>
-              <li>Home Childcare Provider Pilot (HCCPP) or Home Support Worker Pilot (HSWP), who have received a positive eligibility decision (approval in principle) on their application for permanent residence after completing their qualifying work experience.</li>
-            </ul>
-          </li>
-          <li>Have completed one of the following APR stages depending on their class:
-            <ul>
-              <li>Electronic application for permanent residence (e-APR) submitted under Express Entry has passed the Completeness Check. This applies to the following classes:
+              <li>
+                Currently be in Canada after being authorized to enter as a
+                worker.
+              </li>
+              <li>
+                Meet one of the following criteria at the time of submission:
+                <ul>
+                  <li>
+                    Have valid temporary resident status and authorization to
+                    work as the holder of a valid work permit.
+                  </li>
+                  <li>
+                    Have maintained status and authorization to work as a result
+                    of submitting an application to renew your work permit.
+                  </li>
+                  <li>
+                    Be eligible to restore your temporary resident status.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Have submitted an APR as the principal applicant under one of
+                the following classes or pilots:
                 <ul>
                   <li>Federal skilled worker class (FSWC)</li>
                   <li>Canadian experience class (CEC)</li>
                   <li>Federal skilled trades class (FSTC)</li>
-                  <li>Provincial Nominee Program (PNP), where the applicant is accepted through the provincial or territorial Express Entry stream.</li>
+                  <li>
+                    Caring for children class or caring for people with high
+                    medical needs class (before June 18, 2019)
+                  </li>
+                  <li>
+                    Provincial Nominee Program (PNP) for applicants for whom
+                    there are no employer restrictions on nominations
+                  </li>
+                  <li>Agri-Food Pilot (AFP)</li>
+                  <li>
+                    Quebec skilled worker class (QSWC) with valid Certificat de
+                    sélection du Québec (CSQ) at the time of PR application
+                    submission.
+                  </li>
+                  <li>
+                    Home Childcare Provider Pilot (HCCPP) or Home Support Worker
+                    Pilot (HSWP), who have received a positive eligibility
+                    decision (approval in principle) on their application for
+                    permanent residence after completing their qualifying work
+                    experience.
+                  </li>
                 </ul>
               </li>
-              <li>Application for permanent residence APR under the Quebec skilled worker class (QSWC) has passed the Completeness Check.</li>
-              <li>Receipt of a positive eligibility assessment on their non-Express Entry application for permanent residence submitted by mail or online under one of the following classes or pilots:
+              <li>
+                Have completed one of the following APR stages depending on
+                their class:
                 <ul>
-                  <li>Caring for children</li>
-                  <li>Caring for people with high medical needs</li>
-                  <li>Agri-Food Pilot (AFP)</li>
-                  <li>PNP (where the applicant does not qualify for Express Entry)</li>
-                  <li>Home Childcare Provider Pilot (HCCPP) or Home Support Worker Pilot (HSWP) after completing their qualifying work experience.</li>
+                  <li>
+                    Electronic application for permanent residence (e-APR)
+                    submitted under Express Entry has passed the Completeness
+                    Check. This applies to the following classes:
+                    <ul>
+                      <li>Federal skilled worker class (FSWC)</li>
+                      <li>Canadian experience class (CEC)</li>
+                      <li>Federal skilled trades class (FSTC)</li>
+                      <li>
+                        Provincial Nominee Program (PNP), where the applicant is
+                        accepted through the provincial or territorial Express
+                        Entry stream.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Application for permanent residence APR under the Quebec
+                    skilled worker class (QSWC) has passed the Completeness
+                    Check.
+                  </li>
+                  <li>
+                    Receipt of a positive eligibility assessment on their
+                    non-Express Entry application for permanent residence
+                    submitted by mail or online under one of the following
+                    classes or pilots:
+                    <ul>
+                      <li>Caring for children</li>
+                      <li>Caring for people with high medical needs</li>
+                      <li>Agri-Food Pilot (AFP)</li>
+                      <li>
+                        PNP (where the applicant does not qualify for Express
+                        Entry)
+                      </li>
+                      <li>
+                        Home Childcare Provider Pilot (HCCPP) or Home Support
+                        Worker Pilot (HSWP) after completing their qualifying
+                        work experience.
+                      </li>
+                    </ul>
+                  </li>
                 </ul>
               </li>
             </ul>
-          </li>
-        </ul>
-      </section>
-      <section className={styles.application} id="how-to-apply">
-        <h2>How to apply for Bridging Open Work Permit:</h2>
-        <ol>
-          <li>After your permanent residency application has been completed and submitted, gather documents to prove above-mentioned eligibility criteria for bridging open work permit, suitable for your class of permanent residency application.</li>
-          <li>Pay IRCC fees for open work permit holders. You will be required to pay separate restoration fee if applying in the restoration period.</li>
-          <li>Submit complete application to IRCC.</li>
-          <li>Wait for IRCC to process your application.</li>
-        </ol>
-      </section>
-      <section className={styles.advice} id="why-choose-us">
-        <h2>Still not sure?</h2>
-        <p>If you have received a refusal for any of the reasons mentioned above, do not worry. With over a decade of experience, we specialize in previously refused cases. While we don't provide jobs for LMIA, we can certainly assist you if you have a job offer. We have obtained approvals for clients who had multiple previous refusals. We achieve this with a tailored approach to your specific case, addressing each concern that the officer has listed in previous refusals. We use case law and find similar cases to your circumstances that had positive results, and we use them as precedents in cases we work on. This is why we have a high success rate. At Brightlight Immigration, we have a dedicated team of visa application specialists who can assist you from the start of the application process to obtaining your visa. Start your process now.</p>
-      </section>
-    </div>
-    <div id="testimonials"> 
-        <Testimonials/>
+          </section>
+          <section className={styles.application} id="how-to-apply">
+            <h2>How to apply for Bridging Open Work Permit:</h2>
+            <ol>
+              <li>
+                After your permanent residency application has been completed
+                and submitted, gather documents to prove above-mentioned
+                eligibility criteria for bridging open work permit, suitable for
+                your class of permanent residency application.
+              </li>
+              <li>
+                Pay IRCC fees for open work permit holders. You will be required
+                to pay separate restoration fee if applying in the restoration
+                period.
+              </li>
+              <li>Submit complete application to IRCC.</li>
+              <li>Wait for IRCC to process your application.</li>
+            </ol>
+          </section>
+          <section className={styles.advice} id="why-choose-us">
+            <h2>Still not sure?</h2>
+            <p>
+              If you have received a refusal for any of the reasons mentioned
+              above, do not worry. With over a decade of experience, we
+              specialize in previously refused cases. While we don't provide
+              jobs for LMIA, we can certainly assist you if you have a job
+              offer. We have obtained approvals for clients who had multiple
+              previous refusals. We achieve this with a tailored approach to
+              your specific case, addressing each concern that the officer has
+              listed in previous refusals. We use case law and find similar
+              cases to your circumstances that had positive results, and we use
+              them as precedents in cases we work on. This is why we have a high
+              success rate. At Brightlight Immigration, we have a dedicated team
+              of visa application specialists who can assist you from the start
+              of the application process to obtaining your visa. Start your
+              process now.
+            </p>
+          </section>
+        </div>
       </div>
+
       <div id="faqs">
-        <FAQ/>
+        <FAQ />
       </div>
+
+      <div id="testimonials">
+        <Testimonials />
+      </div>
+
       <div id="blogs">
-        <RecentBlogs/>
+        <RecentBlogs />
       </div>
-    <Footer1/>
+      <Footer1 />
     </>
   );
 };

@@ -48,7 +48,7 @@
   
   .bannerHeadingRotatePara p {
     text-align: left;
-    padding-bottom: 24px;
+    padding-bottom: 18px;
     font-size: 30px;
   }
   
@@ -130,7 +130,7 @@
     max-width: 1440px;
     margin: 0 auto;
     padding: 20px;
-
+    text-align: center;
   }
   
   .heading {
@@ -147,7 +147,7 @@
   }
   
   .benefits {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
   .subheading {
@@ -170,7 +170,7 @@
   }
   
   .programs {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
   .buttonContainer {
@@ -193,24 +193,23 @@
   }
   
   .button:hover {
-    background-color: #0056b3;
+opacity: 0.9;
+text-decoration: none;
   }
   
   .eligibility {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
   .eligibilityList {
     list-style-type: disc;
     margin: 0 auto;
-    max-width: 800px;
     padding: 0;
     font-size: 1.1rem;
   }
   
   .stepList {
     margin: 0 auto;
-    max-width: 800px;
     padding: 0;
     font-size: 1.1rem;
   }
@@ -220,7 +219,7 @@
   }
   
   .refusals {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
   .refusalList {
@@ -233,7 +232,7 @@
   
   .callToAction {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
   .callToActionText {
@@ -242,13 +241,13 @@
   }
   
   .testimonials {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 
   .container h2 {
     color: #00273f;
-    margin-top: 50px;
-    margin-bottom: 80px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     text-align: center;
   }
   
@@ -258,21 +257,8 @@
     margin-bottom: 20px;
   }
 
-  .benefitList{
-    margin-left: 20px;
-  }
 
-  .eligibilityList{
-    margin-left: 10px;
-  }
-  .applicationSteps li{
-    margin-left: 20px;
-  }
 
-  .refusalList{
-    margin-left: 20px;
-  }
-  
   @media (max-width: 400px) {
     .container h2 {
       font-size: 20px;

@@ -7,7 +7,6 @@ import Testimonials from "../sections/Testimonials";
 import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
 
-
 const FederalSkilledWorkerProgram = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -301,7 +300,11 @@ const FederalSkilledWorkerProgram = () => {
             specialists will assist you from the start of the application
             process all the way to obtaining your PR. Start your process now.
           </p>
-          <Link id="book-appointment" to="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" className={styles.button}>
+          <Link
+            id="book-appointment"
+            to="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj"
+            className={styles.button}
+          >
             Book Appointment
           </Link>
         </section>
@@ -315,14 +318,15 @@ const FederalSkilledWorkerProgram = () => {
           </p>
         </section>
       </div>
-      <div id="testimonials"> 
-        <Testimonials/>
-      </div>
       <div id="faqs">
-        <FAQ/>
+        <FAQ />
       </div>
+      <div id="testimonials">
+        <Testimonials />
+      </div>
+
       <div id="blogs">
-        <RecentBlogs/>
+        <RecentBlogs />
       </div>
       <Footer1 />
     </>

@@ -9,30 +9,30 @@ import Loader from "./components/Loader";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import PrRenewal from "./pages/PrRenewal";
-import Citizenship from "./pages/Citizenship";
-import Reconsideration from "./pages/Reconsideration";
-import AdditionalDocument from "./pages/AdditionalDocument";
-import ReplyToPflPage from "./pages/ReplyToPflPage";
-import LmiaReviewed from "./pages/LmiaReviewed";
-import OpenWorkPermit from "./pages/OpenWorkPermit";
-import AgricultureStreamLmia from "./pages/AgricultureStreamLmia";
-import GlobalStreamLmia from "./pages/GlobalStreamLmia";
-import LowWageLmia from "./pages/LowWageLmia";
-import BridgingOpenWorkPermitLP from "./pages/BridgingOpenWorkPermitLP";
-import FrancophoneMobilityProgram from "./pages/FrancophoneMobilityProgram";
-import OpenWorkVulnerableLP from "./pages/OpenWorkVulnerableLP";
-import OpenWorkCanadaLP from "./pages/OpenWorkCanadaLP";
-import Pgwp from "./pages/Pgwp";
-import FamilyReunificationSponsorship from "./pages/FamilyReunificationSponsorship";
-import Adoption from "./pages/Adoption";
-import DependentChildren from "./pages/DependentChildren";
-import HumanitarianCompassionate from "./pages/HumanitarianCompassionate";
-import LonelyCanadian from "./pages/LonelyCanadian";
-import ParentsGrandparents from "./pages/ParentsGrandparents";
-import StudentVisa from "./pages/StudentVisa";
-import Orphan from "./pages/Orphan";
-import InsideCanada from "./pages/InsideCanada";
+import PrRenewal from "./pages/PrRenewal"; // Done
+import Citizenship from "./pages/Citizenship"; // Done
+import Reconsideration from "./pages/Reconsideration"; // Done
+import AdditionalDocument from "./pages/AdditionalDocument";// Done
+import ReplyToPflPage from "./pages/ReplyToPflPage";// Done
+import LmiaReviewed from "./pages/LmiaReviewed"; // Done
+import OpenWorkPermit from "./pages/OpenWorkPermit"; // Done
+import AgricultureStreamLmia from "./pages/AgricultureStreamLmia"; // Done
+import GlobalStreamLmia from "./pages/GlobalStreamLmia";// Done
+import LowWageLmia from "./pages/LowWageLmia";//Done
+import BridgingOpenWorkPermitLP from "./pages/BridgingOpenWorkPermitLP"; //Done
+import FrancophoneMobilityProgram from "./pages/FrancophoneMobilityProgram"; //Done
+import OpenWorkVulnerableLP from "./pages/OpenWorkVulnerableLP"; //Done
+import OpenWorkCanadaLP from "./pages/OpenWorkCanadaLP"; // Done
+import Pgwp from "./pages/Pgwp"; //Done
+import FamilyReunificationSponsorship from "./pages/FamilyReunificationSponsorship";  // Done
+import Adoption from "./pages/Adoption"; //Done
+import DependentChildren from "./pages/DependentChildren"; //Done
+import HumanitarianCompassionate from "./pages/HumanitarianCompassionate"; //Done
+import LonelyCanadian from "./pages/LonelyCanadian"; // Done
+import ParentsGrandparents from "./pages/ParentsGrandparents"; //Done
+import StudentVisa from "./pages/StudentVisa"; //Done
+import Orphan from "./pages/Orphan"; //Done
+import InsideCanada from "./pages/InsideCanada"; //Done
 import ChangeCollegeProgram from "./pages/ChangeCollegeProgram";
 import VisitorToStudent from "./pages/VisitorToStudent";
 import OutsideCananda from "./pages/OutsideCananda";
@@ -53,7 +53,7 @@ import BusinessVisitorVisa from "./pages/BusinessVisitorVisa";
 import DualIntentVisa from "./pages/DualIntentVisa";
 import CanadianExperienceClass from "./pages/CanadianExperienceClass";
 import FederalSkilledTradesProgram from "./pages/FederalSkilledTradesProgram";
-import FederalSkilledWorkerProgram from "./pages/FederalSkilledWorkerProgram";
+import FederalSkilledWorkerProgram from "./pages/FederalSkilledWorkerProgram"; // Done
 import FrenchTargetedDraw from "./pages/FrenchTargetedDraw";
 import HealthcareTargetedDraw from "./pages/HealthcareTargetedDraw";
 import StemTargetedDraw from "./pages/StemTargetedDraw";
@@ -89,12 +89,13 @@ function App() {
 
   return (
     <div className="App">
-      <ToastContainer />
+      <ChangeCollegeProgram/>
+      {/* <ToastContainer />
 
       <Loader />
       <HelmetProvider>
         <AllRoutes />
-      </HelmetProvider>
+      </HelmetProvider> */}
     </div>
   );
 }

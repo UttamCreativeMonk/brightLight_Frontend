@@ -48,7 +48,7 @@
   
   .bannerHeadingRotatePara p {
     text-align: left;
-    padding-bottom: 24px;
+    padding-bottom: 18px;
     font-size: 30px;
   }
   
@@ -127,7 +127,7 @@
     max-width: 1440px;
     margin: 0 auto;
     padding: 20px;
-
+    text-align: center;
   }
   
   .heading {
@@ -139,12 +139,12 @@
   
   .description {
     font-size: 1.2rem;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     text-align: center;
   }
   
   .section {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
   .subheading {
@@ -188,14 +188,14 @@
   }
   
   .button:hover {
-    background-color: #0056b3;
+opacity: 0.9;
   }
 
 
   .container h2 {
     color: #00273f;
-    margin-top: 50px;
-    margin-bottom: 80px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     text-align: center;
   }
   

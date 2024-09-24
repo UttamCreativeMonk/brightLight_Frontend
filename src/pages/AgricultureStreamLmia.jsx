@@ -24,7 +24,7 @@ const AgricultureStreamLmia = () => {
     <>
       <Navbar1 />
       <div className={styles.bannerParent}>
-        <header className={styles.header} >
+        <header className={styles.header}>
           <h1>Agricultural Stream LMIA</h1>
         </header>
         <div className={styles.banner}>
@@ -338,11 +338,12 @@ const AgricultureStreamLmia = () => {
         </main>
       </div>
 
-      <div id="testimonials">
-        <Testimonials />
-      </div>
       <div id="faqs">
         <FAQ />
+      </div>
+
+      <div id="testimonials">
+        <Testimonials />
       </div>
       <div id="blogs">
         <RecentBlogs />

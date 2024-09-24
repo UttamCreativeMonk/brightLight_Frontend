@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import styles from "../styles/AdditionalDocument.module.css";
 import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
+import Testimonials from "../sections/Testimonials";
+import RecentBlogs from "../sections/RecentBlogs";
+import FAQ from "../sections/FAQ";
 
 const AdditionalDocument = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -38,15 +41,6 @@ const AdditionalDocument = () => {
                 About the Program
               </p>
               <p onClick={() => scrollToSection("key-points")}>Key Points</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>
-                Refusal Reasons
-              </p>
-              <p onClick={() => scrollToSection("book-appointment")}>
-                Book Appointment
-              </p>
               <p onClick={() => scrollToSection("why-choose-us")}>
                 Why Choose Us?
               </p>
@@ -111,7 +105,13 @@ const AdditionalDocument = () => {
               </li>
               <li>
                 If you're unsure about any aspect of the process, let us handle
-                your case for you. <a id="book-appointment" href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj">Click here</a>
+                your case for you.{" "}
+                <a
+                  id="book-appointment"
+                  href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj"
+                >
+                  Click here
+                </a>
               </li>
             </ul>
           </section>
@@ -132,15 +132,17 @@ const AdditionalDocument = () => {
               ambition, and we'll focus on making it happen smoothly.
             </p>
           </section>
-
-
-          <section className={styles.section}>
-            <h2>Clients Testimonials</h2>
-            {/* Add video and written testimonials here */}
-          </section>
         </main>
       </div>
-
+      <div id="faqs">
+        <FAQ />
+      </div>
+      <div id="testimonials">
+        <Testimonials />
+      </div>
+      <div id="blogs">
+        <RecentBlogs />
+      </div>
       <Footer1 />
     </>
   );

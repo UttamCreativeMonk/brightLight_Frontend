@@ -237,11 +237,18 @@
 }
 
 .navigationButtons button{
-  color: #ffffff;
+  color: #132f46;
   border: none;
-  font-size: 80px;
+  font-size: 60px;
   cursor: pointer;
-  background-color: transparent;
+  background-color: #ffffff;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 20px;
 }
 
 @media all and (max-width: 1460px) {

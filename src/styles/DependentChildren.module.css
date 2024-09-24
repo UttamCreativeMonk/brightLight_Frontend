@@ -48,7 +48,7 @@
   
   .bannerHeadingRotatePara p {
     text-align: left;
-    padding-bottom: 24px;
+    padding-bottom: 18px;
     font-size: 30px;
   }
   
@@ -128,15 +128,16 @@
     max-width: 1440px;
     margin: 0 auto;
     padding: 20px;
+    text-align: center;
   }
   
   .header {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   
   .eligibility {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   
   .eligibility ul {
@@ -149,7 +150,7 @@
   }
   
   .applicationProcess {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   
   .applicationProcess ol {
@@ -157,7 +158,7 @@
   }
   
   .refusalReasons {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   
   .refusalReasons ul {
@@ -181,15 +182,15 @@
   }
   
   .consultation a:hover {
-    background-color: #0056b3;
+   opacity: 0.9;
   }
   
   .whyChooseUs, .blogs {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   
   .testimonials {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   
   .testimonials h2 {
@@ -213,21 +214,25 @@
   }
   
   .toggleButton:hover {
-    background-color: #0056b3;
+ opacity: 0.9;
   }
   
 
   .container h2 {
     color: #00273f;
-    margin-top: 50px;
-    margin-bottom: 80px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     text-align: center;
   }
   
   .header h1{
     color: #e8c47c;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 20px;
+  }
+  .marginTop{
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   
   @media (max-width: 400px) {

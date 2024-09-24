@@ -1206,7 +1206,6 @@
 .swiper-button-next {
   position: relative; /* Remove absolute positioning */
   margin: 0 10px; /* Space between buttons */
-  background-color: #000; /* Optional: Styling for buttons */
   color: #fff; /* Optional: Button text color */
   padding: 10px; /* Optional: Add padding */
   border-radius: 50%; /* Optional: Round buttons */

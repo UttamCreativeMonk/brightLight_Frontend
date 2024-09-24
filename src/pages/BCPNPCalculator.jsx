@@ -308,8 +308,7 @@ const BCPNPCalculator = () => {
         if (footer) {
           const footerRect = footer.getBoundingClientRect();
           setIsFooterVisible(footerRect.top <= window.innerHeight);
-        }
-        else {
+        } else {
           // If footer is not found, set visibility to false (or any default state you prefer)
           setIsFooterVisible(false);
         }
@@ -1261,7 +1260,13 @@ const BCPNPCalculator = () => {
                         </p>
                       </div>
 
-                      <div className={styles.actionButton}>
+                      <div
+                        onClick={() =>
+                          (window.location.href =
+                            "https://api.leadconnectorhq.com/widget/booking/BVqmhNlxRMadz10ir6aM")
+                        }      
+                        className={styles.actionButton}
+                      >
                         <h2>RCIC Appointment</h2>
                         <p>
                           To find out if you are eligible for PR, under FSWP
@@ -1308,7 +1313,13 @@ const BCPNPCalculator = () => {
                     </p>
                   </div>
 
-                  <div className={styles.actionButton}>
+                  <div
+                    onClick={() =>
+                      (window.location.href =
+                        "https://api.leadconnectorhq.com/widget/booking/BVqmhNlxRMadz10ir6aM")
+                    }
+                    className={styles.actionButton}
+                  >
                     <h2>RCIC Appointment</h2>
                     <p>
                       To find out if you are eligible for PR, under FSWP Program

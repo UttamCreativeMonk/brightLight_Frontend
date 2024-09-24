@@ -11,10 +11,9 @@ import { ReactComponent as InstagramIcon } from "../assets/instagram.svg";
 import { ReactComponent as FacebookIcon } from "../assets/facebook.svg";
 import { ReactComponent as YouTubeIcon } from "../assets/youtube.svg";
 
-
 const Footer1 = () => {
   return (
-    <footer id="footer" >
+    <footer id="footer">
       <div className={styles.upperFooter}>
         <img src={UpperFooterImage} alt="Footer background" />
         <div>
@@ -24,9 +23,19 @@ const Footer1 = () => {
             Canada
           </p>
         </div>
-        <button className={styles.freeAssesmentButton} onClick={() => window.location.href = 'https://college-ic.ca/?l=en-CA'}>FREE ASSESSMENT</button>
+        <button
+          className={styles.freeAssesmentButton}
+          onClick={() =>
+            (window.location.href =
+              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+          }
+        >
+          FREE ASSESSMENT
+        </button>
       </div>
-      <p className={styles.upperFooterLowerText}>VANCOUVER BASED, SERVING GLOBALLY.</p>
+      <p className={styles.upperFooterLowerText}>
+        VANCOUVER BASED, SERVING GLOBALLY.
+      </p>
 
       <div className={styles.footer}>
         <div className={styles.innerFooter}>
@@ -86,14 +95,45 @@ const Footer1 = () => {
           <div className={styles.centerFooter}>
             <img src={FooterLogo} />
             <div className={styles.socialMediaFooter}>
-              <TikTokIcon onClick={() => window.location.href = 'https://www.tiktok.com/@brightlightimmigration?_t=8lzyE6vJG0E&_r=1'} className={styles.socialIcon} />
-              <LinkedInIcon  onClick={() => window.location.href = 'https://ca.linkedin.com/in/loveneet-paneswar-5b2377198'} className={styles.socialIcon} />
-              <InstagramIcon onClick={() => window.location.href = 'https://www.instagram.com/brightlightimmigration?igsh=b2xmdzh5eDdsc29p'} className={styles.socialIcon} />
-              <FacebookIcon onClick={() => window.location.href = 'https://www.facebook.com/brightlightimmigration'} className={styles.socialIcon} />
-              <YouTubeIcon onClick={() => window.location.href = 'https://www.youtube.com/channel/UC2NJoKhIOconAE_IFCxX7uA'} className={styles.socialIcon} />
+              <TikTokIcon
+                onClick={() =>
+                  (window.location.href =
+                    "https://www.tiktok.com/@brightlightimmigration?_t=8lzyE6vJG0E&_r=1")
+                }
+                className={styles.socialIcon}
+              />
+              <LinkedInIcon
+                onClick={() =>
+                  (window.location.href =
+                    "https://ca.linkedin.com/in/loveneet-paneswar-5b2377198")
+                }
+                className={styles.socialIcon}
+              />
+              <InstagramIcon
+                onClick={() =>
+                  (window.location.href =
+                    "https://www.instagram.com/brightlightimmigration?igsh=b2xmdzh5eDdsc29p")
+                }
+                className={styles.socialIcon}
+              />
+              <FacebookIcon
+                onClick={() =>
+                  (window.location.href =
+                    "https://www.facebook.com/brightlightimmigration")
+                }
+                className={styles.socialIcon}
+              />
+              <YouTubeIcon
+                onClick={() =>
+                  (window.location.href =
+                    "https://www.youtube.com/channel/UC2NJoKhIOconAE_IFCxX7uA")
+                }
+                className={styles.socialIcon}
+              />
             </div>
             <div className={styles.privacyDiv}>
-              <a href="/privacy-policy">PRIVACY POLICY</a> | <a href="/terms-&-conditions">TERMS & CONDITION</a>
+              <a href="/privacy-policy">PRIVACY POLICY</a> |{" "}
+              <a href="/terms-&-conditions">TERMS & CONDITION</a>
             </div>
           </div>
 
@@ -212,7 +252,9 @@ const Footer1 = () => {
                 <span>.</span>
               </div>
               <div className={styles.footerAncor}>
-                <a href="/family-reunification-sponsorship">FAMILY SPONSORSHIP</a>
+                <a href="/family-reunification-sponsorship">
+                  FAMILY SPONSORSHIP
+                </a>
                 <span>.</span>
               </div>
               <div className={styles.footerAncor}>

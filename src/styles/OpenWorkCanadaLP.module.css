@@ -53,7 +53,7 @@
   
   .bannerHeadingRotatePara p {
     text-align: left;
-    padding-bottom: 24px;
+    padding-bottom: 18px;
     font-size: 30px;
   }
   
@@ -133,6 +133,7 @@
     width: 1440px;
     margin: auto;
     align-items: center;
+    text-align: center;
   }
   
   .header {
@@ -156,7 +157,7 @@
   }
   
  .container table, th, td {
-    border: 1px solid #ddd;
+    border: 1px solid #00273f;
   }
   
  .container th, td {
@@ -166,6 +167,7 @@
   
  .container th {
     background-color: #f4f4f4;
+    color: #00273f;
   }
   
 
@@ -179,8 +181,8 @@
 
   .container h2 {
     color: #00273f;
-    margin-top: 50px;
-    margin-bottom: 80px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     text-align: center;
   }
   
@@ -191,12 +193,12 @@
   }
   
   .applicationProcess li{
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 
   .eligibility h3{
     color: #00273f;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 10px;
   }
 

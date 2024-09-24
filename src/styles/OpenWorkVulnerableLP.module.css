@@ -48,7 +48,7 @@
   
   .bannerHeadingRotatePara p {
     text-align: left;
-    padding-bottom: 24px;
+    padding-bottom: 18px;
     font-size: 30px;
   }
   
@@ -128,15 +128,16 @@
     max-width: 1440px;
     margin: 0 auto;
     padding: 20px;
+    text-align: center;
   }
   
   .header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
   .benefits, .eligibility, .evidence, .applicationProcess, .consultation, .whyChooseUs, .testimonials, .faq {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
   .benefits, .eligibility, .evidence, .applicationProcess, .consultation, .whyChooseUs, .testimonials, .faq  h2 {
@@ -164,20 +165,18 @@
     margin-bottom: 10px;
   }
    */
-
-  
      
   .container h2 {
     color: #00273f;
-    margin-top: 50px;
-    margin-bottom: 80px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     text-align: center;
   }
   
   .header h1{
     color: #e8c47c;
     margin-top: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
 

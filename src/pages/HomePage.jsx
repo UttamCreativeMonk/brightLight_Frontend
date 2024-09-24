@@ -574,7 +574,7 @@ let HomePage = () => {
 
           <div className={styles.bannerParent2HaveQuestions}>
             <h5>Have Questions ?</h5>
-            <a href="#">
+            <a href="https://api.leadconnectorhq.com/widget/booking/BVqmhNlxRMadz10ir6aM">
               <button>
                 <b>RCIC</b>
                 <p>APPOINTEMENT</p>
