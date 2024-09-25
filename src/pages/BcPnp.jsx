@@ -39,8 +39,6 @@ const BcPnp = () => {
     });
   },[])
 
-
-
   return (
     <>
 <Helmet>
@@ -81,7 +79,7 @@ const BcPnp = () => {
           content={
             metaData?.metaKeywords
               ? metaData?.metaKeywords
-              : "About Us, Brightlight Immigration, Immigration Services, Mission, Team"
+              : " Brightlight Immigration, Immigration Services, Mission, Team"
           }
         />
       </Helmet>
@@ -370,21 +368,23 @@ const BcPnp = () => {
           At Brightlight Immigration, we have a dedicated team of visa
           application specialists who can assist you from the start of the
           application process all the way to obtaining your visa.{" "}
-          <a
+
+        </p>
+        <a
             id="book-appointment"
             href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj"
             className={styles.button}
           >
             Book Appointment
           </a>
-        </p>
       </div>
 
-      <div id="testimonials">
-        <Testimonials />
-      </div>
       <div id="faqs">
         <FAQ />
+      </div>
+      
+      <div id="testimonials">
+        <Testimonials />
       </div>
       <div id="blogs">
         <RecentBlogs />

@@ -51,9 +51,6 @@ const VisitorToStudent = () => {
               <p onClick={() => scrollToSection("book-appointment")}>
                 Book Appointment
               </p>
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose Us?
-              </p>
               <p onClick={() => scrollToSection("testimonials")}>
                 Testimonials
               </p>
@@ -258,11 +255,11 @@ const VisitorToStudent = () => {
         </section>
       </div>
 
-      <div id="testimonials">
-        <Testimonials />
-      </div>
       <div id="faqs">
         <FAQ />
+      </div>
+      <div id="testimonials">
+        <Testimonials />
       </div>
       <div id="blogs">
         <RecentBlogs />

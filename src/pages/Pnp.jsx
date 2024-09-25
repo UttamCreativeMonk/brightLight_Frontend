@@ -7,8 +7,6 @@ import Testimonials from "../sections/Testimonials";
 import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
 
-
-
 const Pnp = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -40,12 +38,27 @@ const Pnp = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}> About the Program </p>
+              <p onClick={() => scrollToSection("about-program")}>
+                {" "}
+                About the Program{" "}
+              </p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility </p>
-              <p onClick={() => scrollToSection("how-to-apply")}> How to Apply? </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}> Refusal Reasons </p>
-              <p onClick={() => scrollToSection("book-appointment")}> Book Appointment</p>
-              <p onClick={() => scrollToSection("testimonials")}> Testimonials </p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                {" "}
+                How to Apply?{" "}
+              </p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>
+                {" "}
+                Refusal Reasons{" "}
+              </p>
+              <p onClick={() => scrollToSection("book-appointment")}>
+                {" "}
+                Book Appointment
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                {" "}
+                Testimonials{" "}
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -54,7 +67,9 @@ const Pnp = () => {
       </div>
 
       <div className={styles.container}>
-        <h1 className={styles.heading1} id="about-program">Provincial Nominee Program</h1>
+        <h1 className={styles.heading1} id="about-program">
+          Provincial Nominee Program
+        </h1>
         <p className={styles.paragraph}>
           While the federal Express Entry system remains a popular pathway to
           Canadian permanent residence, the Provincial Nominee Program (PNP)
@@ -142,9 +157,9 @@ const Pnp = () => {
             programs and eligibility criteria, so it is important to research
             your options carefully. Or, for a stress free solution, let us
             handle your case for you.{" "}
-            {/* <a href="/pnp" className={styles.link}>
+            <a href="/pnp" className={styles.link}>
               Click here
-            </a> */}
+            </a>
           </li>
           <li className={styles.listItem}>
             Submit all of the required documents for that particular province.
@@ -159,7 +174,9 @@ const Pnp = () => {
           </li>
         </ul>
 
-        <h3 className={styles.heading3} id="refusal-reasons">Common reasons for refusals for PNP</h3>
+        <h3 className={styles.heading3} id="refusal-reasons">
+          Common reasons for refusals for PNP
+        </h3>
         <ul className={styles.list}>
           <li className={styles.listItem}>You shared incorrect information.</li>
           <li className={styles.listItem}>
@@ -174,7 +191,9 @@ const Pnp = () => {
           </li>
         </ul>
 
-        <h3 className={styles.heading3} id="why-choose-us">Still not sure?</h3>
+        <h3 className={styles.heading3} id="why-choose-us">
+          Still not sure?
+        </h3>
         <p className={styles.paragraph}>
           If you have received a refusal for any of the reasons mentioned above,
           do not worry. With over a decade of experience, we specialize in
@@ -192,26 +211,22 @@ const Pnp = () => {
           application process all the way to obtaining your visa. Start your
           process now.
         </p>
-        <button id="book-appointment"
-          className={styles.button}
-          onClick={() =>
-            (window.location.href = "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-          }
-        >
+        <button id="book-appointment" className={styles.button}  
+        onClick={() =>(window.location.href = "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")  } >
           Book Appointment
         </button>
       </div>
 
-      <div id="testimonials"> 
-        <Testimonials/>
-      </div>
       <div id="faqs">
-        <FAQ/>
+        <FAQ />
+      </div>
+      <div id="testimonials">
+        <Testimonials />
       </div>
       <div id="blogs">
-        <RecentBlogs/>
+        <RecentBlogs />
       </div>
-      <Footer1/>
+      <Footer1 />
     </>
   );
 };

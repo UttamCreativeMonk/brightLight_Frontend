@@ -134,6 +134,7 @@
     margin: 0 auto;
     padding: 20px;
     box-sizing: border-box;
+    text-align: center;
   }
   
   .title {
@@ -154,7 +155,7 @@
   }
   
   .section {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
   .section h2 {
@@ -168,11 +169,17 @@
   .section h3 {
     font-size: 1.5em;
     color: #00273f;
-    margin-top: 50px;
-    margin-bottom: 80px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     text-align: center;
   }
-  
+  .subheading{
+    font-size: 1.5em;
+    color: #00273f;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
   .section p {
     font-size: 1em;
     color: #666;
@@ -211,7 +218,8 @@
   }
   
   .section.button:hover {
-    background-color: #003c3f;
+    opacity: 0.9;
+    text-decoration: none;
   }
   
   .applicationProcess ul {
@@ -231,7 +239,8 @@
   }
   
   .bookAppointment:hover {
-    background-color: #216b88;
+    opacity: 0.9;
+  text-decoration: none;
   }
   
   
@@ -249,14 +258,10 @@
     .container h2 {
       color: #00273f;
       margin-top: 30px;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
   
-    .container h3 {
-      margin-top: 30px;
-      margin-bottom: 20px;
-    }
-    
+
     .title h1 {
       color: #e8c47c;
       margin-top: 50px;
@@ -277,14 +282,14 @@
   
   .container h2 {
     color: #00273f;
-    margin-top: 70px;
-    margin-bottom: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
   
   .container h1 {
     color: #e8c47c;
-    margin-top: 50px;
-    margin-bottom: 80px;
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
   
   @media (max-width: 400px) {

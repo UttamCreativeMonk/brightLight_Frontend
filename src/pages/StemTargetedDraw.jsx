@@ -7,7 +7,6 @@ import Testimonials from "../sections/Testimonials";
 import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
 
-
 const StemTargetedDraw = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -197,7 +196,7 @@ const StemTargetedDraw = () => {
               rel="noopener noreferrer"
               className={styles.link}
             >
-              STEM Eligible NOC Codes
+              NOC Codes
             </a>
           </p>
 
@@ -388,18 +387,17 @@ const StemTargetedDraw = () => {
           </p>
           {/* Include additional details as necessary */}
         </section>
-
-        <section className={styles.testimonials}>
-          <h2 className={styles.subheading}>Client Testimonials</h2>
-          <div className={styles.videoTestimonials}>
-            {/* Include video testimonials here */}
-          </div>
-          <div className={styles.writtenTestimonials}>
-            {/* Include written testimonials here */}
-          </div>
-        </section>
       </div>
-      <Footer1/>
+      <div id="faqs">
+        <FAQ />
+      </div>
+      <div id="testimonials">
+        <Testimonials />
+      </div>
+      <div id="blogs">
+        <RecentBlogs />
+      </div>
+      <Footer1 />
     </>
   );
 };

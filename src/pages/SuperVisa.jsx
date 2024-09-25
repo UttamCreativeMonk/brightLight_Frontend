@@ -7,7 +7,6 @@ import Testimonials from "../sections/Testimonials";
 import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
 
-
 const SuperVisa = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -39,14 +38,26 @@ const SuperVisa = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>     About the Program      </p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program{" "}
+              </p>
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("income-table")}>     Income Table </p>
-              <p onClick={() => scrollToSection("how-to-apply")}>      How to Apply?        </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>        Refusal Reasons       </p>
-              <p onClick={() => scrollToSection("why-choose-us")}>  Why Choose Us?    </p>
-              <p onClick={() => scrollToSection("testimonials")}>    Testimonials      </p>
+              <p onClick={() => scrollToSection("income-table")}>
+                Income Table
+              </p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>
+                Refusal Reasons
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -269,14 +280,15 @@ const SuperVisa = () => {
         </section>
       </div>
 
-      <div id="testimonials"> 
-        <Testimonials/>
-      </div>
       <div id="faqs">
-        <FAQ/>
+        <FAQ />
+      </div>
+
+      <div id="testimonials">
+        <Testimonials />
       </div>
       <div id="blogs">
-        <RecentBlogs/>
+        <RecentBlogs />
       </div>
 
       <Footer1 />

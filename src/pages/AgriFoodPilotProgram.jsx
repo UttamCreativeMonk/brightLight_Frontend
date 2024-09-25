@@ -7,7 +7,6 @@ import Testimonials from "../sections/Testimonials";
 import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
 
-
 const AgriFoodPilotProgram = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [showNOC, setShowNOC] = useState("");
@@ -53,9 +52,6 @@ const AgriFoodPilotProgram = () => {
               </p>
               <p onClick={() => scrollToSection("book-appointment")}>
                 Book Appointment
-              </p>
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose Us?
               </p>
               <p onClick={() => scrollToSection("testimonials")}>
                 Testimonials
@@ -366,25 +362,25 @@ const AgriFoodPilotProgram = () => {
             precedents in cases we work on. This is why we have a high success
             rate.
           </p>
-          <a href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj"><button  className={styles.book_button} id="book-appointment">Book Appointment</button></a>
+          <a href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj">
+            <button className={styles.book_button} id="book-appointment">
+              Book Appointment
+            </button>
+          </a>
         </section>
+      </div>
 
-        <section className={styles.testimonials} id="why-choose-us">
-          <h2>Why Choose Us?</h2>
-          <p>See what our clients have to say:</p>
-        </section>
-      </div>
-      <div id="testimonials"> 
-        <Testimonials/>
-      </div>
       <div id="faqs">
-        <FAQ/>
+        <FAQ />
+      </div>
+      <div id="testimonials">
+        <Testimonials />
       </div>
       <div id="blogs">
-        <RecentBlogs/>
+        <RecentBlogs />
       </div>
 
-      <Footer1/>
+      <Footer1 />
     </>
   );
 };

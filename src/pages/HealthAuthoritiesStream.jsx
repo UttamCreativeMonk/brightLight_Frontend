@@ -154,11 +154,12 @@ const HealthAuthorityStream = () => {
         <a href="/bcpnp-calculator" className={styles.button}>Calculate Your BCPNP Score</a>
       </div>
 
-      <div id="testimonials"> 
-        <Testimonials/>
-      </div>
+
       <div id="faqs">
         <FAQ/>
+      </div>
+      <div id="testimonials"> 
+        <Testimonials/>
       </div>
       <div id="blogs">
         <RecentBlogs/>

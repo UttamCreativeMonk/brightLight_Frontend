@@ -1,225 +1,255 @@
 .bannerParent {
-    background-image: url("../assets/canadaBlue.jpeg");
-    width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 50px 0px;
-    padding-top: 200px;
-  }
-  .banner {
-    width: 1440px;
-    margin: auto;
-    text-align: center;
-  }
-  
-  .bannerHeading h1 {
-    color: #e8c47c;
-    font-size: 50px;
-    text-align: center;
-  }
-  
-  .bannerHeading p {
-    color: #00273f;
-    width: 74%;
-    margin: auto;
-    font-size: 25px;
-    line-height: 1.8;
-    padding-top: 60px;
-  }
-  
-  .bannerHeadingRotateParent {
-    width: 700px;
-    margin: auto;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    /* gap: 10px; */
-    align-items: center;
-    color: white;
-    /* margin-top: 150px; */
-  }
-  
-  .bannerHeadingRotate {
-    transform: rotate(-90deg);
-    border-bottom: 1px solid white;
-    padding-bottom: 20px;
-    font-size: 30px;
-  }
-  
-  .bannerHeadingRotatePara p {
-    text-align: left;
-    padding-bottom: 24px;
-    font-size: 30px;
-  }
-  
+  background-image: url("../assets/canadaBlue.jpeg");
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 50px 0px;
+  padding-top: 200px;
+}
+.banner {
+  width: 1440px;
+  margin: auto;
+  text-align: center;
+}
 
-  .bannerHeadingRotatePara p {
+.bannerHeading h1 {
+  color: #e8c47c;
+  font-size: 50px;
+  text-align: center;
+}
+
+.bannerHeading p {
+  color: #00273f;
+  width: 74%;
+  margin: auto;
+  font-size: 25px;
+  line-height: 1.8;
+  padding-top: 60px;
+}
+
+.bannerHeadingRotateParent {
+  width: 700px;
+  margin: auto;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  /* gap: 10px; */
+  align-items: center;
+  color: white;
+  /* margin-top: 150px; */
+}
+
+.bannerHeadingRotate {
+  transform: rotate(-90deg);
+  border-bottom: 1px solid white;
+  padding-bottom: 20px;
+  font-size: 30px;
+}
+
+.bannerHeadingRotatePara p {
+  text-align: left;
+  padding-bottom: 18px;
+  font-size: 30px;
+}
+
+.bannerHeadingRotatePara p {
+  cursor: pointer;
+}
+
+@media (max-width: 1450px) {
+  .banner {
+    width: 95%;
+  }
+}
+
+@media (max-width: 1080px) {
+  .bannerHeadingRotateParent {
+    flex-direction: column;
+    text-align: center;
+    /* margin-top: 50px; */
+    position: relative;
+    width: 100%;
+  }
+
+  .bannerHeadingRotate {
+    transform: none;
+    border: none;
+    padding-bottom: 0;
+    font-size: 24px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     cursor: pointer;
   }
-  
-  @media (max-width: 1450px) {
-    .banner {
-      width: 95%;
-    }
-  }
-  
-  @media (max-width: 1080px) {
-    .bannerHeadingRotateParent {
-      flex-direction: column;
-      text-align: center;
-      /* margin-top: 50px; */
-      position: relative;
-      width: 100%;
-    }
-  
-    .bannerHeadingRotate {
-      transform: none;
-      border: none;
-      padding-bottom: 0;
-      font-size: 24px;
-      text-align: left;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-    }
-  
-    .bannerHeadingRotate::after {
-      content: "\25BC";
-      font-size: 16px;
-      margin-left: 10px;
-      transition: transform 0.3s;
-    }
-  
-    .bannerHeadingRotateParent.active .bannerHeadingRotate::after {
-      transform: rotate(180deg);
-    }
-  
-    .bannerHeadingRotatePara {
-      margin-left: 0;
-      display: none;
-      background-color: #f7f7f7;
-      padding: 10px;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      z-index: 10;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      padding-top: 25px 0px;
-    }
-  
-    .bannerHeadingRotateParent.active .bannerHeadingRotatePara {
-      display: block;
-    }
-  
-    .bannerHeadingRotatePara p {
-      font-size: 18px;
-      padding: 10px 0;
-      color: #00273f;
-      align-items: center;
-      text-align: center;
-    }
+
+  .bannerHeadingRotate::after {
+    content: "\25BC";
+    font-size: 16px;
+    margin-left: 10px;
+    transition: transform 0.3s;
   }
 
+  .bannerHeadingRotateParent.active .bannerHeadingRotate::after {
+    transform: rotate(180deg);
+  }
 
-
-
-  /* SDS.module.css */
-.container {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 20px;
- 
-  }
-  
-  .heading {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .intro {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    text-align: center;
-  }
-  
-  .fasterProcessing, .eligibility, .applicationProcess, .family, .exclusions, .applicationSubmission, .refusalReasons {
-    margin-bottom: 40px;
-  }
-  
-  .subheading {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    color: #333;
-    text-align: center;
-  }
-  
-  .countryTable, .fundsTable, .languageTable {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-  }
-  
-  .countryTable th, .fundsTable th, .languageTable th,
-  .countryTable td, .fundsTable td, .languageTable td {
-    border: 1px solid #ddd;
+  .bannerHeadingRotatePara {
+    margin-left: 0;
+    display: none;
+    background-color: #f7f7f7;
     padding: 10px;
-    text-align: left;
-    align-self: center;
-    margin: auto;
-  }
-  
-  .countryTable th, .fundsTable th, .languageTable th {
-    background-color: #f4f4f4;
-    margin: auto;
-  }
-  
-  .button {
-    display: inline-block;
-    background-color: #00273f;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1rem;
-  }
-  
-  .button:hover {
-    background-color: #0056b3;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding-top: 25px 0px;
   }
 
-  .container h2 {
+  .bannerHeadingRotateParent.active .bannerHeadingRotatePara {
+    display: block;
+  }
+
+  .bannerHeadingRotatePara p {
+    font-size: 18px;
+    padding: 10px 0;
     color: #00273f;
-    margin-top: 50px;
-    margin-bottom: 80px;
+    align-items: center;
     text-align: center;
   }
-  
-  .heading {
-    color: #e8c47c;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-  
-.applicationProcess h3{
+}
+
+/* SDS.module.css */
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px;
+
+  text-align: center;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.intro {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.fasterProcessing,
+.eligibility,
+.applicationProcess,
+.family,
+.exclusions,
+.applicationSubmission,
+.refusalReasons {
+  margin-bottom: 40px;
+}
+
+.subheading {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #333;
+  text-align: center;
+}
+
+.countryTable,
+.fundsTable,
+.languageTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.countryTable th,
+.fundsTable th,
+.languageTable th,
+.countryTable td,
+.fundsTable td,
+.languageTable td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+  align-self: center;
+  margin: auto;
+}
+
+.countryTable th,
+.fundsTable th,
+.languageTable th {
+  background-color: #f4f4f4;
+  margin: auto;
+}
+
+.button {
+  display: inline-block;
+  background-color: #00273f;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+.button:hover {
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+.container h2 {
+  color: #00273f;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.heading {
+  color: #e8c47c;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.applicationProcess h3 {
   margin-top: 30px;
   margin-bottom: 20px;
   color: #00273f;
 }
+.countryTable th ,tr{
+  text-align: center;
+}
+.countryTable {
+  width: 80%; /* Optional: adjust table width as needed */
+  border-collapse: collapse; /* Optional: for better table styling */
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 
-  @media (max-width: 400px) {
-    .container h2 {
-      font-size: 20px;
-      margin-top: 10px;
-      margin-bottom: 40px;
-    }
-  
-    .heading {
-      font-size: 26px;
-    }
+.countryTable th, 
+.countryTable td {
+  text-align: center;
+  padding: 8px; /* Optional: for spacing */
+  border: 1px solid #ddd; /* Optional: for table border */
+}
+
+
+@media (max-width: 400px) {
+  .container h2 {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 40px;
   }
-  
+
+  .heading {
+    font-size: 26px;
+  }
+}

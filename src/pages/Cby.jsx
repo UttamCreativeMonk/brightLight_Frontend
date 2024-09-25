@@ -44,9 +44,6 @@ const Cby = () => {
               </p>
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("income-table")}>
-                Income Table
-              </p>
               <p onClick={() => scrollToSection("how-to-apply")}>
                 {" "}
                 How to Apply?{" "}
@@ -357,11 +354,12 @@ const Cby = () => {
           </p>
         </section>
       </div>
-      <div id="testimonials">
-        <Testimonials />
-      </div>
+
       <div id="faqs">
         <FAQ />
+      </div>
+      <div id="testimonials">
+        <Testimonials />
       </div>
       <div id="blogs">
         <RecentBlogs />

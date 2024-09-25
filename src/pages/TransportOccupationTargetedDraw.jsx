@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import styles from "../styles/TransportOccupationTargetedDraw.module.css";
 import { Link } from "react-router-dom";
-
+import Testimonials from "../sections/Testimonials";
+import RecentBlogs from "../sections/RecentBlogs";
+import FAQ from "../sections/FAQ";
+import Navbar1 from "../components/Navbar1";
+import Footer1 from "../components/Footer1";
 
 const TransportOccupationTargetedDraw = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -19,7 +23,7 @@ const TransportOccupationTargetedDraw = () => {
 
   return (
     <>
-      {/* <Navbar1 /> */}
+      <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div
@@ -166,19 +170,19 @@ const TransportOccupationTargetedDraw = () => {
         <h2 className={styles.subheading}>Why Choose Us</h2>
         <p>Here is where you can describe why clients should choose your services over others. Highlight your unique selling points, such as personalized service, high success rates, and expert knowledge.</p>
       </div>
-
-      <div className={styles.testimonials}>
-        <h2 className={styles.subheading}>Client Testimonials</h2>
-        <div className={styles.videoTestimonials}>
-          <p>Video testimonials and written testimonials. (Option to hide any of them should be available in backend)</p>
-        </div>
-        <div className={styles.writtenTestimonials}>
-          <p>Written testimonials from previous clients. (Option to hide any of them should be available in backend)</p>
-        </div>
-      </div>
     </div>
 
+    <div id="faqs">
+        <FAQ />
+      </div>
+    <div id="testimonials">
+        <Testimonials />
+      </div>
+      <div id="blogs">
+        <RecentBlogs />
+      </div>
 
+      <Footer1/>
     </>
   );
 };

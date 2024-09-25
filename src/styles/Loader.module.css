@@ -1,4 +1,4 @@
-/* Spinner.module.css */
+/* 
 :root {
     --hue: 223;
     --bg: hsl(var(--hue), 10%, 90%);
@@ -48,7 +48,7 @@
     animation-name: pl-after;
   }
   
-  /* Animations */
+
   @keyframes pl-before {
     from {
       transform: rotate(0) translate(-100%, -100%) rotate(-90deg);
@@ -86,6 +86,54 @@
     }
     to {
       transform: rotate(90deg) scale(1, 1) translate(0, 200%);
+    }
+  }
+   */
+
+
+   .loaderParent {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white; /* Solid white background */
+    z-index: 99;
+    transition: 0.5s all ease-in-out;
+  }
+  
+  .loader {
+    animation: bounce 1s infinite alternate;
+  }
+  
+  .logo {
+    width: 100px; /* Adjust as needed */
+    height: auto;
+    animation: 3s brightness ease-in-out infinite;
+    transition: 0.3s all ease-in-out;
+  }
+
+  @keyframes brightness {
+    0%{
+      opacity: 1;
+    }
+    50%{
+      opacity: 0.7;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
+  
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-10px);
     }
   }
   

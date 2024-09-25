@@ -131,6 +131,7 @@
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
+  text-align: center;
 }
 
 .header {
@@ -140,7 +141,7 @@
 
 .header h1 {
   font-size: 2.5em;
-  color: #00273f;
+  color: #e8c47c;
 }
 
 .mainContent {
@@ -218,7 +219,7 @@
   .container h2 {
     font-size: 20px;
     margin-top: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 
   .header h1 {

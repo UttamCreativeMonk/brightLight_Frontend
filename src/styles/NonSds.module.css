@@ -48,7 +48,7 @@
   
   .bannerHeadingRotatePara p {
     text-align: left;
-    padding-bottom: 24px;
+    padding-bottom: 18px;
     font-size: 30px;
   }
   
@@ -128,23 +128,24 @@
     max-width: 1440px;
     margin: 0 auto;
     padding: 20px;
+    text-align: center;
   }
   
   .heading {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: bold;
     margin-bottom: 20px;
     text-align: center;
   }
   
   .intro {
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     margin-bottom: 30px;
     text-align: center;
   }
   
   .prosCons {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
   .subheading {
@@ -174,11 +175,11 @@
   }
   
   .eligibility {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
   .languageChart {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   
   .languageChart table {
@@ -212,12 +213,17 @@
     margin-top: 10px;
   }
   
+    
+  .button:hover {
+    opacity: 0.9;
+    text-decoration: none;
+  }
   .applicationProcess {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
   .proofOfFunds {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
   .proofOfFunds table {
@@ -227,7 +233,7 @@
   }
   
   .proofOfFunds table, .proofOfFunds th, .proofOfFunds td {
-    border: 1px solid #ddd;
+    border: 1px solid #00273f;
   }
   
   .proofOfFunds th, .proofOfFunds td {
@@ -236,15 +242,15 @@
   }
   
   .proofOfFunds th {
-    background-color: #f4f4f4;
+  color: #00273f;
   }
   
   .spousalPermit {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
   .refusalReasons {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
   .bookAppointment {
@@ -266,12 +272,16 @@
     border-radius: 5px;
     font-size: 1.1rem;
   }
+  .bookAppointment .button:hover {
+    opacity: 0.9;
+    text-decoration: none;
+  }
   
   
   .container h2 {
     color: #00273f;
-    margin-top: 50px;
-    margin-bottom: 80px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     text-align: center;
   }
   

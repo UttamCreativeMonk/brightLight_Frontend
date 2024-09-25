@@ -7,7 +7,6 @@ import Testimonials from "../sections/Testimonials";
 import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
 
-
 const SkilledWorkerStream = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -27,18 +26,17 @@ const SkilledWorkerStream = () => {
       <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
-        <header className={styles.header}>
-          <h1>
-            British Columbia Provincial Nominee Program (BC PNP) Skilled Worker
-            Stream
-          </h1>
-        </header>
+          <header className={styles.header}>
+            <h1>
+              British Columbia Provincial Nominee Program (BC PNP) Skilled
+              Worker Stream
+            </h1>
+          </header>
           <div
             className={`${styles.bannerHeadingRotateParent} ${
               isDropdownOpen ? styles.active : ""
             }`}
           >
-            
             <div
               className={styles.bannerHeadingRotate}
               onClick={toggleDropdown}
@@ -51,13 +49,19 @@ const SkilledWorkerStream = () => {
               </p> */}
               <p onClick={() => scrollToSection("benefits")}>Benefits</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("employer_requirements")}>Employer Requirements</p>
-              <p onClick={() => scrollToSection("bcnp_calculator")}>BCNP Calculator</p>
+              <p onClick={() => scrollToSection("bcnp_calculator")}>
+                BCNP Calculator
+              </p>
               <p onClick={() => scrollToSection("process")}>Process</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us
+              </p>
+              <p onClick={() => scrollToSection("book-appointment")}>
+                Book Appointment
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faq")}>Faq</p>
               <p onClick={() => scrollToSection("blog")}>Blog</p>
             </div>
@@ -145,7 +149,7 @@ const SkilledWorkerStream = () => {
           </ol>
         </section>
 
-        <section className={styles.section} >
+        <section className={styles.section}>
           <h2>Express Entry Consideration</h2>
           <p>
             While an Express Entry profile is not mandatory, candidates who meet
@@ -339,9 +343,12 @@ const SkilledWorkerStream = () => {
             application process all the way to obtaining your PR. Start your
             process now.
           </p>
-          <button 
+          <button
             className={styles.button}
-            onClick={() => (window.location.href = "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")}
+            onClick={() =>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
           >
             Book Appointment
           </button>
@@ -357,16 +364,16 @@ const SkilledWorkerStream = () => {
           </p>
         </section>
       </div>
-      <div id="testimonials"> 
-        <Testimonials/>
-      </div>
       <div id="faqs">
-        <FAQ/>
+        <FAQ />
+      </div>
+      <div id="testimonials">
+        <Testimonials />
       </div>
       <div id="blogs">
-        <RecentBlogs/>
+        <RecentBlogs />
       </div>
-      <Footer1/>
+      <Footer1 />
     </>
   );
 };

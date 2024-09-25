@@ -48,7 +48,7 @@
   
   .bannerHeadingRotatePara p {
     text-align: left;
-    padding-bottom: 24px;
+    padding-bottom: 18px;
     font-size: 30px;
   }
   
@@ -140,12 +140,12 @@
   
   .intro {
     font-size: 1.2rem;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     text-align: center;
   }
   
   .programs {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
   .subheading {
@@ -171,11 +171,33 @@
     border-radius: 5px;
     font-size: 1.1rem;
     margin: auto;
+  }
 
+  .button:hover{
+    text-decoration: none;
+    opacity: 0.9;
   }
   
+.buttonBook{
+  display: block;
+  margin: auto;
+  background-color: #00273f;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  width: 270px;
+}
+.buttonBook:hover{
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+
   .callToAction {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
   .callToActionText {
@@ -185,7 +207,7 @@
   }
   
   .testimonials {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
   .testimonialsContainer {
@@ -196,8 +218,8 @@
   
   .container h2 {
     color: #00273f;
-    margin-top: 50px;
-    margin-bottom: 80px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     text-align: center;
   }
   

@@ -48,7 +48,7 @@
   
   .bannerHeadingRotatePara p {
     text-align: left;
-    padding-bottom: 24px;
+    padding-bottom: 18px;
     font-size: 30px;
   }
   
@@ -126,17 +126,17 @@
 
 
   .container {
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 20px;
-    font-family: Arial, sans-serif;
+    text-align: center;
   }
   
   .heading {
-    font-size: 2.5rem;
+    font-size: 2.1rem;
     font-weight: bold;
     margin-bottom: 20px;
-    color: #00273f;
+ color: #e8c47c;
   }
   
   .introduction,
@@ -147,11 +147,11 @@
   .contact,
   .whyChooseUs,
   .testimonials {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   
   .subheading {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: bold;
     margin-bottom: 15px;
     color: #00273f;
@@ -188,7 +188,10 @@
     text-decoration: none;
     margin-top: 10px;
   }
-  
+  .button:hover {
+    opacity: 0.9;
+    text-decoration: none;
+  }
 
   .table {
     width: 100%;
@@ -197,7 +200,7 @@
   }
   
   .table th, .table td {
-    border: 1px solid #ddd;
+    border: 1px solid #00273f;
     padding: 10px;
     text-align: left;
   }
@@ -205,6 +208,7 @@
   .table th {
     background-color: #f4f4f4;
     font-weight: bold;
+    color: #00273f;
   }
   
   .table tbody tr:nth-child(even) {
@@ -226,8 +230,8 @@
   }
   
   .container h2{
-    margin-top: 50px;
-    margin-bottom: 80px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     text-align: center;
   }
 
@@ -246,7 +250,7 @@
 .container h2{
   font-size: 20px;
   margin-top: 10px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   
 }
   }

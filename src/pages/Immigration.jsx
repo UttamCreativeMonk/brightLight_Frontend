@@ -20,7 +20,7 @@ let Immigration = () => {
       hoverImg: AssessmentWhite,
       title: "Free Assessment",
       description: "Book a Free Assessment with us to help you and your family members find eligibility in various Canadian immigration pathways. Book now!",
-      link: "/free-assessment"
+      link: "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj"
     },
     {
       img: Calculator,

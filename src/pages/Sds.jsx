@@ -43,11 +43,6 @@ const Sds = () => {
                 About the Program
               </p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("faster-processing")}>
-                Faster Processing
-              </p>
-              <p onClick={() => scrollToSection("exclusion")}>Exclusion</p>
-              <p onClick={() => scrollToSection("family")}>Family</p>
               <p onClick={() => scrollToSection("application-submission")}>
                 Application-Submission
               </p>
@@ -588,11 +583,11 @@ const Sds = () => {
           </Link>
         </section>
       </div>
-      <div id="testimonials">
-        <Testimonials />
-      </div>
       <div id="faqs">
         <FAQ />
+      </div>
+      <div id="testimonials">
+        <Testimonials />
       </div>
       <div id="blogs">
         <RecentBlogs />

@@ -7,8 +7,6 @@ import Testimonials from "../sections/Testimonials";
 import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
 
-
-
 const InCaregiverProgramLP = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -46,11 +44,9 @@ const InCaregiverProgramLP = () => {
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
               <p onClick={() => scrollToSection("categories")}>Categories</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>  How to Apply?</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>      Why Choose Us?    </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
+              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -329,16 +325,17 @@ const InCaregiverProgramLP = () => {
           </p>
         </section>
       </div>
-      <div id="testimonials"> 
-        <Testimonials/>
-      </div>
+
       <div id="faqs">
-        <FAQ/>
+        <FAQ />
+      </div>
+      <div id="testimonials">
+        <Testimonials />
       </div>
       <div id="blogs">
-        <RecentBlogs/>
+        <RecentBlogs />
       </div>
-      <Footer1/>
+      <Footer1 />
     </>
   );
 };

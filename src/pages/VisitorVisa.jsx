@@ -1,4 +1,4 @@
-import React, { useState ,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../styles/VisitorVisa.module.css";
 import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
@@ -21,27 +21,27 @@ const VisitorVisa = () => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
-    }  
+    }
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     fetch("https://brightlight-node.onrender.com/visitor-meta")
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => {
-      if (data) {
-        setMetaData(data[0]);
-      }
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-  },[])
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   return (
     <>
-<Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle
@@ -311,22 +311,14 @@ const VisitorVisa = () => {
             throughout your immigration journey. Our dedicated team is committed
             to achieving the best possible outcomes for our clients.
           </p>
-          <div className={styles.testimonials}>
-            <h3>Client Testimonials</h3>
-            <div className={styles.videoTestimonials}>
-              {/* Video testimonials */}
-            </div>
-            <div className={styles.writtenTestimonials}>
-              {/* Written testimonials */}
-            </div>
-          </div>
         </section>
+      </div>
+
+      <div id="faqs">
+        <FAQ />
       </div>
       <div id="testimonials">
         <Testimonials />
-      </div>
-      <div id="faqs">
-        <FAQ />
       </div>
       <div id="blogs">
         <RecentBlogs />

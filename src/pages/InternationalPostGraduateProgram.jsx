@@ -125,7 +125,7 @@ const InternationalPostGraduateProgram = () => {
 
       <div className={styles.container}>
         <section className={styles.section} id="benefits">
-          <h2>Benefits of BCPNP International Post-Graduate Stream</h2>
+          <h2  >Benefits of BCPNP International Post-Graduate Stream</h2>
           <ul>
             <li>
               No Job Offer Required: Candidates do not need a job offer to
@@ -292,11 +292,11 @@ const InternationalPostGraduateProgram = () => {
         </section>
       </div>
 
-      <div id="testimonials"> 
-        <Testimonials/>
-      </div>
       <div id="faqs">
         <FAQ/>
+      </div>
+      <div id="testimonials">
+        <Testimonials />
       </div>
       <div id="blogs">
         <RecentBlogs/>

@@ -7,8 +7,6 @@ import Testimonials from "../sections/Testimonials";
 import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
 
-
-
 const TemporaryResidentPermitDraft = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -171,7 +169,9 @@ const TemporaryResidentPermitDraft = () => {
         </section>
 
         <section className={styles.whyChooseUs}>
-          <h2 className={styles.subheading} id="why-choose-us">Why Choose Us?</h2>
+          <h2 className={styles.subheading} id="why-choose-us">
+            Why Choose Us?
+          </h2>
           <p>
             At Brightlight Immigration, we provide expert guidance and support
             throughout your immigration journey. Our dedicated team is committed
@@ -179,15 +179,15 @@ const TemporaryResidentPermitDraft = () => {
           </p>
         </section>
       </div>
-      
-      <div id="testimonials"> 
-        <Testimonials/>
-      </div>
+
       <div id="faqs">
-        <FAQ/>
+        <FAQ />
+      </div>
+      <div id="testimonials">
+        <Testimonials />
       </div>
       <div id="blogs">
-        <RecentBlogs/>
+        <RecentBlogs />
       </div>
       <Footer1 />
     </>

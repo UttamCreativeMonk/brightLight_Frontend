@@ -48,7 +48,7 @@
   
   .bannerHeadingRotatePara p {
     text-align: left;
-    padding-bottom: 24px;
+    padding-bottom: 18px;
     font-size: 30px;
   }
   
@@ -125,15 +125,16 @@
   /* General container styles */
 .container {
     padding: 20px;
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
+    text-align: center;
   }
   
   /* Title and subtitle styles */
   .title {
     font-size: 2rem;
     font-weight: bold;
-    color: #00273f; /* Dark blue color */
+    color: #e8c47c; 
     margin-bottom: 30px;
     margin-top: 30px;
   }
@@ -199,7 +200,8 @@
   }
   
   .button:hover {
-    background-color: #003366; /* Darker blue for hover */
+    opacity: 0.9;
+    text-decoration: none;
   }
 
   .subheading h3{
@@ -210,8 +212,8 @@
 
   .container h2 {
     color: #00273f;
-    margin-top: 50px;
-    margin-bottom: 80px;
+    margin-top: 40px;
+    margin-bottom: 20px;
     text-align: center;
   }
   
@@ -226,7 +228,7 @@
     .container h2 {
       font-size: 20px;
       margin-top: 10px;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
     }
   
     .header h1{

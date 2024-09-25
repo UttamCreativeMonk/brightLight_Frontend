@@ -46,10 +46,6 @@ const OutsideCananda = () => {
                   About the Program
                 </p>
                 <p onClick={() => scrollToSection("programs")}>Programs</p>
-
-                <p onClick={() => scrollToSection("book-appointment")}>
-                  Book Appointment
-                </p>
                 <p onClick={() => scrollToSection("why-choose-us")}>
                   Why Choose Us?
                 </p>
@@ -82,15 +78,16 @@ const OutsideCananda = () => {
         <p className={styles.callToActionText}>
           At Brightlight Immigration, we have a dedicated team of experts ready to assist you through every step of your study permit application process. Our extensive experience and success rate ensure that your application is handled with the utmost care and professionalism. Whether you are applying under the Student Direct Stream or the Non-Student Direct Stream, we provide personalized services to meet your unique needs.
         </p>
-        <a id="book-appointment" href="book-appointmenthttps://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" className={styles.button}>Book Appointment</a>
+        <a href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" className={styles.buttonBook}>Book Appointment</a>
       </section>
     </div>
 
-    <div id="testimonials"> 
-        <Testimonials/>
-      </div>
       <div id="faqs">
         <FAQ/>
+      </div>
+      
+    <div id="testimonials"> 
+        <Testimonials/>
       </div>
       <div id="blogs">
         <RecentBlogs/>

@@ -48,7 +48,7 @@
   
   .bannerHeadingRotatePara p {
     text-align: left;
-    padding-bottom: 24px;
+    padding-bottom: 18px;
     font-size: 30px;
   }
   
@@ -129,6 +129,7 @@
     margin: 0 auto;
     /* padding: 20px; */
     color: #333;
+    text-align: center;
   }
   
   .header {
@@ -137,7 +138,7 @@
     
   }
   
-  .header h1 {
+  .header {
     font-size: 2.1em;
     margin: 0;
     color: #e8c47c;
@@ -152,8 +153,7 @@
   
   .section h2 {
     font-size: 2em;
-    margin-bottom: 40px;
-    border-bottom: 2px solid #000;
+    margin-bottom: 20px;
     padding-bottom: 5px;
   }
   
@@ -172,32 +172,36 @@
   }
    */
   .button {
-    background-color: #007bff;
+    background-color: #00273f;
     color: white;
     border: none;
     padding: 10px 20px;
     font-size: 1em;
     cursor: pointer;
     border-radius: 5px;
+    margin-top: 10px;
   }
   
   .button:hover {
-    background-color: #0056b3;
+    opacity: 0.9;
+    text-decoration: none;
   }
+
   
   strong {
     font-weight: bold;
   }
 
   .section h2{
-    margin-top: 50px;
+    margin-top: 20px;
     text-align: center;
   }
 
 
-  .header h1{
+  .header {
     width: 75%;
     margin-bottom: 30px;
+    font-size: 20px;
   }
   .criteria h3{
     margin-top: 20px;
@@ -207,8 +211,8 @@
 
 
   .section h2{
-    margin-top: 40px;
-    margin-bottom: 80px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
   .section li{
     margin-top: 20px;
@@ -218,7 +222,7 @@
   @media (max-width: 500px) {
     .section h2{
       font-size: 20px;
-      margin-top: 40px;
+      margin-top: 20px;
       margin-bottom: 30px;
     }
     .section li{

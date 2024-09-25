@@ -48,7 +48,7 @@
   
   .bannerHeadingRotatePara p {
     text-align: left;
-    padding-bottom: 24px;
+    padding-bottom: 18px;
     font-size: 30px;
   }
   
@@ -127,13 +127,14 @@
     max-width: 1440px;
     margin: 0 auto;
     padding: 20px;
+    text-align: center;
   }
   
   .title {
     font-size: 2.1em;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     color: #e8c47c;
-    margin-top: 50px;
+    margin-top: 20px;
     text-align: center;
   }
   
@@ -144,9 +145,9 @@
   }
   
   .subtitle {
-    font-size: 2em;
+    font-size: 1.8em;
     margin-top: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
   .subheading {
@@ -174,7 +175,7 @@
   }
   
   .button:hover {
-    background-color: #517397;
+    opacity: 0.9;
     text-decoration: none;
   }
   
@@ -208,24 +209,24 @@
   }
   
   .list li{
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
 
   .subheading {
-    margin-top: 30px;
-    margin-bottom: 3px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 
   .container h2{
-    margin-top: 50px;
-    margin-bottom: 80px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     text-align: center;
     color: #00273f;
   }
 
   .container h3{
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 
   }
 
@@ -233,7 +234,7 @@
     .container h2{
       font-size: 20px;
       margin-top: 10px;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
     }
     .title{
       font-size: 26px;

@@ -7,7 +7,6 @@ import Testimonials from "../sections/Testimonials";
 import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
 
-
 const ExtensionsDraft = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -39,12 +38,26 @@ const ExtensionsDraft = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}> About the Program </p>
+              <p onClick={() => scrollToSection("about-program")}>
+                {" "}
+                About the Program{" "}
+              </p>
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
-              <p onClick={() => scrollToSection("how-to-apply")}> How to Apply? </p>
-              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
-              <p onClick={() => scrollToSection("why-choose-us")}> Why Choose Us?   </p>
-              <p onClick={() => scrollToSection("testimonials")}> Testimonials </p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                {" "}
+                How to Apply?{" "}
+              </p>
+              <p onClick={() => scrollToSection("book-appointment")}>
+                Book Appointment
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                {" "}
+                Why Choose Us?{" "}
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                {" "}
+                Testimonials{" "}
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -125,7 +138,7 @@ const ExtensionsDraft = () => {
           </ul>
         </section>
 
-        <section className={styles.assistance} >
+        <section className={styles.assistance}>
           <h2 className={styles.subheading}>Still Not Sure?</h2>
           <p>
             If you have received a refusal for any reason, do not worry. With
@@ -144,7 +157,11 @@ const ExtensionsDraft = () => {
             application process all the way to obtaining your visa. Start your
             process now.
           </p>
-          <Link id="book-appointment" to="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" className={styles.button}>
+          <Link
+            id="book-appointment"
+            to="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj"
+            className={styles.button}
+          >
             Book Appointment
           </Link>
         </section>
@@ -160,16 +177,16 @@ const ExtensionsDraft = () => {
         </section>
       </div>
 
-      <div id="testimonials"> 
-        <Testimonials/>
-      </div>
       <div id="faqs">
-        <FAQ/>
+        <FAQ />
+      </div>
+      <div id="testimonials">
+        <Testimonials />
       </div>
       <div id="blogs">
-        <RecentBlogs/>
+        <RecentBlogs />
       </div>
-      <Footer1/>
+      <Footer1 />
     </>
   );
 };

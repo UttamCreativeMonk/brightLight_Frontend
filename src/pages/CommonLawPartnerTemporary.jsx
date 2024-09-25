@@ -7,7 +7,6 @@ import Testimonials from "../sections/Testimonials";
 import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
 
-
 const CommonLawPartnerTemporary = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -40,15 +39,26 @@ const CommonLawPartnerTemporary = () => {
             </div>
             <div className={styles.bannerHeadingRotatePara}>
               <p onClick={() => scrollToSection("about-program")}>
-  
                 About the Program
               </p>
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>   How to Apply?   </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>      Refusal Reasons  </p>
-              <p onClick={() => scrollToSection("why-choose-us")}>  Why Choose Us?{" "}    </p>
-              <p onClick={() => scrollToSection("testimonials")}>   Testimonials   </p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                {" "}
+                How to Apply?{" "}
+              </p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>
+                {" "}
+                Refusal Reasons{" "}
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                {" "}
+                Why Choose Us?{" "}
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                {" "}
+                Testimonials{" "}
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -364,8 +374,12 @@ const CommonLawPartnerTemporary = () => {
           <h2 className={styles.subheading}>Need Assistance?</h2>
           <p>
             If you need help with your application or have questions, feel free
-            to <Link to="/contact-us">contact us</Link>. Our team at Brightlight
-            Immigration is here to assist you every step of the way.
+            to{" "}
+            <Link className={styles.contactUS} to="/contact-us">
+              contact us
+            </Link>
+            . Our team at Brightlight Immigration is here to assist you every
+            step of the way.
           </p>
         </section>
 
@@ -379,17 +393,16 @@ const CommonLawPartnerTemporary = () => {
           {/* Include testimonials and video testimonials here */}
         </section>
       </div>
-
-      <div id="testimonials"> 
-        <Testimonials/>
-      </div>
       <div id="faqs">
-        <FAQ/>
+        <FAQ />
+      </div>{" "}
+      <div id="testimonials">
+        <Testimonials />
       </div>
       <div id="blogs">
-        <RecentBlogs/>
+        <RecentBlogs />
       </div>
-      <Footer1/>
+      <Footer1 />
     </>
   );
 };

@@ -1,278 +1,276 @@
 /* src/components/WorkPermitPage.module.css */
 .bannerParent {
-    background-image: url("../assets/canadaBlue.jpeg");
-    width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 50px 0px;
-    padding-top: 200px;
-  }
+  background-image: url("../assets/canadaBlue.jpeg");
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 50px 0px;
+  padding-top: 200px;
+}
+.banner {
+  width: 1440px;
+  margin: auto;
+  text-align: center;
+}
+
+.bannerHeading h1 {
+  color: #e8c47c;
+  font-size: 50px;
+  text-align: center;
+}
+
+.bannerHeading p {
+  /* color: #00273f; */
+  width: 74%;
+  margin: auto;
+  font-size: 25px;
+  line-height: 1.8;
+  padding-top: 60px;
+}
+
+.bannerHeadingRotateParent {
+  width: 700px;
+  margin: auto;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  /* gap: 10px; */
+  align-items: center;
+  color: white;
+  /* margin-top: 150px; */
+}
+
+.bannerHeadingRotate {
+  transform: rotate(-90deg);
+  border-bottom: 1px solid white;
+  padding-bottom: 20px;
+  font-size: 30px;
+}
+
+.bannerHeadingRotatePara p {
+  text-align: left;
+  padding-bottom: 18px;
+  font-size: 30px;
+}
+
+.bannerHeadingRotatePara {
+  margin-left: -50px;
+}
+.bannerHeadingRotatePara p {
+  cursor: pointer;
+}
+
+@media (max-width: 1450px) {
   .banner {
-    width: 1440px;
-    margin: auto;
-    text-align: center;
+    width: 95%;
   }
-  
-  .bannerHeading h1 {
-    color: #e8c47c;
-    font-size: 50px;
-    text-align: center;
-  }
-  
-  .bannerHeading p {
-    /* color: #00273f; */
-    width: 74%;
-    margin: auto;
-    font-size: 25px;
-    line-height: 1.8;
-    padding-top: 60px;
-  }
-  
+}
+
+@media (max-width: 1080px) {
   .bannerHeadingRotateParent {
-    width: 700px;
-    margin: auto;
-    display: flex;
+    flex-direction: column;
     text-align: center;
-    justify-content: center;
-    /* gap: 10px; */
-    align-items: center;
-    color: white;
-    /* margin-top: 150px; */
+    /* margin-top: 50px; */
+    position: relative;
+    width: 100%;
   }
-  
+
   .bannerHeadingRotate {
-    transform: rotate(-90deg);
-    border-bottom: 1px solid white;
-    padding-bottom: 20px;
-    font-size: 30px;
-  }
-  
-  .bannerHeadingRotatePara p {
+    transform: none;
+    border: none;
+    padding-bottom: 0;
+    font-size: 24px;
     text-align: left;
-    padding-bottom: 24px;
-    font-size: 30px;
-  }
-  
-  .bannerHeadingRotatePara {
-    margin-left: -50px;
-  }
-  .bannerHeadingRotatePara p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     cursor: pointer;
   }
-  
-  @media (max-width: 1450px) {
-    .banner {
-      width: 95%;
-    }
+
+  .bannerHeadingRotate::after {
+    content: "\25BC";
+    font-size: 16px;
+    margin-left: 10px;
+    transition: transform 0.3s;
   }
-  
-  @media (max-width: 1080px) {
-    .bannerHeadingRotateParent {
-      flex-direction: column;
-      text-align: center;
-      /* margin-top: 50px; */
-      position: relative;
-      width: 100%;
-    }
-  
-    .bannerHeadingRotate {
-      transform: none;
-      border: none;
-      padding-bottom: 0;
-      font-size: 24px;
-      text-align: left;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-    }
-  
-    .bannerHeadingRotate::after {
-      content: "\25BC";
-      font-size: 16px;
-      margin-left: 10px;
-      transition: transform 0.3s;
-    }
-  
-    .bannerHeadingRotateParent.active .bannerHeadingRotate::after {
-      transform: rotate(180deg);
-    }
-  
-    .bannerHeadingRotatePara {
-      margin-left: 0;
-      display: none;
-      background-color: #f7f7f7;
-      padding: 10px;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      z-index: 10;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      padding-top: 25px 0px;
-    }
-  
-    .bannerHeadingRotateParent.active .bannerHeadingRotatePara {
-      display: block;
-    }
-  
-    .bannerHeadingRotatePara p {
-      font-size: 18px;
-      padding: 10px 0;
-      color: #00273f;
-      align-items: center;
-      text-align: center;
-    }
+
+  .bannerHeadingRotateParent.active .bannerHeadingRotate::after {
+    transform: rotate(180deg);
   }
-  
-  /* src/components/LmiaReviewedPage.module.css */
-  
-  /* src/components/LmiaReviewedPage.module.css */
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    box-sizing: border-box;
+
+  .bannerHeadingRotatePara {
+    margin-left: 0;
+    display: none;
+    background-color: #f7f7f7;
+    padding: 10px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding-top: 25px 0px;
   }
-  
-  .header {
-    text-align: center;
-    margin-bottom: 40px;
+
+  .bannerHeadingRotateParent.active .bannerHeadingRotatePara {
+    display: block;
   }
-  
-  .header h1 {
-    font-size: 2.5em;
-    color: #e8c47c;
-  }
-  
-  .mainContent {
-    line-height: 1.6;
-  }
-  
-  .section {
-    margin-bottom: 40px;
-  }
-  
-  .section h2 {
-    font-size: 2em;
+
+  .bannerHeadingRotatePara p {
+    font-size: 18px;
+    padding: 10px 0;
     color: #00273f;
+    align-items: center;
     text-align: center;
   }
-  
-  .section h3 {
-    font-size: 1.5em;
-    color: #00273f;
-    text-align: center;
-  }
-  
-  .section p {
-    font-size: 1em;
-    color: #666;
-  }
-  
+}
+
+/* src/components/LmiaReviewedPage.module.css */
+
+/* src/components/LmiaReviewedPage.module.css */
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 2.1em;
+  color: #e8c47c;
+}
+
+.mainContent {
+  line-height: 1.6;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.section h2 {
+  font-size: 1.8em;
+  color: #00273f;
+  text-align: center;
+}
+
+.section h3 {
+  font-size: 1.5em;
+  color: #00273f;
+  text-align: center;
+}
+
+.section p {
+  font-size: 1em;
+  color: #666;
+}
+
+.benefits {
+  /* display: flex; */
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.benefit {
+  width: 45%;
+}
+
+.benefit ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.pathways {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.section .button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #00273f;
+  border-radius: 5px;
+}
+
+.section.button:hover {
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+.applicationProcess ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.bookAppointment {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #00273f;
+  border-radius: 5px;
+}
+
+.bookAppointment:hover {
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+@media (max-width: 1080px) {
   .benefits {
-    /* display: flex; */
-    justify-content: space-between;
-    margin-top: 20px;
+    flex-direction: column;
   }
-  
   .benefit {
-    width: 45%;
+    width: 100%;
   }
-  
-  .benefit ul {
-    list-style-type: disc;
-    margin-left: 20px;
+}
+
+.container h2 {
+  color: #00273f;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.container h3 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #00273f;
+}
+
+.header h1 {
+  color: #e8c47c;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 400px) {
+  .container h2 {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 40px;
   }
-  
-  .pathways {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  
-  .section .button {
-    display: inline-block;
-    padding: 10px 20px;
-    margin: 5px;
-    text-align: center;
-    text-decoration: none;
-    color: #fff;
-    background-color: #00273f;
-    border-radius: 5px;
-  }
-  
-  .section.button:hover {
-    background-color: #003c3f;
-  }
-  
-  .applicationProcess ul {
-    list-style-type: disc;
-    margin-left: 20px;
-  }
-  
-  .bookAppointment {
-    display: inline-block;
-    padding: 10px 20px;
+  .container h3 {
     margin-top: 20px;
-    text-align: center;
-    text-decoration: none;
-    color: #fff;
-    background-color: #00273f;
-    border-radius: 5px;
+    margin-bottom: 20px;
   }
-  
-  .bookAppointment:hover {
-    background-color: #216b88;
-  }
-  
-  
-  
-  @media (max-width: 1080px) {
-  
-    .benefits{
-      flex-direction: column;
-    }
-    .benefit{
-      width: 100%;
-    }
-  }
-  
-    .container h2 {
-      color: #00273f;
-      margin-top: 50px;
-      margin-bottom: 80px;
-      text-align: center;
-    }
-  
-    .container h3 {
-      margin-top: 50px;
-      margin-bottom: 80px;
-      text-align: center;
-      color: #00273f;
-    }
-    
-  
+
   .header h1 {
-    color: #e8c47c;
-    margin-top: 20px;
-    margin-bottom: 50px;
+    font-size: 26px;
   }
-  
-  @media (max-width: 400px) {
-    .container h2 {
-      font-size: 20px;
-      margin-top: 10px;
-      margin-bottom: 40px;
-    }
-    .container h3{
-      margin-top: 40px;
-      margin-bottom: 20px;
-    }
-  
-    .header h1 {
-      font-size: 26px;
-    }
-  }
-  
+}

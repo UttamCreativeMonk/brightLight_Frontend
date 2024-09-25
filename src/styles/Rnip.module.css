@@ -48,7 +48,7 @@
   
   .bannerHeadingRotatePara p {
     text-align: left;
-    padding-bottom: 24px;
+    padding-bottom: 18px;
     font-size: 30px;
   }
   
@@ -129,18 +129,18 @@
     max-width: 1440px;
     margin: 0 auto;
     padding: 20px;
-    font-family: Arial, sans-serif;
+text-align: center;
   }
   
   .header {
     text-align: center;
-    margin-bottom: 50px;
-    margin-top: 50px;
+    margin-bottom: 20px;
+    margin-top: 20px;
   }
   
   .header h1 {
-    font-size: 2.5rem;
-    color: #00273f;
+    font-size: 2.1rem;
+    color: #e8c47c;
   }
   
   .content {
@@ -155,13 +155,14 @@
   
   .table th, .jobOfferTable th, .languageTable th,
   .table td, .jobOfferTable td, .languageTable td {
-    border: 1px solid #ddd;
+    border: 1px solid #00273f;
     padding: 8px;
     text-align: left;
   }
   
   .table th, .jobOfferTable th, .languageTable th {
     background-color: #f4f4f4;
+    color: #00273f;
     font-weight: bold;
   }
   
@@ -181,8 +182,8 @@
    */
 
    .container h2{
-    margin-top: 50px;
-    margin-bottom: 80px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     text-align: center;
    }
 
@@ -193,6 +194,6 @@
     }
     .container h2{
       margin-top: 10px;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
     }
    }

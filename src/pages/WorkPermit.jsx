@@ -1,4 +1,4 @@
-import React, { useState ,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../styles/WorkPermit.module.css";
 import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
@@ -22,28 +22,26 @@ let WorkPermit = () => {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
-
-  
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     fetch("https://brightlight-node.onrender.com/work-meta")
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => {
-      if (data) {
-        setMetaData(data[0]);
-      }
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-  },[])
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   return (
     <>
-<Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle
@@ -81,7 +79,7 @@ let WorkPermit = () => {
           content={
             metaData?.metaKeywords
               ? metaData?.metaKeywords
-              : "About Us, Brightlight Immigration, Immigration Services, Mission, Team"
+              : "Brightlight Immigration, Immigration Services, Mission, Team"
           }
         />
       </Helmet>
@@ -183,11 +181,11 @@ let WorkPermit = () => {
         </main>
       </div>
 
-      <div id="testimonials">
-        <Testimonials />
-      </div>
       <div id="faqs">
         <FAQ />
+      </div>
+      <div id="testimonials">
+        <Testimonials />
       </div>
       <div id="blogs">
         <RecentBlogs />

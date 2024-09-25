@@ -48,7 +48,7 @@
   
   .bannerHeadingRotatePara p {
     text-align: left;
-    padding-bottom: 24px;
+    padding-bottom: 18px;
     font-size: 30px;
   }
   
@@ -121,6 +121,7 @@
     width: 1440px;
     margin: 0 auto;
     padding: 20px;
+    text-align: center;
   }
   
   /* Header */
@@ -143,13 +144,13 @@
   
   /* Sections */
   .section {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
   .section h3 {
     font-size: 2em;
-    margin-top: 50px;
-    margin-bottom: 80px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     color: #00273f;
     text-align: center;
   }
@@ -171,12 +172,13 @@
   }
   
   .table th, .table td {
-    border: 1px solid #ddd;
+    border: 1px solid #00273f;
     padding: 8px;
   }
   
   .table th {
     background-color: #f4f4f4;
+    color: #00273f;
   }
   
   /* Call to Action */
@@ -193,16 +195,19 @@
     cursor: pointer;
     border-radius: 5px;
     margin: 10px;
+    display: block;
+    margin: auto;
   }
   
   .button:hover {
-    background-color: #0056b3;
+    opacity: 0.9;
+    text-decoration: none;
   }
-  
+
   /* Testimonials and Why Choose Us */
 
   .occupationList h4{
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 20px;
   }
 
@@ -238,7 +243,7 @@
 
     .section h3 {
       font-size: 20px;
-      margin-top: 80px;
+      margin-top: 20px;
     }
 
     .header h1 {
@@ -250,7 +255,7 @@
       margin-top: 30px;
     }
     .occupationList h4{
-      margin-top: 40px;
+      margin-top: 20px;
       margin-bottom: 20px;
     }
 
