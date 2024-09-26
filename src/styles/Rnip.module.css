@@ -166,24 +166,10 @@ text-align: center;
     font-weight: bold;
   }
   
-  /* h2 {
-    font-size: 1.8rem;
-    color: #444;
-    margin-top: 20px;
-  }
-  
-  ol, ul {
-    margin: 10px 0;
-  }
-  
-  ol li, ul li {
-    margin-bottom: 10px;
-  }
-   */
 
    .container h2{
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     text-align: center;
    }
 

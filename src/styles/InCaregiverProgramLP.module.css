@@ -139,7 +139,7 @@
 
 .header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 
 .header h1 {
@@ -230,6 +230,11 @@
   text-decoration: none;
 }
 
+.eligibility h4{
+  font-size: 20px;
+  margin-top: 30px;
+}
+
 @media (max-width: 1080px) {
   .benefits {
     flex-direction: column;
@@ -241,14 +246,14 @@
 
 .container h2 {
   color: #00273f;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 15px;
   text-align: center;
 }
 
 .container h3 {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 15px;
   text-align: center;
   color: #00273f;
 }

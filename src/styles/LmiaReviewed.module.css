@@ -126,10 +126,11 @@
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
+  text-align: center;
 }
 
 .header {
@@ -178,6 +179,7 @@
 .benefit ul {
   list-style-type: disc;
   margin-left: 20px;
+  list-style-type: none;
 }
 
 .pathways {
@@ -207,6 +209,7 @@
 .applicationProcess ul {
   list-style-type: disc;
   margin-left: 20px;
+  list-style-type: none;
 }
 
 .bookAppointment {
@@ -227,10 +230,6 @@
   opacity: 0.9;
   text-decoration: none;
 }
-/* 
-.container h2{
-  text-align: center;
-} */
 
 @media (max-width: 1080px) {
   .benefits {

@@ -129,6 +129,9 @@
     padding: 20px;
     text-align: center;
   }
+  .container ul{
+    list-style-type: none;
+  }
   
   .title {
     font-size: 2.1em;
@@ -214,7 +217,7 @@
 
   .subheading {
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   .container h2{
@@ -225,8 +228,8 @@
   }
 
   .container h3{
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
 
   }
 

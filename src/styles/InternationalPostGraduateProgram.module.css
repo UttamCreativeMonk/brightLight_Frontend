@@ -52,7 +52,6 @@
     font-size: 30px;
   }
   
-
   .bannerHeadingRotatePara p {
     cursor: pointer;
   }
@@ -161,16 +160,7 @@
     font-size: 1.5em;
     margin-top: 10px;
   }
-/*   
-  ul {
-    list-style-type: disc;
-    padding-left: 20px;
-  }
-  
-  ol {
-    padding-left: 20px;
-  }
-   */
+
   .button {
     background-color: #00273f;
     color: white;
@@ -211,12 +201,15 @@
 
 
   .section h2{
-    margin-top: 20px;
-    margin-bottom: 20px;
+
+    margin-bottom: 5px;
   }
   .section li{
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  .sectionLi {
+    text-align: start;
   }
 
   @media (max-width: 500px) {

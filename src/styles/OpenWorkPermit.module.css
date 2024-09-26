@@ -172,6 +172,7 @@
     font-size: 1em;
     color: #5a5454;
     margin-top: 10px; 
+    list-style-type: none;
   }
   
   .categories {
@@ -194,12 +195,7 @@
   .section .button:hover {
    opacity: 0.9;
   }
-/*   
-  ul {
-    list-style-type: disc;
-    margin-left: 20px;
-  }
-   */
+
 
   .bannerHeadingRotatePara p{
     color: white;

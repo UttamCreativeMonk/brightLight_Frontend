@@ -138,13 +138,16 @@
     margin-bottom: 30px;
     margin-top: 30px;
   }
+  .container ul{
+    list-style-type: none;
+  }
   
   .subtitle {
     font-size: 1.5rem;
     font-weight: bold;
     color: #00273f; /* Dark blue color */
     margin-top: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 
   .subtitle h2{

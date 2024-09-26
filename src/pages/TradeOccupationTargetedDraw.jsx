@@ -41,7 +41,7 @@ const TradeOccupationTargetedDraw = () => {
               <p onClick={() => scrollToSection("about-program")}>About the Program</p>
               <p onClick={() => scrollToSection("eligible")}>Eligible</p>
               <p onClick={() => scrollToSection("trade-occupations-category")}>Trade Occupations Category</p>
-              <p onClick={() =>  scrollToSection("criteria-trade-occupations-category") }>Criteria Trade Occupation</p>
+              <p onClick={() =>  scrollToSection("criteria-trade-occupations-category")}>Criteria Trade Occupation</p>
               <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
               <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>

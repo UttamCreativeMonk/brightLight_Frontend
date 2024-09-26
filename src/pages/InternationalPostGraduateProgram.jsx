@@ -24,8 +24,6 @@ const InternationalPostGraduateProgram = () => {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
-
-  
   };
 
   useEffect(()=>{
@@ -111,8 +109,6 @@ const InternationalPostGraduateProgram = () => {
               <p onClick={() => scrollToSection("benefits")}>Benefits</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
               <p onClick={() => scrollToSection("employer_requirements")}>Employer Requirements</p>
-              {/* <p onClick={() => scrollToSection("bcpnp_calculator")}>BCPNP Calculator</p> */}
-              {/* <p onClick={() => scrollToSection("process")}>Process</p> */}
               <p onClick={() => scrollToSection("how-to-apply")}> How to Apply? </p>
               <p onClick={() => scrollToSection("book-appointment")}> Book Appointment </p>
               <p onClick={() => scrollToSection("testimonials")}>Testimonials </p>
@@ -225,7 +221,7 @@ const InternationalPostGraduateProgram = () => {
         </section>
         <section className={styles.section} id="how-to-apply">
           <h2>Application Procedure</h2>
-          <ol>
+          <ol  className={styles.sectionLi}>
             <li>
               <strong>Eligibility and Application Submission:</strong> The
               stream is open for applications at any time. Submit an application

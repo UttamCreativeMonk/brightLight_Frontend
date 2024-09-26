@@ -28,7 +28,6 @@ const PrioritiesProgram = () => {
         <div className={styles.banner}>
           <header className={styles.header}>
             <h1>British Columbia Provincial Nominee Program (BC PNP)</h1>
-            <h2>Targeted Draws for Program Priorities Occupations</h2>
           </header>
 
           <div

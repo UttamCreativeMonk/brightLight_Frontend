@@ -44,21 +44,11 @@ const EntryLevelSemiSkilled = () => {
               </p>
               <p onClick={() => scrollToSection("key-points")}>Key Points</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>
-                Refusal Reasons
-              </p>
-              <p onClick={() => scrollToSection("book-appointment")}>
-                Book Appointment
-              </p>
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose Us?
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
+              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
+              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -180,26 +170,26 @@ const EntryLevelSemiSkilled = () => {
           Application Process for British Columbia Entry Level and Semi-Skilled Worker Stream
         </h2>
         <ul className={styles.list}>
-          <li className={styles.listItem}>Eligibility and Registration:
+          <li className={styles.listItem}> <h3>Eligibility and Registration:</h3>
             <ul className={styles.nestedList}>
               <li className={styles.nestedListItem}>Candidates who meet the minimum stream requirements can register a profile using BC’s online immigration portal.</li>
               <li className={styles.nestedListItem}>Once submitted, profiles are assessed, and candidates receive a score based on the BC Skills Immigration Ranking System.</li>
             </ul>
           </li>
-          <li className={styles.listItem}>Invitations and Application:
+          <li className={styles.listItem}><h3>Invitations and Application:</h3>
             <ul className={styles.nestedList}>
               <li className={styles.nestedListItem}>The highest-ranking candidates are invited to apply to the stream during periodic intakes.</li>
               <li className={styles.nestedListItem}>Upon receiving an invitation, candidates must submit a complete application within 30 days.</li>
             </ul>
           </li>
-          <li className={styles.listItem}>Provincial Nomination and Work Permit:
+          <li className={styles.listItem}><h3>Provincial Nomination and Work Permit:</h3>
             <ul className={styles.nestedList}>
               <li className={styles.nestedListItem}>If the application is approved, the candidate receives a provincial nomination for permanent residence from BC.</li>
               <li className={styles.nestedListItem}>Candidates not already working for a BC employer can request a letter of support for a temporary work permit. This allows them to work in Canada while their permanent residence application is processed.</li>
               <li className={styles.nestedListItem}>Applying for a work permit with a province’s nomination letter is a separate application to IRCC.</li>
             </ul>
           </li>
-          <li className={styles.listItem}>Official Application for Permanent Residence:
+          <li className={styles.listItem}><h3>Official Application for Permanent Residence:</h3>
             <ul className={styles.nestedList}>
               <li className={styles.nestedListItem}>After receiving the provincial nomination, the applicant has six months to submit an official application for permanent residence.</li>
               <li className={styles.nestedListItem}>The applications are now submitted online.</li>

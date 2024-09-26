@@ -136,23 +136,23 @@
 
 .container h2 {
   color: #00273f;
-  margin-top: 20px;
-  margin-bottom: 20px;
+
+  margin-bottom: 10px;
   text-align: center;
 }
 .header {
   text-align: center;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   color: #e8c47c;
 }
 
 .pathway a {
   background-color: #00273f;
   color: white;
-  padding: 10px 10px;
+  padding: 10px 15px;
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 15px;
 }
 .pathway a:hover {
   text-decoration: none;
@@ -160,12 +160,12 @@
 }
 
 .pathway p {
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
    .container h2{
-    margin-top: 20px;
+
     margin-bottom: 20px;
     text-align: center;
   }

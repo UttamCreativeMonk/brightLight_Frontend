@@ -7,6 +7,7 @@
     padding: 50px 0px;
     padding-top: 200px;
   }
+
   .banner {
     width: 1440px;
     margin: auto;
@@ -139,15 +140,15 @@
   
   .title {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
   .title h1 {
     font-size: 2.5em;
     color: #e8c47c;
     text-align: center;
-    margin-top: 50px;
-    margin-bottom: 80px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
   
   .mainContent {
@@ -161,23 +162,23 @@
   .section h2 {
     font-size: 2em;
     color: #00273f;
-    margin-top: 50px;
-    margin-bottom: 80px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     text-align: center;
   }
   
   .section h3 {
     font-size: 1.5em;
     color: #00273f;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
     text-align: center;
   }
   .subheading{
-    font-size: 1.5em;
-    color: #00273f;
-    margin-top: 30px;
-    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #666;
+    margin-top: 15px;
+    margin-bottom: 5px;
     text-align: center;
   }
   .section p {
@@ -282,16 +283,28 @@
   
   .container h2 {
     color: #00273f;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 40px;
+    margin-bottom: 15px;
   }
   
+  .container ul{
+    list-style-type: none;
+  }
   .container h1 {
     color: #e8c47c;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
   }
+  .listStrong{
+    text-align: start;
+  }
+  .listStrong strong{
+    color: #666;
+  }
+  .list li{
+    margin-top: 10px;
   
+  }
   @media (max-width: 400px) {
     .container h2 {
       font-size: 20px;

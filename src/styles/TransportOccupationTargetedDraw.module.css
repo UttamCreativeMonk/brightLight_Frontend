@@ -129,7 +129,9 @@
     padding: 20px;
     text-align: center;
   }
-  
+  .container ul{
+    list-style-type: none;
+  }
   .heading {
     font-size: 2.1rem;
     font-weight: bold;
@@ -154,21 +156,6 @@
     margin-bottom: 15px;
     color: #00273f;
   }
-/*   
-  p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #333;
-  }
-  
-  ol, ul {
-    margin-left: 20px;
-  }
-  
-  ul li {
-    margin-bottom: 10px;
-  }
-   */
   a.link {
     color: #0056b3;
     text-decoration: none;
@@ -229,6 +216,10 @@
     font-size: 1rem;
     line-height: 1.6;
     color: #333;
+  }
+  .container h2 {
+    margin-top: 10px;
+    margin-bottom: 5px;
   }
   
 @media (max-width: 400px) {

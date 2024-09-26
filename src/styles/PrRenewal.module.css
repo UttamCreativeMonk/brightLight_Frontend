@@ -197,11 +197,13 @@
 }
 .section li {
   text-align: center;
+  list-style-type: none;
 }
 
 .container li {
   margin-top: 10px;
   text-align: center;
+  list-style-type: none;
 }
 
 @media (max-width: 400px) {

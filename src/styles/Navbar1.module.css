@@ -303,16 +303,14 @@
 .servicesDropdown a {
   display: block;
   margin-top: 10px;
+  width: 100%;
   color: #132f46;
+  font-size: 14px;
 }
 
 .servicesDropdown a:first-child :not(.relativeDiv) {
   margin-top: 0;
 }
-
-/* .permanentNestedSection a:first-child {
-  margin-top: 0;
-} */
 
 .showServicesDropdown {
   top: 30px;
@@ -399,13 +397,13 @@
   opacity: 1;
   visibility: visible;
   top: 0px;
-  left: 180px;
+  left: 150px;
 }
 .permanentNestedSection.showNested {
   opacity: 1;
   visibility: visible;
   top: 0px;
-  left: 180px;
+  left: 150px;
 }
 
 .arrow {
@@ -422,18 +420,18 @@
   transition: 0.3s color ease-in-out;
 }
 .dropdownArrow {
-  margin-left: 5px; /* Adjust as needed */
+  margin-left: 5px; 
 }
 
 .categoryBasedDropdown {
-  display: none; /* Hide by default */
+  display: none; 
 }
 
 .showNested {
-  display: block; /* Show when active */
-  position: absolute; /* Position as needed */
-  background-color: white; /* Adjust background */
-  z-index: 1000; /* Ensure it’s on top */
+  display: block;
+  position: absolute; 
+  background-color: white; 
+  z-index: 1000; 
 }
 
 @media all and (max-width: 1439px) {

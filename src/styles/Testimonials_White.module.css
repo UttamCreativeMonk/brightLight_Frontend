@@ -17,7 +17,7 @@
   text-align: center;
   color: #132f46;
   font-size: 70px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 .googleImageSection {
@@ -25,7 +25,7 @@
   align-items: center;
   justify-content: center;
   gap: 50px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 .googleImageSection img {
@@ -124,7 +124,7 @@
 }
 
 .testimonialsVideoSection {
-  margin: 100px 0px;
+  margin: 50px 0px;
 }
 
 .testimonialsVideoSection iframe {
@@ -349,7 +349,7 @@
 
 @media all and (max-width: 415px) {
   .testimonialsContentSection h1{
-    font-size: 40px;
+    font-size: 31px;
   }
   .googleImageSection img{
     width: 120px;

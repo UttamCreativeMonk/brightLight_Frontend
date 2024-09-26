@@ -110,7 +110,7 @@
   }
   
   .logo {
-    width: 100px; /* Adjust as needed */
+    width: 100px;
     height: auto;
     animation: 3s brightness ease-in-out infinite;
     transition: 0.3s all ease-in-out;
@@ -134,6 +134,13 @@
     }
     100% {
       transform: translateY(-10px);
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .logo {
+      width: 80px;
+
     }
   }
   

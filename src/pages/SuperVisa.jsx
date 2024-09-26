@@ -195,20 +195,20 @@ const SuperVisa = () => {
         <section className={styles.applicationProcess} id="how-to-apply">
           <h2 className={styles.subheading}>How to Apply</h2>
           <ol>
-            <li>
+            <li>-
               Check your income requirements to ensure you meet the latest
               standards.
             </li>
-            <li>
+            <li>-
               Obtain upfront medical clearance from a doctor authorized by IRCC.
             </li>
-            <li>
+            <li>-
               Secure medical insurance that complies with IRCC guidelines.
             </li>
-            <li>
+            <li>-
               Complete all required documents for the Super Visa application.
             </li>
-            <li>Submit your Super Visa application.</li>
+            <li>- Submit your Super Visa application.</li>
           </ol>
         </section>
 

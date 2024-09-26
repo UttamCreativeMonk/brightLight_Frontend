@@ -35,19 +35,13 @@ const PathwaysForCaregiver = () => {
           >
             <div
               className={styles.bannerHeadingRotate}
-              onClick={toggleDropdown}
-            >
+              onClick={toggleDropdown}>
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
-
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose Us?
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}> Why Choose Us?</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -126,16 +120,16 @@ const PathwaysForCaregiver = () => {
           How to apply for Pathways for Caregivers?
         </h2>
         <ol className={styles.list}>
-          <li>
+          <li className={styles.listOl}>
             Select the right NOC occupation as per your qualifications - HCCP or
             HSWP
           </li>
-          <li>
+          <li className={styles.listOl}>
             Choose the right pathway for yourself – temporary pathway is only
             available to individuals who are already on a work permit or study
             permit. Permanent pathways are available to all.
           </li>
-          <li>
+          <li className={styles.listOl}>
             Check each pathway page for eligibility criteria and application
             process.
           </li>

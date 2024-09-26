@@ -192,7 +192,7 @@ opacity: 0.9;
 .container h2 {
   color: #00273f;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   text-align: center;
 }
 
@@ -206,7 +206,7 @@ opacity: 0.9;
   .container h2 {
     font-size: 20px;
     margin-top: 10px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 
   .heading {

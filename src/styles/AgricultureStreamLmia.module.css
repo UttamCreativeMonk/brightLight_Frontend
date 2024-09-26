@@ -170,6 +170,7 @@
 .section ul {
   list-style-type: disc;
   margin-left: 10px;
+  list-style-type: none;
 }
 
 .section ol {
@@ -179,6 +180,7 @@
 
 .section li {
   margin-top: 20px;
+  list-style-type: none;
 }
 
 .section .table {

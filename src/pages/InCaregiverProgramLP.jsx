@@ -140,7 +140,7 @@ const InCaregiverProgramLP = () => {
           </h4>
           <div className={styles.categories} id="categories">
             <div className={styles.category}>
-              <h5>1. Caregivers for children</h5>
+              <h3>1. Caregivers for children</h3>
               <p>
                 This category includes positions such as childcare provider,
                 live-in caregiver, nanny that fall under NOC 44100. The children
@@ -148,7 +148,7 @@ const InCaregiverProgramLP = () => {
               </p>
             </div>
             <div className={styles.category}>
-              <h5>2. Caregivers for people with high medical needs</h5>
+              <h3>2. Caregivers for people with high medical needs</h3>
               <p>
                 This category includes workers who provide care to people with
                 the age of 65 years or over, people with disabilities, a chronic

@@ -1053,9 +1053,6 @@ const BCPNPCalculator = () => {
                   </div>
                 )}
               </div>
-              {/* <div className={styles.points}>
-              Points <input type="text" value={languageProficiencyPoints} readOnly />
-            </div> */}
             </div>
 
             {/* Section 10: Hourly Wage of the B.C. Job Offer */}
@@ -1143,9 +1140,7 @@ const BCPNPCalculator = () => {
                   </div>
                 )}
               </div>
-              <div className={styles.points}>
-                {/* Points <input type="text" value={employmentAreaPoints} readOnly /> */}
-              </div>
+              <div className={styles.points}></div>
             </div>
 
             {/* Section 12: Language Proficiency Region */}
@@ -1203,14 +1198,7 @@ const BCPNPCalculator = () => {
                   </div>
                 )}
               </div>
-              <div className={styles.points}>
-                {/* Points
-              <input
-                type="text"
-                value={languageProficiencyRegionPoints}
-                readOnly
-              /> */}
-              </div>
+              <div className={styles.points}></div>
             </div>
           </div>
 
@@ -1264,9 +1252,8 @@ const BCPNPCalculator = () => {
                         onClick={() =>
                           (window.location.href =
                             "https://api.leadconnectorhq.com/widget/booking/BVqmhNlxRMadz10ir6aM")
-                        }      
-                        className={styles.actionButton}
-                      >
+                        }
+                        className={styles.actionButton} >
                         <h2>RCIC Appointment</h2>
                         <p>
                           To find out if you are eligible for PR, under FSWP

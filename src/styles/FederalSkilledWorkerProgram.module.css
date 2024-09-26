@@ -142,7 +142,7 @@
 .refusalReasons,
 .support,
 .whyChooseUs {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   text-align: center;
   margin-top: 20px;
 }
@@ -165,7 +165,6 @@
 .table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
 }
 
 .table th,
@@ -226,8 +225,8 @@
 
 .subheading {
   color: #00273f;
-  margin-top: 50px;
-  margin-bottom: 80px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   text-align: center;
 }
 .container li{
@@ -239,7 +238,7 @@
   .container h2 {
     font-size: 20px;
     margin-top: 10px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 
   .heading {

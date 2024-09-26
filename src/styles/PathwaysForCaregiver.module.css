@@ -136,6 +136,9 @@
   box-sizing: border-box;
   text-align: center;
 }
+.container ul{
+  list-style-type: none;
+}
 
 .header {
   text-align: center;
@@ -209,7 +212,8 @@
 
 .applicationProcess ul {
   list-style-type: disc;
-  margin-left: 20px;
+  /* margin-left: 20px; */
+  margin-top: 10px;
 }
 
 .bookAppointment {
@@ -237,6 +241,17 @@
   margin-bottom: -50px;
 }
 
+.list a{
+  color: rgb(0, 119, 255);
+}
+
+.lastSubtitle{
+  margin-bottom: 0px;
+}
+.listOl{
+  margin-top: 10px;
+}
+
 @media (max-width: 1080px) {
   .lastSubtitle {
     width: 95%;
@@ -252,13 +267,13 @@
 
 .container h2 {
   color: #00273f;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .container h3 {
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .header h1 {
@@ -280,7 +295,7 @@
 .container h2 {
   color: #00273f;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   text-align: center;
 }
 

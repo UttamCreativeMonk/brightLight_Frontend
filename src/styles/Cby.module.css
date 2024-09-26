@@ -55,6 +55,11 @@
   .bannerHeadingRotatePara p {
     cursor: pointer;
   }
+  .eligibility h3,h4{
+    color: #333;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
   
   @media (max-width: 1450px) {
     .banner {

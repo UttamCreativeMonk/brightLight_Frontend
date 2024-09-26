@@ -143,14 +143,17 @@
   .whoCanApply ul, .eligibility ul, .refusalReasons ul {
     list-style: disc;
     padding-left: 20px;
+    list-style-type: none;
   }
   
   .whoCanApply li, .eligibility li, .refusalReasons li {
     margin-bottom: 10px;
+    list-style-type: none;
   }
   
   .applicationProcess ol {
     padding-left: 20px;
+       list-style-type: none;
   }
   
   .consultation a {

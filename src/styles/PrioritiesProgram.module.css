@@ -127,14 +127,14 @@
   /* Header */
   .header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
   .header h1 {
     font-size: 2.5em;
     margin: 0;
     color: #e8c47c;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   
   .header h2 {
@@ -149,8 +149,7 @@
   
   .section h3 {
     font-size: 2em;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     color: #00273f;
     text-align: center;
   }
@@ -183,7 +182,7 @@
   
   /* Call to Action */
   .callToAction {
-    text-align: left;
+    text-align: center;
   }
   
   .button {
@@ -212,14 +211,17 @@
   }
 
   .callToAction .button{
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   .callToAction ol{
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
+  .callToAction h3{
+    color: #333;
+  }
   @media (max-width: 1450px) {
     .banner {
       width: 95%;
@@ -243,7 +245,7 @@
 
     .section h3 {
       font-size: 20px;
-      margin-top: 20px;
+      margin-top: 5px;
     }
 
     .header h1 {
@@ -252,7 +254,7 @@
     
     .header h2 {
       font-size: 15px;
-      margin-top: 30px;
+      margin-top: 10px;
     }
     .occupationList h4{
       margin-top: 20px;
@@ -260,12 +262,12 @@
     }
 
     .callToAction .button{
-      margin-top: 30px;
-      margin-bottom: 30px;
+      margin-top: 10px;
+      margin-bottom: 10px;
     }
     .callToAction ol{
       margin-top: 20px;
-      margin-bottom: 20px;
+      margin-bottom: 5px;
     }
   
   }

@@ -152,8 +152,9 @@
 }
 
 .criteria h3{
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: #333;
 }
 
 .criteria ul {
@@ -179,7 +180,7 @@
 
 .contact {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .nocSection button {
@@ -217,8 +218,8 @@
 }
 
 .container h2{
-  margin-top: 20px;
-  margin-bottom: 20px;
+  /* margin-top: 20px; */
+  margin-bottom: 10px;
   text-align: center;
 }
 
@@ -226,7 +227,7 @@
   .container h2{
     font-size: 20px;
     margin-top: 10px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   .header h1 {
     font-size: 24px;

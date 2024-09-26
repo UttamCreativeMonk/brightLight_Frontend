@@ -144,14 +144,14 @@
 }
 
 /* Sections */
-.section {
+/* .section {
   margin-bottom: 20px;
-}
+} */
 
 .section h2 {
   font-size: 2em;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  margin-bottom: 10px;
+
   text-align: center;
   color: #00273f;
 }
@@ -161,7 +161,7 @@
   } */
 
 .section li {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 /* Buttons */
@@ -173,12 +173,15 @@
   color: white;
   cursor: pointer;
   border-radius: 5px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .button:hover {
   opacity: 0.9;
   text-decoration: none;
+}
+.sectionStrong{
+  color: #333;
 }
 
 @media (max-width: 1450px) {

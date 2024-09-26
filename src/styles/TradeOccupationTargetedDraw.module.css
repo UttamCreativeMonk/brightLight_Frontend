@@ -169,7 +169,13 @@
   ul li {
     margin-bottom: 10px;
   } */
-  
+
+  .eligibility ul{
+    list-style-type: none;
+  }
+  .container ul{
+    list-style-type: none;
+  }
   a.link {
     color: #0056b3;
     text-decoration: none;
@@ -233,8 +239,8 @@
 
 
   .container h2{
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 10px;
     text-align: center;
   }
 

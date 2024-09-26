@@ -99,29 +99,13 @@ const BcPnp = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
-                {" "}
-                About the Program
-              </p>
+              <p onClick={() => scrollToSection("about-program")}>About the Program </p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>
-                Refusal Reasons{" "}
-              </p>
-              <p onClick={() => scrollToSection("book-appointment")}>
-                {" "}
-                Book Appointment{" "}
-              </p>
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                {" "}
-                Why Choose Us?
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                {" "}
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
+              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
+              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -192,7 +176,7 @@ const BcPnp = () => {
             Employer must be established in BC with a physical presence.
           </li>
           <li className={styles.listItem}>
-            Business structures accepted:
+            <h3>Business structures accepted:</h3>
             <ul className={styles.nestedList}>
               <li className={styles.nestedListItem}>
                 Incorporated in B.C. or extra-provincially registered.
@@ -272,7 +256,7 @@ const BcPnp = () => {
                 Genuine recruitment efforts must be demonstrated.
               </li>
               <li className={styles.nestedListItem}>
-                Disqualifications:
+                <h3> Disqualifications:</h3>
                 <ul className={styles.nestedList}>
                   <li className={styles.nestedListItem}>
                     Employers involved in certain businesses (e.g., pornographic

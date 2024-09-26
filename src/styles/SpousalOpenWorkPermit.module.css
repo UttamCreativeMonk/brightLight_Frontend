@@ -184,6 +184,10 @@
   width: 100%;
   border-collapse: collapse;
 }
+.table {
+  width: 100%;
+
+}
 
 .eligibilityChart .table th,
 .table td {
@@ -241,7 +245,7 @@
   margin-bottom: 20px;
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 450px) {
   .container h2 {
     font-size: 20px;
     margin-top: 10px;
@@ -251,4 +255,7 @@
   .heading {
     font-size: 26px;
   }
+  .eligibilityChart th ,td {
+font-size: 12px;
+}
 }

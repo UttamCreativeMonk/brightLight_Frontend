@@ -48,15 +48,6 @@ const FrancophoneMobilityProgram = () => {
               <p onClick={() => scrollToSection("work-permit-duration")}>
                 Work Permit Duration
               </p>
-              <p onClick={() => scrollToSection("family-members")}>
-                Family Members
-              </p>
-              <p onClick={() => scrollToSection("application-process")}>
-                Application Process
-              </p>
-              <p onClick={() => scrollToSection("work-permit-renewals")}>
-                Work Permit Renewals
-              </p>
               <p onClick={() => scrollToSection("how-to-apply")}>
                 How to Apply?
               </p>

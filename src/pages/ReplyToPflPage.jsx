@@ -189,18 +189,16 @@ const ReplyToPflPage = () => {
             </p>
           </section>
 
-          <section className={styles.section}>
-            <h2>Clients Testimonials</h2>
-            {/* Add video and written testimonials here */}
-          </section>
+
         </main>
       </div>
 
-      <div id="testimonials">
-        <Testimonials />
-      </div>
+
       <div id="faqs">
         <FAQ />
+      </div>
+      <div id="testimonials">
+        <Testimonials />
       </div>
       <div id="blogs">
         <RecentBlogs />

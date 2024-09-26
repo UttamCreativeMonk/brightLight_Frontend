@@ -157,16 +157,7 @@
     font-size: 1.5em;
     margin-top: 10px;
   }
-/*   
-  ul {
-    list-style-type: disc;
-    padding-left: 20px;
-  }
-  
-  ol {
-    padding-left: 20px;
-  } */
-  
+
   .button {
     background-color: #00273f;
     color: white;
@@ -175,7 +166,6 @@
     font-size: 1em;
     cursor: pointer;
     border-radius: 5px;
-    margin-top: 10px;
   }
   
   .button:hover {
@@ -184,18 +174,16 @@
   }
 
   .section h2{
-    margin-top: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     text-align: center;
   }
   
   .criteria h3{
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     /* text-align: center; */
   }
 .section li{
-  margin-top: 24px;
+  margin-top: 10px;
 }
   
   @media (max-width: 1450px) {

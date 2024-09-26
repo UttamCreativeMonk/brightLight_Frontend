@@ -272,10 +272,7 @@ const FamilyReunificationSponsorship = () => {
           </p>
         </section>
 
-        <section className={styles.process}>
-          <h2>Here’s How We Can Help You</h2>
-          <p>[Insert the process section content from the homepage here]</p>
-        </section>
+
       </div>
 
       <div id="faqs">

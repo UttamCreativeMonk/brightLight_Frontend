@@ -264,11 +264,11 @@ img {
 @media all and (max-width: 900px) {
   .navigation_button_02 .swiper-button-prev,
   .swiper-rtl .swiper-button-next {
-    left: 38% !important;
+    left: 30% !important;
   }
 
   .navigation_button_02 .swiper-button-next,
   .swiper-rtl .swiper-button-prev {
-    right: 38% !important;
+    right: 30% !important;
   }
 }

@@ -68,25 +68,20 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           Canada offers a pathway to permanent residency in Canada for
           individuals who provide the essential care.
         </p>
-        <h2 className={styles.subtitle}>
+        {/* <h2 className={styles.subtitle}>
           Here are the permanent residence pathways available for caregivers:
         </h2>
         <ul className={styles.list}>
           <li>
-            <a className={styles.link} href="#categoryA">
-              Category A – Gaining experience
-            </a>{" "}
+
             for Home Child-Care Provider Pilot and Home Support Worker Pilot -
             Scroll to section Below
           </li>
           <li>
-            <a className={styles.link} href="#categoryB">
-              Category B – Direct to permanent residence
-            </a>{" "}
             for Home Child-Care Provider Pilot and Home Support Worker Pilot -
             Scroll to section Below
           </li>
-        </ul>
+        </ul> */}
         <h2 className={styles.subtitle} id="benifits">
           Benefits of Permanent Residence Pathways available for Caregivers:
         </h2>
@@ -117,7 +112,7 @@ const PermanentResidencePathwaysCaregiversLP = () => {
         <h3 id="categoryA" className={styles.subheading}>
           1. Qualifying Occupations:
         </h3>
-        <ul className={styles.list}>
+        <ul className={styles.listStrong}>
           <li>
             <strong>NOC 44100: Home childcare providers</strong> - If you care
             for the well-being and physical and social development of children,

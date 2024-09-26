@@ -167,6 +167,7 @@
   
   .benefitList li {
     margin-bottom: 10px;
+    list-style-type: none;
   }
   
   .programs {
@@ -216,10 +217,12 @@ text-decoration: none;
   
   .stepList li {
     margin-bottom: 10px;
+    list-style-type: none;
   }
   
   .refusals {
     margin-bottom: 20px;
+    list-style-type: none;
   }
   
   .refusalList {
@@ -228,6 +231,7 @@ text-decoration: none;
     max-width: 800px;
     padding: 0;
     font-size: 1.1rem;
+    list-style-type: none;
   }
   
   .callToAction {

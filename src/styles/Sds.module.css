@@ -174,7 +174,7 @@
 .countryTable td,
 .fundsTable td,
 .languageTable td {
-  border: 1px solid #ddd;
+  border: 1px solid #00273f;
   padding: 10px;
   text-align: left;
   align-self: center;
@@ -208,7 +208,6 @@
 .container h2 {
   color: #00273f;
   margin-top: 20px;
-  margin-bottom: 20px;
   text-align: center;
 }
 
@@ -219,8 +218,8 @@
 }
 
 .applicationProcess h3 {
-  margin-top: 30px;
-  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 5px;
   color: #00273f;
 }
 .countryTable th ,tr{
@@ -238,7 +237,7 @@
 .countryTable td {
   text-align: center;
   padding: 8px; /* Optional: for spacing */
-  border: 1px solid #ddd; /* Optional: for table border */
+  border: 1px solid #00273f; /* Optional: for table border */
 }
 
 
@@ -246,7 +245,7 @@
   .container h2 {
     font-size: 20px;
     margin-top: 10px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 
   .heading {

@@ -158,6 +158,7 @@
   .list {
     list-style-type: disc;
     margin-left: 20px;
+    list-style-type: none;
   }
   
   .paragraph {

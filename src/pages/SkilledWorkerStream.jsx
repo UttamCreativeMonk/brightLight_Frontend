@@ -239,7 +239,7 @@ const SkilledWorkerStream = () => {
           <h2>Application Process for BC Skilled Worker Stream</h2>
           <ol>
             <li>
-              <strong>Expression of Interest (EOI) System:</strong>
+              <strong className={styles.sectionStrong}>Expression of Interest (EOI) System:</strong>
               <ul>
                 <li>
                   Candidates meeting minimum requirements register a profile on
@@ -252,7 +252,7 @@ const SkilledWorkerStream = () => {
               </ul>
             </li>
             <li>
-              <strong>Profile Assessment and Ranking:</strong>
+              <strong className={styles.sectionStrong}>Profile Assessment and Ranking:</strong>
               <ul>
                 <li>
                   Submitted profiles are scored and ranked using the BC Skills
@@ -265,7 +265,7 @@ const SkilledWorkerStream = () => {
               </ul>
             </li>
             <li>
-              <strong>Invitation to Apply (ITA):</strong>
+              <strong className={styles.sectionStrong}>Invitation to Apply (ITA):</strong>
               <ul>
                 <li>
                   Invited candidates must submit a complete application within
@@ -288,7 +288,7 @@ const SkilledWorkerStream = () => {
               </ul>
             </li>
             <li>
-              <strong>Express Entry Applicants:</strong>
+              <strong className={styles.sectionStrong}>Express Entry Applicants:</strong>
               <ul>
                 <li>
                   If applying through Express Entry, receive a nomination
@@ -309,7 +309,7 @@ const SkilledWorkerStream = () => {
               </ul>
             </li>
             <li>
-              <strong>Skills Immigration Applicants:</strong>
+              <strong className={styles.sectionStrong}>Skills Immigration Applicants:</strong>
               <ul>
                 <li>If applying through regular Skills Immigration system:</li>
                 <li>Prepare a paper-based application.</li>

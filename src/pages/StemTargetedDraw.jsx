@@ -103,7 +103,7 @@ const StemTargetedDraw = () => {
             <li>
               Choose Your Program: There are three programs you can be eligible
               for to join the Express Entry pool:
-              <ul>
+              <ul className={styles.subheadingLink}>
                 <li>
                   <Link
                     to="/federal-skilled-worker-program"
