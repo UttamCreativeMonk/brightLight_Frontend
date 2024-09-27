@@ -9,6 +9,10 @@
   display: none;
 }
 
+*::selection{
+  background-color: #23557e;
+  color: #ffffff;
+}
 html,
 body {
   overflow-x: hidden;

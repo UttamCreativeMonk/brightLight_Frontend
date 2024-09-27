@@ -41,7 +41,12 @@ const OdometerComponent = ({ value }) => {
     }
 
     if (odometerInstance && isVisible) {
-      odometerInstance.update(value); // Update the value when visible
+      if(value){
+        odometerInstance.update(value);
+      }
+      else{
+        odometerInstance.update(10357);
+      }
     }
   }, [isVisible, value, odometerInstance]);
 

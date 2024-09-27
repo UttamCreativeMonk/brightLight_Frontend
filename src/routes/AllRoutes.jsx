@@ -88,6 +88,9 @@ import WorkPermit from "../pages/WorkPermit";
 import Login from "../components/Login";
 import PrivateRoute from "../components/PrivateRoute";
 import Immigration from "../pages/Immigration";
+import HealthcareTargetedDraw from "../pages/HealthcareTargetedDraw";
+import SpouseInland from "../pages/SpouseInland";
+import SpouseOutland from "../pages/SpouseOutland";
 
 let AllRoutes = () => {
   return (
@@ -136,6 +139,10 @@ let AllRoutes = () => {
       <Route
         path="/health-authority-stream"
         element={<HealthAuthorityStream />}
+      />
+            <Route
+        path="/healthcare-targeted-draw"
+        element={<HealthcareTargetedDraw />}
       />
       <Route
         path="/entry-level-semi-skilled"
@@ -263,6 +270,15 @@ let AllRoutes = () => {
       <Route
         path="/permanent-residence-pathways-caregivers-lp"
         element={<PermanentResidencePathwaysCaregiversLP />}
+      />
+            <Route
+        path="/spouse-inland"
+        element={<SpouseInland />} />
+
+
+<Route
+        path="/spouse-outland"
+        element={<SpouseOutland />}
       />
 
       <Route path="/immigration-tools" element={<Immigration />} />

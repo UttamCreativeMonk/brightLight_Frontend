@@ -52,6 +52,7 @@ import BCPNP from "../admin_sections/BCPNP";
 import BCPNPMeta from "../admin_sections/BCPNPMeta";
 import ExpressEntry from "../admin_sections/Express";
 import ExpressMeta from "../admin_sections/ExpressMeta";
+import AboutAchievement from "../admin_sections/AboutAchievements";
 
 let Admin = () => {
   let { logout } = useAuth();
@@ -519,7 +520,9 @@ let Admin = () => {
             )}
 
             {activePage === "about" && activeSection === "vision" && <Vision />}
-
+            {activePage === "about" && activeSection === "aboutAchievement" && (
+              <AboutAchievement />
+            )}
             {activePage === "about" && activeSection === "pillar" && (
               <Pillars />
             )}

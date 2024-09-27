@@ -528,19 +528,19 @@ let About = () => {
           <div className={styles.ourAchivementCardParent}>
             <div className={styles.ourAchivementCard}>
               <img src={VisaImg} />
-              <h2><Odometer value={10257}/><span className={styles.ourAchivementCardPlus}>+</span></h2>
+              <h2><Odometer value={achievements?.achievement1Numbers}/><span className={styles.ourAchivementCardPlus}>+</span></h2>
               <p>{achievements?.achievement1Heading}</p>
             </div>
 
             <div className={styles.ourAchivementCard}>
               <img src={TickBlue} />
-              <h2><Odometer value={10112}/><span className={styles.ourAchivementCardPlus}>+</span></h2>
+              <h2><Odometer value={achievements?.achievement2Numbers}/><span className={styles.ourAchivementCardPlus}>+</span></h2>
               <p>{achievements?.achievement2Heading}</p>
             </div>
 
             <div className={styles.ourAchivementCard}>
               <img src={SmileBlue} />
-              <h2><Odometer value={10121}/><span className={styles.ourAchivementCardPlus}>+</span></h2>
+              <h2><Odometer value={achievements?.achievement3Numbers}/><span className={styles.ourAchivementCardPlus}>+</span></h2>
               <p>{achievements?.achievement3Heading}</p>
             </div>
           </div>

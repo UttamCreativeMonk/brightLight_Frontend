@@ -80,7 +80,7 @@ let Immigration = () => {
 
   return (
     <>
-      <Navbar1 showBlue={true} />
+      <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.bannerMain}>
           <div className={styles.bannerHeading}>

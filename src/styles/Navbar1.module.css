@@ -47,11 +47,10 @@
   text-decoration: none;
 }
 
-.ancor a:hover{
+.ancor a:hover {
   color: #ffffff;
   text-decoration: none;
 }
-
 
 .mobileIcon {
   display: flex;
@@ -168,7 +167,7 @@
   margin-top: 0px;
 }
 
-.hideContactNumber{
+.hideContactNumber {
   opacity: 0;
   visibility: hidden;
   margin-top: -30px;
@@ -223,7 +222,7 @@
 .bottomSectionNavbar {
   position: absolute;
   top: auto;
-  bottom: -150px; 
+  bottom: -150px;
   transition: all 0.3s ease-in-out;
   z-index: 10;
 }
@@ -233,7 +232,7 @@
   height: auto;
   bottom: auto;
   top: 20px;
-  transition: all 0.3s ease-in-out; 
+  transition: all 0.3s ease-in-out;
 }
 
 .lowerFooterText {
@@ -297,20 +296,23 @@
   padding: 15px;
   background-color: white;
   z-index: 4;
-  
 }
 
 .servicesDropdown a {
   display: block;
-  margin-top: 10px;
   width: 100%;
-  color: #132f46;
+  margin-top: 10px;
   font-size: 14px;
+  color: #132f46;
 }
 
 .servicesDropdown a:first-child :not(.relativeDiv) {
   margin-top: 0;
 }
+
+/* .permanentNestedSection a:first-child {
+    margin-top: 0;
+  } */
 
 .showServicesDropdown {
   top: 30px;
@@ -415,23 +417,32 @@
   align-items: center;
   justify-content: space-between;
 }
-.secondNavbar a:hover{
+.secondNavbar a:hover {
   color: #dec18f;
   transition: 0.3s color ease-in-out;
 }
 .dropdownArrow {
-  margin-left: 5px; 
+  margin-left: 5px; /* Adjust as needed */
 }
 
 .categoryBasedDropdown {
-  display: none; 
+  display: none; /* Hide by default */
 }
 
 .showNested {
-  display: block;
-  position: absolute; 
-  background-color: white; 
-  z-index: 1000; 
+  display: block; /* Show when active */
+  position: absolute; /* Position as needed */
+  background-color: white; /* Adjust background */
+  z-index: 1000; /* Ensure it’s on top */
+}
+
+.dropdownContent {
+  padding: 0px 4px;
+}
+
+.dropdownContent .subDropdown {
+  width: 100%;
+  margin: auto;
 }
 
 @media all and (max-width: 1439px) {
@@ -469,7 +480,7 @@
 }
 
 @media all and (max-width: 1080px) {
-  .firstNavbar .ancor{
+  .firstNavbar .ancor {
     display: none;
   }
   .logoDesktop {
@@ -527,12 +538,13 @@
 
   .dropdownContent {
     display: none;
-    position: absolute;
+    /* position: absolute; */
     background-color: white;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     flex-direction: column;
+    margin-bottom: 20px;
   }
 
   .dropdownContent a {
@@ -551,9 +563,9 @@
   }
 
   /* .dropdown:hover .dropbtn {
-    background-color: #132f46;
-    color: white;
-  } */
+      background-color: #132f46;
+      color: white;
+    } */
 
   /*/ FIXING ALLIGNMENT OF SIDE-BAR // */
 
@@ -562,7 +574,7 @@
     flex-direction: column;
     padding: 20px;
     background-color: white; /* Lighter background for better contrast */
-    width: 250px; /* Fixed width for better alignment */
+    width: 300px; /* Fixed width for better alignment */
     height: 100vh; /* Full height sidebar */
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   }
@@ -589,7 +601,7 @@
     margin-bottom: 20px;
     color: #333;
   }
-  .closeBtn:hover{
+  .closeBtn:hover {
     color: rgb(223, 51, 51);
   }
 
@@ -617,9 +629,8 @@
 
   .dropdownContent {
     display: none;
-    position: absolute;
+    /* position: absolute; */
     background-color: white; /* White background for dropdown items */
-    /* min-width: 250px; Match width with sidebar */
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     flex-direction: column;
@@ -647,9 +658,9 @@
   }
 
   /* .dropdown:hover .dropbtn {
-    background-color: #132f46;
-    color: white;
-  } */
+      background-color: #132f46;
+      color: white;
+    } */
   .subDropdownContent,
   .subSubDropdownContent {
     display: none;
@@ -701,8 +712,8 @@
 .sidebar {
   position: fixed;
   top: 0;
-  right: -250px;
-  width: 250px;
+  right: -300px;
+  width: 300px;
   height: 100%;
   background-color: white;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
@@ -723,8 +734,9 @@
 .sidebar a {
   text-decoration: none;
   color: #132f46;
-  margin-bottom: 10px;
-  font-size: 15px;
+  margin-bottom: 1px;
+  font-size: 13px;
+  padding: 9px 5px;
 }
 
 .sidebar a:hover {
@@ -867,15 +879,15 @@
     font-size: 9px;
   }
   .calculatorIcon p {
-    font-size: 9px;
+    font-size: 13px;
   }
   .iconGearIcon {
-    width: 12px;
-    height: 12px;
+    width: 18px;
+    height: 18px;
   }
   .RightArrowIcon {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
   }
 
   .searchBar input {
@@ -908,7 +920,7 @@
   background-color: white;
   border: none;
   width: 100%;
-  padding: 10px;
+  padding: 5px 10px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
@@ -918,13 +930,15 @@
 
 .subSubDropdownContent {
   display: none;
-  position: absolute;
+  /* position: absolute; */
   top: 100%;
   left: 0;
   z-index: 1000;
   background-color: white;
   border: none;
-  padding: 10px;
+  padding: 5px 10px;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .subDropdown:hover .subDropdownContent,

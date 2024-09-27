@@ -52,7 +52,6 @@
     font-size: 30px;
   }
   
-
   .bannerHeadingRotatePara p {
     cursor: pointer;
   }
@@ -121,112 +120,76 @@
       text-align: center;
     }
   }
+  
 
 
-  .container {
+
+/* SpouseInland.module.css */
+
+
+
+.container {
     max-width: 1440px;
     margin: 0 auto;
     padding: 20px;
     text-align: center;
+}
+.container ul{
+    list-style-type: none;
+}
 
-  }
-  
-  .header {
-    text-align: center;
+.container h1 {
+    font-size: 2rem;
     margin-bottom: 20px;
-  }
-  
-  .whoCanApply, .eligibility, .applicationProcess, .refusalReasons, .consultation, .whyChooseUs, .testimonials, .faq, .blogs {
-    margin-bottom: 20px;
-  }
-  
-  .whoCanApply ul, .eligibility ul, .refusalReasons ul {
-    list-style: disc;
-    /* padding-left: 20px; */
-    list-style-type: none;
-  }
-  
-  .whoCanApply li, .eligibility li, .refusalReasons li {
-    margin-bottom: 10px;
-    list-style-type: none;
-  }
-  
-  .applicationProcess ol {
-    /* padding-left: 20px; */
-       list-style-type: none;
-  }
-  
-  .consultation a {
-    display: inline-block;
-    padding: 10px 15px;
-    font-size: 16px;
-    text-decoration: none;
-    color: white;
-    background-color: #00273f;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    margin-top: 10px;
-  }
-  
-  .consultation a:hover {
-  opacity: 0.9;
-  }
-  
-  .whyChooseUs, .blogs {
-    margin-bottom: 30px;
-  }
-  
-  .testimonials {
-    margin-bottom: 30px;
-  }
-  
-  .testimonials h2 {
-    margin-bottom: 20px;
-  }
-  
-  .videoTestimonials, .writtenTestimonials {
-    margin-bottom: 20px;
-  }
-  
-  .toggleButton {
-    display: inline-block;
-    padding: 10px 15px;
-    font-size: 16px;
-    text-decoration: none;
-    color: white;
-    background-color: #00273f;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: 50px;
-  }
-  
-  .toggleButton:hover {
-  opacity: 0.9;
-  }
-  
-  .container h2 {
-    color: #00273f;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .header h1{
     color: #e8c47c;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-  
-  @media (max-width: 400px) {
-    .container h2 {
-      font-size: 20px;
-      margin-top: 10px;
-      margin-bottom: 20px;
-    }
-  
-    .header h1{
-      font-size: 28px;
-    }
-  }
-  
+}
+
+.container h2 {
+    font-size: 1.5rem;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.container h3 {
+    font-size: 1.25rem;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.container p, ul, ol {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #00273f;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.button:hover {
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+.occupationTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.occupationTable th,
+.occupationTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.occupationTable th {
+    background-color: #f2f2f2;
+}

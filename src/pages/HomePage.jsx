@@ -742,7 +742,7 @@ let HomePage = () => {
             >
               <img src={achiementsData?.achievement1SVG} />
               <h1>
-                <Odometer value={10257} />+
+                <Odometer value={achiementsData?.achievement1Numbers} />+
               </h1>
               <p>{achiementsData?.achievement1Heading}</p>
             </div>
@@ -752,7 +752,7 @@ let HomePage = () => {
             >
               <img src={achiementsData?.achievement2SVG} />
               <h1>
-                <Odometer value={10112} />+
+                <Odometer value={achiementsData?.achievement2Numbers} />+
               </h1>
               <p>{achiementsData?.achievement2Heading}</p>
             </div>
@@ -762,7 +762,7 @@ let HomePage = () => {
             >
               <img src={achiementsData?.achievement3SVG} />
               <h1>
-                <Odometer value={10121} />+
+                <Odometer value={achiementsData?.achievement3Numbers} />+
               </h1>
               <p>{achiementsData?.achievement3Heading}</p>
             </div>

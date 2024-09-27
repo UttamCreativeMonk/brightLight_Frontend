@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/Navbar1.module.css";
 import { ReactComponent as IconGear } from "../assets/gearIcon.svg";
 import { ReactComponent as RightArrow } from "../assets/rightArrow.svg";
@@ -24,7 +24,7 @@ import hamBurgerIconWhite from "../assets/hamBurgerIconWhite.svg";
 import hamBurgerIconBlue from "../assets/hamBurgerIconBlue.svg";
 import whiteLogo from "../assets/brightlight-logo-white.png";
 
-const Navbar3 = (props) => {
+const Navbar1 = (props) => {
   const [inputValue, setInputValue] = useState("");
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevent the default form submission behavior
@@ -39,49 +39,6 @@ const Navbar3 = (props) => {
   const [isFederalSkilledProgramOpen, setIsFederalSkilledProgramOpen] =
     useState(false);
 
-  const [isFederalSkilledOpenTwo, setIsFederalSkilledOpenTwo] = useState(false);
-  const [isFederalSkilledProgramOpenTwo, setIsFederalSkilledProgramOpenTwo] =
-    useState(false);
-
-  const [isFederalSkilledOpenThree, setIsFederalSkilledOpenThree] =
-    useState(false);
-  const [isFederalSkilledProgramOpenFour, setIsFederalSkilledProgramOpenFour] =
-    useState(false);
-
-  const [isFederalSkilledProgramOpenFive, setIsFederalSkilledProgramOpenFive] =
-    useState(false);
-
-  const [isFederalSkilledProgramOpenSix, setIsFederalSkilledProgramOpenSix] =
-    useState(false);
-
-  const [
-    isFederalSkilledProgramOpenSeven,
-    setIsFederalSkilledProgramOpenSeven,
-  ] = useState(false);
-
-  const [
-    isFederalSkilledProgramOpenEight,
-    setIsFederalSkilledProgramOpenEight,
-  ] = useState(false);
-
-  const [isFederalSkilledProgramOpenNine, setIsFederalSkilledProgramOpenNine] =
-    useState(false);
-
-  const [isFederalSkilledProgramOpenTen, setIsFederalSkilledProgramOpenTen] =
-    useState(false);
-
-  const [isFederalSkilledProgramOpenEl, setIsFederalSkilledProgramOpenEl] =
-    useState(false);
-
-  const [isFederalSkilledProgramOpenTw, setIsFederalSkilledProgramOpenTw] =
-    useState(false);
-
-  const [isFederalSkilledProgramOpenTh, setIsFederalSkilledProgramOpenTh] =
-    useState(false);
-
-  const [isFederalSkilledProgramOpenFt, setIsFederalSkilledProgramOpenFt] =
-    useState(false);
-
   const toggleFederalSkilled = (e) => {
     e.preventDefault();
     setIsFederalSkilledOpen(!isFederalSkilledOpen);
@@ -90,59 +47,6 @@ const Navbar3 = (props) => {
   const toggleFederalSkilledProgram = (e) => {
     e.preventDefault();
     setIsFederalSkilledProgramOpen(!isFederalSkilledProgramOpen);
-  };
-  const toggleFederalSkilledProgramTwo = (e) => {
-    e.preventDefault();
-    setIsFederalSkilledProgramOpenTwo(!isFederalSkilledProgramOpenTwo);
-  };
-  const toggleFederalSkilledProgramThree = (e) => {
-    e.preventDefault();
-    setIsFederalSkilledOpenThree(!isFederalSkilledOpenThree);
-  };
-  const toggleFederalSkilledProgramFour = (e) => {
-    e.preventDefault();
-    setIsFederalSkilledProgramOpenFour(!isFederalSkilledProgramOpenFour);
-  };
-  const toggleFederalSkilledProgramFive = (e) => {
-    e.preventDefault();
-    setIsFederalSkilledProgramOpenFive(!isFederalSkilledProgramOpenFive);
-  };
-  const toggleFederalSkilledProgramSix = (e) => {
-    e.preventDefault();
-    setIsFederalSkilledProgramOpenSix(!isFederalSkilledProgramOpenSix);
-  };
-  const toggleFederalSkilledProgramSeven = (e) => {
-    e.preventDefault();
-    setIsFederalSkilledProgramOpenSeven(!isFederalSkilledProgramOpenSeven);
-  };
-  const toggleFederalSkilledProgramEight = (e) => {
-    e.preventDefault();
-    setIsFederalSkilledProgramOpenEight(!isFederalSkilledProgramOpenEight);
-  };
-  const toggleFederalSkilledProgramNine = (e) => {
-    e.preventDefault();
-    setIsFederalSkilledProgramOpenNine(!isFederalSkilledProgramOpenNine);
-  };
-  const toggleFederalSkilledProgramTen = (e) => {
-    e.preventDefault();
-    setIsFederalSkilledProgramOpenTen(!isFederalSkilledProgramOpenTen);
-  };
-
-  const toggleFederalSkilledProgramEl = (e) => {
-    e.preventDefault();
-    setIsFederalSkilledProgramOpenEl(!isFederalSkilledProgramOpenEl);
-  };
-  const toggleFederalSkilledProgramTw = (e) => {
-    e.preventDefault();
-    setIsFederalSkilledProgramOpenTw(!isFederalSkilledProgramOpenTw);
-  };
-  const toggleFederalSkilledProgramTh = (e) => {
-    e.preventDefault();
-    setIsFederalSkilledProgramOpenTh(!isFederalSkilledProgramOpenTh);
-  };
-  const toggleFederalSkilledProgramFt = (e) => {
-    e.preventDefault();
-    setIsFederalSkilledProgramOpenFt(!isFederalSkilledProgramOpenFt);
   };
   const { showBlue } = props;
   let [hideContactNavbar, setHideContactNavbar] = useState(false);
@@ -157,31 +61,11 @@ const Navbar3 = (props) => {
   let [showNestedDropdown5, setShowNestedDropdown5] = useState(false);
   let [showNestedDropdown6, setShowNestedDropdown6] = useState(false);
   let [showNestedDropdown7, setShowNestedDropdown7] = useState(false);
-  let [showNestedDropdown8, setShowNestedDropdown8] = useState(false);
-  let [showNestedDropdown9, setShowNestedDropdown9] = useState(false);
-  let [showNestedDropdown10, setShowNestedDropdown10] = useState(false);
-  let [showNestedDropdown11, setShowNestedDropdown11] = useState(false);
-  let [showNestedDropdown12, setShowNestedDropdown12] = useState(false);
-  let [showNestedDropdown13, setShowNestedDropdown13] = useState(false);
   let [doubleNested1, setDoubleNested1] = useState(false);
   let [doubleNested2, setDoubleNested2] = useState(false);
   let [doubleNested3, setDoubleNested3] = useState(false);
   let [doubleNested4, setDoubleNested4] = useState(false);
   let [doubleNested7, setDoubleNested7] = useState(false);
-  let [showHamburgerServicesDropdown, setShowHamburgerServicesDropdown] =
-    useState(false);
-  const dropdownRef = useRef(null);
-  // useEffect(() => {
-  //   const handleClickOutside = (event) => {
-  //     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-  //       setShowHamburgerServicesDropdown(false);
-  //     }
-  //   };
-  //   document.addEventListener("mousedown", handleClickOutside);
-  //   return () => {
-  //     document.removeEventListener("mousedown", handleClickOutside);
-  //   };
-  // }, []);
 
   useEffect(() => {
     let handleScroll = () => {
@@ -237,6 +121,7 @@ const Navbar3 = (props) => {
   const toggleSidebar = () => {
     setShowSidebar(!showSidebar);
   };
+
   return (
     <>
       <div className={styles.navbar}>
@@ -257,8 +142,7 @@ const Navbar3 = (props) => {
               <a
                 href="/about-us"
                 onMouseEnter={() => setShowAboutDropdown(true)}
-                onMouseLeave={() => setShowAboutDropdown(false)}
-              >
+                onMouseLeave={() => setShowAboutDropdown(false)}>
                 ABOUT
               </a>
             </div>
@@ -360,31 +244,7 @@ const Navbar3 = (props) => {
                           <a href="/federal-skilled-worker-program">FSWP</a>
                           <a href="/federal-skilled-trades-program">FSTP</a>
                           <a href="/canadian-experience-class">CEC</a>
-                          <div
-                            className={`${styles.relativeDiv} ${styles.flex}`}
-                          >
-                            <a
-                              href="#"
-                              onMouseEnter={() => setShowNestedDropdown7(true)}
-                              onMouseLeave={() => setShowNestedDropdown7(false)}
-                            >
-                              Category Based
-                            </a>
-                            <div
-                              className={`${styles.doubleNested} ${
-                                showNestedDropdown7 ? styles.showNested : null
-                              }`}
-                              onMouseEnter={() => setShowNestedDropdown7(true)}
-                              onMouseLeave={() => setShowNestedDropdown7(false)}
-                            >
-                              <a href="/french-targeted-draw">French Language Proficiency</a>
-                              <a href="/healthcare-targeted-draw">Healthcare Occupations</a>
-                              <a href="/stem-targeted-draw">Stem Occupations</a>
-                              <a href="/trade-occupation-targeted-draw">Trade Occupations</a>
-                              <a href="/transport-occupation">Transport Occupations</a>
-                              <a href="/agri-food-pilot-program">Agriculture and Agri-Food Occupation</a>
-                            </div>
-                          </div>
+                          <a href="/category-based">Category Based</a>
                         </div>
                       </div>
 
@@ -423,31 +283,7 @@ const Navbar3 = (props) => {
                           onMouseEnter={() => setDoubleNested7(true)}
                           onMouseLeave={() => setDoubleNested7(false)}
                         >
-                          <div
-                            className={`${styles.relativeDiv} ${styles.flex}`}
-                          >
-                            <a
-                              href="/bridging-open-work-permit-lp"
-                              onMouseEnter={() => setShowNestedDropdown(true)}
-                              onMouseLeave={() => setShowNestedDropdown(false)}
-                            >
-                              BCPNP
-                            </a>
-                            <div
-                              className={`${styles.doubleNested} ${
-                                showNestedDropdown ? styles.showNested : null
-                              }`}
-                              onMouseEnter={() => setShowNestedDropdown(true)}
-                              onMouseLeave={() => setShowNestedDropdown(false)}
-                            >
-                              <a href="/skilled-worker-stream">Skilled Worker</a>
-                              <a href="/health-authority-stream">Health Authority</a>
-                              <a href="/entry-level-semi-skilled">Entry Level and Semi-Skilled (ELSS)</a>
-                              <a href="/international-graduate-program">International Graduate</a>
-                              <a href="/international-post-graduate-program">International Post-Graduate</a>
-                              <a href="/priorities-program">Program Priorities</a>
-                            </div>
-                          </div>
+                          <a href="/bridging-open-work-permit-lp">BCPNP</a>
                         </div>
                       </div>
                       <div>
@@ -614,17 +450,15 @@ const Navbar3 = (props) => {
                             setDoubleNestedInsideCanada(false)
                           }
                         >
-                          <a href="/visitor-to-student">Visitor to Student</a>
                           <a href="/change-college-program">
                             Change of College Program
                           </a>
-                          {/* <a href="#">Admission</a> */}
-                          {/* <a href="#">Transfer DLI</a> */}
+                          <a href="/visitor-to-student">Visitor to Student</a>
                         </div>
                       </div>
 
                       {/* Other menu items */}
-                      <a href="/study-permit-minors">Study Permit For Minor</a>
+                      <a href="/study-permit-minors">Study Permit Minors</a>
                     </div>
                   </div>
                   {/*  */}
@@ -632,11 +466,11 @@ const Navbar3 = (props) => {
 
                   <div className={`${styles.relativeDiv} ${styles.flex}`}>
                     <a
-                      href="#"
+                      href="/family-reunification-sponsorship"
                       onMouseEnter={() => setShowNestedDropdown4(true)}
                       onMouseLeave={() => setShowNestedDropdown4(false)}
                     >
-                      Family Reunification & Sponsorship
+                      Family Reunification
                     </a>
                     <div
                       className={`${styles.permanentNestedSection} ${
@@ -645,33 +479,12 @@ const Navbar3 = (props) => {
                       onMouseEnter={() => setShowNestedDropdown4(true)}
                       onMouseLeave={() => setShowNestedDropdown4(false)}
                     >
-                      <div className={`${styles.relativeDiv} ${styles.flex}`}>
-                        <a
-                          href="/spousal-open-work-permit"
-                          onMouseEnter={() => setShowNestedDropdown8(true)}
-                          onMouseLeave={() => setShowNestedDropdown8(false)}
-                        >
-                          Spousal Permit
-                        </a>
-                        <div
-                          className={`${styles.permanentNestedSection} ${
-                            showNestedDropdown8 ? styles.showNested : null
-                          }`}
-                          onMouseEnter={() => setShowNestedDropdown8(true)}
-                          onMouseLeave={() => setShowNestedDropdown8(false)}
-                        >
-                          <a href="/spouse-inland">Inside</a>
-                          <a href="/spouse-outland">Outside</a>
-                          {/* <a href="#">Same Sex</a> */}
-                        </div>
-                      </div>
-
-                      <a href="/ParentsGrandparents">Parents / Grandparents</a>
+                      <a href="/spousal-open-work-permit">Spousal Permit</a>
                       <a href="/dependent-children">Dependent Children</a>
                       <a href="/humanitarian-compassionate">H & C</a>
                       <a href="/orphan">Orphan</a>
                       <a href="/adoption">Adoption</a>
-                      <a href="/lonely-canadian">Lonely Canadian</a>
+                      {/* <a href="/spouse">Spouse</a> */}
                     </div>
                   </div>
 
@@ -681,11 +494,11 @@ const Navbar3 = (props) => {
 
                   <div className={`${styles.relativeDiv} ${styles.flex}`}>
                     <a
-                      href="/work-permit"
+                      href="/student-visa"
                       onMouseEnter={() => setShowNestedDropdown5(true)}
                       onMouseLeave={() => setShowNestedDropdown5(false)}
                     >
-                      Work Permit
+                      Parents and Grandparents
                     </a>
                     <div
                       className={`${styles.permanentNestedSection} ${
@@ -700,11 +513,11 @@ const Navbar3 = (props) => {
                     >
                       <div className={`${styles.relativeDiv} ${styles.flex}`}>
                         <a
-                          href="/lmia-reviewed"
+                          href="#"
                           onMouseEnter={() => setDoubleNested1(true)}
                           onMouseLeave={() => setDoubleNested1(false)}
                         >
-                          LMIA Work Permit
+                          Work Permit
                         </a>
                         <div
                           className={`${styles.doubleNested} ${
@@ -713,21 +526,19 @@ const Navbar3 = (props) => {
                           onMouseEnter={() => setDoubleNested1(true)}
                           onMouseLeave={() => setDoubleNested1(false)}
                         >
-                          <a href="/low-wage-lmia">High Wage / Low Wage</a>
-                          <a href="/agriculture-stream-lmia">Agriculture</a>
-                          {/* <a href="#">PR Supporting</a> */}
-                          <a href="/global-stream-lmia">Global Talent Stream</a>
-                          <a href="/in-home-caregiver-program-lp">Caregiver LMIA</a>
+                          <a href="/open-work-permit">Open Work Permit</a>
+                          <a href="/bridging-open-work-permit-lp">BOWP</a>
+                          <a href="/pgwp">PGWP</a>
                         </div>
                       </div>
                       {/* // */}
                       <div className={`${styles.relativeDiv} ${styles.flex}`}>
                         <a
-                          href="/open-work-permit"
+                          href="#"
                           onMouseEnter={() => setDoubleNested2(true)}
                           onMouseLeave={() => setDoubleNested2(false)}
                         >
-                          Open Work Permit{" "}
+                          LMIA{" "}
                         </a>
                         <div
                           className={`${styles.doubleNested} ${
@@ -736,128 +547,21 @@ const Navbar3 = (props) => {
                           onMouseEnter={() => setDoubleNested2(true)}
                           onMouseLeave={() => setDoubleNested2(false)}
                         >
-                          <a href="/bridging-open-work-permit-lp">BOWP – Bridging Open Work Permit</a>
-                          <a href="/international-post-graduate-program">PGWP – Post Graduate Open Work Permit</a>
-                          <a href="/spousal-open-work-permit">SOWP – Spousal Open Work Permit</a>
-                          <a href="/francophone-mobility-program">Francophone Mobility Program</a>
-                          <a href="/open-work-vulnerable-lp">Vulnerable Worker</a>
-                          <a href="/dependent-children">Dependent Child of Worker</a>
-                          <a href="/pnp">PNP Applicants</a>
+                          <a href="/low-wage-lmia">Low Wage Lmia</a>
+                          <a href="/agriculture-stream-lmia">
+                            Seasonal Agricultural
+                          </a>
+                          <a href="/global-stream-lmia">Global Talent</a>
+                          <a href="/pathways-for-caregiver">Caregiver</a>
                         </div>
                       </div>
                       {/* // */}
-                    </div>
-                  </div>
-                  <div className={`${styles.relativeDiv} ${styles.flex}`}>
-                    <a
-                      href="/pathways-for-caregiver"
-                      onMouseEnter={() => setShowNestedDropdown9(true)}
-                      onMouseLeave={() => setShowNestedDropdown9(false)}
-                    >
-                      Caregiver
-                    </a>
-                    <div
-                      className={`${styles.permanentNestedSection} ${
-                        showNestedDropdown9 ? styles.showNested : null
-                      }`}
-                      onMouseEnter={() => {
-                        setShowNestedDropdown9(true);
-                      }}
-                      onMouseLeave={() => {
-                        setShowNestedDropdown9(false);
-                      }}>
-                      <a href="/in-home-caregiver-program-lp">Inside - With LMIA</a>
-                      {/* <div className={`${styles.relativeDiv} ${styles.flex}`}>
-                        <a
-                          onMouseEnter={() => setShowNestedDropdown10(true)}
-                          onMouseLeave={() => setShowNestedDropdown10(false)}
-                        >
-                          Outside
-                        </a>
-                        <div
-                          className={`${styles.permanentNestedSection} ${
-                            showNestedDropdown10 ? styles.showNested : null
-                          }`}
-                          onMouseEnter={() => {
-                            setShowNestedDropdown10(true);
-                          }}
-                          onMouseLeave={() => {
-                            setShowNestedDropdown10(false);
-                          }}
-                        >
-                          <a>Home Child Care Provider Pilot</a>
-                          <a>Home Support Worker</a>
-                        </div>
-                      </div> */}
-                    </div>
-                  </div>
-                  <div className={`${styles.relativeDiv} ${styles.flex}`}>
-                    <a
-                      href="#"
-                      onMouseEnter={() => setShowNestedDropdown11(true)}
-                      onMouseLeave={() => setShowNestedDropdown11(false)}
-                    >
-                      PR Renewal
-                    </a>
-                    <div
-                      className={`${styles.permanentNestedSection} ${
-                        showNestedDropdown11 ? styles.showNested : null
-                      }`}
-                      onMouseEnter={() => {
-                        setShowNestedDropdown11(true);
-                      }}
-                      onMouseLeave={() => {
-                        setShowNestedDropdown11(false);
-                      }}
-                    >
                       <a href="/pr-renewal">PR Renewal</a>
-                    </div>
-                  </div>
-                  <div className={`${styles.relativeDiv} ${styles.flex}`}>
-                    <a
-                      href="#"
-                      onMouseEnter={() => setShowNestedDropdown12(true)}
-                      onMouseLeave={() => setShowNestedDropdown12(false)}
-                    >
-                      Citizenship
-                    </a>
-                    <div
-                      className={`${styles.permanentNestedSection} ${
-                        showNestedDropdown12 ? styles.showNested : null
-                      }`}
-                      onMouseEnter={() => {
-                        setShowNestedDropdown12(true);
-                      }}
-                      onMouseLeave={() => {
-                        setShowNestedDropdown12(false);
-                      }}
-                    >
                       <a href="/citizenship">Citizenship</a>
                     </div>
                   </div>
                   <div className={`${styles.relativeDiv} ${styles.flex}`}>
-                    <a
-                      href="#"
-                      onMouseEnter={() => setShowNestedDropdown13(true)}
-                      onMouseLeave={() => setShowNestedDropdown13(false)}
-                    >
-                      Other Services
-                    </a>
-                    <div
-                      className={`${styles.permanentNestedSection} ${
-                        showNestedDropdown13 ? styles.showNested : null
-                      }`}
-                      onMouseEnter={() => {
-                        setShowNestedDropdown13(true);
-                      }}
-                      onMouseLeave={() => {
-                        setShowNestedDropdown13(false);
-                      }}
-                    >
-                      <a href="/reconsideration">Reconsideration of Refusal Decision</a>
-                      <a href="/additional-document">Reply to Additional Document Request</a>
-                      <a href="/reply-to-pfl-page">Reply to Procedural Fairness Letter</a>
-                    </div>
+                    <a href="/previous-draw-history">Prevoius Draw History</a>
                   </div>
                 </div>
               </div>
@@ -945,27 +649,11 @@ const Navbar3 = (props) => {
                 HOME
               </a>
               <div className={styles.dropdown}>
-                <a
-                  href="#"
-                  className={styles.dropbtn}
-                  onClick={() =>
-                    setShowHamburgerServicesDropdown(
-                      !showHamburgerServicesDropdown
-                    )
-                  }
-                  ref={dropdownRef}
-                >
+                <a href="#" className={styles.dropbtn}>
                   SERVICES
                   <span className={styles.arrow}>▼</span>
                 </a>
-                <div
-                  className={styles.dropdownContent}
-                  style={
-                    showHamburgerServicesDropdown
-                      ? { display: "block" }
-                      : { display: "none" }
-                  }
-                >
+                <div className={styles.dropdownContent}>
                   {/* Federal Skilled with Clickable Dropdown */}
                   <div className={styles.subDropdown}>
                     <a href="#" onClick={toggleFederalSkilled}>
@@ -986,74 +674,27 @@ const Navbar3 = (props) => {
                               <a href="/federal-skilled-worker-program">FSWP</a>
                               <a href="/federal-skilled-trades-program">FSTP</a>
                               <a href="/canadian-experience-class">CEC</a>
-                              <a
-                                href="#"
-                                onClick={toggleFederalSkilledProgramTwo}
-                              >
-                                Category Based{" "}
-                                <span className={styles.arrow}>▼</span>
-                              </a>
-                              {isFederalSkilledProgramOpenTwo && (
-                                <div className={styles.subSubDropdownContent}>
-                                  <a href="/category-based">Category Based</a>
-                                  <a href="/french-targeted-draw">French Language Proficiency</a>
-                                  <a href="/healthcare-targeted-draw">Healthcare Occupations</a>
-                                  <a href="/stem-targeted-draw">Stem Occupationss</a>
-                                  <a href="/trade-occupation-targeted-draw">Trade Occupations</a>
-                                  <a href="/transport-occupation">Transport Occupations</a>
-                                  <a href="/agri-food-pilot-program">Agriculture and Agri-Food Occupation</a>
-                                </div>
-                              )}
+                              <a href="/category-based">Category Based</a>
                             </div>
                           )}
                         </div>
                         <div className={styles.subSubDropdown}>
-                          <a
-                            href="#"
-                            onClick={toggleFederalSkilledProgramThree}
-                          >
+                          <a href="#" onClick={toggleFederalSkilledProgram}>
                             Pilot Programs
                             <span className={styles.arrow}>▼</span>
                           </a>
-                          {isFederalSkilledOpenThree && (
+                          {isFederalSkilledProgramOpen && (
                             <div className={styles.subSubDropdownContent}>
+                              <a href="/pilot-programs">Pilot Programs</a>
                               <a href="/agri-food-pilot-program">
                                 Agri Food Pilot
                               </a>
-                              <a href="/pilot-programs"> Pilot Programs</a>
                             </div>
                           )}
                         </div>
-                        <div className={styles.subSubDropdown}>
-                          <a href="#" onClick={toggleFederalSkilledProgramFour}>
-                            PNP
-                            <span className={styles.arrow}>▼</span>
-                          </a>
-                          {isFederalSkilledProgramOpenFour && (
-                            <div className={styles.subSubDropdownContent}>
-                              <a
-                                href="#"
-                                onClick={toggleFederalSkilledProgramFive}
-                              >
-                                BCPNP
-                                <span className={styles.arrow}>▼</span>
-                              </a>
-                              {isFederalSkilledProgramOpenFive && (
-                                <div className={styles.subSubDropdownContent}>
-                                  <a href="/pnp">PNP</a>
-                                  <a href="/bc-pnp">BCPNP</a>
-                                  <a href="/skilled-worker-stream">Skilled Worker</a>
-                                  <a href="/health-authority-stream">Health Authority</a>
-                                  <a href="/entry-level-semi-skilled">Entry Level and Semi-Skilled (ELSS)</a>
-                                  <a href="/international-graduate-program">International Graduate</a>
-                                  <a href="/international-post-graduate-program">International Post-Graduate</a>
-                                  <a href="/priorities-program">Program Priorities</a>
-                                </div>
-                              )}
-                            </div>
-                          )}
+                        <div>
+                          <a href="/rnip">RNIP</a>
                         </div>
-                        <a href="/rnip">RNIP</a>
                       </div>
                     )}
                   </div>
@@ -1079,22 +720,27 @@ const Navbar3 = (props) => {
                           {isVisitorVisaOpen && (
                             <div className={styles.subSubDropdownContent}>
                               <a href="/visitor-visa">Visitor Visa</a>
-                              <a href="/business-visitor-visa">Business Visa</a>
+                              <a href="/business-visitor-visa">
+                                Business Visitor Visa
+                              </a>
                               <a href="/dual-intent-visa">Dual Intent Visa</a>
-                              <a href="#">Super Visa</a>
-                              <a href="/reconsideration">Reconsideration for Refusal</a>
+                              <a href="/reconsideration">
+                                Reconsideration for Refusal
+                              </a>
                             </div>
                           )}
                         </div>
 
-                        <a href="/temporary-resident-permit-draft">Temporary Resident Permits</a>
+                        <a href="/temporary-resident-permit-draft">
+                          Temporary Resident Permits
+                        </a>
                         <a href="/restoration-status-draft">Restoration</a>
                         <a href="/extensions-draft">Extend Stay</a>
                         <a href="/flagpoling">Flagpoling</a>
 
                         <div className={styles.subSubDropdown}>
                           <a href="#" onClick={toggleSpousalPermit}>
-                            Spousal Open Work Permit
+                            Spousal Permit
                             <span className={styles.arrow}>▼</span>
                           </a>
                           {isSpousalPermitOpen && (
@@ -1133,7 +779,7 @@ const Navbar3 = (props) => {
                             <div className={styles.subSubDropdownContent}>
                               <a href="/outside-canada">Outside Canada</a>
                               <a href="/sds">SDS</a>
-                              <a href="/non-sds">Non SDS</a>
+                              <a href="/non-sds">NON SDS</a>
                             </div>
                           )}
                         </div>
@@ -1146,10 +792,12 @@ const Navbar3 = (props) => {
                           {isInsideCanadaOpen && (
                             <div className={styles.subSubDropdownContent}>
                               <a href="/inside-canada">Inside Canada</a>
-                              <a href="/visitor-to-student">Visitor To Student</a>
-                              <a href="/change-college-program">Change of College/Program</a>
-                              {/* <a href="#">Admission</a>
-                              <a href="#">Transfer DLI</a> */}
+                              <a href="/change-college-program">
+                                Change of College Program
+                              </a>
+                              <a href="/visitor-to-student">
+                                Visitor to Student
+                              </a>
                             </div>
                           )}
                         </div>
@@ -1167,114 +815,18 @@ const Navbar3 = (props) => {
                     </a>
                     {isFamilyReunificationOpen && (
                       <div className={styles.subDropdownContent}>
-                        <a href="/family-reunification-sponsorship">
-                          Family Reunification
-                        </a>
-                        <div className={styles.subSubDropdown}>
-                          <a
-                            href="#"
-                            onClick={toggleFederalSkilledProgramSeven}
-                          >
-                            Spouse / Common Law{" "}
-                            <span className={styles.arrow}>▼</span>
-                          </a>
-                          {isFederalSkilledProgramOpenSeven && (
-                            <div className={styles.subSubDropdownContent}>
-                              <a href="/spouse-inland">Inside</a>  
-                              <a href="/spouse-outland">Outside</a>
-                              {/* <a href="#">Same Sex</a> */}
-                            </div>
-                          )}
-                        </div>
+                        <a href="/family-reunification-sponsorship">Family Reunification</a>
+                        <a href="/spousal-open-work-permit">Spousal Permit</a>
                         <a href="/dependent-children">Dependent Children</a>
                         <a href="/humanitarian-compassionate">H & C</a>
                         <a href="/orphan">Orphan</a>
                         <a href="/adoption">Adoption</a>
-                      </div>
-                    )}
-                  </div>
-                  <div className={styles.subDropdown}>
-                    <a href="#" onClick={toggleFederalSkilledProgramSix}>
-                      Work Permit <span className={styles.arrow}>▼</span>
-                    </a>
-                    {isFederalSkilledProgramOpenSix && (
-                      <div className={styles.subDropdownContent}>
-                        <a href="/work-permit">Work Permit</a>
-                        <div className={styles.subSubDropdown}>
-                          <a
-                            href="#"
-                            onClick={toggleFederalSkilledProgramEight}
-                          >
-                            LMIA Work Permit
-                            <span className={styles.arrow}>▼</span>
-                          </a>
-                          {isFederalSkilledProgramOpenEight && (
-                            <div className={styles.subSubDropdownContent}>
-                              <a href="/low-wage-lmia">High Wage / Low Wage</a>
-                              <a href="/agriculture-stream-lmia">Agriculture</a>
-                              {/* <a href="#">PR Supporting</a> */}
-                              <a href="/global-stream-lmia">Global Talent Stream</a>
-                              <a href="/in-home-caregiver-program-lp">Caregiver LMIA</a>
-                            </div>
-                          )}
-                          <a href="#" onClick={toggleFederalSkilledProgramNine}>
-                            Open Work Permit
-                            <span className={styles.arrow}>▼</span>
-                          </a>
-                          {isFederalSkilledProgramOpenNine && (
-                            <div className={styles.subSubDropdownContent}>
-                              <a href="/bridging-open-work-permit-lp">BOWP – Bridging Open Work Permit</a>
-                              <a href="/international-post-graduate-program">PGWP – Post Graduate Open Work Permit</a>
-                              <a href="/spousal-open-work-permit">SOWP – Spousal Open Work Permit</a>
-                              <a href="/francophone-mobility-program">Francophone Mobility Program</a>
-                              <a href="/open-work-vulnerable-lp">Vulnerable Worker</a>
-                              <a href="/dependent-children">Dependent Child of Worker</a>
-                              <a href="/pnp">PNP Applicants</a>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                  <div className={styles.subDropdown}>
-                    <a href="#" onClick={toggleFederalSkilledProgramTen}>
-                      Caregiver <span className={styles.arrow}>▼</span>
-                    </a>
-                    {isFederalSkilledProgramOpenTen && (
-                      <div className={styles.subDropdownContent}>
-                        <a href="/pathways-for-caregiver">Caregiver</a>
-                        <a href="/in-home-caregiver-program-lp">Inside - With LMIA </a>
-                        <a href="#" onClick={toggleFederalSkilledProgramEl}>
-                          Outside <span className={styles.arrow}>▼</span>
-                        </a>
-                        {/* <div className={styles.subSubDropdown}>
-                          {isFederalSkilledProgramOpenEl && (
-                            <div className={styles.subSubDropdownContent}>
-                              <a href="#">Home Child Care Provider Pilot</a>
-                              <a href="#">Home Support Worker</a>
-                            </div>
-                          )}
-                        </div> */}
+                        {/* <a href="/spouse">Spouse</a> */}
                       </div>
                     )}
                   </div>
                   <div className={`${styles.relativeDiv} ${styles.flex}`}>
-                    <a href="/pr-renewal">PR Renewal</a>
-                  </div>
-                  <div className={`${styles.relativeDiv} ${styles.flex}`}>
-                    <a href="/citizenship">Citizenship</a>
-                  </div>
-                  <div className={styles.subDropdown}>
-                    <a href="#" onClick={toggleFederalSkilledProgramEl}>
-                      Other Services <span className={styles.arrow}>▼</span>
-                    </a>
-                    {isFederalSkilledProgramOpenEl && (
-                      <div className={styles.subDropdownContent}>
-                        <a href="/reconsideration">Reconsideration of Refusal Decision</a>
-                        <a href="/additional-document">Reply to Additional Document Request</a>
-                        <a href="/reply-to-pfl-page">Reply to Procedural Fairness Letter</a>
-                      </div>
-                    )}
+                    <a href="/previous-draw-history">Previous Draw History</a>
                   </div>
                 </div>
               </div>
@@ -1304,7 +856,7 @@ const Navbar3 = (props) => {
                 NEWS
               </a>
               <a href="/about-us" className={styles.sidebarLink}>
-                ABOUT
+               ABOUT
               </a>
               <a href="/contact-us" className={styles.sidebarLink}>
                 CONTACT
@@ -1341,6 +893,7 @@ const Navbar3 = (props) => {
                     className={styles.lowerFooterText}
                     style={showBlue ? { color: "#164c95" } : { color: "white" }}
                   >
+                    {" "}
                     Vancouver
                   </a>
                 </span>
@@ -1448,4 +1001,4 @@ const Navbar3 = (props) => {
   );
 };
 
-export default Navbar3;
+export default Navbar1;
