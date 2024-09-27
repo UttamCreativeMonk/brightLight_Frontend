@@ -171,7 +171,7 @@
   }
   
   .eligibility ul, .applicationProcess ol, .refusalReasons ul, .faq dl {
-    margin-left: 20px;
+    margin-left: 0px;
   }
   
   .eligibility li, .applicationProcess li, .refusalReasons li, .faq dt {

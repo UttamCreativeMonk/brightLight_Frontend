@@ -147,7 +147,9 @@ let WorkPermit = () => {
             <div className={styles.pathways}>
               <div className={styles.pathway}>
                 <h3>
-                  <Link to="/open-work-permit">Open Work Permit</Link>
+                  <Link to="/open-work-permit">
+                  <button>Open Work Permit</button>
+                  </Link>
                 </h3>
                 <p>
                   An open work permit allows you to work for any employer in
@@ -158,7 +160,8 @@ let WorkPermit = () => {
               <div className={styles.pathway}>
                 <h3>
                   <Link to="/lmia-work-permit">
-                    Labour Market Impact Assessment (LMIA)-Based Work Permit
+                  <button>   Labour Market Impact Assessment (LMIA)-Based Work Permit</button>
+                 
                   </Link>
                 </h3>
                 <p>

@@ -129,7 +129,7 @@
 .container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 10px;
   box-sizing: border-box;
   text-align: center;
 }
@@ -147,12 +147,13 @@
   color: #e8c47c;
 }
 
-.pathway a {
+.pathway button {
   background-color: #00273f;
   color: white;
   padding: 10px 15px;
   border-radius: 5px;
   font-size: 15px;
+  border: none;
 }
 .pathway a:hover {
   text-decoration: none;

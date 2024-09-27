@@ -239,6 +239,9 @@
       margin-top: 10px;
       margin-bottom: 20px;
     }
+    .streams{
+      justify-content: center;
+    }
     .title{
       font-size: 26px;
     }
