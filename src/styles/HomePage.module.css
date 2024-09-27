@@ -436,7 +436,7 @@
 .simplifyingParent {
   background-image: url("../assets/aboutLeaf.png");
   width: 100%;
-  padding: 80px 0px;
+  padding: 50px 0px;
   opacity: 0;
   visibility: hidden;
   transition: 0.3s all ease-in-out;
@@ -665,7 +665,7 @@
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-top: 80px ;
+  padding-top: 55px ;
   padding-bottom: 10px;
 }
 
@@ -828,8 +828,8 @@
   color: #132f46;
   font-size: 35px;
   font-weight: 400;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 20px;
+  /* padding-bottom: 10px; */
 }
 
 .aspectsCardParent {
@@ -878,7 +878,7 @@
   margin: auto;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 100px 0px;
+  padding: 50px 0px;
 }
 
 .sourceMain {
@@ -2278,7 +2278,7 @@
   }
 
   .simplifyingMain h1 {
-    font-size: 19px;
+    font-size: 24px;
   }
 
   .simplifyingMain p {
