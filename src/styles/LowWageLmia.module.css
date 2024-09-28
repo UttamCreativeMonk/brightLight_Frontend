@@ -145,7 +145,7 @@ section {
 
 .mainContent {
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1440px;
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
@@ -243,8 +243,15 @@ section {
 }
 
 .section table {
-  width: 100%;
+  /* width: 100%; */
   border-collapse: collapse;
+  text-align: left;
+  align-items: left;
+}
+.wageTable{
+  text-align: left;
+  align-items: start;
+  justify-content: start;
 }
 
 .section table,
@@ -272,7 +279,7 @@ td {
   color: #00273f;
   margin-top: 20px;
   margin-bottom: 20px;
-  text-align: center;
+  text-align: left;
 }
 
 .header h1 {
@@ -281,20 +288,21 @@ td {
   margin-bottom: 20px;
 }
 .provincialWage table {
-  margin: auto;
+  /* width: 100%; */
+  /* margin: auto; */
   margin-top: 20px;
   margin-bottom: 20px;
-  align-items: center;
+  align-items: start;
 }
 .container{
-  text-align: center;
+  text-align: left;
 }
 
 @media (max-width: 400px) {
   .container h2 {
     font-size: 20px;
-    margin-top: 10px;
-    margin-bottom: 30px;
+    margin-top: 30px;
+    margin-bottom: 10px;
   }
 
   .header h1 {

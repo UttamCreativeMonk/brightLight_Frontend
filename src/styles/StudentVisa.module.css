@@ -126,18 +126,18 @@
   max-width: 1440px;
   margin: 0 auto;
   padding: 20px;
-  text-align: center;
+  text-align: left;
 }
 
 .heading {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: bold;
   margin-bottom: 20px;
   text-align: center;
 }
 
 .description {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin-bottom: 30px;
   text-align: center;
 }
@@ -214,7 +214,7 @@ opacity: 0.9;
 
 .container h2 {
   color: #00273f;
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 20px;
   text-align: center;
 }
@@ -233,8 +233,8 @@ opacity: 0.9;
 @media (max-width: 400px) {
   .container h2 {
     font-size: 20px;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 10px;
   }
 
   .heading {

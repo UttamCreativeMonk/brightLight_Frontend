@@ -126,20 +126,18 @@
     }
   }
   
-  /* src/components/LmiaReviewedPage.module.css */
-  
-  /* src/components/LmiaReviewedPage.module.css */
+
   
   .container {
     max-width: 1440px;
     margin: 0 auto;
     padding: 20px;
     box-sizing: border-box;
-    text-align: center;
+    text-align: left;
   }
   
   .title {
-    text-align: center;
+    text-align: left;
     margin-bottom: 20px;
   }
   
@@ -156,34 +154,34 @@
   }
   
   .section {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
   
   .section h2 {
     font-size: 2em;
     color: #00273f;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 20px;
-    text-align: center;
+    text-align: left;
   }
   
   .section h3 {
     font-size: 1.5em;
     color: #00273f;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 10px;
-    text-align: center;
+    text-align: left;
   }
   .subheading{
     font-size: 1.2em;
-    color: #666;
+    color: #00273f;
     margin-top: 15px;
     margin-bottom: 5px;
-    text-align: center;
+    text-align: left;
   }
   .section p {
     font-size: 1em;
-    color: #666;
+    color: #00273f;
   }
   
   .benefits {
@@ -259,7 +257,7 @@
     .container h2 {
       color: #00273f;
       margin-top: 30px;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
   
 
@@ -283,23 +281,24 @@
   
   .container h2 {
     color: #00273f;
-    margin-top: 40px;
-    margin-bottom: 15px;
+    margin-top: 30px;
+    margin-bottom: 20px;
   }
   
-  .container ul{
+  /* .container ul{
     list-style-type: none;
-  }
+  } */
   .container h1 {
     color: #e8c47c;
     margin-top: 20px;
     margin-bottom: 10px;
+    text-align: center;
   }
   .listStrong{
     text-align: start;
   }
   .listStrong strong{
-    color: #666;
+    color: #00273f;
   }
   .list li{
     margin-top: 10px;

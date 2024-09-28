@@ -121,19 +121,18 @@
   }
 }
 
-/* Global styles */
 
-/* Container */
+
 .container {
   width: 1440px;
   margin: 0 auto;
   padding: 20px;
-  text-align: center;
+  text-align: left;
 }
 
-/* Header */
+
 .header {
-  text-align: center;
+  text-align: left;
   margin-bottom: 20px;
 }
 
@@ -141,30 +140,25 @@
   font-size: 2.5em;
   margin: 0;
   color: #e8c47c;
+  text-align: center;
 }
 
-/* Sections */
-/* .section {
-  margin-bottom: 20px;
-} */
 
 .section h2 {
   font-size: 2em;
   margin-bottom: 10px;
 
-  text-align: center;
+  text-align: left;
   color: #00273f;
 }
 
-/* .section ul, .section ol {
-    margin-left: 20px;
-  } */
+
 
 .section li {
   margin-bottom: 10px;
 }
 
-/* Buttons */
+
 .button {
   padding: 10px 20px;
   font-size: 1em;
@@ -174,6 +168,8 @@
   cursor: pointer;
   border-radius: 5px;
   margin-top: 10px;
+  display: block;
+  margin: auto;
 }
 
 .button:hover {
@@ -196,7 +192,7 @@
   }
   .section h2 {
     font-size: 22px;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 10px;
   }
 }

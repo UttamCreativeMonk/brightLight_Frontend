@@ -90,7 +90,15 @@ const PilotPrograms = () => {
         <p>
           Our success rate speaks for itself, with a near-perfect approval rate for our clients. By choosing us, you benefit from our extensive knowledge, commitment to your case, and proven track record. Let us help you make your Canadian immigration journey a smooth and successful one.
         </p>
-        <a href="/contact-us" className={styles.button}>Contact Us</a>
+        {/* <a href="/contact-us" className={styles.button}>Contact Us</a> */}
+        <button className={styles.button1}
+              onClick={() =>
+                (window.location.href =
+                  "/contact")
+              }
+            >
+             Contact
+            </button>
       </div>
     </div>
 

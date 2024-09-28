@@ -126,14 +126,14 @@
   max-width: 1440px;
   margin: 0 auto;
   padding: 20px;
-  text-align: center;
+  text-align: left;
 }
 
 .heading {
   font-size: 2.1rem;
   font-weight: bold;
   margin-bottom: 20px;
-  text-align: center;
+  text-align: left;
 }
 
 .introduction,
@@ -150,16 +150,8 @@
   font-size: 1.8rem;
   margin-bottom: 15px;
   color: #333;
-  text-align: center;
+  text-align: left;
 }
-
-/* ul {
-    margin-left: 20px;
-  }
-  
-  ol {
-    margin-left: 20px;
-  } */
 
 .link{
   color: rgb(28, 68, 243);
@@ -178,6 +170,10 @@
   text-decoration: none;
   border-radius: 5px;
   font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin: auto;
   margin-top: 20px;
 }
 .button:hover {
@@ -187,15 +183,16 @@
 
 .container h2 {
   color: #00273f;
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 20px;
-  text-align: center;
+  text-align: left;
 }
 
 .heading {
   color: #e8c47c;
   margin-bottom: 30px;
   margin-top: 20px;
+  text-align: center;
 }
 
 .expressEntry p {
@@ -210,8 +207,8 @@
 @media (max-width: 400px) {
   .container h2 {
     font-size: 20px;
-    margin-top: 10px;
-    margin-bottom: 40px;
+    margin-top: 30px;
+    margin-bottom: 10px;
   }
 
   .heading {

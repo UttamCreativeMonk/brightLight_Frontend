@@ -127,20 +127,20 @@
   margin: 0 auto;
   padding: 20px;
 
-  text-align: center;
+  text-align: left;
 }
 
 .heading {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 20px;
-  text-align: center;
+  text-align: left;
 }
 
 .intro {
   font-size: 1.2rem;
   margin-bottom: 30px;
-  text-align: center;
+  text-align: left;
 }
 
 .fasterProcessing,
@@ -157,7 +157,7 @@
   font-size: 1.8rem;
   margin-bottom: 15px;
   color: #333;
-  text-align: center;
+  text-align: left;
 }
 
 .countryTable,
@@ -198,6 +198,10 @@
   border-radius: 5px;
   font-size: 1rem;
   margin-top: 20px;
+  display: block;
+  margin: auto;
+  border: none;
+  cursor: pointer;
 }
 
 .button:hover {
@@ -207,27 +211,28 @@
 
 .container h2 {
   color: #00273f;
-  margin-top: 20px;
-  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  text-align: left;
 }
 
 .heading {
   color: #e8c47c;
   margin-top: 20px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .applicationProcess h3 {
   margin-top: 20px;
   margin-bottom: 5px;
-  color: #00273f;
+  color: #333;
 }
 .countryTable th ,tr{
   text-align: center;
 }
 .countryTable {
-  width: 80%; /* Optional: adjust table width as needed */
-  border-collapse: collapse; /* Optional: for better table styling */
+  border-collapse: collapse; 
   margin: auto;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -240,12 +245,20 @@
   border: 1px solid #00273f; /* Optional: for table border */
 }
 
+.family strong{
+  color: #333;
+  margin-top: 20px;
+}
+.applicationSubmission{
+  color: #333;
+  margin-top: 20px;
+}
 
 @media (max-width: 400px) {
   .container h2 {
     font-size: 20px;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 10px;
   }
 
   .heading {

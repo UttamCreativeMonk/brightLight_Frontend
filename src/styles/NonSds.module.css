@@ -128,20 +128,20 @@
     max-width: 1440px;
     margin: 0 auto;
     padding: 20px;
-    text-align: center;
+    text-align: left;
   }
   
   .heading {
     font-size: 2.2rem;
     font-weight: bold;
     margin-bottom: 20px;
-    text-align: center;
+    text-align: left;
   }
   
   .intro {
     font-size: 1.0rem;
     margin-bottom: 30px;
-    text-align: center;
+    text-align: left;
   }
   
   .prosCons {
@@ -152,7 +152,7 @@
     font-size: 1.8rem;
     margin-bottom: 15px;
     color: #333;
-    text-align: center;
+    text-align: left;
   }
   
   .grid {
@@ -167,12 +167,13 @@
   .pros h3, .cons h3 {
     font-size: 1.2rem;
     margin-bottom: 10px;
+    color: #333;
   }
   
   .pros ul, .cons ul {
     list-style-type: disc;
     /* padding-left: 20px; */
-    list-style-type: none;
+    /* list-style-type: none; */
   }
   
   .eligibility {
@@ -190,7 +191,7 @@
   }
   
   .languageChart table, .languageChart th, .languageChart td {
-    border: 1px solid #ddd;
+    border: 1px solid #00273f;
   }
   
   .languageChart th, .languageChart td {
@@ -200,6 +201,7 @@
   
   .languageChart th {
     background-color: #f4f4f4;
+    color: #00273f;
   }
   
   .button {
@@ -212,6 +214,10 @@
     border-radius: 5px;
     font-size: 1.1rem;
     margin-top: 10px;
+    display: block;
+    margin: auto;
+    border: none;
+    cursor: pointer;
   }
   
     
@@ -255,7 +261,7 @@
   }
   
   .bookAppointment {
-    text-align: center;
+    text-align: left;
   }
   
   .bookAppointment p {
@@ -272,6 +278,8 @@
     text-decoration: none;
     border-radius: 5px;
     font-size: 1.1rem;
+    display: block;
+    margin: auto;
   }
   .bookAppointment .button:hover {
     opacity: 0.9;
@@ -283,26 +291,28 @@
     color: #00273f;
     margin-top: 20px;
     margin-bottom: 20px;
-    text-align: center;
+    text-align: left;
   }
   
   .heading {
     color: #e8c47c;
     margin-top: 20px;
     margin-bottom: 20px;
+    text-align: center;
   }
   
   .languageChart h3{
     color: #333;
     margin-top: 5px;
     margin-bottom: 5px;
+    text-align: left;
   }
 
   @media (max-width: 400px) {
     .container h2 {
       font-size: 20px;
-      margin-top: 10px;
-      margin-bottom: 20px;
+      margin-top: 30px;
+      margin-bottom: 10px;
     }
   
     .heading {

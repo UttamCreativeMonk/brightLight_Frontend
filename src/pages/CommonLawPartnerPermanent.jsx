@@ -190,9 +190,14 @@ const CommonLawPartnerPermanent = () => {
             specialize in handling complex cases and offer tailored solutions to
             increase your chances of approval.
           </p>
-          <Link id="book-appointment" to="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" className={styles.button}>
-            Book an Appointment
-          </Link>
+          <button className={styles.button}
+              onClick={() =>
+                (window.location.href =
+                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+              }
+            >
+              Book Appointment
+            </button>
         </section>
 
         <section className={styles.whyChooseUs} id="why-choose-us">

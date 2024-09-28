@@ -151,7 +151,15 @@ const InsideCanada = () => {
         <p className={styles.callToActionText}>
           We achieve this by tailoring our approach to your specific case and addressing each concern raised by the officer in previous refusals. Using case law, we identify similar cases with positive outcomes and apply them as precedents. This is why we have a high success rate, with over 90% approval in such cases. At Brightlight Immigration, we have a dedicated team of visa application specialists ready to assist you from the start of the application process to obtaining your visa. Start your process now.
         </p>
-        <a href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" className={styles.button}>Book Appointment</a>
+        <button className={styles.button}
+              onClick={() =>
+                (window.location.href =
+                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+              }
+            >
+              Start your process now
+            </button>
+       
       </section>
     </div>
 

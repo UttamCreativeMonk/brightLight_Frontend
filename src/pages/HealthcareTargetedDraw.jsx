@@ -105,27 +105,51 @@ const HealthcareTargetedDraw = () => {
           </p>
           <ul>
             <li>
-              <Link
-                to="/federal-skilled-worker-program"
+              {/* <Link
+                to=""
                 className={styles.button}
               >
-                Federal Skilled Worker (FSW)
-              </Link>
+                
+              </Link> */}
+              <button className={styles.button1}
+              onClick={() =>
+                (window.location.href =
+                  "/federal-skilled-worker-program")
+              }
+            >
+             Federal Skilled Worker (FSW)
+            </button>
               : No Canadian experience required
             </li>
             <li>
-              <Link to="/canadian-experience-class" className={styles.button}>
-                Canadian Experience Class (CEC)
-              </Link>
+              {/* <Link to="" className={styles.button}>
+               
+              </Link> */}
+              <button className={styles.button1}
+              onClick={() =>
+                (window.location.href =
+                  "/canadian-experience-class")
+              }
+            >
+         Canadian Experience Class (CEC)
+            </button>
               : Canadian experience required
             </li>
             <li>
-              <Link
-                to="/federal-skilled-worker-program"
+              {/* <Link
+                to=""
                 className={styles.button}
               >
-                Federal Skilled Trades (FST)
-              </Link>
+            
+              </Link> */}
+              <button className={styles.button1}
+              onClick={() =>
+                (window.location.href =
+                  "/federal-skilled-worker-program")
+              }
+            >
+             Federal Skilled Trades (FST)
+            </button>
               : Dedicated to trades workers
             </li>
           </ul>
@@ -405,9 +429,17 @@ const HealthcareTargetedDraw = () => {
             score of 422 and invited 3500 candidates eligible for category-based
             selection in healthcare occupations.
           </p>
-          <Link to="/previous-draw-history" className={styles.button}>
-            View Previous Draw History
-          </Link>
+          {/* <Link to="" className={styles.button}>
+            
+          </Link> */}
+          <button className={styles.button}
+              onClick={() =>
+                (window.location.href =
+                  "/previous-draw-history")
+              }
+            >
+              View Previous Draw History
+            </button>
         </section>
 
         <section className={styles.applicationProcess} id="how-to-apply">
@@ -460,9 +492,17 @@ const HealthcareTargetedDraw = () => {
             application process all the way to obtaining your PR. Start your
             process now.
           </p>
-          <Link to="/contact-us" className={styles.button}>
-            Contact Us
-          </Link>
+          {/* <Link to="" className={styles.button}>
+         
+          </Link> */}
+          <button className={styles.button}
+              onClick={() =>
+                (window.location.href =
+                  "/contact-us")
+              }
+            >
+           Contact Us
+            </button>
         </section>
 
         <section className={styles.whyChooseUs} id="why-choose-us">

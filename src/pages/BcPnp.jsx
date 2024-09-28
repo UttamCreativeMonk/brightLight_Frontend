@@ -354,13 +354,14 @@ const BcPnp = () => {
           application process all the way to obtaining your visa.{" "}
 
         </p>
-        <a
-            id="book-appointment"
-            href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj"
-            className={styles.button}
-          >
-            Book Appointment
-          </a>
+          <button className={styles.button1}
+              onClick={() =>
+                (window.location.href =
+                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+              }
+            >
+              Book Appointment
+            </button>
       </div>
 
       <div id="faqs">

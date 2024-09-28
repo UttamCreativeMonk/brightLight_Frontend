@@ -210,13 +210,14 @@ const CanadianExperienceClass = () => {
             specialists will assist you from the start of the application
             process all the way to obtaining your PR. Start your process now.
           </p>
-          <Link
-            id="book-appointment"
-            to="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj"
-            className={styles.button}
-          >
-            Book Appointment
-          </Link>
+          <button className={styles.button}
+              onClick={() =>
+                (window.location.href =
+                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+              }
+            >
+              Book Appointment
+            </button>
         </section>
 
         <section className={styles.whyChooseUs} id="why-choose-us">

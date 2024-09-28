@@ -126,14 +126,14 @@
   max-width: 1440px;
   margin: 0 auto;
   padding: 20px;
-  text-align: center;
+  text-align: left;
 }
 
 .heading {
   font-size: 2.2rem;
   font-weight: bold;
   margin-bottom: 20px;
-  text-align: center;
+  text-align: left;
   color: #e8c47c;
 }
 
@@ -151,16 +151,9 @@
   font-size: 1.8rem;
   margin-bottom: 15px;
   color: #333;
-  text-align: center;
+  text-align: left;
 }
 
-/* ul {
-    margin-left: 20px;
-  }
-  
-  ol {
-    margin-left: 20px;
-  } */
 
 .table {
   width: 100%;
@@ -198,42 +191,44 @@
   text-align: center;
   text-decoration: none;
   font-weight: bold;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin: auto;
   margin-top: 30px;
-  /* margin-bottom: 30px; */
+
 }
 .button:hover {
   opacity: 0.9;
   text-decoration: none;
 }
 
-.support,
-.whyChooseUs {
+.button1 {
+  display: inline-block;
+  background-color: #00273f;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
   text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+
+  text-align: start;
+  margin-top: 30px;
+
+}
+.button1:hover{
+  opacity: 0.9;
+  text-decoration: none;
 }
 
-.testimonials {
-  margin-top: 20px;
-}
-
-.videoTestimonials,
-.writtenTestimonials {
-  margin-top: 10px;
-}
-
-.videoTestimonials video {
-  max-width: 100%;
-  height: auto;
-}
-
-.writtenTestimonials {
-  font-style: italic;
-  color: #555;
-}
 
 .container h2 {
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 20px;
-  text-align: center;
+  text-align: left;
   color: #00273f;
 }
 
@@ -244,7 +239,7 @@
 
   .container h2 {
     font-size: 20px;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 10px;
   }
 }

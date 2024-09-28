@@ -68,9 +68,38 @@ const TransportOccupationTargetedDraw = () => {
           <li>Join the Express Entry Pool: The first step towards becoming a candidate for a transport-specific draw is to get into the Express Entry pool.</li>
           <li>Choose Your Program: There are three programs you can be eligible for to join the Express Entry pool:
             <ul>
-              <li><a href="/federal-skilled-worker-program" className={styles.button}>Federal Skilled Worker Program (FSWP)</a></li>
-              <li><a href="/canadian-experience-class" className={styles.button}>Canadian Experience Class (CEC)</a></li>
-              <li><a href="/federal-skilled-transports-program" className={styles.button}>Federal Skilled Transports Program (FSTP)</a></li>
+              <li>
+               
+              <button className={styles.button1}
+              onClick={() =>
+                (window.location.href =
+                  "/federal-skilled-worker-program")
+              }>
+            Federal Skilled Worker Program (FSWP)
+            </button>
+              </li>
+              <li>
+ 
+                <button className={styles.button1}
+              onClick={() =>
+                (window.location.href =
+                  "/canadian-experience-class")
+              }
+            >
+             Canadian Experience Class (CEC)
+            </button>
+                </li>
+              <li>
+       
+                <button className={styles.button1}
+              onClick={() =>
+                (window.location.href =
+                  "/federal-skilled-transports-program")
+              }
+            >
+             Federal Skilled Transports Program (FSTP)
+            </button>
+                </li>
             </ul>
           </li>
         </ol>
@@ -156,14 +185,30 @@ const TransportOccupationTargetedDraw = () => {
       <div className={styles.drawHistory} id="transport_occupations">
         <h2 className={styles.subheading}>Express Entry Transport Draws History</h2>
         <p>The first-ever Express Entry draw for Transport occupation workers was held in September 2023. Express Entry draw #264 saw a CRS score of 435 and invited 1000 candidates eligible for category-based selection in Transport occupations.</p>
-        <a href="/previous-draw-history" className={styles.button}>View Previous Draw History</a>
+        {/* <a href="" className={styles.button}></a> */}
+        <button className={styles.button}
+              onClick={() =>
+                (window.location.href =
+                  "/previous-draw-history")
+              }
+            >
+              View Previous Draw History
+            </button>
       </div>
 
       <div className={styles.contact}>
         <h2 className={styles.subheading}>Still Not Sure?</h2>
         <p>Contact Brightlight Immigration today to assess your profile and embark on a transformative journey towards achieving your Canadian dream. With over a decade of experience, we specialize in handling Express Entry Programs. Our approval rate for these programs is nearly 100%. We achieve this with a tailored approach to your specific case. We use case law and find similar cases to your circumstances that had positive results, and we use them as precedents in cases we work on. This is why we have a high success rate.</p>
         <p>At Brightlight Immigration, we have a dedicated team of visa application specialists who can assist you from the start of the application process all the way to obtaining your PR. Start your process now.</p>
-        <a href="/contact" className={styles.button}>Contact Us</a>
+        {/* <a href="/contact" className={styles.button}></a> */}
+        <button className={styles.button}
+              onClick={() =>
+                (window.location.href =
+                  "/contact")
+              }
+            >
+          Contact Us
+            </button>
       </div>
 
       <div className={styles.whyChooseUs}>

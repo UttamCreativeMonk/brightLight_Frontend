@@ -133,11 +133,11 @@
     margin: 0 auto;
     padding: 20px;
     box-sizing: border-box;
-    text-align: center;
+    text-align: left;
   }
   
   .header {
-    text-align: center;
+    text-align: left;
     margin-bottom: 20px;
   }
   
@@ -172,7 +172,7 @@
     font-size: 1em;
     color: #5a5454;
     margin-top: 10px; 
-    list-style-type: none;
+    /* list-style-type: none; */
   }
   
   .categories {
@@ -209,6 +209,7 @@
     color: #00273f;
     margin-top: 20px;
     margin-bottom: 20px;
+    text-align: left;
   }
   
   .header h1{

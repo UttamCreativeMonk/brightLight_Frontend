@@ -132,14 +132,14 @@
     max-width: 1440px;
     margin: 0 auto;
     padding: 20px;
-    text-align: center;
+    text-align: left;
   }
   
   .heading {
     font-size: 2.1rem;
     font-weight: bold;
     margin-bottom: 20px;
-    text-align: center;
+    text-align: left;
   }
   
   .introduction, .benefits, .eligibility, .applicationProcess, .refusalReasons, .assistance, .whyChooseUs {
@@ -150,13 +150,10 @@
     font-size: 1.2rem;
     margin-bottom: 15px;
     color: #333;
-    text-align: center;
+    text-align: left;
   }
   
-  /* ul, ol {
-    margin-left: 20px;
-  } */
-  
+
   .button {
     display: inline-block;
     background-color: #00273f;
@@ -167,6 +164,10 @@
     border-radius: 5px;
     font-size: 1rem;
     margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: auto;
   }
   
   .button:hover {
@@ -198,7 +199,7 @@ opacity: 0.9;
   .table ul {
     margin: 0;
     padding: 0;
-    list-style-type: none;
+    /* list-style-type: none; */
   }
   
   .table ul li {
@@ -209,33 +210,29 @@ opacity: 0.9;
   
   .container h2 {
     color: #00273f;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 20px;
-    text-align: center;
+    text-align: left;
   }
   
   .heading {
     color: #e8c47c;
     margin-top: 20px;
     margin-bottom: 20px;
+    text-align: center;
   }
 
   .table{
     margin-top: 30px;
     margin-bottom: 20px;
   }
-  
-  /* .eligibility h3,h4{
-    margin-top: 30px;
-    margin-bottom: 20px;
-    color: #00273f;
-  } */
+
 
   @media (max-width: 1080px) {
     .container h2 {
       font-size: 20px;
-      margin-top: 10px;
-      margin-bottom: 20px;
+      margin-top: 30px;
+      margin-bottom: 10px;
     }
   
     .heading {

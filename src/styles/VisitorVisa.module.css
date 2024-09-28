@@ -126,14 +126,14 @@
   max-width: 1440px;
   margin: 0 auto;
   padding: 20px;
-  text-align: center;
+  text-align: left;
 }
 
 .heading {
   font-size: 2.1rem;
   font-weight: bold;
   margin-bottom: 20px;
-  text-align: center;
+  text-align: left;
 }
 
 .introduction,
@@ -153,7 +153,7 @@
   font-size: 1.8rem;
   margin-bottom: 15px;
   color: #333;
-  text-align: center;
+  text-align: left;
 }
 
 .buttons {
@@ -173,6 +173,10 @@
   border-radius: 5px;
   font-size: 1rem;
   margin-top: 20px;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin: auto;
 }
 
 .button:hover {
@@ -180,33 +184,25 @@ opacity: 0.9;
   text-decoration: none;
 }
 
-/* ul {
-    margin-left: 20px;
-  }
-  
-  ol {
-    margin-left: 20px;
-  } */
-
-
 .container h2 {
   color: #00273f;
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 10px;
-  text-align: center;
+  text-align: left;
 }
 
 .heading {
   color: #e8c47c;
   margin-top: 20px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 @media (max-width: 400px) {
   .container h2 {
     font-size: 20px;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 10px;
   }
 
   .heading {

@@ -162,14 +162,17 @@ const DependentChildren = () => {
           <p>
             At Brightlight Immigration, we have a dedicated team of visa
             application specialists who can assist you from the start of the
-            application process to obtaining your visa.{" "}
-            <a
-              href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj"
-              className={styles.button}
+            application process to obtaining your visa.
+
+          </p>
+          <button
+              onClick={() =>
+                (window.location.href =
+                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+              }
             >
               Start your process now
-            </a>
-          </p>
+            </button>
         </section>
       </div>
       <div id="faqs">

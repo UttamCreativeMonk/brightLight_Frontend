@@ -125,12 +125,13 @@
   max-width: 1440px;
   margin: 0 auto;
   padding: 20px;
-  text-align: center;
+  text-align: left;
 }
 
 .header {
-  text-align: center;
+  text-align: left;
   margin-bottom: 20px;
+
 }
 
 .benefits,
@@ -162,18 +163,18 @@
 .eligibility ul {
   list-style-type: disc;
   margin-left: 20px;
-  list-style-type: none;
+  /* list-style-type: none; */
 }
 
 .applicationProcess ol {
   margin-left: 20px;
-  list-style-type: none;
+  /* list-style-type: none; */
 }
 
 .workPermitDuration li,
 p {
   margin-bottom: 1px;
-  list-style-type: none;
+  /* list-style-type: none; */
 }
 
 .tefButton  {
@@ -184,6 +185,8 @@ p {
   cursor: pointer;
   font-size: 16px;
   border-radius: 5px;
+  display: block;
+  margin: auto;
 }
 
 .tefButton:hover {
@@ -192,7 +195,7 @@ opacity: 0.9;
 
 .container h2 {
   color: #00273f;
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 20px;
   font-size: 24px;
 }
@@ -201,19 +204,17 @@ opacity: 0.9;
   color: #e8c47c;
   margin-top: 20px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
-.container{
-color: #777777;
-}
 .container strong{
-  color: #00273f;
+  color: #333;
 }
 @media (max-width: 400px) {
   .container h2 {
     font-size: 20px;
-    margin-top: 10px;
-    margin-bottom: 40px;
+    margin-top: 30px;
+    margin-bottom: 10px;
   }
 
   .header h1 {

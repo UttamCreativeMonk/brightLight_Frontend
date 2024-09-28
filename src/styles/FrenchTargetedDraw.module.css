@@ -127,7 +127,7 @@
   max-width: 1440px;
   margin: 0 auto;
   padding: 20px;
-  text-align: center;
+  text-align: left;
 }
 
 .heading {
@@ -152,17 +152,10 @@
   font-size: 1.8rem;
   margin-bottom: 15px;
   color: #333;
-  text-align: center;
+  text-align: left;
 }
 
-/* ul {
-    margin-left: 20px;
-  }
-  
-  ol {
-    margin-left: 20px;
-  }
-   */
+
 .table {
   width: 100%;
   border-collapse: collapse;
@@ -200,34 +193,32 @@
   border-radius: 5px;
   font-size: 1rem;
   margin-top: 20px;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin: auto;
 }
 
 
-.testimonials {
-  margin-top: 20px;
-}
 
-.videoTestimonials,
-.writtenTestimonials {
-  margin-top: 20px;
-}
 
 .container h2 {
   color: #00273f;
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 20px;
-  text-align: center;
+  text-align: left;
 }
 
 .heading {
   margin-top: 20px;
   margin-bottom: 20px;
   color: #e8c47c;
+  text-align: center;
 }
 .benefits li {
   color: #00273f;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .button{
@@ -239,11 +230,14 @@
   text-decoration: none;
 }
 
+.benefits strong{
+  color: #333;
+}
 @media (max-width: 500px) {
   .container h2 {
     font-size: 20px;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 10px;
   }
 
   .heading {

@@ -129,14 +129,14 @@
     max-width: 1440px;
     margin: 0 auto;
     padding: 20px;
-    text-align: center;
+    text-align: left;
   }
   
   .heading {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 20px;
-    text-align: center;
+    text-align: left;
   }
   
   .introduction, .benefits, .applicationProcess, .assistance, .whyChooseUs, .testimonials, .faq {
@@ -147,7 +147,7 @@
     font-size: 1.8rem;
     margin-bottom: 15px;
     color: #333;
-    text-align: center;
+    text-align: left;
   }
   
 
@@ -161,6 +161,10 @@
     border-radius: 5px;
     font-size: 1rem;
     margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: auto;
   }
   
   .button:hover {
@@ -174,22 +178,23 @@
   
   .container h2 {
     color: #00273f;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 20px;
-    text-align: center;
+    text-align: left;
   }
   
   .heading {
     color: #e8c47c;
     margin-top: 20px;
     margin-bottom: 20px;
+    text-align: center;
   }
   
   @media (max-width: 1080px) {
     .container h2 {
       font-size: 20px;
-      margin-top: 10px;
-      margin-bottom: 20px;
+      margin-top: 30px;
+      margin-bottom: 10px;
     }
   
     .heading {

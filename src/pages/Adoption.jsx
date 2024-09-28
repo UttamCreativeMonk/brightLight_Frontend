@@ -191,13 +191,13 @@ const Adoption = () => {
           <p>
             At Brightlight Immigration, we have a dedicated team of visa
             application specialists who can assist you from the start of the
-            application process all the way to obtaining your visa.{" "}
-            <a
-              href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj"
-              className={styles.button}
-            >
-              Start your process now
-            </a>
+            application process all the way to obtaining your visa.
+
+            <button onClick={() =>
+                  (window.location.href =
+                    "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+                } className={styles.button}> Start your process now</button>
+
           </p>
         </section>
       </div>

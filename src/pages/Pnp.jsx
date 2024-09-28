@@ -99,7 +99,7 @@ const Pnp = () => {
           BC Provincial Nominee Program (BC PNP)
         </h2>
         <button
-          className={styles.button}
+          className={styles.button1}
           onClick={() => (window.location.href = "/bc-pnp")}
         >
           Learn More

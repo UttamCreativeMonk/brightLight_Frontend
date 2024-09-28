@@ -105,32 +105,41 @@ const StemTargetedDraw = () => {
               for to join the Express Entry pool:
               <ul className={styles.subheadingLink}>
                 <li>
-                  <Link
-                    to="/federal-skilled-worker-program"
-                    className={styles.button}
-                  >
-                    Federal Skilled Worker Program (FSW)
-                  </Link>
+
+                  <button className={styles.button1}
+              onClick={() =>
+                (window.location.href =
+                  "/federal-skilled-worker-program")
+              }
+            >
+               Federal Skilled Worker Program (FSW)
+            </button>
                   : This program is ideal for tech workers who have the
                   necessary work experience, education, and language ability.
                 </li>
                 <li>
-                  <Link
-                    to="/canadian-experience-class"
-                    className={styles.button}
-                  >
-                    Canadian Experience Class (CEC)
-                  </Link>
+  
+                  <button className={styles.button1}
+              onClick={() =>
+                (window.location.href =
+                  "canadian-experience-class")
+              }
+            >
+             Canadian Experience Class (CEC)
+            </button>
                   : Similar to the FSW program, the CEC is also suitable for
                   tech workers who have gained Canadian work experience.
                 </li>
                 <li>
-                  <Link
-                    to="/federal-skilled-trades-program"
-                    className={styles.button}
-                  >
-                    Federal Skilled Trades Program (FSTP)
-                  </Link>
+
+                  <button className={styles.button1}
+              onClick={() =>
+                (window.location.href =
+                  "/federal-skilled-trades-program")
+              }
+            >
+           Federal Skilled Trades Program (FSTP)
+            </button>
                   : If you're a trades worker, this program is designed for you.
                   It requires proof of relevant work experience, education, and
                   language proficiency.
@@ -348,9 +357,17 @@ const StemTargetedDraw = () => {
             candidates eligible for category-based selection in science,
             technology, mathematics, and engineering (STEM) occupations.
           </p>
-          <Link to="/previous-draw-history" className={styles.button}>
-            View Previous Draw History
-          </Link>
+          {/* <Link to="" className={styles.button}>
+          
+          </Link> */}
+          <button className={styles.button}
+              onClick={() =>
+                (window.location.href =
+                  "/previous-draw-history")
+              }
+            >
+     View Previous Draw History
+            </button>
         </section>
 
         <section className={styles.contact}>
@@ -372,9 +389,17 @@ const StemTargetedDraw = () => {
             application process all the way to obtaining your PR. Start your
             process now.
           </p>
-          <Link to="/contact-us" className={styles.button}>
-            Contact Us
-          </Link>
+          {/* <Link to="/contact-us" className={styles.button}>
+           
+          </Link> */}
+          <button className={styles.button}
+              onClick={() =>
+                (window.location.href =
+                  "/contact-us")
+              }
+            >
+          Contact Us
+            </button>
         </section>
 
         <section className={styles.whyChooseUs} id="why-choose-us">

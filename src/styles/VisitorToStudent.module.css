@@ -132,10 +132,10 @@
   }
   
   .heading {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: bold;
     margin-bottom: 20px;
-    text-align: center;
+    text-align: left;
   }
   
   .intro {
@@ -152,25 +152,25 @@
     font-size: 1.5rem;
     margin-bottom: 15px;
     color: #333;
-    text-align: center;
+    text-align: left;
   }
   
   .benefitsList {
     list-style-type: disc;
     margin: 0 auto;
- 
+    text-align: left;
     padding: 0;
     font-size: 1.1rem;
   }
   
   .eligibility {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
   .eligibilityList {
     list-style-type: disc;
     margin: 0 auto;
-
+    text-align: left;
     padding: 0;
     font-size: 1.1rem;
   }
@@ -185,10 +185,12 @@
     margin: 0 auto;
     padding: 0;
     font-size: 1.1rem;
+    text-align: left;
   }
   
   .applicationProcess {
     margin-bottom: 20px;
+    text-align: left;
   }
   
   .processDescription {
@@ -201,6 +203,7 @@
     margin: 0 auto;
     padding: 0;
     font-size: 1.1rem;
+    text-align: left;
   }
   
   .refusals {
@@ -212,6 +215,7 @@
     margin: 0 auto;
     padding: 0;
     font-size: 1.1rem;
+    text-align: left;
   }
   
   .callToAction {
@@ -221,6 +225,7 @@
   .callToActionText {
     font-size: 1.1rem;
     margin-bottom: 20px;
+    text-align: left;
   }
   
   .button {
@@ -237,36 +242,33 @@
     opacity: 0.9;
     text-decoration: none;
   }
-  
-  .testimonials {
-    margin-bottom: 20px;
-  }
-  
-  .testimonialsContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
+
 
   .container h2 {
     color: #00273f;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 20px;
-    text-align: center;
+    text-align: left;
   }
   
   .heading {
     color: #e8c47c;
     margin-top: 30px;
     margin-bottom: 20px;
+    text-align: center;
+  }
+  .eligibilityAdditional{
+    color: #333;
+    font-weight: bolder;
+    text-align: left;
+    margin-top: 30px;
   }
   
   @media (max-width: 400px) {
     .container h2 {
       font-size: 20px;
-      margin-top: 10px;
-      margin-bottom: 40px;
+      margin-top: 30px;
+      margin-bottom: 10px;
     }
   
     .heading {

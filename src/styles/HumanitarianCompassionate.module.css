@@ -127,7 +127,7 @@
     max-width: 1440px;
     margin: 0 auto;
     padding: 20px;
-    text-align: center;
+    text-align: left;
 
   }
   
@@ -143,20 +143,16 @@
   .whoCanApply ul, .eligibility ul, .refusalReasons ul {
     list-style: disc;
     /* padding-left: 20px; */
-    list-style-type: none;
+    /* list-style-type: none; */
   }
   
   .whoCanApply li, .eligibility li, .refusalReasons li {
     margin-bottom: 10px;
-    list-style-type: none;
+    /* list-style-type: none; */
   }
   
-  .applicationProcess ol {
-    /* padding-left: 20px; */
-       list-style-type: none;
-  }
-  
-  .consultation a {
+
+  .consultation button {
     display: inline-block;
     padding: 10px 15px;
     font-size: 16px;
@@ -166,50 +162,24 @@
     border-radius: 5px;
     transition: background-color 0.3s;
     margin-top: 10px;
-  }
-  
-  .consultation a:hover {
-  opacity: 0.9;
-  }
-  
-  .whyChooseUs, .blogs {
-    margin-bottom: 30px;
-  }
-  
-  .testimonials {
-    margin-bottom: 30px;
-  }
-  
-  .testimonials h2 {
-    margin-bottom: 20px;
-  }
-  
-  .videoTestimonials, .writtenTestimonials {
-    margin-bottom: 20px;
-  }
-  
-  .toggleButton {
-    display: inline-block;
-    padding: 10px 15px;
-    font-size: 16px;
-    text-decoration: none;
-    color: white;
-    background-color: #00273f;
-    border-radius: 5px;
+    border: none;
     cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: 50px;
+    margin-top: 30px;
+    display: block;
+    margin: auto;
   }
   
-  .toggleButton:hover {
+  .consultation button:hover {
   opacity: 0.9;
   }
+  
+
   
   .container h2 {
     color: #00273f;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 20px;
-    text-align: center;
+    text-align: left;
   }
   
   .header h1{
@@ -221,8 +191,8 @@
   @media (max-width: 400px) {
     .container h2 {
       font-size: 20px;
-      margin-top: 10px;
-      margin-bottom: 20px;
+      margin-top: 30px;
+      margin-bottom: 10px;
     }
   
     .header h1{

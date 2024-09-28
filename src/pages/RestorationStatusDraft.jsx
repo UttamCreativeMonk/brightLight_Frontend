@@ -228,13 +228,14 @@ const RestorationStatusDraft = () => {
             application process all the way to obtaining your visa. Start your
             process now.
           </p>
-          <Link
-            id="book-appointment"
-            to="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj"
-            className={styles.button}
-          >
-            Book Appointment
-          </Link>
+          <button className={styles.button}
+              onClick={() =>
+                (window.location.href =
+                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+              }
+            >
+              Book Appointment
+            </button>
         </section>
       </div>
 

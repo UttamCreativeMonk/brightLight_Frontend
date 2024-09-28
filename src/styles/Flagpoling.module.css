@@ -128,14 +128,14 @@
     max-width: 1440px;
     margin: 0 auto;
     padding: 20px;
-text-align: center;
+text-align: left;
   }
   
   .heading {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 20px;
-    text-align: center;
+    text-align: left;
   }
   
   .introduction, .benefits, .eligibility, .tips, .assistance, .whyChooseUs, .testimonials {
@@ -146,14 +146,10 @@ text-align: center;
     font-size: 1.8rem;
     margin-bottom: 15px;
     color: #333;
-    text-align: center;
+    text-align: left;
   }
   
-  /* ul {
-    list-style-type: disc;
-    margin-left: 20px;
-  }
-   */
+
   .button {
     display: inline-block;
     background-color: #00273f;
@@ -164,6 +160,11 @@ text-align: center;
     border-radius: 5px;
     font-size: 1rem;
     margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    margin-top: 30px;
   }
   
   .button:hover {
@@ -174,22 +175,23 @@ text-align: center;
   
   .container h2 {
     color: #00273f;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 20px;
-    text-align: center;
+    text-align: left;
   }
   
   .heading {
     color: #e8c47c;
     margin-top: 20px;
     margin-bottom: 20px;
+    text-align: center;
   }
   
-  @media (max-width: 1080px) {
+  @media (max-width: 400px) {
     .container h2 {
       font-size: 20px;
-      margin-top: 10px;
-      margin-bottom: 20px;
+      margin-top: 30px;
+      margin-bottom: 10px;
     }
   
     .heading {

@@ -209,13 +209,16 @@ const HumanitarianCompassionate = () => {
             At Brightlight Immigration, we have a dedicated team of visa
             application specialists who can assist you from the start of the
             application process all the way to obtaining your visa.{" "}
-            <a
-              href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj"
-              className={styles.button}
+
+          </p>
+          <button
+              onClick={() =>
+                (window.location.href =
+                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+              }
             >
               Start your process now
-            </a>
-          </p>
+            </button>
         </section>
       </div>
 

@@ -141,7 +141,7 @@
 
 .header h1 {
   font-size: 2.5rem;
-  color: #00273f;
+  /* color: #00273f; */
 }
 
 .mainContent {
@@ -169,13 +169,13 @@
 .section ul,
 .section ol {
   margin-bottom: 15px;
-  list-style-type: none;
+  /* list-style-type: none; */
 }
 
 .section ul,
 .section ol {
   padding-left: 20px;
-  list-style-type: none;
+  /* list-style-type: none; */
 }
 
 .section .linkButton {
@@ -200,7 +200,7 @@
   color: #00273f;
   margin-top: 20px;
   margin-bottom: 20px;
-  text-align: center;
+  text-align: left;
 }
 
 .header h1 {
@@ -210,13 +210,15 @@
 }
 
 .mainContent {
-  text-align: center;
+  text-align: left;
 }
 .table {
-  width: 80%;
+  /* width: 80%; */
   border-collapse: collapse;
   margin: 20px 0;
-  margin: auto;
+  /* margin: auto; */
+  align-items: left;
+  text-align: start;
 }
 
 th,
@@ -240,8 +242,8 @@ tr:hover {
 @media (max-width: 400px) {
   .container h2 {
     font-size: 20px;
-    margin-bottom: 40px;
-    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-top: 30px;
   }
 
   .header h1 {

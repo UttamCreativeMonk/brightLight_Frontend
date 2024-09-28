@@ -129,20 +129,20 @@
     max-width: 1440px;
     margin: 0 auto;
     padding: 20px;
-    text-align: center;
+    text-align: left;
   }
   
   .heading {
     font-size: 2.3rem;
     font-weight: bold;
     margin-bottom: 20px;
-    text-align: center;
+    text-align: left;
   }
   
   .description {
     font-size: 1.1rem;
     margin-bottom: 20px;
-    text-align: center;
+    text-align: left;
   }
   
   .section {
@@ -158,7 +158,7 @@
   .list {
     list-style-type: disc;
     margin-left: 20px;
-    list-style-type: none;
+    /* list-style-type: none; */
   }
   
   .paragraph {
@@ -188,8 +188,8 @@
 
   .container h2 {
     color: #00273f;
-    margin-top: 20px;
-    text-align: center;
+    margin-top: 30px;
+    text-align: left;
     margin-bottom: 20px;
   }
   
@@ -197,13 +197,14 @@
     color: #e8c47c;
     margin-top: 30px;
     margin-bottom: 20px;
+    text-align: center;
   }
   
   @media (max-width: 400px) {
     .container h2 {
       font-size: 20px;
-      margin-top: 10px;
-      margin-bottom: 40px;
+      margin-top: 30px;
+      margin-bottom: 10px;
     }
   
     .heading {

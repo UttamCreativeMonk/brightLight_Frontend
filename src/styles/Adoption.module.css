@@ -125,7 +125,7 @@
   max-width: 1440px;
   margin: 0 auto;
   padding: 20px;
-  text-align: center;
+  text-align: left;
 }
 
 .header {
@@ -207,7 +207,7 @@
   font-weight: bold;
 }
 
-.consultation a {
+.consultation button {
   display: inline-block;
   padding: 10px 15px;
   font-size: 16px;
@@ -216,9 +216,14 @@
   background-color: #00273f;
   border-radius: 5px;
   transition: background-color 0.3s;
+  border: none;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  cursor: pointer;
 }
 
-.consultation a:hover {
+.consultation button:hover {
   opacity: 0.9;
 }
 
@@ -229,25 +234,29 @@
 
 .container h2 {
   color: #00273f;
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 20px;
-  text-align: center;
+  text-align: left;
 }
 .marginTop{
   margin-top: 10px;
   margin-bottom: 10px;
+  color: #333;
 }
 .header h1 {
   color: #e8c47c;
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.header p{
+  text-align: left;
+}
 
 @media (max-width: 400px) {
   .container h2 {
     font-size: 20px;
-    margin-top: 10px;
-    margin-bottom: 40px;
+    margin-top: 30px;
+    margin-bottom: 10px;
   }
 
   .header h1 {

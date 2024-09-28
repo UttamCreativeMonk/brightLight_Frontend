@@ -195,9 +195,14 @@ const FrenchTargetedDraw = () => {
           <ul>
             <li>
               You have CLB level 7 or higher in French.{" "}
-              <Link to="/clb-ilets-calculator" className={styles.button}>
-                CLB Calculator
-              </Link>
+              <button className={styles.button}
+              onClick={() =>
+                (window.location.href =
+                  "/clb-ilets-calculators")
+              }
+            >
+              CLB Calculators
+            </button>
             </li>
             <li>A valid Express Entry profile.</li>
           </ul>
@@ -222,9 +227,14 @@ const FrenchTargetedDraw = () => {
             was held in February 2024. Express Entry draw 282 saw a CRS score of
             365 and invited 7000 candidates eligible for French language.
           </p>
-          <Link to="/previous-draw-history" className={styles.button}>
-            Previous Draw History
-          </Link>
+          <button className={styles.button}
+              onClick={() =>
+                (window.location.href =
+                  "/previous-draw-history")
+              }
+            >
+                 Previous Draw History
+            </button>
         </section>
 
         <section className={styles.support}>
@@ -243,13 +253,14 @@ const FrenchTargetedDraw = () => {
             application process all the way to obtaining your PR. Start your
             process now.
           </p>
-          <Link
-            id="book-appointment"
-            to="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj"
-            className={styles.button}
-          >
-            Book Appointment
-          </Link>
+          <button className={styles.button}
+              onClick={() =>
+                (window.location.href =
+                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+              }
+            >
+              Book Appointment
+            </button>
         </section>
 
         <section className={styles.whyChooseUs} id="why-choose-us">

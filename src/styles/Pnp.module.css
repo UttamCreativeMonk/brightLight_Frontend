@@ -128,7 +128,7 @@
     max-width: 1440px;
     margin: 0 auto;
     padding: 20px;
-    text-align: center;
+    text-align: left;
   }
   
   .heading1 {
@@ -136,6 +136,7 @@
     margin-bottom: 1rem;
     margin-top: 20px;
     color: #e8c47c;
+    text-align: center;
   }
   
   .heading2 {
@@ -170,11 +171,28 @@
     font-size: 1rem;
     cursor: pointer;
     border-radius: 5px;
-    margin-top: 20px;
-    margin-bottom: 40px;
+  
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
   }
   
   .button:hover {
+    opacity: 0.9;
+    text-decoration: none;
+  }
+  .button1 {
+    background-color: #00273f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .button1:hover {
     opacity: 0.9;
     text-decoration: none;
   }
@@ -182,18 +200,18 @@
   .container h2{
     margin-top: 2px;
     margin-bottom: 20px;
-    text-align: center;
+    text-align: left;
   }
 
   .container h3{
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 20px;
-    text-align: center;
+    text-align: left;
     color: #00273f;
   }
   .heading1{
     margin-bottom: 30px;
-    text-align: center;
+    text-align: left;
   }
   .link{
     color: rgb(15, 106, 180);
@@ -206,14 +224,14 @@
   @media (max-width: 400px) {
     .container h2{
       font-size: 22px;
-      margin-top: 10px;
-      margin-bottom: 20px;
+      margin-top: 30px;
+      margin-bottom: 10px;
     }
 
     .container h3{
       font-size: 22px;
       margin-top: 20px;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
     .heading1{
       font-size: 26px;

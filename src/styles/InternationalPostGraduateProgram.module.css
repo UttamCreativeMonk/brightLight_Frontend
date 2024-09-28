@@ -128,7 +128,7 @@
     margin: 0 auto;
     /* padding: 20px; */
     color: #333;
-    text-align: center;
+    text-align: left;
   }
   
   .header {
@@ -144,6 +144,7 @@
     width: 1440px;
     margin: auto;
     margin-bottom: 10px;
+    text-align: center;
   }
   
   .section {
@@ -170,6 +171,8 @@
     cursor: pointer;
     border-radius: 5px;
     margin-top: 10px;
+    display: block;
+    margin: auto;
   }
   
   .button:hover {
@@ -184,7 +187,7 @@
 
   .section h2{
     margin-top: 20px;
-    text-align: center;
+    text-align: left;
   }
 
 
@@ -215,8 +218,8 @@
   @media (max-width: 500px) {
     .section h2{
       font-size: 20px;
-      margin-top: 20px;
-      margin-bottom: 30px;
+      margin-top: 30px;
+      margin-bottom: 10px;
     }
     .section li{
       margin-top: 20px;

@@ -129,9 +129,7 @@
     padding: 10px;
     box-sizing: border-box;
   }
-  .section li{
-    list-style-type: none;
-  }
+
   
   .sectionTitle {
     font-size: 2rem;
@@ -183,7 +181,7 @@
   }
   
  .section ul {
-    list-style-type: disc;
+    /* list-style-type: disc; */
     margin-left: 20px;
   }
   
@@ -224,7 +222,7 @@
     margin-bottom: 20px;
   }
   .container{
-    text-align: center;
+    text-align: left;
   }
 
 .section li{

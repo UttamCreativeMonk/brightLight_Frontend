@@ -128,7 +128,7 @@
     max-width: 1440px;
     margin: 0 auto;
     padding: 20px;
-    text-align: center;
+    text-align: left;
 }
 
 .header {
@@ -147,7 +147,7 @@
 }
 
 .criteria h2 {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     margin-bottom: 20px;
 }
 
@@ -157,9 +157,9 @@
   color: #333;
 }
 
-.criteria ul {
+/* .criteria ul {
     margin-left: 20px;
-}
+} */
 
 .table {
     width: 100%;
@@ -179,7 +179,7 @@
 }
 
 .contact {
-    text-align: center;
+    text-align: left;
     margin-bottom: 20px;
 }
 
@@ -206,6 +206,9 @@
   margin-top: 3px;
   margin-bottom: 3px;
   border-radius: 5px;
+  display: block;
+  margin: auto;
+  margin-top: 30px;
 }
 .book_button:hover {
   opacity: 0.9;
@@ -218,16 +221,16 @@
 }
 
 .container h2{
-  /* margin-top: 20px; */
+  margin-top: 30px;
   margin-bottom: 10px;
-  text-align: center;
+  text-align: left;
 }
 
 @media (max-width: 400px) {
   .container h2{
     font-size: 20px;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 10px;
   }
   .header h1 {
     font-size: 24px;

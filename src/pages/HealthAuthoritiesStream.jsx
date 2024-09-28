@@ -139,7 +139,14 @@ const HealthAuthorityStream = () => {
           <li className={styles.listItem}>If applying through Express Entry, candidates receive a nomination notification on their IRCC online account. Accepting the nomination boosts their Comprehensive Ranking System (CRS) score by 600 points, and hence guarantees an Invitation to Apply (ITA) for permanent residence.</li>
           <li className={styles.listItem}>If applying through the non-Express Entry system, candidates must prepare a paper-based application and submit it online.</li>
         </ul>
-
+        <button className={styles.button}
+              onClick={() =>
+                (window.location.href =
+                  "/bcpnp-calculator")
+              }
+            >
+              Calculate Your BCPNP Score
+            </button>
         <h2 className={styles.subtitle} id="book-appointment">
           Still Not Sure?
         </h2>
@@ -149,9 +156,22 @@ const HealthAuthorityStream = () => {
         <p className={styles.description}>
           At Brightlight Immigration, we have a dedicated team of visa application specialists who can assist you from the start of the application process all the way to obtaining your PR. Start your process now.
         </p>
-        <Link to="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" className={styles.button}>Book Appointment</Link>
 
-        <a href="/bcpnp-calculator" className={styles.button}>Calculate Your BCPNP Score</a>
+        <button className={styles.button}
+              onClick={() =>
+                (window.location.href =
+                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+              }
+            >
+              Book Appointment
+            </button>
+
+        {/* <Link to="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" className={styles.button}>Book Appointment</Link> */}
+
+
+
+
+        {/* <a href="" className={styles.button}></a> */}
       </div>
 
 

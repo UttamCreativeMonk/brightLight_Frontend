@@ -132,16 +132,16 @@
   }
   
   .heading {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: bold;
     margin-bottom: 20px;
-    text-align: center;
+    text-align: left;
   }
   
   .intro {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-bottom: 20px;
-    text-align: center;
+    text-align: left;
   }
   
   .programs {
@@ -152,7 +152,7 @@
     font-size: 1.8rem;
     margin-bottom: 15px;
     color: #333;
-    text-align: center;
+    text-align: left;
   }
   
   .buttonContainer {
@@ -201,40 +201,33 @@
   }
   
   .callToActionText {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-bottom: 20px;
-    text-align: center;
+    text-align: left;
   }
-  
-  .testimonials {
-    margin-bottom: 20px;
-  }
-  
-  .testimonialsContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+
+
   
   .container h2 {
     color: #00273f;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 20px;
-    text-align: center;
+    text-align: left;
   }
   
   .heading {
     color: #e8c47c;
     margin-top: 20px;
     margin-bottom: 20px;
+    text-align: center;
   }
   
 
   @media (max-width: 400px) {
     .container h2 {
       font-size: 20px;
-      margin-top: 10px;
-      margin-bottom: 40px;
+      margin-top: 30px;
+      margin-bottom: 10px;
     }
   
     .heading {

@@ -88,28 +88,36 @@ const TradeOccupationTargetedDraw = () => {
               for to join the Express Entry pool:
               <ul>
                 <li>
-                  <a
-                    href="/federal-skilled-worker-program"
-                    className={styles.button}
-                  >
-                    Federal Skilled Worker Program (FSW)
-                  </a>
+                  <button className={styles.button1}
+              onClick={() =>
+                (window.location.href =
+                  "/federal-skilled-worker-program")
+              }
+            >
+            Federal Skilled Worker Program (FSW)
+            </button>
                 </li>
                 <li>
-                  <a
-                    href="/canadian-experience-class"
-                    className={styles.button}
-                  >
-                    Canadian Experience Class (CEC)
-                  </a>
+
+                  <button className={styles.button1}
+              onClick={() =>
+                (window.location.href =
+                  "/canadian-experience-class")
+              }
+            >
+           Canadian Experience Class (CEC)
+            </button>
                 </li>
                 <li>
-                  <a
-                    href="/federal-skilled-trades-program"
-                    className={styles.button}
-                  >
-                    Federal Skilled Trades Program (FSTP)
-                  </a>
+
+                  <button className={styles.button1}
+              onClick={() =>
+                (window.location.href =
+                  "/federal-skilled-trades-program")
+              }
+            >
+       Federal Skilled Trades Program (FSTP)
+            </button>
                 </li>
               </ul>
             </li>
@@ -233,9 +241,15 @@ const TradeOccupationTargetedDraw = () => {
             and invited 1500 candidates eligible for category-based selection in
             Trade occupations.
           </p>
-          <a href="/previous-draw-history" className={styles.button}>
-            View Previous Draw History
-          </a>
+
+          <button className={styles.button}
+              onClick={() =>
+                (window.location.href =
+                  "/previous-draw-history")
+              }
+            >
+              View Previous Draw History
+            </button>
         </div>
 
         <div className={styles.contact}>
@@ -257,9 +271,15 @@ const TradeOccupationTargetedDraw = () => {
             application process all the way to obtaining your PR. Start your
             process now.
           </p>
-          <a href="/contact-us" className={styles.button}>
-            Contact Us
-          </a>
+
+          <button className={styles.button}
+              onClick={() =>
+                (window.location.href =
+                  "/contact-us")
+              }
+            >
+              Contact Us
+            </button>
         </div>
 
         <div className={styles.whyChooseUs} id="why-choose-us">

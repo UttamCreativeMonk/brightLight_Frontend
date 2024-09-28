@@ -6,7 +6,6 @@ import Testimonials from "../sections/Testimonials";
 import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
 
-
 const Reconsideration = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -45,13 +44,27 @@ const Reconsideration = () => {
                 About the Program
               </p>
               <p
-                onClick={() => scrollToSection("requests-for-reconsideration")}> Requests for reconsideration</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
+                onClick={() => scrollToSection("requests-for-reconsideration")}
+              >
+                {" "}
+                Requests for reconsideration
+              </p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>
+                Refusal Reasons
+              </p>
               <p onClick={() => scrollToSection("eligibilty")}>Eligibilty</p>
-              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("book-appointment")}>
+                Book Appointment
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -185,7 +198,16 @@ const Reconsideration = () => {
               </li>
             </ul>
             <span className={styles.bookButtonPara}>
-              <a id="book-appointment" href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj">Book Appointment</a>
+              <button
+                id="book-appointment"
+                onClick={() =>
+                  (window.location.href =
+                    "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+                }
+              >
+                Book Appointment
+              </button>
+              {/* <a  href=""></a> */}
             </span>
           </section>
 
@@ -212,13 +234,13 @@ const Reconsideration = () => {
         </main>
       </div>
       <div id="faqs">
-        <FAQ/>
+        <FAQ />
       </div>
-      <div id="testimonials"> 
-        <Testimonials/>
+      <div id="testimonials">
+        <Testimonials />
       </div>
       <div id="blogs">
-        <RecentBlogs/>
+        <RecentBlogs />
       </div>
       <Footer1 />
     </>

@@ -149,34 +149,44 @@ const FamilyReunificationSponsorship = () => {
           <h2>Categories Who Can Be Sponsored</h2>
           <ul>
             <li>
-              <a href="/common-law-partner-permanent" className={styles.button}>
+              <button
+                onClick={() =>
+                  (window.location.href = "/common-law-partner-permanent")
+                }
+              >
                 Spouses and Common-Law Partners
-              </a>
+              </button>
             </li>
             <li>
-              <a href="/dependent-children" className={styles.button}>
+              <button
+                onClick={() => (window.location.href = "/dependent-children")}
+              >
                 Dependent Children
-              </a>
+              </button>
             </li>
             <li>
-              <a href="/humanitarian-compassionate" className={styles.button}>
+              <button
+                onClick={() =>
+                  (window.location.href = "/humanitarian-compassionate")}>
                 Humanitarian and Compassionate
-              </a>
+              </button>
             </li>
             <li>
-              <a href="/orphan" className={styles.button}>
+              <button onClick={() => (window.location.href = "/orphan")}>
                 Orphan
-              </a>
+              </button>
             </li>
             <li>
-              <a href="/adoption" className={styles.button}>
+              <button onClick={() => (window.location.href = "/adoption")}>
                 Adoption
-              </a>
+              </button>
             </li>
             <li>
-              <a href="/ParentsGrandparents" className={styles.button}>
+              <button
+                onClick={() => (window.location.href = "/ParentsGrandparents")}
+              >
                 Parents and Grandparents
-              </a>
+              </button>
             </li>
           </ul>
         </section>
@@ -266,13 +276,17 @@ const FamilyReunificationSponsorship = () => {
             At Brightlight Immigration, we have a dedicated team of visa
             application specialists who can assist you from the start of the
             application process all the way to obtaining your visa.{" "}
-            <a href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" className={styles.button}>
+            <button
+              className={styles.button}
+              onClick={() =>
+                (window.location.href =
+                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+              }
+            >
               Start your process now
-            </a>
+            </button>
           </p>
         </section>
-
-
       </div>
 
       <div id="faqs">

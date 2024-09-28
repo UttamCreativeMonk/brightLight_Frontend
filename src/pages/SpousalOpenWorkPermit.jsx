@@ -124,22 +124,34 @@ const SpousalOpenWorkPermit = () => {
           </h2>
           <ul >
             <li>
-              <Link to="/common-law-partner-temporary" className={styles.link}>
-                Spouse or Common-law Partner of a Temporary Foreign Worker {"->"}
-              </Link>
+            <button className={styles.button1}
+              onClick={() =>
+                (window.location.href =
+                  "/common-law-partner-temporary")
+              }
+            >
+           Spouse or Common-law Partner of a Temporary Foreign Worker 
+            </button>
             </li>
             <li>
-              <Link
-                to="/international-graduate-program"
-                className={styles.link}
-              >
-                Spouse or Common-law Partner of an International Student{"->"}
-              </Link>
+            <button className={styles.button1}
+              onClick={() =>
+                (window.location.href =
+                  "/international-graduate-program")
+              }
+            >
+          Spouse or Common-law Partner of an International Student
+            </button>
             </li>
             <li>
-              <Link to="/spousal-open-work-permit" className={styles.link}>
-                Open Work Permit for Spouses of Canadian/PR {"->"}
-              </Link>
+            <button className={styles.button1}
+              onClick={() =>
+                (window.location.href =
+                  "/spousal-open-work-permit")
+              }
+            >
+             Open Work Permit for Spouses of Canadian/PR
+            </button>
             </li>
           </ul>
         </section>
@@ -324,13 +336,15 @@ const SpousalOpenWorkPermit = () => {
             application process all the way to obtaining your visa. Start your
             process now.
           </p>
-          <Link
-            id="book-appointment"
-            to="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj"
-            className={styles.button}
-          >
-            Book Appointment
-          </Link>
+
+          <button className={styles.button}
+              onClick={() =>
+                (window.location.href =
+                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+              }
+            >
+              Book Appointment
+            </button>
         </section>
 
         <section className={styles.whyChooseUs} id="why-choose-us">

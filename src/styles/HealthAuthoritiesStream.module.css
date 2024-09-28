@@ -127,7 +127,7 @@
     padding: 20px;
     max-width: 1440px;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
   }
   
   /* Title and subtitle styles */
@@ -138,9 +138,9 @@
     margin-bottom: 30px;
     margin-top: 30px;
   }
-  .container ul{
+  /* .container ul{
     list-style-type: none;
-  }
+  } */
   
   .subtitle {
     font-size: 1.5rem;
@@ -200,6 +200,13 @@
     border-radius: 5px;
     font-weight: bold;
     margin-right: 30px;
+    display: block;
+    margin: auto;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    margin-top: 30px;
   }
   
   .button:hover {
@@ -215,23 +222,24 @@
 
   .container h2 {
     color: #00273f;
-    margin-top: 40px;
+    margin-top: 30px;
     margin-bottom: 20px;
-    text-align: center;
+    text-align: left;
   }
   
-  .header h1{
+  .title{
     color: #e8c47c;
     margin-top: 20px;
     margin-bottom: 20px;
+    text-align: center;
   }
   
 
   @media (max-width: 400px) {
     .container h2 {
       font-size: 20px;
-      margin-top: 10px;
-      margin-bottom: 20px;
+      margin-top: 30px;
+      margin-bottom: 10px;
     }
   
     .header h1{

@@ -131,14 +131,14 @@
   margin: 0 auto;
   padding: 10px;
   box-sizing: border-box;
-  text-align: center;
+  text-align: left;
 }
 
 .container h2 {
   color: #00273f;
 
   margin-bottom: 10px;
-  text-align: center;
+  text-align: left;
 }
 .header {
   text-align: center;
@@ -168,7 +168,7 @@
    .container h2{
 
     margin-bottom: 20px;
-    text-align: center;
+    text-align: left;
   }
 
   @media (max-width: 400px) {

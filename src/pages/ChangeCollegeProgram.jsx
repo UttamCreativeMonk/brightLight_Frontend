@@ -182,13 +182,14 @@ const ChangeCollegeProgram = () => {
             assist you from the start of the application process to obtaining
             your visa. Start your process now.
           </p>
-          <a
-            id="book-appointment"
-            href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj"
-            className={styles.button}
-          >
-            Book Appointment
-          </a>
+          <button className={styles.button}
+              onClick={() =>
+                (window.location.href =
+                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+              }
+            >
+              Start your process now
+            </button>
         </section>
       </div>
 

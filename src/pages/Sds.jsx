@@ -38,14 +38,29 @@ const Sds = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}> About the Program</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                {" "}
+                About the Program
+              </p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("application-submission")}>Application Submission</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
-              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials </p>
+              <p onClick={() => scrollToSection("application-submission")}>
+                Application Submission
+              </p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>
+                Refusal Reasons
+              </p>
+              <p onClick={() => scrollToSection("book-appointment")}>
+                Book Appointment
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials{" "}
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -195,9 +210,15 @@ const Sds = () => {
             <li>Complete a medical exam (if applicable) before applying.</li>
             <li>Obtain a police certificate (if applicable).</li>
           </ul>
-          <Link to="/clb-ilets-calculator" className={styles.button}>
-            Check CLB Score Requirements
-          </Link>
+
+          <button className={styles.button}
+              onClick={() =>
+                (window.location.href =
+                  "/clb-ilets-calculator")
+              }
+            >
+              Check CLB Score Requirements
+            </button>
         </section>
 
         <section className={styles.applicationProcess} id="how-to-apply">
@@ -556,13 +577,17 @@ const Sds = () => {
             specialists who can assist you from the start of the application
             process all the way to obtaining your visa. Start your process now.
           </p>
-          <Link
-            id="book-appointment"
-            to="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj"
+
+          <button
             className={styles.button}
+            id="book-appointment"
+            onClick={() =>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
           >
             Book Appointment
-          </Link>
+          </button>
         </section>
       </div>
       <div id="faqs">

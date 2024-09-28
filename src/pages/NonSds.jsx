@@ -173,9 +173,15 @@ const NonSds = () => {
                 </tr>
               </tbody>
             </table>
-            <Link to="/bcpnp-calculator" className={styles.button}>
-              Check CLB Score Requirements
-            </Link>
+
+            <button className={styles.button}
+              onClick={() =>
+                (window.location.href =
+                  "/bcpnp-calculator")
+              }
+            >
+              Start your process now
+            </button>
           </div>
         </section>
 
@@ -354,12 +360,15 @@ const NonSds = () => {
             from the start of the application process all the way to obtaining
             your visa. Start your process now.
           </p>
-          <Link
-            to="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj"
-            className={styles.button}
-          >
-            Book Appointment
-          </Link>
+
+          <button   className={styles.button}
+              onClick={() =>
+                (window.location.href =
+                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+              }
+            >
+                 Book Appointment
+            </button>
         </section>
       </div>
 
