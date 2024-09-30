@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/PrRenewal.module.css";
 import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
@@ -9,6 +9,8 @@ import FAQ from "../sections/FAQ";
 let PrRenewal = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [data, setData] = useState({});
+
+  const sectionsRef = useRef([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -21,6 +23,25 @@ let PrRenewal = () => {
     }
   };
 
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <>
       <Navbar1 />
@@ -39,18 +60,10 @@ let PrRenewal = () => {
             </div>
             <div className={styles.bannerHeadingRotatePara}>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("refusal-reason")}>
-                Refusal Reason
-              </p>
-              <p onClick={() => scrollToSection("appointment")}>
-                Book Appointment
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
+              <p onClick={() => scrollToSection("refusal-reason")}>Refusal Reason</p>
+              <p onClick={() => scrollToSection("appointment")}>Book Appointment</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -58,8 +71,8 @@ let PrRenewal = () => {
         </div>
       </div>
 
-      <div className={styles.section} id="eligibility">
-        <h2 className={styles.sectionTitle}>
+      <div   className={`${styles.section} ${styles.section}`}  id="eligibility" ref={(el) => sectionsRef.current[0] = el}    >
+        <h2  className={styles.sectionTitle} >
           Eligibility for Permanent Residency Renewal
         </h2>
         <ul className={styles.sectionContent}>
@@ -83,8 +96,8 @@ let PrRenewal = () => {
         </ul>
       </div>
 
-      <div className={styles.section} id="how-to-apply">
-        <h2 className={styles.sectionTitle}>
+      <div className={`${styles.section} ${styles.section}`}  id="how-to-apply" ref={(el) => sectionsRef.current[1] = el}    >
+        <h2 className={styles.sectionTitle} >
           How to Apply for Permanent Residency Renewal
         </h2>
         <p className={styles.sectionContent}>
@@ -97,7 +110,7 @@ let PrRenewal = () => {
         </p>
       </div>
 
-      <div className={styles.section} id="refusal-reason">
+      <div className={`${styles.section} ${styles.section}`}  id="refusal-reason" ref={(el) => sectionsRef.current[2] = el}  >
         <h2 className={styles.sectionTitle}>
           Reasons for Refusal of Permanent Residency Renewal
         </h2>
@@ -116,7 +129,7 @@ let PrRenewal = () => {
         </ul>
       </div>
 
-      <div className={styles.section} id="appointment">
+      <div className={`${styles.section} ${styles.section}`}  id="appointment" ref={(el) => sectionsRef.current[3] = el}     >
         <h2 className={styles.sectionTitle}>Book Appointment</h2>
         <p className={styles.sectionContent}>
           Still not sure? If you have received a refusal for any of the reasons

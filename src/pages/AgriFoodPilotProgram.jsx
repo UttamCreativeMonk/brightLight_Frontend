@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/AgriFoodPilotProgram.module.css";
-import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
 import Testimonials from "../sections/Testimonials";
@@ -10,6 +9,9 @@ import FAQ from "../sections/FAQ";
 const AgriFoodPilotProgram = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [showNOC, setShowNOC] = useState("");
+  
+  // Create refs for each section
+  const sectionsRef = useRef([]);
 
   const toggleNOC = (category) => {
     setShowNOC(showNOC === category ? "" : category);
@@ -25,6 +27,26 @@ const AgriFoodPilotProgram = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -64,11 +86,11 @@ const AgriFoodPilotProgram = () => {
       </div>
 
       <div className={styles.container}>
-        <header className={styles.header} id="about-program">
+        <header className={`${styles.header} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
           <h1>Agri-Food Pilot Program</h1>
         </header>
 
-        <section className={styles.intro}>
+        <section className={`${styles.intro} ${styles.section}`} ref={(el) => sectionsRef.current[1] = el}>
           <p>
             The Agri-Food Pilot is strategically designed to address labor
             shortages, particularly in critical areas like meat processing and
@@ -93,7 +115,7 @@ const AgriFoodPilotProgram = () => {
           </p>
         </section>
 
-        <section className={styles.criteria} id="eligibility">
+        <section  className={`${styles.criteria} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[2] = el}>
           <h2>Eligibility Criteria for Agri-Food Immigration Pilot</h2>
           <p>
             To be eligible for Canada’s Agri-Food Immigration Pilot, foreign
@@ -334,7 +356,7 @@ const AgriFoodPilotProgram = () => {
           </div>
         </section>
 
-        <section className={styles.application} id="how-to-apply">
+        <section className={`${styles.application} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[3] = el}>
           <h2>How to Apply for Canada’s Agri-Food Immigration Pilot</h2>
           <ul>
             <li>
@@ -349,7 +371,7 @@ const AgriFoodPilotProgram = () => {
           </ul>
         </section>
 
-        <section className={styles.contact}>
+        <section className={`${styles.contact} ${styles.section}`} ref={(el) => sectionsRef.current[4] = el}>
           <h2>Still Not Sure?</h2>
           <p>
             Contact Brightlight Immigration today to assess your profile and

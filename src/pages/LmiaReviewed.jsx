@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import styles from "../styles/LmiaReviewed.module.css";
 import Navbar1 from "../components/Navbar1";
@@ -21,6 +21,28 @@ const LmiaReviewed = () => {
     }
   };
 
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <Navbar1 />
@@ -41,26 +63,14 @@ const LmiaReviewed = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
-                About the Program
-              </p>
+              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
               <p onClick={() => scrollToSection("pathways")}>Pathways</p>
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>
-                Refusal Reasons
-              </p>
-              <p onClick={() => scrollToSection("book-appointment")}>
-                Book Appointment
-              </p>
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose Us?
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
+              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
+              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -69,8 +79,8 @@ const LmiaReviewed = () => {
       </div>
 
       <div className={styles.container}>
-        <main className={styles.mainContent} id="about-program">
-          <section className={styles.section}>
+        <main className={styles.mainContent} >
+          <section className={`${styles.section} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
             <h2>What is an LMIA?</h2>
             <p>
               If you're looking to apply for an LMIA, it's because you are
@@ -110,7 +120,7 @@ const LmiaReviewed = () => {
             </p>
           </section>
 
-          <section className={styles.section} id="benifits">
+          <section className={`${styles.section} ${styles.section}`} id="benifits" ref={(el) => sectionsRef.current[1] = el}  >
             <h2>Benefits of the LMIA Program</h2>
             <div className={styles.benefits}>
               <div className={styles.benefit}>
@@ -159,7 +169,7 @@ const LmiaReviewed = () => {
             </div>
           </section>
 
-          <section className={styles.section} id="pathways">
+          <section className={`${styles.pathways} ${styles.section}`} id="pathways" ref={(el) => sectionsRef.current[2] = el} >
             <h2>Pathways of LMIA Available</h2>
             <div className={styles.pathways}>
               <Link to="/low-wage-lmia" className={styles.button}>
@@ -183,7 +193,7 @@ const LmiaReviewed = () => {
             </div>
           </section>
 
-          <section className={styles.section} id="how-to-apply">
+          <section className={`${styles.section} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[3] = el}  >
             <h2>How to Apply for LMIA</h2>
             <div className={styles.applicationProcess}>
               <h3>As an Employer</h3>
@@ -226,7 +236,7 @@ const LmiaReviewed = () => {
             </div>
           </section>
 
-          <section className={styles.section} id="refusal-reasons">
+          <section className={`${styles.section} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[4] = el} >
             <h2>Common Reasons for LMIA Refusal</h2>
             <ul>
               <li>
@@ -264,7 +274,7 @@ const LmiaReviewed = () => {
             </ul>
           </section>
 
-          <section className={styles.section} id="why-choose-us">
+          <section className={`${styles.section} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[5] = el}  >
             <h2>Still Not Sure?</h2>
             <p>
               If you have received a refusal for any of the reasons mentioned

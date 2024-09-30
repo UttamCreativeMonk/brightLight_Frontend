@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/FrancophoneMobilityProgram.module.css";
 import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
@@ -20,6 +20,29 @@ const FrancophoneMobilityProgram = () => {
     }
   };
 
+
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <Navbar1 />
@@ -37,27 +60,14 @@ const FrancophoneMobilityProgram = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
-                About the Program
-              </p>
+              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("employer-requirement")}>
-                Employer Requirement
-              </p>
-              <p onClick={() => scrollToSection("work-permit-duration")}>
-                Work Permit Duration
-              </p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
-
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose Us?
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("employer-requirement")}>Employer Requirement</p>
+              <p onClick={() => scrollToSection("work-permit-duration")}>Work Permit Duration</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
+              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -66,7 +76,7 @@ const FrancophoneMobilityProgram = () => {
       </div>
 
       <div className={styles.container}>
-        <header className={styles.header} id="about-program">
+        <header className={`${styles.header} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el} >
           <h1>Francophone Mobility Program – NO LMIA Required</h1>
           <p>
             Mobilité Francophone: Unlocking Opportunities for French-Speaking
@@ -74,7 +84,7 @@ const FrancophoneMobilityProgram = () => {
           </p>
         </header>
 
-        <section className={styles.benefits} id="benifits">
+        <section className={`${styles.benefits} ${styles.section}`} id="benefits" ref={(el) => sectionsRef.current[1] = el}  >
           <h2>Benefits of Francophone Mobility Program</h2>
           <ul>
             <li>
@@ -108,7 +118,7 @@ const FrancophoneMobilityProgram = () => {
           </ul>
         </section>
 
-        <section className={styles.eligibility} id="eligibility">
+        <section className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[2] = el}  >
           <h2>Eligibility Criteria for Francophone Mobility Program</h2>
           <ul>
             <li>
@@ -134,10 +144,8 @@ const FrancophoneMobilityProgram = () => {
           </button>
         </section>
 
-        <section
-          className={styles.employerRequirements}
-          id="employer-requirement"
-        >
+        <section className={`${styles.employerRequirements} ${styles.section}`} id="employer-requirement" ref={(el) => sectionsRef.current[3] = el}   >
+
           <h2>Employer Requirements for the Francophone Mobility Program</h2>
           <ul>
             <li>
@@ -161,10 +169,7 @@ const FrancophoneMobilityProgram = () => {
           </ul>
         </section>
 
-        <section
-          className={styles.workPermitDuration}
-          id="work-permit-duration"
-        >
+        <section  className={`${styles.workPermitDuration} ${styles.section}`} id="work-permit-duration" ref={(el) => sectionsRef.current[4] = el}   >
           <h2>Work Permit Duration for Francophone Mobility Program</h2>
           <p>
             The work permit duration is determined by whichever comes earlier:
@@ -177,7 +182,7 @@ const FrancophoneMobilityProgram = () => {
           </ul>
         </section>
 
-        <section className={styles.familyMembers} id="family-members">
+        <section  className={`${styles.familyMembers} ${styles.section}`} id="family-members" ref={(el) => sectionsRef.current[5] = el}   >
           <h2>
             Family Members and Dependents for Francophone Mobility Program
           </h2>
@@ -193,7 +198,7 @@ const FrancophoneMobilityProgram = () => {
           </ul>
         </section>
 
-        <section className={styles.applicationProcess} id="application-process">
+        <section  className={`${styles.applicationProcess} ${styles.section}`} id="application-process" ref={(el) => sectionsRef.current[6] = el}     >
           <h2>Application Process for Francophone Mobility Program</h2>
           <ol>
             <li>
@@ -239,10 +244,7 @@ const FrancophoneMobilityProgram = () => {
           </ol>
         </section>
 
-        <section
-          className={styles.workPermitRenewals}
-          id="work-permit-renewals"
-        >
+        <section className={`${styles.workPermitRenewals} ${styles.section}`} id="work-permit-renewals" ref={(el) => sectionsRef.current[7] = el}  >
           <h2>Work Permit Renewals for the Mobilité Francophone Stream</h2>
           <ul>
             <li>
@@ -254,7 +256,7 @@ const FrancophoneMobilityProgram = () => {
           </ul>
         </section>
 
-        <section className={styles.consultation} id="why-choose-us">
+        <section className={`${styles.consultation} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[8] = el}   >
           <h2>Still not sure?</h2>
           <p>
             If you have received a refusal for any of the reasons mentioned

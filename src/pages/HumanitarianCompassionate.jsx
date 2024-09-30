@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/HumanitarianCompassionate.module.css";
-import { Link } from "react-router-dom";
 import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
 import Testimonials from "../sections/Testimonials";
@@ -20,6 +19,29 @@ const HumanitarianCompassionate = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <Navbar1 />
@@ -37,21 +59,12 @@ const HumanitarianCompassionate = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
-                About the Program
-              </p>
+              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
               <p onClick={() => scrollToSection("application")}>Application</p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>
-                Refusal Reasons
-              </p>
-
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose Us?
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
+              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -60,7 +73,7 @@ const HumanitarianCompassionate = () => {
       </div>
 
       <div className={styles.container}>
-        <header className={styles.header} id="about-program">
+        <header className={`${styles.header} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}   >
           <h1>Canada Humanitarian and Compassionate (H&C) Program</h1>
           <p>
             Unlike traditional immigration programs that prioritize factors like
@@ -78,7 +91,7 @@ const HumanitarianCompassionate = () => {
           </p>
         </header>
 
-        <section className={styles.whoCanApply}>
+        <section className={`${styles.whoCanApply} ${styles.section}`} id="testing" ref={(el) => sectionsRef.current[1] = el}  >
           <h2>
             Who Can Apply Under the Humanitarian and Compassionate (H&C) Program
             for Family Reunification?
@@ -130,7 +143,7 @@ const HumanitarianCompassionate = () => {
           </ul>
         </section>
 
-        <section className={styles.eligibility} id="eligibility">
+        <section className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[2] = el} >
           <h2>
             Eligibility Criteria for the Humanitarian and Compassionate (H&C)
             Program
@@ -155,7 +168,7 @@ const HumanitarianCompassionate = () => {
           </ul>
         </section>
 
-        <section className={styles.applicationProcess} id="application">
+        <section className={`${styles.applicationProcess} ${styles.section}`} id="application" ref={(el) => sectionsRef.current[3] = el}  >
           <h2>
             How to Apply for the Humanitarian and Compassionate (H&C) Program
           </h2>
@@ -171,7 +184,7 @@ const HumanitarianCompassionate = () => {
           </ol>
         </section>
 
-        <section className={styles.refusalReasons} id="refusal-reasons">
+        <section className={`${styles.refusalReasons} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[4] = el}  >
           <h2>
             Common Reasons for Refusals of the Humanitarian and Compassionate
             (H&C) Program
@@ -194,7 +207,7 @@ const HumanitarianCompassionate = () => {
           </ul>
         </section>
 
-        <section className={styles.consultation} id="why-choose-us">
+        <section  className={`${styles.consultation} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[5] = el} >
           <h2>Still Not Sure?</h2>
           <p>
             If you have received a refusal for any of the reasons mentioned

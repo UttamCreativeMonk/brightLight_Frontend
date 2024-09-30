@@ -1,4 +1,4 @@
-import React, { useState ,useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/StudentVisa.module.css";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
@@ -37,6 +37,29 @@ const StudentVisa = () => {
     });
   },[])
   
+
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
 <Helmet>
@@ -97,16 +120,10 @@ const StudentVisa = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
-                About the Program
-              </p>
+              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
               <p onClick={() => scrollToSection("pathways")}>Pathways</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -114,7 +131,7 @@ const StudentVisa = () => {
         </div>
       </div>
       <div className={styles.container}>
-        <h1 className={styles.heading} id="about-program">
+        <h1  className={`${styles.heading} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el} >
           Student Visa
         </h1>
         <p className={styles.description}>
@@ -131,8 +148,8 @@ const StudentVisa = () => {
           at some of the world's top-rated universities and colleges.
         </p>
 
-        <section className={styles.pathways}>
-          <h2 className={styles.subheading} id="pathways">
+        <section  className={`${styles.pathways} ${styles.section}`} id="testing" ref={(el) => sectionsRef.current[1] = el}>
+          <h2 className={styles.subheading} id="pathways" >
             Pathways to Study Abroad
           </h2>
           <div className={styles.pathwayContainer}>
@@ -166,7 +183,7 @@ const StudentVisa = () => {
           </div>
         </section>
 
-        <section className={styles.callToAction}>
+        <section className={`${styles.callToAction} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[2] = el} >
           <h2 className={styles.subheading} id="how-to-apply">
             Start Your Journey
           </h2>

@@ -1,6 +1,5 @@
-import React, { useState , useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/InternationalGraduateProgram.module.css";
-import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
 import Testimonials from "../sections/Testimonials";
@@ -23,7 +22,6 @@ const InternationalGraduateProgram = () => {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
-
   
   };
 
@@ -41,6 +39,29 @@ const InternationalGraduateProgram = () => {
       console.log(error);
     });
   },[])
+
+
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -88,7 +109,7 @@ const InternationalGraduateProgram = () => {
       </Helmet>
       <Navbar1 />
       <div className={styles.bannerParent}>
-        <header className={styles.header}>
+        <header className={styles.header} >
           <h1>
             British Columbia Provincial Nominee Program - International Graduate
             Stream
@@ -110,26 +131,12 @@ const InternationalGraduateProgram = () => {
             <div className={styles.bannerHeadingRotatePara}>
               <p onClick={() => scrollToSection("benefits")}>Benefits</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("employer_requirements")}>
-                Employer Requirements
-              </p>
-              <p onClick={() => scrollToSection("bcnp-calculator")}>
-                BCPNP Calculator
-              </p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply
-              </p>
-              <p onClick={() => scrollToSection("why_choose_us")}>
-                {" "}
-                Why Choose Us?
-              </p>
-              <p onClick={() => scrollToSection("book-appointment")}>
-                {" "}
-                Book Appointment{" "}
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("employer_requirements")}>Employer Requirements</p>
+              <p onClick={() => scrollToSection("bcnp-calculator")}>BCPNP Calculator</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply</p>
+              <p onClick={() => scrollToSection("why_choose_us")}>Why Choose Us?</p>
+              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -138,7 +145,7 @@ const InternationalGraduateProgram = () => {
       </div>
 
       <div className={styles.container}>
-        <section className={styles.section} id="benefits">
+        <section className={`${styles.section} ${styles.section}`} id="benefits" ref={(el) => sectionsRef.current[0] = el}>
           <h2>Benefits of BCPNP International Graduate Stream</h2>
           <ul>
             <li>
@@ -155,7 +162,7 @@ const InternationalGraduateProgram = () => {
             </li>
           </ul>
         </section>
-        <section className={styles.section} id="eligibility">
+        <section  className={`${styles.section} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[1] = el}>
           <h2>Eligibility Criteria for International Graduate Stream</h2>
           <div className={styles.criteria}>
             <h3>1. Job Offer</h3>
@@ -222,7 +229,7 @@ const InternationalGraduateProgram = () => {
             </ul>
           </div>
         </section>
-        <section className={styles.section} id="employer_requirements">
+        <section className={`${styles.section} ${styles.section}`} id="employer_requirements" ref={(el) => sectionsRef.current[2] = el}>
           <h2>Requirements for the Express Entry Category</h2>
           <p>
             To be eligible, you must qualify under one of the federal programs.
@@ -246,7 +253,7 @@ const InternationalGraduateProgram = () => {
             </li>
           </ul>
         </section>
-        <section className={styles.section}>
+        <section className={`${styles.section} ${styles.section}`} id="testing1" ref={(el) => sectionsRef.current[3] = el}>
           <h2>Employer’s Eligibility Requirements</h2>
           <ul>
             <li>Established in B.C.</li>
@@ -262,7 +269,7 @@ const InternationalGraduateProgram = () => {
             <li>Adhere to all relevant laws and regulations.</li>
           </ul>
         </section>
-        <section className={styles.section} id="bcnp-calculator">
+        <section className={`${styles.section} ${styles.section}`} id="bcnp-calculator" ref={(el) => sectionsRef.current[4] = el}>
           <button
             className={styles.button}
             onClick={() => (window.location.href = "/bcpnp-calculator")}
@@ -270,7 +277,7 @@ const InternationalGraduateProgram = () => {
             Calculate your BCPNP score
           </button>
         </section>
-        <section className={styles.section} id="how-to-apply">
+        <section className={`${styles.section} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[5] = el}>
           <h2>Application Process</h2>
           <ol>
             <li>
@@ -303,7 +310,7 @@ const InternationalGraduateProgram = () => {
             </li>
           </ol>
         </section>
-        <section className={styles.section} id="book-appointment">
+        <section  className={`${styles.section} ${styles.section}`} id="book-appointment" ref={(el) => sectionsRef.current[6] = el}>
           <h2>Still Not Sure?</h2>
           <p>
             Contact Brightlight Immigration to assess your profile and start

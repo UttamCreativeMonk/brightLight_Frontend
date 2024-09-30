@@ -197,11 +197,11 @@
   text-decoration: none;
   border-radius: 5px;
   font-size: 1rem;
-  margin-top: 20px;
   display: block;
   margin: auto;
   border: none;
   cursor: pointer;
+  margin-top: 20px;
 }
 
 .button:hover {
@@ -253,6 +253,19 @@
   color: #333;
   margin-top: 20px;
 }
+
+
+.section {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 
 @media (max-width: 400px) {
   .container h2 {

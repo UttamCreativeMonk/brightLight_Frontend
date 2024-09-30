@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/NonSds.module.css";
 import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
@@ -20,6 +20,29 @@ const NonSds = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -57,7 +80,7 @@ const NonSds = () => {
       </div>
 
       <div className={styles.container}>
-        <h1 className={styles.heading} id="about-program">
+        <h1 c className={`${styles.heading} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el} >
           Non-Student Direct Stream (Non-SDS) / General Student Visa
         </h1>
 
@@ -81,7 +104,7 @@ const NonSds = () => {
           </p>
         </section>
 
-        <section className={styles.prosCons} id="pros-cons">
+        <section className={`${styles.prosCons} ${styles.section}`} id="pros-cons" ref={(el) => sectionsRef.current[1] = el}>
           <h2 className={styles.subheading}>Pros and Cons</h2>
           <div className={styles.grid}>
             <div className={styles.pros}>
@@ -105,7 +128,7 @@ const NonSds = () => {
           </div>
         </section>
 
-        <section className={styles.eligibility} id="eligibility">
+        <section  className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[2] = el}>
           <h2 className={styles.subheading}>Eligibility for Non-SDS Program</h2>
           <ul>
             <li>
@@ -133,7 +156,7 @@ const NonSds = () => {
             </li>
           </ul>
 
-          <div className={styles.languageChart} id="language-chart">
+          <div className={`${styles.languageChart} ${styles.section}`} id="language-chart" ref={(el) => sectionsRef.current[3] = el}>
             <h3>Minimum Language Test Scores Required:</h3>
             <table>
               <thead>
@@ -185,7 +208,7 @@ const NonSds = () => {
           </div>
         </section>
 
-        <section className={styles.applicationProcess} id="how-to-apply">
+        <section  className={`${styles.applicationProcess} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[4] = el}>
           <h2 className={styles.subheading}>Application Process</h2>
           <p>
             The application process for a Non-SDS Canada or General Student Visa
@@ -211,7 +234,7 @@ const NonSds = () => {
           </ul>
         </section>
 
-        <section className={styles.proofOfFunds} id="proof-of-funds">
+        <section className={`${styles.proofOfFunds} ${styles.section}`} id="proof-of-funds" ref={(el) => sectionsRef.current[5] = el}>
           <h2 className={styles.subheading}>Proof of Funds Chart</h2>
           <table>
             <thead>
@@ -293,7 +316,7 @@ const NonSds = () => {
           </table>
         </section>
 
-        <section className={styles.spousalPermit} id="spousal-permit">
+        <section  className={`${styles.spousalPermit} ${styles.section}`} id="spousal-permit" ref={(el) => sectionsRef.current[6] = el}>
           <h2 className={styles.subheading}>Spousal Open Work Permit</h2>
           <p>
             As of March 19, 2024, to be eligible to apply for a Spousal Open
@@ -323,7 +346,7 @@ const NonSds = () => {
           </ul>
         </section>
 
-        <section className={styles.refusalReasons} id="refusal-reasons">
+        <section className={`${styles.refusalReasons} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[7] = el}>
           <h2 className={styles.subheading}>Reasons for Refusal</h2>
           <ul>
             <li>
@@ -343,7 +366,7 @@ const NonSds = () => {
           </ul>
         </section>
 
-        <section className={styles.bookAppointment} id="book-appointment">
+        <section className={`${styles.bookAppointment} ${styles.section}`} id="book-appointment" ref={(el) => sectionsRef.current[8] = el}>
           <h2 className={styles.subheading}>Book an Appointment</h2>
           <p>
             If you have faced a refusal for any of the reasons mentioned above,

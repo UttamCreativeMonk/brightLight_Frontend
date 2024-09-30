@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/LonelyCanadian.module.css";
-import { Link } from "react-router-dom";
 import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
 import Testimonials from "../sections/Testimonials";
@@ -19,6 +18,29 @@ const LonelyCanadian = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
     <Navbar1/>
@@ -41,22 +63,11 @@ const LonelyCanadian = () => {
               <p onClick={() => scrollToSection("duration")}>Duration</p>
               <p onClick={() => scrollToSection("application-process")}>Application Process</p>
               <p onClick={() => scrollToSection("alternatives")}>Alternatives</p>
-
-              <p onClick={() => scrollToSection("bankruptcy")}>
-                How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("sponsor-siblings")}>
-                Refusal Reasons
-              </p>
-              <p onClick={() => scrollToSection("book-appointment")}>
-                Book Appointment
-              </p>
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose Us?
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("bankruptcy")}>How to Apply?</p>
+              <p onClick={() => scrollToSection("sponsor-siblings")}>Refusal Reasons</p>
+              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
+              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -66,12 +77,12 @@ const LonelyCanadian = () => {
 
 
       <div className={styles.container}>
-      <header className={styles.header} id="about-program">
+      <header className={`${styles.header} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}   >
         <h1>Lonely Canadian Sponsoring Other Relatives: A Path to Family Reunification</h1>
         <p>Canada’s family sponsorship program prioritizes family reunification. If you wish to sponsor other family members who may be lonely or orphaned, certain conditions apply. Here’s what you need to know:</p>
       </header>
 
-      <section className={styles.eligibility} id="eligibility">
+      <section className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[1] = el} >
         <h2>Eligibility Criteria to Sponsor Other Relatives as a Lonely Canadian</h2>
         <ul>
           <li>Minimum Necessary Income: The sponsor should have sufficient income.</li>
@@ -84,7 +95,7 @@ const LonelyCanadian = () => {
         </ul>
       </section>
 
-      <section className={styles.duration} id="duration">
+      <section className={`${styles.duration} ${styles.section}`} id="duration" ref={(el) => sectionsRef.current[2] = el} >
         <h2>Duration of Undertaking</h2>
         <ul>
           <li>The undertaking to sponsor other relatives to Canada lasts for ten years.</li>
@@ -96,7 +107,7 @@ const LonelyCanadian = () => {
         </ul>
       </section>
 
-      <section className={styles.bankruptcyCriminalSentences} id="bankruptcy">
+      <section  className={`${styles.bankruptcyCriminalSentences} ${styles.section}`} id="bankruptcy" ref={(el) => sectionsRef.current[3] = el}  >
         <h2>Bankruptcy and Criminal Sentences</h2>
         <ul>
           <li>Sponsoring other relatives is not allowed if the sponsor is filing for bankruptcy.</li>
@@ -107,7 +118,7 @@ const LonelyCanadian = () => {
         </ul>
       </section>
 
-      <section className={styles.sponsoringSiblings} id="sponsor-siblings">
+      <section className={`${styles.sponsoringSiblings} ${styles.section}`} id="sponsor-siblings" ref={(el) => sectionsRef.current[4] = el}     >
         <h2>Sponsoring Siblings</h2>
         <p>Alternative options exist for sponsoring siblings:</p>
         <ul>
@@ -126,7 +137,7 @@ const LonelyCanadian = () => {
         </ul>
       </section>
 
-      <section className={styles.alternatives} id="alternatives">
+      <section   className={`${styles.alternatives} ${styles.section}`} id="alternatives" ref={(el) => sectionsRef.current[5] = el} >
         <h2>Exploring Other Possibilities</h2>
         <p>Consider the following alternatives if you cannot sponsor a sibling over 18 years of age:</p>
         <ul>
@@ -136,7 +147,7 @@ const LonelyCanadian = () => {
         </ul>
       </section>
 
-      <section className={styles.applicationProcess} id="application-process">
+      <section  className={`${styles.applicationProcess} ${styles.section}`} id="application-process" ref={(el) => sectionsRef.current[6] = el} >
         <h2>How to Apply for Sponsoring a Relative as a Lonely Canadian</h2>
         <h3>Step 1: Obtain the Application Package</h3>
         <ul>

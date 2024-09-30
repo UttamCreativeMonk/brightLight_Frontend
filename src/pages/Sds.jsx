@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/Sds.module.css";
-import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
 import Testimonials from "../sections/Testimonials";
@@ -21,6 +20,29 @@ const Sds = () => {
     }
   };
 
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+
   return (
     <>
       <Navbar1 />
@@ -38,29 +60,14 @@ const Sds = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
-                {" "}
-                About the Program
-              </p>
+              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("application-submission")}>
-                Application Submission
-              </p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>
-                Refusal Reasons
-              </p>
-              <p onClick={() => scrollToSection("book-appointment")}>
-                Book Appointment
-              </p>
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose Us?
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials{" "}
-              </p>
+              <p onClick={() => scrollToSection("application-submission")}>Application Submission</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
+              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
+              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -69,11 +76,11 @@ const Sds = () => {
       </div>
 
       <div className={styles.container}>
-        <h1 className={styles.heading} id="about-program">
+        <h1  className={styles.heading} id="about-program"  >
           Student Direct Stream (SDS)
         </h1>
 
-        <section className={styles.intro}>
+        <section className={`${styles.intro} ${styles.section}`} id="testing" ref={(el) => sectionsRef.current[1] = el}>
           <p>
             The Student Direct Stream (SDS) offers eligible international
             students from 14 countries an expedited pathway to obtain their
@@ -96,7 +103,7 @@ const Sds = () => {
           </p>
         </section>
 
-        <section className={styles.fasterProcessing} id="faster-processing">
+        <section className={`${styles.fasterProcessing} ${styles.section}`} id="faster-processing" ref={(el) => sectionsRef.current[2] = el}>
           <h2 className={styles.subheading}>
             How to Benefit from Faster Processing
           </h2>
@@ -118,7 +125,7 @@ const Sds = () => {
           </p>
         </section>
 
-        <section className={styles.eligibility} id="eligibility">
+        <section className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[3] = el}>
           <h2 className={styles.subheading}>
             Eligibility Criteria for the Student Direct Stream (SDS)
           </h2>
@@ -221,7 +228,7 @@ const Sds = () => {
             </button>
         </section>
 
-        <section className={styles.applicationProcess} id="how-to-apply">
+        <section className={`${styles.applicationProcess} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[4] = el}>
           <h2 className={styles.subheading}>
             How to Apply for Student Direct Stream (SDS)
           </h2>
@@ -427,7 +434,7 @@ const Sds = () => {
           </ol>
         </section>
 
-        <section className={styles.family} id="family">
+        <section  className={`${styles.family} ${styles.section}`} id="family" ref={(el) => sectionsRef.current[0] = el}>
           <h2 className={styles.subheading}>
             Bringing Spouses, Common-Law Partners, and Dependent Children
           </h2>
@@ -477,7 +484,7 @@ const Sds = () => {
           </ul>
         </section>
 
-        <section className={styles.exclusions} id="exclusion">
+        <section className={`${styles.exclusions} ${styles.section}`} id="exclusion" ref={(el) => sectionsRef.current[5] = el}>
           <h2 className={styles.subheading}>
             Who Isn’t Eligible for the Student Direct Stream (SDS)?
           </h2>
@@ -496,10 +503,7 @@ const Sds = () => {
           </ul>
         </section>
 
-        <section
-          className={styles.applicationSubmission}
-          id="application-submission"
-        >
+        <section className={`${styles.applicationSubmission} ${styles.section}`} id="application-submission" ref={(el) => sectionsRef.current[6] = el} >
           <h2 className={styles.subheading}>Submitting Your Application</h2>
           <p>
             Students applying through the Student Direct Stream can only apply
@@ -545,7 +549,7 @@ const Sds = () => {
           </p>
         </section>
 
-        <section className={styles.refusalReasons} id="refusal-reasons">
+        <section  className={`${styles.refusalReasons} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[7] = el}>
           <h2 className={styles.subheading}>Reasons for Refusal</h2>
           <ul>
             <li>Insufficient Identity or travel history documents</li>

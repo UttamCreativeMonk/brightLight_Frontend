@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/Reconsideration.module.css";
 import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
@@ -20,6 +20,29 @@ const Reconsideration = () => {
     }
   };
 
+
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <Navbar1 />
@@ -40,31 +63,14 @@ const Reconsideration = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
-                About the Program
-              </p>
-              <p
-                onClick={() => scrollToSection("requests-for-reconsideration")}
-              >
-                {" "}
-                Requests for reconsideration
-              </p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>
-                Refusal Reasons
-              </p>
+              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
+              <p onClick={() => scrollToSection("requests-for-reconsideration")}>Requests for reconsideration</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
               <p onClick={() => scrollToSection("eligibilty")}>Eligibilty</p>
-              <p onClick={() => scrollToSection("book-appointment")}>
-                Book Appointment
-              </p>
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose Us?
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
+              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -73,8 +79,8 @@ const Reconsideration = () => {
       </div>
 
       <div className={styles.container}>
-        <main className={styles.mainContent} id="about-program">
-          <section className={styles.section}>
+        <main className={styles.mainContent}>
+          <section  className={`${styles.section} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}  >
             <h2>Don't Worry, There's Still Hope!</h2>
             <p>
               Are you a Canadian immigrant who has recently received a rejection
@@ -97,7 +103,7 @@ const Reconsideration = () => {
             </p>
           </section>
 
-          <section className={styles.section} id="requests-for-reconsideration">
+          <section className={`${styles.section} ${styles.section}`} id="requests-for-reconsideration" ref={(el) => sectionsRef.current[1] = el}  >
             <h2>Requests for reconsideration can be made for:</h2>
             <ul>
               <li>Permanent residence</li>
@@ -114,7 +120,7 @@ const Reconsideration = () => {
             </p>
           </section>
 
-          <section className={styles.section} id="eligibilty">
+          <section className={`${styles.section} ${styles.section}`} id="eligibilty" ref={(el) => sectionsRef.current[2] = el}  >
             <h2>Eligibility for Reconsideration</h2>
             <p>
               Are you considering reconsideration requests? See if you meet the
@@ -138,7 +144,7 @@ const Reconsideration = () => {
             </ul>
           </section>
 
-          <section className={styles.section} id="how-to-apply">
+          <section  className={`${styles.section} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[3] = el}   >
             <h2>How to Apply for Reconsideration</h2>
             <p>
               Meet the eligibility criteria? Let's see how you can request a
@@ -163,7 +169,7 @@ const Reconsideration = () => {
             </ul>
           </section>
 
-          <section className={styles.section} id="refusal-reasons">
+          <section  className={`${styles.section} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[4] = el} >
             <h2>Reasons for Refusal After Reconsideration</h2>
             <p>
               Don’t forget to avoid these common reconsideration request refusal
@@ -211,7 +217,7 @@ const Reconsideration = () => {
             </span>
           </section>
 
-          <section className={styles.section} id="why-choose-us">
+          <section className={`${styles.section} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[5] = el} >
             <h2>Still Not Sure?</h2>
             <p>
               If you have received a refusal for any of the reasons mentioned

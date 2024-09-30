@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/HealthAuthoritiesStream.module.css";
-import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
 import Testimonials from "../sections/Testimonials";
@@ -23,6 +22,29 @@ const HealthAuthorityStream = () => {
     }
   };
 
+
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <Navbar1 />
@@ -40,22 +62,12 @@ const HealthAuthorityStream = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
-                About the Program
-              </p>
+              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
               <p onClick={() => scrollToSection("benefits")}>Benefits</p>
-              <p onClick={() => scrollToSection("eligibility")}>
-                Eligibility
-              </p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("book-appointment")}>
-                Book Appointment
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
+              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -65,20 +77,20 @@ const HealthAuthorityStream = () => {
 
 
       <div className={styles.container}>
-        <h1 className={styles.title} id="about-program">
+        <h1 className={`${styles.title} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
           British Columbia Health Authority Stream
         </h1>
-        <p className={styles.description}>
+        <p  className={`${styles.description} ${styles.section}`} id="testing1" ref={(el) => sectionsRef.current[1] = el}>
           The British Columbia Health Authority Stream is one of the specialized immigration streams within the British Columbia Provincial Nominee Program (BCPNP), operated by the province of British Columbia. This stream aims to attract skilled immigrants who can contribute significantly to the healthcare infrastructure in BC.
         </p>
-        <p className={styles.description}>
+        <p  className={`${styles.description} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[2] = el}>
           Note: This stream is different from healthcare priority occupations applying under BCPNP Skilled Worker or International Graduate streams.
         </p>
 
-        <h2 className={styles.subtitle} id="benefits">
+        <h2 className={`${styles.subtitle} ${styles.section}`} id="benefits" ref={(el) => sectionsRef.current[3] = el}>
           Benefits of British Columbia Health Authority Stream
         </h2>
-        <ul className={styles.list}>
+        <ul  className={`${styles.list} ${styles.section}`} id="testing3" ref={(el) => sectionsRef.current[4] = el}>
           <li className={styles.listItem}>Job Offer: The job offer can fall under any NOC tier, ranging from 0 to 5. It does not have to be a high-skilled occupation or related to healthcare.</li>
           <li className={styles.listItem}>No Draws: The BC Health Authority stream operates without draws. All you need to do is meet the eligibility criteria for this program.</li>
           <li className={styles.listItem}>Nomination Priority: Successful candidates nominated through the BC Health Authority Program receive an invitation to apply for Canadian permanent residence.</li>
@@ -86,11 +98,11 @@ const HealthAuthorityStream = () => {
           <li className={styles.listItem}>Accelerated Processing: While Express Entry is not mandatory, candidates with an active profile may choose to apply through the Express Entry system for faster processing.</li>
         </ul>
 
-        <h2 className={styles.subtitle} id="eligibility">
+        <h2 className={`${styles.subtitle} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[5] = el}>
           Eligibility for the British Columbia Health Authority Stream
         </h2>
-        <h3 className={styles.subheading}>1. Job Offer</h3>
-        <ul className={styles.list}>
+        <h3  className={`${styles.subheading} ${styles.section}`} id="testing4" ref={(el) => sectionsRef.current[6] = el}>1. Job Offer</h3>
+        <ul className={`${styles.list} ${styles.section}`} id="testing5" ref={(el) => sectionsRef.current[7] = el}>
           <li className={styles.listItem}>Hold an indeterminate (no defined end date), full-time job offer in ANY occupation from one of B.C. public health authorities listed below:
             <ul className={styles.nestedList}>
               <li className={styles.nestedListItem}>Provincial Health Services Authority</li>
@@ -106,31 +118,31 @@ const HealthAuthorityStream = () => {
           <li className={styles.listItem}>Alternatively, possess a letter from a health authority or midwife practice group confirming your role as a physician, nurse practitioner, or midwife in British Columbia.</li>
         </ul>
 
-        <h3 className={styles.subheading}>2. Education and Qualifications</h3>
-        <ul className={styles.list}>
+        <h3  className={`${styles.subheading} ${styles.section}`} id="testing5" ref={(el) => sectionsRef.current[8] = el}>2. Education and Qualifications</h3>
+        <ul className={`${styles.list} ${styles.section}`} id="testing6" ref={(el) => sectionsRef.current[9] = el} >
           <li className={styles.listItem}>Satisfy the education, training, experience, and qualification criteria specified by the public health authority.</li>
         </ul>
 
-        <h3 className={styles.subheading}>3. Health Authority Support</h3>
-        <ul className={styles.list}>
+        <h3 className={`${styles.subheading} ${styles.section}`} id="testing7" ref={(el) => sectionsRef.current[10] = el}>3. Health Authority Support</h3>
+        <ul  className={`${styles.list} ${styles.section}`} id="testing8" ref={(el) => sectionsRef.current[11] = el}>
           <li className={styles.listItem}>The health authority must provide recommendation and support your application.</li>
         </ul>
 
-        <h3 className={styles.subheading}>4. Language</h3>
-        <ul className={styles.list}>
+        <h3 className={`${styles.subheading} ${styles.section}`} id="testing9" ref={(el) => sectionsRef.current[12] = el} >4. Language</h3>
+        <ul className={`${styles.list} ${styles.section}`} id="testing10" ref={(el) => sectionsRef.current[13] = el}>
           <li className={styles.listItem}>If the Job Offer's NOC code is of TEER Category 0 or 1, you do not need language results to be eligible (BCPNP can still ask you to pass a language test at their own discretion).</li>
           <li className={styles.listItem}>If the Job Offer's NOC code is of TEER Category 2, 3, 4 or 5, you will need to have a Canadian Language Benchmark (CLB) score of at least 4 to be eligible.</li>
         </ul>
 
-        <h3 className={styles.subheading}>5. Financial Capability</h3>
-        <ul className={styles.list}>
+        <h3 className={`${styles.subheading} ${styles.section}`} id="testing11" ref={(el) => sectionsRef.current[14] = el} >5. Financial Capability</h3>
+        <ul className={`${styles.list} ${styles.section}`} id="testing12" ref={(el) => sectionsRef.current[15] = el} >
           <li className={styles.listItem}>Demonstrate that you can support yourself and your dependents during your stay in British Columbia.</li>
         </ul>
 
-        <h2 className={styles.subtitle} id="how-to-apply">
+        <h2  className={`${styles.subtitle} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[16] = el}>
           How to Apply for BC Health Authority Stream?
         </h2>
-        <ul className={styles.list}>
+        <ul className={`${styles.list} ${styles.section}`} id="testing13" ref={(el) => sectionsRef.current[17] = el}>
           <li className={styles.listItem}>The BC Health Authority stream accepts new applications at any time.</li>
           <li className={styles.listItem}>Specify whether you are applying through the Express Entry system or non-Express Entry system.</li>
           <li className={styles.listItem}>Provide resume, job description, recommendation letter, and BC PNP Employer Declaration Form from one of the health authorities.</li>
@@ -150,10 +162,10 @@ const HealthAuthorityStream = () => {
         <h2 className={styles.subtitle} id="book-appointment">
           Still Not Sure?
         </h2>
-        <p className={styles.description}>
+        <p   className={`${styles.description} ${styles.section}`} id="testing14" ref={(el) => sectionsRef.current[18] = el}>
           Contact Brightlight Immigration today to assess your profile and embark on a transformative journey towards achieving your Canadian dream. With over a decade of experience, we specialize in handling BCPNP Health Authority Program. Our approval rate for these programs is nearly 100%. We achieve this with a tailored approach to your specific case. We use case law and find similar cases to your circumstances that had positive results, and we use them as precedents in cases we work on. This is why we have a high success rate.
         </p>
-        <p className={styles.description}>
+        <p  className={`${styles.description} ${styles.section}`} id="testing15" ref={(el) => sectionsRef.current[19] = el}>
           At Brightlight Immigration, we have a dedicated team of visa application specialists who can assist you from the start of the application process all the way to obtaining your PR. Start your process now.
         </p>
 

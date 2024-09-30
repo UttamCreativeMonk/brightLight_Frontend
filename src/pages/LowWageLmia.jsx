@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/LowWageLmia.module.css";
-import { Link } from "react-router-dom";
 import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
 import Testimonials from "../sections/Testimonials";
@@ -20,6 +19,31 @@ const LowWageLmia = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  
+
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <Navbar1 />
@@ -37,23 +61,13 @@ const LowWageLmia = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
-                About the Program
-              </p>
+              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
               <p onClick={() => scrollToSection("noc")}>NOC</p>
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
               <p onClick={() => scrollToSection("differences")}>Differences</p>
-
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
-
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose Us?
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
+              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -62,7 +76,7 @@ const LowWageLmia = () => {
       </div>
 
       <div className={styles.container}>
-        <header className={styles.header} id="about-program">
+        <header className={`${styles.header} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
           <h1>Low-wage/High-wage LMIA</h1>
         </header>
         <section className={styles.intro}>
@@ -78,7 +92,7 @@ const LowWageLmia = () => {
             <li>Provincial median wage</li>
           </ul>
         </section>
-        <section className={styles.noc} id="noc">
+        <section  className={`${styles.noc} ${styles.section}`} id="noc" ref={(el) => sectionsRef.current[1] = el}    >
           <h2>1. National Occupation Classification NOC Code:</h2>
           <p>
             The National Occupational Classification is a database developed by
@@ -87,7 +101,7 @@ const LowWageLmia = () => {
             level.
           </p>
         </section>
-        <section className={styles.prevailingWage}>
+        <section className={`${styles.prevailingWage} ${styles.section}`} id="testing" ref={(el) => sectionsRef.current[2] = el}   >
           <h2>2. Prevailing Median Wage</h2>
           <p>
             Government of Canada’s official Job Bank website lists the
@@ -97,7 +111,7 @@ const LowWageLmia = () => {
             this wage with what the employer will offer to their foreign worker.
           </p>
         </section>
-        <section className={styles.provincialWage}>
+        <section  className={`${styles.provincialWage} ${styles.section}`} id="testing1" ref={(el) => sectionsRef.current[3] = el}       >
           <h2>3. Provincial Median Wage</h2>
           <p>
             Employment and Social Development Canada (ESDC) department updates
@@ -178,7 +192,7 @@ const LowWageLmia = () => {
             </a>
           </p>
         </section>
-        <section className={styles.highWageLMIA}>
+        <section  className={`${styles.highWageLMIA} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[4] = el}   >
           <h2>High-wage LMIA</h2>
           <p>
             This LMIA is for occupations that pay an hourly wage equal to or
@@ -189,7 +203,7 @@ const LowWageLmia = () => {
             Canadians/PR.
           </p>
         </section>
-        <section className={styles.lowWageLMIA}>
+        <section   className={`${styles.lowWageLMIA} ${styles.section}`} id="testing4" ref={(el) => sectionsRef.current[5] = el}  >
           <h2>Low-wage LMIA</h2>
           <p>
             This LMIA is for occupations that pay an hourly wage that is below
@@ -198,7 +212,7 @@ const LowWageLmia = () => {
             can hire on low-wage LMIAs.
           </p>
         </section>
-        <section className={styles.benefits} id="benifits">
+        <section className={`${styles.benefits} ${styles.section}`} id="benifits" ref={(el) => sectionsRef.current[6] = el}  >
           <h2>Benefits of Low-wage/High-wage LMIA:</h2>
           <ul>
             <li>
@@ -223,7 +237,7 @@ const LowWageLmia = () => {
             </li>
           </ul>
         </section>
-        <section className={styles.applicationSteps} id="how-to-apply">
+        <section  className={`${styles.applicationSteps} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[7] = el}   >
           <h2>How to Apply for Low-wage/High-wage LMIA:</h2>
           <ol>
             <li>
@@ -284,7 +298,7 @@ const LowWageLmia = () => {
             </li>
           </ol>
         </section>
-        <section className={styles.differences} id="differences">
+        <section className={`${styles.differences} ${styles.section}`} id="differences" ref={(el) => sectionsRef.current[8] = el}    >
           <h2>Differences Between High-Wage and Low-Wage Positions</h2>
           <table className={styles.differencesTable}>
             <thead>
@@ -400,7 +414,7 @@ const LowWageLmia = () => {
             </tbody>
           </table>
         </section>
-        <section className={styles.refusalReasons} id="refusal-reasons">
+        <section className={`${styles.refusalReasons} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[9] = el}   >
           <h2>
             Common Reasons for Refusal of High-Wage and Low-Wage Positions:
           </h2>
@@ -448,7 +462,7 @@ const LowWageLmia = () => {
             </li>
           </ul>
         </section>
-        <section className={styles.consultation} id="why-choose-us">
+        <section className={`${styles.consultation} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[10] = el}  >
           <h2>Still not sure?</h2>
           <p>
             If you have received a refusal for any of the reasons mentioned

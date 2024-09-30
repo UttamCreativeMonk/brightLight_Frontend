@@ -164,9 +164,9 @@
     margin-top: 10px;
     border: none;
     cursor: pointer;
-    margin-top: 30px;
     display: block;
     margin: auto;
+    margin-top: 30px;
   }
   
   .consultation button:hover {
@@ -187,6 +187,18 @@
     margin-top: 20px;
     margin-bottom: 20px;
   }
+
+  .section {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  
+  .section.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
   
   @media (max-width: 400px) {
     .container h2 {

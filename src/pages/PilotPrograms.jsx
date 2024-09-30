@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/PilotPrograms.module.css";
-import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
 import Testimonials from "../sections/Testimonials";
@@ -23,6 +22,29 @@ const PilotPrograms = () => {
     }
   };
 
+
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <Navbar1 />
@@ -40,17 +62,10 @@ const PilotPrograms = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
-                About the Program
-              </p>
+              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
               <p onClick={() => scrollToSection("pilot-program")}>Pilot Program</p>
-
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose Us?
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -59,7 +74,7 @@ const PilotPrograms = () => {
       </div>
 
       <div className={styles.container}>
-      <h1 className={styles.heading} id="about-program">Canada’s Pilot Programs</h1>
+      <h1  className={`${styles.heading} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>Canada’s Pilot Programs</h1>
 
       <div className={styles.introduction}>
         <p>
@@ -70,7 +85,7 @@ const PilotPrograms = () => {
         </p>
       </div>
 
-      <div className={styles.pilotPrograms} id="pilot-program">
+      <div className={`${styles.pilotPrograms} ${styles.section}`} id="pilot-program" ref={(el) => sectionsRef.current[1] = el}>
         <h2 className={styles.subheading}>Here is one of the Pilot Programs</h2>
         <ul>
           <li>
@@ -82,8 +97,8 @@ const PilotPrograms = () => {
         </ul>
       </div>
 
-      <div className={styles.whyChooseUs}>
-        <h2 className={styles.subheading} id="why-choose-us">Why Choose Us</h2>
+      <div className={`${styles.whyChooseUs} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[2] = el}>
+        <h2 className={styles.subheading} id="why-choose-us" >Why Choose Us</h2>
         <p>
           At Brightlight Immigration, we provide expert guidance through Canada’s various immigration programs, including Pilot Programs. Our team of experienced consultants is dedicated to helping you navigate the complexities of immigration, ensuring that you have the best chance of success. We tailor our services to meet your unique needs and provide a high level of personalized support throughout the application process.
         </p>
@@ -94,9 +109,7 @@ const PilotPrograms = () => {
         <button className={styles.button1}
               onClick={() =>
                 (window.location.href =
-                  "/contact")
-              }
-            >
+                  "/contact")}>
              Contact
             </button>
       </div>

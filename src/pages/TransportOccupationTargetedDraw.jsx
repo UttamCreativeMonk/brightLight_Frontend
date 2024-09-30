@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/TransportOccupationTargetedDraw.module.css";
-import { Link } from "react-router-dom";
 import Testimonials from "../sections/Testimonials";
 import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
@@ -20,6 +19,29 @@ const TransportOccupationTargetedDraw = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -54,7 +76,7 @@ const TransportOccupationTargetedDraw = () => {
 
 
       <div className={styles.container}>
-      <h1 className={styles.heading} id="about-program">Category-Based Express Entry Selection Draws: Transport Occupations</h1>
+      <h1  className={`${styles.heading} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>Category-Based Express Entry Selection Draws: Transport Occupations</h1>
 
       <div className={styles.introduction}>
         <p>
@@ -62,7 +84,7 @@ const TransportOccupationTargetedDraw = () => {
         </p>
       </div>
 
-      <div className={styles.eligibility} id="eligibility">
+      <div className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[1] = el}>
         <h2 className={styles.subheading}>First You Must Be Eligible with Express Entry</h2>
         <ol>
           <li>Join the Express Entry Pool: The first step towards becoming a candidate for a transport-specific draw is to get into the Express Entry pool.</li>
@@ -108,7 +130,7 @@ const TransportOccupationTargetedDraw = () => {
         </p>
       </div>
 
-      <div className={styles.transportEligibility} id="transport-eligibility">
+      <div className={`${styles.transportEligibility} ${styles.section}`} id="transport-eligibility" ref={(el) => sectionsRef.current[2] = el}>
         <h2 className={styles.subheading}>Eligibility Criteria for Transport Occupations Category</h2>
         <ul>
           <li>Within the last 3 years, you have at least 6 months of full-time, continuous work experience (or an equivalent amount of part-time work experience) in a single eligible transport occupation. This experience can be gained either in Canada or abroad.</li>
@@ -117,7 +139,7 @@ const TransportOccupationTargetedDraw = () => {
         <p>Here is the list of eligible NOCs: <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/submit-profile/rounds-invitations/category-based-selection.html" className={styles.link}>Eligible NOCs List</a></p>
       </div>
 
-      <div className={styles.tableContainer}>
+      <div className={`${styles.tableContainer} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[3] = el}>
         <h2 className={styles.subheading}>Eligible Transport Occupations</h2>
         <table className={styles.table}>
           <thead>
@@ -182,7 +204,7 @@ const TransportOccupationTargetedDraw = () => {
         </table>
       </div>
 
-      <div className={styles.drawHistory} id="transport_occupations">
+      <div className={`${styles.drawHistory} ${styles.section}`} id="transport_occupations" ref={(el) => sectionsRef.current[4] = el}>
         <h2 className={styles.subheading}>Express Entry Transport Draws History</h2>
         <p>The first-ever Express Entry draw for Transport occupation workers was held in September 2023. Express Entry draw #264 saw a CRS score of 435 and invited 1000 candidates eligible for category-based selection in Transport occupations.</p>
         {/* <a href="" className={styles.button}></a> */}
@@ -196,7 +218,7 @@ const TransportOccupationTargetedDraw = () => {
             </button>
       </div>
 
-      <div className={styles.contact}>
+      <div className={`${styles.contact} ${styles.section}`} id="testing3" ref={(el) => sectionsRef.current[5] = el}>
         <h2 className={styles.subheading}>Still Not Sure?</h2>
         <p>Contact Brightlight Immigration today to assess your profile and embark on a transformative journey towards achieving your Canadian dream. With over a decade of experience, we specialize in handling Express Entry Programs. Our approval rate for these programs is nearly 100%. We achieve this with a tailored approach to your specific case. We use case law and find similar cases to your circumstances that had positive results, and we use them as precedents in cases we work on. This is why we have a high success rate.</p>
         <p>At Brightlight Immigration, we have a dedicated team of visa application specialists who can assist you from the start of the application process all the way to obtaining your PR. Start your process now.</p>
@@ -204,14 +226,12 @@ const TransportOccupationTargetedDraw = () => {
         <button className={styles.button}
               onClick={() =>
                 (window.location.href =
-                  "/contact")
-              }
-            >
-          Contact Us
+                  "/contact")}>
+           Contact Us
             </button>
       </div>
 
-      <div className={styles.whyChooseUs}>
+      <div className={`${styles.whyChooseUs} ${styles.section}`} id="testing4" ref={(el) => sectionsRef.current[6] = el} >
         <h2 className={styles.subheading}>Why Choose Us</h2>
         <p>Here is where you can describe why clients should choose your services over others. Highlight your unique selling points, such as personalized service, high success rates, and expert knowledge.</p>
       </div>

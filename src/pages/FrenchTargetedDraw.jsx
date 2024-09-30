@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/FrenchTargetedDraw.module.css";
 import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
@@ -21,6 +21,29 @@ const FrenchTargetedDraw = () => {
     }
   };
 
+
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <Navbar1 />
@@ -38,20 +61,12 @@ const FrenchTargetedDraw = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
-                About the Program
-              </p>
+              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
               <p onClick={() => scrollToSection("benefits")}>Benefits</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("book-appointment")}>
-                Book Appointment
-              </p>
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose Us?
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
+              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -60,7 +75,7 @@ const FrenchTargetedDraw = () => {
       </div>
 
       <div className={styles.container}>
-        <h1 className={styles.heading} id="about-program">
+        <h1  className={`${styles.heading} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
           Category-Based Express Entry Selection Draws: French Language
           Proficiency
         </h1>
@@ -76,7 +91,7 @@ const FrenchTargetedDraw = () => {
           </p>
         </section>
 
-        <section className={styles.benefits} id="benefits">
+        <section  className={`${styles.benefits} ${styles.section}`} id="benefits" ref={(el) => sectionsRef.current[1] = el}>
           <h2 className={styles.subheading}>
             Benefits of French Language Proficiency
           </h2>
@@ -131,7 +146,7 @@ const FrenchTargetedDraw = () => {
           </ul>
         </section>
 
-        <section className={styles.expressEntryEligibility} id="eligibility">
+        <section className={`${styles.expressEntryEligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[2] = el}>
           <h2 className={styles.subheading}>
             First You Must Be Eligible with Express Entry
           </h2>
@@ -188,7 +203,7 @@ const FrenchTargetedDraw = () => {
           </p>
         </section>
 
-        <section className={styles.frenchLanguageEligibility}>
+        <section className={`${styles.frenchLanguageEligibility} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[3] = el}>
           <h2 className={styles.subheading}>
             Eligibility Criteria for French Language Proficiency Category
           </h2>
@@ -218,7 +233,7 @@ const FrenchTargetedDraw = () => {
           </p>
         </section>
 
-        <section className={styles.drawsHistory}>
+        <section className={`${styles.drawsHistory} ${styles.section}`} id="testing4" ref={(el) => sectionsRef.current[4] = el}>
           <h2 className={styles.subheading}>
             Express Entry French-Language Proficiency Draws History
           </h2>
@@ -237,7 +252,7 @@ const FrenchTargetedDraw = () => {
             </button>
         </section>
 
-        <section className={styles.support}>
+        <section className={`${styles.support} ${styles.section}`} id="testing5" ref={(el) => sectionsRef.current[5] = el}>
           <h2 className={styles.subheading}>Still Not Sure?</h2>
           <p>
             Contact Brightlight Immigration today to assess your profile and
@@ -263,7 +278,7 @@ const FrenchTargetedDraw = () => {
             </button>
         </section>
 
-        <section className={styles.whyChooseUs} id="why-choose-us">
+        <section className={`${styles.whyChooseUs} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[6] = el}>
           <h2 className={styles.subheading}>Why Choose Us?</h2>
           <p>
             At Brightlight Immigration, we offer expert guidance and support

@@ -133,8 +133,10 @@
   font-size: 2.2rem;
   font-weight: bold;
   margin-bottom: 20px;
+  margin-top: 30px;
   text-align: left;
   color: #e8c47c;
+  text-align: center;
 }
 
 .introduction,
@@ -230,6 +232,16 @@
   margin-bottom: 20px;
   text-align: left;
   color: #00273f;
+}
+.section {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 @media (max-width: 400px) {

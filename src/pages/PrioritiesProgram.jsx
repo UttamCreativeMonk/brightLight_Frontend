@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/PrioritiesProgram.module.css";
-import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
 import Testimonials from "../sections/Testimonials";
@@ -20,6 +19,29 @@ const PrioritiesProgram = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -43,22 +65,11 @@ const PrioritiesProgram = () => {
             </div>
             <div className={styles.bannerHeadingRotatePara}>
               <p onClick={() => scrollToSection("benefits")}>Benefits</p>
-              <p onClick={() => scrollToSection("eligibility")}>
-                Eligibility Criteria
-              </p>
-              <p onClick={() => scrollToSection("Priority_Occupation_List")}>
-                Priority Occupation List
-              </p>
-              <p onClick={() => scrollToSection("BCPNP_Calculator")}>
-                BCPNP Calculator
-              </p>
-              <p onClick={() => scrollToSection("book-appointment")}>
-                {" "}
-                Book Appointment
-              </p>
-              <p onClick={() => scrollToSection("Testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("eligibility")}>Eligibility Criteria</p>
+              <p onClick={() => scrollToSection("Priority_Occupation_List")}>Priority Occupation List</p>
+              <p onClick={() => scrollToSection("BCPNP_Calculator")}>BCPNP Calculator</p>
+              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
+              <p onClick={() => scrollToSection("Testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("FAQs")}>FAQs</p>
               <p onClick={() => scrollToSection("Blogs")}>Blogs</p>
             </div>
@@ -67,7 +78,7 @@ const PrioritiesProgram = () => {
       </div>
 
       <div className={styles.container}>
-        <section className={styles.section} id="benefits">
+        <section className={`${styles.section} ${styles.section}`} id="benefits" ref={(el) => sectionsRef.current[0] = el}>
           <h3>Benefits of Priority Occupations List</h3>
           <ul>
             <li>
@@ -90,7 +101,7 @@ const PrioritiesProgram = () => {
           </ul>
         </section>
 
-        <section className={styles.section} id="eligibility">
+        <section className={`${styles.section} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[1] = el}>
           <h3>Eligibility Criteria for BCPNP Targeted Draws</h3>
           <ol>
             <li>
@@ -116,7 +127,7 @@ const PrioritiesProgram = () => {
           </ol>
         </section>
 
-        <section className={styles.section} id="Priority_Occupation_List">
+        <section className={`${styles.section} ${styles.section}`} id="Priority_Occupation_List" ref={(el) => sectionsRef.current[2] = el}>
           <h3>Priority Occupations List</h3>
 
           <div className={styles.occupationList}>
@@ -498,7 +509,7 @@ const PrioritiesProgram = () => {
           </div>
         </section>
 
-        <section className={styles.callToAction} id="BCPNP_Calculator">
+        <section className={`${styles.callToAction} ${styles.section}`} id="BCPNP_Calculator" ref={(el) => sectionsRef.current[3] = el}>
           <button
             className={styles.button}
             onClick={() => (window.location.href = "/bcpnp-calculator")}

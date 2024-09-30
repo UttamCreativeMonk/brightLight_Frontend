@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/RestorationStatusDraft.module.css";
-import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
 import Testimonials from "../sections/Testimonials";
@@ -21,6 +20,29 @@ const RestorationStatusDraft = () => {
     }
   };
 
+
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <Navbar1 />
@@ -38,29 +60,12 @@ const RestorationStatusDraft = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
-                {" "}
-                About the Program{" "}
-              </p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                {" "}
-                How to Apply?{" "}
-              </p>
-              <p onClick={() => scrollToSection("requirement")}>
-                {" "}
-                Requirement{" "}
-              </p>
-              <p onClick={() => scrollToSection("book-appointment")}>
-                {" "}
-                Book Appointment{" "}
-              </p>
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                {" "}
-                Why Choose Us?{" "}
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
+              <p onClick={() => scrollToSection("requirement")}>Requirement</p>
+              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
+              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -69,10 +74,10 @@ const RestorationStatusDraft = () => {
       </div>
 
       <div className={styles.container}>
-        <h1 className={styles.heading} id="about-program">
+        <h1  className={`${styles.heading} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
           Restoration of Status
         </h1>
-        <section className={styles.introduction}>
+        <section className={`${styles.introduction} ${styles.section}`} id="testing" ref={(el) => sectionsRef.current[1] = el}>
           <p>
             Are you a temporary resident in Canada who has lost status? Don't
             despair! There is a way to regain your legal standing in Canada.
@@ -102,7 +107,7 @@ const RestorationStatusDraft = () => {
           </p>
         </section>
 
-        <section className={styles.checkStatus} id="check-status">
+        <section className={`${styles.checkStatus} ${styles.section}`} id="check-status" ref={(el) => sectionsRef.current[2] = el}>
           <h2 className={styles.subheading}>
             How to Check if Your Immigration Status is Valid
           </h2>
@@ -125,7 +130,7 @@ const RestorationStatusDraft = () => {
           </ul>
         </section>
 
-        <section className={styles.requirements} id="requirement">
+        <section className={`${styles.requirements} ${styles.section}`} id="requirement" ref={(el) => sectionsRef.current[3] = el}>
           <h2 className={styles.subheading}>
             What Are the Requirements for Restoration of Your Status?
           </h2>
@@ -150,7 +155,7 @@ const RestorationStatusDraft = () => {
           </p>
         </section>
 
-        <section className={styles.applicationProcess} id="how-to-apply">
+        <section className={`${styles.applicationProcess} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[4] = el}>
           <h2 className={styles.subheading}>
             How to Apply for Restoration of Status
           </h2>
@@ -184,7 +189,7 @@ const RestorationStatusDraft = () => {
           </ul>
         </section>
 
-        <section className={styles.refusalReasons} id="refusal-reasons">
+        <section className={`${styles.refusalReasons} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[5] = el}>
           <h2 className={styles.subheading}>
             Common Reasons for Refusal of Restoration of Status Applications
           </h2>
@@ -206,7 +211,7 @@ const RestorationStatusDraft = () => {
           </ul>
         </section>
 
-        <section className={styles.assistance} id="why-choose-us">
+        <section className={`${styles.assistance} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[6] = el}>
           <h2 className={styles.subheading}>Still Not Sure?</h2>
           <p>
             If you have received a refusal for any reason, do not worry. With

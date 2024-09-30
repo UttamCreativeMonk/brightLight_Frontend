@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/GlobalStreamLmia.module.css";
-import { Link } from "react-router-dom";
 import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
 import Testimonials from "../sections/Testimonials";
@@ -20,6 +19,31 @@ const GlobalStreamLmia = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  
+
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <Navbar1 />
@@ -40,23 +64,13 @@ const GlobalStreamLmia = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
-                About the Program
-              </p>
+              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("labour-market")}>
-                Labour Market
-              </p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose Us?
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("labour-market")}>Labour Market</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
+              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -65,8 +79,8 @@ const GlobalStreamLmia = () => {
       </div>
 
       <div className={styles.container}>
-        <main className={styles.mainContent} id="about-program">
-          <section className={styles.section}>
+        <main className={styles.mainContent}>
+          <section className={`${styles.section} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}> 
             <h2>Overview</h2>
             <p>
               This type of LMIA stream is designed to expedite the process of
@@ -78,7 +92,7 @@ const GlobalStreamLmia = () => {
             </p>
           </section>
 
-          <section className={styles.section} id="benifits">
+          <section className={`${styles.section} ${styles.section}`} id="benifits" ref={(el) => sectionsRef.current[1] = el}>
             <h2>Benefits of Global Talent Stream (GTS) LMIA</h2>
             <ul>
               <li>
@@ -97,7 +111,7 @@ const GlobalStreamLmia = () => {
             </ul>
           </section>
 
-          <section className={styles.section} id="eligibility">
+          <section className={`${styles.section} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[2] = el}>
             <h2>Eligibility Criteria for Global Talent Stream (GTS) LMIA</h2>
             <h3>Global Talent Stream Categories</h3>
             <p>
@@ -269,7 +283,7 @@ const GlobalStreamLmia = () => {
             </table>
           </section>
 
-          <section className={styles.section} id="labour-market">
+          <section className={`${styles.section} ${styles.section}`} id="labour-market" ref={(el) => sectionsRef.current[3] = el}  >
             <h2>Labour Market Benefits Plan (LMBP)</h2>
             <p>
               The Labour Market Benefits Plan (LMBP) is a mandatory component of
@@ -335,7 +349,7 @@ const GlobalStreamLmia = () => {
             </ul>
           </section>
 
-          <section className={styles.section} id="how-to-apply">
+          <section className={`${styles.section} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[4] = el} >
             <h2>How to Apply for Global Talent Stream (GTS) LMIA</h2>
             <ol>
               <li>
@@ -367,7 +381,7 @@ const GlobalStreamLmia = () => {
             </ol>
           </section>
 
-          <section className={styles.section} id="refusal-reasons">
+          <section  className={`${styles.section} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[5] = el}>
             <h2>
               Common Reasons for Refusal of Global Talent Stream (GTS) LMIA
             </h2>
@@ -390,7 +404,7 @@ const GlobalStreamLmia = () => {
             </ul>
           </section>
 
-          <section className={styles.section} id="how-to-apply">
+          <section className={`${styles.section} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[6] = el}>
             <h2>Still Not Sure?</h2>
             <p>
               If you have received a refusal for any of the reasons mentioned
@@ -416,7 +430,7 @@ const GlobalStreamLmia = () => {
             </p>
           </section>
 
-          <section className={styles.section} id="why-choose-us">
+          <section  className={`${styles.section} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[7] = el}>
             <h2>Why Choose Us</h2>
             <p>
               At Brightlight Immigration, we offer comprehensive services and a

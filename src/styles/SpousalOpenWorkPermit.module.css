@@ -220,11 +220,12 @@
   text-decoration: none;
   border-radius: 5px;
   font-size: 1rem;
-  margin-top: 20px;
+ 
   cursor: pointer;
   border: none;
   display: block;
 text-align: start;
+margin-top: 20px;
 }
 .button1:hover {
   opacity: 0.9;
@@ -251,6 +252,17 @@ text-align: start;
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.section {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 
 @media (max-width: 450px) {
   .container h2 {

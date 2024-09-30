@@ -232,7 +232,6 @@ text-align: start;
     background-color: #f1f1f1;
   }
   
-
   
   .whyChooseUs p {
     font-size: 1rem;
@@ -243,6 +242,18 @@ text-align: start;
     margin-top: 30px;
     margin-bottom: 20px;
     text-align: left;
+  }
+
+
+  .section {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  
+  .section.visible {
+    opacity: 1;
+    transform: translateX(0);
   }
   
 @media (max-width: 400px) {

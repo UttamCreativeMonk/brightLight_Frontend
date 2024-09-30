@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/ChangeCollegeProgram.module.css";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
@@ -20,6 +20,30 @@ const ChangeCollegeProgram = () => {
     }
   };
 
+  
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+
   return (
     <>
       <Navbar1 />
@@ -37,25 +61,13 @@ const ChangeCollegeProgram = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
-                About the Program
-              </p>
+              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>
-                Refusal Reasons
-              </p>
-              <p onClick={() => scrollToSection("book-appointment")}>
-                Book Appointment
-              </p>
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose Us?
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
+              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
+              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -64,7 +76,7 @@ const ChangeCollegeProgram = () => {
       </div>
 
       <div className={styles.container}>
-        <h1 className={styles.heading} id="about-program">
+        <h1 className={`${styles.heading} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el} >
           Change Your College or Program in Canada (DLI Change)
         </h1>
         <p className={styles.intro}>
@@ -85,7 +97,7 @@ const ChangeCollegeProgram = () => {
           604-503-3734.
         </p>
 
-        <section className={styles.eligibility} id="eligibility">
+        <section className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[1] = el}>
           <h2 className={styles.subheading}>
             Eligibility Criteria for Changing Your College or Program in Canada
             (DLI Change)
@@ -99,7 +111,7 @@ const ChangeCollegeProgram = () => {
           </ul>
         </section>
 
-        <section className={styles.process} id="how-to-apply">
+        <section className={`${styles.process} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[2] = el}>
           <h2 className={styles.subheading}>
             How to Change Your College or Program in Canada (DLI Change)
           </h2>
@@ -139,7 +151,7 @@ const ChangeCollegeProgram = () => {
           </ul>
         </section>
 
-        <section className={styles.refusals} id="refusal-reasons">
+        <section className={`${styles.refusals} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[3] = el}>
           <h2 className={styles.subheading}>
             Reasons for Refusals for Changing Your College or Program in Canada
             (DLI Change)
@@ -163,7 +175,7 @@ const ChangeCollegeProgram = () => {
           </ul>
         </section>
 
-        <section className={styles.callToAction} id="why-choose-us">
+        <section className={`${styles.callToAction} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[4] = el}>
           <h2 className={styles.subheading}>Still Not Sure?</h2>
           <p className={styles.callToActionText}>
             If you have faced a refusal for any of the reasons mentioned above,

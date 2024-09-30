@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/HealthcareTargetedDraw.module.css";
-import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
 import Testimonials from "../sections/Testimonials";
@@ -21,6 +20,29 @@ const HealthcareTargetedDraw = () => {
     }
   };
 
+
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <Navbar1 />
@@ -38,23 +60,12 @@ const HealthcareTargetedDraw = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
-                About the Program{" "}
-              </p>
+              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
               <p onClick={() => scrollToSection("eligiblity")}>Eligiblity</p>
-              <p onClick={() => scrollToSection("eligiblity-occupation")}>
-                Eligiblity Occupation
-              </p>
-              <p onClick={() => scrollToSection("previous-draw-history")}>
-                Previous Draw History
-              </p>
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                {" "}
-                Why Choose Us?{" "}
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials{" "}
-              </p>
+              <p onClick={() => scrollToSection("eligiblity-occupation")}>Eligiblity Occupation</p>
+              <p onClick={() => scrollToSection("previous-draw-history")}>Previous Draw History</p>
+              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -67,7 +78,7 @@ const HealthcareTargetedDraw = () => {
           Category-Based Express Entry Selection Draws: Healthcare Draw
         </h1>
 
-        <section className={styles.introduction} id="about-program">
+        <section className={`${styles.introduction} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
           <p>
             In 2023, the Canadian Government launched the Express Entry
             healthcare draws, a strategic initiative aimed at attracting and
@@ -83,7 +94,7 @@ const HealthcareTargetedDraw = () => {
           </p>
         </section>
 
-        <section className={styles.eligibilityCriteria} id="eligiblity">
+        <section className={`${styles.eligibilityCriteria} ${styles.section}`} id="eligiblity" ref={(el) => sectionsRef.current[1] = el}>
           <h2 className={styles.subheading}>
             Eligibility Criteria for Express Entry Healthcare Draws
           </h2>
@@ -175,10 +186,7 @@ const HealthcareTargetedDraw = () => {
           </p>
         </section>
 
-        <section
-          className={styles.eligibleOccupations}
-          id="eligiblity-occupation"
-        >
+        <section className={`${styles.eligibleOccupations} ${styles.section}`} id="eligiblity-occupation" ref={(el) => sectionsRef.current[2] = el}>
           <h2 className={styles.subheading}>
             Eligible Occupations for Express Entry Healthcare Draws
           </h2>
@@ -419,7 +427,7 @@ const HealthcareTargetedDraw = () => {
           </table>
         </section>
 
-        <section className={styles.drawHistory} id="previous-draw-history">
+        <section className={`${styles.drawHistory} ${styles.section}`} id="previous-draw-history" ref={(el) => sectionsRef.current[3] = el}>
           <h2 className={styles.subheading}>
             Express Entry Healthcare Draws History
           </h2>
@@ -442,7 +450,7 @@ const HealthcareTargetedDraw = () => {
             </button>
         </section>
 
-        <section className={styles.applicationProcess} id="how-to-apply">
+        <section className={`${styles.applicationProcess} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[4] = el}>
           <h2 className={styles.subheading}>
             How to Apply for Express Entry Healthcare Draws
           </h2>
@@ -473,7 +481,7 @@ const HealthcareTargetedDraw = () => {
           </p>
         </section>
 
-        <section className={styles.contact}>
+        <section className={`${styles.contact} ${styles.section}`} id="testing1" ref={(el) => sectionsRef.current[5] = el}>
           <h2 className={styles.subheading}>Still Not Sure?</h2>
           <p>
             Contact Brightlight Immigration today to assess your profile and
@@ -498,14 +506,12 @@ const HealthcareTargetedDraw = () => {
           <button className={styles.button}
               onClick={() =>
                 (window.location.href =
-                  "/contact-us")
-              }
-            >
-           Contact Us
+                  "/contact-us")}>
+            Contact Us
             </button>
         </section>
 
-        <section className={styles.whyChooseUs} id="why-choose-us">
+        <section  className={`${styles.whyChooseUs} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[6] = el}>
           <h2 className={styles.subheading}>Why Choose Us</h2>
           <p>
             Brightlight Immigration offers personalized services to maximize

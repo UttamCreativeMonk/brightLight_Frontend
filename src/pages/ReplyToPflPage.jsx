@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/ReplyToPflPage.module.css";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
@@ -36,6 +36,29 @@ const ReplyToPflPage = () => {
       .catch((error) => {
         console.log(error);
       });
+  }, []);
+
+
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
@@ -101,18 +124,10 @@ const ReplyToPflPage = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
-                About the Program
-              </p>
-              <p onClick={() => scrollToSection("recieved-a-pfl")}>
-                Recieved a PFL
-              </p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
+              <p onClick={() => scrollToSection("recieved-a-pfl")}>Recieved a PFL</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -121,8 +136,8 @@ const ReplyToPflPage = () => {
       </div>
 
       <div className={styles.container}>
-        <main className={styles.mainContent} id="about-program">
-          <section className={styles.section}>
+        <main className={styles.mainContent} >
+          <section className={`${styles.section} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
             <h2>Did You Get a Red Flag from Canadian Immigration - PFL?</h2>
             <p>
               Don't panic! We'll help you through the PFL process and turn that
@@ -151,7 +166,7 @@ const ReplyToPflPage = () => {
             </p>
           </section>
 
-          <section className={styles.section} id="recieved-a-pfl">
+          <section className={`${styles.section} ${styles.section}`} id="recieved-a-pfl" ref={(el) => sectionsRef.current[1] = el}   >
             <h2>Here Are a Few Reasons You Might Have Received a PFL</h2>
             <ul>
               <li>
@@ -173,7 +188,7 @@ const ReplyToPflPage = () => {
             </ul>
           </section>
 
-          <section className={styles.section} id="how-to-apply">
+          <section className={`${styles.section} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[2] = el}  >
             <h2>Still Not Sure?</h2>
             <p>
               If you have received a PFL, don't panic. We can help you with your

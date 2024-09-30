@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/OpenWorkPermit.module.css";
 import { Link } from "react-router-dom";
 import Footer1 from "../components/Footer1";
@@ -20,6 +20,29 @@ const OpenWorkPermit = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <Navbar1 />
@@ -40,17 +63,10 @@ const OpenWorkPermit = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
-                About the Program
-              </p>
+              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
               <p onClick={() => scrollToSection("categories")}>Categories</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
-
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -61,7 +77,7 @@ const OpenWorkPermit = () => {
       <div className={styles.container}>
 
         <main className={styles.mainContent}>
-          <section className={styles.section} id="about-program">
+          <section  className={`${styles.section} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
             <h2>What is an Open Work Permit?</h2>
             <p>
               A Canadian Open Work Permit is a temporary document that allows
@@ -72,7 +88,7 @@ const OpenWorkPermit = () => {
             </p>
           </section>
 
-          <section className={styles.section} id="categories">
+          <section className={`${styles.section} ${styles.section}`} id="categories" ref={(el) => sectionsRef.current[1] = el} >
             <h2>Categories Under Open Work Permit</h2>
             <div className={styles.categories}>
               <Link to="/pgwp" className={styles.button}>
@@ -98,7 +114,7 @@ const OpenWorkPermit = () => {
             </div>
           </section>
 
-          <section className={styles.section} id="how-to-apply">
+          <section className={`${styles.section} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[2] = el} >
             <h2>Here’s How We Can Help You</h2>
             <p>
               Our process is designed to assist you from start to finish,

@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/InternationalPostGraduateProgram.module.css";
-import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
 import Testimonials from "../sections/Testimonials";
@@ -40,6 +39,29 @@ const InternationalPostGraduateProgram = () => {
       console.log(error);
     });
   },[])
+
+
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -120,7 +142,7 @@ const InternationalPostGraduateProgram = () => {
       </div>
 
       <div className={styles.container}>
-        <section className={styles.section} id="benefits">
+        <section className={`${styles.section} ${styles.section}`} id="benefits" ref={(el) => sectionsRef.current[0] = el}>
           <h2  >Benefits of BCPNP International Post-Graduate Stream</h2>
           <ul>
             <li>
@@ -141,7 +163,7 @@ const InternationalPostGraduateProgram = () => {
             </li>
           </ul>
         </section>
-        <section className={styles.section} id="eligibility">
+        <section className={`${styles.section} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[1] = el}>
           <h2>Eligibility Criteria for International Post-Graduate Stream</h2>
           <div className={styles.criteria}>
             <h3>1. Educational Qualifications</h3>
@@ -189,7 +211,7 @@ const InternationalPostGraduateProgram = () => {
             </ul>
           </div>
         </section>
-        <section className={styles.section} >
+        <section className={`${styles.section} ${styles.section}`} id="testing1" ref={(el) => sectionsRef.current[2] = el} >
           <h2>Requirements for the Express Entry Category</h2>
           <p>
             To be eligible, you must qualify under one of the federal programs.
@@ -213,13 +235,13 @@ const InternationalPostGraduateProgram = () => {
             </li>
           </ul>
         </section>
-        <section className={styles.section} id="employer_requirements">
+        <section className={`${styles.section} ${styles.section}`} id="employer_requirements" ref={(el) => sectionsRef.current[3] = el}>
           <h2>Employer Requirements</h2>
           <p>
             No job offer from an employer is required to apply to this stream.
           </p>
         </section>
-        <section className={styles.section} id="how-to-apply">
+        <section  className={`${styles.section} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[4] = el} >
           <h2>Application Procedure</h2>
           <ol  className={styles.sectionLi}>
             <li>
@@ -248,7 +270,7 @@ const InternationalPostGraduateProgram = () => {
             </li>
           </ol>
         </section>
-        <section className={styles.section}>
+        <section className={`${styles.section} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[5] = el}>
           <h2>Still Not Sure?</h2>
           <p>
             Contact Brightlight Immigration to assess your profile and start
@@ -265,7 +287,7 @@ const InternationalPostGraduateProgram = () => {
             Book Appointment
           </button>
         </section>
-        <section className={styles.section}  id="why-choose-us">
+        <section  className={`${styles.section} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[6] = el}>
           <h2>Why Choose Us?</h2>
           <ul>
             <li>

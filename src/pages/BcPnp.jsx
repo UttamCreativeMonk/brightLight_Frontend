@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/BcPnp.module.css";
-import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
 import Testimonials from "../sections/Testimonials";
@@ -38,6 +37,29 @@ const BcPnp = () => {
       console.log(error);
     });
   },[])
+
+
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -114,16 +136,16 @@ const BcPnp = () => {
       </div>
 
       <div className={styles.container}>
-        <h1 className={styles.title} id="about-program">
+        <h1  className={`${styles.title} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
           British Columbia Provincial Nominee Program (BC PNP)
         </h1>
-        <p className={styles.description}>
+        <p  className={`${styles.description} ${styles.section}`} id="testing1" ref={(el) => sectionsRef.current[1] = el}>
           British Columbia (BC) is a beautiful province in Canada with stunning
           scenery, exciting cities, and lots of job opportunities. If you want
           to move to BC, the BC Provincial Nominee Program (BCPNP) can help you
           make it happen.
         </p>
-        <p className={styles.description}>
+        <p className={`${styles.description} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[2] = el}>
           The British Columbia Provincial Nominee Program (BC PNP) is an
           economic immigration program that allows British Columbia to select
           skilled workers, business people, and international graduates who will
@@ -132,10 +154,10 @@ const BcPnp = () => {
           Canada.
         </p>
 
-        <h2 className={styles.subtitle}>
+        <h2 className={`${styles.subtitle} ${styles.section}`} id="testing3" ref={(el) => sectionsRef.current[3] = el}>
           Streams under British Columbia Provincial Nominee Program (BC PNP)
         </h2>
-        <div className={styles.streams}>
+        <div  className={`${styles.streams} ${styles.section}`} id="testing4" ref={(el) => sectionsRef.current[4] = el}>
           <a href="/skilled-worker-stream" className={styles.button}>
             BC Skilled Worker Stream
           </a>
@@ -159,19 +181,19 @@ const BcPnp = () => {
           </a>
         </div>
 
-        <h2 className={styles.subtitle} id="eligibility">
+        <h2 className={`${styles.subtitle} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[5] = el}>
           Eligibility Criteria
         </h2>
-        <h3 className={styles.subheading}>Candidate’s Criteria</h3>
-        <p className={styles.description}>
+        <h3 className={`${styles.subheading} ${styles.section}`} id="testing5" ref={(el) => sectionsRef.current[6] = el}>Candidate’s Criteria</h3>
+        <p  className={`${styles.description} ${styles.section}`} id="testing6" ref={(el) => sectionsRef.current[7] = el}> 
           Please review the eligibility criteria for each stream, as it varies
           from one stream to another.
         </p>
 
-        <h3 className={styles.subheading}>
+        <h3 className={`${styles.subheading} ${styles.section}`} id="testing7" ref={(el) => sectionsRef.current[8] = el}>
           Eligibility Criteria for Employer Supporting BCPNP Application
         </h3>
-        <ul className={styles.list}>
+        <ul className={`${styles.list} ${styles.section}`} id="testing8" ref={(el) => sectionsRef.current[9] = el}>
           <li className={styles.listItem}>
             Employer must be established in BC with a physical presence.
           </li>
@@ -290,10 +312,10 @@ const BcPnp = () => {
           </li>
         </ul>
 
-        <h2 className={styles.subtitle} id="how-to-apply">
+        <h2 className={`${styles.subtitle} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[10] = el}>
           How to Apply for BCPNP?
         </h2>
-        <ul className={styles.list}>
+        <ul className={`${styles.list} ${styles.section}`} id="testing10" ref={(el) => sectionsRef.current[11] = el}>
           <li className={styles.listItem}>
             Create an online profile and provide information about your skills,
             experience, education, and work experience. Or, for a stress-free
@@ -317,10 +339,10 @@ const BcPnp = () => {
           </li>
         </ul>
 
-        <h2 className={styles.subtitle} id="refusal-reasons">
+        <h2 className={`${styles.subtitle} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[12] = el}>
           Common Reasons for Refusals in BCPNP
         </h2>
-        <ul className={styles.list}>
+        <ul className={`${styles.list} ${styles.section}`} id="testing13" ref={(el) => sectionsRef.current[14] = el}>
           <li className={styles.listItem}>You shared incorrect information.</li>
           <li className={styles.listItem}>
             You couldn’t meet the minimum qualifications for BC PNP including
@@ -334,10 +356,10 @@ const BcPnp = () => {
           </li>
         </ul>
 
-        <h2 className={styles.subtitle} id="why-choose-us">
+        <h2  className={`${styles.subtitle} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[15] = el}>
           Still Not Sure?
         </h2>
-        <p className={styles.description}>
+        <p  className={`${styles.description} ${styles.section}`} id="testing16" ref={(el) => sectionsRef.current[17] = el} >
           If you have received a refusal for any of the reasons mentioned above,
           do not worry. With over a decade of experience, we specialize in
           previously refused cases. We have got approvals for clients who had
@@ -348,7 +370,7 @@ const BcPnp = () => {
           precedents in cases we work on. This is why we have a high success
           rate.
         </p>
-        <p className={styles.description}>
+        <p  className={`${styles.description} ${styles.section}`} id="testing18" ref={(el) => sectionsRef.current[18] = el} >
           At Brightlight Immigration, we have a dedicated team of visa
           application specialists who can assist you from the start of the
           application process all the way to obtaining your visa.{" "}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/AdditionalDocument.module.css";
 import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
@@ -20,6 +20,28 @@ const AdditionalDocument = () => {
     }
   };
 
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <Navbar1 />
@@ -37,16 +59,10 @@ const AdditionalDocument = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
-                About the Program
-              </p>
+              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
               <p onClick={() => scrollToSection("key-points")}>Key Points</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose Us?
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -55,11 +71,11 @@ const AdditionalDocument = () => {
       </div>
 
       <div className={styles.container}>
-        <header className={styles.header} id="about-program">
+        <header className={styles.header} id="about-program"  >
           <h1>Reply to Additional Document Request</h1>
         </header>
         <main className={styles.mainContent}>
-          <section className={styles.section}>
+          <section className={`${styles.section} ${styles.section}`} id="about"  ref={(el) => sectionsRef.current[0] = el}>
             <h2>Don’t Worry, We’re Here to Help!</h2>
             <p>
               If you’re here, that means IRCC has already requested you to
@@ -88,7 +104,7 @@ const AdditionalDocument = () => {
             </p>
           </section>
 
-          <section className={styles.section} id="key-points">
+          <section className={`${styles.section} ${styles.section}`} id="key-points" ref={(el) => sectionsRef.current[1] = el}    >
             <h2>Key Points to Keep in Mind</h2>
             <ul>
               <li>
@@ -116,7 +132,7 @@ const AdditionalDocument = () => {
             </ul>
           </section>
 
-          <section className={styles.section} id="why-choose-us">
+          <section  className={`${styles.section} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[2] = el}    >
             <h2>Still Not Sure?</h2>
             <p>
               If you have received a Request for an additional document, do not

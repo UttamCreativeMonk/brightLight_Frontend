@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/StemTargetedDraw.module.css";
-import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
 import Testimonials from "../sections/Testimonials";
@@ -21,6 +20,29 @@ const StemTargetedDraw = () => {
     }
   };
 
+
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <Navbar1 />
@@ -38,22 +60,12 @@ const StemTargetedDraw = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
-                About the Program
-              </p>
+              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
               <p onClick={() => scrollToSection("eligiblity")}>Eligiblity</p>
-              <p onClick={() => scrollToSection("stem-eligiblity")}>
-                Stem Eligiblity
-              </p>
-              <p onClick={() => scrollToSection("stem-noc-codes")}>
-                Stem Noc Codes
-              </p>
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose Us?
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("stem-eligiblity")}>Stem Eligiblity</p>
+              <p onClick={() => scrollToSection("stem-noc-codes")}>Stem Noc Codes</p>
+              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -67,7 +79,7 @@ const StemTargetedDraw = () => {
           Technology, Engineering, Math) Occupations
         </h1>
 
-        <section className={styles.introduction} id="about-program">
+        <section className={`${styles.introduction} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
           <p>
             Canada's Express Entry system is not just a general immigration
             tool, but also a strategic resource for targeting specific sectors
@@ -85,7 +97,7 @@ const StemTargetedDraw = () => {
           </p>
         </section>
 
-        <section className={styles.eligibility} id="eligiblity">
+        <section className={`${styles.eligibility} ${styles.section}`} id="eligiblity" ref={(el) => sectionsRef.current[1] = el}>
           <h2 className={styles.subheading}>
             First You Must Be Eligible with Express Entry
           </h2>
@@ -180,7 +192,7 @@ const StemTargetedDraw = () => {
           </p>
         </section>
 
-        <section className={styles.stemEligibility} id="stem-eligiblity">
+        <section className={`${styles.stemEligibility} ${styles.section}`} id="stem-eligiblity" ref={(el) => sectionsRef.current[2] = el}>
           <h2 className={styles.subheading}>
             Eligibility Criteria for STEM (Science, Technology, Engineering,
             Math) Occupations
@@ -196,7 +208,7 @@ const StemTargetedDraw = () => {
           </ul>
         </section>
 
-        <section className={styles.stemNocCodes} id="stem-noc-codes">
+        <section className={`${styles.stemNocCodes} ${styles.section}`} id="stem-noc-codes" ref={(el) => sectionsRef.current[3] = el}>
           <h2 className={styles.subheading}>STEM Eligible NOC Codes</h2>
           <p>
             <a
@@ -347,7 +359,7 @@ const StemTargetedDraw = () => {
           </table>
         </section>
 
-        <section className={styles.drawHistory}>
+        <section className={`${styles.drawHistory} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[4] = el}>
           <h2 className={styles.subheading}>
             Express Entry STEM Draws History
           </h2>
@@ -364,13 +376,12 @@ const StemTargetedDraw = () => {
               onClick={() =>
                 (window.location.href =
                   "/previous-draw-history")
-              }
-            >
-     View Previous Draw History
+              }>
+          View Previous Draw History
             </button>
         </section>
 
-        <section className={styles.contact}>
+        <section className={`${styles.contact} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[5] = el}>
           <h2 className={styles.subheading}>Still Not Sure?</h2>
           <p>
             Contact Brightlight Immigration today to assess your profile and
@@ -396,13 +407,12 @@ const StemTargetedDraw = () => {
               onClick={() =>
                 (window.location.href =
                   "/contact-us")
-              }
-            >
+              }>
           Contact Us
             </button>
         </section>
 
-        <section className={styles.whyChooseUs} id="why-choose-us">
+        <section  className={`${styles.whyChooseUs} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[6] = el}>
           <h2 className={styles.subheading}>Why Choose Us</h2>
           <p>
             Brightlight Immigration offers personalized services to maximize

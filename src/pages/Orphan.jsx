@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from '../styles/Orphan.module.css';
 import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
@@ -20,6 +20,31 @@ const Orphan = () => {
         element.scrollIntoView({ behavior: "smooth" });
       }
     };
+
+    
+
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   
     return (
       <>
@@ -40,20 +65,11 @@ const Orphan = () => {
                 <h3>Quick Access</h3>
               </div>
               <div className={styles.bannerHeadingRotatePara}>
-                <p onClick={() => scrollToSection("about-program")}>
-                  About the Program
-                </p>
+                <p onClick={() => scrollToSection("about-program")}>About the Program</p>
                 <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-                <p onClick={() => scrollToSection("how-to-apply")}>
-                  How to Apply?
-                </p>
-
-                <p onClick={() => scrollToSection("why-choose-us")}>
-                  Why Choose Us?
-                </p>
-                <p onClick={() => scrollToSection("testimonials")}>
-                  Testimonials
-                </p>
+                <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
+                <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
+                <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
                 <p onClick={() => scrollToSection("faqs")}>FAQs</p>
                 <p onClick={() => scrollToSection("blogs")}>Blogs</p>
               </div>
@@ -61,11 +77,11 @@ const Orphan = () => {
           </div>
         </div>
     <div className={styles.container}>
-      <h1 className={styles.heading} id="about-program">Canada's Orphan Sponsorship Program</h1>
+      <h1 className={`${styles.heading} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}  >Canada's Orphan Sponsorship Program</h1>
       <p className={styles.description}>
         The Canada Orphan Sponsorship Program gives orphaned kids a chance to be with their Canadian relatives or start a new life in Canada. This special program is all about care and kindness, helping these children overcome challenges and have a life full of possibilities.
       </p>
-      <section className={styles.section}>
+      <section className={`${styles.section} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[1] = el}>
         <h2 className={styles.subheading} id="eligibility">Eligibility criteria for a Sponsor:</h2>
         <ul className={styles.list}>
           <li>You must be a Canadian citizen or permanent resident who has lived in Canada for at least one year.</li>
@@ -78,7 +94,7 @@ const Orphan = () => {
         </ul>
       </section>
 
-      <section className={styles.section}>
+      <section className={`${styles.section} ${styles.section}`} id="testing" ref={(el) => sectionsRef.current[2] = el} >
         <h2 className={styles.subheading}>Who is eligible as an Orphan under Canada Orphan Sponsorship Program?</h2>
         <ul className={styles.list}>
           <li>You are under 18 years of age.</li>
@@ -97,7 +113,7 @@ const Orphan = () => {
         </ul>
       </section>
 
-      <section className={styles.section}>
+      <section  className={`${styles.section} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[3] = el}>
         <h2 className={styles.subheading} id="how-to-apply">How to apply for sponsoring an Orphan?</h2>
         <ul className={styles.list}>
           <li>Complete a series of forms, including the sponsorship application form, financial assessment form, and medical forms for the orphan.</li>
@@ -108,7 +124,7 @@ const Orphan = () => {
         </ul>
       </section>
 
-      <section className={styles.section}>
+      <section className={`${styles.section} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[4] = el}>
         <h2 className={styles.subheading} id="refusal-reasons">Common reasons for refusals of Orphan Sponsorship Program:</h2>
         <ul className={styles.list}>
           <li>You may not qualify due to several reasons such as not being a Canadian citizen or permanent resident, not having lived in Canada for at least one year, lacking the financial ability to support the orphan, not having suitable housing for the orphan, or having a questionable character.</li>
@@ -117,7 +133,7 @@ const Orphan = () => {
         </ul>
       </section>
 
-      <section className={styles.section}>
+      <section className={`${styles.section} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[5] = el}>
         <h2 className={styles.subheading} id="why-choose-us">Still not sure?</h2>
         <p className={styles.paragraph}>
           If you have received a refusal for any of the reasons mentioned above, do not worry. With over a decade of experience, we specialize in previously refused cases. We have got approvals for clients who had multiple previous refusals. We achieve this with a tailored approach to your specific case, addressing each concern that the officer has listed in previous refusals. We use case law and find similar cases to your circumstances that had positive results, and we use them as precedents in cases we work on. This is why we have a high success rate.

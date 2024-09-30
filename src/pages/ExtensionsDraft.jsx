@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/ExtensionsDraft.module.css";
-import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
 import Testimonials from "../sections/Testimonials";
@@ -21,6 +20,29 @@ const ExtensionsDraft = () => {
     }
   };
 
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+
   return (
     <>
       <Navbar1 />
@@ -38,26 +60,12 @@ const ExtensionsDraft = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
-                {" "}
-                About the Program{" "}
-              </p>
+              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                {" "}
-                How to Apply?{" "}
-              </p>
-              <p onClick={() => scrollToSection("book-appointment")}>
-                Book Appointment
-              </p>
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                {" "}
-                Why Choose Us?{" "}
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                {" "}
-                Testimonials{" "}
-              </p>
+              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
+              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
+              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -66,10 +74,10 @@ const ExtensionsDraft = () => {
       </div>
 
       <div className={styles.container}>
-        <h1 className={styles.heading} id="about-program">
+        <h1  className={`${styles.heading} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
           Extension of Temporary Status
         </h1>
-        <section className={styles.introduction}>
+        <section className={`${styles.introduction} ${styles.section}`} id="testing" ref={(el) => sectionsRef.current[1] = el}>
           <p>
             The plans can change, and you may need to extend your stay in Canada
             for various reasons. Let us guide you to maintain your legal status
@@ -84,7 +92,7 @@ const ExtensionsDraft = () => {
           </p>
         </section>
 
-        <section className={styles.benefits} id="benifits">
+        <section className={`${styles.benefits} ${styles.section}`} id="benifits" ref={(el) => sectionsRef.current[2] = el}>
           <h2 className={styles.subheading}>
             Benefits of Extending Your Temporary Status
           </h2>
@@ -106,7 +114,7 @@ const ExtensionsDraft = () => {
           </ul>
         </section>
 
-        <section className={styles.applicationProcess} id="how-to-apply">
+        <section className={`${styles.applicationProcess} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[3] = el}>
           <h2 className={styles.subheading}>
             How to Apply for an Extension of Temporary Status?
           </h2>
@@ -138,7 +146,7 @@ const ExtensionsDraft = () => {
           </ul>
         </section>
 
-        <section className={styles.assistance}>
+        <section  className={`${styles.assistance} ${styles.section}`} id="testing3" ref={(el) => sectionsRef.current[4] = el}>
           <h2 className={styles.subheading}>Still Not Sure?</h2>
           <p>
             If you have received a refusal for any reason, do not worry. With
@@ -168,7 +176,7 @@ const ExtensionsDraft = () => {
             </button>
         </section>
 
-        <section className={styles.whyChooseUs} id="why-choose-us">
+        <section className={`${styles.whyChooseUs} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[5] = el}>
           <h2 className={styles.subheading}>Why Choose Us?</h2>
           <p>
             We offer personalized service and expert advice to ensure your

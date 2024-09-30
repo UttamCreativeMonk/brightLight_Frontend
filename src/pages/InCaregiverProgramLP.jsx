@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/InCaregiverProgramLP.module.css";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
@@ -20,6 +19,29 @@ const InCaregiverProgramLP = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -55,7 +77,7 @@ const InCaregiverProgramLP = () => {
       </div>
 
       <div className={styles.container}>
-        <header className={styles.header} id="about-program">
+        <header className={`${styles.header} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
           <h1>In Home Caregiver Program</h1>
           <p>
             The Canadian government provides a remedy to Canadian families to
@@ -65,7 +87,7 @@ const InCaregiverProgramLP = () => {
           </p>
         </header>
 
-        <section className={styles.benefits} id="benifits">
+        <section  className={`${styles.benefits} ${styles.section}`} id="benifits" ref={(el) => sectionsRef.current[1] = el}>
           <h2>Benefits of In Home Caregiver Program</h2>
           <ul>
             <li>
@@ -94,7 +116,7 @@ const InCaregiverProgramLP = () => {
           </ul>
         </section>
 
-        <section className={styles.eligibility} id="eligibility">
+        <section className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[2] = el}>
           <h2>Eligibility Criteria for In Home Caregiver Program</h2>
           <p>In home Caregiver program is a two-step process:</p>
           <ol>
@@ -225,7 +247,7 @@ const InCaregiverProgramLP = () => {
           </p>
         </section>
 
-        <section className={styles.howToApply} id="how-to-apply">
+        <section className={`${styles.howToApply} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[3] = el}>
           <h2>How to Apply for In Home Caregiver Program?</h2>
           <h3>As an Employer:</h3>
           <ol>
@@ -293,7 +315,7 @@ const InCaregiverProgramLP = () => {
           </ul>
         </section>
 
-        <section className={styles.stillNotSure}>
+        <section  className={`${styles.stillNotSure} ${styles.section}`} id="testing1" ref={(el) => sectionsRef.current[4] = el}>
           <h2>Still Not Sure?</h2>
           <p>
             If you have received a refusal for any of the reasons mentioned
@@ -316,7 +338,7 @@ const InCaregiverProgramLP = () => {
           </p>
         </section>
 
-        <section className={styles.whyChooseUs} id="why-choose-us">
+        <section  className={`${styles.whyChooseUs} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[5] = el}>
           <h2>Why Choose Us</h2>
           <p>
             Discover why Brightlight Immigration is the right choice for your

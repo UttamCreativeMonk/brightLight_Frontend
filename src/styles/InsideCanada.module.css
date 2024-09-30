@@ -262,6 +262,17 @@ text-decoration: none;
     text-align: center;
   }
 
+  .section {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  
+  .section.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
 
 
   @media (max-width: 400px) {

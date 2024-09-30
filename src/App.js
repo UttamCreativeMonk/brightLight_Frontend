@@ -9,62 +9,62 @@ import Loader from "./components/Loader";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import PrRenewal from "./pages/PrRenewal"; // Done
-import Citizenship from "./pages/Citizenship"; // Done
-import Reconsideration from "./pages/Reconsideration"; // Done
-import AdditionalDocument from "./pages/AdditionalDocument";// Done
-import ReplyToPflPage from "./pages/ReplyToPflPage";// Done
-import LmiaReviewed from "./pages/LmiaReviewed"; // Done
-import OpenWorkPermit from "./pages/OpenWorkPermit"; // Done
-import AgricultureStreamLmia from "./pages/AgricultureStreamLmia"; // Done
-import GlobalStreamLmia from "./pages/GlobalStreamLmia";// Done
-import LowWageLmia from "./pages/LowWageLmia";//Done
-import BridgingOpenWorkPermitLP from "./pages/BridgingOpenWorkPermitLP"; //Done
-import FrancophoneMobilityProgram from "./pages/FrancophoneMobilityProgram"; //Done
-import OpenWorkVulnerableLP from "./pages/OpenWorkVulnerableLP"; //Done
-import OpenWorkCanadaLP from "./pages/OpenWorkCanadaLP"; // Done
-import Pgwp from "./pages/Pgwp"; //Done
-import FamilyReunificationSponsorship from "./pages/FamilyReunificationSponsorship";  // Done
-import Adoption from "./pages/Adoption"; //Done
-import DependentChildren from "./pages/DependentChildren"; //Done
-import HumanitarianCompassionate from "./pages/HumanitarianCompassionate"; //Done
-import LonelyCanadian from "./pages/LonelyCanadian"; // Done
-import ParentsGrandparents from "./pages/ParentsGrandparents"; //Done
-import StudentVisa from "./pages/StudentVisa"; //Done
-import Orphan from "./pages/Orphan"; //Done
-import InsideCanada from "./pages/InsideCanada"; //Done
-import ChangeCollegeProgram from "./pages/ChangeCollegeProgram"; //Done
-import VisitorToStudent from "./pages/VisitorToStudent"; //Done
-import OutsideCananda from "./pages/OutsideCananda";//Done
-import NonSds from "./pages/NonSds"; //Done
-import Sds from "./pages/Sds";  //Done
-import StudyPermitMinors from "./pages/StudyPermitMinors"; //Done
-import ExtensionsDraft from "./pages/ExtensionsDraft"; //Done
-import Flagpoling from "./pages/Flagpoling";  //Done
-import RestorationStatusDraft from "./pages/RestorationStatusDraft"; //Done
-import SpousalOpenWorkPermit from "./pages/SpousalOpenWorkPermit"; //Done
-import CommonLawPartnerPermanent from "./pages/CommonLawPartnerPermanent"; //Done
-import CommonLawPartnerTemporary from "./pages/CommonLawPartnerTemporary";
-import Cby from "./pages/Cby"; //Done
-import SuperVisa from "./pages/SuperVisa"; //Done
-import TemporaryResidentPermitDraft from "./pages/TemporaryResidentPermitDraft"; //Done
-import VisitorVisa from "./pages/VisitorVisa"; //Done
-import BusinessVisitorVisa from "./pages/BusinessVisitorVisa";//Done
-import DualIntentVisa from "./pages/DualIntentVisa"; //Done
-import CanadianExperienceClass from "./pages/CanadianExperienceClass"; //Done
-import FederalSkilledTradesProgram from "./pages/FederalSkilledTradesProgram";//Done
-import FederalSkilledWorkerProgram from "./pages/FederalSkilledWorkerProgram"; // Done
-import FrenchTargetedDraw from "./pages/FrenchTargetedDraw"; //Done
-import HealthcareTargetedDraw from "./pages/HealthcareTargetedDraw"; //Done
-import StemTargetedDraw from "./pages/StemTargetedDraw"; //Done
-import TradeOccupationTargetedDraw from "./pages/TradeOccupationTargetedDraw"; //Done
-import TransportOccupationTargetedDraw from "./pages/TransportOccupationTargetedDraw"; //Done
-import PilotPrograms from "./pages/PilotPrograms"; //Done
-import AgriFoodPilotProgram from "./pages/AgriFoodPilotProgram"; //Done
-import Rnip from "./pages/Rnip"; //Done
-import Pnp from "./pages/Pnp"; //Done
-import BcPnp from "./pages/BcPnp"; //Done
-import EntryLevelSemiSkilled from "./pages/EntryLevelSemiSkilled";//Done
+import PrRenewal from "./pages/PrRenewal"; // Done Animation
+import Citizenship from "./pages/Citizenship"; // Done Animation
+import Reconsideration from "./pages/Reconsideration"; // Done Animation
+import AdditionalDocument from "./pages/AdditionalDocument";// Done Animation
+import ReplyToPflPage from "./pages/ReplyToPflPage";// Done Animation
+import LmiaReviewed from "./pages/LmiaReviewed"; // Done Animation
+import OpenWorkPermit from "./pages/OpenWorkPermit"; // Done Animation
+import AgricultureStreamLmia from "./pages/AgricultureStreamLmia"; // Done Animation
+import GlobalStreamLmia from "./pages/GlobalStreamLmia";// Done Animation
+import LowWageLmia from "./pages/LowWageLmia";//Done Animation
+import BridgingOpenWorkPermitLP from "./pages/BridgingOpenWorkPermitLP"; //Done Animation
+import FrancophoneMobilityProgram from "./pages/FrancophoneMobilityProgram"; //Done Animation
+import OpenWorkVulnerableLP from "./pages/OpenWorkVulnerableLP"; //Done Animation
+import OpenWorkCanadaLP from "./pages/OpenWorkCanadaLP"; // Done Animation
+import Pgwp from "./pages/Pgwp"; //Done Animation
+import FamilyReunificationSponsorship from "./pages/FamilyReunificationSponsorship";  // Done Animation
+import Adoption from "./pages/Adoption"; //Done Animation
+import DependentChildren from "./pages/DependentChildren"; //Done Animation
+import HumanitarianCompassionate from "./pages/HumanitarianCompassionate"; //Done Animation
+import LonelyCanadian from "./pages/LonelyCanadian"; // Done Animation
+import ParentsGrandparents from "./pages/ParentsGrandparents"; //Done not done yet
+import StudentVisa from "./pages/StudentVisa"; //Done Animation
+import Orphan from "./pages/Orphan"; //Done  Animation
+import InsideCanada from "./pages/InsideCanada"; //Done Animation
+import ChangeCollegeProgram from "./pages/ChangeCollegeProgram"; //Done Animation
+import VisitorToStudent from "./pages/VisitorToStudent"; //Done Animation
+import OutsideCananda from "./pages/OutsideCananda";//Done Animation
+import NonSds from "./pages/NonSds"; //Done Animation 
+import Sds from "./pages/Sds";  //Done Animation
+import StudyPermitMinors from "./pages/StudyPermitMinors"; //Done Animation
+import ExtensionsDraft from "./pages/ExtensionsDraft"; //Done Animation
+import Flagpoling from "./pages/Flagpoling";  //Done Animation
+import RestorationStatusDraft from "./pages/RestorationStatusDraft"; //Done Animation
+import SpousalOpenWorkPermit from "./pages/SpousalOpenWorkPermit"; //Done Animation
+import CommonLawPartnerPermanent from "./pages/CommonLawPartnerPermanent"; //Done Animation
+import CommonLawPartnerTemporary from "./pages/CommonLawPartnerTemporary";  //Done Animation
+import Cby from "./pages/Cby"; //Done Animation
+import SuperVisa from "./pages/SuperVisa"; //Done Animation
+import TemporaryResidentPermitDraft from "./pages/TemporaryResidentPermitDraft"; //Done Animation
+import VisitorVisa from "./pages/VisitorVisa"; //Done  Animation
+import BusinessVisitorVisa from "./pages/BusinessVisitorVisa";//Done one part Animation
+import DualIntentVisa from "./pages/DualIntentVisa"; //Done one part Animation
+import CanadianExperienceClass from "./pages/CanadianExperienceClass"; //Done Animation
+import FederalSkilledTradesProgram from "./pages/FederalSkilledTradesProgram";//Done Animation
+import FederalSkilledWorkerProgram from "./pages/FederalSkilledWorkerProgram"; // Done Animation
+import FrenchTargetedDraw from "./pages/FrenchTargetedDraw"; //Done Animation
+import HealthcareTargetedDraw from "./pages/HealthcareTargetedDraw"; //Done Animation
+import StemTargetedDraw from "./pages/StemTargetedDraw"; //Done Animation
+import TradeOccupationTargetedDraw from "./pages/TradeOccupationTargetedDraw"; //Done Animation
+import TransportOccupationTargetedDraw from "./pages/TransportOccupationTargetedDraw"; //Done Animation
+import PilotPrograms from "./pages/PilotPrograms"; //Done Animation
+import AgriFoodPilotProgram from "./pages/AgriFoodPilotProgram"; //Done Animation
+import Rnip from "./pages/Rnip"; //Done Animation1
+import Pnp from "./pages/Pnp"; //Done Animation1
+import BcPnp from "./pages/BcPnp"; //Done Animation
+import EntryLevelSemiSkilled from "./pages/EntryLevelSemiSkilled";//Done no yet
 import HealthAuthoritiesStream from "./pages/HealthAuthoritiesStream"; //Done
 import InternationalGraduateProgram from "./pages/InternationalGraduateProgram"; //Done
 import InternationalPostGraduateProgram from "./pages/InternationalPostGraduateProgram"; //Done
@@ -92,9 +92,10 @@ function App() {
   
       <ToastContainer />
 
-      <Loader />
+      {/* <Loader /> */}
       <HelmetProvider>
-        <AllRoutes />
+        {/* <AllRoutes /> */}
+        <WorkPermit/>
       </HelmetProvider>
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/WorkPermit.module.css";
 import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
@@ -37,6 +37,29 @@ let WorkPermit = () => {
       .catch((error) => {
         console.log(error);
       });
+  }, []);
+
+
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
@@ -99,18 +122,10 @@ let WorkPermit = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
-                About the Program
-              </p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose Us?
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
+              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -122,8 +137,8 @@ let WorkPermit = () => {
         <header className={styles.header}>
           <h1>Work Permit</h1>
         </header>
-        <main className={styles.mainContent} id="about-program">
-          <section className={styles.section}>
+        <main className={styles.mainContent}  >
+          <section className={`${styles.section} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
             <h2>
               Are you considering a rewarding career and professional growth in
               Canada?
@@ -142,7 +157,7 @@ let WorkPermit = () => {
             </p>
           </section>
 
-          <section className={styles.section} id="how-to-apply">
+          <section  className={`${styles.section} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[1] = el}>
             <h2>Pathways to Get a Work Permit</h2>
             <div className={styles.pathways}>
               <div className={styles.pathway}>
@@ -172,7 +187,7 @@ let WorkPermit = () => {
             </div>
           </section>
 
-          <section className={styles.section} id="why-choose-us">
+          <section  className={`${styles.section} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[2] = el}>
             <h2>Here’s How We Can Help You</h2>
             {/* Embed the process section from the homepage here */}
             <p>

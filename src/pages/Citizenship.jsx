@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/Citizenship.module.css";
 import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
@@ -8,6 +8,7 @@ import FAQ from "../sections/FAQ";
 
 const Citizenship = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -19,6 +20,29 @@ const Citizenship = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -45,18 +69,10 @@ const Citizenship = () => {
               </p>
               <p onClick={() => scrollToSection("benefits")}>Benefits</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>
-                Refusal Reasons
-              </p>
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose Us?
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
+              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -65,8 +81,8 @@ const Citizenship = () => {
       </div>
 
       <div className={styles.container}>
-        <main className={styles.mainContent} id="about-program">
-          <section className={styles.section}>
+        <main className={styles.mainContent} >
+          <section className={`${styles.section} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}  >
             <h2>Congratulations on your PR Journey!</h2>
             <p>
               After completing your 3 years (or staying physically in Canada for
@@ -79,7 +95,7 @@ const Citizenship = () => {
             </p>
           </section>
 
-          <section className={styles.section} id="benefits">
+          <section className={`${styles.section} ${styles.section}`} id="benefits" ref={(el) => sectionsRef.current[1] = el}   >
             <h2>Benefits of becoming a Canadian Citizen:</h2>
             <ul>
               <li>You now have the right to vote and hold office</li>
@@ -96,7 +112,7 @@ const Citizenship = () => {
             </ul>
           </section>
 
-          <section className={styles.section} id="eligibility">
+          <section  className={`${styles.section} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[2] = el}  >
             <h2>Eligibility criteria for Canadian Citizenship</h2>
             <p>
               Are you eligible to file your Canadian Citizenship? Let's find
@@ -127,7 +143,7 @@ const Citizenship = () => {
             </p>
           </section>
 
-          <section className={styles.section} id="how-to-apply">
+          <section   className={`${styles.section} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[3] = el}>
             <h2>How to apply for Canadian Citizenship?</h2>
             <p>
               Before you apply, make sure you meet the eligibility requirements.
@@ -157,7 +173,7 @@ const Citizenship = () => {
             </p>
           </section>
 
-          <section className={styles.section} id="refusal-reasons">
+          <section className={`${styles.section} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[4] = el}   >
             <h2>Reasons for refusal of Canadian Citizenship:</h2>
             <ul>
               <li>
@@ -209,7 +225,7 @@ const Citizenship = () => {
             <p></p>
           </section>
 
-          <section className={styles.section} id="why-choose-us">
+          <section className={`${styles.section} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[5] = el}  >
             <h2>Still not sure?</h2>
             <p>
               If you have received a refusal for any of the reasons mentioned

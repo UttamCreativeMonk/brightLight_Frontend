@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/CommonLawPartnerPermanent.module.css";
-import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
 import Testimonials from "../sections/Testimonials";
@@ -20,6 +19,31 @@ const CommonLawPartnerPermanent = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  
+
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
 
   return (
     <>
@@ -58,7 +82,7 @@ const CommonLawPartnerPermanent = () => {
           Resident/Canadian Citizen
         </h1>
 
-        <section className={styles.introduction} id="about-program">
+        <section className={`${styles.introduction} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
           <p>
             The processing time for a PR application can be longer than usually
             expected. There are various reasons for this to happen. The common
@@ -85,7 +109,7 @@ const CommonLawPartnerPermanent = () => {
           </ul>
         </section>
 
-        <section className={styles.benefits} id="benifits">
+        <section className={`${styles.benefits} ${styles.section}`} id="benifits" ref={(el) => sectionsRef.current[1] = el}>
           <h2 className={styles.subheading}>
             Benefits of Open Work Permit for Spouse or Common-law Partner of a
             Permanent Resident/Canadian Citizen
@@ -112,7 +136,7 @@ const CommonLawPartnerPermanent = () => {
           </ul>
         </section>
 
-        <section className={styles.eligibility} id="eligibility">
+        <section className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[2] = el}>
           <h2 className={styles.subheading}>Eligibility Criteria</h2>
           <ol>
             <li>
@@ -133,7 +157,7 @@ const CommonLawPartnerPermanent = () => {
           </ol>
         </section>
 
-        <section className={styles.applicationProcess} id="how-to-apply">
+        <section className={`${styles.applicationProcess} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[3] = el}>
           <h2 className={styles.subheading}>How to Apply</h2>
           <ol>
             <li>
@@ -161,7 +185,7 @@ const CommonLawPartnerPermanent = () => {
           </ol>
         </section>
 
-        <section className={styles.refusalReasons} id="refusal-reasons">
+        <section className={`${styles.refusalReasons} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[4] = el}>
           <h2 className={styles.subheading}>Common Reasons for Refusal</h2>
           <ul>
             <li>
@@ -182,7 +206,7 @@ const CommonLawPartnerPermanent = () => {
           </ul>
         </section>
 
-        <section className={styles.assistance}>
+        <section className={`${styles.assistance} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[5] = el}>
           <h2 className={styles.subheading}>Need Assistance?</h2>
           <p>
             If you need help with your application or have received a refusal,
@@ -200,14 +224,13 @@ const CommonLawPartnerPermanent = () => {
             </button>
         </section>
 
-        <section className={styles.whyChooseUs} id="why-choose-us">
+        <section className={`${styles.whyChooseUs} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[6] = el}>
           <h2 className={styles.subheading}>Why Choose Us?</h2>
           <p>
             At Brightlight Immigration, we provide expert guidance and support
             throughout your immigration journey. Our dedicated team is committed
             to achieving the best possible outcomes for our clients.
           </p>
-          {/* Include testimonials and video testimonials here */}
         </section>
       </div>
       <div id="faqs">

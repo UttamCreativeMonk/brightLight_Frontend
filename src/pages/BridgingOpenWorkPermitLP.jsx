@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/BridgingOpenWorkPermitLP.module.css";
-import { Link } from "react-router-dom";
 import Footer1 from "../components/Footer1";
 import Navbar1 from "../components/Navbar1";
 import Testimonials from "../sections/Testimonials";
@@ -20,6 +19,30 @@ const BridgingOpenWorkPermitLP = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+  
+
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <Navbar1 />
@@ -37,22 +60,12 @@ const BridgingOpenWorkPermitLP = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
-                About the Program
-              </p>
+              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
-              <p onClick={() => scrollToSection("application-process")}>
-                Eligibility
-              </p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose Us?
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("application-process")}>Eligibility</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
+              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -62,7 +75,7 @@ const BridgingOpenWorkPermitLP = () => {
 
       <div className={styles.containerParent}>
         <div className={styles.container}>
-          <header className={styles.header} id="about-program">
+          <header className={`${styles.header} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}   >
             <h1>Bridging Open Work Permit</h1>
           </header>
           <section className={styles.intro}>
@@ -76,7 +89,7 @@ const BridgingOpenWorkPermitLP = () => {
               residency application.
             </p>
           </section>
-          <section className={styles.benefits} id="benifits">
+          <section className={`${styles.benefits} ${styles.section}`} id="benefits" ref={(el) => sectionsRef.current[1] = el}  >
             <h2>Benefits of Bridging Open Work Permit</h2>
             <ul>
               <li>
@@ -98,7 +111,7 @@ const BridgingOpenWorkPermitLP = () => {
               </li>
             </ul>
           </section>
-          <section className={styles.application} id="application-process">
+          <section className={`${styles.application} ${styles.section}`} id="application-process" ref={(el) => sectionsRef.current[2] = el}    >
             <h2>Eligibility criteria for Bridging Open Work Permit:</h2>
             <p>
               To be eligible for a bridging open work permit (BOWP), you must:
@@ -202,7 +215,7 @@ const BridgingOpenWorkPermitLP = () => {
               </li>
             </ul>
           </section>
-          <section className={styles.application} id="how-to-apply">
+          <section className={`${styles.application} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[3] = el} >
             <h2>How to apply for Bridging Open Work Permit:</h2>
             <ol>
               <li>
@@ -220,7 +233,7 @@ const BridgingOpenWorkPermitLP = () => {
               <li>Wait for IRCC to process your application.</li>
             </ol>
           </section>
-          <section className={styles.advice} id="why-choose-us">
+          <section  className={`${styles.advice} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[4] = el}   >
             <h2>Still not sure?</h2>
             <p>
               If you have received a refusal for any of the reasons mentioned

@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/Rnip.module.css";
-import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
 import Testimonials from "../sections/Testimonials";
@@ -20,6 +19,29 @@ const AgriFoodPilotProgram = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -43,15 +65,9 @@ const AgriFoodPilotProgram = () => {
               </p>
               <p onClick={() => scrollToSection("benefits")}>Benefits</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>
-                Refusal Reasons
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -60,11 +76,11 @@ const AgriFoodPilotProgram = () => {
       </div>
 
       <div className={styles.container}>
-        <header className={styles.header} id="about-program">
+        <header  className={`${styles.header} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
           <h1>Rural and Northern Immigration Pilot (RNIP)</h1>
         </header>
-        <section className={styles.content} id="benefits">
-          <p>
+        <section >
+          <p id="benefits">
             The Rural and Northern Immigration Pilot (RNIP) is revolutionizing
             the way economic immigration benefits smaller communities across
             Canada. Unlike traditional immigration programs that often favor
@@ -81,7 +97,7 @@ const AgriFoodPilotProgram = () => {
             perspectives to enrich the area.
           </p>
           <h2>Participating Communities</h2>
-          <table className={styles.table}>
+          <table className={`${styles.table} ${styles.section}`} id="testing" ref={(el) => sectionsRef.current[2] = el}>
             <thead>
               <tr>
                 <th>Community</th>
@@ -124,9 +140,9 @@ const AgriFoodPilotProgram = () => {
             </tbody>
           </table>
 
-          <h2 id="eligibility">Eligibility Requirements for RNIP</h2>
+          <h2 className={`${styles.section} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[1] = el}>Eligibility Requirements for RNIP</h2>
           <p>There are two main parts to eligibility:</p>
-          <ol>
+          <ol >
             <li>
               IRCC requirements: You'll need to check if you meet the general
               criteria set by Immigration, Refugees and Citizenship Canada
@@ -256,7 +272,7 @@ const AgriFoodPilotProgram = () => {
           </ul>
 
           <h2>Language Requirements</h2>
-          <table className={styles.languageTable}>
+          <table className={`${styles.languageTable} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[3] = el}>
             <thead>
               <tr>
                 <th>NOC Category</th>
@@ -315,8 +331,8 @@ const AgriFoodPilotProgram = () => {
             To participate in the pilot, you must plan to live in the community.
           </p>
 
-          <h2 id="how-to-apply">How to Apply</h2>
-          <ol>
+          <h2>How to Apply</h2>
+          <ol className={`${styles.section} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[5] = el}>
             <li>
               Look for a qualifying job offer with a qualifying employer in the
               qualifying community.

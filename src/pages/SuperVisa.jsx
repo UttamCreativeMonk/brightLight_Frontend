@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/SuperVisa.module.css";
-import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
 import Testimonials from "../sections/Testimonials";
@@ -21,6 +20,32 @@ const SuperVisa = () => {
     }
   };
 
+
+  
+
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+
   return (
     <>
       <Navbar1 />
@@ -38,26 +63,14 @@ const SuperVisa = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
-                About the Program{" "}
-              </p>
+              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("income-table")}>
-                Income Table
-              </p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>
-                Refusal Reasons
-              </p>
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose Us?
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("income-table")}>Income Table</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
+              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -66,18 +79,18 @@ const SuperVisa = () => {
       </div>
 
       <div className={styles.container}>
-        <h1 className={styles.heading} id="about-program">
+        <h1  className={`${styles.heading} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
           Super Visa
         </h1>
 
-        <section className={styles.introduction}>
+        <section className={`${styles.introduction} ${styles.section}`} id="testing" ref={(el) => sectionsRef.current[1] = el}>
           <p>
             The Super Visa is a temporary visa program offered to parents and
             grandparents of Canadian citizens or permanent residents.
           </p>
         </section>
 
-        <section className={styles.benefits} id="benifits">
+        <section className={`${styles.benefits} ${styles.section}`} id="benifits" ref={(el) => sectionsRef.current[2] = el}>
           <h2 className={styles.subheading}>Benefits of Super Visa</h2>
           <ul>
             <li>
@@ -92,7 +105,7 @@ const SuperVisa = () => {
           </ul>
         </section>
 
-        <section className={styles.eligibility} id="eligibility">
+        <section className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[3] = el}>
           <h2 className={styles.subheading}>
             Eligibility Criteria for Super Visa
           </h2>
@@ -143,7 +156,7 @@ const SuperVisa = () => {
           </ul>
         </section>
 
-        <section className={styles.incomeTable} id="income-table">
+        <section className={`${styles.incomeTable} ${styles.section}`} id="income-table" ref={(el) => sectionsRef.current[4] = el}>
           <h2 className={styles.subheading}>Super Visa Income Table</h2>
           <p>
             Minimum necessary income requirements Updated as of June 3, 2024:
@@ -192,7 +205,7 @@ const SuperVisa = () => {
           </table>
         </section>
 
-        <section className={styles.applicationProcess} id="how-to-apply">
+        <section className={`${styles.applicationProcess} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[5] = el}>
           <h2 className={styles.subheading}>How to Apply</h2>
           <ol>
             <li>-
@@ -212,7 +225,7 @@ const SuperVisa = () => {
           </ol>
         </section>
 
-        <section className={styles.refusalReasons} id="refusal-reasons">
+        <section  className={`${styles.refusalReasons} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[6] = el}>
           <h2 className={styles.subheading}>Common Reasons for Refusal</h2>
           <ul>
             <li>
@@ -270,7 +283,7 @@ const SuperVisa = () => {
           </p>
         </section>
 
-        <section className={styles.whyChooseUs} id="why-choose-us">
+        <section className={`${styles.whyChooseUs} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[7] = el} >
           <h2 className={styles.subheading}>Why Choose Us?</h2>
           <p>
             At Brightlight Immigration, we provide expert guidance and support

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/FederalSkilledTradesProgram.module.css";
 import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
@@ -21,6 +21,29 @@ const FederalSkilledTradesProgram = () => {
     }
   };
 
+
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <Navbar1 />
@@ -38,29 +61,14 @@ const FederalSkilledTradesProgram = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
-                About the Program
-              </p>
+              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("express-entry")}>
-                Express Entry
-              </p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>
-                {" "}
-                Refusal Reasons{" "}
-              </p>
-              <p onClick={() => scrollToSection("book-appointment")}>
-                Book Appointment
-              </p>
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose Us?
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("express-entry")}>Express Entry</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
+              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
+              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -69,11 +77,11 @@ const FederalSkilledTradesProgram = () => {
       </div>
 
       <div className={styles.container}>
-        <h1 className={styles.heading} id="about-program">
+        <h1  className={`${styles.heading} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
           Federal Skilled Trades Program (FSTP)
         </h1>
 
-        <section className={styles.introduction}>
+        <section  className={`${styles.introduction} ${styles.section}`} id="testing" ref={(el) => sectionsRef.current[1] = el}>
           <p>
             If you're a skilled tradesperson with a passion for building,
             fixing, or creating, Canada's Federal Skilled Trades Program (FSTP)
@@ -91,7 +99,7 @@ const FederalSkilledTradesProgram = () => {
           </p>
         </section>
 
-        <section className={styles.eligibility} id="eligibility">
+        <section className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[2] = el}>
           <h2 className={styles.subheading}>
             Eligibility Criteria for Federal Skilled Trades Program (FSTP)
           </h2>
@@ -153,12 +161,12 @@ const FederalSkilledTradesProgram = () => {
           </ul>
         </section>
 
-        <section className={styles.expressEntry} id="express-entry">
+        <section className={`${styles.expressEntry} ${styles.section}`} id="express-entry" ref={(el) => sectionsRef.current[3] = el}>
           <h2 className={styles.subheading}>
             Express Entry FSTP Draws History
           </h2>
           <p>
-            For the latest updates on Express Entry draws,{" "}
+            For the latest updates on Express Entry draws,
             <Link to="/express-entry-draws-history" className={styles.link}>
               click here
             </Link>
@@ -166,7 +174,7 @@ const FederalSkilledTradesProgram = () => {
           </p>
         </section>
 
-        <section className={styles.applicationProcess} id="how-to-apply">
+        <section className={`${styles.applicationProcess} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[4] = el} >
           <h2 className={styles.subheading}>
             How to Apply for the Federal Skilled Trades Program (FSTP)
           </h2>
@@ -204,7 +212,7 @@ const FederalSkilledTradesProgram = () => {
           </ol>
         </section>
 
-        <section className={styles.refusalReasons} id="refusal-reasons">
+        <section className={`${styles.refusalReasons} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[5] = el}>
           <h2 className={styles.subheading}>
             Common Reasons for Refusals of the Federal Skilled Trades Program
             (FSTP)
@@ -234,7 +242,7 @@ const FederalSkilledTradesProgram = () => {
           </ul>
         </section>
 
-        <section className={styles.support}>
+        <section className={`${styles.support} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[6] = el}>
           <h2 className={styles.subheading}>Still Not Sure?</h2>
           <p>
             If you have received a refusal for any of the reasons mentioned
@@ -259,7 +267,7 @@ const FederalSkilledTradesProgram = () => {
             </button>
         </section>
 
-        <section className={styles.whyChooseUs} id="why-choose-us">
+        <section className={`${styles.whyChooseUs} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[7] = el}>
           <h2 className={styles.subheading}>Why Choose Us?</h2>
           <p>
             At Brightlight Immigration, we offer expert guidance and support

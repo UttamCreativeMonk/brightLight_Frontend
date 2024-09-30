@@ -1,13 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/BusinessVisitorVisa.module.css";
-import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
 import Testimonials from "../sections/Testimonials";
 import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
-
-
 
 const BusinessVisitorVisa = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -22,6 +19,31 @@ const BusinessVisitorVisa = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  
+
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
 
   return (
     <>
@@ -40,23 +62,15 @@ const BusinessVisitorVisa = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
-                About the Program
-              </p>
+              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
               <p onClick={() => scrollToSection("activities")}>Activities</p>
               <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
               <p onClick={() => scrollToSection("event-codes")}>Event Codes</p>
               <p onClick={() => scrollToSection("essential-documents")}>Essential Documents</p>
-              <p onClick={() => scrollToSection("book-appointment")}>
-                Book Appointment
-              </p>
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose Us?
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
+              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -66,15 +80,15 @@ const BusinessVisitorVisa = () => {
 
 
       <div className={styles.container}>
-      <h1 className={styles.heading} id="about-program">Business Visitor Visa</h1>
+      <h1  className={`${styles.heading} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>Business Visitor Visa</h1>
 
-      <section className={styles.introduction}>
+      <section  className={`${styles.introduction} ${styles.section}`} id="testing" ref={(el) => sectionsRef.current[1] = el}>
         <p>
           A Business Visitor Visa is ideal for business owners who wish to travel to Canada to explore business opportunities without requiring sponsorship. This visa allows you to engage in various business activities while in Canada, including attending meetings, events, and conferences.
         </p>
       </section>
 
-      <section className={styles.activities} id="activities">
+      <section className={`${styles.activities} ${styles.section}`} id="activities" ref={(el) => sectionsRef.current[2] = el} >
         <h2 className={styles.subheading}>Activities Allowed with a Business Visitor Visa</h2>
         <ul>
           <li>Purchasing Canadian goods or services for a foreign business or government.</li>
@@ -90,7 +104,7 @@ const BusinessVisitorVisa = () => {
         </p>
       </section>
 
-      <section className={styles.eligibility} id="eligibility">
+      <section className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[3] = el}>
         <h2 className={styles.subheading}>Eligibility Criteria</h2>
         <p>To qualify as a business visitor, you must meet the following requirements:</p>
         <ul>
@@ -112,14 +126,14 @@ const BusinessVisitorVisa = () => {
         </p>
       </section>
 
-      <section className={styles.eventCode} id="event-codes">
+      <section className={`${styles.eventCode} ${styles.section}`} id="event-codes" ref={(el) => sectionsRef.current[4] = el}>
         <h2 className={styles.subheading}>Event Code (if Applicable)</h2>
         <p>
           If your meeting, event, or conference is registered with Immigration, Refugees and Citizenship Canada (IRCC), your organizer will provide an event code. Include this code on your visa application form to indicate your participation in a registered event.
         </p>
       </section>
 
-      <section className={styles.documents} id="essential-documents">
+      <section className={styles.documents}>
         <h2 className={styles.subheading}>Essential Documents for Entry</h2>
         <p>Upon arrival at the border, ensure you have the following documents:</p>
         <ul>
@@ -135,7 +149,7 @@ const BusinessVisitorVisa = () => {
         </ul>
       </section>
 
-      <section className={styles.support}>
+      <section className={`${styles.support} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[6] = el}>
         <h2 className={styles.subheading}>Still Not Sure?</h2>
         <p>
           If you have received a refusal or have doubts regarding your case and application, do not worry. With over a decade of experience, we specialize in handling previous refusals. Our approval rate for these programs is nearly 100%. We have achieved this with a tailored approach to your specific case, using case law and finding similar cases with positive results as precedents.
@@ -147,13 +161,12 @@ const BusinessVisitorVisa = () => {
               onClick={() =>
                 (window.location.href =
                   "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-              }
-            >
+              }>
               Book Appointment
             </button>
       </section>
 
-      <section className={styles.whyChooseUs} id="why-choose-us">
+      <section className={`${styles.whyChooseUs} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[5] = el}>
         <h2 className={styles.subheading}>Why Choose Us?</h2>
         <p>
           At Brightlight Immigration, we provide expert guidance and support throughout your immigration journey. Our dedicated team is committed to achieving the best possible outcomes for our clients.

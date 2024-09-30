@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/TradeOccupationTargetedDraw.module.css";
-import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
 import Testimonials from "../sections/Testimonials";
@@ -20,6 +19,29 @@ const TradeOccupationTargetedDraw = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -52,11 +74,11 @@ const TradeOccupationTargetedDraw = () => {
       </div>
 
       <div className={styles.container}>
-        <h1 className={styles.heading} id="about-program">
+        <h1  className={`${styles.heading} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
           Category-Based Express Entry Selection Draws: Trade Occupations
         </h1>
 
-        <div className={styles.introduction}>
+        <div  className={`${styles.introduction} ${styles.section}`} id="testing" ref={(el) => sectionsRef.current[1] = el}>
           <p>
             Canada’s Express Entry system for Trades is tailored to meet the
             rising demand for skilled workers in various trade sectors. This
@@ -73,7 +95,7 @@ const TradeOccupationTargetedDraw = () => {
           </p>
         </div>
 
-        <div className={styles.eligibility} id="eligible">
+        <div className={`${styles.eligibility} ${styles.section}`} id="eligible" ref={(el) => sectionsRef.current[2] = el}>
           <h2 className={styles.subheading}>
             First You Must Be Eligible with Express Entry
           </h2>
@@ -231,7 +253,7 @@ const TradeOccupationTargetedDraw = () => {
           </table>
         </div>
 
-        <div className={styles.drawHistory}>
+        <div className={`${styles.drawHistory} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[3] = el}>
           <h2 className={styles.subheading}>
             Express Entry Trade Occupations Draw History
           </h2>
@@ -252,7 +274,7 @@ const TradeOccupationTargetedDraw = () => {
             </button>
         </div>
 
-        <div className={styles.contact}>
+        <div   className={`${styles.contact} ${styles.section}`} id="testing3" ref={(el) => sectionsRef.current[4] = el}>
           <h2 className={styles.subheading}>Still Not Sure?</h2>
           <p>
             Contact Brightlight Immigration today to assess your profile and
@@ -282,7 +304,7 @@ const TradeOccupationTargetedDraw = () => {
             </button>
         </div>
 
-        <div className={styles.whyChooseUs} id="why-choose-us">
+        <div className={`${styles.whyChooseUs} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[5] = el}>
           <h2 className={styles.subheading}>Why Choose Us</h2>
           <p>
             Here is where you can describe why clients should choose your
