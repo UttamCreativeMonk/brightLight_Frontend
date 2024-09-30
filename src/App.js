@@ -92,10 +92,10 @@ function App() {
   
       <ToastContainer />
 
-      {/* <Loader /> */}
+      <Loader />
       <HelmetProvider>
-        {/* <AllRoutes /> */}
-        <WorkPermit/>
+        <AllRoutes />
+        {/* <WorkPermit/> */}
       </HelmetProvider>
     </div>
   );
