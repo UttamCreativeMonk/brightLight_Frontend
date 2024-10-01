@@ -826,10 +826,10 @@
 
 .aspectsHeading h2 {
   color: #132f46;
-  font-size: 35px;
+  font-size: 32px;
   font-weight: 400;
-  padding-top: 20px;
-  /* padding-bottom: 10px; */
+  padding-top: 30px;
+  padding-bottom: 40px;
 }
 
 .aspectsCardParent {
