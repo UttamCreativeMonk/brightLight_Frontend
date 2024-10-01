@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/PermanentResidencePathwaysCaregiversLP.module.css";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
@@ -21,6 +20,29 @@ const PermanentResidencePathwaysCaregiversLP = () => {
     }
   };
 
+
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <Navbar1 />
@@ -38,18 +60,12 @@ const PermanentResidencePathwaysCaregiversLP = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
-                About the Program
-              </p>
+              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
               {/* <p onClick={() => scrollToSection("pathways")}>Pathways</p> */}
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose Us?
-              </p>
-              <p onClick={() => scrollToSection("testimonials")}>
-                Testimonials
-              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -58,10 +74,10 @@ const PermanentResidencePathwaysCaregiversLP = () => {
       </div>
 
       <div className={styles.container}>
-        <h1 className={styles.title} id="about-program">
+        <h1 className={`${styles.title} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
           Permanent Residence Pathways available for Caregivers
         </h1>
-        <p className={styles.description}>
+        <p className={`${styles.description} ${styles.section}`} id="testing1" ref={(el) => sectionsRef.current[1] = el}>
           The caregivers play a crucial role in contributing to the Canadian
           economy by providing invaluable support to families and individuals in
           need. The caregiver program by Immigration, Refugees and Citizenship
@@ -82,10 +98,10 @@ const PermanentResidencePathwaysCaregiversLP = () => {
             Scroll to section Below
           </li>
         </ul> */}
-        <h2 className={styles.subtitle} id="benifits">
+        <h2 className={`${styles.subtitle} ${styles.section}`} id="benifits" ref={(el) => sectionsRef.current[2] = el}>
           Benefits of Permanent Residence Pathways available for Caregivers:
         </h2>
-        <ul className={styles.list}>
+        <ul className={`${styles.list} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[3] = el}>
           <li>
             Caregiver pathways provide you with an opportunity to apply for
             permanent residence, after gaining 12 months of experience in
@@ -105,14 +121,14 @@ const PermanentResidencePathwaysCaregiversLP = () => {
             process.
           </li>
         </ul>
-        <h2 className={styles.subtitle} id="eligibility">
+        <h2 className={`${styles.subtitle} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[4] = el}>
           Eligibility criteria for Permanent Residence Pathways available for
           Caregivers:
         </h2>
-        <h3 id="categoryA" className={styles.subheading}>
+        <h3 className={`${styles.subheading} ${styles.section}`} id="categoryA" ref={(el) => sectionsRef.current[5] = el}>
           1. Qualifying Occupations:
         </h3>
-        <ul className={styles.listStrong}>
+        <ul className={`${styles.listStrong} ${styles.section}`} id="testing3" ref={(el) => sectionsRef.current[6] = el}>
           <li>
             <strong>NOC 44100: Home childcare providers</strong> - If you care
             for the well-being and physical and social development of children,
@@ -128,8 +144,8 @@ const PermanentResidencePathwaysCaregiversLP = () => {
             or other such institution, you do not qualify for this NOC.
           </li>
         </ul>
-        <h3 className={styles.subheading}>2. Application Categories:</h3>
-        <ul className={styles.list}>
+        <h3 className={`${styles.subheading} ${styles.section}`} id="testing4" ref={(el) => sectionsRef.current[7] = el}>2. Application Categories:</h3>
+        <ul  className={`${styles.list} ${styles.section}`} id="testing5" ref={(el) => sectionsRef.current[8] = el}>
           <li>
             a. Applicants without 12 months of Qualifying Canadian work
             experience (Category A – Gaining experience)
@@ -139,8 +155,8 @@ const PermanentResidencePathwaysCaregiversLP = () => {
             (Category B – Direct to permanent residence)
           </li>
         </ul>
-        <h3 className={styles.subheading}>3. Education:</h3>
-        <ul className={styles.list}>
+        <h3 className={`${styles.subheading} ${styles.section}`} id="testng6" ref={(el) => sectionsRef.current[9] = el}>3. Education:</h3>
+        <ul className={`${styles.list} ${styles.section}`} id="testing7" ref={(el) => sectionsRef.current[10] = el}>
           <li>
             You are required to have either of the following:
             <ul>
@@ -158,8 +174,8 @@ const PermanentResidencePathwaysCaregiversLP = () => {
             </ul>
           </li>
         </ul>
-        <h3 className={styles.subheading}>4. Language requirements:</h3>
-        <ul className={styles.list}>
+        <h3 className={`${styles.subheading} ${styles.section}`} id="testing8" ref={(el) => sectionsRef.current[11] = el}>4. Language requirements:</h3>
+        <ul className={`${styles.list} ${styles.section}`} id="testing9" ref={(el) => sectionsRef.current[12] = el} >
           <li>CLB 5 in reading, writing, speaking, and listening.</li>
           <li>IELTS: reading-4, writing-5, speaking-5, and listening-5</li>
           <li>CELPIP-G: 5 in reading, writing, speaking, and listening.</li>
@@ -168,11 +184,11 @@ const PermanentResidencePathwaysCaregiversLP = () => {
             listening-(39-49)
           </li>
         </ul>
-        <h3 className={styles.subheading}>
+        <h3 className={`${styles.subheading} ${styles.section}`} id="testing10" ref={(el) => sectionsRef.current[13] = el}>
           5. Qualifying Canadian work experience and permanent residency
           application categories:
         </h3>
-        <h4 id="categoryA" className={styles.subheading}>
+        <h4 className={`${styles.subheading} ${styles.section}`} id="categoryA" ref={(el) => sectionsRef.current[14] = el}>
           Applicants under Category A – Gaining experience:
         </h4>
         <p>
@@ -183,7 +199,7 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           to submit proof of at least 12 months of authorized full-time work
           experience. You will also be required to provide the following with
           the application:
-          <ul className={styles.list}>
+          <ul className={`${styles.list} ${styles.section}`} id="testing11" ref={(el) => sectionsRef.current[15] = el}>
             <li>
               An employment offer from a qualifying Canadian employer in either
               NOC 44101: Home support workers or NOC 44100: Home childcare
@@ -198,7 +214,7 @@ const PermanentResidencePathwaysCaregiversLP = () => {
             </li>
           </ul>
         </p>
-        <h4 className={styles.subheading}>
+        <h4 className={`${styles.subheading} ${styles.section}`} id="testing12" ref={(el) => sectionsRef.current[16] = el}>
           Applicants under Category B – Direct to Permanent residence:
         </h4>
         <p>
@@ -207,11 +223,11 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           residence), then you submit the documents to prove your work
           experience upfront.
         </p>
-        <h2 className={styles.subtitle}>
+        <h2 className={`${styles.subtitle} ${styles.section}`} id="testing13" ref={(el) => sectionsRef.current[17] = el}>
           How to apply for Permanent Residence Pathways available for
           Caregivers?
         </h2>
-        <ol className={styles.list}>
+        <ol className={`${styles.list} ${styles.section}`} id="testing14" ref={(el) => sectionsRef.current[18] = el}>
           <li>
             Select the right program as per your qualifications - HCCP or HSWP
           </li>
@@ -225,11 +241,11 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           </li>
           <li>Appear for an acceptable English test.</li>
         </ol>
-        <h3 className={styles.subheading}>
+        <h3 className={`${styles.subheading} ${styles.section}`} id="testing15" ref={(el) => sectionsRef.current[19] = el}>
           Now if you are applying to Gaining Experience category of Caregiver
           pilot:
         </h3>
-        <ol className={styles.list}>
+        <ol className={`${styles.list} ${styles.section}`} id="testing16" ref={(el) => sectionsRef.current[20] = el}>
           <li>
             If you do not have qualifying Canadian experience, look for a
             genuine job offer.
@@ -250,10 +266,10 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           </li>
           <li>Provide proof of work experience to IRCC.</li>
         </ol>
-        <h3 className={styles.subheading}>
+        <h3 className={`${styles.subheading} ${styles.section}`} id="testing17" ref={(el) => sectionsRef.current[21] = el}>
           Now if you are applying to Direct to PR category of Caregiver pilot:
         </h3>
-        <ol className={styles.list}>
+        <ol className={`${styles.list} ${styles.section}`} id="testing18" ref={(el) => sectionsRef.current[22] = el}>
           <li>
             If you have qualifying Canadian experience of 12 months, prepare PR
             application after ensuring IRCC is still accepting applications for
@@ -266,10 +282,10 @@ const PermanentResidencePathwaysCaregiversLP = () => {
             expiring.
           </li>
         </ol>
-        <h2 className={styles.subtitle} id="why-choose-us">
+        <h2 className={`${styles.subtitle} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[23] = el}>
           Still not sure?
         </h2>
-        <p className={styles.description}>
+        <p className={`${styles.description} ${styles.section}`} id="testing19" ref={(el) => sectionsRef.current[24] = el}>
           If you have received a refusal for any of the reasons mentioned above,
           do not worry. With over a decade of experience, we specialize in
           previously refused cases. While we don't provide jobs for LMIA, we can

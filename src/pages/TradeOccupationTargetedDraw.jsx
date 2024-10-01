@@ -78,7 +78,7 @@ const TradeOccupationTargetedDraw = () => {
           Category-Based Express Entry Selection Draws: Trade Occupations
         </h1>
 
-        <div  className={`${styles.introduction} ${styles.section}`} id="testing" ref={(el) => sectionsRef.current[1] = el}>
+        <div  className={`${styles.introduction} ${styles.section}`} id="testing1" ref={(el) => sectionsRef.current[1] = el}>
           <p>
             Canada’s Express Entry system for Trades is tailored to meet the
             rising demand for skilled workers in various trade sectors. This
@@ -99,7 +99,7 @@ const TradeOccupationTargetedDraw = () => {
           <h2 className={styles.subheading}>
             First You Must Be Eligible with Express Entry
           </h2>
-          <ol>
+          <ol  className={`${styles.section} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[3] = el}>
             <li>
               Join the Express Entry Pool: The first step towards becoming a
               candidate for a trade-specific draw is to get into the Express
@@ -135,10 +135,8 @@ const TradeOccupationTargetedDraw = () => {
                   <button className={styles.button1}
               onClick={() =>
                 (window.location.href =
-                  "/federal-skilled-trades-program")
-              }
-            >
-       Federal Skilled Trades Program (FSTP)
+                  "/federal-skilled-trades-program")}>
+               Federal Skilled Trades Program (FSTP)
             </button>
                 </li>
               </ul>
@@ -151,10 +149,7 @@ const TradeOccupationTargetedDraw = () => {
           </p>
         </div>
 
-        <div
-          className={styles.tradeEligibility}
-          id="trade-occupations-category"
-        >
+        <div className={`${styles.tradeEligibility} ${styles.section}`} id="trade-occupations-category" ref={(el) => sectionsRef.current[4] = el}>
           <h2 className={styles.subheading}>
             Eligibility Criteria for Trade Occupations Category
           </h2>
@@ -173,21 +168,19 @@ const TradeOccupationTargetedDraw = () => {
             Here is the list of eligible NOCs:{" "}
             <a
               href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/submit-profile/rounds-invitations/category-based-selection.html"
-              className={styles.link}
-            >
+              className={styles.link}>
               Eligible NOCs List
             </a>
           </p>
         </div>
 
-        <div className={styles.tableContainer}>
+        <div className={`${styles.tableContainer} ${styles.section}`} id="testing3" ref={(el) => sectionsRef.current[5] = el}>
           <h2
             className={styles.subheading}
-            id="criteria-trade-occupations-category"
-          >
+            id="criteria-trade-occupations-category">
             Eligible Trade Occupations
           </h2>
-          <table className={styles.table}>
+          <table className={`${styles.table} ${styles.section}`} id="testing4" ref={(el) => sectionsRef.current[6] = el}>
             <thead>
               <tr>
                 <th>Occupations</th>
@@ -253,7 +246,7 @@ const TradeOccupationTargetedDraw = () => {
           </table>
         </div>
 
-        <div className={`${styles.drawHistory} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[3] = el}>
+        <div className={`${styles.drawHistory} ${styles.section}`} id="testing5" ref={(el) => sectionsRef.current[7] = el}>
           <h2 className={styles.subheading}>
             Express Entry Trade Occupations Draw History
           </h2>
@@ -274,7 +267,7 @@ const TradeOccupationTargetedDraw = () => {
             </button>
         </div>
 
-        <div   className={`${styles.contact} ${styles.section}`} id="testing3" ref={(el) => sectionsRef.current[4] = el}>
+        <div   className={`${styles.contact} ${styles.section}`} id="testing6" ref={(el) => sectionsRef.current[8] = el}>
           <h2 className={styles.subheading}>Still Not Sure?</h2>
           <p>
             Contact Brightlight Immigration today to assess your profile and
@@ -304,7 +297,7 @@ const TradeOccupationTargetedDraw = () => {
             </button>
         </div>
 
-        <div className={`${styles.whyChooseUs} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[5] = el}>
+        <div className={`${styles.whyChooseUs} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[9] = el}>
           <h2 className={styles.subheading}>Why Choose Us</h2>
           <p>
             Here is where you can describe why clients should choose your

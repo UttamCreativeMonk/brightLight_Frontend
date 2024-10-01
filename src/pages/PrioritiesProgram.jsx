@@ -130,7 +130,7 @@ const PrioritiesProgram = () => {
         <section className={`${styles.section} ${styles.section}`} id="Priority_Occupation_List" ref={(el) => sectionsRef.current[2] = el}>
           <h3>Priority Occupations List</h3>
 
-          <div className={styles.occupationList}>
+          <div  className={`${styles.occupationList} ${styles.section}`} id="testing1" ref={(el) => sectionsRef.current[3] = el}>
             <h4>Childcare Professionals</h4>
             <table className={styles.table}>
               <thead>
@@ -148,9 +148,9 @@ const PrioritiesProgram = () => {
             </table>
           </div>
 
-          <div className={styles.occupationList}>
+          <div className={`${styles.occupationList} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[4] = el}>
             <h4>Construction</h4>
-            <table className={styles.table}>
+            <table className={styles.table} >
               <thead>
                 <tr>
                   <th>Occupation</th>
@@ -272,7 +272,7 @@ const PrioritiesProgram = () => {
 
           <div className={styles.occupationList}>
             <h4>Healthcare Professionals</h4>
-            <table className={styles.table}>
+            <table className={`${styles.table} ${styles.section}`} id="testing3" ref={(el) => sectionsRef.current[5] = el}>
               <thead>
                 <tr>
                   <th>Occupation</th>
@@ -418,7 +418,7 @@ const PrioritiesProgram = () => {
 
           <div className={styles.occupationList}>
             <h4>Technology Sector Opportunities</h4>
-            <table className={styles.table}>
+            <table className={`${styles.table} ${styles.section}`} id="testing4" ref={(el) => sectionsRef.current[6] = el}>
               <thead>
                 <tr>
                   <th>Occupation</th>
@@ -486,7 +486,7 @@ const PrioritiesProgram = () => {
             </table>
           </div>
 
-          <div className={styles.occupationList}>
+          <div className={`${styles.occupationList} ${styles.section}`} id="testing5" ref={(el) => sectionsRef.current[7] = el}>
             <h4>Veterinary Care</h4>
             <table className={styles.table}>
               <thead>
@@ -509,11 +509,10 @@ const PrioritiesProgram = () => {
           </div>
         </section>
 
-        <section className={`${styles.callToAction} ${styles.section}`} id="BCPNP_Calculator" ref={(el) => sectionsRef.current[3] = el}>
+        <section className={`${styles.callToAction} ${styles.section}`} id="BCPNP_Calculator" ref={(el) => sectionsRef.current[8] = el}>
           <button
             className={styles.button}
-            onClick={() => (window.location.href = "/bcpnp-calculator")}
-          >
+            onClick={() => (window.location.href = "/bcpnp-calculator")}>
             Calculate your BCPNP score
           </button>
           <h3>Application Procedure for British Columbia Priorities Program</h3>

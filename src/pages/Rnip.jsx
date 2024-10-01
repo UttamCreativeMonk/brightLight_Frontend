@@ -80,7 +80,7 @@ const AgriFoodPilotProgram = () => {
           <h1>Rural and Northern Immigration Pilot (RNIP)</h1>
         </header>
         <section >
-          <p id="benefits">
+          <p className={`${styles.section} ${styles.section}`} id="benefits" ref={(el) => sectionsRef.current[1] = el}> 
             The Rural and Northern Immigration Pilot (RNIP) is revolutionizing
             the way economic immigration benefits smaller communities across
             Canada. Unlike traditional immigration programs that often favor
@@ -88,7 +88,7 @@ const AgriFoodPilotProgram = () => {
             charge of their own economic growth by attracting foreign workers
             and international students who want to settle permanently.
           </p>
-          <p>
+          <p  className={`${styles.section} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[2] = el}>
             The program's community-driven approach is its strength. Communities
             themselves assess prospective candidates, ensuring they have the
             skills and intentions that align perfectly with local needs. This
@@ -96,8 +96,8 @@ const AgriFoodPilotProgram = () => {
             the community fabric, contributing their unique talents and
             perspectives to enrich the area.
           </p>
-          <h2>Participating Communities</h2>
-          <table className={`${styles.table} ${styles.section}`} id="testing" ref={(el) => sectionsRef.current[2] = el}>
+          <h2  className={`${styles.section} ${styles.section}`} id="testing3" ref={(el) => sectionsRef.current[3] = el}>Participating Communities</h2>
+          <table className={`${styles.table} ${styles.section}`} id="testing4" ref={(el) => sectionsRef.current[4] = el}>
             <thead>
               <tr>
                 <th>Community</th>
@@ -140,9 +140,9 @@ const AgriFoodPilotProgram = () => {
             </tbody>
           </table>
 
-          <h2 className={`${styles.section} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[1] = el}>Eligibility Requirements for RNIP</h2>
+          <h2 className={`${styles.section} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[5] = el}>Eligibility Requirements for RNIP</h2>
           <p>There are two main parts to eligibility:</p>
-          <ol >
+          <ol className={`${styles.section} ${styles.section}`} id="testing5" ref={(el) => sectionsRef.current[6] = el}>
             <li>
               IRCC requirements: You'll need to check if you meet the general
               criteria set by Immigration, Refugees and Citizenship Canada
@@ -157,8 +157,8 @@ const AgriFoodPilotProgram = () => {
             </li>
           </ol>
 
-          <h2>How to Apply for RNIP</h2>
-          <ol>
+          <h2  className={`${styles.section} ${styles.section}`} id="testing6" ref={(el) => sectionsRef.current[7] = el}>How to Apply for RNIP</h2>
+          <ol className={`${styles.section} ${styles.section}`} id="testing7" ref={(el) => sectionsRef.current[8] = el}>
             <li>
               Find an eligible job: The first step in the actual application
               process is to secure a job offer from an employer in one of the
@@ -176,12 +176,12 @@ const AgriFoodPilotProgram = () => {
             </li>
           </ol>
 
-          <h2>Work Experience Requirements</h2>
+          <h2 className={`${styles.section} ${styles.section}`} id="testing8" ref={(el) => sectionsRef.current[9] = el}>Work Experience Requirements</h2>
           <p>
             You need 1 year of continuous work experience (at least 1,560 hours)
             in the past 3 years. The following hours of work are eligible:
           </p>
-          <ul>
+          <ul  className={`${styles.section} ${styles.section}`} id="testing9" ref={(el) => sectionsRef.current[10] = el}>
             <li>Count the hours worked in part-time and full-time jobs.</li>
             <li>
               The hours must be in one occupation, but they can be with
@@ -195,12 +195,12 @@ const AgriFoodPilotProgram = () => {
             </li>
           </ul>
 
-          <h2>Job Offer Requirements</h2>
+          <h2  className={`${styles.section} ${styles.section}`} id="testing10" ref={(el) => sectionsRef.current[11] = el}>Job Offer Requirements</h2>
           <p>
             Your job offer must be for an occupation at a skill level related to
             the NOC TEER category that matches your work experience.
           </p>
-          <table className={styles.jobOfferTable}>
+          <table className={`${styles.jobOfferTable} ${styles.section}`} id="testing11" ref={(el) => sectionsRef.current[12] = el}>
             <thead>
               <tr>
                 <th>Job Offer TEER Category</th>
@@ -231,12 +231,12 @@ const AgriFoodPilotProgram = () => {
             </tbody>
           </table>
 
-          <h2>International Students Requirements</h2>
+          <h2  className={`${styles.section} ${styles.section}`} id="testing12" ref={(el) => sectionsRef.current[13] = el}>International Students Requirements</h2>
           <p>
             You’re exempt from the work experience criteria above if you
             graduated with:
           </p>
-          <ul>
+          <ul  className={`${styles.section} ${styles.section}`} id="testing13" ref={(el) => sectionsRef.current[14] = el}>
             <li>
               A credential from a post-secondary program of 2 years or longer
               and you:
@@ -271,8 +271,8 @@ const AgriFoodPilotProgram = () => {
             </li>
           </ul>
 
-          <h2>Language Requirements</h2>
-          <table className={`${styles.languageTable} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[3] = el}>
+          <h2  className={`${styles.section} ${styles.section}`} id="testing14" ref={(el) => sectionsRef.current[15] = el}>Language Requirements</h2>
+          <table className={`${styles.languageTable} ${styles.section}`} id="testing15" ref={(el) => sectionsRef.current[16] = el}>
             <thead>
               <tr>
                 <th>NOC Category</th>
@@ -313,8 +313,8 @@ const AgriFoodPilotProgram = () => {
             credential that’s equal to Canadian secondary school (high school).
           </p>
 
-          <h2>Settlement Funds</h2>
-          <ul>
+          <h2  className={`${styles.section} ${styles.section}`} id="testing16" ref={(el) => sectionsRef.current[17] = el}>Settlement Funds</h2>
+          <ul className={`${styles.section} ${styles.section}`} id="testing17" ref={(el) => sectionsRef.current[18] = el}>
             <li>
               Applicants who are not currently working legally in Canada must
               demonstrate sufficient financial resources to support themselves
@@ -331,8 +331,8 @@ const AgriFoodPilotProgram = () => {
             To participate in the pilot, you must plan to live in the community.
           </p>
 
-          <h2>How to Apply</h2>
-          <ol className={`${styles.section} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[5] = el}>
+          <h2  className={`${styles.section} ${styles.section}`} id="testing18" ref={(el) => sectionsRef.current[19] = el}>How to Apply</h2>
+          <ol className={`${styles.section} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[20] = el}>
             <li>
               Look for a qualifying job offer with a qualifying employer in the
               qualifying community.
@@ -371,8 +371,8 @@ const AgriFoodPilotProgram = () => {
             </li>
           </ol>
 
-          <h2 id="refusal-reasons">Common Reasons for Refusals for RNIP</h2>
-          <ul>
+          <h2 className={`${styles.section} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[21] = el}>Common Reasons for Refusals for RNIP</h2>
+          <ul  className={`${styles.section} ${styles.section}`} id="testing19" ref={(el) => sectionsRef.current[22] = el}>
             <li>
               Having a job offer that does not match your work experience.
             </li>

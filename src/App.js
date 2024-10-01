@@ -29,7 +29,7 @@ import Adoption from "./pages/Adoption"; //Done Animation
 import DependentChildren from "./pages/DependentChildren"; //Done Animation
 import HumanitarianCompassionate from "./pages/HumanitarianCompassionate"; //Done Animation
 import LonelyCanadian from "./pages/LonelyCanadian"; // Done Animation
-import ParentsGrandparents from "./pages/ParentsGrandparents"; //Done not done yet
+import ParentsGrandparents from "./pages/ParentsGrandparents"; //Done Animation
 import StudentVisa from "./pages/StudentVisa"; //Done Animation
 import Orphan from "./pages/Orphan"; //Done  Animation
 import InsideCanada from "./pages/InsideCanada"; //Done Animation
@@ -61,19 +61,19 @@ import TradeOccupationTargetedDraw from "./pages/TradeOccupationTargetedDraw"; /
 import TransportOccupationTargetedDraw from "./pages/TransportOccupationTargetedDraw"; //Done Animation
 import PilotPrograms from "./pages/PilotPrograms"; //Done Animation
 import AgriFoodPilotProgram from "./pages/AgriFoodPilotProgram"; //Done Animation
-import Rnip from "./pages/Rnip"; //Done Animation1
-import Pnp from "./pages/Pnp"; //Done Animation1
+import Rnip from "./pages/Rnip"; //Done Animation
+import Pnp from "./pages/Pnp"; //Done Animation
 import BcPnp from "./pages/BcPnp"; //Done Animation
 import EntryLevelSemiSkilled from "./pages/EntryLevelSemiSkilled";//Done no yet
-import HealthAuthoritiesStream from "./pages/HealthAuthoritiesStream"; //Done
-import InternationalGraduateProgram from "./pages/InternationalGraduateProgram"; //Done
-import InternationalPostGraduateProgram from "./pages/InternationalPostGraduateProgram"; //Done
-import PrioritiesProgram from "./pages/PrioritiesProgram"; //Done
-import SkilledWorkerStream from "./pages/SkilledWorkerStream"; //Done
-import InCaregiverProgramLP from "./pages/InCaregiverProgramLP";
-import WorkPermit from "./pages/WorkPermit"; //Done
-import PathwaysForCaregiver from "./pages/PathwaysForCaregiver"; //Done
-import PermanentResidencePathwaysCaregiversLP from "./pages/PermanentResidencePathwaysCaregiversLP"; //Done
+import HealthAuthoritiesStream from "./pages/HealthAuthoritiesStream"; //Done Animation
+import InternationalGraduateProgram from "./pages/InternationalGraduateProgram"; //Done Animation
+import InternationalPostGraduateProgram from "./pages/InternationalPostGraduateProgram"; //Done Animation
+import PrioritiesProgram from "./pages/PrioritiesProgram"; //Done Animation
+import SkilledWorkerStream from "./pages/SkilledWorkerStream"; //Done Animation
+import InCaregiverProgramLP from "./pages/InCaregiverProgramLP"; //Done Animation
+import WorkPermit from "./pages/WorkPermit"; //Done Animation
+import PathwaysForCaregiver from "./pages/PathwaysForCaregiver"; //Done Animation
+import PermanentResidencePathwaysCaregiversLP from "./pages/PermanentResidencePathwaysCaregiversLP"; //Done Animation
 import NewsDetails from "./pages/NewsDetails";
 import News from "./pages/News";
 import Odometer from "./components/Odometer";
@@ -95,7 +95,6 @@ function App() {
       <Loader />
       <HelmetProvider>
         <AllRoutes />
-        {/* <WorkPermit/> */}
       </HelmetProvider>
     </div>
   );

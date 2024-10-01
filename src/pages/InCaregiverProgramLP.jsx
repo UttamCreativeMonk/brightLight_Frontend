@@ -119,7 +119,7 @@ const InCaregiverProgramLP = () => {
         <section className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[2] = el}>
           <h2>Eligibility Criteria for In Home Caregiver Program</h2>
           <p>In home Caregiver program is a two-step process:</p>
-          <ol>
+          <ol className={`${styles.section} ${styles.section}`} id="testing1" ref={(el) => sectionsRef.current[3] = el}>
             <li>
               Step 1: Your employer applies for Labour Market Impact Assessment
               (LMIA).
@@ -127,12 +127,12 @@ const InCaregiverProgramLP = () => {
             <li>Step 2: You apply for work permit.</li>
           </ol>
 
-          <h3>Step 1: Labour Market Impact Assessment (LMIA) Process</h3>
+          <h3 className={`${styles.section} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[4] = el}>Step 1: Labour Market Impact Assessment (LMIA) Process</h3>
           <p>
             For the employer considering hiring a foreign worker on a caregiver
             LMIA, here is the eligibility check:
           </p>
-          <ul>
+          <ul className={`${styles.section} ${styles.section}`} id="testing3" ref={(el) => sectionsRef.current[5] = el}>
             <li>
               Have a valid payroll account with Canada Revenue Agency (CRA).
             </li>
@@ -156,12 +156,12 @@ const InCaregiverProgramLP = () => {
             employer on LMIA portal.
           </p>
 
-          <h4>
+          <h4 className={`${styles.section} ${styles.section}`} id="testing4" ref={(el) => sectionsRef.current[6] = el}>
             The employers in Canada can hire a foreign worker for one of the two
             categories:
           </h4>
-          <div className={styles.categories} id="categories">
-            <div className={styles.category}>
+          <div className={`${styles.categories} ${styles.section}`} id="categories" ref={(el) => sectionsRef.current[7] = el}>
+            <div className={`${styles.category} ${styles.section}`} id="testing5" ref={(el) => sectionsRef.current[8] = el}>
               <h3>1. Caregivers for children</h3>
               <p>
                 This category includes positions such as childcare provider,
@@ -169,7 +169,7 @@ const InCaregiverProgramLP = () => {
                 to whom care will be provided should be under 18 years of age.
               </p>
             </div>
-            <div className={styles.category}>
+            <div className={`${styles.category} ${styles.section}`} id="testing6" ref={(el) => sectionsRef.current[9] = el}>
               <h3>2. Caregivers for people with high medical needs</h3>
               <p>
                 This category includes workers who provide care to people with
@@ -189,7 +189,7 @@ const InCaregiverProgramLP = () => {
             </div>
           </div>
 
-          <h3>Proof of Individual Requiring Care</h3>
+          <h3 className={`${styles.section} ${styles.section}`} id="testing7" ref={(el) => sectionsRef.current[10] = el}>Proof of Individual Requiring Care</h3>
           <p>
             At the time of LMIA application, the employer is required to provide
             proof to Service Canada to prove that they or their dependant is in
@@ -199,7 +199,7 @@ const InCaregiverProgramLP = () => {
             For age and parentage for each child under the age of 18, they can
             provide one of the following documents:
           </p>
-          <ul>
+          <ul className={`${styles.section} ${styles.section}`} id="testing8" ref={(el) => sectionsRef.current[11] = el}>
             <li>Long form birth certificate</li>
             <li>Adoption order</li>
             <li>Official guardianship, or</li>
@@ -211,7 +211,7 @@ const InCaregiverProgramLP = () => {
             For age for each senior, 65 years or older, they can provide one of
             the following documents:
           </p>
-          <ul>
+          <ul className={`${styles.section} ${styles.section}`} id="testing9" ref={(el) => sectionsRef.current[12] = el}>
             <li>Birth certificate</li>
             <li>Passport, or</li>
             <li>Old Age Security (OAS) identification card</li>
@@ -220,7 +220,7 @@ const InCaregiverProgramLP = () => {
             For disability, chronic or terminal illness for each disabled,
             chronically or terminally ill person, they can provide:
           </p>
-          <ul>
+          <ul className={`${styles.section} ${styles.section}`} id="testing10" ref={(el) => sectionsRef.current[13] = el}>
             <li>
               Completed Schedule H - Medical disability, chronic or terminal
               illness certificate (EMP5600) form, signed and dated by the
@@ -233,8 +233,8 @@ const InCaregiverProgramLP = () => {
             </li>
           </ul>
 
-          <h3>Step 2: You Apply for Work Permit</h3>
-          <p>
+          <h3 className={`${styles.section} ${styles.section}`} id="testing12" ref={(el) => sectionsRef.current[14] = el}>Step 2: You Apply for Work Permit</h3>
+          <p className={`${styles.section} ${styles.section}`} id="testing13" ref={(el) => sectionsRef.current[15] = el}>
             If you are a foreign national residing within Canada on a work
             permit or study permit, you can apply for a work permit under
             Temporary Foreign Worker Program after your employer obtains a
@@ -247,7 +247,7 @@ const InCaregiverProgramLP = () => {
           </p>
         </section>
 
-        <section className={`${styles.howToApply} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[3] = el}>
+        <section className={`${styles.howToApply} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[16] = el}>
           <h2>How to Apply for In Home Caregiver Program?</h2>
           <h3>As an Employer:</h3>
           <ol>
@@ -298,7 +298,7 @@ const InCaregiverProgramLP = () => {
           </ol>
 
           <h3>As a Foreign Worker:</h3>
-          <ul>
+          <ul className={`${styles.section} ${styles.section}`} id="testing14" ref={(el) => sectionsRef.current[17] = el}>
             <li>Apply for a work permit as per guidelines set by IRCC.</li>
             <li>
               IRCC will assess your application to check if you meet the
@@ -315,7 +315,7 @@ const InCaregiverProgramLP = () => {
           </ul>
         </section>
 
-        <section  className={`${styles.stillNotSure} ${styles.section}`} id="testing1" ref={(el) => sectionsRef.current[4] = el}>
+        <section  className={`${styles.stillNotSure} ${styles.section}`} id="testing1" ref={(el) => sectionsRef.current[18] = el}>
           <h2>Still Not Sure?</h2>
           <p>
             If you have received a refusal for any of the reasons mentioned
@@ -338,7 +338,7 @@ const InCaregiverProgramLP = () => {
           </p>
         </section>
 
-        <section  className={`${styles.whyChooseUs} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[5] = el}>
+        <section  className={`${styles.whyChooseUs} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[19] = el}>
           <h2>Why Choose Us</h2>
           <p>
             Discover why Brightlight Immigration is the right choice for your

@@ -76,25 +76,25 @@ const ParentsGrandparents = () => {
         <h1  className={`${styles.heading} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el} >
           Parents and Grandparents Program (PGP)
         </h1>
-        <p className={styles.description}>
+        <p className={`${styles.description} ${styles.section}`} id="testing1" ref={(el) => sectionsRef.current[1] = el}>
           Parents and grandparents are incredibly important in one’s life.
           They're like the foundation of our lives, helping us become who we are
           today. Many dream of bringing their parents and grandparents from
           their native countries to be together in Canada. The Family
           Reunification and Sponsorship program makes this possible.
         </p>
-        <p className={styles.description}>
+        <p  className={`${styles.description} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[2] = el}>
           The Parents and Grandparents Program (PGP) allows Canadian citizens
           and permanent residents to sponsor their parents and grandparents to
           immigrate to Canada.
         </p>
 
-        <section className={styles.section}>
+        <section className={`${styles.section} ${styles.section}`} id="testing3" ref={(el) => sectionsRef.current[3] = el}>
           <h2 className={styles.subheading} id="eligibility" >
             Eligibility criteria for Sponsor of Parents and Grandparents Program
             (PGP):
           </h2>
-          <ul className={styles.list}>
+          <ul className={styles.list} >
             <li>
               You can sponsor your parents and grandparents, related by blood or
               adoption. This includes your mother, father, step-parents, and
@@ -129,7 +129,7 @@ const ParentsGrandparents = () => {
           </a>
         </section>
 
-        <section className={styles.section}>
+        <section  className={`${styles.section} ${styles.section}`} id="testing4" ref={(el) => sectionsRef.current[5] = el}>
           <h2 className={styles.subheading} id="how-to-apply">
             How to apply for the Parents and Grandparents Program (PGP)?
           </h2>
@@ -160,7 +160,7 @@ const ParentsGrandparents = () => {
           </ul>
         </section>
 
-        <section className={styles.section}>
+        <section className={`${styles.section} ${styles.section}`} id="testing5" ref={(el) => sectionsRef.current[6] = el}>
           <h2 className={styles.subheading} id="refusal-reasons">
             Common reasons for refusal of Parents and Grandparents Program (PGP)
           </h2>
@@ -201,7 +201,7 @@ const ParentsGrandparents = () => {
           </button>
         </section>
 
-        <section className={styles.section}>
+        <section className={`${styles.section} ${styles.section}`} id="testing6" ref={(el) => sectionsRef.current[7] = el}>
           <h2 className={styles.subheading} id="why-choose-us">
             Still not Sure?
           </h2>
@@ -224,8 +224,7 @@ const ParentsGrandparents = () => {
           </p>
           <button
             onClick={() => (window.location.href = "/contact-us")}
-            className={styles.button}
-          >
+            className={styles.button}>
             Start Your Process
           </button>
         </section>
