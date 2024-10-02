@@ -147,6 +147,14 @@ const AdditionalDocument = () => {
               and we'll handle the rest. You keep your focus on your Canadian
               ambition, and we'll focus on making it happen smoothly.
             </p>
+            <button
+          onClick={() =>
+            (window.location.href =
+              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+          }
+        >
+          Book Appointment
+        </button>
           </section>
         </main>
       </div>

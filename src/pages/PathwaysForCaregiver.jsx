@@ -156,6 +156,16 @@ const PathwaysForCaregiver = () => {
             process.
           </li>
         </ol>
+        <section>
+        <button className={styles.button}
+          onClick={() =>
+            (window.location.href =
+              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+          }
+        >
+          Book Appointment
+        </button>
+        </section>
       </div>
       <h2 className={`${styles.lastSubtitle} ${styles.section}`} id="testing7" ref={(el) => sectionsRef.current[10] = el}>Here’s how we can help you:</h2>
       <OurProcess/>

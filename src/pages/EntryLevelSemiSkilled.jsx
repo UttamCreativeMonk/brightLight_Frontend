@@ -163,7 +163,14 @@ const EntryLevelSemiSkilled = () => {
             </ul>
           </div>
 
-          <a href="/bcpnp-calculator" className={styles.button}>Calculate Your BCPNP Score</a>
+          
+          <button className={styles.button}
+          onClick={() =>
+            (window.location.href =
+              "/bcpnp-calculator")
+          }>
+         Calculate Your BCPNP Score
+        </button>
         </div>
 
         <h2 className={styles.subtitle} id="how-to-apply">
@@ -206,7 +213,15 @@ const EntryLevelSemiSkilled = () => {
         <p className={styles.description}>
           At Brightlight Immigration, we have a dedicated team of visa application specialists who can assist you from the start of the application process all the way to obtaining your PR. Start your process now.
         </p>
-        <Link id="book-appointment" to="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" className={styles.button}>Book Appointment</Link>
+
+        <button className={styles.button}
+          onClick={() =>
+            (window.location.href =
+              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+          }
+        >
+          Book Appointment
+        </button>
 
         <h2 className={styles.subtitle} id="why-choose-us">
           Why Choose Us?

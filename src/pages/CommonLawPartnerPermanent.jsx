@@ -231,6 +231,7 @@ const CommonLawPartnerPermanent = () => {
             throughout your immigration journey. Our dedicated team is committed
             to achieving the best possible outcomes for our clients.
           </p>
+          
         </section>
       </div>
       <div id="faqs">

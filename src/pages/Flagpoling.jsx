@@ -202,6 +202,14 @@ const Flagpoling = () => {
             are well-prepared for every step, from gathering documentation to
             handling interviews.
           </p>
+          <button
+          onClick={() =>
+            (window.location.href =
+              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+          }
+        >
+          Book Appointment
+        </button>
         </section>
       </div>
 

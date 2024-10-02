@@ -345,6 +345,14 @@ const InCaregiverProgramLP = () => {
             immigration needs. Our experienced team offers personalized services
             to ensure the best possible outcome for your application.
           </p>
+          <button
+          onClick={() =>
+            (window.location.href =
+              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+          }
+        >
+          Book Appointment
+        </button>
         </section>
       </div>
 

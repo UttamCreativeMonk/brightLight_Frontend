@@ -234,8 +234,17 @@ const TransportOccupationTargetedDraw = () => {
       <div className={`${styles.whyChooseUs} ${styles.section}`} id="testing4" ref={(el) => sectionsRef.current[6] = el} >
         <h2 className={styles.subheading}>Why Choose Us</h2>
         <p>Here is where you can describe why clients should choose your services over others. Highlight your unique selling points, such as personalized service, high success rates, and expert knowledge.</p>
+        <button className={styles.button}
+          onClick={() =>
+            (window.location.href =
+              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+          }
+        >
+          Book Appointment
+        </button>
       </div>
     </div>
+
 
     <div id="faqs">
         <FAQ />

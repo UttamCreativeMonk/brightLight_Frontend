@@ -114,7 +114,7 @@ let BlogDetails = () => {
                 </a>
                 <div>
                   <p className={styles.haveAQuestion}>Have Questions?</p>
-                  <a className={styles.imageSection} href={loveneetData.rcic}>
+                  <a className={styles.imageSection} href="https://api.leadconnectorhq.com/widget/booking/BVqmhNlxRMadz10ir6aM">
                     <img src={rcic} />
                   </a>
                 </div>

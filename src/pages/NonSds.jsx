@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/NonSds.module.css";
-import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
 import Testimonials from "../sections/Testimonials";
@@ -388,8 +387,7 @@ const NonSds = () => {
               onClick={() =>
                 (window.location.href =
                   "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-              }
-            >
+              }>
                  Book Appointment
             </button>
         </section>

@@ -385,7 +385,7 @@ const CommonLawPartnerTemporary = () => {
           <h2 className={styles.subheading}>Need Assistance?</h2>
           <p>
             If you need help with your application or have questions, feel free
-            to{" "}
+            to
             <Link className={styles.contactUS} to="/contact-us">
               contact us
             </Link>
@@ -401,7 +401,14 @@ const CommonLawPartnerTemporary = () => {
             throughout your immigration journey. Our dedicated team is committed
             to achieving the best possible outcomes for our clients.
           </p>
-          {/* Include testimonials and video testimonials here */}
+          <button
+          onClick={() =>
+            (window.location.href =
+              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+          }
+        >
+          Book Appointment
+        </button>
         </section>
       </div>
       <div id="faqs">

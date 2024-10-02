@@ -439,6 +439,14 @@ const GlobalStreamLmia = () => {
               through the entire process, ensuring that every aspect of your
               application is handled with the utmost care.
             </p>
+            <button
+          onClick={() =>
+            (window.location.href =
+              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+          }
+        >
+          Book Appointment
+        </button>
           </section>
         </main>
       </div>

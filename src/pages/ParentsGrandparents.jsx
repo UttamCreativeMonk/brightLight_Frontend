@@ -225,7 +225,7 @@ const ParentsGrandparents = () => {
           <button
             onClick={() => (window.location.href = "/contact-us")}
             className={styles.button}>
-            Start Your Process
+            Contact Us
           </button>
         </section>
       </div>

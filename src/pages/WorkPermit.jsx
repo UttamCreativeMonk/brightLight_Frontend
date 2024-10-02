@@ -195,6 +195,14 @@ let WorkPermit = () => {
               application process, ensuring that all requirements are met and
               your application stands the best chance of approval.
             </p>
+            <button
+          onClick={() =>
+            (window.location.href =
+              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+          }
+        >
+          Book Appointment
+        </button>
           </section>
         </main>
       </div>

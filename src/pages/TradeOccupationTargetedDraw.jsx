@@ -305,6 +305,15 @@ const TradeOccupationTargetedDraw = () => {
             personalized service, high success rates, and expert knowledge.
           </p>
         </div>
+        
+        <button className={styles.button}
+          onClick={() =>
+            (window.location.href =
+              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+          }
+        >
+          Book Appointment
+        </button>
       </div>
 
       <div id="faqs">

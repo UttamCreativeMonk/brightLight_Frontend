@@ -200,6 +200,14 @@ const Pgwp = () => {
             specialists can assist you from start to finish. Start your process
             now!
           </p>
+          <button
+          onClick={() =>
+            (window.location.href =
+              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+          }
+        >
+          Book Appointment
+        </button>
         </section>
       </div>
       

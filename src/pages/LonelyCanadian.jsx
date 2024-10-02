@@ -199,6 +199,14 @@ const LonelyCanadian = () => {
         </ul>
         <h3>Step 3: Submit Your Application</h3>
         <p>Mail all application documents to the address provided in the instruction guide of your package.</p>
+        <button
+          onClick={() =>
+            (window.location.href =
+              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+          }
+        >
+          Book Appointment
+        </button>
       </section>
 
 

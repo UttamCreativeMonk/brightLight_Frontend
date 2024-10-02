@@ -200,6 +200,14 @@ const OpenWorkVulnerableLP = () => {
             application specialists who can assist you from the start of the
             application process to obtaining your visa. Start your process now.
           </p>
+          <button
+          onClick={() =>
+            (window.location.href =
+              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+          }
+        >
+          Book Appointment
+        </button>
         </section>
       </div>
 

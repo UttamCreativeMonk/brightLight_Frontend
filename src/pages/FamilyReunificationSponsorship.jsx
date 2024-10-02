@@ -268,6 +268,15 @@ const FamilyReunificationSponsorship = () => {
               the sponsor and the person being sponsored.
             </li>
           </ul>
+
+          <button
+          onClick={() =>
+            (window.location.href =
+              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+          }
+        >
+          Book Appointment
+        </button>
         </section>
 
         <section  className={`${styles.consultation} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[5] = el} >

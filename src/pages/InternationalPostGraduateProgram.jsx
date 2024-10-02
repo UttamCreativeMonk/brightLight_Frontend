@@ -143,7 +143,7 @@ const InternationalPostGraduateProgram = () => {
 
       <div className={styles.container}>
         <section className={`${styles.section} ${styles.section}`} id="benefits" ref={(el) => sectionsRef.current[0] = el}>
-          <h2  >Benefits of BCPNP International Post-Graduate Stream</h2>
+          <h2 className={styles.header} >Benefits of BCPNP International Post-Graduate Stream</h2>
           <ul>
             <li>
               No Job Offer Required: Candidates do not need a job offer to

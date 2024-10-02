@@ -109,7 +109,7 @@ const Adoption = () => {
           </ul>
         </section>
 
-        <section    className={`${styles.intraCountry} ${styles.section}`} id="intra-country" ref={(el) => sectionsRef.current[2] = el}   >
+        <section className={`${styles.intraCountry} ${styles.section}`} id="intra-country" ref={(el) => sectionsRef.current[2] = el}   >
           <h2>Intra-Country Adoption (Inside Canada)</h2>
           <p>
             Intra-country adoption involves adopting a child from another
@@ -186,6 +186,14 @@ const Adoption = () => {
               the child's well-being or cultural suitability in Canada.
             </li>
           </ul>
+          <button
+          onClick={() =>
+            (window.location.href =
+              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+          }
+        >
+          Book Appointment
+        </button>
         </section>
 
         <section className={`${styles.consultation} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[6] = el}  >

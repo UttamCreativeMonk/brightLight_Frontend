@@ -383,6 +383,15 @@ const AgriFoodPilotProgram = () => {
               Improper calculation of hours that count towards work experience.
             </li>
           </ul>
+
+          <button className={styles.button}
+          onClick={() =>
+            (window.location.href =
+              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+          }
+        >
+          Book Appointment
+        </button>
         </section>
       </div>
 
