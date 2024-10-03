@@ -239,13 +239,125 @@ const BCPNPCalculator = () => {
   // Handles the Hourly Wage change
   const handleHourlyWageChange = (e) => {
     const wageValue = parseFloat(e.target.value);
-
-    if (wageValue >= 30) {
+  
+    // Update points based on the entered wage value according to the table
+    if (wageValue >= 70) {
+      setHourlyWagePoints(55);
+    } else if (wageValue >= 69 && wageValue <= 69.99) {
+      setHourlyWagePoints(54);
+    } else if (wageValue >= 68 && wageValue <= 68.99) {
+      setHourlyWagePoints(53);
+    } else if (wageValue >= 67 && wageValue <= 67.99) {
+      setHourlyWagePoints(52);
+    } else if (wageValue >= 66 && wageValue <= 66.99) {
+      setHourlyWagePoints(51);
+    } else if (wageValue >= 65 && wageValue <= 65.99) {
+      setHourlyWagePoints(50);
+    } else if (wageValue >= 64 && wageValue <= 64.99) {
+      setHourlyWagePoints(49);
+    } else if (wageValue >= 63 && wageValue <= 63.99) {
+      setHourlyWagePoints(48);
+    } else if (wageValue >= 62 && wageValue <= 62.99) {
+      setHourlyWagePoints(47);
+    } else if (wageValue >= 61 && wageValue <= 61.99) {
+      setHourlyWagePoints(46);
+    } else if (wageValue >= 60 && wageValue <= 60.99) {
+      setHourlyWagePoints(45);
+    } else if (wageValue >= 59 && wageValue <= 59.99) {
+      setHourlyWagePoints(44);
+    } else if (wageValue >= 58 && wageValue <= 58.99) {
+      setHourlyWagePoints(43);
+    } else if (wageValue >= 57 && wageValue <= 57.99) {
+      setHourlyWagePoints(42);
+    } else if (wageValue >= 56 && wageValue <= 56.99) {
+      setHourlyWagePoints(41);
+    } else if (wageValue >= 55 && wageValue <= 55.99) {
+      setHourlyWagePoints(40);
+    } else if (wageValue >= 54 && wageValue <= 54.99) {
+      setHourlyWagePoints(39);
+    } else if (wageValue >= 53 && wageValue <= 53.99) {
+      setHourlyWagePoints(38);
+    } else if (wageValue >= 52 && wageValue <= 52.99) {
+      setHourlyWagePoints(37);
+    } else if (wageValue >= 51 && wageValue <= 51.99) {
+      setHourlyWagePoints(36);
+    } else if (wageValue >= 50 && wageValue <= 50.99) {
+      setHourlyWagePoints(35);
+    } else if (wageValue >= 49 && wageValue <= 49.99) {
+      setHourlyWagePoints(34);
+    } else if (wageValue >= 48 && wageValue <= 48.99) {
+      setHourlyWagePoints(33);
+    } else if (wageValue >= 47 && wageValue <= 47.99) {
+      setHourlyWagePoints(32);
+    } else if (wageValue >= 46 && wageValue <= 46.99) {
+      setHourlyWagePoints(31);
+    } else if (wageValue >= 45 && wageValue <= 45.99) {
+      setHourlyWagePoints(30);
+    } else if (wageValue >= 44 && wageValue <= 44.99) {
+      setHourlyWagePoints(29);
+    } else if (wageValue >= 43 && wageValue <= 43.99) {
+      setHourlyWagePoints(28);
+    } else if (wageValue >= 42 && wageValue <= 42.99) {
+      setHourlyWagePoints(27);
+    } else if (wageValue >= 41 && wageValue <= 41.99) {
+      setHourlyWagePoints(26);
+    } else if (wageValue >= 40 && wageValue <= 40.99) {
+      setHourlyWagePoints(25);
+    } else if (wageValue >= 39 && wageValue <= 39.99) {
+      setHourlyWagePoints(24);
+    } else if (wageValue >= 38 && wageValue <= 38.99) {
+      setHourlyWagePoints(23);
+    } else if (wageValue >= 37 && wageValue <= 37.99) {
+      setHourlyWagePoints(22);
+    } else if (wageValue >= 36 && wageValue <= 36.99) {
+      setHourlyWagePoints(21);
+    } else if (wageValue >= 35 && wageValue <= 35.99) {
+      setHourlyWagePoints(20);
+    } else if (wageValue >= 34 && wageValue <= 34.99) {
+      setHourlyWagePoints(19);
+    } else if (wageValue >= 33 && wageValue <= 33.99) {
+      setHourlyWagePoints(18);
+    } else if (wageValue >= 32 && wageValue <= 32.99) {
+      setHourlyWagePoints(17);
+    } else if (wageValue >= 31 && wageValue <= 31.99) {
+      setHourlyWagePoints(16);
+    } else if (wageValue >= 30 && wageValue <= 30.99) {
+      setHourlyWagePoints(15);
+    } else if (wageValue >= 29 && wageValue <= 29.99) {
+      setHourlyWagePoints(14);
+    } else if (wageValue >= 28 && wageValue <= 28.99) {
+      setHourlyWagePoints(13);
+    } else if (wageValue >= 27 && wageValue <= 27.99) {
+      setHourlyWagePoints(12);
+    } else if (wageValue >= 26 && wageValue <= 26.99) {
+      setHourlyWagePoints(11);
+    } else if (wageValue >= 25 && wageValue <= 25.99) {
+      setHourlyWagePoints(10);
+    } else if (wageValue >= 24 && wageValue <= 24.99) {
+      setHourlyWagePoints(9);
+    } else if (wageValue >= 23 && wageValue <= 23.99) {
       setHourlyWagePoints(8);
-    } else {
+    }
+    else if (wageValue >= 22 && wageValue <= 22.99) {
+      setHourlyWagePoints(7);
+    } else if (wageValue >= 21 && wageValue <= 21.99) {
+      setHourlyWagePoints(6);
+    } else if (wageValue >= 20 && wageValue <= 20.99) {
+      setHourlyWagePoints(5);
+    } else if (wageValue >= 19 && wageValue <= 19.99) {
       setHourlyWagePoints(4);
+    } else if (wageValue >= 18 && wageValue <= 18.99) {
+      setHourlyWagePoints(3);
+    } else if (wageValue >= 17 && wageValue <= 17.99) {
+      setHourlyWagePoints(2);
+    } else if (wageValue >= 16 && wageValue <= 16.99) {
+      setHourlyWagePoints(1);
+    } else if (wageValue < 16 && wageValue <= 16.99) {
+      setHourlyWagePoints(0);
     }
   };
+  
+  
 
   // Handles the Area of Employment change
   const handleEmploymentAreaChange = (e) => {

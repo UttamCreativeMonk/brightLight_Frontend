@@ -127,7 +127,6 @@
 
 // export default BestChoice;
 
-
 import React, { useEffect, useState, useRef } from "react";
 import styles from "../styles/BestChoice.module.css";
 import UpdateBestChoice from "../assets/best-choice-update.png";
@@ -161,18 +160,24 @@ let BestChoice = () => {
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
+    let lastTimestamp = performance.now();
 
     const handleScroll = () => {
       if (!isTrackImageVisible) return;
 
       const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY) {
-        setPlaneTop((prevTop) => prevTop + 12.5);
-      } else {
-        // Scrolling up
-        setPlaneTop((prevTop) => prevTop - 12.5);
-      }
+      const currentTime = performance.now();
+      const deltaY = currentScrollY - lastScrollY;
+      const deltaTime = currentTime - lastTimestamp;
+
+      // Calculate the scroll speed (scrolling distance over time)
+      const scrollSpeed = deltaY / deltaTime;
+
+      // Adjust the plane's top position proportionally to the scroll speed
+      setPlaneTop((prevTop) => prevTop + scrollSpeed * 35); // Adjust the multiplier (50) for desired speed
+
       lastScrollY = currentScrollY;
+      lastTimestamp = currentTime;
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -223,6 +228,7 @@ let BestChoice = () => {
         console.log(error);
       });
   }, []);
+
   return (
     <div className={styles.bestChoiceParent}>
       <div className={styles.bestChoice}>

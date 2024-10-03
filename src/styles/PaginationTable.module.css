@@ -136,3 +136,7 @@
 .dataAll a{
   color: white;
 }
+.table tr:hover{
+  background-color: #092d47;
+  color: wheat;
+}

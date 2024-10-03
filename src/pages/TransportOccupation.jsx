@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/TransportOccupation.module.css";
 import BlueLinkAncor from "../assets/blueLink-arrows.png";
 import LinkAncor from "../assets/link-arrows.png";

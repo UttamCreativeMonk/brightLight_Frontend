@@ -124,8 +124,12 @@
   text-align: center;
   display: flex;
   line-height: 1.8;
+  cursor: pointer;
 }
 
+.eligibleCard:hover{
+  opacity: 0.9;
+}
 /* // */
 
 .additionGrandParent {
@@ -174,8 +178,12 @@
   text-align: center;
   /* display: flex; */
   /* line-height: 1.8; */
+  cursor: pointer;
 }
 
+.additionCard:hover{
+  opacity: 0.9;
+}
 .additionCard h2 {
   font-size: 24px;
 }

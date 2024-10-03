@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "../styles/ExpressEntry.module.css";
 import ServiceImg from "../assets/service-data-image.webp";
-import { ReactComponent as Responsibility } from "../assets/handsShake.svg";
 import BestChoice from "../sections/BestChoice";
 import Testimonials from "../sections/Testimonials";
 import FAQ from "../sections/FAQ";
@@ -147,21 +146,21 @@ const ExpressEntry = () => {
 
         <div className={styles.eligibleCardParent}>
           {data?.er1 && (
-            <div className={styles.eligibleCard}>
+            <div className={styles.eligibleCard} onClick={() =>(window.location.href ="/federal-skilled-worker-program")}>
               <h2>{data.er1}</h2>
             </div>
           )}
           {data?.er2 && (
-            <div className={styles.eligibleCard}>
+            <div className={styles.eligibleCard} onClick={() =>(window.location.href ="/federal-skilled-trades-program")}>
               <h2>{data.er2}</h2>
             </div>
           )}
           {data?.er3 && (
-            <div className={styles.eligibleCard}>
+            <div className={styles.eligibleCard} onClick={() =>(window.location.href ="/canadian-experience-class")}>
               <h2>{data.er3}</h2>
             </div>
           )}
-          {data?.er4 && (
+          {/* {data?.er4 && (
             <div className={styles.eligibleCard}>
               <h2>{data.er4}</h2>
             </div>
@@ -170,7 +169,7 @@ const ExpressEntry = () => {
             <div className={styles.eligibleCard}>
               <h2>{data.er5}</h2>
             </div>
-          )}
+          )} */}
         </div>
       </div>
 
@@ -179,21 +178,21 @@ const ExpressEntry = () => {
           <h1>{data?.drawHeading}</h1>
           <div className={styles.additionCardParent}>
             {data?.draw1 && (
-              <div className={styles.additionCard}>
+              <div className={styles.additionCard} >
                 <h2>{data.draw1}</h2>
               </div>
             )}
             {data?.draw2 && (
-              <div className={styles.additionCard}>
+              <div className={styles.additionCard} onClick={() =>(window.location.href ="/category-based")}>
                 <h2>{data.draw2}</h2>
               </div>
             )}
             {data?.draw3 && (
-              <div className={styles.additionCard}>
+              <div className={styles.additionCard} onClick={() =>(window.location.href ="/pnp")}>
                 <h2>{data.draw3}</h2>
               </div>
             )}
-            {data?.draw4 && (
+            {/* {data?.draw4 && (
               <div className={styles.additionCard}>
                 <h2>{data.draw4}</h2>
               </div>
@@ -202,7 +201,7 @@ const ExpressEntry = () => {
               <div className={styles.additionCard}>
                 <h2>{data.draw5}</h2>
               </div>
-            )}
+            )} */}
           </div>
         </div>
       </div>

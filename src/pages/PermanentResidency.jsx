@@ -158,19 +158,19 @@ const PermanentResidency = () => {
           </div>
 
           <div className={styles.pathwayCardsParent}>
-            <div className={styles.pathwayCards}>
+            <div className={styles.pathwayCards} onClick={() =>(window.location.href ="/express-entry")}>
               <img src={studyVisaImg} alt="Express Entry" />
               <h2>Express Entry</h2>
             </div>
-            <div className={styles.pathwayCards}>
+            <div className={styles.pathwayCards} onClick={() =>(window.location.href ="/pilot-programs")}>
               <img src={studyVisaImg} alt="Pilot Program" />
               <h2>Pilot Program</h2>
             </div>
-            <div className={styles.pathwayCards}>
+            <div className={styles.pathwayCards} onClick={() =>(window.location.href ="/pnp")}>
               <img src={studyVisaImg} alt="PNP" />
               <h2>PNP</h2>
             </div>
-            <div className={styles.pathwayCards}>
+            <div className={styles.pathwayCards} onClick={() =>(window.location.href ="/rnip")}>
               <img src={studyVisaImg} alt="RNIP" />
               <h2>RNIP</h2>
             </div>

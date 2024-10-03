@@ -59,7 +59,7 @@
   /* height: 300px; */
   width: 100%;
   margin: auto;
-  padding: 30px 0px;
+  padding: 20px 0px;
   border-radius: 20px;
   background-color: #132f46;
   color: white;
@@ -68,19 +68,19 @@
 }
 
 .pointContainer h2 {
-  font-size: 50px;
+  font-size: 30px;
   color: white;
 }
 
 .points h1 {
-  font-size: 60px;
+  font-size: 40px;
   color: white;
 }
 
 .header {
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   max-width: 900px; 
 }
 
@@ -165,7 +165,7 @@
   margin-top: 20px;
 }
 .disclaimer p{
-  font-size: 12px;
+  font-size: 11px;
 }
 .colorRedDis{
   color: rgb(163, 13, 13);
@@ -175,7 +175,7 @@
   border: 2px solid #132f46;
   border-radius: 10px;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 20px;
   padding: 20px 10px;
   cursor: pointer;
   transition: 0.3s ease-in-out;
