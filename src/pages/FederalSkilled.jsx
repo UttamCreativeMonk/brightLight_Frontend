@@ -72,7 +72,8 @@ const FederalSkilled = () => {
     if (value === "1") points = Math.floor(data.fsq1o1p);
     else if (value === "2") points = Math.floor(data.fsq1o2p);
     else if (value === "3") points = Math.floor(data.fsq1o3p);
-    else if (value === "4") points = Math.floor(data.fsq1o4p);
+    // else if (value === "4") points = Math.floor(data.fsq1o4p);
+    else if (value === "4") points = Math.floor(0);
 
     setLanguagePoints(points);
   };
@@ -754,15 +755,15 @@ const FederalSkilled = () => {
                 <option value="3">{data?.fosq1o3}</option>
                 <option value="4">{data?.fosq1o4}</option>
                 <option value="5">{data?.fosq1o5}</option>
-                <option value="6">{data?.fosq1o5}</option>
-                <option value="7">{data?.fosq1o5}</option>
-                <option value="8">{data?.fosq1o5}</option>
-                <option value="9">{data?.fosq1o5}</option>
-                <option value="10">{data?.fosq1o5}</option>
-                <option value="11">{data?.fosq1o5}</option>
-                <option value="12">{data?.fosq1o5}</option>
-                <option value="13">{data?.fosq1o5}</option>
-                <option value="14">{data?.fosq1o5}</option>
+                <option value="6">{data?.fosq1o6}</option>
+                <option value="7">{data?.fosq1o7}</option>
+                <option value="8">{data?.fosq1o8}</option>
+                <option value="9">{data?.fosq1o9}</option>
+                <option value="10">{data?.fosq1o10}</option>
+                <option value="11">{data?.fosq1o11}</option>
+                <option value="12">{data?.fosq1o12}</option>
+                <option value="13">{data?.fosq1o13}</option>
+                <option value="14">{data?.fosq1o14}</option>
               </select>
             </div>
 
