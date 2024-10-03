@@ -144,6 +144,14 @@
   .introduction, .benefits, .eligibility, .applicationProcess, .refusalReasons, .assistance, .whyChooseUs {
     margin-bottom: 20px;
   }
+
+  .introduction p{
+    margin-bottom: 20px;
+  }
+
+  .eligibility p{
+    margin-bottom: 20px;
+  }
   
   .subheading {
     font-size: 1.8rem;
@@ -230,6 +238,8 @@ text-decoration: none;
     opacity: 0;
     transform: translateX(-100px);
     transition: opacity 0.8s ease, transform 0.8s ease;
+    margin-top: 50px;
+    margin-bottom: 50px;
   }
   
   .section.visible {

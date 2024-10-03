@@ -115,7 +115,7 @@ const StemTargetedDraw = () => {
             <li>
               Choose Your Program: There are three programs you can be eligible
               for to join the Express Entry pool:
-              <ul className={styles.subheadingLink}>
+              <ul className={styles.subheadingLink} style={{marginTop: "20px"}}>
                 <li>
 
                   <button className={styles.button1}
@@ -126,7 +126,7 @@ const StemTargetedDraw = () => {
             >
                Federal Skilled Worker Program (FSW)
             </button>
-                  : This program is ideal for tech workers who have the
+                  This program is ideal for tech workers who have the
                   necessary work experience, education, and language ability.
                 </li>
                 <li>
@@ -139,7 +139,7 @@ const StemTargetedDraw = () => {
             >
              Canadian Experience Class (CEC)
             </button>
-                  : Similar to the FSW program, the CEC is also suitable for
+                  Similar to the FSW program, the CEC is also suitable for
                   tech workers who have gained Canadian work experience.
                 </li>
                 <li>
@@ -152,7 +152,7 @@ const StemTargetedDraw = () => {
             >
            Federal Skilled Trades Program (FSTP)
             </button>
-                  : If you're a trades worker, this program is designed for you.
+                  If you're a trades worker, this program is designed for you.
                   It requires proof of relevant work experience, education, and
                   language proficiency.
                 </li>

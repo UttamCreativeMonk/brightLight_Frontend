@@ -150,6 +150,29 @@
   .testimonials {
     margin-bottom: 20px;
   }
+
+  .eligibility ol{
+    margin-bottom: 20px;
+  }
+
+  .eligibility ul{
+    list-style: none;
+  }
+
+  .contact p{
+    margin-bottom: 20px;
+  }
+
+  .eligibility ul button{
+    display: flex !important;
+    margin: 0 !important;
+    margin-bottom: 20px !important;
+  }
+
+  .introduction p{
+    margin-bottom: 20px;
+    text-align: center;
+  }
   
   .subheading {
     font-size: 1.8rem;
@@ -262,6 +285,8 @@
   opacity: 0;
   transform: translateX(-100px);
   transition: opacity 0.8s ease, transform 0.8s ease;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .section.visible {

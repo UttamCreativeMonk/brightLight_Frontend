@@ -338,7 +338,7 @@ const SkilledWorkerStream = () => {
           </ol>
         </section>
 
-        <section className={`${styles.section} ${styles.section}`} id="book-appointment" ref={(el) => sectionsRef.current[6] = el}>
+        <section className={`${styles.support} ${styles.section} ${styles.section}`} id="book-appointment" ref={(el) => sectionsRef.current[6] = el}>
           <h2>Still not sure?</h2>
           <p>
             Contact Brightlight Immigration today to assess your profile and

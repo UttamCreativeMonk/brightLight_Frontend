@@ -245,6 +245,7 @@ const Navbar1 = (props) => {
                           <a href="/federal-skilled-trades-program">FSTP</a>
                           <a href="/canadian-experience-class">CEC</a>
                           <a href="/category-based">Category Based</a>
+                          <a href="/transport-occupation">Transport Occupations</a>
                         </div>
                       </div>
 
@@ -675,6 +676,7 @@ const Navbar1 = (props) => {
                               <a href="/federal-skilled-trades-program">FSTP</a>
                               <a href="/canadian-experience-class">CEC</a>
                               <a href="/category-based">Category Based</a>
+                              <a href="/transport-occupation">Transport Occupations</a>
                             </div>
                           )}
                         </div>

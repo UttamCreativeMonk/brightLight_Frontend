@@ -92,7 +92,7 @@ const LowWageLmia = () => {
             <li>Provincial median wage</li>
           </ul>
         </section>
-        <section  className={`${styles.noc} ${styles.section}`} id="noc" ref={(el) => sectionsRef.current[1] = el}    >
+        <section className={`${styles.noc} ${styles.section}`} id="noc" ref={(el) => sectionsRef.current[1] = el}    >
           <h2>1. National Occupation Classification NOC Code:</h2>
           <p>
             The National Occupational Classification is a database developed by

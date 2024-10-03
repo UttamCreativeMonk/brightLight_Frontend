@@ -148,6 +148,14 @@
   margin-bottom: 20px;
 }
 
+.introduction p{
+  text-align: center;
+}
+
+.eligibility p, .documents p, .support p {
+  margin-bottom: 20px;
+}
+
 .subheading {
   font-size: 1.6rem;
   margin-bottom: 15px;
@@ -195,6 +203,8 @@ text-decoration: none;
 .section {
   opacity: 0;
   transform: translateX(-100px);
+  margin-top: 50px;
+  margin-bottom: 50px;
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 

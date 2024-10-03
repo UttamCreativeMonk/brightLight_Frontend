@@ -59,7 +59,7 @@
   cursor: pointer;
 }
 
- button {
+ .button1 {
   display: block;
   margin: auto;
   background-color: #00273f;
@@ -71,7 +71,7 @@
   cursor: pointer;
   border: none;
 }
- button:hover {
+ .button1:hover {
   opacity: 0.9;
   text-decoration: none;
 }

@@ -20,7 +20,6 @@ const PrioritiesProgram = () => {
     }
   };
 
-
   const sectionsRef = useRef([]);
 
   const handleScroll = () => {
@@ -65,11 +64,21 @@ const PrioritiesProgram = () => {
             </div>
             <div className={styles.bannerHeadingRotatePara}>
               <p onClick={() => scrollToSection("benefits")}>Benefits</p>
-              <p onClick={() => scrollToSection("eligibility")}>Eligibility Criteria</p>
-              <p onClick={() => scrollToSection("Priority_Occupation_List")}>Priority Occupation List</p>
-              <p onClick={() => scrollToSection("BCPNP_Calculator")}>BCPNP Calculator</p>
-              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
-              <p onClick={() => scrollToSection("Testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("eligibility")}>
+                Eligibility Criteria
+              </p>
+              <p onClick={() => scrollToSection("Priority_Occupation_List")}>
+                Priority Occupation List
+              </p>
+              <p onClick={() => scrollToSection("BCPNP_Calculator")}>
+                BCPNP Calculator
+              </p>
+              <p onClick={() => scrollToSection("book-appointment")}>
+                Book Appointment
+              </p>
+              <p onClick={() => scrollToSection("Testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("FAQs")}>FAQs</p>
               <p onClick={() => scrollToSection("Blogs")}>Blogs</p>
             </div>
@@ -78,7 +87,11 @@ const PrioritiesProgram = () => {
       </div>
 
       <div className={styles.container}>
-        <section className={`${styles.section} ${styles.section}`} id="benefits" ref={(el) => sectionsRef.current[0] = el}>
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="benefits"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
           <h3>Benefits of Priority Occupations List</h3>
           <ul>
             <li>
@@ -101,7 +114,11 @@ const PrioritiesProgram = () => {
           </ul>
         </section>
 
-        <section className={`${styles.section} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[1] = el}>
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="eligibility"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
           <h3>Eligibility Criteria for BCPNP Targeted Draws</h3>
           <ol>
             <li>
@@ -127,10 +144,18 @@ const PrioritiesProgram = () => {
           </ol>
         </section>
 
-        <section className={`${styles.section} ${styles.section}`} id="Priority_Occupation_List" ref={(el) => sectionsRef.current[2] = el}>
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="Priority_Occupation_List"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
           <h3>Priority Occupations List</h3>
 
-          <div  className={`${styles.occupationList} ${styles.section}`} id="testing1" ref={(el) => sectionsRef.current[3] = el}>
+          <div
+            className={`${styles.occupationList} ${styles.section}`}
+            id="testing1"
+            ref={(el) => (sectionsRef.current[3] = el)}
+          >
             <h4>Childcare Professionals</h4>
             <table className={styles.table}>
               <thead>
@@ -148,9 +173,13 @@ const PrioritiesProgram = () => {
             </table>
           </div>
 
-          <div className={`${styles.occupationList} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[4] = el}>
+          <div
+            className={`${styles.occupationList} ${styles.section}`}
+            id="testing2"
+            ref={(el) => (sectionsRef.current[4] = el)}
+          >
             <h4>Construction</h4>
-            <table className={styles.table} >
+            <table className={styles.table}>
               <thead>
                 <tr>
                   <th>Occupation</th>
@@ -272,7 +301,11 @@ const PrioritiesProgram = () => {
 
           <div className={styles.occupationList}>
             <h4>Healthcare Professionals</h4>
-            <table className={`${styles.table} ${styles.section}`} id="testing3" ref={(el) => sectionsRef.current[5] = el}>
+            <table
+              className={`${styles.table} ${styles.section}`}
+              id="testing3"
+              ref={(el) => (sectionsRef.current[5] = el)}
+            >
               <thead>
                 <tr>
                   <th>Occupation</th>
@@ -418,7 +451,11 @@ const PrioritiesProgram = () => {
 
           <div className={styles.occupationList}>
             <h4>Technology Sector Opportunities</h4>
-            <table className={`${styles.table} ${styles.section}`} id="testing4" ref={(el) => sectionsRef.current[6] = el}>
+            <table
+              className={`${styles.table} ${styles.section}`}
+              id="testing4"
+              ref={(el) => (sectionsRef.current[6] = el)}
+            >
               <thead>
                 <tr>
                   <th>Occupation</th>
@@ -486,7 +523,11 @@ const PrioritiesProgram = () => {
             </table>
           </div>
 
-          <div className={`${styles.occupationList} ${styles.section}`} id="testing5" ref={(el) => sectionsRef.current[7] = el}>
+          <div
+            className={`${styles.occupationList} ${styles.section}`}
+            id="testing5"
+            ref={(el) => (sectionsRef.current[7] = el)}
+          >
             <h4>Veterinary Care</h4>
             <table className={styles.table}>
               <thead>
@@ -506,15 +547,20 @@ const PrioritiesProgram = () => {
                 </tr>
               </tbody>
             </table>
+            <button
+              className={styles.button}
+              onClick={() => (window.location.href = "/bcpnp-calculator")}
+            >
+              Calculate your BCPNP score
+            </button>
           </div>
         </section>
 
-        <section className={`${styles.callToAction} ${styles.section}`} id="BCPNP_Calculator" ref={(el) => sectionsRef.current[8] = el}>
-          <button
-            className={styles.button}
-            onClick={() => (window.location.href = "/bcpnp-calculator")}>
-            Calculate your BCPNP score
-          </button>
+        <section
+          className={`${styles.callToAction} ${styles.section}`}
+          id="BCPNP_Calculator"
+          ref={(el) => (sectionsRef.current[8] = el)}
+        >
           <h3>Application Procedure for British Columbia Priorities Program</h3>
           <ol>
             <li>

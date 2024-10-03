@@ -5,6 +5,7 @@
   background-size: cover;
   padding: 30px 0px;
   padding-top: 150px;
+  margin-bottom: 50px;
 }
 .banner {
   width: 1440px;
@@ -133,11 +134,11 @@
   
   .header {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
   }
   
   .categories {
-    margin-bottom: 30px;
+    margin-bottom: 60px;
   }
   
   .categories ul {
@@ -147,11 +148,14 @@
   
   .categories li {
     margin-bottom: 10px;
+    text-align: left;
   }
   
 
   .categories button {
-    display: inline-block;
+    display: flex !important;
+    margin: 0px !important;
+    margin-bottom: 20px !important;
     padding: 10px 15px;
     font-size: 16px;
     text-decoration: none;
@@ -172,6 +176,10 @@
   
   .eligibility, .applicationProcess, .refusalReasons, .consultation, .process, .faq {
     margin-bottom: 30px;
+  }
+
+  .consultation p{
+    margin-bottom: 20px;
   }
   
   .eligibility ul, .applicationProcess ol, .refusalReasons ul, .faq dl {
@@ -230,6 +238,7 @@
     opacity: 0;
     transform: translateX(-100px);
     transition: opacity 0.8s ease, transform 0.8s ease;
+    margin-bottom: 50px;
   }
   
   .section.visible {

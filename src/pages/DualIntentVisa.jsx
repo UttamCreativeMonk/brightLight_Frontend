@@ -143,26 +143,26 @@ const DualIntentVisa = () => {
 
         <section className={styles.eligibility} id="eligibility">
           <h2 className={styles.subheading}>Eligibility Criteria</h2>
-          <p>-
+          <p>
             To be eligible for a Dual Intent Visa, you must meet the following
             criteria:
           </p>
           <ul>
-            <li>-
+            <li>
               Provide a specific timeframe for your intended stay in Canada.
             </li>
-            <li>-
+            <li>
               Show how you will support yourself financially during your stay.
             </li>
-            <li>-
+            <li>
               Demonstrate strong ties to your home country to ensure your return
               after your visit.
             </li>
-            <li>-
+            <li>
               Clearly explain the reason for your visit and provide accurate and
               genuine documentation.
             </li>
-            <li>-
+            <li>
               Show evidence of past compliance with Canadian immigration
               regulations and provide a clear contingency plan if your visa
               application is refused.
@@ -183,14 +183,14 @@ const DualIntentVisa = () => {
         <section className={`${styles.refusals} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[5] = el}>
           <h2 className={styles.subheading}>Common Refusal Reasons</h2>
           <ul>
-            <li>-Failure to demonstrate genuine dual intent.</li>
-            <li>-
+            <li>Failure to demonstrate genuine dual intent.</li>
+            <li>
               Insufficient evidence that you will leave Canada at the end of
               your stay.
             </li>
-            <li>-Lack of strong ties to your home country.</li>
-            <li>-Unconvincing purpose for traveling temporarily to Canada.</li>
-            <li>-
+            <li>Lack of strong ties to your home country.</li>
+            <li>Unconvincing purpose for traveling temporarily to Canada.</li>
+            <li>
               Previous visa refusals that were not adequately justified in your
               current application.
             </li>

@@ -5,6 +5,7 @@
   background-size: cover;
   padding: 30px 0px;
   padding-top: 150px;
+  margin-bottom: 50px;
 }
 .banner {
   width: 1440px;
@@ -131,12 +132,13 @@
 }
 
 .header {
-  text-align: left;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 .header h1 {
   font-size: 32px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   color: #e8c47c;
   text-align: center;
 }
@@ -148,6 +150,7 @@
 
 section {
   margin-top: 20px;
+  margin-bottom: 50px;
 }
 
 .header .eligibility,
@@ -184,6 +187,15 @@ section {
 .container h2 {
   color: #00273f;
   margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.container li{
+  color: black;
+}
+
+.container p{
+  color: black;
   margin-bottom: 20px;
 }
 

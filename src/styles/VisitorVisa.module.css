@@ -150,6 +150,10 @@
   margin-bottom: 20px;
 }
 
+.eligibility p, .support p{
+  margin-bottom: 20px;
+}
+
 .subheading {
   font-size: 1.8rem;
   margin-bottom: 15px;
@@ -203,6 +207,8 @@ opacity: 0.9;
   opacity: 0;
   transform: translateX(-100px);
   transition: opacity 0.8s ease, transform 0.8s ease;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .section.visible {

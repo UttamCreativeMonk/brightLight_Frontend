@@ -151,6 +151,14 @@
   .testimonials {
     margin-bottom: 20px;
   }
+
+  .introduction p{
+    text-align: center;
+  }
+
+  .contact p{
+    margin-bottom: 20px;
+  }
   
   .subheading {
     font-size: 1.8rem;
@@ -260,6 +268,8 @@ text-align: start;
     opacity: 0;
     transform: translateX(-100px);
     transition: opacity 0.8s ease, transform 0.8s ease;
+    margin-top: 50px;
+    margin-bottom: 50px;
   }
   
   .section.visible {

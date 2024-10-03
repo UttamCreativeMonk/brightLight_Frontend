@@ -156,7 +156,7 @@
   }
   
   .criteria h3 {
-    font-size: 1.5em;
+    font-size: 1.5rem;
     margin-top: 10px;
     text-align: left;
   }
@@ -187,7 +187,8 @@
   }
   
   .criteria h3{
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    margin-top: 30px;
     /* text-align: center; */
   }
 .section li{
@@ -197,6 +198,8 @@
   opacity: 0;
   transform: translateX(-100px);
   transition: opacity 0.8s ease, transform 0.8s ease;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .section.visible {

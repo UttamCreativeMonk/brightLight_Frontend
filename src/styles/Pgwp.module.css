@@ -5,6 +5,7 @@
   background-size: cover;
   padding: 30px 0px;
   padding-top: 150px;
+  margin-bottom: 50px;
 }
 .banner {
   width: 1440px;
@@ -133,14 +134,24 @@
   
   .header {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
   }
   
   .benefits, .eligibility, .applicationProcess, .refusalReasons, .consultation, .whyChooseUs, .testimonials, .faq, .blogs {
     margin-bottom: 20px;
   }
-  
 
+  .consultation p{
+    margin-bottom: 20px;
+  }
+
+  .eligibility p{
+    margin-bottom: 20px;
+  }
+  
+  .applicationProcess p{
+    margin-bottom: 20px;
+  }
   
   .container table {
     width: 100%;
@@ -189,6 +200,7 @@
   opacity: 0;
   transform: translateX(-100px);
   transition: opacity 0.8s ease, transform 0.8s ease;
+  margin-bottom: 50px;
 }
 
 .section.visible {

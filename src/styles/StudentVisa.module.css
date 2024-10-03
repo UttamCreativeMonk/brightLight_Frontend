@@ -5,6 +5,7 @@
   background-size: cover;
   padding: 30px 0px;
   padding-top: 150px;
+  margin-bottom: 50px;
 }
 .banner {
   width: 1440px;
@@ -144,7 +145,8 @@
 }
 
 .pathways {
-  margin-bottom: 20px;
+  margin-bottom: 70px;
+  margin-top: 70px;
 }
 
 .subheading {
@@ -159,6 +161,7 @@
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 20px;
+
 }
 
 .pathway {
@@ -235,6 +238,7 @@ opacity: 0.9;
   opacity: 0;
   transform: translateX(-100px);
   transition: opacity 0.8s ease, transform 0.8s ease;
+  margin-bottom: 50px;
 }
 
 .section.visible {

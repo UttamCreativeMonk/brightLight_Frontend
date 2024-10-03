@@ -144,6 +144,15 @@
   margin-bottom: 30px;
 }
 
+.introduction p{
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.whyChooseUs p{
+  margin-bottom: 20px;
+}
+
 .subheading {
   font-size: 2rem;
   font-weight: bold;
@@ -201,6 +210,8 @@ a.button:hover {
   opacity: 0;
   transform: translateX(-100px);
   transition: opacity 0.8s ease, transform 0.8s ease;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .section.visible {

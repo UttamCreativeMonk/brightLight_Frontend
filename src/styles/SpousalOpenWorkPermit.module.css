@@ -149,8 +149,27 @@
   margin-bottom: 20px;
 }
 
+.refusalReasons p{
+  margin-bottom: 20px;
+}
+
+.introduction p{
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.pathways ul{
+  list-style: none;
+}
+
+.pathways ul button{
+  display: flex !important;
+  margin: 0 !important;
+  margin-bottom: 20px !important;
+}
+
 .subheading {
-  font-size: 1.2rem;
+  /* font-size: 1.2rem; */
   margin-bottom: 15px;
   color: #333;
   text-align: left;
@@ -258,6 +277,8 @@ margin-top: 20px;
   opacity: 0;
   transform: translateX(-100px);
   transition: opacity 0.8s ease, transform 0.8s ease;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .section.visible {

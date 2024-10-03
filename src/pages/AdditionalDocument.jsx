@@ -77,31 +77,33 @@ const AdditionalDocument = () => {
         <main className={styles.mainContent}>
           <section className={`${styles.section} ${styles.section}`} id="about"  ref={(el) => sectionsRef.current[0] = el}>
             <h2>Don’t Worry, We’re Here to Help!</h2>
-            <p>
+            <ul>
+            <li>
               If you’re here, that means IRCC has already requested you to
               submit additional documents for your Canadian Immigration
               application. Don’t worry. This can happen at any stage of the
               application process, and the specific documents requested will
               vary depending on your case and program.
-            </p>
-            <p>
+            </li>
+            <li>
               We know these requests can be stressful. Especially if you’ve
               applied your application yourself. It's easy to forget something
               or accidentally upload the wrong document. No worries, though! We
               can help you out.
-            </p>
-            <p>
+            </li>
+            <li>
               If you already got that "Acknowledgement of Receipt" (AOR) letter
               with your application number and the Unique Client Identifier
               (UCI) – you can just use IRCC's online form to upload the right
               document.
-            </p>
-            <p>
+            </li>
+            <li>
               Make sure you know what they need and why. Follow their
               instructions to the letter, label your documents clearly, and get
               them uploaded in the right format. The faster you get that missing
               document submitted, the sooner things can keep moving along.
-            </p>
+            </li>
+            </ul>
           </section>
 
           <section className={`${styles.section} ${styles.section}`} id="key-points" ref={(el) => sectionsRef.current[1] = el}    >

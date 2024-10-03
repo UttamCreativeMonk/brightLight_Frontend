@@ -566,6 +566,9 @@ const Sds = () => {
               qualifications and experience
             </li>
           </ul>
+          <h2 className={styles.subheading}>
+            Still Not Sure ?
+          </h2>
           <p>
             Still not sure? If you have faced a refusal for any of the reasons
             mentioned above, don't worry. With over 10 years of experience, we

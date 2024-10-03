@@ -78,7 +78,7 @@ const Orphan = () => {
         </div>
     <div className={styles.container}>
       <h1 className={`${styles.heading} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}  >Canada's Orphan Sponsorship Program</h1>
-      <p className={styles.description}>
+      <p style={{textAlign: "center"}} className={styles.description}>
         The Canada Orphan Sponsorship Program gives orphaned kids a chance to be with their Canadian relatives or start a new life in Canada. This special program is all about care and kindness, helping these children overcome challenges and have a life full of possibilities.
       </p>
       <section className={`${styles.section} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[1] = el}>

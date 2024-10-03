@@ -160,6 +160,14 @@
   margin-bottom: 10px;
 }
 
+.support p{
+  margin-bottom: 20px;
+}
+
+.section ol li{
+  margin-top: 10px;
+}
+
 
 .button {
   padding: 10px 20px;
@@ -185,6 +193,8 @@
   opacity: 0;
   transform: translateX(-100px);
   transition: opacity 0.8s ease, transform 0.8s ease;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .section.visible {

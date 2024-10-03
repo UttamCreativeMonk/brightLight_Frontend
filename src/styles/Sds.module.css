@@ -145,6 +145,10 @@
   text-align: left;
 }
 
+.intro p{
+  margin-bottom: 20px;
+}
+
 .fasterProcessing,
 .eligibility,
 .applicationProcess,
@@ -153,6 +157,14 @@
 .applicationSubmission,
 .refusalReasons {
   margin-bottom: 40px;
+}
+
+.fasterProcessing p{
+  margin-bottom: 20px;
+}
+
+.eligibility p{
+  margin-bottom: 20px;
 }
 
 .subheading {
@@ -251,9 +263,18 @@
   color: #333;
   margin-top: 20px;
 }
+
+.family p{
+  margin-bottom: 20px;
+}
 .applicationSubmission{
   color: #333;
   margin-top: 20px;
+}
+
+.applicationSubmission p{
+  margin-bottom: 20px;
+  margin-top: 5px;
 }
 
 
@@ -261,6 +282,8 @@
   opacity: 0;
   transform: translateX(-100px);
   transition: opacity 0.8s ease, transform 0.8s ease;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .section.visible {

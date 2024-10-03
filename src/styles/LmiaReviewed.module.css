@@ -6,6 +6,7 @@
   background-size: cover;
   padding: 30px 0px;
   padding-top: 150px;
+  margin-bottom: 50px;
 }
 .banner {
   width: 1440px;
@@ -146,7 +147,7 @@
 }
 
 .section {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 .section h2 {
@@ -161,6 +162,7 @@
 
 .section p {
   font-size: 1em;
+  margin-bottom: 20px;
   color: #666;
 }
 
@@ -184,6 +186,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  margin-bottom: 40px;
 }
 
 .section .button {

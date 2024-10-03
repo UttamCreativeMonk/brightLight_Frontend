@@ -5,6 +5,7 @@
   background-size: cover;
   padding: 30px 0px;
   padding-top: 150px;
+  margin-bottom: 50px;
 }
 .banner {
   width: 1440px;
@@ -208,6 +209,10 @@ opacity: 0.9;
   text-align: center;
 }
 
+.header p{
+  text-align: center;
+}
+
 .container strong{
   color: #333;
 }
@@ -218,6 +223,7 @@ opacity: 0.9;
   opacity: 0;
   transform: translateX(-100px);
   transition: opacity 0.8s ease, transform 0.8s ease;
+  margin-bottom: 70px;
 }
 
 .section.visible {

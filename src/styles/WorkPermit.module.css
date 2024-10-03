@@ -173,6 +173,12 @@
     opacity: 0;
     transform: translateX(-100px);
     transition: opacity 0.8s ease, transform 0.8s ease;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .section p{
+    margin-bottom: 20px;
   }
   
   .section.visible {
@@ -183,7 +189,7 @@
 
   .section button {
     display: block;
-    margin: auto;
+    /* margin: auto; */
     background-color: #00273f;
     color: white;
     padding: 15px;

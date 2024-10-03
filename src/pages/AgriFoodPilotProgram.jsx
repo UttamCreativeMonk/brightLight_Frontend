@@ -9,7 +9,7 @@ import FAQ from "../sections/FAQ";
 const AgriFoodPilotProgram = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [showNOC, setShowNOC] = useState("");
-  
+
   // Create refs for each section
   const sectionsRef = useRef([]);
 
@@ -65,11 +65,19 @@ const AgriFoodPilotProgram = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
+              <p onClick={() => scrollToSection("book-appointment")}>
+                Book Appointment
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -78,12 +86,23 @@ const AgriFoodPilotProgram = () => {
       </div>
 
       <div className={styles.container}>
-        <header className={`${styles.header} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
+        <header
+          className={`${styles.header} ${styles.section}`}
+          id="about-program"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
           <h1>Agri-Food Pilot Program</h1>
         </header>
 
-        <section className={`${styles.intro} ${styles.section}`} ref={(el) => sectionsRef.current[1] = el}>
-          <p  className={`${styles.section} ${styles.section}`} id="testing1" ref={(el) => sectionsRef.current[2] = el}>
+        <section
+          className={`${styles.intro} ${styles.section}`}
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
+          <p
+            className={`${styles.section} ${styles.section}`}
+            id="testing1"
+            ref={(el) => (sectionsRef.current[2] = el)}
+          >
             The Agri-Food Pilot is strategically designed to address labor
             shortages, particularly in critical areas like meat processing and
             mushroom production, within Canada's agri-food sector, while also
@@ -92,7 +111,11 @@ const AgriFoodPilotProgram = () => {
             agri-food industry sustains approximately one-in-eight jobs across
             the country.
           </p>
-          <p  className={`${styles.section} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[3] = el}>
+          <p
+            className={`${styles.section} ${styles.section}`}
+            id="testing2"
+            ref={(el) => (sectionsRef.current[3] = el)}
+          >
             This initiative aims to assist the agri-food sector in recruiting
             full-time, non-seasonal foreign workers essential for filling
             expanding labor gaps. By offering a pathway to permanent residency
@@ -100,27 +123,53 @@ const AgriFoodPilotProgram = () => {
             program seeks to attract and retain skilled workers, eliminating the
             need for repetitive work permit renewals.
           </p>
-          <p  className={`${styles.section} ${styles.section}`} id="testing3" ref={(el) => sectionsRef.current[4] = el}>
+          <p
+            className={`${styles.section} ${styles.section}`}
+            id="testing3"
+            ref={(el) => (sectionsRef.current[4] = el)}
+          >
             In each calendar year, a maximum of 2,750 principal applicants,
             along with their accompanying family members, will be considered for
             processing under this pilot program.
           </p>
         </section>
 
-        <section  className={`${styles.criteria} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[5] = el}>
-          <h2  className={`${styles.section} ${styles.section}`} id="testing25" ref={(el) => sectionsRef.current[25] = el}>Eligibility Criteria for Agri-Food Immigration Pilot</h2>
+        <section
+          className={`${styles.criteria} ${styles.section}`}
+          id="eligibility"
+          ref={(el) => (sectionsRef.current[5] = el)}
+        >
+          <h2
+            className={`${styles.section} ${styles.section}`}
+            id="testing25"
+            ref={(el) => (sectionsRef.current[25] = el)}
+          >
+            Eligibility Criteria for Agri-Food Immigration Pilot
+          </h2>
           <p>
             To be eligible for Canada’s Agri-Food Immigration Pilot, foreign
             workers need to meet specific criteria:
           </p>
 
-          <h3  className={`${styles.section} ${styles.section}`} id="testing4" ref={(el) => sectionsRef.current[6] = el}>1. Qualifying Work Experience</h3>
+          <h3
+            style={{ marginTop: "50px", marginBottom: "20px" }}
+            className={`${styles.section} ${styles.section}`}
+            id="testing4"
+            ref={(el) => (sectionsRef.current[6] = el)}
+          >
+            1. Qualifying Work Experience
+          </h3>
           <p>
             Candidates must possess at least one year of Canadian work
             experience, totaling a minimum of 1,560 hours within the past three
             years. This experience should meet the following criteria:
           </p>
-          <ul  className={`${styles.section} ${styles.section}`} id="testing5" ref={(el) => sectionsRef.current[7] = el}>
+          <ul
+            style={{ marginTop: "0px", marginBottom: "0px" }}
+            className={`${styles.section} ${styles.section}`}
+            id="testing5"
+            ref={(el) => (sectionsRef.current[7] = el)}
+          >
             <li>Non-seasonal</li>
             <li>In an eligible occupation within a qualifying industry</li>
             <li>
@@ -135,12 +184,24 @@ const AgriFoodPilotProgram = () => {
             broadening the eligibility criteria.
           </p>
 
-          <h3  className={`${styles.section} ${styles.section}`} id="testing6" ref={(el) => sectionsRef.current[8] = el}>2. Qualifying Job Offer</h3>
+          <h3
+            style={{ marginTop: "50px", marginBottom: "20px" }}
+            className={`${styles.section} ${styles.section}`}
+            id="testing6"
+            ref={(el) => (sectionsRef.current[8] = el)}
+          >
+            2. Qualifying Job Offer
+          </h3>
           <p>
             Applicants must secure a qualifying job offer. The job offer must
             meet these criteria:
           </p>
-          <ul  className={`${styles.section} ${styles.section}`} id="testing7" ref={(el) => sectionsRef.current[9] = el}>
+          <ul
+            style={{ marginTop: "0px", marginBottom: "0px" }}
+            className={`${styles.section} ${styles.section}`}
+            id="testing7"
+            ref={(el) => (sectionsRef.current[9] = el)}
+          >
             <li>Full-time (minimum 30 paid hours per week)</li>
             <li>
               Non-seasonal (consistent and regularly scheduled paid employment
@@ -150,18 +211,37 @@ const AgriFoodPilotProgram = () => {
             <li>Located in Canada, excluding Quebec</li>
           </ul>
 
-          <h3  className={`${styles.section} ${styles.section}`} id="testing8" ref={(el) => sectionsRef.current[10] = el}>3. Minimum Language Requirements</h3>
+          <h3
+            style={{ marginTop: "50px", marginBottom: "20px" }}
+            className={`${styles.section} ${styles.section}`}
+            id="testing8"
+            ref={(el) => (sectionsRef.current[10] = el)}
+          >
+            3. Minimum Language Requirements
+          </h3>
           <p>
             Achieve a minimum Canadian Language Benchmark (CLB) of Level 4 on an
             approved language test in either English or French.
           </p>
 
-          <h3  className={`${styles.section} ${styles.section}`} id="testing9" ref={(el) => sectionsRef.current[11] = el}>4. Minimum Education Requirements</h3>
+          <h3
+            style={{ marginTop: "50px", marginBottom: "20px" }}
+            className={`${styles.section} ${styles.section}`}
+            id="testing9"
+            ref={(el) => (sectionsRef.current[11] = el)}
+          >
+            4. Minimum Education Requirements
+          </h3>
           <p>
             Depending on whether you are residing in Canada or outside of
             Canada, you must meet the following educational requirements:
           </p>
-          <ul  className={`${styles.section} ${styles.section}`} id="testing10" ref={(el) => sectionsRef.current[12] = el}>
+          <ul
+            style={{ marginTop: "0px", marginBottom: "0px" }}
+            className={`${styles.section} ${styles.section}`}
+            id="testing10"
+            ref={(el) => (sectionsRef.current[12] = el)}
+          >
             <li>
               If residing in Canada: Meet either the educational requirement or
               the job offer requirement.
@@ -183,8 +263,19 @@ const AgriFoodPilotProgram = () => {
             </li>
           </ul>
 
-          <h3 className={`${styles.section} ${styles.section}`} id="testing11" ref={(el) => sectionsRef.current[13] = el}>5. Settlement Funds Requirement</h3>
-          <table className={`${styles.table} ${styles.section}`} id="testing12" ref={(el) => sectionsRef.current[14] = el}>
+          <h3
+            style={{ marginTop: "50px", marginBottom: "20px" }}
+            className={`${styles.section} ${styles.section}`}
+            id="testing11"
+            ref={(el) => (sectionsRef.current[13] = el)}
+          >
+            5. Settlement Funds Requirement
+          </h3>
+          <table
+            className={`${styles.table} ${styles.section}`}
+            id="testing12"
+            ref={(el) => (sectionsRef.current[14] = el)}
+          >
             <thead>
               <tr>
                 <th>Number of family members</th>
@@ -211,26 +302,43 @@ const AgriFoodPilotProgram = () => {
             </tbody>
           </table>
 
-          <h3 className={`${styles.section} ${styles.section}`} id="testing" ref={(el) => sectionsRef.current[15] = el}>Eligible Industries and NOC Codes</h3>
-          <div className={`${styles.nocSection} ${styles.section}`} id="testing" ref={(el) => sectionsRef.current[16] = el}>
+          <h3
+            className={`${styles.section} ${styles.section}`}
+            id="testing"
+            ref={(el) => (sectionsRef.current[15] = el)}
+          >
+            Eligible Industries and NOC Codes
+          </h3>
+          <div
+            className={`${styles.nocSection} ${styles.section}`}
+            id="testing"
+            ref={(el) => (sectionsRef.current[16] = el)}
+          >
             <button
               onClick={() => toggleNOC("meatProcessing")}
-              className={styles.nocButton}>
+              className={styles.nocButton}
+            >
               Meat Product Manufacturing
             </button>
             <button
               onClick={() => toggleNOC("greenhouse")}
-              className={styles.nocButton}>
+              className={styles.nocButton}
+            >
               Greenhouse, Nursery and Floriculture Production
             </button>
             <button
               onClick={() => toggleNOC("animalProduction")}
-              className={styles.nocButton}>
+              className={styles.nocButton}
+            >
               Animal Production
             </button>
 
             {showNOC === "meatProcessing" && (
-              <table className={`${styles.table} ${styles.section}`} id="testing" ref={(el) => sectionsRef.current[17] = el}>
+              <table
+                className={`${styles.table} ${styles.section}`}
+                id="testing"
+                ref={(el) => (sectionsRef.current[17] = el)}
+              >
                 <thead>
                   <tr>
                     <th>Occupation</th>
@@ -278,7 +386,11 @@ const AgriFoodPilotProgram = () => {
             )}
 
             {showNOC === "greenhouse" && (
-              <table className={`${styles.table} ${styles.section}`} id="testing" ref={(el) => sectionsRef.current[18] = el}>
+              <table
+                className={`${styles.table} ${styles.section}`}
+                id="testing"
+                ref={(el) => (sectionsRef.current[18] = el)}
+              >
                 <thead>
                   <tr>
                     <th>Occupation</th>
@@ -311,7 +423,11 @@ const AgriFoodPilotProgram = () => {
             )}
 
             {showNOC === "animalProduction" && (
-              <table className={`${styles.table} ${styles.section}`} id="testing" ref={(el) => sectionsRef.current[19] = el}>
+              <table
+                className={`${styles.table} ${styles.section}`}
+                id="testing"
+                ref={(el) => (sectionsRef.current[19] = el)}
+              >
                 <thead>
                   <tr>
                     <th>Occupation</th>
@@ -345,9 +461,17 @@ const AgriFoodPilotProgram = () => {
           </div>
         </section>
 
-        <section className={`${styles.application} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[20] = el}>
+        <section
+          className={`${styles.application} ${styles.section}`}
+          id="how-to-apply"
+          ref={(el) => (sectionsRef.current[20] = el)}
+        >
           <h2>How to Apply for Canada’s Agri-Food Immigration Pilot</h2>
-          <ul  className={`${styles.section} ${styles.section}`} id="testing" ref={(el) => sectionsRef.current[21] = el}>
+          <ul
+            className={`${styles.section} ${styles.section}`}
+            id="testing"
+            ref={(el) => (sectionsRef.current[21] = el)}
+          >
             <li>
               If you meet the program requirements listed above, then you can
               submit your application for permanent resident status directly to
@@ -360,9 +484,16 @@ const AgriFoodPilotProgram = () => {
           </ul>
         </section>
 
-        <section className={`${styles.contact} ${styles.section}`} ref={(el) => sectionsRef.current[22] = el}>
+        <section
+          className={`${styles.contact} ${styles.section}`}
+          ref={(el) => (sectionsRef.current[22] = el)}
+        >
           <h2>Still Not Sure?</h2>
-          <p  className={`${styles.section} ${styles.section}`} id="testing" ref={(el) => sectionsRef.current[23] = el}>
+          <p
+            className={`${styles.section} ${styles.section}`}
+            id="testing"
+            ref={(el) => (sectionsRef.current[23] = el)}
+          >
             Contact Brightlight Immigration today to assess your profile and
             embark on a transformative journey towards achieving your Canadian
             dream. With over a decade of experience, we specialize in handling

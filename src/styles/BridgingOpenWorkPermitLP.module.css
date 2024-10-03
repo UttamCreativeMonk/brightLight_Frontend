@@ -5,6 +5,7 @@
   background-size: cover;
   padding: 30px 0px;
   padding-top: 150px;
+  margin-bottom: 30px;
 }
 .banner {
   width: 1440px;
@@ -133,8 +134,12 @@
   margin-bottom: 20px;
 }
 
-.section .intro {
-  margin-bottom: 20px;
+.container .section {
+  margin-bottom: 50px;
+}
+
+.intro{
+  margin-bottom: 50px;
 }
 
 .benefits,

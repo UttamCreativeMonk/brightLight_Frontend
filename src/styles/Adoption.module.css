@@ -5,6 +5,7 @@
   background-size: cover;
   padding: 30px 0px;
   padding-top: 150px;
+  margin-bottom: 50px;
 }
 .banner {
   width: 1440px;
@@ -175,6 +176,10 @@
   margin-bottom: 30px;
 }
 
+.consultation p{
+  margin-bottom: 20px;
+}
+
 .intraCountry h2,
 .interCountry h2,
 .eligibility h2,
@@ -248,7 +253,7 @@
 .header h1 {
   color: #e8c47c;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 .header p{
   text-align: left;
@@ -258,6 +263,7 @@
   opacity: 0;
   transform: translateX(-100px);
   transition: opacity 0.8s ease, transform 0.8s ease;
+  margin-bottom: 50px;
 }
 
 .section.visible {

@@ -140,7 +140,7 @@ let AllRoutes = () => {
         path="/health-authority-stream"
         element={<HealthAuthorityStream />}
       />
-            <Route
+      <Route
         path="/healthcare-targeted-draw"
         element={<HealthcareTargetedDraw />}
       />
@@ -271,15 +271,9 @@ let AllRoutes = () => {
         path="/permanent-residence-pathways-caregivers-lp"
         element={<PermanentResidencePathwaysCaregiversLP />}
       />
-            <Route
-        path="/spouse-inland"
-        element={<SpouseInland />} />
+      <Route path="/spouse-inland" element={<SpouseInland />} />
 
-
-<Route
-        path="/spouse-outland"
-        element={<SpouseOutland />}
-      />
+      <Route path="/spouse-outland" element={<SpouseOutland />} />
 
       <Route path="/immigration-tools" element={<Immigration />} />
 

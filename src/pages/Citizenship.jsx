@@ -145,32 +145,34 @@ const Citizenship = () => {
 
           <section   className={`${styles.section} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[3] = el}>
             <h2>How to apply for Canadian Citizenship?</h2>
-            <p>
+            <ul>
+            <li>
               Before you apply, make sure you meet the eligibility requirements.
               These include being a permanent resident of Canada, having lived
               in Canada for at least 3 out of the past 5 years, filing your
               taxes in Canada for at least three years during the five years
               before applying, passing a citizenship test, and showing your
               ability to speak either English or French.
-            </p>
-            <p>
+            </li>
+            <li>
               To apply, you'll need to complete the necessary forms, provide
               supporting documents, and pay the applicable fees.
-            </p>
-            <p>
+            </li>
+            <li>
               If you're approved, you'll attend a citizenship ceremony to take
               the Oath of Citizenship, where you will officially become a
               Canadian citizen. You will also receive your Canadian citizenship
               certificate.
-            </p>
-            <p>
+            </li>
+            <li>
               We know what it means to you to become a Canadian citizen. We
               would be honored to help you through the application process and
               to get you ready for your citizenship ceremony.
               <a href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj">
                 Click here
               </a>
-            </p>
+            </li>
+            </ul>
           </section>
 
           <section className={`${styles.section} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[4] = el}   >

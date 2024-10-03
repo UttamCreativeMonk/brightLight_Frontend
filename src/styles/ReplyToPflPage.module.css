@@ -7,6 +7,7 @@
   background-size: cover;
   padding: 30px 0px;
   padding-top: 150px;
+  margin-bottom: 50px;
 }
 .banner {
   width: 1440px;
@@ -145,12 +146,15 @@
   }
   
   .section {
-    margin-bottom: 20px;
+    margin-bottom: 50px;
   }
   
  .section h1, h2 {
-
     color: #00273f;
+  }
+
+  .section p{
+    margin-bottom: 15px;
   }
   
   .section ul {
