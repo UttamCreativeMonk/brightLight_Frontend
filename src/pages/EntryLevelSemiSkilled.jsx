@@ -253,7 +253,7 @@ const EntryLevelSemiSkilled = () => {
           <li className={styles.listItem}>Expertise: Over a decade of experience with high approval rates.</li>
           <li className={styles.listItem}>Personalized Service: Tailored approach to address each unique case.</li>
           <li className={styles.listItem}>Case Law Utilization: Leveraging precedents from similar cases.</li>
-          <li className={styles.listItem}>Full Support: From initial application to final PR approval.</li>
+          <li className={styles.listItem}>Full Support: From initial application to final PR approval. </li>
         </ul>
       </div>
 
