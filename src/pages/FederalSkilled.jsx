@@ -163,6 +163,33 @@ const FederalSkilled = () => {
       case "5":
         setAgePoints(Math.floor(data?.fosq1o5p));
         break;
+      case "6":
+        setAgePoints(Math.floor(data?.fosq1o6p));
+        break;
+      case "7":
+        setAgePoints(Math.floor(data?.fosq1o7p));
+        break;
+      case "8":
+        setAgePoints(Math.floor(data?.fosq1o8p));
+        break;
+      case "9":
+        setAgePoints(Math.floor(data?.fosq1o9p));
+        break;
+      case "10":
+        setAgePoints(Math.floor(data?.fosq1o10p));
+        break;
+      case "11":
+        setAgePoints(Math.floor(data?.fosq1o11p));
+        break;
+      case "12":
+        setAgePoints(Math.floor(data?.fosq1o12p));
+        break;
+      case "13":
+        setAgePoints(Math.floor(data?.fosq1o13p));
+        break;
+      case "14":
+        setAgePoints(Math.floor(data?.fosq1o14p));
+        break;
       default:
         setAgePoints(0);
         break;
@@ -727,6 +754,15 @@ const FederalSkilled = () => {
                 <option value="3">{data?.fosq1o3}</option>
                 <option value="4">{data?.fosq1o4}</option>
                 <option value="5">{data?.fosq1o5}</option>
+                <option value="6">{data?.fosq1o5}</option>
+                <option value="7">{data?.fosq1o5}</option>
+                <option value="8">{data?.fosq1o5}</option>
+                <option value="9">{data?.fosq1o5}</option>
+                <option value="10">{data?.fosq1o5}</option>
+                <option value="11">{data?.fosq1o5}</option>
+                <option value="12">{data?.fosq1o5}</option>
+                <option value="13">{data?.fosq1o5}</option>
+                <option value="14">{data?.fosq1o5}</option>
               </select>
             </div>
 
