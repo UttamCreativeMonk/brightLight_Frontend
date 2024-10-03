@@ -243,6 +243,38 @@
   transform: translateX(0);
 }
 
+.nocButton{
+  display: block;
+  margin: auto;
+  background-color: #00273f;
+  color: white;
+  padding: 15px;
+  border-radius: 3px;
+  margin-top: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+}
+.nocButton{
+  opacity: 0.9;
+  text-decoration: none;
+}
+.nocSectionButtons{
+  display: flex;
+  margin-top: 30px;
+}
+
+@media all and (max-width: 790px){
+  .nocSectionButtons{
+    display: flex;
+    flex-direction: column;
+    display: block;
+    margin: auto;
+    text-align: left;
+    align-items: left;
+  }
+}
+
 
 @media (max-width: 400px) {
   .container h2{

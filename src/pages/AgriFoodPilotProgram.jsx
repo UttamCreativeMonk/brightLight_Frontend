@@ -8,7 +8,7 @@ import FAQ from "../sections/FAQ";
 
 const AgriFoodPilotProgram = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [showNOC, setShowNOC] = useState("");
+  const [showNOC, setShowNOC] = useState("meatProcessing");
 
   // Create refs for each section
   const sectionsRef = useRef([]);
@@ -152,7 +152,6 @@ const AgriFoodPilotProgram = () => {
           </p>
 
           <h3
-            style={{ marginTop: "50px", marginBottom: "20px" }}
             className={`${styles.section} ${styles.section}`}
             id="testing4"
             ref={(el) => (sectionsRef.current[6] = el)}
@@ -165,7 +164,6 @@ const AgriFoodPilotProgram = () => {
             years. This experience should meet the following criteria:
           </p>
           <ul
-            style={{ marginTop: "0px", marginBottom: "0px" }}
             className={`${styles.section} ${styles.section}`}
             id="testing5"
             ref={(el) => (sectionsRef.current[7] = el)}
@@ -185,7 +183,6 @@ const AgriFoodPilotProgram = () => {
           </p>
 
           <h3
-            style={{ marginTop: "50px", marginBottom: "20px" }}
             className={`${styles.section} ${styles.section}`}
             id="testing6"
             ref={(el) => (sectionsRef.current[8] = el)}
@@ -197,7 +194,6 @@ const AgriFoodPilotProgram = () => {
             meet these criteria:
           </p>
           <ul
-            style={{ marginTop: "0px", marginBottom: "0px" }}
             className={`${styles.section} ${styles.section}`}
             id="testing7"
             ref={(el) => (sectionsRef.current[9] = el)}
@@ -212,7 +208,6 @@ const AgriFoodPilotProgram = () => {
           </ul>
 
           <h3
-            style={{ marginTop: "50px", marginBottom: "20px" }}
             className={`${styles.section} ${styles.section}`}
             id="testing8"
             ref={(el) => (sectionsRef.current[10] = el)}
@@ -225,7 +220,6 @@ const AgriFoodPilotProgram = () => {
           </p>
 
           <h3
-            style={{ marginTop: "50px", marginBottom: "20px" }}
             className={`${styles.section} ${styles.section}`}
             id="testing9"
             ref={(el) => (sectionsRef.current[11] = el)}
@@ -237,7 +231,6 @@ const AgriFoodPilotProgram = () => {
             Canada, you must meet the following educational requirements:
           </p>
           <ul
-            style={{ marginTop: "0px", marginBottom: "0px" }}
             className={`${styles.section} ${styles.section}`}
             id="testing10"
             ref={(el) => (sectionsRef.current[12] = el)}
@@ -264,18 +257,13 @@ const AgriFoodPilotProgram = () => {
           </ul>
 
           <h3
-            style={{ marginTop: "50px", marginBottom: "20px" }}
             className={`${styles.section} ${styles.section}`}
             id="testing11"
             ref={(el) => (sectionsRef.current[13] = el)}
           >
             5. Settlement Funds Requirement
           </h3>
-          <table
-            className={`${styles.table} ${styles.section}`}
-            id="testing12"
-            ref={(el) => (sectionsRef.current[14] = el)}
-          >
+          <table className={styles.table}>
             <thead>
               <tr>
                 <th>Number of family members</th>
@@ -309,36 +297,29 @@ const AgriFoodPilotProgram = () => {
           >
             Eligible Industries and NOC Codes
           </h3>
-          <div
-            className={`${styles.nocSection} ${styles.section}`}
-            id="testing"
-            ref={(el) => (sectionsRef.current[16] = el)}
-          >
-            <button
-              onClick={() => toggleNOC("meatProcessing")}
-              className={styles.nocButton}
-            >
-              Meat Product Manufacturing
-            </button>
-            <button
-              onClick={() => toggleNOC("greenhouse")}
-              className={styles.nocButton}
-            >
-              Greenhouse, Nursery and Floriculture Production
-            </button>
-            <button
-              onClick={() => toggleNOC("animalProduction")}
-              className={styles.nocButton}
-            >
-              Animal Production
-            </button>
-
-            {showNOC === "meatProcessing" && (
-              <table
-                className={`${styles.table} ${styles.section}`}
-                id="testing"
-                ref={(el) => (sectionsRef.current[17] = el)}
+          <div className={styles.nocSection}>
+            <div className={styles.nocSectionButtons}>
+              <button
+                onClick={() => toggleNOC("meatProcessing")}
+                className={styles.nocButton}
               >
+                Meat Product Manufacturing
+              </button>
+              <button
+                onClick={() => toggleNOC("greenhouse")}
+                className={styles.nocButton}
+              >
+                Greenhouse, Nursery and Floriculture Production
+              </button>
+              <button
+                onClick={() => toggleNOC("animalProduction")}
+                className={styles.nocButton}
+              >
+                Animal Production
+              </button>
+            </div>
+            {showNOC === "meatProcessing" && (
+              <table className={styles.table}>
                 <thead>
                   <tr>
                     <th>Occupation</th>
@@ -386,11 +367,7 @@ const AgriFoodPilotProgram = () => {
             )}
 
             {showNOC === "greenhouse" && (
-              <table
-                className={`${styles.table} ${styles.section}`}
-                id="testing"
-                ref={(el) => (sectionsRef.current[18] = el)}
-              >
+              <table className={styles.table}>
                 <thead>
                   <tr>
                     <th>Occupation</th>
@@ -423,11 +400,7 @@ const AgriFoodPilotProgram = () => {
             )}
 
             {showNOC === "animalProduction" && (
-              <table
-                className={`${styles.table} ${styles.section}`}
-                id="testing"
-                ref={(el) => (sectionsRef.current[19] = el)}
-              >
+              <table className={styles.table}>
                 <thead>
                   <tr>
                     <th>Occupation</th>
