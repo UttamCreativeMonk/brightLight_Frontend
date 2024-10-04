@@ -38,98 +38,98 @@ const CLBILETSCalculator = () => {
     switch (level) {
       case "1":
         setScores2({
-          listening: Math.floor(data.c2b1PointsListening),
-          reading: Math.floor(data.c2b1PointsReading),
-          writing: Math.floor(data.c2b1PointsWriting),
-          speaking: Math.floor(data.c2b1PointsSpeaking),
+          listening: data.c2b1PointsListening,
+          reading: data.c2b1PointsReading,
+          writing: data.c2b1PointsWriting,
+          speaking: data.c2b1PointsSpeaking,
         });
         break;
       case "2":
         setScores2({
-          listening: Math.floor(data.c2b2PointsListening),
-          reading: Math.floor(data.c2b2PointsReading),
-          writing: Math.floor(data.c2b2PointsWriting),
-          speaking: Math.floor(data.c2b2PointsSpeaking),
+          listening: data.c2b2PointsListening,
+          reading: data.c2b2PointsReading,
+          writing: data.c2b2PointsWriting,
+          speaking: data.c2b2PointsSpeaking,
         });
         break;
       case "3":
         setScores2({
-          listening: Math.floor(data.c2b3PointsListening),
-          reading: Math.floor(data.c2b3PointsReading),
-          writing: Math.floor(data.c2b3PointsWriting),
-          speaking: Math.floor(data.c2b3PointsSpeaking),
+          listening: data.c2b3PointsListening,
+          reading: data.c2b3PointsReading,
+          writing: data.c2b3PointsWriting,
+          speaking: data.c2b3PointsSpeaking,
         });
         break;
       case "4":
         setScores2({
-          listening: Math.floor(data.c2b4PointsListening),
-          reading: Math.floor(data.c2b4PointsReading),
-          writing: Math.floor(data.c2b4PointsWriting),
-          speaking: Math.floor(data.c2b4PointsSpeaking),
+          listening: data.c2b4PointsListening,
+          reading: data.c2b4PointsReading,
+          writing: data.c2b4PointsWriting,
+          speaking: data.c2b4PointsSpeaking,
         });
         break;
       case "5":
         setScores2({
-          listening: Math.floor(data.c2b5PointsListening),
-          reading: Math.floor(data.c2b5PointsReading),
-          writing: Math.floor(data.c2b5PointsWriting),
-          speaking: Math.floor(data.c2b5PointsSpeaking),
+          listening: data.c2b5PointsListening,
+          reading: data.c2b5PointsReading,
+          writing: data.c2b5PointsWriting,
+          speaking: data.c2b5PointsSpeaking,
         });
         break;
       case "6":
         setScores2({
-          listening: Math.floor(data.c2b6PointsListening),
-          reading: Math.floor(data.c2b6PointsReading),
-          writing: Math.floor(data.c2b6PointsWriting),
-          speaking: Math.floor(data.c2b6PointsSpeaking),
+          listening: data.c2b6PointsListening,
+          reading: data.c2b6PointsReading,
+          writing: data.c2b6PointsWriting,
+          speaking: data.c2b6PointsSpeaking,
         });
         break;
       case "7":
         setScores2({
-          listening: Math.floor(data.c2b7PointsListening),
-          reading: Math.floor(data.c2b7PointsReading),
-          writing: Math.floor(data.c2b7PointsWriting),
-          speaking: Math.floor(data.c2b7PointsSpeaking),
+          listening: data.c2b7PointsListening,
+          reading: data.c2b7PointsReading,
+          writing: data.c2b7PointsWriting,
+          speaking: data.c2b7PointsSpeaking,
         });
         break;
       case "8":
         setScores2({
-          listening: Math.floor(data.c2b8PointsListening),
-          reading: Math.floor(data.c2b8PointsReading),
-          writing: Math.floor(data.c2b8PointsWriting),
-          speaking: Math.floor(data.c2b8PointsSpeaking),
+          listening: data.c2b8PointsListening,
+          reading: data.c2b8PointsReading,
+          writing: data.c2b8PointsWriting,
+          speaking: data.c2b8PointsSpeaking,
         });
         break;
       case "9":
         setScores2({
-          listening: Math.floor(data.c2b9PointsListening),
-          reading: Math.floor(data.c2b9PointsReading),
-          writing: Math.floor(data.c2b9PointsWriting),
-          speaking: Math.floor(data.c2b9PointsSpeaking),
+          listening: data.c2b9PointsListening,
+          reading: data.c2b9PointsReading,
+          writing: data.c2b9PointsWriting,
+          speaking: data.c2b9PointsSpeaking,
         });
         break;
       case "10":
         setScores2({
-          listening: Math.floor(data.c2b10PointsListening),
-          reading: Math.floor(data.c2b10PointsReading),
-          writing: Math.floor(data.c2b10PointsWriting),
-          speaking: Math.floor(data.c2b10PointsSpeaking),
+          listening: data.c2b10PointsListening,
+          reading: data.c2b10PointsReading,
+          writing: data.c2b10PointsWriting,
+          speaking: data.c2b10PointsSpeaking,
         });
         break;
       case "11":
         setScores2({
-          listening: Math.floor(data.c2b11PointsListening),
-          reading: Math.floor(data.c2b11PointsReading),
-          writing: Math.floor(data.c2b11PointsWriting),
-          speaking: Math.floor(data.c2b11PointsSpeaking),
+          listening: data.c2b11PointsListening,
+          reading: data.c2b11PointsReading,
+          writing: data.c2b11PointsWriting,
+          speaking: data.c2b11PointsSpeaking,
         });
         break;
       case "12":
         setScores2({
-          listening: Math.floor(data.c2b12PointsListening),
-          reading: Math.floor(data.c2b12PointsReading),
-          writing: Math.floor(data.c2b12PointsWriting),
-          speaking: Math.floor(data.c2b12PointsSpeaking),
+          listening: data.c2b12PointsListening,
+          reading: data.c2b12PointsReading,
+          writing: data.c2b12PointsWriting,
+          speaking: data.c2b12PointsSpeaking,
         });
         break;
       default:
@@ -150,6 +150,27 @@ const CLBILETSCalculator = () => {
       .catch((error) => {
         console.log(error);
       });
+
+    setScores({
+      listening: data.c1b4PointsListening,
+      reading: data.c1b4PointsReading,
+      writing: data.c1b4PointsWriting,
+      speaking: data.c1b4PointsSpeaking,
+    });
+
+    setScores2({
+      listening: data.c2b1PointsListening,
+      reading: data.c2b1PointsReading,
+      writing: data.c2b1PointsWriting,
+      speaking: data.c2b1PointsSpeaking,
+    });
+
+    setScores3({
+      listening: data.c3b4PointsListening,
+      reading: data.c3b4PointsReading,
+      writing: data.c3b4PointsWriting,
+      speaking: data.c3b4PointsSpeaking,
+    });
   }, []);
 
   const [selectedCLB3, setSelectedCLB3] = useState("1");
@@ -160,98 +181,98 @@ const CLBILETSCalculator = () => {
     switch (level) {
       case "1":
         setScores3({
-          listening: Math.floor(data.c3b1PointsListening),
-          reading: Math.floor(data.c3b1PointsReading),
-          writing: Math.floor(data.c3b1PointsWriting),
-          speaking: Math.floor(data.c3b1PointsSpeaking),
+          listening: data.c3b1PointsListening,
+          reading: data.c3b1PointsReading,
+          writing: data.c3b1PointsWriting,
+          speaking: data.c3b1PointsSpeaking,
         });
         break;
       case "2":
         setScores3({
-          listening: Math.floor(data.c3b2PointsListening),
-          reading: Math.floor(data.c3b2PointsReading),
-          writing: Math.floor(data.c3b2PointsWriting),
-          speaking: Math.floor(data.c3b2PointsSpeaking),
+          listening: data.c3b2PointsListening,
+          reading: data.c3b2PointsReading,
+          writing: data.c3b2PointsWriting,
+          speaking: data.c3b2PointsSpeaking,
         });
         break;
       case "3":
         setScores3({
-          listening: Math.floor(data.c3b3PointsListening),
-          reading: Math.floor(data.c3b3PointsReading),
-          writing: Math.floor(data.c3b3PointsWriting),
-          speaking: Math.floor(data.c3b3PointsSpeaking),
+          listening: data.c3b3PointsListening,
+          reading: data.c3b3PointsReading,
+          writing: data.c3b3PointsWriting,
+          speaking: data.c3b3PointsSpeaking,
         });
         break;
       case "4":
         setScores3({
-          listening: Math.floor(data.c3b4PointsListening),
-          reading: Math.floor(data.c3b4PointsReading),
-          writing: Math.floor(data.c3b4PointsWriting),
-          speaking: Math.floor(data.c3b4PointsSpeaking),
+          listening: data.c3b4PointsListening,
+          reading: data.c3b4PointsReading,
+          writing: data.c3b4PointsWriting,
+          speaking: data.c3b4PointsSpeaking,
         });
         break;
       case "5":
         setScores3({
-          listening: Math.floor(data.c3b5PointsListening),
-          reading: Math.floor(data.c3b5PointsReading),
-          writing: Math.floor(data.c3b5PointsWriting),
-          speaking: Math.floor(data.c3b5PointsSpeaking),
+          listening: data.c3b5PointsListening,
+          reading: data.c3b5PointsReading,
+          writing: data.c3b5PointsWriting,
+          speaking: data.c3b5PointsSpeaking,
         });
         break;
       case "6":
         setScores3({
-          listening: Math.floor(data.c3b6PointsListening),
-          reading: Math.floor(data.c3b6PointsReading),
-          writing: Math.floor(data.c3b6PointsWriting),
-          speaking: Math.floor(data.c3b6PointsSpeaking),
+          listening: data.c3b6PointsListening,
+          reading: data.c3b6PointsReading,
+          writing: data.c3b6PointsWriting,
+          speaking: data.c3b6PointsSpeaking,
         });
         break;
       case "7":
         setScores3({
-          listening: Math.floor(data.c3b7PointsListening),
-          reading: Math.floor(data.c3b7PointsReading),
-          writing: Math.floor(data.c3b7PointsWriting),
-          speaking: Math.floor(data.c3b7PointsSpeaking),
+          listening: data.c3b7PointsListening,
+          reading: data.c3b7PointsReading,
+          writing: data.c3b7PointsWriting,
+          speaking: data.c3b7PointsSpeaking,
         });
         break;
       case "8":
         setScores3({
-          listening: Math.floor(data.c3b8PointsListening),
-          reading: Math.floor(data.c3b8PointsReading),
-          writing: Math.floor(data.c3b8PointsWriting),
-          speaking: Math.floor(data.c3b8PointsSpeaking),
+          listening: data.c3b8PointsListening,
+          reading: data.c3b8PointsReading,
+          writing: data.c3b8PointsWriting,
+          speaking: data.c3b8PointsSpeaking,
         });
         break;
       case "9":
         setScores3({
-          listening: Math.floor(data.c3b9PointsListening),
-          reading: Math.floor(data.c3b9PointsReading),
-          writing: Math.floor(data.c3b9PointsWriting),
-          speaking: Math.floor(data.c3b9PointsSpeaking),
+          listening: data.c3b9PointsListening,
+          reading: data.c3b9PointsReading,
+          writing: data.c3b9PointsWriting,
+          speaking: data.c3b9PointsSpeaking,
         });
         break;
       case "10":
         setScores3({
-          listening: Math.floor(data.c3b10PointsListening),
-          reading: Math.floor(data.c3b10PointsReading),
-          writing: Math.floor(data.c3b10PointsWriting),
-          speaking: Math.floor(data.c3b10PointsSpeaking),
+          listening: data.c3b10PointsListening,
+          reading: data.c3b10PointsReading,
+          writing: data.c3b10PointsWriting,
+          speaking: data.c3b10PointsSpeaking,
         });
         break;
       case "11":
         setScores3({
-          listening: Math.floor(data.c3b11PointsListening),
-          reading: Math.floor(data.c3b11PointsReading),
-          writing: Math.floor(data.c3b11PointsWriting),
-          speaking: Math.floor(data.c3b11PointsSpeaking),
+          listening: data.c3b11PointsListening,
+          reading: data.c3b11PointsReading,
+          writing: data.c3b11PointsWriting,
+          speaking: data.c3b11PointsSpeaking,
         });
         break;
       case "12":
         setScores3({
-          listening: Math.floor(data.c3b12PointsListening),
-          reading: Math.floor(data.c3b12PointsReading),
-          writing: Math.floor(data.c3b12PointsWriting),
-          speaking: Math.floor(data.c3b12PointsSpeaking),
+          listening: data.c3b12PointsListening,
+          reading: data.c3b12PointsReading,
+          writing: data.c3b12PointsWriting,
+          speaking: data.c3b12PointsSpeaking,
         });
         break;
       default:
@@ -282,98 +303,98 @@ const CLBILETSCalculator = () => {
     switch (level) {
       case "CLB1":
         setScores({
-          listening: Math.floor(data.c1b1PointsListening),
-          reading: Math.floor(data.c1b1PointsReading),
-          writing: Math.floor(data.c1b1PointsWriting),
-          speaking: Math.floor(data.c1b1PointsSpeaking),
+          listening: data.c1b1PointsListening,
+          reading: data.c1b1PointsReading,
+          writing: data.c1b1PointsWriting,
+          speaking: data.c1b1PointsSpeaking,
         });
         break;
       case "CLB2":
         setScores({
-          listening: Math.floor(data.c1b2PointsListening),
-          reading: Math.floor(data.c1b2PointsReading),
-          writing: Math.floor(data.c1b2PointsWriting),
-          speaking: Math.floor(data.c1b2PointsSpeaking),
+          listening: data.c1b2PointsListening,
+          reading: data.c1b2PointsReading,
+          writing: data.c1b2PointsWriting,
+          speaking: data.c1b2PointsSpeaking,
         });
         break;
       case "CLB3":
         setScores({
-          listening: Math.floor(data.c1b3PointsListening),
-          reading: Math.floor(data.c1b3PointsReading),
-          writing: Math.floor(data.c1b3PointsWriting),
-          speaking: Math.floor(data.c1b3PointsSpeaking),
+          listening: data.c1b3PointsListening,
+          reading: data.c1b3PointsReading,
+          writing: data.c1b3PointsWriting,
+          speaking: data.c1b3PointsSpeaking,
         });
         break;
       case "CLB4":
         setScores({
-          listening: Math.floor(data.c1b4PointsListening),
-          reading: Math.floor(data.c1b4PointsReading),
-          writing: Math.floor(data.c1b4PointsWriting),
-          speaking: Math.floor(data.c1b4PointsSpeaking),
+          listening: data.c1b4PointsListening,
+          reading: data.c1b4PointsReading,
+          writing: data.c1b4PointsWriting,
+          speaking: data.c1b4PointsSpeaking,
         });
         break;
       case "CLB5":
         setScores({
-          listening: Math.floor(data.c1b5PointsListening),
-          reading: Math.floor(data.c1b5PointsReading),
-          writing: Math.floor(data.c1b5PointsWriting),
-          speaking: Math.floor(data.c1b5PointsSpeaking),
+          listening: data.c1b5PointsListening,
+          reading: data.c1b5PointsReading,
+          writing: data.c1b5PointsWriting,
+          speaking: data.c1b5PointsSpeaking,
         });
         break;
       case "CLB6":
         setScores({
-          listening: Math.floor(data.c1b6PointsListening),
-          reading: Math.floor(data.c1b6PointsReading),
-          writing: Math.floor(data.c1b6PointsWriting),
-          speaking: Math.floor(data.c1b6PointsSpeaking),
+          listening: data.c1b6PointsListening,
+          reading: data.c1b6PointsReading,
+          writing: data.c1b6PointsWriting,
+          speaking: data.c1b6PointsSpeaking,
         });
         break;
       case "CLB7":
         setScores({
-          listening: Math.floor(data.c1b7PointsListening),
-          reading: Math.floor(data.c1b7PointsReading),
-          writing: Math.floor(data.c1b7PointsWriting),
-          speaking: Math.floor(data.c1b7PointsSpeaking),
+          listening: data.c1b7PointsListening,
+          reading: data.c1b7PointsReading,
+          writing: data.c1b7PointsWriting,
+          speaking: data.c1b7PointsSpeaking,
         });
         break;
       case "CLB8":
         setScores({
-          listening: Math.floor(data.c1b8PointsListening),
-          reading: Math.floor(data.c1b8PointsReading),
-          writing: Math.floor(data.c1b8PointsWriting),
-          speaking: Math.floor(data.c1b8PointsSpeaking),
+          listening: data.c1b8PointsListening,
+          reading: data.c1b8PointsReading,
+          writing: data.c1b8PointsWriting,
+          speaking: data.c1b8PointsSpeaking,
         });
         break;
       case "CLB9":
         setScores({
-          listening: Math.floor(data.c1b9PointsListening),
-          reading: Math.floor(data.c1b9PointsReading),
-          writing: Math.floor(data.c1b9PointsWriting),
-          speaking: Math.floor(data.c1b9PointsSpeaking),
+          listening: data.c1b9PointsListening,
+          reading: data.c1b9PointsReading,
+          writing: data.c1b9PointsWriting,
+          speaking: data.c1b9PointsSpeaking,
         });
         break;
       case "CLB10":
         setScores({
-          listening: Math.floor(data.c1b10PointsListening),
-          reading: Math.floor(data.c1b10PointsReading),
-          writing: Math.floor(data.c1b10PointsWriting),
-          speaking: Math.floor(data.c1b10PointsSpeaking),
+          listening: data.c1b10PointsListening,
+          reading: data.c1b10PointsReading,
+          writing: data.c1b10PointsWriting,
+          speaking: data.c1b10PointsSpeaking,
         });
         break;
       case "CLB11":
         setScores({
-          listening: Math.floor(data.c1b11PointsListening),
-          reading: Math.floor(data.c1b11PointsReading),
-          writing: Math.floor(data.c1b11PointsWriting),
-          speaking: Math.floor(data.c1b11PointsSpeaking),
+          listening: data.c1b11PointsListening,
+          reading: data.c1b11PointsReading,
+          writing: data.c1b11PointsWriting,
+          speaking: data.c1b11PointsSpeaking,
         });
         break;
       case "CLB12":
         setScores({
-          listening: Math.floor(data.c1b12PointsListening),
-          reading: Math.floor(data.c1b12PointsReading),
-          writing: Math.floor(data.c1b12PointsWriting),
-          speaking: Math.floor(data.c1b12PointsSpeaking),
+          listening: data.c1b12PointsListening,
+          reading: data.c1b12PointsReading,
+          writing: data.c1b12PointsWriting,
+          speaking: data.c1b12PointsSpeaking,
         });
         break;
       default:
@@ -440,16 +461,22 @@ const CLBILETSCalculator = () => {
           </div>
 
           <div className={styles.calculatorButtons}>
-            <button className={`${styles.tabButton} ${
+            <button
+              className={`${styles.tabButton} ${
                 selected == `2` ? styles.active : null
-              }`} onClick={() => setSelectedAndUpdateURL(2)}>
+              }`}
+              onClick={() => setSelectedAndUpdateURL(2)}
+            >
               {data?.c2}
             </button>
           </div>
           <div className={styles.calculatorButtons}>
-            <button className={`${styles.tabButton} ${
+            <button
+              className={`${styles.tabButton} ${
                 selected == `3` ? styles.active : null
-              }`} onClick={() => setSelectedAndUpdateURL(3)}>
+              }`}
+              onClick={() => setSelectedAndUpdateURL(3)}
+            >
               {data?.c3}
             </button>
           </div>
@@ -458,7 +485,7 @@ const CLBILETSCalculator = () => {
 
       {selected == 1 ? (
         <div className={styles.container}>
-          <div className={styles.row}>
+          <div className={`${styles.row} ${styles.hiddenrow}`}>
             <div
               className={`${styles.box} ${
                 selectedCLB === "CLB1" ? styles.selectedBox : ""
@@ -718,7 +745,7 @@ const CLBILETSCalculator = () => {
 
       {selected == 3 ? (
         <div className={styles.container}>
-          <div className={styles.row}>
+          <div className={`${styles.row} ${styles.hiddenrow}`}>
             <div
               className={`${styles.box} ${
                 selectedCLB3 === "1" ? styles.selectedBox : ""
