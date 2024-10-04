@@ -174,7 +174,13 @@ let BestChoice = () => {
       const scrollSpeed = deltaY / deltaTime;
 
       // Adjust the plane's top position proportionally to the scroll speed
-      setPlaneTop((prevTop) => prevTop + scrollSpeed * 35); // Adjust the multiplier (50) for desired speed
+      if(window.innerWidth < 767){
+        setPlaneTop((prevTop) => prevTop + scrollSpeed * 25);
+      }
+      else{
+        setPlaneTop((prevTop) => prevTop + scrollSpeed * 35);
+      }
+       // Adjust the multiplier (50) for desired speed
 
       lastScrollY = currentScrollY;
       lastTimestamp = currentTime;
