@@ -146,6 +146,7 @@ const AgriFoodPilotProgram = () => {
           >
             Eligibility Criteria for Agri-Food Immigration Pilot
           </h2>
+          <h4>Who Qualifies for Canada’s Agri-Food Immigration Pilot?</h4>
           <p>
             To be eligible for Canada’s Agri-Food Immigration Pilot, foreign
             workers need to meet specific criteria:
@@ -168,19 +169,231 @@ const AgriFoodPilotProgram = () => {
             id="testing5"
             ref={(el) => (sectionsRef.current[7] = el)}
           >
-            <li>Non-seasonal</li>
-            <li>In an eligible occupation within a qualifying industry</li>
             <li>
-              Obtained through either the Temporary Foreign Worker Program
-              (supported by an LMIA with a minimum 12-month duration) or an Open
-              Work Permit for applicants classified as vulnerable workers.
+              Non-seasonal: In an eligible occupation within a qualifying
+              industry; and obtained through either the Temporary Foreign Worker
+              Program (supported by an LMIA with a minimum 12-month duration) or
+              Open Work Permit for applicants classifies as vulnerable workers.
+            </li>
+
+            <p>
+              Canada announced on May 8, 2023, that it would now consider work
+              experience gained under an open work permit for vulnerable
+              workers, broadening the eligibility criteria.
+            </p>
+
+            <li>
+              Qualifying Job Offer: Applicants must secure a qualifying job
+              offer.
+            </li>
+            <li>
+              Language and Educational Requirements: Candidates must meet or
+              surpass minimum language and educational requirements.
+            </li>
+            <li>
+              Settlement Funds: Applicants must demonstrate sufficient funds to
+              settle in their chosen community.
             </li>
           </ul>
-          <p>
-            Canada announced on May 8, 2023, that it would now consider work
-            experience gained under an open work permit for vulnerable workers,
-            broadening the eligibility criteria.
-          </p>
+
+          <ul>
+            <li>
+              Valid Temporary Residence Status: Candidates must maintain valid
+              temporary residence status. Note: Effective February 12, 2024,
+              applicants residing in Canada during the application process must
+              meet either the job offer or educational requirements, while those
+              residing outside Eligible industries
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              Eligible industries for the Agri-Food Immigration Pilot are:
+              <ol>
+                <li>Meat product manufacturing (NAICS 3116)</li>
+                <li>
+                  Greenhouse, nursery and floriculture production, including
+                  mushroom production (NAICS 1114)
+                </li>
+                <li>
+                  Animal production, excluding aquaculture (NAICS 1121, 1122,
+                  1123, 1124 or 1129)
+                </li>
+              </ol>
+              <p>
+                Industries are classified by the North American Industry
+                Classification System (NAICS). You can see specific industry
+                definitions by searching the industry codes below on the NAICS
+                website. Canada must fulfill both.
+              </p>
+            </li>
+          </ul>
+
+          <h3
+            className={`${styles.section} ${styles.section}`}
+            id="testing"
+            ref={(el) => (sectionsRef.current[15] = el)}
+          >
+            Eligible NOC Occupations
+          </h3>
+          <div className={styles.nocSection}>
+            <div className={styles.nocSectionButtons}>
+              <button
+                onClick={() => toggleNOC("meatProcessing")}
+                className={styles.nocButton}
+              >
+                Meat Product Manufacturing
+              </button>
+              <button
+                onClick={() => toggleNOC("greenhouse")}
+                className={styles.nocButton}
+              >
+                Greenhouse, Nursery and Floriculture Production
+              </button>
+              <button
+                onClick={() => toggleNOC("animalProduction")}
+                className={styles.nocButton}
+              >
+                Animal Production
+              </button>
+            </div>
+            {showNOC === "meatProcessing" && (
+              <>
+                <p>
+                  For meat product manufacturing (NAICS 3116), eligible jobs
+                  are:
+                </p>
+                <table className={styles.table}>
+                  <thead>
+                    <tr>
+                      <th>Occupation</th>
+                      <th>NOC Code</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Butchers – retail and wholesale</td>
+                      <td>NOC 63201</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Meat cutters and fishmongers – retail and wholesale
+                      </td>
+                      <td>NOC 65202</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Industrial butchers and meat cutters, poultry preparers
+                        and related workers
+                      </td>
+                      <td>NOC 94141</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Agricultural service contractors and farm supervisors
+                      </td>
+                      <td>NOC 82030</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Specialized livestock workers and farm machinery
+                        operators
+                      </td>
+                      <td>NOC 84120</td>
+                    </tr>
+                    <tr>
+                      <td>Livestock labourers</td>
+                      <td>NOC 85100</td>
+                    </tr>
+                    <tr>
+                      <td>Labourers in food and beverage processing</td>
+                      <td>NOC 95106</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </>
+            )}
+
+            {showNOC === "greenhouse" && (
+              <>
+                <p>
+                  For greenhouse, nursery and floriculture production, including
+                  mushroom production (NAICS 1114), eligible jobs are:
+                </p>
+                <table className={styles.table}>
+                  <thead>
+                    <tr>
+                      <th>Occupation</th>
+                      <th>NOC Code</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        Agricultural service contractors and farm supervisors
+                      </td>
+                      <td>NOC 82030</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Specialized livestock workers and farm machinery
+                        operators
+                      </td>
+                      <td>NOC 84120</td>
+                    </tr>
+                    <tr>
+                      <td>Livestock labourers</td>
+                      <td>NOC 85100</td>
+                    </tr>
+                    <tr>
+                      <td>Harvesting labourers</td>
+                      <td>NOC 85101</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </>
+            )}
+
+            {showNOC === "animalProduction" && (
+              <>
+                <p>
+                  For animal production, excluding aquaculture (NAICS 1121,
+                  1122, 1123, 1124 and 1129), eligible jobs are:
+                </p>
+                <table className={styles.table}>
+                  <thead>
+                    <tr>
+                      <th>Occupation</th>
+                      <th>NOC Code</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        Agricultural service contractors and farm supervisors
+                      </td>
+                      <td>NOC 82030</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Specialized livestock workers and farm machinery
+                        operators
+                      </td>
+                      <td>NOC 84120</td>
+                    </tr>
+                    <tr>
+                      <td>Livestock labourers</td>
+                      <td>NOC 85100</td>
+                    </tr>
+                    <tr>
+                      <td>Harvesting labourers</td>
+                      <td>NOC 85101</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </>
+            )}
+          </div>
 
           <h3
             className={`${styles.section} ${styles.section}`}
@@ -190,22 +403,48 @@ const AgriFoodPilotProgram = () => {
             2. Qualifying Job Offer
           </h3>
           <p>
-            Applicants must secure a qualifying job offer. The job offer must
-            meet these criteria:
+            If you are living in Canada at the time of application, you have the
+            option to fulfill either the job offer requirement or the
+            educational requirement.
+          </p>
+          <p>
+            However, if you are living outside of Canada when you apply, you
+            must meet both the job offer and the educational requirement.
+          </p>
+          <p>
+            The job offer you receive must be genuine and satisfy all of the
+            following criteria:
           </p>
           <ul
             className={`${styles.section} ${styles.section}`}
             id="testing7"
             ref={(el) => (sectionsRef.current[9] = el)}
           >
-            <li>Full-time (minimum 30 paid hours per week)</li>
             <li>
-              Non-seasonal (consistent and regularly scheduled paid employment
-              throughout the year)
+              The job must be in an eligible occupation under one of the
+              eligible industries.
             </li>
-            <li>Permanent (no predetermined end date)</li>
-            <li>Located in Canada, excluding Quebec</li>
+            <li>
+              The job must be full-time, implying that you work a minimum of 30
+              paid hours per week.
+            </li>
+            <li>
+              The job must be non-seasonal, meaning you have consistent and
+              regularly scheduled paid employment throughout the year.
+            </li>
+            <li>
+              The job must be permanent, showing there is no predetermined end
+              date.
+            </li>
+            <li>The job must be located in Canada, excluding Quebec.</li>
           </ul>
+          <p>
+            For positions that are unionized, the wage must be determined by the
+            relevant collective agreement. For non-unionized positions, the wage
+            must meet or exceed the prevailing (median) wage for the occupation
+            listed on your job offer in the province of employment (or at the
+            national level if no provincial rate is available).
+          </p>
 
           <h3
             className={`${styles.section} ${styles.section}`}
@@ -227,30 +466,43 @@ const AgriFoodPilotProgram = () => {
             4. Minimum Education Requirements
           </h3>
           <p>
-            Depending on whether you are residing in Canada or outside of
-            Canada, you must meet the following educational requirements:
+            The education requirement for the agri-food pilot program depends on
+            whether you are residing in Canada or outside of Canada when you
+            apply:
           </p>
           <ul
-            className={`${styles.section} ${styles.section}`}
+            className={`${styles.fourthPoint} ${styles.section}`}
             id="testing10"
             ref={(el) => (sectionsRef.current[12] = el)}
           >
             <li>
-              If residing in Canada: Meet either the educational requirement or
-              the job offer requirement.
+              If you are residing in Canada:
+              <ul>
+                <li>
+                  You may choose to meet either the educational requirement or
+                  the job offer requirement.
+                </li>
+              </ul>
             </li>
             <li>
-              If residing outside of Canada: Meet both the educational
-              requirement and the job offer.
+              If you are residing outside of Canada:
+              <ul>
+                <li>
+                  You must meet both the educational requirement and the job
+                  offer.
+                </li>
+              </ul>
             </li>
             <li>
-              Educational requirement entails having at least one of the
+              The educational requirement entails having at least one of the
               following:
               <ul>
                 <li>A Canadian high school diploma, or</li>
                 <li>
                   An Educational Credential Assessment (ECA) report from a
-                  designated organization or professional body.
+                  designated organization or professional body, demonstrating
+                  the completion of a foreign credential at the secondary school
+                  level or higher.
                 </li>
               </ul>
             </li>
@@ -263,6 +515,13 @@ const AgriFoodPilotProgram = () => {
           >
             5. Settlement Funds Requirement
           </h3>
+          <p>
+            Demonstrate sufficient funds to support yourself and your family
+            upon settling in Canada. If you&#39;re already employed in Canada
+            with a valid work permit, no proof of funds is necessary. For those
+            not currently employed in Canada, specific settlement funds are
+            required:
+          </p>
           <table className={styles.table}>
             <thead>
               <tr>
@@ -289,149 +548,6 @@ const AgriFoodPilotProgram = () => {
               </tr>
             </tbody>
           </table>
-
-          <h3
-            className={`${styles.section} ${styles.section}`}
-            id="testing"
-            ref={(el) => (sectionsRef.current[15] = el)}
-          >
-            Eligible Industries and NOC Codes
-          </h3>
-          <div className={styles.nocSection}>
-            <div className={styles.nocSectionButtons}>
-              <button
-                onClick={() => toggleNOC("meatProcessing")}
-                className={styles.nocButton}
-              >
-                Meat Product Manufacturing
-              </button>
-              <button
-                onClick={() => toggleNOC("greenhouse")}
-                className={styles.nocButton}
-              >
-                Greenhouse, Nursery and Floriculture Production
-              </button>
-              <button
-                onClick={() => toggleNOC("animalProduction")}
-                className={styles.nocButton}
-              >
-                Animal Production
-              </button>
-            </div>
-            {showNOC === "meatProcessing" && (
-              <table className={styles.table}>
-                <thead>
-                  <tr>
-                    <th>Occupation</th>
-                    <th>NOC Code</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Butchers – retail and wholesale</td>
-                    <td>NOC 63201</td>
-                  </tr>
-                  <tr>
-                    <td>Meat cutters and fishmongers – retail and wholesale</td>
-                    <td>NOC 65202</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Industrial butchers and meat cutters, poultry preparers
-                      and related workers
-                    </td>
-                    <td>NOC 94141</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Agricultural service contractors and farm supervisors
-                    </td>
-                    <td>NOC 82030</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Specialized livestock workers and farm machinery operators
-                    </td>
-                    <td>NOC 84120</td>
-                  </tr>
-                  <tr>
-                    <td>Livestock labourers</td>
-                    <td>NOC 85100</td>
-                  </tr>
-                  <tr>
-                    <td>Labourers in food and beverage processing</td>
-                    <td>NOC 95106</td>
-                  </tr>
-                </tbody>
-              </table>
-            )}
-
-            {showNOC === "greenhouse" && (
-              <table className={styles.table}>
-                <thead>
-                  <tr>
-                    <th>Occupation</th>
-                    <th>NOC Code</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      Agricultural service contractors and farm supervisors
-                    </td>
-                    <td>NOC 82030</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Specialized livestock workers and farm machinery operators
-                    </td>
-                    <td>NOC 84120</td>
-                  </tr>
-                  <tr>
-                    <td>Livestock labourers</td>
-                    <td>NOC 85100</td>
-                  </tr>
-                  <tr>
-                    <td>Harvesting labourers</td>
-                    <td>NOC 85101</td>
-                  </tr>
-                </tbody>
-              </table>
-            )}
-
-            {showNOC === "animalProduction" && (
-              <table className={styles.table}>
-                <thead>
-                  <tr>
-                    <th>Occupation</th>
-                    <th>NOC Code</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      Agricultural service contractors and farm supervisors
-                    </td>
-                    <td>NOC 82030</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Specialized livestock workers and farm machinery operators
-                    </td>
-                    <td>NOC 84120</td>
-                  </tr>
-                  <tr>
-                    <td>Livestock labourers</td>
-                    <td>NOC 85100</td>
-                  </tr>
-                  <tr>
-                    <td>Harvesting labourers</td>
-                    <td>NOC 85101</td>
-                  </tr>
-                </tbody>
-              </table>
-            )}
-          </div>
         </section>
 
         <section

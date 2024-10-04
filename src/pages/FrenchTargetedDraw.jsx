@@ -95,6 +95,8 @@ const FrenchTargetedDraw = () => {
           <h2 className={styles.subheading}>
             Benefits of French Language Proficiency
           </h2>
+          <p>Discover the significance of strong French language skills in Canadian permanent residency (PR)
+          applications:</p>
           <ul>
             <li>
               <strong>Leverage Targeted Draws by IRCC:</strong> The Immigration,
@@ -207,6 +209,8 @@ const FrenchTargetedDraw = () => {
           <h2 className={styles.subheading}>
             Eligibility Criteria for French Language Proficiency Category
           </h2>
+          <p>Once you have met eligibility for one of the programs of Express Entry now you need to be eligible for the
+          French-language proficiency category:</p>
           <ul>
             <li>
               You have CLB level 7 or higher in French.{" "}
@@ -231,6 +235,9 @@ const FrenchTargetedDraw = () => {
             providing information for each round as soon as IRCC provides any
             update.
           </p>
+          <p>To obtain complete eligibility details for the French-language proficiency category, it is essential to review
+the instructions for each round. These instructions provide comprehensive information about the specific
+requirements that must be met in order to be eligible for this category.</p>
         </section>
 
         <section className={`${styles.drawsHistory} ${styles.section}`} id="testing4" ref={(el) => sectionsRef.current[4] = el}>

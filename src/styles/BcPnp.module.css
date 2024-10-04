@@ -221,6 +221,11 @@
   .listItem {
     margin-bottom: 10px;
   }
+
+  .listItem ul{
+    margin-left: 20px;
+    list-style-type: circle;
+  }
   
   .nestedList {
     list-style-type: circle;

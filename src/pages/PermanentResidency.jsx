@@ -90,6 +90,7 @@ const PermanentResidency = () => {
         <div className={styles.banner}>
           <div className={styles.bannerHeading}>
             <h1>Permanent Residency</h1>
+            <p>Make Canada your home through the <b>Permanent Residency</b> program</p>
             <p>
               Canada welcomes thousands of skilled individuals from around the
               world every year. With a thriving economy, high living standards,

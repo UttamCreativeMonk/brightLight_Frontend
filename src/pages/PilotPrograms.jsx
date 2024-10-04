@@ -6,8 +6,6 @@ import Testimonials from "../sections/Testimonials";
 import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
 
-
-
 const PilotPrograms = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -21,7 +19,6 @@ const PilotPrograms = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
-
 
   const sectionsRef = useRef([]);
 
@@ -62,10 +59,18 @@ const PilotPrograms = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
-              <p onClick={() => scrollToSection("pilot-program")}>Pilot Program</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
+              <p onClick={() => scrollToSection("pilot-program")}>
+                Pilot Program
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -74,58 +79,92 @@ const PilotPrograms = () => {
       </div>
 
       <div className={styles.container}>
-      <h1  className={`${styles.heading} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>Canada’s Pilot Programs</h1>
+        <h1
+          className={`${styles.heading} ${styles.section}`}
+          id="about-program"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
+          Canada’s Pilot Programs
+        </h1>
 
-      <div className={styles.introduction}>
-        <p>
-          The diverse economy of Canada offers various opportunities to advance your career in fields such as agriculture and more.
-        </p>
-        <p>
-          Canada's Pilot Programs are temporary immigration programs designed to address the specific needs of certain Canadian regions or communities. These programs aim to attract skilled, semi-skilled, and unskilled workers to fill labor shortages in various sectors and contribute to the economic growth and development of those areas. Many times, these programs become permanent, providing more PR opportunities.
-        </p>
+        <div className={styles.introduction}>
+          <p>
+            The diverse economy of Canada offers various opportunities to
+            advance your career in fields such as agriculture and more.
+          </p>
+          <p>
+            Canada's Pilot Programs are temporary immigration programs designed
+            to address the specific needs of certain Canadian regions or
+            communities. These programs aim to attract skilled, semi-skilled,
+            and unskilled workers to fill labor shortages in various sectors and
+            contribute to the economic growth and development of those areas.
+            Many times, these programs become permanent, providing more PR
+            opportunities.
+          </p>
+        </div>
+
+        <div
+          className={`${styles.pilotPrograms} ${styles.section}`}
+          id="pilot-program"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
+          <h2 className={styles.subheading}>
+            Here is one of the Pilot Programs
+          </h2>
+          <ul>
+            <li>
+              <a href="/agri-food-pilot-program" className={styles.button}>
+                Agri-Food Pilot
+              </a>
+            </li>
+            {/* You can add more pilot programs here in a similar format */}
+          </ul>
+        </div>
+
+        <div
+          className={`${styles.whyChooseUs} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
+          <h2 className={styles.subheading} id="why-choose-us">
+            Why Choose Us
+          </h2>
+          <p>
+            At Brightlight Immigration, we provide expert guidance through
+            Canada’s various immigration programs, including Pilot Programs. Our
+            team of experienced consultants is dedicated to helping you navigate
+            the complexities of immigration, ensuring that you have the best
+            chance of success. We tailor our services to meet your unique needs
+            and provide a high level of personalized support throughout the
+            application process.
+          </p>
+          <p>
+            Our success rate speaks for itself, with a near-perfect approval
+            rate for our clients. By choosing us, you benefit from our extensive
+            knowledge, commitment to your case, and proven track record. Let us
+            help you make your Canadian immigration journey a smooth and
+            successful one.
+          </p>
+          {/* <a href="/contact-us" className={styles.button}>Contact Us</a> */}
+          <button
+            className={styles.button1}
+            onClick={() => (window.location.href = "/contact")}
+          >
+            Contact
+          </button>
+        </div>
       </div>
-
-      <div className={`${styles.pilotPrograms} ${styles.section}`} id="pilot-program" ref={(el) => sectionsRef.current[1] = el}>
-        <h2 className={styles.subheading}>Here is one of the Pilot Programs</h2>
-        <ul>
-          <li>
-            <a href="/agri-food-pilot-program" className={styles.button}>
-              Agri-Food Pilot
-            </a>
-          </li>
-          {/* You can add more pilot programs here in a similar format */}
-        </ul>
-      </div>
-
-      <div className={`${styles.whyChooseUs} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[2] = el}>
-        <h2 className={styles.subheading} id="why-choose-us" >Why Choose Us</h2>
-        <p>
-          At Brightlight Immigration, we provide expert guidance through Canada’s various immigration programs, including Pilot Programs. Our team of experienced consultants is dedicated to helping you navigate the complexities of immigration, ensuring that you have the best chance of success. We tailor our services to meet your unique needs and provide a high level of personalized support throughout the application process.
-        </p>
-        <p>
-          Our success rate speaks for itself, with a near-perfect approval rate for our clients. By choosing us, you benefit from our extensive knowledge, commitment to your case, and proven track record. Let us help you make your Canadian immigration journey a smooth and successful one.
-        </p>
-        {/* <a href="/contact-us" className={styles.button}>Contact Us</a> */}
-        <button className={styles.button1}
-              onClick={() =>
-                (window.location.href =
-                  "/contact")}>
-             Contact
-            </button>
-      </div>
-    </div>
-
 
       <div id="faqs">
-        <FAQ/>
+        <FAQ />
       </div>
-      <div id="testimonials"> 
-        <Testimonials/>
+      <div id="testimonials">
+        <Testimonials />
       </div>
       <div id="blogs">
-        <RecentBlogs/>
+        <RecentBlogs />
       </div>
-    <Footer1/>
+      <Footer1 />
     </>
   );
 };

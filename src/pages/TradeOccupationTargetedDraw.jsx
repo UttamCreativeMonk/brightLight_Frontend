@@ -20,7 +20,6 @@ const TradeOccupationTargetedDraw = () => {
     }
   };
 
-
   const sectionsRef = useRef([]);
 
   const handleScroll = () => {
@@ -60,12 +59,26 @@ const TradeOccupationTargetedDraw = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
               <p onClick={() => scrollToSection("eligible")}>Eligible</p>
-              <p onClick={() => scrollToSection("trade-occupations-category")}>Trade Occupations Category</p>
-              <p onClick={() =>  scrollToSection("criteria-trade-occupations-category")}>Criteria Trade Occupation</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("trade-occupations-category")}>
+                Trade Occupations Category
+              </p>
+              <p
+                onClick={() =>
+                  scrollToSection("criteria-trade-occupations-category")
+                }
+              >
+                Criteria Trade Occupation
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -74,11 +87,19 @@ const TradeOccupationTargetedDraw = () => {
       </div>
 
       <div className={styles.container}>
-        <h1  className={`${styles.heading} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
+        <h1
+          className={`${styles.heading} ${styles.section}`}
+          id="about-program"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
           Category-Based Express Entry Selection Draws: Trade Occupations
         </h1>
 
-        <div  className={`${styles.introduction} ${styles.section}`} id="testing1" ref={(el) => sectionsRef.current[1] = el}>
+        <div
+          className={`${styles.introduction} ${styles.section}`}
+          id="testing1"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
           <p>
             Canada’s Express Entry system for Trades is tailored to meet the
             rising demand for skilled workers in various trade sectors. This
@@ -95,11 +116,24 @@ const TradeOccupationTargetedDraw = () => {
           </p>
         </div>
 
-        <div className={`${styles.eligibility} ${styles.section}`} id="eligible" ref={(el) => sectionsRef.current[2] = el}>
+        <div
+          className={`${styles.eligibility} ${styles.section}`}
+          id="eligible"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
           <h2 className={styles.subheading}>
             First You Must Be Eligible with Express Entry
           </h2>
-          <ol  className={`${styles.section} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[3] = el}>
+          <p>
+            Before you can participate in a STEM-specific draw through
+            Canada&#39;s Express Entry system, you need to be eligible.
+            Here&#39;s how you can get started:
+          </p>
+          <ol
+            className={`${styles.section} ${styles.section}`}
+            id="testing2"
+            ref={(el) => (sectionsRef.current[3] = el)}
+          >
             <li>
               Join the Express Entry Pool: The first step towards becoming a
               candidate for a trade-specific draw is to get into the Express
@@ -110,34 +144,41 @@ const TradeOccupationTargetedDraw = () => {
               for to join the Express Entry pool:
               <ul>
                 <li>
-                  <button className={styles.button1}
-              onClick={() =>
-                (window.location.href =
-                  "/federal-skilled-worker-program")
-              }
-            >
-            Federal Skilled Worker Program (FSW)
-            </button>
+                  <button
+                    className={styles.button1}
+                    onClick={() =>
+                      (window.location.href = "/federal-skilled-worker-program")
+                    }
+                  >
+                    Federal Skilled Worker Program (FSW)
+                  </button>
+                  This program is ideal for tech workers who have the necessary
+                  work experience, education, and language ability.
                 </li>
                 <li>
-
-                  <button className={styles.button1}
-              onClick={() =>
-                (window.location.href =
-                  "/canadian-experience-class")
-              }
-            >
-           Canadian Experience Class (CEC)
-            </button>
+                  <button
+                    className={styles.button1}
+                    onClick={() =>
+                      (window.location.href = "/canadian-experience-class")
+                    }
+                  >
+                    Canadian Experience Class (CEC)
+                  </button>
+                  Like the FSW program, the CEC is also suitable for tech
+                  workers who have gained Canadian work experience.
                 </li>
                 <li>
-
-                  <button className={styles.button1}
-              onClick={() =>
-                (window.location.href =
-                  "/federal-skilled-trades-program")}>
-               Federal Skilled Trades Program (FSTP)
-            </button>
+                  <button
+                    className={styles.button1}
+                    onClick={() =>
+                      (window.location.href = "/federal-skilled-trades-program")
+                    }
+                  >
+                    Federal Skilled Trades Program (FSTP)
+                  </button>
+                  If you&#39;re a trades worker, this program is designed for
+                  you. It requires proof of relevant work experience, education,
+                  and language proficiency.
                 </li>
               </ul>
             </li>
@@ -149,10 +190,16 @@ const TradeOccupationTargetedDraw = () => {
           </p>
         </div>
 
-        <div className={`${styles.tradeEligibility} ${styles.section}`} id="trade-occupations-category" ref={(el) => sectionsRef.current[4] = el}>
+        <div
+          className={`${styles.tradeEligibility} ${styles.section}`}
+          id="trade-occupations-category"
+          ref={(el) => (sectionsRef.current[4] = el)}
+        >
           <h2 className={styles.subheading}>
             Eligibility Criteria for Trade Occupations Category
           </h2>
+          <p>Once you have met eligibility for one of the Express Entry programs, now you need to meet eligibility for
+          Trade specific criteria:</p>
           <ul>
             <li>
               You must have a Red Seal or other recognized trade certification.
@@ -168,19 +215,29 @@ const TradeOccupationTargetedDraw = () => {
             Here is the list of eligible NOCs:{" "}
             <a
               href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/submit-profile/rounds-invitations/category-based-selection.html"
-              className={styles.link}>
+              className={styles.link}
+            >
               Eligible NOCs List
             </a>
           </p>
         </div>
 
-        <div className={`${styles.tableContainer} ${styles.section}`} id="testing3" ref={(el) => sectionsRef.current[5] = el}>
+        <div
+          className={`${styles.tableContainer} ${styles.section}`}
+          id="testing3"
+          ref={(el) => (sectionsRef.current[5] = el)}
+        >
           <h2
             className={styles.subheading}
-            id="criteria-trade-occupations-category">
+            id="criteria-trade-occupations-category"
+          >
             Eligible Trade Occupations
           </h2>
-          <table className={`${styles.table} ${styles.section}`} id="testing4" ref={(el) => sectionsRef.current[6] = el}>
+          <table
+            className={`${styles.table} ${styles.section}`}
+            id="testing4"
+            ref={(el) => (sectionsRef.current[6] = el)}
+          >
             <thead>
               <tr>
                 <th>Occupations</th>
@@ -246,7 +303,11 @@ const TradeOccupationTargetedDraw = () => {
           </table>
         </div>
 
-        <div className={`${styles.drawHistory} ${styles.section}`} id="testing5" ref={(el) => sectionsRef.current[7] = el}>
+        <div
+          className={`${styles.drawHistory} ${styles.section}`}
+          id="testing5"
+          ref={(el) => (sectionsRef.current[7] = el)}
+        >
           <h2 className={styles.subheading}>
             Express Entry Trade Occupations Draw History
           </h2>
@@ -257,17 +318,19 @@ const TradeOccupationTargetedDraw = () => {
             Trade occupations.
           </p>
 
-          <button className={styles.button}
-              onClick={() =>
-                (window.location.href =
-                  "/previous-draw-history")
-              }
-            >
-              View Previous Draw History
-            </button>
+          <button
+            className={styles.button}
+            onClick={() => (window.location.href = "/previous-draw-history")}
+          >
+            View Previous Draw History
+          </button>
         </div>
 
-        <div   className={`${styles.contact} ${styles.section}`} id="testing6" ref={(el) => sectionsRef.current[8] = el}>
+        <div
+          className={`${styles.contact} ${styles.section}`}
+          id="testing6"
+          ref={(el) => (sectionsRef.current[8] = el)}
+        >
           <h2 className={styles.subheading}>Still Not Sure?</h2>
           <p>
             Contact Brightlight Immigration today to assess your profile and
@@ -287,17 +350,19 @@ const TradeOccupationTargetedDraw = () => {
             process now.
           </p>
 
-          <button className={styles.button}
-              onClick={() =>
-                (window.location.href =
-                  "/contact-us")
-              }
-            >
-              Contact Us
-            </button>
+          <button
+            className={styles.button}
+            onClick={() => (window.location.href = "/contact-us")}
+          >
+            Contact Us
+          </button>
         </div>
 
-        <div className={`${styles.whyChooseUs} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[9] = el}>
+        <div
+          className={`${styles.whyChooseUs} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[9] = el)}
+        >
           <h2 className={styles.subheading}>Why Choose Us</h2>
           <p>
             Here is where you can describe why clients should choose your
@@ -305,8 +370,9 @@ const TradeOccupationTargetedDraw = () => {
             personalized service, high success rates, and expert knowledge.
           </p>
         </div>
-        
-        <button className={styles.button}
+
+        <button
+          className={styles.button}
           onClick={() =>
             (window.location.href =
               "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")

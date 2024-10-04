@@ -103,6 +103,8 @@ const FederalSkilledTradesProgram = () => {
           <h2 className={styles.subheading}>
             Eligibility Criteria for Federal Skilled Trades Program (FSTP)
           </h2>
+          <p>If you're a skilled tradesperson looking to immigrate to Canada, the Federal Skilled Trades Program (FSTP) could be a great option for you. To be eligible, you must meet the following requirements:
+          </p>
           <ul>
             <li>
               Two years of paid full-time work experience (or an equal amount of
@@ -115,6 +117,10 @@ const FederalSkilledTradesProgram = () => {
                 <li>
                   Major Group 72: Technical Trades and Transportation Officers
                   and Controllers
+                  <ul>
+                    <li>Excluding Sub-Major Group 726: Transportation Officers and Controllers
+                    </li>
+                  </ul>
                 </li>
                 <li>Major Group 73: General Trades</li>
                 <li>
@@ -167,7 +173,7 @@ const FederalSkilledTradesProgram = () => {
           </h2>
           <p>
             For the latest updates on Express Entry draws,
-            <Link to="/express-entry-draws-history" className={styles.link}>
+            <Link to="/previous-draw-history" className={styles.link}>
               click here
             </Link>
             .
@@ -192,13 +198,11 @@ const FederalSkilledTradesProgram = () => {
               .
             </li>
             <li>
-              Receive an invitation to apply (ITA) from IRCC. ITAs are issued to
-              candidates who score high enough on the Comprehensive Ranking
-              System (CRS). For a CRS Calculator,{" "}
+            After that, you will receive an invitation to apply (ITA) from IRCC. Note that ITAs are issued to candidates who score high enough on the Comprehensive Ranking System (CRS), which is a points-based system that assesses candidates' eligibility for the program.{" "}
               <Link to="/crs-calculator" className={styles.link}>
                 click here
               </Link>
-              .
+              you can find a link to a FSTP Calculator.
             </li>
             <li>
               Submit a complete application, including supporting documents such

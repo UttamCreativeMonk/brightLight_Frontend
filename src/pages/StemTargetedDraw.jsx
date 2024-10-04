@@ -20,7 +20,6 @@ const StemTargetedDraw = () => {
     }
   };
 
-
   const sectionsRef = useRef([]);
 
   const handleScroll = () => {
@@ -60,12 +59,22 @@ const StemTargetedDraw = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
               <p onClick={() => scrollToSection("eligiblity")}>Eligiblity</p>
-              <p onClick={() => scrollToSection("stem-eligiblity")}>Stem Eligiblity</p>
-              <p onClick={() => scrollToSection("stem-noc-codes")}>Stem Noc Codes</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("stem-eligiblity")}>
+                Stem Eligiblity
+              </p>
+              <p onClick={() => scrollToSection("stem-noc-codes")}>
+                Stem Noc Codes
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -79,7 +88,11 @@ const StemTargetedDraw = () => {
           Technology, Engineering, Math) Occupations
         </h1>
 
-        <section className={`${styles.introduction} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
+        <section
+          className={`${styles.introduction} ${styles.section}`}
+          id="about-program"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
           <p>
             Canada's Express Entry system is not just a general immigration
             tool, but also a strategic resource for targeting specific sectors
@@ -97,7 +110,11 @@ const StemTargetedDraw = () => {
           </p>
         </section>
 
-        <section className={`${styles.eligibility} ${styles.section}`} id="eligiblity" ref={(el) => sectionsRef.current[1] = el}>
+        <section
+          className={`${styles.eligibility} ${styles.section}`}
+          id="eligiblity"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
           <h2 className={styles.subheading}>
             First You Must Be Eligible with Express Entry
           </h2>
@@ -115,43 +132,43 @@ const StemTargetedDraw = () => {
             <li>
               Choose Your Program: There are three programs you can be eligible
               for to join the Express Entry pool:
-              <ul className={styles.subheadingLink} style={{marginTop: "20px"}}>
+              <ul
+                className={styles.subheadingLink}
+                style={{ marginTop: "20px" }}
+              >
                 <li>
-
-                  <button className={styles.button1}
-              onClick={() =>
-                (window.location.href =
-                  "/federal-skilled-worker-program")
-              }
-            >
-               Federal Skilled Worker Program (FSW)
-            </button>
-                  This program is ideal for tech workers who have the
-                  necessary work experience, education, and language ability.
+                  <button
+                    className={styles.button1}
+                    onClick={() =>
+                      (window.location.href = "/federal-skilled-worker-program")
+                    }
+                  >
+                    Federal Skilled Worker Program (FSW)
+                  </button>
+                  This program is ideal for tech workers who have the necessary
+                  work experience, education, and language ability.
                 </li>
                 <li>
-  
-                  <button className={styles.button1}
-              onClick={() =>
-                (window.location.href =
-                  "canadian-experience-class")
-              }
-            >
-             Canadian Experience Class (CEC)
-            </button>
-                  Similar to the FSW program, the CEC is also suitable for
-                  tech workers who have gained Canadian work experience.
+                  <button
+                    className={styles.button1}
+                    onClick={() =>
+                      (window.location.href = "canadian-experience-class")
+                    }
+                  >
+                    Canadian Experience Class (CEC)
+                  </button>
+                  Similar to the FSW program, the CEC is also suitable for tech
+                  workers who have gained Canadian work experience.
                 </li>
                 <li>
-
-                  <button className={styles.button1}
-              onClick={() =>
-                (window.location.href =
-                  "/federal-skilled-trades-program")
-              }
-            >
-           Federal Skilled Trades Program (FSTP)
-            </button>
+                  <button
+                    className={styles.button1}
+                    onClick={() =>
+                      (window.location.href = "/federal-skilled-trades-program")
+                    }
+                  >
+                    Federal Skilled Trades Program (FSTP)
+                  </button>
                   If you're a trades worker, this program is designed for you.
                   It requires proof of relevant work experience, education, and
                   language proficiency.
@@ -164,13 +181,17 @@ const StemTargetedDraw = () => {
             So, make sure to review these carefully and ensure you meet all the
             necessary criteria before applying.
           </p>
-          <p>Important things to keep in mind:</p>
+          <h2>Important things to keep in mind:</h2>
+          <p>
+            When it comes to the Federal Skilled Worker Program (FSW) BACKLINK
+            and the Canadian Experience Class (CEC) BACKLINK - the two programs
+            most relevant to tech workers - you&#39;ll need at least one year of
+            continuous work experience in a &quot;skilled&quot; occupation.
+            These occupations are classified under 0, 1, 2, and 3 of Canada’s
+            Training Education Experience Responsibilities (TEER) categories.
+          </p>
+          <p>Here are a couple of important points to remember:</p>
           <ul>
-            <li>
-              You need at least one year of continuous work experience in a
-              "skilled" occupation, classified under 0, 1, 2, and 3 of Canada’s
-              Training Education Experience Responsibilities (TEER) categories.
-            </li>
             <li>
               You can accumulate this work experience over two years in
               part-time roles, as long as it adds up to 1,560 hours, which is
@@ -183,20 +204,31 @@ const StemTargetedDraw = () => {
             </li>
           </ul>
           <p>
-            Having six months of work experience in a STEM occupation alone is
-            not enough to qualify for Express Entry. You need to meet the work
-            experience requirements for at least one of the programs first. If
-            you have one year of work experience in an eligible STEM occupation
-            and meet the other requirements of the CEC or the FSW, then you may
-            be invited in a STEM-specific draw.
+            The reason we&#39;re stressing that you need to be eligible for
+            Express Entry is to make it clear that having six months of work
+            experience in a STEM occupation isn&#39;t enough to qualify for
+            Express Entry. You need to meet the work experience requirements for
+            at least one of the programs first. If you have one year of work
+            experience in an eligible STEM occupation and meet the other
+            requirements of the CEC or the FSW, then you may be invited in a
+            STEM-specific draw.
           </p>
         </section>
 
-        <section className={`${styles.stemEligibility} ${styles.section}`} id="stem-eligiblity" ref={(el) => sectionsRef.current[2] = el}>
+        <section
+          className={`${styles.stemEligibility} ${styles.section}`}
+          id="stem-eligiblity"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
           <h2 className={styles.subheading}>
             Eligibility Criteria for STEM (Science, Technology, Engineering,
             Math) Occupations
           </h2>
+          <p>
+            To be Eligible in Science, Technology, Engineering, and Math (STEM)
+            occupations category you must meet the following eligibility
+            criteria:
+          </p>
           <ul>
             <li>A valid university degree in a STEM field.</li>
             <li>
@@ -208,7 +240,33 @@ const StemTargetedDraw = () => {
           </ul>
         </section>
 
-        <section className={`${styles.stemNocCodes} ${styles.section}`} id="stem-noc-codes" ref={(el) => sectionsRef.current[3] = el}>
+        <section
+          className={`${styles.stemEligibility} ${styles.section}`}
+          id="stem-eligiblity"
+          ref={(el) => (sectionsRef.current[7] = el)}
+        >
+          <h2 className={styles.subheading}>
+            Express Entry STEM draws history
+          </h2>
+          <p>
+            The first ever Express Entry draw for STEM workers was just
+            held. Express Entry draw 254 saw a CRS score of 486 and invited 500
+            candidates eligible for category-based selection in science,
+            technology, mathematics, and engineering (STEM) occupations.
+          </p>
+          <button
+            className={styles.button}
+            onClick={() => (window.location.href = "/previous-draw-history")}
+          >
+            View Previous Draw History
+          </button>
+        </section>
+
+        <section
+          className={`${styles.stemNocCodes} ${styles.section}`}
+          id="stem-noc-codes"
+          ref={(el) => (sectionsRef.current[3] = el)}
+        >
           <h2 className={styles.subheading}>STEM Eligible NOC Codes</h2>
           <p>
             <a
@@ -359,7 +417,11 @@ const StemTargetedDraw = () => {
           </table>
         </section>
 
-        <section className={`${styles.drawHistory} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[4] = el}>
+        <section
+          className={`${styles.drawHistory} ${styles.section}`}
+          id="testing2"
+          ref={(el) => (sectionsRef.current[4] = el)}
+        >
           <h2 className={styles.subheading}>
             Express Entry STEM Draws History
           </h2>
@@ -372,16 +434,19 @@ const StemTargetedDraw = () => {
           {/* <Link to="" className={styles.button}>
           
           </Link> */}
-          <button className={styles.button}
-              onClick={() =>
-                (window.location.href =
-                  "/previous-draw-history")
-              }>
-          View Previous Draw History
-            </button>
+          <button
+            className={styles.button}
+            onClick={() => (window.location.href = "/previous-draw-history")}
+          >
+            View Previous Draw History
+          </button>
         </section>
 
-        <section className={`${styles.contact} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[5] = el}>
+        <section
+          className={`${styles.contact} ${styles.section}`}
+          id="testing2"
+          ref={(el) => (sectionsRef.current[5] = el)}
+        >
           <h2 className={styles.subheading}>Still Not Sure?</h2>
           <p>
             Contact Brightlight Immigration today to assess your profile and
@@ -403,16 +468,19 @@ const StemTargetedDraw = () => {
           {/* <Link to="/contact-us" className={styles.button}>
            
           </Link> */}
-          <button className={styles.button}
-              onClick={() =>
-                (window.location.href =
-                  "/contact-us")
-              }>
-          Contact Us
-            </button>
+          <button
+            className={styles.button}
+            onClick={() => (window.location.href = "/contact-us")}
+          >
+            Contact Us
+          </button>
         </section>
 
-        <section  className={`${styles.whyChooseUs} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[6] = el}>
+        <section
+          className={`${styles.whyChooseUs} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[6] = el)}
+        >
           <h2 className={styles.subheading}>Why Choose Us</h2>
           <p>
             Brightlight Immigration offers personalized services to maximize
@@ -422,13 +490,13 @@ const StemTargetedDraw = () => {
           </p>
           {/* Include additional details as necessary */}
           <button
-          onClick={() =>
-            (window.location.href =
-              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-          }
-        >
-          Book Appointment
-        </button>
+            onClick={() =>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
+          >
+            Book Appointment
+          </button>
         </section>
       </div>
       <div id="faqs">

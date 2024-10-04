@@ -148,6 +148,14 @@
   margin-bottom: 20px;
 }
 
+.eligibility p{
+  margin-bottom: 20px;
+}
+
+.eligibility ul ul{
+  margin-left: 25px;
+}
+
 .introduction p{
   text-align: center;
   margin-bottom: 20px;

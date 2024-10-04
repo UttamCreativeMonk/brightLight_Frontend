@@ -151,6 +151,10 @@
   .testimonials {
     margin-bottom: 30px;
   }
+
+  .eligibility p, .transportEligibility p{
+    margin-bottom: 20px;
+  }
   
   .subheading {
     font-size: 2rem;

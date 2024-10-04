@@ -262,16 +262,21 @@
 .nocSectionButtons{
   display: flex;
   margin-top: 30px;
+  justify-content: flex-start;
+}
+
+.fourthPoint li ul{
+  list-style-type: circle;
+  margin-left: 20px;
 }
 
 @media all and (max-width: 790px){
+  .nocSection button{
+    margin-right: auto;
+  }
   .nocSectionButtons{
-    display: flex;
-    flex-direction: column;
     display: block;
-    margin: auto;
     text-align: left;
-    align-items: left;
   }
 }
 

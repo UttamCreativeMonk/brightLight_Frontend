@@ -151,12 +151,25 @@
     margin-bottom: 20px;
   }
 
+  .eligibility li{
+    margin-bottom: 10px;
+  }
+
+  .stemEligibility p{
+    margin-bottom: 20px;
+  }
+
+  .eligibility p{
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
   .eligibility ol{
     margin-bottom: 20px;
   }
 
   .eligibility ul{
-    list-style: none;
+    margin-left: 20px;
   }
 
   .contact p{

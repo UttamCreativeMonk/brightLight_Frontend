@@ -152,6 +152,10 @@
     margin-bottom: 20px;
   }
 
+  .eligibility p, .tradeEligibility p{
+    margin-bottom: 20px;
+  }
+
   .introduction p{
     text-align: center;
   }
@@ -167,13 +171,15 @@
     color: #00273f;
   }
   
-
-
-  /* .eligibility ul{
-    list-style-type: none;
-  } */
   .container ul{
-    list-style-type: none;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+
+  .container button{
+    display: flex !important;
+    margin: 0 !important;
+    margin-bottom: 20px !important;
   }
   a.link {
     color: #0056b3;

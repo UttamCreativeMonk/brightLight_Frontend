@@ -207,6 +207,8 @@ const HealthcareTargetedDraw = () => {
             </li>
             <li>A valid Express Entry profile.</li>
           </ul>
+          <p>**The following table contains the most up-to-date list of eligible occupations. Remember that Canada
+          may change these occupations in response to labor market conditions.</p>
           <p>
             <a
               href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/submit-profile/rounds-invitations/category-based-selection.html"

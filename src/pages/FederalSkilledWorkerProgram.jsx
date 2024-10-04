@@ -21,7 +21,6 @@ const FederalSkilledWorkerProgram = () => {
     }
   };
 
-
   const sectionsRef = useRef([]);
 
   const handleScroll = () => {
@@ -61,14 +60,24 @@ const FederalSkilledWorkerProgram = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
               <p onClick={() => scrollToSection("categories")}>Categories</p>
               <p onClick={() => scrollToSection("process")}>Process</p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
-              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>
+                Refusal Reasons
+              </p>
+              <p onClick={() => scrollToSection("book-appointment")}>
+                Book Appointment
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -77,11 +86,19 @@ const FederalSkilledWorkerProgram = () => {
       </div>
 
       <div className={styles.container}>
-        <h1 className={`${styles.heading} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
+        <h1
+          className={`${styles.heading} ${styles.section}`}
+          id="about-program"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
           Federal Skilled Worker Program (FSWP)
         </h1>
 
-        <section  className={`${styles.introduction} ${styles.section}`} id="testing" ref={(el) => sectionsRef.current[1] = el}>
+        <section
+          className={`${styles.introduction} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
           <p>
             Elevate your career with Canada's FSWP, a pathway to skilled
             professionals.
@@ -96,10 +113,18 @@ const FederalSkilledWorkerProgram = () => {
           </p>
         </section>
 
-        <section className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[3] = el}>
+        <section
+          className={`${styles.eligibility} ${styles.section}`}
+          id="eligibility"
+          ref={(el) => (sectionsRef.current[3] = el)}
+        >
           <h2 className={styles.subheading}>
             Eligibility Criteria for Federal Skilled Worker Program (FSWP)
           </h2>
+          <p>
+            To meet the eligibility requirements for the Federal Skilled Worker
+            Program FSWP, you must meet the following requirements:
+          </p>
           <ul>
             <li>You must be between 18 and 45 years old.</li>
             <li>
@@ -119,7 +144,7 @@ const FederalSkilledWorkerProgram = () => {
             </li>
           </ul>
 
-          <h3 className={styles.subheading} id="categories" >
+          <h3 className={styles.subheading} id="categories">
             TEER Categories and Examples of Jobs
           </h3>
           <table className={styles.table}>
@@ -206,31 +231,54 @@ const FederalSkilledWorkerProgram = () => {
             valid job offer from a Canadian employer may increase your chances
             of receiving an invitation to apply for permanent residency.
           </p>
-          
-          <button className={styles.button}
-              onClick={() =>
-                (window.location.href =
-                  "/federal-skilled")
-              }
+
+          <section
+            className={`${styles.expressEntry} ${styles.section}`}
+            ref={(el) => (sectionsRef.current[9] = el)}
+            id="testing"
+          >
+            <h2 className={styles.subheading}>
+              Assessment through a Federal Skilled Worker Program (FSWP)
+              Calculator
+            </h2>
+            <p>
+              Once you have met the minimum requirements for the FSWP, you will
+              be assessed based on the Comprehensive Ranking System (CRS). The
+              CRS is a points-based system that evaluates candidates on factors
+              such as their age, education, language skills, work experience,
+              and adaptability.
+            </p>
+            <button
+              className={styles.button}
+              onClick={() => (window.location.href = "/federal-skilled")}
             >
-             FSWP Calculator
+              FSWP Calculator
             </button>
+          </section>
         </section>
 
-        <section className={`${styles.expressEntry} ${styles.section}`} id="expressEntry" ref={(el) => sectionsRef.current[4] = el}>
+        <section
+          className={`${styles.expressEntry} ${styles.section}`}
+          id="expressEntry"
+          ref={(el) => (sectionsRef.current[4] = el)}
+        >
           <h2 className={styles.subheading}>
             Express Entry Federal Skilled Worker Program (FSWP) Draws History
           </h2>
           <p>
             For the latest updates on Express Entry draws,
-            <Link to="/express-entry" className={styles.link}>
+            <Link to="/previous-draw-history" className={styles.link}>
               click here
             </Link>
             .
           </p>
         </section>
 
-        <section className={`${styles.applicationProcess} ${styles.section}`} id="Process" ref={(el) => sectionsRef.current[5] = el}>
+        <section
+          className={`${styles.applicationProcess} ${styles.section}`}
+          id="Process"
+          ref={(el) => (sectionsRef.current[5] = el)}
+        >
           <h2 className={styles.subheading}>
             How to Apply for Federal Skilled Worker Program (FSWP)
           </h2>
@@ -261,8 +309,8 @@ const FederalSkilledWorkerProgram = () => {
               the requirements.
             </li>
             <li>
-              Submit a complete application for permanent residency within 60
-              days of receiving the ITA.
+              A complete application for permanent residency submission will be
+              required within 60 days of receiving the ITA.
             </li>
             <li>
               Provide additional documentation and undergo medical examinations
@@ -272,7 +320,11 @@ const FederalSkilledWorkerProgram = () => {
           </ol>
         </section>
 
-        <section className={`${styles.refusalReasons} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[6] = el} >
+        <section
+          className={`${styles.refusalReasons} ${styles.section}`}
+          id="refusal-reasons"
+          ref={(el) => (sectionsRef.current[6] = el)}
+        >
           <h2 className={styles.subheading}>
             Common Reasons for Refusals of Federal Skilled Worker Program (FSWP)
           </h2>
@@ -300,7 +352,11 @@ const FederalSkilledWorkerProgram = () => {
           </ul>
         </section>
 
-        <section className={`${styles.support} ${styles.section}`} id="testing3" ref={(el) => sectionsRef.current[7] = el}>
+        <section
+          className={`${styles.support} ${styles.section}`}
+          id="testing3"
+          ref={(el) => (sectionsRef.current[7] = el)}
+        >
           <h2 className={styles.subheading}>Still Not Sure?</h2>
           <p>
             If you have received a refusal for any of the reasons mentioned
@@ -315,17 +371,22 @@ const FederalSkilledWorkerProgram = () => {
             specialists will assist you from the start of the application
             process all the way to obtaining your PR. Start your process now.
           </p>
-          <button className={styles.button}
-              onClick={() =>
-                (window.location.href =
-                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-              }
-            >
-              Book Appointment
-            </button>
+          <button
+            className={styles.button}
+            onClick={() =>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
+          >
+            Book Appointment
+          </button>
         </section>
 
-        <section className={`${styles.whyChooseUs} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[8] = el}>
+        <section
+          className={`${styles.whyChooseUs} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[8] = el)}
+        >
           <h2 className={styles.subheading}>Why Choose Us?</h2>
           <p>
             At Brightlight Immigration, we offer expert guidance and support

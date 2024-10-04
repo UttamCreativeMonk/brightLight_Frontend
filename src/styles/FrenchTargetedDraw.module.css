@@ -149,6 +149,10 @@
   margin-bottom: 20px;
 }
 
+.benefits p, .frenchLanguageEligibility p{
+  margin-bottom: 20px;
+}
+
 .expressEntryEligibility p, .support p{
   margin-bottom: 20px;
 }

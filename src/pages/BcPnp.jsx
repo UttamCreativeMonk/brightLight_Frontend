@@ -23,21 +23,20 @@ const BcPnp = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
-  useEffect(()=>{
+  useEffect(() => {
     fetch("https://brightlight-node.onrender.com/bp-meta")
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => {
-      if (data) {
-        setMetaData(data[0]);
-      }
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-  },[])
-
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   const sectionsRef = useRef([]);
 
@@ -63,7 +62,7 @@ const BcPnp = () => {
 
   return (
     <>
-<Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle
@@ -121,13 +120,25 @@ const BcPnp = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program </p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program{" "}
+              </p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
-              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>
+                Refusal Reasons
+              </p>
+              <p onClick={() => scrollToSection("book-appointment")}>
+                Book Appointment
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -136,16 +147,28 @@ const BcPnp = () => {
       </div>
 
       <div className={styles.container}>
-        <h1  className={`${styles.title} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
+        <h1
+          className={`${styles.title} ${styles.section}`}
+          id="about-program"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
           British Columbia Provincial Nominee Program (BC PNP)
         </h1>
-        <p  className={`${styles.description} ${styles.section}`} id="testing1" ref={(el) => sectionsRef.current[1] = el}>
+        <p
+          className={`${styles.description} ${styles.section}`}
+          id="testing1"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
           British Columbia (BC) is a beautiful province in Canada with stunning
           scenery, exciting cities, and lots of job opportunities. If you want
           to move to BC, the BC Provincial Nominee Program (BCPNP) can help you
           make it happen.
         </p>
-        <p className={`${styles.description} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[2] = el}>
+        <p
+          className={`${styles.description} ${styles.section}`}
+          id="testing2"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
           The British Columbia Provincial Nominee Program (BC PNP) is an
           economic immigration program that allows British Columbia to select
           skilled workers, business people, and international graduates who will
@@ -154,10 +177,19 @@ const BcPnp = () => {
           Canada.
         </p>
 
-        <h2 className={`${styles.subtitle} ${styles.section}`} id="testing3" ref={(el) => sectionsRef.current[3] = el}>
-          Streams under British Columbia Provincial Nominee Program (BC PNP)
+        <h2
+          className={`${styles.subtitle} ${styles.section}`}
+          id="testing3"
+          ref={(el) => (sectionsRef.current[3] = el)}
+        >
+          There are five streams under British Columbia Provincial Nominee
+          Program (BC PNP):
         </h2>
-        <div  className={`${styles.streams} ${styles.section}`} id="testing4" ref={(el) => sectionsRef.current[4] = el}>
+        <div
+          className={`${styles.streams} ${styles.section}`}
+          id="testing4"
+          ref={(el) => (sectionsRef.current[4] = el)}
+        >
           <a href="/skilled-worker-stream" className={styles.button}>
             BC Skilled Worker Stream
           </a>
@@ -180,58 +212,78 @@ const BcPnp = () => {
             Priority Occupations
           </a>
         </div>
+        <p>
+          Note: BCPNP issues targeted invitations to apply for select
+          occupations called priority occupations
+        </p>
 
-        <h2 className={`${styles.subtitle} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[5] = el}>
-          Eligibility Criteria
+        <h2
+          className={`${styles.subtitle} ${styles.section}`}
+          id="eligibility"
+          ref={(el) => (sectionsRef.current[5] = el)}
+        >
+          Eligibility criteria for British Columbia Provincial Nominee Program
+          (BC PNP)
         </h2>
-        <h3 className={`${styles.subheading} ${styles.section}`} id="testing5" ref={(el) => sectionsRef.current[6] = el}>Candidate’s Criteria</h3>
-        <p  className={`${styles.description} ${styles.section}`} id="testing6" ref={(el) => sectionsRef.current[7] = el}> 
+        <h3
+          className={`${styles.subheading} ${styles.section}`}
+          id="testing5"
+          ref={(el) => (sectionsRef.current[6] = el)}
+        >
+          Candidate’s Criteria
+        </h3>
+        <p
+          className={`${styles.description} ${styles.section}`}
+          id="testing6"
+          ref={(el) => (sectionsRef.current[7] = el)}
+        >
           Please review the eligibility criteria for each stream, as it varies
           from one stream to another.
         </p>
 
-        <h3 className={`${styles.subheading} ${styles.section}`} id="testing7" ref={(el) => sectionsRef.current[8] = el}>
+        <h3
+          className={`${styles.subheading} ${styles.section}`}
+          id="testing7"
+          ref={(el) => (sectionsRef.current[8] = el)}
+        >
           Eligibility Criteria for Employer Supporting BCPNP Application
         </h3>
-        <ul className={`${styles.list} ${styles.section}`} id="testing8" ref={(el) => sectionsRef.current[9] = el}>
+        <ul
+          className={`${styles.list} ${styles.section}`}
+          id="testing8"
+          ref={(el) => (sectionsRef.current[9] = el)}
+        >
           <li className={styles.listItem}>
-            Employer must be established in BC with a physical presence.
-          </li>
-          <li className={styles.listItem}>
-            <h3>Business structures accepted:</h3>
-            <ul className={styles.nestedList}>
-              <li className={styles.nestedListItem}>
-                Incorporated in B.C. or extra-provincially registered.
+            Employer Eligibility Criteria:
+            <ul>
+              <li>
+                Employer must be established in BC with a physical presence.
               </li>
-              <li className={styles.nestedListItem}>
-                Registered as a general, limited, or limited liability
-                partnership in B.C.
+              <li>
+                Business structures accepted:
+                <ul>
+                  <li>
+                    Incorporated in B.C. or extra-provincially registered.
+                  </li>
+                  <li>
+                    Registered as a general, limited, or limited liability
+                    partnership in B.C.
+                  </li>
+                </ul>
               </li>
-              <li className={styles.nestedListItem}>
+              <li>
                 Accepts applications from public sector or non-profit
                 organizations in B.C., including:
-                <ul className={styles.nestedList}>
-                  <li className={styles.nestedListItem}>
-                    Health authorities and agencies
-                  </li>
-                  <li className={styles.nestedListItem}>
-                    Public post-secondary education institutions
-                  </li>
-                  <li className={styles.nestedListItem}>
-                    Public school districts
-                  </li>
-                  <li className={styles.nestedListItem}>
+                <ul>
+                  <li>Health authorities and agencies</li>
+                  <li>Public post-secondary education institutions</li>
+                  <li>Public school districts</li>
+                  <li>
                     Accredited private non-profit post-secondary institutions
                   </li>
-                  <li className={styles.nestedListItem}>
-                    Research institutions supported by government
-                  </li>
-                  <li className={styles.nestedListItem}>
-                    Government organizations and agencies
-                  </li>
-                  <li className={styles.nestedListItem}>
-                    Registered non-profit groups
-                  </li>
+                  <li>Research institutions supported by government</li>
+                  <li>Government organizations and agencies</li>
+                  <li>Registered non-profit groups</li>
                 </ul>
               </li>
             </ul>
@@ -277,45 +329,57 @@ const BcPnp = () => {
               <li className={styles.nestedListItem}>
                 Genuine recruitment efforts must be demonstrated.
               </li>
-              <li className={styles.nestedListItem}>
-                <h3> Disqualifications:</h3>
-                <ul className={styles.nestedList}>
-                  <li className={styles.nestedListItem}>
-                    Employers involved in certain businesses (e.g., pornographic
-                    products, employment agencies).
-                  </li>
-                  <li className={styles.nestedListItem}>
-                    Businesses bringing BC PNP or BC government into disrepute.
-                  </li>
-                </ul>
-              </li>
-              <li className={styles.nestedListItem}>
-                Company Ownership Restrictions:
-                <ul className={styles.nestedList}>
-                  <li className={styles.nestedListItem}>
-                    Applicant and family members must not have held more than
-                    10% ownership in the BC company in past 5 years.
-                  </li>
-                </ul>
-              </li>
-              <li className={styles.nestedListItem}>
-                Discretionary Consideration:
-                <ul className={styles.nestedList}>
-                  <li className={styles.nestedListItem}>
-                    BC PNP may consider applications not meeting minimum
-                    requirements based on various factors like business
-                    structure, length of operation, and employee count.
-                  </li>
-                </ul>
-              </li>
             </ul>
+            <li className={styles.nestedListItem}>
+              <> Disqualifications:</>
+              <ul className={styles.nestedList}>
+                <li className={styles.nestedListItem}>
+                  Employers involved in certain businesses (e.g., pornographic
+                  products, employment agencies).
+                </li>
+                <li className={styles.nestedListItem}>
+                  Businesses bringing BC PNP or BC government into disrepute.
+                </li>
+              </ul>
+            </li>
+            <li className={styles.nestedListItem}>
+              Company Ownership Restrictions:
+              <ul className={styles.nestedList}>
+                <li className={styles.nestedListItem}>
+                  Applicant and family members must not have held more than 10%
+                  ownership in the BC company in past 5 years.
+                </li>
+                <li>
+                  Family members include spouse, parents, siblings, children,
+                  and others.
+                </li>
+              </ul>
+            </li>
+            <li className={styles.nestedListItem}>
+              Discretionary Consideration:
+              <ul className={styles.nestedList}>
+                <li className={styles.nestedListItem}>
+                  BC PNP may consider applications not meeting minimum
+                  requirements based on various factors like business structure,
+                  length of operation, and employee count.
+                </li>
+              </ul>
+            </li>
           </li>
         </ul>
 
-        <h2 className={`${styles.subtitle} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[10] = el}>
+        <h2
+          className={`${styles.subtitle} ${styles.section}`}
+          id="how-to-apply"
+          ref={(el) => (sectionsRef.current[10] = el)}
+        >
           How to Apply for BCPNP?
         </h2>
-        <ul className={`${styles.list} ${styles.section}`} id="testing10" ref={(el) => sectionsRef.current[11] = el}>
+        <ul
+          className={`${styles.list} ${styles.section}`}
+          id="testing10"
+          ref={(el) => (sectionsRef.current[11] = el)}
+        >
           <li className={styles.listItem}>
             Create an online profile and provide information about your skills,
             experience, education, and work experience. Or, for a stress-free
@@ -339,10 +403,18 @@ const BcPnp = () => {
           </li>
         </ul>
 
-        <h2 className={`${styles.subtitle} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[12] = el}>
+        <h2
+          className={`${styles.subtitle} ${styles.section}`}
+          id="refusal-reasons"
+          ref={(el) => (sectionsRef.current[12] = el)}
+        >
           Common Reasons for Refusals in BCPNP
         </h2>
-        <ul className={`${styles.list} ${styles.section}`} id="testing13" ref={(el) => sectionsRef.current[14] = el}>
+        <ul
+          className={`${styles.list} ${styles.section}`}
+          id="testing13"
+          ref={(el) => (sectionsRef.current[14] = el)}
+        >
           <li className={styles.listItem}>You shared incorrect information.</li>
           <li className={styles.listItem}>
             You couldn’t meet the minimum qualifications for BC PNP including
@@ -356,10 +428,18 @@ const BcPnp = () => {
           </li>
         </ul>
 
-        <h2  className={`${styles.subtitle} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[15] = el}>
+        <h2
+          className={`${styles.subtitle} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[15] = el)}
+        >
           Still Not Sure?
         </h2>
-        <p  className={`${styles.description} ${styles.section}`} id="testing16" ref={(el) => sectionsRef.current[17] = el} >
+        <p
+          className={`${styles.description} ${styles.section}`}
+          id="testing16"
+          ref={(el) => (sectionsRef.current[17] = el)}
+        >
           If you have received a refusal for any of the reasons mentioned above,
           do not worry. With over a decade of experience, we specialize in
           previously refused cases. We have got approvals for clients who had
@@ -370,26 +450,30 @@ const BcPnp = () => {
           precedents in cases we work on. This is why we have a high success
           rate.
         </p>
-        <p  className={`${styles.description} ${styles.section}`} id="testing18" ref={(el) => sectionsRef.current[18] = el} >
+        <p
+          className={`${styles.description} ${styles.section}`}
+          id="testing18"
+          ref={(el) => (sectionsRef.current[18] = el)}
+        >
           At Brightlight Immigration, we have a dedicated team of visa
           application specialists who can assist you from the start of the
           application process all the way to obtaining your visa.{" "}
-
         </p>
-          <button className={styles.button1}
-              onClick={() =>
-                (window.location.href =
-                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-              }
-            >
-              Book Appointment
-            </button>
+        <button
+          className={styles.button1}
+          onClick={() =>
+            (window.location.href =
+              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+          }
+        >
+          Book Appointment
+        </button>
       </div>
 
       <div id="faqs">
         <FAQ />
       </div>
-      
+
       <div id="testimonials">
         <Testimonials />
       </div>
