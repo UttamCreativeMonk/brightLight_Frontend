@@ -119,10 +119,10 @@ const HumanitarianCompassionate = () => {
               exceptional factors.
             </li>
           </ul>
-          <p>
+          <h2>
             Here are a few examples of Humanitarian and Compassionate (H&C)
             cases under family reunification:
-          </p>
+          </h2>
           <ul>
             <li>
               A child who has been separated from their parents due to war or
@@ -148,6 +148,8 @@ const HumanitarianCompassionate = () => {
             Eligibility Criteria for the Humanitarian and Compassionate (H&C)
             Program
           </h2>
+          <h4>To be eligible for H&C sponsorship under the family reunification program, you must meet the following criteria:
+          </h4>
           <ul>
             <li>
               You must be a spouse, common-law partner, or parent of a Canadian

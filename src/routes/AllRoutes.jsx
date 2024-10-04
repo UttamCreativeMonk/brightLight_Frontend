@@ -18,6 +18,7 @@ import TermsAndConditions from "../pages/TermsAndConditions";
 import MoreServices from "../pages/MoreServices";
 import Admin from "../pages/Admin";
 
+import TemporaryResident from "../pages/TemporaryResident";
 import SkilledWorkerStream from "../pages/SkilledWorkerStream";
 import PrioritiesProgram from "../pages/PrioritiesProgram";
 import InternationalPostGraduateProgram from "../pages/InternationalPostGraduateProgram";
@@ -44,6 +45,7 @@ import SuperVisa from "../pages/SuperVisa";
 import Cby from "../pages/Cby";
 import CommonLawPartnerTemporary from "../pages/CommonLawPartnerTemporary";
 import CommonLawPartnerPermanent from "../pages/CommonLawPartnerPermanent";
+import CommonLawPartnerInternational from "../pages/CommonLawPartnerInternational";
 import SpousalOpenWorkPermit from "../pages/SpousalOpenWorkPermit";
 import RestorationStatusDraft from "../pages/RestorationStatusDraft";
 import Flagpoling from "../pages/Flagpoling";
@@ -91,6 +93,8 @@ import Immigration from "../pages/Immigration";
 import HealthcareTargetedDraw from "../pages/HealthcareTargetedDraw";
 import SpouseInland from "../pages/SpouseInland";
 import SpouseOutland from "../pages/SpouseOutland";
+import SpouseCommonLawSpon from "../pages/SpouseCommonLawSpon";
+import SameSex from "../pages/SameSex";
 
 let AllRoutes = () => {
   return (
@@ -181,6 +185,9 @@ let AllRoutes = () => {
       <Route path="/dual-intent-visa" element={<DualIntentVisa />} />
       <Route path="/business-visitor-visa" element={<BusinessVisitorVisa />} />
       <Route path="/visitor-visa" element={<VisitorVisa />} />
+
+      <Route path="temporary-resident" element={<TemporaryResident />} />
+
       <Route
         path="/temporary-resident-permit-draft"
         element={<TemporaryResidentPermitDraft />}
@@ -194,6 +201,14 @@ let AllRoutes = () => {
       <Route
         path="/common-law-partner-permanent"
         element={<CommonLawPartnerPermanent />}
+      />
+     <Route
+        path="/common-law-partner-international"
+        element={<CommonLawPartnerInternational />}
+      />
+           <Route
+        path="/spouse-common-law-sponsership"
+        element={<SpouseCommonLawSpon />}
       />
       <Route
         path="/restoration-status-draft"
@@ -274,6 +289,8 @@ let AllRoutes = () => {
       <Route path="/spouse-inland" element={<SpouseInland />} />
 
       <Route path="/spouse-outland" element={<SpouseOutland />} />
+
+      <Route path="/same-sex" element={<SameSex />} />
 
       <Route path="/immigration-tools" element={<Immigration />} />
 

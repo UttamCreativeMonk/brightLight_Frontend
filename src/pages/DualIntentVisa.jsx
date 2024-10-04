@@ -20,7 +20,6 @@ const DualIntentVisa = () => {
     }
   };
 
-
   const sectionsRef = useRef([]);
 
   const handleScroll = () => {
@@ -61,15 +60,22 @@ const DualIntentVisa = () => {
             </div>
             <div className={styles.bannerHeadingRotatePara}>
               <p onClick={() => scrollToSection("about-program")}>
- 
                 About the Program
               </p>
               <p onClick={() => scrollToSection("key-points")}>Key Points</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
-              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>
+                Refusal Reasons
+              </p>
+              <p onClick={() => scrollToSection("book-appointment")}>
+                Book Appointment
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -77,34 +83,48 @@ const DualIntentVisa = () => {
         </div>
       </div>
       <div className={styles.container}>
-        <h1  className={`${styles.heading} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
+        <h1
+          className={`${styles.heading} ${styles.section}`}
+          id="about-program"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
           Dual Intent Visa
         </h1>
 
-        <section  className={`${styles.introduction} ${styles.section}`} id="testing" ref={(el) => sectionsRef.current[1] = el}>
+        <section
+          className={`${styles.introduction} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
           <p>
             A Dual Intent Visa allows you to have two different reasons for
-            visiting Canada: you can come to Canada temporarily while also
-            considering permanent residence in the future, or vice versa. This
-            flexibility makes the Dual Intent Visa unique. Typically, applicants
-            have a temporary resident visa and are either applying or planning
-            to apply for permanent resident status.
+            visiting Canada. This means you can come to Canada temporarily with
+            the option of considering permanent residence in the future or vice
+            versa. Typically, these applications are made by individuals who
+            already have a temporary resident visa and have either applied or
+            are planning to apply for permanent resident status in Canada. This
+            flexibility is what makes this visa type unique and called "Dual
+            Intent."
           </p>
           <p>
-            At Brightlight Immigration, we understand that demonstrating Dual
-            Intent can be complex. With over 12 years of experience, we aim to
-            simplify this process for you.
+            At <strong>Brightlight Immigration</strong>, we understand that
+            demonstrating Dual Intent can be complex. With over 12 years of
+            experience, we aim to simplify this process for you.
           </p>
         </section>
 
-        <section className={`${styles.scenarios} ${styles.section}`} id="scenarios" ref={(el) => sectionsRef.current[2] = el}>
+        <section
+          className={`${styles.scenarios} ${styles.section}`}
+          id="scenarios"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
           <h2 className={styles.subheading}>Common Scenarios</h2>
           <ul>
             <li>
               If you've applied for permanent residence through spousal
               sponsorship and wish to reunite with your spouse in Canada while
               waiting for your PR application, you can apply for a Dual Intent
-              Visa to temporarily visit and live with your spouse.
+              Visa to temporarily visit and live with your spouse in Canada.
             </li>
             <li>
               If you’ve submitted an Express Entry profile and are in the
@@ -117,112 +137,181 @@ const DualIntentVisa = () => {
           </ul>
         </section>
 
-        <section className={`${styles.keyConsiderations} ${styles.section}`} id="key-points" ref={(el) => sectionsRef.current[3] = el}>
+        <section
+          className={`${styles.keyConsiderations} ${styles.section}`}
+          id="key-points"
+          ref={(el) => (sectionsRef.current[3] = el)}
+        >
           <h2 className={styles.subheading}>Key Considerations</h2>
           <p>
-            Dual Intent Visas are often used by outland spouses awaiting spousal
-            sponsorship approval. These visas typically have a high approval
-            rate, often within 30 days. Here’s what you should know:
+            Dual Intent Visa for Outland Spouse: Navigating the waiting period
+            during spousal sponsorship application processing can be challenging
+            for newly married couples. These applications often take a
+            considerable amount of time to process. However, there is an
+            alternative: the Dual Intent Visitor Visa. In most cases, this visa
+            is approved within 30 days and boasts a remarkable success rate of
+            over 90%.
           </p>
-          <ul>
-            <li>
-              For a Dual Intent Visa, you must convincingly demonstrate your
-              intention to leave Canada at the end of your authorized stay, even
-              if your PR application is rejected.
-            </li>
-            <li>
-              Ensure your documentation is genuine and supports your temporary
-              visit to Canada while applying for permanent residency.
-            </li>
-            <li>
-              Recent changes in family reunification policies may also affect
-              how your application is assessed.
-            </li>
-          </ul>
+
+          <p>
+            If a spouse or partner can convincingly demonstrate that they will
+            leave Canada at the end of their authorized stay, even if their
+            permanent residence application is rejected, officers may issue a
+            temporary resident visa (TRV).
+          </p>
         </section>
 
         <section className={styles.eligibility} id="eligibility">
           <h2 className={styles.subheading}>Eligibility Criteria</h2>
           <p>
-            To be eligible for a Dual Intent Visa, you must meet the following
-            criteria:
+            Immigration officers carefully review your application for temporary
+            residence to ensure you're eligible to stay in Canada and that you
+            have genuine intentions. They consider various factors that affect
+            your ability to support yourself and your plans for the future. Here
+            are some key considerations for dual intent applications:
           </p>
           <ul>
             <li>
-              Provide a specific timeframe for your intended stay in Canada.
+              How long do you intend to stay in Canada? Provide a specific
+              timeframe.
             </li>
             <li>
-              Show how you will support yourself financially during your stay.
+              How will you support yourself financially during your stay in
+              Canada? Share your sources of income, etc.
             </li>
             <li>
-              Demonstrate strong ties to your home country to ensure your return
-              after your visit.
+              What connections do you have that will ensure your return to your
+              home country after you visit Canada? Share concrete examples.
             </li>
             <li>
-              Clearly explain the reason for your visit and provide accurate and
-              genuine documentation.
+              Clearly express the reason for your visit to Canada. Elaborate on
+              the specific circumstances surrounding your trip.
             </li>
             <li>
-              Show evidence of past compliance with Canadian immigration
-              regulations and provide a clear contingency plan if your visa
-              application is refused.
+              Ensure the documents you submit with your visa application are
+              genuine and accurate.
+            </li>
+            <li>
+              Provide evidence of your past compliance with Canadian immigration
+              regulations and the information provided in your biographic and
+              biometric records.
+            </li>
+            <li>
+              If your visa application is refused, what are your plans for
+              returning to your home country? Outline a clear contingency plan.
             </li>
           </ul>
           <p>
-            For spousal and partner cases, immigration officers will consider
-            the approval status of your sponsorship application and your ties to
-            your home country.
+            Under the recent changes to family reunification policies,
+            immigration officers will now consider additional factors when
+            assessing applications.
           </p>
-          <p>
-            For parents and grandparents, officers will assess whether your
-            primary intention is to visit temporarily and not seek permanent
-            residency.
-          </p>
+          <h3>In cases of Spousal and Partners:</h3>
+          <ul>
+            <li>
+              Immigration officers will evaluate whether your sponsorship
+              application has been approved.
+            </li>
+            <li>
+              Immigration officers will assess the progress of your permanent
+              residence application, including whether stage one has been
+              approved.
+            </li>
+            <li>The office will check if you have received your AOR or not.</li>
+            <li>
+              Immigration officers will also assess the ties to your home
+              country.
+            </li>
+            <li>
+              What will your plans be for returning home in case your permanent
+              residence application is denied?
+            </li>
+          </ul>
+          <h3>In the cases of Parents and Grandparents:</h3>
+          <ul>
+            <li>
+              Immigration officers will consider whether your permanent
+              residence applications are in progress.
+            </li>
+            <li>
+              They will assess whether your primary intention is to visit Canada
+              temporarily and not seek permanent residency.
+            </li>
+          </ul>
         </section>
 
-        <section className={`${styles.refusals} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[5] = el}>
+        <section
+          className={`${styles.refusals} ${styles.section}`}
+          id="refusal-reasons"
+          ref={(el) => (sectionsRef.current[5] = el)}
+        >
           <h2 className={styles.subheading}>Common Refusal Reasons</h2>
           <ul>
-            <li>Failure to demonstrate genuine dual intent.</li>
             <li>
-              Insufficient evidence that you will leave Canada at the end of
-              your stay.
+              Failure to demonstrate genuine dual intent is a common reason for
+              your dual intent visa application to be refused.
             </li>
-            <li>Lack of strong ties to your home country.</li>
-            <li>Unconvincing purpose for traveling temporarily to Canada.</li>
             <li>
-              Previous visa refusals that were not adequately justified in your
-              current application.
+              The visa officer is not satisfied that you will leave Canada at
+              the end of your stay.
+            </li>
+            <li>
+              The visa officer is not satisfied that you have strong ties to
+              your home country.
+            </li>
+            <li>
+              The visa officer is not satisfied with your purpose for traveling
+              to Canada temporarily.
+            </li>
+            <li>
+              You have previous visa refusals on record that were not justified
+              in your current application.
             </li>
           </ul>
         </section>
 
-        <section className={`${styles.support} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[6] = el}>
+        <section
+          className={`${styles.support} ${styles.section}`}
+          id="testing2"
+          ref={(el) => (sectionsRef.current[6] = el)}
+        >
           <h2 className={styles.subheading}>Still Not Sure?</h2>
           <p>
-            If you have received a refusal or have doubts about your
-            application, don't worry. With over a decade of experience, we
-            specialize in handling previously refused cases. Our tailored
-            approach and high success rate are achieved by addressing each
-            concern listed in previous refusals and using similar successful
-            cases as precedents.
+            If you have received a refusal for any of the reasons mentioned
+            above, do not worry. With over a decade of experience, we specialize
+            in previously refused cases. We have got approvals for clients who
+            had multiple previous refusals.
           </p>
           <p>
-            At Brightlight Immigration, our dedicated team of visa application
-            specialists will assist you throughout the application process to
-            help you obtain your visa. Start your process now.
+            We achieve this with a tailored approach to your specific case,
+            addressing each concern that the officer has listed in previous
+            refusals. We use case law and find similar cases to your
+            circumstances that had positive results, and we use them as
+            precedents in cases we work on. This is why we have a high success
+            rate.
           </p>
-          <button className={styles.button}
-              onClick={() =>
-                (window.location.href =
-                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-              }
-            >
-              Book Appointment
-            </button>
+          <p>
+            At Brightlight Immigration, we have a dedicated team of visa
+            application specialists who can assist you from the start of the
+            application process all the way to obtaining your visa. Start your
+            process now.
+          </p>
+          <button
+            className={styles.button}
+            onClick={() =>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
+          >
+            Book Appointment
+          </button>
         </section>
 
-        <section className={`${styles.whyChooseUs} ${styles.section}`} id="whyChooseUs" ref={(el) => sectionsRef.current[4] = el}>
+        <section
+          className={`${styles.whyChooseUs} ${styles.section}`}
+          id="whyChooseUs"
+          ref={(el) => (sectionsRef.current[4] = el)}
+        >
           <h2 className={styles.subheading} id="why-choose-us">
             Why Choose Us?
           </h2>

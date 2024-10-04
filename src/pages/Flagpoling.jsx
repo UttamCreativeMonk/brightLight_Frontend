@@ -126,6 +126,7 @@ const Flagpoling = () => {
           <h2 className={styles.subheading}>
             Eligibility Criteria for Flagpoling
           </h2>
+          <h4>The eligibility criteria for flagpoling are as follows:</h4>
           <ul>
             <li>
               You must be currently holding a valid visitor, study, or work
@@ -202,14 +203,7 @@ const Flagpoling = () => {
             are well-prepared for every step, from gathering documentation to
             handling interviews.
           </p>
-          <button
-          onClick={() =>
-            (window.location.href =
-              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-          }
-        >
-          Book Appointment
-        </button>
+
         </section>
       </div>
 

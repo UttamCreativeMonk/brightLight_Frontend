@@ -38,7 +38,6 @@ const FamilyReunificationSponsorship = () => {
       });
   }, []);
 
-
   const sectionsRef = useRef([]);
 
   const handleScroll = () => {
@@ -120,14 +119,26 @@ const FamilyReunificationSponsorship = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
               <p onClick={() => scrollToSection("categories")}>Categories</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("application-process")}>Application Process</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("application-process")}>
+                Application Process
+              </p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>
+                Refusal Reasons
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -136,7 +147,11 @@ const FamilyReunificationSponsorship = () => {
       </div>
 
       <div className={styles.container}>
-        <header className={`${styles.header} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}  >
+        <header
+          className={`${styles.header} ${styles.section}`}
+          id="about-program"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
           <h1>Family Reunification and Sponsorship</h1>
           <p>
             Canada is renowned for its welcoming spirit and commitment to
@@ -154,7 +169,11 @@ const FamilyReunificationSponsorship = () => {
           </p>
         </header>
 
-        <section className={`${styles.categories} ${styles.section}`} id="categories" ref={(el) => sectionsRef.current[1] = el}  >
+        <section
+          className={`${styles.categories} ${styles.section}`}
+          id="categories"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
           <h2>Categories Who Can Be Sponsored</h2>
           <ul>
             <li>
@@ -176,7 +195,9 @@ const FamilyReunificationSponsorship = () => {
             <li>
               <button
                 onClick={() =>
-                  (window.location.href = "/humanitarian-compassionate")}>
+                  (window.location.href = "/humanitarian-compassionate")
+                }
+              >
                 Humanitarian and Compassionate
               </button>
             </li>
@@ -200,11 +221,21 @@ const FamilyReunificationSponsorship = () => {
           </ul>
         </section>
 
-        <section className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[2] = el} >
+        <section
+          className={`${styles.eligibility} ${styles.section}`}
+          id="eligibility"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
           <h2>
             Eligibility Criteria for Family Reunification and Sponsorship
             Program
           </h2>
+          <p>
+            The requirements for this program can vary depending on the
+            relationship between the sponsor and the person being sponsored.
+            However, if you’re the sponsor, you must meet the following general
+            requirements:
+          </p>
           <ul>
             <li>
               <strong>Age:</strong> Should be at least 18 years old.
@@ -227,7 +258,11 @@ const FamilyReunificationSponsorship = () => {
           </ul>
         </section>
 
-        <section className={`${styles.applicationProcess} ${styles.section}`} id="application-process" ref={(el) => sectionsRef.current[3] = el}>
+        <section
+          className={`${styles.applicationProcess} ${styles.section}`}
+          id="application-process"
+          ref={(el) => (sectionsRef.current[3] = el)}
+        >
           <h2>
             How to Apply for the Family Reunification and Sponsorship Program
           </h2>
@@ -255,45 +290,64 @@ const FamilyReunificationSponsorship = () => {
           </ol>
         </section>
 
-        <section className={`${styles.refusalReasons} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[4] = el}>
+        <section
+          className={`${styles.refusalReasons} ${styles.section}`}
+          id="refusal-reasons"
+          ref={(el) => (sectionsRef.current[4] = el)}
+        >
           <h2>Reasons for Refusals of Family Reunification and Sponsorship</h2>
           <ul>
-            <li>Incomplete or inaccurate information in the application.</li>
             <li>
-              Failure to demonstrate the financial capability to support the
-              family members.
+              It is crucial to provide complete and accurate information in your
+              application. Missing or incorrect details can raise red flags and
+              lead to a refusal.
             </li>
             <li>
-              Inadequate proof of the genuineness of the relationship between
-              the sponsor and the person being sponsored.
+              Sponsors must demonstrate their ability to financially support the
+              family members they are sponsoring. This means having sufficient
+              income and assets to meet their basic needs.
+            </li>
+            <li>
+              The immigration authorities may need to verify the genuineness of
+              the relationship between the sponsor and the person being
+              sponsored. This may involve providing documentation such as
+              marriage certificates, birth certificates, or joint financial
+              records. Failure to do so will lead to refusal.
             </li>
           </ul>
 
           <button
-          onClick={() =>
-            (window.location.href =
-              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-          }
-        >
-          Book Appointment
-        </button>
+            onClick={() =>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
+          >
+            Book Appointment
+          </button>
         </section>
 
-        <section  className={`${styles.consultation} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[5] = el} >
+        <section
+          className={`${styles.consultation} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[5] = el)}
+        >
           <h2>Still Not Sure?</h2>
           <p>
             If you have received a refusal for any of the reasons mentioned
             above, do not worry. With over a decade of experience, we specialize
-            in previously refused cases. We have successfully obtained approvals
-            for clients with multiple previous refusals by using a tailored
-            approach, addressing each concern listed in previous refusals, and
-            applying case law precedents. Our high success rate is a testament
-            to our expertise.
+            in previously refused cases. We have got approvals for clients who
+            had multiple previous refusals. We achieve this with a tailored
+            approach to your specific case, addressing each concern that the
+            officer has listed in previous refusals. We use case law and find
+            similar cases to your circumstances that had positive results, and
+            we use them as precedents in cases we work on. This is why we have a
+            high success rate.
           </p>
           <p>
             At Brightlight Immigration, we have a dedicated team of visa
             application specialists who can assist you from the start of the
-            application process all the way to obtaining your visa.{" "}
+            application process all the way to obtaining your visa. Start your
+            process now.
             <button
               className={styles.button}
               onClick={() =>

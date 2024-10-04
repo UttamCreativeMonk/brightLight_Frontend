@@ -20,8 +20,6 @@ const DependentChildren = () => {
     }
   };
 
-  
-
   const sectionsRef = useRef([]);
 
   const handleScroll = () => {
@@ -61,11 +59,21 @@ const DependentChildren = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
-              <p onClick={() => scrollToSection("application-process")}>Application Process</p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
+              <p onClick={() => scrollToSection("application-process")}>
+                Application Process
+              </p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>
+                Refusal Reasons
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -74,7 +82,11 @@ const DependentChildren = () => {
       </div>
 
       <div className={styles.container}>
-        <header className={`${styles.header} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}   >
+        <header
+          className={`${styles.header} ${styles.section}`}
+          id="about-program"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
           <h1>Canada’s Dependent Children Sponsorship Program</h1>
           <p>
             The Dependent Child Program helps families stay together and gives
@@ -88,16 +100,20 @@ const DependentChildren = () => {
           </p>
         </header>
 
-        <section className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[1] = el} >
-          <h2>Eligibility Requirements</h2>
-          <h3 className={styles.marginTop}>For the Dependent Child:</h3>
+        <section
+          className={`${styles.eligibility} ${styles.section}`}
+          id="eligibility"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
+          <h2>Eligibility requirements for the dependent child:</h2>
+          <h4>
+            The child must be under the age of 22 on the date the sponsorship
+            application is submitted.
+          </h4>
+          {/* <h3 className={styles.marginTop}>For the Dependent Child:</h3> */}
           <ul>
             <li>
-              The child must be under the age of 22 on the date the sponsorship
-              application is submitted.
-            </li>
-            <li>
-              The child must be a biological or adopted child of the Canadian
+              The child must be a biological or adopted child of a Canadian
               citizen or permanent resident sponsoring them.
             </li>
             <li>
@@ -106,7 +122,9 @@ const DependentChildren = () => {
               throughout the sponsorship process.
             </li>
           </ul>
-          <h3 className={styles.marginTop}>For the Sponsor:</h3>
+          <h2 className={styles.marginTop}>
+            Eligibility requirements for the sponsor:
+          </h2>
           <ul>
             <li>
               You must have an annual income that meets the Canadian income
@@ -121,8 +139,12 @@ const DependentChildren = () => {
           </ul>
         </section>
 
-        <section className={`${styles.applicationProcess} ${styles.section}`} id="application-process" ref={(el) => sectionsRef.current[2] = el} >
-          <h2>How to Apply for the Dependent Children Sponsorship Program</h2>
+        <section
+          className={`${styles.applicationProcess} ${styles.section}`}
+          id="application-process"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
+          <h2>How to apply for the Dependent Children Sponsorship Program?</h2>
           <ol>
             <li>
               Collect and submit a variety of documents to support your
@@ -141,8 +163,15 @@ const DependentChildren = () => {
           </ol>
         </section>
 
-        <section className={`${styles.refusalReasons} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[3] = el}>
-          <h2>Common Reasons for Refusals</h2>
+        <section
+          className={`${styles.refusalReasons} ${styles.section}`}
+          id="refusal-reasons"
+          ref={(el) => (sectionsRef.current[3] = el)}
+        >
+          <h2>
+            Common reasons for refusals of Canada’s Dependent Children
+            Sponsorship Program:
+          </h2>
           <ul>
             <li>
               Fails to meet the eligibility criteria for the DC Program, such as
@@ -160,40 +189,45 @@ const DependentChildren = () => {
             </li>
           </ul>
           <button
-          onClick={() =>
-            (window.location.href =
-              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-          }
-        >
-          Book Appointment
-        </button>
+            onClick={() =>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
+          >
+            Book Appointment
+          </button>
         </section>
 
-        <section  className={`${styles.consultation} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[4] = el}>
+        <section
+          className={`${styles.consultation} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[4] = el)}
+        >
           <h2>Still Not Sure?</h2>
           <p>
             If you have received a refusal for any of the reasons mentioned
             above, do not worry. With over a decade of experience, we specialize
-            in previously refused cases. We have successfully obtained approvals
-            for clients with multiple previous refusals by using a tailored
-            approach, addressing each concern listed in previous refusals, and
-            applying case law precedents. Our high success rate is a testament
-            to our expertise.
+            in previously refused cases. We have got approvals for clients who
+            had multiple previous refusals. We achieve this with a tailored
+            approach to your specific case, addressing each concern that the
+            officer has listed in previous refusals. We use case law and find
+            similar cases to your circumstances that had positive results, and
+            we use them as precedents in cases we work on. This is why we have a
+            high success rate.
           </p>
           <p>
             At Brightlight Immigration, we have a dedicated team of visa
             application specialists who can assist you from the start of the
             application process to obtaining your visa.
-
           </p>
           <button
-              onClick={() =>
-                (window.location.href =
-                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-              }
-            >
-              Start your process now
-            </button>
+            onClick={() =>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
+          >
+            Start your process now
+          </button>
         </section>
       </div>
       <div id="faqs">

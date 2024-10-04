@@ -264,6 +264,22 @@ text-decoration: none;
     opacity: 0.9;
     text-decoration: none;
   }
+  .requirementsList {
+    list-style-type: none;
+    padding: 0;
+}
+
+.requirementsList li {
+    margin-bottom: 5px;
+}
+
+.subList {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+.applicationProcess li{
+  margin-top: 8px;
+}
 
   @media (max-width: 400px) {
     .container h2 {

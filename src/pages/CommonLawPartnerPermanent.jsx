@@ -93,11 +93,12 @@ const CommonLawPartnerPermanent = () => {
             work while waiting for your permanent residency application to be
             processed.
           </p>
-          <p>
+          <p >
             You can apply for this type of open work permit if you’ve applied
             for permanent residence under one of the following classes:
           </p>
-          <ul>
+          <ul className={styles.introductionUl}>
+
             <li>
               The spouse or common-law partner in Canada class (SCLPC) as a
               spouse or common-law partner.
@@ -137,7 +138,8 @@ const CommonLawPartnerPermanent = () => {
         </section>
 
         <section className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[2] = el}>
-          <h2 className={styles.subheading}>Eligibility Criteria</h2>
+          <h2 className={styles.subheading}>Eligibility criteria of Open Work Permit for Spouse or Common-law Partner of a Permanent Resident/Canadiancitizen:
+          </h2>
           <ol>
             <li>
               Both the sponsor and principal applicant must be in a genuine
@@ -158,7 +160,8 @@ const CommonLawPartnerPermanent = () => {
         </section>
 
         <section className={`${styles.applicationProcess} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[3] = el}>
-          <h2 className={styles.subheading}>How to Apply</h2>
+          <h2 className={styles.subheading}>How to apply for Open Work Permit for Spouse or Common-law Partner of a Permanent Resident/Canadiancitizen?
+          </h2>
           <ol>
             <li>
               Identify the principal applicant’s occupation in TEER category 0,
@@ -186,7 +189,7 @@ const CommonLawPartnerPermanent = () => {
         </section>
 
         <section className={`${styles.refusalReasons} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[4] = el}>
-          <h2 className={styles.subheading}>Common Reasons for Refusal</h2>
+          <h2 className={styles.subheading}>Common reasons for refusals of Open Work Permit for Spouse or Common-law Partner of a Permanent Resident/Canadiancitizen:</h2>
           <ul>
             <li>
               Lack of documentation verifying the National Occupational

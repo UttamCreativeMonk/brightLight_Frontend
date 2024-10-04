@@ -59,13 +59,25 @@ const TemporaryResidentPermitDraft = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
-              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>
+                Refusal Reasons
+              </p>
+              <p onClick={() => scrollToSection("book-appointment")}>
+                Book Appointment
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -73,20 +85,32 @@ const TemporaryResidentPermitDraft = () => {
         </div>
       </div>
       <div className={styles.container}>
-        <h1  className={`${styles.heading} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
+        <h1
+          className={`${styles.heading} ${styles.section}`}
+          id="about-program"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
           Temporary Resident Permit (TRP)
         </h1>
 
-        <section  className={`${styles.introduction} ${styles.section}`} id="testing" ref={(el) => sectionsRef.current[1] = el} >
+        <section
+          className={`${styles.introduction} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
           <p>
-            The Temporary Resident Permit (TRP) is a legal document issued by
-            Citizenship and Immigration Canada (CIC) that allows individuals who
-            are inadmissible to Canada to temporarily visit and stay in the
-            country under very specific circumstances.
+            It is a legal document issued by Citizenship and Immigration Canada
+            (CIC) that allows individuals who are inadmissible to Canada to
+            temporarily visit and stay in the country under very specific
+            circumstances.
           </p>
         </section>
 
-        <section className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[2] = el}>
+        <section
+          className={`${styles.eligibility} ${styles.section}`}
+          id="eligibility"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
           <h2 className={styles.subheading}>
             Eligibility Criteria for Temporary Resident Permit
           </h2>
@@ -100,7 +124,11 @@ const TemporaryResidentPermitDraft = () => {
           </p>
         </section>
 
-        <section className={`${styles.applicationProcess} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[3] = el}>
+        <section
+          className={`${styles.applicationProcess} ${styles.section}`}
+          id="how-to-apply"
+          ref={(el) => (sectionsRef.current[3] = el)}
+        >
           <h2 className={styles.subheading}>
             How to Apply for a Temporary Resident Permit
           </h2>
@@ -113,10 +141,20 @@ const TemporaryResidentPermitDraft = () => {
           </p>
         </section>
 
-        <section className={`${styles.refusalReasons} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[4] = el}>
+        <section
+          className={`${styles.refusalReasons} ${styles.section}`}
+          id="refusal-reasons"
+          ref={(el) => (sectionsRef.current[4] = el)}
+        >
           <h2 className={styles.subheading}>
             Common Reasons for Refusals of Temporary Resident Permit (TRP)
           </h2>
+          <h4>
+            To increase your chances of securing a Temporary Resident Permit
+            (TRP), it's crucial to be mindful of common reasons for rejection.
+            By understanding these, you can make your application to address any
+            potential concerns and boost your chances of approval.
+          </h4>
           <ul>
             <li>
               When an individual is deemed inadmissible to Canada, it means they
@@ -148,7 +186,11 @@ const TemporaryResidentPermitDraft = () => {
           </ul>
         </section>
 
-        <section className={`${styles.support} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[5] = el}>
+        <section
+          className={`${styles.support} ${styles.section}`}
+          id="testing2"
+          ref={(el) => (sectionsRef.current[5] = el)}
+        >
           <h2 className={styles.subheading}>Still Not Sure?</h2>
           <p>
             If you have received a refusal or are inadmissible for any of the
@@ -168,17 +210,22 @@ const TemporaryResidentPermitDraft = () => {
             application process all the way to obtaining your visa. Start your
             process now.
           </p>
-          <button className={styles.button}
-              onClick={() =>
-                (window.location.href =
-                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-              }
-            >
-              Book Appointment
-            </button>
+          <button
+            className={styles.button}
+            onClick={() =>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
+          >
+            Book Appointment
+          </button>
         </section>
 
-        <section className={`${styles.whyChooseUs} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[6] = el}>
+        <section
+          className={`${styles.whyChooseUs} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[6] = el)}
+        >
           <h2 className={styles.subheading} id="why-choose-us">
             Why Choose Us?
           </h2>

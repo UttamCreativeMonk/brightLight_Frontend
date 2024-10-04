@@ -135,35 +135,43 @@ const SpousalOpenWorkPermit = () => {
             Pathways under Spousal Open Work Permit (SOWP)
           </h2>
           <ul >
-            <li>
+            
             <button className={styles.button1}
               onClick={() =>
                 (window.location.href =
                   "/common-law-partner-temporary")
               }
             >
-           Spouse or Common-law Partner of a Temporary Foreign Worker 
+           For the Spouse of the worker 
             </button>
-            </li>
-            <li>
+            <li> <strong>Spouse or Common-law Partner of a Temporary Foreign Worker [C41, C46, C47, C48]</strong>
+If you are the spouse or common-law partner of a temporary foreign worker who is authorized to work in Canada, you may be eligible for an open work permit. The duration depends on the validity of the work permit of the spouse.  
+</li>
+            
+           
             <button className={styles.button1}
               onClick={() =>
                 (window.location.href =
                   "/international-graduate-program")
               }
             >
-          Spouse or Common-law Partner of an International Student
+         For Spouse of an International Student 
             </button>
-            </li>
-            <li>
+         
+         <li>   <strong>Spouse or Common-law Partner of an International Student[C42] </strong>
+If you are the spouse or common-law partner of an international student who is attending a qualifying DLI and studying in a qualifying program  in Canada, you may be eligible for an open work permit. 
+</li>
+            
             <button className={styles.button1}
               onClick={() =>
                 (window.location.href =
-                  "/spousal-open-work-permit")
+                  "/spouse-inland")
               }
             >
-             Open Work Permit for Spouses of Canadian/PR
+           PR OWP, Inland
             </button>
+            <li><strong>Open work permit for spouses of Canadian/PR, who are in Canada and have applied for PR.</strong>
+        This type of open work permit is available if you are in Canada and have submitted a spousal sponsorship application for PR.
             </li>
           </ul>
         </section>
@@ -367,14 +375,6 @@ const SpousalOpenWorkPermit = () => {
             experienced team is dedicated to achieving the best possible
             outcomes for our clients.
           </p>
-          <button
-          onClick={() =>
-            (window.location.href =
-              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-          }
-        >
-          Book Appointment
-        </button>
         </section>
       </div>
 

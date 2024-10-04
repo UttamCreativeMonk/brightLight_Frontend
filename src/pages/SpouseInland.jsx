@@ -1,5 +1,3 @@
-// SpouseInland.js
-
 import React, { useState } from "react";
 import styles from "../styles/SpouseInland.module.css";
 import Navbar1 from "../components/Navbar1";
@@ -78,21 +76,21 @@ const SpouseInland = () => {
         <h2 id="Key Points">Key Points about Inland Sponsorship:</h2>
         <ul>
           <li>
-            Eligibility: Canadians and permanent residents can sponsor their
+            <strong> Eligibility: </strong>Canadians and permanent residents can sponsor their
             loved ones, provided they legally cohabit in Canada.
           </li>
           <li>
-            Temporary Status Requirement: The foreign spouse or common-law
+          <strong> Temporary Status Requirement:</strong> The foreign spouse or common-law
             partner does not need to hold valid temporary status in Canada
             (e.g., as a worker, student, or visitor).
           </li>
           <li>
-            Continued Living and Working: During the Inland sponsorship
+          <strong>  Continued Living and Working:</strong> During the Inland sponsorship
             application process, the sponsored person can continue living,
             working, or studying in Canada.
           </li>
           <li>
-            PR Visa Approval: Both the Canadian citizen or permanent resident
+          <strong> PR Visa Approval:</strong> Both the Canadian citizen or permanent resident
             and the foreign national must be approved by Immigration, Refugees
             and Citizenship Canada (IRCC) for the sponsored person to receive a
             Canadian PR visa through Inland sponsorship.
@@ -102,16 +100,16 @@ const SpouseInland = () => {
         <h2 id="Benifits">Benefits of Inland Spousal Sponsorship</h2>
         <ul>
           <li>
-            Open Work Permit (OWP): Applicants may qualify for an open work
+          <strong>Open Work Permit (OWP):</strong> Applicants may qualify for an open work
             permit, allowing full-time employment while their permanent
             residence application is processed.
           </li>
           <li>
-            Economic and Emotional Relief: An OWP eases financial and emotional
+          <strong>  Economic and Emotional Relief:</strong> An OWP eases financial and emotional
             burdens during the potentially lengthy application process.
           </li>
           <li>
-            Staying in Canada: Inland sponsorship applicants are generally
+          <strong> Staying in Canada:</strong> Inland sponsorship applicants are generally
             expected to remain in Canada throughout processing.
           </li>
         </ul>
@@ -218,17 +216,17 @@ const SpouseInland = () => {
 
         <h3>Eligibility for Open Work Permit under the Pilot Program</h3>
         <ul>
-          <li>Residency in Canada: You must currently reside in Canada.</li>
+          <li> <strong>Residency in Canada:</strong> You must currently reside in Canada.</li>
           <li>
-            Sponsorship Category: You need to be sponsored under the Spouse or
+          <strong>  Sponsorship Category:</strong> You need to be sponsored under the Spouse or
             Common-Law Partner in Canada (SCLPC) Class.
           </li>
           <li>
-            Valid Temporary Resident Status: Hold a valid temporary resident
+          <strong>   Valid Temporary Resident Status:</strong> Hold a valid temporary resident
             status, such as a visitor, student, or worker.
           </li>
           <li>
-            Same Address as Sponsor: You must live at the same address as your
+          <strong>  Same Address as Sponsor:</strong> You must live at the same address as your
             sponsor.
           </li>
         </ul>

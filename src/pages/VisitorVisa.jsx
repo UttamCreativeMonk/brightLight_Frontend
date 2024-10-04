@@ -39,7 +39,6 @@ const VisitorVisa = () => {
       });
   }, []);
 
-
   const sectionsRef = useRef([]);
 
   const handleScroll = () => {
@@ -122,14 +121,28 @@ const VisitorVisa = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
-              <p onClick={() => scrollToSection("choose-your-application")}>Choose Your Application</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
+              {/* <p onClick={() => scrollToSection("choose-your-application")}>
+                Choose Your Application
+              </p> */}
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
-              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>
+                Refusal Reasons
+              </p>
+              <p onClick={() => scrollToSection("book-appointment")}>
+                Book Appointment
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -137,10 +150,20 @@ const VisitorVisa = () => {
         </div>
       </div>
 
-      <div className={styles.container} >
-        <h1  className={`${styles.heading} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>Visitor Visa</h1>
+      <div className={styles.container}>
+        <h1
+          className={`${styles.heading} ${styles.section}`}
+          id="about-program"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
+          Visitor Visa
+        </h1>
 
-        <section className={`${styles.introduction} ${styles.section}`} id="testing" ref={(el) => sectionsRef.current[1] = el}>
+        <section
+          className={`${styles.introduction} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
           <p>
             A Visitor Visa, also known as a Temporary Resident Visa (TRV),
             allows people from other countries to visit Canada for a short
@@ -157,7 +180,11 @@ const VisitorVisa = () => {
           </p>
         </section>
 
-        <section className={`${styles.options} ${styles.section}`} id="choose-your-application" ref={(el) => sectionsRef.current[2] = el}>
+        <section
+          className={`${styles.options} ${styles.section}`}
+          id="choose-your-application"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
           <h2 className={styles.subheading}>
             Choose Your Application of Interest:
           </h2>
@@ -183,13 +210,18 @@ const VisitorVisa = () => {
           </div>
         </section>
 
-        <section className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[3] = el}>
+        <section
+          className={`${styles.eligibility} ${styles.section}`}
+          id="eligibility"
+          ref={(el) => (sectionsRef.current[3] = el)}
+        >
           <h2 className={styles.subheading}>Eligibility Criteria</h2>
           <p>
             To obtain a visitor visa, you must meet essential requirements,
             which may vary depending on your individual circumstances and
             country of citizenship and residence.
           </p>
+          <p>Essential requirements include:</p>
           <ul>
             <li>A passport that is valid for 6 months or more</li>
             <li>No criminal or immigration-related convictions</li>
@@ -198,17 +230,22 @@ const VisitorVisa = () => {
               Proof of your intention to leave Canada at the end of your visit
             </li>
             <li>Proof that you have enough funds to cover your stay</li>
+            <li>
+              The amount of money you will need depends on the purpose of your
+              visit, how long you plan to stay, and whether you will stay in a
+              hotel or with friends or relatives.
+            </li>
           </ul>
-          <p>
-            The amount of money you will need depends on the purpose of your
-            visit, how long you plan to stay, and whether you will stay in a
-            hotel or with friends or relatives.
-          </p>
         </section>
 
-        <section className={`${styles.applicationProcess} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[4] = el} >
+        <section
+          className={`${styles.applicationProcess} ${styles.section}`}
+          id="how-to-apply"
+          ref={(el) => (sectionsRef.current[4] = el)}
+        >
           <h2 className={styles.subheading}>How to Apply for a Visitor Visa</h2>
-          <ol>
+          <p>To start the process of obtaining a Canadian visitor visa, you, as the applicant, must follow a series of steps and complete specific requirements, as outlined below:</p>
+          <ol className={styles.visitorVisaList}>
             <li>Assess your eligibility for a Canadian visitor visa.</li>
             <li>
               Gather the necessary documents and complete the required
@@ -229,7 +266,11 @@ const VisitorVisa = () => {
           </ol>
         </section>
 
-        <section className={`${styles.tourism} ${styles.section}`} id="tourism" ref={(el) => sectionsRef.current[5] = el}>
+        <section
+          className={`${styles.tourism} ${styles.section}`}
+          id="tourism"
+          ref={(el) => (sectionsRef.current[5] = el)}
+        >
           <h2 className={styles.subheading}>Tourism Visa</h2>
           <p>
             Canadian immigration allows you to visit Canada for tourism purposes
@@ -245,7 +286,11 @@ const VisitorVisa = () => {
           </p>
         </section>
 
-        <section className={`${styles.emergencyVisa} ${styles.section}`} id="emergency-visa" ref={(el) => sectionsRef.current[6] = el}>
+        <section
+          className={`${styles.emergencyVisa} ${styles.section}`}
+          id="emergency-visa"
+          ref={(el) => (sectionsRef.current[6] = el)}
+        >
           <h2 className={styles.subheading}>Emergency Visa</h2>
           <p>
             Canada Immigration allows for the application of an emergency visa
@@ -257,10 +302,16 @@ const VisitorVisa = () => {
           </p>
         </section>
 
-        <section className={`${styles.refusalReasons} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[7] = el} >
+        <section
+          className={`${styles.refusalReasons} ${styles.section}`}
+          id="refusal-reasons"
+          ref={(el) => (sectionsRef.current[7] = el)}
+        >
           <h2 className={styles.subheading}>
             Common Reasons for Refusals of Visitor Visa
           </h2>
+          <p>When applying for a visitor visa, visa officers often look for signs that you'll return home after your trip. They want to be sure you have the means to support yourself financially and strong reasons to stay put. Here’s how to increase your chances of approval:
+          </p>
           <ul>
             <li>
               Prove that you can afford your trip. Address any concerns about
@@ -285,7 +336,11 @@ const VisitorVisa = () => {
           </ul>
         </section>
 
-        <section className={`${styles.support} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[8] = el}>
+        <section
+          className={`${styles.support} ${styles.section}`}
+          id="testing2"
+          ref={(el) => (sectionsRef.current[8] = el)}
+        >
           <h2 className={styles.subheading}>Still Not Sure?</h2>
           <p>
             If you have received a refusal for any of the reasons mentioned
@@ -304,17 +359,22 @@ const VisitorVisa = () => {
             application process all the way to obtaining your visa. Start your
             process now.
           </p>
-          <button className={styles.button}
-              onClick={() =>
-                (window.location.href =
-                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-              }
-            >
-              Book Appointment
-            </button>
+          <button
+            className={styles.button}
+            onClick={() =>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
+          >
+            Book Appointment
+          </button>
         </section>
 
-        <section className={`${styles.whyChooseUs} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[9] = el}>
+        <section
+          className={`${styles.whyChooseUs} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[9] = el)}
+        >
           <h2 className={styles.subheading}>Why Choose Us?</h2>
           <p>
             At Brightlight Immigration, we provide expert guidance and support

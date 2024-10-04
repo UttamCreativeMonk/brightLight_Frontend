@@ -127,18 +127,20 @@ const SuperVisa = () => {
               Provide proof that you have medical insurance for your
               parents/grandparents from a Canadian insurance company. The
               insurance must meet the following criteria:
-              <ul>
+              <ul className={styles.subList}> 
                 <li>Valid for at least one year from the date of entry.</li>
                 <li>Coverage of at least $100,000.</li>
-                <li>
+
+              </ul>
+              <li>
                   Proof that the medical insurance has been paid in full or that
                   monthly payments have been set up.
                 </li>
-              </ul>
             </li>
           </ul>
 
-          <h3>Additional Requirements for Parents/Grandparents</h3>
+          <h3>Apart from these basic requirements</h3>
+          <h4>there are some additional requirements that your parents/grandparents will need to meet:</h4>
           <ul>
             <li>
               Their Super Visa application must be submitted from outside
@@ -158,9 +160,10 @@ const SuperVisa = () => {
 
         <section className={`${styles.incomeTable} ${styles.section}`} id="income-table" ref={(el) => sectionsRef.current[4] = el}>
           <h2 className={styles.subheading}>Super Visa Income Table</h2>
-          <p>
+          <h4>
             Minimum necessary income requirements Updated as of June 3, 2024:
-          </p>
+          </h4>
+          <h4>Low Income Cut-Off (LICO):</h4>
           <table className={styles.table}>
             <thead>
               <tr>
@@ -207,6 +210,7 @@ const SuperVisa = () => {
 
         <section className={`${styles.applicationProcess} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[5] = el}>
           <h2 className={styles.subheading}>How to Apply</h2>
+          <h4>To start the application process, there are several forms and steps that you, as the applicant, will need to complete. The steps are as follows:</h4>
           <ol>
             <li>
               Check your income requirements to ensure you meet the latest

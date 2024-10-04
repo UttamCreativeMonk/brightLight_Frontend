@@ -80,28 +80,28 @@ const Adoption = () => {
         <header className={`${styles.header} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}  >
           <h1>Canada's Adoption Program</h1>
           <p>
-            The heart-warming journey of bringing a child into your life through
-            adoption is an incredible act of love and commitment, offering the
-            child a nurturing home and a lifetime of opportunities.
+          The heart-warming journey of bringing a child into your life through adoption is an incredible act of love and commitment, offering the child a nurturing home and a lifetime of opportunities.
           </p>
           <p>
-            Canada's adoption program under family reunification and sponsorship
-            provides a pathway for eligible Canadians to adopt children from
-            both within Canada and internationally. The program aims to provide
-            permanent homes for children who cannot live with their biological
-            families due to various circumstances.
+          Canada's adoption program under family reunification and sponsorship provides a pathway for eligible Canadians to adopt children from both within Canada and internationally. The program aims to provide permanent homes for children who cannot live with their biological families due to various circumstances.
+
           </p>
         </header>
 
         <section  className={`${styles.adoptionTypes} ${styles.section}`} id="types-of-adoption" ref={(el) => sectionsRef.current[1] = el} >
-          <h2>Types of Adoption</h2>
+          <h2>There are two main types of adoption under family sponsorship in Canada:
+          </h2>
           <ul>
             <li>
+              <p>Intra-country adoption. This involves adopting a child from another province in Canada.
+              </p>
               <a href="#intra-country" className={styles.button}>
                 Intra-Country Adoption
               </a>
             </li>
             <li>
+              <p>Inter-country adoption. This involves adopting a child from another country.
+              </p>
               <a href="#inter-country" className={styles.button}>
                 Inter-Country Adoption
               </a>
@@ -170,6 +170,7 @@ const Adoption = () => {
 
         <section className={`${styles.refusalReasons} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[5] = el}>
           <h2>Common Reasons for Refusals of Adoption Program</h2>
+          <h4>Failing to meet the eligibility criteria to be eligible to sponsor a child for adoption that is: </h4>
           <ul>
             <li>
               Incomplete or inaccurate information on your application or during

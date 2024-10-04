@@ -143,6 +143,12 @@ text-align: left;
     margin-bottom: 20px;
   }
   
+  .introduction{
+    text-align: center;
+  }
+  .introduction p{
+    margin-top: 20px;
+  }
   .subheading {
     font-size: 1.8rem;
     margin-bottom: 15px;
@@ -201,6 +207,9 @@ text-align: left;
     transform: translateX(0);
   }
   
+  .assistance p{
+    margin-top: 20px;
+  }
 
   .section button {
     display: block;

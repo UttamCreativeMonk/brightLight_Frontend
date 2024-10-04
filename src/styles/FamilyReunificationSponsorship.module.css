@@ -134,7 +134,7 @@
   
   .header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
   }
   
   .categories {
@@ -232,6 +232,9 @@
     margin-top: 20px;
     margin-bottom: 20px;
     text-align: center;
+  }
+  .header p{
+    margin-top: 10px;
   }
 
   .section {

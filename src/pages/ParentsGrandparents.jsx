@@ -107,6 +107,8 @@ const ParentsGrandparents = () => {
             Sponsorship:
           </h2>
           <ul className={styles.list}>
+            <h4>Are you eligible to sponsor your parents or grandparents? Let's find out.
+            </h4>
             <li>You should be a Canadian citizen or permanent resident.</li>
             <li>You must be at least 18 years old.</li>
             <li>You should be living in Canada.</li>
@@ -133,6 +135,8 @@ const ParentsGrandparents = () => {
           <h2 className={styles.subheading} id="how-to-apply">
             How to apply for the Parents and Grandparents Program (PGP)?
           </h2>
+          <h4>Meet the eligibility criteria? Let's see how you can sponsor your parents or grandparents
+          </h4>
           <ul className={styles.list}>
             <li>
               The first step is to submit an Interest to Sponsor form on the
@@ -164,6 +168,8 @@ const ParentsGrandparents = () => {
           <h2 className={styles.subheading} id="refusal-reasons">
             Common reasons for refusal of Parents and Grandparents Program (PGP)
           </h2>
+          <h4>Don’t forget to avoid these common PGP refusal reasons and increase your chances of approval.
+          </h4>
           <ul className={styles.list}>
             <li>
               If you can't show you have enough money to support your parents or

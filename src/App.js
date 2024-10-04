@@ -48,6 +48,7 @@ import CommonLawPartnerTemporary from "./pages/CommonLawPartnerTemporary";  //Do
 import Cby from "./pages/Cby"; //Done Animation
 import SuperVisa from "./pages/SuperVisa"; //Done Animation
 import TemporaryResidentPermitDraft from "./pages/TemporaryResidentPermitDraft"; //Done Animation
+import TemporaryResident from "./pages/TemporaryResident";
 import VisitorVisa from "./pages/VisitorVisa"; //Done  Animation
 import BusinessVisitorVisa from "./pages/BusinessVisitorVisa";//Done one part Animation
 import DualIntentVisa from "./pages/DualIntentVisa"; //Done one part Animation
@@ -92,7 +93,7 @@ function App() {
   
       <ToastContainer />
 
-      <Loader />
+      {/* <Loader /> */}
       <HelmetProvider>
         <AllRoutes />
       </HelmetProvider>

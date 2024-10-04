@@ -21,8 +21,6 @@ const CommonLawPartnerTemporary = () => {
     }
   };
 
-  
-
   const sectionsRef = useRef([]);
 
   const handleScroll = () => {
@@ -45,7 +43,6 @@ const CommonLawPartnerTemporary = () => {
     };
   }, []);
 
-
   return (
     <>
       <Navbar1 />
@@ -63,13 +60,23 @@ const CommonLawPartnerTemporary = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>
+                Refusal Reasons
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -77,12 +84,20 @@ const CommonLawPartnerTemporary = () => {
         </div>
       </div>
       <div className={styles.container}>
-        <h1  className={`${styles.heading} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
+        <h1
+          className={`${styles.heading} ${styles.section}`}
+          id="about-program"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
           Open Work Permit for Spouse or Common-law Partner of a Temporary
           Foreign Worker
         </h1>
 
-        <section className={`${styles.introduction} ${styles.section}`} id="testing" ref={(el) => sectionsRef.current[1] = el}>
+        <section
+          className={`${styles.introduction} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
           <p>
             The spouses or common-law partners of authorized workers coming to
             Canada or working in Canada may apply for an open work permit
@@ -105,7 +120,11 @@ const CommonLawPartnerTemporary = () => {
           </p>
         </section>
 
-        <section className={`${styles.benefits} ${styles.section}`} id="benifits" ref={(el) => sectionsRef.current[2] = el}>
+        <section
+          className={`${styles.benefits} ${styles.section}`}
+          id="benifits"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
           <h2 className={styles.subheading}>
             Benefits of Open Work Permit for Spouse or Common-law Partner of a
             Temporary Foreign Worker
@@ -144,7 +163,11 @@ const CommonLawPartnerTemporary = () => {
           </ul>
         </section>
 
-        <section className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[3] = el}>
+        <section
+          className={`${styles.eligibility} ${styles.section}`}
+          id="eligibility"
+          ref={(el) => (sectionsRef.current[3] = el)}
+        >
           <h2 className={styles.subheading}>
             Eligibility Criteria for Applying for Open Work Permit of Spouse or
             Common-law Partner of a Temporary Foreign Worker
@@ -156,182 +179,188 @@ const CommonLawPartnerTemporary = () => {
           </p>
 
           <h3>1. For High-Skilled Occupations (TEER 0, 1, 2, or 3)</h3>
-          <table className={styles.table}>
-            <thead>
-              <tr>
-                <th>Requirement</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Valid Work Authorization</td>
-                <td>
-                  Must possess one of the following:
-                  <ul>
-                    <li>A valid work permit, subject to certain exceptions.</li>
-                    <li>
-                      An approved work permit that has not yet been issued
-                      (indicated by a port of entry letter of introduction).
-                    </li>
-                    <li>Authorization to work without a permit.</li>
-                  </ul>
-                </td>
-              </tr>
-              <tr>
-                <td>Work Permit Validity</td>
-                <td>
-                  Your work permit or authorized work status must be valid for
-                  at least six months beyond the date you submit your family
-                  member's open work permit application.
-                </td>
-              </tr>
-              <tr>
-                <td>High-Skilled Occupation</td>
-                <td>
-                  Must be employed or have a confirmed offer of employment in a
-                  high-skilled occupation (TEER 0, 1, 2, or 3).
-                </td>
-              </tr>
-              <tr>
-                <td>Canadian Residence</td>
-                <td>
-                  Must be living in Canada or have plans to move to Canada to
-                  work.
-                </td>
-              </tr>
-              <tr>
-                <td>Not Eligible Currently</td>
-                <td>
-                  <ul>
-                    <li>
-                      Made a refugee claim referred to the Immigration and
-                      Refugee Board.
-                    </li>
-                    <li>Subject to an unenforceable removal order.</li>
-                    <li>
-                      International student working in a co-op program without a
-                      work permit.
-                    </li>
-                    <li>
-                      International student working off-campus without a work
-                      permit.
-                    </li>
-                    <li>
-                      Applied for a post-graduation work permit (PGWP) but have
-                      not yet received a positive decision.
-                    </li>
-                    <li>Holds a spousal open work permit.</li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <ul className={styles.requirementsList}>
+            <h2>Requirements and Descriptions</h2>
+            <li>
+              <strong>Valid Work Authorization</strong>
+              <ul className={styles.subList}>
+                <li>A valid work permit, subject to certain exceptions.</li>
+                <li>
+                  An approved work permit that has not yet been issued
+                  (indicated by a port of entry letter of introduction).
+                </li>
+                <li>Authorization to work without a permit.</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Work Permit Validity</strong>
+              <p>
+                Your work permit or authorized work status must be valid for at
+                least six months beyond the date you submit your family member's
+                open work permit application.
+              </p>
+            </li>
+            <li>
+              <strong>High-Skilled Occupation</strong>
+              <p>
+                Must be employed or have a confirmed offer of employment in a
+                high-skilled occupation (TEER 0, 1, 2, or 3).
+              </p>
+            </li>
+            <li>
+              <strong>Canadian Residence</strong>
+              <p>
+                Must be living in Canada or have plans to move to Canada to
+                work.
+              </p>
+            </li>
+            <li>
+              <strong>Not Eligible Currently</strong>
+              <ul className={styles.subList}>
+                <li>
+                  Made a refugee claim referred to the Immigration and Refugee
+                  Board.
+                </li>
+                <li>Subject to an unenforceable removal order.</li>
+                <li>
+                  International student working in a co-op program without a
+                  work permit.
+                </li>
+                <li>
+                  International student working off-campus without a work
+                  permit.
+                </li>
+                <li>
+                  Applied for a post-graduation work permit (PGWP) but have not
+                  yet received a positive decision.
+                </li>
+                <li>Holds a spousal open work permit.</li>
+              </ul>
+            </li>
+          </ul>
 
           <h3>2. For Low-Skilled Occupations (TEER 4 or 5)</h3>
-          <table className={styles.table}>
-            <thead>
-              <tr>
-                <th>Requirement</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Valid Work Authorization</td>
-                <td>
-                  Must possess one of the following:
-                  <ul>
-                    <li>A valid work permit, subject to certain exceptions.</li>
-                    <li>
-                      An approved work permit that has not yet been issued
-                      (indicated by a port of entry letter of introduction).
-                    </li>
-                    <li>Authorization to work without a permit.</li>
-                  </ul>
-                </td>
-              </tr>
-              <tr>
-                <td>Work Permit Validity</td>
-                <td>
-                  Your work permit or authorized work status must be valid for
-                  at least six months beyond the date you submit your family
-                  member's open work permit application.
-                </td>
-              </tr>
-              <tr>
-                <td>Low-Skilled Occupation</td>
-                <td>
-                  Must be employed or have a confirmed offer of employment in a
-                  low-skilled occupation (TEER 4 or 5).
-                </td>
-              </tr>
-              <tr>
-                <td>Wages</td>
-                <td>
-                  If employed in a low-skilled occupation, your wage rate must
-                  be at or above the median hourly wages set by the province or
-                  territory of your location of work.
-                </td>
-              </tr>
-              <tr>
-                <td>Canadian Residence</td>
-                <td>
-                  Must be living in Canada or have plans to move to Canada to
-                  work.
-                </td>
-              </tr>
-              <tr>
-                <td>If Work Permit Holder is Under the Agri-Food Pilot</td>
-                <td>
-                  Must hold a labour market impact assessment (LMIA)-based work
-                  permit in the agriculture or low-wage stream of the Agri-Food
-                  Pilot and must have received an acknowledgment of receipt
-                  (AOR) letter from IRCC confirming that your application for
-                  permanent residence is complete.
-                </td>
-              </tr>
-              <tr>
-                <td>Not Eligible Currently</td>
-                <td>
-                  <ul>
-                    <li>
-                      Holds a work permit under the low-wage stream of the
-                      Temporary Foreign Worker Program.
-                    </li>
-                    <li>
-                      Holds a work permit under the Seasonal Agricultural Worker
-                      Program.
-                    </li>
-                    <li>
-                      Holds a work permit under the agricultural stream of the
-                      Temporary Foreign Worker Program.
-                    </li>
-                    <li>
-                      Made a refugee claim referred to the Immigration and
-                      Refugee Board.
-                    </li>
-                    <li>Subject to an unenforceable removal order.</li>
-                    <li>International student in a co-op program.</li>
-                    <li>
-                      International student working off-campus without a work
-                      permit.
-                    </li>
-                    <li>
-                      Applying for a Post-Graduation Work Permit (PGWP) and
-                      haven't received a positive decision on your application
-                      yet.
-                    </li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <ul className={styles.requirementsList}>
+            <li>
+              <strong>Valid Work Authorization</strong>
+              <p>Must possess one of the following:</p>
+              <ul className={styles.subList}>
+                <li>A valid work permit, subject to certain exceptions.</li>
+                <li>
+                  An approved work permit that has not yet been issued
+                  (indicated by a port of entry letter of introduction).
+                </li>
+                <li>Authorization to work without a permit.</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Work Permit Validity</strong>
+              <p>
+                Your work permit or authorized work status must be valid for at
+                least six months beyond the date you submit your family member's
+                open work permit application.
+              </p>
+            </li>
+            <li>
+              <strong>Low-Skilled Occupation</strong>
+              <p>
+                Must be employed or have a confirmed offer of employment in a
+                low-skilled occupation (TEER 4 or 5).
+              </p>
+            </li>
+            <li>
+              <strong>Wages</strong>
+              <p>
+                If employed in a low-skilled occupation, your wage rate must be
+                at or above the median hourly wages set by the province or
+                territory of your location of work.
+              </p>
+            </li>
+            <li>
+              <strong>Canadian Residence</strong>
+              <p>
+                Must be living in Canada or have plans to move to Canada to
+                work.
+              </p>
+            </li>
+            <li>
+              <strong>
+                If Work Permit Holder is Under the Agri-Food Pilot
+              </strong>
+              <p>
+                Must hold a labour market impact assessment (LMIA)-based work
+                permit in the agriculture or low-wage stream of the Agri-Food
+                Pilot and must have received an acknowledgment of receipt (AOR)
+                letter from IRCC confirming that your application for permanent
+                residence is complete.
+              </p>
+            </li>
+            <li>
+              <strong>Not Eligible Currently</strong>
+              <ul className={styles.subList}>
+                <li>
+                  Holds a work permit under the low-wage stream of the Temporary
+                  Foreign Worker Program.
+                </li>
+                <li>
+                  Holds a work permit under the Seasonal Agricultural Worker
+                  Program.
+                </li>
+                <li>
+                  Holds a work permit under the agricultural stream of the
+                  Temporary Foreign Worker Program.
+                </li>
+                <li>
+                  Made a refugee claim referred to the Immigration and Refugee
+                  Board.
+                </li>
+                <li>Subject to an unenforceable removal order.</li>
+                <li>International student in a co-op program.</li>
+                <li>
+                  International student working off-campus without a work
+                  permit.
+                </li>
+                <li>
+                  Applying for a Post-Graduation Work Permit (PGWP) and haven't
+                  received a positive decision on your application yet.
+                </li>
+              </ul>
+            </li>
+          </ul>
         </section>
-
-        <section className={`${styles.applicationProcess} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[4] = el}>
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[14] = el)}
+        >
+          <h2>Family Member Requirements for Open Work Permits:</h2>
+          <p>Your family member must meet 3 requirements:</p>
+          <ul>
+            <li>
+              <strong>General Eligibility:</strong> They must meet the general
+              work permit eligibility criteria such as police clearances,
+              medical clearance and not inadmissible to Canada.
+            </li>
+            <li>
+              <strong>Relationship:</strong> You must be in a genuine
+              relationship with each other.
+            </li>
+            <li>
+              <strong>Temporary Residency:</strong> If in Canada, they must have
+              valid temporary resident status, have applied to extend their
+              status before it expired (maintained status), or be eligible for
+              restoration of their status as a visitor, worker, or student.
+            </li>
+          </ul>
+        </section>
+        <section
+          className={`${styles.applicationProcess} ${styles.section}`}
+          id="how-to-apply"
+          ref={(el) => (sectionsRef.current[4] = el)}
+        >
           <h2 className={styles.subheading} id="how-to-apply">
-            How to Apply
+            How to apply for Open Work Permit of Spouse or Common-law Partner of
+            a Temporary Foreign Worker?
           </h2>
           <ol>
             <li>
@@ -359,8 +388,15 @@ const CommonLawPartnerTemporary = () => {
           </ol>
         </section>
 
-        <section className={`${styles.refusalReasons} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[5] = el}>
-          <h2 className={styles.subheading}>Common Reasons for Refusal</h2>
+        <section
+          className={`${styles.refusalReasons} ${styles.section}`}
+          id="refusal-reasons"
+          ref={(el) => (sectionsRef.current[5] = el)}
+        >
+          <h2 className={styles.subheading}>
+            Common reasons for refusal of Open Work permit of Spouse or
+            Common-law Partner of a Temporary Foreign Worker
+          </h2>
           <ul>
             <li>
               Lack of documentation verifying the National Occupational
@@ -381,7 +417,11 @@ const CommonLawPartnerTemporary = () => {
           </ul>
         </section>
 
-        <section  className={`${styles.assistance} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[6] = el}>
+        <section
+          className={`${styles.assistance} ${styles.section}`}
+          id="testing2"
+          ref={(el) => (sectionsRef.current[6] = el)}
+        >
           <h2 className={styles.subheading}>Need Assistance?</h2>
           <p>
             If you need help with your application or have questions, feel free
@@ -394,7 +434,11 @@ const CommonLawPartnerTemporary = () => {
           </p>
         </section>
 
-        <section className={`${styles.whyChooseUs} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[7] = el}>
+        <section
+          className={`${styles.whyChooseUs} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[7] = el)}
+        >
           <h2 className={styles.subheading}>Why Choose Us?</h2>
           <p>
             At Brightlight Immigration, we provide expert guidance and support
@@ -402,13 +446,13 @@ const CommonLawPartnerTemporary = () => {
             to achieving the best possible outcomes for our clients.
           </p>
           <button
-          onClick={() =>
-            (window.location.href =
-              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-          }
-        >
-          Book Appointment
-        </button>
+            onClick={() =>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
+          >
+            Book Appointment
+          </button>
         </section>
       </div>
       <div id="faqs">

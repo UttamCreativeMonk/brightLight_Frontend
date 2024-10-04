@@ -101,7 +101,7 @@ const RestorationStatusDraft = () => {
             continue enjoying the advantages of living and working in Canada.
           </p>
           <p>
-            <strong>Important:</strong> If you're a student or worker on
+            <strong>Important things to know:</strong> If you're a student or worker on
             temporary status, you're not allowed to work or study while your
             restoration application is under review.
           </p>
@@ -134,6 +134,9 @@ const RestorationStatusDraft = () => {
           <h2 className={styles.subheading}>
             What Are the Requirements for Restoration of Your Status?
           </h2>
+          <h4>
+          To regain your legal status in Canada, you must meet the following requirements:
+          </h4>
           <ul>
             <li>
               Apply for restoration of status within 90 days (3 months) of your

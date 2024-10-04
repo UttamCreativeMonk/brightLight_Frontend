@@ -63,10 +63,10 @@ const BusinessVisitorVisa = () => {
             </div>
             <div className={styles.bannerHeadingRotatePara}>
               <p onClick={() => scrollToSection("about-program")}>About the Program</p>
-              <p onClick={() => scrollToSection("activities")}>Activities</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
+              {/* <p onClick={() => scrollToSection("activities")}>Activities</p> */}
+              {/* <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p> */}
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("event-codes")}>Event Codes</p>
+              {/* <p onClick={() => scrollToSection("event-codes")}>Event Codes</p> */}
               <p onClick={() => scrollToSection("essential-documents")}>Essential Documents</p>
               <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
               <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
@@ -83,13 +83,14 @@ const BusinessVisitorVisa = () => {
       <h1  className={`${styles.heading} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>Business Visitor Visa</h1>
 
       <section  className={`${styles.introduction} ${styles.section}`} id="testing" ref={(el) => sectionsRef.current[1] = el}>
+        <h2>Business Visitors in Canada: Meetings, Events, and Conferences. </h2>
         <p>
-          A Business Visitor Visa is ideal for business owners who wish to travel to Canada to explore business opportunities without requiring sponsorship. This visa allows you to engage in various business activities while in Canada, including attending meetings, events, and conferences.
+        Business Visa is a great option for business owners who want to travel to Canada for purposes of exploring business opportunities. The best part about this program is that you do not require any sponsorship.
         </p>
       </section>
 
       <section className={`${styles.activities} ${styles.section}`} id="activities" ref={(el) => sectionsRef.current[2] = el} >
-        <h2 className={styles.subheading}>Activities Allowed with a Business Visitor Visa</h2>
+        <h2 className={styles.subheading}>As a business visitor, you may engage in the following activities:</h2>
         <ul>
           <li>Purchasing Canadian goods or services for a foreign business or government.</li>
           <li>Accepting orders for goods or services.</li>
@@ -99,20 +100,26 @@ const BusinessVisitorVisa = () => {
           <li>Training employees of a Canadian branch of a foreign company.</li>
           <li>Receiving training from a Canadian company that sold you equipment or services.</li>
         </ul>
-        <p>
-          Additional Considerations: U.S. or Mexican nationals may also participate in research, marketing, and general services under the Canada-United States-Mexico Agreement (CUSMA). Refer to the Global Affairs Canada website for details.
-        </p>
+        <h4>
+          Additional Considerations
+        </h4>
+        <ul>
+          <li>
+          <p><strong>Canada-United States-Mexico Agreement (CUSMA):</strong> U.S. or Mexican nationals may participate in other activities such as research, marketing, and general services. Refer to the Global Affairs Canada website for details.</p>
+          </li>
+        </ul>
       </section>
 
       <section className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[3] = el}>
-        <h2 className={styles.subheading}>Eligibility Criteria</h2>
+        <h2 className={styles.subheading}>Eligibility criteria for a Business Visitor Visa?</h2>
+        <h4>Before proceeding, learn whether you qualify as a business visitor or if you need to apply for a work permit instead. Business visitors typically stay in Canada for a few days or weeks to attend meetings or events, with a maximum stay of up to 6 months. A separate application can be filed to extend the stay.</h4>
         <p>To qualify as a business visitor, you must meet the following requirements:</p>
-        <ul>
-          <li>Your stay in Canada is less than 6 months.</li>
-          <li>You do not intend to enter the Canadian labor market.</li>
-          <li>Your primary business operations, income, and profits are outside Canada.</li>
-          <li>You possess documents supporting your application.</li>
-          <li>You meet Canada’s basic entry requirements, including:
+        <ul className={styles.eligibilityList}>
+          <li> <strong>Duration of Stay:</strong> Your planned stay is less than 6 months.</li>
+          <li> <strong>Non-Engagement in Canadian Labor Market:</strong> You do not intend to enter the Canadian labor market.</li>
+          <li> <strong>Business Ties Outside Canada:</strong> Your primary business operations, income, and profits are outside Canada.</li>
+          <li> <strong>Documentary Support:</strong> You possess documents supporting your application.</li>
+          <li><strong>Basic Entry Requirements:</strong> You meet Canada’s basic entry criteria, including:
             <ul>
               <li>Valid travel document (e.g., passport)</li>
               <li>Adequate funds for your stay and return</li>
@@ -128,9 +135,8 @@ const BusinessVisitorVisa = () => {
 
       <section className={`${styles.eventCode} ${styles.section}`} id="event-codes" ref={(el) => sectionsRef.current[4] = el}>
         <h2 className={styles.subheading}>Event Code (if Applicable)</h2>
-        <p>
-          If your meeting, event, or conference is registered with Immigration, Refugees and Citizenship Canada (IRCC), your organizer will provide an event code. Include this code on your visa application form to indicate your participation in a registered event.
-        </p>
+        <li>If you require a business visitor visa for Canada and your meeting, event, or conference is registered with Immigration, Refugees and Citizenship Canada (IRCC), your organizer will provide an event code.</li>
+        <li>Include this event code on your visa application form to indicate your participation in a registered event.</li>
       </section>
 
       <section className={styles.documents}>

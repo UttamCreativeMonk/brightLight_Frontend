@@ -84,14 +84,16 @@ const LonelyCanadian = () => {
 
       <section className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[1] = el} >
         <h2>Eligibility Criteria to Sponsor Other Relatives as a Lonely Canadian</h2>
+        <h4>To sponsor relatives such as nephews, nieces, uncles, and aunts, the sponsor must meet the following criteria:
+        </h4>
         <ul>
-          <li>Minimum Necessary Income: The sponsor should have sufficient income.</li>
-          <li>Age Requirement: Be at least 18 years old.</li>
-          <li>Canadian Citizenship or Permanent Residency: The sponsor must be a Canadian citizen or permanent resident residing in Canada.</li>
-          <li>Debt and Bankruptcy: Be free from debt or bankruptcy proceedings.</li>
-          <li>Application Readiness: Prepared to submit the sponsorship application with all required forms and documents.</li>
-          <li>Undertaking Obligations: Willing to accept the responsibilities of undertaking.</li>
-          <li>No Removal Orders or Criminal Convictions: Free from any restrictions of removal orders and criminal convictions.</li>
+          <li> <strong>Minimum Necessary Income:</strong> The sponsor should have sufficient income.</li>
+          <li><strong>Age Requirement:</strong> Be at least 18 years old.</li>
+          <li><strong>Canadian Citizenship or Permanent Residency:</strong> The sponsor must be a Canadian citizen or permanent resident residing in Canada.</li>
+          <li><strong>Debt and Bankruptcy:</strong> Be free from debt or bankruptcy proceedings.</li>
+          <li><strong>Application Readiness:</strong> Prepared to submit the sponsorship application with all required forms and documents.</li>
+          <li><strong>Undertaking Obligations:</strong> Willing to accept the responsibilities of undertaking.</li>
+          <li><strong>No Removal Orders or Criminal Convictions:</strong> Free from any restrictions of removal orders and criminal convictions.</li>
         </ul>
       </section>
 
@@ -120,12 +122,12 @@ const LonelyCanadian = () => {
 
       <section className={`${styles.sponsoringSiblings} ${styles.section}`} id="sponsor-siblings" ref={(el) => sectionsRef.current[4] = el}     >
         <h2>Sponsoring Siblings</h2>
-        <p>Alternative options exist for sponsoring siblings:</p>
+        <h4>Alternative options exist for sponsoring siblings:</h4>
         <ul>
           <li>Siblings Below 18: You can sponsor a brother or sister below 18 years of age who has lost both parents.</li>
           <li>Lone Sponsor: Even if you are a lonely sponsor, you can sponsor a brother or sister who is over 18 years of age.</li>
         </ul>
-        <p>A lonely sponsor does not have:</p>
+        <h4>A lonely sponsor does not have:</h4>
         <ul>
           <li>Mother</li>
           <li>Father</li>
@@ -151,15 +153,18 @@ const LonelyCanadian = () => {
         <h2>How to Apply for Sponsoring a Relative as a Lonely Canadian</h2>
         <h3>Step 1: Obtain the Application Package</h3>
         <ul>
-          <li>Application Package Contents:
+          <h4><strong>Application Package Contents:
+          </strong></h4>
+          <li>
             <ul>
-              <li>Instruction Guide: Read this guide before filling out the forms.</li>
-              <li>Forms: Complete the necessary forms.</li>
-              <li>Document Checklist: Ensure you include all required documents.</li>
-              <li>Eligibility Check: Confirm your eligibility to sponsor a relative.</li>
+              <li><strong>Instruction Guide:</strong> Read this guide before filling out the forms.</li>
+              <li><strong>Forms:</strong> Complete the necessary forms.</li>
+              <li><strong>Document Checklist:</strong> Ensure you include all required documents.</li>
+              <li><strong>Eligibility Check:</strong> Confirm your eligibility to sponsor a relative.</li>
             </ul>
           </li>
-          <li>Application Submission:
+          <h4><strong>Application Submission:</strong></h4>
+          <li>
             <ul>
               <li>Provide proof of income.</li>
               <li>Relatives must express their intent to support themselves.</li>
@@ -169,7 +174,8 @@ const LonelyCanadian = () => {
               <li>Missing information or documents can cause delays.</li>
             </ul>
           </li>
-          <li>Truthfulness: All information in your application must be accurate. Be truthful about:
+          <h4><strong>Truthfulness: All information in your application must be accurate. Be truthful about:</strong></h4>
+          <li>
             <ul>
               <li>Your family members (include all in your application).</li>
               <li>Your marital status.</li>
@@ -180,13 +186,15 @@ const LonelyCanadian = () => {
         </ul>
         <h3>Step 2: Pay Application Fees</h3>
         <ul>
-          <li>Biometrics Fee:
+          <h4><strong>Biometrics Fee:</strong></h4>
+          <li>
             <ul>
               <li>In most cases, pay the biometrics fee when submitting your application.</li>
               <li>This fee covers fingerprint collection and a digital photo.</li>
             </ul>
           </li>
-          <li>Third-Party Fees:
+          <h4><strong>Third-Party Fees:</strong></h4>
+          <li>
             <ul>
               <li>Depending on your situation, you may need to pay third parties for:
                 <ul>

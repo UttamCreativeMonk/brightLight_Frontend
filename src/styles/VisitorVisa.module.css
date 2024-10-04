@@ -216,6 +216,22 @@ opacity: 0.9;
   transform: translateX(0);
 }
 
+.subheading ol{
+  margin-left: 30px;
+}
+.subheading li{
+  margin-top: 5px;
+}
+.visitorVisaList{
+  margin-left: 30px;
+  margin-top: 20px;
+}
+.visitorVisaList li{
+  margin-top: 10px;
+}
+.refusalReasons p{
+  margin-bottom: 20px;
+}
 .section button {
   display: block;
   margin: auto;

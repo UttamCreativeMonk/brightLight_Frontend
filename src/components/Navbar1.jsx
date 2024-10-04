@@ -480,7 +480,7 @@ const Navbar3 = (props) => {
 
                   <div className={`${styles.relativeDiv} ${styles.flex}`}>
                     <a
-                      href="/temporary-resident-permit-draft"
+                      href="/temporary-resident"
                       onMouseEnter={() => setShowNestedDropdown2(true)}
                       onMouseLeave={() => setShowNestedDropdown2(false)}
                     >
@@ -1162,7 +1162,7 @@ const Navbar3 = (props) => {
                     </a>
                     {isTemporaryResidencyOpen && (
                       <div className={styles.subDropdownContent}>
-                        <a href="/temporary-resident-permit-draft">
+                        <a href="/temporary-resident">
                           Temporary Residency
                         </a>
                         <a href="/super-visa">Super Visa</a>

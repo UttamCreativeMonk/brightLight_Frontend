@@ -214,6 +214,9 @@
     margin-bottom: 20px;
     text-align: center;
   }
+  .header p{
+    margin-top: 10px;
+  }
   .marginTop{
     margin-top: 10px;
     margin-bottom: 10px;

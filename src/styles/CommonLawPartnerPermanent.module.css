@@ -151,8 +151,18 @@
 
 .introduction p{
   margin-bottom: 20px;
+  text-align: center;
+}
+.introductionUl li{
+  margin-left: 40px;
 }
 
+.applicationProcess li{
+  margin-top: 10px;
+}
+.eligibility li{
+  margin-top: 10px;
+}
 .subheading {
   font-size: 1.4rem;
   margin-bottom: 15px;
