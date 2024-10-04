@@ -206,9 +206,14 @@
 .advantagesPara p {
   color: #78797b;
   font-size: 25px;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   align-items: left;
   line-height: 1.8;
+}
+
+.advantagesPara li{
+  color: #78797b;
+  font-size: 25px;
 }
 
 .forgetParent {

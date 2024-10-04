@@ -213,12 +213,13 @@ const ExpressEntry = () => {
           </div>
           <div className={styles.advantagesPara}>
             <p>{data?.advantageDescription}</p>
-            <hr />
-            {data?.a1 && <p>{data.a1}</p>}
-            {data?.a2 && <p>{data.a2}</p>}
-            {data?.a3 && <p>{data.a3}</p>}
-            {data?.a4 && <p>{data.a4}</p>}
-            {data?.a5 && <p>{data.a5}</p>}
+            <ul>
+            {data?.a1 && <li>{data.a1}</li>}
+            {data?.a2 && <li>{data.a2}</li>}
+            {data?.a3 && <li>{data.a3}</li>}
+            {data?.a4 && <li>{data.a4}</li>}
+            {data?.a5 && <li>{data.a5}</li>}
+            </ul>
           </div>
         </div>
       </div>
