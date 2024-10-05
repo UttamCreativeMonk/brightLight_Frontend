@@ -62,7 +62,7 @@ let Immigration = () => {
       hoverImg: ExpressWhite,
       title: "Express Entry CRS Draw History",
       description: "Check all the Draw history for Express Entry, including latest Draws, Updated Regularly!",
-      link: "/express-entry"
+      link: "/previous-draw-history"
     },
     {
       img: Sandclock,

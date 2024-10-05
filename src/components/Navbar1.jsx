@@ -684,7 +684,7 @@ const Navbar3 = (props) => {
                         >
                           <a href="/spouse-inland">Inside</a>
                           <a href="/spouse-outland">Outside</a>
-                          {/* <a href="#">Same Sex</a> */}
+                          <a href="/same-sex">Same Sex</a>
                         </div>
                       </div>
 
@@ -1286,7 +1286,7 @@ const Navbar3 = (props) => {
                             <div className={styles.subSubDropdownContent}>
                               <a href="/spouse-inland">Inside</a>
                               <a href="/spouse-outland">Outside</a>
-                              {/* <a href="#">Same Sex</a> */}
+                              <a href="/same-sex">Same Sex</a>
                             </div>
                           )}
                         </div>

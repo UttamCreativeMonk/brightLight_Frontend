@@ -178,7 +178,7 @@ const ExpressEntry = () => {
           <h1>{data?.drawHeading}</h1>
           <div className={styles.additionCardParent}>
             {data?.draw1 && (
-              <div className={styles.additionCard} >
+              <div className={styles.additionCard} onClick={() =>(window.location.href ="/previous-draw-history")}>
                 <h2>{data.draw1}</h2>
               </div>
             )}
