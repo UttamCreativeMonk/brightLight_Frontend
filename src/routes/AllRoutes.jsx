@@ -95,6 +95,8 @@ import SpouseInland from "../pages/SpouseInland";
 import SpouseOutland from "../pages/SpouseOutland";
 import SpouseCommonLawSpon from "../pages/SpouseCommonLawSpon";
 import SameSex from "../pages/SameSex";
+import CategoryBasedExpress from "../pages/CategoryBasedExpress" ;
+import AgricultureandAgriFoodOccu from "../pages/AgricultureandAgriFoodOccu";
 
 let AllRoutes = () => {
   return (
@@ -273,6 +275,10 @@ let AllRoutes = () => {
       <Route path="/citizenship" element={<Citizenship />} />
       <Route path="/pr-renewal" element={<PrRenewal />} />
       <Route path="/work-permit" element={<WorkPermit />} />
+
+      <Route path="/category-based-express" element={<CategoryBasedExpress />} />
+
+      <Route path="/agriculture-agri-food-occupation" element={<AgricultureandAgriFoodOccu />} />
 
       <Route
         path="/in-home-caregiver-program-lp"
