@@ -10,7 +10,6 @@ import Footer1 from "../components/Footer1";
 import ogImage from "../assets/ogImage.png";
 import { Helmet } from "react-helmet-async";
 
-
 const ExpressEntry = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [data, setData] = useState({});
@@ -27,7 +26,7 @@ const ExpressEntry = () => {
       .catch((error) => {
         console.error("Error fetching Express Entry data:", error);
       });
-      fetch("https://brightlight-node.onrender.com/express-meta")
+    fetch("https://brightlight-node.onrender.com/express-meta")
       .then((res) => {
         return res.json();
       })
@@ -54,7 +53,7 @@ const ExpressEntry = () => {
 
   return (
     <>
-<Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle
@@ -116,14 +115,26 @@ const ExpressEntry = () => {
               <h3>QUICK ACCESS</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the program</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the program
+              </p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("advantages")}>Advantages of Express Entry</p>
-              <p onClick={() => scrollToSection("refusal-reason")}>Refusal Reason</p>
-              <p onClick={() => scrollToSection("draw-history")}>Draw History</p>
+              <p onClick={() => scrollToSection("advantages")}>
+                Advantages of Express Entry
+              </p>
+              <p onClick={() => scrollToSection("refusal-reason")}>
+                Refusal Reason
+              </p>
+              <p onClick={() => scrollToSection("draw-history")}>
+                Draw History
+              </p>
               <p onClick={() => scrollToSection("appointment")}>Appointment</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose us</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose us
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -140,23 +151,61 @@ const ExpressEntry = () => {
         </div>
       </div>
 
+      <div className={styles.benefits}>
+        <h1>Benefits of Express Entry</h1>
+        <ul>
+          <li>
+            There are various immigration programs that you can apply through
+            FSWP: Federal Skilled Worker Program, FSTP: Federal Skilled Trades
+            Program, or CEC: Canadian Experience Class. This means that you can
+            choose the program that best suits your qualifications and
+            experience.
+          </li>
+          <li>Applications for Express Entry are accepted all year round.</li>
+          <li>
+            Once you receive your permanent residency visa, you can settle
+            anywhere in Canada.
+          </li>
+          <li>
+            After you have been physically present in Canada for at least 1,095
+            days (3 years) out of the last 5 years, you can apply for Canadian
+            Citizenship.
+          </li>
+        </ul>
+      </div>
+
       <div id="eligibility" className={styles.eligibleParent}>
         <h1>{data?.eligibilityHeading}</h1>
         <p>{data?.eligibilityDescription}</p>
 
         <div className={styles.eligibleCardParent}>
           {data?.er1 && (
-            <div className={styles.eligibleCard} onClick={() =>(window.location.href ="/federal-skilled-worker-program")}>
+            <div
+              className={styles.eligibleCard}
+              onClick={() =>
+                (window.location.href = "/federal-skilled-worker-program")
+              }
+            >
               <h2>{data.er1}</h2>
             </div>
           )}
           {data?.er2 && (
-            <div className={styles.eligibleCard} onClick={() =>(window.location.href ="/federal-skilled-trades-program")}>
+            <div
+              className={styles.eligibleCard}
+              onClick={() =>
+                (window.location.href = "/federal-skilled-trades-program")
+              }
+            >
               <h2>{data.er2}</h2>
             </div>
           )}
           {data?.er3 && (
-            <div className={styles.eligibleCard} onClick={() =>(window.location.href ="/canadian-experience-class")}>
+            <div
+              className={styles.eligibleCard}
+              onClick={() =>
+                (window.location.href = "/canadian-experience-class")
+              }
+            >
               <h2>{data.er3}</h2>
             </div>
           )}
@@ -178,17 +227,28 @@ const ExpressEntry = () => {
           <h1>{data?.drawHeading}</h1>
           <div className={styles.additionCardParent}>
             {data?.draw1 && (
-              <div className={styles.additionCard} onClick={() =>(window.location.href ="/previous-draw-history")}>
+              <div
+                className={styles.additionCard}
+                onClick={() =>
+                  (window.location.href = "/previous-draw-history")
+                }
+              >
                 <h2>{data.draw1}</h2>
               </div>
             )}
             {data?.draw2 && (
-              <div className={styles.additionCard} onClick={() =>(window.location.href ="/category-based")}>
+              <div
+                className={styles.additionCard}
+                onClick={() => (window.location.href = "/category-based")}
+              >
                 <h2>{data.draw2}</h2>
               </div>
             )}
             {data?.draw3 && (
-              <div className={styles.additionCard} onClick={() =>(window.location.href ="/pnp")}>
+              <div
+                className={styles.additionCard}
+                onClick={() => (window.location.href = "/pnp")}
+              >
                 <h2>{data.draw3}</h2>
               </div>
             )}
@@ -214,14 +274,18 @@ const ExpressEntry = () => {
           <div className={styles.advantagesPara}>
             <p>{data?.advantageDescription}</p>
             <ul>
-            {data?.a1 && <li>{data.a1}</li>}
-            {data?.a2 && <li>{data.a2}</li>}
-            {data?.a3 && <li>{data.a3}</li>}
-            {data?.a4 && <li>{data.a4}</li>}
-            {data?.a5 && <li>{data.a5}</li>}
+              {data?.a1 && <li>{data.a1}</li>}
+              {data?.a2 && <li>{data.a2}</li>}
+              {data?.a3 && <li>{data.a3}</li>}
+              {data?.a4 && <li>{data.a4}</li>}
+              {data?.a5 && <li>{data.a5}</li>}
             </ul>
           </div>
         </div>
+      </div>
+
+      <div className={styles.previous_draw_history}>
+        <button onClick={() => window.location.href="/prvious-draw-history"}>Express Entry draws history</button>
       </div>
 
       <div id="refusal-reason" className={styles.forgetParent}>

@@ -308,7 +308,7 @@ const Navbar3 = (props) => {
               </a>
               <div className={styles.relativeDiv}>
                 <a
-                  href="#"
+                  href="/more-services"
                   onMouseEnter={() => setShowServicesDropdown(true)}
                   onMouseLeave={() => setShowServicesDropdown(false)}
                 >
@@ -387,8 +387,8 @@ const Navbar3 = (props) => {
                               <a href="/trade-occupation-targeted-draw">
                                 Trade Occupations
                               </a>
-                              <a href="/transport-occupation">
-                                Transport Occupations
+                              <a href="/transport-occupation-targeted-draw">
+                                Transport Occupation Targeted Draws
                               </a>
                               <a href="/agri-food-pilot-program">
                                 Agriculture and Agri-Food Occupation
@@ -1080,8 +1080,8 @@ const Navbar3 = (props) => {
                                   <a href="/trade-occupation-targeted-draw">
                                     Trade Occupations
                                   </a>
-                                  <a href="/transport-occupation">
-                                    Transport Occupations
+                                  <a href="/transport-occupation-targeted-draw">
+                                    Transport Occupation Targeted Draws
                                   </a>
                                   <a href="/agri-food-pilot-program">
                                     Agriculture and Agri-Food Occupation

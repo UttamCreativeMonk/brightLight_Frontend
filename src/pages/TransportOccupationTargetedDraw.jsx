@@ -139,6 +139,7 @@ const TransportOccupationTargetedDraw = () => {
                   >
                     Federal Skilled Worker Program (FSWP)
                   </button>
+                  {"->"}
                   This program is ideal for tech workers who have the necessary
                   work experience, education, and language ability.
                 </li>
@@ -151,6 +152,7 @@ const TransportOccupationTargetedDraw = () => {
                   >
                     Canadian Experience Class (CEC)
                   </button>
+                  {"->"}
                   Similar to the FSW program, the CEC is also suitable for tech
                   workers who have gained Canadian work experience.
                 </li>
@@ -164,6 +166,7 @@ const TransportOccupationTargetedDraw = () => {
                   >
                     Federal Skilled Transports Program (FSTP)
                   </button>
+                  {"->"}
                   If you&#39;re a Transports worker, this program is designed
                   for you. It requires proof of relevant work experience,
                   education, and language proficiency.

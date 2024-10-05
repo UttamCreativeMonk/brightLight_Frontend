@@ -12,6 +12,25 @@
   text-align: center;
 }
 
+.previous_draw_history {
+  display: block;
+  margin: auto;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.previous_draw_history button {
+  background-color: #00273f;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 20px 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
 .bannerHeading h1 {
   color: #e8c47c;
   font-size: 50px;
@@ -127,7 +146,7 @@
   cursor: pointer;
 }
 
-.eligibleCard:hover{
+.eligibleCard:hover {
   opacity: 0.9;
 }
 /* // */
@@ -181,7 +200,7 @@
   cursor: pointer;
 }
 
-.additionCard:hover{
+.additionCard:hover {
   opacity: 0.9;
 }
 .additionCard h2 {
@@ -197,10 +216,29 @@
   margin: auto;
 }
 
+.benefits {
+  width: 1440px;
+  margin: auto;
+}
+
 .advantagesHeading h1 {
   font-size: 50px;
   color: #153b58;
   margin-bottom: 50px;
+}
+
+.benefits h1 {
+  font-size: 50px;
+  color: #153b58;
+  margin-bottom: 50px;
+}
+
+.benefits ul li {
+  color: #78797b;
+  font-size: 25px;
+  margin-bottom: 30px;
+  align-items: left;
+  line-height: 1.8;
 }
 
 .advantagesPara p {
@@ -211,7 +249,7 @@
   line-height: 1.8;
 }
 
-.advantagesPara li{
+.advantagesPara li {
   color: #78797b;
   font-size: 25px;
 }
@@ -476,7 +514,7 @@
   font-size: 70px;
   color: white;
 }
-.bannerHeadingRotatePara p{
+.bannerHeadingRotatePara p {
   cursor: pointer;
 }
 
@@ -561,6 +599,9 @@
   .advantages {
     width: 1340px;
   }
+  .benefits {
+    width: 1340px;
+  }
   .forgetMain {
     width: 1340px;
   }
@@ -605,6 +646,9 @@
     width: 1240px;
   }
   .advantages {
+    width: 1240px;
+  }
+  .benefits {
     width: 1240px;
   }
   .forgetMain {
@@ -655,6 +699,9 @@
     width: 1140px;
   }
   .advantages {
+    width: 1140px;
+  }
+  .benefits {
     width: 1140px;
   }
   .forgetMain {
@@ -716,6 +763,9 @@
   }
 
   .advantages {
+    width: 1040px;
+  }
+  .benefits {
     width: 1040px;
   }
   .forgetMain {
@@ -783,6 +833,9 @@
   }
 
   .advantages {
+    width: 940px;
+  }
+  .benefits {
     width: 940px;
   }
   .forgetMain {
@@ -890,6 +943,10 @@
   }
 
   .advantages {
+    width: 800px;
+  }
+
+  .benefits {
     width: 800px;
   }
 
@@ -1006,6 +1063,10 @@
     width: 95%;
   }
 
+  .benefits {
+    width: 95%;
+  }
+
   /* .advantages{
     text-align: center;
   } */
@@ -1051,16 +1112,21 @@
     font-size: 20px;
   }
 
-  .additionParent h1{
+  .additionParent h1 {
     font-size: 28px;
   }
-  
+
   .additionCard {
     width: 285px;
     height: 158px;
     font-size: 12px;
     padding: 65px 0px;
     margin-bottom: 40px;
+  }
+
+  .previous_draw_history button {
+    padding: 10px 15px;
+    font-size: 15px;
   }
 }
 @media all and (max-width: 580px) {
@@ -1077,6 +1143,14 @@
 
   .advantagesHeading h1 {
     font-size: 40px;
+  }
+
+  .benefits h1 {
+    font-size: 40px;
+  }
+
+  .benefits ul li {
+    font-size: 18px;
   }
 
   .advantagesPara p {
@@ -1108,7 +1182,15 @@
     font-size: 34px;
   }
 
+  .benefits h1 {
+    font-size: 34px;
+  }
+
   .advantagesPara p {
+    font-size: 18px;
+  }
+
+  .benefits ul li {
     font-size: 18px;
   }
 
@@ -1130,13 +1212,12 @@
     height: 140px;
     font-size: 12px;
     padding: 65px 10px;
- 
   }
-  .additionCard h2{
+  .additionCard h2 {
     font-size: 14px;
   }
 }
 
-.eligibleCard h2{
+.eligibleCard h2 {
   color: white;
 }
