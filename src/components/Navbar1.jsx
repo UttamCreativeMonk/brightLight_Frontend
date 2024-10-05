@@ -364,7 +364,7 @@ const Navbar3 = (props) => {
                             className={`${styles.relativeDiv} ${styles.flex}`}
                           >
                             <a
-                              href="#"
+                              href="/category-based"
                               onMouseEnter={() => setShowNestedDropdown7(true)}
                               onMouseLeave={() => setShowNestedDropdown7(false)}
                             >
