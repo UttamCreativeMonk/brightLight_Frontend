@@ -32,7 +32,7 @@ let CategoryBased = () => {
       .catch((error) => {
         console.log(error);
       });
-      fetch("https://brightlight-node.onrender.com/bp-meta")
+    fetch("https://brightlight-node.onrender.com/bp-meta")
       .then((res) => {
         return res.json();
       })
@@ -47,7 +47,7 @@ let CategoryBased = () => {
   }, []);
   return (
     <>
-<Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle
@@ -144,18 +144,56 @@ let CategoryBased = () => {
         <div className={styles.container}>
           <div className={styles.column}>
             <ul>
-              <li>{data?.draw1}</li>
-              <li>{data?.draw2}</li>
-              <li>{data?.draw3}</li>
-              <li>{data?.draw8}</li>
+              <li
+                style={{ cursor: "pointer" }}
+                onClick={() => (window.location.href = "/french-targeted-draw")}
+              >
+                {data?.draw1}
+              </li>
+              <li
+                style={{ cursor: "pointer" }}
+                onClick={() => (window.location.href = "/stem-targeted-draw")}
+              >
+                {data?.draw2}
+              </li>
+              <li
+                style={{ cursor: "pointer" }}
+                onClick={() =>
+                  (window.location.href = "/transport-occupation-targeted-draw")
+                }
+              >
+                {data?.draw3}
+              </li>
+              <li style={{ cursor: "pointer" }}>{data?.draw8}</li>
             </ul>
           </div>
           <div className={styles.column}>
             <ul>
-              <li>{data?.draw4}</li>
-              <li>{data?.draw5}</li>
-              <li>{data?.draw6}</li>
-              <li>{data?.draw7}</li>
+              <li
+                style={{ cursor: "pointer" }}
+                onClick={() =>
+                  (window.location.href = "/healthcare-targeted-draw")
+                }
+              >
+                {data?.draw4}
+              </li>
+              <li
+                style={{ cursor: "pointer" }}
+                onClick={() =>
+                  (window.location.href = "/trade-occupation-targeted-draw")
+                }
+              >
+                {data?.draw5}
+              </li>
+              <li
+                style={{ cursor: "pointer" }}
+                onClick={() =>
+                  (window.location.href = "/agriculture-agri-food-occupation")
+                }
+              >
+                {data?.draw6}
+              </li>
+              <li style={{ cursor: "pointer" }}>{data?.draw7}</li>
             </ul>
           </div>
         </div>
@@ -386,8 +424,8 @@ let CategoryBased = () => {
 
       <div className={styles.theButtonAncorParent}>
         <div className={styles.theButtonAncor}>
-          <a href={data?.drawHeadingLink}>
-            <button>
+          <a href="/previous-draw-history">
+            <button style={{ cursor: "pointer" }}>
               {data?.drawHeadingBottom}{" "}
               <span className={styles.theButtonSpan}>
                 <img src={LinkAncor} alt="err" />

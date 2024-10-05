@@ -390,7 +390,7 @@ const Navbar3 = (props) => {
                               <a href="/transport-occupation-targeted-draw">
                                 Transport Occupation Targeted Draws
                               </a>
-                              <a href="/agri-food-pilot-program">
+                              <a href="/agriculture-agri-food-occupation">
                                 Agriculture and Agri-Food Occupation
                               </a>
                             </div>
@@ -536,7 +536,7 @@ const Navbar3 = (props) => {
 
                       <div className={`${styles.relativeDiv} ${styles.flex}`}>
                         <a
-                          href="/spousal-open-work-permit"
+                          href="/spouse-common-law-sponsership"
                           onMouseEnter={() =>
                             setDoubleNestedSpousalPermit(true)
                           }
@@ -669,7 +669,7 @@ const Navbar3 = (props) => {
                     >
                       <div className={`${styles.relativeDiv} ${styles.flex}`}>
                         <a
-                          href="/spousal-open-work-permit"
+                          href="/spouse-common-law-sponsership"
                           onMouseEnter={() => setShowNestedDropdown8(true)}
                           onMouseLeave={() => setShowNestedDropdown8(false)}
                         >
@@ -783,7 +783,7 @@ const Navbar3 = (props) => {
                       </div>
                       <div className={`${styles.relativeDiv} ${styles.flex}`}>
                         <a
-                          href="/spousal-open-work-permit"
+                          href="/spouse-common-law-sponsership"
                           onMouseEnter={() => setShowNestedDropdown10(true)}
                           onMouseLeave={() => setShowNestedDropdown10(false)}
                         >
@@ -1083,7 +1083,7 @@ const Navbar3 = (props) => {
                                   <a href="/transport-occupation-targeted-draw">
                                     Transport Occupation Targeted Draws
                                   </a>
-                                  <a href="/agri-food-pilot-program">
+                                  <a href="/agriculture-agri-food-occupation">
                                     Agriculture and Agri-Food Occupation
                                   </a>
                                 </div>
@@ -1358,7 +1358,7 @@ const Navbar3 = (props) => {
                           </a>
                           {isFederalSkilledProgramOpenTw && (
                             <div className={styles.subSubDropdownContent}>
-                              <a href="/spousal-open-work-permit">
+                              <a href="/spouse-common-law-sponsership">
                                 Spousal Permit
                               </a>
                               <a href="/spousal-open-work-permit">
