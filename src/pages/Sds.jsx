@@ -42,7 +42,6 @@ const Sds = () => {
     };
   }, []);
 
-
   return (
     <>
       <Navbar1 />
@@ -60,14 +59,28 @@ const Sds = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("application-submission")}>Application Submission</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
-              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("application-submission")}>
+                Application Submission
+              </p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>
+                Refusal Reasons
+              </p>
+              <p onClick={() => scrollToSection("book-appointment")}>
+                Book Appointment
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -76,17 +89,25 @@ const Sds = () => {
       </div>
 
       <div className={styles.container}>
-        <h1  className={styles.heading} id="about-program"  >
+        <h1 className={styles.heading} id="about-program">
           Student Direct Stream (SDS)
         </h1>
+        <p style={{ textAlign: "center" }}>
+          The Student Direct Stream (SDS) offers eligible international students
+          from 14 countries an expedited pathway to obtain their Canadian study
+          permit.
+        </p>
 
-        <section className={`${styles.intro} ${styles.section}`} id="testing" ref={(el) => sectionsRef.current[1] = el}>
+        <section
+          className={`${styles.intro} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
+          <h2>What is a Study Permit?</h2>
           <p>
-            The Student Direct Stream (SDS) offers eligible international
-            students from 14 countries an expedited pathway to obtain their
-            Canadian study permit. A study permit grants you the authorization
-            to stay in Canada for educational purposes. It contains essential
-            information about you, including:
+            A study permit grants you the authorization to stay in Canada for
+            educational purposes. It contains essential information about you,
+            including:
           </p>
           <ul>
             <li>The reason for your presence in Canada</li>
@@ -103,7 +124,11 @@ const Sds = () => {
           </p>
         </section>
 
-        <section className={`${styles.fasterProcessing} ${styles.section}`} id="faster-processing" ref={(el) => sectionsRef.current[2] = el}>
+        <section
+          className={`${styles.fasterProcessing} ${styles.section}`}
+          id="faster-processing"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
           <h2 className={styles.subheading}>
             How to Benefit from Faster Processing
           </h2>
@@ -125,7 +150,11 @@ const Sds = () => {
           </p>
         </section>
 
-        <section className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[3] = el}>
+        <section
+          className={`${styles.eligibility} ${styles.section}`}
+          id="eligibility"
+          ref={(el) => (sectionsRef.current[3] = el)}
+        >
           <h2 className={styles.subheading}>
             Eligibility Criteria for the Student Direct Stream (SDS)
           </h2>
@@ -217,21 +246,30 @@ const Sds = () => {
             <li>Complete a medical exam (if applicable) before applying.</li>
             <li>Obtain a police certificate (if applicable).</li>
           </ul>
+          <p>
+            Additional documentation may be necessary, potentially extending
+            processing times. For specific instructions, refer to your country’s
+            visa office guidelines by selecting your country of residence from
+            the provided menu.
+          </p>
 
-          <button className={styles.button}
-              onClick={() =>
-                (window.location.href =
-                  "/clb-ilets-calculator")
-              }
-            >
-              Check CLB Score Requirements
-            </button>
+          <button
+            className={styles.button}
+            onClick={() => (window.location.href = "/clb-ilets-calculator")}
+          >
+            Check CLB Score Requirements
+          </button>
         </section>
 
-        <section className={`${styles.applicationProcess} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[4] = el}>
+        <section
+          className={`${styles.applicationProcess} ${styles.section}`}
+          id="how-to-apply"
+          ref={(el) => (sectionsRef.current[4] = el)}
+        >
           <h2 className={styles.subheading}>
             How to Apply for Student Direct Stream (SDS)
           </h2>
+          <h4>Application Process:</h4>
           <p>
             If you’re considering applying for a study permit through the
             Student Direct Stream (SDS), here’s what you’ll need:
@@ -239,15 +277,22 @@ const Sds = () => {
           <ol>
             <li>
               <h3>Provincial Attestation Letters (PAL)</h3>
-              <p>
-                As of January 22, 2024, most students planning to study in
-                Canada must provide a Provincial Attestation Letter (PAL)
-                specific to their chosen study location. A PAL serves as an
-                electronic certification, confirming a student’s eligibility to
-                apply for a study permit within a province’s quota. Note:
-                Master’s degree, doctoral degree, and K-12 students are exempt
-                from the PAL requirement.
-              </p>
+              <ul style={{ marginLeft: "20px" }}>
+                <li>
+                  As of January 22, 2024, most students planning to study in
+                  Canada must provide a Provincial Attestation Letter
+                  (PAL) specific to their chosen study location.
+                </li>
+                <li>
+                  A PAL serves as an electronic certification, confirming a
+                  student’s eligibility to apply for a study permit within a
+                  province’s quota.
+                </li>
+                <li>
+                  Note: Master’s degree, doctoral degree, and K-12 students are
+                  exempt from the PAL requirement.
+                </li>
+              </ul>
             </li>
             <li>
               <h3>Proof of First-Year Tuition Payment</h3>
@@ -256,7 +301,7 @@ const Sds = () => {
                 tuition by including one of the following documents with their
                 application:
               </p>
-              <ul>
+              <ul style={{ marginLeft: "20px", marginTop: "10px" }}>
                 <li>
                   A receipt from the Designated Learning Institution (DLI)
                 </li>
@@ -270,6 +315,11 @@ const Sds = () => {
             </li>
             <li>
               <h3>Proof of Funds Chart</h3>
+              <p style={{ marginBottom: "20px" }}>
+                Scenarios with estimated one year tuition fees of 20,000 &amp;
+                minimum travel cost per person of $2000 CAD based on the new
+                cost of living
+              </p>
               <table className={styles.fundsTable}>
                 <thead>
                   <tr>
@@ -351,12 +401,12 @@ const Sds = () => {
             </li>
             <li>
               <h3>Medical Exam</h3>
-              <p>
+              <p style={{ marginBottom: "20px" }}>
                 You may need to undergo a medical exam conducted by an
                 Immigration, Refugees and Citizenship Canada (IRCC)-approved
                 doctor if:
               </p>
-              <ul>
+              <ul style={{ marginLeft: "20px" }}>
                 <li>
                   You have lived or traveled in certain countries or territories
                   for six months or longer in the year before coming to Canada.
@@ -377,12 +427,12 @@ const Sds = () => {
             </li>
             <li>
               <h3>Language Test Results</h3>
-              <p>
+              <p style={{ marginBottom: "20px" }}>
                 Include your language test results demonstrating proficiency in
                 English or French. As of August 10, 2023, SDS applicants can
                 submit English proficiency test results from four new providers:
               </p>
-              <ul>
+              <ul style={{ marginLeft: "20px" }}>
                 <li>Canadian Academic English Language (CAEL)</li>
                 <li>
                   Canadian English Language Proficiency Index Program (CELPIP
@@ -391,7 +441,9 @@ const Sds = () => {
                 <li>Pearson Test of English – Academic (PTE Academic)</li>
                 <li>Test of English as a Foreign Language (TOEFL iBT)</li>
               </ul>
-              <p>Minimum language test scores required:</p>
+              <p style={{ marginBottom: "20px" }}>
+                Minimum language test scores required:
+              </p>
               <table className={styles.languageTable}>
                 <thead>
                   <tr>
@@ -434,7 +486,11 @@ const Sds = () => {
           </ol>
         </section>
 
-        <section  className={`${styles.family} ${styles.section}`} id="family" ref={(el) => sectionsRef.current[0] = el}>
+        <section
+          className={`${styles.family} ${styles.section}`}
+          id="family"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
           <h2 className={styles.subheading}>
             Bringing Spouses, Common-Law Partners, and Dependent Children
           </h2>
@@ -455,21 +511,43 @@ const Sds = () => {
           </p>
           <p>
             <strong>
-              Is my spouse or common law partner eligible for an Open Work
-              Permit?
+              I am an international student. Is my spouse, common law partner,
+              eligible for an Open Work Permit?
             </strong>{" "}
+          </p>
+          <p>
             As of March 19, 2024, to be eligible to apply for a Spousal Open
             Work Permit as an international student, you must be enrolled in one
             of the following programs:
           </p>
           <ul>
-            <li>
-              <strong>Graduate Programs:</strong> Master’s and doctorate degrees
-              granted by universities or polytechnic institutions.
-            </li>
-            <li>
-              <strong>Professional Degree Programs:</strong>
+            <li
+              style={{
+                listStyle: "none",
+                marginBottom: "20px",
+                marginTop: "10px",
+              }}
+            >
+              <strong>Graduate Programs:</strong>
               <ul>
+                <li>
+                  Graduate programs encompass master’s and doctorate
+                  degrees granted by universities or polytechnic institutions.
+                </li>
+              </ul>
+            </li>
+            <li style={{ listStyle: "none" }}>
+              <strong>Professional Degree Programs:</strong>
+              <li
+                style={{
+                  listStyle: "disc",
+                  marginLeft: "20px",
+                  marginTop: "10px",
+                }}
+              >
+                Professional degree programs include the following:
+              </li>
+              <ul style={{ marginLeft: "40px" }}>
                 <li>Doctor of Dental Surgery (DDS, DMD)</li>
                 <li>Bachelor of Law or Juris Doctor (LLB, JD, BCL)</li>
                 <li>Doctor of Medicine (MD)</li>
@@ -484,11 +562,18 @@ const Sds = () => {
           </ul>
         </section>
 
-        <section className={`${styles.exclusions} ${styles.section}`} id="exclusion" ref={(el) => sectionsRef.current[5] = el}>
+        <section
+          className={`${styles.exclusions} ${styles.section}`}
+          id="exclusion"
+          ref={(el) => (sectionsRef.current[5] = el)}
+        >
           <h2 className={styles.subheading}>
             Who Isn’t Eligible for the Student Direct Stream (SDS)?
           </h2>
-          <ul>
+          <p style={{ marginBottom: "20px" }}>
+            According to the Government of Canada:
+          </p>
+          <ul style={{ marginLeft: "20px" }}>
             <li>
               If you reside anywhere other than the 14 countries listed above
               (even if you’re a citizen of those countries), you must apply
@@ -503,44 +588,68 @@ const Sds = () => {
           </ul>
         </section>
 
-        <section className={`${styles.applicationSubmission} ${styles.section}`} id="application-submission" ref={(el) => sectionsRef.current[6] = el} >
+        <section
+          className={`${styles.applicationSubmission} ${styles.section}`}
+          id="application-submission"
+          ref={(el) => (sectionsRef.current[6] = el)}
+        >
           <h2 className={styles.subheading}>Submitting Your Application</h2>
-          <p>
-            Students applying through the Student Direct Stream can only apply
-            online; there’s no paper application process. To complete your
-            application, follow these steps:
-          </p>
-          <ol>
-            <li>Review the instruction guide to fill out the forms.</li>
-            <li>Create electronic copies of your documents.</li>
-            <li>Pay the application fee using a credit or debit card.</li>
-          </ol>
+          <ul>
+            <li>
+              Students applying through the Student Direct Stream can only apply
+              online; there’s no paper application process. To complete your
+              application, follow these steps:
+            </li>
+            <li>
+              To complete your application, follow these steps:
+              <ol style={{ marginLeft: "20px", marginBottom: "70px" }}>
+                <li>Review the instruction guide to fill out the forms.</li>
+                <li>Create electronic copies of your documents.</li>
+                <li>Pay the application fee using a credit or debit card.</li>
+              </ol>
+            </li>
+          </ul>
+
           <h3>Paying for Your Biometrics</h3>
-          <p>
-            Most students need to provide biometrics and should pay the fee
-            along with their online application. If you require assistance with
-            biometrics or passport submission, visit a visa application centre
-            (VAC).
-          </p>
+          <ul style={{ marginTop: "10px", marginBottom: "50px" }}>
+            <li>
+              Most students need to provide biometrics and should pay the fee
+              along with their online application.
+            </li>
+            <li>
+              If you require assistance with biometrics or passport submission,
+              visit a visa application centre (VAC).
+            </li>
+          </ul>
           <h3>After You Apply</h3>
-          <p>
-            Book an appointment to provide your biometrics after submitting your
-            study permit application through the Student Direct Stream. You’ll
-            receive an instruction letter detailing where and how to provide
-            your biometrics within 30 days. Bring this letter and your valid
-            passport to your appointment. If you didn’t pay the biometrics fee
-            during application, you’ll receive a reminder letter. The visa
-            office won’t process your application until you’ve provided
-            biometrics.
-          </p>
+          <ul style={{ marginTop: "20px", marginBottom: "50px" }}>
+            <li>
+              Book an appointment to provide your biometrics after submitting
+              your study permit application through the Student Direct Stream.
+            </li>
+            <li>
+              You’ll receive an instruction letter detailing where and how to
+              provide your biometrics within 30 days. Bring this letter and your
+              valid passport to your appointment.
+            </li>
+            <li>
+              If you didn’t pay the biometrics fee during application, you’ll
+              receive a reminder letter. The visa office won’t process your
+              application until you’ve provided biometrics.
+            </li>
+          </ul>
           <h3>Processing Time</h3>
-          <p>
-            The visa office typically processes most applications within 20
-            calendar days after receiving biometrics from eligible applicants.
-            If your application doesn’t meet the eligibility criteria for the
-            Student Direct Stream, it will be reviewed as a regular study permit
-            application, without faster processing.
-          </p>
+          <ul style={{ marginTop: "20px", marginBottom: "50px" }}>
+            <li>
+              The visa office typically processes most applications within 20
+              calendar days after receiving biometrics from eligible applicants.
+            </li>
+            <li>
+              If your application doesn’t meet the eligibility criteria for the
+              Student Direct Stream, it will be reviewed as a regular study
+              permit application, without faster processing.
+            </li>
+          </ul>
           <h3>Application Refusal</h3>
           <p>
             If your application is refused, you’ll receive a letter explaining
@@ -549,10 +658,16 @@ const Sds = () => {
           </p>
         </section>
 
-        <section  className={`${styles.refusalReasons} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[7] = el}>
+        <section
+          className={`${styles.refusalReasons} ${styles.section}`}
+          id="refusal-reasons"
+          ref={(el) => (sectionsRef.current[7] = el)}
+        >
           <h2 className={styles.subheading}>Reasons for Refusal</h2>
+          <p style={{ marginBottom: "20px" }}>
+            Insufficient Identity or travel history documents
+          </p>
           <ul>
-            <li>Insufficient Identity or travel history documents</li>
             <li>Not having an intention of coming back to your home country</li>
             <li>You failed to submit a Letter of Acceptance</li>
             <li>Lack of academic performance & low language test scores</li>
@@ -566,9 +681,7 @@ const Sds = () => {
               qualifications and experience
             </li>
           </ul>
-          <h2 className={styles.subheading}>
-            Still Not Sure ?
-          </h2>
+          <h2 className={styles.subheading}>Still Not Sure ?</h2>
           <p>
             Still not sure? If you have faced a refusal for any of the reasons
             mentioned above, don't worry. With over 10 years of experience, we

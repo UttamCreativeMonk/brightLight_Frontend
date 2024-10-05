@@ -8,7 +8,6 @@ import FAQ from "../sections/FAQ";
 import ogImage from "../assets/ogImage.png";
 import { Helmet } from "react-helmet-async";
 
-
 const InternationalGraduateProgram = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
@@ -22,24 +21,22 @@ const InternationalGraduateProgram = () => {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
-  
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     fetch("https://brightlight-node.onrender.com/igp-meta")
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => {
-      if (data) {
-        setMetaData(data[0]);
-      }
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-  },[])
-
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   const sectionsRef = useRef([]);
 
@@ -65,7 +62,7 @@ const InternationalGraduateProgram = () => {
 
   return (
     <>
-<Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle
@@ -109,7 +106,7 @@ const InternationalGraduateProgram = () => {
       </Helmet>
       <Navbar1 />
       <div className={styles.bannerParent}>
-        <header className={styles.header} >
+        <header className={styles.header}>
           <h1>
             British Columbia Provincial Nominee Program - International Graduate
             Stream
@@ -131,12 +128,24 @@ const InternationalGraduateProgram = () => {
             <div className={styles.bannerHeadingRotatePara}>
               <p onClick={() => scrollToSection("benefits")}>Benefits</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("employer_requirements")}>Employer Requirements</p>
-              <p onClick={() => scrollToSection("bcnp-calculator")}>BCPNP Calculator</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply</p>
-              <p onClick={() => scrollToSection("why_choose_us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("employer_requirements")}>
+                Employer Requirements
+              </p>
+              <p onClick={() => scrollToSection("bcnp-calculator")}>
+                BCPNP Calculator
+              </p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply
+              </p>
+              <p onClick={() => scrollToSection("why_choose_us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("book-appointment")}>
+                Book Appointment
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -145,7 +154,30 @@ const InternationalGraduateProgram = () => {
       </div>
 
       <div className={styles.container}>
-        <section className={`${styles.section} ${styles.section}`} id="benefits" ref={(el) => sectionsRef.current[0] = el}>
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="benefits-2"
+          ref={(el) => (sectionsRef.current[21] = el)}
+        >
+          <h2>
+            British Columbia Provincial Nominee Program International Graduate
+            stream
+          </h2>
+          <p>
+            The British Columbia International Graduate stream is one of the
+            immigration pathways offered within the British Columbia Provincial
+            Nominee Program (BC PNP). Operated by the province of British
+            Columbia, the BC PNP aims to nominate skilled immigrants for
+            permanent residence in Canada. The BC International Graduate stream
+            prioritizes candidates who have completed post-secondary education
+            in Canada and have received an offer for skilled employment.
+          </p>
+        </section>
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="benefits"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
           <h2>Benefits of BCPNP International Graduate Stream</h2>
           <ul>
             <li>
@@ -162,8 +194,13 @@ const InternationalGraduateProgram = () => {
             </li>
           </ul>
         </section>
-        <section  className={`${styles.section} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[1] = el}>
-          <h2>Eligibility Criteria for International Graduate Stream</h2>
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="eligibility"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
+          <h2>First you must be eligible with BCPNP Skilled Worker Program</h2>
+          <h4>Eligibility Criteria for International Graduate Stream</h4>
           <div className={styles.criteria}>
             <h3>1. Job Offer</h3>
             <ul>
@@ -175,8 +212,9 @@ const InternationalGraduateProgram = () => {
                 The job offer should fall under NOC TEER Categories 1, 2, or 3.
               </li>
               <li>
-                For eligible tech occupations or NOC 41200, it does not need to
-                be indeterminate.
+                If the job offer is in an eligible tech occupation or falls
+                under NOC 41200 (university professors and lecturers), it does
+                not need to be indeterminate.
               </li>
               <li>
                 The wage must be at market rate and comparable to similar roles
@@ -195,14 +233,21 @@ const InternationalGraduateProgram = () => {
                 You need a degree, diploma, or certificate from an eligible
                 Canadian post-secondary institution.
               </li>
-              <li>Completion date should be within the last three years.</li>
               <li>
-                Degrees must be from authorized institutions, diplomas from
-                public institutions.
+                The degree or diploma program completion date should be within
+                the last three years from the date on your official transcript.
               </li>
               <li>
-                Language training or programs shorter than 8 months do not
-                qualify.
+                Undergraduate or graduate degrees must be from authorized
+                institutions that can grant degrees.
+              </li>
+              <li>
+                Diplomas and certificates must be from public post-secondary
+                institutions in Canada (private institutions are not eligible).
+              </li>
+              <li>
+                Language training and programs shorter than 8 months (excluding
+                internships and co-op terms) do not qualify.
               </li>
             </ul>
           </div>
@@ -210,12 +255,13 @@ const InternationalGraduateProgram = () => {
             <h3>3. Language Proficiency</h3>
             <ul>
               <li>
-                TEER Category 1: Language results not mandatory (BC PNP may
-                request a test).
+                If the job offer’s NOC code is TEER Category 1, language results
+                are not mandatory for eligibility (although BCPNP may still
+                request a language test).
               </li>
               <li>
-                TEER Categories 2 or 3: Canadian Language Benchmark (CLB) score
-                of at least 4 required.
+                For TEER Categories 2 or 3, you need a Canadian Language
+                Benchmark (CLB) score of at least 4.
               </li>
             </ul>
           </div>
@@ -223,17 +269,32 @@ const InternationalGraduateProgram = () => {
             <h3>4. Minimum Income Requirements</h3>
             <ul>
               <li>
-                Gross annual wage must meet minimum income requirements based on
-                location and dependents.
+                You must demonstrate that your gross annual wage in the job
+                offer meets minimum income requirements.
+              </li>
+              <li>
+                These requirements vary based on your location of residence in
+                BC and the number of dependents.
               </li>
             </ul>
           </div>
+          <p>
+            Remember that meeting these eligibility criteria does not guarantee
+            an invitation to apply; invitations are based on threshold scores
+            during draws. If your score meets or exceeds the threshold, you’ll
+            receive an invitation to apply from the BCPNP.
+          </p>
         </section>
-        <section className={`${styles.section} ${styles.section}`} id="employer_requirements" ref={(el) => sectionsRef.current[2] = el}>
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="employer_requirements"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
           <h2>Requirements for the Express Entry Category</h2>
           <p>
-            To be eligible, you must qualify under one of the federal programs.
-            Click below for more details:
+            To be eligible for the International Graduates (IG) stream, you must
+            qualify under one of the three federal programs. To understand the
+            eligibility criteria for these programs, click on either the:
           </p>
           <ul>
             <li>
@@ -253,8 +314,16 @@ const InternationalGraduateProgram = () => {
             </li>
           </ul>
         </section>
-        <section className={`${styles.section} ${styles.section}`} id="testing1" ref={(el) => sectionsRef.current[3] = el}>
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="testing1"
+          ref={(el) => (sectionsRef.current[3] = el)}
+        >
           <h2>Employer’s Eligibility Requirements</h2>
+          <p>
+            As a British Columbia employer participating in the BC Skilled
+            Worker program, ensure you:
+          </p>
           <ul>
             <li>Established in B.C.</li>
             <li>Comply with domestic labor market recruitment.</li>
@@ -269,7 +338,11 @@ const InternationalGraduateProgram = () => {
             <li>Adhere to all relevant laws and regulations.</li>
           </ul>
         </section>
-        <section className={`${styles.section} ${styles.section}`} id="bcnp-calculator" ref={(el) => sectionsRef.current[4] = el}>
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="bcnp-calculator"
+          ref={(el) => (sectionsRef.current[4] = el)}
+        >
           <button
             className={styles.button}
             onClick={() => (window.location.href = "/bcpnp-calculator")}
@@ -277,40 +350,134 @@ const InternationalGraduateProgram = () => {
             Calculate your BCPNP score
           </button>
         </section>
-        <section className={`${styles.section} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[5] = el}>
-          <h2>Application Process</h2>
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="how-to-apply"
+          ref={(el) => (sectionsRef.current[5] = el)}
+        >
+          <h2>
+            Application Process for British Columbia Provincial Nominee Program
+            International Graduate Stream application
+          </h2>
           <ol>
             <li>
-              <strong>Expression of Interest (EOI) System:</strong> Register a
-              profile on BC’s immigration portal.
+              <strong>Expression of Interest (EOI) System</strong>
+              <ul>
+                <li>
+                  The British Columbia International Graduate stream operates on
+                  an Expression of Interest (EOI) system.
+                </li>
+                <li>
+                  Candidates who meet the minimum stream requirements can
+                  register a profile using the BC’s online immigration portal.
+                </li>
+              </ul>
             </li>
             <li>
-              <strong>Profile Registration:</strong> Indicate if applying
-              through Express Entry or regular Skills Immigration system.
+              <strong>Profile Registration:</strong>
+              <ul>
+                <li>
+                  Candidates must indicate on their BC profile whether they are
+                  applying through:
+                  <ul>
+                    <li>The accelerated Express Entry system, or</li>
+                    <li>
+                      The regular non- Express Entry Skills Immigration system.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  Once the profile has been submitted, candidates will be
+                  assigned a score and ranked against one another using the BC
+                  Skills Immigration Ranking System.
+                </li>
+              </ul>
             </li>
             <li>
-              <strong>Invitation to Apply (ITA):</strong> High-ranking
-              candidates receive an ITA in periodic intakes.
+              <strong>Invitation to Apply (ITA):</strong>
+              <ul>
+                <li>
+                  The highest ranking candidates will be invited to apply to the
+                  stream in one of the stream’s periodic intakes.
+                </li>
+                <li>
+                  Candidates must submit a complete application to the stream
+                  within 30 days from when they receive the invitation to apply.
+                </li>
+              </ul>
             </li>
             <li>
-              <strong>Application Fee:</strong> $1,475 CAD per applicant.
+              <strong>Application Fee:</strong>
+              <ul>
+                <li>
+                  The BC International Graduate stream charges a $1,475 CAD
+                  application fee per applicant.
+                </li>
+              </ul>
             </li>
             <li>
-              <strong>Provincial Nomination:</strong> Issued if approved,
-              including a letter of support for a temporary work permit if
-              needed.
+              <strong>Provincial Nomination:</strong>
+              <ul>
+                <li>
+                  If the application is approved, the candidate will be issued
+                  a provincial nomination for permanent residence from BC.
+                </li>
+                <li>
+                  Candidates can also request to receive a letter of support for
+                  a temporary work permit, allowing them to begin working in
+                  Canada while their application for permanent residence is
+                  processed.
+                </li>
+                <li>
+                  Applying for a work permit with a letter of support from a
+                  province represents a separate application to IRCC.
+                </li>
+              </ul>
             </li>
             <li>
-              <strong>Express Entry Stream:</strong> Notification of nomination
-              increases CRS score by 600 points.
+              <strong>Express Entry Stream:</strong>
+              <ul>
+                <li>
+                  If the applicant indicated on their BC profile that they were
+                  applying to the BC Skilled Worker stream through Express
+                  Entry, they will receive a notification of nomination on their
+                  IRCC online account.
+                </li>
+                <li>
+                  After accepting the provincial nomination, the
+                  applicant’s Comprehensive Ranking System (CRS) score will
+                  increase by 600 points, virtually guaranteeing they will
+                  receive an Invitation to Apply (ITA) for permanent residence
+                  in the next Express Entry draw.
+                </li>
+                <li>
+                  After receiving an ITA, the applicant must prepare and submit
+                  an official application for Canadian permanent residence
+                  within the designated timeframe. Applications for permanent
+                  residence submitted through Express Entry are generally
+                  processed within six months.
+                </li>
+              </ul>
             </li>
             <li>
-              <strong>Regular Skills Immigration System:</strong> Six months to
-              submit an official application online.
+              <strong>Regular Skills Immigration System:</strong>
+              <ul>
+                <li>
+                  If the applicant indicated on their BC profile that they were
+                  applying to the BC International Graduate stream through
+                  the regular Skills Immigration system, the applicant has six
+                  months to submit an official application for permanent
+                  residence online.
+                </li>
+              </ul>
             </li>
           </ol>
         </section>
-        <section  className={`${styles.section} ${styles.section}`} id="book-appointment" ref={(el) => sectionsRef.current[6] = el}>
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="book-appointment"
+          ref={(el) => (sectionsRef.current[6] = el)}
+        >
           <h2>Still Not Sure?</h2>
           <p>
             Contact Brightlight Immigration to assess your profile and start
@@ -321,7 +488,10 @@ const InternationalGraduateProgram = () => {
           <button
             className={styles.button}
             onClick={() =>
-              (window.location.href ="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")}>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
+          >
             Book Appointment
           </button>
         </section>

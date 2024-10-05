@@ -146,12 +146,19 @@
   
   .subtitle {
     font-size: 1.8em;
+    margin-bottom: 20px !important;
+    margin-top: 50px !important;
+  }
 
+  .section{
+    margin-bottom: 20px;
   }
   
   .subheading {
     font-size: 1.5em;
     color: #333;
+    margin-top: 50px;
+    margin-bottom: 20px;
   }
   
   .criteria {

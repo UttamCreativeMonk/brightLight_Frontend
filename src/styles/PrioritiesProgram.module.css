@@ -161,6 +161,10 @@
   margin-bottom: 20px;
 }
 
+.occupationList ol li{
+  margin-bottom: 10px;
+}
+
 .occupationList h4 {
   font-size: 1.5em;
   margin-bottom: 10px;
@@ -187,6 +191,16 @@
 .callToAction {
   text-align: left;
   margin-top: 50px !important;
+}
+
+.callToAction ol{
+  margin-top: 20px;
+}
+
+.callToAction ol ul{
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .button {
@@ -238,6 +252,8 @@
   opacity: 0;
   transform: translateX(-100px);
   transition: opacity 0.8s ease, transform 0.8s ease;
+  margin-top: 50px !important;
+  margin-bottom: 50px !important;
 }
 
 .section.visible {

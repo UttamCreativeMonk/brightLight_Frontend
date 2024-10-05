@@ -20,7 +20,6 @@ const NonSds = () => {
     }
   };
 
-
   const sectionsRef = useRef([]);
 
   const handleScroll = () => {
@@ -64,13 +63,28 @@ const NonSds = () => {
                 About the Program
               </p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("language-chart")}>Language Chart</p>
-              <p onClick={() => scrollToSection("spousal-permit")}>Spousal Permit </p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
-              <p onClick={() => scrollToSection("book-appointment")}> Book Appointment </p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("language-chart")}>
+                Language Chart
+              </p>
+              <p onClick={() => scrollToSection("spousal-permit")}>
+                Spousal Permit{" "}
+              </p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>
+                Refusal Reasons
+              </p>
+              <p onClick={() => scrollToSection("book-appointment")}>
+                {" "}
+                Book Appointment{" "}
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -79,7 +93,12 @@ const NonSds = () => {
       </div>
 
       <div className={styles.container}>
-        <h1 c className={`${styles.heading} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el} >
+        <h1
+          c
+          className={`${styles.heading} ${styles.section}`}
+          id="about-program"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
           Non-Student Direct Stream (Non-SDS) / General Student Visa
         </h1>
 
@@ -88,22 +107,31 @@ const NonSds = () => {
             While the Student Direct Stream (SDS) program offers a streamlined
             application process for select countries, the Non-SDS Canada Student
             Visa program extends this opportunity to students from all corners
-            of the globe. The Non-SDS or General Student Visa is an option for
-            international students who do not meet the eligibility requirements
-            for the Student Direct Stream (SDS) program. The SDS program offers
-            a streamlined visa application process with faster processing times
+            of the globe.
+          </p>
+          <p>
+            The Non-SDS or General Student Visa is an option for international
+            students who do not meet the eligibility requirements for the
+            Student Direct Stream (SDS) program. The SDS program offers a
+            streamlined visa application process with faster processing times
             for certain eligible students from India and Brazil. Non-SDS
             applicants, on the other hand, must undergo a more comprehensive
-            application process, which may take longer to process. While Non-SDS
-            or General Student Visa offers greater flexibility in terms of
-            nationality and program selection, it also entails a lengthier
-            application process and more stringent documentation requirements.
-            Let's look into the pros and cons of this visa to help you make an
-            informed decision.
+            application process, which may take longer to process.
+          </p>
+          <p>
+            While Non-SDS or General Student Visa offers greater flexibility in
+            terms of nationality and program selection, it also entails a
+            lengthier application process and more stringent documentation
+            requirements. Let&#39;s look into the pros and cons of this visa to
+            help you make an informed decision.
           </p>
         </section>
 
-        <section className={`${styles.prosCons} ${styles.section}`} id="pros-cons" ref={(el) => sectionsRef.current[1] = el}>
+        <section
+          className={`${styles.prosCons} ${styles.section}`}
+          id="pros-cons"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
           <h2 className={styles.subheading}>Pros and Cons</h2>
           <div className={styles.grid}>
             <div className={styles.pros}>
@@ -127,7 +155,11 @@ const NonSds = () => {
           </div>
         </section>
 
-        <section  className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[2] = el}>
+        <section
+          className={`${styles.eligibility} ${styles.section}`}
+          id="eligibility"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
           <h2 className={styles.subheading}>Eligibility for Non-SDS Program</h2>
           <ul>
             <li>
@@ -135,8 +167,8 @@ const NonSds = () => {
               learning institution (DLI) in Canada.
             </li>
             <li>
-              Hold a provincial attestation letter (PAL) from the province or
-              territory where you plan to study.
+              Hold a <b>provincial attestation letter (PAL)</b> from the
+              province or territory where you plan to study.
             </li>
             <li>
               Demonstrate adequate English language proficiency, typically with
@@ -150,12 +182,17 @@ const NonSds = () => {
               external scholarships.
             </li>
             <li>
-              Meet all other Canadian immigration requirements, such as criminal
-              background checks and medical exams.
+              Also, you should meet all other Canadian immigration requirements,
+              such as criminal background checks and medical exams.
             </li>
+            <li>Minimum language test scores required:</li>
           </ul>
 
-          <div className={`${styles.languageChart} ${styles.section}`} id="language-chart" ref={(el) => sectionsRef.current[3] = el}>
+          <div
+            className={`${styles.languageChart} ${styles.section}`}
+            id="language-chart"
+            ref={(el) => (sectionsRef.current[3] = el)}
+          >
             <h3>Minimum Language Test Scores Required:</h3>
             <table>
               <thead>
@@ -196,19 +233,27 @@ const NonSds = () => {
               </tbody>
             </table>
 
-            <button className={styles.button}
-              onClick={() =>
-                (window.location.href =
-                  "/bcpnp-calculator")
-              }
+            <h2 style={{ marginTop: "50px" }}>
+              Check what CLB score you need to achieve to meet CLB criteria.
+            </h2>
+
+            <button
+              className={styles.button}
+              onClick={() => (window.location.href = "/bcpnp-calculator")}
             >
               Start your process now
             </button>
           </div>
         </section>
 
-        <section  className={`${styles.applicationProcess} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[4] = el}>
-          <h2 className={styles.subheading}>Application Process</h2>
+        <section
+          className={`${styles.applicationProcess} ${styles.section}`}
+          id="how-to-apply"
+          ref={(el) => (sectionsRef.current[4] = el)}
+        >
+          <h2 className={styles.subheading}>
+            Application Process (how to apply)
+          </h2>
           <p>
             The application process for a Non-SDS Canada or General Student Visa
             involves you submitting your complete application package to the
@@ -219,8 +264,8 @@ const NonSds = () => {
             <li>Your passport or travel document.</li>
             <li>Proof of identity.</li>
             <li>
-              Provincial attestation letter (PAL) from the province or territory
-              where you plan to study.
+              Hold a <b>Provincial attestation letter (PAL)</b> from the
+              province or territory where you plan to study.
             </li>
             <li>Proof of funds. (See Chart Below)</li>
             <li>Your letter of acceptance from a DLI.</li>
@@ -233,8 +278,14 @@ const NonSds = () => {
           </ul>
         </section>
 
-        <section className={`${styles.proofOfFunds} ${styles.section}`} id="proof-of-funds" ref={(el) => sectionsRef.current[5] = el}>
-          <h2 className={styles.subheading}>Proof of Funds Chart</h2>
+        <section
+          className={`${styles.proofOfFunds} ${styles.section}`}
+          id="proof-of-funds"
+          ref={(el) => (sectionsRef.current[5] = el)}
+        >
+          <h2 className={styles.subheading}>
+            Proof of Funds Chart updated as per new guidelines Jan 2024
+          </h2>
           <table>
             <thead>
               <tr>
@@ -315,22 +366,43 @@ const NonSds = () => {
           </table>
         </section>
 
-        <section  className={`${styles.spousalPermit} ${styles.section}`} id="spousal-permit" ref={(el) => sectionsRef.current[6] = el}>
-          <h2 className={styles.subheading}>Spousal Open Work Permit</h2>
-          <p>
-            As of March 19, 2024, to be eligible to apply for a Spousal Open
-            Work Permit as an international student, you must be enrolled in one
-            of the following programs:
-          </p>
+        <h3 style={{ marginBottom: "20px" }}>
+          I am an international student. Is my spouse, common law partner,
+          eligible for an Open Work Permit?
+        </h3>
+        <p>
+          As of March 19, 2024, to be eligible to apply for a Spousal Open Work
+          Permit as an international student, you must be enrolled in one of the
+          following programs:
+        </p>
+
+        <section
+          className={`${styles.spousalPermit} ${styles.section}`}
+          id="spousal-permit"
+          ref={(el) => (sectionsRef.current[6] = el)}
+        >
           <ul>
-            <li>
-              <strong>Graduate Programs:</strong> Graduate programs encompass
-              master’s and doctorate degrees granted by universities or
-              polytechnic institutions.
-            </li>
-            <li>
-              <strong>Professional Degree Programs:</strong>
+            <li style={{ listStyle: "none" }}>
+              <strong>Graduate Programs:</strong>
               <ul>
+                <li>
+                  Graduate programs encompass master’s and doctorate degrees
+                  granted by universities or polytechnic institutions.
+                </li>
+              </ul>
+            </li>
+            <li style={{ listStyle: "none" }}>
+              <strong>Professional Degree Programs:</strong>
+              <li
+                style={{
+                  listStyle: "disc",
+                  marginLeft: "20px",
+                  marginTop: "10px",
+                }}
+              >
+                Professional degree programs include the following:
+              </li>
+              <ul style={{ marginLeft: "40px" }}>
                 <li>Doctor of Dental Surgery (DDS, DMD)</li>
                 <li>Bachelor of Law or Juris Doctor (LLB, JD, BCL)</li>
                 <li>Doctor of Medicine (MD)</li>
@@ -345,8 +417,15 @@ const NonSds = () => {
           </ul>
         </section>
 
-        <section className={`${styles.refusalReasons} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[7] = el}>
-          <h2 className={styles.subheading}>Reasons for Refusal</h2>
+        <section
+          className={`${styles.refusalReasons} ${styles.section}`}
+          id="refusal-reasons"
+          ref={(el) => (sectionsRef.current[7] = el)}
+        >
+          <h2 className={styles.subheading}>
+            Don’t forget to avoid these common Non-SDS or General Student Visa
+            refusal reasons and increase your chances of approval.
+          </h2>
           <ul>
             <li>
               Your application is incomplete, and you did not share all the
@@ -365,34 +444,42 @@ const NonSds = () => {
           </ul>
         </section>
 
-        <section className={`${styles.bookAppointment} ${styles.section}`} id="book-appointment" ref={(el) => sectionsRef.current[8] = el}>
-          <h2 className={styles.subheading}>Book an Appointment</h2>
+        <section
+          className={`${styles.bookAppointment} ${styles.section}`}
+          id="book-appointment"
+          ref={(el) => (sectionsRef.current[8] = el)}
+        >
+          <h2 className={styles.subheading}>In Case,</h2>
           <p>
             If you have faced a refusal for any of the reasons mentioned above,
-            don't worry. With over 10 years of experience, we specialize in
+            don&#39;t worry. With over 10 years of experience, we specialize in
             handling previously refused cases. We have successfully secured
             approval for students who have had multiple refusals, long gaps in
-            education, and are of mature age. We achieve this by tailoring our
-            approach to your specific case and addressing each concern raised by
-            the officer in previous refusals. Using case law, we identify
-            similar cases with positive outcomes and apply them as precedents in
-            the cases we handle. This is why we have a high success rate, with
-            over 90% approval in such cases. At Brightlight Immigration, we have
-            a dedicated team of visa application specialists who can assist you
-            from the start of the application process all the way to obtaining
-            your visa. Start your process now.
+            education, and are of mature age.
+          </p>
+          <p>
+            We achieve this by tailoring our approach to your specific case and
+            addressing each concern raised by the officer in previous refusals.
+            Using case law, we identify similar cases with positive outcomes and
+            apply them as precedents in the cases we handle. This is why we have
+            a high success rate, with over 90% approval in such cases. At
+            Brightlight Immigration, we have a dedicated team of visa
+            application specialists who can assist you from the start of the
+            application process all the way to obtaining your visa. Start your
+            process now.
           </p>
 
-          <button   className={styles.button}
-              onClick={() =>
-                (window.location.href =
-                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-              }>
-                 Book Appointment
-            </button>
+          <button
+            className={styles.button}
+            onClick={() =>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
+          >
+            Book Appointment
+          </button>
         </section>
       </div>
-
 
       <div id="faqs">
         <FAQ />

@@ -202,11 +202,11 @@ let AllRoutes = () => {
         path="/common-law-partner-permanent"
         element={<CommonLawPartnerPermanent />}
       />
-     <Route
+      <Route
         path="/common-law-partner-international"
         element={<CommonLawPartnerInternational />}
       />
-           <Route
+      <Route
         path="/spouse-common-law-sponsership"
         element={<SpouseCommonLawSpon />}
       />

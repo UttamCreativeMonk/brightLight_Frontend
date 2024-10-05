@@ -22,21 +22,20 @@ const StudentVisa = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
-  useEffect(()=>{
+  useEffect(() => {
     fetch("https://brightlight-node.onrender.com/study-meta")
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => {
-      if (data) {
-        setMetaData(data[0]);
-      }
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-  },[])
-  
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   const sectionsRef = useRef([]);
 
@@ -62,7 +61,7 @@ const StudentVisa = () => {
 
   return (
     <>
-<Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle
@@ -120,10 +119,16 @@ const StudentVisa = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
               <p onClick={() => scrollToSection("pathways")}>Pathways</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -131,7 +136,11 @@ const StudentVisa = () => {
         </div>
       </div>
       <div className={styles.container}>
-        <h1  className={`${styles.heading} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el} >
+        <h1
+          className={`${styles.heading} ${styles.section}`}
+          id="about-program"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
           Student Visa
         </h1>
         <p className={styles.description}>
@@ -148,8 +157,12 @@ const StudentVisa = () => {
           at some of the world's top-rated universities and colleges.
         </p>
 
-        <section  className={`${styles.pathways} ${styles.section}`} id="testing" ref={(el) => sectionsRef.current[1] = el}>
-          <h2 className={styles.subheading} id="pathways" >
+        <section
+          className={`${styles.pathways} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
+          <h2 className={styles.subheading} id="pathways">
             Pathways to Study Abroad
           </h2>
           <div className={styles.pathwayContainer}>
@@ -183,7 +196,11 @@ const StudentVisa = () => {
           </div>
         </section>
 
-        <section className={`${styles.callToAction} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[2] = el} >
+        <section
+          className={`${styles.callToAction} ${styles.section}`}
+          id="how-to-apply"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
           <h2 className={styles.subheading} id="how-to-apply">
             Start Your Journey
           </h2>

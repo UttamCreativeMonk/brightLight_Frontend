@@ -20,7 +20,6 @@ const SkilledWorkerStream = () => {
     }
   };
 
-
   const sectionsRef = useRef([]);
 
   const handleScroll = () => {
@@ -71,11 +70,19 @@ const SkilledWorkerStream = () => {
               </p> */}
               <p onClick={() => scrollToSection("benefits")}>Benefits</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("bcnp_calculator")}>BCNP Calculator</p>
+              <p onClick={() => scrollToSection("bcnp_calculator")}>
+                BCNP Calculator
+              </p>
               <p onClick={() => scrollToSection("process")}>Process</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us</p>
-              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us
+              </p>
+              <p onClick={() => scrollToSection("book-appointment")}>
+                Book Appointment
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faq")}>Faq</p>
               <p onClick={() => scrollToSection("blog")}>Blog</p>
             </div>
@@ -84,7 +91,28 @@ const SkilledWorkerStream = () => {
       </div>
 
       <div className={styles.container}>
-        <section className={`${styles.section} ${styles.section}`} id="benefits" ref={(el) => sectionsRef.current[0] = el}>
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="benefits-2"
+          ref={(el) => (sectionsRef.current[50] = el)}
+        >
+          <h2>
+            British Columbia Provincial Nominee Program (BC PNP) Skilled Worker
+            Stream
+          </h2>
+          <p>
+            The British Columbia Skilled Worker Stream is an integral part of
+            the British Columbia Provincial Nominee Program (BC PNP). Designed
+            to attract skilled immigrants, this stream prioritizes individuals
+            who hold job offers and demonstrate a strong potential to contribute
+            to the labor force in British Columbia.
+          </p>
+        </section>
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="benefits"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
           <h2>Benefits of BC Skilled Worker Stream</h2>
           <ul>
             <li>
@@ -105,8 +133,22 @@ const SkilledWorkerStream = () => {
           </ul>
         </section>
 
-        <section className={`${styles.section} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[1] = el}>
-          <h2>Eligibility Requirements for the BC Skilled Worker Stream</h2>
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="eligibility"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
+          <h3 style={{ marginBottom: "20px" }}>
+            First you must be eligible with BCPNP Skilled Worker Stream:
+          </h3>
+          <h2 style={{ marginBottom: "20px" }}>
+            Eligibility Requirements for the BC Skilled Worker Stream
+          </h2>
+          <p style={{ marginBottom: "20px" }}>
+            As an aspiring skilled worker in British Columbia, you’ll need to
+            meet specific criteria to qualify for this stream. Here are the key
+            eligibility requirements:
+          </p>
           <ol>
             <li>
               <strong>Job Offer Acceptance:</strong>
@@ -163,7 +205,11 @@ const SkilledWorkerStream = () => {
           </ol>
         </section>
 
-        <section className={`${styles.section} ${styles.section}`} id="testting1" ref={(el) => sectionsRef.current[2] = el}>
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="testting1"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
           <h2>Express Entry Consideration</h2>
           <p>
             While an Express Entry profile is not mandatory, candidates who meet
@@ -173,8 +219,25 @@ const SkilledWorkerStream = () => {
           </p>
         </section>
 
-        <section  className={`${styles.section} ${styles.section}`} id="employer_requirements" ref={(el) => sectionsRef.current[3] = el}>
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="employer_requirements"
+          ref={(el) => (sectionsRef.current[3] = el)}
+        >
           <h2>Employer Requirements for BC PNP Skilled Worker Stream</h2>
+          <p>
+            For applicants to most BC Skills Immigration programs, the employer
+            must meet specific requirements:
+          </p>
+          <h4 style={{ marginTop: "20px" }}>
+            Employer Eligibility Requirements for the BC Skilled Worker Stream
+          </h4>
+          <p style={{ marginBottom: "20px" }}>
+            As an employer in British Columbia, you play a crucial role in
+            supporting skilled workers through the BC Skilled Worker stream. To
+            participate, your organization must meet specific requirements and
+            fulfill responsibilities:
+          </p>
           <ol>
             <li>
               <strong>Establishment in B.C.:</strong>
@@ -240,7 +303,11 @@ const SkilledWorkerStream = () => {
           </ol>
         </section>
 
-        <section className={`${styles.section} ${styles.section}`} id="bcnp_calculator" ref={(el) => sectionsRef.current[4] = el}>
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="bcnp_calculator"
+          ref={(el) => (sectionsRef.current[4] = el)}
+        >
           <button
             className={styles.button}
             onClick={() => (window.location.href = "/bcpnp-calculator")}
@@ -249,11 +316,17 @@ const SkilledWorkerStream = () => {
           </button>
         </section>
 
-        <section className={`${styles.section} ${styles.section}`} id="process" ref={(el) => sectionsRef.current[5] = el}>
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="process"
+          ref={(el) => (sectionsRef.current[5] = el)}
+        >
           <h2>Application Process for BC Skilled Worker Stream</h2>
           <ol>
             <li>
-              <strong className={styles.sectionStrong}>Expression of Interest (EOI) System:</strong>
+              <strong className={styles.sectionStrong}>
+                Expression of Interest (EOI) System:
+              </strong>
               <ul>
                 <li>
                   Candidates meeting minimum requirements register a profile on
@@ -266,7 +339,9 @@ const SkilledWorkerStream = () => {
               </ul>
             </li>
             <li>
-              <strong className={styles.sectionStrong}>Profile Assessment and Ranking:</strong>
+              <strong className={styles.sectionStrong}>
+                Profile Assessment and Ranking:
+              </strong>
               <ul>
                 <li>
                   Submitted profiles are scored and ranked using the BC Skills
@@ -279,7 +354,9 @@ const SkilledWorkerStream = () => {
               </ul>
             </li>
             <li>
-              <strong className={styles.sectionStrong}>Invitation to Apply (ITA):</strong>
+              <strong className={styles.sectionStrong}>
+                Invitation to Apply (ITA):
+              </strong>
               <ul>
                 <li>
                   Invited candidates must submit a complete application within
@@ -302,7 +379,9 @@ const SkilledWorkerStream = () => {
               </ul>
             </li>
             <li>
-              <strong className={styles.sectionStrong}>Express Entry Applicants:</strong>
+              <strong className={styles.sectionStrong}>
+                Express Entry Applicants:
+              </strong>
               <ul>
                 <li>
                   If applying through Express Entry, receive a nomination
@@ -323,22 +402,33 @@ const SkilledWorkerStream = () => {
               </ul>
             </li>
             <li>
-              <strong className={styles.sectionStrong}>Skills Immigration Applicants:</strong>
+              <strong className={styles.sectionStrong}>
+                Skills Immigration Applicants:
+              </strong>
               <ul>
-                <li>If applying through regular Skills Immigration system:</li>
-                <li>Prepare a paper-based application.</li>
                 <li>
-                  Submit it by mail to the appropriate application centre.
-                </li>
-                <li>
-                  Generally processed within 18 months for permanent residence.
+                  If applying through regular Skills Immigration system:
+                  <ul>
+                    <li>Prepare a paper-based application.</li>
+                    <li>
+                      Submit it by mail to the appropriate application centre.
+                    </li>
+                    <li>
+                      Generally processed within 18 months for permanent
+                      residence.
+                    </li>
+                  </ul>
                 </li>
               </ul>
             </li>
           </ol>
         </section>
 
-        <section className={`${styles.support} ${styles.section} ${styles.section}`} id="book-appointment" ref={(el) => sectionsRef.current[6] = el}>
+        <section
+          className={`${styles.support} ${styles.section} ${styles.section}`}
+          id="book-appointment"
+          ref={(el) => (sectionsRef.current[6] = el)}
+        >
           <h2>Still not sure?</h2>
           <p>
             Contact Brightlight Immigration today to assess your profile and
@@ -368,7 +458,11 @@ const SkilledWorkerStream = () => {
           </button>
         </section>
 
-        <section  className={`${styles.section} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[7] = el}>
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[7] = el)}
+        >
           <h2>Why Choose Us</h2>
           <p>
             Our personalized approach, extensive experience, and high success

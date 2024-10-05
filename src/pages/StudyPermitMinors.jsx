@@ -21,7 +21,6 @@ const StudyPermitMinors = () => {
     }
   };
 
-
   const sectionsRef = useRef([]);
 
   const handleScroll = () => {
@@ -61,13 +60,25 @@ const StudyPermitMinors = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
-              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>
+                Refusal Reasons
+              </p>
+              <p onClick={() => scrollToSection("book-appointment")}>
+                Book Appointment
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -76,7 +87,12 @@ const StudyPermitMinors = () => {
       </div>
 
       <div className={styles.container}>
-        <h1 c className={`${styles.heading} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el} >
+        <h1
+          c
+          className={`${styles.heading} ${styles.section}`}
+          id="about-program"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
           Canadian Study Permit for Minors
         </h1>
         <section className={styles.introduction}>
@@ -93,8 +109,16 @@ const StudyPermitMinors = () => {
           </p>
         </section>
 
-        <section  className={`${styles.exceptions} ${styles.section}`} id="Exeption" ref={(el) => sectionsRef.current[1] = el}>
-          <h2 className={styles.subheading}>Exceptions to the Rule</h2>
+        <section
+          className={`${styles.exceptions} ${styles.section}`}
+          id="Exeption"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
+          <p>
+            In general, minors who intend to study in Canada for six months or
+            more will need to apply for a study permit. However, there are a few
+            exceptions to this rule:
+          </p>
           <ul>
             <li>
               Minors who are refugees or refugee claimants do not need a study
@@ -115,7 +139,11 @@ const StudyPermitMinors = () => {
           </ul>
         </section>
 
-        <section className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[2] = el}>
+        <section
+          className={`${styles.eligibility} ${styles.section}`}
+          id="eligibility"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
           <h2 className={styles.subheading}>Eligibility for the Program</h2>
           <ul>
             <li>Be between the ages of 12 and 17</li>
@@ -135,7 +163,11 @@ const StudyPermitMinors = () => {
           </ul>
         </section>
 
-        <section className={`${styles.applicationProcess} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[3] = el}>
+        <section
+          className={`${styles.applicationProcess} ${styles.section}`}
+          id="how-to-apply"
+          ref={(el) => (sectionsRef.current[3] = el)}
+        >
           <h2 className={styles.subheading}>Application Process</h2>
           <p>
             Meet the eligibility criteria? Let's see how you or your child can
@@ -165,7 +197,11 @@ const StudyPermitMinors = () => {
           </ul>
         </section>
 
-        <section  className={`${styles.refusalReasons} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[4] = el}>
+        <section
+          className={`${styles.refusalReasons} ${styles.section}`}
+          id="refusal-reasons"
+          ref={(el) => (sectionsRef.current[4] = el)}
+        >
           <h2 className={styles.subheading}>Reasons for Refusal</h2>
           <ul>
             <li>The nature of the minor's program of study is irrelevant.</li>
@@ -176,7 +212,7 @@ const StudyPermitMinors = () => {
               they are likely to succeed in their studies.
             </li>
             <li>
-              The minor does not have sufficient funds to support themselves
+              The minors does not have sufficient funds to support themselves
               during their studies, including tuition fees, accommodation, food,
               and other living expenses.
             </li>
@@ -187,7 +223,11 @@ const StudyPermitMinors = () => {
           </ul>
         </section>
 
-        <section className={`${styles.assistance} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[5] = el}>
+        <section
+          className={`${styles.assistance} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[5] = el)}
+        >
           <h2 className={styles.subheading}>Still Not Sure?</h2>
           <p>
             If you or your child have faced a refusal for any of the reasons
@@ -205,17 +245,23 @@ const StudyPermitMinors = () => {
             process all the way to obtaining your visa. Start your process now.
           </p>
 
-          <button className={styles.button} id="book-appointment"
-              onClick={() =>
-                (window.location.href =
-                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-              }
-            >
-              Book Appointment
-            </button>
+          <button
+            className={styles.button}
+            id="book-appointment"
+            onClick={() =>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
+          >
+            Book Appointment
+          </button>
         </section>
 
-        <section className={`${styles.whyChooseUs} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[6] = el}>
+        <section
+          className={`${styles.whyChooseUs} ${styles.section}`}
+          id="testing2"
+          ref={(el) => (sectionsRef.current[6] = el)}
+        >
           <h2 className={styles.subheading}>Why Choose Us?</h2>
           <p>
             We offer personalized service and expert advice to ensure your

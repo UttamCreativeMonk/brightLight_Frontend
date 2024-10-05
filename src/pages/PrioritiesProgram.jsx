@@ -89,6 +89,21 @@ const PrioritiesProgram = () => {
       <div className={styles.container}>
         <section
           className={`${styles.section} ${styles.section}`}
+          id="benefits-2"
+          ref={(el) => (sectionsRef.current[30] = el)}
+        >
+          <h3>
+            British Columbia Provincial Nominee Program Targeted Draws for
+            Program Priorities Occupations
+          </h3>
+          <p style={{ marginTop: "20px", marginBottom: "50px" }}>
+            British Columbia has a significant demand in essential sectors of
+            the care economy, including healthcare, childcare, and veterinary
+            care, as well as in the construction and technology sectors
+          </p>
+        </section>
+        <section
+          className={`${styles.section} ${styles.section}`}
           id="benefits"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
@@ -179,6 +194,36 @@ const PrioritiesProgram = () => {
             ref={(el) => (sectionsRef.current[4] = el)}
           >
             <h4>Construction</h4>
+            <p style={{ marginBottom: "20px" }}>
+              Individuals working in the construction sector can take advantage
+              of targeted invitations to apply by meeting the following
+              requirements:
+            </p>
+            <ol style={{ marginBottom: "20px", lineHeight: "1.5" }}>
+              <li>
+                The job offer must be for an indeterminate, full-time
+                position within one of the priority construction occupations.
+              </li>
+              <li>
+                You must hold a valid trade certificate issued by, or have an
+                apprenticeship registered with SkilledTradesBC.
+              </li>
+              <li>
+                Your trade certificate must align with the specific job you’ve
+                been offered.
+              </li>
+              <li>
+                Remember that meeting these eligibility criteria does not
+                guarantee an invitation to apply; invitations are based on
+                threshold scores during draws. If your score meets or exceeds
+                the threshold, you’ll receive an invitation to apply from the
+                BCPNP.
+              </li>
+            </ol>
+            <p style={{ marginBottom: "40px" }}>
+              For a comprehensive list of eligible National Occupational
+              Classification (NOC) codes, please refer to the NOC list below:
+            </p>
             <table className={styles.table}>
               <thead>
                 <tr>
@@ -301,6 +346,32 @@ const PrioritiesProgram = () => {
 
           <div className={styles.occupationList}>
             <h4>Healthcare Professionals</h4>
+            <ul>
+              <li>
+                Individuals who are direct employees of a provincial health
+                authority or are physicians, nurse practitioners, or
+                midwives with the endorsement of a provincial health authority
+                can directly submit an application through the Health Authority
+                stream.
+              </li>
+              <li>
+                For those not employed by a health authority (and therefore need
+                to register through an alternative stream), targeted invitations
+                to apply may be available if they have a job offer in one of the
+                following occupations.
+              </li>
+              <li>
+                Remember that meeting these eligibility criteria does not
+                guarantee an invitation to apply; invitations are based on
+                threshold scores during draws. If your score meets or exceeds
+                the threshold, you’ll receive an invitation to apply from the
+                BCPNP.
+              </li>
+            </ul>
+            <p>
+              For a comprehensive list of eligible National Occupational
+              Classification (NOC) codes, please refer to the NOC list below:
+            </p>
             <table
               className={`${styles.table} ${styles.section}`}
               id="testing3"
@@ -451,6 +522,42 @@ const PrioritiesProgram = () => {
 
           <div className={styles.occupationList}>
             <h4>Technology Sector Opportunities</h4>
+            <p style={{ marginBottom: "20px" }}>
+              The British Columbia Provincial Nominee Program (BC PNP) provides
+              a pathway to permanent residence for skilled workers in specific,
+              high-demand technology occupations. To cater to the unique
+              requirements of B.C.&#39;s thriving technology sector, priority
+              technology occupations do not necessitate a permanent job offer.
+            </p>
+            <p>
+              For individuals working in the technology sector, the following
+              criteria must be met to qualify for targeted invitations to apply:
+            </p>
+            <ol>
+              <li>
+                The job offer should fall within one of the priority technology
+                occupations.
+              </li>
+              <li>
+                The job offer must have a minimum duration of one year (365
+                days).
+              </li>
+              <li>
+                At the time of application, there should be at least 120
+                calendar days remaining on the job offer.
+              </li>
+              <li>
+                Remember that meeting these eligibility criteria does not
+                guarantee an invitation to apply; invitations are based on
+                threshold scores during draws. If your score meets or exceeds
+                the threshold, you’ll receive an invitation to apply from the
+                BCPNP.
+              </li>
+            </ol>
+            <p>
+              For a comprehensive list of eligible National Occupational
+              Classification (NOC) codes, please refer to the NOC list below:
+            </p>
             <table
               className={`${styles.table} ${styles.section}`}
               id="testing4"
@@ -529,6 +636,20 @@ const PrioritiesProgram = () => {
             ref={(el) => (sectionsRef.current[7] = el)}
           >
             <h4>Veterinary Care</h4>
+            <p style={{ marginBottom: "20px" }}>
+              Veterinary Care Workers with job offers in one of the following
+              occupations may benefit from targeted invitations to apply.
+            </p>
+            <p style={{ marginBottom: "20px" }}>
+              Remember that meeting these eligibility criteria does not
+              guarantee an invitation to apply; invitations are based on
+              threshold scores during draws. If your score meets or exceeds the
+              threshold, you’ll receive an invitation to apply from the BCPNP.
+            </p>
+            <p style={{ marginBottom: "20px" }}>
+              For a comprehensive list of eligible National Occupational
+              Classification (NOC) codes, please refer to the NOC list below:
+            </p>
             <table className={styles.table}>
               <thead>
                 <tr>
@@ -561,17 +682,74 @@ const PrioritiesProgram = () => {
           id="BCPNP_Calculator"
           ref={(el) => (sectionsRef.current[8] = el)}
         >
-          <h3>Application Procedure for British Columbia Priorities Program</h3>
+          <h3 style={{marginBottom: "20px"}}>
+            Application Procedure for British Columbia Priorities Program:
+          </h3>
           <ol>
             <li>
               Register online on the BCPNP website and submit your BCPNP
-              profile.
+              profile:
+              <ul>
+                <li>
+                  Begin by choosing the appropriate program, which typically
+                  aligns with BC&#39;s Skills Immigration programs, such as the
+                  BC Skilled Worker or BC International Graduate programs.
+                </li>
+                <li>
+                  Ensure eligibility by verifying that you meet the National
+                  Occupation Classification (NOC) code requirements for one of
+                  the in-demand occupations, categorized into streams like
+                  Childcare, Healthcare, Construction, Technology, and
+                  Veterinary-care.
+                </li>
+                <li>
+                  Once confirmed eligible, initiate the application process by
+                  registering a profile with BCPNP Online.
+                </li>
+              </ul>
             </li>
-            <li>Check your score.</li>
-            <li>Improve your score if necessary.</li>
-            <li>Receive an Invitation to Apply (ITA).</li>
-            <li>Prepare and submit your BCPNP application within 30 days.</li>
+            <li>
+              Check your score:
+              <ul>
+                <li>
+                  Upon registration, applicants should assess their score based
+                  on the provided criteria.
+                </li>
+              </ul>
+            </li>
+            <li>
+              Improve your score if necessary:
+              <ul>
+                <li>
+                  If your score falls below the cutoff set by the last draw
+                  conducted by BCPNP for your occupation, take steps to enhance
+                  your score to increase your chances of receiving an invitation
+                  to apply (ITA).
+                </li>
+              </ul>
+            </li>
+            <li>
+              Receive an Invitation to Apply (ITA):
+              <ul>
+                <li>
+                  If you meet or exceed the cutoff score from the last draw
+                  conducted by BCPNP for your occupation, you will receive an
+                  ITA to proceed with your application.
+                </li>
+              </ul>
+            </li>
+            <li>
+              Prepare and submit your BCPNP application within 30 days:
+              <ul>
+                <li>
+                  Upon receiving an ITA, applicants must diligently prepare and
+                  submit their BCPNP application within the specified timeframe
+                  of 30 days.
+                </li>
+              </ul>
+            </li>
           </ol>
+          <h3 style={{ marginTop: "50px" }}>Still Not Sure ?</h3>
           <p>
             Still not sure? Contact Brightlight Immigration today to assess your
             profile and embark on a transformative journey towards achieving

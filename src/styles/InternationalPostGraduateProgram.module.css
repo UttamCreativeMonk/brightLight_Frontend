@@ -219,6 +219,11 @@
     text-align: start;
   }
 
+  .sectionLi ul{
+    margin-left: 20px;
+    list-style-type: circle ;
+  }
+
   .section {
     opacity: 0;
     transform: translateX(-100px);
