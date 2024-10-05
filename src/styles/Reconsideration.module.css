@@ -166,11 +166,11 @@ section ul {
 
 .header {
   text-align: center;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 
 .header h1 {
-  font-size: 2.5rem;
+  font-size: 2.1rem;
   text-align: center;
 }
 
@@ -185,11 +185,14 @@ section ul {
 
 .section h2 {
   font-size: 2rem;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
+  /* padding-bottom: 10px; */
+  margin-bottom: 10px;
   text-align: left;
 }
 
+.section p{
+  margin-bottom: 10px;
+}
 
 
 .container {
@@ -201,12 +204,10 @@ section ul {
 
 .header {
   text-align: center;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px;/ */
 }
 
-.header h1 {
-  color: #00273f;
-}
+
 
 .mainContent {
   line-height: 1.6;
@@ -269,16 +270,22 @@ section ul {
 }
 .container h2 {
   color: #00273f;
-  margin-top: 10px;
-  margin-bottom: 20px;
+  /* margin-top: 10px; */
+  /* margin-bottom: 20px; */
 }
 
 .header h1 {
   color: #e8c47c;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  /* margin-top: 20px; */
+  /* margin-bottom: 20px; */
 }
+.discription{
+  text-align: center;
 
+}
+.discription p{
+  margin-top: 10px;
+}
 
 .section {
   opacity: 0;

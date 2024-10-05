@@ -48,9 +48,7 @@ const GlobalStreamLmia = () => {
     <>
       <Navbar1 />
       <div className={styles.bannerParent}>
-        <header className={styles.header}>
-          <h1>Global Talent Stream (GTS) LMIA</h1>
-        </header>
+
         <div className={styles.banner}>
           <div
             className={`${styles.bannerHeadingRotateParent} ${
@@ -80,8 +78,11 @@ const GlobalStreamLmia = () => {
 
       <div className={styles.container}>
         <main className={styles.mainContent}>
+        <header className={styles.header}>
+          <h1>Global Talent Stream (GTS) LMIA</h1>
+        </header>
           <section className={`${styles.section} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}> 
-            <h2>Overview</h2>
+           
             <p>
               This type of LMIA stream is designed to expedite the process of
               hiring foreign workers with exceptional skills and experience in
@@ -113,7 +114,7 @@ const GlobalStreamLmia = () => {
 
           <section className={`${styles.section} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[2] = el}>
             <h2>Eligibility Criteria for Global Talent Stream (GTS) LMIA</h2>
-            <h3>Global Talent Stream Categories</h3>
+            <h3>Global Talent Stream Categories:</h3>
             <p>
               The Global Talent Stream consists of two categories with their own
               set of requirements:
@@ -121,22 +122,28 @@ const GlobalStreamLmia = () => {
             <ol>
               <li>
                 <strong>
+                  <a href="#CategoryA">
                   Category A - Referred by one of the stream's designated
                   referral partners
+                  </a>
                 </strong>
               </li>
               <li>
                 <strong>
+                  <a href="#CategoryB">
                   Category B - In-demand occupations on the global talent
                   occupations list
+                  </a>
                 </strong>
               </li>
             </ol>
 
-            <h3>
-              Category A - Referred by one of the stream's designated referral
+            <h3 id="CategoryA">
+             1 Category A - Referred by one of the stream's designated referral
               partners
             </h3>
+
+            
             <p>
               If you've been referred by a designated referral partner and are
               hiring someone with unique, specialized talent, your application
@@ -163,7 +170,7 @@ const GlobalStreamLmia = () => {
               </li>
             </ul>
 
-            <h3>
+            <h3 id="CategoryB">
               Category B - In-demand occupations on the global talent
               occupations list
             </h3>
@@ -353,32 +360,35 @@ const GlobalStreamLmia = () => {
             <h2>How to Apply for Global Talent Stream (GTS) LMIA</h2>
             <ol>
               <li>
-                Have an initial assessment performed by us to verify if the
-                employer is eligible to apply for LMIA for a specific position
-                and how many positions are allowed.
+              Step 1:  Have an initial assessment performed by us to verify if the employer is eligible to apply for LMIA for a specific position and how many positions are allowed. 
+
               </li>
               <li>
-                We will provide you with a checklist of documents and
-                information required to start the initial process.
+              Step 2:  We will provide you with a checklist of documents and information required to start the initial process. 
+
               </li>
               <li>
-                While there is no minimum recruitment requirement for the GTS,
-                it is recommended to perform recruitment efforts.
+              Step 3: While there is no minimum recruitment requirement for the GTS, it is recommended to perform recruitment efforts. They do not need to meet the criteria of high-wage recruitment and advertising efforts guidelines set by ESDC.
+
               </li>
               <li>
-                Prepare the Labour Market Benefits Plan according to the
-                category GTS LMIA application is to be applied under.
+              Step 4: Prepare the Labour Market Benefits Plan according to the category GTS LMIA application is to be applied under.
+
               </li>
-              <li>Interview local applicants.</li>
-              <li>
-                Prepare and submit an LMIA application to the Service Canada
-                ESDS department.
+              <li>Step 5: Interview local applicants.
               </li>
               <li>
-                Wait for LMIA processing time, which can range from 7 to 10
-                business days.
+              Step 6: Prepare and submit an LMIA application to the Service Canada ESDS department. 
+
+              </li>
+              <li>
+              Step 7:  Wait for LMIA processing time, which can range from 7 to 10 business days. If the Service 
               </li>
             </ol>
+            <p>
+            Canada officer has any questions or concerns or requires any further information, the employer might be contacted for an interview. 
+
+            </p>
           </section>
 
           <section  className={`${styles.section} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[5] = el}>
@@ -386,20 +396,23 @@ const GlobalStreamLmia = () => {
               Common Reasons for Refusal of Global Talent Stream (GTS) LMIA
             </h2>
             <ul>
-              <li>Insufficient Evidence of Labour Market Benefits.</li>
-              <li>
-                Provided false, misleading, or inaccurate information in the
-                LMIA application.
+              <li>Insufficient Evidence of Labour Market Benefits A Labour Market Benefits Plan (LMBP) submitted by the employer may lack clear and substantive activities aimed at benefiting the Canadian labor market. ESDC assesses the proposed activities to ensure they contribute to skills development, job creation, or other positive outcomes for Canadians.
               </li>
               <li>
-                Non-compliance as a result of an employer compliance review.
+              Provided false, misleading, or inaccurate information in the LMIA application.
+
               </li>
               <li>
-                Being banned from the Temporary Foreign Worker Program due to
-                non-compliance discovered during an inspection.
+              Have been found non-compliant as a result of an employer compliance review.
+
               </li>
               <li>
-                Defaulting on payment of an administrative monetary penalty.
+              Have been banned from the Temporary Foreign Worker Program because non-compliance was discovered during an inspection.
+
+              </li>
+              <li>
+              Are in default of payment of an administrative monetary penalty.
+
               </li>
             </ul>
           </section>

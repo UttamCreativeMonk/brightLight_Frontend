@@ -113,9 +113,9 @@ const BridgingOpenWorkPermitLP = () => {
           </section>
           <section className={`${styles.application} ${styles.section}`} id="application-process" ref={(el) => sectionsRef.current[2] = el}    >
             <h2>Eligibility criteria for Bridging Open Work Permit:</h2>
-            <p>
+            <h4>
               To be eligible for a bridging open work permit (BOWP), you must:
-            </p>
+            </h4>
             <ul>
               <li>
                 Currently be in Canada after being authorized to enter as a
@@ -123,7 +123,7 @@ const BridgingOpenWorkPermitLP = () => {
               </li>
               <li>
                 Meet one of the following criteria at the time of submission:
-                <ul>
+                <ul  className={styles.subList} >
                   <li>
                     Have valid temporary resident status and authorization to
                     work as the holder of a valid work permit.
@@ -138,8 +138,10 @@ const BridgingOpenWorkPermitLP = () => {
                 </ul>
               </li>
               <li>
+                <h4>
                 Have submitted an APR as the principal applicant under one of
                 the following classes or pilots:
+                </h4>
                 <ul>
                   <li>Federal skilled worker class (FSWC)</li>
                   <li>Canadian experience class (CEC)</li>
@@ -168,14 +170,16 @@ const BridgingOpenWorkPermitLP = () => {
                 </ul>
               </li>
               <li>
+                <h4>
                 Have completed one of the following APR stages depending on
                 their class:
+                </h4>
                 <ul>
                   <li>
                     Electronic application for permanent residence (e-APR)
                     submitted under Express Entry has passed the Completeness
                     Check. This applies to the following classes:
-                    <ul>
+                    <ul  className={styles.subList}>
                       <li>Federal skilled worker class (FSWC)</li>
                       <li>Canadian experience class (CEC)</li>
                       <li>Federal skilled trades class (FSTC)</li>
@@ -196,7 +200,7 @@ const BridgingOpenWorkPermitLP = () => {
                     non-Express Entry application for permanent residence
                     submitted by mail or online under one of the following
                     classes or pilots:
-                    <ul>
+                    <ul  className={styles.subList}>
                       <li>Caring for children</li>
                       <li>Caring for people with high medical needs</li>
                       <li>Agri-Food Pilot (AFP)</li>
@@ -236,20 +240,11 @@ const BridgingOpenWorkPermitLP = () => {
           <section  className={`${styles.advice} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[4] = el}   >
             <h2>Still not sure?</h2>
             <p>
-              If you have received a refusal for any of the reasons mentioned
-              above, do not worry. With over a decade of experience, we
-              specialize in previously refused cases. While we don't provide
-              jobs for LMIA, we can certainly assist you if you have a job
-              offer. We have obtained approvals for clients who had multiple
-              previous refusals. We achieve this with a tailored approach to
-              your specific case, addressing each concern that the officer has
-              listed in previous refusals. We use case law and find similar
-              cases to your circumstances that had positive results, and we use
-              them as precedents in cases we work on. This is why we have a high
-              success rate. At Brightlight Immigration, we have a dedicated team
-              of visa application specialists who can assist you from the start
-              of the application process to obtaining your visa. Start your
-              process now.
+            If you have received a refusal for any of the reasons mentioned above, do not worry. With over a decade of experience, we specialize in previously refused cases. While we don't provide jobs for LMIA, we can certainly assist you if you have a job offer. We have obtained approvals for clients who had multiple previous refusals. We achieve this with a tailored approach to your specific case, addressing each concern that the officer has listed in previous refusals. We use case law and find similar cases to your circumstances that had positive results, and we use them as precedents in cases we work on. This is why we have a high success rate. 
+
+            </p>
+            <p>
+            At Brightlight Immigration, we have a dedicated team of visa application specialists who can assist you from the start of the application process to obtaining your visa. Start your process now. 
             </p>
             <button
           onClick={() =>

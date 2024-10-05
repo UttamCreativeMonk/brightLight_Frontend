@@ -139,7 +139,7 @@
   }
 
   .evidence p{
-    margin-bottom: 20px;
+    margin-bottom: 5px;
   }
   
   .benefits, .eligibility, .evidence, .applicationProcess, .consultation, .whyChooseUs, .testimonials, .faq {
@@ -187,20 +187,19 @@
     color: #333;
   }
   .eligibility h3{
-    color: #666;
     margin-bottom: 20px;
     margin-top: 20px;
   }
 
   .eligibility p{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   .section {
     opacity: 0;
     transform: translateX(-100px);
     transition: opacity 0.8s ease, transform 0.8s ease;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
   }
 
   .consultation p{

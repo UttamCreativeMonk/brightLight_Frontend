@@ -6,7 +6,7 @@
   background-size: cover;
   padding: 30px 0px;
   padding-top: 150px;
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
 }
 .banner {
   width: 1440px;
@@ -133,7 +133,7 @@
 }
 
 .header {
-  text-align: left;
+  text-align: center;
   margin-bottom: 30px;
 }
 
@@ -163,7 +163,7 @@
 .section p {
   font-size: 1em;
   margin-bottom: 20px;
-  color: #666;
+  /* color: #666; */
 }
 
 .benefits {

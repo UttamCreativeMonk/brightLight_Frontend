@@ -150,8 +150,8 @@
 }
 
 .section {
-  margin-bottom: 50px;
-  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-top: 5px;
 }
 
 .section h2 {
@@ -228,7 +228,7 @@
 }
 
 .bookAppointment {
-  display: inline-block;
+  display: block;
   padding: 10px 20px;
   margin-top: 20px;
   text-align: center;
@@ -237,6 +237,7 @@
   background-color: #00273f;
   font-size: 20px;
   border-radius: 5px;
+  margin: auto;
   border: none;
   cursor: pointer;
 }

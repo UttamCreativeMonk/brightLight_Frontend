@@ -94,6 +94,10 @@ const VisitorToStudent = () => {
           <h2 className={styles.subheading}>
             Benefits of Changing Your Status from Visitor to Student
           </h2>
+          <h4>
+          The Visitor to Student Permit Program offers several benefits for international students, including:
+
+          </h4>
           <ul className={styles.benefitsList}>
             <li>
               A Guaranteed Investment Certificate (GIC) is not required to apply
@@ -209,6 +213,8 @@ const VisitorToStudent = () => {
           <h2 className={styles.subheading}>
             Reasons for Refusals of Study Permit When Applying as a Visitor
           </h2>
+          <h4>You should have a Letter of Acceptance (LOA) from a DLI. If you do not have a LOA, your application will be refused.
+          </h4>
           <ul className={styles.refusalList}>
             <li>You do not have a Letter of Acceptance (LOA) from a DLI.</li>
             <li>

@@ -204,7 +204,7 @@ opacity: 0.9;
 
 .header h1 {
   color: #e8c47c;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   margin-bottom: 20px;
   text-align: center;
 }
@@ -212,11 +212,6 @@ opacity: 0.9;
 .header p{
   text-align: center;
 }
-
-.container strong{
-  color: #333;
-}
-
 
 
 .section {

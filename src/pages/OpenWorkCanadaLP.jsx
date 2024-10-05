@@ -20,7 +20,6 @@ const OpenWorkCanadaLP = () => {
     }
   };
 
-
   const sectionsRef = useRef([]);
 
   const handleScroll = () => {
@@ -60,15 +59,27 @@ const OpenWorkCanadaLP = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
-              <p onClick={() => scrollToSection("application-process")}>Application Process</p>
+              <p onClick={() => scrollToSection("application-process")}>
+                Application Process
+              </p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
               <p onClick={() => scrollToSection("age-chart")}>Age Chart</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>
+                Refusal Reasons
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -76,7 +87,11 @@ const OpenWorkCanadaLP = () => {
         </div>
       </div>
       <div className={styles.container}>
-        <header className={`${styles.header} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}  >
+        <header
+          className={`${styles.header} ${styles.section}`}
+          id="about-program"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
           <h1>
             Open Work Permit for Dependent Child of Foreign Worker in Canada
           </h1>
@@ -87,7 +102,11 @@ const OpenWorkCanadaLP = () => {
           </p>
         </header>
 
-        <section className={`${styles.benefits} ${styles.section}`} id="benefits" ref={(el) => sectionsRef.current[1] = el} >
+        <section
+          className={`${styles.benefits} ${styles.section}`}
+          id="benefits"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
           <h2>Benefits of Open Work Permit for Dependent Child</h2>
           <ul>
             <li>
@@ -120,62 +139,151 @@ const OpenWorkCanadaLP = () => {
           </ul>
         </section>
 
-        <section className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[2] = el}>
-          <h2>Eligibility Criteria</h2>
-          <p>There are three main groups of eligible family members:</p>
+        <section
+          className={`${styles.eligibility} ${styles.section}`}
+          id="eligibility"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
+          <h2>
+            Eligibility criteria for Open work permit for Dependent child of
+            foreign worker in Canada:
+          </h2>
+          <p>
+            There are 3 main groups of eligible family members as classified
+            below:{" "}
+          </p>
           <h3>
             1. Foreign Nationals in High-Skilled Occupations (TEER 0, 1, 2, or
             3)
           </h3>
           <ul>
             <li>
-              <strong>Valid Work Authorization:</strong> Must have a valid work
-              permit, an approved but not yet issued work permit, or
-              authorization to work without a permit.
+              <strong>Valid Work Authorization:</strong> You must possess one of
+              the following:
+              <ul className={styles.subList}>
+                <li>A valid work permit, subject to certain exceptions*.</li>
+                <li>
+                  An approved work permit that has not yet been issued
+                  (indicated by a port of entry letter of introduction).
+                </li>
+                <li>Authorization to work without a permit.</li>
+              </ul>
             </li>
             <li>
-              <strong>Work Permit Validity:</strong> Must be valid for at least
-              six months beyond the application submission date.
+              <strong>Work Permit Validity:</strong>Your work permit or
+              authorized work status must be valid for at least six months
+              beyond the date you submit your family member's open work permit
+              application.
             </li>
             <li>
-              <strong>High-Skilled Occupation:</strong> Must be employed or have
-              a confirmed offer in a high-skilled occupation (TEER categories 0,
-              1, 2, or 3).
+              <strong>High-Skilled Occupation:</strong>You must be employed or
+              have a confirmed offer of employment in a high-skilled occupation,
+              as defined by the National Occupation Classification system (TEER
+              categories 0, 1, 2, or 3).
             </li>
             <li>
-              <strong>Canadian Residence:</strong> Must be living in Canada or
-              planning to move to Canada.
+              <strong>Canadian Residence:</strong> You must be living in Canada
+              or have plans to move to Canada to work.
             </li>
             <li>
-              <strong>Not Eligible:</strong> Certain conditions like refugee
-              claims, unenforceable removal orders, etc.
+              <strong>Not Eligible:</strong>
+              <ul className={styles.subList}>
+                <li>
+                  You have made a refugee claim that has been referred to the
+                  Immigration and Refugee Board.
+                </li>
+                <li>You are subject to an unenforceable removal order.</li>
+                <li>
+                  You are an international student working in a co-op program
+                  without a work permit.
+                </li>
+                <li>
+                  You are an international student working off-campus without a
+                  work permit.
+                </li>
+                <li>
+                  You have applied for a post-graduation work permit (PGWP) but
+                  have not yet received a positive decision.
+                </li>
+                <li>You, yourself, hold a spousal open work permit.</li>
+              </ul>
             </li>
           </ul>
 
           <h3>2. Foreign Nationals in Low-Skilled Occupations (TEER 4 or 5)</h3>
+          <h4>
+            You must meet the following four requirements to be eligible to
+            apply for your child:
+          </h4>
           <ul>
             <li>
-              <strong>Valid Work Authorization:</strong> Same as above.
+              <strong>Valid Work Authorization:</strong> You must possess one of
+              the following:
+              <ul className={styles.subList}>
+                <li>A valid work permit, subject to certain exceptions*.</li>
+                <li>
+                  An approved work permit that has not yet been issued
+                  (indicated by a port of entry letter of introduction).
+                </li>
+                <li>Authorization to work without a permit.</li>
+              </ul>
             </li>
             <li>
-              <strong>Work Permit Validity:</strong> Same as above.
+              <strong>Work Permit Validity:</strong>Your work permit or
+              authorized work status must be valid for at least six months
+              beyond the date you submit your family member's open work permit
+              application.
             </li>
             <li>
-              <strong>Low-Skilled Occupation:</strong> Must be employed or have
-              a confirmed offer in a low-skilled occupation (TEER categories 4
-              or 5).
+              <strong>Low-Skilled Occupation:</strong> You must be employed or
+              have a confirmed offer of employment in a low-skilled occupation,
+              as defined by the National Occupation Classification system (TEER
+              categories 4 or 5).
             </li>
             <li>
-              <strong>Canadian Residence:</strong> Same as above.
+              <strong>Canadian Residence:</strong> You must be living in Canada
+              or have plans to move to Canada to work.
             </li>
             <li>
-              <strong>Additional Requirements:</strong> If under the Agri-Food
-              Pilot, must hold a specific LMIA-based work permit and have
-              received an acknowledgment of receipt (AOR) letter from IRCC.
+              <strong>
+                If the work permit holder is under the Agri-Food Pilot:
+              </strong>
+              you must hold a labor market impact assessment (LMIA)-based work
+              permit in the agriculture or low-wage stream of the Agri-Food
+              Pilot and must have received an acknowledgment of receipt AOR
+              letter from IRCC confirming that your application for permanent
+              residence is complete.
             </li>
             <li>
-              <strong>Not Eligible:</strong> Similar conditions as mentioned
-              above.
+              <strong>Not Eligible currently:</strong>
+              <ul className={styles.subList}>
+                <li>
+                  You hold a work permit under the <strong>low-wage</strong>{" "}
+                  stream of the Temporary Foreign Worker Program.
+                </li>
+                <li>
+                  You hold a work permit under the Seasonal Agricultural Worker
+                  Program.
+                </li>
+                <li>
+                  You hold a work permit under the agricultural stream of the
+                  Temporary Foreign Worker Program.
+                </li>
+                <li>
+                  You have made a refugee claim referred to the Immigration and
+                  Refugee Board.
+                </li>
+                <li>You are subject to an unenforceable removal order.</li>
+                <li>You are an international student in a co-op program.</li>
+                <li>
+                  You are an international student working off-campus without a
+                  work permit.
+                </li>
+                <li>
+                  You are applying for a Post-Graduation Work Permit (PGWP) and
+                  haven't received a positive decision on your application yet.
+                </li>
+              </ul>
             </li>
           </ul>
 
@@ -183,21 +291,36 @@ const OpenWorkCanadaLP = () => {
             3. Foreign Nationals Applying for Permanent Residence through
             Economic Immigration Program
           </h3>
+          <h4>
+            You must meet the following four requirements to be eligible to
+            apply for your child:
+          </h4>
           <ul>
             <li>
-              <strong>Valid Work Authorization:</strong> Must have a valid or
-              approved work permit.
+              <strong>Valid Work Authorization:</strong> You must possess one of
+              the following:
+              <ul className={styles.subList}>
+                <li>A valid work permit, subject to certain exceptions*.</li>
+                <li>
+                  An approved work permit (employer-specific or open under a
+                  non-family category).
+                </li>
+              </ul>
             </li>
             <li>
-              <strong>Work Permit Validity:</strong> Same as above.
+              <strong>Work Permit Validity:</strong> Your work permit or
+              authorized work status must be valid for at least six months
+              beyond the date you submit your family member's open work permit
+              application.
             </li>
             <li>
-              <strong>Canadian Residence:</strong> Same as above.
+              <strong>Canadian Residence:</strong> You must be living in Canada
+              or have plans to move to Canada to work.
             </li>
             <li>
-              <strong>Permanent Residency in Process:</strong> Must be in the
-              process of applying for permanent residence through an economic
-              immigration program.
+              <strong>Permanent Residency in Process:</strong> Your work permit
+              was issued or approved because you applied for an economic class
+              permanent residence program.
             </li>
           </ul>
 
@@ -222,7 +345,11 @@ const OpenWorkCanadaLP = () => {
           </ul>
         </section>
 
-        <section className={`${styles.ageChart} ${styles.section}`} id="age-chart" ref={(el) => sectionsRef.current[3] = el}  >
+        <section
+          className={`${styles.ageChart} ${styles.section}`}
+          id="age-chart"
+          ref={(el) => (sectionsRef.current[3] = el)}
+        >
           <h2>Legal Minimum Age to Work by Province/Territory</h2>
           <table>
             <thead>
@@ -314,7 +441,11 @@ const OpenWorkCanadaLP = () => {
           </table>
         </section>
 
-        <section className={`${styles.applicationProcess} ${styles.section}`} id="application-process" ref={(el) => sectionsRef.current[4] = el}  >
+        <section
+          className={`${styles.applicationProcess} ${styles.section}`}
+          id="application-process"
+          ref={(el) => (sectionsRef.current[4] = el)}
+        >
           <h2>How to Apply</h2>
           <ol>
             <li>
@@ -336,7 +467,11 @@ const OpenWorkCanadaLP = () => {
           </ol>
         </section>
 
-        <section className={`${styles.refusalReasons} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[5] = el}>
+        <section
+          className={`${styles.refusalReasons} ${styles.section}`}
+          id="refusal-reasons"
+          ref={(el) => (sectionsRef.current[5] = el)}
+        >
           <h2>Common Reasons for Refusal</h2>
           <ul>
             <li>
@@ -357,7 +492,11 @@ const OpenWorkCanadaLP = () => {
           </ul>
         </section>
 
-        <section  className={`${styles.consultation} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[6] = el}   >
+        <section
+          className={`${styles.consultation} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[6] = el)}
+        >
           <h2>Still Not Sure?</h2>
           <p>
             If you have received a refusal for any of the reasons mentioned
@@ -370,16 +509,16 @@ const OpenWorkCanadaLP = () => {
             assistance from start to finish.
           </p>
           <button
-          onClick={() =>
-            (window.location.href =
-              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-          }
-        >
-          Book Appointment
-        </button>
+            onClick={() =>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
+          >
+            Book Appointment
+          </button>
         </section>
       </div>
-      
+
       <div id="faqs">
         <FAQ />
       </div>

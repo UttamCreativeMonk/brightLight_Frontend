@@ -8,6 +8,7 @@ import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
 import ogImage from "../assets/ogImage.png";
 import { Helmet } from "react-helmet-async";
+import OurProcess from "../sections/OurProcess";
 
 let WorkPermit = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -139,22 +140,15 @@ let WorkPermit = () => {
         </header>
         <main className={styles.mainContent}  >
           <section className={`${styles.section} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
-            <h2>
-              Are you considering a rewarding career and professional growth in
-              Canada?
-            </h2>
-            <p>
-              The Canadian Work Permit is your key to accessing these exciting
-              professional opportunities.
+           <p className={styles.discription}>
+           Are you considering a rewarding career and professional growth in Canada? The Canadian Work Permit is your key to accessing these exciting professional opportunities.
+
+              </p>
+            <p className={styles.discription}>
+            Canada is a top choice for people worldwide looking to advance their careers. To work in Canada, international workers need a temporary document called a work permit. This permit allows them to legally take on employment in the country, and it's available for a broad range of occupations, skill levels, and immigration statuses.
+
             </p>
-            <p>
-              Canada is a top choice for people worldwide looking to advance
-              their careers. To work in Canada, international workers need a
-              temporary document called a work permit. This permit allows them
-              to legally take on employment in the country, and it's available
-              for a broad range of occupations, skill levels, and immigration
-              statuses.
-            </p>
+           
           </section>
 
           <section  className={`${styles.section} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[1] = el}>
@@ -195,7 +189,7 @@ let WorkPermit = () => {
               application process, ensuring that all requirements are met and
               your application stands the best chance of approval.
             </p>
-            <button
+            <button className={styles.button1}
           onClick={() =>
             (window.location.href =
               "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
@@ -206,6 +200,7 @@ let WorkPermit = () => {
           </section>
         </main>
       </div>
+      <OurProcess/>
 
       <div id="faqs">
         <FAQ />

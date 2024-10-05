@@ -6,7 +6,6 @@ import Testimonials from "../sections/Testimonials";
 import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
 
-
 const OpenWorkVulnerableLP = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -20,7 +19,6 @@ const OpenWorkVulnerableLP = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
-  
 
   const sectionsRef = useRef([]);
 
@@ -61,13 +59,21 @@ const OpenWorkVulnerableLP = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
-              <p onClick={() => scrollToSection("application-process")}>Application Process</p>
+              <p onClick={() => scrollToSection("application-process")}>
+                Application Process
+              </p>
               <p onClick={() => scrollToSection("evidence")}>Evidence</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -76,7 +82,11 @@ const OpenWorkVulnerableLP = () => {
       </div>
 
       <div className={styles.container}>
-        <header className={`${styles.header} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}  >
+        <header
+          className={`${styles.header} ${styles.section}`}
+          id="about-program"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
           <h1>Open Work Permit for Vulnerable Workers</h1>
           <p>
             Every employer in Canada is entitled to a safe and healthy work
@@ -85,7 +95,11 @@ const OpenWorkVulnerableLP = () => {
           </p>
         </header>
 
-        <section className={`${styles.benefits} ${styles.section}`} id="benefits" ref={(el) => sectionsRef.current[1] = el} >
+        <section
+          className={`${styles.benefits} ${styles.section}`}
+          id="benefits"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
           <h2>Benefits of Open Work Permit for Vulnerable Workers</h2>
           <ul>
             <li>
@@ -106,7 +120,11 @@ const OpenWorkVulnerableLP = () => {
           </ul>
         </section>
 
-        <section className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[2] = el} >
+        <section
+          className={`${styles.eligibility} ${styles.section}`}
+          id="eligibility"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
           <h2>Eligibility for Open Work Permit for Vulnerable Workers</h2>
           <ul>
             <li>
@@ -118,8 +136,10 @@ const OpenWorkVulnerableLP = () => {
           </ul>
           <h3>How IRCC Defines Abuse</h3>
           <p>
-            Any behavior that scares, controls, or isolates you could be
-            considered abuse. Abuse can be:
+            Any behavior that scares, controls, or isolates you could be abuse.
+          </p>
+          <p>
+            Abuse can be physical, sexual, financial, or mental and can include
           </p>
           <ul>
             <li>Physical abuse, including assault and forcible confinement</li>
@@ -133,12 +153,17 @@ const OpenWorkVulnerableLP = () => {
           </ul>
         </section>
 
-        <section className={`${styles.evidence} ${styles.section}`} id="evidence" ref={(el) => sectionsRef.current[3] = el}>
+        <section
+          className={`${styles.evidence} ${styles.section}`}
+          id="evidence"
+          ref={(el) => (sectionsRef.current[3] = el)}
+        >
           <h2>Types of Evidence</h2>
           <p>
-            You should include as much evidence as possible with your
-            application. Examples of evidence include:
+            You should also include as much evidence as you can with your
+            application.
           </p>
+          <p>Evidence could include:</p>
           <ul>
             <li>
               Letter, statement, or report from an abuse support organization,
@@ -159,9 +184,17 @@ const OpenWorkVulnerableLP = () => {
             <li>Photos showing injuries or working conditions</li>
             <li>Witness testimony</li>
           </ul>
+          <p>
+            The list above includes examples of evidence. You may have other
+            types of evidence.
+          </p>
         </section>
 
-        <section className={`${styles.applicationProcess} ${styles.section}`} id="application-process" ref={(el) => sectionsRef.current[5] = el}>
+        <section
+          className={`${styles.applicationProcess} ${styles.section}`}
+          id="application-process"
+          ref={(el) => (sectionsRef.current[5] = el)}
+        >
           <h2>How to Apply</h2>
           <ol>
             <li>Collect extensive documents to provide evidence to IRCC.</li>
@@ -183,7 +216,11 @@ const OpenWorkVulnerableLP = () => {
           </ol>
         </section>
 
-        <section className={`${styles.consultation} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[4] = el}  >
+        <section
+          className={`${styles.consultation} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[4] = el)}
+        >
           <h2>Still Not Sure?</h2>
           <p>
             If you have received a refusal for any of the reasons mentioned
@@ -201,13 +238,13 @@ const OpenWorkVulnerableLP = () => {
             application process to obtaining your visa. Start your process now.
           </p>
           <button
-          onClick={() =>
-            (window.location.href =
-              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-          }
-        >
-          Book Appointment
-        </button>
+            onClick={() =>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
+          >
+            Book Appointment
+          </button>
         </section>
       </div>
 

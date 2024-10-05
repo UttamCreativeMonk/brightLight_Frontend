@@ -115,9 +115,9 @@ const ChangeCollegeProgram = () => {
           <h2 className={styles.subheading}>
             How to Change Your College or Program in Canada (DLI Change)
           </h2>
-          <p className={styles.processDescription}>
+          <h4 className={styles.processDescription}>
             If your study permit has not yet been approved:
-          </p>
+          </h4>
           <ul className={styles.processList}>
             <li>
               Obtain a letter of acceptance from the new Designated Learning
@@ -126,9 +126,9 @@ const ChangeCollegeProgram = () => {
             </li>
             <li>Submit a new study permit application.</li>
           </ul>
-          <p className={styles.processDescription}>
+          <h4 className={styles.processDescription}>
             If your study permit has already been approved:
-          </p>
+          </h4>
           <ul className={styles.processList}>
             <li>
               Notify IRCC of your change of school or program by logging into

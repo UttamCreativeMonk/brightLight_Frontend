@@ -59,13 +59,23 @@ const Pgwp = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("application-process")}>Application Process</p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("application-process")}>
+                Application Process
+              </p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>
+                Refusal Reasons
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -73,16 +83,33 @@ const Pgwp = () => {
         </div>
       </div>
       <div className={styles.container}>
-        <header className={`${styles.header} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}  >
+        <header
+          className={`${styles.header} ${styles.section}`}
+          id="about-program"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
           <h1>Canada’s Post-Graduate Work Permit (PGWP)</h1>
           <p>
             If you are an international student who has graduated from a
             designated learning institution (DLI) in Canada, you may be eligible
-            for a Post-Graduation Work Permit (PGWP).
+            for a PGWP.
+          </p>
+          <p>
+            The Post-Graduation Work Permit (PGWP) is a temporary work permit
+            that allows international students who have graduated from a
+            Canadian Designated Learning Institution (DLI) to work in Canada
+            after they graduate for up to 3 years. The PGWP is a valuable
+            opportunity for international students to gain valuable Canadian
+            work experience, which can help them qualify for Canadian Permanent
+            Residence.
           </p>
         </header>
 
-        <section className={`${styles.benefits} ${styles.section}`} id="benefits" ref={(el) => sectionsRef.current[1] = el} >
+        <section
+          className={`${styles.benefits} ${styles.section}`}
+          id="benefits"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
           <h2>Benefits of a Post-Graduate Work Permit (PGWP)</h2>
           <ul>
             <li>
@@ -102,7 +129,11 @@ const Pgwp = () => {
           </ul>
         </section>
 
-        <section className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[2] = el}>
+        <section
+          className={`${styles.eligibility} ${styles.section}`}
+          id="eligibility"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
           <h2>Eligibility Criteria for Post-Graduate Work Permit (PGWP)</h2>
           <p>Are you eligible for a PGWP? Let's find out.</p>
           <ul>
@@ -139,11 +170,17 @@ const Pgwp = () => {
           </ul>
         </section>
 
-        <section className={`${styles.applicationProcess} ${styles.section}`} id="application-process" ref={(el) => sectionsRef.current[3] = el}>
+        <section
+          className={`${styles.applicationProcess} ${styles.section}`}
+          id="application-process"
+          ref={(el) => (sectionsRef.current[3] = el)}
+        >
           <h2>How to Apply for Post-Graduate Work Permit (PGWP)</h2>
           <p>
             Meet the eligibility criteria? Here’s how you can apply for PGWP:
           </p>
+          <p>You can apply for a PGWP from inside or outside Canada.</p>
+          <p>Here’s what you will need to provide when you apply for a PGWP</p>
           <ul>
             <li>
               <strong>Application Location:</strong> You can apply for a PGWP
@@ -163,10 +200,18 @@ const Pgwp = () => {
           </ul>
         </section>
 
-        <section className={`${styles.refusalReasons} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[4] = el} >
+        <section
+          className={`${styles.refusalReasons} ${styles.section}`}
+          id="refusal-reasons"
+          ref={(el) => (sectionsRef.current[4] = el)}
+        >
           <h2>
             Common Reasons for Refusal of Post-Graduate Work Permit (PGWP)
           </h2>
+          <h4>
+            Don’t forget to avoid these common PGWP refusal reasons and increase
+            your chances of approval.
+          </h4>
           <ul>
             <li>Failure to meet the eligibility criteria set by IRCC.</li>
             <li>
@@ -184,7 +229,11 @@ const Pgwp = () => {
           </ul>
         </section>
 
-        <section  className={`${styles.consultation} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[5] = el} >
+        <section
+          className={`${styles.consultation} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[5] = el)}
+        >
           <h2>Still Not Sure?</h2>
           <p>
             If you have received a refusal for any of the reasons mentioned
@@ -201,16 +250,16 @@ const Pgwp = () => {
             now!
           </p>
           <button
-          onClick={() =>
-            (window.location.href =
-              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-          }
-        >
-          Book Appointment
-        </button>
+            onClick={() =>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
+          >
+            Book Appointment
+          </button>
         </section>
       </div>
-      
+
       <div id="faqs">
         <FAQ />
       </div>

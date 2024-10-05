@@ -48,9 +48,6 @@ const Citizenship = () => {
     <>
       <Navbar1 />
       <div className={styles.bannerParent}>
-        <header className={styles.header}>
-          <h1>Citizenship - The highest form of legal status in Canada</h1>
-        </header>
         <div className={styles.banner}>
           <div
             className={`${styles.bannerHeadingRotateParent} ${
@@ -64,9 +61,7 @@ const Citizenship = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>
-                About the Program
-              </p>
+              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
               <p onClick={() => scrollToSection("benefits")}>Benefits</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
               <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
@@ -83,15 +78,16 @@ const Citizenship = () => {
       <div className={styles.container}>
         <main className={styles.mainContent} >
           <section className={`${styles.section} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}  >
-            <h2>Congratulations on your PR Journey!</h2>
-            <p>
-              After completing your 3 years (or staying physically in Canada for
-              at least 1,095 days) of PR journey in Canada, you are now
-              officially going to become a Canadian Citizen. Congratulations.
-              All you are left to do is complete the Canadian Citizenship
-              application through IRCC and enjoy the highest form of legal
-              status in Canada. This is the last step for you to become a
-              Canadian.
+          <header className={styles.header}>
+          <h1>Citizenship - The highest form of legal status in Canada</h1>
+        </header>
+            
+            <p className={styles.discription}>
+            After completing your 3 years (or staying physically in Canada for at least 1,095 days) of PR journey in Canada, you are now officially going to become a Canadian Citizen. Congratulations. All you are left to do is complete the Canadian Citizenship application through IRCC and enjoy the highest form of legal status in Canada. This is the last step for you to become a Canadian. 
+            </p>
+            <p className={styles.discription}>
+            Because of Canadian citizenship, you’ll have several rights and responsibilities. It is the highest form of legal status in Canada, and it allows you to enjoy the full benefits of Canadian society, including the right to vote, hold public office, and live and work anywhere in the country.
+
             </p>
           </section>
 

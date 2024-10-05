@@ -418,6 +418,12 @@ const LowWageLmia = () => {
           <h2>
             Common Reasons for Refusal of High-Wage and Low-Wage Positions:
           </h2>
+          <h4>Over the years, Service Canada officers have become very strict about the employers meeting the requirements of the program. 
+          </h4>
+          <h4>
+          Please see below the common reasons for refusals:
+
+          </h4>
           <ul>
             <li>
               Failure to perform or document minimum recruitment requirements.

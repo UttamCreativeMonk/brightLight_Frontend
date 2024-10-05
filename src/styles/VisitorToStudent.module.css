@@ -149,6 +149,13 @@
   .benefits {
     margin-bottom: 20px;
   }
+
+  .benefits h4{
+    text-align: left;
+  }
+  .refusals h4{
+    text-align: left;
+  }
   
   .subheading {
     font-size: 1.5rem;

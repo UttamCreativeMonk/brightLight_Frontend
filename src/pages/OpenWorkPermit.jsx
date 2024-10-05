@@ -6,6 +6,7 @@ import Navbar1 from "../components/Navbar1";
 import Testimonials from "../sections/Testimonials";
 import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
+import OurProcess from "../sections/OurProcess";
 
 const OpenWorkPermit = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -78,14 +79,12 @@ const OpenWorkPermit = () => {
 
         <main className={styles.mainContent}>
           <section  className={`${styles.section} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
-            <h2>What is an Open Work Permit?</h2>
+            <header className={styles.header}>
+            <h1>Open Work Permit</h1>
             <p>
-              A Canadian Open Work Permit is a temporary document that allows
-              foreign nationals to work in Canada without being tied to a
-              specific employer. This type of permit offers flexibility and
-              opens up a wide range of job opportunities for eligible
-              individuals.
+            A Canadian Open Work Permit is a temporary document that allows foreign nationals to work in Canada without being tied to a specific employer. This type of permit offers flexibility and opens up a wide range of job opportunities for eligible individuals. 
             </p>
+            </header>
           </section>
 
           <section className={`${styles.section} ${styles.section}`} id="categories" ref={(el) => sectionsRef.current[1] = el} >
@@ -153,6 +152,7 @@ const OpenWorkPermit = () => {
           </section>
         </main>
       </div>
+      <OurProcess/>
 
       <div id="faqs">
         <FAQ />

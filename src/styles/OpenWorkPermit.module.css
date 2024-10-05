@@ -1,4 +1,4 @@
-/* src/components/OpenWorkPermitPage.module.css */
+
 .bannerParent {
   background-image: url("../assets/canadaBlue.jpeg");
   width: 100%;
@@ -215,6 +215,9 @@
     color: #e8c47c;
     margin-top: 20px;
     margin-bottom: 20px;
+    text-align: center;
+  }
+  .header p{
     text-align: center;
   }
 

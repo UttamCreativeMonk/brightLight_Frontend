@@ -202,11 +202,11 @@ let AllRoutes = () => {
         path="/common-law-partner-permanent"
         element={<CommonLawPartnerPermanent />}
       />
-      <Route
+     <Route
         path="/common-law-partner-international"
         element={<CommonLawPartnerInternational />}
       />
-      <Route
+           <Route
         path="/spouse-common-law-sponsership"
         element={<SpouseCommonLawSpon />}
       />
@@ -246,7 +246,7 @@ let AllRoutes = () => {
         element={<FamilyReunificationSponsorship />}
       />
       <Route path="/pgwp" element={<Pgwp />} />
-      <Route path="/openWork-canada-lp" element={<OpenWorkCanadaLP />} />
+      <Route path="/openWork-dependent-children" element={<OpenWorkCanadaLP />} />
       <Route
         path="/open-work-vulnerable-lp"
         element={<OpenWorkVulnerableLP />}

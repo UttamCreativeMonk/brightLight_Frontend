@@ -47,9 +47,6 @@ const LmiaReviewed = () => {
     <>
       <Navbar1 />
       <div className={styles.bannerParent}>
-        <header className={styles.header}>
-          <h1>Labour Market Impact Assessment (LMIA)</h1>
-        </header>
         <div className={styles.banner}>
           <div
             className={`${styles.bannerHeadingRotateParent} ${
@@ -63,14 +60,26 @@ const LmiaReviewed = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
               <p onClick={() => scrollToSection("pathways")}>Pathways</p>
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
-              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>
+                Refusal Reasons
+              </p>
+              <p onClick={() => scrollToSection("book-appointment")}>
+                Book Appointment
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -79,48 +88,58 @@ const LmiaReviewed = () => {
       </div>
 
       <div className={styles.container}>
-        <main className={styles.mainContent} >
-          <section className={`${styles.section} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
-            <h2>What is an LMIA?</h2>
-            <p>
-              If you're looking to apply for an LMIA, it's because you are
-              either a foreign worker who wants to apply for a job on a
-              temporary work permit that is available in any Canadian province
-              or an employer who wants to bring in skilled professionals or
-              experienced workers to join their team in Canada.
-            </p>
-            <p>
-              Canada relies on the Temporary Foreign Worker Program (TFWP) to
-              bring in workers from other countries when there's a shortage of
-              qualified workers in Canada for a particular job. When a Canadian
-              employer wants to hire a foreign worker, they generally submit an
-              application known as a Labour Market Impact Assessment (LMIA) to
-              the Canadian Government Department - Employment and Social
-              Development Canada (ESDC).
-            </p>
-            <p>
-              An ESDC officer reviews the application to assess whether hiring
-              the foreign worker would be beneficial for the Canadian job
-              market. They ensure that qualified Canadians/PR haven't been
-              overlooked for the position and that the foreign worker will
-              receive appropriate pay and benefits according to federal and
-              provincial regulations.
-            </p>
-            <p>
-              If the LMIA is positive or neutral, it means there's no Canadian
-              available for the job, and hiring a foreign worker won't hurt the
-              Canadian job market. However, if it's negative, it means that the
-              employer has failed to demonstrate that they meet at least one of
-              the requirements mentioned on the ESDC website.
-            </p>
-            <p>
-              At Brightlight Immigration, we do not provide recruitment
-              services. As your official legal consultants, we can represent
-              your case to ESDC and get you the desired favorable response.
-            </p>
+        <main className={styles.mainContent}>
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="about-program"
+            ref={(el) => (sectionsRef.current[0] = el)}
+          >
+            <header className={styles.header}>
+              <h1>Labour Market Impact Assessment (LMIA)</h1>
+
+              <p>
+                If you're looking to apply for an LMIA, it's because you are
+                either a foreign worker who wants to apply for a job on a
+                temporary work permit that is available in any Canadian province
+                or an employer who wants to bring in skilled professionals or
+                experienced workers to join their team in Canada.
+              </p>
+              <p>
+                Canada relies on the Temporary Foreign Worker Program (TFWP) to
+                bring in workers from other countries when there's a shortage of
+                qualified workers in Canada for a particular job. When a
+                Canadian employer wants to hire a foreign worker, they generally
+                submit an application known as a Labour Market Impact Assessment
+                (LMIA) to the Canadian Government Department - Employment and
+                Social Development Canada (ESDC).
+              </p>
+              <p>
+                An ESDC officer after reviewing the application assesses whether
+                hiring the foreign worker would be beneficial for the Canadian
+                job market. They ensure that qualified Canadians/PR hasn't been
+                overlooked for the position and that the foreign worker will
+                receive appropriate pay and benefits according to federal and
+                provincial regulations.
+              </p>
+              <p>
+                If the LMIA is positive or neutral, it means there's no Canadian
+                available for the job, and hiring a foreign worker won't hurt
+                the Canadian job market. However, if it's negative, it means
+                that the employer has failed to demonstrate that he does not
+                meet at least one of the requirements mentioned on the ESDC
+                website. At Brightlight Immigration, we do not provide
+                recruitment services. As your official legal consultants, we can
+                represent your case to ESDC and get you the desired favorable
+                response.
+              </p>
+            </header>
           </section>
 
-          <section className={`${styles.section} ${styles.section}`} id="benifits" ref={(el) => sectionsRef.current[1] = el}  >
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="benifits"
+            ref={(el) => (sectionsRef.current[1] = el)}
+          >
             <h2>Benefits of the LMIA Program</h2>
             <div className={styles.benefits}>
               <div className={styles.benefit}>
@@ -169,7 +188,11 @@ const LmiaReviewed = () => {
             </div>
           </section>
 
-          <section className={`${styles.pathways} ${styles.section}`} id="pathways" ref={(el) => sectionsRef.current[2] = el} >
+          <section
+            className={`${styles.pathways} ${styles.section}`}
+            id="pathways"
+            ref={(el) => (sectionsRef.current[2] = el)}
+          >
             <h2>Pathways of LMIA Available</h2>
             <div className={styles.pathways}>
               <Link to="/low-wage-lmia" className={styles.button}>
@@ -193,7 +216,11 @@ const LmiaReviewed = () => {
             </div>
           </section>
 
-          <section className={`${styles.section} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[3] = el}  >
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="how-to-apply"
+            ref={(el) => (sectionsRef.current[3] = el)}
+          >
             <h2>How to Apply for LMIA</h2>
             <div className={styles.applicationProcess}>
               <h3>As an Employer</h3>
@@ -236,8 +263,14 @@ const LmiaReviewed = () => {
             </div>
           </section>
 
-          <section className={`${styles.section} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[4] = el} >
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="refusal-reasons"
+            ref={(el) => (sectionsRef.current[4] = el)}
+          >
             <h2>Common Reasons for LMIA Refusal</h2>
+            <h4>Don’t forget to avoid these common LMIA refusal reasons and increase your chances of approval.
+            </h4>
             <ul>
               <li>
                 As an employer, you did not try to hire Canadians by
@@ -274,7 +307,11 @@ const LmiaReviewed = () => {
             </ul>
           </section>
 
-          <section className={`${styles.section} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[5] = el}  >
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="why-choose-us"
+            ref={(el) => (sectionsRef.current[5] = el)}
+          >
             <h2>Still Not Sure?</h2>
             <p>
               If you have received a refusal for any of the reasons mentioned

@@ -97,20 +97,25 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           Canada offers a pathway to permanent residency in Canada for
           individuals who provide the essential care.
         </p>
-        {/* <h2 className={styles.subtitle}>
+        <h2 className={styles.subtitle}>
           Here are the permanent residence pathways available for caregivers:
         </h2>
         <ul className={styles.list}>
           <li>
-
-            for Home Child-Care Provider Pilot and Home Support Worker Pilot -
-            Scroll to section Below
+            <a href="#CategoryA">
+            <strong>(Category A – Gaining experience)</strong> for Home
+            Child-Care Provider Pilot and Home Support Worker Pilot - Scroll to
+            section Below
+            </a>
           </li>
           <li>
-            for Home Child-Care Provider Pilot and Home Support Worker Pilot -
-            Scroll to section Below
+            <a href="#CategoryB">
+            <strong>(Category B – Direct to permanent residence)</strong> for
+            Home Child-Care Provider Pilot and Home Support Worker Pilot Scroll
+            to section Below
+            </a>
           </li>
-        </ul> */}
+        </ul>
         <h2
           className={`${styles.subtitle} ${styles.section}`}
           id="benifits"
@@ -152,11 +157,18 @@ const PermanentResidencePathwaysCaregiversLP = () => {
         </h2>
         <h3
           className={`${styles.subheading} ${styles.section}`}
-          id="categoryA"
+          id="category"
           ref={(el) => (sectionsRef.current[5] = el)}
         >
           1. Qualifying Occupations:
         </h3>
+        <p>
+          In the caregiver program, only two occupations are allowed for the
+          purpose of defining the occupation mentioned in the job offer as well
+          as the in-Canada qualify work experience to apply for permanent
+          residency:{" "}
+        </p>
+        <h4>The two National Occupational Classification (NOC) codes are:</h4>
         <ul
           className={`${styles.listStrong} ${styles.section}`}
           id="testing3"
@@ -184,6 +196,7 @@ const PermanentResidencePathwaysCaregiversLP = () => {
         >
           2. Application Categories:
         </h3>
+        <p>There are 2 categories you can apply under:</p>
         <ul
           className={`${styles.list} ${styles.section}`}
           id="testing5"
@@ -205,6 +218,7 @@ const PermanentResidencePathwaysCaregiversLP = () => {
         >
           3. Education:
         </h3>
+        <p>You are required have either of the following:</p>
         <ul
           className={`${styles.list} ${styles.section}`}
           id="testing7"
@@ -257,7 +271,7 @@ const PermanentResidencePathwaysCaregiversLP = () => {
         </h3>
         <h4
           className={`${styles.subheading} ${styles.section}`}
-          id="categoryA"
+          id="CategoryA"
           ref={(el) => (sectionsRef.current[14] = el)}
         >
           Applicants under Category A – Gaining experience:
@@ -291,7 +305,7 @@ const PermanentResidencePathwaysCaregiversLP = () => {
         </p>
         <h4
           className={`${styles.subheading} ${styles.section}`}
-          id="testing12"
+          id="CategoryB"
           ref={(el) => (sectionsRef.current[16] = el)}
         >
           Applicants under Category B – Direct to Permanent residence:
@@ -420,7 +434,6 @@ const PermanentResidencePathwaysCaregiversLP = () => {
         >
           Book Appointment
         </button>
-        <section></section>
       </div>
 
       <div id="faqs">

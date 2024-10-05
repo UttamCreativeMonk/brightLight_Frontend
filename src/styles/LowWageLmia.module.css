@@ -142,7 +142,7 @@
 .mainContent {
   margin: 0 auto;
   max-width: 1440px;
-  background-color: #fff;
+  /* background-color: #fff; */
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -167,7 +167,6 @@
 .section ul,
 .section ol {
   font-size: 1rem;
-  color: #666;
   line-height: 1.6;
 }
 

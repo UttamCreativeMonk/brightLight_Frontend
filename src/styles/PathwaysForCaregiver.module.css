@@ -151,9 +151,9 @@
   box-sizing: border-box;
   text-align: left;
 }
-.container ul{
+/* .container ul{
   list-style-type: none;
-}
+} */
 
 .header {
   text-align: left;
@@ -172,6 +172,9 @@
 
 .section {
   margin-bottom: 20px;
+}
+.description{
+  text-align: center;
 }
 
 .section h2 {

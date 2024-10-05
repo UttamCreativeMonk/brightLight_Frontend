@@ -123,9 +123,7 @@
   }
 }
 
-/* src/components/LmiaReviewedPage.module.css */
 
-/* src/components/LmiaReviewedPage.module.css */
 
 .container {
   max-width: 1440px;
@@ -145,6 +143,9 @@
   color: #e8c47c;
   text-align: center;
 }
+.header p{
+  text-align: center;
+}
 
 .mainContent {
   line-height: 1.6;
@@ -156,6 +157,9 @@
 
 .howToApply h3{
   margin-top: 30px !important;
+}
+.howToApply li{
+  margin-top: 10px;
 }
 
 .section {

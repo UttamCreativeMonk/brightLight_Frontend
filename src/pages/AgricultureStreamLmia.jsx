@@ -49,9 +49,7 @@ const AgricultureStreamLmia = () => {
     <>
       <Navbar1 />
       <div className={styles.bannerParent}>
-        <header className={styles.header}>
-          <h1>Agricultural Stream LMIA</h1>
-        </header>
+
         <div className={styles.banner}>
           <div
             className={`${styles.bannerHeadingRotateParent} ${
@@ -86,7 +84,11 @@ const AgricultureStreamLmia = () => {
       <div className={styles.container}>
         <main className={styles.mainContent}>
           <section className={`${styles.section} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
-            <h2>Overview</h2>
+          <header className={styles.header}>
+          <h1>Agricultural Stream LMIA</h1>
+        </header>
+        
+           
             <p>
               This type of LMIA allows employers to hire foreign workers to fill
               jobs in farms, nurseries, or greenhouses. It can involve the
@@ -187,109 +189,66 @@ const AgricultureStreamLmia = () => {
               <li>Sheep</li>
               <li>Swine</li>
             </ul>
-          </section>
-
-          <section  className={`${styles.section} ${styles.section}`} id="housing-requirements" ref={(el) => sectionsRef.current[3] = el}   >
-            <h2>Housing Requirements</h2>
             <p>
-              Employers must provide proof that the on-farm or off-site housing
-              has been inspected by the appropriate
-              provincial/territorial/municipal body or by an authorized private
-              inspector with appropriate certification. Foreign workers are not
-              obliged to use the accommodation provided by the employer and can
-              choose to live at the accommodation of their own choice with their
-              family.
+            Employers must provide proof that the on-farm or off-site housing has been inspected by the appropriate provincial/territorial/municipal body or by an authorized private inspector with appropriate certification. Foreign workers are not obliged to use the accommodation provided by the employer and can choose to live at the accommodation of their own choice with their family.
+
             </p>
           </section>
 
-          <section className={`${styles.section} ${styles.section}`} id="benifits" ref={(el) => sectionsRef.current[4] = el} >
-            <h2>Benefits of Agricultural Stream LMIA</h2>
-            <ul>
-              <li>
-                No LMIA processing fees, as compared to low-wage/high-wage LMIA
-                applications, where the employer has to pay $1000.00 for each
-                position.
-              </li>
-              <li>
-                Only 14 calendar days of recruitment efforts have to be
-                performed, as compared to 4 weeks in low-wage/high-wage LMIA
-                applications. Advertising requirements are less strict than the
-                low-wage/high-wage occupations.
-              </li>
-              <li>
-                No cap calculation requirements like in the low-wage LMIA
-                applications.
-              </li>
-              <li>
-                No transition plan is required like in the High-wage LMIA
-                applications.
-              </li>
-              <li>
-                Employers can submit the LMIA application without advertising if
-                they are hiring a replacement worker, provided it is for the
-                same occupation and the location of work is in the same Job Bank
-                economic region as per the previous LMIA application.
-              </li>
-            </ul>
-          </section>
-
-          <section className={`${styles.section} ${styles.section}`} id="important-considerations" ref={(el) => sectionsRef.current[5] = el} >
-            <h2>Important Considerations</h2>
+          <section  className={`${styles.section} ${styles.section}`} id="housing-requirements" ref={(el) => sectionsRef.current[3] = el}   >
+            <h2>The important thing to note</h2>
             <p>
-              Agriculture Stream LMIA applications are approved with the
-              employment duration of 2 years only. However, if the employer
-              qualifies for the same position in the High-wage LMIA application,
-              the employment duration can be 3 years instead.
+            Agriculture Stream LMIA applications are approved with the employment duration of 2 years only. However, if the employer qualifies for the same position in the High-wage LMIA application, the employment duration can be 3 years instead.
+
             </p>
           </section>
 
           <section  className={`${styles.section} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[6] = el} >
-            <h2>How to Apply for Agricultural Stream LMIA</h2>
+            <h2>How to Apply for Agricultural Stream LMIA ?</h2>
             <ol>
               <li>
-                Have an initial assessment performed by us to verify if the
-                employer is eligible to apply for LMIA for a specific position
-                and how many positions are allowed. We will also discuss the
-                application that should be submitted to the High-wage LMIA
-                program.
+              Step 1:  Have an initial assessment performed by us to verify if the employer is eligible to apply for LMIA for a specific position and how many positions are allowed. We will also discuss the application that should be submitted to the High-wage LMIA program.
+
               </li>
               <li>
-                We will provide you with a checklist of documents and
-                information required to start the initial process.
+              Step 2:  We will provide you with a checklist of documents and information required to start the initial process. 
+
               </li>
               <li>
-                If required, perform recruitment efforts as per ESDC program
-                requirements for each LMIA type. Job advertisement postings (All
-                advertisements must be active for 14 days before submission).
+              Step 3: If required, perform recruitment efforts as per ESDC program requirements for each LMIA type. Job advertisement postings (All advertisements must be active for 14 days before submission).
+
               </li>
               <li>
-                Get a housing inspection done by the appropriate
-                provincial/territorial/municipal body or by an authorized
-                private inspector with appropriate certification. The inspector
-                will provide you with a filled-in Schedule F – Housing
-                inspection report seasonal agricultural worker program and
-                agricultural stream.
+              Step 4: Get a housing inspection done by the appropriate provincial/territorial/municipal body or by an authorized private inspector with appropriate certification. The inspector will provide you with a filled in Schedule F – Housing inspection report seasonal agricultural worker program and agricultural stream.
+
               </li>
-              <li>Interview local applicants.</li>
-              <li>
-                Prepare and submit an LMIA application to the Service Canada
-                ESDS department.
+              <li>Step 5: Interview local applicants.
               </li>
               <li>
-                Wait for LMIA processing time, which can range from 15 to 60
-                business days. If the Service Canada officer has any questions
-                or concerns or requires any further information, the employer
-                might be contacted for an interview.
+              Step 6: Prepare and submit an LMIA application to the Service Canada ESDS department. 
+
               </li>
               <li>
-                Once LMIA is received, the employer can add or remove the name
-                of the foreign worker.
+              Step 7:  Wait for LMIA processing time, which can range from 15 to 60 business days. If the Service Canada officer has any questions or concerns or requires any further information, the employer might be contacted for an interview. 
+
+              </li>
+              <li>
+              Step 8: Once LMIA is received, the employer can add or remove the name of the foreign worker.
+
               </li>
             </ol>
           </section>
 
           <section  className={`${styles.section} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[7] = el} >
             <h2>Common Reasons for Refusal</h2>
+            <h4>
+            Over the years, Service Canada officers have become very strict about the employers meeting the requirements of the program. 
+
+            </h4>
+            <h4>
+            Please see below the common reasons for refusals:
+
+            </h4>
             <ul>
               <li>
                 Failure to perform or document the minimum recruitment

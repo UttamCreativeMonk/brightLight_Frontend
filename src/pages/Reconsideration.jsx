@@ -47,9 +47,7 @@ const Reconsideration = () => {
     <>
       <Navbar1 />
       <div className={styles.bannerParent}>
-        <header className={styles.header}>
-          <h1>Reconsideration for Refusal Decision</h1>
-        </header>
+
         <div className={styles.banner}>
           <div
             className={`${styles.bannerHeadingRotateParent} ${
@@ -80,8 +78,10 @@ const Reconsideration = () => {
 
       <div className={styles.container}>
         <main className={styles.mainContent}>
-          <section  className={`${styles.section} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}  >
-            <h2>Don't Worry, There's Still Hope!</h2>
+        <header className={styles.header}>
+          <h1>Reconsideration for Refusal Decision</h1>
+        </header>
+          <section  className={`${styles.discription} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}  >
             <p>
               Are you a Canadian immigrant who has recently received a rejection
               for your visa application? If so, you're not alone. Many people
@@ -104,7 +104,8 @@ const Reconsideration = () => {
           </section>
 
           <section className={`${styles.section} ${styles.section}`} id="requests-for-reconsideration" ref={(el) => sectionsRef.current[1] = el}  >
-            <h2>Requests for reconsideration can be made for:</h2>
+            <h2>Requests for reconsideration can be made for any type of Canadian immigration decision, including decisions on applications for:
+            </h2>
             <ul>
               <li>Permanent residence</li>
               <li>Temporary residence</li>
@@ -121,10 +122,13 @@ const Reconsideration = () => {
           </section>
 
           <section className={`${styles.section} ${styles.section}`} id="eligibilty" ref={(el) => sectionsRef.current[2] = el}  >
-            <h2>Eligibility for Reconsideration</h2>
+            <h2>Eligibility for Reconsideration for Refusal Decision  
+            </h2>
             <p>
+            <strong>
               Are you considering reconsideration requests? See if you meet the
               eligibility.
+              </strong>
             </p>
             <ul>
               <li>
@@ -146,9 +150,10 @@ const Reconsideration = () => {
 
           <section  className={`${styles.section} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[3] = el}   >
             <h2>How to Apply for Reconsideration</h2>
-            <p>
+            <p><strong>
               Meet the eligibility criteria? Let's see how you can request a
               reconsideration.
+              </strong>
             </p>
             <ul>
               <li>
@@ -171,9 +176,10 @@ const Reconsideration = () => {
 
           <section  className={`${styles.section} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[4] = el} >
             <h2>Reasons for Refusal After Reconsideration</h2>
-            <p>
+            <p> <strong>
               Don’t forget to avoid these common reconsideration request refusal
               reasons and increase your chances of approval.
+              </strong>
             </p>
             <ul>
               <li>
