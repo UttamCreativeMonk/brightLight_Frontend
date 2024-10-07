@@ -623,8 +623,7 @@ const Navbar3 = (props) => {
                           onMouseEnter={() => setDoubleNestedInsideCanada(true)}
                           onMouseLeave={() =>
                             setDoubleNestedInsideCanada(false)
-                          }
-                        >
+                          }>
                           Inside Canada
                         </a>
                         <div
