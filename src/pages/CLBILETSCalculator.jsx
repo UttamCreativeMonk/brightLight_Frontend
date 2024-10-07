@@ -492,7 +492,7 @@ const CLBILETSCalculator = () => {
               }`}
               onClick={() => handleCLBClick("CLB1")}
             >
-              CLB1
+              {data?.c1b1}
             </div>
             <div
               className={`${styles.box} ${
@@ -500,7 +500,7 @@ const CLBILETSCalculator = () => {
               }`}
               onClick={() => handleCLBClick("CLB2")}
             >
-              CLB2
+              {data?.c1b2}
             </div>
             <div
               className={`${styles.box} ${
@@ -508,7 +508,7 @@ const CLBILETSCalculator = () => {
               }`}
               onClick={() => handleCLBClick("CLB3")}
             >
-              CLB3
+              {data?.c1b3}
             </div>
             <div
               className={`${styles.box} ${
@@ -516,17 +516,25 @@ const CLBILETSCalculator = () => {
               }`}
               onClick={() => handleCLBClick("CLB4")}
             >
-              CLB4
+              {data?.c1b4}
             </div>
           </div>
           <div className={styles.row}>
+            <div
+              className={`${styles.box} ${
+                selectedCLB === "CLB4" ? styles.selectedBox : ""
+              }`}
+              onClick={() => handleCLBClick("CLB4")}
+            >
+              {data?.c1b4}
+            </div>
             <div
               className={`${styles.box} ${
                 selectedCLB === "CLB5" ? styles.selectedBox : ""
               }`}
               onClick={() => handleCLBClick("CLB5")}
             >
-              CLB5
+              {data?.c1b5}
             </div>
             <div
               className={`${styles.box} ${
@@ -534,15 +542,17 @@ const CLBILETSCalculator = () => {
               }`}
               onClick={() => handleCLBClick("CLB6")}
             >
-              CLB6
+              {data?.c1b6}
             </div>
+          </div>
+          <div className={styles.row}>
             <div
               className={`${styles.box} ${
                 selectedCLB === "CLB7" ? styles.selectedBox : ""
               }`}
               onClick={() => handleCLBClick("CLB7")}
             >
-              CLB7
+              {data?.c1b7}
             </div>
             <div
               className={`${styles.box} ${
@@ -550,41 +560,25 @@ const CLBILETSCalculator = () => {
               }`}
               onClick={() => handleCLBClick("CLB8")}
             >
-              CLB8
+              {data?.c1b8}
             </div>
-          </div>
-          <div className={styles.row}>
             <div
               className={`${styles.box} ${
                 selectedCLB === "CLB9" ? styles.selectedBox : ""
               }`}
               onClick={() => handleCLBClick("CLB9")}
             >
-              CLB9
+              {data?.c1b9}
             </div>
+          </div>
+          <div className={styles.row}>
             <div
               className={`${styles.box} ${
                 selectedCLB === "CLB10" ? styles.selectedBox : ""
               }`}
               onClick={() => handleCLBClick("CLB10")}
             >
-              CLB10
-            </div>
-            <div
-              className={`${styles.box} ${
-                selectedCLB === "CLB11" ? styles.selectedBox : ""
-              }`}
-              onClick={() => handleCLBClick("CLB11")}
-            >
-              CLB11
-            </div>
-            <div
-              className={`${styles.box} ${
-                selectedCLB === "CLB12" ? styles.selectedBox : ""
-              }`}
-              onClick={() => handleCLBClick("CLB12")}
-            >
-              CLB12
+              {data?.c1b10}
             </div>
           </div>
 
@@ -782,6 +776,14 @@ const CLBILETSCalculator = () => {
           <div className={styles.row}>
             <div
               className={`${styles.box} ${
+                selectedCLB3 === "4" ? styles.selectedBox : ""
+              }`}
+              onClick={() => handleCLBClick3("4")}
+            >
+              {data?.c3b4}
+            </div>
+            <div
+              className={`${styles.box} ${
                 selectedCLB3 === "5" ? styles.selectedBox : ""
               }`}
               onClick={() => handleCLBClick3("5")}
@@ -796,6 +798,8 @@ const CLBILETSCalculator = () => {
             >
               {data?.c3b6}
             </div>
+          </div>
+          <div className={styles.row}>
             <div
               className={`${styles.box} ${
                 selectedCLB3 === "7" ? styles.selectedBox : ""
@@ -812,8 +816,6 @@ const CLBILETSCalculator = () => {
             >
               {data?.c3b8}
             </div>
-          </div>
-          <div className={styles.row}>
             <div
               className={`${styles.box} ${
                 selectedCLB3 === "9" ? styles.selectedBox : ""
@@ -822,6 +824,8 @@ const CLBILETSCalculator = () => {
             >
               {data?.c3b9}
             </div>
+          </div>
+          <div className={styles.row}>
             <div
               className={`${styles.box} ${
                 selectedCLB3 === "10" ? styles.selectedBox : ""
@@ -829,22 +833,6 @@ const CLBILETSCalculator = () => {
               onClick={() => handleCLBClick3("10")}
             >
               {data?.c3b10}
-            </div>
-            <div
-              className={`${styles.box} ${
-                selectedCLB3 === "11" ? styles.selectedBox : ""
-              }`}
-              onClick={() => handleCLBClick3("11")}
-            >
-              {data?.c3b11}
-            </div>
-            <div
-              className={`${styles.box} ${
-                selectedCLB3 === "12" ? styles.selectedBox : ""
-              }`}
-              onClick={() => handleCLBClick3("12")}
-            >
-              {data?.c3b12}
             </div>
           </div>
 
