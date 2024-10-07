@@ -102,14 +102,14 @@ const Adoption = () => {
             <li>
               <p>Inter-country adoption. This involves adopting a child from another country.
               </p>
-              <a href="#inter-country" className={styles.button}>
+              <a href="#inter-country" className={styles.button} id="intra-country">
                 Inter-Country Adoption
               </a>
             </li>
           </ul>
         </section>
 
-        <section className={`${styles.intraCountry} ${styles.section}`} id="intra-country" ref={(el) => sectionsRef.current[2] = el}   >
+        <section className={`${styles.intraCountry} ${styles.section}`} id="inter-country" ref={(el) => sectionsRef.current[2] = el}   >
           <h2>Intra-Country Adoption (Inside Canada)</h2>
           <p>
             Intra-country adoption involves adopting a child from another
@@ -126,7 +126,7 @@ const Adoption = () => {
           </ol>
         </section>
 
-        <section  className={`${styles.interCountry} ${styles.section}`} id="inter-country" ref={(el) => sectionsRef.current[3] = el}    >
+        <section  className={`${styles.interCountry} ${styles.section}`} id="country" ref={(el) => sectionsRef.current[3] = el}    >
           <h2>Inter-Country Adoption (Outside Canada)</h2>
           <p>
             Inter-country adoption involves adopting a child from another
