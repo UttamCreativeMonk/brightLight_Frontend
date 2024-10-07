@@ -294,14 +294,14 @@ const EntryLevelSemiSkilled = () => {
             <table className={styles.table}>
               <thead>
                 <tr>
-                  <th className={styles.tableHeader}>Occupation Code</th>
-                  <th className={styles.tableHeader}>Occupation Title</th>
+                  <th className={styles.tableHeader}>Occupation</th>
+                  <th className={styles.tableHeader}>NOC Code</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td className={styles.tableCell}>64314</td>
                   <td className={styles.tableCell}>Hotel front desk clerks</td>
+                  <td className={styles.tableCell}>64314</td>
                 </tr>
               </tbody>
             </table>
@@ -316,24 +316,24 @@ const EntryLevelSemiSkilled = () => {
             <table className={styles.table}>
               <thead>
                 <tr>
-                  <th className={styles.tableHeader}>Occupation Code</th>
-                  <th className={styles.tableHeader}>Occupation Title</th>
+                  <th className={styles.tableHeader}>Occupation</th>
+                  <th className={styles.tableHeader}>NOC Code</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td className={styles.tableCell}>64320</td>
                   <td className={styles.tableCell}>Tour and travel guides</td>
+                  <td className={styles.tableCell}>64320</td>
                 </tr>
                 <tr>
-                  <td className={styles.tableCell}>64321</td>
                   <td className={styles.tableCell}>Casino workers</td>
+                  <td className={styles.tableCell}>64321</td>
                 </tr>
                 <tr>
-                  <td className={styles.tableCell}>64322</td>
                   <td className={styles.tableCell}>
                     Outdoor sport and recreational guides
                   </td>
+                  <td className={styles.tableCell}>64322</td>
                 </tr>
               </tbody>
             </table>
@@ -348,33 +348,33 @@ const EntryLevelSemiSkilled = () => {
             <table className={styles.table}>
               <thead>
                 <tr>
-                  <th className={styles.tableHeader}>Occupation Code</th>
-                  <th className={styles.tableHeader}>Occupation Title</th>
+                  <th className={styles.tableHeader}>Occupation</th>
+                  <th className={styles.tableHeader}>NOC Code</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td className={styles.tableCell}>64300</td>
                   <td className={styles.tableCell}>
                     Maîtres d’hotel and hosts/hostesses
                   </td>
+                  <td className={styles.tableCell}>64300</td>
                 </tr>
                 <tr>
-                  <td className={styles.tableCell}>64301</td>
                   <td className={styles.tableCell}>Bartenders</td>
+                  <td className={styles.tableCell}>64301</td>
                 </tr>
                 <tr>
-                  <td className={styles.tableCell}>65200</td>
                   <td className={styles.tableCell}>
                     Food and beverage servers
                   </td>
+                  <td className={styles.tableCell}>65200</td>
                 </tr>
                 <tr>
-                  <td className={styles.tableCell}>65201</td>
                   <td className={styles.tableCell}>
                     Food counter attendants, kitchen helpers and related support
                     occupations
                   </td>
+                  <td className={styles.tableCell}>65201</td>
                 </tr>
               </tbody>
             </table>
@@ -389,31 +389,32 @@ const EntryLevelSemiSkilled = () => {
             <table className={styles.table}>
               <thead>
                 <tr>
-                  <th className={styles.tableHeader}>Occupation Code</th>
-                  <th className={styles.tableHeader}>Occupation Title</th>
+                  <th className={styles.tableHeader}>Occupation</th>
+                  <th className={styles.tableHeader}>NOC Code</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td className={styles.tableCell}>65210</td>
                   <td className={styles.tableCell}>
                     Support occupations in accommodation, travel and facilities
                     set-up services
                   </td>
+                  <td className={styles.tableCell}>65210</td>
                 </tr>
                 <tr>
-                  <td className={styles.tableCell}>65310</td>
                   <td className={styles.tableCell}>Light duty cleaners</td>
+                  <td className={styles.tableCell}>65310</td>
                 </tr>
                 <tr>
-                  <td className={styles.tableCell}>65311</td>
                   <td className={styles.tableCell}>Specialized cleaners</td>
+                  <td className={styles.tableCell}>65311</td>
                 </tr>
+
                 <tr>
-                  <td className={styles.tableCell}>65312</td>
                   <td className={styles.tableCell}>
                     Janitors, caretakers and heavy-duty cleaners
                   </td>
+                  <td className={styles.tableCell}>65312</td>
                 </tr>
               </tbody>
             </table>
@@ -428,34 +429,32 @@ const EntryLevelSemiSkilled = () => {
             <table className={styles.table}>
               <thead>
                 <tr>
-                  <th className={styles.tableHeader}>Occupation Code</th>
-                  <th className={styles.tableHeader}>Occupation Title</th>
+                  <th className={styles.tableHeader}>Occupation</th>
+                  <th className={styles.tableHeader}>NOC Code</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td className={styles.tableCell}>65320</td>
                   <td className={styles.tableCell}>
                     Dry cleaning, laundry and related occupations
                   </td>
+                  <td className={styles.tableCell}>65320</td>
                 </tr>
                 <tr>
-                  <td className={styles.tableCell}>65329</td>
                   <td className={styles.tableCell}>
                     Other service support occupations
                   </td>
+                  <td className={styles.tableCell}>65329</td>
                 </tr>
-                
               </tbody>
-
             </table>
-            <p  className={styles.occupationPara}>
-                *For the purposes of the BC PNP, a resort is defined as an
-                accommodation facility that is associated with recreational
-                activities. These activities can include skiing, golfing,
-                boating, fishing, biking, swimming, horseback riding, hiking,
-                nature-based or interpretive tours, etc.
-              </p>
+            <p className={styles.occupationPara}>
+              *For the purposes of the BC PNP, a resort is defined as an
+              accommodation facility that is associated with recreational
+              activities. These activities can include skiing, golfing, boating,
+              fishing, biking, swimming, horseback riding, hiking, nature-based
+              or interpretive tours, etc.
+            </p>
             <h4
               className={styles.occupationTitle}
               id="testing23"
@@ -466,42 +465,42 @@ const EntryLevelSemiSkilled = () => {
             <table className={styles.table}>
               <thead>
                 <tr>
-                  <th className={styles.tableHeader}>Occupation Code</th>
-                  <th className={styles.tableHeader}>Occupation Title</th>
+                  <th className={styles.tableHeader}>Occupation</th>
+                  <th className={styles.tableHeader}>NOC Code</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td className={styles.tableCell}>94140</td>
                   <td className={styles.tableCell}>
                     Process control and machine operators, food and beverage
                     processing
                   </td>
+                  <td className={styles.tableCell}>94140</td>
                 </tr>
                 <tr>
-                  <td className={styles.tableCell}>94141</td>
                   <td className={styles.tableCell}>
                     Industrial butchers and meat cutters, poultry preparers and
                     related workers
                   </td>
+                  <td className={styles.tableCell}>94141</td>
                 </tr>
                 <tr>
-                  <td className={styles.tableCell}>94142</td>
                   <td className={styles.tableCell}>
                     Fish and seafood plant workers
                   </td>
+                  <td className={styles.tableCell}>94142</td>
                 </tr>
                 <tr>
-                  <td className={styles.tableCell}>94143</td>
                   <td className={styles.tableCell}>
                     Testers and graders, food and beverage processing
                   </td>
+                  <td className={styles.tableCell}>94143</td>
                 </tr>
                 <tr>
-                  <td className={styles.tableCell}>95106</td>
                   <td className={styles.tableCell}>
                     Labourers in food and beverage processing
                   </td>
+                  <td className={styles.tableCell}>95106</td>
                 </tr>
               </tbody>
             </table>
