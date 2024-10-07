@@ -7,6 +7,84 @@
   justify-content: space-between;
 }
 
+.blogContentTageSelectionArea{
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  overflow-x: scroll;
+}
+
+.tagsArea{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+  overflow-x: scroll;
+  margin-bottom: 20px;
+}
+
+.tag{
+  font-size: 13px;
+  flex-shrink: 0;
+  border: 1px solid black;
+  padding: 5px 20px;
+  border-radius: 5px;
+  color: white;
+  background-color: #132f46;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+}
+
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.tagsArea div:disabled{
+  opacity: 0.5;
+}
+
+.dashboard *:focus {
+  outline: none;
+}
+
+.shortCodeImage {
+  display: block;
+  width: 300px;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.copyButton {
+  background-color: #132f46;
+  color: white;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.precautionLine {
+  color: #132f46;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  word-spacing: 5px;
+  line-height: 1.5;
+}
+
+.copyButton:disabled {
+  opacity: 0.5;
+}
+
 .dashboard input:focus {
   outline: none;
 }

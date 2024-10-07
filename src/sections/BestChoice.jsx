@@ -175,10 +175,10 @@ let BestChoice = () => {
 
       // Adjust the plane's top position proportionally to the scroll speed
       if(window.innerWidth < 767){
-        setPlaneTop((prevTop) => prevTop + scrollSpeed * 15);
+        setPlaneTop((prevTop) => prevTop + scrollSpeed * 30);
       }
       else{
-        setPlaneTop((prevTop) => prevTop + scrollSpeed * 25);
+        setPlaneTop((prevTop) => prevTop + scrollSpeed * 35);
       }
        // Adjust the multiplier (50) for desired speed
 

@@ -3,10 +3,191 @@ import { useState, useEffect } from "react";
 import editIcon from "../assets/edit.png";
 import deleteIcon from "../assets/delete.png";
 import update from "../assets/update.png";
-import {ToastContainer, toast, Bounce } from "react-toastify";
- 
+import { ToastContainer, toast, Bounce } from "react-toastify";
 
-const AddBlog = () => {
+let AddBlog = () => {
+  const [textareaValue, setTextareaValue] = useState("Bigger Heading");
+  const [ytIframe, setYtIframe] = useState(null);
+  const [ytLink, setYtLink] = useState("");
+  const [ytShortcode, setYtShortcode] = useState("");
+  const [imageBase64, setImageBase64] = useState("");
+
+  const handleTagClick = (tag) => {
+    let tagValue = "";
+
+    switch (tag) {
+      case "Bigger Heading":
+        tagValue = "<h4>Your bigger heading goes here</h4>";
+        break;
+      case "Sub Heading":
+        tagValue = "<h6>Your sub heading goes here</h6>";
+        break;
+      case "Paragraph":
+        tagValue = "<p>Your paragraph goes here</p>";
+        break;
+      case "Numbered List":
+        tagValue = `
+        <ol>
+  <li>First item</li>
+  <li>Second item</li>
+  <li>Third item</li>
+</ol>`.trim();
+        break;
+      case "Bullet Points List":
+        tagValue = `
+        <ul>
+  <li>First point</li>
+  <li>Second point</li>
+  <li>Third point</li>
+</ul>`.trim();
+        break;
+      default:
+        break;
+    }
+
+    // Update the textarea value
+    setTextareaValue(tagValue);
+  };
+
+  // Function to handle YouTube link change and iframe generation
+  const handleYtLinkChange = (e) => {
+    const link = e.target.value;
+    setYtLink(link);
+
+    const videoId = extractYtVideoId(link);
+    if (videoId) {
+      const iframeCode = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+      setYtShortcode(iframeCode);
+      setYtIframe(
+        <iframe
+          width="560"
+          height="315"
+          src={`https://www.youtube.com/embed/${videoId}`}
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          title="YouTube Video Preview"
+        ></iframe>
+      );
+    } else {
+      setYtShortcode("");
+      setYtIframe(null); // Clear iframe if invalid video link
+    }
+  };
+
+  // Regex to extract YouTube video ID from share link
+  const extractYtVideoId = (link) => {
+    const regExp =
+      /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+    const match = link.match(regExp);
+    return match ? match[1] : null;
+  };
+
+  // Function to handle copy button click for YouTube video shortcode
+  const handleCopyClickYT = () => {
+    const shortcode = ytShortcode;
+    if (shortcode) {
+      navigator.clipboard
+        .writeText(shortcode)
+        .then(() => {
+          toast.success("YouTube Video Shortcode Copied", {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            transition: Bounce,
+          });
+        })
+        .catch((err) => {
+          toast.error("Failed to copy the shortcode.", {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            transition: Bounce,
+          });
+        });
+    } else {
+      toast.error("No YouTube video shortcode to copy.", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Bounce,
+      });
+    }
+  };
+  let handleFileChange = (event) => {
+    let file = event.target.files[0];
+    if (file) {
+      let reader = new FileReader();
+      reader.onloadend = () => {
+        let base64Image = reader.result;
+        setImageBase64(base64Image);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  let getImageShortcode = () => {
+    return imageBase64 ? `<img src="${imageBase64}" />` : "";
+  };
+  let handleCopyClick = () => {
+    let shortcode = getImageShortcode();
+    if (shortcode) {
+      navigator.clipboard
+        .writeText(shortcode)
+        .then(() => {
+          toast.success("Image shortcode Copied", {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            transition: Bounce,
+          });
+        })
+        .catch((err) => {
+          toast.error("Failed to copy the shortcode.", {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            transition: Bounce,
+          });
+        });
+    } else {
+      toast.error("No image shortcode to copy.", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Bounce,
+      });
+    }
+  };
   let notifySuccess = () => {
     toast.success("Success", {
       position: "top-center",
@@ -48,7 +229,7 @@ const AddBlog = () => {
       transition: Bounce,
     });
   };
-  const [sectionDataSingle, setSectionDataSingle] = useState({
+  let [sectionDataSingle, setSectionDataSingle] = useState({
     blog_heading: "",
     image: "",
     tag_1: "",
@@ -58,12 +239,12 @@ const AddBlog = () => {
     metaTitle: "",
     metaDescription: "",
   });
-  const [editMode, setEditMode] = useState(false);
+  let [editMode, setEditMode] = useState(false);
 
-  const handleInputChange = (e) => {
+  let handleInputChange = (e) => {
     if (e.target.type === "file") {
-      const file = e.target.files[0];
-      const reader = new FileReader();
+      let file = e.target.files[0];
+      let reader = new FileReader();
 
       reader.onloadend = () => {
         setSectionDataSingle({
@@ -83,13 +264,13 @@ const AddBlog = () => {
     }
   };
 
-  const handleEditClick = () => {
+  let handleEditClick = () => {
     setEditMode(true);
   };
 
-  const handleAddClick = () => {
+  let handleAddClick = () => {
     // Create a FormData object
-    const formData = new FormData();
+    let formData = new FormData();
     Object.keys(sectionDataSingle).forEach((key) => {
       formData.append(key, sectionDataSingle[key]);
     });
@@ -98,20 +279,19 @@ const AddBlog = () => {
       method: "POST",
       body: formData,
     })
-    .then((response) => {
-      if (response.status === 413) {
-        notifySize();
-        throw new Error("Payload too large");
-      } else if (!response.ok) {
-        notifyError();
-        throw new Error("Network response was not ok.");
-      }
-      return response.json();
-    })
+      .then((response) => {
+        if (response.status === 413) {
+          notifySize();
+          throw new Error("Payload too large");
+        } else if (!response.ok) {
+          notifyError();
+          throw new Error("Network response was not ok.");
+        }
+        return response.json();
+      })
       .then((data) => {
         notifySuccess();
         setEditMode(false);
-        // Optionally clear the form
         setSectionDataSingle({
           blog_heading: "",
           image: "",
@@ -130,7 +310,7 @@ const AddBlog = () => {
 
   return (
     <div className={styles.singleSectionData}>
-      <ToastContainer/>
+      <ToastContainer />
       <input
         placeholder="Blog Heading"
         name="blog_heading"
@@ -159,6 +339,46 @@ const AddBlog = () => {
         onChange={handleInputChange}
         disabled={!editMode}
       />
+      <div className={styles.blogContentTageSelectionArea}>
+        <div className={styles.tagsArea}>
+          <div
+            className={`${styles.tag} ${!editMode ? styles.disabled : ""}`}
+            onClick={() => handleTagClick("Bigger Heading")}
+          >
+            <p>Bigger Heading</p>
+          </div>
+          <div
+            className={`${styles.tag} ${!editMode ? styles.disabled : ""}`}
+            onClick={() => handleTagClick("Sub Heading")}
+          >
+            <p>Sub Heading</p>
+          </div>
+          <div
+            className={`${styles.tag} ${!editMode ? styles.disabled : ""}`}
+            onClick={() => handleTagClick("Paragraph")}
+          >
+            <p>Paragraph</p>
+          </div>
+          <div
+            className={`${styles.tag} ${!editMode ? styles.disabled : ""}`}
+            onClick={() => handleTagClick("Numbered List")}
+          >
+            <p>Numbered List</p>
+          </div>
+          <div
+            className={`${styles.tag} ${!editMode ? styles.disabled : ""}`}
+            onClick={() => handleTagClick("Bullet Points List")}
+          >
+            <p>Bullet Points List</p>
+          </div>
+        </div>
+        <textarea
+          placeholder="Your Selection Code Here"
+          value={textareaValue}
+          onChange={(e) => setTextareaValue(e.target.value)}
+          disabled={!editMode}
+        />
+      </div>
       <textarea
         placeholder="Blog Content"
         name="blog_content"
@@ -193,6 +413,60 @@ const AddBlog = () => {
           alt="Preview"
         />
       )}
+      <p className={styles.precautionLine}>
+        For Uploading Image in the blog , upload the image below, get the
+        shortcode, copy it and paste it anywhere in the blog content.
+      </p>
+      <input type="file" disabled={!editMode} onChange={handleFileChange} />
+      <textarea
+        className={styles.imageShortCodeTextarea}
+        placeholder="Above Image Shortcode"
+        disabled={!editMode}
+        value={getImageShortcode()}
+      />
+      <button
+        type="button"
+        className={styles.copyButton}
+        onClick={handleCopyClick}
+        disabled={!editMode || !getImageShortcode()}
+      >
+        Copy Image Shortcode
+      </button>
+      {imageBase64 && (
+        <img
+          className={styles.shortCodeImage}
+          src={imageBase64}
+          alt="Uploaded Image Preview"
+        />
+      )}
+
+      <p className={styles.precautionLine}>
+        For Uploading Video in the blog, paste the YouTube video share link
+        below, get the shortcode, copy it, and paste it anywhere in the blog
+        content.
+      </p>
+      <input
+        type="text"
+        placeholder="YouTube Video Share Link"
+        disabled={!editMode}
+        value={ytLink}
+        onChange={handleYtLinkChange}
+      />
+      <textarea
+        className={styles.imageShortCodeTextarea}
+        placeholder="Above YT Video Shortcode"
+        disabled={!editMode}
+        value={ytShortcode}
+      />
+      <button
+        type="button"
+        className={styles.copyButton}
+        onClick={handleCopyClickYT}
+        disabled={!editMode || !ytShortcode}
+      >
+        Copy YT Video Shortcode
+      </button>
+      {ytIframe && <div className={styles.youtubeIframe}>{ytIframe}</div>}
       <div className={styles.editIcons}>
         {editMode ? (
           <img

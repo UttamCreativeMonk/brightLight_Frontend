@@ -153,7 +153,10 @@ let BlogDetails = () => {
                 <a
                   href={`/blogs/${item._id}`}
                   key={index}
-                  style={{ backgroundImage: `url(${item.image})` }}
+                  style={{ background: `linear-gradient(
+                    rgba(255, 255, 255, 0.3), 
+                    rgba(255, 255, 255, 0.3)
+                  ), url(${item.image})` }}
                   className={styles.recentBlog}
                 >
                   <h3>{item.blog_heading}</h3>
