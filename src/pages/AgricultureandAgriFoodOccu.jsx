@@ -62,13 +62,13 @@ const AgricultureandAgriFoodOccu = () => {
               <p onClick={() => scrollToSection("about-program")}>
                 About the Program
               </p>
-              <p onClick={() => scrollToSection("benefits")}>Benefits</p>
+              {/* <p onClick={() => scrollToSection("benefits")}>Benefits</p> */}
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
+              <p onClick={() => scrollToSection("express-entry")}>
+              Express Entry
               </p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>
-                Refusal Reasons
+              <p onClick={() => scrollToSection("noc")}>
+              Noc's
               </p>
               <p onClick={() => scrollToSection("why-choose-us")}>
                 Why Choose Us?
@@ -208,7 +208,7 @@ const AgricultureandAgriFoodOccu = () => {
 
           <section
             className={`${styles.section} ${styles.section}`}
-            id="testing"
+            id="express-entry"
             ref={(el) => (sectionsRef.current[31] = el)}
           >
             <h2>
@@ -231,7 +231,7 @@ const AgricultureandAgriFoodOccu = () => {
 
           <section
             className={`${styles.section}`}
-            id="testing"
+            id="noc"
             ref={(el) => (sectionsRef.current[4] = el)}
           >
             <h2>Here is the list of eligible NOCs for Agriculture and agri-food occupations category:

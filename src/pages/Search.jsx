@@ -41,6 +41,7 @@ const Search = () => {
     "Express Entry": "/express-entry",
     TransportOccupation: "/transport-occupation",
     "Category Based": "/category-based",
+    "Category Based Express": "/category-based-express",
     "Clb Ilets Calculator": "/clb-ilets-calculator",
     "Previous-Draw History": "/previous-draw-history",
     "Privacy Policy": "/privacy-policy",
@@ -55,6 +56,7 @@ const Search = () => {
     Pnp: "/pnp",
     Rnip: "/rnip",
     "Agri Food Pilot Program": "/agri-food-pilot-program",
+    "Common Law Partner Permanent": "/agriculture-agri-food-occupation",
     "Pilot Programs": "/pilot-programs",
     "Transport Occupation Targeted Draw": "/transport-occupation-targeted-draw",
     "Trade Occupation Targeted Draw": "/trade-occupation-targeted-draw",
@@ -70,8 +72,11 @@ const Search = () => {
     Cby: "/cby",
     "Common Law Partner Temporary": "/common-law-partner-temporary",
     "Common Law Partner Permanent": "/common-law-partner-permanent",
+    "Common Law Partner International":"/common-law-partner-international",
     "Restoration Status Draft": "/restoration-status-draft",
     "Spousal Open Work Permit": "/spousal-open-work-permit",
+    "Spouse Common Law Partner Sponsership": "/spouse-common-law-sponsership",
+    "Same Sex": "/same-sex",
     Flagpoling: "/flagpoling",
     "Extensions Draft": "Extensions Draft",
     "Study Permit Minors": "/study-permit-minors",
@@ -106,6 +111,7 @@ const Search = () => {
     "Permanent Residence Pathways Caregivers Lp":
       "/permanent-residence-pathways-caregivers-lp",
     "Immigration Tools": "/immigration-tools",
+    "Temporary Residency":"/temporary-resident",
   }).map(([name, link]) => ({ name, link }));
 
   useEffect(() => {
