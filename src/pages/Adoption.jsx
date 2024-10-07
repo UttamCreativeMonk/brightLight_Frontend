@@ -20,9 +20,6 @@ const Adoption = () => {
     }
   };
 
-
-  
-
   const sectionsRef = useRef([]);
 
   const handleScroll = () => {
@@ -62,13 +59,25 @@ const Adoption = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
-              <p onClick={() => scrollToSection("types-of-adoption")}>Types of Adoption</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
+              <p onClick={() => scrollToSection("types-of-adoption")}>
+                Types of Adoption
+              </p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>
+                Refusal Reasons
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -77,45 +86,74 @@ const Adoption = () => {
       </div>
 
       <div className={styles.container}>
-        <header className={`${styles.header} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}  >
+        <header
+          className={`${styles.header} ${styles.section}`}
+          id="about-program"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
           <h1>Canada's Adoption Program</h1>
           <p>
-          The heart-warming journey of bringing a child into your life through adoption is an incredible act of love and commitment, offering the child a nurturing home and a lifetime of opportunities.
+            The heart-warming journey of bringing a child into your life through
+            adoption is an incredible act of love and commitment, offering the
+            child a nurturing home and a lifetime of opportunities.
           </p>
           <p>
-          Canada's adoption program under family reunification and sponsorship provides a pathway for eligible Canadians to adopt children from both within Canada and internationally. The program aims to provide permanent homes for children who cannot live with their biological families due to various circumstances.
-
+            Canada's adoption program under family reunification and sponsorship
+            provides a pathway for eligible Canadians to adopt children from
+            both within Canada and internationally. The program aims to provide
+            permanent homes for children who cannot live with their biological
+            families due to various circumstances.
           </p>
         </header>
 
-        <section  className={`${styles.adoptionTypes} ${styles.section}`} id="types-of-adoption" ref={(el) => sectionsRef.current[1] = el} >
-          <h2>There are two main types of adoption under family sponsorship in Canada:
+        <section
+          className={`${styles.adoptionTypes} ${styles.section}`}
+          id="types-of-adoption"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
+          <h2>
+            There are two main types of adoption under family sponsorship in
+            Canada:
           </h2>
           <ul>
             <li>
-              <p>Intra-country adoption. This involves adopting a child from another province in Canada.
+              <p>
+                Intra-country adoption. This involves adopting a child from
+                another province in Canada.
               </p>
               <a href="#intra-country" className={styles.button}>
                 Intra-Country Adoption
               </a>
             </li>
             <li>
-              <p>Inter-country adoption. This involves adopting a child from another country.
+              <p>
+                Inter-country adoption. This involves adopting a child from
+                another country.
               </p>
-              <a href="#inter-country" className={styles.button} id="intra-country">
+              <a
+                href="#inter-country"
+                className={styles.button}
+                id="intra-country"
+              >
                 Inter-Country Adoption
               </a>
             </li>
           </ul>
         </section>
 
-        <section className={`${styles.intraCountry} ${styles.section}`} id="inter-country" ref={(el) => sectionsRef.current[2] = el}   >
+        <section
+          className={`${styles.intraCountry} ${styles.section}`}
+          id="inter-country"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
           <h2>Intra-Country Adoption (Inside Canada)</h2>
           <p>
             Intra-country adoption involves adopting a child from another
             province within Canada.
           </p>
-          <h3  className={styles.marginTop}>How to Apply for Intra-Country Adoption:</h3>
+          <h3 className={styles.marginTop}>
+            How to Apply for Intra-Country Adoption:
+          </h3>
           <ol>
             <li>Fill out the adoption application.</li>
             <li>Attend an adoption orientation.</li>
@@ -126,13 +164,19 @@ const Adoption = () => {
           </ol>
         </section>
 
-        <section  className={`${styles.interCountry} ${styles.section}`} id="country" ref={(el) => sectionsRef.current[3] = el}    >
+        <section
+          className={`${styles.interCountry} ${styles.section}`}
+          id="country"
+          ref={(el) => (sectionsRef.current[3] = el)}
+        >
           <h2>Inter-Country Adoption (Outside Canada)</h2>
           <p>
             Inter-country adoption involves adopting a child from another
             country.
           </p>
-          <h3 className={styles.marginTop}>How to Apply for Inter-Country Adoption:</h3>
+          <h3 className={styles.marginTop}>
+            How to Apply for Inter-Country Adoption:
+          </h3>
           <ol>
             <li>Choose a child from the available list.</li>
             <li>Complete a home study and provide financial documentation.</li>
@@ -147,7 +191,11 @@ const Adoption = () => {
           </ol>
         </section>
 
-        <section className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[4] = el} >
+        <section
+          className={`${styles.eligibility} ${styles.section}`}
+          id="eligibility"
+          ref={(el) => (sectionsRef.current[4] = el)}
+        >
           <h2>Eligibility Criteria for Adoption in Canada</h2>
           <ul>
             <li>Be a Canadian citizen or permanent resident.</li>
@@ -168,9 +216,16 @@ const Adoption = () => {
           </p>
         </section>
 
-        <section className={`${styles.refusalReasons} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[5] = el}>
+        <section
+          className={`${styles.refusalReasons} ${styles.section}`}
+          id="refusal-reasons"
+          ref={(el) => (sectionsRef.current[5] = el)}
+        >
           <h2>Common Reasons for Refusals of Adoption Program</h2>
-          <h4>Failing to meet the eligibility criteria to be eligible to sponsor a child for adoption that is: </h4>
+          <h4>
+            Failing to meet the eligibility criteria to be eligible to sponsor a
+            child for adoption that is:{" "}
+          </h4>
           <ul>
             <li>
               Incomplete or inaccurate information on your application or during
@@ -188,16 +243,20 @@ const Adoption = () => {
             </li>
           </ul>
           <button
-          onClick={() =>
-            (window.location.href =
-              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-          }
-        >
-          Book Appointment
-        </button>
+            onClick={() =>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
+          >
+            Book Appointment
+          </button>
         </section>
 
-        <section className={`${styles.consultation} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[6] = el}  >
+        <section
+          className={`${styles.consultation} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[6] = el)}
+        >
           <h2>Still Not Sure?</h2>
           <p>
             If you have received a refusal for any of the reasons mentioned
@@ -212,12 +271,16 @@ const Adoption = () => {
             At Brightlight Immigration, we have a dedicated team of visa
             application specialists who can assist you from the start of the
             application process all the way to obtaining your visa.
-
-            <button onClick={() =>
-                  (window.location.href =
-                    "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-                } className={styles.button}> Start your process now</button>
-
+            <button
+              onClick={() =>
+                (window.location.href =
+                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+              }
+              className={styles.button}
+            >
+              {" "}
+              Start your process now
+            </button>
           </p>
         </section>
       </div>
