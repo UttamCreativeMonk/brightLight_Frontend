@@ -88,14 +88,22 @@ const CommonLawPartnerInternational = () => {
       </div>
 
       <div className={styles.container}>
-        <header className={styles.header}>
+        <header
+          className={`${styles.header} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
           <h1>
             Open Work Permit for Spouse or Common-law Partner of an
             International Student
           </h1>
         </header>
 
-        <section className={styles.intro}>
+        <section
+          className={`${styles.intro} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
           <p>
             Canada allows spouses and common-law partners to accompany their
             partners who are international students. Over the years, IRCC has
@@ -111,12 +119,20 @@ const CommonLawPartnerInternational = () => {
           </p>
         </section>
 
-        <section className={styles.benefits}>
+        <section
+          className={`${styles.benefits} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
           <h2>
             Benefits of Open Work Permit for Spouse or Common-law Partner of an
             International Student:
           </h2>
-          <ul>
+          <ul
+            className={`${styles.section} ${styles.section}`}
+            id="testing"
+            ref={(el) => (sectionsRef.current[3] = el)}
+          >
             <li>
               It enables your spouse or common-law partner to accompany you to
               Canada and reside with you.
@@ -148,7 +164,11 @@ const CommonLawPartnerInternational = () => {
           </ul>
         </section>
 
-        <section className={styles.eligibility}>
+        <section
+          className={`${styles.eligibility} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[4] = el)}
+        >
           <h2>
             Eligibility criteria for Open Work Permit for Spouse or Common-law
             Partner of an International Student:
@@ -162,7 +182,11 @@ const CommonLawPartnerInternational = () => {
         </section>
         {/* /// */}
 
-        <section className={styles.eligibility}>
+        <section
+          className={`${styles.eligibility} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[5] = el)}
+        >
           <h2>Eligibility Requirements of the international student:</h2>
           <h3>Applications submitted before March 19, 2024</h3>
           <p>
@@ -170,7 +194,11 @@ const CommonLawPartnerInternational = () => {
             partner under administrative code C42, they must meet all of the
             following requirements:
           </p>
-          <ul>
+          <ul
+            className={`${styles.section} ${styles.section}`}
+            id="testing"
+            ref={(el) => (sectionsRef.current[6] = el)}
+          >
             <li>
               Proof that the international student is attending a designated
               learning institution (DLI)
@@ -213,13 +241,19 @@ const CommonLawPartnerInternational = () => {
             </ul>
           </ul>
 
-          <h3>Applications submitted on or after March 19, 2024</h3>
-          <p>
+          <h3
+            className={`${styles.section} ${styles.section}`}
+            id="testing"
+            ref={(el) => (sectionsRef.current[7] = el)}
+          >
+            Applications submitted on or after March 19, 2024
+          </h3>
+          <p className={`${styles.section} ${styles.section}`} id="testing" ref={(el) => (sectionsRef.current[8] = el)}>
             For the international graduate to be eligible to apply for their
             partner under administrative code C42, they must meet all of the
             following requirements:
           </p>
-          <ul>
+          <ul className={`${styles.section} ${styles.section}`} id="testing" ref={(el) => (sectionsRef.current[9] = el)}>
             <li>
               hold a valid study permit AND must be physically residing in
               Canada while studying or be approved for a study permit, if
@@ -241,10 +275,10 @@ const CommonLawPartnerInternational = () => {
             </ul>
           </ul>
 
-          <h3>
+          <h3 className={`${styles.section} ${styles.section}`} id="testing" ref={(el) => (sectionsRef.current[10] = el)}>
             Professional degree programs are identified under the following:
           </h3>
-          <ul>
+          <ul className={`${styles.section} ${styles.section}`} id="testing" ref={(el) => (sectionsRef.current[11] = el)}>
             <li>Doctor of Dental Surgery (DDS, DMD)</li>
             <li>Bachelor of Law or Juris Doctor (LLB, JD, BCL)</li>
             <li>Doctor of Medicine (MD)</li>
@@ -255,8 +289,8 @@ const CommonLawPartnerInternational = () => {
             <li>Bachelor of Education (BEd)</li>
             <li>Bachelor of Engineering (BEng, BE, BASc) only</li>
           </ul>
-          <p>The international student is not eligible to apply if: </p>
-          <ul>
+          <p className={`${styles.section} ${styles.section}`} id="testing" ref={(el) => (sectionsRef.current[12] = el)}>The international student is not eligible to apply if: </p>
+          <ul className={`${styles.section} ${styles.section}`} id="testing" ref={(el) => (sectionsRef.current[13] = el)}>
             <li>Not enrolled while residing in Canada.</li>
             <li>Enrolled in part-time studies.</li>
             <li>
@@ -266,13 +300,13 @@ const CommonLawPartnerInternational = () => {
           </ul>
         </section>
 
-        <section className={styles.eligibility}>
-          <h2>
+        <section className={`${styles.eligibility} ${styles.section}`} id="testing" ref={(el) => (sectionsRef.current[14] = el)}>
+          <h2 className={`${styles.section} ${styles.section}`} id="testing" ref={(el) => (sectionsRef.current[15] = el)}>
             Eligibilty Requirements for accompanying spouse or common-law
             partner:
           </h2>
-          <p>Your family member must meet following requirements:</p>
-          <ul>
+          <p className={`${styles.section} ${styles.section}`} id="testing" ref={(el) => (sectionsRef.current[16] = el)}>Your family member must meet following requirements:</p>
+          <ul className={`${styles.section} ${styles.section}`} id="testing" ref={(el) => (sectionsRef.current[17] = el)}>
             <li>
               {" "}
               <strong>General Eligibility:</strong> The applicant must meet
@@ -305,8 +339,8 @@ const CommonLawPartnerInternational = () => {
           </ul>
         </section>
 
-        <section className={styles.application}>
-          <h2>
+        <section className={`${styles.application} ${styles.section}`} id="testing" ref={(el) => (sectionsRef.current[18] = el)}>
+          <h2 > 
             When to apply for Open Work Permit for Spouse or Common-law Partner
             of an International Student?
           </h2>
@@ -332,7 +366,7 @@ const CommonLawPartnerInternational = () => {
           </ol>
         </section>
 
-        <section className={styles.application}>
+        <section className={`${styles.section} ${styles.section}`} id="testing" ref={(el) => (sectionsRef.current[19] = el)}>
           <h2>
             How to apply for Open Work Permit for Spouse or Common-law Partner
             of an International Student?
@@ -356,7 +390,7 @@ const CommonLawPartnerInternational = () => {
           </ol>
         </section>
 
-        <section className={styles.refusalReasons}>
+        <section className={`${styles.refusalReasons} ${styles.section}`} id="testing" ref={(el) => (sectionsRef.current[20] = el)}>
           <h2>
             Common reasongs for refusal of Open Work Permit for Spouse or
             Common-law Partner of an International Student:
@@ -374,14 +408,15 @@ const CommonLawPartnerInternational = () => {
               there has been no application filed to extend their stay.
             </li>
           </ul>
-          <button className={styles.button}
-              onClick={() =>
-                (window.location.href =
-                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-              }
-            >
-              Book Appointment
-            </button>
+          <button
+            className={styles.button}
+            onClick={() =>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
+          >
+            Book Appointment
+          </button>
         </section>
       </div>
       <div id="faqs">

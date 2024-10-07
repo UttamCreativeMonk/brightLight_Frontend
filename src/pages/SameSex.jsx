@@ -62,12 +62,11 @@ const SameSex = () => {
               <p onClick={() => scrollToSection("about-program")}>
                 About the Program
               </p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("requirement")}>Requirement</p>
-              <p onClick={() => scrollToSection("book-appointment")}>
-                Book Appointment
+              <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
+              <p onClick={() => scrollToSection("common-law-partner")}>Common Law Partner</p>
+              <p onClick={() => scrollToSection("conjugal-partner")}>Conjugal Partner</p>
+              <p onClick={() => scrollToSection("appointment")}>
+                Appointment
               </p>
               <p onClick={() => scrollToSection("why-choose-us")}>
                 Why Choose Us?
@@ -83,10 +82,18 @@ const SameSex = () => {
       </div>
 
       <div className={styles.container}>
-        <h1 className={styles.heading}>
+        <h1
+          className={`${styles.heading} ${styles.section}`}
+          id="about-program"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
           Same-Sex Spousal Sponsorship in Canada
         </h1>
-        <p className={styles.paragraphIntro}>
+        <p
+          className={`${styles.paragraphIntro} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
           As a permanent resident or Canadian citizen, you have the opportunity
           to bring your same-sex partner to Canada through the permanent
           residence application process. Canada, known for its progressive
@@ -96,15 +103,27 @@ const SameSex = () => {
           partners in the Citizenship and Immigration Canada (CIC) policies.
         </p>
 
-        <h2 className={styles.subtitle}>
+        <h2
+          className={`${styles.subtitle} ${styles.section}`}
+          id="eligibility"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
           Eligibility Criteria for Same-Sex Sponsorship:
         </h2>
-        <p className={styles.paragraph}>
+        <p
+          className={`${styles.paragraph} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[3] = el)}
+        >
           If you’re in a same-sex relationship and your partner resides outside
           Canada, you can sponsor them to join you in Canada. To qualify,
           consider the following criteria:
         </p>
-        <ul className={styles.list}>
+        <ul
+          className={`${styles.list} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[4] = el)}
+        >
           <li className={styles.listItem}>
             Permanent Resident or Canadian Citizen: You must be either a
             permanent resident or a Canadian citizen.
@@ -123,15 +142,35 @@ const SameSex = () => {
           </li>
         </ul>
 
-        <h2 className={styles.subtitle}>Same-Sex Partner Sponsorship</h2>
-        <p className={styles.paragraph}>
+        <h2
+          className={`${styles.subtitle} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[5] = el)}
+        >
+          Same-Sex Partner Sponsorship
+        </h2>
+        <p
+          className={`${styles.paragraph} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[6] = el)}
+        >
           In Canada, two partner categories are acknowledged: conjugal and
           common-law. Even if you’re not legally married to your same-sex
           partner, you can sponsor them to reside in Canada together.
         </p>
 
-        <h2 className={styles.heading}>What is a Common Law Partner?</h2>
-        <p className={styles.paragraph}>
+        <h2
+          className={`${styles.heading} ${styles.section}`}
+          id="common-law-partner"
+          ref={(el) => (sectionsRef.current[7] = el)}
+        >
+          What is a Common Law Partner?
+        </h2>
+        <p
+          className={`${styles.paragraph} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[8] = el)}
+        >
           A Common Law Partner refers to an individual with whom you share a
           continuous living arrangement for more than one year, maintaining a
           conjugal relationship. Whether your partner is of the opposite or same
@@ -140,8 +179,18 @@ const SameSex = () => {
           is essential.
         </p>
 
-        <h2 className={styles.heading}>Proving Your Common Law Partnership</h2>
-        <ul className={styles.list}>
+        <h2
+          className={`${styles.heading} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[9] = el)}
+        >
+          Proving Your Common Law Partnership
+        </h2>
+        <ul
+          className={`${styles.list} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[10] = el)}
+        >
           <li className={styles.listItem}>
             Shared Residence: You and your partner must reside in the same home,
             sharing responsibilities such as household chores.
@@ -164,10 +213,18 @@ const SameSex = () => {
           </li>
         </ul>
 
-        <h2 className={styles.heading}>
+        <h2
+          className={`${styles.heading} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[11] = el)}
+        >
           Common Law: Required Documents for Sponsorship
         </h2>
-        <ul className={styles.list}>
+        <ul
+          className={`${styles.list} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[12] = el)}
+        >
           <li className={styles.listItem}>
             Pay stubs or tax forms showing the same address.
           </li>
@@ -192,10 +249,18 @@ const SameSex = () => {
           </li>
         </ul>
 
-        <h2 className={styles.subtitle}>
+        <h2
+          className={`${styles.subtitle} ${styles.section}`}
+          id="conjugal-partner"
+          ref={(el) => (sectionsRef.current[13] = el)}
+        >
           Who Qualifies as a Conjugal Partner?
         </h2>
-        <p className={styles.paragraph}>
+        <p
+          className={`${styles.paragraph} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[14] = el)}
+        >
           A Conjugal Partner refers to an individual living outside of Canada
           with whom you share a committed and romantic relationship lasting at
           least one year. However, significant barriers prevent you from
@@ -204,10 +269,18 @@ const SameSex = () => {
           or sexual orientation.
         </p>
 
-        <h2 className={styles.heading}>
+        <h2
+          className={`${styles.heading} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[15] = el)}
+        >
           Qualifications for Conjugal Partnership
         </h2>
-        <ul className={styles.list}>
+        <ul
+          className={`${styles.list} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[16] = el)}
+        >
           <li className={styles.listItem}>
             Barriers to Living Together: Despite the inability to cohabit, your
             relationship must demonstrate commitment and genuine connection.
@@ -224,10 +297,18 @@ const SameSex = () => {
           </li>
         </ul>
 
-        <h2 className={styles.heading}>
+        <h2
+          className={`${styles.heading} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[17] = el)}
+        >
           Conjugal Partner: Required Documents for Sponsorship
         </h2>
-        <ul className={styles.list}>
+        <ul
+          className={`${styles.list} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[18] = el)}
+        >
           <li className={styles.listItem}>Completed application forms.</li>
           <li className={styles.listItem}>Proof of status in Canada</li>
           <li className={styles.listItem}>Identity documents</li>
@@ -255,8 +336,18 @@ const SameSex = () => {
           </li>
         </ul>
 
-        <h2 className={styles.subtitle}>Still not sure?</h2>
-        <p className={styles.paragraph}>
+        <h2
+          className={`${styles.subtitle} ${styles.section}`}
+          id="appointment"
+          ref={(el) => (sectionsRef.current[19] = el)}
+        >
+          Still not sure?
+        </h2>
+        <p
+          className={`${styles.paragraph} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[20] = el)}
+        >
           Are you facing challenges in bringing your same-sex spouse or conjugal
           partner to Canada? Look no further than Brightlight Immigration. With
           over 12 years of expertise, we specialize in creating robust same-sex

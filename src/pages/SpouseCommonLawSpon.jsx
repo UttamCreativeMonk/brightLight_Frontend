@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/Cby.module.css";
-import { Link } from "react-router-dom";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
 import Testimonials from "../sections/Testimonials";
@@ -63,14 +62,12 @@ const SpouseCommonLawSpon = () => {
               <p onClick={() => scrollToSection("about-program")}>
                 About the Program
               </p>
-              <p onClick={() => scrollToSection("benifits")}>Benifits</p>
+              <p onClick={() => scrollToSection("3-pathways")}>3 Pathways</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>
-                How to Apply?
-              </p>
-              <p onClick={() => scrollToSection("why-choose-us")}>
-                Why Choose Us?
-              </p>
+              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
+              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
+              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
               <p onClick={() => scrollToSection("testimonials")}>
                 Testimonials
               </p>
@@ -119,7 +116,7 @@ const SpouseCommonLawSpon = () => {
 
         <section
           className={`${styles.benefits} ${styles.section}`}
-          id="benifits"
+          id="3-pathways"
           ref={(el) => (sectionsRef.current[2] = el)}
         >
           <h2 className={styles.subheading}>
@@ -265,7 +262,7 @@ const SpouseCommonLawSpon = () => {
             application specialists who can assist you from the start of the
             application process to obtaining your visa. Start your process now.
           </p>
-          <button
+          <button id="book-appointment"
             onClick={() =>
               (window.location.href =
                 "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")

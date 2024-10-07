@@ -188,7 +188,7 @@ let AllRoutes = () => {
       <Route path="/business-visitor-visa" element={<BusinessVisitorVisa />} />
       <Route path="/visitor-visa" element={<VisitorVisa />} />
 
-      <Route path="temporary-resident" element={<TemporaryResident />} />
+      <Route path="/temporary-resident" element={<TemporaryResident />} />
 
       <Route
         path="/temporary-resident-permit-draft"
