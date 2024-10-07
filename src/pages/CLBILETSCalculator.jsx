@@ -10,24 +10,24 @@ const CLBILETSCalculator = () => {
   let [metaData, setMetaData] = useState([]);
   let [data, setData] = useState([]);
   const [scores, setScores] = useState({
-    listening: 1.0,
-    reading: 1.0,
-    writing: 1.0,
-    speaking: 1.0,
+    listening: 4.0,
+    reading: 3.5,
+    writing: 4.0,
+    speaking: 4.0,
   });
 
   let [scores2, setScores2] = useState({
-    listening: 1.0,
-    reading: 1.0,
-    writing: 1.0,
-    speaking: 1.0,
+    listening: "144<= (A1)",
+    reading: "120<= (A1)",
+    writing: "180<= (A1)",
+    speaking: "180<= (A1)",
   });
 
   let [scores3, setScores3] = useState({
-    listening: 1.0,
-    reading: 1.0,
-    writing: 1.0,
-    speaking: 1.0,
+    listening: 4.0,
+    reading: 4.0,
+    writing: 4.0,
+    speaking: 4.0,
   });
 
   const [selectedCLB2, setSelectedCLB2] = useState("1");
@@ -150,27 +150,6 @@ const CLBILETSCalculator = () => {
       .catch((error) => {
         console.log(error);
       });
-
-    setScores({
-      listening: data.c1b4PointsListening,
-      reading: data.c1b4PointsReading,
-      writing: data.c1b4PointsWriting,
-      speaking: data.c1b4PointsSpeaking,
-    });
-
-    setScores2({
-      listening: data.c2b1PointsListening,
-      reading: data.c2b1PointsReading,
-      writing: data.c2b1PointsWriting,
-      speaking: data.c2b1PointsSpeaking,
-    });
-
-    setScores3({
-      listening: data.c3b4PointsListening,
-      reading: data.c3b4PointsReading,
-      writing: data.c3b4PointsWriting,
-      speaking: data.c3b4PointsSpeaking,
-    });
   }, []);
 
   const [selectedCLB3, setSelectedCLB3] = useState("1");
@@ -742,7 +721,7 @@ const CLBILETSCalculator = () => {
           <div className={`${styles.row} ${styles.hiddenrow}`}>
             <div
               className={`${styles.box} ${
-                selectedCLB3 === "1" ? styles.selectedBox : ""
+                selectedCLB3 == "1" ? styles.selectedBox : ""
               }`}
               onClick={() => handleCLBClick3("1")}
             >
