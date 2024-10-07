@@ -231,6 +231,42 @@ color: #333;
     text-align: left;
     color: #00273f;
   }
+  .occupations {
+    margin: 20px;
+  }
+  
+  .occupationTitle {
+    font-size: 1.5rem;
+    margin-top: 20px;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .tableHeader {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+    background-color: #f4f4f4;
+  }
+  
+  .tableCell {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .section {
+    margin-bottom: 30px;
+  }
+
+  .occupationPara{
+    margin-top: 20px;
+  }
+  
   .section {
     opacity: 0;
     transform: translateX(-100px);

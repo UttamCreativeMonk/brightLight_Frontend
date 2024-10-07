@@ -150,8 +150,10 @@ const EntryLevelSemiSkilled = () => {
           Eligibility Criteria for the British Columbia BCPNP Entry Level and
           Semi-Skilled (ELSS) Program
         </h2>
-        <p>The BCPNP Entry Level and Semi-Skilled (ELSS) Program encompasses five key eligibility categories, as
-        outlined below:</p>
+        <p>
+          The BCPNP Entry Level and Semi-Skilled (ELSS) Program encompasses five
+          key eligibility categories, as outlined below:
+        </p>
         <div
           className={`${styles.criteria} ${styles.section}`}
           id="testing4"
@@ -207,7 +209,7 @@ const EntryLevelSemiSkilled = () => {
           </ul>
 
           <h3
-          style={{opacity: '1', transform: "translateX(0)"}}
+            style={{ opacity: "1", transform: "translateX(0)" }}
             className={`${styles.subheading} ${styles.section}`}
             id="testing6"
             ref={(el) => (sectionsRef.current[8] = el)}
@@ -283,137 +285,226 @@ const EntryLevelSemiSkilled = () => {
             ref={(el) => (sectionsRef.current[15] = el)}
           >
             <h4
-              className={`${styles.occupationTitle} ${styles.section}`}
+              className={styles.occupationTitle}
               id="testing14"
               ref={(el) => (sectionsRef.current[16] = el)}
             >
               Occupations in Travel and Accommodation
             </h4>
-            <ul
-              className={`${styles.list} ${styles.section}`}
-              id="testing5"
-              ref={(el) => (sectionsRef.current[17] = el)}
-            >
-              <li className={styles.listItem}>64314 Hotel front desk clerks</li>
-            </ul>
+            <table className={styles.table}>
+              <thead>
+                <tr>
+                  <th className={styles.tableHeader}>Occupation Code</th>
+                  <th className={styles.tableHeader}>Occupation Title</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className={styles.tableCell}>64314</td>
+                  <td className={styles.tableCell}>Hotel front desk clerks</td>
+                </tr>
+              </tbody>
+            </table>
 
             <h4
-              className={`${styles.occupationTitle} ${styles.section}`}
+              className={styles.occupationTitle}
               id="testing15"
               ref={(el) => (sectionsRef.current[8] = el)}
             >
               Tour and Recreational Guides and Casino Occupations
             </h4>
-            <ul
-              className={`${styles.list} ${styles.section}`}
-              id="testing16"
-              ref={(el) => (sectionsRef.current[18] = el)}
-            >
-              <li className={styles.listItem}>64320 Tour and travel guides</li>
-              <li className={styles.listItem}>64321 Casino workers</li>
-              <li className={styles.listItem}>
-                64322 Outdoor sport and recreational guides
-              </li>
-            </ul>
+            <table className={styles.table}>
+              <thead>
+                <tr>
+                  <th className={styles.tableHeader}>Occupation Code</th>
+                  <th className={styles.tableHeader}>Occupation Title</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className={styles.tableCell}>64320</td>
+                  <td className={styles.tableCell}>Tour and travel guides</td>
+                </tr>
+                <tr>
+                  <td className={styles.tableCell}>64321</td>
+                  <td className={styles.tableCell}>Casino workers</td>
+                </tr>
+                <tr>
+                  <td className={styles.tableCell}>64322</td>
+                  <td className={styles.tableCell}>
+                    Outdoor sport and recreational guides
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 
             <h4
-              className={`${styles.occupationTitle} ${styles.section}`}
+              className={styles.occupationTitle}
               id="testing17"
               ref={(el) => (sectionsRef.current[19] = el)}
             >
               Occupations in Food and Beverage Service
             </h4>
-            <ul
-              className={`${styles.list} ${styles.section}`}
-              id="testing18"
-              ref={(el) => (sectionsRef.current[20] = el)}
-            >
-              <li className={styles.listItem}>
-                64300 Maîtres d’hotel and hosts/hostesses
-              </li>
-              <li className={styles.listItem}>64301 Bartenders</li>
-              <li className={styles.listItem}>
-                65200 Food and beverage servers
-              </li>
-              <li className={styles.listItem}>
-                65201 Food counter attendants, kitchen helpers and related
-                support occupations
-              </li>
-            </ul>
+            <table className={styles.table}>
+              <thead>
+                <tr>
+                  <th className={styles.tableHeader}>Occupation Code</th>
+                  <th className={styles.tableHeader}>Occupation Title</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className={styles.tableCell}>64300</td>
+                  <td className={styles.tableCell}>
+                    Maîtres d’hotel and hosts/hostesses
+                  </td>
+                </tr>
+                <tr>
+                  <td className={styles.tableCell}>64301</td>
+                  <td className={styles.tableCell}>Bartenders</td>
+                </tr>
+                <tr>
+                  <td className={styles.tableCell}>65200</td>
+                  <td className={styles.tableCell}>
+                    Food and beverage servers
+                  </td>
+                </tr>
+                <tr>
+                  <td className={styles.tableCell}>65201</td>
+                  <td className={styles.tableCell}>
+                    Food counter attendants, kitchen helpers and related support
+                    occupations
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 
             <h4
-              className={`${styles.occupationTitle} ${styles.section}`}
+              className={styles.occupationTitle}
               id="testing19"
               ref={(el) => (sectionsRef.current[21] = el)}
             >
               Cleaners (Employed Directly by Hotels/Resorts)
             </h4>
-            <ul
-              className={`${styles.list} ${styles.section}`}
-              id="testing20"
-              ref={(el) => (sectionsRef.current[22] = el)}
-            >
-              <li className={styles.listItem}>
-                65210 Support occupations in accommodation, travel and
-                facilities set-up services
-              </li>
-              <li className={styles.listItem}>65310 Light duty cleaners</li>
-              <li className={styles.listItem}>65311 Specialized cleaners</li>
-              <li className={styles.listItem}>
-                65312 Janitors, caretakers and heavy-duty cleaners
-              </li>
-            </ul>
+            <table className={styles.table}>
+              <thead>
+                <tr>
+                  <th className={styles.tableHeader}>Occupation Code</th>
+                  <th className={styles.tableHeader}>Occupation Title</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className={styles.tableCell}>65210</td>
+                  <td className={styles.tableCell}>
+                    Support occupations in accommodation, travel and facilities
+                    set-up services
+                  </td>
+                </tr>
+                <tr>
+                  <td className={styles.tableCell}>65310</td>
+                  <td className={styles.tableCell}>Light duty cleaners</td>
+                </tr>
+                <tr>
+                  <td className={styles.tableCell}>65311</td>
+                  <td className={styles.tableCell}>Specialized cleaners</td>
+                </tr>
+                <tr>
+                  <td className={styles.tableCell}>65312</td>
+                  <td className={styles.tableCell}>
+                    Janitors, caretakers and heavy-duty cleaners
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 
             <h4
-              className={`${styles.occupationTitle} ${styles.section}`}
+              className={styles.occupationTitle}
               id="testing21"
               ref={(el) => (sectionsRef.current[23] = el)}
             >
               Other Service Occupations (Employed Directly by Hotels/Resorts)
             </h4>
-            <ul
-              className={`${styles.list} ${styles.section}`}
-              id="testing22"
-              ref={(el) => (sectionsRef.current[24] = el)}
-            >
-              <li className={styles.listItem}>
-                65320 Dry cleaning, laundry and related occupations
-              </li>
-              <li className={styles.listItem}>
-                65329 Other service support occupations
-              </li>
-            </ul>
+            <table className={styles.table}>
+              <thead>
+                <tr>
+                  <th className={styles.tableHeader}>Occupation Code</th>
+                  <th className={styles.tableHeader}>Occupation Title</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className={styles.tableCell}>65320</td>
+                  <td className={styles.tableCell}>
+                    Dry cleaning, laundry and related occupations
+                  </td>
+                </tr>
+                <tr>
+                  <td className={styles.tableCell}>65329</td>
+                  <td className={styles.tableCell}>
+                    Other service support occupations
+                  </td>
+                </tr>
+                
+              </tbody>
 
+            </table>
+            <p  className={styles.occupationPara}>
+                *For the purposes of the BC PNP, a resort is defined as an
+                accommodation facility that is associated with recreational
+                activities. These activities can include skiing, golfing,
+                boating, fishing, biking, swimming, horseback riding, hiking,
+                nature-based or interpretive tours, etc.
+              </p>
             <h4
-              className={`${styles.occupationTitle} ${styles.section}`}
+              className={styles.occupationTitle}
               id="testing23"
               ref={(el) => (sectionsRef.current[25] = el)}
             >
               Food Processing
             </h4>
-            <ul
-              className={`${styles.list} ${styles.section}`}
-              id="testing24"
-              ref={(el) => (sectionsRef.current[26] = el)}
-            >
-              <li className={styles.listItem}>
-                94140 Process control and machine operators, food and beverage
-                processing
-              </li>
-              <li className={styles.listItem}>
-                94141 Industrial butchers and meat cutters, poultry preparers
-                and related workers
-              </li>
-              <li className={styles.listItem}>
-                94142 Fish and seafood plant workers
-              </li>
-              <li className={styles.listItem}>
-                94143 Testers and graders, food and beverage processing
-              </li>
-              <li className={styles.listItem}>
-                95106 Labourers in food and beverage processing
-              </li>
-            </ul>
+            <table className={styles.table}>
+              <thead>
+                <tr>
+                  <th className={styles.tableHeader}>Occupation Code</th>
+                  <th className={styles.tableHeader}>Occupation Title</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className={styles.tableCell}>94140</td>
+                  <td className={styles.tableCell}>
+                    Process control and machine operators, food and beverage
+                    processing
+                  </td>
+                </tr>
+                <tr>
+                  <td className={styles.tableCell}>94141</td>
+                  <td className={styles.tableCell}>
+                    Industrial butchers and meat cutters, poultry preparers and
+                    related workers
+                  </td>
+                </tr>
+                <tr>
+                  <td className={styles.tableCell}>94142</td>
+                  <td className={styles.tableCell}>
+                    Fish and seafood plant workers
+                  </td>
+                </tr>
+                <tr>
+                  <td className={styles.tableCell}>94143</td>
+                  <td className={styles.tableCell}>
+                    Testers and graders, food and beverage processing
+                  </td>
+                </tr>
+                <tr>
+                  <td className={styles.tableCell}>95106</td>
+                  <td className={styles.tableCell}>
+                    Labourers in food and beverage processing
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
 
           <button
@@ -432,8 +523,10 @@ const EntryLevelSemiSkilled = () => {
           Application Process for British Columbia Entry Level and Semi-Skilled
           Worker Stream
         </h2>
-        <p>The BCPNP Entry Level and Semi-Skilled Worker stream operates on an Expression of Interest
-        (EOI) system. Let’s delve into the details:</p>
+        <p>
+          The BCPNP Entry Level and Semi-Skilled Worker stream operates on an
+          Expression of Interest (EOI) system. Let’s delve into the details:
+        </p>
         <ul
           className={`${styles.list} ${styles.section}`}
           id="testing25"
