@@ -8,6 +8,7 @@ import rcic from "../assets/rcic.png";
 import searchIcon from "../assets/search-gray.png";
 import ogImage from "../assets/ogImage.png";
 import { Helmet } from "react-helmet-async";
+import Lp from "../assets/blogDetailsPic.jpg";
 
 
 let BlogDetails = () => {
@@ -100,7 +101,7 @@ let BlogDetails = () => {
         <div className={styles.blogsTopContentSection}>
           <h1>{blog.blog_heading}</h1>
           <div className={styles.loveneetSection}>
-            <img src={loveneetData.image} className={styles.loveneetImage} />
+            <img src={Lp} className={styles.loveneetImage} />
             <div className={styles.loveneetContent}>
               <div className={styles.loveneetDataFlex}>
                 <h3>By {loveneetData.name}</h3>
