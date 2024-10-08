@@ -287,6 +287,7 @@
   margin-left: 20px;
   margin-top: 10px;
   font-size: 15px;
+  letter-spacing: 1px;
 }
 
 
@@ -342,6 +343,12 @@
     padding-right:0px;
     border-right: none;
   }
+  .footerLogo2Para p{
+  margin-left: 15px;
+  margin-top: 10px;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
 }
 
 @media all and (max-width: 900px) {
