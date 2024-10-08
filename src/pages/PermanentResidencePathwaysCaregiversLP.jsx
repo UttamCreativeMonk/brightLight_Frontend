@@ -225,7 +225,6 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           ref={(el) => (sectionsRef.current[10] = el)}
         >
           <li>
-            You are required to have either of the following:
             <ul>
               <li>
                 Canadian 1-year post-secondary (or higher) educational
