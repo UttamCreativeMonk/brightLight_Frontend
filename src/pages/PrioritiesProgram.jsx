@@ -47,10 +47,6 @@ const PrioritiesProgram = () => {
       <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
-          <header className={styles.header}>
-            <h1>British Columbia Provincial Nominee Program (BC PNP)</h1>
-          </header>
-
           <div
             className={`${styles.bannerHeadingRotateParent} ${
               isDropdownOpen ? styles.active : ""
