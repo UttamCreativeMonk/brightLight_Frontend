@@ -228,10 +228,7 @@ let AllRoutes = () => {
       <Route path="/non-sds" element={<NonSds />} />
       <Route path="/outside-cananda" element={<OutsideCananda />} />
       <Route path="/visitor-to-student" element={<VisitorToStudent />} />
-      <Route
-        path="/change-college-program"
-        element={<ChangeCollegeProgram />}
-      />
+      <Route path="/change-college-program" element={<ChangeCollegeProgram />}/>
       <Route path="/inside-canada" element={<InsideCanada />} />
       <Route path="/student-visa" element={<StudentVisa />} />
       <Route path="/ParentsGrandparents" element={<ParentsGrandparents />} />
