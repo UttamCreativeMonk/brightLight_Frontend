@@ -3,6 +3,7 @@ import styles from "../styles/Footer1.module.css";
 import HoursIcon from "../assets/hours.webp";
 import Address from "../assets/address.webp";
 import FooterLogo from "../assets/brightlight-main-logo.webp";
+import FooterLogo2 from "../assets/cicc.png";
 import UpperFooterImage from "../assets/footer-image.webp";
 
 import { ReactComponent as TikTokIcon } from "../assets/tiktok.svg";
@@ -63,7 +64,7 @@ const Footer1 = () => {
                 />
                 <p>OUR ADDRESS</p>
               </div>
-              <p>6638 152A St Unit #114, Surrey, BC V3S 5X5</p>
+              <p>15315 66 Ave unit 327, Surrey, BC V3S 2A1</p>
             </div>
 
             <div className={styles.leftDiv}>
@@ -93,7 +94,23 @@ const Footer1 = () => {
           </div>
 
           <div className={styles.centerFooter}>
-            <img src={FooterLogo} />
+            <div className={styles.footerLogo}>
+              <img src={FooterLogo} className={styles.footerLogo1} />
+              <div className={styles.footerLogo2Para}>
+
+              <img
+                onClick={() =>
+                  (window.location.href =
+                    "https://register.college-ic.ca/Public-Register-EN/RCIC_Search.aspx")
+                }
+                src={FooterLogo2}
+                className={styles.footerLogo2}
+              />
+              <p>RCIC License # R522969</p>
+              </div>
+             
+            </div>
+            {/* <img src={FooterLogo} />  // this  */}
             <div className={styles.socialMediaFooter}>
               <TikTokIcon
                 onClick={() =>
