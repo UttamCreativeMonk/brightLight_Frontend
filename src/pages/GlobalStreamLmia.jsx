@@ -360,29 +360,29 @@ const GlobalStreamLmia = () => {
             <h2>How to Apply for Global Talent Stream (GTS) LMIA</h2>
             <ol>
               <li>
-              Step 1:  Have an initial assessment performed by us to verify if the employer is eligible to apply for LMIA for a specific position and how many positions are allowed. 
+     Have an initial assessment performed by us to verify if the employer is eligible to apply for LMIA for a specific position and how many positions are allowed. 
 
               </li>
               <li>
-              Step 2:  We will provide you with a checklist of documents and information required to start the initial process. 
+                We will provide you with a checklist of documents and information required to start the initial process. 
 
               </li>
               <li>
-              Step 3: While there is no minimum recruitment requirement for the GTS, it is recommended to perform recruitment efforts. They do not need to meet the criteria of high-wage recruitment and advertising efforts guidelines set by ESDC.
+              While there is no minimum recruitment requirement for the GTS, it is recommended to perform recruitment efforts. They do not need to meet the criteria of high-wage recruitment and advertising efforts guidelines set by ESDC.
 
               </li>
               <li>
-              Step 4: Prepare the Labour Market Benefits Plan according to the category GTS LMIA application is to be applied under.
+               Prepare the Labour Market Benefits Plan according to the category GTS LMIA application is to be applied under.
 
               </li>
-              <li>Step 5: Interview local applicants.
+              <li> Interview local applicants.
               </li>
               <li>
-              Step 6: Prepare and submit an LMIA application to the Service Canada ESDS department. 
+               Prepare and submit an LMIA application to the Service Canada ESDS department. 
 
               </li>
               <li>
-              Step 7:  Wait for LMIA processing time, which can range from 7 to 10 business days. If the Service 
+             Wait for LMIA processing time, which can range from 7 to 10 business days. If the Service 
               </li>
             </ol>
             <p>

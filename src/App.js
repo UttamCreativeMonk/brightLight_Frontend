@@ -93,7 +93,7 @@ function App() {
   
       <ToastContainer />
 
-      <Loader />
+      {/* <Loader /> */}
       <HelmetProvider>
         <AllRoutes />
       </HelmetProvider>

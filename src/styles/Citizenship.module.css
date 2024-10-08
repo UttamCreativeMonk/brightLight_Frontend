@@ -51,9 +51,9 @@
     font-size: 28px;
   }
   
-  .bannerHeadingRotatePara {
+  /* .bannerHeadingRotatePara {
     margin-left: -50px;
-  }
+  } */
   .bannerHeadingRotatePara p{
     cursor: pointer;
   }

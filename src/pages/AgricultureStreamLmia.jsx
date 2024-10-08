@@ -207,33 +207,33 @@ const AgricultureStreamLmia = () => {
             <h2>How to Apply for Agricultural Stream LMIA ?</h2>
             <ol>
               <li>
-              Step 1:  Have an initial assessment performed by us to verify if the employer is eligible to apply for LMIA for a specific position and how many positions are allowed. We will also discuss the application that should be submitted to the High-wage LMIA program.
+                Have an initial assessment performed by us to verify if the employer is eligible to apply for LMIA for a specific position and how many positions are allowed. We will also discuss the application that should be submitted to the High-wage LMIA program.
 
               </li>
               <li>
-              Step 2:  We will provide you with a checklist of documents and information required to start the initial process. 
+                We will provide you with a checklist of documents and information required to start the initial process. 
 
               </li>
               <li>
-              Step 3: If required, perform recruitment efforts as per ESDC program requirements for each LMIA type. Job advertisement postings (All advertisements must be active for 14 days before submission).
+               If required, perform recruitment efforts as per ESDC program requirements for each LMIA type. Job advertisement postings (All advertisements must be active for 14 days before submission).
 
               </li>
               <li>
-              Step 4: Get a housing inspection done by the appropriate provincial/territorial/municipal body or by an authorized private inspector with appropriate certification. The inspector will provide you with a filled in Schedule F – Housing inspection report seasonal agricultural worker program and agricultural stream.
+               Get a housing inspection done by the appropriate provincial/territorial/municipal body or by an authorized private inspector with appropriate certification. The inspector will provide you with a filled in Schedule F – Housing inspection report seasonal agricultural worker program and agricultural stream.
 
               </li>
-              <li>Step 5: Interview local applicants.
+              <li> Interview local applicants.
               </li>
               <li>
-              Step 6: Prepare and submit an LMIA application to the Service Canada ESDS department. 
-
-              </li>
-              <li>
-              Step 7:  Wait for LMIA processing time, which can range from 15 to 60 business days. If the Service Canada officer has any questions or concerns or requires any further information, the employer might be contacted for an interview. 
+              Prepare and submit an LMIA application to the Service Canada ESDS department. 
 
               </li>
               <li>
-              Step 8: Once LMIA is received, the employer can add or remove the name of the foreign worker.
+              Wait for LMIA processing time, which can range from 15 to 60 business days. If the Service Canada officer has any questions or concerns or requires any further information, the employer might be contacted for an interview. 
+
+              </li>
+              <li>
+               Once LMIA is received, the employer can add or remove the name of the foreign worker.
 
               </li>
             </ol>
