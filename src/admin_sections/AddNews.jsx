@@ -3,9 +3,46 @@ import { useState, useEffect } from "react";
 import editIcon from "../assets/edit.png";
 import deleteIcon from "../assets/delete.png";
 import update from "../assets/update.png";
-import {ToastContainer, toast, Bounce } from "react-toastify";
+import { ToastContainer, toast, Bounce } from "react-toastify";
 
 const AddNews = () => {
+  const [textareaValue, setTextareaValue] = useState("Bigger Heading");
+  const handleTagClick = (tag) => {
+    let tagValue = "";
+
+    switch (tag) {
+      case "Bigger Heading":
+        tagValue = "<h4>Your bigger heading goes here</h4>";
+        break;
+      case "Sub Heading":
+        tagValue = "<h6>Your sub heading goes here</h6>";
+        break;
+      case "Paragraph":
+        tagValue = "<p>Your paragraph goes here</p>";
+        break;
+      case "Numbered List":
+        tagValue = `
+        <ol>
+  <li>First item</li>
+  <li>Second item</li>
+  <li>Third item</li>
+</ol>`.trim();
+        break;
+      case "Bullet Points List":
+        tagValue = `
+        <ul>
+  <li>First point</li>
+  <li>Second point</li>
+  <li>Third point</li>
+</ul>`.trim();
+        break;
+      default:
+        break;
+    }
+
+    // Update the textarea value
+    setTextareaValue(tagValue);
+  };
   let notifySuccess = () => {
     toast.success("Success", {
       position: "top-center",
@@ -128,7 +165,7 @@ const AddNews = () => {
 
   return (
     <div className={styles.singleSectionData}>
-      <ToastContainer/>
+      <ToastContainer />
       <input
         placeholder="News Heading"
         name="news_heading"
@@ -157,6 +194,46 @@ const AddNews = () => {
         onChange={handleInputChange}
         disabled={!editMode}
       />
+      <div className={styles.blogContentTageSelectionArea}>
+        <div className={styles.tagsArea}>
+          <div
+            className={`${styles.tag} ${!editMode ? styles.disabled : ""}`}
+            onClick={() => handleTagClick("Bigger Heading")}
+          >
+            <p>Bigger Heading</p>
+          </div>
+          <div
+            className={`${styles.tag} ${!editMode ? styles.disabled : ""}`}
+            onClick={() => handleTagClick("Sub Heading")}
+          >
+            <p>Sub Heading</p>
+          </div>
+          <div
+            className={`${styles.tag} ${!editMode ? styles.disabled : ""}`}
+            onClick={() => handleTagClick("Paragraph")}
+          >
+            <p>Paragraph</p>
+          </div>
+          <div
+            className={`${styles.tag} ${!editMode ? styles.disabled : ""}`}
+            onClick={() => handleTagClick("Numbered List")}
+          >
+            <p>Numbered List</p>
+          </div>
+          <div
+            className={`${styles.tag} ${!editMode ? styles.disabled : ""}`}
+            onClick={() => handleTagClick("Bullet Points List")}
+          >
+            <p>Bullet Points List</p>
+          </div>
+        </div>
+        <textarea
+          placeholder="Your Selection Code Here"
+          value={textareaValue}
+          onChange={(e) => setTextareaValue(e.target.value)}
+          disabled={!editMode}
+        />
+      </div>
       <textarea
         placeholder="News Content"
         name="news_content"
