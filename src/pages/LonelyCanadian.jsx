@@ -196,7 +196,8 @@ const LonelyCanadian = () => {
           <h4><strong>Third-Party Fees:</strong></h4>
           <li>
             <ul>
-              <li>Depending on your situation, you may need to pay third parties for:
+              <li>
+                <p>Depending on your situation, you may need to pay third parties for:</p>
                 <ul>
                   <li>Medical exams.</li>
                   <li>Police certificates.</li>

@@ -94,14 +94,20 @@ const ParentsGrandparents = () => {
             Eligibility criteria for Sponsor of Parents and Grandparents Program
             (PGP):
           </h2>
-          <ul className={styles.list} >
+          {/* <ul className={styles.list} >
             <li>
               You can sponsor your parents and grandparents, related by blood or
               adoption. This includes your mother, father, step-parents, and
               grandparents. However, you cannot sponsor your parents' or
               grandparents' siblings, unless they are dependent children.
             </li>
-          </ul>
+          </ul> */}
+          <p>
+          You can sponsor your parents and grandparents, related by blood or
+              adoption. This includes your mother, father, step-parents, and
+              grandparents. However, you cannot sponsor your parents' or
+              grandparents' siblings, unless they are dependent children.
+          </p>
           <h2 className={styles.subheading}>
             Eligibility criteria for Parents and Grandparents Program (PGP) PR
             Sponsorship:

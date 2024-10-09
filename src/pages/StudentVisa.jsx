@@ -166,7 +166,7 @@ const StudentVisa = () => {
             Pathways to Study Abroad
           </h2>
           <div className={styles.pathwayContainer}>
-            <a href="/outside-cananda">
+            <a href="/outside-canada">
               <div className={styles.pathway}>
                 <h3 className={styles.pathwayTitle}>Outside Canada</h3>
                 <p className={styles.pathwayDescription}>

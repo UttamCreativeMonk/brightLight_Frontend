@@ -590,7 +590,7 @@ const Navbar3 = (props) => {
                       {/* Outside Canada with subheadings */}
                       <div className={`${styles.relativeDiv} ${styles.flex}`}>
                         <a
-                          href="/outside-cananda"
+                          href="/outside-canada"
                           onMouseEnter={() =>
                             setDoubleNestedOutsideCanada(true)
                           }

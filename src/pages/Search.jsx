@@ -82,7 +82,7 @@ const Search = () => {
     "Study Permit Minors": "/study-permit-minors",
     Sds: "/sds",
     "Non Sds": "/non-sds",
-    "Outside Cananda": "/outside-cananda",
+    "Outside Cananda": "/outside-canada",
     "Visitor Student": "/visitor-to-student",
     "Change College Program": "/change-college-program",
     "Inside Canada": "/inside-canada",

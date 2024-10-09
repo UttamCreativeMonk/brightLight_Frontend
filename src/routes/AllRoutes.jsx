@@ -226,7 +226,7 @@ let AllRoutes = () => {
       <Route path="/study-permit-minors" element={<StudyPermitMinors />} />
       <Route path="/sds" element={<Sds />} />
       <Route path="/non-sds" element={<NonSds />} />
-      <Route path="/outside-cananda" element={<OutsideCananda />} />
+      <Route path="/outside-canada" element={<OutsideCananda />} />
       <Route path="/visitor-to-student" element={<VisitorToStudent />} />
       <Route path="/change-college-program" element={<ChangeCollegeProgram />}/>
       <Route path="/inside-canada" element={<InsideCanada />} />
@@ -240,10 +240,7 @@ let AllRoutes = () => {
       />
       <Route path="/dependent-children" element={<DependentChildren />} />
       <Route path="/adoption" element={<Adoption />} />
-      <Route
-        path="/family-reunification-sponsorship"
-        element={<FamilyReunificationSponsorship />}
-      />
+      <Route path="/family-reunification-sponsorship" element={<FamilyReunificationSponsorship />} />
       <Route path="/pgwp" element={<Pgwp />} />
       <Route path="/openWork-dependent-children" element={<OpenWorkCanadaLP />} />
       <Route

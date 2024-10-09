@@ -344,10 +344,11 @@
     border-right: none;
   }
   .footerLogo2Para p{
-  margin-left: 15px;
+  /* margin-left: 15px; */
   margin-top: 10px;
   font-size: 15px;
   letter-spacing: 1px;
+  text-align: center;
 }
 }
 

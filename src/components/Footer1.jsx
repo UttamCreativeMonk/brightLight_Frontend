@@ -3,7 +3,7 @@ import styles from "../styles/Footer1.module.css";
 import HoursIcon from "../assets/hours.webp";
 import Address from "../assets/address.webp";
 import FooterLogo from "../assets/brightlight-main-logo.webp";
-import FooterLogo2 from "../assets/cicc.png";
+import FooterLogo2 from "../assets/cicc-seeklogo1.png";
 import UpperFooterImage from "../assets/footer-image.webp";
 
 import { ReactComponent as TikTokIcon } from "../assets/tiktok.svg";

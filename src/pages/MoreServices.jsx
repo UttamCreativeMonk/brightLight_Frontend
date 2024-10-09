@@ -195,7 +195,7 @@ const MoreServices = () => {
       hoverImg: OutsideCanandaHover,
       title: "Outside Canada",
       description: "So, you've set your sights on pursuing higher education in the vibrant and diverse world of Canada.....",
-      link: "/outside-cananda"
+      link: "/outside-canada"
     },
     {
       img: InsideCanadaImg,
