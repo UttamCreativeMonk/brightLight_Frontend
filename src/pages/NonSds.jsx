@@ -185,7 +185,6 @@ const NonSds = () => {
               Also, you should meet all other Canadian immigration requirements,
               such as criminal background checks and medical exams.
             </li>
-            <li>Minimum language test scores required:</li>
           </ul>
 
           <div

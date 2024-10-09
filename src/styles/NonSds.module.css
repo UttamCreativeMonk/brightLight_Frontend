@@ -140,7 +140,10 @@
   .intro {
     font-size: 1.0rem;
     margin-bottom: 30px;
-    text-align: left;
+    text-align: center;
+  }
+  .intro p{
+    margin-top: 12px;
   }
   
   .prosCons {
