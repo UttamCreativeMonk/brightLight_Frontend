@@ -88,11 +88,11 @@ const PrioritiesProgram = () => {
           id="benefits-2"
           ref={(el) => (sectionsRef.current[30] = el)}
         >
-          <h3>
+          <h3 style={{textAlign: "center"}}>
             British Columbia Provincial Nominee Program Targeted Draws for
             Program Priorities Occupations
           </h3>
-          <p style={{ marginTop: "20px", marginBottom: "50px" }}>
+          <p style={{ marginTop: "20px", marginBottom: "50px", textAlign: "center" }}>
             British Columbia has a significant demand in essential sectors of
             the care economy, including healthcare, childcare, and veterinary
             care, as well as in the construction and technology sectors
