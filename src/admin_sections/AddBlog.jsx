@@ -19,6 +19,9 @@ let AddBlog = () => {
       case "Bigger Heading":
         tagValue = "<h4>Your bigger heading goes here</h4>";
         break;
+      case "Bold":
+        tagValue = "<strong>Your bigger heading goes here</strong>";
+        break;
       case "Sub Heading":
         tagValue = "<h6>Your sub heading goes here</h6>";
         break;
@@ -370,6 +373,12 @@ let AddBlog = () => {
             onClick={() => handleTagClick("Bullet Points List")}
           >
             <p>Bullet Points List</p>
+          </div>
+          <div
+            className={`${styles.tag} ${!editMode ? styles.disabled : ""}`}
+            onClick={() => handleTagClick("Bold")}
+          >
+            <p>Bold Text</p>
           </div>
         </div>
         <textarea
