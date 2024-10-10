@@ -239,10 +239,10 @@ const CommonLawPartnerTemporary = () => {
             </li>
           </ul>
 
-          <h3>2. For Low-Skilled Occupations (TEER 4 or 5)</h3>
+          <h3 className={styles.validWorkLiHead}>2. For Low-Skilled Occupations (TEER 4 or 5)</h3>
           <ul className={styles.requirementsList}>
             <li>
-              <strong>Valid Work Authorization</strong>
+              <strong >Valid Work Authorization</strong>
               <p>Must possess one of the following:</p>
               <ul className={styles.subList}>
                 <li>A valid work permit, subject to certain exceptions.</li>
@@ -334,7 +334,7 @@ const CommonLawPartnerTemporary = () => {
           ref={(el) => (sectionsRef.current[14] = el)}
         >
           <h2>Family Member Requirements for Open Work Permits:</h2>
-          <p>Your family member must meet 3 requirements:</p>
+          <p className={styles.testPara}>Your family member must meet 3 requirements:</p>
           <ul>
             <li>
               <strong>General Eligibility:</strong> They must meet the general

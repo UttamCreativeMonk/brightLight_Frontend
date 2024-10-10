@@ -283,6 +283,12 @@ margin-top: 20px;
   opacity: 1;
   transform: translateX(0);
 }
+.eligibility ol li{
+  margin-top: 10px;
+}
+.applicationProcess ol li{
+  margin-top: 10px;
+}
 
 .section button {
   display: block;
