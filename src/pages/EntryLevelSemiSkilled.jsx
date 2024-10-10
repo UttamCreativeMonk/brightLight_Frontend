@@ -94,6 +94,7 @@ const EntryLevelSemiSkilled = () => {
           British Columbia Entry Level and Semi-Skilled Worker (ELSS) Stream
         </h1>
         <p
+          style={{ textAlign: "center" }}
           className={`${styles.description} ${styles.section}`}
           id="testing1"
           ref={(el) => (sectionsRef.current[1] = el)}
@@ -105,6 +106,7 @@ const EntryLevelSemiSkilled = () => {
           semi-skilled and entry level work experience.
         </p>
         <p
+          style={{ textAlign: "center" }}
           className={`${styles.description} ${styles.section}`}
           id="testing2"
           ref={(el) => (sectionsRef.current[2] = el)}
