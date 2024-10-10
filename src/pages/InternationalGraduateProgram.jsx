@@ -106,12 +106,6 @@ const InternationalGraduateProgram = () => {
       </Helmet>
       <Navbar1 />
       <div className={styles.bannerParent}>
-        <header className={styles.header}>
-          <h1>
-            British Columbia Provincial Nominee Program - International Graduate
-            Stream
-          </h1>
-        </header>
         <div className={styles.banner}>
           <div
             className={`${styles.bannerHeadingRotateParent} ${
@@ -159,11 +153,11 @@ const InternationalGraduateProgram = () => {
           id="benefits-2"
           ref={(el) => (sectionsRef.current[21] = el)}
         >
-          <h2>
+          <h2 style={{textAlign: "center"}}> 
             British Columbia Provincial Nominee Program International Graduate
             stream
           </h2>
-          <p>
+          <p style={{textAlign: "center"}}>
             The British Columbia International Graduate stream is one of the
             immigration pathways offered within the British Columbia Provincial
             Nominee Program (BC PNP). Operated by the province of British

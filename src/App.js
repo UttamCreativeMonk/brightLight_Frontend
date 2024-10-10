@@ -67,8 +67,8 @@ import Pnp from "./pages/Pnp"; //Done Animation
 import BcPnp from "./pages/BcPnp"; //Done Animation
 import EntryLevelSemiSkilled from "./pages/EntryLevelSemiSkilled";//Done no yet
 import HealthAuthoritiesStream from "./pages/HealthAuthoritiesStream"; //Done Animation
-import InternationalGraduateProgram from "./pages/InternationalGraduateProgram"; //Not use
-import InternationalPostGraduateProgram from "./pages/InternationalPostGraduateProgram"; //Not use
+import InternationalGraduateProgram from "./pages/InternationalGraduateProgram"; //Done Animation
+import InternationalPostGraduateProgram from "./pages/InternationalPostGraduateProgram"; //Done Animation
 import PrioritiesProgram from "./pages/PrioritiesProgram"; //Done Animation
 import SkilledWorkerStream from "./pages/SkilledWorkerStream"; //Done Animation
 import InCaregiverProgramLP from "./pages/InCaregiverProgramLP"; //Done Animation

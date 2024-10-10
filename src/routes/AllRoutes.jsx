@@ -137,11 +137,11 @@ let AllRoutes = () => {
       <Route
         path="/international-post-graduate-program"
         element={<InternationalPostGraduateProgram />}
-      /> {/* not use */}
+      />
       <Route
         path="/international-graduate-program"
         element={<InternationalGraduateProgram />}
-      /> {/* not use */}
+      />
       <Route
         path="/health-authority-stream"
         element={<HealthAuthorityStream />}
