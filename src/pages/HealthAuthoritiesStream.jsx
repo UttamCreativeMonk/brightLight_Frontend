@@ -89,6 +89,7 @@ const HealthAuthorityStream = () => {
           British Columbia Health Authority Stream
         </h1>
         <p
+          style={{ textAlign: "center" }}
           className={`${styles.description} ${styles.section}`}
           id="testing1"
           ref={(el) => (sectionsRef.current[1] = el)}
@@ -100,6 +101,7 @@ const HealthAuthorityStream = () => {
           significantly to the healthcare infrastructure in BC.
         </p>
         <p
+          style={{ textAlign: "center" }}
           className={`${styles.description} ${styles.section}`}
           id="testing2"
           ref={(el) => (sectionsRef.current[2] = el)}
