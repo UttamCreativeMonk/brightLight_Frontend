@@ -983,6 +983,24 @@ let Admin = () => {
                 >
                   <p>BCPNP Page</p>
                 </div>
+                <div
+                  className={`${styles.page} ${
+                    activePage === "additional_documents"
+                      ? styles.activePage
+                      : ""
+                  }`}
+                  onClick={() => handlePageClick("additional_documents")}
+                >
+                  <p>Additional Documents Page</p>
+                </div>
+                <div
+                  className={`${styles.page} ${
+                    activePage === "adoption_page" ? styles.activePage : ""
+                  }`}
+                  onClick={() => handlePageClick("adoption_page")}
+                >
+                  <p>Adoption Page</p>
+                </div>
               </div>
               <div className={styles.rightPanel}>
                 {activePage === "bcpnp_page" && (
@@ -999,9 +1017,47 @@ let Admin = () => {
                     </div>
                   </div>
                 )}
+                {activePage === "additional_documents" && (
+                  <div className={styles.sections}>
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "additional_documents_content"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick("additional_documents_content")
+                      }
+                    >
+                      Page Content
+                    </div>
+                  </div>
+                )}
+                {activePage === "adoption_page" && (
+                  <div className={styles.sections}>
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "adoption_page_content"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick("adoption_page_content")
+                      }
+                    >
+                      Page Content
+                    </div>
+                  </div>
+                )}
                 <div className={styles.roshiSection}>
                   {activePage === "bcpnp" &&
                     activeSection === "bcpnp_page_content" && <HomeTop />}
+                  {activePage === "additional_documents" &&
+                    activeSection === "additional_documents_content" && (
+                      <HomeTop />
+                    )}
+                  {activePage === "adoption_page" &&
+                    activeSection === "adoption_page_content" && <HomeTop />}
                 </div>
               </div>
             </div>
