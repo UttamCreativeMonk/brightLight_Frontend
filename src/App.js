@@ -88,6 +88,22 @@ function App() {
     });
   }, []);
 
+  useEffect(() => {
+    let handleBackgroundColor = () => {
+      if (window.location.pathname === '/users/admin/dashboard') {
+        document.body.style.backgroundColor = 'rgb(241, 241, 241)'; 
+      } else {
+        document.body.style.backgroundColor = 'white';
+      }
+    };
+    handleBackgroundColor();
+    window.addEventListener('popstate', handleBackgroundColor);
+    return () => {
+      window.removeEventListener('popstate', handleBackgroundColor);
+      document.body.style.backgroundColor = 'white';
+    };
+  }, []);
+
   return (
     <div className="App">
   

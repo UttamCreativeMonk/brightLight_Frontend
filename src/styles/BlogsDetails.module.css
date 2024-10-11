@@ -66,6 +66,13 @@
   width: 935px;
 }
 
+.blogDescriptionSection a{
+  display: inline;
+  color: #132f46;
+  text-decoration: none;
+  font-weight: 600;
+}
+
 @media all and (max-width: 1450px){
   .blogDescriptionSection div{
     width: 65%;

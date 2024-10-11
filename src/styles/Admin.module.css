@@ -7,27 +7,41 @@
   justify-content: space-between;
 }
 
-.blogContentTageSelectionArea{
+.blogContentTageSelectionArea {
   width: 100%;
   margin-top: 20px;
   margin-bottom: 10px;
   overflow-x: scroll;
 }
 
-.tagsArea{
+.tagsArea {
+  width: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 20px;
-  overflow-x: scroll;
+  gap: 25px;
+  overflow-x: auto;
   margin-bottom: 20px;
+  padding-bottom: 10px;
 }
 
-.tag{
-  font-size: 13px;
+.tagsArea::-webkit-scrollbar {
+  display: block !important;
+  height: 6px !important;
+  background-color: #eeeeee !important;
+  border-radius: 10px;
+}
+
+.tagsArea::-webkit-scrollbar-thumb {
+  background-color: #132f46 !important;
+  border-radius: 10px;
+}
+
+.tag {
+  font-size: 14px;
   flex-shrink: 0;
   border: 1px solid black;
-  padding: 5px 20px;
+  padding: 5px 25px;
   border-radius: 5px;
   color: white;
   background-color: #132f46;
@@ -41,7 +55,7 @@
   pointer-events: none;
 }
 
-.tagsArea div:disabled{
+.tagsArea div:disabled {
   opacity: 0.5;
 }
 
@@ -102,7 +116,7 @@
 
 .grayBg {
   background-color: rgb(241, 241, 241);
-  padding: 50px 0px 10%;
+  padding: 50px 0px;
 }
 
 .leftPanel {
@@ -110,6 +124,24 @@
   padding: 30px 20px;
   background-color: white;
   border-radius: 5px;
+  height: 75vh;
+  overflow-y: scroll;
+  position: relative;
+}
+
+.leftPanel::-webkit-scrollbar {
+  display: block !important;
+  width: 8px;
+  background-color: white !important;
+  border-radius: 2px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.leftPanel::-webkit-scrollbar-thumb {
+  background-color: #256497 !important;
+  border-radius: 2px;
 }
 
 .rightPanel {
@@ -117,10 +149,24 @@
   padding: 30px 20px;
   background-color: white;
   border-radius: 5px;
+  height: 75vh;
+  overflow-y: scroll;
+}
+
+.rightPanel::-webkit-scrollbar {
+  display: block !important;
+  width: 8px;
+  background-color: white !important;
+  border-radius: 2px;
+}
+
+.rightPanel::-webkit-scrollbar-thumb {
+  background-color: #256497 !important;
+  border-radius: 2px;
 }
 
 .logo {
-  width: 80px;
+  width: 60px;
 }
 
 .topBarSearch {

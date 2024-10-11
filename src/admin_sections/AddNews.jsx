@@ -23,6 +23,10 @@ const AddNews = () => {
       case "Paragraph":
         tagValue = "<p>Your paragraph goes here</p>";
         break;
+      case "Link_Text":
+        tagValue =
+          '<a href="https://example.com" target="_blank">Your Text Here</a>';
+        break;
       case "Numbered List":
         tagValue = `
         <ol>
@@ -234,6 +238,12 @@ const AddNews = () => {
             onClick={() => handleTagClick("Bold")}
           >
             <p>Bold Text</p>
+          </div>
+          <div
+            className={`${styles.tag} ${!editMode ? styles.disabled : ""}`}
+            onClick={() => handleTagClick("Link_Text")}
+          >
+            <p>Link Text</p>
           </div>
         </div>
         <textarea
