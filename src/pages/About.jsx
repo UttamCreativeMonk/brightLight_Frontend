@@ -138,7 +138,7 @@ let About = () => {
         }
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error) ;
       });
 
     fetch("https://brightlight-node.onrender.com/ourFoundationSection")
