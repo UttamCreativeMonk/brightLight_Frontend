@@ -371,8 +371,10 @@ const TradeOccupationTargetedDraw = () => {
           </p>
         </div>
 
-        <button
-          className={styles.button}
+
+      </div>
+      <button
+          className={styles.Bookbutton}
           onClick={() =>
             (window.location.href =
               "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
@@ -380,8 +382,7 @@ const TradeOccupationTargetedDraw = () => {
         >
           Book Appointment
         </button>
-      </div>
-
+        
       <div id="faqs">
         <FAQ />
       </div>

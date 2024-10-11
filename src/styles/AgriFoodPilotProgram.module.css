@@ -141,7 +141,7 @@
 }
 
 .intro p{
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   text-align: center;
 }
 
@@ -232,8 +232,8 @@
   opacity: 0;
   transform: translateX(-100px);
   transition: opacity 0.8s ease, transform 0.8s ease;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .section.visible {

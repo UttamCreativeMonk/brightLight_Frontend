@@ -188,7 +188,7 @@
   }
   
   .button {
-    display: inline-block;
+    /* display: inline-block; */
     padding: 10px 20px;
     font-size: 1rem;
     color: #fff;
@@ -293,6 +293,25 @@ text-align: start;
     border: none;
   }
   .section button:hover {
+    opacity: 0.9;
+    text-decoration: none;
+  }
+  .Bookbutton {
+    /* display: inline-block; */
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #00273f;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+  }
+  
+  .Bookbutton:hover {
     opacity: 0.9;
     text-decoration: none;
   }

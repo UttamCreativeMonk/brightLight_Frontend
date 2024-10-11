@@ -268,7 +268,7 @@ const StemTargetedDraw = () => {
           ref={(el) => (sectionsRef.current[3] = el)}
         >
           <h2 className={styles.subheading}>STEM Eligible NOC Codes</h2>
-          <p>
+          {/* <p>
             <a
               href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/submit-profile/rounds-invitations/category-based-selection.html"
               target="_blank"
@@ -277,7 +277,7 @@ const StemTargetedDraw = () => {
             >
               NOC Codes
             </a>
-          </p>
+          </p> */}
 
           <table className={styles.table}>
             <thead>
@@ -417,7 +417,7 @@ const StemTargetedDraw = () => {
           </table>
         </section>
 
-        <section
+        {/* <section
           className={`${styles.drawHistory} ${styles.section}`}
           id="testing2"
           ref={(el) => (sectionsRef.current[4] = el)}
@@ -431,16 +431,13 @@ const StemTargetedDraw = () => {
             candidates eligible for category-based selection in science,
             technology, mathematics, and engineering (STEM) occupations.
           </p>
-          {/* <Link to="" className={styles.button}>
-          
-          </Link> */}
           <button
             className={styles.button}
             onClick={() => (window.location.href = "/previous-draw-history")}
           >
             View Previous Draw History
           </button>
-        </section>
+        </section> */}
 
         <section
           className={`${styles.contact} ${styles.section}`}
