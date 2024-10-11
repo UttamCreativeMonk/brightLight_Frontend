@@ -267,12 +267,9 @@ let Admin = () => {
                 <p>Express Entry</p>
               </div>
               <div
-                className={`${styles.page} ${
-                  activePage === "internal" ? styles.activePage : ""
-                }`}
+                className={styles.page}
                 onClick={() => {
                   setInternalPages();
-                  handlePageClick("internal");
                 }}
               >
                 <p>Internal Pages {"->"}</p>
