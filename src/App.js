@@ -45,7 +45,7 @@ import RestorationStatusDraft from "./pages/RestorationStatusDraft"; //Done Anim
 import SpousalOpenWorkPermit from "./pages/SpousalOpenWorkPermit"; //Done Animation
 import CommonLawPartnerPermanent from "./pages/CommonLawPartnerPermanent"; //Done Animation
 import CommonLawPartnerTemporary from "./pages/CommonLawPartnerTemporary";  //Done Animation
-import Cby from "./pages/Cby"; //Done Animation
+import Cby from "./pages/Cby"; //not use
 import SuperVisa from "./pages/SuperVisa"; //Done Animation
 import TemporaryResidentPermitDraft from "./pages/TemporaryResidentPermitDraft"; //Done Animation
 import TemporaryResident from "./pages/TemporaryResident";
@@ -93,7 +93,7 @@ function App() {
   
       <ToastContainer />
 
-      {/* <Loader />  */}  
+      <Loader />   
       <HelmetProvider>
         <AllRoutes />
       </HelmetProvider>

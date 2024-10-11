@@ -106,12 +106,6 @@ const InternationalPostGraduateProgram = () => {
       </Helmet>
       <Navbar1 />
       <div className={styles.bannerParent}>
-        <header className={styles.header}>
-          <h1>
-            British Columbia Provincial Nominee Program - BC PNP International
-            Post-Graduate (IPG) Stream
-          </h1>
-        </header>
         <div className={styles.banner}>
           <div
             className={`${styles.bannerHeadingRotateParent} ${

@@ -195,7 +195,7 @@ let AllRoutes = () => {
         element={<TemporaryResidentPermitDraft />}
       />
       <Route path="/super-visa" element={<SuperVisa />} />
-      <Route path="/cby" element={<Cby />} />
+      <Route path="/cby" element={<Cby />} /> {/* not use */}
       <Route
         path="/common-law-partner-temporary"
         element={<CommonLawPartnerTemporary />}

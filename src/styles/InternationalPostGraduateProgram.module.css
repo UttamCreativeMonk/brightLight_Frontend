@@ -157,10 +157,9 @@
     margin-bottom: 20px;
     padding-bottom: 5px;
   }
-  
-  .criteria h3 {
-    font-size: 1.5em;
-    margin-top: 10px;
+
+  .criteria li ul{
+    margin-left: 25px;
   }
 
   .button {

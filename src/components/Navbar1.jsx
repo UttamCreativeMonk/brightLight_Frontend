@@ -762,7 +762,7 @@ const Navbar3 = (props) => {
                           <a href="/bridging-open-work-permit-lp">
                             BOWP – Bridging Open Work Permit
                           </a>
-                          <a href="/international-post-graduate-program">
+                          <a href="/pgwp">
                             PGWP – Post Graduate Open Work Permit
                           </a>
                           <a href="/spousal-open-work-permit">
@@ -1333,7 +1333,7 @@ const Navbar3 = (props) => {
                               <a href="/bridging-open-work-permit-lp">
                                 BOWP – Bridging Open Work Permit
                               </a>
-                              <a href="/international-post-graduate-program">
+                              <a href="/pgwp">
                                 PGWP – Post Graduate Open Work Permit
                               </a>
                               <a href="/spousal-open-work-permit">
