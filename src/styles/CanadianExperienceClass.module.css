@@ -150,6 +150,11 @@
   margin-bottom: 20px;
 }
 
+.eligibility ul{
+  width: 95%;
+  margin-left: 40px;
+}
+
 .introduction p{
   text-align: center;
 }

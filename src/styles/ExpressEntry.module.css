@@ -241,12 +241,38 @@
   line-height: 1.8;
 }
 
+.button {
+  display: inline-block;
+  background-color: #00273f;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-top: 20px;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+}
+
+.button:hover {
+ opacity: 0.9;
+ text-decoration: none;
+}
+
 .advantagesPara p {
   color: #78797b;
   font-size: 25px;
   margin-bottom: 30px;
   align-items: left;
   line-height: 1.8;
+}
+
+.advantagesPara ul {
+  width: 90%;
+  margin-left: 50px;
 }
 
 .advantagesPara li {

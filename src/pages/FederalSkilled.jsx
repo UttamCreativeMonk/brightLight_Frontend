@@ -665,7 +665,7 @@ const FederalSkilled = () => {
                     <label>
                       <input
                         type="radio"
-                        name="speaking12"
+                        name="speaking11"
                         value="2"
                         onChange={handleEducationChange}
                       />{" "}
@@ -678,7 +678,7 @@ const FederalSkilled = () => {
                     <label>
                       <input
                         type="radio"
-                        name="speaking13"
+                        name="speaking11"
                         value="3"
                         onChange={handleEducationChange}
                       />{" "}
@@ -691,7 +691,7 @@ const FederalSkilled = () => {
                     <label>
                       <input
                         type="radio"
-                        name="speaking14"
+                        name="speaking11"
                         value="4"
                         onChange={handleEducationChange}
                       />{" "}
@@ -704,7 +704,7 @@ const FederalSkilled = () => {
                     <label>
                       <input
                         type="radio"
-                        name="speaking15"
+                        name="speaking11"
                         value="5"
                         onChange={handleEducationChange}
                       />{" "}
@@ -717,7 +717,7 @@ const FederalSkilled = () => {
                     <label>
                       <input
                         type="radio"
-                        name="speaking16"
+                        name="speaking11"
                         value="6"
                         onChange={handleEducationChange}
                       />{" "}
@@ -730,7 +730,7 @@ const FederalSkilled = () => {
                     <label>
                       <input
                         type="radio"
-                        name="speaking17"
+                        name="speaking11"
                         value="7"
                         onChange={handleEducationChange}
                       />{" "}
@@ -858,7 +858,7 @@ const FederalSkilled = () => {
                     <label>
                       <input
                         type="radio"
-                        name="speaking1111"
+                        name="speaking11111"
                         value="4"
                         onChange={handleExperienceChange}
                       />{" "}

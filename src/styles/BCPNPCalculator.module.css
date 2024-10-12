@@ -11,6 +11,12 @@
   text-align: center;
 }
 
+.requiredDesc{
+  font-size: 12px !important;
+  color: red;
+  margin-top: -5px;
+}
+
 .bannerHeading h1 {
   color:#e0b969;
   font-size: 50px;

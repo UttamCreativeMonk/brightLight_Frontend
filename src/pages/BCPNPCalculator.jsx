@@ -9,7 +9,7 @@ import { Helmet } from "react-helmet-async";
 const BCPNPCalculator = () => {
   let [metaData, setMetaData] = useState([]);
   const [isFooterVisible, setIsFooterVisible] = useState(false);
-
+  let [applicableLastSection, setApplicableLastSection] = useState(false);
   const firstSectionRef = useRef(null);
   const [firstSectionHeight, setFirstSectionHeight] = useState("auto");
   const [points, setPoints] = useState(0);
@@ -239,7 +239,7 @@ const BCPNPCalculator = () => {
   // Handles the Hourly Wage change
   const handleHourlyWageChange = (e) => {
     const wageValue = parseFloat(e.target.value);
-  
+
     // Update points based on the entered wage value according to the table
     if (wageValue >= 70) {
       setHourlyWagePoints(55);
@@ -337,8 +337,7 @@ const BCPNPCalculator = () => {
       setHourlyWagePoints(9);
     } else if (wageValue >= 23 && wageValue <= 23.99) {
       setHourlyWagePoints(8);
-    }
-    else if (wageValue >= 22 && wageValue <= 22.99) {
+    } else if (wageValue >= 22 && wageValue <= 22.99) {
       setHourlyWagePoints(7);
     } else if (wageValue >= 21 && wageValue <= 21.99) {
       setHourlyWagePoints(6);
@@ -356,8 +355,6 @@ const BCPNPCalculator = () => {
       setHourlyWagePoints(0);
     }
   };
-  
-  
 
   // Handles the Area of Employment change
   const handleEmploymentAreaChange = (e) => {
@@ -1133,6 +1130,12 @@ const BCPNPCalculator = () => {
                   </div>
                   <h4>{data?.ninthSectionHeading}</h4>
                   <h5>{data?.nnsq1}</h5>
+                  {data && (
+                    <p className={styles.requiredDesc}>
+                      *CLB 4 or higher in each of 4 competencies on both tests
+                      Required
+                    </p>
+                  )}
                 </div>
               )}
 
@@ -1218,6 +1221,7 @@ const BCPNPCalculator = () => {
                         name="employmentArea"
                         value="1"
                         onChange={handleEmploymentAreaChange}
+                        onClick={() => setApplicableLastSection(false)}
                       />{" "}
                       {data?.elsq1o1}
                     </label>
@@ -1232,6 +1236,7 @@ const BCPNPCalculator = () => {
                         name="employmentArea"
                         value="2"
                         onChange={handleEmploymentAreaChange}
+                        onClick={() => setApplicableLastSection(true)}
                       />{" "}
                       {data?.elsq1o2}
                     </label>
@@ -1246,6 +1251,7 @@ const BCPNPCalculator = () => {
                         name="employmentArea"
                         value="3"
                         onChange={handleEmploymentAreaChange}
+                        onClick={() => setApplicableLastSection(true)}
                       />{" "}
                       {data?.elsq1o3}
                     </label>
@@ -1275,7 +1281,9 @@ const BCPNPCalculator = () => {
                       <input
                         type="radio"
                         name="languageProficiencyRegion"
-                        value="1"
+                        value={applicableLastSection == true ? "0" : "1"}
+                        // value="1"
+                        disabled={applicableLastSection}
                         onChange={handleLanguageProficiencyRegionChange}
                       />{" "}
                       {data?.twsq1o1}
@@ -1289,7 +1297,9 @@ const BCPNPCalculator = () => {
                       <input
                         type="radio"
                         name="languageProficiencyRegion"
-                        value="2"
+                        value={applicableLastSection == true ? "0" : "2"}
+                        // value="2"
+                        disabled={applicableLastSection}
                         onChange={handleLanguageProficiencyRegionChange}
                       />{" "}
                       {data?.twsq1o2}
@@ -1302,7 +1312,9 @@ const BCPNPCalculator = () => {
                       <input
                         type="radio"
                         name="languageProficiencyRegion"
-                        value="3"
+                        value={applicableLastSection == true ? "0" : "3"}
+                        // value="3"
+                        disabled={applicableLastSection}
                         onChange={handleLanguageProficiencyRegionChange}
                       />{" "}
                       {data?.twsq1o3}
@@ -1365,7 +1377,8 @@ const BCPNPCalculator = () => {
                           (window.location.href =
                             "https://api.leadconnectorhq.com/widget/booking/BVqmhNlxRMadz10ir6aM")
                         }
-                        className={styles.actionButton} >
+                        className={styles.actionButton}
+                      >
                         <h2>RCIC Appointment</h2>
                         <p>
                           To find out if you are eligible for PR, under FSWP

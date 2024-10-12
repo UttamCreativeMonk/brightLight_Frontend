@@ -148,6 +148,10 @@
   margin-top: 20px;
 }
 
+.eligibility ul{
+  margin-left: 40px;
+}
+
 .eligibility p{
   margin-bottom: 20px;
 }
@@ -175,14 +179,15 @@
 }
 
 .table ul{
-  list-style: none;
+  /* list-style: none; */
+  text-align: left;
 }
 
 .table th,
 .table td {
   border: 1px solid #132f46;
   padding: 8px;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .table th {

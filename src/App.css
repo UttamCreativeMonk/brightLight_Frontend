@@ -75,6 +75,14 @@ ul li:empty {
   display: none;
 }
 
+/* ul{
+  margin-left: 40px !important;
+}
+
+ol{
+  margin-left: 40px !important;
+} */
+
 .swiper-slide {
   flex-shrink: 1 !important;
 }

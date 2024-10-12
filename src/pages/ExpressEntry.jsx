@@ -285,7 +285,11 @@ const ExpressEntry = () => {
       </div>
 
       <div className={styles.previous_draw_history}>
-        <button onClick={() => window.location.href="/prvious-draw-history"}>Express Entry draws history</button>
+        <button
+          onClick={() => (window.location.href = "/prvious-draw-history")}
+        >
+          Express Entry draws history
+        </button>
       </div>
 
       <div id="refusal-reason" className={styles.forgetParent}>
@@ -312,8 +316,14 @@ const ExpressEntry = () => {
           <div className={styles.incaseContent}>
             <h1>{data?.appointmentHeading}</h1>
             <p>{data?.appointmentDescription}</p>
-            <button className={styles.theButton} role="button">
-              Book an Appointment
+            <button
+              className={styles.button}
+              onClick={() =>
+                (window.location.href =
+                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+              }
+            >
+              Book Appointment
             </button>
           </div>
         </div>
