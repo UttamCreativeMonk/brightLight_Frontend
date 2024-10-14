@@ -40,7 +40,6 @@ let WorkPermit = () => {
       });
   }, []);
 
-
   const sectionsRef = useRef([]);
 
   const handleScroll = () => {
@@ -123,10 +122,18 @@ let WorkPermit = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -138,26 +145,38 @@ let WorkPermit = () => {
         <header className={styles.header}>
           <h1>Work Permit</h1>
         </header>
-        <main className={styles.mainContent}  >
-          <section className={`${styles.section} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
-           <p className={styles.discription}>
-           Are you considering a rewarding career and professional growth in Canada? The Canadian Work Permit is your key to accessing these exciting professional opportunities.
-
-              </p>
+        <main className={styles.mainContent}>
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="about-program"
+            ref={(el) => (sectionsRef.current[0] = el)}
+          >
             <p className={styles.discription}>
-            Canada is a top choice for people worldwide looking to advance their careers. To work in Canada, international workers need a temporary document called a work permit. This permit allows them to legally take on employment in the country, and it's available for a broad range of occupations, skill levels, and immigration statuses.
-
+              Are you considering a rewarding career and professional growth in
+              Canada? The Canadian Work Permit is your key to accessing these
+              exciting professional opportunities.
             </p>
-           
+            <p className={styles.discription}>
+              Canada is a top choice for people worldwide looking to advance
+              their careers. To work in Canada, international workers need a
+              temporary document called a work permit. This permit allows them
+              to legally take on employment in the country, and it's available
+              for a broad range of occupations, skill levels, and immigration
+              statuses.
+            </p>
           </section>
 
-          <section  className={`${styles.section} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[1] = el}>
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="how-to-apply"
+            ref={(el) => (sectionsRef.current[1] = el)}
+          >
             <h2>Pathways to Get a Work Permit</h2>
             <div className={styles.pathways}>
               <div className={styles.pathway}>
                 <h3>
                   <Link to="/open-work-permit">
-                  <button>Open Work Permit</button>
+                    <button>Open Work Permit</button>
                   </Link>
                 </h3>
                 <p>
@@ -168,9 +187,11 @@ let WorkPermit = () => {
               </div>
               <div className={styles.pathway}>
                 <h3>
-                  <Link to="/lmia-work-permit">
-                  <button>   Labour Market Impact Assessment (LMIA)-Based Work Permit</button>
-                 
+                  <Link to="/lmia-reviewed">
+                    <button>
+                      {" "}
+                      Labour Market Impact Assessment (LMIA)-Based Work Permit
+                    </button>
                   </Link>
                 </h3>
                 <p>
@@ -181,7 +202,73 @@ let WorkPermit = () => {
             </div>
           </section>
 
-          <section  className={`${styles.section} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[2] = el}>
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="why-choose-us"
+            ref={(el) => (sectionsRef.current[15] = el)}
+          >
+            <h2>Pathways to get a Work Permit</h2>
+            <ul>
+              <li>
+                <strong
+                  style={{ cursor: "pointer" }}
+                  onClick={() => (window.location.href = "/open-work-permit")}
+                >
+                  Open Work Permit
+                </strong>
+              </li>
+              <li>
+                <strong
+                  style={{ cursor: "pointer" }}
+                  onClick={() => (window.location.href = "/lmia-reviewed")}
+                >
+                  Labour Market Impact Assessment (LMIA)based work permit
+                </strong>
+              </li>
+              <li>
+                <strong
+                  style={{ cursor: "pointer" }}
+                  onClick={() =>
+                    (window.location.href = "/spousal-open-work-permit")
+                  }
+                >
+                  Spousal Open Work Permit
+                </strong>
+              </li>
+            </ul>
+          </section>
+
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="why-choose-us"
+            ref={(el) => (sectionsRef.current[9] = el)}
+          >
+            <h2>Why Choose Us?</h2>
+            <ul>
+              <li>
+                <strong>Experienced Team:</strong> Over a decade of experience
+                in handling BCPNP applications with a high success rate.
+              </li>
+              <li>
+                <strong>Tailored Approach:</strong> Personalized services and
+                strategies based on your specific case.
+              </li>
+              <li>
+                <strong>High Success Rate:</strong> Proven track record using
+                case law and precedents for positive results.
+              </li>
+              <li>
+                <strong>Comprehensive Support:</strong> Assistance from the
+                start of the application process to obtaining your PR.
+              </li>
+            </ul>
+          </section>
+
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="why-choose-us"
+            ref={(el) => (sectionsRef.current[2] = el)}
+          >
             <h2>Here’s How We Can Help You</h2>
             {/* Embed the process section from the homepage here */}
             <p>
@@ -189,18 +276,19 @@ let WorkPermit = () => {
               application process, ensuring that all requirements are met and
               your application stands the best chance of approval.
             </p>
-            <button className={styles.button1}
-          onClick={() =>
-            (window.location.href =
-              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-          }
-        >
-          Book Appointment
-        </button>
+            <button
+              className={styles.button1}
+              onClick={() =>
+                (window.location.href =
+                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+              }
+            >
+              Book Appointment
+            </button>
           </section>
         </main>
       </div>
-      <OurProcess/>
+      <OurProcess />
 
       <div id="faqs">
         <FAQ />

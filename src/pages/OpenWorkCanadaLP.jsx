@@ -156,7 +156,9 @@ const OpenWorkCanadaLP = () => {
             1. Foreign Nationals in High-Skilled Occupations (TEER 0, 1, 2, or
             3)
           </h3>
-          <ul>
+          <ul
+            style={{ marginLeft: "40px", marginTop: "20px", marginBottom: "30px" }}
+          >
             <li>
               <strong>Valid Work Authorization:</strong> You must possess one of
               the following:
@@ -215,7 +217,7 @@ const OpenWorkCanadaLP = () => {
             You must meet the following four requirements to be eligible to
             apply for your child:
           </h4>
-          <ul>
+          <ul style={{ marginLeft: "40px", marginTop: "20px", marginBottom: "30px" }}>
             <li>
               <strong>Valid Work Authorization:</strong> You must possess one of
               the following:
@@ -295,7 +297,7 @@ const OpenWorkCanadaLP = () => {
             You must meet the following four requirements to be eligible to
             apply for your child:
           </h4>
-          <ul>
+          <ul style={{ marginLeft: "40px", marginTop: "20px", marginBottom: "30px" }}>
             <li>
               <strong>Valid Work Authorization:</strong> You must possess one of
               the following:
@@ -488,6 +490,32 @@ const OpenWorkCanadaLP = () => {
             <li>
               Principal applicant's work permit is expiring without an extension
               application.
+            </li>
+          </ul>
+        </section>
+
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[9] = el)}
+        >
+          <h2>Why Choose Us?</h2>
+          <ul>
+            <li>
+              <strong>Experienced Team:</strong> Over a decade of experience in
+              handling BCPNP applications with a high success rate.
+            </li>
+            <li>
+              <strong>Tailored Approach:</strong> Personalized services and
+              strategies based on your specific case.
+            </li>
+            <li>
+              <strong>High Success Rate:</strong> Proven track record using case
+              law and precedents for positive results.
+            </li>
+            <li>
+              <strong>Comprehensive Support:</strong> Assistance from the start
+              of the application process to obtaining your PR.
             </li>
           </ul>
         </section>

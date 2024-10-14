@@ -42,7 +42,6 @@ const VisitorToStudent = () => {
     };
   }, []);
 
-
   return (
     <>
       <Navbar1 />
@@ -60,14 +59,26 @@ const VisitorToStudent = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>
+                Refusal Reasons
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("book-appointment")}>
+                Book Appointment
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -76,7 +87,11 @@ const VisitorToStudent = () => {
       </div>
 
       <div className={styles.container}>
-        <h1  className={`${styles.heading} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
+        <h1
+          className={`${styles.heading} ${styles.section}`}
+          id="about-program"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
           Visitor to Student
         </h1>
         <p className={styles.intro}>
@@ -90,54 +105,62 @@ const VisitorToStudent = () => {
           to a student visa.
         </p>
 
-        <section className={`${styles.benefits} ${styles.section}`} id="benifits" ref={(el) => sectionsRef.current[1] = el}>
+        <section
+          className={`${styles.benefits} ${styles.section}`}
+          id="benifits"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
           <h2 className={styles.subheading}>
             Benefits of Changing Your Status from Visitor to Student
           </h2>
           <h4>
-          The Visitor to Student Permit Program offers several benefits for international students, including:
-
+            The Visitor to Student Permit Program offers several benefits for
+            international students, including:
           </h4>
-          <ul className={styles.benefitsList}>
-            <li>
+          <ol className={styles.benefitsList}>
+            <li style={{marginBottom: "10px"}}>
               A Guaranteed Investment Certificate (GIC) is not required to apply
               for a Study Permit when you apply from inside Canada.
             </li>
-            <li>
+            <li style={{marginBottom: "10px"}}>
               You do not need to pay a 1-year fee to college or university,
               upfront.
             </li>
-            <li>
+            <li style={{marginBottom: "10px"}}>
               You do not need a Provincial Attestation Letter (PAL) when you
               apply for a Study Permit from inside Canada.
             </li>
-            <li>
+            <li style={{marginBottom: "10px"}}>
               While you study, you are allowed to work up to 24 hours per week,
               starting September 2024.
             </li>
-            <li>
+            <li style={{marginBottom: "10px"}}>
               Every 2 semesters, you are allowed to take a scheduled break for
               one semester. During this time, there are no restrictions on your
               work hours.
             </li>
-            <li>
+            <li style={{marginBottom: "10px"}}>
               If you decide to stay in Canada after completing your studies, you
               may be eligible for a post-graduate work permit, which can give
               you valuable work experience and enhance your chances of obtaining
               permanent residency.
             </li>
-            <li>
+            <li style={{marginBottom: "10px"}}>
               You can continue your studies without having to return to your
               home country.
             </li>
-            <li>
+            <li style={{marginBottom: "10px"}}>
               You can avoid the hassle and expense of traveling back and forth
               between Canada and your home country.
             </li>
-          </ul>
+          </ol>
         </section>
 
-        <section className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[2] = el}>
+        <section
+          className={`${styles.eligibility} ${styles.section}`}
+          id="eligibility"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
           <h2 className={styles.subheading}>
             Eligibility Criteria for the Student Permit Program
           </h2>
@@ -189,7 +212,11 @@ const VisitorToStudent = () => {
           </ul>
         </section>
 
-        <section className={`${styles.applicationProcess} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[3] = el}>
+        <section
+          className={`${styles.applicationProcess} ${styles.section}`}
+          id="how-to-apply"
+          ref={(el) => (sectionsRef.current[3] = el)}
+        >
           <h2 className={styles.subheading}>
             How to Apply for a Study Permit When Applying as a Visitor
           </h2>
@@ -209,11 +236,17 @@ const VisitorToStudent = () => {
           </ol>
         </section>
 
-        <section className={`${styles.refusals} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[4] = el}>
+        <section
+          className={`${styles.refusals} ${styles.section}`}
+          id="refusal-reasons"
+          ref={(el) => (sectionsRef.current[4] = el)}
+        >
           <h2 className={styles.subheading}>
             Reasons for Refusals of Study Permit When Applying as a Visitor
           </h2>
-          <h4>You should have a Letter of Acceptance (LOA) from a DLI. If you do not have a LOA, your application will be refused.
+          <h4>
+            You should have a Letter of Acceptance (LOA) from a DLI. If you do
+            not have a LOA, your application will be refused.
           </h4>
           <ul className={styles.refusalList}>
             <li>You do not have a Letter of Acceptance (LOA) from a DLI.</li>
@@ -246,7 +279,37 @@ const VisitorToStudent = () => {
           </ul>
         </section>
 
-        <section className={`${styles.callToAction} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[5] = el}>
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[9] = el)}
+        >
+          <h2>Why Choose Us?</h2>
+          <ul style={{ textAlign: "left" }}>
+            <li>
+              <strong>Experienced Team:</strong> Over a decade of experience in
+              handling BCPNP applications with a high success rate.
+            </li>
+            <li>
+              <strong>Tailored Approach:</strong> Personalized services and
+              strategies based on your specific case.
+            </li>
+            <li>
+              <strong>High Success Rate:</strong> Proven track record using case
+              law and precedents for positive results.
+            </li>
+            <li>
+              <strong>Comprehensive Support:</strong> Assistance from the start
+              of the application process to obtaining your PR.
+            </li>
+          </ul>
+        </section>
+
+        <section
+          className={`${styles.callToAction} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[5] = el)}
+        >
           <h2 className={styles.subheading}>Still Not Sure?</h2>
           <p className={styles.callToActionText}>
             If you have faced a refusal for any of the reasons mentioned above,

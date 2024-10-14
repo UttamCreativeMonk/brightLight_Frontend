@@ -10,7 +10,6 @@ import ogImage from "../assets/ogImage.png";
 import { Helmet } from "react-helmet-async";
 import Lp from "../assets/blogDetailsPic.jpg";
 
-
 let BlogDetails = () => {
   let { id } = useParams();
   let navigate = useNavigate();
@@ -61,7 +60,7 @@ let BlogDetails = () => {
 
   return (
     <>
-    <Helmet>
+      <Helmet>
         <title>
           {blog?.metaTitle
             ? blog?.metaTitle
@@ -94,7 +93,6 @@ let BlogDetails = () => {
               : "Discover the story behind Brightlight Immigration, our commitment to providing honest and accurate advice, and how our team can assist you with your immigration needs."
           }
         />
-
       </Helmet>
       <Navbar1 />
       <div className={styles.blogTopSection}>
@@ -115,7 +113,10 @@ let BlogDetails = () => {
                 </a>
                 <div>
                   <p className={styles.haveAQuestion}>Have Questions?</p>
-                  <a className={styles.imageSection} href="https://api.leadconnectorhq.com/widget/booking/BVqmhNlxRMadz10ir6aM">
+                  <a
+                    className={styles.imageSection}
+                    href="https://api.leadconnectorhq.com/widget/booking/BVqmhNlxRMadz10ir6aM"
+                  >
                     <img src={rcic} />
                   </a>
                 </div>
@@ -128,7 +129,7 @@ let BlogDetails = () => {
         <div className={styles.blogImgSection}>
           <img src={blog.image} />
         </div>
-        <div className={styles.blogSearchSection}>
+        <div className={styles.blogSearchSection1}>
           <div className={styles.searchDiv}>
             <input
               placeholder="Search Blogs"
@@ -154,10 +155,6 @@ let BlogDetails = () => {
                 <a
                   href={`/blogs/${item._id}`}
                   key={index}
-                  style={{ background: `linear-gradient(
-                    rgba(255, 255, 255, 0.3), 
-                    rgba(255, 255, 255, 0.3)
-                  ), url(${item.image})` }}
                   className={styles.recentBlog}
                 >
                   <h3>{item.blog_heading}</h3>
@@ -165,12 +162,60 @@ let BlogDetails = () => {
               ))}
             </div>
           ) : null}
+          <div className={styles.freeAssesmentSection}>
+            <h4>Start You Process Today With Us!</h4>
+            <p>Book A Free Assement With Us Right Now.</p>
+            <a href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj">
+              Free Assesment
+            </a>
+          </div>
         </div>
       </div>
       <div className={styles.blogDescriptionSection}>
         {blog.blog_content ? (
           <div dangerouslySetInnerHTML={{ __html: blog.blog_content }} />
         ) : null}
+      </div>
+      <div className={styles.blogSearchSection}>
+        <div className={styles.searchDiv}>
+          <input
+            placeholder="Search Blogs"
+            value={searchQuery}
+            onChange={handleSearchChange}
+          />
+          <img
+            src={searchIcon}
+            onClick={handleSearchClick}
+            className={styles.searchIcon}
+            alt="Search"
+          />
+        </div>
+        <div className={styles.blogTagsSection}>
+          {blog.tag_1 && <p>{blog.tag_1}</p>}
+          {blog.tag_2 && <p>{blog.tag_2}</p>}
+          {blog.tag_3 && <p>{blog.tag_3}</p>}
+        </div>
+        {recentBlogs ? (
+          <div className={styles.recentBlogsSection}>
+            <h4>Recent Blogs</h4>
+            {recentBlogs?.map((item, index) => (
+              <a
+                href={`/blogs/${item._id}`}
+                key={index}
+                className={styles.recentBlog}
+              >
+                <h3>{item.blog_heading}</h3>
+              </a>
+            ))}
+          </div>
+        ) : null}
+        <div className={styles.freeAssesmentSection}>
+          <h4>Start You Process Today With Us!</h4>
+          <p>Book A Free Assement With Us Right Now.</p>
+          <a href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj">
+            Free Assesment
+          </a>
+        </div>
       </div>
       <Footer1 />
     </>

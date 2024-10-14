@@ -163,8 +163,8 @@ const InsideCanada = () => {
             Eligibility Criteria for Student Visa - Inside Canada
           </h2>
           <h4>
-          You can only apply for a student visa from inside Canada if you meet all of the following criteria:
-
+            You can only apply for a student visa from inside Canada if you meet
+            all of the following criteria:
           </h4>
           <ul className={styles.eligibilityList}>
             <li>
@@ -183,10 +183,9 @@ const InsideCanada = () => {
             <li>You have no criminal record.</li>
             <li>
               <h4>
-              Additionally, you must meet at least one of the following
-              conditions:
+                Additionally, you must meet at least one of the following
+                conditions:
               </h4>
-              
             </li>
             <ul>
               <li>Your work permit or study permit is still valid.</li>
@@ -216,10 +215,10 @@ const InsideCanada = () => {
             </ul>
           </ul>
           <p>
-          If none of the above applies, you must submit your study permit
-              application as though you were outside Canada, but you will not
-              need to physically leave the country. You will be required to
-              apply for a Provincial Attestation Letter (PAL) in this situation.
+            If none of the above applies, you must submit your study permit
+            application as though you were outside Canada, but you will not need
+            to physically leave the country. You will be required to apply for a
+            Provincial Attestation Letter (PAL) in this situation.
           </p>
         </section>
 
@@ -232,8 +231,11 @@ const InsideCanada = () => {
             How to Apply for a Study Permit from Inside Canada
           </h2>
           <h4>
-          You will need to provide the same documents as you would if you were applying from outside Canada. This includes your passport, letter of acceptance from your DLI, proof of financial support, and police certificates. Here are 5 easy steps we help you follow to process your application.
-
+            You will need to provide the same documents as you would if you were
+            applying from outside Canada. This includes your passport, letter of
+            acceptance from your DLI, proof of financial support, and police
+            certificates. Here are 5 easy steps we help you follow to process
+            your application.
           </h4>
           <ol className={styles.stepList}>
             <li>Contact Bright Light Immigration.</li>
@@ -262,6 +264,32 @@ const InsideCanada = () => {
             <li>
               Not accepted into a recognized educational institution or
               submitting fraudulent documents.
+            </li>
+          </ul>
+        </section>
+
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[9] = el)}
+        >
+          <h2>Why Choose Us?</h2>
+          <ul>
+            <li>
+              <strong>Experienced Team:</strong> Over a decade of experience in
+              handling BCPNP applications with a high success rate.
+            </li>
+            <li>
+              <strong>Tailored Approach:</strong> Personalized services and
+              strategies based on your specific case.
+            </li>
+            <li>
+              <strong>High Success Rate:</strong> Proven track record using case
+              law and precedents for positive results.
+            </li>
+            <li>
+              <strong>Comprehensive Support:</strong> Assistance from the start
+              of the application process to obtaining your PR.
             </li>
           </ul>
         </section>

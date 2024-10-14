@@ -12,7 +12,6 @@ const ChangeCollegeProgram = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
 
-
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
@@ -24,7 +23,6 @@ const ChangeCollegeProgram = () => {
     }
   };
   useEffect(() => {
-
     fetch("https://brightlight-node.onrender.com/canadianExperienceClassMeta")
       .then((res) => {
         return res.json();
@@ -39,7 +37,6 @@ const ChangeCollegeProgram = () => {
       });
   }, []);
 
-  
   const sectionsRef = useRef([]);
 
   const handleScroll = () => {
@@ -62,10 +59,9 @@ const ChangeCollegeProgram = () => {
     };
   }, []);
 
-
   return (
     <>
-        <Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle
@@ -122,13 +118,25 @@ const ChangeCollegeProgram = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
-              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>
+                Refusal Reasons
+              </p>
+              <p onClick={() => scrollToSection("book-appointment")}>
+                Book Appointment
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -137,7 +145,11 @@ const ChangeCollegeProgram = () => {
       </div>
 
       <div className={styles.container}>
-        <h1 className={`${styles.heading} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el} >
+        <h1
+          className={`${styles.heading} ${styles.section}`}
+          id="about-program"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
           Change Your College or Program in Canada (DLI Change)
         </h1>
         <p className={styles.intro}>
@@ -158,7 +170,11 @@ const ChangeCollegeProgram = () => {
           604-503-3734.
         </p>
 
-        <section className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[1] = el}>
+        <section
+          className={`${styles.eligibility} ${styles.section}`}
+          id="eligibility"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
           <h2 className={styles.subheading}>
             Eligibility Criteria for Changing Your College or Program in Canada
             (DLI Change)
@@ -172,7 +188,11 @@ const ChangeCollegeProgram = () => {
           </ul>
         </section>
 
-        <section className={`${styles.process} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[2] = el}>
+        <section
+          className={`${styles.process} ${styles.section}`}
+          id="how-to-apply"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
           <h2 className={styles.subheading}>
             How to Change Your College or Program in Canada (DLI Change)
           </h2>
@@ -212,7 +232,11 @@ const ChangeCollegeProgram = () => {
           </ul>
         </section>
 
-        <section className={`${styles.refusals} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[3] = el}>
+        <section
+          className={`${styles.refusals} ${styles.section}`}
+          id="refusal-reasons"
+          ref={(el) => (sectionsRef.current[3] = el)}
+        >
           <h2 className={styles.subheading}>
             Reasons for Refusals for Changing Your College or Program in Canada
             (DLI Change)
@@ -236,7 +260,37 @@ const ChangeCollegeProgram = () => {
           </ul>
         </section>
 
-        <section className={`${styles.callToAction} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[4] = el}>
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[9] = el)}
+        >
+          <h2>Why Choose Us?</h2>
+          <ul>
+            <li>
+              <strong>Experienced Team:</strong> Over a decade of experience in
+              handling BCPNP applications with a high success rate.
+            </li>
+            <li>
+              <strong>Tailored Approach:</strong> Personalized services and
+              strategies based on your specific case.
+            </li>
+            <li>
+              <strong>High Success Rate:</strong> Proven track record using case
+              law and precedents for positive results.
+            </li>
+            <li>
+              <strong>Comprehensive Support:</strong> Assistance from the start
+              of the application process to obtaining your PR.
+            </li>
+          </ul>
+        </section>
+
+        <section
+          className={`${styles.callToAction} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[4] = el)}
+        >
           <h2 className={styles.subheading}>Still Not Sure?</h2>
           <p className={styles.callToActionText}>
             If you have faced a refusal for any of the reasons mentioned above,
@@ -255,17 +309,17 @@ const ChangeCollegeProgram = () => {
             assist you from the start of the application process to obtaining
             your visa. Start your process now.
           </p>
-          <button className={styles.button}
-              onClick={() =>
-                (window.location.href =
-                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-              }
-            >
-              Start your process now
-            </button>
+          <button
+            className={styles.button}
+            onClick={() =>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
+          >
+            Start your process now
+          </button>
         </section>
       </div>
-
 
       <div id="faqs">
         <FAQ />

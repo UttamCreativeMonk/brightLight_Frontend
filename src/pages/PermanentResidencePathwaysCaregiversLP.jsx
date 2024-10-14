@@ -80,6 +80,7 @@ const PermanentResidencePathwaysCaregiversLP = () => {
 
       <div className={styles.container}>
         <h1
+          style={{ marginTop: "50px" }}
           className={`${styles.title} ${styles.section}`}
           id="about-program"
           ref={(el) => (sectionsRef.current[0] = el)}
@@ -97,26 +98,27 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           Canada offers a pathway to permanent residency in Canada for
           individuals who provide the essential care.
         </p>
-        <h2 className={styles.subtitle}>
+        <h2 className={styles.subtitle} style={{ marginTop: "50px" }}>
           Here are the permanent residence pathways available for caregivers:
         </h2>
         <ul className={styles.list}>
           <li>
             <a href="#CategoryA">
-            <strong>(Category A – Gaining experience)</strong> for Home
-            Child-Care Provider Pilot and Home Support Worker Pilot - Scroll to
-            section Below
+              <strong>(Category A – Gaining experience)</strong> for Home
+              Child-Care Provider Pilot and Home Support Worker Pilot - Scroll
+              to section Below
             </a>
           </li>
           <li>
             <a href="#CategoryB">
-            <strong>(Category B – Direct to permanent residence)</strong> for
-            Home Child-Care Provider Pilot and Home Support Worker Pilot Scroll
-            to section Below
+              <strong>(Category B – Direct to permanent residence)</strong> for
+              Home Child-Care Provider Pilot and Home Support Worker Pilot
+              Scroll to section Below
             </a>
           </li>
         </ul>
         <h2
+          style={{ marginTop: "50px" }}
           className={`${styles.subtitle} ${styles.section}`}
           id="benifits"
           ref={(el) => (sectionsRef.current[2] = el)}
@@ -148,6 +150,7 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           </li>
         </ul>
         <h2
+          style={{ marginTop: "50px" }}
           className={`${styles.subtitle} ${styles.section}`}
           id="eligibility"
           ref={(el) => (sectionsRef.current[4] = el)}
@@ -162,14 +165,17 @@ const PermanentResidencePathwaysCaregiversLP = () => {
         >
           1. Qualifying Occupations:
         </h3>
-        <p>
+        <p style={{ marginTop: "10px" }}>
           In the caregiver program, only two occupations are allowed for the
           purpose of defining the occupation mentioned in the job offer as well
           as the in-Canada qualify work experience to apply for permanent
           residency:{" "}
         </p>
-        <h4>The two National Occupational Classification (NOC) codes are:</h4>
+        <h4 style={{ marginTop: "20px" }}>
+          The two National Occupational Classification (NOC) codes are:
+        </h4>
         <ul
+          style={{ marginTop: "30px", marginLeft: "40px" }}
           className={`${styles.listStrong} ${styles.section}`}
           id="testing3"
           ref={(el) => (sectionsRef.current[6] = el)}
@@ -198,6 +204,7 @@ const PermanentResidencePathwaysCaregiversLP = () => {
         </h3>
         <p>There are 2 categories you can apply under:</p>
         <ul
+          style={{ marginTop: "30px", marginLeft: "40px" }}
           className={`${styles.list} ${styles.section}`}
           id="testing5"
           ref={(el) => (sectionsRef.current[8] = el)}
@@ -212,6 +219,7 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           </li>
         </ul>
         <h3
+          style={{ marginTop: "30px" }}
           className={`${styles.subheading} ${styles.section}`}
           id="testng6"
           ref={(el) => (sectionsRef.current[9] = el)}
@@ -220,6 +228,7 @@ const PermanentResidencePathwaysCaregiversLP = () => {
         </h3>
         <p>You are required have either of the following:</p>
         <ul
+          style={{ marginTop: "30px", marginLeft: "40px" }}
           className={`${styles.list} ${styles.section}`}
           id="testing7"
           ref={(el) => (sectionsRef.current[10] = el)}
@@ -241,6 +250,7 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           </li>
         </ul>
         <h3
+          style={{ marginTop: "30px" }}
           className={`${styles.subheading} ${styles.section}`}
           id="testing8"
           ref={(el) => (sectionsRef.current[11] = el)}
@@ -248,6 +258,7 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           4. Language requirements:
         </h3>
         <ul
+          style={{ marginTop: "30px" }}
           className={`${styles.list} ${styles.section}`}
           id="testing9"
           ref={(el) => (sectionsRef.current[12] = el)}
@@ -261,6 +272,7 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           </li>
         </ul>
         <h3
+          style={{ marginTop: "30px" }}
           className={`${styles.subheading} ${styles.section}`}
           id="testing10"
           ref={(el) => (sectionsRef.current[13] = el)}
@@ -269,13 +281,14 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           application categories:
         </h3>
         <h4
+          style={{ marginTop: "20px" }}
           className={`${styles.subheading} ${styles.section}`}
           id="CategoryA"
           ref={(el) => (sectionsRef.current[14] = el)}
         >
           Applicants under Category A – Gaining experience:
         </h4>
-        <p>
+        <p style={{ marginTop: "10px" }}>
           If you are a permanent residency applicant without 12 months of
           Qualifying Canadian work experience (Category A – Gaining experience),
           then you will be issued an occupation-restricted open work permit
@@ -284,6 +297,7 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           experience. You will also be required to provide the following with
           the application:
           <ul
+            style={{ marginTop: "30px", marginLeft: "40px" }}
             className={`${styles.list} ${styles.section}`}
             id="testing11"
             ref={(el) => (sectionsRef.current[15] = el)}
@@ -316,6 +330,7 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           experience upfront.
         </p>
         <h2
+          style={{ marginTop: "30px" }}
           className={`${styles.subtitle} ${styles.section}`}
           id="testing13"
           ref={(el) => (sectionsRef.current[17] = el)}
@@ -398,6 +413,32 @@ const PermanentResidencePathwaysCaregiversLP = () => {
             expiring.
           </li>
         </ol>
+
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[99] = el)}
+        >
+          <h2 style={{ fontSize: "22px" }}>Why Choose Us?</h2>
+          <ul>
+            <li>
+              <strong>Experienced Team:</strong> Over a decade of experience in
+              handling BCPNP applications with a high success rate.
+            </li>
+            <li>
+              <strong>Tailored Approach:</strong> Personalized services and
+              strategies based on your specific case.
+            </li>
+            <li>
+              <strong>High Success Rate:</strong> Proven track record using case
+              law and precedents for positive results.
+            </li>
+            <li>
+              <strong>Comprehensive Support:</strong> Assistance from the start
+              of the application process to obtaining your PR.
+            </li>
+          </ul>
+        </section>
         <h2
           className={`${styles.subtitle} ${styles.section}`}
           id="why-choose-us"
@@ -419,10 +460,12 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           concern that the officer has listed in previous refusals. We use case
           law and find similar cases to your circumstances that had positive
           results, and we use them as precedents in cases we work on. This is
-          why we have a high success rate. At Brightlight Immigration, we have a
-          dedicated team of visa application specialists who can assist you from
-          the start of the application process to obtaining your visa. Start
-          your process now.
+          why we have a high success rate.
+        </p>
+        <p style={{ marginBottom: "30px" }}>
+          At Brightlight Immigration, we have a dedicated team of visa
+          application specialists who can assist you from the start of the
+          application process to obtaining your visa. Start your process now.
         </p>
         <button
           className={styles.bookAppointment}

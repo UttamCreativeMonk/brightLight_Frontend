@@ -49,9 +49,9 @@ const OpenWorkPermit = () => {
       <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
-        <header className={styles.header} >
-          <h1>Open Work Permit</h1>
-        </header>
+          <header className={styles.header}>
+            <h1>Open Work Permit</h1>
+          </header>
           <div
             className={`${styles.bannerHeadingRotateParent} ${
               isDropdownOpen ? styles.active : ""
@@ -64,10 +64,16 @@ const OpenWorkPermit = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
               <p onClick={() => scrollToSection("categories")}>Categories</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -76,18 +82,29 @@ const OpenWorkPermit = () => {
       </div>
 
       <div className={styles.container}>
-
         <main className={styles.mainContent}>
-          <section  className={`${styles.section} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="about-program"
+            ref={(el) => (sectionsRef.current[0] = el)}
+          >
             <header className={styles.header}>
-            <h1>Open Work Permit</h1>
-            <p>
-            A Canadian Open Work Permit is a temporary document that allows foreign nationals to work in Canada without being tied to a specific employer. This type of permit offers flexibility and opens up a wide range of job opportunities for eligible individuals. 
-            </p>
+              <h1>Open Work Permit</h1>
+              <p>
+                A Canadian Open Work Permit is a temporary document that allows
+                foreign nationals to work in Canada without being tied to a
+                specific employer. This type of permit offers flexibility and
+                opens up a wide range of job opportunities for eligible
+                individuals.
+              </p>
             </header>
           </section>
 
-          <section className={`${styles.section} ${styles.section}`} id="categories" ref={(el) => sectionsRef.current[1] = el} >
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="categories"
+            ref={(el) => (sectionsRef.current[1] = el)}
+          >
             <h2>Categories Under Open Work Permit</h2>
             <div className={styles.categories}>
               <Link to="/pgwp" className={styles.button}>
@@ -107,20 +124,51 @@ const OpenWorkPermit = () => {
               </Link>
               <Link
                 to="/francophone-mobility-program"
-                className={styles.button} >
+                className={styles.button}
+              >
                 Francophone Mobility Work Permit
               </Link>
             </div>
           </section>
 
-          <section className={`${styles.section} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[2] = el} >
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="why-choose-us"
+            ref={(el) => (sectionsRef.current[9] = el)}
+          >
+            <h2>Why Choose Us?</h2>
+            <ul>
+              <li>
+                <strong>Experienced Team:</strong> Over a decade of experience
+                in handling BCPNP applications with a high success rate.
+              </li>
+              <li>
+                <strong>Tailored Approach:</strong> Personalized services and
+                strategies based on your specific case.
+              </li>
+              <li>
+                <strong>High Success Rate:</strong> Proven track record using
+                case law and precedents for positive results.
+              </li>
+              <li>
+                <strong>Comprehensive Support:</strong> Assistance from the
+                start of the application process to obtaining your PR.
+              </li>
+            </ul>
+          </section>
+
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="how-to-apply"
+            ref={(el) => (sectionsRef.current[2] = el)}
+          >
             <h2>Here’s How We Can Help You</h2>
             <p>
               Our process is designed to assist you from start to finish,
               ensuring you have the support you need to obtain your Open Work
               Permit. We follow a structured approach that includes:
             </p>
-            <ul style={{marginLeft: "40px"}}>
+            <ul style={{ marginLeft: "40px" }}>
               <li>
                 Initial Consultation: Understanding your needs and eligibility.
               </li>
@@ -142,17 +190,17 @@ const OpenWorkPermit = () => {
               </li>
             </ul>
             <button
-          onClick={() =>
-            (window.location.href =
-              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-          }
-        >
-          Book Appointment
-        </button>
+              onClick={() =>
+                (window.location.href =
+                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+              }
+            >
+              Book Appointment
+            </button>
           </section>
         </main>
       </div>
-      <OurProcess/>
+      <OurProcess />
 
       <div id="faqs">
         <FAQ />

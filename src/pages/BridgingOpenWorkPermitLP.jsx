@@ -12,7 +12,6 @@ const BridgingOpenWorkPermitLP = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
 
-
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
@@ -25,7 +24,6 @@ const BridgingOpenWorkPermitLP = () => {
   };
 
   useEffect(() => {
-
     fetch("https://brightlight-node.onrender.com/bridgingOpenWorkMeta")
       .then((res) => {
         return res.json();
@@ -39,8 +37,6 @@ const BridgingOpenWorkPermitLP = () => {
         console.log(error);
       });
   }, []);
-
-  
 
   const sectionsRef = useRef([]);
 
@@ -66,7 +62,7 @@ const BridgingOpenWorkPermitLP = () => {
 
   return (
     <>
-        <Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle
@@ -123,12 +119,22 @@ const BridgingOpenWorkPermitLP = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
-              <p onClick={() => scrollToSection("application-process")}>Eligibility</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("application-process")}>
+                Eligibility
+              </p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -138,7 +144,11 @@ const BridgingOpenWorkPermitLP = () => {
 
       <div className={styles.containerParent}>
         <div className={styles.container}>
-          <header className={`${styles.header} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}   >
+          <header
+            className={`${styles.header} ${styles.section}`}
+            id="about-program"
+            ref={(el) => (sectionsRef.current[0] = el)}
+          >
             <h1>Bridging Open Work Permit</h1>
           </header>
           <section className={styles.intro}>
@@ -152,7 +162,11 @@ const BridgingOpenWorkPermitLP = () => {
               residency application.
             </p>
           </section>
-          <section className={`${styles.benefits} ${styles.section}`} id="benefits" ref={(el) => sectionsRef.current[1] = el}  >
+          <section
+            className={`${styles.benefits} ${styles.section}`}
+            id="benefits"
+            ref={(el) => (sectionsRef.current[1] = el)}
+          >
             <h2>Benefits of Bridging Open Work Permit</h2>
             <ul>
               <li>
@@ -174,19 +188,23 @@ const BridgingOpenWorkPermitLP = () => {
               </li>
             </ul>
           </section>
-          <section className={`${styles.application} ${styles.section}`} id="application-process" ref={(el) => sectionsRef.current[2] = el}    >
+          <section
+            className={`${styles.application} ${styles.section}`}
+            id="application-process"
+            ref={(el) => (sectionsRef.current[2] = el)}
+          >
             <h2>Eligibility criteria for Bridging Open Work Permit:</h2>
             <h4>
               To be eligible for a bridging open work permit (BOWP), you must:
             </h4>
-            <ul>
+            <ul style={{ marginLeft: "40px" }}>
               <li>
                 Currently be in Canada after being authorized to enter as a
                 worker.
               </li>
               <li>
                 Meet one of the following criteria at the time of submission:
-                <ul  className={styles.subList} >
+                <ul className={styles.subList}>
                   <li>
                     Have valid temporary resident status and authorization to
                     work as the holder of a valid work permit.
@@ -202,22 +220,53 @@ const BridgingOpenWorkPermitLP = () => {
               </li>
               <li>
                 <h4>
-                Have submitted an APR as the principal applicant under one of
-                the following classes or pilots:
+                  Have submitted an APR as the principal applicant under one of
+                  the following classes or pilots:
                 </h4>
                 <ul>
-                  <li>Federal skilled worker class (FSWC)</li>
-                  <li>Canadian experience class (CEC)</li>
-                  <li>Federal skilled trades class (FSTC)</li>
+                  <li
+                    onClick={() =>
+                      (window.location.href = "/federal-skilled-worker-program")
+                    }
+                    style={{ cursor: "pointer" }}
+                  >
+                    Federal skilled worker class (FSWC)
+                  </li>
+                  <li
+                    onClick={() =>
+                      (window.location.href = "/canadian-experience-class")
+                    }
+                    style={{ cursor: "pointer" }}
+                  >
+                    Canadian experience class (CEC)
+                  </li>
+                  <li
+                    onClick={() =>
+                      (window.location.href = "/federal-skilled-worker-program")
+                    }
+                    style={{ cursor: "pointer" }}
+                  >
+                    Federal skilled trades class (FSTC)
+                  </li>
                   <li>
                     Caring for children class or caring for people with high
                     medical needs class (before June 18, 2019)
                   </li>
-                  <li>
+                  <li
+                    onClick={() => (window.location.href = "/pnp")}
+                    style={{ cursor: "pointer" }}
+                  >
                     Provincial Nominee Program (PNP) for applicants for whom
                     there are no employer restrictions on nominations
                   </li>
-                  <li>Agri-Food Pilot (AFP)</li>
+                  <li
+                    onClick={() =>
+                      (window.location.href = "/agri-food-pilot-program")
+                    }
+                    style={{ cursor: "pointer" }}
+                  >
+                    Agri-Food Pilot (AFP)
+                  </li>
                   <li>
                     Quebec skilled worker class (QSWC) with valid Certificat de
                     sélection du Québec (CSQ) at the time of PR application
@@ -234,15 +283,15 @@ const BridgingOpenWorkPermitLP = () => {
               </li>
               <li>
                 <h4>
-                Have completed one of the following APR stages depending on
-                their class:
+                  Have completed one of the following APR stages depending on
+                  their class:
                 </h4>
                 <ul>
                   <li>
                     Electronic application for permanent residence (e-APR)
                     submitted under Express Entry has passed the Completeness
                     Check. This applies to the following classes:
-                    <ul  className={styles.subList}>
+                    <ul className={styles.subList}>
                       <li>Federal skilled worker class (FSWC)</li>
                       <li>Canadian experience class (CEC)</li>
                       <li>Federal skilled trades class (FSTC)</li>
@@ -263,7 +312,7 @@ const BridgingOpenWorkPermitLP = () => {
                     non-Express Entry application for permanent residence
                     submitted by mail or online under one of the following
                     classes or pilots:
-                    <ul  className={styles.subList}>
+                    <ul className={styles.subList}>
                       <li>Caring for children</li>
                       <li>Caring for people with high medical needs</li>
                       <li>Agri-Food Pilot (AFP)</li>
@@ -282,7 +331,11 @@ const BridgingOpenWorkPermitLP = () => {
               </li>
             </ul>
           </section>
-          <section className={`${styles.application} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[3] = el} >
+          <section
+            className={`${styles.application} ${styles.section}`}
+            id="how-to-apply"
+            ref={(el) => (sectionsRef.current[3] = el)}
+          >
             <h2>How to apply for Bridging Open Work Permit:</h2>
             <ol>
               <li>
@@ -300,23 +353,65 @@ const BridgingOpenWorkPermitLP = () => {
               <li>Wait for IRCC to process your application.</li>
             </ol>
           </section>
-          <section  className={`${styles.advice} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[4] = el}   >
+
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="why-choose-us"
+            ref={(el) => (sectionsRef.current[9] = el)}
+          >
+            <h2>Why Choose Us?</h2>
+            <ul>
+              <li>
+                <strong>Experienced Team:</strong> Over a decade of experience
+                in handling BCPNP applications with a high success rate.
+              </li>
+              <li>
+                <strong>Tailored Approach:</strong> Personalized services and
+                strategies based on your specific case.
+              </li>
+              <li>
+                <strong>High Success Rate:</strong> Proven track record using
+                case law and precedents for positive results.
+              </li>
+              <li>
+                <strong>Comprehensive Support:</strong> Assistance from the
+                start of the application process to obtaining your PR.
+              </li>
+            </ul>
+          </section>
+          <section
+            className={`${styles.advice} ${styles.section}`}
+            id="why-choose-us"
+            ref={(el) => (sectionsRef.current[4] = el)}
+          >
             <h2>Still not sure?</h2>
             <p>
-            If you have received a refusal for any of the reasons mentioned above, do not worry. With over a decade of experience, we specialize in previously refused cases. While we don't provide jobs for LMIA, we can certainly assist you if you have a job offer. We have obtained approvals for clients who had multiple previous refusals. We achieve this with a tailored approach to your specific case, addressing each concern that the officer has listed in previous refusals. We use case law and find similar cases to your circumstances that had positive results, and we use them as precedents in cases we work on. This is why we have a high success rate. 
-
+              If you have received a refusal for any of the reasons mentioned
+              above, do not worry. With over a decade of experience, we
+              specialize in previously refused cases. While we don't provide
+              jobs for LMIA, we can certainly assist you if you have a job
+              offer. We have obtained approvals for clients who had multiple
+              previous refusals. We achieve this with a tailored approach to
+              your specific case, addressing each concern that the officer has
+              listed in previous refusals. We use case law and find similar
+              cases to your circumstances that had positive results, and we use
+              them as precedents in cases we work on. This is why we have a high
+              success rate.
             </p>
             <p>
-            At Brightlight Immigration, we have a dedicated team of visa application specialists who can assist you from the start of the application process to obtaining your visa. Start your process now. 
+              At Brightlight Immigration, we have a dedicated team of visa
+              application specialists who can assist you from the start of the
+              application process to obtaining your visa. Start your process
+              now.
             </p>
             <button
-          onClick={() =>
-            (window.location.href =
-              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-          }
-        >
-          Book Appointment
-        </button>
+              onClick={() =>
+                (window.location.href =
+                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+              }
+            >
+              Book Appointment
+            </button>
           </section>
         </div>
       </div>

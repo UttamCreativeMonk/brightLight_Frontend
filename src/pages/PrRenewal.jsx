@@ -60,10 +60,18 @@ let PrRenewal = () => {
             </div>
             <div className={styles.bannerHeadingRotatePara}>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("refusal-reason")}>Refusal Reason</p>
-              <p onClick={() => scrollToSection("appointment")}>Book Appointment</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
+              <p onClick={() => scrollToSection("refusal-reason")}>
+                Refusal Reason
+              </p>
+              <p onClick={() => scrollToSection("appointment")}>
+                Book Appointment
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -71,8 +79,41 @@ let PrRenewal = () => {
         </div>
       </div>
 
-      <div className={`${styles.section} ${styles.section}`}  id="eligibility" ref={(el) => sectionsRef.current[0] = el}    >
-        <h2  className={styles.sectionTitle} >
+      <section
+        className={`${styles.section} ${styles.section}`}
+        id="about-program"
+        ref={(el) => (sectionsRef.current[11] = el)}
+      >
+        <header className={styles.header}>
+          <h1>Permanent Residency Renewal </h1>
+        </header>
+
+        <p className={styles.discription}>
+          Your PR card is proof that you have the right to live and study, just
+          like a Canadian citizen. but, like taking care of something valuable,
+          your PR card needs attention to keep working well. Renewing it ensures
+          you can keep being a permanent resident and enjoy all the wonderful
+          things Canada has to offer.
+        </p>
+        <p className={styles.discription}>
+          Your PR card is your proof of status and allows you to re-enter Canada
+          after traveling abroad. Most new PR cards are valid for 5 years and
+          they are supposed to be renewed before they expire or within 90 days
+          of their expiry date. However, you don't have to keep renewing it
+          forever. After 5 years of being a Canadian PR, you can apply for
+          Canadian citizenship. This means you will get a Canadian passport, and
+          you will be able to vote in all Canadian elections. Check our{" "}
+          <a href="/citizenship">Citizenship</a> page to look for your
+          eligibility.
+        </p>
+      </section>
+
+      <div
+        className={`${styles.section} ${styles.section}`}
+        id="eligibility"
+        ref={(el) => (sectionsRef.current[0] = el)}
+      >
+        <h2 className={styles.sectionTitle}>
           Eligibility for Permanent Residency Renewal
         </h2>
         <ul className={styles.sectionContent}>
@@ -96,8 +137,12 @@ let PrRenewal = () => {
         </ul>
       </div>
 
-      <div className={`${styles.section} ${styles.section}`}  id="how-to-apply" ref={(el) => sectionsRef.current[1] = el}    >
-        <h2 className={styles.sectionTitle} >
+      <div
+        className={`${styles.section} ${styles.section}`}
+        id="how-to-apply"
+        ref={(el) => (sectionsRef.current[1] = el)}
+      >
+        <h2 className={styles.sectionTitle}>
           How to Apply for Permanent Residency Renewal
         </h2>
         <p className={styles.sectionContent}>
@@ -110,11 +155,26 @@ let PrRenewal = () => {
         </p>
       </div>
 
-      <div className={`${styles.section} ${styles.section}`}  id="refusal-reason" ref={(el) => sectionsRef.current[2] = el}  >
+      <div
+        className={`${styles.section} ${styles.section}`}
+        id="refusal-reason"
+        ref={(el) => (sectionsRef.current[2] = el)}
+      >
         <h2 className={styles.sectionTitle}>
           Reasons for Refusal of Permanent Residency Renewal
         </h2>
-        <ul className={styles.sectionContent}>
+        <p>
+          Don’t forget to avoid these common PR Renewal refusal reasons and
+          increase your chances of approval.
+        </p>
+        <ul
+          style={{
+            marginLeft: "40px",
+            marginTop: "20px",
+            marginBottom: "10px",
+          }}
+          className={styles.sectionContent}
+        >
           <li>You did not complete two years out of the last five years.</li>
           <li>
             You are not physically present in Canada when you apply for renewal.
@@ -129,19 +189,52 @@ let PrRenewal = () => {
         </ul>
       </div>
 
-      <div className={`${styles.section} ${styles.section}`}  id="appointment" ref={(el) => sectionsRef.current[3] = el}     >
-        <h2 className={styles.sectionTitle}>Book Appointment</h2>
+      <section
+        className={`${styles.section} ${styles.section}`}
+        id="why-choose-us"
+        ref={(el) => (sectionsRef.current[9] = el)}
+      >
+        <h2>Why Choose Us?</h2>
+        <ul>
+          <li>
+            <strong>Experienced Team:</strong> Over a decade of experience in
+            handling BCPNP applications with a high success rate.
+          </li>
+          <li>
+            <strong>Tailored Approach:</strong> Personalized services and
+            strategies based on your specific case.
+          </li>
+          <li>
+            <strong>High Success Rate:</strong> Proven track record using case
+            law and precedents for positive results.
+          </li>
+          <li>
+            <strong>Comprehensive Support:</strong> Assistance from the start of
+            the application process to obtaining your PR.
+          </li>
+        </ul>
+      </section>
+
+      <div
+        className={`${styles.section} ${styles.section}`}
+        id="appointment"
+        ref={(el) => (sectionsRef.current[3] = el)}
+      >
+        <h2 className={styles.sectionTitle}>Still not sure?</h2>
         <p className={styles.sectionContent}>
-          Still not sure? If you have received a refusal for any of the reasons
-          mentioned above, do not worry. With over a decade of experience, we
-          specialize in previously refused cases. We have got approvals for
-          clients who had multiple previous refusals. We achieve this with a
-          tailored approach to your specific case, addressing each concern that
-          the officer has listed in previous refusals. This is why we have a
-          high success rate. At Brightlight Immigration, we have a dedicated
-          team of visa application specialists who can assist you from the start
-          of the application process all the way to obtaining your visa. Start
-          your PR Card renewal process now.
+          If you have received a refusal for any of the reasons mentioned above,
+          do not worry. With over a decade of experience, we specialize in
+          previously refused cases. We have got approvals for clients who had
+          multiple previous refusals. We achieve this with a tailored approach
+          to your specific case, addressing each concern that the officer has
+          listed in previous refusals. This is why we have a high success rate.
+        </p>
+        <p style={{ marginTop: "20px" }}>
+          {" "}
+          At Brightlight Immigration, we have a dedicated team of visa
+          application specialists who can assist you from the start of the
+          application process all the way to obtaining your visa. Start your PR
+          Card renewal process now.
         </p>
         <button
           onClick={() =>

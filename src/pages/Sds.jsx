@@ -214,7 +214,7 @@ const Sds = () => {
             </tbody>
           </table>
           <p>To be eligible, you must:</p>
-          <ul style={{marginLeft: "40px"}}>
+          <ul style={{ marginLeft: "40px" }}>
             <li>
               Hold a provincial attestation letter (PAL) from the province or
               territory where you plan to study.
@@ -238,7 +238,7 @@ const Sds = () => {
             Depending on your study location and personal circumstances, you may
             need to:
           </p>
-          <ul style={{marginLeft: "40px"}}>
+          <ul style={{ marginLeft: "40px" }}>
             <li>
               Obtain a Certificat d’acceptation du Québec (CAQ) if planning to
               study in Quebec.
@@ -499,7 +499,7 @@ const Sds = () => {
             accompany you to Canada, they may also qualify for faster processing
             of the following:
           </p>
-          <ul style={{marginLeft: "40px"}}> 
+          <ul style={{ marginLeft: "40px" }}>
             <li>Visitor Visa</li>
             <li>Work Permit</li>
             <li>Study Permit</li>
@@ -656,6 +656,32 @@ const Sds = () => {
             the decision. For any questions, reach out directly to the visa
             office.
           </p>
+        </section>
+
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[9] = el)}
+        >
+          <h2>Why Choose Us?</h2>
+          <ul>
+            <li>
+              <strong>Experienced Team:</strong> Over a decade of experience in
+              handling BCPNP applications with a high success rate.
+            </li>
+            <li>
+              <strong>Tailored Approach:</strong> Personalized services and
+              strategies based on your specific case.
+            </li>
+            <li>
+              <strong>High Success Rate:</strong> Proven track record using case
+              law and precedents for positive results.
+            </li>
+            <li>
+              <strong>Comprehensive Support:</strong> Assistance from the start
+              of the application process to obtaining your PR.
+            </li>
+          </ul>
         </section>
 
         <section

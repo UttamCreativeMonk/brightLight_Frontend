@@ -7,7 +7,6 @@ import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
 import OurProcess from "../sections/OurProcess";
 
-
 const PathwaysForCaregiver = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -44,7 +43,6 @@ const PathwaysForCaregiver = () => {
     };
   }, []);
 
-
   return (
     <>
       <Navbar1 />
@@ -57,13 +55,19 @@ const PathwaysForCaregiver = () => {
           >
             <div
               className={styles.bannerHeadingRotate}
-              onClick={toggleDropdown}>
+              onClick={toggleDropdown}
+            >
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
-              <p onClick={() => scrollToSection("why-choose-us")}> Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                {" "}
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -72,17 +76,36 @@ const PathwaysForCaregiver = () => {
       </div>
 
       <div className={styles.container}>
-        <h1 className={`${styles.title} ${styles.section}`} id="testing0" ref={(el) => sectionsRef.current[0] = el}>Pathways for Caregivers</h1>
-        <p className={`${styles.description} ${styles.section}`} id="testing1" ref={(el) => sectionsRef.current[1] = el}>
+        <h1
+          className={`${styles.title} ${styles.section}`}
+          id="testing0"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
+          Pathways for Caregivers
+        </h1>
+        <p
+          className={`${styles.description} ${styles.section}`}
+          id="testing1"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
           The Canadian government is actively welcoming foreign residents with
           the right skills and experience to fill the country's critical need
           for caregivers. IRCC defines caregivers as the workers who provide
           care for children, seniors, or people with disabilities or illness.
         </p>
-        <h2 className={`${styles.subtitle} ${styles.section}`} id="benifits" ref={(el) => sectionsRef.current[2] = el}>
+        <h2
+          style={{ marginTop: "50px" }}
+          className={`${styles.subtitle} ${styles.section}`}
+          id="benifits"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
           Benefits of Pathways for Caregivers:
         </h2>
-        <ul  className={`${styles.list} ${styles.section}`} id="testing1" ref={(el) => sectionsRef.current[3] = el}>
+        <ul
+          className={`${styles.list} ${styles.section}`}
+          id="testing1"
+          ref={(el) => (sectionsRef.current[3] = el)}
+        >
           <li>
             Canadian families can hire a full-time dedicated caregiver for the
             person in need, thereby creating a less stressful environment when
@@ -107,10 +130,19 @@ const PathwaysForCaregiver = () => {
             process.
           </li>
         </ul>
-        <h2 className={`${styles.subtitle} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[4] = el} >
+        <h2
+          style={{ marginTop: "50px" }}
+          className={`${styles.subtitle} ${styles.section}`}
+          id="testing2"
+          ref={(el) => (sectionsRef.current[4] = el)}
+        >
           Here are the temporary residence pathways available for caregivers:
         </h2>
-        <ul className={`${styles.list} ${styles.section}`} id="testing3" ref={(el) => sectionsRef.current[5] = el}>
+        <ul
+          className={`${styles.list} ${styles.section}`}
+          id="testing3"
+          ref={(el) => (sectionsRef.current[5] = el)}
+        >
           <li>
             <a className={styles.link} href="/in-home-caregiver-program-lp">
               In Home Caregiver program
@@ -119,29 +151,53 @@ const PathwaysForCaregiver = () => {
             Assessment (LMIA)
           </li>
         </ul>
-        <h2  className={`${styles.subtitle} ${styles.section}`} id="testing4" ref={(el) => sectionsRef.current[6] = el}>
+        <h2
+          style={{ marginTop: "50px" }}
+          className={`${styles.subtitle} ${styles.section}`}
+          id="testing4"
+          ref={(el) => (sectionsRef.current[6] = el)}
+        >
           Here are the permanent residence pathways available for caregivers:
         </h2>
-        <ul className={`${styles.list} ${styles.section}`} id="testing5" ref={(el) => sectionsRef.current[7] = el}>
+        <ul
+          className={`${styles.list} ${styles.section}`}
+          id="testing5"
+          ref={(el) => (sectionsRef.current[7] = el)}
+        >
           <li>
-            <a className={styles.link} href="/permanent-residency">
+            <a
+              className={styles.link}
+              href="/permanent-residence-pathways-caregivers-lp"
+            >
               Category A – Gaining experience
             </a>
             - For Home Child-Care Provider and Home Support Worker without
             Canadian Experience
           </li>
           <li>
-            <a className={styles.link} href="/permanent-residency">
+            <a
+              className={styles.link}
+              href="/permanent-residence-pathways-caregivers-lp"
+            >
               Category B – Direct to permanent residence
             </a>
             - For Home Child-Care Provider and Home Support Worker with Canadian
             Experience
           </li>
         </ul>
-        <h2 className={`${styles.subtitle} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[8] = el}>
+        <h2
+          style={{ marginTop: "50px" }}
+          className={`${styles.subtitle} ${styles.section}`}
+          id="how-to-apply"
+          ref={(el) => (sectionsRef.current[8] = el)}
+        >
           How to apply for Pathways for Caregivers?
         </h2>
-        <ol className={`${styles.list} ${styles.section}`} id="testing6" ref={(el) => sectionsRef.current[9] = el}>
+        <ol
+          className={`${styles.list} ${styles.section}`}
+          id="testing6"
+          ref={(el) => (sectionsRef.current[9] = el)}
+        >
           <li className={styles.listOl}>
             Select the right NOC occupation as per your qualifications - HCCP or
             HSWP
@@ -156,27 +212,65 @@ const PathwaysForCaregiver = () => {
             process.
           </li>
         </ol>
+
+        <section
+          style={{ marginTop: "50px" }}
+          className={`${styles.section} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[15] = el)}
+        >
+          <h2 style={{ fontSize: "24px", marginBottom: "20px" }}>
+            Why Choose Us?
+          </h2>
+          <ul>
+            <li>
+              <strong>Experienced Team:</strong> Over a decade of experience in
+              handling BCPNP applications with a high success rate.
+            </li>
+            <li>
+              <strong>Tailored Approach:</strong> Personalized services and
+              strategies based on your specific case.
+            </li>
+            <li>
+              <strong>High Success Rate:</strong> Proven track record using case
+              law and precedents for positive results.
+            </li>
+            <li>
+              <strong>Comprehensive Support:</strong> Assistance from the start
+              of the application process to obtaining your PR.
+            </li>
+          </ul>
+        </section>
         <section>
-        <button className={styles.button1}
-          onClick={() =>
-            (window.location.href =
-              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-          }>
-          Book Appointment
-        </button>
+          <button
+            className={styles.button1}
+            onClick={() =>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
+          >
+            Book Appointment
+          </button>
         </section>
       </div>
-      <h2 className={`${styles.lastSubtitle} ${styles.section}`} id="testing7" ref={(el) => sectionsRef.current[10] = el}>Here’s how we can help you:</h2>
-      <OurProcess/>
+      <h2
+        style={{ textAlign: "center" }}
+        className={`${styles.lastSubtitle} ${styles.section}`}
+        id="testing7"
+        ref={(el) => (sectionsRef.current[10] = el)}
+      >
+        Here’s how we can help you:
+      </h2>
+      <OurProcess />
 
       <div id="faqs">
-        <FAQ/>
+        <FAQ />
       </div>
-      <div id="testimonials"> 
-        <Testimonials/>
+      <div id="testimonials">
+        <Testimonials />
       </div>
       <div id="blogs">
-        <RecentBlogs/>
+        <RecentBlogs />
       </div>
       <Footer1 />
     </>

@@ -201,10 +201,17 @@ const StudentVisa = () => {
           id="how-to-apply"
           ref={(el) => (sectionsRef.current[2] = el)}
         >
-          <h2 className={styles.subheading} id="how-to-apply">
+          <h2
+            style={{ textAlign: "left" }}
+            className={styles.subheading}
+            id="how-to-apply"
+          >
             Start Your Journey
           </h2>
-          <p className={styles.callToActionText}>
+          <p
+            style={{ textAlign: "left", marginBottom: "20px" }}
+            className={styles.callToActionText}
+          >
             Ready to take the next step in your educational journey? Whether
             you’re planning to study from abroad or already in Canada, our
             expert team can guide you through the process and ensure you meet
@@ -219,6 +226,32 @@ const StudentVisa = () => {
           >
             Book a Consultation
           </button>
+        </section>
+
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[9] = el)}
+        >
+          <h2 style={{ textAlign: "left" }}>Why Choose Us?</h2>
+          <ul>
+            <li>
+              <strong>Experienced Team:</strong> Over a decade of experience in
+              handling BCPNP applications with a high success rate.
+            </li>
+            <li>
+              <strong>Tailored Approach:</strong> Personalized services and
+              strategies based on your specific case.
+            </li>
+            <li>
+              <strong>High Success Rate:</strong> Proven track record using case
+              law and precedents for positive results.
+            </li>
+            <li>
+              <strong>Comprehensive Support:</strong> Assistance from the start
+              of the application process to obtaining your PR.
+            </li>
+          </ul>
         </section>
       </div>
 

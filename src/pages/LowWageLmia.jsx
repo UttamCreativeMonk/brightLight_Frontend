@@ -20,8 +20,6 @@ const LowWageLmia = () => {
     }
   };
 
-  
-
   const sectionsRef = useRef([]);
 
   const handleScroll = () => {
@@ -61,13 +59,21 @@ const LowWageLmia = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
               <p onClick={() => scrollToSection("noc")}>NOC</p>
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
               <p onClick={() => scrollToSection("differences")}>Differences</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -76,7 +82,11 @@ const LowWageLmia = () => {
       </div>
 
       <div className={styles.container}>
-        <header className={`${styles.header} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
+        <header
+          className={`${styles.header} ${styles.section}`}
+          id="about-program"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
           <h1>Low-wage/High-wage LMIA</h1>
         </header>
         <section className={styles.intro}>
@@ -86,13 +96,23 @@ const LowWageLmia = () => {
             low-wage or high-wage LMIA, you must understand the following three
             key aspects related to wages in Canada.
           </p>
-          <ul style={{marginTop: "0px", marginLeft: "40px", marginBottom: "30px"}}>
+          <ol
+            style={{
+              marginTop: "0px",
+              marginLeft: "40px",
+              marginBottom: "30px",
+            }}
+          >
             <li>National Occupation Classification Code</li>
             <li>Prevailing median wage</li>
             <li>Provincial median wage</li>
-          </ul>
+          </ol>
         </section>
-        <section className={`${styles.noc} ${styles.section}`} id="noc" ref={(el) => sectionsRef.current[1] = el}    >
+        <section
+          className={`${styles.noc} ${styles.section}`}
+          id="noc"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
           <h2>1. National Occupation Classification NOC Code:</h2>
           <p>
             The National Occupational Classification is a database developed by
@@ -101,7 +121,11 @@ const LowWageLmia = () => {
             level.
           </p>
         </section>
-        <section className={`${styles.prevailingWage} ${styles.section}`} id="testing" ref={(el) => sectionsRef.current[2] = el}   >
+        <section
+          className={`${styles.prevailingWage} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
           <h2>2. Prevailing Median Wage</h2>
           <p>
             Government of Canada’s official Job Bank website lists the
@@ -111,7 +135,11 @@ const LowWageLmia = () => {
             this wage with what the employer will offer to their foreign worker.
           </p>
         </section>
-        <section  className={`${styles.provincialWage} ${styles.section}`} id="testing1" ref={(el) => sectionsRef.current[3] = el}       >
+        <section
+          className={`${styles.provincialWage} ${styles.section}`}
+          id="testing1"
+          ref={(el) => (sectionsRef.current[3] = el)}
+        >
           <h2>3. Provincial Median Wage</h2>
           <p>
             Employment and Social Development Canada (ESDC) department updates
@@ -192,7 +220,11 @@ const LowWageLmia = () => {
             </a>
           </p>
         </section>
-        <section  className={`${styles.highWageLMIA} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[4] = el}   >
+        <section
+          className={`${styles.highWageLMIA} ${styles.section}`}
+          id="testing2"
+          ref={(el) => (sectionsRef.current[4] = el)}
+        >
           <h2>High-wage LMIA</h2>
           <p>
             This LMIA is for occupations that pay an hourly wage equal to or
@@ -203,7 +235,11 @@ const LowWageLmia = () => {
             Canadians/PR.
           </p>
         </section>
-        <section   className={`${styles.lowWageLMIA} ${styles.section}`} id="testing4" ref={(el) => sectionsRef.current[5] = el}  >
+        <section
+          className={`${styles.lowWageLMIA} ${styles.section}`}
+          id="testing4"
+          ref={(el) => (sectionsRef.current[5] = el)}
+        >
           <h2>Low-wage LMIA</h2>
           <p>
             This LMIA is for occupations that pay an hourly wage that is below
@@ -212,7 +248,11 @@ const LowWageLmia = () => {
             can hire on low-wage LMIAs.
           </p>
         </section>
-        <section className={`${styles.benefits} ${styles.section}`} id="benifits" ref={(el) => sectionsRef.current[6] = el}  >
+        <section
+          className={`${styles.benefits} ${styles.section}`}
+          id="benifits"
+          ref={(el) => (sectionsRef.current[6] = el)}
+        >
           <h2>Benefits of Low-wage/High-wage LMIA:</h2>
           <ul>
             <li>
@@ -237,7 +277,11 @@ const LowWageLmia = () => {
             </li>
           </ul>
         </section>
-        <section  className={`${styles.applicationSteps} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[7] = el}   >
+        <section
+          className={`${styles.applicationSteps} ${styles.section}`}
+          id="how-to-apply"
+          ref={(el) => (sectionsRef.current[7] = el)}
+        >
           <h2>How to Apply for Low-wage/High-wage LMIA:</h2>
           <ol>
             <li>
@@ -254,7 +298,13 @@ const LowWageLmia = () => {
               each LMIA type. Job advertisement postings (All advertisements
               must be active for 4 weeks before submission). Your LMIA job
               posting must include the following information:
-              <ul style={{marginTop: "20px", marginLeft: "40px", marginBottom: "30px"}}>
+              <ul
+                style={{
+                  marginTop: "20px",
+                  marginLeft: "40px",
+                  marginBottom: "30px",
+                }}
+              >
                 <li>Company name and business address</li>
                 <li>Job title</li>
                 <li>
@@ -298,7 +348,11 @@ const LowWageLmia = () => {
             </li>
           </ol>
         </section>
-        <section className={`${styles.differences} ${styles.section}`} id="differences" ref={(el) => sectionsRef.current[8] = el}    >
+        <section
+          className={`${styles.differences} ${styles.section}`}
+          id="differences"
+          ref={(el) => (sectionsRef.current[8] = el)}
+        >
           <h2>Differences Between High-Wage and Low-Wage Positions</h2>
           <table className={styles.differencesTable}>
             <thead>
@@ -414,17 +468,20 @@ const LowWageLmia = () => {
             </tbody>
           </table>
         </section>
-        <section className={`${styles.refusalReasons} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[9] = el}   >
+        <section
+          className={`${styles.refusalReasons} ${styles.section}`}
+          id="refusal-reasons"
+          ref={(el) => (sectionsRef.current[9] = el)}
+        >
           <h2>
             Common Reasons for Refusal of High-Wage and Low-Wage Positions:
           </h2>
-          <h4>Over the years, Service Canada officers have become very strict about the employers meeting the requirements of the program. 
-          </h4>
           <h4>
-          Please see below the common reasons for refusals:
-
+            Over the years, Service Canada officers have become very strict
+            about the employers meeting the requirements of the program.
           </h4>
-          <ul style={{marginLeft: "40px"}}> 
+          <h4>Please see below the common reasons for refusals:</h4>
+          <ul style={{ marginLeft: "40px" }}>
             <li>
               Failure to perform or document minimum recruitment requirements.
             </li>
@@ -468,7 +525,36 @@ const LowWageLmia = () => {
             </li>
           </ul>
         </section>
-        <section className={`${styles.consultation} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[10] = el}  >
+
+        <section
+          className={`${styles.section} ${styles.section}`}
+          ref={(el) => (sectionsRef.current[65] = el)}
+        >
+          <h2>Why Choose Us?</h2>
+          <ul>
+            <li>
+              <strong>Experienced Team:</strong> Over a decade of experience in
+              handling BCPNP applications with a high success rate.
+            </li>
+            <li>
+              <strong>Tailored Approach:</strong> Personalized services and
+              strategies based on your specific case.
+            </li>
+            <li>
+              <strong>High Success Rate:</strong> Proven track record using case
+              law and precedents for positive results.
+            </li>
+            <li>
+              <strong>Comprehensive Support:</strong> Assistance from the start
+              of the application process to obtaining your PR.
+            </li>
+          </ul>
+        </section>
+        <section
+          className={`${styles.consultation} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[10] = el)}
+        >
           <h2>Still not sure?</h2>
           <p>
             If you have received a refusal for any of the reasons mentioned
@@ -483,22 +569,22 @@ const LowWageLmia = () => {
             precedents in cases we work on. This is why we have a high success
             rate.
           </p>
-          <p style={{marginTop: "20px"}}>
+          <p style={{ marginTop: "20px" }}>
             At Brightlight Immigration, we have a dedicated team of visa
             application specialists who can assist you from the start of the
             application process to obtaining your visa. Start your process now.
           </p>
           <button
-          onClick={() =>
-            (window.location.href =
-              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-          }
-        >
-          Book Appointment
-        </button>
+            onClick={() =>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
+          >
+            Book Appointment
+          </button>
         </section>
       </div>
-      
+
       <div id="faqs">
         <FAQ />
       </div>

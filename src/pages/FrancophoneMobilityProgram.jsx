@@ -111,7 +111,7 @@ const FrancophoneMobilityProgram = () => {
             French-speaking talent, this program operates outside of Quebec and
             provides unique advantages. Let’s explore the key details:
           </h4>
-          <ul style={{marginLeft: "40px"}}>
+          <ul style={{ marginLeft: "40px" }}>
             <li>
               <strong>No LMIA Required:</strong> Unlike traditional work
               permits, the <strong>Mobilité Francophone</strong> stream operates
@@ -160,7 +160,9 @@ const FrancophoneMobilityProgram = () => {
             To qualify for <strong>Mobilité Francophone</strong>, applicants
             must meet the following conditions:
           </p>
-          <ul style={{marginLeft: "40px", marginTop: "20px"}}>
+          <ol
+            style={{ marginLeft: "40px", marginTop: "20px", lineHeight: "2" }}
+          >
             <li>
               <strong>Job Offer:</strong> Must be from outside Quebec (anywhere
               else in Canada). Primary agricultural work is not covered.
@@ -180,7 +182,7 @@ const FrancophoneMobilityProgram = () => {
               <strong> Canadian Language Benchmark (CLB) 5 or higher </strong>{" "}
               is the threshold.
             </li>
-          </ul>
+          </ol>
           <button
             onClick={() => (window.location.href = "/french-targeted-draw")}
             className={styles.tefButton}
@@ -195,17 +197,17 @@ const FrancophoneMobilityProgram = () => {
           ref={(el) => (sectionsRef.current[3] = el)}
         >
           <h2>Employer Requirements for the Francophone Mobility Program</h2>
-          <ul>
-            <li>
+          <ol>
+            <li style={{marginBottom: "10px"}}>
               <strong>Job Offer:</strong> Issue a job offer at a reasonable wage
               rate within the province of work.
             </li>
-            <li>
+            <li style={{marginBottom: "10px"}}>
               <strong>LMIA Exempt Code:</strong> Request the LMIA exempt code
               for the job offer and work permit application. Employer compliance
               fee is $230.
             </li>
-            <li>
+            <li style={{marginBottom: "10px"}}>
               <strong>Proof of Operations:</strong> Provide evidence of
               operations, payroll, and income to justify the hire and the
               position.
@@ -214,7 +216,7 @@ const FrancophoneMobilityProgram = () => {
               <strong>Work Location Identification:</strong> Identify the work
               location for the job offer and the foreign worker.
             </li>
-          </ul>
+          </ol>
         </section>
 
         <section
@@ -229,8 +231,11 @@ const FrancophoneMobilityProgram = () => {
             duration is determined by whichever of the following dates comes
             earlier:
           </p>
-          <ul style={{marginLeft: "40px", marginTop: "20px"}}>
-            <li>The expiration date of the foreign worker’s passport <strong>OR</strong></li>
+          <ul style={{ marginLeft: "40px", marginTop: "20px" }}>
+            <li>
+              The expiration date of the foreign worker’s passport{" "}
+              <strong>OR</strong>
+            </li>
             <li>
               The duration specified in the job offer issued by the employer.
             </li>
@@ -245,9 +250,11 @@ const FrancophoneMobilityProgram = () => {
           <h2>
             Family Members and Dependents for Francophone Mobility Program
           </h2>
-          <p>For the <strong>Francophone Mobility Program</strong> , family members and dependents have specific options:
+          <p>
+            For the <strong>Francophone Mobility Program</strong> , family
+            members and dependents have specific options:
           </p>
-          <ul style={{marginLeft: "40px", marginTop: "10px"}}>
+          <ul style={{ marginLeft: "40px", marginTop: "10px" }}>
             <li>
               <strong>Dependent Children:</strong> Can apply for study permits.
             </li>
@@ -266,44 +273,72 @@ const FrancophoneMobilityProgram = () => {
         >
           <h2>Application Process for Francophone Mobility Program</h2>
           <ol>
-            <li> 
+            <li>
               <strong>Job Search:</strong>
-              <ul style={{marginLeft: "40px", marginTop: "20px", marginBottom: "20px"}}>
+              <ul
+                style={{
+                  marginLeft: "40px",
+                  marginTop: "20px",
+                  marginBottom: "20px",
+                }}
+              >
                 <li>
-                Identify opportunities: Utilize specialized job platforms and the LinkedIn network to find job offers that align with your profile in regions outside Quebec.
-
+                  Identify opportunities: Utilize specialized job platforms and
+                  the LinkedIn network to find job offers that align with your
+                  profile in regions outside Quebec.
                 </li>
                 <li>
-                  <strong>Tip:</strong> Customize your search by applying filters for TEER 0 to TEER 5 positions and specifying your preference for French. Remember agriculture jobs are not covered under this program.
-
+                  <strong>Tip:</strong> Customize your search by applying
+                  filters for TEER 0 to TEER 5 positions and specifying your
+                  preference for French. Remember agriculture jobs are not
+                  covered under this program.
                 </li>
               </ul>
             </li>
             <li>
               <strong>Preparing Your Application:</strong>
-              <ul style={{marginLeft: "40px", marginTop: "20px", marginBottom: "20px"}}>
+              <ul
+                style={{
+                  marginLeft: "40px",
+                  marginTop: "20px",
+                  marginBottom: "20px",
+                }}
+              >
                 <li>
-                <strong>CV and Cover Letter: </strong> Adapt your CV and cover letter to the Canadian format, emphasizing your fluency in French and relevant professional experience.
-
+                  <strong>CV and Cover Letter: </strong> Adapt your CV and cover
+                  letter to the Canadian format, emphasizing your fluency in
+                  French and relevant professional experience.
                 </li>
                 <li>
-                  <strong>Tip:</strong> Highlight concrete examples of professional achievements to showcase your value to potential Canadian employers.
-
+                  <strong>Tip:</strong> Highlight concrete examples of
+                  professional achievements to showcase your value to potential
+                  Canadian employers.
                 </li>
               </ul>
             </li>
             <li>
               <strong>File Submission:</strong>
-              <ul style={{marginLeft: "40px", marginTop: "20px", marginBottom: "20px"}}>
+              <ul
+                style={{
+                  marginLeft: "40px",
+                  marginTop: "20px",
+                  marginBottom: "20px",
+                }}
+              >
                 <li>
-                <strong>Eligibility Criteria: </strong>   Ensure that you meet all eligibility criteria before submitting your application.
-
-                </li>
-                <li> <strong>Necessary Documents:</strong> Compile essential documents, including proof of language skills, professional qualifications, and a valid job offer.
+                  <strong>Eligibility Criteria: </strong> Ensure that you meet
+                  all eligibility criteria before submitting your application.
                 </li>
                 <li>
-                  <strong>Tip:</strong>  Review your application thoroughly to avoid errors or omissions that could delay or jeopardize the process.
-
+                  {" "}
+                  <strong>Necessary Documents:</strong> Compile essential
+                  documents, including proof of language skills, professional
+                  qualifications, and a valid job offer.
+                </li>
+                <li>
+                  <strong>Tip:</strong> Review your application thoroughly to
+                  avoid errors or omissions that could delay or jeopardize the
+                  process.
                 </li>
               </ul>
             </li>
@@ -317,13 +352,41 @@ const FrancophoneMobilityProgram = () => {
         >
           <h2>Work Permit Renewals for the Mobilité Francophone Stream</h2>
           <ul>
-            <h4>If you currently hold a work permit issued through the Mobilité Francophone stream, you can easily renew it. Here’s how:
+            <h4>
+              If you currently hold a work permit issued through the Mobilité
+              Francophone stream, you can easily renew it. Here’s how:
             </h4>
             <li>
               <strong>Submission Options:</strong> Renewals can be submitted by
               mail or online. Existing permits under the discontinued
               “Significant benefit – Francophone destined to work outside of
               Quebec” category can be renewed through Mobilité Francophone.
+            </li>
+          </ul>
+        </section>
+
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[9] = el)}
+        >
+          <h2>Why Choose Us?</h2>
+          <ul>
+            <li>
+              <strong>Experienced Team:</strong> Over a decade of experience in
+              handling BCPNP applications with a high success rate.
+            </li>
+            <li>
+              <strong>Tailored Approach:</strong> Personalized services and
+              strategies based on your specific case.
+            </li>
+            <li>
+              <strong>High Success Rate:</strong> Proven track record using case
+              law and precedents for positive results.
+            </li>
+            <li>
+              <strong>Comprehensive Support:</strong> Assistance from the start
+              of the application process to obtaining your PR.
             </li>
           </ul>
         </section>

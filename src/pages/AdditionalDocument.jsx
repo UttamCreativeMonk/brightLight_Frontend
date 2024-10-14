@@ -24,7 +24,6 @@ const AdditionalDocument = () => {
   };
 
   useEffect(() => {
-
     fetch("https://brightlight-node.onrender.com/addDocMeta")
       .then((res) => {
         return res.json();
@@ -38,7 +37,6 @@ const AdditionalDocument = () => {
         console.log(error);
       });
   }, []);
-
 
   const sectionsRef = useRef([]);
 
@@ -62,11 +60,9 @@ const AdditionalDocument = () => {
     };
   }, []);
 
-
-
   return (
     <>
-    <Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle
@@ -123,10 +119,16 @@ const AdditionalDocument = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
               <p onClick={() => scrollToSection("key-points")}>Key Points</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -135,42 +137,51 @@ const AdditionalDocument = () => {
       </div>
 
       <div className={styles.container}>
-        <header className={styles.header} id="about-program"  >
+        <header className={styles.header} id="about-program">
           <h1>Reply to Additional Document Request</h1>
         </header>
         <main className={styles.mainContent}>
-          <section className={`${styles.section} ${styles.section}`} id="about"  ref={(el) => sectionsRef.current[0] = el}>
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="about"
+            ref={(el) => (sectionsRef.current[0] = el)}
+          >
             <h2>Don’t Worry, We’re Here to Help!</h2>
             <ul>
-            <li>
-              If you’re here, that means IRCC has already requested you to
-              submit additional documents for your Canadian Immigration
-              application. Don’t worry. This can happen at any stage of the
-              application process, and the specific documents requested will
-              vary depending on your case and program.
-            </li>
-            <li>
-              We know these requests can be stressful. Especially if you’ve
-              applied your application yourself. It's easy to forget something
-              or accidentally upload the wrong document. No worries, though! We
-              can help you out.
-            </li>
-            <li>
-              If you already got that "Acknowledgement of Receipt" (AOR) letter
-              with your application number and the Unique Client Identifier
-              (UCI) – you can just use IRCC's online form to upload the right
-              document.
-            </li>
-            <li>
-              Make sure you know what they need and why. Follow their
-              instructions to the letter, label your documents clearly, and get
-              them uploaded in the right format. The faster you get that missing
-              document submitted, the sooner things can keep moving along.
-            </li>
+              <li>
+                If you’re here, that means IRCC has already requested you to
+                submit additional documents for your Canadian Immigration
+                application. Don’t worry. This can happen at any stage of the
+                application process, and the specific documents requested will
+                vary depending on your case and program.
+              </li>
+              <li>
+                We know these requests can be stressful. Especially if you’ve
+                applied your application yourself. It's easy to forget something
+                or accidentally upload the wrong document. No worries, though!
+                We can help you out.
+              </li>
+              <li>
+                If you already got that "Acknowledgement of Receipt" (AOR)
+                letter with your application number and the Unique Client
+                Identifier (UCI) – you can just use IRCC's online form to upload
+                the right document.
+              </li>
+              <li>
+                Make sure you know what they need and why. Follow their
+                instructions to the letter, label your documents clearly, and
+                get them uploaded in the right format. The faster you get that
+                missing document submitted, the sooner things can keep moving
+                along.
+              </li>
             </ul>
           </section>
 
-          <section className={`${styles.section} ${styles.section}`} id="key-points" ref={(el) => sectionsRef.current[1] = el}    >
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="key-points"
+            ref={(el) => (sectionsRef.current[1] = el)}
+          >
             <h2>Key Points to Keep in Mind</h2>
             <ul>
               <li>
@@ -198,7 +209,11 @@ const AdditionalDocument = () => {
             </ul>
           </section>
 
-          <section  className={`${styles.section} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[2] = el}    >
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="why-choose-us"
+            ref={(el) => (sectionsRef.current[2] = el)}
+          >
             <h2>Still Not Sure?</h2>
             <p>
               If you have received a Request for an additional document, do not
@@ -214,13 +229,39 @@ const AdditionalDocument = () => {
               ambition, and we'll focus on making it happen smoothly.
             </p>
             <button
-          onClick={() =>
-            (window.location.href =
-              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-          }
-        >
-          Book Appointment
-        </button>
+              onClick={() =>
+                (window.location.href =
+                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+              }
+            >
+              Book Appointment
+            </button>
+          </section>
+
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="why-choose-us"
+            ref={(el) => (sectionsRef.current[9] = el)}
+          >
+            <h2>Why Choose Us?</h2>
+            <ul>
+              <li>
+                <strong>Experienced Team:</strong> Over a decade of experience
+                in handling BCPNP applications with a high success rate.
+              </li>
+              <li>
+                <strong>Tailored Approach:</strong> Personalized services and
+                strategies based on your specific case.
+              </li>
+              <li>
+                <strong>High Success Rate:</strong> Proven track record using
+                case law and precedents for positive results.
+              </li>
+              <li>
+                <strong>Comprehensive Support:</strong> Assistance from the
+                start of the application process to obtaining your PR.
+              </li>
+            </ul>
           </section>
         </main>
       </div>

@@ -136,7 +136,7 @@ const Pgwp = () => {
         >
           <h2>Eligibility Criteria for Post-Graduate Work Permit (PGWP)</h2>
           <p>Are you eligible for a PGWP? Let's find out.</p>
-          <ul style={{marginLeft: "40px"}}>
+          <ul style={{ marginLeft: "40px" }}>
             <li>
               <strong>Graduation from a Qualifying DLI:</strong> Be a foreign
               national who has graduated from a qualifying DLI and qualifying
@@ -181,14 +181,14 @@ const Pgwp = () => {
           </p>
           <p>You can apply for a PGWP from inside or outside Canada.</p>
           <p>Here’s what you will need to provide when you apply for a PGWP</p>
-          <ul style={{marginLeft: "40px"}}>
+          <ul style={{ marginLeft: "40px" }}>
             <li>
               <strong>Application Location:</strong> You can apply for a PGWP
               from inside or outside Canada.
             </li>
             <li>
               <strong>Required Documents:</strong>
-              <ul style={{marginTop: "10px", marginLeft: "40px"}}>
+              <ul style={{ marginTop: "10px", marginLeft: "40px" }}>
                 <li>A copy of your study permit.</li>
                 <li>
                   A copy of your final academic transcripts OR a letter from
@@ -212,7 +212,7 @@ const Pgwp = () => {
             Don’t forget to avoid these common PGWP refusal reasons and increase
             your chances of approval.
           </h4>
-          <ul style={{marginLeft: "40px"}}>
+          <ul style={{ marginLeft: "40px" }}>
             <li>Failure to meet the eligibility criteria set by IRCC.</li>
             <li>
               Not completing a full-time program of at least eight months at a
@@ -225,6 +225,32 @@ const Pgwp = () => {
             <li>
               Study permit expired before graduation without applying for an
               extension or restoration of status.
+            </li>
+          </ul>
+        </section>
+
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[9] = el)}
+        >
+          <h2>Why Choose Us?</h2>
+          <ul>
+            <li>
+              <strong>Experienced Team:</strong> Over a decade of experience in
+              handling BCPNP applications with a high success rate.
+            </li>
+            <li>
+              <strong>Tailored Approach:</strong> Personalized services and
+              strategies based on your specific case.
+            </li>
+            <li>
+              <strong>High Success Rate:</strong> Proven track record using case
+              law and precedents for positive results.
+            </li>
+            <li>
+              <strong>Comprehensive Support:</strong> Assistance from the start
+              of the application process to obtaining your PR.
             </li>
           </ul>
         </section>

@@ -7,7 +7,6 @@ import searchIcon from "../assets/search-gray.png";
 import ogImage from "../assets/ogImage.png";
 import { Helmet } from "react-helmet-async";
 
-
 let NewsDetails = () => {
   let { id } = useParams();
   let navigate = useNavigate();
@@ -48,11 +47,9 @@ let NewsDetails = () => {
 
   return (
     <>
-           <Helmet>
+      <Helmet>
         <title>
-          {blog?.metaTitle
-            ? blog?.metaTitle
-            : "Brightlight Immigration"}
+          {blog?.metaTitle ? blog?.metaTitle : "Brightlight Immigration"}
         </title>
         <meta
           name="description"
@@ -66,9 +63,7 @@ let NewsDetails = () => {
           name="title"
           property="og:title"
           content={
-            blog?.metaTitle
-              ? blog?.metaTitle
-              : "Brightlight Immigration"
+            blog?.metaTitle ? blog?.metaTitle : "Brightlight Immigration"
           }
         />
         <meta property="og:image" content={ogImage} />
@@ -81,7 +76,6 @@ let NewsDetails = () => {
               : "Discover the story behind Brightlight Immigration, our commitment to providing honest and accurate advice, and how our team can assist you with your immigration needs."
           }
         />
-
       </Helmet>
       <Navbar1 />
       <div className={styles.blogTopSection}>
@@ -93,7 +87,7 @@ let NewsDetails = () => {
         <div className={styles.blogImgSection}>
           <img src={blog.image} alt="News" />
         </div>
-        <div className={styles.blogSearchSection}>
+        <div className={styles.blogSearchSection1}>
           <div className={styles.searchDiv}>
             <input
               placeholder="Search News"
@@ -119,7 +113,6 @@ let NewsDetails = () => {
                 <a
                   href={`/news/${item._id}`}
                   key={item._id}
-                  style={{ backgroundImage: `url(${item.image})` }}
                   className={styles.recentBlog}
                 >
                   <h3>{item.news_heading}</h3>
@@ -127,12 +120,60 @@ let NewsDetails = () => {
               ))}
             </div>
           )}
+          <div className={styles.freeAssesmentSection}>
+            <h4>Start You Process Today With Us!</h4>
+            <p>Book A Free Assement With Us Right Now.</p>
+            <a href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj">
+              Free Assesment
+            </a>
+          </div>
         </div>
       </div>
       <div className={styles.blogDescriptionSection}>
         {blog.news_content ? (
           <div dangerouslySetInnerHTML={{ __html: blog.news_content }} />
         ) : null}
+      </div>
+      <div className={styles.blogSearchSection}>
+        <div className={styles.searchDiv}>
+          <input
+            placeholder="Search News"
+            value={searchQuery}
+            onChange={handleSearchChange}
+          />
+          <img
+            src={searchIcon}
+            onClick={handleSearchClick}
+            className={styles.searchIcon}
+            alt="Search"
+          />
+        </div>
+        <div className={styles.blogTagsSection}>
+          {blog.tag_1 && <p>{blog.tag_1}</p>}
+          {blog.tag_2 && <p>{blog.tag_2}</p>}
+          {blog.tag_3 && <p>{blog.tag_3}</p>}
+        </div>
+        {recentBlogs.length > 0 && (
+          <div className={styles.recentBlogsSection}>
+            <h4>Recent News</h4>
+            {recentBlogs.map((item) => (
+              <a
+                href={`/news/${item._id}`}
+                key={item._id}
+                className={styles.recentBlog}
+              >
+                <h3>{item.news_heading}</h3>
+              </a>
+            ))}
+          </div>
+        )}
+        <div className={styles.freeAssesmentSection}>
+          <h4>Start You Process Today With Us!</h4>
+          <p>Book A Free Assement With Us Right Now.</p>
+          <a href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj">
+            Free Assesment
+          </a>
+        </div>
       </div>
       <Footer1 />
     </>

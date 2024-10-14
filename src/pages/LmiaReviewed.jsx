@@ -222,9 +222,15 @@ const LmiaReviewed = () => {
             ref={(el) => (sectionsRef.current[3] = el)}
           >
             <h2>How to Apply for LMIA</h2>
-            <div className={styles.applicationProcess}> 
+            <div className={styles.applicationProcess}>
               <h3>As an Employer</h3>
-              <ul style={{marginTop: "10px", marginLeft: "40px", marginBottom: "30px"}}>
+              <ul
+                style={{
+                  marginTop: "10px",
+                  marginLeft: "40px",
+                  marginBottom: "30px",
+                }}
+              >
                 <li>
                   You must submit an LMIA application to Employment and Social
                   Development Canada (ESDC).
@@ -244,7 +250,13 @@ const LmiaReviewed = () => {
                 </li>
               </ul>
               <h3>As a Foreign Worker</h3>
-              <ul style={{marginTop: "10px", marginLeft: "40px", marginBottom: "30px"}}>
+              <ul
+                style={{
+                  marginTop: "10px",
+                  marginLeft: "40px",
+                  marginBottom: "30px",
+                }}
+              >
                 <li>Apply for a work permit as per guidelines set by IRCC.</li>
                 <li>
                   IRCC will assess your application to check if you meet the
@@ -269,9 +281,17 @@ const LmiaReviewed = () => {
             ref={(el) => (sectionsRef.current[4] = el)}
           >
             <h2>Common Reasons for LMIA Refusal</h2>
-            <h4>Don’t forget to avoid these common LMIA refusal reasons and increase your chances of approval.
+            <h4>
+              Don’t forget to avoid these common LMIA refusal reasons and
+              increase your chances of approval.
             </h4>
-            <ul style={{marginTop: "10px", marginLeft: "40px", marginBottom: "30px"}}>
+            <ul
+              style={{
+                marginTop: "10px",
+                marginLeft: "40px",
+                marginBottom: "30px",
+              }}
+            >
               <li>
                 As an employer, you did not try to hire Canadians by
                 advertising, attending job fairs, or using online platforms.
@@ -303,6 +323,32 @@ const LmiaReviewed = () => {
               <li>
                 As a worker, you do not meet the specific requirements outlined
                 in the job description.
+              </li>
+            </ul>
+          </section>
+
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="why-choose-us"
+            ref={(el) => (sectionsRef.current[9] = el)}
+          >
+            <h2>Why Choose Us?</h2>
+            <ul>
+              <li>
+                <strong>Experienced Team:</strong> Over a decade of experience
+                in handling BCPNP applications with a high success rate.
+              </li>
+              <li>
+                <strong>Tailored Approach:</strong> Personalized services and
+                strategies based on your specific case.
+              </li>
+              <li>
+                <strong>High Success Rate:</strong> Proven track record using
+                case law and precedents for positive results.
+              </li>
+              <li>
+                <strong>Comprehensive Support:</strong> Assistance from the
+                start of the application process to obtaining your PR.
               </li>
             </ul>
           </section>

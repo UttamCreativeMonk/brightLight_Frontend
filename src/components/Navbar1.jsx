@@ -623,7 +623,8 @@ const Navbar3 = (props) => {
                           onMouseEnter={() => setDoubleNestedInsideCanada(true)}
                           onMouseLeave={() =>
                             setDoubleNestedInsideCanada(false)
-                          }>
+                          }
+                        >
                           Inside Canada
                         </a>
                         <div
@@ -637,7 +638,7 @@ const Navbar3 = (props) => {
                         >
                           <a href="/visitor-to-student">Visitor to Student</a>
                           <a href="/change-college-program">
-                            Change of College Program
+                            DLI Change
                           </a>
                           {/* <a href="#">Admission</a> */}
                           {/* <a href="#">Transfer DLI</a> */}
@@ -774,10 +775,9 @@ const Navbar3 = (props) => {
                           <a href="/open-work-vulnerable-lp">
                             Vulnerable Worker
                           </a>
-                          <a href="/dependent-children">
+                          <a href="/openWork-dependent-children">
                             Dependent Child of Worker
                           </a>
-                          <a href="/pnp">PNP Applicants</a>
                         </div>
                       </div>
                       <div className={`${styles.relativeDiv} ${styles.flex}`}>
@@ -831,6 +831,9 @@ const Navbar3 = (props) => {
                       <a href="/in-home-caregiver-program-lp">
                         Inside - With LMIA
                       </a>
+                      <a href="/permanent-residence-pathways-caregivers-lp">
+                        PR Pathways for Care-Giver
+                      </a>
                       {/* <div className={`${styles.relativeDiv} ${styles.flex}`}>
                         <a
                           onMouseEnter={() => setShowNestedDropdown10(true)}
@@ -856,45 +859,21 @@ const Navbar3 = (props) => {
                     </div>
                   </div>
                   <div className={`${styles.relativeDiv} ${styles.flex}`}>
-                    <a
-                      href="#"
-                      onMouseEnter={() => setShowNestedDropdown11(true)}
-                      onMouseLeave={() => setShowNestedDropdown11(false)}
-                    >
-                      PR Renewal
-                    </a>
+                    <a href="/pr-renewal">PR Renewal</a>
                     <div
                       className={`${styles.permanentNestedSection} ${
                         showNestedDropdown11 ? styles.showNested : null
                       }`}
-                      onMouseEnter={() => {
-                        setShowNestedDropdown11(true);
-                      }}
-                      onMouseLeave={() => {
-                        setShowNestedDropdown11(false);
-                      }}
                     >
                       <a href="/pr-renewal">PR Renewal</a>
                     </div>
                   </div>
                   <div className={`${styles.relativeDiv} ${styles.flex}`}>
-                    <a
-                      href="#"
-                      onMouseEnter={() => setShowNestedDropdown12(true)}
-                      onMouseLeave={() => setShowNestedDropdown12(false)}
-                    >
-                      Citizenship
-                    </a>
+                    <a href="/citizenship">Citizenship</a>
                     <div
                       className={`${styles.permanentNestedSection} ${
                         showNestedDropdown12 ? styles.showNested : null
                       }`}
-                      onMouseEnter={() => {
-                        setShowNestedDropdown12(true);
-                      }}
-                      onMouseLeave={() => {
-                        setShowNestedDropdown12(false);
-                      }}
                     >
                       <a href="/citizenship">Citizenship</a>
                     </div>
@@ -922,11 +901,9 @@ const Navbar3 = (props) => {
                         Reconsideration of Refusal Decision
                       </a>
                       <a href="/additional-document">
-                        Reply to Additional Document Request
+                        Additional Document Request
                       </a>
-                      <a href="/reply-to-pfl-page">
-                        Reply to Procedural Fairness Letter
-                      </a>
+                      <a href="/reply-to-pfl-page">PFL</a>
                     </div>
                   </div>
                 </div>
@@ -1161,9 +1138,7 @@ const Navbar3 = (props) => {
                     </a>
                     {isTemporaryResidencyOpen && (
                       <div className={styles.subDropdownContent}>
-                        <a href="/temporary-resident">
-                          Temporary Residency
-                        </a>
+                        <a href="/temporary-resident">Temporary Residency</a>
                         <a href="/super-visa">Super Visa</a>
 
                         <div className={styles.subSubDropdown}>
@@ -1249,7 +1224,7 @@ const Navbar3 = (props) => {
                                 Visitor To Student
                               </a>
                               <a href="/change-college-program">
-                                Change of College/Program
+                                DLI Change
                               </a>
                               {/* <a href="#">Admission</a>
                               <a href="#">Transfer DLI</a> */}
@@ -1345,10 +1320,9 @@ const Navbar3 = (props) => {
                               <a href="/open-work-vulnerable-lp">
                                 Vulnerable Worker
                               </a>
-                              <a href="/dependent-children">
+                              <a href="/openWork-dependent-children">
                                 Dependent Child of Worker
                               </a>
-                              <a href="/pnp">PNP Applicants</a>
                             </div>
                           )}
                           <a href="#" onClick={toggleFederalSkilledProgramTw}>
@@ -1385,6 +1359,9 @@ const Navbar3 = (props) => {
                         <a href="/in-home-caregiver-program-lp">
                           Inside - With LMIA{" "}
                         </a>
+                        <a href="/permanent-residence-pathways-caregivers-lp">
+                          PR Pathways for Care-Giver
+                        </a>
                         <a href="#" onClick={toggleFederalSkilledProgramEl}>
                           Outside <span className={styles.arrow}>▼</span>
                         </a>
@@ -1415,11 +1392,9 @@ const Navbar3 = (props) => {
                           Reconsideration of Refusal Decision
                         </a>
                         <a href="/additional-document">
-                          Reply to Additional Document Request
+                          Additional Document Request
                         </a>
-                        <a href="/reply-to-pfl-page">
-                          Reply to Procedural Fairness Letter
-                        </a>
+                        <a href="/reply-to-pfl-page">PFL</a>
                       </div>
                     )}
                   </div>

@@ -114,7 +114,7 @@ const AgricultureStreamLmia = () => {
               etc.
             </p>
             <p>To qualify for this stream, employers must meet 2 criteria:</p>
-            <ol style={{marginLeft: "40px"}}> 
+            <ol style={{ marginLeft: "40px" }}>
               <li>
                 Production must be in specific commodity sectors from the list
                 below, and
@@ -299,7 +299,7 @@ const AgricultureStreamLmia = () => {
               about the employers meeting the requirements of the program.
             </h4>
             <h4>Please see below the common reasons for refusals:</h4>
-            <ul style={{marginLeft: "40px"}}> 
+            <ol style={{ marginLeft: "40px" }}>
               <li>
                 Failure to perform or document the minimum recruitment
                 requirements.
@@ -325,6 +325,32 @@ const AgricultureStreamLmia = () => {
               </li>
               <li>
                 Are in default of payment of an administrative monetary penalty.
+              </li>
+            </ol>
+          </section>
+
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="why-choose-us"
+            ref={(el) => (sectionsRef.current[9] = el)}
+          >
+            <h2>Why Choose Us?</h2>
+            <ul>
+              <li>
+                <strong>Experienced Team:</strong> Over a decade of experience
+                in handling BCPNP applications with a high success rate.
+              </li>
+              <li>
+                <strong>Tailored Approach:</strong> Personalized services and
+                strategies based on your specific case.
+              </li>
+              <li>
+                <strong>High Success Rate:</strong> Proven track record using
+                case law and precedents for positive results.
+              </li>
+              <li>
+                <strong>Comprehensive Support:</strong> Assistance from the
+                start of the application process to obtaining your PR.
               </li>
             </ul>
           </section>

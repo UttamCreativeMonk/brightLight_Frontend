@@ -20,7 +20,6 @@ const InCaregiverProgramLP = () => {
     }
   };
 
-
   const sectionsRef = useRef([]);
 
   const handleScroll = () => {
@@ -66,9 +65,15 @@ const InCaregiverProgramLP = () => {
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
               <p onClick={() => scrollToSection("categories")}>Categories</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -77,7 +82,11 @@ const InCaregiverProgramLP = () => {
       </div>
 
       <div className={styles.container}>
-        <header className={`${styles.header} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
+        <header
+          className={`${styles.header} ${styles.section}`}
+          id="about-program"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
           <h1>In Home Caregiver Program</h1>
           <p>
             The Canadian government provides a remedy to Canadian families to
@@ -87,7 +96,11 @@ const InCaregiverProgramLP = () => {
           </p>
         </header>
 
-        <section  className={`${styles.benefits} ${styles.section}`} id="benifits" ref={(el) => sectionsRef.current[1] = el}>
+        <section
+          className={`${styles.benefits} ${styles.section}`}
+          id="benifits"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
           <h2>Benefits of In Home Caregiver Program</h2>
           <ul>
             <li>
@@ -116,23 +129,49 @@ const InCaregiverProgramLP = () => {
           </ul>
         </section>
 
-        <section className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[2] = el}>
+        <section
+          className={`${styles.eligibility} ${styles.section}`}
+          id="eligibility"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
           <h2>Eligibility Criteria for In Home Caregiver Program</h2>
           <p>In home Caregiver program is a two-step process:</p>
-          <ol style={{marginTop: "20px", marginLeft: "40px"}} className={`${styles.section} ${styles.section}`} id="testing1" ref={(el) => sectionsRef.current[3] = el}>
-            <li> 
+          <ol
+            style={{ marginTop: "20px" }}
+            className={`${styles.section} ${styles.section}`}
+            id="testing1"
+            ref={(el) => (sectionsRef.current[3] = el)}
+          >
+            <li
+              style={{ listStyle: "none", fontSize: "18px", fontWeight: "600" }}
+            >
               Step 1: Your employer applies for Labour Market Impact Assessment
               (LMIA).
             </li>
-            <li>Step 2: You apply for work permit.</li>
+            <li
+              style={{ listStyle: "none", fontSize: "18px", fontWeight: "600" }}
+            >
+              Step 2: You can apply for work permit.
+            </li>
           </ol>
 
-          <h3 className={`${styles.section} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[4] = el}>Step 1: Labour Market Impact Assessment (LMIA) Process</h3>
+          <h3
+            className={`${styles.section} ${styles.section}`}
+            id="testing2"
+            ref={(el) => (sectionsRef.current[4] = el)}
+          >
+            Step 1: Labour Market Impact Assessment (LMIA) Process
+          </h3>
           <p>
             For the employer considering hiring a foreign worker on a caregiver
             LMIA, here is the eligibility check:
           </p>
-          <ul style={{marginTop: "20px", marginLeft: "40px"}} className={`${styles.section} ${styles.section}`} id="testing3" ref={(el) => sectionsRef.current[5] = el}>
+          <ul
+            style={{ marginTop: "20px", marginLeft: "40px" }}
+            className={`${styles.section} ${styles.section}`}
+            id="testing3"
+            ref={(el) => (sectionsRef.current[5] = el)}
+          >
             <li>
               Have a valid payroll account with Canada Revenue Agency (CRA).
             </li>
@@ -156,27 +195,43 @@ const InCaregiverProgramLP = () => {
             employer on LMIA portal.
           </p>
 
-          <h4 className={`${styles.section} ${styles.section}`} id="testing4" ref={(el) => sectionsRef.current[6] = el}>
+          <h4
+            className={`${styles.section} ${styles.section}`}
+            id="testing4"
+            ref={(el) => (sectionsRef.current[6] = el)}
+          >
             The employers in Canada can hire a foreign worker for one of the two
             categories:
           </h4>
-          <div className={`${styles.categories} ${styles.section}`} id="categories" ref={(el) => sectionsRef.current[7] = el}>
-            <div className={`${styles.category} ${styles.section}`} id="testing5" ref={(el) => sectionsRef.current[8] = el}>
-              <h3>1. Caregivers for children</h3>
+          <div
+            className={`${styles.categories} ${styles.section}`}
+            id="categories"
+            ref={(el) => (sectionsRef.current[7] = el)}
+          >
+            <div
+              className={`${styles.category} ${styles.section}`}
+              id="testing5"
+              ref={(el) => (sectionsRef.current[8] = el)}
+            >
+              <h2>1. Caregivers for children</h2>
               <p>
                 This category includes positions such as childcare provider,
                 live-in caregiver, nanny that fall under NOC 44100. The children
                 to whom care will be provided should be under 18 years of age.
               </p>
             </div>
-            <div className={`${styles.category} ${styles.section}`} id="testing6" ref={(el) => sectionsRef.current[9] = el}>
-              <h3>2. Caregivers for people with high medical needs</h3>
+            <div
+              className={`${styles.category} ${styles.section}`}
+              id="testing6"
+              ref={(el) => (sectionsRef.current[9] = el)}
+            >
+              <h2>2. Caregivers for people with high medical needs</h2>
               <p>
                 This category includes workers who provide care to people with
                 the age of 65 years or over, people with disabilities, a chronic
                 or terminal illness. The positions included are as follows:
               </p>
-              <ul style={{marginTop: "20px", marginLeft: "40px"}}>
+              <ul style={{ marginTop: "20px", marginLeft: "40px" }}>
                 <li>
                   Registered nurse or registered psychiatric nurse (NOC 31301)
                 </li>
@@ -189,7 +244,13 @@ const InCaregiverProgramLP = () => {
             </div>
           </div>
 
-          <h3 className={`${styles.section} ${styles.section}`} id="testing7" ref={(el) => sectionsRef.current[10] = el}>Proof of Individual Requiring Care</h3>
+          <h2
+            className={`${styles.section} ${styles.section}`}
+            id="testing7"
+            ref={(el) => (sectionsRef.current[10] = el)}
+          >
+            Proof of Individual Requiring Care
+          </h2>
           <p>
             At the time of LMIA application, the employer is required to provide
             proof to Service Canada to prove that they or their dependant is in
@@ -199,7 +260,12 @@ const InCaregiverProgramLP = () => {
             For age and parentage for each child under the age of 18, they can
             provide one of the following documents:
           </p>
-          <ul style={{marginTop: "20px", marginLeft: "40px"}} className={`${styles.section} ${styles.section}`} id="testing8" ref={(el) => sectionsRef.current[11] = el}>
+          <ul
+            style={{ marginTop: "20px", marginLeft: "40px" }}
+            className={`${styles.section} ${styles.section}`}
+            id="testing8"
+            ref={(el) => (sectionsRef.current[11] = el)}
+          >
             <li>Long form birth certificate</li>
             <li>Adoption order</li>
             <li>Official guardianship, or</li>
@@ -211,7 +277,12 @@ const InCaregiverProgramLP = () => {
             For age for each senior, 65 years or older, they can provide one of
             the following documents:
           </p>
-          <ul style={{marginTop: "20px", marginLeft: "40px"}} className={`${styles.section} ${styles.section}`} id="testing9" ref={(el) => sectionsRef.current[12] = el}>
+          <ul
+            style={{ marginTop: "20px", marginLeft: "40px" }}
+            className={`${styles.section} ${styles.section}`}
+            id="testing9"
+            ref={(el) => (sectionsRef.current[12] = el)}
+          >
             <li>Birth certificate</li>
             <li>Passport, or</li>
             <li>Old Age Security (OAS) identification card</li>
@@ -220,7 +291,12 @@ const InCaregiverProgramLP = () => {
             For disability, chronic or terminal illness for each disabled,
             chronically or terminally ill person, they can provide:
           </p>
-          <ul style={{marginTop: "20px", marginLeft: "40px"}} className={`${styles.section} ${styles.section}`} id="testing10" ref={(el) => sectionsRef.current[13] = el}>
+          <ul
+            style={{ marginTop: "20px", marginLeft: "40px" }}
+            className={`${styles.section} ${styles.section}`}
+            id="testing10"
+            ref={(el) => (sectionsRef.current[13] = el)}
+          >
             <li>
               Completed Schedule H - Medical disability, chronic or terminal
               illness certificate (EMP5600) form, signed and dated by the
@@ -233,8 +309,19 @@ const InCaregiverProgramLP = () => {
             </li>
           </ul>
 
-          <h3 className={`${styles.section} ${styles.section}`} id="testing12" ref={(el) => sectionsRef.current[14] = el}>Step 2: You Apply for Work Permit</h3>
-          <p style={{marginTop: "20px"}} className={`${styles.section} ${styles.section}`} id="testing13" ref={(el) => sectionsRef.current[15] = el}>
+          <h3
+            className={`${styles.section} ${styles.section}`}
+            id="testing12"
+            ref={(el) => (sectionsRef.current[14] = el)}
+          >
+            Step 2: You Apply for Work Permit
+          </h3>
+          <p
+            style={{ marginTop: "20px" }}
+            className={`${styles.section} ${styles.section}`}
+            id="testing13"
+            ref={(el) => (sectionsRef.current[15] = el)}
+          >
             If you are a foreign national residing within Canada on a work
             permit or study permit, you can apply for a work permit under
             Temporary Foreign Worker Program after your employer obtains a
@@ -247,10 +334,14 @@ const InCaregiverProgramLP = () => {
           </p>
         </section>
 
-        <section className={`${styles.howToApply} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[16] = el}>
-          <h2>How to Apply for In Home Caregiver Program?</h2>
-          <h3>As an Employer:</h3>
-          <ol style={{marginTop: "20px", marginLeft: "40px"}}>
+        <section
+          className={`${styles.howToApply} ${styles.section}`}
+          id="how-to-apply"
+          ref={(el) => (sectionsRef.current[16] = el)}
+        >
+          <h3>How to Apply for In Home Caregiver Program?</h3>
+          <h2>As an Employer:</h2>
+          <ol style={{ marginTop: "20px", marginLeft: "40px" }}>
             <li>
               Have an initial assessment performed by us to verify if the
               employer is eligible to apply for LMIA.
@@ -297,8 +388,13 @@ const InCaregiverProgramLP = () => {
             </li>
           </ol>
 
-          <h3>As a Foreign Worker:</h3>
-          <ul style={{marginTop: "20px", marginLeft: "40px"}} className={`${styles.section} ${styles.section}`} id="testing14" ref={(el) => sectionsRef.current[17] = el}>
+          <h2>As a Foreign Worker:</h2>
+          <ul
+            style={{ marginTop: "20px", marginLeft: "40px" }}
+            className={`${styles.section} ${styles.section}`}
+            id="testing14"
+            ref={(el) => (sectionsRef.current[17] = el)}
+          >
             <li>Apply for a work permit as per guidelines set by IRCC.</li>
             <li>
               IRCC will assess your application to check if you meet the
@@ -315,7 +411,37 @@ const InCaregiverProgramLP = () => {
           </ul>
         </section>
 
-        <section  className={`${styles.stillNotSure} ${styles.section}`} id="testing1" ref={(el) => sectionsRef.current[18] = el}>
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[99] = el)}
+        >
+          <h2>Why Choose Us?</h2>
+          <ul>
+            <li>
+              <strong>Experienced Team:</strong> Over a decade of experience in
+              handling BCPNP applications with a high success rate.
+            </li>
+            <li>
+              <strong>Tailored Approach:</strong> Personalized services and
+              strategies based on your specific case.
+            </li>
+            <li>
+              <strong>High Success Rate:</strong> Proven track record using case
+              law and precedents for positive results.
+            </li>
+            <li>
+              <strong>Comprehensive Support:</strong> Assistance from the start
+              of the application process to obtaining your PR.
+            </li>
+          </ul>
+        </section>
+
+        <section
+          className={`${styles.stillNotSure} ${styles.section}`}
+          id="testing1"
+          ref={(el) => (sectionsRef.current[18] = el)}
+        >
           <h2>Still Not Sure?</h2>
           <p>
             If you have received a refusal for any of the reasons mentioned
@@ -338,7 +464,11 @@ const InCaregiverProgramLP = () => {
           </p>
         </section>
 
-        <section  className={`${styles.whyChooseUs} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[19] = el}>
+        <section
+          className={`${styles.whyChooseUs} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[19] = el)}
+        >
           <h2>Why Choose Us</h2>
           <p>
             Discover why Brightlight Immigration is the right choice for your
@@ -346,13 +476,13 @@ const InCaregiverProgramLP = () => {
             to ensure the best possible outcome for your application.
           </p>
           <button
-          onClick={() =>
-            (window.location.href =
-              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-          }
-        >
-          Book Appointment
-        </button>
+            onClick={() =>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
+          >
+            Book Appointment
+          </button>
         </section>
       </div>
 

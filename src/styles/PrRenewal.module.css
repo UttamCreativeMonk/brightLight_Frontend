@@ -13,6 +13,15 @@
   text-align: center;
 }
 
+.discription {
+  margin-bottom: 30px;
+  text-align: center !important;
+}
+
+.discription a {
+  color: rgb(28, 68, 243);
+}
+
 .bannerHeading h1 {
   color: #e8c47c;
   font-size: 50px;
@@ -51,7 +60,6 @@
   padding-bottom: 8px;
   font-size: 28px;
 }
-
 
 .bannerHeadingRotatePara p {
   cursor: pointer;
@@ -145,7 +153,6 @@
   text-align: left;
 }
 
-
 @media (max-width: 1440px) {
   .bannerHeadingRotate {
     font-size: 1.2rem;
@@ -169,7 +176,6 @@
   margin-bottom: 20px;
   text-align: left;
 }
-
 
 .section button {
   display: block;
@@ -208,21 +214,21 @@
   opacity: 1;
   transform: translateX(0);
 }
-.header h1{
+.header h1 {
   color: #e8c47c;
-font-size: 2.0rem;
-margin-bottom: 20px;
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
-.header{
+.header {
   text-align: center;
 }
-.header p{
-margin-top: 10px;
-text-align: center;
-margin-bottom: 30px;
+.header p {
+  margin-top: 10px;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
-.discription{
+.discription {
   text-align: center;
 }
 

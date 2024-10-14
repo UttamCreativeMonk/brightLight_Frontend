@@ -38,7 +38,6 @@ const ReplyToPflPage = () => {
       });
   }, []);
 
-
   const sectionsRef = useRef([]);
 
   const handleScroll = () => {
@@ -124,10 +123,18 @@ const ReplyToPflPage = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
-              <p onClick={() => scrollToSection("recieved-a-pfl")}>Recieved a PFL</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
+              <p onClick={() => scrollToSection("recieved-a-pfl")}>
+                Recieved a PFL
+              </p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -136,8 +143,12 @@ const ReplyToPflPage = () => {
       </div>
 
       <div className={styles.container}>
-        <main className={styles.mainContent} >
-          <section className={`${styles.section} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
+        <main className={styles.mainContent}>
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="about-program"
+            ref={(el) => (sectionsRef.current[0] = el)}
+          >
             <h2>Did You Get a Red Flag from Canadian Immigration - PFL?</h2>
             <p>
               Don't panic! We'll help you through the PFL process and turn that
@@ -166,9 +177,13 @@ const ReplyToPflPage = () => {
             </p>
           </section>
 
-          <section className={`${styles.section} ${styles.section}`} id="recieved-a-pfl" ref={(el) => sectionsRef.current[1] = el}   >
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="recieved-a-pfl"
+            ref={(el) => (sectionsRef.current[1] = el)}
+          >
             <h2>Here Are a Few Reasons You Might Have Received a PFL</h2>
-            <ul>
+            <ul style={{ marginLeft: "40px" }}>
               <li>
                 IRCC or PNP officer might have found discrepancies in your
                 application or supporting documents.
@@ -188,7 +203,11 @@ const ReplyToPflPage = () => {
             </ul>
           </section>
 
-          <section className={`${styles.section} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[2] = el}  >
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="how-to-apply"
+            ref={(el) => (sectionsRef.current[2] = el)}
+          >
             <h2>Still Not Sure?</h2>
             <p>
               If you have received a PFL, don't panic. We can help you with your
@@ -204,19 +223,42 @@ const ReplyToPflPage = () => {
             </p>
 
             <button
-          onClick={() =>
-            (window.location.href =
-              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-          }
-        >
-          Book Appointment
-        </button>
+              onClick={() =>
+                (window.location.href =
+                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+              }
+            >
+              Book Appointment
+            </button>
           </section>
 
-
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="why-choose-us"
+            ref={(el) => (sectionsRef.current[9] = el)}
+          >
+            <h2>Why Choose Us?</h2>
+            <ul>
+              <li>
+                <strong>Experienced Team:</strong> Over a decade of experience
+                in handling BCPNP applications with a high success rate.
+              </li>
+              <li>
+                <strong>Tailored Approach:</strong> Personalized services and
+                strategies based on your specific case.
+              </li>
+              <li>
+                <strong>High Success Rate:</strong> Proven track record using
+                case law and precedents for positive results.
+              </li>
+              <li>
+                <strong>Comprehensive Support:</strong> Assistance from the
+                start of the application process to obtaining your PR.
+              </li>
+            </ul>
+          </section>
         </main>
       </div>
-
 
       <div id="faqs">
         <FAQ />

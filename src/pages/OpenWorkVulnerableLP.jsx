@@ -141,7 +141,13 @@ const OpenWorkVulnerableLP = () => {
           <p>
             Abuse can be physical, sexual, financial, or mental and can include
           </p>
-          <ul style={{marginLeft: "40px", marginTop: "20px", marginBottom: "20px"}}>
+          <ul
+            style={{
+              marginLeft: "40px",
+              marginTop: "20px",
+              marginBottom: "20px",
+            }}
+          >
             <li>Physical abuse, including assault and forcible confinement</li>
             <li>Sexual abuse, including sexual contact without consent</li>
             <li>Psychological abuse, including threats and intimidation</li>
@@ -164,7 +170,13 @@ const OpenWorkVulnerableLP = () => {
             application.
           </p>
           <p>Evidence could include:</p>
-          <ul style={{marginLeft: "40px", marginTop: "20px", marginBottom: "20px"}}>
+          <ul
+            style={{
+              marginLeft: "40px",
+              marginTop: "20px",
+              marginBottom: "20px",
+            }}
+          >
             <li>
               Letter, statement, or report from an abuse support organization,
               medical doctor, or health care professional
@@ -217,6 +229,32 @@ const OpenWorkVulnerableLP = () => {
         </section>
 
         <section
+          className={`${styles.section} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[9] = el)}
+        >
+          <h2>Why Choose Us?</h2>
+          <ul>
+            <li>
+              <strong>Experienced Team:</strong> Over a decade of experience in
+              handling BCPNP applications with a high success rate.
+            </li>
+            <li>
+              <strong>Tailored Approach:</strong> Personalized services and
+              strategies based on your specific case.
+            </li>
+            <li>
+              <strong>High Success Rate:</strong> Proven track record using case
+              law and precedents for positive results.
+            </li>
+            <li>
+              <strong>Comprehensive Support:</strong> Assistance from the start
+              of the application process to obtaining your PR.
+            </li>
+          </ul>
+        </section>
+
+        <section
           className={`${styles.consultation} ${styles.section}`}
           id="why-choose-us"
           ref={(el) => (sectionsRef.current[4] = el)}
@@ -232,13 +270,13 @@ const OpenWorkVulnerableLP = () => {
             addressing each concern listed in previous refusals. We use case law
             and similar cases as precedents to achieve a high success rate.
           </p>
-          <p>
+          <p style={{marginTop: "20px"}}>
             At Brightlight Immigration, we have a dedicated team of visa
             application specialists who can assist you from the start of the
             application process to obtaining your visa. Start your process now.
           </p>
           <button
-            onClick={() =>
+            onClick={() => 
               (window.location.href =
                 "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
             }

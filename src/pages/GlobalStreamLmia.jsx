@@ -20,8 +20,6 @@ const GlobalStreamLmia = () => {
     }
   };
 
-  
-
   const sectionsRef = useRef([]);
 
   const handleScroll = () => {
@@ -48,7 +46,6 @@ const GlobalStreamLmia = () => {
     <>
       <Navbar1 />
       <div className={styles.bannerParent}>
-
         <div className={styles.banner}>
           <div
             className={`${styles.bannerHeadingRotateParent} ${
@@ -62,13 +59,23 @@ const GlobalStreamLmia = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("labour-market")}>Labour Market</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("labour-market")}>
+                Labour Market
+              </p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -78,11 +85,14 @@ const GlobalStreamLmia = () => {
 
       <div className={styles.container}>
         <main className={styles.mainContent}>
-        <header className={styles.header}>
-          <h1>Global Talent Stream (GTS) LMIA</h1>
-        </header>
-          <section className={`${styles.section} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}> 
-           
+          <header className={styles.header}>
+            <h1>Global Talent Stream (GTS) LMIA</h1>
+          </header>
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="about-program"
+            ref={(el) => (sectionsRef.current[0] = el)}
+          >
             <p>
               This type of LMIA stream is designed to expedite the process of
               hiring foreign workers with exceptional skills and experience in
@@ -93,7 +103,11 @@ const GlobalStreamLmia = () => {
             </p>
           </section>
 
-          <section className={`${styles.section} ${styles.section}`} id="benifits" ref={(el) => sectionsRef.current[1] = el}>
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="benifits"
+            ref={(el) => (sectionsRef.current[1] = el)}
+          >
             <h2>Benefits of Global Talent Stream (GTS) LMIA</h2>
             <ul>
               <li>
@@ -112,38 +126,41 @@ const GlobalStreamLmia = () => {
             </ul>
           </section>
 
-          <section className={`${styles.section} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[2] = el}>
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="eligibility"
+            ref={(el) => (sectionsRef.current[2] = el)}
+          >
             <h2>Eligibility Criteria for Global Talent Stream (GTS) LMIA</h2>
             <h3>Global Talent Stream Categories:</h3>
             <p>
               The Global Talent Stream consists of two categories with their own
               set of requirements:
             </p>
-            <ol style={{marginLeft: "40px"}}> 
+            <ol style={{ marginLeft: "40px" }}>
               <li>
                 <strong>
                   <a href="#CategoryA">
-                  Category A - Referred by one of the stream's designated
-                  referral partners
+                    Category A - Referred by one of the stream's designated
+                    referral partners
                   </a>
                 </strong>
               </li>
               <li>
                 <strong>
                   <a href="#CategoryB">
-                  Category B - In-demand occupations on the global talent
-                  occupations list
+                    Category B - In-demand occupations on the global talent
+                    occupations list
                   </a>
                 </strong>
               </li>
             </ol>
 
             <h3 id="CategoryA">
-             1 Category A - Referred by one of the stream's designated referral
+              1 Category A - Referred by one of the stream's designated referral
               partners
             </h3>
 
-            
             <p>
               If you've been referred by a designated referral partner and are
               hiring someone with unique, specialized talent, your application
@@ -151,7 +168,7 @@ const GlobalStreamLmia = () => {
               looking to bring in individuals who can drive growth and
               innovation.
             </p>
-            <ul style={{marginLeft: "20px"}}>
+            <ul style={{ marginLeft: "20px" }}>
               <li>The employer company must be based in Canada.</li>
               <li>
                 The company should focus on innovation and be willing and able
@@ -279,18 +296,47 @@ const GlobalStreamLmia = () => {
                   <td>51120</td>
                   <td>
                     Producer, technical, creative, and artistic director, and
-                    project manager – Visual effects and video game
+                    project manager – Visual effects and video game (The
+                    position must require a minimum of 3 years of experience in
+                    the visual effects, video game, or animation industries in 1
+                    or a combination of the following roles: producer, technical
+                    director, creative director, artistic director or project
+                    manager, senior coordinator, department manager, with 3
+                    years of job experience in at least 1 or more of the
+                    following skills relevant to the visual effects, video game
+                    or animation industries: surfacing and look development;
+                    character or simulation rigging; matte painting; managing
+                    budgets or teams; or technical pipeline development and
+                    application for visual effects, video games, or animation
+                    production.)
                   </td>
                 </tr>
                 <tr>
                   <td>52120</td>
-                  <td>Digital media designers</td>
+                  <td>
+                    Digital media designers (The position must require a minimum
+                    of 3 years of job experience in at least 1 of the following
+                    digital media design skills: 3D modeling, compositing, paint
+                    and roto, layout and match move, digital environment and
+                    Matte painting, texture, lighting shading, character
+                    effects, effects and simulations, design and scenario,
+                    rigging, user interface or user experience, responsive
+                    design (for gaming), virtual reality, augmented reality,
+                    digital media animation, levels editing for digital media
+                    design, software editing for digital media design, pipeline
+                    software development or applications relevant for digital
+                    media design)
+                  </td>
                 </tr>
               </tbody>
             </table>
           </section>
 
-          <section className={`${styles.section} ${styles.section}`} id="labour-market" ref={(el) => sectionsRef.current[3] = el}  >
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="labour-market"
+            ref={(el) => (sectionsRef.current[3] = el)}
+          >
             <h2>Labour Market Benefits Plan (LMBP)</h2>
             <p>
               The Labour Market Benefits Plan (LMBP) is a mandatory component of
@@ -301,9 +347,10 @@ const GlobalStreamLmia = () => {
             </p>
             <p>
               The LMBP consists of 1 mandatory activity and at least 2
-              supplementary activities:
+              supplementary activities. The mandatory activity is tailored to
+              either Category A or Category B, as follows:
             </p>
-            <ul style={{marginLeft: "40px"}}>
+            <ul style={{ marginLeft: "40px" }}>
               <li>
                 Category A: The employer must create jobs for Canadian citizens
                 and permanent residents.
@@ -313,8 +360,13 @@ const GlobalStreamLmia = () => {
                 improvement of Canadian citizens and permanent residents.
               </li>
             </ul>
-            <p>Examples of supplementary activities include:</p>
-            <ul style={{marginLeft: "40px"}}>
+            <p>
+              The supplementary activities must demonstrate how hiring foreign
+              workers will lead to skills transfer, job creation, or enhanced
+              workforce development for Canadians. Examples of supplementary
+              activities include:
+            </p>
+            <ul style={{ marginLeft: "40px" }}>
               <li>
                 Increasing the number of Canadians and permanent residents
                 employed full-time and part-time.
@@ -356,68 +408,89 @@ const GlobalStreamLmia = () => {
             </ul>
           </section>
 
-          <section className={`${styles.section} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[4] = el} >
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="how-to-apply"
+            ref={(el) => (sectionsRef.current[4] = el)}
+          >
             <h2>How to Apply for Global Talent Stream (GTS) LMIA</h2>
             <ol>
               <li>
-     Have an initial assessment performed by us to verify if the employer is eligible to apply for LMIA for a specific position and how many positions are allowed. 
-
+                Have an initial assessment performed by us to verify if the
+                employer is eligible to apply for LMIA for a specific position
+                and how many positions are allowed.
               </li>
               <li>
-                We will provide you with a checklist of documents and information required to start the initial process. 
-
+                We will provide you with a checklist of documents and
+                information required to start the initial process.
               </li>
               <li>
-              While there is no minimum recruitment requirement for the GTS, it is recommended to perform recruitment efforts. They do not need to meet the criteria of high-wage recruitment and advertising efforts guidelines set by ESDC.
-
+                While there is no minimum recruitment requirement for the GTS,
+                it is recommended to perform recruitment efforts. They do not
+                need to meet the criteria of high-wage recruitment and
+                advertising efforts guidelines set by ESDC.
               </li>
               <li>
-               Prepare the Labour Market Benefits Plan according to the category GTS LMIA application is to be applied under.
-
+                Prepare the Labour Market Benefits Plan according to the
+                category GTS LMIA application is to be applied under.
               </li>
-              <li> Interview local applicants.
+              <li> Interview local applicants.</li>
+              <li>
+                Prepare and submit an LMIA application to the Service Canada
+                ESDS department.
               </li>
               <li>
-               Prepare and submit an LMIA application to the Service Canada ESDS department. 
-
-              </li>
-              <li>
-             Wait for LMIA processing time, which can range from 7 to 10 business days. If the Service 
+                Wait for LMIA processing time, which can range from 7 to 10
+                business days. If the Service
               </li>
             </ol>
             <p>
-            Canada officer has any questions or concerns or requires any further information, the employer might be contacted for an interview. 
-
+              Canada officer has any questions or concerns or requires any
+              further information, the employer might be contacted for an
+              interview.
             </p>
           </section>
 
-          <section  className={`${styles.section} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[5] = el}>
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="refusal-reasons"
+            ref={(el) => (sectionsRef.current[5] = el)}
+          >
             <h2>
               Common Reasons for Refusal of Global Talent Stream (GTS) LMIA
             </h2>
-            <ul>
-              <li>Insufficient Evidence of Labour Market Benefits A Labour Market Benefits Plan (LMBP) submitted by the employer may lack clear and substantive activities aimed at benefiting the Canadian labor market. ESDC assesses the proposed activities to ensure they contribute to skills development, job creation, or other positive outcomes for Canadians.
+            <ol>
+              <li>
+                Insufficient Evidence of Labour Market Benefits A Labour Market
+                Benefits Plan (LMBP) submitted by the employer may lack clear
+                and substantive activities aimed at benefiting the Canadian
+                labor market. ESDC assesses the proposed activities to ensure
+                they contribute to skills development, job creation, or other
+                positive outcomes for Canadians.
               </li>
               <li>
-              Provided false, misleading, or inaccurate information in the LMIA application.
-
+                Provided false, misleading, or inaccurate information in the
+                LMIA application.
               </li>
               <li>
-              Have been found non-compliant as a result of an employer compliance review.
-
+                Have been found non-compliant as a result of an employer
+                compliance review.
               </li>
               <li>
-              Have been banned from the Temporary Foreign Worker Program because non-compliance was discovered during an inspection.
-
+                Have been banned from the Temporary Foreign Worker Program
+                because non-compliance was discovered during an inspection.
               </li>
               <li>
-              Are in default of payment of an administrative monetary penalty.
-
+                Are in default of payment of an administrative monetary penalty.
               </li>
-            </ul>
+            </ol>
           </section>
 
-          <section className={`${styles.section} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[6] = el}>
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="how-to-apply"
+            ref={(el) => (sectionsRef.current[6] = el)}
+          >
             <h2>Still Not Sure?</h2>
             <p>
               If you have received a refusal for any of the reasons mentioned
@@ -443,23 +516,45 @@ const GlobalStreamLmia = () => {
             </p>
           </section>
 
-          <section  className={`${styles.section} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[7] = el}>
-            <h2>Why Choose Us</h2>
-            <p>
-              At Brightlight Immigration, we offer comprehensive services and a
-              high success rate due to our tailored approach and expert
-              knowledge in immigration law. We provide step-by-step guidance
-              through the entire process, ensuring that every aspect of your
-              application is handled with the utmost care.
-            </p>
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="why-choose-us"
+            ref={(el) => (sectionsRef.current[9] = el)}
+          >
+            <h2>Why Choose Us?</h2>
+            <ul>
+              <li>
+                <strong>Experienced Team:</strong> Over a decade of experience
+                in handling BCPNP applications with a high success rate.
+              </li>
+              <li>
+                <strong>Tailored Approach:</strong> Personalized services and
+                strategies based on your specific case.
+              </li>
+              <li>
+                <strong>High Success Rate:</strong> Proven track record using
+                case law and precedents for positive results.
+              </li>
+              <li>
+                <strong>Comprehensive Support:</strong> Assistance from the
+                start of the application process to obtaining your PR.
+              </li>
+            </ul>
+          </section>
+
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="why-choose-us"
+            ref={(el) => (sectionsRef.current[7] = el)}
+          >
             <button
-          onClick={() =>
-            (window.location.href =
-              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-          }
-        >
-          Book Appointment
-        </button>
+              onClick={() =>
+                (window.location.href =
+                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+              }
+            >
+              Book Appointment
+            </button>
           </section>
         </main>
       </div>

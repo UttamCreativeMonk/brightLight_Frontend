@@ -12,7 +12,6 @@ const Citizenship = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
 
-
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
@@ -25,7 +24,6 @@ const Citizenship = () => {
   };
 
   useEffect(() => {
-
     fetch("https://brightlight-node.onrender.com/citizenshipMeta")
       .then((res) => {
         return res.json();
@@ -64,7 +62,7 @@ const Citizenship = () => {
 
   return (
     <>
-        <Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle
@@ -121,13 +119,23 @@ const Citizenship = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
               <p onClick={() => scrollToSection("benefits")}>Benefits</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>
+                Refusal Reasons
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -136,22 +144,39 @@ const Citizenship = () => {
       </div>
 
       <div className={styles.container}>
-        <main className={styles.mainContent} >
-          <section className={`${styles.section} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}  >
-          <header className={styles.header}>
-          <h1>Citizenship - The highest form of legal status in Canada</h1>
-        </header>
-            
+        <main className={styles.mainContent}>
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="about-program"
+            ref={(el) => (sectionsRef.current[0] = el)}
+          >
+            <header className={styles.header}>
+              <h1>Citizenship - The highest form of legal status in Canada</h1>
+            </header>
+
             <p className={styles.discription}>
-            After completing your 3 years (or staying physically in Canada for at least 1,095 days) of PR journey in Canada, you are now officially going to become a Canadian Citizen. Congratulations. All you are left to do is complete the Canadian Citizenship application through IRCC and enjoy the highest form of legal status in Canada. This is the last step for you to become a Canadian. 
+              After completing your 3 years (or staying physically in Canada for
+              at least 1,095 days) of PR journey in Canada, you are now
+              officially going to become a Canadian Citizen. Congratulations.
+              All you are left to do is complete the Canadian Citizenship
+              application through IRCC and enjoy the highest form of legal
+              status in Canada. This is the last step for you to become a
+              Canadian.
             </p>
             <p className={styles.discription}>
-            Because of Canadian citizenship, you’ll have several rights and responsibilities. It is the highest form of legal status in Canada, and it allows you to enjoy the full benefits of Canadian society, including the right to vote, hold public office, and live and work anywhere in the country.
-
+              Because of Canadian citizenship, you’ll have several rights and
+              responsibilities. It is the highest form of legal status in
+              Canada, and it allows you to enjoy the full benefits of Canadian
+              society, including the right to vote, hold public office, and live
+              and work anywhere in the country.
             </p>
           </section>
 
-          <section className={`${styles.section} ${styles.section}`} id="benefits" ref={(el) => sectionsRef.current[1] = el}   >
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="benefits"
+            ref={(el) => (sectionsRef.current[1] = el)}
+          >
             <h2>Benefits of becoming a Canadian Citizen:</h2>
             <ul>
               <li>You now have the right to vote and hold office</li>
@@ -168,13 +193,17 @@ const Citizenship = () => {
             </ul>
           </section>
 
-          <section  className={`${styles.section} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[2] = el}  >
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="eligibility"
+            ref={(el) => (sectionsRef.current[2] = el)}
+          >
             <h2>Eligibility criteria for Canadian Citizenship</h2>
             <p>
               Are you eligible to file your Canadian Citizenship? Let's find
               out.
             </p>
-            <ul>
+            <ul style={{ marginTop: "20px", marginBottom: "20px" }}>
               <li>
                 You need to be a permanent resident of Canada and have lived in
                 Canada for 3 years out of the past 5 years. You must be present
@@ -199,39 +228,48 @@ const Citizenship = () => {
             </p>
           </section>
 
-          <section   className={`${styles.section} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[3] = el}>
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="how-to-apply"
+            ref={(el) => (sectionsRef.current[3] = el)}
+          >
             <h2>How to apply for Canadian Citizenship?</h2>
             <ul>
-            <li>
-              Before you apply, make sure you meet the eligibility requirements.
-              These include being a permanent resident of Canada, having lived
-              in Canada for at least 3 out of the past 5 years, filing your
-              taxes in Canada for at least three years during the five years
-              before applying, passing a citizenship test, and showing your
-              ability to speak either English or French.
-            </li>
-            <li>
-              To apply, you'll need to complete the necessary forms, provide
-              supporting documents, and pay the applicable fees.
-            </li>
-            <li>
-              If you're approved, you'll attend a citizenship ceremony to take
-              the Oath of Citizenship, where you will officially become a
-              Canadian citizen. You will also receive your Canadian citizenship
-              certificate.
-            </li>
-            <li>
-              We know what it means to you to become a Canadian citizen. We
-              would be honored to help you through the application process and
-              to get you ready for your citizenship ceremony.
-              <a href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj">
-                Click here
-              </a>
-            </li>
+              <li>
+                Before you apply, make sure you meet the eligibility
+                requirements. These include being a permanent resident of
+                Canada, having lived in Canada for at least 3 out of the past 5
+                years, filing your taxes in Canada for at least three years
+                during the five years before applying, passing a citizenship
+                test, and showing your ability to speak either English or
+                French.
+              </li>
+              <li>
+                To apply, you'll need to complete the necessary forms, provide
+                supporting documents, and pay the applicable fees.
+              </li>
+              <li>
+                If you're approved, you'll attend a citizenship ceremony to take
+                the Oath of Citizenship, where you will officially become a
+                Canadian citizen. You will also receive your Canadian
+                citizenship certificate.
+              </li>
+              <li>
+                We know what it means to you to become a Canadian citizen. We
+                would be honored to help you through the application process and
+                to get you ready for your citizenship ceremony.
+                <a href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj">
+                  Click here
+                </a>
+              </li>
             </ul>
           </section>
 
-          <section className={`${styles.section} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[4] = el}   >
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="refusal-reasons"
+            ref={(el) => (sectionsRef.current[4] = el)}
+          >
             <h2>Reasons for refusal of Canadian Citizenship:</h2>
             <ul>
               <li>
@@ -283,7 +321,37 @@ const Citizenship = () => {
             <p></p>
           </section>
 
-          <section className={`${styles.section} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[5] = el}  >
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="why-choose-us"
+            ref={(el) => (sectionsRef.current[9] = el)}
+          >
+            <h2>Why Choose Us?</h2>
+            <ul>
+              <li>
+                <strong>Experienced Team:</strong> Over a decade of experience
+                in handling BCPNP applications with a high success rate.
+              </li>
+              <li>
+                <strong>Tailored Approach:</strong> Personalized services and
+                strategies based on your specific case.
+              </li>
+              <li>
+                <strong>High Success Rate:</strong> Proven track record using
+                case law and precedents for positive results.
+              </li>
+              <li>
+                <strong>Comprehensive Support:</strong> Assistance from the
+                start of the application process to obtaining your PR.
+              </li>
+            </ul>
+          </section>
+
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="why-choose-us"
+            ref={(el) => (sectionsRef.current[5] = el)}
+          >
             <h2>Still not sure?</h2>
             <p>
               If you have received a refusal for any of the reasons mentioned
@@ -303,13 +371,13 @@ const Citizenship = () => {
               process now.
             </p>
             <button
-          onClick={() =>
-            (window.location.href =
-              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-          }
-        >
-          Book Appointment
-        </button>
+              onClick={() =>
+                (window.location.href =
+                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+              }
+            >
+              Book Appointment
+            </button>
           </section>
         </main>
       </div>

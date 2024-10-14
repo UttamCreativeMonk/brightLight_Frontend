@@ -64,6 +64,10 @@
   color: white;
 }
 
+.blogDescriptionSection div {
+  width: 935px;
+}
+
 .loveneetDataFlex p {
   position: relative;
   top: 5px;
@@ -72,6 +76,77 @@
 .loveneetDataFlex h5 {
   position: relative;
   top: -7px;
+}
+
+.freeAssesmentSection {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.freeAssesmentSection p {
+  margin-top: -15px;
+  margin-bottom: 20px;
+}
+
+.freeAssesmentSection a {
+  display: block;
+  text-align: center;
+  padding: 15px 15px;
+  background-color: #132f46;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  animation: pulseAnimation 2s infinite;
+}
+
+/* Hover effects */
+.freeAssesmentSection a:hover {
+  text-decoration: none;
+  border-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  animation: bounceAnimation 0.6s ease;
+}
+
+@keyframes pulseAnimation {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes bounceAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media all and (max-width: 1450px) {
+  .blogDescriptionSection div {
+    width: 65%;
+  }
+}
+
+@media all and (max-width: 1100px) {
+  .blogDescriptionSection div {
+    width: 100%;
+  }
 }
 
 .loveneetContent h4 {
@@ -123,6 +198,10 @@
 }
 
 .blogSearchSection {
+  display: none;
+}
+
+.blogSearchSection1 {
   width: 33%;
 }
 
@@ -184,6 +263,7 @@
   padding: 20px 15px;
   width: 100%;
   display: block;
+  background-color: #132f46;
 }
 
 .recentBlog:hover {
@@ -193,7 +273,6 @@
 .recentBlog h3 {
   color: white;
   font-size: 15px;
-  text-shadow: rgb(255, 255, 255) 1px 0 5px;
 }
 
 .blogDescriptionSection {
@@ -208,8 +287,13 @@
   letter-spacing: 0.5px;
 }
 
-.blogDescriptionSection *{
+.blogDescriptionSection * {
   margin: 30px 0px;
+}
+
+.blogDescriptionSection ul li,
+.blogDescriptionSection ol li {
+  margin: 10px 0px;
 }
 
 .blogDescriptionSection iframe {
@@ -227,7 +311,7 @@
   margin-top: 20px;
 }
 
-.blogDescriptionSection a{
+.blogDescriptionSection a {
   display: inline;
   color: #132f46;
   text-decoration: none;
@@ -247,6 +331,14 @@
 }
 
 @media all and (max-width: 1100px) {
+  .blogSearchSection1 {
+    display: none;
+  }
+  .blogSearchSection {
+    display: block;
+    width: 95%;
+    margin: auto;
+  }
   .blogsFlexSection {
     flex-direction: column;
   }
@@ -255,11 +347,11 @@
     align-items: center;
     margin: auto;
   }
-  .blogSearchSection {
+  .blogSearchSection1 {
     width: 100%;
     margin: auto;
   }
-  .blogSearchSection {
+  .blogSearchSection1 {
     margin-top: 30px;
   }
   .loveneetDataFlex h3 {
@@ -318,7 +410,7 @@
     align-items: center;
     margin: auto;
   }
-  .blogSearchSection {
+  .blogSearchSection1 {
     width: 100%;
     /* margin: auto; */
   }
