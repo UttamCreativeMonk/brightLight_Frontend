@@ -23,8 +23,6 @@ const GlobalStreamLmia = () => {
     }
   };
 
-<<<<<<< HEAD
-=======
   useEffect(() => {
 
     fetch("https://brightlight-node.onrender.com/globalStreamLmiaMeta")
@@ -41,8 +39,6 @@ const GlobalStreamLmia = () => {
       });
   }, []);
 
-
->>>>>>> 784e6acd4da5d091dbb43088f5da1296416beb4f
   const sectionsRef = useRef([]);
 
   const handleScroll = () => {
