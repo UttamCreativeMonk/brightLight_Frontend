@@ -180,6 +180,11 @@
   .faq {
     margin-bottom: 10px;
   }
+
+  .leftList{
+    list-style-type: disc;
+    margin-left: 40px !important;
+  }
   
   .section h2 {
     font-size: 2rem;

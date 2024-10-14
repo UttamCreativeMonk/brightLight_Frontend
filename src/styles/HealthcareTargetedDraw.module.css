@@ -159,6 +159,11 @@
 
 .eligibilityCriteria ul{
   margin-bottom: 20px;
+  margin-left: 40px;
+}
+
+.eligibleOccupations ul{
+  margin-left: 40px;
 }
 
 .eligibleOccupations p ,.contact p{

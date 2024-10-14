@@ -140,7 +140,7 @@ const SuperVisa = () => {
           </ul>
 
           <h3>Apart from these basic requirements</h3>
-          <h4>there are some additional requirements that your parents/grandparents will need to meet:</h4>
+          <h4>There are some additional requirements that your parents/grandparents will need to meet:</h4>
           <ul>
             <li>
               Their Super Visa application must be submitted from outside

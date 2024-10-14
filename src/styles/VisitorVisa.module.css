@@ -152,6 +152,10 @@
   margin-bottom: 20px;
 }
 
+.eligibility ul{
+  margin-left: 40px;
+}
+
 .subheading {
   font-size: 1.8rem;
   margin-bottom: 15px;
@@ -229,6 +233,10 @@ opacity: 0.9;
 }
 .refusalReasons p{
   margin-bottom: 20px;
+}
+
+.refusalReasons ul{
+  margin-left: 40px;
 }
 .section button {
   display: block;

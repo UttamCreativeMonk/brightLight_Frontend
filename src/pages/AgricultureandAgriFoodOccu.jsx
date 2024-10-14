@@ -196,7 +196,7 @@ const AgricultureandAgriFoodOccu = () => {
               programs, now you need to meet eligibility for Agriculture and
               agri-food occupations criteria:
             </h4>
-            <ul>
+            <ul className={styles.leftList}>
               <li>
                 At least 6 months of full-time, continuous work experience (or
                 an equivalent amount of part-time work experience) in an
@@ -220,7 +220,7 @@ const AgricultureandAgriFoodOccu = () => {
             >
               Previous Draw
             </button>
-            <p>
+            <p style={{marginTop: "20px"}}>
               The first ever Express Entry draw for Agriculture and agri-food
               occupations workers was held on September, 2023. Express Entry
               draw 267 saw a CRS score of 354 and invited 600 candidates

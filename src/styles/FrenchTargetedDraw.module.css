@@ -151,8 +151,25 @@
   margin-bottom: 20px;
 }
 
+.frenchLanguageEligibility ul{
+  margin-left: 40px;
+}
+
+.benefits ul{
+  margin-left: 40px;
+}
+
 .expressEntryEligibility p, .support p{
   margin-bottom: 20px;
+}
+
+.expressEntryEligibility ol{
+  margin-left: 40px;
+}
+
+.expressEntryEligibility ul{
+  margin-left: 40px;
+  margin-top: 10px;
 }
 
 .introduction p{

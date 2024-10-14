@@ -148,6 +148,14 @@
     margin-bottom: 20px;
   }
 
+  .leftList{
+    margin-left: 40px;
+  }
+
+  .stemEligibility ul {
+    margin-left: 40px;
+  }
+
   .eligibility li{
     margin-bottom: 10px;
   }

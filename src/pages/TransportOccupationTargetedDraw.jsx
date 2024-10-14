@@ -139,9 +139,11 @@ const TransportOccupationTargetedDraw = () => {
                   >
                     Federal Skilled Worker Program (FSWP)
                   </button>
-                  {"->"}
-                  This program is ideal for tech workers who have the necessary
-                  work experience, education, and language ability.
+                  <span>{"->"}</span>
+                  <p>
+                    This program is ideal for tech workers who have the
+                    necessary work experience, education, and language ability.
+                  </p>
                 </li>
                 <li>
                   <button
@@ -152,9 +154,11 @@ const TransportOccupationTargetedDraw = () => {
                   >
                     Canadian Experience Class (CEC)
                   </button>
-                  {"->"}
-                  Similar to the FSW program, the CEC is also suitable for tech
-                  workers who have gained Canadian work experience.
+                  <span>{"->"}</span>
+                  <p>
+                    Similar to the FSW program, the CEC is also suitable for
+                    tech workers who have gained Canadian work experience.
+                  </p>
                 </li>
                 <li>
                   <button
@@ -166,10 +170,12 @@ const TransportOccupationTargetedDraw = () => {
                   >
                     Federal Skilled Transports Program (FSTP)
                   </button>
-                  {"->"}
-                  If you&#39;re a Transports worker, this program is designed
-                  for you. It requires proof of relevant work experience,
-                  education, and language proficiency.
+                  <span>{"->"}</span>
+                  <p>
+                    If you&#39;re a Transports worker, this program is designed
+                    for you. It requires proof of relevant work experience,
+                    education, and language proficiency.
+                  </p>
                 </li>
               </ul>
             </li>
@@ -189,7 +195,10 @@ const TransportOccupationTargetedDraw = () => {
           <h2 className={styles.subheading}>
             Eligibility Criteria for Transport Occupations Category
           </h2>
-          <p>Once you have met eligibility for</p>
+          <p>
+            Once you have met eligibility for one of the Express Entry programs,
+            now you need to meet eligibility for Transport specific criteria:
+          </p>
           <ul>
             <li>
               Within the last 3 years, you have at least 6 months of full-time,

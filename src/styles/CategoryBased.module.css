@@ -258,6 +258,10 @@
   padding-bottom: 100px;
 }
 
+.refusalParent ul{
+  margin-left: 20px !important;
+}
+
 .benifitMain h1 {
   font-size: 60px;
   color: #132f46;

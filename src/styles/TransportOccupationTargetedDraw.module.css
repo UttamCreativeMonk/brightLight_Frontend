@@ -149,6 +149,23 @@
     margin-bottom: 30px;
   }
 
+  .eligibility ol{
+    margin-left: 40px;
+  }
+
+  .eligibility ol p{
+    display: flex;
+    display: inline-block;
+    width: 50%;
+    margin-left: 10px;
+    margin-top: 20px;
+  }
+
+  .transportEligibility ul{
+    list-style-type: disc;
+    margin-left: 40px;
+  }
+
   .eligibility p, .transportEligibility p{
     margin-bottom: 20px;
   }

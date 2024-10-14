@@ -191,7 +191,7 @@ const StemTargetedDraw = () => {
             Training Education Experience Responsibilities (TEER) categories.
           </p>
           <p>Here are a couple of important points to remember:</p>
-          <ul>
+          <ul className={styles.leftList}>
             <li>
               You can accumulate this work experience over two years in
               part-time roles, as long as it adds up to 1,560 hours, which is
