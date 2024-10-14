@@ -6,9 +6,12 @@ import Footer1 from "../components/Footer1";
 import Testimonials from "../sections/Testimonials";
 import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
+import ogImage from "../assets/ogImage.png";
+import { Helmet } from "react-helmet-async";
 
 const FrenchTargetedDraw = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  let [metaData, setMetaData] = useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -20,7 +23,20 @@ const FrenchTargetedDraw = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
-
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/frenchTargetedDrawMeta")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   const sectionsRef = useRef([]);
 
@@ -46,6 +62,49 @@ const FrenchTargetedDraw = () => {
 
   return (
     <>
+      <Helmet>
+        <title>
+          {metaData?.metaTitle
+            ? metaData?.metaTitle
+            : "Brightlight Immigration"}
+        </title>
+        <meta
+          name="description"
+          content={
+            metaData?.metaDesc
+              ? metaData?.metaDesc
+              : "Learn about Brightlight Immigration, our mission, values, and the dedicated team behind our immigration services. We are committed to providing honest and accurate advice to guide you through your immigration journey."
+          }
+        />
+        <meta
+          name="title"
+          property="og:title"
+          content={
+            metaData?.metaOgTitle
+              ? metaData?.metaOgTitle
+              : " Brightlight Immigration"
+          }
+        />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:type" content="image/png" />
+        <meta
+          property="og:description"
+          content={
+            metaData?.metaOgDesc
+              ? metaData?.metaOgDesc
+              : "Discover the story behind Brightlight Immigration, our commitment to providing honest and accurate advice, and how our team can assist you with your immigration needs."
+          }
+        />
+        <meta
+          name="Keywords"
+          content={
+            metaData?.metaKeywords
+              ? metaData?.metaKeywords
+              : "Brightlight Immigration, Immigration Services, Mission, Team"
+          }
+        />
+      </Helmet>
+
       <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
@@ -61,12 +120,20 @@ const FrenchTargetedDraw = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
               <p onClick={() => scrollToSection("benefits")}>Benefits</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("book-appointment")}>
+                Book Appointment
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -75,7 +142,11 @@ const FrenchTargetedDraw = () => {
       </div>
 
       <div className={styles.container}>
-        <h1  className={`${styles.heading} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
+        <h1
+          className={`${styles.heading} ${styles.section}`}
+          id="about-program"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
           Category-Based Express Entry Selection Draws: French Language
           Proficiency
         </h1>
@@ -91,12 +162,18 @@ const FrenchTargetedDraw = () => {
           </p>
         </section>
 
-        <section  className={`${styles.benefits} ${styles.section}`} id="benefits" ref={(el) => sectionsRef.current[1] = el}>
+        <section
+          className={`${styles.benefits} ${styles.section}`}
+          id="benefits"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
           <h2 className={styles.subheading}>
             Benefits of French Language Proficiency
           </h2>
-          <p>Discover the significance of strong French language skills in Canadian permanent residency (PR)
-          applications:</p>
+          <p>
+            Discover the significance of strong French language skills in
+            Canadian permanent residency (PR) applications:
+          </p>
           <ul>
             <li>
               <strong>Leverage Targeted Draws by IRCC:</strong> The Immigration,
@@ -148,7 +225,11 @@ const FrenchTargetedDraw = () => {
           </ul>
         </section>
 
-        <section className={`${styles.expressEntryEligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[2] = el}>
+        <section
+          className={`${styles.expressEntryEligibility} ${styles.section}`}
+          id="eligibility"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
           <h2 className={styles.subheading}>
             First You Must Be Eligible with Express Entry
           </h2>
@@ -205,23 +286,30 @@ const FrenchTargetedDraw = () => {
           </p>
         </section>
 
-        <section className={`${styles.frenchLanguageEligibility} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[3] = el}>
+        <section
+          className={`${styles.frenchLanguageEligibility} ${styles.section}`}
+          id="testing2"
+          ref={(el) => (sectionsRef.current[3] = el)}
+        >
           <h2 className={styles.subheading}>
             Eligibility Criteria for French Language Proficiency Category
           </h2>
-          <p>Once you have met eligibility for one of the programs of Express Entry now you need to be eligible for the
-          French-language proficiency category:</p>
+          <p>
+            Once you have met eligibility for one of the programs of Express
+            Entry now you need to be eligible for the French-language
+            proficiency category:
+          </p>
           <ul>
             <li>
               You have CLB level 7 or higher in French.{" "}
-              <button className={styles.button}
-              onClick={() =>
-                (window.location.href =
-                  "/clb-ilets-calculators")
-              }
-            >
-              CLB Calculators
-            </button>
+              <button
+                className={styles.button}
+                onClick={() =>
+                  (window.location.href = "/clb-ilets-calculators")
+                }
+              >
+                CLB Calculators
+              </button>
             </li>
             <li>A valid Express Entry profile.</li>
           </ul>
@@ -235,12 +323,20 @@ const FrenchTargetedDraw = () => {
             providing information for each round as soon as IRCC provides any
             update.
           </p>
-          <p>To obtain complete eligibility details for the French-language proficiency category, it is essential to review
-the instructions for each round. These instructions provide comprehensive information about the specific
-requirements that must be met in order to be eligible for this category.</p>
+          <p>
+            To obtain complete eligibility details for the French-language
+            proficiency category, it is essential to review the instructions for
+            each round. These instructions provide comprehensive information
+            about the specific requirements that must be met in order to be
+            eligible for this category.
+          </p>
         </section>
 
-        <section className={`${styles.drawsHistory} ${styles.section}`} id="testing4" ref={(el) => sectionsRef.current[4] = el}>
+        <section
+          className={`${styles.drawsHistory} ${styles.section}`}
+          id="testing4"
+          ref={(el) => (sectionsRef.current[4] = el)}
+        >
           <h2 className={styles.subheading}>
             Express Entry French-Language Proficiency Draws History
           </h2>
@@ -249,17 +345,19 @@ requirements that must be met in order to be eligible for this category.</p>
             was held in February 2024. Express Entry draw 282 saw a CRS score of
             365 and invited 7000 candidates eligible for French language.
           </p>
-          <button className={styles.button}
-              onClick={() =>
-                (window.location.href =
-                  "/previous-draw-history")
-              }
-            >
-                 Previous Draw History
-            </button>
+          <button
+            className={styles.button}
+            onClick={() => (window.location.href = "/previous-draw-history")}
+          >
+            Previous Draw History
+          </button>
         </section>
 
-        <section className={`${styles.support} ${styles.section}`} id="testing5" ref={(el) => sectionsRef.current[5] = el}>
+        <section
+          className={`${styles.support} ${styles.section}`}
+          id="testing5"
+          ref={(el) => (sectionsRef.current[5] = el)}
+        >
           <h2 className={styles.subheading}>Still Not Sure?</h2>
           <p>
             Contact Brightlight Immigration today to assess your profile and
@@ -275,17 +373,22 @@ requirements that must be met in order to be eligible for this category.</p>
             application process all the way to obtaining your PR. Start your
             process now.
           </p>
-          <button className={styles.button}
-              onClick={() =>
-                (window.location.href =
-                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-              }
-            >
-              Book Appointment
-            </button>
+          <button
+            className={styles.button}
+            onClick={() =>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
+          >
+            Book Appointment
+          </button>
         </section>
 
-        <section className={`${styles.whyChooseUs} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[6] = el}>
+        <section
+          className={`${styles.whyChooseUs} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[6] = el)}
+        >
           <h2 className={styles.subheading}>Why Choose Us?</h2>
           <p>
             At Brightlight Immigration, we offer expert guidance and support

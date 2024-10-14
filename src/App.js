@@ -55,7 +55,7 @@ import DualIntentVisa from "./pages/DualIntentVisa"; //Done one part Animation
 import CanadianExperienceClass from "./pages/CanadianExperienceClass"; //Done Animation
 import FederalSkilledTradesProgram from "./pages/FederalSkilledTradesProgram";//Done Animation
 import FederalSkilledWorkerProgram from "./pages/FederalSkilledWorkerProgram"; // Done Animation
-import FrenchTargetedDraw from "./pages/FrenchTargetedDraw"; //Done Animation
+import FrenchTargetedDraw from "./pages/FrenchTargetedDraw"; //Done Animation Meta
 import HealthcareTargetedDraw from "./pages/HealthcareTargetedDraw"; //Done Animation
 import StemTargetedDraw from "./pages/StemTargetedDraw"; //Done Animation
 import TradeOccupationTargetedDraw from "./pages/TradeOccupationTargetedDraw"; //Done Animation
@@ -109,7 +109,7 @@ function App() {
   
       <ToastContainer />
 
-      {/* <Loader />    */}
+      <Loader />   
       <HelmetProvider>
         <AllRoutes />
       </HelmetProvider>

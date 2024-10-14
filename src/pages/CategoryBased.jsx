@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/CategoryBased.module.css";
 import GirlVisa from "../assets/GirlVisa.png";
 import LinkAncor from "../assets/link-arrows.png";
 import BestChoice from "../sections/BestChoice";
 import Testimonials from "../sections/Testimonials";
 import FAQ from "../sections/FAQ";
+import Blogs from "../sections/Blogs";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
 import ogImage from "../assets/ogImage.png";
@@ -44,6 +45,36 @@ let CategoryBased = () => {
       .catch((error) => {
         console.log(error);
       });
+  }, []);
+
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
   return (
     <>
@@ -96,12 +127,10 @@ let CategoryBased = () => {
             <h1>{data?.heading}</h1>
             <p>{data?.description}</p>
           </div>
-          {/* // */}
-          <div
+         
+          {/* <div
             className={`${styles.bannerHeadingRotateParent} ${
-              isDropdownOpen ? styles.active : ""
-            }`}
-          >
+              isDropdownOpen ? styles.active : ""}`}>
             <div
               className={styles.bannerHeadingRotate}
               onClick={toggleDropdown}
@@ -123,14 +152,39 @@ let CategoryBased = () => {
               <p>FAQs</p>
               <p>Blogs</p>
             </div>
-          </div>
-          {/* // */}
+          </div> */}
+          
         </div>
+                  <div
+            className={`${styles.bannerHeadingRotateParent} ${
+              isDropdownOpen ? styles.active : ""
+            }`}>
+            <div
+              className={styles.bannerHeadingRotate}
+              onClick={toggleDropdown}>
+              <h3>Quick Access</h3>
+             </div>
+            <div className={styles.bannerHeadingRotatePara}>
+              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
+              <p onClick={() => scrollToSection("benefits")}>Benefits</p>
+              <p onClick={() => scrollToSection("categories")}>Categories</p>
+              <p onClick={() => scrollToSection("HowItWorks")}>How it Works</p>
+              <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
+              <p onClick={() => scrollToSection("drawHistory")}>Draw History</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
+              <p onClick={() => scrollToSection("book-Appointment")}>Book Appointment</p>
+              <p onClick={() => scrollToSection("whyChooseUs")}>Why Choose Us</p>
+              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("faqs")}>FAQs</p>
+              <p onClick={() => scrollToSection("blogs")}>Blogs</p>
+            </div>
+          </div>
       </div>
 
       <div className={styles.canadianParent}>
         <div className={styles.canadianContent}>
-          <h1>{data?.aboutHeading}</h1>
+          <h1 id="about-program">{data?.aboutHeading}</h1>
           <p>{data?.aboutDescription}</p>
         </div>
 
@@ -139,10 +193,10 @@ let CategoryBased = () => {
         </div>
       </div>
 
-      <div className={styles.eligibleParent}>
+      <div className={styles.eligibleParent} id="categories">
         <h1>{data?.drawsHeading}</h1>
         <div className={styles.container}>
-          <div className={styles.column}>
+          <div className={styles.column} >
             <ul>
               <li
                 style={{ cursor: "pointer" }}
@@ -201,7 +255,7 @@ let CategoryBased = () => {
 
       <div className={styles.categoryBasedParent}>
         <div className={styles.categoryBasedMain}>
-          <h1>{data?.workHeading}</h1>
+          <h1 >{data?.workHeading}</h1>
           <div className={styles.categoryBasedContentParent}>
             <div className={styles.categoryBasedContent}>
               <p>{data?.workDescription}</p>
@@ -213,7 +267,7 @@ let CategoryBased = () => {
         </div>
       </div>
 
-      <div className={styles.eligibilityParent}>
+      <div className={styles.eligibilityParent} id="eligibility">
         <div className={styles.eligibilityMain}>
           <h1>{data?.eligibilityHeading}</h1>
           <h3>{data?.eligibilitySubHeading}</h3>
@@ -249,7 +303,7 @@ let CategoryBased = () => {
         </div>
       </div>
 
-      <div className={styles.benifitParent}>
+      <div className={styles.benifitParent} id="benefits">
         <div className={styles.benifitMain}>
           {data?.benefitsHeading ? <h1>{data?.benefitsHeading}</h1> : null}
 
@@ -264,7 +318,7 @@ let CategoryBased = () => {
         </div>
       </div>
 
-      <div className={styles.howApplyParent}>
+      <div className={styles.howApplyParent} id="HowItWorks">
         <div className={styles.howApplyMain}>
           {data?.applyHeading ? <h1>{data?.applyHeading}</h1> : null}
           {data?.applyDescription ? <h4>{data?.applyDescription}</h4> : null}
@@ -402,7 +456,7 @@ let CategoryBased = () => {
         </div>
       </div>
 
-      <div className={styles.refusalParent}>
+      <div className={styles.refusalParent} id="refusal-reasons">
         <div className={styles.refusalMain}>
           {data?.refusalHeading ? <h1>{data?.refusalHeading}</h1> : null}
           {data?.refusalDescription ? (
@@ -436,16 +490,38 @@ let CategoryBased = () => {
       </div>
 
       <div className={styles.appointementParent}>
-        <div className={styles.appointementMain}>
+        <div className={styles.appointementMain} id="book-Appointment">
           {data?.bookHeading ? <h1>{data?.bookHeading}</h1> : null}
 
           {data?.bookSubHeading ? <h5>{data?.bookSubHeading}</h5> : null}
           {data?.bookDescription ? <p>{data?.bookDescription}</p> : null}
         </div>
+        <button
+            className={styles.button02}  
+            onClick={() =>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
+          >
+            Book Appointment
+          </button>
+      </div>
+      <div id="whyChooseUs">
+
       </div>
       <BestChoice />
+      <div id="testimonials">
+
+      </div>
       <Testimonials />
+      <div id="faqs">
+
+      </div>
       <FAQ />
+      <div id="blogs">
+
+      </div>
+      <Blogs/>
 
       <Footer1 />
     </>

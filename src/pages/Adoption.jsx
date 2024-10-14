@@ -5,9 +5,13 @@ import Navbar1 from "../components/Navbar1";
 import Testimonials from "../sections/Testimonials";
 import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
+import ogImage from "../assets/ogImage.png";
+import { Helmet } from "react-helmet-async";
 
 const Adoption = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  let [metaData, setMetaData] = useState([]);
+
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -19,6 +23,23 @@ const Adoption = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  useEffect(() => {
+
+    fetch("https://brightlight-node.onrender.com/adopMeta")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
 
   const sectionsRef = useRef([]);
 
@@ -44,6 +65,48 @@ const Adoption = () => {
 
   return (
     <>
+        <Helmet>
+        <title>
+          {metaData?.metaTitle
+            ? metaData?.metaTitle
+            : "Brightlight Immigration"}
+        </title>
+        <meta
+          name="description"
+          content={
+            metaData?.metaDesc
+              ? metaData?.metaDesc
+              : "Learn about Brightlight Immigration, our mission, values, and the dedicated team behind our immigration services. We are committed to providing honest and accurate advice to guide you through your immigration journey."
+          }
+        />
+        <meta
+          name="title"
+          property="og:title"
+          content={
+            metaData?.metaOgTitle
+              ? metaData?.metaOgTitle
+              : " Brightlight Immigration"
+          }
+        />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:type" content="image/png" />
+        <meta
+          property="og:description"
+          content={
+            metaData?.metaOgDesc
+              ? metaData?.metaOgDesc
+              : "Discover the story behind Brightlight Immigration, our commitment to providing honest and accurate advice, and how our team can assist you with your immigration needs."
+          }
+        />
+        <meta
+          name="Keywords"
+          content={
+            metaData?.metaKeywords
+              ? metaData?.metaKeywords
+              : "Brightlight Immigration, Immigration Services, Mission, Team"
+          }
+        />
+      </Helmet>
       <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
@@ -121,30 +184,16 @@ const Adoption = () => {
                 Intra-country adoption. This involves adopting a child from
                 another province in Canada.
               </p>
-              <a
-                style={{
-                  marginTop: "10px",
-                }}
-                href="#intra-country"
-                className={styles.button}
-              >
+              <a href="#intra-country" className={styles.button}>
                 Intra-Country Adoption
               </a>
             </li>
-            <li
-              style={{
-                marginTop: "30px",
-                marginBottom: "60px",
-              }}
-            >
+            <li>
               <p>
                 Inter-country adoption. This involves adopting a child from
                 another country.
               </p>
               <a
-                style={{
-                  marginTop: "10px",
-                }}
                 href="#inter-country"
                 className={styles.button}
                 id="intra-country"
@@ -168,11 +217,7 @@ const Adoption = () => {
           <h3 className={styles.marginTop}>
             How to Apply for Intra-Country Adoption:
           </h3>
-          <ol style={{
-              marginLeft: "40px",
-              marginTop: "20px",
-              marginBottom: "60px",
-            }}>
+          <ol>
             <li>Fill out the adoption application.</li>
             <li>Attend an adoption orientation.</li>
             <li>Get matched with a child.</li>
@@ -195,11 +240,7 @@ const Adoption = () => {
           <h3 className={styles.marginTop}>
             How to Apply for Inter-Country Adoption:
           </h3>
-          <ol style={{
-              marginLeft: "40px",
-              marginTop: "20px",
-              marginBottom: "60px",
-            }}>
+          <ol>
             <li>Choose a child from the available list.</li>
             <li>Complete a home study and provide financial documentation.</li>
             <li>
@@ -248,11 +289,7 @@ const Adoption = () => {
             Failing to meet the eligibility criteria to be eligible to sponsor a
             child for adoption that is:{" "}
           </h4>
-          <ul style={{
-              marginLeft: "40px",
-              marginTop: "20px",
-              marginBottom: "60px",
-            }}>
+          <ul>
             <li>
               Incomplete or inaccurate information on your application or during
               interviews.
