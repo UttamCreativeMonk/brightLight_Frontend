@@ -239,12 +239,11 @@ const EntryLevelSemiSkilled = () => {
               Location-specific variations apply:
               <ul className={styles.nestedList}>
                 <li className={styles.nestedListItem}>
-                  Northeast Development Region of BC: All NOC 4 or 5 occupations
+               <strong> Northeast Development Region of BC:</strong>   All NOC 4 or 5 occupations
                   are eligible except for live-in caregivers (NOC 44100).
                 </li>
                 <li className={styles.nestedListItem}>
-                  Outside the Northeast Development Region: Eligible occupations
-                  include:
+                <strong> Outside the Northeast Development Region:</strong>Eligible occupations include:
                   <ul className={styles.nestedList}>
                     <li className={styles.nestedListItem}>
                       Travel and accommodation roles (e.g., hotel front desk
@@ -279,9 +278,7 @@ const EntryLevelSemiSkilled = () => {
             Work Experience
           </h3>
           <ul
-            className={`${styles.list} ${styles.section}`}
-            id="testing7"
-            ref={(el) => (sectionsRef.current[9] = el)}
+            className={styles.list} 
           >
             <li className={styles.listItem}>
               Maintain full-time employment (averaging at least 30 hours per
@@ -697,7 +694,7 @@ const EntryLevelSemiSkilled = () => {
           Book Appointment
         </button>
 
-        <h2
+        {/* <h2
           className={`${styles.subtitle} ${styles.section}`}
           id="why-choose-us"
           ref={(el) => (sectionsRef.current[32] = el)}
@@ -728,7 +725,32 @@ const EntryLevelSemiSkilled = () => {
           <li className={styles.listItem}>
             Full Support: From initial application to final PR approval.{" "}
           </li>
-        </ul>
+        </ul> */}
+                <section
+          className={`${styles.section} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[9] = el)}
+        >
+          <h2>Why Choose Us?</h2>
+          <ul>
+            <li>
+              <strong>Experienced Team:</strong> Over a decade of experience in
+              handling BCPNP applications with a high success rate.
+            </li>
+            <li>
+              <strong>Tailored Approach:</strong> Personalized services and
+              strategies based on your specific case.
+            </li>
+            <li>
+              <strong>High Success Rate:</strong> Proven track record using case
+              law and precedents for positive results.
+            </li>
+            <li>
+              <strong>Comprehensive Support:</strong> Assistance from the start
+              of the application process to obtaining your PR.
+            </li>
+          </ul>
+        </section>
       </div>
 
       <div id="faqs">

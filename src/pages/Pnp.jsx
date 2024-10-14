@@ -210,7 +210,7 @@ const Pnp = () => {
         <h3
           className={`${styles.heading3} ${styles.section}`}
           id="testing7"
-          ref={(el) => (sectionsRef.current[8] = el)}
+          ref={(el) => (sectionsRef.current[28] = el)}
         >
           How to apply for PNP?
         </h3>
@@ -218,7 +218,7 @@ const Pnp = () => {
           style={{marginTop: "20px", marginBottom: "60px"}}
           className={`${styles.list} ${styles.section}`}
           id="testing8"
-          ref={(el) => (sectionsRef.current[9] = el)}
+          ref={(el) => (sectionsRef.current[49] = el)}
         >
           <li className={styles.listItem}>
             Firstly, choose the province or territory you are interested in
@@ -269,7 +269,7 @@ const Pnp = () => {
           </li>
         </ul>
 
-        <h3 className={styles.heading3} id="why-choose-us">
+        {/* <h3 className={styles.heading3} id="why-choose-us">
           Still not sure?
         </h3>
         <p
@@ -307,7 +307,43 @@ const Pnp = () => {
           }
         >
           Book Appointment
-        </button>
+        </button> */}
+                <section
+          className={`${styles.section} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[9] = el)}
+        >
+          <h2>Why Choose Us?</h2>
+          <ul>
+            <li>
+              <strong>Experienced Team:</strong> Over a decade of experience in
+              handling BCPNP applications with a high success rate.
+            </li>
+            <li>
+              <strong>Tailored Approach:</strong> Personalized services and
+              strategies based on your specific case.
+            </li>
+            <li>
+              <strong>High Success Rate:</strong> Proven track record using case
+              law and precedents for positive results.
+            </li>
+            <li>
+              <strong>Comprehensive Support:</strong> Assistance from the start
+              of the application process to obtaining your PR.
+            </li>
+          </ul>
+
+          <button
+          id="book-appointment"
+          className={styles.button}
+          onClick={() =>
+            (window.location.href =
+              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+          }
+        >
+          Book Appointment
+        </button> 
+        </section>
       </div>
 
       <div id="faqs">

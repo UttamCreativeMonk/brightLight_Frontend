@@ -191,6 +191,45 @@ const InternationalPostGraduateProgram = () => {
           ref={(el) => (sectionsRef.current[1] = el)}
         >
           <h4>First you must be eligible with BCPNP Skilled Worker Program</h4>
+          <ul className={styles.subheadingLink}>
+                <li>
+                  <button
+                    className={styles.button1}
+                    onClick={() =>
+                      (window.location.href = "/federal-skilled-worker-program")
+                    }
+                  >
+                    Federal Skilled Worker Program (FSW)
+                  </button>
+                  This program is ideal for tech workers who have the necessary
+                  work experience, education, and language ability.
+                </li>
+                <li>
+                  <button
+                    className={styles.button1}
+                    onClick={() =>
+                      (window.location.href = "/canadian-experience-class")
+                    }
+                  >
+                    Canadian Experience Class (CEC)
+                  </button>
+                  Like the FSW program, the CEC is also suitable for tech
+                  workers who have gained Canadian work experience.
+                </li>
+                <li>
+                  <button
+                    className={styles.button1}
+                    onClick={() =>
+                      (window.location.href = "/federal-skilled-trades-program")
+                    }
+                  >
+                    Federal Skilled Trades Program (FSTP)
+                  </button>
+                  If you&#39;re a trades worker, this program is designed for
+                  you. It requires proof of relevant work experience, education,
+                  and language proficiency.
+                </li>
+              </ul>
           <h2>Eligibility Criteria for International Post-Graduate Stream</h2>
           <div className={styles.criteria}>
             <h3>1. Educational Qualifications</h3>

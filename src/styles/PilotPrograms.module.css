@@ -179,6 +179,7 @@ a.button:hover {
 }
 .container ul {
   list-style-type: none;
+  text-align: center;
 }
 
 .button1 {

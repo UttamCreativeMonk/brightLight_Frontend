@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useRef } from "react";
 import styles from "../styles/ExpressEntry.module.css";
 import ServiceImg from "../assets/service-data-image.webp";
 import BestChoice from "../sections/BestChoice";
@@ -50,7 +50,7 @@ const ExpressEntry = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
-
+let sectionRef=useRef(null)
   return (
     <>
       <Helmet>
@@ -328,6 +328,32 @@ const ExpressEntry = () => {
           </div>
         </div>
       </div>
+
+      <div
+          className={styles.whyChooseUs} 
+          id="why-choose-us"
+        
+        >
+          <h2>Why Choose Us?</h2>
+          <ul>
+            <li>
+              <strong>Experienced Team:</strong> Over a decade of experience in
+              handling BCPNP applications with a high success rate.
+            </li>
+            <li>
+              <strong>Tailored Approach:</strong> Personalized services and
+              strategies based on your specific case.
+            </li>
+            <li>
+              <strong>High Success Rate:</strong> Proven track record using case
+              law and precedents for positive results.
+            </li>
+            <li>
+              <strong>Comprehensive Support:</strong> Assistance from the start
+              of the application process to obtaining your PR.
+            </li>
+          </ul>
+        </div>
 
       <div id="why-choose-us">
         <BestChoice />

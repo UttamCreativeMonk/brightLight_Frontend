@@ -638,6 +638,27 @@
   opacity: 0.9;
   text-decoration: none;
 }
+.whyChooseUs{
+  width: 1440px;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+.whyChooseUs h2{
+  font-size: 44px;
+}
+.whyChooseUs ul{
+  margin-top: 30px;
+}
+.whyChooseUs li{
+font-size: 20px;
+}
+@media (max-width: 1460px) {
+  .whyChooseUs{
+    width: 95%;
+
+  }
+}
 
 @media (max-width: 1080px) {
   .bannerHeadingRotateParent {
@@ -1110,7 +1131,18 @@
     font-size: 40px;
   }
 }
+@media (max-width: 460px) {
+  .whyChooseUs{
+    width: 95%;
+  }
+  .whyChooseUs h2{
+    font-size: 34px;
+  }
 
+  .whyChooseUs li{
+  font-size: 16px;
+  }
+}
 @media (max-width: 484px) {
   .theButtonAncorParent{
     padding: 10px 0px ;

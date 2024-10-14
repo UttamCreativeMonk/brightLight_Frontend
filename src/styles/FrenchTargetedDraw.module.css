@@ -276,6 +276,60 @@
   transform: translateX(0);
 }
 
+
+.button02 {
+  display: inline-block;
+  background-color: #00273f;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-top: 20px;
+  border: none;
+  cursor: pointer;
+  /* display: block; */
+  margin: auto;
+}
+
+
+
+.whyChooseUs{
+  width: 1440px;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+.whyChooseUs h2{
+  font-size: 44px;
+}
+.whyChooseUs ul{
+  margin-top: 30px;
+}
+.whyChooseUs li{
+font-size: 20px;
+}
+@media (max-width: 1460px) {
+  .whyChooseUs{
+    width: 95%;
+
+  }
+}
+
+@media (max-width: 460px) {
+  .whyChooseUs{
+    width: 95%;
+  }
+  .whyChooseUs h2{
+    font-size: 34px;
+  }
+
+  .whyChooseUs li{
+  font-size: 16px;
+  }
+}
+
 @media (max-width: 500px) {
   .container h2 {
     font-size: 20px;

@@ -173,11 +173,11 @@ const FederalSkilledTradesProgram = () => {
             </li>
             <li>
               Your work experience must be in one of the following categories:
-              <ul>
+              <ul className={styles.subList}>
                 <li>
                   Major Group 72: Technical Trades and Transportation Officers
                   and Controllers
-                  <ul>
+                  <ul className={styles.subList02}>
                     <li>Excluding Sub-Major Group 726: Transportation Officers and Controllers
                     </li>
                   </ul>
@@ -259,10 +259,12 @@ const FederalSkilledTradesProgram = () => {
             </li>
             <li>
             After that, you will receive an invitation to apply (ITA) from IRCC. Note that ITAs are issued to candidates who score high enough on the Comprehensive Ranking System (CRS), which is a points-based system that assesses candidates' eligibility for the program.{" "}
-              <Link to="/crs-calculator" className={styles.link}>
+             {" "}
+              <Link to="/Federal-Skilled" className={styles.link}>
                 click here
               </Link>
-              you can find a link to a FSTP Calculator.
+              {" "}
+              you can find a link to a FSWP Calculator.
             </li>
             <li>
               Submit a complete application, including supporting documents such
@@ -330,7 +332,7 @@ const FederalSkilledTradesProgram = () => {
               Book Appointment
             </button>
         </section>
-
+{/* 
         <section className={`${styles.whyChooseUs} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[7] = el}>
           <h2 className={styles.subheading}>Why Choose Us?</h2>
           <p>
@@ -338,6 +340,31 @@ const FederalSkilledTradesProgram = () => {
             throughout your immigration journey. Our dedicated team is committed
             to achieving the best possible outcomes for our clients.
           </p>
+        </section> */}
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[7] = el)}
+        >
+          <h2>Why Choose Us?</h2>
+          <ul>
+            <li>
+              <strong>Experienced Team:</strong> Over a decade of experience in
+              handling BCPNP applications with a high success rate.
+            </li>
+            <li>
+              <strong>Tailored Approach:</strong> Personalized services and
+              strategies based on your specific case.
+            </li>
+            <li>
+              <strong>High Success Rate:</strong> Proven track record using case
+              law and precedents for positive results.
+            </li>
+            <li>
+              <strong>Comprehensive Support:</strong> Assistance from the start
+              of the application process to obtaining your PR.
+            </li>
+          </ul>
         </section>
       </div>
 

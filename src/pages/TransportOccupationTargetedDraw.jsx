@@ -129,7 +129,7 @@ const TransportOccupationTargetedDraw = () => {
             <li>
               Choose Your Program: There are three programs you can be eligible
               for to join the Express Entry pool:
-              <ul>
+              <ul className={styles.subheadingLink}>
                 <li>
                   <button
                     className={styles.button1}
@@ -137,13 +137,10 @@ const TransportOccupationTargetedDraw = () => {
                       (window.location.href = "/federal-skilled-worker-program")
                     }
                   >
-                    Federal Skilled Worker Program (FSWP)
+                    Federal Skilled Worker Program (FSW)
                   </button>
-                  <span>{"->"}</span>
-                  <p>
-                    This program is ideal for tech workers who have the
-                    necessary work experience, education, and language ability.
-                  </p>
+                  This program is ideal for tech workers who have the necessary
+                  work experience, education, and language ability.
                 </li>
                 <li>
                   <button
@@ -154,28 +151,21 @@ const TransportOccupationTargetedDraw = () => {
                   >
                     Canadian Experience Class (CEC)
                   </button>
-                  <span>{"->"}</span>
-                  <p>
-                    Similar to the FSW program, the CEC is also suitable for
-                    tech workers who have gained Canadian work experience.
-                  </p>
+                  Like the FSW program, the CEC is also suitable for tech
+                  workers who have gained Canadian work experience.
                 </li>
                 <li>
                   <button
                     className={styles.button1}
                     onClick={() =>
-                      (window.location.href =
-                        "/federal-skilled-transports-program")
+                      (window.location.href = "/federal-skilled-trades-program")
                     }
                   >
-                    Federal Skilled Transports Program (FSTP)
+                    Federal Skilled Trades Program (FSTP)
                   </button>
-                  <span>{"->"}</span>
-                  <p>
-                    If you&#39;re a Transports worker, this program is designed
-                    for you. It requires proof of relevant work experience,
-                    education, and language proficiency.
-                  </p>
+                  If you&#39;re a trades worker, this program is designed for
+                  you. It requires proof of relevant work experience, education,
+                  and language proficiency.
                 </li>
               </ul>
             </li>
@@ -345,7 +335,7 @@ const TransportOccupationTargetedDraw = () => {
           </button>
         </div>
 
-        <div
+        {/* <div
           className={`${styles.whyChooseUs} ${styles.section}`}
           id="testing4"
           ref={(el) => (sectionsRef.current[6] = el)}
@@ -365,7 +355,45 @@ const TransportOccupationTargetedDraw = () => {
           >
             Book Appointment
           </button>
-        </div>
+        </div> */}
+
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[9] = el)}
+        >
+          <h2>Why Choose Us?</h2>
+          <ul>
+            <li>
+              <strong>Experienced Team:</strong> Over a decade of experience in
+              handling BCPNP applications with a high success rate.
+            </li>
+            <li>
+              <strong>Tailored Approach:</strong> Personalized services and
+              strategies based on your specific case.
+            </li>
+            <li>
+              <strong>High Success Rate:</strong> Proven track record using case
+              law and precedents for positive results.
+            </li>
+            <li>
+              <strong>Comprehensive Support:</strong> Assistance from the start
+              of the application process to obtaining your PR.
+            </li>
+          </ul>
+
+          <button
+            className={styles.button}
+            onClick={() =>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
+          >
+            Book Appointment
+          </button>
+        </section>
+
+
       </div>
 
       <div id="faqs">

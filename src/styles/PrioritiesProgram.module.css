@@ -123,11 +123,10 @@
 
 /* Header */
 .header {
-  text-align: left;
   margin-bottom: 20px;
 }
 
-.header h1 {
+.header h3 {
   font-size: 2.1em;
   margin: 0;
   color: #e8c47c;
@@ -164,6 +163,9 @@
 
 .occupationList h4 {
   font-size: 1.5em;
+  margin-bottom: 10px;
+}
+.sectionPara {
   margin-bottom: 10px;
 }
 

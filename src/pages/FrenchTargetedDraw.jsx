@@ -247,31 +247,41 @@ const FrenchTargetedDraw = () => {
             <li>
               Choose Your Program: There are three programs you can be eligible
               for to join the Express Entry pool:
-              <ul>
+              <ul >
                 <li>
-                  <Link
-                    to="/federal-skilled-worker-program"
-                    className={styles.link}
-                  >
-                    Federal Skilled Worker Program (FSW)
-                  </Link>
+                <button
+                className={styles.button02}
+                onClick={() =>
+                  (window.location.href = "/federal-skilled-worker-program")
+                }>
+                Federal Skilled Worker Program (FSW)
+              </button>
+
                   : This program is ideal for tech workers who have the
                   necessary work experience, education, and language ability.
                 </li>
                 <li>
-                  <Link to="/canadian-experience-class" className={styles.link}>
-                    Canadian Experience Class (CEC)
-                  </Link>
+                <button
+                className={styles.button02}
+                onClick={() =>
+                  (window.location.href = "/canadian-experience-class")
+                }
+              >
+               Canadian Experience Class (CEC)
+              </button>
+
                   : Similar to the FSW program, the CEC is also suitable for
                   tech workers who have gained Canadian work experience.
                 </li>
                 <li>
-                  <Link
-                    to="/federal-skilled-trades-program"
-                    className={styles.link}
-                  >
-                    Federal Skilled Trades Program (FSTP)
-                  </Link>
+                <button
+                className={styles.button02}
+                onClick={() =>
+                  (window.location.href = "/federal-skilled-trades-program")
+                }
+              >
+                 Federal Skilled Trades Program (FSTP)
+              </button>
                   : If you're a trades worker, this program is designed for you.
                   It requires proof of relevant work experience, education, and
                   language proficiency.
@@ -383,7 +393,7 @@ const FrenchTargetedDraw = () => {
             Book Appointment
           </button>
         </section>
-
+{/* 
         <section
           className={`${styles.whyChooseUs} ${styles.section}`}
           id="why-choose-us"
@@ -395,6 +405,31 @@ const FrenchTargetedDraw = () => {
             throughout your immigration journey. Our dedicated team is committed
             to achieving the best possible outcomes for our clients.
           </p>
+        </section> */}
+
+      <section
+          className={`${styles.section} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[6] = el)}>
+          <h2>Why Choose Us?</h2>
+          <ul>
+            <li>
+              <strong>Experienced Team:</strong> Over a decade of experience in
+              handling BCPNP applications with a high success rate.
+            </li>
+            <li>
+              <strong>Tailored Approach:</strong> Personalized services and
+              strategies based on your specific case.
+            </li>
+            <li>
+              <strong>High Success Rate:</strong> Proven track record using case
+              law and precedents for positive results.
+            </li>
+            <li>
+              <strong>Comprehensive Support:</strong> Assistance from the start
+              of the application process to obtaining your PR.
+            </li>
+          </ul>
         </section>
       </div>
 

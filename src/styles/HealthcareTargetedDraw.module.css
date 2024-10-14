@@ -160,6 +160,8 @@
 .eligibilityCriteria ul{
   margin-bottom: 20px;
   margin-left: 40px;
+  text-align: center;
+  list-style-type: none;
 }
 
 .eligibleOccupations ul{
@@ -267,6 +269,39 @@
   transform: translateX(0);
 }
 
+.whyChooseUs{
+  width: 1440px;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+.whyChooseUs h2{
+  font-size: 44px;
+}
+.whyChooseUs ul{
+  margin-top: 30px;
+}
+.whyChooseUs li{
+font-size: 20px;
+}
+@media (max-width: 1460px) {
+  .whyChooseUs{
+    width: 95%;
+
+  }
+}
+@media (max-width: 460px) {
+  .whyChooseUs{
+    width: 95%;
+  }
+  .whyChooseUs h2{
+    font-size: 34px;
+  }
+
+  .whyChooseUs li{
+  font-size: 16px;
+  }
+}
 @media (max-width: 400px) {
   .heading {
     font-size: 20px;

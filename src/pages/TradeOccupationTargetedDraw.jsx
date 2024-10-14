@@ -142,7 +142,7 @@ const TradeOccupationTargetedDraw = () => {
             <li>
               Choose Your Program: There are three programs you can be eligible
               for to join the Express Entry pool:
-              <ul>
+              <ul className={styles.subheadingLink}>
                 <li>
                   <button
                     className={styles.button1}
@@ -358,7 +358,7 @@ const TradeOccupationTargetedDraw = () => {
           </button>
         </div>
 
-        <div
+        {/* <div
           className={`${styles.whyChooseUs} ${styles.section}`}
           id="why-choose-us"
           ref={(el) => (sectionsRef.current[9] = el)}
@@ -369,9 +369,32 @@ const TradeOccupationTargetedDraw = () => {
             services over others. Highlight your unique selling points, such as
             personalized service, high success rates, and expert knowledge.
           </p>
-        </div>
+        </div> */}
 
-
+      <section
+          className={`${styles.whyChooseUs} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[9] = el)}>
+          <h2>Why Choose Us?</h2>
+          <ul>
+            <li>
+              <strong>Experienced Team:</strong> Over a decade of experience in
+              handling BCPNP applications with a high success rate.
+            </li>
+            <li>
+              <strong>Tailored Approach:</strong> Personalized services and
+              strategies based on your specific case.
+            </li>
+            <li>
+              <strong>High Success Rate:</strong> Proven track record using case
+              law and precedents for positive results.
+            </li>
+            <li>
+              <strong>Comprehensive Support:</strong> Assistance from the start
+              of the application process to obtaining your PR.
+            </li>
+          </ul>
+        </section>
       </div>
       <button
           className={styles.Bookbutton}

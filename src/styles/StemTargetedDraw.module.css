@@ -185,6 +185,8 @@
     display: flex !important;
     margin: 0 !important;
     margin-bottom: 20px !important;
+    display: block !important;
+    margin: auto !important;
   }
 
   .introduction p{
@@ -296,7 +298,12 @@
   }
 
 .subheadingLink{
-  text-align: start;
+  text-align: center;
+ 
+}
+.subheadingLink li{
+  list-style-type: none;
+  margin-top: 10px;
 }
 
 .section {
@@ -327,6 +334,42 @@
 .section button:hover {
   opacity: 0.9;
   text-decoration: none;
+}
+
+
+
+.whyChooseUs{
+  width: 1440px;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+.whyChooseUs h2{
+  font-size: 30px;
+}
+.whyChooseUs ul{
+  margin-top: 30px;
+}
+.whyChooseUs li{
+font-size: 15px;
+}
+@media (max-width: 1460px) {
+  .whyChooseUs{
+    width: 95%;
+
+  }
+}
+@media (max-width: 460px) {
+  .whyChooseUs{
+    width: 95%;
+  }
+  .whyChooseUs h2{
+    font-size: 28px;
+  }
+
+  .whyChooseUs li{
+  font-size: 14px;
+  }
 }
 
   @media (max-width: 400px) {

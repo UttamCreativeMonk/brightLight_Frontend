@@ -173,7 +173,15 @@
   color: #333;
   text-align: left;
 }
-
+.applicationProcess li{
+  margin-top: 15px;
+}
+.subList li{
+  list-style-type: circle;
+}
+.subList02 li{
+  list-style-type: disc;
+}
 .link {
   color: #007bff;
   text-decoration: none;

@@ -149,7 +149,7 @@ const InternationalGraduateProgram = () => {
 
       <div className={styles.container}>
         <section
-          className={`${styles.section} ${styles.section}`}
+          className={`${styles.header} ${styles.section}`}
           id="benefits-2"
           ref={(el) => (sectionsRef.current[21] = el)}
         >
@@ -194,6 +194,45 @@ const InternationalGraduateProgram = () => {
           ref={(el) => (sectionsRef.current[1] = el)}
         >
           <h2>First you must be eligible with BCPNP Skilled Worker Program</h2>
+          <ul className={styles.subheadingLink}>
+                <li>
+                  <button
+                    className={styles.button1}
+                    onClick={() =>
+                      (window.location.href = "/federal-skilled-worker-program")
+                    }
+                  >
+                    Federal Skilled Worker Program (FSW)
+                  </button>
+                  This program is ideal for tech workers who have the necessary
+                  work experience, education, and language ability.
+                </li>
+                <li>
+                  <button
+                    className={styles.button1}
+                    onClick={() =>
+                      (window.location.href = "/canadian-experience-class")
+                    }
+                  >
+                    Canadian Experience Class (CEC)
+                  </button>
+                  Like the FSW program, the CEC is also suitable for tech
+                  workers who have gained Canadian work experience.
+                </li>
+                <li>
+                  <button
+                    className={styles.button1}
+                    onClick={() =>
+                      (window.location.href = "/federal-skilled-trades-program")
+                    }
+                  >
+                    Federal Skilled Trades Program (FSTP)
+                  </button>
+                  If you&#39;re a trades worker, this program is designed for
+                  you. It requires proof of relevant work experience, education,
+                  and language proficiency.
+                </li>
+              </ul>
           <h4>Eligibility Criteria for International Graduate Stream</h4>
           <div className={styles.criteria}>
             <h3>1. Job Offer</h3>
@@ -488,6 +527,32 @@ const InternationalGraduateProgram = () => {
           >
             Book Appointment
           </button>
+        </section>
+        
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[9] = el)}
+        >
+          <h2>Why Choose Us?</h2>
+          <ul>
+            <li>
+              <strong>Experienced Team:</strong> Over a decade of experience in
+              handling BCPNP applications with a high success rate.
+            </li>
+            <li>
+              <strong>Tailored Approach:</strong> Personalized services and
+              strategies based on your specific case.
+            </li>
+            <li>
+              <strong>High Success Rate:</strong> Proven track record using case
+              law and precedents for positive results.
+            </li>
+            <li>
+              <strong>Comprehensive Support:</strong> Assistance from the start
+              of the application process to obtaining your PR.
+            </li>
+          </ul>
         </section>
       </div>
 
