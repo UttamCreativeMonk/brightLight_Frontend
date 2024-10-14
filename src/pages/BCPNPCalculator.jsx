@@ -1273,6 +1273,12 @@ const BCPNPCalculator = () => {
                   <h5>{data?.twsq1}</h5>
                 </div>
               )}
+              {data && (
+                <p className={styles.requiredDesc}>
+                  Only Applies If You have selected Area 2 or Area 3 in the
+                  question above
+                </p>
+              )}
 
               <div className={styles.radioGroup}>
                 {data?.twsq1o1 && (
