@@ -141,7 +141,7 @@ const OpenWorkVulnerableLP = () => {
           <p>
             Abuse can be physical, sexual, financial, or mental and can include
           </p>
-          <ul>
+          <ul style={{marginLeft: "40px", marginTop: "20px", marginBottom: "20px"}}>
             <li>Physical abuse, including assault and forcible confinement</li>
             <li>Sexual abuse, including sexual contact without consent</li>
             <li>Psychological abuse, including threats and intimidation</li>
@@ -164,7 +164,7 @@ const OpenWorkVulnerableLP = () => {
             application.
           </p>
           <p>Evidence could include:</p>
-          <ul>
+          <ul style={{marginLeft: "40px", marginTop: "20px", marginBottom: "20px"}}>
             <li>
               Letter, statement, or report from an abuse support organization,
               medical doctor, or health care professional

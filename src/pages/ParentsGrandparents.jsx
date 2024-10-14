@@ -20,7 +20,6 @@ const ParentsGrandparents = () => {
     }
   };
 
-
   const sectionsRef = useRef([]);
 
   const handleScroll = () => {
@@ -60,12 +59,22 @@ const ParentsGrandparents = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>
+                Refusal Reasons
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -73,24 +82,40 @@ const ParentsGrandparents = () => {
         </div>
       </div>
       <div className={styles.container}>
-        <h1  className={`${styles.heading} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el} >
+        <h1
+          className={`${styles.heading} ${styles.section}`}
+          id="about-program"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
           Parents and Grandparents Program (PGP)
         </h1>
-        <p className={`${styles.description} ${styles.section}`} id="testing1" ref={(el) => sectionsRef.current[1] = el}>
+        <p
+          className={`${styles.description} ${styles.section}`}
+          id="testing1"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
           Parents and grandparents are incredibly important in one’s life.
           They're like the foundation of our lives, helping us become who we are
           today. Many dream of bringing their parents and grandparents from
           their native countries to be together in Canada. The Family
           Reunification and Sponsorship program makes this possible.
         </p>
-        <p  className={`${styles.description} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[2] = el}>
+        <p
+          className={`${styles.description} ${styles.section}`}
+          id="testing2"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
           The Parents and Grandparents Program (PGP) allows Canadian citizens
           and permanent residents to sponsor their parents and grandparents to
           immigrate to Canada.
         </p>
 
-        <section className={`${styles.section} ${styles.section}`} id="testing3" ref={(el) => sectionsRef.current[3] = el}>
-          <h2 className={styles.subheading} id="eligibility" >
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="testing3"
+          ref={(el) => (sectionsRef.current[3] = el)}
+        >
+          <h2 className={styles.subheading} id="eligibility">
             Eligibility criteria for Sponsor of Parents and Grandparents Program
             (PGP):
           </h2>
@@ -103,18 +128,27 @@ const ParentsGrandparents = () => {
             </li>
           </ul> */}
           <p>
-          You can sponsor your parents and grandparents, related by blood or
-              adoption. This includes your mother, father, step-parents, and
-              grandparents. However, you cannot sponsor your parents' or
-              grandparents' siblings, unless they are dependent children.
+            You can sponsor your parents and grandparents, related by blood or
+            adoption. This includes your mother, father, step-parents, and
+            grandparents. However, you cannot sponsor your parents' or
+            grandparents' siblings, unless they are dependent children.
           </p>
           <h2 className={styles.subheading}>
             Eligibility criteria for Parents and Grandparents Program (PGP) PR
             Sponsorship:
           </h2>
-          <ul className={styles.list}>
-            <h4>Are you eligible to sponsor your parents or grandparents? Let's find out.
-            </h4>
+          <h4>
+            Are you eligible to sponsor your parents or grandparents? Let's find
+            out.
+          </h4>
+          <ul
+            style={{
+              marginLeft: "40px",
+              marginTop: "20px",
+              marginBottom: "60px",
+            }}
+            className={styles.list}
+          >
             <li>You should be a Canadian citizen or permanent resident.</li>
             <li>You must be at least 18 years old.</li>
             <li>You should be living in Canada.</li>
@@ -137,13 +171,26 @@ const ParentsGrandparents = () => {
           </a>
         </section>
 
-        <section  className={`${styles.section} ${styles.section}`} id="testing4" ref={(el) => sectionsRef.current[5] = el}>
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="testing4"
+          ref={(el) => (sectionsRef.current[5] = el)}
+        >
           <h2 className={styles.subheading} id="how-to-apply">
             How to apply for the Parents and Grandparents Program (PGP)?
           </h2>
-          <h4>Meet the eligibility criteria? Let's see how you can sponsor your parents or grandparents
+          <h4>
+            Meet the eligibility criteria? Let's see how you can sponsor your
+            parents or grandparents
           </h4>
-          <ul className={styles.list}>
+          <ul
+            style={{
+              marginLeft: "40px",
+              marginTop: "20px",
+              marginBottom: "60px",
+            }}
+            className={styles.list}
+          >
             <li>
               The first step is to submit an Interest to Sponsor form on the
               IRCC website. This form allows you to express your interest in
@@ -170,13 +217,26 @@ const ParentsGrandparents = () => {
           </ul>
         </section>
 
-        <section className={`${styles.section} ${styles.section}`} id="testing5" ref={(el) => sectionsRef.current[6] = el}>
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="testing5"
+          ref={(el) => (sectionsRef.current[6] = el)}
+        >
           <h2 className={styles.subheading} id="refusal-reasons">
             Common reasons for refusal of Parents and Grandparents Program (PGP)
           </h2>
-          <h4>Don’t forget to avoid these common PGP refusal reasons and increase your chances of approval.
+          <h4>
+            Don’t forget to avoid these common PGP refusal reasons and increase
+            your chances of approval.
           </h4>
-          <ul className={styles.list}>
+          <ul
+            style={{
+              marginLeft: "40px",
+              marginTop: "20px",
+              marginBottom: "60px",
+            }}
+            className={styles.list}
+          >
             <li>
               If you can't show you have enough money to support your parents or
               grandparents without help, your application will be refused. The
@@ -213,7 +273,11 @@ const ParentsGrandparents = () => {
           </button>
         </section>
 
-        <section className={`${styles.section} ${styles.section}`} id="testing6" ref={(el) => sectionsRef.current[7] = el}>
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="testing6"
+          ref={(el) => (sectionsRef.current[7] = el)}
+        >
           <h2 className={styles.subheading} id="why-choose-us">
             Still not Sure?
           </h2>
@@ -236,7 +300,8 @@ const ParentsGrandparents = () => {
           </p>
           <button
             onClick={() => (window.location.href = "/contact-us")}
-            className={styles.button}>
+            className={styles.button}
+          >
             Contact Us
           </button>
         </section>

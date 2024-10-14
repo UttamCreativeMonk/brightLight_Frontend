@@ -143,6 +143,11 @@
   text-align: left;
 }
 
+.intro ul{
+  margin-left: 40px;
+  margin-bottom: 20px;
+}
+
 .intro p{
   margin-bottom: 20px;
 }
@@ -157,7 +162,16 @@
   margin-bottom: 40px;
 }
 
+.refusalReasons ul{
+  margin-left: 40px;
+}
+
 .fasterProcessing p{
+  margin-bottom: 20px;
+}
+
+.fasterProcessing ul{
+  margin-left: 40px;
   margin-bottom: 20px;
 }
 

@@ -214,7 +214,7 @@ const Sds = () => {
             </tbody>
           </table>
           <p>To be eligible, you must:</p>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               Hold a provincial attestation letter (PAL) from the province or
               territory where you plan to study.
@@ -238,7 +238,7 @@ const Sds = () => {
             Depending on your study location and personal circumstances, you may
             need to:
           </p>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               Obtain a Certificat d’acceptation du Québec (CAQ) if planning to
               study in Quebec.
@@ -277,7 +277,7 @@ const Sds = () => {
           <ol>
             <li>
               <h3>Provincial Attestation Letters (PAL)</h3>
-              <ul style={{ marginLeft: "20px" }}>
+              <ul style={{ marginLeft: "40px" }}>
                 <li>
                   As of January 22, 2024, most students planning to study in
                   Canada must provide a Provincial Attestation Letter
@@ -301,7 +301,7 @@ const Sds = () => {
                 tuition by including one of the following documents with their
                 application:
               </p>
-              <ul style={{ marginLeft: "20px", marginTop: "10px" }}>
+              <ul style={{ marginLeft: "40px", marginTop: "10px" }}>
                 <li>
                   A receipt from the Designated Learning Institution (DLI)
                 </li>
@@ -406,7 +406,7 @@ const Sds = () => {
                 Immigration, Refugees and Citizenship Canada (IRCC)-approved
                 doctor if:
               </p>
-              <ul style={{ marginLeft: "20px" }}>
+              <ul style={{ marginLeft: "40px" }}>
                 <li>
                   You have lived or traveled in certain countries or territories
                   for six months or longer in the year before coming to Canada.
@@ -432,7 +432,7 @@ const Sds = () => {
                 English or French. As of August 10, 2023, SDS applicants can
                 submit English proficiency test results from four new providers:
               </p>
-              <ul style={{ marginLeft: "20px" }}>
+              <ul style={{ marginLeft: "40px" }}>
                 <li>Canadian Academic English Language (CAEL)</li>
                 <li>
                   Canadian English Language Proficiency Index Program (CELPIP
@@ -499,7 +499,7 @@ const Sds = () => {
             accompany you to Canada, they may also qualify for faster processing
             of the following:
           </p>
-          <ul>
+          <ul style={{marginLeft: "40px"}}> 
             <li>Visitor Visa</li>
             <li>Work Permit</li>
             <li>Study Permit</li>
@@ -573,7 +573,7 @@ const Sds = () => {
           <p style={{ marginBottom: "20px" }}>
             According to the Government of Canada:
           </p>
-          <ul style={{ marginLeft: "20px" }}>
+          <ul style={{ marginLeft: "40px" }}>
             <li>
               If you reside anywhere other than the 14 countries listed above
               (even if you’re a citizen of those countries), you must apply

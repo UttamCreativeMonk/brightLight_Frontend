@@ -146,6 +146,10 @@
   margin-bottom: 20px;
 }
 
+.documents ul{
+  margin-left: 40px;
+}
+
 .introduction p{
   text-align: left;
 }
@@ -160,9 +164,12 @@
   color: #333;
   text-align: left;
 }
+.eligibilityList{
+  margin-left: 40px;
+}
 .eligibilityList ul{
   list-style-type: circle;
-  margin-left: 30px;
+  margin-left: 40px;
 }
 .support {
   margin-top: 20px;

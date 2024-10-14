@@ -159,6 +159,10 @@
     text-align: left;
   }
 
+  .criteria ul{
+    margin-left: 40px;
+  }
+
   .button {
     background-color: #00273f;
     color: white;

@@ -140,6 +140,10 @@
     .introduction, .benefits, .eligibility, .applicationProcess, .refusalReasons, .assistance, .whyChooseUs {
       margin-bottom: 20px;
     }
+
+    .refusalReasons ul{
+      margin-left: 40px !important;
+    }
   
     .eligibility p{
       margin-bottom: 20px;
@@ -155,7 +159,7 @@
     }
     
     .subheading {
-      font-size: 1.2rem;
+      /* font-size: 1.2rem; */
       margin-bottom: 15px;
       color: #333;
       text-align: left;

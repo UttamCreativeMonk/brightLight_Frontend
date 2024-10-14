@@ -111,7 +111,7 @@ const FrancophoneMobilityProgram = () => {
             French-speaking talent, this program operates outside of Quebec and
             provides unique advantages. Let’s explore the key details:
           </h4>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>No LMIA Required:</strong> Unlike traditional work
               permits, the <strong>Mobilité Francophone</strong> stream operates
@@ -160,7 +160,7 @@ const FrancophoneMobilityProgram = () => {
             To qualify for <strong>Mobilité Francophone</strong>, applicants
             must meet the following conditions:
           </p>
-          <ul>
+          <ul style={{marginLeft: "40px", marginTop: "20px"}}>
             <li>
               <strong>Job Offer:</strong> Must be from outside Quebec (anywhere
               else in Canada). Primary agricultural work is not covered.
@@ -229,7 +229,7 @@ const FrancophoneMobilityProgram = () => {
             duration is determined by whichever of the following dates comes
             earlier:
           </p>
-          <ul>
+          <ul style={{marginLeft: "40px", marginTop: "20px"}}>
             <li>The expiration date of the foreign worker’s passport <strong>OR</strong></li>
             <li>
               The duration specified in the job offer issued by the employer.
@@ -247,7 +247,7 @@ const FrancophoneMobilityProgram = () => {
           </h2>
           <p>For the <strong>Francophone Mobility Program</strong> , family members and dependents have specific options:
           </p>
-          <ul>
+          <ul style={{marginLeft: "40px", marginTop: "10px"}}>
             <li>
               <strong>Dependent Children:</strong> Can apply for study permits.
             </li>
@@ -266,9 +266,9 @@ const FrancophoneMobilityProgram = () => {
         >
           <h2>Application Process for Francophone Mobility Program</h2>
           <ol>
-            <li>
+            <li> 
               <strong>Job Search:</strong>
-              <ul>
+              <ul style={{marginLeft: "40px", marginTop: "20px", marginBottom: "20px"}}>
                 <li>
                 Identify opportunities: Utilize specialized job platforms and the LinkedIn network to find job offers that align with your profile in regions outside Quebec.
 
@@ -281,7 +281,7 @@ const FrancophoneMobilityProgram = () => {
             </li>
             <li>
               <strong>Preparing Your Application:</strong>
-              <ul>
+              <ul style={{marginLeft: "40px", marginTop: "20px", marginBottom: "20px"}}>
                 <li>
                 <strong>CV and Cover Letter: </strong> Adapt your CV and cover letter to the Canadian format, emphasizing your fluency in French and relevant professional experience.
 
@@ -294,7 +294,7 @@ const FrancophoneMobilityProgram = () => {
             </li>
             <li>
               <strong>File Submission:</strong>
-              <ul>
+              <ul style={{marginLeft: "40px", marginTop: "20px", marginBottom: "20px"}}>
                 <li>
                 <strong>Eligibility Criteria: </strong>   Ensure that you meet all eligibility criteria before submitting your application.
 

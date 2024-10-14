@@ -140,6 +140,10 @@ text-align: left;
   .introduction, .benefits, .eligibility, .tips, .assistance, .whyChooseUs, .testimonials {
     margin-bottom: 20px;
   }
+
+  .eligibility ul{
+    margin-left: 40px;
+  }
   
   .introduction{
     text-align: center;

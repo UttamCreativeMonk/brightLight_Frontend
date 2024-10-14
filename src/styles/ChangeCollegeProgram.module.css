@@ -179,7 +179,7 @@
   .processList {
     list-style-type: disc;
     margin: 0 auto;
-
+    margin-left: 40px;
     padding: 0;
     font-size: 1.1rem;
   }

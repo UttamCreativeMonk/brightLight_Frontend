@@ -222,9 +222,9 @@ const LmiaReviewed = () => {
             ref={(el) => (sectionsRef.current[3] = el)}
           >
             <h2>How to Apply for LMIA</h2>
-            <div className={styles.applicationProcess}>
+            <div className={styles.applicationProcess}> 
               <h3>As an Employer</h3>
-              <ul>
+              <ul style={{marginTop: "10px", marginLeft: "40px", marginBottom: "30px"}}>
                 <li>
                   You must submit an LMIA application to Employment and Social
                   Development Canada (ESDC).
@@ -244,7 +244,7 @@ const LmiaReviewed = () => {
                 </li>
               </ul>
               <h3>As a Foreign Worker</h3>
-              <ul>
+              <ul style={{marginTop: "10px", marginLeft: "40px", marginBottom: "30px"}}>
                 <li>Apply for a work permit as per guidelines set by IRCC.</li>
                 <li>
                   IRCC will assess your application to check if you meet the
@@ -271,7 +271,7 @@ const LmiaReviewed = () => {
             <h2>Common Reasons for LMIA Refusal</h2>
             <h4>Don’t forget to avoid these common LMIA refusal reasons and increase your chances of approval.
             </h4>
-            <ul>
+            <ul style={{marginTop: "10px", marginLeft: "40px", marginBottom: "30px"}}>
               <li>
                 As an employer, you did not try to hire Canadians by
                 advertising, attending job fairs, or using online platforms.

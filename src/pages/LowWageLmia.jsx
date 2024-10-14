@@ -86,7 +86,7 @@ const LowWageLmia = () => {
             low-wage or high-wage LMIA, you must understand the following three
             key aspects related to wages in Canada.
           </p>
-          <ul>
+          <ul style={{marginTop: "0px", marginLeft: "40px", marginBottom: "30px"}}>
             <li>National Occupation Classification Code</li>
             <li>Prevailing median wage</li>
             <li>Provincial median wage</li>
@@ -254,7 +254,7 @@ const LowWageLmia = () => {
               each LMIA type. Job advertisement postings (All advertisements
               must be active for 4 weeks before submission). Your LMIA job
               posting must include the following information:
-              <ul>
+              <ul style={{marginTop: "20px", marginLeft: "40px", marginBottom: "30px"}}>
                 <li>Company name and business address</li>
                 <li>Job title</li>
                 <li>
@@ -424,7 +424,7 @@ const LowWageLmia = () => {
           Please see below the common reasons for refusals:
 
           </h4>
-          <ul>
+          <ul style={{marginLeft: "40px"}}> 
             <li>
               Failure to perform or document minimum recruitment requirements.
             </li>
@@ -483,7 +483,7 @@ const LowWageLmia = () => {
             precedents in cases we work on. This is why we have a high success
             rate.
           </p>
-          <p>
+          <p style={{marginTop: "20px"}}>
             At Brightlight Immigration, we have a dedicated team of visa
             application specialists who can assist you from the start of the
             application process to obtaining your visa. Start your process now.

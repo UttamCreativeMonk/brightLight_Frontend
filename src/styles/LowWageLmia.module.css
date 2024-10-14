@@ -234,6 +234,10 @@
   color: #00273f;
 }
 
+.applicationSteps li{
+  line-height: 1.8 !important;
+}
+
 .section h3 {
   font-size: 20px;
   margin-bottom: 10px;

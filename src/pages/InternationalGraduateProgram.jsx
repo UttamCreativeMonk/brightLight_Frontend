@@ -290,7 +290,7 @@ const InternationalGraduateProgram = () => {
             qualify under one of the three federal programs. To understand the
             eligibility criteria for these programs, click on either the:
           </p>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <a href="/federal-skilled-worker-program">
                 Federal Skilled Worker (FSW)
@@ -318,7 +318,7 @@ const InternationalGraduateProgram = () => {
             As a British Columbia employer participating in the BC Skilled
             Worker program, ensure you:
           </p>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>Established in B.C.</li>
             <li>Comply with domestic labor market recruitment.</li>
             <li>At least 1 year in operation in BC.</li>

@@ -6,7 +6,6 @@ import Testimonials from "../sections/Testimonials";
 import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
 
-
 const AgricultureStreamLmia = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -20,7 +19,6 @@ const AgricultureStreamLmia = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
-
 
   const sectionsRef = useRef([]);
 
@@ -44,12 +42,10 @@ const AgricultureStreamLmia = () => {
     };
   }, []);
 
-
   return (
     <>
       <Navbar1 />
       <div className={styles.bannerParent}>
-
         <div className={styles.banner}>
           <div
             className={`${styles.bannerHeadingRotateParent} ${
@@ -63,17 +59,35 @@ const AgricultureStreamLmia = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
               <p onClick={() => scrollToSection("noc")}>NOC</p>
-              <p onClick={() => scrollToSection("national-commodity-list")}>National Commodity List</p>
-              <p onClick={() => scrollToSection("important-considerations")}>Important Considerations</p>
-              <p onClick={() => scrollToSection("housing-requirements")}>Housing Requirements</p>
+              <p onClick={() => scrollToSection("national-commodity-list")}>
+                National Commodity List
+              </p>
+              <p onClick={() => scrollToSection("important-considerations")}>
+                Important Considerations
+              </p>
+              <p onClick={() => scrollToSection("housing-requirements")}>
+                Housing Requirements
+              </p>
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
-              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>
+                Refusal Reasons
+              </p>
+              <p onClick={() => scrollToSection("book-appointment")}>
+                Book Appointment
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -83,12 +97,15 @@ const AgricultureStreamLmia = () => {
 
       <div className={styles.container}>
         <main className={styles.mainContent}>
-          <section className={`${styles.section} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
-          <header className={styles.header}>
-          <h1>Agricultural Stream LMIA</h1>
-        </header>
-        
-           
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="about-program"
+            ref={(el) => (sectionsRef.current[0] = el)}
+          >
+            <header className={styles.header}>
+              <h1>Agricultural Stream LMIA</h1>
+            </header>
+
             <p>
               This type of LMIA allows employers to hire foreign workers to fill
               jobs in farms, nurseries, or greenhouses. It can involve the
@@ -97,7 +114,7 @@ const AgricultureStreamLmia = () => {
               etc.
             </p>
             <p>To qualify for this stream, employers must meet 2 criteria:</p>
-            <ol>
+            <ol style={{marginLeft: "40px"}}> 
               <li>
                 Production must be in specific commodity sectors from the list
                 below, and
@@ -108,7 +125,11 @@ const AgricultureStreamLmia = () => {
             </ol>
           </section>
 
-          <section   className={`${styles.section} ${styles.section}`} id="noc" ref={(el) => sectionsRef.current[1] = el}    >
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="noc"
+            ref={(el) => (sectionsRef.current[1] = el)}
+          >
             <h2>NOC Codes</h2>
             <table className={styles.table}>
               <thead>
@@ -159,7 +180,11 @@ const AgricultureStreamLmia = () => {
             </table>
           </section>
 
-          <section  className={`${styles.section} ${styles.section}`} id="national-commodity-list" ref={(el) => sectionsRef.current[2] = el} >
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="national-commodity-list"
+            ref={(el) => (sectionsRef.current[2] = el)}
+          >
             <h2>National Commodity List</h2>
             <ul>
               <li>Apiary products</li>
@@ -190,66 +215,91 @@ const AgricultureStreamLmia = () => {
               <li>Swine</li>
             </ul>
             <p>
-            Employers must provide proof that the on-farm or off-site housing has been inspected by the appropriate provincial/territorial/municipal body or by an authorized private inspector with appropriate certification. Foreign workers are not obliged to use the accommodation provided by the employer and can choose to live at the accommodation of their own choice with their family.
-
+              Employers must provide proof that the on-farm or off-site housing
+              has been inspected by the appropriate
+              provincial/territorial/municipal body or by an authorized private
+              inspector with appropriate certification. Foreign workers are not
+              obliged to use the accommodation provided by the employer and can
+              choose to live at the accommodation of their own choice with their
+              family.
             </p>
           </section>
 
-          <section  className={`${styles.section} ${styles.section}`} id="housing-requirements" ref={(el) => sectionsRef.current[3] = el}   >
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="housing-requirements"
+            ref={(el) => (sectionsRef.current[3] = el)}
+          >
             <h2>The important thing to note</h2>
             <p>
-            Agriculture Stream LMIA applications are approved with the employment duration of 2 years only. However, if the employer qualifies for the same position in the High-wage LMIA application, the employment duration can be 3 years instead.
-
+              Agriculture Stream LMIA applications are approved with the
+              employment duration of 2 years only. However, if the employer
+              qualifies for the same position in the High-wage LMIA application,
+              the employment duration can be 3 years instead.
             </p>
           </section>
 
-          <section  className={`${styles.section} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[6] = el} >
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="how-to-apply"
+            ref={(el) => (sectionsRef.current[6] = el)}
+          >
             <h2>How to Apply for Agricultural Stream LMIA ?</h2>
             <ol>
               <li>
-                Have an initial assessment performed by us to verify if the employer is eligible to apply for LMIA for a specific position and how many positions are allowed. We will also discuss the application that should be submitted to the High-wage LMIA program.
-
+                Have an initial assessment performed by us to verify if the
+                employer is eligible to apply for LMIA for a specific position
+                and how many positions are allowed. We will also discuss the
+                application that should be submitted to the High-wage LMIA
+                program.
               </li>
               <li>
-                We will provide you with a checklist of documents and information required to start the initial process. 
-
+                We will provide you with a checklist of documents and
+                information required to start the initial process.
               </li>
               <li>
-               If required, perform recruitment efforts as per ESDC program requirements for each LMIA type. Job advertisement postings (All advertisements must be active for 14 days before submission).
-
+                If required, perform recruitment efforts as per ESDC program
+                requirements for each LMIA type. Job advertisement postings (All
+                advertisements must be active for 14 days before submission).
               </li>
               <li>
-               Get a housing inspection done by the appropriate provincial/territorial/municipal body or by an authorized private inspector with appropriate certification. The inspector will provide you with a filled in Schedule F – Housing inspection report seasonal agricultural worker program and agricultural stream.
-
+                Get a housing inspection done by the appropriate
+                provincial/territorial/municipal body or by an authorized
+                private inspector with appropriate certification. The inspector
+                will provide you with a filled in Schedule F – Housing
+                inspection report seasonal agricultural worker program and
+                agricultural stream.
               </li>
-              <li> Interview local applicants.
+              <li> Interview local applicants.</li>
+              <li>
+                Prepare and submit an LMIA application to the Service Canada
+                ESDS department.
               </li>
               <li>
-              Prepare and submit an LMIA application to the Service Canada ESDS department. 
-
+                Wait for LMIA processing time, which can range from 15 to 60
+                business days. If the Service Canada officer has any questions
+                or concerns or requires any further information, the employer
+                might be contacted for an interview.
               </li>
               <li>
-              Wait for LMIA processing time, which can range from 15 to 60 business days. If the Service Canada officer has any questions or concerns or requires any further information, the employer might be contacted for an interview. 
-
-              </li>
-              <li>
-               Once LMIA is received, the employer can add or remove the name of the foreign worker.
-
+                Once LMIA is received, the employer can add or remove the name
+                of the foreign worker.
               </li>
             </ol>
           </section>
 
-          <section  className={`${styles.section} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[7] = el} >
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="refusal-reasons"
+            ref={(el) => (sectionsRef.current[7] = el)}
+          >
             <h2>Common Reasons for Refusal</h2>
             <h4>
-            Over the years, Service Canada officers have become very strict about the employers meeting the requirements of the program. 
-
+              Over the years, Service Canada officers have become very strict
+              about the employers meeting the requirements of the program.
             </h4>
-            <h4>
-            Please see below the common reasons for refusals:
-
-            </h4>
-            <ul>
+            <h4>Please see below the common reasons for refusals:</h4>
+            <ul style={{marginLeft: "40px"}}> 
               <li>
                 Failure to perform or document the minimum recruitment
                 requirements.
@@ -279,7 +329,11 @@ const AgricultureStreamLmia = () => {
             </ul>
           </section>
 
-          <section className={`${styles.section} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[8] = el}>
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="why-choose-us"
+            ref={(el) => (sectionsRef.current[8] = el)}
+          >
             <h2>Still Not Sure?</h2>
             <p>
               If you have received a refusal for any of the reasons mentioned
@@ -301,13 +355,13 @@ const AgricultureStreamLmia = () => {
               now.
             </p>
             <button
-          onClick={() =>
-            (window.location.href =
-              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-          }
-        >
-          Book Appointment
-        </button>
+              onClick={() =>
+                (window.location.href =
+                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+              }
+            >
+              Book Appointment
+            </button>
           </section>
         </main>
       </div>

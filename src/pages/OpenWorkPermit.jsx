@@ -120,7 +120,7 @@ const OpenWorkPermit = () => {
               ensuring you have the support you need to obtain your Open Work
               Permit. We follow a structured approach that includes:
             </p>
-            <ul>
+            <ul style={{marginLeft: "40px"}}>
               <li>
                 Initial Consultation: Understanding your needs and eligibility.
               </li>

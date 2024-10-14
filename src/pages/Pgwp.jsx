@@ -136,7 +136,7 @@ const Pgwp = () => {
         >
           <h2>Eligibility Criteria for Post-Graduate Work Permit (PGWP)</h2>
           <p>Are you eligible for a PGWP? Let's find out.</p>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Graduation from a Qualifying DLI:</strong> Be a foreign
               national who has graduated from a qualifying DLI and qualifying
@@ -181,14 +181,14 @@ const Pgwp = () => {
           </p>
           <p>You can apply for a PGWP from inside or outside Canada.</p>
           <p>Here’s what you will need to provide when you apply for a PGWP</p>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Application Location:</strong> You can apply for a PGWP
               from inside or outside Canada.
             </li>
             <li>
               <strong>Required Documents:</strong>
-              <ul>
+              <ul style={{marginTop: "10px", marginLeft: "40px"}}>
                 <li>A copy of your study permit.</li>
                 <li>
                   A copy of your final academic transcripts OR a letter from
@@ -212,7 +212,7 @@ const Pgwp = () => {
             Don’t forget to avoid these common PGWP refusal reasons and increase
             your chances of approval.
           </h4>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>Failure to meet the eligibility criteria set by IRCC.</li>
             <li>
               Not completing a full-time program of at least eight months at a

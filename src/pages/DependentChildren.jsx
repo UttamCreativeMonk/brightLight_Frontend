@@ -111,7 +111,7 @@ const DependentChildren = () => {
             application is submitted.
           </h4>
           {/* <h3 className={styles.marginTop}>For the Dependent Child:</h3> */}
-          <ul>
+          <ul style={{marginLeft: "40px", marginTop: "20px", marginBottom: "20px"}}>
             <li>
               The child must be a biological or adopted child of a Canadian
               citizen or permanent resident sponsoring them.

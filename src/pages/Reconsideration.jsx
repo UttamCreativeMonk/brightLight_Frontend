@@ -20,7 +20,6 @@ const Reconsideration = () => {
     }
   };
 
-
   const sectionsRef = useRef([]);
 
   const handleScroll = () => {
@@ -47,7 +46,6 @@ const Reconsideration = () => {
     <>
       <Navbar1 />
       <div className={styles.bannerParent}>
-
         <div className={styles.banner}>
           <div
             className={`${styles.bannerHeadingRotateParent} ${
@@ -61,14 +59,30 @@ const Reconsideration = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
-              <p onClick={() => scrollToSection("requests-for-reconsideration")}>Requests for reconsideration</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
+              <p
+                onClick={() => scrollToSection("requests-for-reconsideration")}
+              >
+                Requests for reconsideration
+              </p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>
+                Refusal Reasons
+              </p>
               <p onClick={() => scrollToSection("eligibilty")}>Eligibilty</p>
-              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("book-appointment")}>
+                Book Appointment
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -78,10 +92,14 @@ const Reconsideration = () => {
 
       <div className={styles.container}>
         <main className={styles.mainContent}>
-        <header className={styles.header}>
-          <h1>Reconsideration for Refusal Decision</h1>
-        </header>
-          <section  className={`${styles.discription} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}  >
+          <header className={styles.header}>
+            <h1>Reconsideration for Refusal Decision</h1>
+          </header>
+          <section
+            className={`${styles.discription} ${styles.section}`}
+            id="about-program"
+            ref={(el) => (sectionsRef.current[0] = el)}
+          >
             <p>
               Are you a Canadian immigrant who has recently received a rejection
               for your visa application? If so, you're not alone. Many people
@@ -103,8 +121,14 @@ const Reconsideration = () => {
             </p>
           </section>
 
-          <section className={`${styles.section} ${styles.section}`} id="requests-for-reconsideration" ref={(el) => sectionsRef.current[1] = el}  >
-            <h2>Requests for reconsideration can be made for any type of Canadian immigration decision, including decisions on applications for:
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="requests-for-reconsideration"
+            ref={(el) => (sectionsRef.current[1] = el)}
+          >
+            <h2>
+              Requests for reconsideration can be made for any type of Canadian
+              immigration decision, including decisions on applications for:
             </h2>
             <ul>
               <li>Permanent residence</li>
@@ -121,16 +145,19 @@ const Reconsideration = () => {
             </p>
           </section>
 
-          <section className={`${styles.section} ${styles.section}`} id="eligibilty" ref={(el) => sectionsRef.current[2] = el}  >
-            <h2>Eligibility for Reconsideration for Refusal Decision  
-            </h2>
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="eligibilty"
+            ref={(el) => (sectionsRef.current[2] = el)}
+          >
+            <h2>Eligibility for Reconsideration for Refusal Decision</h2>
             <p>
-            <strong>
-              Are you considering reconsideration requests? See if you meet the
-              eligibility.
+              <strong> 
+                Are you considering reconsideration requests? See if you meet
+                the eligibility.
               </strong>
             </p>
-            <ul>
+            <ul style={{marginLeft: "40px"}}>
               <li>
                 You must have received a letter saying your application was
                 rejected or refused by IRCC. This letter will tell you why.
@@ -148,14 +175,19 @@ const Reconsideration = () => {
             </ul>
           </section>
 
-          <section  className={`${styles.section} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[3] = el}   >
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="how-to-apply"
+            ref={(el) => (sectionsRef.current[3] = el)}
+          >
             <h2>How to Apply for Reconsideration</h2>
-            <p><strong>
-              Meet the eligibility criteria? Let's see how you can request a
-              reconsideration.
+            <p>
+              <strong>
+                Meet the eligibility criteria? Let's see how you can request a
+                reconsideration.
               </strong>
             </p>
-            <ul>
+            <ul style={{marginLeft: "40px"}}>
               <li>
                 You must submit the request within 30 days of receiving the
                 refusal letter. The request should be well-written and clearly
@@ -174,14 +206,20 @@ const Reconsideration = () => {
             </ul>
           </section>
 
-          <section  className={`${styles.section} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[4] = el} >
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="refusal-reasons"
+            ref={(el) => (sectionsRef.current[4] = el)}
+          >
             <h2>Reasons for Refusal After Reconsideration</h2>
-            <p> <strong>
-              Don’t forget to avoid these common reconsideration request refusal
-              reasons and increase your chances of approval.
+            <p>
+              {" "}
+              <strong>
+                Don’t forget to avoid these common reconsideration request
+                refusal reasons and increase your chances of approval.
               </strong>
             </p>
-            <ul>
+            <ul style={{marginLeft: "40px"}}>
               <li>
                 Failing to provide enough new evidence to counter the initial
                 refusal reasons.
@@ -223,7 +261,11 @@ const Reconsideration = () => {
             </span>
           </section>
 
-          <section className={`${styles.section} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[5] = el} >
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="why-choose-us"
+            ref={(el) => (sectionsRef.current[5] = el)}
+          >
             <h2>Still Not Sure?</h2>
             <p>
               If you have received a refusal for any of the reasons mentioned
@@ -243,13 +285,13 @@ const Reconsideration = () => {
               process now.
             </p>
             <button
-                onClick={() =>
-                  (window.location.href =
-                    "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-                }
-              >
-                Book Appointment
-              </button>
+              onClick={() =>
+                (window.location.href =
+                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+              }
+            >
+              Book Appointment
+            </button>
           </section>
         </main>
       </div>

@@ -41,12 +41,16 @@ const SpouseOutland = () => {
                 About the Program
               </p>
               <p onClick={() => scrollToSection("Process")}>Process</p>
-              <p onClick={() => scrollToSection("Process-Timeline")}>Process Timeline</p>
+              <p onClick={() => scrollToSection("Process-Timeline")}>
+                Process Timeline
+              </p>
               <p onClick={() => scrollToSection("How-to-apply")}>
                 How to Apply
               </p>
               <p onClick={() => scrollToSection("Eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("Dual-Intent-Visa")}>Dual Intent Visa</p>
+              <p onClick={() => scrollToSection("Dual-Intent-Visa")}>
+                Dual Intent Visa
+              </p>
               <p onClick={() => scrollToSection("testimonials")}>
                 Testimonials
               </p>
@@ -57,8 +61,20 @@ const SpouseOutland = () => {
         </div>
       </div>
       <div className={styles.container}>
-        <h1 id="about-program">Outland Spousal and Common-Law Partner Sponsorship</h1>
-        <p>
+        <h1
+          style={{
+            marginTop: "40px",
+            marginBottom: "30px",
+          }}
+          id="about-program"
+        >
+          Outland Spousal and Common-Law Partner Sponsorship
+        </h1>
+        <p
+          style={{
+            marginBottom: "50px",
+          }}
+        >
           Outland sponsorship provides an opportunity for Canadians and
           permanent residents to sponsor their spouse or common-law partner for
           permanent residence in Canada. Outland sponsorship allows foreign
@@ -71,7 +87,13 @@ const SpouseOutland = () => {
 
         <h2>Is Outland Sponsorship Right for You?</h2>
         <p>Consider Outland sponsorship if:</p>
-        <ul>
+        <ul
+          style={{
+            marginLeft: "40px",
+            marginTop: "20px",
+            marginBottom: "30px",
+          }}
+        >
           <li>You cannot apply for spousal sponsorship from within Canada.</li>
           <li>
             Your loved one is not legally residing in Canada during the
@@ -85,7 +107,14 @@ const SpouseOutland = () => {
           commitments that require international mobility.
         </p>
 
-        <h2 id="Process">Approval Process</h2>
+        <h2
+          style={{
+            marginTop: "50px",
+          }}
+          id="Process"
+        >
+          Approval Process
+        </h2>
         <p>
           For the sponsored person to obtain Canadian PR through Outland
           sponsorship, both the Canadian citizen or permanent resident and the
@@ -93,12 +122,25 @@ const SpouseOutland = () => {
           Citizenship Canada (IRCC).
         </p>
 
-        <h2 id="Eligibility">Eligibility Criteria</h2>
+        <h2
+          style={{
+            marginTop: "50px",
+          }}
+          id="Eligibility"
+        >
+          Eligibility Criteria
+        </h2>
         <p>
           To sponsor a loved one under the Outland application category, both
           the sponsor and sponsored person must meet specific requirements:
         </p>
-        <ul>
+        <ul
+          style={{
+            marginLeft: "40px",
+            marginTop: "20px",
+            marginBottom: "20px",
+          }}
+        >
           <li>The sponsor must be a Canadian citizen or permanent resident.</li>
           <li>Both parties must be at least 18 years old.</li>
           <li>
@@ -134,7 +176,14 @@ const SpouseOutland = () => {
           under Inland sponsorship.
         </p>
 
-        <h2 id="How-to-apply">How to apply for Outland Sponsorship in Canada?</h2>
+        <h2
+          style={{
+            marginTop: "60px",
+          }}
+          id="How-to-apply"
+        >
+          How to apply for Outland Sponsorship in Canada?
+        </h2>
         <p>
           Outland sponsorship is a specialized application process designed to
           facilitate the sponsorship of a loved one under Canada’s Family Class
@@ -142,8 +191,20 @@ const SpouseOutland = () => {
           resident, this process allows you to sponsor your foreign spouse or
           partner for permanent residence.
         </p>
-        <h3>Outland Sponsorship Process:</h3>
-        <ol>
+        <h3
+          style={{
+            marginTop: "20px",
+          }}
+        >
+          Outland Sponsorship Process:
+        </h3>
+        <ol
+          style={{
+            marginLeft: "40px",
+            marginTop: "20px",
+            marginBottom: "60px",
+          }}
+        >
           <li>
             Eligibility Verification: Begin by confirming your eligibility as a
             sponsor. Ensure that you meet the necessary criteria to support your
@@ -167,7 +228,13 @@ const SpouseOutland = () => {
         </ol>
 
         <h2>Quebec-Specific Considerations:</h2>
-        <p>
+        <p
+          style={{
+            marginLeft: "40px",
+            marginTop: "20px",
+            marginBottom: "20px",
+          }}
+        >
           <strong>Sponsorship in Quebec:</strong> If you reside in the province
           of Quebec, additional requirements apply. Quebec sponsors must commit
           to a financial undertaking to support their sponsored family members.
@@ -175,7 +242,13 @@ const SpouseOutland = () => {
           For spousal sponsorship, the sponsor commits to financially supporting
           their spouse, common-law partner, or conjugal partner for three years.
         </p>
-        <p>
+        <p
+          style={{
+            marginLeft: "40px",
+            marginTop: "30px",
+            marginBottom: "50px",
+          }}
+        >
           <strong>Processing Time:</strong> Outland sponsorship applications in
           Quebec may take up to 24 months to process.
         </p>
@@ -188,7 +261,13 @@ const SpouseOutland = () => {
           review of both the sponsor’s eligibility and the sponsored person’s
           application for permanent residence.
         </p>
-        <ul>
+        <ul
+          style={{
+            marginLeft: "40px",
+            marginTop: "20px",
+            marginBottom: "20px",
+          }}
+        >
           <li>
             Acknowledgment of Receipt (AOR): After submitting your application,
             you will receive an acknowledgment of receipt from IRCC.
@@ -212,7 +291,13 @@ const SpouseOutland = () => {
           based on individual circumstances and processing volumes.
         </p>
 
-        <h2>Dual Intent Visa for Outland Spouse</h2>
+        <h2
+          style={{
+            marginTop: "50px",
+          }}
+        >
+          Dual Intent Visa for Outland Spouse
+        </h2>
         <p>
           Navigating the waiting period during spousal sponsorship applications
           can be challenging for newly married couples. These applications often
@@ -222,7 +307,14 @@ const SpouseOutland = () => {
           90%.
         </p>
 
-        <h3 id="Dual-Intent-Visa">What is a Dual Intent Visa?</h3>
+        <h3
+          style={{
+            marginTop: "30px",
+          }}
+          id="Dual-Intent-Visa"
+        >
+          What is a Dual Intent Visa?
+        </h3>
         <p>
           The concept of Dual Intent involves simultaneously pursuing two
           pathways: applying for permanent residence and seeking temporary
@@ -238,13 +330,25 @@ const SpouseOutland = () => {
           strive to simplify this process for you.
         </p>
 
-        <h2>Spouses and Partners</h2>
+        <h2
+          style={{
+            marginTop: "50px",
+          }}
+        >
+          Spouses and Partners
+        </h2>
         <p>
           When assessing foreign nationals sponsored for permanent residence as
           spouses or common-law partners, officers take individual circumstances
           into account. Factors considered include:
         </p>
-        <ul>
+        <ul
+          style={{
+            marginLeft: "40px",
+            marginTop: "20px",
+            marginBottom: "30px",
+          }}
+        >
           <li>Approval status of the sponsorship application</li>
           <li>Stage one approval for permanent residence</li>
           <li>Retention of ties in the applicant’s home country</li>

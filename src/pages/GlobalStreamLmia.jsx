@@ -119,7 +119,7 @@ const GlobalStreamLmia = () => {
               The Global Talent Stream consists of two categories with their own
               set of requirements:
             </p>
-            <ol>
+            <ol style={{marginLeft: "40px"}}> 
               <li>
                 <strong>
                   <a href="#CategoryA">
@@ -151,7 +151,7 @@ const GlobalStreamLmia = () => {
               looking to bring in individuals who can drive growth and
               innovation.
             </p>
-            <ul>
+            <ul style={{marginLeft: "20px"}}>
               <li>The employer company must be based in Canada.</li>
               <li>
                 The company should focus on innovation and be willing and able
@@ -303,7 +303,7 @@ const GlobalStreamLmia = () => {
               The LMBP consists of 1 mandatory activity and at least 2
               supplementary activities:
             </p>
-            <ul>
+            <ul style={{marginLeft: "40px"}}>
               <li>
                 Category A: The employer must create jobs for Canadian citizens
                 and permanent residents.
@@ -314,7 +314,7 @@ const GlobalStreamLmia = () => {
               </li>
             </ul>
             <p>Examples of supplementary activities include:</p>
-            <ul>
+            <ul style={{marginLeft: "40px"}}>
               <li>
                 Increasing the number of Canadians and permanent residents
                 employed full-time and part-time.

@@ -145,6 +145,10 @@
   margin-bottom: 20px;
 }
 
+.checkStatus ul, .requirements ul, .applicationProcess ul{
+  margin-left: 40px;
+}
+
 .assistance p{
   margin-bottom: 20px;
 }

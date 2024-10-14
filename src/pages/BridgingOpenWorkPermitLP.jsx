@@ -116,7 +116,7 @@ const BridgingOpenWorkPermitLP = () => {
             <h4>
               To be eligible for a bridging open work permit (BOWP), you must:
             </h4>
-            <ul>
+            <ul style={{marginLeft: "40px"}}>
               <li>
                 Currently be in Canada after being authorized to enter as a
                 worker.

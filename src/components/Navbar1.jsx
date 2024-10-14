@@ -516,7 +516,7 @@ const Navbar3 = (props) => {
                             Business Visitor Visa
                           </a>
                           <a href="/dual-intent-visa">Dual Intent Visa</a>
-                          <a href="/super-visa">Super Visa</a>
+                          {/* <a href="/super-visa">Super Visa</a> */}
                           <a href="/reconsideration">
                             Reconsideration for Refusal
                           </a>
@@ -1176,7 +1176,7 @@ const Navbar3 = (props) => {
                               <a href="/visitor-visa">Visitor Visa</a>
                               <a href="/business-visitor-visa">Business Visa</a>
                               <a href="/dual-intent-visa">Dual Intent Visa</a>
-                              <a href="#">Super Visa</a>
+                              {/* <a href="#">Super Visa</a> */}
                               <a href="/reconsideration">
                                 Reconsideration for Refusal
                               </a>

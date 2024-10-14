@@ -102,7 +102,11 @@ const HumanitarianCompassionate = () => {
             the family member is eligible for H&C consideration based on one or
             more of the following factors:
           </p>
-          <ul>
+          <ul style={{
+              marginLeft: "40px",
+              marginTop: "20px",
+              marginBottom: "60px",
+            }}>
             <li>
               The family member is at risk of suffering significant hardship or
               harm if they are not allowed to stay in Canada.
@@ -150,7 +154,11 @@ const HumanitarianCompassionate = () => {
           </h2>
           <h4>To be eligible for H&C sponsorship under the family reunification program, you must meet the following criteria:
           </h4>
-          <ul>
+          <ul style={{
+              marginLeft: "40px",
+              marginTop: "20px",
+              marginBottom: "60px",
+            }}>
             <li>
               You must be a spouse, common-law partner, or parent of a Canadian
               citizen or permanent resident.

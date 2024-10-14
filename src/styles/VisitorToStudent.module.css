@@ -147,6 +147,10 @@
     margin-bottom: 20px;
   }
 
+  .benefits ul{
+    margin-left: 40px;
+  }
+
   .benefits h4{
     text-align: left;
   }
@@ -189,6 +193,7 @@
   .eligibilityAdditionalList {
     list-style-type: disc;
     margin: 0 auto;
+    margin-left: 40px;
     padding: 0;
     font-size: 1.1rem;
     text-align: left;
@@ -200,13 +205,14 @@
   }
   
   .processDescription {
-    font-size: 1.2rem;
+    /* font-size: 1.2rem; */
     margin-bottom: 10px;
   }
   
   .processList {
     list-style-type: decimal;
     margin: 0 auto;
+    margin-left: 40px;
     padding: 0;
     font-size: 1.1rem;
     text-align: left;
@@ -219,6 +225,7 @@
   .refusalList {
     list-style-type: disc;
     margin: 0 auto;
+    margin-left: 40px;
     padding: 0;
     font-size: 1.1rem;
     text-align: left;

@@ -160,8 +160,23 @@ const Orphan = () => {
               Canadian citizenship through adoption-related provisions.
             </li>
           </ul>
-          <h4 className={styles.paragraph}>In addition, the adoption must:</h4>
-          <ul className={styles.list}>
+          <h4
+            style={{
+              marginTop: "30px",
+              marginBottom: "20px",
+            }}
+            className={styles.paragraph}
+          >
+            In addition, the adoption must:
+          </h4>
+          <ul
+            style={{
+              marginLeft: "40px",
+              marginTop: "-10px",
+              marginBottom: "60px",
+            }}
+            className={styles.list}
+          >
             <li>Have been in the best interests of the child;</li>
             <li>
               Have created a genuine relationship between parent and child;
@@ -230,7 +245,14 @@ const Orphan = () => {
             orphan, not having suitable housing for the orphan, or having a
             questionable character.
           </p>
-          <ul className={styles.list}>
+          <ul
+            style={{
+              marginLeft: "40px",
+              marginTop: "20px",
+              marginBottom: "60px",
+            }}
+            className={styles.list}
+          >
             <li>
               The relationship between you and the orphan might not be close
               enough. This could be because you are a distant relative or

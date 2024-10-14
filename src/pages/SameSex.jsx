@@ -120,6 +120,11 @@ const SameSex = () => {
           consider the following criteria:
         </p>
         <ul
+        style={{
+          marginLeft: "40px",
+          marginTop: "-20px",
+          marginBottom: "60px",
+        }}
           className={`${styles.list} ${styles.section}`}
           id="testing"
           ref={(el) => (sectionsRef.current[4] = el)}

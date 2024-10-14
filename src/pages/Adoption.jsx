@@ -121,16 +121,30 @@ const Adoption = () => {
                 Intra-country adoption. This involves adopting a child from
                 another province in Canada.
               </p>
-              <a href="#intra-country" className={styles.button}>
+              <a
+                style={{
+                  marginTop: "10px",
+                }}
+                href="#intra-country"
+                className={styles.button}
+              >
                 Intra-Country Adoption
               </a>
             </li>
-            <li>
+            <li
+              style={{
+                marginTop: "30px",
+                marginBottom: "60px",
+              }}
+            >
               <p>
                 Inter-country adoption. This involves adopting a child from
                 another country.
               </p>
               <a
+                style={{
+                  marginTop: "10px",
+                }}
                 href="#inter-country"
                 className={styles.button}
                 id="intra-country"
@@ -154,7 +168,11 @@ const Adoption = () => {
           <h3 className={styles.marginTop}>
             How to Apply for Intra-Country Adoption:
           </h3>
-          <ol>
+          <ol style={{
+              marginLeft: "40px",
+              marginTop: "20px",
+              marginBottom: "60px",
+            }}>
             <li>Fill out the adoption application.</li>
             <li>Attend an adoption orientation.</li>
             <li>Get matched with a child.</li>
@@ -177,7 +195,11 @@ const Adoption = () => {
           <h3 className={styles.marginTop}>
             How to Apply for Inter-Country Adoption:
           </h3>
-          <ol>
+          <ol style={{
+              marginLeft: "40px",
+              marginTop: "20px",
+              marginBottom: "60px",
+            }}>
             <li>Choose a child from the available list.</li>
             <li>Complete a home study and provide financial documentation.</li>
             <li>
@@ -226,7 +248,11 @@ const Adoption = () => {
             Failing to meet the eligibility criteria to be eligible to sponsor a
             child for adoption that is:{" "}
           </h4>
-          <ul>
+          <ul style={{
+              marginLeft: "40px",
+              marginTop: "20px",
+              marginBottom: "60px",
+            }}>
             <li>
               Incomplete or inaccurate information on your application or during
               interviews.
