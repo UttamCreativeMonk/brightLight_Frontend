@@ -213,6 +213,18 @@ const PathwaysForCaregiver = () => {
           </li>
         </ol>
 
+        <section>
+          <button
+            className={styles.button1}
+            onClick={() =>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
+          >
+            Book Appointment
+          </button>
+        </section>
+
         <section
           style={{ marginTop: "50px" }}
           className={`${styles.section} ${styles.section}`}
@@ -240,17 +252,6 @@ const PathwaysForCaregiver = () => {
               of the application process to obtaining your PR.
             </li>
           </ul>
-        </section>
-        <section>
-          <button
-            className={styles.button1}
-            onClick={() =>
-              (window.location.href =
-                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-            }
-          >
-            Book Appointment
-          </button>
         </section>
       </div>
       <h2

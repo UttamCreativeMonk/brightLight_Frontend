@@ -355,31 +355,6 @@ const BridgingOpenWorkPermitLP = () => {
           </section>
 
           <section
-            className={`${styles.section} ${styles.section}`}
-            id="why-choose-us"
-            ref={(el) => (sectionsRef.current[9] = el)}
-          >
-            <h2>Why Choose Us?</h2>
-            <ul>
-              <li>
-                <strong>Experienced Team:</strong> Over a decade of experience
-                in handling BCPNP applications with a high success rate.
-              </li>
-              <li>
-                <strong>Tailored Approach:</strong> Personalized services and
-                strategies based on your specific case.
-              </li>
-              <li>
-                <strong>High Success Rate:</strong> Proven track record using
-                case law and precedents for positive results.
-              </li>
-              <li>
-                <strong>Comprehensive Support:</strong> Assistance from the
-                start of the application process to obtaining your PR.
-              </li>
-            </ul>
-          </section>
-          <section
             className={`${styles.advice} ${styles.section}`}
             id="why-choose-us"
             ref={(el) => (sectionsRef.current[4] = el)}
@@ -412,6 +387,32 @@ const BridgingOpenWorkPermitLP = () => {
             >
               Book Appointment
             </button>
+          </section>
+
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="why-choose-us"
+            ref={(el) => (sectionsRef.current[9] = el)}
+          >
+            <h2>Why Choose Us?</h2>
+            <ul>
+              <li>
+                <strong>Experienced Team:</strong> Over a decade of experience
+                in handling BCPNP applications with a high success rate.
+              </li>
+              <li>
+                <strong>Tailored Approach:</strong> Personalized services and
+                strategies based on your specific case.
+              </li>
+              <li>
+                <strong>High Success Rate:</strong> Proven track record using
+                case law and precedents for positive results.
+              </li>
+              <li>
+                <strong>Comprehensive Support:</strong> Assistance from the
+                start of the application process to obtaining your PR.
+              </li>
+            </ul>
           </section>
         </div>
       </div>

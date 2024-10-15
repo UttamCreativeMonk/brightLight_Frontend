@@ -157,7 +157,11 @@ const OpenWorkCanadaLP = () => {
             3)
           </h3>
           <ul
-            style={{ marginLeft: "40px", marginTop: "20px", marginBottom: "30px" }}
+            style={{
+              marginLeft: "40px",
+              marginTop: "20px",
+              marginBottom: "30px",
+            }}
           >
             <li>
               <strong>Valid Work Authorization:</strong> You must possess one of
@@ -217,7 +221,13 @@ const OpenWorkCanadaLP = () => {
             You must meet the following four requirements to be eligible to
             apply for your child:
           </h4>
-          <ul style={{ marginLeft: "40px", marginTop: "20px", marginBottom: "30px" }}>
+          <ul
+            style={{
+              marginLeft: "40px",
+              marginTop: "20px",
+              marginBottom: "30px",
+            }}
+          >
             <li>
               <strong>Valid Work Authorization:</strong> You must possess one of
               the following:
@@ -297,7 +307,13 @@ const OpenWorkCanadaLP = () => {
             You must meet the following four requirements to be eligible to
             apply for your child:
           </h4>
-          <ul style={{ marginLeft: "40px", marginTop: "20px", marginBottom: "30px" }}>
+          <ul
+            style={{
+              marginLeft: "40px",
+              marginTop: "20px",
+              marginBottom: "30px",
+            }}
+          >
             <li>
               <strong>Valid Work Authorization:</strong> You must possess one of
               the following:
@@ -495,32 +511,6 @@ const OpenWorkCanadaLP = () => {
         </section>
 
         <section
-          className={`${styles.section} ${styles.section}`}
-          id="why-choose-us"
-          ref={(el) => (sectionsRef.current[9] = el)}
-        >
-          <h2>Why Choose Us?</h2>
-          <ul>
-            <li>
-              <strong>Experienced Team:</strong> Over a decade of experience in
-              handling BCPNP applications with a high success rate.
-            </li>
-            <li>
-              <strong>Tailored Approach:</strong> Personalized services and
-              strategies based on your specific case.
-            </li>
-            <li>
-              <strong>High Success Rate:</strong> Proven track record using case
-              law and precedents for positive results.
-            </li>
-            <li>
-              <strong>Comprehensive Support:</strong> Assistance from the start
-              of the application process to obtaining your PR.
-            </li>
-          </ul>
-        </section>
-
-        <section
           className={`${styles.consultation} ${styles.section}`}
           id="why-choose-us"
           ref={(el) => (sectionsRef.current[6] = el)}
@@ -544,6 +534,32 @@ const OpenWorkCanadaLP = () => {
           >
             Book Appointment
           </button>
+        </section>
+
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[9] = el)}
+        >
+          <h2>Why Choose Us?</h2>
+          <ul>
+            <li>
+              <strong>Experienced Team:</strong> Over a decade of experience in
+              handling BCPNP applications with a high success rate.
+            </li>
+            <li>
+              <strong>Tailored Approach:</strong> Personalized services and
+              strategies based on your specific case.
+            </li>
+            <li>
+              <strong>High Success Rate:</strong> Proven track record using case
+              law and precedents for positive results.
+            </li>
+            <li>
+              <strong>Comprehensive Support:</strong> Assistance from the start
+              of the application process to obtaining your PR.
+            </li>
+          </ul>
         </section>
       </div>
 

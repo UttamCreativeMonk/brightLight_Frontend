@@ -351,7 +351,7 @@ const SameSex = () => {
           style={{ fontSize: "18px", marginTop: "35px", marginBottom: "10px" }}
           className={`${styles.heading} ${styles.section}`}
           id="testing"
-          ref={(el) => (sectionsRef.current[15] = el)}
+          ref={(el) => (sectionsRef.current[151] = el)}
         >
           Conjugal Relationship Considerations
         </h2>
@@ -363,7 +363,7 @@ const SameSex = () => {
           }}
           className={`${styles.list} ${styles.section}`}
           id="testing"
-          ref={(el) => (sectionsRef.current[16] = el)}
+          ref={(el) => (sectionsRef.current[161] = el)}
         >
           <li className={styles.listItem}>
             <strong>Country-Specific Challenges:</strong> If your relationship
@@ -426,32 +426,6 @@ const SameSex = () => {
           </li>
         </ul>
 
-        <section
-          className={`${styles.section} ${styles.section}`}
-          id="why-choose-u"
-          ref={(el) => (sectionsRef.current[99] = el)}
-        >
-          <h2>Why Choose Us?</h2>
-          <ul>
-            <li>
-              <strong>Experienced Team:</strong> Over a decade of experience in
-              handling BCPNP applications with a high success rate.
-            </li>
-            <li>
-              <strong>Tailored Approach:</strong> Personalized services and
-              strategies based on your specific case.
-            </li>
-            <li>
-              <strong>High Success Rate:</strong> Proven track record using case
-              law and precedents for positive results.
-            </li>
-            <li>
-              <strong>Comprehensive Support:</strong> Assistance from the start
-              of the application process to obtaining your PR.
-            </li>
-          </ul>
-        </section>
-
         <h2
           className={`${styles.subtitle} ${styles.section}`}
           id="appointment"
@@ -479,6 +453,32 @@ const SameSex = () => {
         >
           Book Appointment
         </button>
+
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="why-choose-u"
+          ref={(el) => (sectionsRef.current[99] = el)}
+        >
+          <h2>Why Choose Us?</h2>
+          <ul>
+            <li>
+              <strong>Experienced Team:</strong> Over a decade of experience in
+              handling BCPNP applications with a high success rate.
+            </li>
+            <li>
+              <strong>Tailored Approach:</strong> Personalized services and
+              strategies based on your specific case.
+            </li>
+            <li>
+              <strong>High Success Rate:</strong> Proven track record using case
+              law and precedents for positive results.
+            </li>
+            <li>
+              <strong>Comprehensive Support:</strong> Assistance from the start
+              of the application process to obtaining your PR.
+            </li>
+          </ul>
+        </section>
       </div>
 
       <div id="faqs">

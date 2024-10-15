@@ -60,10 +60,18 @@ let PrRenewal = () => {
             </div>
             <div className={styles.bannerHeadingRotatePara}>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("refusal-reason")}>Refusal Reason</p>
-              <p onClick={() => scrollToSection("appointment")}>Book Appointment</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
+              <p onClick={() => scrollToSection("refusal-reason")}>
+                Refusal Reason
+              </p>
+              <p onClick={() => scrollToSection("appointment")}>
+                Book Appointment
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -71,8 +79,12 @@ let PrRenewal = () => {
         </div>
       </div>
 
-      <div className={`${styles.section} ${styles.section}`}  id="eligibility" ref={(el) => sectionsRef.current[0] = el}    >
-        <h2  className={styles.sectionTitle} >
+      <div
+        className={`${styles.section} ${styles.section}`}
+        id="eligibility"
+        ref={(el) => (sectionsRef.current[0] = el)}
+      >
+        <h2 className={styles.sectionTitle}>
           Eligibility for Permanent Residency Renewal
         </h2>
         <ul className={styles.sectionContent}>
@@ -96,8 +108,12 @@ let PrRenewal = () => {
         </ul>
       </div>
 
-      <div className={`${styles.section} ${styles.section}`}  id="how-to-apply" ref={(el) => sectionsRef.current[1] = el}    >
-        <h2 className={styles.sectionTitle} >
+      <div
+        className={`${styles.section} ${styles.section}`}
+        id="how-to-apply"
+        ref={(el) => (sectionsRef.current[1] = el)}
+      >
+        <h2 className={styles.sectionTitle}>
           How to Apply for Permanent Residency Renewal
         </h2>
         <p className={styles.sectionContent}>
@@ -110,7 +126,11 @@ let PrRenewal = () => {
         </p>
       </div>
 
-      <div className={`${styles.section} ${styles.section}`}  id="refusal-reason" ref={(el) => sectionsRef.current[2] = el}  >
+      <div
+        className={`${styles.section} ${styles.section}`}
+        id="refusal-reason"
+        ref={(el) => (sectionsRef.current[2] = el)}
+      >
         <h2 className={styles.sectionTitle}>
           Reasons for Refusal of Permanent Residency Renewal
         </h2>
@@ -128,32 +148,6 @@ let PrRenewal = () => {
           </li>
         </ul>
       </div>
-
-      <section
-        className={`${styles.section} ${styles.section}`}
-        id="why-choose-us"
-        ref={(el) => (sectionsRef.current[9] = el)}
-      >
-        <h2>Why Choose Us?</h2>
-        <ul>
-          <li>
-            <strong>Experienced Team:</strong> Over a decade of experience in
-            handling BCPNP applications with a high success rate.
-          </li>
-          <li>
-            <strong>Tailored Approach:</strong> Personalized services and
-            strategies based on your specific case.
-          </li>
-          <li>
-            <strong>High Success Rate:</strong> Proven track record using case
-            law and precedents for positive results.
-          </li>
-          <li>
-            <strong>Comprehensive Support:</strong> Assistance from the start of
-            the application process to obtaining your PR.
-          </li>
-        </ul>
-      </section>
 
       <div
         className={`${styles.section} ${styles.section}`}
@@ -184,9 +178,33 @@ let PrRenewal = () => {
         >
           Book Appointment
         </button>
-
-        
       </div>
+
+      <section
+        className={`${styles.section} ${styles.section}`}
+        id="why-choose-us"
+        ref={(el) => (sectionsRef.current[9] = el)}
+      >
+        <h2>Why Choose Us?</h2>
+        <ul>
+          <li>
+            <strong>Experienced Team:</strong> Over a decade of experience in
+            handling BCPNP applications with a high success rate.
+          </li>
+          <li>
+            <strong>Tailored Approach:</strong> Personalized services and
+            strategies based on your specific case.
+          </li>
+          <li>
+            <strong>High Success Rate:</strong> Proven track record using case
+            law and precedents for positive results.
+          </li>
+          <li>
+            <strong>Comprehensive Support:</strong> Assistance from the start of
+            the application process to obtaining your PR.
+          </li>
+        </ul>
+      </section>
       <div id="faqs">
         <FAQ />
       </div>

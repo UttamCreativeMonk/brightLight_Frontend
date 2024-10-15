@@ -412,32 +412,6 @@ const InCaregiverProgramLP = () => {
         </section>
 
         <section
-          className={`${styles.section} ${styles.section}`}
-          id="why-choose-us"
-          ref={(el) => (sectionsRef.current[99] = el)}
-        >
-          <h2>Why Choose Us?</h2>
-          <ul>
-            <li>
-              <strong>Experienced Team:</strong> Over a decade of experience in
-              handling BCPNP applications with a high success rate.
-            </li>
-            <li>
-              <strong>Tailored Approach:</strong> Personalized services and
-              strategies based on your specific case.
-            </li>
-            <li>
-              <strong>High Success Rate:</strong> Proven track record using case
-              law and precedents for positive results.
-            </li>
-            <li>
-              <strong>Comprehensive Support:</strong> Assistance from the start
-              of the application process to obtaining your PR.
-            </li>
-          </ul>
-        </section>
-
-        <section
           className={`${styles.stillNotSure} ${styles.section}`}
           id="testing1"
           ref={(el) => (sectionsRef.current[18] = el)}
@@ -462,19 +436,7 @@ const InCaregiverProgramLP = () => {
             application specialists who can assist you from the start of the
             application process to obtaining your visa. Start your process now.
           </p>
-        </section>
 
-        <section
-          className={`${styles.whyChooseUs} ${styles.section}`}
-          id="why-choose-us"
-          ref={(el) => (sectionsRef.current[19] = el)}
-        >
-          <h2>Why Choose Us</h2>
-          <p>
-            Discover why Brightlight Immigration is the right choice for your
-            immigration needs. Our experienced team offers personalized services
-            to ensure the best possible outcome for your application.
-          </p>
           <button
             onClick={() =>
               (window.location.href =
@@ -483,6 +445,35 @@ const InCaregiverProgramLP = () => {
           >
             Book Appointment
           </button>
+        </section>
+
+        <section
+          style={{ marginTop: "50px" }}
+          className={`${styles.section} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[15] = el)}
+        >
+          <h2 style={{ fontSize: "24px", marginBottom: "20px" }}>
+            Why Choose Us?
+          </h2>
+          <ul>
+            <li>
+              <strong>Experienced Team:</strong> Over a decade of experience in
+              handling BCPNP applications with a high success rate.
+            </li>
+            <li>
+              <strong>Tailored Approach:</strong> Personalized services and
+              strategies based on your specific case.
+            </li>
+            <li>
+              <strong>High Success Rate:</strong> Proven track record using case
+              law and precedents for positive results.
+            </li>
+            <li>
+              <strong>Comprehensive Support:</strong> Assistance from the start
+              of the application process to obtaining your PR.
+            </li>
+          </ul>
         </section>
       </div>
 

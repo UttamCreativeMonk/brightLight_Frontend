@@ -289,7 +289,17 @@ const SpouseInland = () => {
           </li>
         </ul>
 
+        <h3>Applying for a Spousal or Partner Work Permit</h3>
+        <p>
+          New spousal or partner work permit applications can be submitted along
+          with your sponsorship application. These applications may also be
+          submitted concurrently with an application for permanent residence.
+          Ensure you include the appropriate fees and send the application by
+          mail or courier.
+        </p>
+
         <section
+          style={{ marginTop: "50px" }}
           className={`${styles.section} ${styles.section}`}
           id="why-choose-u"
         >
@@ -313,15 +323,6 @@ const SpouseInland = () => {
             </li>
           </ul>
         </section>
-
-        <h3>Applying for a Spousal or Partner Work Permit</h3>
-        <p>
-          New spousal or partner work permit applications can be submitted along
-          with your sponsorship application. These applications may also be
-          submitted concurrently with an application for permanent residence.
-          Ensure you include the appropriate fees and send the application by
-          mail or courier.
-        </p>
       </div>
 
       <button

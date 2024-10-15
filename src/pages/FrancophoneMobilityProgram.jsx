@@ -24,7 +24,6 @@ const FrancophoneMobilityProgram = () => {
   };
 
   useEffect(() => {
-
     fetch("https://brightlight-node.onrender.com/francophoneMobilityMeta")
       .then((res) => {
         return res.json();
@@ -38,7 +37,6 @@ const FrancophoneMobilityProgram = () => {
         console.log(error);
       });
   }, []);
-
 
   const sectionsRef = useRef([]);
 
@@ -64,7 +62,7 @@ const FrancophoneMobilityProgram = () => {
 
   return (
     <>
-            <Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle
@@ -260,16 +258,16 @@ const FrancophoneMobilityProgram = () => {
         >
           <h2>Employer Requirements for the Francophone Mobility Program</h2>
           <ol>
-            <li style={{marginBottom: "10px"}}>
+            <li style={{ marginBottom: "10px" }}>
               <strong>Job Offer:</strong> Issue a job offer at a reasonable wage
               rate within the province of work.
             </li>
-            <li style={{marginBottom: "10px"}}>
+            <li style={{ marginBottom: "10px" }}>
               <strong>LMIA Exempt Code:</strong> Request the LMIA exempt code
               for the job offer and work permit application. Employer compliance
               fee is $230.
             </li>
-            <li style={{marginBottom: "10px"}}>
+            <li style={{ marginBottom: "10px" }}>
               <strong>Proof of Operations:</strong> Provide evidence of
               operations, payroll, and income to justify the hire and the
               position.
@@ -428,32 +426,6 @@ const FrancophoneMobilityProgram = () => {
         </section>
 
         <section
-          className={`${styles.section} ${styles.section}`}
-          id="why-choose-us"
-          ref={(el) => (sectionsRef.current[9] = el)}
-        >
-          <h2>Why Choose Us?</h2>
-          <ul>
-            <li>
-              <strong>Experienced Team:</strong> Over a decade of experience in
-              handling BCPNP applications with a high success rate.
-            </li>
-            <li>
-              <strong>Tailored Approach:</strong> Personalized services and
-              strategies based on your specific case.
-            </li>
-            <li>
-              <strong>High Success Rate:</strong> Proven track record using case
-              law and precedents for positive results.
-            </li>
-            <li>
-              <strong>Comprehensive Support:</strong> Assistance from the start
-              of the application process to obtaining your PR.
-            </li>
-          </ul>
-        </section>
-
-        <section
           className={`${styles.consultation} ${styles.section}`}
           id="why-choose-us"
           ref={(el) => (sectionsRef.current[8] = el)}
@@ -482,6 +454,32 @@ const FrancophoneMobilityProgram = () => {
           >
             Book Appointment
           </button>
+        </section>
+
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[9] = el)}
+        >
+          <h2>Why Choose Us?</h2>
+          <ul>
+            <li>
+              <strong>Experienced Team:</strong> Over a decade of experience in
+              handling BCPNP applications with a high success rate.
+            </li>
+            <li>
+              <strong>Tailored Approach:</strong> Personalized services and
+              strategies based on your specific case.
+            </li>
+            <li>
+              <strong>High Success Rate:</strong> Proven track record using case
+              law and precedents for positive results.
+            </li>
+            <li>
+              <strong>Comprehensive Support:</strong> Assistance from the start
+              of the application process to obtaining your PR.
+            </li>
+          </ul>
         </section>
       </div>
 

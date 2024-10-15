@@ -794,10 +794,10 @@ const Navbar3 = (props) => {
                           onMouseLeave={() => setShowNestedDropdown10(false)}
                         >
                           <a href="/spousal-open-work-permit">
-                            For Spouse of Worker
+                            Open Work Permit - For Spouse of Worker
                           </a>
-                          <a href="/international-graduate-program">
-                            For Spouse of Student
+                          <a href="/cby">
+                            Open Work Permit - For Spouse of Student
                           </a>
                           <a href="/open-work-permit">
                             Open Work Permit - For Spouse of PR
@@ -1334,10 +1334,10 @@ const Navbar3 = (props) => {
                                 Spousal Permit
                               </a>
                               <a href="/spousal-open-work-permit">
-                                For Spouse of Worker
+                                Open Work Permit - For Spouse of Worker
                               </a>
-                              <a href="/international-graduate-program">
-                                For Spouse of Student
+                              <a href="/cby">
+                                Open Work Permit - For Spouse of Student
                               </a>
                               <a href="/open-work-permit">
                                 PR Open Work Permit, Inland

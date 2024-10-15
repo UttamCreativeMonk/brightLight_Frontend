@@ -229,6 +229,37 @@ const OpenWorkVulnerableLP = () => {
         </section>
 
         <section
+          className={`${styles.consultation} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[4] = el)}
+        >
+          <h2>Still Not Sure?</h2>
+          <p>
+            If you have received a refusal for any of the reasons mentioned
+            above, do not worry. With over a decade of experience, we specialize
+            in previously refused cases. While we don't provide jobs for LMIA,
+            we can certainly assist you if you have a job offer. We have
+            obtained approvals for clients who had multiple previous refusals.
+            We achieve this with a tailored approach to your specific case,
+            addressing each concern listed in previous refusals. We use case law
+            and similar cases as precedents to achieve a high success rate.
+          </p>
+          <p style={{ marginTop: "20px" }}>
+            At Brightlight Immigration, we have a dedicated team of visa
+            application specialists who can assist you from the start of the
+            application process to obtaining your visa. Start your process now.
+          </p>
+          <button
+            onClick={() =>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
+          >
+            Book Appointment
+          </button>
+        </section>
+
+        <section
           className={`${styles.section} ${styles.section}`}
           id="why-choose-us"
           ref={(el) => (sectionsRef.current[9] = el)}
@@ -252,37 +283,6 @@ const OpenWorkVulnerableLP = () => {
               of the application process to obtaining your PR.
             </li>
           </ul>
-        </section>
-
-        <section
-          className={`${styles.consultation} ${styles.section}`}
-          id="why-choose-us"
-          ref={(el) => (sectionsRef.current[4] = el)}
-        >
-          <h2>Still Not Sure?</h2>
-          <p>
-            If you have received a refusal for any of the reasons mentioned
-            above, do not worry. With over a decade of experience, we specialize
-            in previously refused cases. While we don't provide jobs for LMIA,
-            we can certainly assist you if you have a job offer. We have
-            obtained approvals for clients who had multiple previous refusals.
-            We achieve this with a tailored approach to your specific case,
-            addressing each concern listed in previous refusals. We use case law
-            and similar cases as precedents to achieve a high success rate.
-          </p>
-          <p style={{marginTop: "20px"}}>
-            At Brightlight Immigration, we have a dedicated team of visa
-            application specialists who can assist you from the start of the
-            application process to obtaining your visa. Start your process now.
-          </p>
-          <button
-            onClick={() => 
-              (window.location.href =
-                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-            }
-          >
-            Book Appointment
-          </button>
         </section>
       </div>
 

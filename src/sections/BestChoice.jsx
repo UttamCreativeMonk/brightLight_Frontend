@@ -169,26 +169,21 @@ let BestChoice = () => {
       const currentTime = performance.now();
       const deltaY = currentScrollY - lastScrollY;
       const deltaTime = currentTime - lastTimestamp;
-
-      // Calculate the scroll speed (scrolling distance over time)
       const scrollSpeed = deltaY / deltaTime;
-
-      // Adjust the plane's top position proportionally to the scroll speed
-      if(window.innerWidth < 767){
+      // if (planeTop <= 150) {
+      //   setPlaneTop(150);
+      // }
+      if (window.innerWidth < 767) {
         setPlaneTop((prevTop) => prevTop + scrollSpeed * 5);
-      }
-      else{
+      } else {
         setPlaneTop((prevTop) => prevTop + scrollSpeed * 15);
       }
-       // Adjust the multiplier (50) for desired speed
 
       lastScrollY = currentScrollY;
       lastTimestamp = currentTime;
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    // Cleanup the event listener on component unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };

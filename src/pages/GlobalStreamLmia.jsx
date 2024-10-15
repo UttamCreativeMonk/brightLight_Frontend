@@ -11,7 +11,7 @@ import { Helmet } from "react-helmet-async";
 const GlobalStreamLmia = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
-  
+
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
@@ -24,7 +24,6 @@ const GlobalStreamLmia = () => {
   };
 
   useEffect(() => {
-
     fetch("https://brightlight-node.onrender.com/globalStreamLmiaMeta")
       .then((res) => {
         return res.json();
@@ -63,7 +62,7 @@ const GlobalStreamLmia = () => {
 
   return (
     <>
-            <Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle
@@ -580,6 +579,21 @@ const GlobalStreamLmia = () => {
           <section
             className={`${styles.section} ${styles.section}`}
             id="why-choose-us"
+            ref={(el) => (sectionsRef.current[7] = el)}
+          >
+            <button
+              onClick={() =>
+                (window.location.href =
+                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+              }
+            >
+              Book Appointment
+            </button>
+          </section>
+
+          <section
+            className={`${styles.section} ${styles.section}`}
+            id="why-choose-us"
             ref={(el) => (sectionsRef.current[9] = el)}
           >
             <h2>Why Choose Us?</h2>
@@ -601,21 +615,6 @@ const GlobalStreamLmia = () => {
                 start of the application process to obtaining your PR.
               </li>
             </ul>
-          </section>
-
-          <section
-            className={`${styles.section} ${styles.section}`}
-            id="why-choose-us"
-            ref={(el) => (sectionsRef.current[7] = el)}
-          >
-            <button
-              onClick={() =>
-                (window.location.href =
-                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-              }
-            >
-              Book Appointment
-            </button>
           </section>
         </main>
       </div>
