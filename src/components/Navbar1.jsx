@@ -536,7 +536,7 @@ const Navbar3 = (props) => {
 
                       <div className={`${styles.relativeDiv} ${styles.flex}`}>
                         <a
-                          href="/spouse-common-law-sponsership"
+                          href="/spousal-open-work-permit"
                           onMouseEnter={() =>
                             setDoubleNestedSpousalPermit(true)
                           }
@@ -544,7 +544,7 @@ const Navbar3 = (props) => {
                             setDoubleNestedSpousalPermit(false)
                           }
                         >
-                          Spousal Permit
+                          Spousal Open Work Permit
                         </a>
                         <div
                           className={`${styles.doubleNested} ${
@@ -557,11 +557,11 @@ const Navbar3 = (props) => {
                             setDoubleNestedSpousalPermit(false)
                           }
                         >
-                          <a href="/spousal-open-work-permit">
-                            For Spouse of Worker
+                          <a href="/common-law-partner-temporary">
+                            Open Work Permit - For Spouse of Worker
                           </a>
-                          <a href="/international-graduate-program">
-                            For Spouse of Student
+                          <a href="/cby">
+                            Open Work Permit - For Spouse of Student
                           </a>
                           <a href="/open-work-permit">
                             PR Open Work Permit, Inland
@@ -800,7 +800,7 @@ const Navbar3 = (props) => {
                             For Spouse of Student
                           </a>
                           <a href="/open-work-permit">
-                            PR Open Work Permit, Inland
+                            Open Work Permit - For Spouse of PR
                           </a>
                           {/* <a href="/cby">Cby</a> */}
                         </div>
@@ -1171,14 +1171,14 @@ const Navbar3 = (props) => {
                           </a>
                           {isSpousalPermitOpen && (
                             <div className={styles.subSubDropdownContent}>
-                              <a href="/spousal-open-work-permit">
-                                For Spouse of Worker
+                              <a href="/common-law-partner-temporary">
+                                Open Work Permit - For Spouse of Worker
                               </a>
-                              <a href="/international-graduate-program">
-                                For Spouse of Student
+                              <a href="/cby">
+                                Open Work Permit - For Spouse of Student
                               </a>
                               <a href="/open-work-permit">
-                                PR Open Work Permit, Inland
+                                Open Work Permit - For Spouse of PR
                               </a>
                             </div>
                           )}

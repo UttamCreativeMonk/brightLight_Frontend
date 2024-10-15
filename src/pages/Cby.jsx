@@ -21,7 +21,6 @@ const Cby = () => {
     }
   };
 
-
   const sectionsRef = useRef([]);
 
   const handleScroll = () => {
@@ -61,12 +60,20 @@ const Cby = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -75,12 +82,20 @@ const Cby = () => {
       </div>
 
       <div className={styles.container}>
-        <h1  className={`${styles.heading} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
+        <h1
+          className={`${styles.heading} ${styles.section}`}
+          id="about-program"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
           Open Work Permit for Spouse or Common-law Partner of an International
           Student
         </h1>
 
-        <section className={`${styles.introduction} ${styles.section}`} id="testing" ref={(el) => sectionsRef.current[1] = el}>
+        <section
+          className={`${styles.introduction} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
           <p>
             Canada allows spouses and common-law partners to come to Canada and
             accompany their partners who are international students. Over the
@@ -96,7 +111,12 @@ const Cby = () => {
           </p>
         </section>
 
-        <section className={`${styles.benefits} ${styles.section}`} id="benifits" ref={(el) => sectionsRef.current[2] = el}>
+        <section
+          style={{ marginTop: "70px" }}
+          className={`${styles.benefits} ${styles.section}`}
+          id="benifits"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
           <h2 className={styles.subheading}>
             Benefits of Open Work Permit for Spouse or Common-law Partner of an
             International Student
@@ -133,7 +153,12 @@ const Cby = () => {
           </ul>
         </section>
 
-        <section className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[3] = el}>
+        <section
+          style={{ marginTop: "70px" }}
+          className={`${styles.eligibility} ${styles.section}`}
+          id="eligibility"
+          ref={(el) => (sectionsRef.current[3] = el)}
+        >
           <h2 className={styles.subheading}>
             Eligibility Criteria for Open Work Permit for Spouse or Common-law
             Partner of an International Student
@@ -145,101 +170,225 @@ const Cby = () => {
             the same for the accompanying spouse or common-law partner.
           </p>
 
-          <h3>Eligibility Requirements of the International Student:</h3>
+          <h3 style={{ marginTop: "70px" }}>
+            Eligibility Requirements of the International Student:
+          </h3>
 
           {/* <h4>Applications Submitted Before March 19, 2024</h4> */}
           <div>
-      <h4>Applications Submitted Before March 19, 2024</h4>
-      <ul className={styles.list}>
-        <li className={styles.listItem}>
-          <strong>Proof of Enrollment:</strong> Must be attending a designated learning institution (DLI).
-        </li>
-        <li className={styles.listItem}>
-          <strong>Full-Time Study:</strong> Must be actively studying full-time in a post-graduation work permit-eligible program at:
-          <ul className={styles.subList}>
-            <li> A Canadian public post-secondary institution (college, trade/technical school, university, or CEGEP in Quebec).</li>
-            <li> A private post-secondary institution in Quebec operating under the same rules as public institutions.</li>
-            <li> A private or public secondary or post-secondary institution in Quebec offering qualifying programs of 900 hours or longer leading to a Diploma of Vocational Studies (DVS) or an Attestation of Vocational Specialization (AVS).</li>
-            <li> A Canadian private institution authorized by provincial statute to confer degrees (e.g., bachelor’s, master’s, or doctorate) if enrolled in a degree program authorized by the province.</li>
-          </ul>
-        </li>
-        <li className={styles.listItem}>
-          <strong>Ineligibility:</strong>
-          <ul className={styles.subList}>
-            <li> Not enrolled while residing in Canada.</li>
-            <li> Enrolled in part-time studies.</li>
-            <li> Enrollment in a private post-secondary program or institution not meeting specified eligibility criteria.</li>
-          </ul>
-        </li>
-      </ul>
+            <h4>Applications Submitted Before March 19, 2024</h4>
+            <p style={{ marginTop: "-10px" }}>
+              For the international student to be eligible to apply for their
+              partner under administrative code C42, they must meet all of the
+              following requirements:
+            </p>
+            <ul
+              style={{ marginTop: "30px", marginLeft: "40px" }}
+              className={styles.list}
+            >
+              <li className={styles.listItem}>
+                proof that the international student is attending a designated
+                learning institution (DLI)
+              </li>
+              <li className={styles.listItem}>
+                The international student must be actively studying full-time in
+                a post-graduation work permit-eligible program at one of the
+                following:
+                <ul className={styles.subList}>
+                  <li>
+                    {" "}
+                    A Canadian public post-secondary institution (college,
+                    trade/technical school, university, or CEGEP in Quebec).
+                  </li>
+                  <li>
+                    {" "}
+                    A private post-secondary institution in Quebec operating
+                    under the same rules as public institutions.
+                  </li>
+                  <li>
+                    {" "}
+                    A private or public secondary or post-secondary institution
+                    in Quebec offering qualifying programs of 900 hours or
+                    longer leading to a Diploma of Vocational Studies (DVS) or
+                    an Attestation of Vocational Specialization (AVS).
+                  </li>
+                  <li>
+                    {" "}
+                    A Canadian private institution authorized by provincial
+                    statute to confer degrees (e.g., bachelor’s, master’s, or
+                    doctorate) if enrolled in a degree program authorized by the
+                    province.
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <p style={{ marginTop: "30px", fontWeight: "600" }}>
+              The international student is not eligible to apply if:{" "}
+            </p>
+            <ul
+              style={{
+                marginTop: "10px",
+                marginLeft: "40px",
+                marginBottom: "40px",
+              }}
+              className={styles.list}
+            >
+              <li className={styles.listItem}>
+                Not enrolled while residing in Canada.
+              </li>
+              <li className={styles.listItem}>
+                Enrolled in part-time studies.
+              </li>
+              <li className={styles.listItem}>
+                Enrollment in a private post-secondary program or institution
+                not meeting specified eligibility criteria.
+              </li>
+            </ul>
 
-      <h4>Applications Submitted On or After March 19, 2024</h4>
-      <ul className={styles.list}>
-        <li className={styles.listItem}>
-          <strong>Valid Study Permit:</strong> Must hold a valid study permit AND be physically residing in Canada while studying or be approved for a study permit if applying as a family group outside of Canada AND provide proof that they plan to physically reside in Canada while studying.
-        </li>
-        <li className={styles.listItem}>
-          <strong>Full-Time Study:</strong> Must be studying on a full-time basis in a graduate program (master’s and doctorate) in a university or polytechnic institution, or a professional degree-granting program in a university (e.g., medicine, dentistry, law, etc.).
-        </li>
-        <li className={styles.listItem}>
-          <strong>Graduate and Professional Programs:</strong> Graduate programs include master’s and doctorate degrees. Professional degree programs include:
-          <ul className={styles.subList}>
-            <li> Doctor of Dental Surgery (DDS, DMD)</li>
-            <li> Bachelor of Law or Juris Doctor (LLB, JD, BCL)</li>
-            <li> Doctor of Medicine (MD)</li>
-            <li> Doctor of Optometry (OD)</li>
-            <li> Pharmacy (PharmD, BS, BSc, BPharm)</li>
-            <li> Doctor of Veterinary Medicine (DVM)</li>
-            <li> Bachelor of Science in Nursing (BScN, BSN, BNSc)</li>
-            <li> Bachelor of Education (BEd)</li>
-            <li> Bachelor of Engineering (BEng, BE, BASc) only</li>
-          </ul>
-        </li>
-        <li className={styles.listItem}>
-          <strong>Ineligibility:</strong>
-          <ul className={styles.subList}>
-            <li> Not enrolled while residing in Canada.</li>
-            <li> Enrolled in part-time studies.</li>
-            <li> Not enrolled in a private post-secondary program/institution other than those listed.</li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-          <h3>
+            <h4>Applications Submitted On or After March 19, 2024</h4>
+            <p>
+              For the international graduate to be eligible to apply for their
+              partner under administrative code C42, they must meet all of the
+              following requirements:
+            </p>
+            <ul className={styles.list}>
+              <li className={styles.listItem}>
+                hold a valid study permit AND must be physically residing in
+                Canada while studying
+              </li>
+              <p>or</p>
+              <p>
+                be approved for a study permit, if applying as a family group
+                outside of Canada AND provide proof that they plan to physically
+                reside in Canada while studying
+              </p>
+              <li>
+                be studying on a full-time basis in a graduate program (master’s
+                and doctorate) in a university or polytechnic institution, or a
+                professional degree-granting program in a university (e.g.,
+                medicine, dentistry, law, etc.)
+              </li>
+
+              <li
+                style={{ listStyle: "none", marginTop: "40px" }}
+                className={styles.listItem}
+              >
+                <strong>Graduate programs</strong> are defined as follows:
+                <ul className={styles.subList}>
+                  <li>
+                    master’s and doctorate degrees granted by universities or
+                    polytechnic institutions
+                  </li>
+                </ul>
+                <p style={{ listStyle: "none", marginTop: "40px" }}>
+                  <strong>Professional degree programs</strong> are identified
+                  under the following:
+                </p>
+                <ul
+                  style={{
+                    marginLeft: "40px",
+                    marginTop: "10px",
+                    marginBottom: "40px",
+                  }}
+                  className={styles.subList}
+                >
+                  <li> Doctor of Dental Surgery (DDS, DMD)</li>
+                  <li> Bachelor of Law or Juris Doctor (LLB, JD, BCL)</li>
+                  <li> Doctor of Medicine (MD)</li>
+                  <li> Doctor of Optometry (OD)</li>
+                  <li> Pharmacy (PharmD, BS, BSc, BPharm)</li>
+                  <li> Doctor of Veterinary Medicine (DVM)</li>
+                  <li> Bachelor of Science in Nursing (BScN, BSN, BNSc)</li>
+                  <li> Bachelor of Education (BEd)</li>
+                  <li> Bachelor of Engineering (BEng, BE, BASc) only</li>
+                </ul>
+              </li>
+            </ul>
+            <p style={{ fontWeight: "600" }}>
+              The international student is not eligible to apply if:
+            </p>
+            <ul>
+              <li>Not enrolled while residing in Canada.</li>
+              <li>Enrolled in part-time studies.</li>
+              <li>
+                Not enrolled in a private post-secondary program/institution
+                other than those listed
+              </li>
+            </ul>
+          </div>
+          <h3 className={styles.subheading} style={{ marginTop: "70px" }}>
             Eligibility Requirements for Accompanying Spouse or Common-law
             Partner
           </h3>
+          <p>Your family member must meet following requirements:</p>
+          <ol>
+            <li style={{ marginBottom: "10px" }}>
+              <strong> General Eligibility:</strong> The applicant must meet
+              general work permit criteria, including police and medical
+              clearances, and not be inadmissible to Canada.
+            </li>
+            <li style={{ marginBottom: "10px" }}>
+              <strong> Relationship:</strong> A genuine relationship between the
+              applicant and the study permit holder is required.
+            </li>
+            <li style={{ marginBottom: "10px" }}>
+              <strong> Proof of Spousal Relationship:</strong> Evidence must
+              demonstrate the applicant's genuine status as the spouse or
+              common-law partner of a valid study permit holder.
+            </li>
+            <li style={{ marginBottom: "10px" }}>
+              <strong> Additional Documentation:</strong> Supplementary proof is
+              necessary to satisfy IRCC that the relationship was not primarily
+              for status acquisition or is not genuine.
+            </li>
+            <li>
+              <strong> Applicants in Canada:</strong> They must possess valid
+              temporary resident status, have applied for an extension before
+              its expiry (maintained status), or be eligible for restoration of
+              status as a visitor, worker, or student. They must also be
+              eligible to apply for a work permit from within Canada.
+            </li>
+          </ol>
+        </section>
+
+        <section
+          style={{ marginTop: "70px" }}
+          className={`${styles.applicationProcess} ${styles.section}`}
+          id="how-to-apply"
+          ref={(el) => (sectionsRef.current[99] = el)}
+        >
+          <h2 className={styles.subheading}>
+            When to apply for Open Work Permit for Spouse or Common-law Partner
+            of an International Student?
+          </h2>
           <ul>
             <li>
-           <strong>   General Eligibility:</strong> The applicant must meet general work permit
-              criteria, including police and medical clearances, and not be
-              inadmissible to Canada.
+              You can choose to apply together for a Study Permit and Spousal
+              Open Work Permit before traveling to Canada. If the applications
+              are approved, study and work permits will be issued upon arrival
+              in Canada, allowing the spouse to begin working immediately.
             </li>
             <li>
-           <strong>   Relationship:</strong> A genuine relationship between the applicant and the
-              study permit holder is required.
+              Foreign nationals exempt from the Temporary Resident Visa (TRV)
+              requirement can apply for the Spousal Open Work Permit (SOWP) upon
+              arrival in Canada, with immediate issuance upon approval by CBSA
+              officer.
             </li>
             <li>
-           <strong>   Proof of Spousal Relationship:</strong> Evidence must demonstrate the
-              applicant's genuine status as the spouse or common-law partner of
-              a valid study permit holder.
-            </li>
-            <li>
-            <strong>  Additional Documentation:</strong> Supplementary proof is necessary to
-              satisfy IRCC that the relationship was not primarily for status
-              acquisition or is not genuine.
-            </li>
-            <li>
-             <strong> Applicants in Canada:</strong> They must possess valid temporary resident
-              status, have applied for an extension before its expiry
-              (maintained status), or be eligible for restoration of status as a
-              visitor, worker, or student. They must also be eligible to apply
-              for a work permit from within Canada.
+              Some spouses/common-law partners may enter Canada as visitors and
+              apply for the work permit later. In such cases, the application
+              can be submitted at any time, ensuring the visitor status remains
+              valid during the application process.
             </li>
           </ul>
         </section>
 
-        <section  className={`${styles.applicationProcess} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[4] = el}>
+        <section
+          style={{ marginTop: "70px" }}
+          className={`${styles.applicationProcess} ${styles.section}`}
+          id="how-to-apply"
+          ref={(el) => (sectionsRef.current[4] = el)}
+        >
           <h2 className={styles.subheading}>
             How to Apply for Open Work Permit for Spouse or Common-law Partner
             of an International Student
@@ -266,7 +415,12 @@ const Cby = () => {
           </ol>
         </section>
 
-        <section className={`${styles.refusalReasons} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[5] = el}>
+        <section
+          style={{ marginTop: "70px" }}
+          className={`${styles.refusalReasons} ${styles.section}`}
+          id="refusal-reasons"
+          ref={(el) => (sectionsRef.current[5] = el)}
+        >
           <h2 className={styles.subheading}>Common Reasons for Refusal</h2>
           <ul>
             <li>
@@ -283,7 +437,12 @@ const Cby = () => {
           </ul>
         </section>
 
-        <section className={`${styles.assistance} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[6] = el}>
+        <section
+          style={{ marginTop: "70px" }}
+          className={`${styles.assistance} ${styles.section}`}
+          id="testing2"
+          ref={(el) => (sectionsRef.current[6] = el)}
+        >
           <h2 className={styles.subheading}>Need Assistance?</h2>
           <p>
             If you need help with your application or have questions, feel free
@@ -308,7 +467,8 @@ const Cby = () => {
           Book Appointment
         </button>
         </section> */}
-                <section
+        <section
+          style={{ marginTop: "70px" }}
           className={`${styles.whyChooseUs} ${styles.section}`}
           id="why-choose-us"
           ref={(el) => (sectionsRef.current[9] = el)}
@@ -333,13 +493,13 @@ const Cby = () => {
             </li>
           </ul>
           <button
-          onClick={() =>
-            (window.location.href =
-              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-          }
-        >
-          Book Appointment
-        </button>
+            onClick={() =>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
+          >
+            Book Appointment
+          </button>
         </section>
       </div>
 
