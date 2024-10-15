@@ -159,6 +159,12 @@ let BestChoice = () => {
   }, []);
 
   useEffect(() => {
+    if (planeTop <= 150) {
+      setPlaneTop(150);
+    }
+  }, [planeTop]);
+
+  useEffect(() => {
     let lastScrollY = window.scrollY;
     let lastTimestamp = performance.now();
 
@@ -170,9 +176,6 @@ let BestChoice = () => {
       const deltaY = currentScrollY - lastScrollY;
       const deltaTime = currentTime - lastTimestamp;
       const scrollSpeed = deltaY / deltaTime;
-      // if (planeTop <= 150) {
-      //   setPlaneTop(150);
-      // }
       if (window.innerWidth < 767) {
         setPlaneTop((prevTop) => prevTop + scrollSpeed * 5);
       } else {
