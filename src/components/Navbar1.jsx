@@ -437,7 +437,7 @@ const Navbar3 = (props) => {
                             className={`${styles.relativeDiv} ${styles.flex}`}
                           >
                             <a
-                              href="/bridging-open-work-permit-lp"
+                              href="/bc-pnp"
                               onMouseEnter={() => setShowNestedDropdown(true)}
                               onMouseLeave={() => setShowNestedDropdown(false)}
                             >
