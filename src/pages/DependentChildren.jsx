@@ -23,7 +23,6 @@ const DependentChildren = () => {
     }
   };
   useEffect(() => {
-
     fetch("https://brightlight-node.onrender.com/dependentChildMeta")
       .then((res) => {
         return res.json();
@@ -62,7 +61,7 @@ const DependentChildren = () => {
 
   return (
     <>
-        <Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle
@@ -148,12 +147,12 @@ const DependentChildren = () => {
           ref={(el) => (sectionsRef.current[0] = el)}
         >
           <h1>Canada’s Dependent Children Sponsorship Program</h1>
-          <p>
+          <p style={{ textAlign: "center" }}>
             The Dependent Child Program helps families stay together and gives
             your child the chance to go to good schools in Canada, grow up in a
             safe place, and be successful in the future.
           </p>
-          <p>
+          <p style={{ textAlign: "center" }}>
             The Dependent Children Program allows Canadian citizens and
             permanent residents to bring their unmarried children under the age
             of 22 to Canada as permanent residents.
@@ -171,7 +170,7 @@ const DependentChildren = () => {
             application is submitted.
           </h4>
           {/* <h3 className={styles.marginTop}>For the Dependent Child:</h3> */}
-          <ul>
+          <ul style={{ marginLeft: "40px" }}>
             <li>
               The child must be a biological or adopted child of a Canadian
               citizen or permanent resident sponsoring them.
@@ -256,6 +255,32 @@ const DependentChildren = () => {
           >
             Book Appointment
           </button>
+        </section>
+
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="why-choose-u"
+          ref={(el) => (sectionsRef.current[9] = el)}
+        >
+          <h2>Why Choose Us?</h2>
+          <ul>
+            <li>
+              <strong>Experienced Team:</strong> Over a decade of experience in
+              handling BCPNP applications with a high success rate.
+            </li>
+            <li>
+              <strong>Tailored Approach:</strong> Personalized services and
+              strategies based on your specific case.
+            </li>
+            <li>
+              <strong>High Success Rate:</strong> Proven track record using case
+              law and precedents for positive results.
+            </li>
+            <li>
+              <strong>Comprehensive Support:</strong> Assistance from the start
+              of the application process to obtaining your PR.
+            </li>
+          </ul>
         </section>
 
         <section

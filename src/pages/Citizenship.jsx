@@ -323,7 +323,7 @@ const Citizenship = () => {
 
           <section
             className={`${styles.section} ${styles.section}`}
-            id="why-choose-us"
+            id="why-choose-u"
             ref={(el) => (sectionsRef.current[9] = el)}
           >
             <h2>Why Choose Us?</h2>

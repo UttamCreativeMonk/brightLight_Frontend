@@ -64,10 +64,18 @@ const SpouseCommonLawSpon = () => {
               </p>
               <p onClick={() => scrollToSection("3-pathways")}>3 Pathways</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>
+                Refusal Reasons
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("book-appointment")}>
+                Book Appointment
+              </p>
               <p onClick={() => scrollToSection("testimonials")}>
                 Testimonials
               </p>
@@ -122,34 +130,21 @@ const SpouseCommonLawSpon = () => {
           <h2 className={styles.subheading}>
             3 main pathways for sponsoring a Spouse or Common-law Partner:
           </h2>
-          <ul>
+          <ul style={{ listStyle: "none" }}>
             <li>
-              It enables your spouse or common-law partner to accompany you to
-              Canada and reside with you.
+              <button style={{display: "flex", margin: "0"}} onClick={() => (window.location.href = "/")}>
+                Spouse or Common-Law Partner IN CANADA{" "}
+              </button>
             </li>
             <li>
-              It permits your spouse or common-law partner to work, alleviating
-              financial strain on you while you are in school full-time.
+              <button style={{display: "flex", margin: "0"}} onClick={() => (window.location.href = "/")}>
+                Spouse or Common-Law Partner IN CANADA{" "}
+              </button>
             </li>
             <li>
-              It provides your spouse or common-law partner with the opportunity
-              to gain Canadian work experience and enhance their skills.
-            </li>
-            <li>
-              Through the Canadian work experience gained, they may become
-              eligible for permanent residency programs.
-            </li>
-            <li>
-              They have the flexibility to work for any employer and in any
-              position.
-            </li>
-            <li>They can also establish their own business if desired.</li>
-            <li>
-              Unlike visitors, they are allowed to stay in Canada for longer
-              than six months, with multiple entries allowed.
-            </li>
-            <li>
-              It also offers a chance to immerse oneself in Canadian society.
+              <button style={{display: "flex", margin: "0"}} onClick={() => (window.location.href = "/")}>
+                Spouse or Common-Law Partner IN CANADA{" "}
+              </button>
             </li>
           </ul>
         </section>
@@ -164,7 +159,7 @@ const SpouseCommonLawSpon = () => {
             Partner for Permanent Residence in Canada:
           </h2>
           <ul>
-            <li>You must be a Canadian citizen or permanent resident.</li>
+            <li>You must be a Canadian citizen or permanent resident. </li>
             <li>
               You must show that you have the financial means to support your
               spouse or partner financially after they arrive in Canada.
@@ -198,10 +193,6 @@ const SpouseCommonLawSpon = () => {
               IRCC will review your application to ensure you meet all
               eligibility requirements and assess the genuineness of your
               relationship.
-            </li>
-            <li>
-              You might be required to get a medical exam and police clearance
-              certificates if applying from outside Canada.
             </li>
             <li>
               If your application is approved, your spouse or partner will
@@ -241,6 +232,32 @@ const SpouseCommonLawSpon = () => {
         </section>
 
         <section
+          className={`${styles.section} ${styles.section}`}
+          id="why-choose-u"
+          ref={(el) => (sectionsRef.current[9] = el)}
+        >
+          <h2>Why Choose Us?</h2>
+          <ul>
+            <li>
+              <strong>Experienced Team:</strong> Over a decade of experience in
+              handling BCPNP applications with a high success rate.
+            </li>
+            <li>
+              <strong>Tailored Approach:</strong> Personalized services and
+              strategies based on your specific case.
+            </li>
+            <li>
+              <strong>High Success Rate:</strong> Proven track record using case
+              law and precedents for positive results.
+            </li>
+            <li>
+              <strong>Comprehensive Support:</strong> Assistance from the start
+              of the application process to obtaining your PR.
+            </li>
+          </ul>
+        </section>
+
+        <section
           className={`${styles.whyChooseUs} ${styles.section}`}
           id="why-choose-us"
           ref={(el) => (sectionsRef.current[7] = el)}
@@ -257,12 +274,13 @@ const SpouseCommonLawSpon = () => {
             we use them as precedents in cases we work on. This is why we have a
             high success rate.
           </p>
-          <p>
+          <p style={{ marginTop: "20px" }}>
             At Brightlight Immigration, we have a dedicated team of visa
             application specialists who can assist you from the start of the
             application process to obtaining your visa. Start your process now.
           </p>
-          <button id="book-appointment"
+          <button
+            id="book-appointment"
             onClick={() =>
               (window.location.href =
                 "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")

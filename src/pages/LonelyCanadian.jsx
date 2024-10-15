@@ -119,35 +119,35 @@ const LonelyCanadian = () => {
             To sponsor relatives such as nephews, nieces, uncles, and aunts, the
             sponsor must meet the following criteria:
           </h4>
-          <ul
+          <ol
             style={{
               marginLeft: "40px",
               marginTop: "20px",
               marginBottom: "60px",
             }}
           >
-            <li>
+            <li style={{ marginBottom: "10px" }}>
               {" "}
               <strong>Minimum Necessary Income:</strong> The sponsor should have
               sufficient income.
             </li>
-            <li>
+            <li style={{ marginBottom: "10px" }}>
               <strong>Age Requirement:</strong> Be at least 18 years old.
             </li>
-            <li>
+            <li style={{ marginBottom: "10px" }}>
               <strong>Canadian Citizenship or Permanent Residency:</strong> The
               sponsor must be a Canadian citizen or permanent resident residing
               in Canada.
             </li>
-            <li>
+            <li style={{ marginBottom: "10px" }}>
               <strong>Debt and Bankruptcy:</strong> Be free from debt or
               bankruptcy proceedings.
             </li>
-            <li>
+            <li style={{ marginBottom: "10px" }}>
               <strong>Application Readiness:</strong> Prepared to submit the
               sponsorship application with all required forms and documents.
             </li>
-            <li>
+            <li style={{ marginBottom: "10px" }}>
               <strong>Undertaking Obligations:</strong> Willing to accept the
               responsibilities of undertaking.
             </li>
@@ -155,7 +155,7 @@ const LonelyCanadian = () => {
               <strong>No Removal Orders or Criminal Convictions:</strong> Free
               from any restrictions of removal orders and criminal convictions.
             </li>
-          </ul>
+          </ol>
         </section>
 
         <section
@@ -226,9 +226,15 @@ const LonelyCanadian = () => {
           ref={(el) => (sectionsRef.current[4] = el)}
         >
           <h2>Sponsoring Siblings</h2>
-          <h4>Alternative options exist for sponsoring siblings:</h4>
+          <ul>
+            <li>
+              <h4>Alternative options exist for sponsoring siblings:</h4>
+            </li>
+          </ul>
+
           <ul
             style={{
+              listStyle: "circle",
               marginLeft: "40px",
               marginTop: "20px",
               marginBottom: "40px",
@@ -243,9 +249,15 @@ const LonelyCanadian = () => {
               brother or sister who is over 18 years of age.
             </li>
           </ul>
-          <h4>A lonely sponsor does not have:</h4>
+          <ul>
+            <li>
+              <h4>A lonely sponsor does not have:</h4>
+            </li>
+          </ul>
+
           <ul
             style={{
+              listStyle: "circle",
               marginLeft: "40px",
               marginTop: "20px",
               marginBottom: "20px",
@@ -271,20 +283,20 @@ const LonelyCanadian = () => {
             Consider the following alternatives if you cannot sponsor a sibling
             over 18 years of age:
           </p>
-          <ul
+          <ol
             style={{
               marginLeft: "40px",
               marginTop: "20px",
               marginBottom: "20px",
             }}
           >
-            <li>
+            <li style={{ marginBottom: "10px" }}>
               Study in Canada: Apply for immigration through a study permit.{" "}
               <a href="/study-visa" className={styles.link}>
                 Learn more about Study Visas
               </a>
             </li>
-            <li>
+            <li style={{ marginBottom: "10px" }}>
               Business Partnership: Successful business owners can secure a work
               permit if eligible.
             </li>
@@ -295,7 +307,7 @@ const LonelyCanadian = () => {
                 Learn more about Express Entry
               </a>
             </li>
-          </ul>
+          </ol>
         </section>
 
         <section
@@ -450,6 +462,32 @@ const LonelyCanadian = () => {
           >
             Book Appointment
           </button>
+        </section>
+
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="why-choose-u"
+          ref={(el) => (sectionsRef.current[99] = el)}
+        >
+          <h2>Why Choose Us?</h2>
+          <ul>
+            <li>
+              <strong>Experienced Team:</strong> Over a decade of experience in
+              handling BCPNP applications with a high success rate.
+            </li>
+            <li>
+              <strong>Tailored Approach:</strong> Personalized services and
+              strategies based on your specific case.
+            </li>
+            <li>
+              <strong>High Success Rate:</strong> Proven track record using case
+              law and precedents for positive results.
+            </li>
+            <li>
+              <strong>Comprehensive Support:</strong> Assistance from the start
+              of the application process to obtaining your PR.
+            </li>
+          </ul>
         </section>
       </div>
 

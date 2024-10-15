@@ -158,9 +158,9 @@ const SpouseInland = () => {
             </li>
             <li>Both parties must be at least 18 years old.</li>
           </ul>
-          <li>
+          <h3 style={{ margin: "20px 0px" }}>
             The relationship must fall into one of the following categories:
-          </li>
+          </h3>
           <ul>
             <li>
               Spouse: Legally married with a valid marriage certificate
@@ -289,6 +289,31 @@ const SpouseInland = () => {
           </li>
         </ul>
 
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="why-choose-u"
+        >
+          <h2>Why Choose Us?</h2>
+          <ul>
+            <li>
+              <strong>Experienced Team:</strong> Over a decade of experience in
+              handling BCPNP applications with a high success rate.
+            </li>
+            <li>
+              <strong>Tailored Approach:</strong> Personalized services and
+              strategies based on your specific case.
+            </li>
+            <li>
+              <strong>High Success Rate:</strong> Proven track record using case
+              law and precedents for positive results.
+            </li>
+            <li>
+              <strong>Comprehensive Support:</strong> Assistance from the start
+              of the application process to obtaining your PR.
+            </li>
+          </ul>
+        </section>
+
         <h3>Applying for a Spousal or Partner Work Permit</h3>
         <p>
           New spousal or partner work permit applications can be submitted along
@@ -298,6 +323,16 @@ const SpouseInland = () => {
           mail or courier.
         </p>
       </div>
+
+      <button
+        className={styles.bookAppointmentBtn}
+        onClick={() =>
+          (window.location.href =
+            "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+        }
+      >
+        Book Appointment
+      </button>
 
       <div id="faqs">
         <FAQ />

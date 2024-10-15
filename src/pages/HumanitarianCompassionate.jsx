@@ -59,12 +59,20 @@ const HumanitarianCompassionate = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
               <p onClick={() => scrollToSection("application")}>Application</p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>
+                Refusal Reasons
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -73,7 +81,11 @@ const HumanitarianCompassionate = () => {
       </div>
 
       <div className={styles.container}>
-        <header className={`${styles.header} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}   >
+        <header
+          className={`${styles.header} ${styles.section}`}
+          id="about-program"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
           <h1>Canada Humanitarian and Compassionate (H&C) Program</h1>
           <p>
             Unlike traditional immigration programs that prioritize factors like
@@ -91,7 +103,11 @@ const HumanitarianCompassionate = () => {
           </p>
         </header>
 
-        <section className={`${styles.whoCanApply} ${styles.section}`} id="testing" ref={(el) => sectionsRef.current[1] = el}  >
+        <section
+          className={`${styles.whoCanApply} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
           <h2>
             Who Can Apply Under the Humanitarian and Compassionate (H&C) Program
             for Family Reunification?
@@ -102,11 +118,13 @@ const HumanitarianCompassionate = () => {
             the family member is eligible for H&C consideration based on one or
             more of the following factors:
           </p>
-          <ul style={{
+          <ul
+            style={{
               marginLeft: "40px",
               marginTop: "20px",
               marginBottom: "60px",
-            }}>
+            }}
+          >
             <li>
               The family member is at risk of suffering significant hardship or
               harm if they are not allowed to stay in Canada.
@@ -147,18 +165,26 @@ const HumanitarianCompassionate = () => {
           </ul>
         </section>
 
-        <section className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[2] = el} >
+        <section
+          className={`${styles.eligibility} ${styles.section}`}
+          id="eligibility"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
           <h2>
             Eligibility Criteria for the Humanitarian and Compassionate (H&C)
             Program
           </h2>
-          <h4>To be eligible for H&C sponsorship under the family reunification program, you must meet the following criteria:
+          <h4>
+            To be eligible for H&C sponsorship under the family reunification
+            program, you must meet the following criteria:
           </h4>
-          <ul style={{
+          <ul
+            style={{
               marginLeft: "40px",
               marginTop: "20px",
               marginBottom: "60px",
-            }}>
+            }}
+          >
             <li>
               You must be a spouse, common-law partner, or parent of a Canadian
               citizen or permanent resident.
@@ -178,7 +204,11 @@ const HumanitarianCompassionate = () => {
           </ul>
         </section>
 
-        <section className={`${styles.applicationProcess} ${styles.section}`} id="application" ref={(el) => sectionsRef.current[3] = el}  >
+        <section
+          className={`${styles.applicationProcess} ${styles.section}`}
+          id="application"
+          ref={(el) => (sectionsRef.current[3] = el)}
+        >
           <h2>
             How to Apply for the Humanitarian and Compassionate (H&C) Program
           </h2>
@@ -194,7 +224,11 @@ const HumanitarianCompassionate = () => {
           </ol>
         </section>
 
-        <section className={`${styles.refusalReasons} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[4] = el}  >
+        <section
+          className={`${styles.refusalReasons} ${styles.section}`}
+          id="refusal-reasons"
+          ref={(el) => (sectionsRef.current[4] = el)}
+        >
           <h2>
             Common Reasons for Refusals of the Humanitarian and Compassionate
             (H&C) Program
@@ -216,16 +250,46 @@ const HumanitarianCompassionate = () => {
             </li>
           </ul>
           <button
-          onClick={() =>
-            (window.location.href =
-              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-          }
-        >
-          Book Appointment
-        </button>
+            onClick={() =>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
+          >
+            Book Appointment
+          </button>
         </section>
 
-        <section  className={`${styles.consultation} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[5] = el} >
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="why-choose-u"
+          ref={(el) => (sectionsRef.current[9] = el)}
+        >
+          <h2>Why Choose Us?</h2>
+          <ul>
+            <li>
+              <strong>Experienced Team:</strong> Over a decade of experience in
+              handling BCPNP applications with a high success rate.
+            </li>
+            <li>
+              <strong>Tailored Approach:</strong> Personalized services and
+              strategies based on your specific case.
+            </li>
+            <li>
+              <strong>High Success Rate:</strong> Proven track record using case
+              law and precedents for positive results.
+            </li>
+            <li>
+              <strong>Comprehensive Support:</strong> Assistance from the start
+              of the application process to obtaining your PR.
+            </li>
+          </ul>
+        </section>
+
+        <section
+          className={`${styles.consultation} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[5] = el)}
+        >
           <h2>Still Not Sure?</h2>
           <p>
             If you have received a refusal for any of the reasons mentioned
@@ -240,16 +304,15 @@ const HumanitarianCompassionate = () => {
             At Brightlight Immigration, we have a dedicated team of visa
             application specialists who can assist you from the start of the
             application process all the way to obtaining your visa.{" "}
-
           </p>
           <button
-              onClick={() =>
-                (window.location.href =
-                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-              }
-            >
-              Start your process now
-            </button>
+            onClick={() =>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
+          >
+            Start your process now
+          </button>
         </section>
       </div>
 

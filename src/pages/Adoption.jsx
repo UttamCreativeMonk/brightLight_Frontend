@@ -12,7 +12,6 @@ const Adoption = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
 
-
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
@@ -25,7 +24,6 @@ const Adoption = () => {
   };
 
   useEffect(() => {
-
     fetch("https://brightlight-node.onrender.com/adopMeta")
       .then((res) => {
         return res.json();
@@ -39,7 +37,6 @@ const Adoption = () => {
         console.log(error);
       });
   }, []);
-
 
   const sectionsRef = useRef([]);
 
@@ -65,7 +62,7 @@ const Adoption = () => {
 
   return (
     <>
-        <Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle
@@ -155,12 +152,12 @@ const Adoption = () => {
           ref={(el) => (sectionsRef.current[0] = el)}
         >
           <h1>Canada's Adoption Program</h1>
-          <p>
+          <p style={{ marginTop: "-20px" }}>
             The heart-warming journey of bringing a child into your life through
             adoption is an incredible act of love and commitment, offering the
             child a nurturing home and a lifetime of opportunities.
           </p>
-          <p>
+          <p style={{ marginTop: "20px" }}>
             Canada's adoption program under family reunification and sponsorship
             provides a pathway for eligible Canadians to adopt children from
             both within Canada and internationally. The program aims to provide
@@ -188,7 +185,7 @@ const Adoption = () => {
                 Intra-Country Adoption
               </a>
             </li>
-            <li>
+            <li style={{ marginTop: "30px" }}>
               <p>
                 Inter-country adoption. This involves adopting a child from
                 another country.
@@ -202,56 +199,6 @@ const Adoption = () => {
               </a>
             </li>
           </ul>
-        </section>
-
-        <section
-          className={`${styles.intraCountry} ${styles.section}`}
-          id="inter-country"
-          ref={(el) => (sectionsRef.current[2] = el)}
-        >
-          <h2>Intra-Country Adoption (Inside Canada)</h2>
-          <p>
-            Intra-country adoption involves adopting a child from another
-            province within Canada.
-          </p>
-          <h3 className={styles.marginTop}>
-            How to Apply for Intra-Country Adoption:
-          </h3>
-          <ol>
-            <li>Fill out the adoption application.</li>
-            <li>Attend an adoption orientation.</li>
-            <li>Get matched with a child.</li>
-            <li>Complete a home study.</li>
-            <li>Receive approval from the provincial adoption authority.</li>
-            <li>Finalize the adoption.</li>
-          </ol>
-        </section>
-
-        <section
-          className={`${styles.interCountry} ${styles.section}`}
-          id="country"
-          ref={(el) => (sectionsRef.current[3] = el)}
-        >
-          <h2>Inter-Country Adoption (Outside Canada)</h2>
-          <p>
-            Inter-country adoption involves adopting a child from another
-            country.
-          </p>
-          <h3 className={styles.marginTop}>
-            How to Apply for Inter-Country Adoption:
-          </h3>
-          <ol>
-            <li>Choose a child from the available list.</li>
-            <li>Complete a home study and provide financial documentation.</li>
-            <li>
-              Receive approval from the Canadian government and the child's
-              country of origin.
-            </li>
-            <li>
-              Travel to the child's country of origin to finalize the adoption.
-            </li>
-            <li>Return to Canada with the child.</li>
-          </ol>
         </section>
 
         <section
@@ -280,6 +227,69 @@ const Adoption = () => {
         </section>
 
         <section
+          className={`${styles.intraCountry} ${styles.section}`}
+          id="inter-country"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
+          <h2>How to apply for sponsoring a child for adoption?</h2>
+
+          <h4 className={styles.marginTop}>
+            For Intra-Country Adoption (Inside Canada)
+          </h4>
+          <ul style={{ marginTop: "20px", marginLeft: "40px" }}>
+            <li>Fill out the adoption application.</li>
+            <li>Attend an adoption orientation.</li>
+            <li>Get matched with a child.</li>
+            <li>Complete a home study.</li>
+            <li>Receive approval from the provincial adoption authority.</li>
+            <li>Finalize the adoption.</li>
+          </ul>
+        </section>
+
+        <section
+          className={`${styles.interCountry} ${styles.section}`}
+          id="country"
+          ref={(el) => (sectionsRef.current[3] = el)}
+        >
+          <h4 className={styles.marginTop}>
+            For Inter-Country Adoption (Outside Canada)
+          </h4>
+          <ul style={{ marginTop: "20px", marginLeft: "40px" }}>
+            <li>Choose a child from the available list.</li>
+            <li>Complete a home study and provide financial documentation.</li>
+            <li>
+              Receive approval from the Canadian government and the child's
+              country of origin.
+            </li>
+            <li>
+              Travel to the child's country of origin to finalize the adoption.
+            </li>
+            <li>Return to Canada with the child.</li>
+          </ul>
+        </section>
+
+        <section
+          className={`${styles.intraCountry} ${styles.section}`}
+          id="inter-country"
+          ref={(el) => (sectionsRef.current[100] = el)}
+        >
+          <h4 className={styles.marginTop}>
+            You can’t sponsor your brother, sister, nephew, niece or grandchild
+            if:
+          </h4>
+          <ul style={{ marginTop: "20px", marginLeft: "40px" }}>
+            <li>one of their parents is still alive </li>
+            <li>no one knows where their parents are</li>
+            <li>their parents abandoned them</li>
+            <li>
+              someone else other than their parents is taking care of them while
+              one or both their parents are alive
+            </li>
+            <li>their parent is in jail or otherwise detained</li>
+          </ul>
+        </section>
+
+        <section
           className={`${styles.refusalReasons} ${styles.section}`}
           id="refusal-reasons"
           ref={(el) => (sectionsRef.current[5] = el)}
@@ -289,7 +299,7 @@ const Adoption = () => {
             Failing to meet the eligibility criteria to be eligible to sponsor a
             child for adoption that is:{" "}
           </h4>
-          <ul>
+          <ul style={{ marginTop: "20px", marginLeft: "40px" }}>
             <li>
               Incomplete or inaccurate information on your application or during
               interviews.
@@ -313,6 +323,32 @@ const Adoption = () => {
           >
             Book Appointment
           </button>
+        </section>
+
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="why-choose-u"
+          ref={(el) => (sectionsRef.current[9] = el)}
+        >
+          <h2>Why Choose Us?</h2>
+          <ul>
+            <li>
+              <strong>Experienced Team:</strong> Over a decade of experience in
+              handling BCPNP applications with a high success rate.
+            </li>
+            <li>
+              <strong>Tailored Approach:</strong> Personalized services and
+              strategies based on your specific case.
+            </li>
+            <li>
+              <strong>High Success Rate:</strong> Proven track record using case
+              law and precedents for positive results.
+            </li>
+            <li>
+              <strong>Comprehensive Support:</strong> Assistance from the start
+              of the application process to obtaining your PR.
+            </li>
+          </ul>
         </section>
 
         <section

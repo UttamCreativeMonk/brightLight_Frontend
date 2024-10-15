@@ -146,19 +146,28 @@ const SpouseOutland = () => {
           <li>
             The relationship can fall into one of the following categories:
           </li>
-          <ul>
+          <ul
+            style={{
+              listStyle: "circle",
+              marginLeft: "40px",
+              marginTop: "20px",
+              marginBottom: "20px",
+            }}
+          >
             <li>
-              Spouse: Legally married with a valid marriage recognized by the
-              jurisdiction where registered and under Canadian law.
+              <strong>Spouse:</strong> Legally married with a valid marriage
+              recognized by the jurisdiction where registered and under Canadian
+              law.
             </li>
             <li>
-              Common-law: Cohabiting or having cohabited for at least 12
-              consecutive months in a marriage-like relationship.
+              <strong>Common-law:</strong> Cohabiting or having cohabited for at
+              least 12 consecutive months in a marriage-like relationship.
             </li>
             <li>
-              Conjugal partnership*: In an ongoing committed relationship for at
-              least 12 months, despite legal constraints preventing physical
-              cohabitation (e.g., immigration barriers or marital status).
+              <strong>Conjugal partnership*:</strong> In an ongoing committed
+              relationship for at least 12 months, despite legal constraints
+              preventing physical cohabitation (e.g., immigration barriers or
+              marital status).
             </li>
           </ul>
           <li>
@@ -330,6 +339,31 @@ const SpouseOutland = () => {
           strive to simplify this process for you.
         </p>
 
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="why-choose-u"
+        >
+          <h2>Why Choose Us?</h2>
+          <ul>
+            <li>
+              <strong>Experienced Team:</strong> Over a decade of experience in
+              handling BCPNP applications with a high success rate.
+            </li>
+            <li>
+              <strong>Tailored Approach:</strong> Personalized services and
+              strategies based on your specific case.
+            </li>
+            <li>
+              <strong>High Success Rate:</strong> Proven track record using case
+              law and precedents for positive results.
+            </li>
+            <li>
+              <strong>Comprehensive Support:</strong> Assistance from the start
+              of the application process to obtaining your PR.
+            </li>
+          </ul>
+        </section>
+
         <h2
           style={{
             marginTop: "50px",
@@ -364,6 +398,15 @@ const SpouseOutland = () => {
           temporary resident visa (TRV).
         </p>
       </div>
+      <button
+        className={styles.bookAppointmentBtn}
+        onClick={() =>
+          (window.location.href =
+            "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+        }
+      >
+        Book Appointment
+      </button>
       <div id="faqs">
         <FAQ />
       </div>

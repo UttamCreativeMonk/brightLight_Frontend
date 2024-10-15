@@ -637,9 +637,7 @@ const Navbar3 = (props) => {
                           }
                         >
                           <a href="/visitor-to-student">Visitor to Student</a>
-                          <a href="/change-college-program">
-                            DLI Change
-                          </a>
+                          <a href="/change-college-program">DLI Change</a>
                           {/* <a href="#">Admission</a> */}
                           {/* <a href="#">Transfer DLI</a> */}
                         </div>
@@ -654,7 +652,7 @@ const Navbar3 = (props) => {
 
                   <div className={`${styles.relativeDiv} ${styles.flex}`}>
                     <a
-                      href="#"
+                      href="/family-reunification-sponsorship"
                       onMouseEnter={() => setShowNestedDropdown4(true)}
                       onMouseLeave={() => setShowNestedDropdown4(false)}
                     >
@@ -673,7 +671,7 @@ const Navbar3 = (props) => {
                           onMouseEnter={() => setShowNestedDropdown8(true)}
                           onMouseLeave={() => setShowNestedDropdown8(false)}
                         >
-                          Spousal Permit
+                          Spousal Sponsorship
                         </a>
                         <div
                           className={`${styles.permanentNestedSection} ${
@@ -682,8 +680,8 @@ const Navbar3 = (props) => {
                           onMouseEnter={() => setShowNestedDropdown8(true)}
                           onMouseLeave={() => setShowNestedDropdown8(false)}
                         >
-                          <a href="/spouse-inland">Inside</a>
-                          <a href="/spouse-outland">Outside</a>
+                          <a href="/spouse-inland">Inside Canada</a>
+                          <a href="/spouse-outland">Outside Canada</a>
                           <a href="/same-sex">Same Sex</a>
                         </div>
                       </div>
@@ -1223,9 +1221,7 @@ const Navbar3 = (props) => {
                               <a href="/visitor-to-student">
                                 Visitor To Student
                               </a>
-                              <a href="/change-college-program">
-                                DLI Change
-                              </a>
+                              <a href="/change-college-program">DLI Change</a>
                               {/* <a href="#">Admission</a>
                               <a href="#">Transfer DLI</a> */}
                             </div>
@@ -1240,26 +1236,29 @@ const Navbar3 = (props) => {
                   {/* Family Reunification with Subheadings */}
                   <div className={styles.subDropdown}>
                     <a href="#" onClick={toggleFamilyReunification}>
-                      Family Reunification
+                      Family Reunification & Sponsorship
                       <span className={styles.arrow}>▼</span>
                     </a>
                     {isFamilyReunificationOpen && (
                       <div className={styles.subDropdownContent}>
                         <a href="/family-reunification-sponsorship">
-                          Family Reunification
+                          Family Reunification & Sponsorship
                         </a>
                         <div className={styles.subSubDropdown}>
                           <a
                             href="#"
                             onClick={toggleFederalSkilledProgramSeven}
                           >
-                            Spouse / Common Law{" "}
+                            Spousal Sponsorship{" "}
                             <span className={styles.arrow}>▼</span>
                           </a>
                           {isFederalSkilledProgramOpenSeven && (
                             <div className={styles.subSubDropdownContent}>
-                              <a href="/spouse-inland">Inside</a>
-                              <a href="/spouse-outland">Outside</a>
+                              <a href="/spouse-common-law-sponsership">
+                                Spousal Sponsorship
+                              </a>
+                              <a href="/spouse-inland">Inside Canada</a>
+                              <a href="/spouse-outland">Outside Canada</a>
                               <a href="/same-sex">Same Sex</a>
                             </div>
                           )}

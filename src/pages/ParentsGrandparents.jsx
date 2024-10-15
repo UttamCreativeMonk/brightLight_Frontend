@@ -158,17 +158,66 @@ const ParentsGrandparents = () => {
             <li>You do not have any criminal record.</li>
             <li>Meet income requirement for the past 3 years.</li>
           </ul>
-          <p className={styles.tableTitle}>
-            Make following table in format approved:
-          </p>
-          <a
-            href="https://ircc.canada.ca/english/helpcentre/answer.asp?qnum=1445&top=14"
-            className={styles.link}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View Approved Format
-          </a>
+
+          <h3 style={{ marginBottom: "20px" }}>
+            Income required for the 3 tax years before the date you apply (if
+            you’re applying for the 2024 intake)
+          </h3>
+
+          <table className={styles.occupationTable}>
+            <thead>
+              <tr>
+                <th>Family size</th>
+                <th>2023</th>
+                <th>2022</th>
+                <th>2021</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2 People</td>
+                <td>$44,530</td>
+                <td>$43,082</td>
+                <td>$32,898</td>
+              </tr>
+              <tr>
+                <td>3 People</td>
+                <td>$54,743</td>
+                <td>$52,965</td>
+                <td>$40,444</td>
+              </tr>
+              <tr>
+                <td>4 People</td>
+                <td>$66,466</td>
+                <td>$64,306</td>
+                <td>$49,106</td>
+              </tr>
+              <tr>
+                <td>5 People</td>
+                <td>$75,384</td>
+                <td>$72,935</td>
+                <td>$55,694</td>
+              </tr>
+              <tr>
+                <td>6 People</td>
+                <td>$85,020</td>
+                <td>$82,259</td>
+                <td>$62,814</td>
+              </tr>
+              <tr>
+                <td>7 People</td>
+                <td>$94,658</td>
+                <td>$91,582</td>
+                <td>$69,934</td>
+              </tr>
+              <tr>
+                <td>If more than 7 people, for each additional person, add:</td>
+                <td>$9,636</td>
+                <td>$9,324</td>
+                <td>$7,120</td>
+              </tr>
+            </tbody>
+          </table>
         </section>
 
         <section
@@ -271,6 +320,32 @@ const ParentsGrandparents = () => {
           >
             Book Appointment
           </button>
+        </section>
+
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="why-choose-u"
+          ref={(el) => (sectionsRef.current[9] = el)}
+        >
+          <h2>Why Choose Us?</h2>
+          <ul>
+            <li>
+              <strong>Experienced Team:</strong> Over a decade of experience in
+              handling BCPNP applications with a high success rate.
+            </li>
+            <li>
+              <strong>Tailored Approach:</strong> Personalized services and
+              strategies based on your specific case.
+            </li>
+            <li>
+              <strong>High Success Rate:</strong> Proven track record using case
+              law and precedents for positive results.
+            </li>
+            <li>
+              <strong>Comprehensive Support:</strong> Assistance from the start
+              of the application process to obtaining your PR.
+            </li>
+          </ul>
         </section>
 
         <section

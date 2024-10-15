@@ -6,6 +6,18 @@
   padding: 30px 0px;
   padding-top: 150px;
 }
+
+.bookAppointmentBtn {
+  display: block;
+  margin: auto;
+  background-color: #00273f;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
 .banner {
   width: 1440px;
   margin: auto;
@@ -51,127 +63,123 @@
   font-size: 28px;
 }
 
-
 .bannerHeadingRotatePara p {
   cursor: pointer;
 }
-  
-  @media (max-width: 1450px) {
-    .banner {
-      width: 95%;
-    }
-  }
-  
-  @media (max-width: 1080px) {
-    .bannerHeadingRotateParent {
-      flex-direction: column;
-      text-align: center;
-      /* margin-top: 50px; */
-      position: relative;
-      width: 100%;
-    }
-  
-    .bannerHeadingRotate {
-      transform: none;
-      border: none;
-      padding-bottom: 0;
-      font-size: 24px;
-      text-align: left;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-    }
-  
-    .bannerHeadingRotate::after {
-      content: "\25BC";
-      font-size: 16px;
-      margin-left: 10px;
-      transition: transform 0.3s;
-    }
-  
-    .bannerHeadingRotateParent.active .bannerHeadingRotate::after {
-      transform: rotate(180deg);
-    }
-  
-    .bannerHeadingRotatePara {
-      margin-left: 0;
-      display: none;
-      background-color: #f7f7f7;
-      padding: 10px;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      z-index: 10;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      padding-top: 25px 0px;
-    }
-  
-    .bannerHeadingRotateParent.active .bannerHeadingRotatePara {
-      display: block;
-    }
-  
-    .bannerHeadingRotatePara p {
-      font-size: 18px;
-      padding: 10px 0;
-      color: #00273f;
-      align-items: center;
-      text-align: center;
-    }
-  }
-  
 
+@media (max-width: 1450px) {
+  .banner {
+    width: 95%;
+  }
+}
 
+@media (max-width: 1080px) {
+  .bannerHeadingRotateParent {
+    flex-direction: column;
+    text-align: center;
+    /* margin-top: 50px; */
+    position: relative;
+    width: 100%;
+  }
+
+  .bannerHeadingRotate {
+    transform: none;
+    border: none;
+    padding-bottom: 0;
+    font-size: 24px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .bannerHeadingRotate::after {
+    content: "\25BC";
+    font-size: 16px;
+    margin-left: 10px;
+    transition: transform 0.3s;
+  }
+
+  .bannerHeadingRotateParent.active .bannerHeadingRotate::after {
+    transform: rotate(180deg);
+  }
+
+  .bannerHeadingRotatePara {
+    margin-left: 0;
+    display: none;
+    background-color: #f7f7f7;
+    padding: 10px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding-top: 25px 0px;
+  }
+
+  .bannerHeadingRotateParent.active .bannerHeadingRotatePara {
+    display: block;
+  }
+
+  .bannerHeadingRotatePara p {
+    font-size: 18px;
+    padding: 10px 0;
+    color: #00273f;
+    align-items: center;
+    text-align: center;
+  }
+}
 
 /* SpouseInland.module.css */
 
-
-
 .container {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: left;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: left;
 }
 /* .container ul{
     list-style-type: none;
 } */
 
 .container h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #e8c47c;
-    text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #e8c47c;
+  text-align: center;
 }
 
 .container h2 {
-    font-size: 1.5rem;
-    margin-top: 30px;
-    margin-bottom: 10px;
+  font-size: 1.5rem;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 
 .container h3 {
-    font-size: 1.25rem;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    color: #333;
+  font-size: 1.25rem;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: #333;
 }
 
-.container p, ul, ol {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin: 10px 0;
+.container p,
+ul,
+ol {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 10px 0;
 }
 
 .button {
-    display: inline-block;
-    padding: 10px 20px;
-    margin: 10px;
-    background-color: #00273f;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #00273f;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
 }
 
 .button:hover {
@@ -180,17 +188,17 @@
 }
 
 .occupationTable {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
 }
 
 .occupationTable th,
 .occupationTable td {
-    border: 1px solid #ddd;
-    padding: 8px;
+  border: 1px solid #ddd;
+  padding: 8px;
 }
 
 .occupationTable th {
-    background-color: #f2f2f2;
+  background-color: #f2f2f2;
 }

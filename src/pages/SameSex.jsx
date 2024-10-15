@@ -63,11 +63,13 @@ const SameSex = () => {
                 About the Program
               </p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("common-law-partner")}>Common Law Partner</p>
-              <p onClick={() => scrollToSection("conjugal-partner")}>Conjugal Partner</p>
-              <p onClick={() => scrollToSection("appointment")}>
-                Appointment
+              <p onClick={() => scrollToSection("common-law-partner")}>
+                Common Law Partner
               </p>
+              <p onClick={() => scrollToSection("conjugal-partner")}>
+                Conjugal Partner
+              </p>
+              <p onClick={() => scrollToSection("appointment")}>Appointment</p>
               <p onClick={() => scrollToSection("why-choose-us")}>
                 Why Choose Us?
               </p>
@@ -120,34 +122,40 @@ const SameSex = () => {
           consider the following criteria:
         </p>
         <ul
-        style={{
-          marginLeft: "40px",
-          marginTop: "-20px",
-          marginBottom: "60px",
-        }}
+          style={{
+            marginLeft: "40px",
+            marginTop: "-20px",
+            marginBottom: "60px",
+          }}
           className={`${styles.list} ${styles.section}`}
           id="testing"
           ref={(el) => (sectionsRef.current[4] = el)}
         >
           <li className={styles.listItem}>
-            Permanent Resident or Canadian Citizen: You must be either a
-            permanent resident or a Canadian citizen.
+            <strong>Permanent Resident or Canadian Citizen:</strong>
+            You must be either a permanent resident or a Canadian citizen.
           </li>
           <li className={styles.listItem}>
-            Marriage in Canada: If you and your same-sex partner are married
-            within Canada, and possess a valid marriage certificate issued by a
-            Canadian province or territory, you meet the eligibility
-            requirements.
+            <strong>Marriage in Canada:</strong> If you and your same-sex
+            partner are married within Canada, and possess a valid marriage
+            certificate issued by a Canadian province or territory, you meet the
+            eligibility requirements.
           </li>
           <li className={styles.listItem}>
-            Marriage Outside Canada: If your marriage occurred outside Canada,
-            you can still apply for spousal sponsorship or conjugal partner
-            sponsorship if the marriage is legally recognized in Canada and
-            complies with the laws of the country where it took place.
+            <strong>Marriage Outside Canada:</strong> If your marriage occurred
+            outside Canada, you can still apply for spousal sponsorship or
+            conjugal partner sponsorship if the marriage is legally recognized
+            in Canada and complies with the laws of the country where it took
+            place.
           </li>
         </ul>
 
         <h2
+          style={{
+            fontSize: "16px",
+            marginTop: "-35px",
+            marginBottom: "-10px",
+          }}
           className={`${styles.subtitle} ${styles.section}`}
           id="testing"
           ref={(el) => (sectionsRef.current[5] = el)}
@@ -185,47 +193,67 @@ const SameSex = () => {
         </p>
 
         <h2
+          style={{ fontSize: "18px", marginTop: "-15px", marginBottom: "10px" }}
           className={`${styles.heading} ${styles.section}`}
           id="testing"
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           Proving Your Common Law Partnership
         </h2>
+        <p>
+          To establish your common-law relationship, consider the following
+          aspects:
+        </p>
         <ul
+          style={{
+            marginLeft: "40px",
+            marginBottom: "10px",
+            marginTop: "20px",
+          }}
           className={`${styles.list} ${styles.section}`}
           id="testing"
           ref={(el) => (sectionsRef.current[10] = el)}
         >
           <li className={styles.listItem}>
-            Shared Residence: You and your partner must reside in the same home,
-            sharing responsibilities such as household chores.
+            <strong>Shared Residence:</strong> You and your partner must reside
+            in the same home, sharing responsibilities such as household chores.
           </li>
           <li className={styles.listItem}>
-            Financial and Emotional Support: Provide evidence of mutual
-            financial arrangements and emotional support.
+            <strong>Financial and Emotional Support:</strong> Provide evidence
+            of mutual financial arrangements and emotional support.
           </li>
           <li className={styles.listItem}>
-            Parenting Together: If applicable, demonstrate that you have
-            children together.
+            <strong>Parenting Together:</strong> If applicable, demonstrate that
+            you have children together.
           </li>
           <li className={styles.listItem}>
-            Public Presentation: Present yourselves as a couple in public
-            settings.
+            <strong>Public Presentation:</strong> Present yourselves as a couple
+            in public settings.
           </li>
           <li className={styles.listItem}>
-            Personal Behavior: Factors like fidelity, commitment, and feelings
-            toward each other contribute to the proof.
+            <strong>Personal Behavior:</strong> Factors like fidelity,
+            commitment, and feelings toward each other contribute to the proof.
           </li>
         </ul>
 
         <h2
+          style={{ fontSize: "18px", marginTop: "25px", marginBottom: "10px" }}
           className={`${styles.heading} ${styles.section}`}
           id="testing"
           ref={(el) => (sectionsRef.current[11] = el)}
         >
           Common Law: Required Documents for Sponsorship
         </h2>
+        <p>
+          When applying, submit at least two of the following documents to
+          validate your common-law relationship:
+        </p>
         <ul
+          style={{
+            marginLeft: "40px",
+            marginBottom: "10px",
+            marginTop: "20px",
+          }}
           className={`${styles.list} ${styles.section}`}
           id="testing"
           ref={(el) => (sectionsRef.current[12] = el)}
@@ -253,6 +281,13 @@ const SameSex = () => {
             Affirmation from family and friends (letters, emails, social media)
           </li>
         </ul>
+        <p>
+          If specific documents are unavailable, explore alternative ways to
+          demonstrate your relationship. Sworn declarations or letters from
+          trusted sources can strengthen your case. Ultimately, the visa
+          officer’s discretion will determine the acceptance of your common-law
+          documents, so providing ample proof enhances your chances of approval.
+        </p>
 
         <h2
           className={`${styles.subtitle} ${styles.section}`}
@@ -275,6 +310,7 @@ const SameSex = () => {
         </p>
 
         <h2
+          style={{ fontSize: "18px", marginTop: "-15px", marginBottom: "10px" }}
           className={`${styles.heading} ${styles.section}`}
           id="testing"
           ref={(el) => (sectionsRef.current[15] = el)}
@@ -282,34 +318,83 @@ const SameSex = () => {
           Qualifications for Conjugal Partnership
         </h2>
         <ul
+          style={{
+            marginLeft: "40px",
+            marginBottom: "10px",
+            marginTop: "20px",
+          }}
           className={`${styles.list} ${styles.section}`}
           id="testing"
           ref={(el) => (sectionsRef.current[16] = el)}
         >
           <li className={styles.listItem}>
-            Barriers to Living Together: Despite the inability to cohabit, your
-            relationship must demonstrate commitment and genuine connection.
+            <strong>Barriers to Living Together:</strong> Despite the inability
+            to cohabit, your relationship must demonstrate commitment and
+            genuine connection.
           </li>
           <li className={styles.listItem}>
-            Legal Marriage Constraints: Some conjugal partners cannot legally
-            marry their sponsor but still qualify under this category.
+            <strong>Legal Marriage Constraints:</strong> Some conjugal partners
+            cannot legally marry their sponsor but still qualify under this
+            category.
           </li>
           <li className={styles.listItem}>
-            Similarities to Common-Law and Spousal Relationships: In all other
-            aspects, conjugal partnerships mirror common-law unions or
-            marriages, requiring a bona fide relationship lasting at least one
-            year.
+            <strong>
+              Similarities to Common-Law and Spousal Relationships:
+            </strong>{" "}
+            In all other aspects, conjugal partnerships mirror common-law unions
+            or marriages, requiring a bona fide relationship lasting at least
+            one year.
           </li>
         </ul>
 
         <h2
+          style={{ fontSize: "18px", marginTop: "35px", marginBottom: "10px" }}
+          className={`${styles.heading} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[15] = el)}
+        >
+          Conjugal Relationship Considerations
+        </h2>
+        <ul
+          style={{
+            marginLeft: "40px",
+            marginBottom: "10px",
+            marginTop: "20px",
+          }}
+          className={`${styles.list} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[16] = el)}
+        >
+          <li className={styles.listItem}>
+            <strong>Country-Specific Challenges:</strong> If your relationship
+            faces obstacles due to factors like a country’s stance on same-sex
+            marriage, lack of divorce options, or legal restrictions, it still
+            qualifies as a conjugal relationship.
+          </li>
+          <li className={styles.listItem}>
+            <strong>Emotional, Financial, and Physical Interdependence:</strong>{" "}
+            Conjugal partners must rely on each other emotionally, financially,
+            and physically.
+          </li>
+        </ul>
+
+        <h2
+          style={{ fontSize: "18px", marginTop: "35px", marginBottom: "10px" }}
           className={`${styles.heading} ${styles.section}`}
           id="testing"
           ref={(el) => (sectionsRef.current[17] = el)}
         >
           Conjugal Partner: Required Documents for Sponsorship
         </h2>
+        <p>
+          When applying to sponsor a spouse, gather the following documents:
+        </p>
         <ul
+          style={{
+            marginLeft: "40px",
+            marginBottom: "10px",
+            marginTop: "20px",
+          }}
           className={`${styles.list} ${styles.section}`}
           id="testing"
           ref={(el) => (sectionsRef.current[18] = el)}
@@ -340,6 +425,32 @@ const SameSex = () => {
             Proof of marriage registration with a government authority
           </li>
         </ul>
+
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="why-choose-u"
+          ref={(el) => (sectionsRef.current[99] = el)}
+        >
+          <h2>Why Choose Us?</h2>
+          <ul>
+            <li>
+              <strong>Experienced Team:</strong> Over a decade of experience in
+              handling BCPNP applications with a high success rate.
+            </li>
+            <li>
+              <strong>Tailored Approach:</strong> Personalized services and
+              strategies based on your specific case.
+            </li>
+            <li>
+              <strong>High Success Rate:</strong> Proven track record using case
+              law and precedents for positive results.
+            </li>
+            <li>
+              <strong>Comprehensive Support:</strong> Assistance from the start
+              of the application process to obtaining your PR.
+            </li>
+          </ul>
+        </section>
 
         <h2
           className={`${styles.subtitle} ${styles.section}`}
