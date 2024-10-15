@@ -489,23 +489,7 @@ let CategoryBased = () => {
         </div>
       </div>
 
-      <div className={styles.appointementParent}>
-        <div className={styles.appointementMain} id="book-Appointment">
-          {data?.bookHeading ? <h1>{data?.bookHeading}</h1> : null}
 
-          {data?.bookSubHeading ? <h5>{data?.bookSubHeading}</h5> : null}
-          {data?.bookDescription ? <p>{data?.bookDescription}</p> : null}
-        </div>
-        <button
-            className={styles.button02}  
-            onClick={() =>
-              (window.location.href =
-                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-            }
-          >
-            Book Appointment
-          </button>
-      </div>
 
       <section className={styles.whyChooseUs}>
           <h2>Why Choose Us?</h2>
@@ -528,6 +512,27 @@ let CategoryBased = () => {
             </li>
           </ul>
         </section>
+
+
+      <div className={styles.appointementParent}>
+        <div className={styles.appointementMain} id="book-Appointment">
+          {data?.bookHeading ? <h1>{data?.bookHeading}</h1> : null}
+
+          {data?.bookSubHeading ? <h5>{data?.bookSubHeading}</h5> : null}
+          {data?.bookDescription ? <p>{data?.bookDescription}</p> : null}
+        </div>
+        <button
+            className={styles.button02}  
+            onClick={() =>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
+          >
+            Book Appointment
+          </button>
+      </div>
+
+
 
       <div id="whyChooseUs">
 

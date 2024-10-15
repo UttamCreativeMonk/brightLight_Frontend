@@ -367,14 +367,30 @@ If you are the spouse or common-law partner of an international student who is a
             </button>
         </section>
 
-        <section className={`${styles.whyChooseUs} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[8] = el}>
-          <h2 className={styles.subheading}>Why Choose Us?</h2>
-          <p>
-            At Brightlight Immigration, we are committed to providing you with
-            expert assistance throughout your immigration journey. Our
-            experienced team is dedicated to achieving the best possible
-            outcomes for our clients.
-          </p>
+        <section
+          className={`${styles.whyChooseUs} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[9] = el)}
+        >
+          <h2>Why Choose Us?</h2>
+          <ul>
+            <li>
+              <strong>Experienced Team:</strong> Over a decade of experience in
+              handling BCPNP applications with a high success rate.
+            </li>
+            <li>
+              <strong>Tailored Approach:</strong> Personalized services and
+              strategies based on your specific case.
+            </li>
+            <li>
+              <strong>High Success Rate:</strong> Proven track record using case
+              law and precedents for positive results.
+            </li>
+            <li>
+              <strong>Comprehensive Support:</strong> Assistance from the start
+              of the application process to obtaining your PR.
+            </li>
+          </ul>
         </section>
       </div>
 

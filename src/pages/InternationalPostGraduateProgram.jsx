@@ -436,6 +436,7 @@ const InternationalPostGraduateProgram = () => {
             </li>
           </ol>
         </section>
+ 
         <section
           className={`${styles.section} ${styles.section}`}
           id="testing2"

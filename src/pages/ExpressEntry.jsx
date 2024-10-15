@@ -310,25 +310,7 @@ let sectionRef=useRef(null)
           </div>
         </div>
       </div>
-
-      <div id="appointment" className={styles.incaseParent}>
-        <div className={styles.incaseMain}>
-          <div className={styles.incaseContent}>
-            <h1>{data?.appointmentHeading}</h1>
-            <p>{data?.appointmentDescription}</p>
-            <button
-              className={styles.button}
-              onClick={() =>
-                (window.location.href =
-                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-              }
-            >
-              Book Appointment
-            </button>
-          </div>
-        </div>
-      </div>
-
+      
       <div
           className={styles.whyChooseUs} 
           id="why-choose-us"
@@ -355,7 +337,27 @@ let sectionRef=useRef(null)
           </ul>
         </div>
 
-      <div id="why-choose-us">
+      <div id="appointment" className={styles.incaseParent}>
+        <div className={styles.incaseMain}>
+          <div className={styles.incaseContent}>
+            <h1>{data?.appointmentHeading}</h1>
+            <p>{data?.appointmentDescription}</p>
+            <button
+              className={styles.button}
+              onClick={() =>
+                (window.location.href =
+                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+              }
+            >
+              Book Appointment
+            </button>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div >
         <BestChoice />
       </div>
 

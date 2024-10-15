@@ -623,6 +623,7 @@ const AgriFoodPilotProgram = () => {
             </li>
           </ol>
 
+
           <h2
             className={`${styles.section} ${styles.section}`}
             id="refusal-reasons"
@@ -652,6 +653,7 @@ const AgriFoodPilotProgram = () => {
             Book Appointment
           </button>
         </section>
+
         <section
           className={`${styles.section} ${styles.section}`}
           id="why-choose-us"

@@ -16,8 +16,8 @@
   display: block;
   margin: auto;
   text-align: center;
-  margin-top: 50px;
-  margin-bottom: 100px;
+  margin-top: 0px;
+  margin-bottom: 50px;
 }
 
 .previous_draw_history button {
@@ -54,7 +54,7 @@
   /* gap: 10px; */
   align-items: center;
   color: white;
-  margin-top: 150px;
+  margin-top: 50px;
 }
 
 .bannerHeadingRotate {
@@ -208,7 +208,9 @@
 }
 .advantagesParent {
   width: 100%;
-  padding: 100px 0px;
+  /* padding: 100px 0px; */
+  padding-bottom: 20px;
+  padding-top: 100px;
 }
 
 .advantages {
@@ -245,7 +247,7 @@
   display: inline-block;
   background-color: #00273f;
   color: white;
-  padding: 10px 20px;
+  padding: 15px 25px;
   text-align: center;
   text-decoration: none;
   border-radius: 5px;

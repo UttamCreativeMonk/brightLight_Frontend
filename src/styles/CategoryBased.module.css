@@ -489,7 +489,9 @@
 .appointementParent {
   width: 1440px;
   margin: auto;
-  padding: 100px 0px;
+  /* padding: 100px 0px; */
+  margin-bottom: 50px;
+  margin-top: 20px;
 }
 
 .appointementMain h1 {
@@ -641,11 +643,11 @@
 .whyChooseUs{
   width: 1440px;
   margin: auto;
-  margin-top: 30px;
-  margin-bottom: 50px;
+padding-top: 80px;
+padding-bottom: 30px;
 }
 .whyChooseUs h2{
-  font-size: 44px;
+  font-size: 48px;
 }
 .whyChooseUs ul{
   margin-top: 30px;

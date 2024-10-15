@@ -142,7 +142,7 @@ const HealthcareTargetedDraw = () => {
                   "/canadian-experience-class")
               }
             >
-         Canadian Experience Class (CEC)
+             Canadian Experience Class (CEC)
             </button>
               : Canadian experience required
             </li>
@@ -483,6 +483,8 @@ const HealthcareTargetedDraw = () => {
           </p>
         </section>
 
+
+
         <section className={`${styles.contact} ${styles.section}`} id="testing1" ref={(el) => sectionsRef.current[5] = el}>
           <h2 className={styles.subheading}>Still Not Sure?</h2>
           <p>
@@ -523,7 +525,7 @@ const HealthcareTargetedDraw = () => {
           </p>
 
         </section> */}
-                <section
+        <section
           className={`${styles.section} ${styles.section}`}
           id="why-choose-us"
           ref={(el) => (sectionsRef.current[6] = el)}

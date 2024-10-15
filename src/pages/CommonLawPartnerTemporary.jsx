@@ -25,7 +25,6 @@ const CommonLawPartnerTemporary = () => {
   };
 
   useEffect(() => {
-
     fetch("https://brightlight-node.onrender.com/comLawPartTempMeta")
       .then((res) => {
         return res.json();
@@ -39,7 +38,6 @@ const CommonLawPartnerTemporary = () => {
         console.log(error);
       });
   }, []);
-
 
   const sectionsRef = useRef([]);
 
@@ -65,7 +63,7 @@ const CommonLawPartnerTemporary = () => {
 
   return (
     <>
-        <Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle
@@ -276,6 +274,73 @@ const CommonLawPartnerTemporary = () => {
                 work.
               </p>
             </li>
+            <table className={styles.wageTable}>
+              <thead className={styles.tableHeader}>
+                <tr>
+                  <th className={styles.headerProvince}>Province/Territory</th>
+                  <th className={styles.headerWage}>
+                    Median Hourly Wages (April 2, 2024)
+                  </th>
+                </tr>
+              </thead>
+              <tbody className={styles.tableBody}>
+                <tr className={styles.rowAlberta}>
+                  <td className={styles.cellProvince}>Alberta</td>
+                  <td className={styles.cellWage}>$29.50</td>
+                </tr>
+                <tr className={styles.rowBC}>
+                  <td className={styles.cellProvince}>British Columbia</td>
+                  <td className={styles.cellWage}>$28.85</td>
+                </tr>
+                <tr className={styles.rowManitoba}>
+                  <td className={styles.cellProvince}>Manitoba</td>
+                  <td className={styles.cellWage}>$25.00</td>
+                </tr>
+                <tr className={styles.rowNB}>
+                  <td className={styles.cellProvince}>New Brunswick</td>
+                  <td className={styles.cellWage}>$24.04</td>
+                </tr>
+                <tr className={styles.rowNL}>
+                  <td className={styles.cellProvince}>
+                    Newfoundland and Labrador
+                  </td>
+                  <td className={styles.cellWage}>$26.00</td>
+                </tr>
+                <tr className={styles.rowNWT}>
+                  <td className={styles.cellProvince}>Northwest Territories</td>
+                  <td className={styles.cellWage}>$39.24</td>
+                </tr>
+                <tr className={styles.rowNS}>
+                  <td className={styles.cellProvince}>Nova Scotia</td>
+                  <td className={styles.cellWage}>$24.00</td>
+                </tr>
+                <tr className={styles.rowNunavut}>
+                  <td className={styles.cellProvince}>Nunavut</td>
+                  <td className={styles.cellWage}>$35.00</td>
+                </tr>
+                <tr className={styles.rowOntario}>
+                  <td className={styles.cellProvince}>Ontario</td>
+                  <td className={styles.cellWage}>$28.39</td>
+                </tr>
+                <tr className={styles.rowPEI}>
+                  <td className={styles.cellProvince}>Prince Edward Island</td>
+                  <td className={styles.cellWage}>$24.00</td>
+                </tr>
+                <tr className={styles.rowQuebec}>
+                  <td className={styles.cellProvince}>Quebec</td>
+                  <td className={styles.cellWage}>$27.47</td>
+                </tr>
+                <tr className={styles.rowSaskatchewan}>
+                  <td className={styles.cellProvince}>Saskatchewan</td>
+                  <td className={styles.cellWage}>$27.00</td>
+                </tr>
+                <tr className={styles.rowYukon}>
+                  <td className={styles.cellProvince}>Yukon</td>
+                  <td className={styles.cellWage}>$36.00</td>
+                </tr>
+              </tbody>
+            </table>
+
             <li>
               <strong>Not Eligible Currently</strong>
               <ul className={styles.subList}>
@@ -301,10 +366,12 @@ const CommonLawPartnerTemporary = () => {
             </li>
           </ul>
 
-          <h3 className={styles.validWorkLiHead}>2. For Low-Skilled Occupations (TEER 4 or 5)</h3>
+          <h3 className={styles.validWorkLiHead}>
+            2. For Low-Skilled Occupations (TEER 4 or 5)
+          </h3>
           <ul className={styles.requirementsList}>
             <li>
-              <strong >Valid Work Authorization</strong>
+              <strong>Valid Work Authorization</strong>
               <p>Must possess one of the following:</p>
               <ul className={styles.subList}>
                 <li>A valid work permit, subject to certain exceptions.</li>
@@ -396,7 +463,9 @@ const CommonLawPartnerTemporary = () => {
           ref={(el) => (sectionsRef.current[14] = el)}
         >
           <h2>Family Member Requirements for Open Work Permits:</h2>
-          <p className={styles.testPara}>Your family member must meet 3 requirements:</p>
+          <p className={styles.testPara}>
+            Your family member must meet 3 requirements:
+          </p>
           <ul>
             <li>
               <strong>General Eligibility:</strong> They must meet the general
@@ -495,7 +564,7 @@ const CommonLawPartnerTemporary = () => {
             step of the way.
           </p>
         </section>
-
+{/* 
         <section
           className={`${styles.whyChooseUs} ${styles.section}`}
           id="why-choose-us"
@@ -507,6 +576,32 @@ const CommonLawPartnerTemporary = () => {
             throughout your immigration journey. Our dedicated team is committed
             to achieving the best possible outcomes for our clients.
           </p>
+
+        </section> */}
+        <section
+          className={`${styles.whyChooseUs} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[9] = el)}
+        >
+          <h2>Why Choose Us?</h2>
+          <ul>
+            <li>
+              <strong>Experienced Team:</strong> Over a decade of experience in
+              handling BCPNP applications with a high success rate.
+            </li>
+            <li>
+              <strong>Tailored Approach:</strong> Personalized services and
+              strategies based on your specific case.
+            </li>
+            <li>
+              <strong>High Success Rate:</strong> Proven track record using case
+              law and precedents for positive results.
+            </li>
+            <li>
+              <strong>Comprehensive Support:</strong> Assistance from the start
+              of the application process to obtaining your PR.
+            </li>
+          </ul>
           <button
             onClick={() =>
               (window.location.href =

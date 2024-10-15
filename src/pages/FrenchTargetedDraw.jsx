@@ -363,6 +363,8 @@ const FrenchTargetedDraw = () => {
           </button>
         </section>
 
+
+        
         <section
           className={`${styles.support} ${styles.section}`}
           id="testing5"
@@ -406,8 +408,7 @@ const FrenchTargetedDraw = () => {
             to achieving the best possible outcomes for our clients.
           </p>
         </section> */}
-
-      <section
+        <section
           className={`${styles.section} ${styles.section}`}
           id="why-choose-us"
           ref={(el) => (sectionsRef.current[6] = el)}>

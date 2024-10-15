@@ -198,7 +198,7 @@ const TransportOccupationTargetedDraw = () => {
             </li>
             <li>A valid Express Entry profile.</li>
           </ul>
-          <p>
+          {/* <p>
             Here is the list of eligible NOCs:{" "}
             <a
               href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/submit-profile/rounds-invitations/category-based-selection.html"
@@ -206,7 +206,7 @@ const TransportOccupationTargetedDraw = () => {
             >
               Eligible NOCs List
             </a>
-          </p>
+          </p> */}
         </div>
 
         <div
@@ -302,7 +302,7 @@ const TransportOccupationTargetedDraw = () => {
             View Previous Draw History
           </button>
         </div>
-
+      
         <div
           className={`${styles.contact} ${styles.section}`}
           id="testing3"
@@ -357,7 +357,7 @@ const TransportOccupationTargetedDraw = () => {
           </button>
         </div> */}
 
-        <section
+<section
           className={`${styles.section} ${styles.section}`}
           id="why-choose-us"
           ref={(el) => (sectionsRef.current[9] = el)}
@@ -392,7 +392,6 @@ const TransportOccupationTargetedDraw = () => {
             Book Appointment
           </button>
         </section>
-
 
       </div>
 

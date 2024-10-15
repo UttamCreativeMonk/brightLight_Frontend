@@ -726,7 +726,7 @@ const EntryLevelSemiSkilled = () => {
             Full Support: From initial application to final PR approval.{" "}
           </li>
         </ul> */}
-                <section
+        <section
           className={`${styles.section} ${styles.section}`}
           id="why-choose-us"
           ref={(el) => (sectionsRef.current[9] = el)}

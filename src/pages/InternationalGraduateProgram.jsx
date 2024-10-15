@@ -506,6 +506,10 @@ const InternationalGraduateProgram = () => {
             </li>
           </ol>
         </section>
+
+
+
+
         <section
           className={`${styles.section} ${styles.section}`}
           id="book-appointment"
@@ -529,6 +533,7 @@ const InternationalGraduateProgram = () => {
           </button>
         </section>
         
+
         <section
           className={`${styles.section} ${styles.section}`}
           id="why-choose-us"

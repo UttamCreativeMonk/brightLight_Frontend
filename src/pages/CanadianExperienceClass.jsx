@@ -358,7 +358,11 @@ const CanadianExperienceClass = () => {
             to achieving the best possible outcomes for our clients.
           </p>
         </section> */}
-        <section
+
+
+
+
+<section
           className={`${styles.section} ${styles.section}`}
           id="why-choose-us"
           ref={(el) => (sectionsRef.current[9] = el)}
@@ -383,6 +387,8 @@ const CanadianExperienceClass = () => {
             </li>
           </ul>
         </section>
+
+
       </div>
 
       <div id="faqs">

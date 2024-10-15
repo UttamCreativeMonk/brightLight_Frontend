@@ -160,6 +160,9 @@
     color: #333;
     text-align: left;
   }
+  .applicationProcess li{
+    margin-top: 8px;
+  }
   
 
   .button {
@@ -242,8 +245,8 @@
     opacity: 0;
     transform: translateX(-100px);
     transition: opacity 0.8s ease, transform 0.8s ease;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    /* margin-top: 50px;
+    margin-bottom: 50px; */
   }
   
   .section.visible {
@@ -268,6 +271,22 @@
     text-decoration: none;
   }
 
+  .list {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .listItem {
+    margin-bottom: 15px;
+  }
+  
+  .subList {
+    list-style-type: circle;
+    padding-left: 20px;
+    margin-top: 5px;
+  }
+  
+
   @media (max-width: 1080px) {
     .container h2 {
       font-size: 20px;
@@ -284,4 +303,3 @@
       
     }
   }
-  

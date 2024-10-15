@@ -193,7 +193,7 @@ const AgricultureandAgriFoodOccu = () => {
                 eligible for to join the Express Entry pool:
                 <ul className={styles.subList}>
                   <li>
-                    Federal Skilled Worker Program (FSW): This program is ideal
+                   <strong>  Federal Skilled Worker Program (FSW): </strong>This program is ideal
                     for tech workers who have the necessary work experience,
                     education, and language ability.
                     <button
@@ -207,7 +207,7 @@ const AgricultureandAgriFoodOccu = () => {
                     </button>
                   </li>
                   <li>
-                    Canadian Experience Class (CEC): Similar to the FSW program,
+                   <strong> Canadian Experience Class (CEC):</strong> Similar to the FSW program,
                     the CEC is also suitable for tech workers who have gained
                     Canadian work experience.
                     <button
@@ -221,8 +221,8 @@ const AgricultureandAgriFoodOccu = () => {
                   </li>
 
                   <li>
-                    Federal Skilled Agriculture and agri-food occupations s
-                    Program (FSTP): If you're a Agriculture and agri-food
+                   <strong> Federal Skilled Agriculture and agri-food occupations s
+                    Program (FSTP):</strong>  If you're a Agriculture and agri-food
                     occupations s worker, this program is designed for you. It
                     requires proof of relevant work experience, education, and
                     language proficiency.

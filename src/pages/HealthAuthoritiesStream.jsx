@@ -294,7 +294,7 @@ const HealthAuthorityStream = () => {
           Please note*** that if your job offer falls within a priority
           technology occupation, it does not need to be indeterminate.
         </p>
-
+      
         <h2
           className={`${styles.subtitle} ${styles.section}`}
           id="how-to-apply"
@@ -346,6 +346,10 @@ const HealthAuthorityStream = () => {
         >
           Calculate Your BCPNP Score
         </button>
+
+
+
+
         <h2 className={styles.subtitle} id="book-appointment">
           Still Not Sure?
         </h2>
@@ -387,11 +391,10 @@ const HealthAuthorityStream = () => {
         {/* <Link to="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj" className={styles.button}>Book Appointment</Link> */}
 
         {/* <a href="" className={styles.button}></a> */}
-
         <section
           className={`${styles.section} ${styles.section}`}
           id="why-choose-us"
-          ref={(el) => (sectionsRef.current[9] = el)}
+          ref={(el) => (sectionsRef.current[91] = el)}
         >
           <h2>Why Choose Us?</h2>
           <ul>
@@ -413,6 +416,7 @@ const HealthAuthorityStream = () => {
             </li>
           </ul>
         </section>
+
       </div>
 
       <div id="faqs">

@@ -181,6 +181,9 @@ a.button:hover {
   list-style-type: none;
   text-align: center;
 }
+.whyChooseUs ul{
+  text-align: left;
+}
 
 .button1 {
   display: inline-block;

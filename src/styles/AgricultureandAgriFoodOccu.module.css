@@ -242,6 +242,8 @@
     cursor: pointer;
     border: none;
     margin-top: 30px;
+    display: block !important;
+    margin: auto !important;
   }
   
   .section button:hover {
