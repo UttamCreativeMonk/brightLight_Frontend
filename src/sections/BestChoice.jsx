@@ -178,7 +178,7 @@ let BestChoice = () => {
         setPlaneTop((prevTop) => prevTop + scrollSpeed * 5);
       }
       else{
-        setPlaneTop((prevTop) => prevTop + scrollSpeed * 5);
+        setPlaneTop((prevTop) => prevTop + scrollSpeed * 15);
       }
        // Adjust the multiplier (50) for desired speed
 
