@@ -5,7 +5,6 @@
   background-size: cover;
   padding: 120px 0px;
   padding-top: 230px;
-  
 }
 
 .aboutUsTopContentSection {
@@ -48,8 +47,8 @@
   border-radius: 40px;
   padding-right: 10px;
 }
-.aboutUsFeature:hover{
-  transform: translateY(-5px); 
+.aboutUsFeature:hover {
+  transform: translateY(-5px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .aboutUsFeature div {
@@ -264,7 +263,8 @@
   padding: 10px 10px 30px 10px;
   background: linear-gradient(to bottom, #14334c 10%, #030c1412);
   position: relative; /* Ensures proper positioning for child elements */
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease;
 }
 
 .pillarFeatureSvg h4 {
@@ -288,7 +288,7 @@
 }
 
 .pillarFeatureSvg:hover {
-  transform: translateY(-10px); 
+  transform: translateY(-10px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   background-color: #1c2e3f;
 }
@@ -298,15 +298,12 @@
 }
 
 .pillarFeatureSvg:hover h4 {
- 
   transform: translateY(-5px);
 }
 
 .pillarFeatureSvg:hover p {
-
   transform: translateY(-3px);
 }
-
 
 .weAreParent {
   background-image: url("../assets/we-are-background.png");
@@ -456,8 +453,8 @@
 .socialMoblileImgDiv {
   padding-top: 70px;
 }
-.socialMoblileImgDiv img:hover{
-  transform: translateY(-7px); 
+.socialMoblileImgDiv img:hover {
+  transform: translateY(-7px);
   transition: transform 0.3s ease, box-shadow 0.4s ease;
 }
 
@@ -580,7 +577,6 @@
 }
 
 .meetDirectorMain h1:hover {
- 
   transform: scale(1.05); /* Slightly enlarge the text on hover */
 }
 
@@ -600,7 +596,6 @@
 
 .thedirectors img:hover {
   transform: scale(1.1); /* Slightly enlarge image on hover */
-
 }
 
 .meetDirectorimgContent {
@@ -617,7 +612,6 @@
 }
 
 .meetDirectorimgContent h1:hover {
- 
   transform: translateY(-5px); /* Move text slightly up on hover */
 }
 
@@ -629,7 +623,6 @@
 }
 
 .meetDirectorimgContent h3:hover {
- 
   transform: translateY(-3px); /* Move text slightly up on hover */
 }
 
@@ -642,10 +635,8 @@
 }
 
 .meetDirectorimgContent p:hover {
- 
   opacity: 0.8; /* Slightly reduce opacity on hover */
 }
-
 
 .weAreBig {
   display: block;
@@ -655,8 +646,7 @@
   display: none;
 }
 
-
-.pillarLogoContent h2{
+.pillarLogoContent h2 {
   color: white;
 }
 
@@ -716,8 +706,8 @@
   animation: fadeIn 2s ease-out forwards;
 }
 
-.ourAchivementCard:hover{
-  transform: translateY(-8px); 
+.ourAchivementCard:hover {
+  transform: translateY(-8px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -768,6 +758,10 @@
 /* Ensure elements are relatively positioned for transitions */
 .section {
   position: relative;
+}
+
+.ourAchivementCardPlus {
+  margin-top: -12px;
 }
 
 @media all and (max-width: 1500px) {
@@ -1113,12 +1107,13 @@
   }
 }
 
-@media all and (max-width: 1150px){
-  .ourAchivementCardPlus{
+@media all and (max-width: 1150px) {
+  .ourAchivementCardPlus {
     font-size: 42px;
   }
-  .ourAchivementCardPlus{
+  .ourAchivementCardPlus {
     margin-left: -20px;
+    margin-top: 2px;
   }
 }
 
@@ -1226,6 +1221,14 @@
 }
 
 @media all and (max-width: 1000px) {
+  .ourAchivementCardPlus {
+    margin-top: 2px;
+  }
+
+  .ourAchivementCard h2 div {
+    width: 200px;
+  }
+
   .aboutUsTopContentSection {
     width: 900px;
   }
@@ -1648,7 +1651,7 @@
     width: 620px;
   }
 
-  .weAreParent{
+  .weAreParent {
     padding-top: 30px;
     padding-bottom: 60px;
   }
@@ -1745,10 +1748,10 @@
   .ourAchivementHeading h1 {
     font-size: 50px;
   }
-  .aboutUsFeature{
+  .aboutUsFeature {
     border-radius: 40px;
   }
-  .bannerParaParent{
+  .bannerParaParent {
     width: 90%;
   }
 
@@ -1892,7 +1895,7 @@
   .meetDirectorImg img {
     width: 220px;
   }
-  .aboutUsFeature{
+  .aboutUsFeature {
     border-radius: 40px;
   }
 }
@@ -1944,7 +1947,6 @@
     font-size: 19px;
   }
 
-
   .pillarFeatureSvg h4 {
     font-size: 14px;
   }
@@ -1960,7 +1962,6 @@
   .bestChoice {
     width: 450px;
   }
-
 
   .socialPresence {
     width: 480px;
@@ -1991,7 +1992,6 @@
   .pillarLogo {
     height: 370px;
   }
-
 
   .ourAchivementCard {
     padding: 5px 5px;
@@ -2039,23 +2039,22 @@
     font-size: 40px;
     margin-top: 30px;
   }
-  .pillarFeatureSection{
+  .pillarFeatureSection {
     margin-top: 150px;
   }
-  .pillarParent{
+  .pillarParent {
     padding: 100px 0px;
   }
-  .aboutUsFeature{
+  .aboutUsFeature {
     border-radius: 40px;
   }
   .bannerPara {
     font-size: 16px;
     line-height: 22px;
   }
-  .bannerParaParent{
+  .bannerParaParent {
     width: 95%;
   }
-
 }
 
 @media all and (max-width: 450px) {
@@ -2105,7 +2104,6 @@
     width: 380px;
   }
 
-
   .designContent h1 {
     font-size: 30px;
   }
@@ -2120,14 +2118,14 @@
   .pillarFeatureSvg p {
     font-size: 9px;
   }
-  .pillarFeatureSvg{
+  .pillarFeatureSvg {
     width: 32%;
     height: 160px;
   }
   .pillarFeatureSvg img {
     width: 40px;
   }
-  .pillarFeatureSection{
+  .pillarFeatureSection {
     width: 100%;
   }
   .weAreParentImg {
@@ -2182,7 +2180,6 @@
     height: 370px;
   }
 
-
   .pillarLogoContent h2 {
     font-size: 40px;
   }
@@ -2230,42 +2227,46 @@
     object-fit: cover;
     text-align: left;
   }
-  .pillarFeatureSection{
+  .pillarFeatureSection {
     margin-top: 80px;
   }
-  .pillarParent{
+  .pillarParent {
     padding: 100px 0px;
   }
-  .aboutUsFeature{
+  .aboutUsFeature {
     border-radius: 40px;
   }
   .bannerPara {
     font-size: 14px;
     line-height: 20px;
   }
-  .visionContentSection p{
+  .visionContentSection p {
     font-size: 16px;
   }
-  .meetDirectorimgContent{
+  .meetDirectorimgContent {
     width: 95%;
   }
-  .meetDirectorimgContent h3{
+  .meetDirectorimgContent h3 {
     font-size: 16px;
   }
-  .meetDirectorimgContent p{
+  .meetDirectorimgContent p {
     font-size: 15px;
     line-height: 25px;
   }
-  .pillarLogo img{
+  .pillarLogo img {
     margin: auto;
   }
-  .aboutHeading{
-    font-size:16px;
+  .aboutHeading {
+    font-size: 16px;
   }
-
 }
 
 @media all and (max-width: 430px) {
+  .ourAchivementCard h2 div {
+    width: 150px;
+    margin-left: -5px;
+    margin-right: 10px;
+  }
   .ourAchivementHeading h1 {
     font-size: 38px;
   }
@@ -2305,7 +2306,7 @@
     width: 300px;
   }
 
-  .pillarFeatureSection{
+  .pillarFeatureSection {
     width: 95%;
   }
 
@@ -2315,7 +2316,7 @@
   .pillarFeatureSvg p {
     font-size: 7px;
   }
-  .pillarFeatureSvg{
+  .pillarFeatureSvg {
     width: 30%;
     height: 120px;
   }
@@ -2356,7 +2357,6 @@
     font-size: 15px;
   }
 
-
   .weAreParentImg {
     width: 340px;
   }
@@ -2377,14 +2377,12 @@
   .socialPresence {
     width: 95%;
   }
-  .socialPresence p{
-   font-size: 16px;
+  .socialPresence p {
+    font-size: 16px;
   }
-  .socialPresence h1{
+  .socialPresence h1 {
     font-size: 45px;
-   }
- 
-
+  }
 
   .socialPresenceIcons {
     width: 280px;
@@ -2408,7 +2406,6 @@
   .meetDirectorimgContent {
     width: 340px;
   }
-
 
   .ourAchivementCard h2 {
     font-size: 50px;
@@ -2454,30 +2451,30 @@
     object-fit: cover;
     text-align: left;
   }
-  .pillarFeatureSection{
+  .pillarFeatureSection {
     margin-top: 0px;
   }
-  .pillarParent{
+  .pillarParent {
     padding: 100px 0px;
   }
-  .aboutUsFeature{
+  .aboutUsFeature {
     border-radius: 40px;
   }
-  .aboutHeading{
-    font-size:16px;
+  .aboutHeading {
+    font-size: 16px;
   }
-  .ourAchivementCardParent{
+  .ourAchivementCardParent {
     width: 210px;
   }
-  .pillarParent{
+  .pillarParent {
     padding: 0px 0px;
   }
-  .visionMainSection{
+  .visionMainSection {
     padding: 80px 0px;
   }
-.borderBottomFoundation{
-  margin-bottom: 30px;
-}
+  .borderBottomFoundation {
+    margin-bottom: 30px;
+  }
 }
 
 @media all and (max-width: 370px) {
@@ -2582,7 +2579,6 @@
     width: 320px;
   }
 
-
   .ourAchivementCard h2 {
     font-size: 50px;
     margin-top: 1px;
@@ -2609,12 +2605,12 @@
     width: 300px;
   }
 
-   .pillarLogo{
+  .pillarLogo {
     gap: 10px;
-   }
-   .pillarLogo img{
+  }
+  .pillarLogo img {
     height: 190px;
-   }
+  }
 
   .visionInside img {
     height: auto;
@@ -2629,26 +2625,26 @@
   .pillarFeatureSvg p {
     font-size: 6px;
   }
-  .pillarFeatureSvg{
+  .pillarFeatureSvg {
     width: 30%;
     height: 110px;
   }
   .pillarFeatureSvg img {
     width: 30px;
   }
-  .aboutUsFeature{
+  .aboutUsFeature {
     border-radius: 40px;
   }
-  .aboutHeading{
-    font-size:14px;
+  .aboutHeading {
+    font-size: 14px;
   }
-  .ourAchivementCardParent{
+  .ourAchivementCardParent {
     width: 200px;
   }
-  .ourAchivementCard h2{
+  .ourAchivementCard h2 {
     font-size: 30px;
   }
-  .ourAchivementCard p{
+  .ourAchivementCard p {
     font-size: 15px;
   }
 }
@@ -2718,8 +2714,6 @@
     font-size: 15px;
   }
 
-
-
   .weAreParentImg {
     width: 290px;
   }
@@ -2784,7 +2778,6 @@
 
   .pillarLogoContent p {
     line-height: 17px;
-
   }
 
   .ourAchivementCard {
@@ -2817,7 +2810,7 @@
     object-fit: cover;
     text-align: left;
   }
-  .pillarFeatureSection{
+  .pillarFeatureSection {
     flex-direction: column;
     align-items: center;
   }
@@ -2827,7 +2820,7 @@
   .pillarFeatureSvg p {
     font-size: 9px;
   }
-  .pillarFeatureSvg{
+  .pillarFeatureSvg {
     width: 60%;
     height: auto;
     padding: 8px;
@@ -2835,10 +2828,10 @@
   .pillarFeatureSvg img {
     width: 40px;
   }
-  .pillarFeatureSection{
+  .pillarFeatureSection {
     margin-top: 20px;
   }
-  .aboutUsFeature{
+  .aboutUsFeature {
     border-radius: 40px;
   }
 }
