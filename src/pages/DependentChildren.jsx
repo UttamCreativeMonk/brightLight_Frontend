@@ -298,7 +298,7 @@ const DependentChildren = () => {
           <ul>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
-              handling BCPNP applications with a high success rate.
+              handling Immigration applications with a high success rate.
             </li>
             <li>
               <strong>Tailored Approach:</strong> Personalized services and

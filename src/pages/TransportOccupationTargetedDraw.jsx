@@ -5,9 +5,12 @@ import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
+import ogImage from "../assets/ogImage.png";
+import { Helmet } from "react-helmet-async";
 
 const TransportOccupationTargetedDraw = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  let [metaData, setMetaData] = useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -19,6 +22,21 @@ const TransportOccupationTargetedDraw = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/transportOccuptionTargDrawMeta")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   const sectionsRef = useRef([]);
 
@@ -44,6 +62,48 @@ const TransportOccupationTargetedDraw = () => {
 
   return (
     <>
+          <Helmet>
+        <title>
+          {metaData?.metaTitle
+            ? metaData?.metaTitle
+            : "Brightlight Immigration"}
+        </title>
+        <meta
+          name="description"
+          content={
+            metaData?.metaDesc
+              ? metaData?.metaDesc
+              : "Learn about Brightlight Immigration, our mission, values, and the dedicated team behind our immigration services. We are committed to providing honest and accurate advice to guide you through your immigration journey."
+          }
+        />
+        <meta
+          name="title"
+          property="og:title"
+          content={
+            metaData?.metaOgTitle
+              ? metaData?.metaOgTitle
+              : " Brightlight Immigration"
+          }
+        />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:type" content="image/png" />
+        <meta
+          property="og:description"
+          content={
+            metaData?.metaOgDesc
+              ? metaData?.metaOgDesc
+              : "Discover the story behind Brightlight Immigration, our commitment to providing honest and accurate advice, and how our team can assist you with your immigration needs."
+          }
+        />
+        <meta
+          name="Keywords"
+          content={
+            metaData?.metaKeywords
+              ? metaData?.metaKeywords
+              : "Brightlight Immigration, Immigration Services, Mission, Team"
+          }
+        />
+      </Helmet>
       <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
@@ -366,7 +426,7 @@ const TransportOccupationTargetedDraw = () => {
           <ul>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
-              handling BCPNP applications with a high success rate.
+              handling Immigration applications with a high success rate.
             </li>
             <li>
               <strong>Tailored Approach:</strong> Personalized services and
