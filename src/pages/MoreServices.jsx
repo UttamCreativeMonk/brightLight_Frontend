@@ -82,7 +82,7 @@ const MoreServices = () => {
       img: TemporaryImg,
       hoverImg: TemporaryImgHover,
       title: "Temporary Residence",
-      description: "The Temporary Resident Permit (TRP) is a legal document...",
+      description: "Temporary residency in Canada is a status granted by Canadian immigration....",
       link: "/temporary-resident-permit-draft"
     },
     {

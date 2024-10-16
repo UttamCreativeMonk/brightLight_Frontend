@@ -416,15 +416,42 @@
     font-size: 40px;
   }
 }
-@media all and (max-width: 635px) {
+
+@media all and (max-width: 767px) {
+  .loveneetSection {
+    flex-direction: column;
+    row-gap: 20px;
+    justify-content: center;
+  }
+
   .loveneetImage {
     width: 200px;
+    height: 200px;
+    border: 5px solid white;
   }
+
+  .loveneetContent {
+    width: 100%;
+    text-align: center;
+  }
+
+  .loveneetDataFlex {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .loveneetLinks {
+    justify-content: center;
+    gap: 30px;
+  }
+}
+
+@media all and (max-width: 635px) {
   .loveneetDataFlex h3 {
     font-size: 30px;
   }
   .imageSection {
-    padding: 10px 5px;
+    padding: 10px 20px;
   }
   .haveAQuestion {
     font-size: 10px;
@@ -438,11 +465,14 @@
   .loveneetContent h4 {
     font-size: 12px;
   }
-  .loveneetImage {
-    width: 150px;
-  }
   .blogsTopContentSection h1 {
     font-size: 30px;
+  }
+
+  .loveneetImage {
+    width: 150px;
+    height: 150px;
+    border: 5px solid white;
   }
 }
 
@@ -513,10 +543,5 @@
   }
   .imageSection img {
     width: 60px;
-  }
-  .loveneetLinks {
-    flex-direction: column-reverse;
-    align-items: center;
-    gap: 10px;
   }
 }
