@@ -261,7 +261,7 @@ const FederalSkilledTradesProgram = () => {
             After that, you will receive an invitation to apply (ITA) from IRCC. Note that ITAs are issued to candidates who score high enough on the Comprehensive Ranking System (CRS), which is a points-based system that assesses candidates' eligibility for the program.{" "}
              {" "}
               <Link to="/Federal-Skilled" className={styles.link}>
-                click here
+                Click here
               </Link>
               {" "}
               you can find a link to a FSWP Calculator.
