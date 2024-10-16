@@ -174,7 +174,7 @@ const SkilledWorkerStream = () => {
           ref={(el) => (sectionsRef.current[0] = el)}
         >
           <h2>Benefits of BC Skilled Worker Stream</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               Nomination Priority: Successful candidates nominated through the
               BC Skilled Worker stream receive an invitation to apply for
@@ -209,7 +209,7 @@ const SkilledWorkerStream = () => {
             meet specific criteria to qualify for this stream. Here are the key
             eligibility requirements:
           </p>
-          <ol>
+          <ol style={{marginLeft: "40px"}}>
             <li>
               <strong>Job Offer Acceptance:</strong>
               <ul>
@@ -298,7 +298,7 @@ const SkilledWorkerStream = () => {
             participate, your organization must meet specific requirements and
             fulfill responsibilities:
           </p>
-          <ol>
+          <ol style={{marginLeft: "40px"}}>
             <li>
               <strong>Establishment in B.C.:</strong>
               <ul>
@@ -382,7 +382,7 @@ const SkilledWorkerStream = () => {
           ref={(el) => (sectionsRef.current[5] = el)}
         >
           <h2>Application Process for BC Skilled Worker Stream</h2>
-          <ol>
+          <ol style={{marginLeft: "40px"}}>
             <li>
               <strong className={styles.sectionStrong}>
                 Expression of Interest (EOI) System:
@@ -489,7 +489,7 @@ const SkilledWorkerStream = () => {
           ref={(el) => (sectionsRef.current[9] = el)}
          >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

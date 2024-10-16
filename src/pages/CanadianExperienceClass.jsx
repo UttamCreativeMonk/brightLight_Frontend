@@ -243,7 +243,7 @@ const CanadianExperienceClass = () => {
           <h2 className={styles.subheading}>
             How to Apply for the Canadian Experience Class (CEC) Program
           </h2>
-          <ol>
+          <ol style={{ marginLeft: "40px" }}>
             <li>
               Create an Express Entry profile and submit your information,
               including your work experience, language skills, and education. Or
@@ -281,7 +281,7 @@ const CanadianExperienceClass = () => {
             Common Reasons for Refusals of Canadian Experience Class (CEC)
             Program
           </h2>
-          <ul>
+          <ul style={{ marginLeft: "40px" }}>
             <li>
               Your application is incomplete and has inaccurate information.
             </li>
@@ -359,16 +359,13 @@ const CanadianExperienceClass = () => {
           </p>
         </section> */}
 
-
-
-
-     <section
+        <section
           className={`${styles.section} ${styles.section}`}
           id="why-choose-us"
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{ marginLeft: "40px" }}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.
@@ -387,8 +384,6 @@ const CanadianExperienceClass = () => {
             </li>
           </ul>
         </section>
-
-
       </div>
 
       <div id="faqs">

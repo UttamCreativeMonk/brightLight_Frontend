@@ -153,7 +153,7 @@ let sectionRef=useRef(null)
 
       <div className={styles.benefits}>
         <h1>Benefits of Express Entry</h1>
-        <ul>
+        <ul style={{marginLeft: "40px"}}>
           <li>
             There are various immigration programs that you can apply through
             FSWP: Federal Skilled Worker Program, FSTP: Federal Skilled Trades
@@ -298,7 +298,7 @@ let sectionRef=useRef(null)
             <h1>{data?.refusalHeading}</h1>
           </div>
           <div className={styles.forgetListParent}>
-            <ul className={styles.forgetListMain}>
+            <ul style={{marginLeft: "40px"}} className={styles.forgetListMain}>
               {data?.r1 && <li className={styles.forgetList}>{data.r1}</li>}
               {data?.r2 && <li className={styles.forgetList}>{data.r2}</li>}
               {data?.r3 && <li className={styles.forgetList}>{data.r3}</li>}
@@ -312,12 +312,13 @@ let sectionRef=useRef(null)
       </div>
       
       <div
+      style={{marginTop: "100px"}}
           className={styles.whyChooseUs} 
           id="why-choose-us"
         
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

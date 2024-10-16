@@ -24,7 +24,6 @@ const FederalSkilledTradesProgram = () => {
     }
   };
   useEffect(() => {
-
     fetch("https://brightlight-node.onrender.com/federalSkillTradesProgMeta")
       .then((res) => {
         return res.json();
@@ -38,7 +37,6 @@ const FederalSkilledTradesProgram = () => {
         console.log(error);
       });
   }, []);
-
 
   const sectionsRef = useRef([]);
 
@@ -64,7 +62,7 @@ const FederalSkilledTradesProgram = () => {
 
   return (
     <>
-            <Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle
@@ -121,14 +119,28 @@ const FederalSkilledTradesProgram = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("express-entry")}>Express Entry</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
-              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("express-entry")}>
+                Express Entry
+              </p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
+              <p onClick={() => scrollToSection("refusal-reasons")}>
+                Refusal Reasons
+              </p>
+              <p onClick={() => scrollToSection("book-appointment")}>
+                Book Appointment
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -137,11 +149,19 @@ const FederalSkilledTradesProgram = () => {
       </div>
 
       <div className={styles.container}>
-        <h1  className={`${styles.heading} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
+        <h1
+          className={`${styles.heading} ${styles.section}`}
+          id="about-program"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
           Federal Skilled Trades Program (FSTP)
         </h1>
 
-        <section  className={`${styles.introduction} ${styles.section}`} id="testing" ref={(el) => sectionsRef.current[1] = el}>
+        <section
+          className={`${styles.introduction} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
           <p>
             If you're a skilled tradesperson with a passion for building,
             fixing, or creating, Canada's Federal Skilled Trades Program (FSTP)
@@ -159,11 +179,18 @@ const FederalSkilledTradesProgram = () => {
           </p>
         </section>
 
-        <section className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[2] = el}>
+        <section
+          className={`${styles.eligibility} ${styles.section}`}
+          id="eligibility"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
           <h2 className={styles.subheading}>
             Eligibility Criteria for Federal Skilled Trades Program (FSTP)
           </h2>
-          <p>If you're a skilled tradesperson looking to immigrate to Canada, the Federal Skilled Trades Program (FSTP) could be a great option for you. To be eligible, you must meet the following requirements:
+          <p>
+            If you're a skilled tradesperson looking to immigrate to Canada, the
+            Federal Skilled Trades Program (FSTP) could be a great option for
+            you. To be eligible, you must meet the following requirements:
           </p>
           <ul>
             <li>
@@ -178,7 +205,9 @@ const FederalSkilledTradesProgram = () => {
                   Major Group 72: Technical Trades and Transportation Officers
                   and Controllers
                   <ul className={styles.subList02}>
-                    <li>Excluding Sub-Major Group 726: Transportation Officers and Controllers
+                    <li>
+                      Excluding Sub-Major Group 726: Transportation Officers and
+                      Controllers
                     </li>
                   </ul>
                 </li>
@@ -227,7 +256,11 @@ const FederalSkilledTradesProgram = () => {
           </ul>
         </section>
 
-        <section className={`${styles.expressEntry} ${styles.section}`} id="express-entry" ref={(el) => sectionsRef.current[3] = el}>
+        <section
+          className={`${styles.expressEntry} ${styles.section}`}
+          id="express-entry"
+          ref={(el) => (sectionsRef.current[3] = el)}
+        >
           <h2 className={styles.subheading}>
             Express Entry FSTP Draws History
           </h2>
@@ -240,11 +273,15 @@ const FederalSkilledTradesProgram = () => {
           </p>
         </section>
 
-        <section className={`${styles.applicationProcess} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[4] = el} >
+        <section
+          className={`${styles.applicationProcess} ${styles.section}`}
+          id="how-to-apply"
+          ref={(el) => (sectionsRef.current[4] = el)}
+        >
           <h2 className={styles.subheading}>
             How to Apply for the Federal Skilled Trades Program (FSTP)
           </h2>
-          <ol>
+          <ol style={{ marginLeft: "40px" }}>
             <li>
               Create an Express Entry profile and submit it to Immigration,
               Refugees and Citizenship Canada (IRCC). For a stress-free
@@ -258,12 +295,14 @@ const FederalSkilledTradesProgram = () => {
               .
             </li>
             <li>
-            After that, you will receive an invitation to apply (ITA) from IRCC. Note that ITAs are issued to candidates who score high enough on the Comprehensive Ranking System (CRS), which is a points-based system that assesses candidates' eligibility for the program.{" "}
-             {" "}
+              After that, you will receive an invitation to apply (ITA) from
+              IRCC. Note that ITAs are issued to candidates who score high
+              enough on the Comprehensive Ranking System (CRS), which is a
+              points-based system that assesses candidates' eligibility for the
+              program.{" "}
               <Link to="/Federal-Skilled" className={styles.link}>
                 Click here
-              </Link>
-              {" "}
+              </Link>{" "}
               you can find a link to a FSWP Calculator.
             </li>
             <li>
@@ -278,12 +317,16 @@ const FederalSkilledTradesProgram = () => {
           </ol>
         </section>
 
-        <section className={`${styles.refusalReasons} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[5] = el}>
+        <section
+          className={`${styles.refusalReasons} ${styles.section}`}
+          id="refusal-reasons"
+          ref={(el) => (sectionsRef.current[5] = el)}
+        >
           <h2 className={styles.subheading}>
             Common Reasons for Refusals of the Federal Skilled Trades Program
             (FSTP)
           </h2>
-          <ul>
+          <ul style={{ marginLeft: "40px" }}>
             <li>
               Inadequate qualifications: You do not have the necessary skills,
               education, or experience to perform the job duties.
@@ -308,7 +351,11 @@ const FederalSkilledTradesProgram = () => {
           </ul>
         </section>
 
-        <section className={`${styles.support} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[6] = el}>
+        <section
+          className={`${styles.support} ${styles.section}`}
+          id="testing2"
+          ref={(el) => (sectionsRef.current[6] = el)}
+        >
           <h2 className={styles.subheading}>Still Not Sure?</h2>
           <p>
             If you have received a refusal for any of the reasons mentioned
@@ -323,16 +370,17 @@ const FederalSkilledTradesProgram = () => {
             specialists will assist you from the start of the application
             process all the way to obtaining your PR. Start your process now.
           </p>
-          <button className={styles.button}
-              onClick={() =>
-                (window.location.href =
-                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-              }
-            >
-              Book Appointment
-            </button>
+          <button
+            className={styles.button}
+            onClick={() =>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
+          >
+            Book Appointment
+          </button>
         </section>
-{/* 
+        {/* 
         <section className={`${styles.whyChooseUs} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[7] = el}>
           <h2 className={styles.subheading}>Why Choose Us?</h2>
           <p>
@@ -347,7 +395,7 @@ const FederalSkilledTradesProgram = () => {
           ref={(el) => (sectionsRef.current[7] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

@@ -204,7 +204,7 @@ const HumanitarianCompassionate = () => {
             Here are a few examples of Humanitarian and Compassionate (H&C)
             cases under family reunification:
           </h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               A child who has been separated from their parents due to war or
               persecution in their home country.
@@ -271,7 +271,7 @@ const HumanitarianCompassionate = () => {
           <h2>
             How to Apply for the Humanitarian and Compassionate (H&C) Program
           </h2>
-          <ol>
+          <ol style={{marginLeft: "40px"}}>
             <li>Collect all relevant evidence to support your H&C claims.</li>
             <li>
               Fill out the necessary forms and submit your application to IRCC.
@@ -292,7 +292,7 @@ const HumanitarianCompassionate = () => {
             Common Reasons for Refusals of the Humanitarian and Compassionate
             (H&C) Program
           </h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               You did not provide enough evidence to support your H&C claims.
               This could include evidence of hardship, integration, or
@@ -354,7 +354,7 @@ const HumanitarianCompassionate = () => {
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

@@ -159,7 +159,7 @@ const SpousalOpenWorkPermit = () => {
           <h2 className={styles.subheading}>
             Benefits of Spousal Open Work Permit (SOWP)
           </h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               It enables your spouse or common-law partner to accompany you to
               Canada and reside with you.
@@ -431,7 +431,7 @@ If you are the spouse or common-law partner of an international student who is a
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

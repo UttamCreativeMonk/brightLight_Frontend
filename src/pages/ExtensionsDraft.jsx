@@ -24,7 +24,6 @@ const ExtensionsDraft = () => {
   };
 
   useEffect(() => {
-
     fetch("https://brightlight-node.onrender.com/extensionMeta")
       .then((res) => {
         return res.json();
@@ -38,7 +37,6 @@ const ExtensionsDraft = () => {
         console.log(error);
       });
   }, []);
-
 
   const sectionsRef = useRef([]);
 
@@ -62,10 +60,9 @@ const ExtensionsDraft = () => {
     };
   }, []);
 
-
   return (
     <>
-            <Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle
@@ -122,12 +119,22 @@ const ExtensionsDraft = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
+              <p onClick={() => scrollToSection("book-appointment")}>
+                Book Appointment
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -136,16 +143,24 @@ const ExtensionsDraft = () => {
       </div>
 
       <div className={styles.container}>
-        <h1  className={`${styles.heading} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
+        <h1
+          className={`${styles.heading} ${styles.section}`}
+          id="about-program"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
           Extension of Temporary Status
         </h1>
-        <section className={`${styles.introduction} ${styles.section}`} id="testing" ref={(el) => sectionsRef.current[1] = el}>
+        <section
+          className={`${styles.introduction} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
           <p>
             The plans can change, and you may need to extend your stay in Canada
             for various reasons. Let us guide you to maintain your legal status
             in Canada.
           </p>
-          <p>
+          <p style={{marginTop: "20px"}}>
             If you are visiting Canada for leisure, work, family visits,
             studies, or temporary employment, your circumstances may change, and
             you may need to extend your stay beyond the initially specified
@@ -154,11 +169,15 @@ const ExtensionsDraft = () => {
           </p>
         </section>
 
-        <section className={`${styles.benefits} ${styles.section}`} id="benifits" ref={(el) => sectionsRef.current[2] = el}>
+        <section
+          className={`${styles.benefits} ${styles.section}`}
+          id="benifits"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
           <h2 className={styles.subheading}>
             Benefits of Extending Your Temporary Status
           </h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               You can stay longer in Canada after applying for an extension,
               without having to leave Canada and come back.
@@ -176,7 +195,11 @@ const ExtensionsDraft = () => {
           </ul>
         </section>
 
-        <section className={`${styles.applicationProcess} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[3] = el}>
+        <section
+          className={`${styles.applicationProcess} ${styles.section}`}
+          id="how-to-apply"
+          ref={(el) => (sectionsRef.current[3] = el)}
+        >
           <h2 className={styles.subheading}>
             How to Apply for an Extension of Temporary Status?
           </h2>
@@ -208,7 +231,11 @@ const ExtensionsDraft = () => {
           </ul>
         </section>
 
-        <section  className={`${styles.assistance} ${styles.section}`} id="testing3" ref={(el) => sectionsRef.current[4] = el}>
+        <section
+          className={`${styles.assistance} ${styles.section}`}
+          id="testing3"
+          ref={(el) => (sectionsRef.current[4] = el)}
+        >
           <h2 className={styles.subheading}>Still Not Sure?</h2>
           <p>
             If you have received a refusal for any reason, do not worry. With
@@ -228,14 +255,15 @@ const ExtensionsDraft = () => {
             process now.
           </p>
 
-          <button className={styles.button}
-              onClick={() =>
-                (window.location.href =
-                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-              }
-            >
-              Book Appointment
-            </button>
+          <button
+            className={styles.button}
+            onClick={() =>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
+          >
+            Book Appointment
+          </button>
         </section>
 
         {/* <section className={`${styles.whyChooseUs} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[5] = el}>
@@ -253,7 +281,7 @@ const ExtensionsDraft = () => {
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

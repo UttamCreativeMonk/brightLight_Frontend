@@ -61,7 +61,7 @@ const AgriFoodPilotProgram = () => {
 
   return (
     <>
-          <Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle
@@ -175,7 +175,7 @@ const AgriFoodPilotProgram = () => {
           <p style={{ marginBottom: "20px" }}>
             The participating communities will:
           </p>
-          <ul style={{ marginLeft: "20px" }}>
+          <ul style={{ marginLeft: "40px" }}>
             <li>
               Recommend candidates for permanent residence to IRCC for a final
               decision.
@@ -187,7 +187,7 @@ const AgriFoodPilotProgram = () => {
           </ul>
 
           <h2>Benefits of Rural and Northern Immigration Pilot (RNIP)</h2>
-          <ul style={{ marginLeft: "20px" }}>
+          <ul style={{ marginLeft: "40px" }}>
             <li>
               Great alternative to Provincial Nominee Programs (PNPs),
               especially as PNPs are becoming more competitive and difficult to
@@ -205,7 +205,7 @@ const AgriFoodPilotProgram = () => {
           </ul>
           <h2>Eligibility Requirements for RNIP</h2>
           <p>There are two main parts to eligibility:</p>
-          <ol style={{ marginLeft: "20px" }}>
+          <ol style={{ marginLeft: "40px" }}>
             <li style={{ marginBottom: "20px" }}>
               IRCC requirements: You&#39;ll need to check if you meet the
               general criteria set by Immigration, Refugees and Citizenship
@@ -220,7 +220,7 @@ const AgriFoodPilotProgram = () => {
             </li>
           </ol>
           <h2>How to Apply for RINP?</h2>
-          <ol style={{ marginLeft: "20px" }}>
+          <ol style={{ marginLeft: "40px" }}>
             <li style={{ marginBottom: "20px" }}>
               Find an eligible job: The first step in the actual application
               process is to secure a job offer from an employer in one of the
@@ -246,7 +246,7 @@ const AgriFoodPilotProgram = () => {
             will need to meet to qualify to apply and obtain PR in RNIP program:
           </p>
           <p style={{ marginBottom: "20px" }}>You must:</p>
-          <ul style={{ marginLeft: "20px" }}>
+          <ul style={{ marginLeft: "40px" }}>
             <li>
               Have qualifying work experience or have graduated from a publicly
               funded post-secondary institution in the recommending community
@@ -330,7 +330,7 @@ const AgriFoodPilotProgram = () => {
           <p style={{ marginBottom: "20px" }}>
             Each community will also have its own:
           </p>
-          <ul>
+          <ul style={{ marginLeft: "40px" }}>
             <li>Additional eligibility requirements</li>
             <li>Job search process</li>
             <li>Community recommendation application process</li>
@@ -338,14 +338,14 @@ const AgriFoodPilotProgram = () => {
           </ul>
 
           <h2>Work Experience Requirements</h2>
-          <ul style={{ marginTop: "20px" }}>
+          <ul style={{ marginTop: "20px", marginLeft: "40px" }}>
             <li>
               You need 1 year of continuous work experience (at least 1,560
               hours) in the past 3 years.
             </li>
             <li>
               The following hours of work are eligible:
-              <ul style={{ marginLeft: "20px", marginTop: "20px" }}>
+              <ul style={{ marginLeft: "40px", marginTop: "20px" }}>
                 <li>Count the hours worked in part-time and full-time jobs.</li>
                 <li>
                   The hours must be in one occupation, but they can be with
@@ -432,6 +432,7 @@ const AgriFoodPilotProgram = () => {
             International Students Requirements
           </h2>
           <ul
+          style={{marginLeft: "40px"}}
             className={`${styles.section} ${styles.section}`}
             id="testing13"
             ref={(el) => (sectionsRef.current[14] = el)}
@@ -484,7 +485,7 @@ const AgriFoodPilotProgram = () => {
             Important: Before you apply as an international student, make sure
             your program doesn&#39;t fall into these categories:
           </p>
-          <ul style={{ marginLeft: "20px", marginTop: "20px" }}>
+          <ul style={{ marginLeft: "40px", marginTop: "20px" }}>
             <li>Studied English or French for more than half of the program</li>
             <li>
               Distance learning was your main method of instruction for than
@@ -509,14 +510,14 @@ const AgriFoodPilotProgram = () => {
             in the community.
           </p>
           <p style={{ marginBottom: "20px" }}>This can either be the:</p>
-          <ul style={{ marginLeft: "20px" }}>
+          <ul style={{ marginLeft: "40px" }}>
             <li>Canadian Language Benchmarks (CLB), or</li>
             <li>Niveaux de compétence linguistique canadiens (NCLC)</li>
           </ul>
           <p style={{ marginBottom: "20px", marginTop: "20px" }}>
             The minimum language requirements for each NOC category are:
           </p>
-          <ul style={{ marginLeft: "20px" }}>
+          <ul style={{ marginLeft: "40px" }}>
             <li>NOC 0 and A: CLB/NCLC 6</li>
             <li>NOC B: CLB/NCLC 5</li>
             <li>NOC C and D: CLB/NCLC 4</li>
@@ -573,7 +574,7 @@ const AgriFoodPilotProgram = () => {
           >
             Settlement Funds
           </h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               Applicants who are not currently working legally in Canada must
               demonstrate sufficient financial resources to support themselves
@@ -590,7 +591,7 @@ const AgriFoodPilotProgram = () => {
             To participate in the pilot, you must plan to live in the community.
           </p>
           <h2>Finding a Job for Canadian Immigration</h2>
-          <ul style={{ marginLeft: "20px" }}>
+          <ul style={{ marginLeft: "40px" }}>
             <li>
               As a candidate, you must have a genuine job offer to work in one
               of the participating communities.
@@ -610,7 +611,7 @@ const AgriFoodPilotProgram = () => {
             To be eligible for a job offer, the position must meet all of the
             following criteria:
           </p>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>Located in the community</li>
             <li>
               Employer continues to run the business in the same community
@@ -628,7 +629,7 @@ const AgriFoodPilotProgram = () => {
           <p style={{ marginTop: "20px", marginBottom: "20px" }}>
             The job offer cannot be from:
           </p>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>A consulate</li>
             <li>A staffing or employment agency</li>
             <li>A business you own or have significant control over</li>
@@ -643,7 +644,7 @@ const AgriFoodPilotProgram = () => {
           >
             How to Apply
           </h2>
-          <ol  className={styles.howToApplyLi}>
+          <ol style={{marginLeft: "40px"}} className={styles.howToApplyLi}>
             <li>
               Look for a qualifying job offer with a qualifying employer in the
               qualifying community.
@@ -682,7 +683,6 @@ const AgriFoodPilotProgram = () => {
             </li>
           </ol>
 
-
           <h2
             className={`${styles.section} ${styles.section}`}
             id="refusal-reasons"
@@ -690,7 +690,7 @@ const AgriFoodPilotProgram = () => {
           >
             Common Reasons for Refusals for RNIP
           </h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               Having a job offer that does not match your work experience.
             </li>
@@ -719,7 +719,7 @@ const AgriFoodPilotProgram = () => {
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{ marginLeft: "40px" }}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

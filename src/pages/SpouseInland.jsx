@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../styles/SpouseInland.module.css";
 import Navbar1 from "../components/Navbar1";
 import Footer1 from "../components/Footer1";
@@ -146,6 +146,7 @@ const SpouseInland = () => {
           style={{
             marginTop: "20px",
             marginBottom: "60px",
+            marginLeft: "40px"
           }}
         >
           <li>
@@ -176,6 +177,7 @@ const SpouseInland = () => {
           style={{
             marginTop: "20px",
             marginBottom: "60px",
+            marginLeft: "40px"
           }}
         >
           <li>
@@ -200,6 +202,7 @@ const SpouseInland = () => {
         <ul
           style={{
             marginBottom: "60px",
+            marginLeft: "40px"
           }}
         >
           <li>Your spouse or partner must live with you in Canada.</li>
@@ -260,6 +263,7 @@ const SpouseInland = () => {
         <ul
           style={{
             marginBottom: "60px",
+            marginLeft: "40px"
           }}
         >
           <li>
@@ -275,7 +279,8 @@ const SpouseInland = () => {
         <ol
           style={{
             marginTop: "20px",
-            marginBottom: "60px",
+            marginBottom: "60px", 
+            marginLeft: "40px"
           }}
         >
           <li>Verify eligibility for both sponsor and sponsored person.</li>
@@ -363,7 +368,7 @@ const SpouseInland = () => {
           id="why-choose-u"
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

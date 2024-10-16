@@ -230,6 +230,7 @@ const AgriFoodPilotProgram = () => {
             years. This experience should meet the following criteria:
           </p>
           <ul
+          style={{marginLeft: "40px"}}
             className={`${styles.section} ${styles.section}`}
             id="testing5"
             ref={(el) => (sectionsRef.current[7] = el)}
@@ -274,7 +275,7 @@ const AgriFoodPilotProgram = () => {
           <ul>
             <li>
               Eligible industries for the Agri-Food Immigration Pilot are:
-              <ol>
+              <ol style={{marginLeft: "40px"}}>
                 <li>Meat product manufacturing (NAICS 3116)</li>
                 <li>
                   Greenhouse, nursery and floriculture production, including
@@ -481,6 +482,7 @@ const AgriFoodPilotProgram = () => {
             following criteria:
           </p>
           <ul
+          style={{marginLeft: "40px"}}
             className={`${styles.section} ${styles.section}`}
             id="testing7"
             ref={(el) => (sectionsRef.current[9] = el)}
@@ -536,6 +538,7 @@ const AgriFoodPilotProgram = () => {
             apply:
           </p>
           <ul
+          style={{marginLeft: "40px"}}
             className={`${styles.fourthPoint} ${styles.section}`}
             id="testing10"
             ref={(el) => (sectionsRef.current[12] = el)}
@@ -622,6 +625,7 @@ const AgriFoodPilotProgram = () => {
         >
           <h2>How to Apply for Canada’s Agri-Food Immigration Pilot</h2>
           <ul
+          style={{marginLeft: "40px"}}
             className={`${styles.section} ${styles.section}`}
             id="testing"
             ref={(el) => (sectionsRef.current[21] = el)}
@@ -668,10 +672,10 @@ const AgriFoodPilotProgram = () => {
         <section
           className={`${styles.section} ${styles.section}`}
           id="why-choose-us"
-          ref={(el) => (sectionsRef.current[5] = el)}
+          ref={(el) => (sectionsRef.current[50] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

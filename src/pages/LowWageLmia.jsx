@@ -315,7 +315,7 @@ const LowWageLmia = () => {
           ref={(el) => (sectionsRef.current[6] = el)}
         >
           <h2>Benefits of Low-wage/High-wage LMIA:</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               The employer can apply for low-wage/high-wage LMIA to immediately
               meet the labor shortage.
@@ -344,7 +344,7 @@ const LowWageLmia = () => {
           ref={(el) => (sectionsRef.current[7] = el)}
         >
           <h2>How to Apply for Low-wage/High-wage LMIA:</h2>
-          <ol>
+          <ol style={{marginLeft: "40px"}}>
             <li>
               Have an initial assessment performed by us to verify if the
               employer is eligible to apply for LMIA for a specific position and
@@ -626,7 +626,7 @@ const LowWageLmia = () => {
           ref={(el) => (sectionsRef.current[65] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

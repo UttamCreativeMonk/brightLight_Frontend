@@ -62,7 +62,7 @@ const VisitorToStudent = () => {
 
   return (
     <>
-          <Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle
@@ -177,7 +177,7 @@ const VisitorToStudent = () => {
             The Visitor to Student Permit Program offers several benefits for
             international students, including:
           </h4>
-          <ol className={styles.benefitsList}>
+          <ol style={{ marginLeft: "40px" }} className={styles.benefitsList}>
             <li style={{ marginBottom: "10px" }}>
               A Guaranteed Investment Certificate (GIC) is not required to apply
               for a Study Permit when you apply from inside Canada.
@@ -224,7 +224,7 @@ const VisitorToStudent = () => {
           <h2 className={styles.subheading}>
             Eligibility Criteria for the Student Permit Program
           </h2>
-          <ul className={styles.eligibilityList}>
+          <ul style={{marginLeft: "40px"}} className={styles.eligibilityList}>
             <li>
               You are already in Canada legally with a valid status, such as a
               valid study permit, work permit, or visitor record.
@@ -377,7 +377,7 @@ const VisitorToStudent = () => {
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul style={{ textAlign: "left" }}>
+          <ul style={{ textAlign: "left", marginLeft: "40px" }}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

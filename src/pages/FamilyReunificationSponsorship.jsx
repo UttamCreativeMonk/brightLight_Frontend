@@ -272,7 +272,7 @@ const FamilyReunificationSponsorship = () => {
           <h2>
             How to Apply for the Family Reunification and Sponsorship Program
           </h2>
-          <ol>
+          <ol style={{marginLeft: "40px"}}>
             <li>
               Complete a comprehensive application form, providing detailed
               information about yourself, your relationship to the person being
@@ -302,7 +302,7 @@ const FamilyReunificationSponsorship = () => {
           ref={(el) => (sectionsRef.current[4] = el)}
         >
           <h2>Reasons for Refusals of Family Reunification and Sponsorship</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               It is crucial to provide complete and accurate information in your
               application. Missing or incorrect details can raise red flags and
@@ -363,7 +363,7 @@ const FamilyReunificationSponsorship = () => {
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

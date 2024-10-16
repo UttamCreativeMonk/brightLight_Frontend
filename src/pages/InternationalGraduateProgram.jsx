@@ -173,7 +173,7 @@ const InternationalGraduateProgram = () => {
           ref={(el) => (sectionsRef.current[0] = el)}
         >
           <h2>Benefits of BCPNP International Graduate Stream</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               Nomination Priority: Successful candidates receive an invitation
               to apply for Canadian permanent residence.
@@ -392,7 +392,7 @@ const InternationalGraduateProgram = () => {
             Application Process for British Columbia Provincial Nominee Program
             International Graduate Stream application
           </h2>
-          <ol>
+          <ol style={{marginLeft: "40px"}}>
             <li>
               <strong>Expression of Interest (EOI) System</strong>
               <ul>
@@ -540,7 +540,7 @@ const InternationalGraduateProgram = () => {
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

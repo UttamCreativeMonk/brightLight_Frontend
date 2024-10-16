@@ -164,7 +164,7 @@ const CommonLawPartnerTemporary = () => {
             without having an offer of employment.
           </p>
           <p>They are usually classified into the following two categories:</p>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               Family members of foreign nationals authorized to work in
               high-skilled occupations (TEER 0, 1, 2, or 3) – [C41 and C46]
@@ -189,7 +189,7 @@ const CommonLawPartnerTemporary = () => {
             Benefits of Open Work Permit for Spouse or Common-law Partner of a
             Temporary Foreign Worker
           </h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               It enables your spouse or common-law partner to accompany you to
               Canada and reside with you.
@@ -243,7 +243,7 @@ const CommonLawPartnerTemporary = () => {
             <h2>Requirements and Descriptions</h2>
             <li>
               <strong>Valid Work Authorization</strong>
-              <ul className={styles.subList}>
+              <ul style={{marginLeft: "40px"}} className={styles.subList}>
                 <li>A valid work permit, subject to certain exceptions.</li>
                 <li>
                   An approved work permit that has not yet been issued
@@ -343,7 +343,7 @@ const CommonLawPartnerTemporary = () => {
 
             <li>
               <strong>Not Eligible Currently</strong>
-              <ul className={styles.subList}>
+              <ul style={{marginLeft: "40px"}} className={styles.subList}>
                 <li>
                   Made a refugee claim referred to the Immigration and Refugee
                   Board.
@@ -373,7 +373,7 @@ const CommonLawPartnerTemporary = () => {
             <li>
               <strong>Valid Work Authorization</strong>
               <p>Must possess one of the following:</p>
-              <ul className={styles.subList}>
+              <ul style={{marginLeft: "40px"}} className={styles.subList}>
                 <li>A valid work permit, subject to certain exceptions.</li>
                 <li>
                   An approved work permit that has not yet been issued
@@ -426,7 +426,7 @@ const CommonLawPartnerTemporary = () => {
             </li>
             <li>
               <strong>Not Eligible Currently</strong>
-              <ul className={styles.subList}>
+              <ul style={{marginLeft: "40px"}} className={styles.subList}>
                 <li>
                   Holds a work permit under the low-wage stream of the Temporary
                   Foreign Worker Program.
@@ -466,7 +466,7 @@ const CommonLawPartnerTemporary = () => {
           <p className={styles.testPara}>
             Your family member must meet 3 requirements:
           </p>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>General Eligibility:</strong> They must meet the general
               work permit eligibility criteria such as police clearances,
@@ -493,7 +493,7 @@ const CommonLawPartnerTemporary = () => {
             How to apply for Open Work Permit of Spouse or Common-law Partner of
             a Temporary Foreign Worker?
           </h2>
-          <ol>
+          <ol style={{marginLeft: "40px"}}>
             <li>
               Identify the principal applicant’s occupation in TEER category 0,
               1, 2, 3, 4, or 5 of the National Occupation Classification system.
@@ -528,7 +528,7 @@ const CommonLawPartnerTemporary = () => {
             Common reasons for refusal of Open Work permit of Spouse or
             Common-law Partner of a Temporary Foreign Worker
           </h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               Lack of documentation verifying the National Occupational
               Classification (NOC) of the principal applicant.
@@ -584,7 +584,7 @@ const CommonLawPartnerTemporary = () => {
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

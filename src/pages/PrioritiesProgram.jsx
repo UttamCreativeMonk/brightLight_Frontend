@@ -62,7 +62,7 @@ const PrioritiesProgram = () => {
 
   return (
     <>
-          <Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle
@@ -148,11 +148,17 @@ const PrioritiesProgram = () => {
           id="benefits-2"
           ref={(el) => (sectionsRef.current[30] = el)}
         >
-          <h3 style={{textAlign: "center" , color: "#e8c47c",}}>
+          <h3 style={{ textAlign: "center", color: "#e8c47c" }}>
             British Columbia Provincial Nominee Program Targeted Draws for
             Program Priorities Occupations
           </h3>
-          <p style={{ marginTop: "20px", marginBottom: "50px", textAlign: "center" }}>
+          <p
+            style={{
+              marginTop: "20px",
+              marginBottom: "50px",
+              textAlign: "center",
+            }}
+          >
             British Columbia has a significant demand in essential sectors of
             the care economy, including healthcare, childcare, and veterinary
             care, as well as in the construction and technology sectors
@@ -164,7 +170,7 @@ const PrioritiesProgram = () => {
           ref={(el) => (sectionsRef.current[0] = el)}
         >
           <h3>Benefits of Priority Occupations List</h3>
-          <ul>
+          <ul style={{ marginLeft: "40px" }}>
             <li>
               The draws held in these Priority Occupations are generally
               targeted occupations, and the cut-off is much lower than the
@@ -191,11 +197,11 @@ const PrioritiesProgram = () => {
           ref={(el) => (sectionsRef.current[1] = el)}
         >
           <h3>Eligibility Criteria for BCPNP Targeted Draws</h3>
-          <ol>
+          <ol style={{ marginLeft: "40px" }}>
             <li>
               You must fulfill the eligibility requirements for one of the
               following BCPNP streams:
-              <ul>
+              <ul style={{ marginLeft: "40px", marginTop: "10px" }}>
                 <li>
                   <a href="/skilled-worker" className={styles.link}>
                     BCPNP Skilled Worker
@@ -229,11 +235,14 @@ const PrioritiesProgram = () => {
           >
             <h4>Childcare Professionals</h4>
             <p className={styles.sectionPara}>
-          Individuals with a job offer in the occupation of 42202 Early Childhood Educators and Assistants may be eligible for targeted invitations to apply.
-          </p>
-          <p className={styles.sectionPara}>
-          For a comprehensive list of eligible National Occupational Classification (NOC) codes, please refer to the NOC list below:
-          </p>
+              Individuals with a job offer in the occupation of 42202 Early
+              Childhood Educators and Assistants may be eligible for targeted
+              invitations to apply.
+            </p>
+            <p className={styles.sectionPara}>
+              For a comprehensive list of eligible National Occupational
+              Classification (NOC) codes, please refer to the NOC list below:
+            </p>
             <table className={styles.table}>
               <thead>
                 <tr>
@@ -261,7 +270,13 @@ const PrioritiesProgram = () => {
               of targeted invitations to apply by meeting the following
               requirements:
             </p>
-            <ol style={{ marginBottom: "20px", lineHeight: "1.5" }}>
+            <ol
+              style={{
+                marginBottom: "20px",
+                lineHeight: "1.5",
+                marginLeft: "40px",
+              }}
+            >
               <li>
                 The job offer must be for an indeterminate, full-time
                 position within one of the priority construction occupations.
@@ -408,7 +423,7 @@ const PrioritiesProgram = () => {
 
           <div className={styles.occupationList}>
             <h4>Healthcare Professionals</h4>
-            <ul>
+            <ul style={{ marginLeft: "40px" }}>
               <li>
                 Individuals who are direct employees of a provincial health
                 authority or are physicians, nurse practitioners, or
@@ -595,7 +610,7 @@ const PrioritiesProgram = () => {
               For individuals working in the technology sector, the following
               criteria must be met to qualify for targeted invitations to apply:
             </p>
-            <ol>
+            <ol style={{ marginLeft: "40px" }}>
               <li>
                 The job offer should fall within one of the priority technology
                 occupations.
@@ -730,14 +745,13 @@ const PrioritiesProgram = () => {
                 </tr>
               </tbody>
             </table>
-
           </div>
           <button
-              className={styles.button}
-              onClick={() => (window.location.href = "/bcpnp-calculator")}
-            >
-              Calculate your BCPNP score
-            </button>
+            className={styles.button}
+            onClick={() => (window.location.href = "/bcpnp-calculator")}
+          >
+            Calculate your BCPNP score
+          </button>
         </section>
 
         <section
@@ -745,10 +759,10 @@ const PrioritiesProgram = () => {
           id="BCPNP_Calculator"
           ref={(el) => (sectionsRef.current[8] = el)}
         >
-          <h3 style={{marginBottom: "20px"}}>
+          <h3 style={{ marginBottom: "20px" }}>
             Application Procedure for British Columbia Priorities Program:
           </h3>
-          <ol>
+          <ol style={{ marginLeft: "40px" }}>
             <li>
               Register online on the BCPNP website and submit your BCPNP
               profile:
@@ -813,8 +827,6 @@ const PrioritiesProgram = () => {
             </li>
           </ol>
 
-
-
           <h3 style={{ marginTop: "50px" }}>Still Not Sure ?</h3>
           <p>
             Still not sure? Contact Brightlight Immigration today to assess your
@@ -838,7 +850,7 @@ const PrioritiesProgram = () => {
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{ marginLeft: "40px", marginTop: "10px" }}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

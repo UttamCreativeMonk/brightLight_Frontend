@@ -23,7 +23,6 @@ const Flagpoling = () => {
   };
 
   useEffect(() => {
-
     fetch("https://brightlight-node.onrender.com/flagpolingMeta")
       .then((res) => {
         return res.json();
@@ -37,7 +36,6 @@ const Flagpoling = () => {
         console.log(error);
       });
   }, []);
-
 
   const sectionsRef = useRef([]);
 
@@ -63,7 +61,7 @@ const Flagpoling = () => {
 
   return (
     <>
-            <Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle
@@ -120,14 +118,24 @@ const Flagpoling = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
               <p onClick={() => scrollToSection("benifits")}>Benifits</p>
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
               <p onClick={() => scrollToSection("tips")}>Tips</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
+              <p onClick={() => scrollToSection("book-appointment")}>
+                Book Appointment
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -136,10 +144,18 @@ const Flagpoling = () => {
       </div>
 
       <div className={styles.container}>
-        <h1  className={`${styles.heading} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
+        <h1
+          className={`${styles.heading} ${styles.section}`}
+          id="about-program"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
           Flagpoling
         </h1>
-        <section className={`${styles.introduction} ${styles.section}`} id="testing" ref={(el) => sectionsRef.current[1] = el}>
+        <section
+          className={`${styles.introduction} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
           <p>
             Flagpoling is a legal process of exiting Canada and re-entering the
             country without physically crossing into the USA to obtain, change,
@@ -158,9 +174,13 @@ const Flagpoling = () => {
           </p>
         </section>
 
-        <section className={`${styles.benefits} ${styles.section}`} id="benifits" ref={(el) => sectionsRef.current[2] = el}>
+        <section
+          className={`${styles.benefits} ${styles.section}`}
+          id="benifits"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
           <h2 className={styles.subheading}>Benefits of Flagpoling</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               Flagpoling is a time-saving alternative to applying for a work or
               study permit through online or paper applications, where
@@ -182,7 +202,11 @@ const Flagpoling = () => {
           </ul>
         </section>
 
-        <section className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[3] = el}>
+        <section
+          className={`${styles.eligibility} ${styles.section}`}
+          id="eligibility"
+          ref={(el) => (sectionsRef.current[3] = el)}
+        >
           <h2 className={styles.subheading}>
             Eligibility Criteria for Flagpoling
           </h2>
@@ -212,7 +236,11 @@ const Flagpoling = () => {
           </ul>
         </section>
 
-        <section className={`${styles.tips} ${styles.section}`} id="tips" ref={(el) => sectionsRef.current[4] = el}>
+        <section
+          className={`${styles.tips} ${styles.section}`}
+          id="tips"
+          ref={(el) => (sectionsRef.current[4] = el)}
+        >
           <h2 className={styles.subheading}>Don’t Forget This Important Tip</h2>
           <p>
             While flagpoling can be a helpful tool when used under the right
@@ -227,7 +255,11 @@ const Flagpoling = () => {
           </p>
         </section>
 
-        <section className={`${styles.assistance} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[5] = el}>
+        <section
+          className={`${styles.assistance} ${styles.section}`}
+          id="how-to-apply"
+          ref={(el) => (sectionsRef.current[5] = el)}
+        >
           <h2 className={styles.subheading}>Still Not Sure?</h2>
           <p>
             To avoid these risks and ensure a smooth flagpoling experience, we
@@ -244,14 +276,15 @@ const Flagpoling = () => {
             provide tailored guidance, and assist you in effectively
             communicating your case to immigration officers.
           </p>
-          <button className={styles.button}
-              onClick={() =>
-                (window.location.href =
-                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-              }
-            >
-              Book Appointment
-            </button>
+          <button
+            className={styles.button}
+            onClick={() =>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
+          >
+            Book Appointment
+          </button>
         </section>
 
         {/* <section className={`${styles.whyChooseUs} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[6] = el}>
@@ -271,7 +304,7 @@ const Flagpoling = () => {
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

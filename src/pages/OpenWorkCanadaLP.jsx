@@ -168,7 +168,7 @@ const OpenWorkCanadaLP = () => {
           ref={(el) => (sectionsRef.current[1] = el)}
         >
           <h2>Benefits of Open Work Permit for Dependent Child</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Financial Independence:</strong> Enables your dependent
               child to work and earn income, supporting their expenses or saving
@@ -403,7 +403,7 @@ const OpenWorkCanadaLP = () => {
           </ul>
 
           <h3>Requirements for Your Dependent Child</h3>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>General Eligibility:</strong> Must meet general work
               permit criteria, including police and medical clearances.
@@ -525,7 +525,7 @@ const OpenWorkCanadaLP = () => {
           ref={(el) => (sectionsRef.current[4] = el)}
         >
           <h2>How to Apply</h2>
-          <ol>
+          <ol style={{marginLeft: "40px"}}>
             <li>
               Identify the principal applicant’s occupation in TEER category 0,
               1, 2, 3, 4, or 5.
@@ -551,7 +551,7 @@ const OpenWorkCanadaLP = () => {
           ref={(el) => (sectionsRef.current[5] = el)}
         >
           <h2>Common Reasons for Refusal</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               Lack of documentation verifying the NOC of the principal
               applicant.
@@ -602,7 +602,7 @@ const OpenWorkCanadaLP = () => {
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

@@ -169,7 +169,7 @@ const GlobalStreamLmia = () => {
             ref={(el) => (sectionsRef.current[1] = el)}
           >
             <h2>Benefits of Global Talent Stream (GTS) LMIA</h2>
-            <ul>
+            <ul style={{marginLeft: "40px"}}>
               <li>
                 GTS LMIAs are typically processed within 10 business days.
               </li>
@@ -474,7 +474,7 @@ const GlobalStreamLmia = () => {
             ref={(el) => (sectionsRef.current[4] = el)}
           >
             <h2>How to Apply for Global Talent Stream (GTS) LMIA</h2>
-            <ol>
+            <ol style={{marginLeft: "40px"}}>
               <li>
                 Have an initial assessment performed by us to verify if the
                 employer is eligible to apply for LMIA for a specific position
@@ -519,7 +519,7 @@ const GlobalStreamLmia = () => {
             <h2>
               Common Reasons for Refusal of Global Talent Stream (GTS) LMIA
             </h2>
-            <ol>
+            <ol style={{marginLeft: "40px"}}>
               <li>
                 Insufficient Evidence of Labour Market Benefits A Labour Market
                 Benefits Plan (LMBP) submitted by the employer may lack clear
@@ -597,7 +597,7 @@ const GlobalStreamLmia = () => {
             ref={(el) => (sectionsRef.current[9] = el)}
           >
             <h2>Why Choose Us?</h2>
-            <ul>
+            <ul style={{marginLeft: "40px"}}>
               <li>
                 <strong>Experienced Team:</strong> Over a decade of experience
                 in handling Immigration applications with a high success rate.

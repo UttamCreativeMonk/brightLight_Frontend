@@ -257,7 +257,7 @@ const FrancophoneMobilityProgram = () => {
           ref={(el) => (sectionsRef.current[3] = el)}
         >
           <h2>Employer Requirements for the Francophone Mobility Program</h2>
-          <ol>
+          <ol style={{marginLeft: "40px"}}>
             <li style={{ marginBottom: "10px" }}>
               <strong>Job Offer:</strong> Issue a job offer at a reasonable wage
               rate within the province of work.
@@ -332,7 +332,7 @@ const FrancophoneMobilityProgram = () => {
           ref={(el) => (sectionsRef.current[6] = el)}
         >
           <h2>Application Process for Francophone Mobility Program</h2>
-          <ol>
+          <ol style={{marginLeft: "40px"}}>
             <li>
               <strong>Job Search:</strong>
               <ul
@@ -416,7 +416,7 @@ const FrancophoneMobilityProgram = () => {
               If you currently hold a work permit issued through the Mobilité
               Francophone stream, you can easily renew it. Here’s how:
             </h4>
-            <li>
+            <li style={{marginLeft: "40px"}}>
               <strong>Submission Options:</strong> Renewals can be submitted by
               mail or online. Existing permits under the discontinued
               “Significant benefit – Francophone destined to work outside of
@@ -462,7 +462,7 @@ const FrancophoneMobilityProgram = () => {
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

@@ -23,9 +23,7 @@ const FederalSkilledWorkerProgram = () => {
     }
   };
 
-
   useEffect(() => {
-
     fetch("https://brightlight-node.onrender.com/federalSkillWorkerProgMeta")
       .then((res) => {
         return res.json();
@@ -39,7 +37,6 @@ const FederalSkilledWorkerProgram = () => {
         console.log(error);
       });
   }, []);
-
 
   const sectionsRef = useRef([]);
 
@@ -65,7 +62,7 @@ const FederalSkilledWorkerProgram = () => {
 
   return (
     <>
-            <Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle
@@ -340,7 +337,7 @@ const FederalSkilledWorkerProgram = () => {
           <h2 className={styles.subheading}>
             How to Apply for Federal Skilled Worker Program (FSWP)
           </h2>
-          <ol>
+          <ol style={{ marginLeft: "40px" }}>
             <li>
               Create your profile on the Immigration, Refugees and Citizenship
               Canada (IRCC) website, or for a stress-free solution, let us
@@ -386,7 +383,7 @@ const FederalSkilledWorkerProgram = () => {
           <h2 className={styles.subheading}>
             Common Reasons for Refusals of Federal Skilled Worker Program (FSWP)
           </h2>
-          <ul>
+          <ul style={{ marginLeft: "40px" }}>
             <li>
               You don’t have a Canadian high school diploma or equivalent,
               language proficiency in English or French, and skilled work
@@ -478,13 +475,13 @@ const FederalSkilledWorkerProgram = () => {
           </ul>
         </section> */}
 
-<section
+        <section
           className={`${styles.section} ${styles.section}`}
           id="why-choose-us"
           ref={(el) => (sectionsRef.current[94] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{ marginLeft: "40px" }}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

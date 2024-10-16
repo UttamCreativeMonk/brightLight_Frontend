@@ -147,7 +147,7 @@ const AdditionalDocument = () => {
             ref={(el) => (sectionsRef.current[0] = el)}
           >
             <h2>Don’t Worry, We’re Here to Help!</h2>
-            <ul>
+            <ul style={{marginLeft: "40px"}}>
               <li>
                 If you’re here, that means IRCC has already requested you to
                 submit additional documents for your Canadian Immigration
@@ -183,7 +183,7 @@ const AdditionalDocument = () => {
             ref={(el) => (sectionsRef.current[1] = el)}
           >
             <h2>Key Points to Keep in Mind</h2>
-            <ul>
+            <ul style={{marginLeft: "40px"}}>
               <li>
                 Submit the requested document ASAP. Failure to do so can
                 negatively impact your application.
@@ -244,7 +244,7 @@ const AdditionalDocument = () => {
             ref={(el) => (sectionsRef.current[9] = el)}
           >
             <h2>Why Choose Us?</h2>
-            <ul>
+            <ul style={{marginLeft: "40px"}}>
               <li>
                 <strong>Experienced Team:</strong> Over a decade of experience
                 in handling Immigration applications with a high success rate.

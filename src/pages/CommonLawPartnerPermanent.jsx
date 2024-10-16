@@ -175,7 +175,7 @@ const CommonLawPartnerPermanent = () => {
             Benefits of Open Work Permit for Spouse or Common-law Partner of a
             Permanent Resident/Canadian Citizen
           </h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               It permits your spouse or common-law partner to work, alleviating
               financial strain on you.
@@ -200,7 +200,7 @@ const CommonLawPartnerPermanent = () => {
         <section className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[2] = el}>
           <h2 className={styles.subheading}>Eligibility criteria of Open Work Permit for Spouse or Common-law Partner of a Permanent Resident/Canadiancitizen:
           </h2>
-          <ol>
+          <ol style={{marginLeft: "40px"}}>
             <li>
               Both the sponsor and principal applicant must be in a genuine
               relationship with each other.
@@ -222,7 +222,7 @@ const CommonLawPartnerPermanent = () => {
         <section className={`${styles.applicationProcess} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[3] = el}>
           <h2 className={styles.subheading}>How to apply for Open Work Permit for Spouse or Common-law Partner of a Permanent Resident/Canadiancitizen?
           </h2>
-          <ol>
+          <ol style={{marginLeft: "40px"}}>
             <li>
               Identify the principal applicant’s occupation in TEER category 0,
               1, 2, or 3 of the National Occupation Classification system.
@@ -250,7 +250,7 @@ const CommonLawPartnerPermanent = () => {
 
         <section className={`${styles.refusalReasons} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[4] = el}>
           <h2 className={styles.subheading}>Common reasons for refusals of Open Work Permit for Spouse or Common-law Partner of a Permanent Resident/Canadiancitizen:</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               Lack of documentation verifying the National Occupational
               Classification (NOC) of the principal applicant.
@@ -293,7 +293,7 @@ const CommonLawPartnerPermanent = () => {
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

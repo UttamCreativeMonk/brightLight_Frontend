@@ -186,7 +186,7 @@ const AgricultureStreamLmia = () => {
             ref={(el) => (sectionsRef.current[2] = el)}
           >
             <h2>National Commodity List</h2>
-            <ul>
+            <ul style={{marginLeft: "40px"}}>
               <li>Apiary products</li>
               <li>
                 Fruits, vegetables (including canning/processing of these
@@ -245,7 +245,7 @@ const AgricultureStreamLmia = () => {
             ref={(el) => (sectionsRef.current[6] = el)}
           >
             <h2>How to Apply for Agricultural Stream LMIA ?</h2>
-            <ol>
+            <ol style={{marginLeft: "40px"}}>
               <li>
                 Have an initial assessment performed by us to verify if the
                 employer is eligible to apply for LMIA for a specific position
@@ -370,7 +370,7 @@ const AgricultureStreamLmia = () => {
             ref={(el) => (sectionsRef.current[9] = el)}
           >
             <h2>Why Choose Us?</h2>
-            <ul>
+            <ul style={{marginLeft: "40px"}}>
               <li>
                 <strong>Experienced Team:</strong> Over a decade of experience
                 in handling Immigration applications with a high success rate.

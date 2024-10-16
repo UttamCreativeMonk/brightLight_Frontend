@@ -207,7 +207,7 @@ const Adoption = () => {
           ref={(el) => (sectionsRef.current[4] = el)}
         >
           <h2>Eligibility Criteria for Adoption in Canada</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>Be a Canadian citizen or permanent resident.</li>
             <li>Be at least 18 years of age.</li>
             <li>Have a stable income and living situation.</li>
@@ -363,7 +363,7 @@ const Adoption = () => {
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

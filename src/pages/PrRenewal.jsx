@@ -147,7 +147,7 @@ let PrRenewal = () => {
         <h2 className={styles.sectionTitle}>
           Eligibility for Permanent Residency Renewal
         </h2>
-        <ul className={styles.sectionContent}>
+        <ul style={{marginLeft: "40px"}} className={styles.sectionContent}>
           <li>You should be a permanent resident of Canada.</li>
           <li>
             You have lived in Canada for at least 2 years out of the last 5
@@ -194,7 +194,7 @@ let PrRenewal = () => {
         <h2 className={styles.sectionTitle}>
           Reasons for Refusal of Permanent Residency Renewal
         </h2>
-        <ul className={styles.sectionContent}>
+        <ul style={{marginLeft: "40px"}} className={styles.sectionContent}>
           <li>You did not complete two years out of the last five years.</li>
           <li>
             You are not physically present in Canada when you apply for renewal.
@@ -246,7 +246,7 @@ let PrRenewal = () => {
         ref={(el) => (sectionsRef.current[9] = el)}
       >
         <h2>Why Choose Us?</h2>
-        <ul>
+        <ul style={{marginLeft: "40px"}}>
           <li>
             <strong>Experienced Team:</strong> Over a decade of experience in
             handling Immigration applications with a high success rate.

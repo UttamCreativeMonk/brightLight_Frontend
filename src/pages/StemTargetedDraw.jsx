@@ -62,7 +62,7 @@ const StemTargetedDraw = () => {
 
   return (
     <>
-          <Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle
@@ -183,7 +183,7 @@ const StemTargetedDraw = () => {
             Express Entry system, you need to be eligible. Here's how you can
             get started:
           </p>
-          <ol>
+          <ol style={{ marginLeft: "40px" }}>
             <li>
               Join the Express Entry Pool: The first step towards becoming a
               candidate for a STEM-specific draw is to get into the Express
@@ -196,8 +196,9 @@ const StemTargetedDraw = () => {
                 className={styles.subheadingLink}
                 style={{ marginTop: "20px" }}
               >
-                <li>
+                <li style={{ textAlign: "center", marginBottom: "30px" }}>
                   <button
+                    
                     className={styles.button1}
                     onClick={() =>
                       (window.location.href = "/federal-skilled-worker-program")
@@ -208,7 +209,7 @@ const StemTargetedDraw = () => {
                   This program is ideal for tech workers who have the necessary
                   work experience, education, and language ability.
                 </li>
-                <li>
+                <li style={{ textAlign: "center", marginBottom: "30px" }}>
                   <button
                     className={styles.button1}
                     onClick={() =>
@@ -251,7 +252,7 @@ const StemTargetedDraw = () => {
             Training Education Experience Responsibilities (TEER) categories.
           </p>
           <p>Here are a couple of important points to remember:</p>
-          <ul className={styles.leftList}>
+          <ul style={{ marginLeft: "40px" }} className={styles.leftList}>
             <li>
               You can accumulate this work experience over two years in
               part-time roles, as long as it adds up to 1,560 hours, which is
@@ -555,14 +556,14 @@ const StemTargetedDraw = () => {
             Book Appointment
           </button>
         </section> */}
-        
+
         <section
           className={`${styles.whyChooseUs} ${styles.section}`}
           id="why-choose-us"
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{ marginLeft: "40px" }}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

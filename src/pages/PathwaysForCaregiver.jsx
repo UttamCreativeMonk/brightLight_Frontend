@@ -163,6 +163,7 @@ const PathwaysForCaregiver = () => {
           Benefits of Pathways for Caregivers:
         </h2>
         <ul
+        style={{marginLeft: "40px"}}
           className={`${styles.list} ${styles.section}`}
           id="testing1"
           ref={(el) => (sectionsRef.current[3] = el)}
@@ -200,6 +201,7 @@ const PathwaysForCaregiver = () => {
           Here are the temporary residence pathways available for caregivers:
         </h2>
         <ul
+        style={{marginLeft: "40px"}}
           className={`${styles.list} ${styles.section}`}
           id="testing3"
           ref={(el) => (sectionsRef.current[5] = el)}
@@ -221,6 +223,7 @@ const PathwaysForCaregiver = () => {
           Here are the permanent residence pathways available for caregivers:
         </h2>
         <ul
+        style={{marginLeft: "40px"}}
           className={`${styles.list} ${styles.section}`}
           id="testing5"
           ref={(el) => (sectionsRef.current[7] = el)}
@@ -255,6 +258,7 @@ const PathwaysForCaregiver = () => {
           How to apply for Pathways for Caregivers?
         </h2>
         <ol
+        style={{marginLeft: "40px"}}
           className={`${styles.list} ${styles.section}`}
           id="testing6"
           ref={(el) => (sectionsRef.current[9] = el)}
@@ -295,7 +299,7 @@ const PathwaysForCaregiver = () => {
           <h2 style={{ fontSize: "24px", marginBottom: "20px" }}>
             Why Choose Us?
           </h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

@@ -62,7 +62,7 @@ const Sds = () => {
 
   return (
     <>
-          <Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle
@@ -334,7 +334,7 @@ const Sds = () => {
             If you’re considering applying for a study permit through the
             Student Direct Stream (SDS), here’s what you’ll need:
           </p>
-          <ol>
+          <ol style={{ marginLeft: "40px" }}>
             <li>
               <h3>Provincial Attestation Letters (PAL)</h3>
               <ul style={{ marginLeft: "40px" }}>
@@ -589,7 +589,7 @@ const Sds = () => {
               }}
             >
               <strong>Graduate Programs:</strong>
-              <ul>
+              <ul style={{ marginLeft: "40px" }}>
                 <li>
                   Graduate programs encompass master’s and doctorate
                   degrees granted by universities or polytechnic institutions.
@@ -654,7 +654,7 @@ const Sds = () => {
           ref={(el) => (sectionsRef.current[6] = el)}
         >
           <h2 className={styles.subheading}>Submitting Your Application</h2>
-          <ul>
+          <ul style={{ marginLeft: "40px" }}>
             <li>
               Students applying through the Student Direct Stream can only apply
               online; there’s no paper application process. To complete your
@@ -671,7 +671,13 @@ const Sds = () => {
           </ul>
 
           <h3>Paying for Your Biometrics</h3>
-          <ul style={{ marginTop: "10px", marginBottom: "50px" }}>
+          <ul
+            style={{
+              marginTop: "10px",
+              marginBottom: "50px",
+              marginLeft: "40px",
+            }}
+          >
             <li>
               Most students need to provide biometrics and should pay the fee
               along with their online application.
@@ -682,7 +688,13 @@ const Sds = () => {
             </li>
           </ul>
           <h3>After You Apply</h3>
-          <ul style={{ marginTop: "20px", marginBottom: "50px" }}>
+          <ul
+            style={{
+              marginTop: "20px",
+              marginBottom: "50px",
+              marginLeft: "40px",
+            }}
+          >
             <li>
               Book an appointment to provide your biometrics after submitting
               your study permit application through the Student Direct Stream.
@@ -699,7 +711,13 @@ const Sds = () => {
             </li>
           </ul>
           <h3>Processing Time</h3>
-          <ul style={{ marginTop: "20px", marginBottom: "50px" }}>
+          <ul
+            style={{
+              marginTop: "20px",
+              marginBottom: "50px",
+              marginLeft: "40px",
+            }}
+          >
             <li>
               The visa office typically processes most applications within 20
               calendar days after receiving biometrics from eligible applicants.
@@ -776,7 +794,7 @@ const Sds = () => {
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{ marginLeft: "40px" }}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

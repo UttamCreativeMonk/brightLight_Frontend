@@ -177,35 +177,12 @@ const OutsideCananda = () => {
         </section>
 
         <section
-          className={`${styles.callToAction} ${styles.section}`}
-          id="why-choose-us"
-          ref={(el) => (sectionsRef.current[2] = el)}
-        >
-          <h2 className={styles.subheading}>Why Choose Us</h2>
-          <p className={styles.callToActionText}>
-            At Brightlight Immigration, we have a dedicated team of experts
-            ready to assist you through every step of your study permit
-            application process. Our extensive experience and success rate
-            ensure that your application is handled with the utmost care and
-            professionalism. Whether you are applying under the Student Direct
-            Stream or the Non-Student Direct Stream, we provide personalized
-            services to meet your unique needs.
-          </p>
-          <a
-            href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj"
-            className={styles.buttonBook}
-          >
-            Book Appointment
-          </a>
-        </section>
-
-        <section
           className={`${styles.section} ${styles.section}`}
           id="why-choose-us"
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.
@@ -223,6 +200,13 @@ const OutsideCananda = () => {
               of the application process to obtaining your PR.
             </li>
           </ul>
+
+          <a
+            href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj"
+            className={styles.buttonBook}
+          >
+            Book Appointment
+          </a>
         </section>
       </div>
 

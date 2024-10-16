@@ -205,7 +205,7 @@ const LmiaReviewed = () => {
             <div className={styles.benefits}>
               <div className={styles.benefit}>
                 <h3>Benefits for Canadian Employers</h3>
-                <ul>
+                <ul style={{marginLeft: "40px"}}>
                   <li>
                     The LMIA program lets Canadian employers hire skilled people
                     from around the world, filling important roles in various
@@ -227,7 +227,7 @@ const LmiaReviewed = () => {
               </div>
               <div className={styles.benefit}>
                 <h3>Benefits for Foreign Workers</h3>
-                <ul>
+                <ul style={{marginLeft: "40px"}}>
                   <li>
                     The LMIA program gives foreign workers a chance to work in
                     Canada, gaining valuable experience in a well-known country.
@@ -429,7 +429,7 @@ const LmiaReviewed = () => {
             ref={(el) => (sectionsRef.current[9] = el)}
           >
             <h2>Why Choose Us?</h2>
-            <ul>
+            <ul style={{marginLeft: "40px"}}>
               <li>
                 <strong>Experienced Team:</strong> Over a decade of experience
                 in handling Immigration applications with a high success rate.

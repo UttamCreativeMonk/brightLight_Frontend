@@ -166,7 +166,7 @@ const InternationalPostGraduateProgram = () => {
           ref={(el) => (sectionsRef.current[0] = el)}
         >
           <h2>Benefits of BCPNP International Post-Graduate Stream</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               No Job Offer Required: Candidates do not need a job offer to
               apply.
@@ -233,7 +233,7 @@ const InternationalPostGraduateProgram = () => {
           <h2>Eligibility Criteria for International Post-Graduate Stream</h2>
           <div className={styles.criteria}>
             <h3>1. Educational Qualifications</h3>
-            <ul>
+            <ul style={{marginLeft: "40px"}}>
               <li>
                 Must hold a master’s or doctoral (PhD) degree obtained within
                 the past three years.
@@ -255,7 +255,7 @@ const InternationalPostGraduateProgram = () => {
           </div>
           <div className={styles.criteria}>
             <h3>2. Intent to Live and Work in British Columbia</h3>
-            <ul>
+            <ul style={{marginLeft: "40px"}}>
               <li>
                 Applicants must demonstrate their commitment to residing and
                 working in British Columbia.
@@ -281,7 +281,7 @@ const InternationalPostGraduateProgram = () => {
           </div>
           <div className={styles.criteria}>
             <h3>3. Connection to British Columbia</h3>
-            <ul>
+            <ul style={{marginLeft: "40px"}}>
               <li>
                 Candidates must have completed a master’s or doctorate degree
                 from one of BC’s eligible institutions in one of BC’s eligible
@@ -313,7 +313,7 @@ const InternationalPostGraduateProgram = () => {
             qualify under one of the three federal programs. To understand the
             eligibility criteria for these programs, click on either the:
           </p>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <a href="/federal-skilled-worker-program">
                 Federal Skilled Worker (FSW)
@@ -351,7 +351,7 @@ const InternationalPostGraduateProgram = () => {
             Application Procedure for British Columbia Provincial Nominee
             Program BC PNP International Post-Graduate (IPG) Stream
           </h2>
-          <ol className={styles.sectionLi}>
+          <ol style={{marginLeft: "40px"}} className={styles.sectionLi}>
             <li>
               <strong>Eligibility and Application Submission:</strong>
               <ul>
@@ -466,7 +466,7 @@ const InternationalPostGraduateProgram = () => {
           ref={(el) => (sectionsRef.current[6] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

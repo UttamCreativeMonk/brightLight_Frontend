@@ -117,7 +117,7 @@ const CategoryBasedExpress = () => {
             <h4>
               Category-based draws offer several benefits to you, including:
             </h4>
-            <ul>
+            <ul style={{marginLeft: "40px"}}>
               <li>
                 Your chances of getting an ITA are Increased. By focusing on
                 specific groups of candidates, category-based draws often have
@@ -230,7 +230,7 @@ const CategoryBasedExpress = () => {
               However, here are some general eligibility criteria that apply to
               all categories. These include:
             </p>
-            <ul>
+            <ul style={{marginLeft: "40px"}}>
               <li>You must have a valid Express Entry profile.</li>
               <li>
                 You must meet the language proficiency requirements for the
@@ -264,7 +264,7 @@ const CategoryBasedExpress = () => {
             ref={(el) => (sectionsRef.current[3] = el)}
           >
             <h2>How to apply for Category Based Draw?</h2>
-            <ul>
+            <ul style={{marginLeft: "40px"}}>
               <li>
                 Create an Express Entry profile first. Or even better and
                 stress-free solution, let us handle your case for you.
@@ -304,7 +304,7 @@ const CategoryBasedExpress = () => {
             ref={(el) => (sectionsRef.current[4] = el)}
           >
             <h2>Common Reasons for Refusals in Category-Based Draw</h2>
-            <ul>
+            <ul style={{marginLeft: "40px"}}>
               <li>
                 Your applicant does not meet the eligibility criteria for the
                 program you are applying for. The eligibility criteria vary

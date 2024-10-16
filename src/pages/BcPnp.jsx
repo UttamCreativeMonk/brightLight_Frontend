@@ -428,8 +428,8 @@ const BcPnp = () => {
           </li>
         </ul>
 
-
- <h2 className={`${styles.subtitle} ${styles.section}`}
+        <h2
+          className={`${styles.subtitle} ${styles.section}`}
           id="why-choose-us"
           ref={(el) => (sectionsRef.current[15] = el)}
         >
@@ -468,11 +468,11 @@ const BcPnp = () => {
         >
           Book Appointment
         </button>
-      </div>
-      <section
+
+        <section
           className={`${styles.section} ${styles.section}`}
           id="why-choose-us"
-          ref={(el) => (sectionsRef.current[9] = el)}
+          ref={(el) => (sectionsRef.current[90] = el)}
         >
           <h2>Why Choose Us?</h2>
           <ul>
@@ -493,7 +493,9 @@ const BcPnp = () => {
               of the application process to obtaining your PR.
             </li>
           </ul>
-        </section> 
+        </section>
+      </div>
+
       <div id="faqs">
         <FAQ />
       </div>

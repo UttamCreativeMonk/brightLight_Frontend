@@ -170,7 +170,7 @@ const InsideCanada = () => {
           ref={(el) => (sectionsRef.current[1] = el)}
         >
           <h2 className={styles.subheading}>Benefits</h2>
-          <ul className={styles.benefitList}>
+          <ul style={{marginLeft: "40px"}} className={styles.benefitList}>
             <li>No GIC Required</li>
             <li>No IELTS Required</li>
             <li>No PAL Letter Required</li>
@@ -242,7 +242,7 @@ const InsideCanada = () => {
               Canada.
             </li>
             <li>You have no criminal record.</li>
-            <li>
+            <li style={{listStyle: "none"}}>
               <h4>
                 Additionally, you must meet at least one of the following
                 conditions:
@@ -313,7 +313,7 @@ const InsideCanada = () => {
           ref={(el) => (sectionsRef.current[5] = el)}
         >
           <h2 className={styles.subheading}>Common Reasons for Refusals</h2>
-          <ul className={styles.refusalList}>
+          <ul style={{marginLeft: "40px"}} className={styles.refusalList}>
             <li>
               Lack of proof of funds to afford living and studying in Canada.
             </li>
@@ -369,7 +369,7 @@ const InsideCanada = () => {
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling BCPNP applications with a high success rate.

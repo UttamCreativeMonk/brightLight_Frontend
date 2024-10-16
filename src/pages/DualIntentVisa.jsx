@@ -182,7 +182,7 @@ const DualIntentVisa = () => {
           ref={(el) => (sectionsRef.current[2] = el)}
         >
           <h2 className={styles.subheading}>Common Scenarios</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               If you've applied for permanent residence through spousal
               sponsorship and wish to reunite with your spouse in Canada while
@@ -309,7 +309,7 @@ const DualIntentVisa = () => {
           ref={(el) => (sectionsRef.current[5] = el)}
         >
           <h2 className={styles.subheading}>Common Refusal Reasons</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               Failure to demonstrate genuine dual intent is a common reason for
               your dual intent visa application to be refused.
@@ -392,7 +392,7 @@ const DualIntentVisa = () => {
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

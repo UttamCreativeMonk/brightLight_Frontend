@@ -184,6 +184,7 @@ const EntryLevelSemiSkilled = () => {
           Benefits of BCPNP Entry Level and Semi-Skilled Worker (ELSS) Stream
         </h2>
         <ul
+          style={{ marginLeft: "40px" }}
           className={`${styles.list} ${styles.section}`}
           id="testing3"
           ref={(el) => (sectionsRef.current[4] = el)}
@@ -239,11 +240,13 @@ const EntryLevelSemiSkilled = () => {
               Location-specific variations apply:
               <ul className={styles.nestedList}>
                 <li className={styles.nestedListItem}>
-               <strong> Northeast Development Region of BC:</strong>   All NOC 4 or 5 occupations
-                  are eligible except for live-in caregivers (NOC 44100).
+                  <strong> Northeast Development Region of BC:</strong> All NOC
+                  4 or 5 occupations are eligible except for live-in caregivers
+                  (NOC 44100).
                 </li>
                 <li className={styles.nestedListItem}>
-                <strong> Outside the Northeast Development Region:</strong>Eligible occupations include:
+                  <strong> Outside the Northeast Development Region:</strong>
+                  Eligible occupations include:
                   <ul className={styles.nestedList}>
                     <li className={styles.nestedListItem}>
                       Travel and accommodation roles (e.g., hotel front desk
@@ -277,9 +280,7 @@ const EntryLevelSemiSkilled = () => {
           >
             Work Experience
           </h3>
-          <ul
-            className={styles.list} 
-          >
+          <ul style={{ marginLeft: "20px" }} className={styles.list}>
             <li className={styles.listItem}>
               Maintain full-time employment (averaging at least 30 hours per
               week year-round) with the BC employer supporting your BCPNP
@@ -299,6 +300,7 @@ const EntryLevelSemiSkilled = () => {
             Education
           </h3>
           <ul
+            style={{ marginLeft: "20px" }}
             className={`${styles.list} ${styles.section}`}
             id="testing9"
             ref={(el) => (sectionsRef.current[11] = el)}
@@ -321,6 +323,7 @@ const EntryLevelSemiSkilled = () => {
             Language Proficiency
           </h3>
           <ul
+            style={{ marginLeft: "20px" }}
             className={`${styles.list} ${styles.section}`}
             id="testing11"
             ref={(el) => (sectionsRef.current[13] = el)}
@@ -732,7 +735,7 @@ const EntryLevelSemiSkilled = () => {
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{ marginLeft: "40px" }}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

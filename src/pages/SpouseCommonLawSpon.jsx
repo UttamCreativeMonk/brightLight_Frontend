@@ -218,7 +218,7 @@ const SpouseCommonLawSpon = () => {
             Eligibility criteria for sponsoring your Spouse or Common-law
             Partner for Permanent Residence in Canada:
           </h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>You must be a Canadian citizen or permanent resident. </li>
             <li>
               You must show that you have the financial means to support your
@@ -241,7 +241,7 @@ const SpouseCommonLawSpon = () => {
           <h2 className={styles.subheading}>
             How to apply to sponsoring your Spouse or Common-law Partner?
           </h2>
-          <ol>
+          <ol style={{marginLeft: "40px"}}>
             <li>
               You will need to submit a comprehensive application package to
               IRCC, including marriage certificates, proof of cohabitation (such
@@ -332,7 +332,7 @@ const SpouseCommonLawSpon = () => {
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

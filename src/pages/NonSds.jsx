@@ -196,7 +196,7 @@ const NonSds = () => {
           <div className={styles.grid}>
             <div className={styles.pros}>
               <h3>Pros:</h3>
-              <ul>
+              <ul style={{marginLeft: "40px"}}>
                 <li>No specific nationality requirements</li>
                 <li>Allows students from all countries to apply.</li>
                 <li>More flexibility in choosing a DLI.</li>
@@ -205,7 +205,7 @@ const NonSds = () => {
             </div>
             <div className={styles.cons}>
               <h3>Cons:</h3>
-              <ul>
+              <ul style={{marginLeft: "40px"}}>
                 <li>Longer application process</li>
                 <li>Processing times can be unpredictable.</li>
                 <li>Higher funds are required.</li>
@@ -221,7 +221,7 @@ const NonSds = () => {
           ref={(el) => (sectionsRef.current[2] = el)}
         >
           <h2 className={styles.subheading}>Eligibility for Non-SDS Program</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               You need to have a valid offer of admission from a designated
               learning institution (DLI) in Canada.
@@ -443,7 +443,7 @@ const NonSds = () => {
           <ul>
             <li style={{ listStyle: "none" }}>
               <strong>Graduate Programs:</strong>
-              <ul>
+              <ul style={{marginLeft: "40px"}}>
                 <li>
                   Graduate programs encompass master’s and doctorate degrees
                   granted by universities or polytechnic institutions.
@@ -455,13 +455,13 @@ const NonSds = () => {
               <li
                 style={{
                   listStyle: "disc",
-                  marginLeft: "20px",
+                  marginLeft: "40px",
                   marginTop: "10px",
                 }}
               >
                 Professional degree programs include the following:
               </li>
-              <ul style={{ marginLeft: "40px" }}>
+              <ul style={{ marginLeft: "80px" }}>
                 <li>Doctor of Dental Surgery (DDS, DMD)</li>
                 <li>Bachelor of Law or Juris Doctor (LLB, JD, BCL)</li>
                 <li>Doctor of Medicine (MD)</li>
@@ -485,7 +485,7 @@ const NonSds = () => {
             Don’t forget to avoid these common Non-SDS or General Student Visa
             refusal reasons and increase your chances of approval.
           </h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               Your application is incomplete, and you did not share all the
               required documentation.
@@ -545,7 +545,7 @@ const NonSds = () => {
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

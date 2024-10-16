@@ -149,7 +149,7 @@ const SuperVisa = () => {
 
         <section className={`${styles.benefits} ${styles.section}`} id="benifits" ref={(el) => sectionsRef.current[2] = el}>
           <h2 className={styles.subheading}>Benefits of Super Visa</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               It allows them to visit their children or grandchildren in Canada
               for up to five continuous years from their first arrival, with no
@@ -288,7 +288,7 @@ const SuperVisa = () => {
 
         <section  className={`${styles.refusalReasons} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[6] = el}>
           <h2 className={styles.subheading}>Common Reasons for Refusal</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               Sponsor does not have sufficient financial support based on family
               size. This is a common reason for refusal because you may have
@@ -359,7 +359,7 @@ const SuperVisa = () => {
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

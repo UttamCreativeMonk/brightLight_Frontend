@@ -62,7 +62,7 @@ const Pnp = () => {
 
   return (
     <>
-          <Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle
@@ -191,7 +191,7 @@ const Pnp = () => {
           BC Provincial Nominee Program (BC PNP)
         </h2>
         <button
-          style={{marginTop: "10px", marginBottom: "60px"}}
+          style={{ marginTop: "10px", marginBottom: "60px" }}
           className={`${styles.button1} ${styles.section}`}
           id="testing16"
           ref={(el) => (sectionsRef.current[16] = el)}
@@ -209,7 +209,11 @@ const Pnp = () => {
           out.
         </h2>
         <ul
-          style={{marginTop: "20px", marginBottom: "60px"}}
+          style={{
+            marginTop: "20px",
+            marginBottom: "60px",
+            marginLeft: "40px",
+          }}
           className={`${styles.list} ${styles.section}`}
           id="testing4"
           ref={(el) => (sectionsRef.current[5] = el)}
@@ -248,7 +252,11 @@ const Pnp = () => {
           criteria may include:
         </p>
         <ul
-          style={{marginLeft: "40px", marginTop: "20px", marginBottom: "60px"}}
+          style={{
+            marginLeft: "40px",
+            marginTop: "20px",
+            marginBottom: "60px",
+          }}
           className={`${styles.list} ${styles.section}`}
           id="testing6"
           ref={(el) => (sectionsRef.current[7] = el)}
@@ -275,7 +283,11 @@ const Pnp = () => {
           How to apply for PNP?
         </h3>
         <ul
-          style={{marginTop: "20px", marginBottom: "60px"}}
+          style={{
+            marginTop: "20px",
+            marginBottom: "60px",
+            marginLeft: "40px",
+          }}
           className={`${styles.list} ${styles.section}`}
           id="testing8"
           ref={(el) => (sectionsRef.current[49] = el)}
@@ -302,7 +314,7 @@ const Pnp = () => {
             nominate you for permanent residence.
           </li>
         </ul>
-       
+
         <h3
           className={`${styles.heading3} ${styles.section}`}
           id="refusal-reasons"
@@ -311,7 +323,11 @@ const Pnp = () => {
           Common reasons for refusals for PNP
         </h3>
         <ul
-          style={{marginTop: "20px", marginBottom: "60px"}}
+          style={{
+            marginTop: "20px",
+            marginBottom: "60px",
+            marginLeft: "40px",
+          }}
           className={`${styles.list} ${styles.section}`}
           id="testing9"
           ref={(el) => (sectionsRef.current[11] = el)}
@@ -369,6 +385,31 @@ const Pnp = () => {
           Book Appointment
         </button> */}
 
+        <section
+          className={`${styles.whyChooseUs} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[39] = el)}
+        >
+          <h2>Why Choose Us?</h2>
+          <ul style={{ marginLeft: "40px" }}>
+            <li>
+              <strong>Experienced Team:</strong> Over a decade of experience in
+              handling Immigration applications with a high success rate.
+            </li>
+            <li>
+              <strong>Tailored Approach:</strong> Personalized services and
+              strategies based on your specific case.
+            </li>
+            <li>
+              <strong>High Success Rate:</strong> Proven track record using case
+              law and precedents for positive results.
+            </li>
+            <li>
+              <strong>Comprehensive Support:</strong> Assistance from the start
+              of the application process to obtaining your PR.
+            </li>
+          </ul>
+        </section>
       </div>
 
       <div id="faqs">

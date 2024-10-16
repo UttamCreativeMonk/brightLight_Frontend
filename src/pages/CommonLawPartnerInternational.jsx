@@ -129,6 +129,7 @@ const CommonLawPartnerInternational = () => {
             International Student:
           </h2>
           <ul
+            style={{ marginLeft: "40px" }}
             className={`${styles.section} ${styles.section}`}
             id="testing"
             ref={(el) => (sectionsRef.current[3] = el)}
@@ -193,8 +194,9 @@ const CommonLawPartnerInternational = () => {
             For the international student to be eligible to apply for their
             partner under administrative code C42, they must meet all of the
             following requirements:
-          </p>
+          </p>  
           <ul
+            style={{ marginLeft: "40px", marginTop: "0px" }}
             className={`${styles.section} ${styles.section}`}
             id="testing"
             ref={(el) => (sectionsRef.current[6] = el)}
@@ -248,12 +250,21 @@ const CommonLawPartnerInternational = () => {
           >
             Applications submitted on or after March 19, 2024
           </h3>
-          <p className={`${styles.section} ${styles.section}`} id="testing" ref={(el) => (sectionsRef.current[8] = el)}>
+          <p
+            className={`${styles.section} ${styles.section}`}
+            id="testing"
+            ref={(el) => (sectionsRef.current[8] = el)}
+          >
             For the international graduate to be eligible to apply for their
             partner under administrative code C42, they must meet all of the
             following requirements:
           </p>
-          <ul className={`${styles.section} ${styles.section}`} id="testing" ref={(el) => (sectionsRef.current[9] = el)}>
+          <ul  
+          style={{marginLeft: "40px", marginTop: "-20px"}}
+            className={`${styles.section} ${styles.section}`}
+            id="testing"
+            ref={(el) => (sectionsRef.current[9] = el)}
+          >
             <li>
               hold a valid study permit AND must be physically residing in
               Canada while studying or be approved for a study permit, if
@@ -275,10 +286,19 @@ const CommonLawPartnerInternational = () => {
             </ul>
           </ul>
 
-          <h3 className={`${styles.section} ${styles.section}`} id="testing" ref={(el) => (sectionsRef.current[10] = el)}>
+          <h3
+            className={`${styles.section} ${styles.section}`}
+            id="testing"
+            ref={(el) => (sectionsRef.current[10] = el)}
+          >
             Professional degree programs are identified under the following:
           </h3>
-          <ul className={`${styles.section} ${styles.section}`} id="testing" ref={(el) => (sectionsRef.current[11] = el)}>
+          <ul
+          style={{marginLeft: "40px", marginTop: "0px"}}
+            className={`${styles.section} ${styles.section}`}
+            id="testing"
+            ref={(el) => (sectionsRef.current[11] = el)}
+          >
             <li>Doctor of Dental Surgery (DDS, DMD)</li>
             <li>Bachelor of Law or Juris Doctor (LLB, JD, BCL)</li>
             <li>Doctor of Medicine (MD)</li>
@@ -289,8 +309,19 @@ const CommonLawPartnerInternational = () => {
             <li>Bachelor of Education (BEd)</li>
             <li>Bachelor of Engineering (BEng, BE, BASc) only</li>
           </ul>
-          <p className={`${styles.section} ${styles.section}`} id="testing" ref={(el) => (sectionsRef.current[12] = el)}>The international student is not eligible to apply if: </p>
-          <ul className={`${styles.section} ${styles.section}`} id="testing" ref={(el) => (sectionsRef.current[13] = el)}>
+          <p
+            className={`${styles.section} ${styles.section}`}
+            id="testing"
+            ref={(el) => (sectionsRef.current[12] = el)}
+          >
+            The international student is not eligible to apply if:{" "}
+          </p>
+          <ul
+          style={{marginLeft: "40px", marginTop: "-20px"}}
+            className={`${styles.section} ${styles.section}`}
+            id="testing"
+            ref={(el) => (sectionsRef.current[13] = el)}
+          >
             <li>Not enrolled while residing in Canada.</li>
             <li>Enrolled in part-time studies.</li>
             <li>
@@ -300,13 +331,32 @@ const CommonLawPartnerInternational = () => {
           </ul>
         </section>
 
-        <section className={`${styles.eligibility} ${styles.section}`} id="testing" ref={(el) => (sectionsRef.current[14] = el)}>
-          <h2 className={`${styles.section} ${styles.section}`} id="testing" ref={(el) => (sectionsRef.current[15] = el)}>
+        <section
+          className={`${styles.eligibility} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[14] = el)}
+        >
+          <h2
+            className={`${styles.section} ${styles.section}`}
+            id="testing"
+            ref={(el) => (sectionsRef.current[15] = el)}
+          >
             Eligibilty Requirements for accompanying spouse or common-law
             partner:
           </h2>
-          <p className={`${styles.section} ${styles.section}`} id="testing" ref={(el) => (sectionsRef.current[16] = el)}>Your family member must meet following requirements:</p>
-          <ul className={`${styles.section} ${styles.section}`} id="testing" ref={(el) => (sectionsRef.current[17] = el)}>
+          <p
+            className={`${styles.section} ${styles.section}`}
+            id="testing"
+            ref={(el) => (sectionsRef.current[16] = el)}
+          >
+            Your family member must meet following requirements:
+          </p>
+          <ul
+          style={{marginLeft: "40px", marginTop: "-20px"}}
+            className={`${styles.section} ${styles.section}`}
+            id="testing"
+            ref={(el) => (sectionsRef.current[17] = el)}
+          >
             <li>
               {" "}
               <strong>General Eligibility:</strong> The applicant must meet
@@ -339,12 +389,16 @@ const CommonLawPartnerInternational = () => {
           </ul>
         </section>
 
-        <section className={`${styles.application} ${styles.section}`} id="testing" ref={(el) => (sectionsRef.current[18] = el)}>
-          <h2 > 
+        <section
+          className={`${styles.application} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[18] = el)}
+        >
+          <h2>
             When to apply for Open Work Permit for Spouse or Common-law Partner
             of an International Student?
           </h2>
-          <ol>
+          <ol style={{marginLeft: "40px", marginTop: "10px"}}>
             <li>
               You can choose to apply together for a Study Permit and Spousal
               Open Work Permit before traveling to Canada. If the applications
@@ -366,12 +420,16 @@ const CommonLawPartnerInternational = () => {
           </ol>
         </section>
 
-        <section className={`${styles.section} ${styles.section}`} id="testing" ref={(el) => (sectionsRef.current[19] = el)}>
+        <section
+          className={`${styles.section} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[19] = el)}
+        >
           <h2>
             How to apply for Open Work Permit for Spouse or Common-law Partner
             of an International Student?
           </h2>
-          <ol>
+          <ol style={{marginLeft: "40px", marginTop: "10px"}}>
             <li>
               Gather documents to prove above-mentioned eligibility criteria for
               internation student.
@@ -390,12 +448,16 @@ const CommonLawPartnerInternational = () => {
           </ol>
         </section>
 
-        <section className={`${styles.refusalReasons} ${styles.section}`} id="testing" ref={(el) => (sectionsRef.current[20] = el)}>
+        <section
+          className={`${styles.refusalReasons} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[20] = el)}
+        >
           <h2>
             Common reasongs for refusal of Open Work Permit for Spouse or
             Common-law Partner of an International Student:
           </h2>
-          <ul>
+          <ul style={{marginLeft: "40px", marginTop: "10px"}}>
             <li>
               Lack of documentation verifying the enrollment status of the
               international student.
@@ -422,10 +484,10 @@ const CommonLawPartnerInternational = () => {
         <section
           className={`${styles.whyChooseUs} ${styles.section}`}
           id="why-choose-us"
-          ref={(el) => (sectionsRef.current[9] = el)}
+          ref={(el) => (sectionsRef.current[90] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

@@ -225,7 +225,7 @@ const LonelyCanadian = () => {
           ref={(el) => (sectionsRef.current[2] = el)}
         >
           <h2>Duration of Undertaking</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               The undertaking to sponsor other relatives to Canada lasts for ten
               years.
@@ -259,7 +259,7 @@ const LonelyCanadian = () => {
           ref={(el) => (sectionsRef.current[3] = el)}
         >
           <h2>Bankruptcy and Criminal Sentences</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               Sponsoring other relatives is not allowed if the sponsor is filing
               for bankruptcy.
@@ -531,7 +531,7 @@ const LonelyCanadian = () => {
           ref={(el) => (sectionsRef.current[99] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

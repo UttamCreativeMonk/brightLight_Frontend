@@ -204,7 +204,7 @@ const StudyPermitMinors = () => {
           ref={(el) => (sectionsRef.current[2] = el)}
         >
           <h2 className={styles.subheading}>Eligibility for the Program</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>Be between the ages of 12 and 17</li>
             <li>
               Have a valid acceptance letter from a designated learning
@@ -262,7 +262,7 @@ const StudyPermitMinors = () => {
           ref={(el) => (sectionsRef.current[4] = el)}
         >
           <h2 className={styles.subheading}>Reasons for Refusal</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>The nature of the minor's program of study is irrelevant.</li>
             <li>The minor's age is not between 12 and 17.</li>
             <li>
@@ -322,7 +322,7 @@ const StudyPermitMinors = () => {
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

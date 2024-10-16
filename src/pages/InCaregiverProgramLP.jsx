@@ -62,7 +62,7 @@ const InCaregiverProgramLP = () => {
 
   return (
     <>
-          <Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle
@@ -162,7 +162,7 @@ const InCaregiverProgramLP = () => {
           ref={(el) => (sectionsRef.current[1] = el)}
         >
           <h2>Benefits of In Home Caregiver Program</h2>
-          <ul>
+          <ul style={{ marginLeft: "40px" }}>
             <li>
               The employers can hire a full-time dedicated caregiver for the
               person in need, thereby creating a less stressful environment when
@@ -511,12 +511,12 @@ const InCaregiverProgramLP = () => {
           style={{ marginTop: "50px" }}
           className={`${styles.section} ${styles.section}`}
           id="why-choose-us"
-          ref={(el) => (sectionsRef.current[15] = el)}
+          ref={(el) => (sectionsRef.current[151] = el)}
         >
           <h2 style={{ fontSize: "24px", marginBottom: "20px" }}>
             Why Choose Us?
           </h2>
-          <ul>
+          <ul style={{ marginLeft: "40px" }}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling BCPNP applications with a high success rate.

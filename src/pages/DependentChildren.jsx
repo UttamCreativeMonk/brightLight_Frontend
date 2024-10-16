@@ -184,7 +184,7 @@ const DependentChildren = () => {
           <h2 className={styles.marginTop}>
             Eligibility requirements for the sponsor:
           </h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               You must have an annual income that meets the Canadian income
               requirements for sponsorship.
@@ -204,7 +204,7 @@ const DependentChildren = () => {
           ref={(el) => (sectionsRef.current[2] = el)}
         >
           <h2>How to apply for the Dependent Children Sponsorship Program?</h2>
-          <ol>
+          <ol style={{marginLeft: "40px"}}>
             <li>
               Collect and submit a variety of documents to support your
               application, such as proof of identity, proof of relationship with
@@ -231,7 +231,7 @@ const DependentChildren = () => {
             Common reasons for refusals of Canada’s Dependent Children
             Sponsorship Program:
           </h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               Fails to meet the eligibility criteria for the DC Program, such as
               being a Canadian citizen or permanent resident, having the
@@ -295,7 +295,7 @@ const DependentChildren = () => {
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

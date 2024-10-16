@@ -9,6 +9,7 @@ import ogImage from "../assets/ogImage.png";
 import { Helmet } from "react-helmet-async";
 
 const RestorationStatusDraft = () => {
+  let [metaData, setMetaData] = useState([]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -60,7 +61,7 @@ const RestorationStatusDraft = () => {
 
   return (
     <>
-          <Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle
@@ -117,12 +118,22 @@ const RestorationStatusDraft = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
+              <p onClick={() => scrollToSection("how-to-apply")}>
+                How to Apply?
+              </p>
               <p onClick={() => scrollToSection("requirement")}>Requirement</p>
-              <p onClick={() => scrollToSection("book-appointment")}>Book Appointment</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("book-appointment")}>
+                Book Appointment
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -131,10 +142,18 @@ const RestorationStatusDraft = () => {
       </div>
 
       <div className={styles.container}>
-        <h1  className={`${styles.heading} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
+        <h1
+          className={`${styles.heading} ${styles.section}`}
+          id="about-program"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
           Restoration of Status
         </h1>
-        <section className={`${styles.introduction} ${styles.section}`} id="testing" ref={(el) => sectionsRef.current[1] = el}>
+        <section
+          className={`${styles.introduction} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
           <p>
             Are you a temporary resident in Canada who has lost status? Don't
             despair! There is a way to regain your legal standing in Canada.
@@ -158,13 +177,17 @@ const RestorationStatusDraft = () => {
             continue enjoying the advantages of living and working in Canada.
           </p>
           <p>
-            <strong>Important things to know:</strong> If you're a student or worker on
-            temporary status, you're not allowed to work or study while your
-            restoration application is under review.
+            <strong>Important things to know:</strong> If you're a student or
+            worker on temporary status, you're not allowed to work or study
+            while your restoration application is under review.
           </p>
         </section>
 
-        <section className={`${styles.checkStatus} ${styles.section}`} id="check-status" ref={(el) => sectionsRef.current[2] = el}>
+        <section
+          className={`${styles.checkStatus} ${styles.section}`}
+          id="check-status"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
           <h2 className={styles.subheading}>
             How to Check if Your Immigration Status is Valid
           </h2>
@@ -187,12 +210,17 @@ const RestorationStatusDraft = () => {
           </ul>
         </section>
 
-        <section className={`${styles.requirements} ${styles.section}`} id="requirement" ref={(el) => sectionsRef.current[3] = el}>
+        <section
+          className={`${styles.requirements} ${styles.section}`}
+          id="requirement"
+          ref={(el) => (sectionsRef.current[3] = el)}
+        >
           <h2 className={styles.subheading}>
             What Are the Requirements for Restoration of Your Status?
           </h2>
           <h4>
-          To regain your legal status in Canada, you must meet the following requirements:
+            To regain your legal status in Canada, you must meet the following
+            requirements:
           </h4>
           <ul>
             <li>
@@ -215,7 +243,11 @@ const RestorationStatusDraft = () => {
           </p>
         </section>
 
-        <section className={`${styles.applicationProcess} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[4] = el}>
+        <section
+          className={`${styles.applicationProcess} ${styles.section}`}
+          id="how-to-apply"
+          ref={(el) => (sectionsRef.current[4] = el)}
+        >
           <h2 className={styles.subheading}>
             How to Apply for Restoration of Status
           </h2>
@@ -249,11 +281,15 @@ const RestorationStatusDraft = () => {
           </ul>
         </section>
 
-        <section className={`${styles.refusalReasons} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[5] = el}>
+        <section
+          className={`${styles.refusalReasons} ${styles.section}`}
+          id="refusal-reasons"
+          ref={(el) => (sectionsRef.current[5] = el)}
+        >
           <h2 className={styles.subheading}>
             Common Reasons for Refusal of Restoration of Status Applications
           </h2>
-          <ul>
+          <ul style={{ marginLeft: "40px" }}>
             <li>
               Missed the deadline to submit the restoration application within
               90 days of the expiry of status.
@@ -271,7 +307,11 @@ const RestorationStatusDraft = () => {
           </ul>
         </section>
 
-        <section className={`${styles.assistance} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[6] = el}>
+        <section
+          className={`${styles.assistance} ${styles.section}`}
+          id="why-choose-us"
+          ref={(el) => (sectionsRef.current[6] = el)}
+        >
           <h2 className={styles.subheading}>Still Not Sure?</h2>
           <p>
             If you have received a refusal for any reason, do not worry. With
@@ -293,14 +333,15 @@ const RestorationStatusDraft = () => {
             application process all the way to obtaining your visa. Start your
             process now.
           </p>
-          <button className={styles.button}
-              onClick={() =>
-                (window.location.href =
-                  "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-              }
-            >
-              Book Appointment
-            </button>
+          <button
+            className={styles.button}
+            onClick={() =>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
+          >
+            Book Appointment
+          </button>
         </section>
         <section
           className={`${styles.whyChooseUs} ${styles.section}`}
@@ -308,7 +349,7 @@ const RestorationStatusDraft = () => {
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{ marginLeft: "40px" }}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

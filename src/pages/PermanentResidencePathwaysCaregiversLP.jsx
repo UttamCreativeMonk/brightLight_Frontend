@@ -161,7 +161,7 @@ const PermanentResidencePathwaysCaregiversLP = () => {
         <h2 className={styles.subtitle} style={{ marginTop: "50px" }}>
           Here are the permanent residence pathways available for caregivers:
         </h2>
-        <ul className={styles.list}>
+        <ul style={{marginLeft: "40px"}} className={styles.list}>
           <li>
             <a href="#CategoryA">
               <strong>(Category A – Gaining experience)</strong> for Home
@@ -186,6 +186,7 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           Benefits of Permanent Residence Pathways available for Caregivers:
         </h2>
         <ul
+        style={{marginLeft: "40px"}}
           className={`${styles.list} ${styles.section}`}
           id="testing2"
           ref={(el) => (sectionsRef.current[3] = el)}
@@ -318,7 +319,7 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           4. Language requirements:
         </h3>
         <ul
-          style={{ marginTop: "30px" }}
+          style={{ marginTop: "30px", marginLeft: "40px" }}
           className={`${styles.list} ${styles.section}`}
           id="testing9"
           ref={(el) => (sectionsRef.current[12] = el)}
@@ -399,6 +400,7 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           Caregivers?
         </h2>
         <ol
+        style={{marginLeft: "40px"}}
           className={`${styles.list} ${styles.section}`}
           id="testing14"
           ref={(el) => (sectionsRef.current[18] = el)}
@@ -425,6 +427,7 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           pilot:
         </h3>
         <ol
+        style={{marginLeft: "40px"}}
           className={`${styles.list} ${styles.section}`}
           id="testing16"
           ref={(el) => (sectionsRef.current[20] = el)}
@@ -457,6 +460,7 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           Now if you are applying to Direct to PR category of Caregiver pilot:
         </h3>
         <ol
+        style={{marginLeft: "40px"}}
           className={`${styles.list} ${styles.section}`}
           id="testing18"
           ref={(el) => (sectionsRef.current[22] = el)}
@@ -517,7 +521,7 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           ref={(el) => (sectionsRef.current[99] = el)}
         >
           <h2 style={{ fontSize: "22px" }}>Why Choose Us?</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

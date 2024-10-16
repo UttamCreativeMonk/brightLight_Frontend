@@ -168,7 +168,7 @@ const BridgingOpenWorkPermitLP = () => {
             ref={(el) => (sectionsRef.current[1] = el)}
           >
             <h2>Benefits of Bridging Open Work Permit</h2>
-            <ul>
+            <ul style={{marginLeft: "40px"}}>
               <li>
                 No interruption in your employment while you wait for the
                 results of your permanent residence application.
@@ -337,7 +337,7 @@ const BridgingOpenWorkPermitLP = () => {
             ref={(el) => (sectionsRef.current[3] = el)}
           >
             <h2>How to apply for Bridging Open Work Permit:</h2>
-            <ol>
+            <ol style={{marginLeft: "40px"}}>
               <li>
                 After your permanent residency application has been completed
                 and submitted, gather documents to prove above-mentioned
@@ -395,7 +395,7 @@ const BridgingOpenWorkPermitLP = () => {
             ref={(el) => (sectionsRef.current[9] = el)}
           >
             <h2>Why Choose Us?</h2>
-            <ul>
+            <ul style={{marginLeft: "40px"}}>
               <li>
                 <strong>Experienced Team:</strong> Over a decade of experience
                 in handling Immigration applications with a high success rate.

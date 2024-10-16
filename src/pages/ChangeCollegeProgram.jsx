@@ -179,7 +179,7 @@ const ChangeCollegeProgram = () => {
             Eligibility Criteria for Changing Your College or Program in Canada
             (DLI Change)
           </h2>
-          <ul className={styles.eligibilityList}>
+          <ul style={{marginLeft: "40px"}} className={styles.eligibilityList}>
             <li>
               Your original study permit must still be valid or have an
               extension application pending.
@@ -241,7 +241,7 @@ const ChangeCollegeProgram = () => {
             Reasons for Refusals for Changing Your College or Program in Canada
             (DLI Change)
           </h2>
-          <ul className={styles.refusalList}>
+          <ul style={{marginLeft: "40px"}} className={styles.refusalList}>
             <li>
               If your academic background is not strong enough for the new
               program, IRCC will refuse your application.
@@ -300,7 +300,7 @@ const ChangeCollegeProgram = () => {
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

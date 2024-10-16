@@ -6,7 +6,6 @@ import Testimonials from "../sections/Testimonials";
 import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
 
-
 const HealthcareTargetedDraw = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -20,7 +19,6 @@ const HealthcareTargetedDraw = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
-
 
   const sectionsRef = useRef([]);
 
@@ -61,12 +59,22 @@ const HealthcareTargetedDraw = () => {
               <h3>Quick Access</h3>
             </div>
             <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
+              <p onClick={() => scrollToSection("about-program")}>
+                About the Program
+              </p>
               <p onClick={() => scrollToSection("eligiblity")}>Eligiblity</p>
-              <p onClick={() => scrollToSection("eligiblity-occupation")}>Eligiblity Occupation</p>
-              <p onClick={() => scrollToSection("previous-draw-history")}>Previous Draw History</p>
-              <p onClick={() => scrollToSection("why-choose-us")}>Why Choose Us?</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+              <p onClick={() => scrollToSection("eligiblity-occupation")}>
+                Eligiblity Occupation
+              </p>
+              <p onClick={() => scrollToSection("previous-draw-history")}>
+                Previous Draw History
+              </p>
+              <p onClick={() => scrollToSection("why-choose-us")}>
+                Why Choose Us?
+              </p>
+              <p onClick={() => scrollToSection("testimonials")}>
+                Testimonials
+              </p>
               <p onClick={() => scrollToSection("faqs")}>FAQs</p>
               <p onClick={() => scrollToSection("blogs")}>Blogs</p>
             </div>
@@ -79,7 +87,11 @@ const HealthcareTargetedDraw = () => {
           Category-Based Express Entry Selection Draws: Healthcare Draw
         </h1>
 
-        <section className={`${styles.introduction} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
+        <section
+          className={`${styles.introduction} ${styles.section}`}
+          id="about-program"
+          ref={(el) => (sectionsRef.current[0] = el)}
+        >
           <p>
             In 2023, the Canadian Government launched the Express Entry
             healthcare draws, a strategic initiative aimed at attracting and
@@ -95,7 +107,11 @@ const HealthcareTargetedDraw = () => {
           </p>
         </section>
 
-        <section className={`${styles.eligibilityCriteria} ${styles.section}`} id="eligiblity" ref={(el) => sectionsRef.current[1] = el}>
+        <section
+          className={`${styles.eligibilityCriteria} ${styles.section}`}
+          id="eligiblity"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
           <h2 className={styles.subheading}>
             Eligibility Criteria for Express Entry Healthcare Draws
           </h2>
@@ -115,53 +131,74 @@ const HealthcareTargetedDraw = () => {
             To be eligible for Express Entry, you must meet the criteria for one
             of the following programs:
           </p>
-          <ul>
-            <li>
+          <ul style={{ marginLeft: "40px" }}>
+            <li
+              style={{
+                display: "flex",
+                alignItems: "flex-end",
+                justifyContent: "flex-start",
+                gap: "10px",
+              }}
+            >
               {/* <Link
                 to=""
                 className={styles.button}
               >
                 
               </Link> */}
-              <button className={styles.button1}
-              onClick={() =>
-                (window.location.href =
-                  "/federal-skilled-worker-program")
-              }
-            >
-             Federal Skilled Worker (FSW)
-            </button>
+              <button
+                className={styles.button1}
+                onClick={() =>
+                  (window.location.href = "/federal-skilled-worker-program")
+                }
+              >
+                Federal Skilled Worker (FSW)
+              </button>
               : No Canadian experience required
             </li>
-            <li>
+            <li
+              style={{
+                display: "flex",
+                alignItems: "flex-end",
+                justifyContent: "flex-start",
+                gap: "10px",
+              }}
+            >
               {/* <Link to="" className={styles.button}>
                
               </Link> */}
-              <button className={styles.button1}
-              onClick={() =>
-                (window.location.href =
-                  "/canadian-experience-class")
-              }
-            >
-             Canadian Experience Class (CEC)
-            </button>
+              <button
+                className={styles.button1}
+                onClick={() =>
+                  (window.location.href = "/canadian-experience-class")
+                }
+              >
+                Canadian Experience Class (CEC)
+              </button>
               : Canadian experience required
             </li>
-            <li>
+            <li
+              style={{
+                display: "flex",
+                alignItems: "flex-end",
+                justifyContent: "flex-start",
+                gap: "10px",
+              }}
+            >
               {/* <Link
                 to=""
                 className={styles.button}
               >
             
               </Link> */}
-              <button className={styles.button1}
-              onClick={() =>
-                (window.location.href =
-                  "/federal-skilled-worker-program")
-              }
-            >
-             Federal Skilled Trades (FST)
-            </button>
+              <button
+                className={styles.button1}
+                onClick={() =>
+                  (window.location.href = "/federal-skilled-worker-program")
+                }
+              >
+                Federal Skilled Trades (FST)
+              </button>
               : Dedicated to trades workers
             </li>
           </ul>
@@ -187,7 +224,11 @@ const HealthcareTargetedDraw = () => {
           </p>
         </section>
 
-        <section className={`${styles.eligibleOccupations} ${styles.section}`} id="eligiblity-occupation" ref={(el) => sectionsRef.current[2] = el}>
+        <section
+          className={`${styles.eligibleOccupations} ${styles.section}`}
+          id="eligiblity-occupation"
+          ref={(el) => (sectionsRef.current[2] = el)}
+        >
           <h2 className={styles.subheading}>
             Eligible Occupations for Express Entry Healthcare Draws
           </h2>
@@ -208,8 +249,11 @@ const HealthcareTargetedDraw = () => {
             </li>
             <li>A valid Express Entry profile.</li>
           </ul>
-          <p>**The following table contains the most up-to-date list of eligible occupations. Remember that Canada
-          may change these occupations in response to labor market conditions.</p>
+          <p>
+            **The following table contains the most up-to-date list of eligible
+            occupations. Remember that Canada may change these occupations in
+            response to labor market conditions.
+          </p>
           <p>
             <a
               href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/submit-profile/rounds-invitations/category-based-selection.html"
@@ -430,7 +474,11 @@ const HealthcareTargetedDraw = () => {
           </table>
         </section>
 
-        <section className={`${styles.drawHistory} ${styles.section}`} id="previous-draw-history" ref={(el) => sectionsRef.current[3] = el}>
+        <section
+          className={`${styles.drawHistory} ${styles.section}`}
+          id="previous-draw-history"
+          ref={(el) => (sectionsRef.current[3] = el)}
+        >
           <h2 className={styles.subheading}>
             Express Entry Healthcare Draws History
           </h2>
@@ -443,21 +491,23 @@ const HealthcareTargetedDraw = () => {
           {/* <Link to="" className={styles.button}>
             
           </Link> */}
-          <button className={styles.button}
-              onClick={() =>
-                (window.location.href =
-                  "/previous-draw-history")
-              }
-            >
-              View Previous Draw History
-            </button>
+          <button
+            className={styles.button}
+            onClick={() => (window.location.href = "/previous-draw-history")}
+          >
+            View Previous Draw History
+          </button>
         </section>
 
-        <section className={`${styles.applicationProcess} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[4] = el}>
+        <section
+          className={`${styles.applicationProcess} ${styles.section}`}
+          id="how-to-apply"
+          ref={(el) => (sectionsRef.current[4] = el)}
+        >
           <h2 className={styles.subheading}>
             How to Apply for Express Entry Healthcare Draws
           </h2>
-          <ol>
+          <ol style={{ marginLeft: "40px" }}>
             <li>Submit your profile to the Express Entry pool</li>
             <li>
               Prove that you have at least six months of eligible work
@@ -484,9 +534,11 @@ const HealthcareTargetedDraw = () => {
           </p>
         </section>
 
-
-
-        <section className={`${styles.contact} ${styles.section}`} id="testing1" ref={(el) => sectionsRef.current[5] = el}>
+        <section
+          className={`${styles.contact} ${styles.section}`}
+          id="testing1"
+          ref={(el) => (sectionsRef.current[5] = el)}
+        >
           <h2 className={styles.subheading}>Still Not Sure?</h2>
           <p>
             Contact Brightlight Immigration today to assess your profile and
@@ -508,12 +560,12 @@ const HealthcareTargetedDraw = () => {
           {/* <Link to="" className={styles.button}>
          
           </Link> */}
-          <button className={styles.button}
-              onClick={() =>
-                (window.location.href =
-                  "/contact-us")}>
+          <button
+            className={styles.button}
+            onClick={() => (window.location.href = "/contact-us")}
+          >
             Contact Us
-            </button>
+          </button>
         </section>
 
         {/* <section  className={`${styles.whyChooseUs} ${styles.section}`} id="why-choose-us" ref={(el) => sectionsRef.current[6] = el}>
@@ -532,7 +584,7 @@ const HealthcareTargetedDraw = () => {
           ref={(el) => (sectionsRef.current[6] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{ marginLeft: "40px" }}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

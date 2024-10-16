@@ -47,7 +47,6 @@ let CategoryBased = () => {
       });
   }, []);
 
-
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -127,7 +126,7 @@ let CategoryBased = () => {
             <h1>{data?.heading}</h1>
             <p>{data?.description}</p>
           </div>
-         
+
           {/* <div
             className={`${styles.bannerHeadingRotateParent} ${
               isDropdownOpen ? styles.active : ""}`}>
@@ -153,33 +152,37 @@ let CategoryBased = () => {
               <p>Blogs</p>
             </div>
           </div> */}
-          
         </div>
-                  <div
-            className={`${styles.bannerHeadingRotateParent} ${
-              isDropdownOpen ? styles.active : ""
-            }`}>
-            <div
-              className={styles.bannerHeadingRotate}
-              onClick={toggleDropdown}>
-              <h3>Quick Access</h3>
-             </div>
-            <div className={styles.bannerHeadingRotatePara}>
-              <p onClick={() => scrollToSection("about-program")}>About the Program</p>
-              <p onClick={() => scrollToSection("benefits")}>Benefits</p>
-              <p onClick={() => scrollToSection("categories")}>Categories</p>
-              <p onClick={() => scrollToSection("HowItWorks")}>How it Works</p>
-              <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
-              <p onClick={() => scrollToSection("drawHistory")}>Draw History</p>
-              <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
-              <p onClick={() => scrollToSection("refusal-reasons")}>Refusal Reasons</p>
-              <p onClick={() => scrollToSection("book-Appointment")}>Book Appointment</p>
-              <p onClick={() => scrollToSection("whyChooseUs")}>Why Choose Us</p>
-              <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
-              <p onClick={() => scrollToSection("faqs")}>FAQs</p>
-              <p onClick={() => scrollToSection("blogs")}>Blogs</p>
-            </div>
+        <div
+          className={`${styles.bannerHeadingRotateParent} ${
+            isDropdownOpen ? styles.active : ""
+          }`}
+        >
+          <div className={styles.bannerHeadingRotate} onClick={toggleDropdown}>
+            <h3>Quick Access</h3>
           </div>
+          <div className={styles.bannerHeadingRotatePara}>
+            <p onClick={() => scrollToSection("about-program")}>
+              About the Program
+            </p>
+            <p onClick={() => scrollToSection("benefits")}>Benefits</p>
+            <p onClick={() => scrollToSection("categories")}>Categories</p>
+            <p onClick={() => scrollToSection("HowItWorks")}>How it Works</p>
+            <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
+            <p onClick={() => scrollToSection("drawHistory")}>Draw History</p>
+            <p onClick={() => scrollToSection("how-to-apply")}>How to Apply?</p>
+            <p onClick={() => scrollToSection("refusal-reasons")}>
+              Refusal Reasons
+            </p>
+            <p onClick={() => scrollToSection("book-Appointment")}>
+              Book Appointment
+            </p>
+            <p onClick={() => scrollToSection("whyChooseUs")}>Why Choose Us</p>
+            <p onClick={() => scrollToSection("testimonials")}>Testimonials</p>
+            <p onClick={() => scrollToSection("faqs")}>FAQs</p>
+            <p onClick={() => scrollToSection("blogs")}>Blogs</p>
+          </div>
+        </div>
       </div>
 
       <div className={styles.canadianParent}>
@@ -196,7 +199,7 @@ let CategoryBased = () => {
       <div className={styles.eligibleParent} id="categories">
         <h1>{data?.drawsHeading}</h1>
         <div className={styles.container}>
-          <div className={styles.column} >
+          <div className={styles.column}>
             <ul>
               <li
                 style={{ cursor: "pointer" }}
@@ -255,7 +258,7 @@ let CategoryBased = () => {
 
       <div className={styles.categoryBasedParent}>
         <div className={styles.categoryBasedMain}>
-          <h1 >{data?.workHeading}</h1>
+          <h1>{data?.workHeading}</h1>
           <div className={styles.categoryBasedContentParent}>
             <div className={styles.categoryBasedContent}>
               <p>{data?.workDescription}</p>
@@ -308,7 +311,7 @@ let CategoryBased = () => {
           {data?.benefitsHeading ? <h1>{data?.benefitsHeading}</h1> : null}
 
           <div className={styles.benifitlistParent}>
-            <ul>
+            <ul style={{ marginLeft: "40px", fontSize: "22px" }}>
               {data?.b1 ? <li>{data?.b1}</li> : null}
               {data?.b2 ? <li>{data?.b2}</li> : null}
               {data?.b3 ? <li>{data?.b3}</li> : null}
@@ -464,7 +467,7 @@ let CategoryBased = () => {
           ) : null}
 
           <div className={styles.refusalListParent}>
-            <ul>
+            <ul style={{ fontSize: "22px" }}>
               {data?.r1 ? <li>{data?.r1}</li> : null}
               {data?.r2 ? <li>{data?.r2}</li> : null}
               {data?.r3 ? <li>{data?.r3}</li> : null}
@@ -489,30 +492,27 @@ let CategoryBased = () => {
         </div>
       </div>
 
-
-
       <section className={styles.whyChooseUs}>
-          <h2>Why Choose Us?</h2>
-          <ul>
-            <li>
-              <strong>Experienced Team:</strong> Over a decade of experience in
-              handling Immigration applications with a high success rate.
-            </li>
-            <li>
-              <strong>Tailored Approach:</strong> Personalized services and
-              strategies based on your specific case.
-            </li>
-            <li>
-              <strong>High Success Rate:</strong> Proven track record using case
-              law and precedents for positive results.
-            </li>
-            <li>
-              <strong>Comprehensive Support:</strong> Assistance from the start
-              of the application process to obtaining your PR.
-            </li>
-          </ul>
-        </section>
-
+        <h2>Why Choose Us?</h2>
+        <ul style={{marginLeft: "40px"}}>
+          <li>
+            <strong>Experienced Team:</strong> Over a decade of experience in
+            handling Immigration applications with a high success rate.
+          </li> 
+          <li>
+            <strong>Tailored Approach:</strong> Personalized services and
+            strategies based on your specific case.
+          </li>
+          <li>
+            <strong>High Success Rate:</strong> Proven track record using case
+            law and precedents for positive results.
+          </li>
+          <li>
+            <strong>Comprehensive Support:</strong> Assistance from the start of
+            the application process to obtaining your PR.
+          </li>
+        </ul>
+      </section>
 
       <div className={styles.appointementParent}>
         <div className={styles.appointementMain} id="book-Appointment">
@@ -522,34 +522,24 @@ let CategoryBased = () => {
           {data?.bookDescription ? <p>{data?.bookDescription}</p> : null}
         </div>
         <button
-            className={styles.button02}  
-            onClick={() =>
-              (window.location.href =
-                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-            }
-          >
-            Book Appointment
-          </button>
+          className={styles.button02}
+          onClick={() =>
+            (window.location.href =
+              "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+          }
+        >
+          Book Appointment
+        </button>
       </div>
 
-
-
-      <div id="whyChooseUs">
-
-      </div>
+      <div id="whyChooseUs"></div>
       <BestChoice />
-      <div id="testimonials">
-
-      </div>
+      <div id="testimonials"></div>
       <Testimonials />
-      <div id="faqs">
-
-      </div>
+      <div id="faqs"></div>
       <FAQ />
-      <div id="blogs">
-
-      </div>
-      <Blogs/>
+      <div id="blogs"></div>
+      <Blogs />
 
       <Footer1 />
     </>

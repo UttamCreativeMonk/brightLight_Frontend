@@ -161,7 +161,7 @@ const OpenWorkVulnerableLP = () => {
           ref={(el) => (sectionsRef.current[1] = el)}
         >
           <h2>Benefits of Open Work Permit for Vulnerable Workers</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Flexibility:</strong> Work with nearly any employer across
               Canada.
@@ -186,7 +186,7 @@ const OpenWorkVulnerableLP = () => {
           ref={(el) => (sectionsRef.current[2] = el)}
         >
           <h2>Eligibility for Open Work Permit for Vulnerable Workers</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               You are inside Canada and hold a specific employer's work permit,
               such as a Labour Market Impact Assessment (LMIA)-based work permit
@@ -268,7 +268,7 @@ const OpenWorkVulnerableLP = () => {
           ref={(el) => (sectionsRef.current[5] = el)}
         >
           <h2>How to Apply</h2>
-          <ol>
+          <ol style={{marginLeft: "40px"}}>
             <li>Collect extensive documents to provide evidence to IRCC.</li>
             <li>
               Draft a mandatory letter describing the abuse, along with a sworn
@@ -325,7 +325,7 @@ const OpenWorkVulnerableLP = () => {
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

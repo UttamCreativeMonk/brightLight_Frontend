@@ -177,6 +177,7 @@ const HealthAuthorityStream = () => {
           Benefits of British Columbia Health Authority Stream
         </h2>
         <ul
+        style={{marginLeft: "40px"}}
           className={`${styles.list} ${styles.section}`}
           id="testing3"
           ref={(el) => (sectionsRef.current[4] = el)}
@@ -227,6 +228,7 @@ const HealthAuthorityStream = () => {
           1. Job Offer
         </h3>
         <ul
+        style={{marginLeft: "40px"}}
           className={`${styles.list} ${styles.section}`}
           id="testing5"
           ref={(el) => (sectionsRef.current[7] = el)}
@@ -267,6 +269,7 @@ const HealthAuthorityStream = () => {
           2. Education and Qualifications
         </h3>
         <ul
+        style={{marginLeft: "40px"}}
           className={`${styles.list} ${styles.section}`}
           id="testing6"
           ref={(el) => (sectionsRef.current[9] = el)}
@@ -285,6 +288,7 @@ const HealthAuthorityStream = () => {
           3. Health Authority Support
         </h3>
         <ul
+        style={{marginLeft: "40px"}}
           className={`${styles.list} ${styles.section}`}
           id="testing8"
           ref={(el) => (sectionsRef.current[11] = el)}
@@ -303,6 +307,7 @@ const HealthAuthorityStream = () => {
           4. Language
         </h3>
         <ul
+        style={{marginLeft: "40px"}}
           className={`${styles.list} ${styles.section}`}
           id="testing10"
           ref={(el) => (sectionsRef.current[13] = el)}
@@ -327,6 +332,7 @@ const HealthAuthorityStream = () => {
           5. Financial Capability
         </h3>
         <ul
+        style={{marginLeft: "40px"}}
           className={`${styles.list} ${styles.section}`}
           id="testing12"
           ref={(el) => (sectionsRef.current[15] = el)}
@@ -362,6 +368,7 @@ const HealthAuthorityStream = () => {
           How to Apply for BC Health Authority Stream?
         </h2>
         <ul
+        style={{marginLeft: "40px"}}
           className={`${styles.list} ${styles.section}`}
           id="testing13"
           ref={(el) => (sectionsRef.current[17] = el)}
@@ -456,7 +463,7 @@ const HealthAuthorityStream = () => {
           ref={(el) => (sectionsRef.current[91] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

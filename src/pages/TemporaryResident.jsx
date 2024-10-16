@@ -62,7 +62,7 @@ const TemporaryResident = () => {
 
   return (
     <>
-          <Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle
@@ -122,7 +122,9 @@ const TemporaryResident = () => {
               <p onClick={() => scrollToSection("about-program")}>
                 About the Program
               </p>
-              <p onClick={() => scrollToSection("visa-categories")}>Visa Categories</p>
+              <p onClick={() => scrollToSection("visa-categories")}>
+                Visa Categories
+              </p>
 
               <p onClick={() => scrollToSection("book-appointment")}>
                 Book Appointment
@@ -149,8 +151,10 @@ const TemporaryResident = () => {
         </h1>
 
         <section
-          className={`${styles.introduction} ${styles.section}`}id="testing"
-          ref={(el) => (sectionsRef.current[1] = el)}>
+          className={`${styles.introduction} ${styles.section}`}
+          id="testing"
+          ref={(el) => (sectionsRef.current[1] = el)}
+        >
           <p>
             Temporary residency in Canada is a status granted by Canadian
             immigration officers to foreign nationals, permitting them to reside
@@ -162,8 +166,8 @@ const TemporaryResident = () => {
           <p>
             When granted temporary residency status, foreign nationals become
             temporary residents of Canada. This status differs from permanent
-            residency, <a href="/pr-renewal">Pr Renewal</a> which allows individuals to stay in
-            Canada indefinitely.
+            residency, <a href="/pr-renewal">Pr Renewal</a> which allows
+            individuals to stay in Canada indefinitely.
           </p>
           <p>
             Canada warmly welcomes visitors, workers, and entrepreneurs from
@@ -178,43 +182,50 @@ const TemporaryResident = () => {
             Visa Categories under Temporary Residency
           </h2>
           <div className={styles.buttonContainer}>
-            <button onClick={() =>(window.location.href ="/super-visa")}
+            <button
+              onClick={() => (window.location.href = "/super-visa")}
               className={styles.button}
             >
               Super Visa
             </button>
             <button
-            onClick={() =>(window.location.href ="/visitor-visa")}
+              onClick={() => (window.location.href = "/visitor-visa")}
               className={styles.button}
             >
               Visitor Visa
             </button>
             <button
-             onClick={() =>(window.location.href ="/temporary-resident-permit-draft")}
+              onClick={() =>
+                (window.location.href = "/temporary-resident-permit-draft")
+              }
               className={styles.button}
             >
               Temporary Resident Permits
             </button>
             <button
-             onClick={() =>(window.location.href ="/restoration-status-draft")}
+              onClick={() =>
+                (window.location.href = "/restoration-status-draft")
+              }
               className={styles.button}
             >
               Restoration
             </button>
             <button
-              onClick={() =>(window.location.href ="/extensions-draft")}
+              onClick={() => (window.location.href = "/extensions-draft")}
               className={styles.button}
             >
               Extend Stay
             </button>
             <button
-             onClick={() =>(window.location.href ="/flagpoling")}
+              onClick={() => (window.location.href = "/flagpoling")}
               className={styles.button}
             >
               Flagpole
             </button>
             <button
-              onClick={() =>(window.location.href ="/spousal-open-work-permit")}
+              onClick={() =>
+                (window.location.href = "/spousal-open-work-permit")
+              }
               className={styles.button}
             >
               Spousal Open Work Permit
@@ -228,7 +239,7 @@ const TemporaryResident = () => {
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.
@@ -246,11 +257,16 @@ const TemporaryResident = () => {
               of the application process to obtaining your PR.
             </li>
           </ul>
-          <button   className={styles.button1} id="book-appointment"
-          onClick={() =>(window.location.href ="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")}
-        >
-          Book Appointment
-        </button>
+          <button
+            className={styles.button1}
+            id="book-appointment"
+            onClick={() =>
+              (window.location.href =
+                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
+            }
+          >
+            Book Appointment
+          </button>
         </section>
 
         {/* <section

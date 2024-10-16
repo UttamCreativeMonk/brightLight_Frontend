@@ -121,7 +121,7 @@ const Cby = () => {
             Benefits of Open Work Permit for Spouse or Common-law Partner of an
             International Student
           </h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               It enables your spouse or common-law partner to accompany you to
               Canada and reside with you.
@@ -187,7 +187,7 @@ const Cby = () => {
               className={styles.list}
             >
               <li className={styles.listItem}>
-                proof that the international student is attending a designated
+                Proof that the international student is attending a designated
                 learning institution (DLI)
               </li>
               <li className={styles.listItem}>
@@ -251,7 +251,7 @@ const Cby = () => {
               partner under administrative code C42, they must meet all of the
               following requirements:
             </p>
-            <ul className={styles.list}>
+            <ul style={{marginLeft: "40px"}} className={styles.list}>
               <li className={styles.listItem}>
                 hold a valid study permit AND must be physically residing in
                 Canada while studying
@@ -307,7 +307,7 @@ const Cby = () => {
             <p style={{ fontWeight: "600" }}>
               The international student is not eligible to apply if:
             </p>
-            <ul>
+            <ul style={{marginLeft: "40px"}}>
               <li>Not enrolled while residing in Canada.</li>
               <li>Enrolled in part-time studies.</li>
               <li>
@@ -321,7 +321,7 @@ const Cby = () => {
             Partner
           </h3>
           <p>Your family member must meet following requirements:</p>
-          <ol>
+          <ol style={{marginLeft: "40px"}}>
             <li style={{ marginBottom: "10px" }}>
               <strong> General Eligibility:</strong> The applicant must meet
               general work permit criteria, including police and medical
@@ -361,7 +361,7 @@ const Cby = () => {
             When to apply for Open Work Permit for Spouse or Common-law Partner
             of an International Student?
           </h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               You can choose to apply together for a Study Permit and Spousal
               Open Work Permit before traveling to Canada. If the applications
@@ -393,7 +393,7 @@ const Cby = () => {
             How to Apply for Open Work Permit for Spouse or Common-law Partner
             of an International Student
           </h2>
-          <ol>
+          <ol style={{marginLeft: "40px"}}>
             <li>
               Gather documents to prove the above-mentioned eligibility criteria
               for the international student.
@@ -422,7 +422,7 @@ const Cby = () => {
           ref={(el) => (sectionsRef.current[5] = el)}
         >
           <h2 className={styles.subheading}>Common Reasons for Refusal</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               Lack of documentation verifying the enrollment status of the
               international student.
@@ -474,7 +474,7 @@ const Cby = () => {
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

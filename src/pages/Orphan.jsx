@@ -168,7 +168,7 @@ const Orphan = () => {
           <h2 className={styles.subheading} id="eligibility">
             Eligibility criteria for a Sponsor:
           </h2>
-          <ul className={styles.list}>
+          <ul style={{marginLeft: "40px"}} className={styles.list}>
             <li>
               You must be a Canadian citizen or permanent resident who has lived
               in Canada for at least one year.
@@ -205,7 +205,7 @@ const Orphan = () => {
             Who is eligible as an Orphan under Canada Orphan Sponsorship
             Program?
           </h2>
-          <ul className={styles.list}>
+          <ul style={{marginLeft: "40px"}} className={styles.list}>
             <li>You are under 18 years of age.</li>
             <li>You do not possess Canadian citizenship presently.</li>
             <li>You are unmarried and not in a common-law partnership.</li>
@@ -264,7 +264,7 @@ const Orphan = () => {
           <h2 className={styles.subheading} id="how-to-apply">
             How to apply for sponsoring an Orphan?
           </h2>
-          <ul className={styles.list}>
+          <ul style={{marginLeft: "40px"}} className={styles.list}>
             <li>
               Complete a series of forms, including the sponsorship application
               form, financial assessment form, and medical forms for the orphan.
@@ -367,7 +367,7 @@ const Orphan = () => {
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul>
+          <ul style={{marginLeft: "40px"}}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.
