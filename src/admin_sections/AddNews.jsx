@@ -12,13 +12,13 @@ const AddNews = () => {
 
     switch (tag) {
       case "Bigger Heading":
-        tagValue = "<h4>Your bigger heading goes here</h4>";
+        tagValue = "<h2>Your bigger heading goes here</h2>";
         break;
       case "Bold":
         tagValue = "<strong>Your bigger heading goes here</strong>";
         break;
       case "Sub Heading":
-        tagValue = "<h6>Your sub heading goes here</h6>";
+        tagValue = "<h3>Your sub heading goes here</h3>";
         break;
       case "Paragraph":
         tagValue = "<p>Your paragraph goes here</p>";

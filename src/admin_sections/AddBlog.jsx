@@ -17,17 +17,17 @@ let AddBlog = () => {
 
     switch (tag) {
       case "Bigger Heading":
-        tagValue = "<h4>Your bigger heading goes here</h4>";
+        tagValue = "<h2>Your bigger heading goes here</h2>";
+        break;
+      case "Sub Heading":
+        tagValue = "<h3>Your bigger heading goes here</h3>";
         break;
       case "Bold":
-        tagValue = "<strong>Your bigger heading goes here</strong>";
+        tagValue = "<strong>Your bold text goes here</strong>";
         break;
       case "Link_Text":
         tagValue =
           '<a href="https://example.com" target="_blank">Your Text Here</a>';
-        break;
-      case "Sub Heading":
-        tagValue = "<h6>Your sub heading goes here</h6>";
         break;
       case "Paragraph":
         tagValue = "<p>Your paragraph goes here</p>";

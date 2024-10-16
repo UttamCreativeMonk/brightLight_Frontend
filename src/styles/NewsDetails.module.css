@@ -291,9 +291,27 @@
   margin: 30px 0px;
 }
 
+.blogDescriptionSection h3,
+.blogDescriptionSection h4,
+.blogDescriptionSection h5,
+.blogDescriptionSection h6 {
+  margin-bottom: -10px;
+}
+
+.blogDescriptionSection h2 {
+  margin-bottom: 10px;
+}
+
 .blogDescriptionSection ul li,
 .blogDescriptionSection ol li {
   margin: 10px 0px;
+  display: list-item;
+  list-style-type: disc !important;
+}
+
+.blogDescriptionSection ul,
+.blogDescriptionSection ol {
+  margin-left: 40px;
 }
 
 .blogDescriptionSection iframe {
