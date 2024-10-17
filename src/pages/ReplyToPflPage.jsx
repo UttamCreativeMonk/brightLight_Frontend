@@ -8,9 +8,11 @@ import FAQ from "../sections/FAQ";
 import ogImage from "../assets/ogImage.png";
 import { Helmet } from "react-helmet-async";
 
+
 const ReplyToPflPage = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([])
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -37,6 +39,22 @@ const ReplyToPflPage = () => {
         console.log(error);
       });
   }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/replyPFl")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
 
   const sectionsRef = useRef([]);
 
@@ -108,7 +126,7 @@ const ReplyToPflPage = () => {
       <Navbar1 />
       <div className={styles.bannerParent}>
         <header className={styles.header}>
-          <h1>Procedural Fairness Letter (PFL)</h1>
+          <h1>{pData?.PFLHeading}</h1>
         </header>
         <div className={styles.banner}>
           <div
@@ -149,31 +167,18 @@ const ReplyToPflPage = () => {
             id="about-program"
             ref={(el) => (sectionsRef.current[0] = el)}
           >
-            <h2>Did You Get a Red Flag from Canadian Immigration - PFL?</h2>
+            <h2>{pData?.RedFlagHeading}</h2>
             <p>
-              Don't panic! We'll help you through the PFL process and turn that
-              flag into a welcome mat.
+            {pData?.RedFlagPara1}
             </p>
             <p>
-              Responding to a Procedural Fairness Letter (PFL) is a crucial step
-              in addressing concerns raised by IRCC about your immigration
-              application. It's your chance to clear things up, provide more
-              proof, and possibly prevent a negative decision/refusal.
+            {pData?.RedFlagPara2}
             </p>
             <p>
-              These letters often come up when an officer from IRCC is unsure
-              about the information given in your application. For example, they
-              might suspect something's not quite right, like providing false or
-              misleading details, which could lead to issues with the
-              Immigration Refugees and Protection Act (IRPA).
+            {pData?.RedFlagPara3}
             </p>
             <p>
-              Typically, you'll get a letter outlining the concerns, and you
-              usually have around 30 days to respond. This is a serious matter,
-              as not addressing it properly might keep you from entering Canada
-              for at least 5 years. So, it's crucial to respond with detailed
-              answers, covering all the officer's concerns, even the ones you
-              might not know about.
+            {pData?.RedFlagPara4}
             </p>
           </section>
 
@@ -182,23 +187,19 @@ const ReplyToPflPage = () => {
             id="recieved-a-pfl"
             ref={(el) => (sectionsRef.current[1] = el)}
           >
-            <h2>Here Are a Few Reasons You Might Have Received a PFL</h2>
+            <h2>{pData?.ReasonReceivedHeading}</h2>
             <ul style={{ marginLeft: "40px" }}>
               <li>
-                IRCC or PNP officer might have found discrepancies in your
-                application or supporting documents.
+              {pData?.r1}
               </li>
               <li>
-                You might have missed providing the necessary information or
-                documentation.
+              {pData?.rr2}
               </li>
               <li>
-                There may be concerns about your criminal history, health, or
-                financial status that could affect your admissibility to Canada.
+              {pData?.rr3}
               </li>
               <li>
-                If you are sponsoring family members, IRCC may have questions
-                about the genuineness of the relationship.
+              {pData?.rr4}
               </li>
             </ul>
           </section>
@@ -208,18 +209,12 @@ const ReplyToPflPage = () => {
             id="how-to-apply"
             ref={(el) => (sectionsRef.current[2] = el)}
           >
-            <h2>Still Not Sure?</h2>
+            <h2>{pData?.StillNotHeading}</h2>
             <p>
-              If you have received a PFL, don't panic. We can help you with your
-              application. With over a decade of experience, we have
-              successfully cleared many applications that faced PFL.
+            {pData?.s1}
             </p>
             <p>
-              At Brightlight Immigration, we have a dedicated team of visa
-              application specialists who can assist you from the start of the
-              application process to obtaining your visa. Just reach out to us,
-              and we'll handle the rest. You focus on your Canadian ambition,
-              and we'll focus on making it happen smoothly.
+            {pData?.s2}
             </p>
 
             <button

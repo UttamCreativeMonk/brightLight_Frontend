@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet-async";
 const AdditionalDocument = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([])
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -37,6 +38,22 @@ const AdditionalDocument = () => {
         console.log(error);
       });
   }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/additionalDocument")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
 
   const sectionsRef = useRef([]);
 
@@ -138,7 +155,7 @@ const AdditionalDocument = () => {
 
       <div className={styles.container}>
         <header className={styles.header} id="about-program">
-          <h1>Reply to Additional Document Request</h1>
+          <h1>{pData?.AdditionalDocumentHeading}</h1>
         </header>
         <main className={styles.mainContent}>
           <section
@@ -146,33 +163,19 @@ const AdditionalDocument = () => {
             id="about"
             ref={(el) => (sectionsRef.current[0] = el)}
           >
-            <h2>Don’t Worry, We’re Here to Help!</h2>
+            <h2>{pData?.DonotWorryHeading}</h2>
             <ul style={{marginLeft: "40px"}}>
               <li>
-                If you’re here, that means IRCC has already requested you to
-                submit additional documents for your Canadian Immigration
-                application. Don’t worry. This can happen at any stage of the
-                application process, and the specific documents requested will
-                vary depending on your case and program.
+              {pData?.DonotWorryPara1}
               </li>
               <li>
-                We know these requests can be stressful. Especially if you’ve
-                applied your application yourself. It's easy to forget something
-                or accidentally upload the wrong document. No worries, though!
-                We can help you out.
+              {pData?.DonotWorryPara2}
               </li>
               <li>
-                If you already got that "Acknowledgement of Receipt" (AOR)
-                letter with your application number and the Unique Client
-                Identifier (UCI) – you can just use IRCC's online form to upload
-                the right document.
+              {pData?.DonotWorryPara3}
               </li>
               <li>
-                Make sure you know what they need and why. Follow their
-                instructions to the letter, label your documents clearly, and
-                get them uploaded in the right format. The faster you get that
-                missing document submitted, the sooner things can keep moving
-                along.
+              {pData?.DonotWorryPara4}
               </li>
             </ul>
           </section>
@@ -182,23 +185,19 @@ const AdditionalDocument = () => {
             id="key-points"
             ref={(el) => (sectionsRef.current[1] = el)}
           >
-            <h2>Key Points to Keep in Mind</h2>
+            <h2>{pData?.KeyPointsHeading}</h2>
             <ul style={{marginLeft: "40px"}}>
               <li>
-                Submit the requested document ASAP. Failure to do so can
-                negatively impact your application.
+              {pData?.k1}
               </li>
               <li>
-                Only submit requested documents. Don't include irrelevant
-                information.
+              {pData?.k2}
               </li>
               <li>
-                The documents should be clear, legible, and translated if
-                necessary.
+              {pData?.k3}
               </li>
               <li>
-                If you're unsure about any aspect of the process, let us handle
-                your case for you.{" "}
+              {pData?.k4}
                 <a
                   id="book-appointment"
                   href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj"
@@ -214,19 +213,12 @@ const AdditionalDocument = () => {
             id="why-choose-us"
             ref={(el) => (sectionsRef.current[2] = el)}
           >
-            <h2>Still Not Sure?</h2>
+            <h2>{pData?.StillNotHeading}</h2>
             <p>
-              If you have received a Request for an additional document, do not
-              worry. We can help you with your application. With over a decade
-              of experience, we have guided many when it comes to providing
-              additional documents.
+            {pData?.s1}
             </p>
             <p>
-              At Brightlight Immigration, we have a dedicated team of visa
-              application specialists who can assist you from the start of the
-              application process to obtaining your visa. Just reach out to us,
-              and we'll handle the rest. You keep your focus on your Canadian
-              ambition, and we'll focus on making it happen smoothly.
+            {pData?.s2}
             </p>
             <button
               onClick={() =>

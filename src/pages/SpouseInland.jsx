@@ -125,7 +125,7 @@ const SpouseInland = () => {
         >
           Inland Spousal and Common-Law Partner Sponsorship
         </h1>
-        <p>
+        <p className={styles.headingPara}>
           Inland sponsorship enables Canadians and permanent residents to
           sponsor their spouse or common-law partner for permanent resident
           status when the couple is already living together in Canada. This
@@ -214,7 +214,14 @@ const SpouseInland = () => {
             Both the sponsor and sponsored person must meet the basic
             requirements for immigration to Canada:
           </li>
-          <ul>
+          <ul 
+                   style={{
+                    marginBottom: "60px",
+                    marginLeft: "40px",
+                    listStyleType: "circle"
+
+                  }}
+          >
             <li>
               The sponsor must be a Canadian citizen or permanent resident.
             </li>
@@ -275,8 +282,8 @@ const SpouseInland = () => {
           </li>
         </ul>
 
-        <h2 id="How-to-apply">How to apply for Inland Spousal Sponsorship?</h2>
-        <ol
+        <h2   id="How-to-apply">How to apply for Inland Spousal Sponsorship?</h2> 
+        <ol className={styles.howToApply}
           style={{
             marginTop: "20px",
             marginBottom: "60px", 
@@ -365,7 +372,7 @@ const SpouseInland = () => {
         <section
           style={{ marginTop: "50px" }}
           className={`${styles.section} ${styles.section}`}
-          id="why-choose-u"
+          id="why-choose-us"
         >
           <h2>Why Choose Us?</h2>
           <ul style={{marginLeft: "40px"}}>
