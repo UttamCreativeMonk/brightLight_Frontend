@@ -53,6 +53,30 @@ import BCPNPMeta from "../admin_sections/BCPNPMeta";
 import ExpressEntry from "../admin_sections/Express";
 import ExpressMeta from "../admin_sections/ExpressMeta";
 import AboutAchievement from "../admin_sections/AboutAchievements";
+import AdditionalDocument from "../admin_sections/AdditionalDocument";
+import AdditionalDocumentMeta from "../admin_sections/AdditionalDocumentMeta";
+import Adoption from "../admin_sections/Adoption";
+import AdoptionMeta from "../admin_sections/AdoptionMeta";
+import BcpnpPageContent from "../admin_sections/BcpnpPage";
+import BcpnpPageMeta from "../admin_sections/BcpnpPageMeta";
+import AgricultureAndAgriFoodPageContent from "../admin_sections/AgricultureAndAgriFood";
+import AgricultureAndAgriFoodMeta from "../admin_sections/AgricultureAndAgriFoodMeta";
+import AgricultureStreamLMIAContent from "../admin_sections/AgricultureStreamLMIA";
+import AgricultureStreamLMIAMeta from "../admin_sections/AgricultureStreamLMIAMeta";
+import AgriFoodPilotProgramContent from "../admin_sections/AgriFoodPilotProgramContent";
+import AgriFoodPilotProgramMeta from "../admin_sections/AgriFoodPilotProgramMeta";
+import BridgingOpenWorkPermitLPContent from "../admin_sections/BridgingOpenWorkPermitLP";
+import BridgingOpenWorkPermitLPMeta from "../admin_sections/BridgingOpenWorkPermitLPMeta";
+import BusinessVisitorVisaContent from "../admin_sections/BusinessVisitorVisa";
+import BusinessVisitorVisaMeta from "../admin_sections/BusinessVisitorVisaMeta";
+import CanadianExperienceClassContent from "../admin_sections/CanadianExperienceClass";
+import CanadianExperienceClassMeta from "../admin_sections/CanadianExperienceClassMeta";
+import CbyContent from "../admin_sections/Cby";
+import CbyMeta from "../admin_sections/CbyMeta";
+import ChangeCollegeProgramContent from "../admin_sections/ChangeCollegeProgram";
+import ChangeCollegeProgramMeta from "../admin_sections/ChangeCollegeProgramMeta";
+import CategoryBasedExpressContent from "../admin_sections/CategoryBasedExpress";
+import CategoryBasedExpressMeta from "../admin_sections/CategoryBasedExpressMeta";
 
 let Admin = () => {
   let { logout } = useAuth();
@@ -973,16 +997,9 @@ let Admin = () => {
             <div className={styles.dashboard}>
               <div className={styles.leftPanel}>
                 <div className={styles.page} onClick={setMainPages}>
-                  <p>Move Back {"->"}</p>
+                  <p>{"<-"} Move Back</p>
                 </div>
-                <div
-                  className={`${styles.page} ${
-                    activePage === "bcpnp_page" ? styles.activePage : ""
-                  }`}
-                  onClick={() => handlePageClick("bcpnp_page")}
-                >
-                  <p>BCPNP Page</p>
-                </div>
+
                 <div
                   className={`${styles.page} ${
                     activePage === "additional_documents"
@@ -1001,6 +1018,120 @@ let Admin = () => {
                 >
                   <p>Adoption Page</p>
                 </div>
+
+                <div
+                  className={`${styles.page} ${
+                    activePage === "agriculture_and_agri_food_page"
+                      ? styles.activePage
+                      : ""
+                  }`}
+                  onClick={() =>
+                    handlePageClick("agriculture_and_agri_food_page")
+                  }
+                >
+                  <p>Agriculture And Agri Food Occupation Page</p>
+                </div>
+
+                <div
+                  className={`${styles.page} ${
+                    activePage === "agriculture_stream_lmia_page"
+                      ? styles.activePage
+                      : ""
+                  }`}
+                  onClick={() =>
+                    handlePageClick("agriculture_stream_lmia_page")
+                  }
+                >
+                  <p>Agriculture Stream LMIA Page</p>
+                </div>
+
+                <div
+                  className={`${styles.page} ${
+                    activePage === "agri_food_pilot_page"
+                      ? styles.activePage
+                      : ""
+                  }`}
+                  onClick={() => handlePageClick("agri_food_pilot_page")}
+                >
+                  <p>Agri Food Pilot Program Page</p>
+                </div>
+
+                <div
+                  className={`${styles.page} ${
+                    activePage === "bcpnp_page" ? styles.activePage : ""
+                  }`}
+                  onClick={() => handlePageClick("bcpnp_page")}
+                >
+                  <p>BCPNP Page</p>
+                </div>
+
+                <div
+                  className={`${styles.page} ${
+                    activePage === "bridging_open_work_permit_page"
+                      ? styles.activePage
+                      : ""
+                  }`}
+                  onClick={() =>
+                    handlePageClick("bridging_open_work_permit_page")
+                  }
+                >
+                  <p>Bridging Open Work Permit LP Page</p>
+                </div>
+
+                <div
+                  className={`${styles.page} ${
+                    activePage === "business_visitor_visa_page"
+                      ? styles.activePage
+                      : ""
+                  }`}
+                  onClick={() => handlePageClick("business_visitor_visa_page")}
+                >
+                  <p>Business Visitor Visa Page</p>
+                </div>
+
+                <div
+                  className={`${styles.page} ${
+                    activePage === "canadian_experience_class_page"
+                      ? styles.activePage
+                      : ""
+                  }`}
+                  onClick={() =>
+                    handlePageClick("canadian_experience_class_page")
+                  }
+                >
+                  <p>Canadian Experience Class Page</p>
+                </div>
+
+                <div
+                  className={`${styles.page} ${
+                    activePage === "cby_page" ? styles.activePage : ""
+                  }`}
+                  onClick={() => handlePageClick("cby_page")}
+                >
+                  <p>Cby Page</p>
+                </div>
+
+                <div
+                  className={`${styles.page} ${
+                    activePage === "change_college_program_page"
+                      ? styles.activePage
+                      : ""
+                  }`}
+                  onClick={() => handlePageClick("change_college_program_page")}
+                >
+                  <p>Change College Program Page</p>
+                </div>
+
+                <div
+                  className={`${styles.page} ${
+                    activePage === "category_based_express_page"
+                      ? styles.activePage
+                      : ""
+                  }`}
+                  onClick={() => handlePageClick("category_based_express_page")}
+                >
+                  <p>Category Based Express Page</p>
+                </div>
               </div>
               <div className={styles.rightPanel}>
                 {activePage === "bcpnp_page" && (
@@ -1014,6 +1145,17 @@ let Admin = () => {
                       onClick={() => handleSectionClick("bcpnp_page_content")}
                     >
                       Page Content
+                    </div>
+
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "bcpnp_page_meta"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() => handleSectionClick("bcpnp_page_meta")}
+                    >
+                      Page Meta
                     </div>
                   </div>
                 )}
@@ -1031,6 +1173,54 @@ let Admin = () => {
                     >
                       Page Content
                     </div>
+
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "additional_documents_meta"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick("additional_documents_meta")
+                      }
+                    >
+                      Page Meta
+                    </div>
+                  </div>
+                )}
+
+                {activePage === "bridging_open_work_permit_page" && (
+                  <div className={styles.sections}>
+                    <div
+                      className={`${styles.section} ${
+                        activeSection ===
+                        "bridging_open_work_permit_page_content"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick(
+                          "bridging_open_work_permit_page_content"
+                        )
+                      }
+                    >
+                      Page Content
+                    </div>
+
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "bridging_open_work_permit_page_meta"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick(
+                          "bridging_open_work_permit_page_meta"
+                        )
+                      }
+                    >
+                      Page Meta
+                    </div>
                   </div>
                 )}
                 {activePage === "adoption_page" && (
@@ -1047,17 +1237,371 @@ let Admin = () => {
                     >
                       Page Content
                     </div>
+
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "adoption_page_meta"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() => handleSectionClick("adoption_page_meta")}
+                    >
+                      Page Meta
+                    </div>
+                  </div>
+                )}
+                {activePage === "agriculture_and_agri_food_page" && (
+                  <div className={styles.sections}>
+                    <div
+                      className={`${styles.section} ${
+                        activeSection ===
+                        "agriculture_and_agri_food_page_content"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick(
+                          "agriculture_and_agri_food_page_content"
+                        )
+                      }
+                    >
+                      Page Content
+                    </div>
+
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "agriculture_and_agri_food_page_meta"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick(
+                          "agriculture_and_agri_food_page_meta"
+                        )
+                      }
+                    >
+                      Page Meta
+                    </div>
+                  </div>
+                )}
+
+                {activePage === "agriculture_stream_lmia_page" && (
+                  <div className={styles.sections}>
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "agriculture_stream_lmia_page_content"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick(
+                          "agriculture_stream_lmia_page_content"
+                        )
+                      }
+                    >
+                      Page Content
+                    </div>
+
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "agriculture_stream_lmia_page_meta"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick("agriculture_stream_lmia_page_meta")
+                      }
+                    >
+                      Page Meta
+                    </div>
+                  </div>
+                )}
+
+                {activePage === "agri_food_pilot_page" && (
+                  <div className={styles.sections}>
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "agri_food_pilot_page_content"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick("agri_food_pilot_page_content")
+                      }
+                    >
+                      Page Content
+                    </div>
+
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "agri_food_pilot_page_meta"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick("agri_food_pilot_page_meta")
+                      }
+                    >
+                      Page Meta
+                    </div>
+                  </div>
+                )}
+
+                {activePage === "business_visitor_visa_page" && (
+                  <div className={styles.sections}>
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "business_visitor_visa_page_content"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick("business_visitor_visa_page_content")
+                      }
+                    >
+                      Page Content
+                    </div>
+
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "business_visitor_visa_page_meta"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick("business_visitor_visa_page_meta")
+                      }
+                    >
+                      Page Meta
+                    </div>
+                  </div>
+                )}
+
+                {activePage === "canadian_experience_class_page" && (
+                  <div className={styles.sections}>
+                    <div
+                      className={`${styles.section} ${
+                        activeSection ===
+                        "canadian_experience_class_page_content"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick(
+                          "canadian_experience_class_page_content"
+                        )
+                      }
+                    >
+                      Page Content
+                    </div>
+
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "canadian_experience_class_page_meta"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick(
+                          "canadian_experience_class_page_meta"
+                        )
+                      }
+                    >
+                      Page Meta
+                    </div>
+                  </div>
+                )}
+
+                {activePage === "cby_page" && (
+                  <div className={styles.sections}>
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "cby_page_content"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() => handleSectionClick("cby_page_content")}
+                    >
+                      Page Content
+                    </div>
+
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "cby_page_meta"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() => handleSectionClick("cby_page_meta")}
+                    >
+                      Page Meta
+                    </div>
+                  </div>
+                )}
+
+                {activePage === "change_college_program_page" && (
+                  <div className={styles.sections}>
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "change_college_program_page_content"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick(
+                          "change_college_program_page_content"
+                        )
+                      }
+                    >
+                      Page Content
+                    </div>
+
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "change_college_program_page_meta"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick("change_college_program_page_meta")
+                      }
+                    >
+                      Page Meta
+                    </div>
+                  </div>
+                )}
+
+                {activePage === "category_based_express_page" && (
+                  <div className={styles.sections}>
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "category_based_express_page_content"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick(
+                          "category_based_express_page_content"
+                        )
+                      }
+                    >
+                      Page Content
+                    </div>
+
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "category_based_express_page_meta"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick("category_based_express_page_meta")
+                      }
+                    >
+                      Page Meta
+                    </div>
                   </div>
                 )}
                 <div className={styles.roshiSection}>
-                  {activePage === "bcpnp" &&
-                    activeSection === "bcpnp_page_content" && <HomeTop />}
+                  {activePage === "bcpnp_page" &&
+                    activeSection === "bcpnp_page_content" && (
+                      <BcpnpPageContent />
+                    )}
+                  {activePage === "bcpnp_page" &&
+                    activeSection === "bcpnp_page_meta" && <BcpnpPageMeta />}
                   {activePage === "additional_documents" &&
                     activeSection === "additional_documents_content" && (
-                      <HomeTop />
+                      <AdditionalDocument />
+                    )}
+
+                  {activePage === "additional_documents" &&
+                    activeSection === "additional_documents_meta" && (
+                      <AdditionalDocumentMeta />
                     )}
                   {activePage === "adoption_page" &&
-                    activeSection === "adoption_page_content" && <HomeTop />}
+                    activeSection === "adoption_page_content" && <Adoption />}
+                  {activePage === "adoption_page" &&
+                    activeSection === "adoption_page_meta" && <AdoptionMeta />}
+
+                  {activePage === "agriculture_and_agri_food_page" &&
+                    activeSection ===
+                      "agriculture_and_agri_food_page_content" && (
+                      <AgricultureAndAgriFoodPageContent />
+                    )}
+                  {activePage === "agriculture_and_agri_food_page" &&
+                    activeSection === "agriculture_and_agri_food_page_meta" && (
+                      <AgricultureAndAgriFoodMeta />
+                    )}
+
+                  {activePage === "agriculture_stream_lmia_page" &&
+                    activeSection ===
+                      "agriculture_stream_lmia_page_content" && (
+                      <AgricultureStreamLMIAContent />
+                    )}
+                  {activePage === "agriculture_stream_lmia_page" &&
+                    activeSection === "agriculture_stream_lmia_page_meta" && (
+                      <AgricultureStreamLMIAMeta />
+                    )}
+
+                  {activePage === "agri_food_pilot_page" &&
+                    activeSection === "agri_food_pilot_page_content" && (
+                      <AgriFoodPilotProgramContent />
+                    )}
+                  {activePage === "agri_food_pilot_page" &&
+                    activeSection === "agri_food_pilot_page_meta" && (
+                      <AgriFoodPilotProgramMeta />
+                    )}
+
+                  {activePage === "bridging_open_work_permit_page" &&
+                    activeSection ===
+                      "bridging_open_work_permit_page_content" && (
+                      <BridgingOpenWorkPermitLPContent />
+                    )}
+                  {activePage === "bridging_open_work_permit_page" &&
+                    activeSection === "bridging_open_work_permit_page_meta" && (
+                      <BridgingOpenWorkPermitLPMeta />
+                    )}
+
+                  {activePage === "business_visitor_visa_page" &&
+                    activeSection === "business_visitor_visa_page_content" && (
+                      <BusinessVisitorVisaContent />
+                    )}
+                  {activePage === "business_visitor_visa_page" &&
+                    activeSection === "business_visitor_visa_page_meta" && (
+                      <BusinessVisitorVisaMeta />
+                    )}
+
+                  {activePage === "canadian_experience_class_page" &&
+                    activeSection ===
+                      "canadian_experience_class_page_content" && (
+                      <CanadianExperienceClassContent />
+                    )}
+                  {activePage === "canadian_experience_class_page" &&
+                    activeSection === "canadian_experience_class_page_meta" && (
+                      <CanadianExperienceClassMeta />
+                    )}
+
+                  {activePage === "cby_page" &&
+                    activeSection === "cby_page_content" && <CbyContent />}
+                  {activePage === "cby_page" &&
+                    activeSection === "cby_page_meta" && <CbyMeta />}
+
+                  {activePage === "change_college_program_page" &&
+                    activeSection === "change_college_program_page_content" && (
+                      <ChangeCollegeProgramContent />
+                    )}
+                  {activePage === "change_college_program_page" &&
+                    activeSection === "change_college_program_page_meta" && (
+                      <ChangeCollegeProgramMeta />
+                    )}
+
+                  {activePage === "category_based_express_page" &&
+                    activeSection === "category_based_express_page_content" && (
+                      <CategoryBasedExpressContent />
+                    )}
+                  {activePage === "category_based_express_page" &&
+                    activeSection === "category_based_express_page_meta" && (
+                      <CategoryBasedExpressMeta />
+                    )}
                 </div>
               </div>
             </div>
