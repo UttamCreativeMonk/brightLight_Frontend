@@ -11,7 +11,7 @@ import { Helmet } from "react-helmet-async";
 const AgricultureandAgriFoodOccu = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
-
+  let [pData,setPData]=useState([])
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -39,6 +39,24 @@ const AgricultureandAgriFoodOccu = () => {
         console.log(error);
       });
   }, []);
+
+
+  
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/agricultureAgriFoodOccupation")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
 
 
   const sectionsRef = useRef([]);
@@ -155,19 +173,11 @@ const AgricultureandAgriFoodOccu = () => {
             ref={(el) => (sectionsRef.current[0] = el)}
           >
             <header className={styles.header}>
-              <h1>
-                Category-Based Express Entry Selection Draws: Agriculture and
-                agri-food occupations
-              </h1>
+              <h1>{pData?.agricultAndAgriFoodOccuHeading}</h1>
             </header>
 
             <p className={styles.discription}>
-              Exploring the Agriculture and Agri-Food Occupations Category
-              offers access to abundant opportunities within Canada's thriving
-              agricultural sector. Whether your skills lie in crop production,
-              livestock farming, agricultural research, or any other agri-food
-              occupation, this program paves the way for a rewarding career path
-              in Canada.
+            {pData?.agricultAndAgriFoodOccuPara}
             </p>
           </section>
 
@@ -176,26 +186,19 @@ const AgricultureandAgriFoodOccu = () => {
             id="eligibility"
             ref={(el) => (sectionsRef.current[2] = el)}
           >
-            <h2> First you must be eligible with Express Entry</h2>
+            <h2>{pData?.FirstEligibleHeading}</h2>
             <p>
-              Before you can participate in a STEM-specific draw through
-              Canada's Express Entry system, you need to be eligible. Here's how
-              you can get started:
+            {pData?.FirstEligSubHead}
             </p>
             <ul>
               <li>
-                1. Join the Express Entry Pool: The first step towards becoming
-                a candidate for a STEM-specific draw is to get into the Express
-                Entry pool.
+              {pData?.e1}
               </li>
               <li>
-                2. Choose Your Program: There are three programs you can be
-                eligible for to join the Express Entry pool:
+              {pData?.e2}
                 <ul className={styles.subList}>
                   <li>
-                   <strong>  Federal Skilled Worker Program (FSW): </strong>This program is ideal
-                    for tech workers who have the necessary work experience,
-                    education, and language ability.
+                  {pData?.e2SubLi1}
                     <button
                       className={styles.button2}
                       onClick={() =>
@@ -207,9 +210,7 @@ const AgricultureandAgriFoodOccu = () => {
                     </button>
                   </li>
                   <li>
-                   <strong> Canadian Experience Class (CEC):</strong> Similar to the FSW program,
-                    the CEC is also suitable for tech workers who have gained
-                    Canadian work experience.
+                  {pData?.e2SubLi2}
                     <button
                       className={styles.button2}
                       onClick={() =>
@@ -221,11 +222,7 @@ const AgricultureandAgriFoodOccu = () => {
                   </li>
 
                   <li>
-                   <strong> Federal Skilled Agriculture and agri-food occupations s
-                    Program (FSTP):</strong>  If you're a Agriculture and agri-food
-                    occupations s worker, this program is designed for you. It
-                    requires proof of relevant work experience, education, and
-                    language proficiency.
+                  {pData?.e2SubLi3}
                     <button
                       className={styles.button2}
                       onClick={() =>
@@ -240,9 +237,7 @@ const AgricultureandAgriFoodOccu = () => {
               </li>
             </ul>
             <p>
-              Remember, each program has its own set of eligibility
-              requirements. So, make sure to review these carefully and ensure
-              you meet all the necessary criteria before applying.
+            {pData?.FirstEligPara}
             </p>
           </section>
 
@@ -252,8 +247,7 @@ const AgricultureandAgriFoodOccu = () => {
             ref={(el) => (sectionsRef.current[3] = el)}
           >
             <h2>
-              Eligibility Criteria for Agriculture and Agri-Food Occupations
-              Category
+            {pData?.EligCriHeading}
             </h2>
             <h4>
               Once you have met eligibility for one of the Express Entry
@@ -262,11 +256,9 @@ const AgricultureandAgriFoodOccu = () => {
             </h4>
             <ul className={styles.leftList}>
               <li>
-                At least 6 months of full-time, continuous work experience (or
-                an equivalent amount of part-time work experience) in an
-                agriculture or agri-food occupation.
+              {pData?.ec1}
               </li>
-              <li>A valid Express Entry profile.</li>
+              <li> {pData?.ec2}</li>
             </ul>
           </section>
 
@@ -276,7 +268,7 @@ const AgricultureandAgriFoodOccu = () => {
             ref={(el) => (sectionsRef.current[31] = el)}
           >
             <h2>
-              Express Entry Agriculture and agri-food occupations draws history
+            {pData?.EligEntryHeading}
             </h2>
             <button
               className={styles.button1}
@@ -298,62 +290,49 @@ const AgricultureandAgriFoodOccu = () => {
             id="noc"
             ref={(el) => (sectionsRef.current[4] = el)}
           >
-            <h2>Here is the list of eligible NOCs for Agriculture and agri-food occupations category:
+            <h2>{pData?.HereEligTabHeading}
             </h2>
 
             <table className={styles.occupationTable}>
               <thead>
                 <tr>
-                  <th>Occupations</th>
-                  <th>2021 NOC Code</th>
+                  <th> {pData?.HereEligTableHead1}</th>
+                  <th> {pData?.HereEligTableHead2}</th>
                   <th>2021 TEER Category</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>
-                    Contractors and supervisors, landscaping, grounds
-                    maintenance and horticulture services
+                  {pData?.HeT1Po1}
                   </td>
-                  <td>82031</td>
+                  <td>{pData?.HeT2Po1}</td>
                   <td>2</td>
                 </tr>
                 <tr>
-                  <td>Agricultural service contractors and farm supervisors</td>
-                  <td>82030</td>
+                  <td>{pData?.HeT1Po2}</td>
+                  <td>{pData?.HeT2Po1}</td>
                   <td>2</td>
                 </tr>
                 <tr>
-                  <td>Butchers- retail and wholesale</td>
-                  <td>63201</td>
+                  <td>{pData?.HeT1Po3}</td>
+                  <td>{pData?.HeT2Po1}</td>
                   <td>3</td>
                 </tr>
               </tbody>
             </table>
           </section>
-{/* 
+
           <section
             className={`${styles.section} ${styles.section}`}
-            id="why-choose-us"
             ref={(el) => (sectionsRef.current[5] = el)}
           >
-            <h2>Still not sure?</h2>
+            <h2>{pData?.StillNotHeading}</h2>
             <p>
-              Contact Brightlight Immigration today to assess your profile and
-              embark on a transformative journey towards achieving your Canadian
-              dream. With over a decade of experience, we specialize in handling
-              Express Entry Programs. Our approval rate for these programs are
-              near to 100%. We achieve this with a tailored approach to your
-              specific case. We use case law and find similar cases to your
-              circumstances that had positive results, and we use them as
-              precedents in cases we work on. This is why we have a high success
-              rate.
+            {pData?.s1}
             </p>
             <p>
-              At Brightlight Immigration, we have a dedicated team of visa
-              application specialists who can assist you from the start of the
-              application process all the way to obtaining your PR. Start your
-              process now.
+            {pData?.s2}
             </p>
             <button
               onClick={() =>
@@ -363,12 +342,12 @@ const AgricultureandAgriFoodOccu = () => {
             >
               Book Appointment
             </button>
-          </section> */}
+          </section>
 
           <section
           className={`${styles.section} ${styles.section}`}
           id="why-choose-us"
-          ref={(el) => (sectionsRef.current[5] = el)}
+          ref={(el) => (sectionsRef.current[6] = el)}
         >
           <h2>Why Choose Us?</h2>
           <ul style={{marginLeft: "40px"}}>
@@ -389,14 +368,6 @@ const AgricultureandAgriFoodOccu = () => {
               of the application process to obtaining your PR.
             </li>
           </ul>
-          <button
-            onClick={() =>
-              (window.location.href =
-                "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
-            }
-          >
-            Book Appointment
-          </button>
         </section>
         </main>
       </div>

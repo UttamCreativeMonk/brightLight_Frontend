@@ -210,7 +210,7 @@ const CommonLawPartnerInternational = () => {
               post-graduation work permit-eligible program at one of the
               following:{" "}
             </li>
-            <ul>
+            <ul style={{ marginLeft: "40px", marginTop: "0px",  listStyleType: "circle" }}>
               <li>
                 A Canadian public post-secondary institution (college,
                 trade/technical school, university, or CEGEP in Quebec).
@@ -232,8 +232,8 @@ const CommonLawPartnerInternational = () => {
                 authorized by the province.{" "}
               </li>
             </ul>
-            <p>The international student is not eligible to apply if: </p>
-            <ul>
+            <p><strong>The international student is not eligible to apply if: </strong></p>
+            <ul style={{ marginLeft: "40px", marginTop: "0px" }}>
               <li>Not enrolled while residing in Canada.</li>
               <li>Enrolled in part-time studies.</li>
               <li>
@@ -314,7 +314,7 @@ const CommonLawPartnerInternational = () => {
             id="testing"
             ref={(el) => (sectionsRef.current[12] = el)}
           >
-            The international student is not eligible to apply if:{" "}
+           <strong> The international student is not eligible to apply if:{" "}</strong>
           </p>
           <ul
           style={{marginLeft: "40px", marginTop: "-20px"}}
@@ -423,13 +423,12 @@ const CommonLawPartnerInternational = () => {
         <section
           className={`${styles.section} ${styles.section}`}
           id="testing"
-          ref={(el) => (sectionsRef.current[19] = el)}
-        >
+          ref={(el) => (sectionsRef.current[19] = el)}>
           <h2>
             How to apply for Open Work Permit for Spouse or Common-law Partner
             of an International Student?
           </h2>
-          <ol style={{marginLeft: "40px", marginTop: "10px"}}>
+          <ol className={styles.subList} style={{marginLeft: "40px", marginTop: "10px"}} >
             <li>
               Gather documents to prove above-mentioned eligibility criteria for
               internation student.

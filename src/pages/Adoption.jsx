@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet-async";
 const Adoption = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([])
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -31,6 +32,21 @@ const Adoption = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/adoption")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -151,18 +167,12 @@ const Adoption = () => {
           id="about-program"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          <h1>Canada's Adoption Program</h1>
+          <h1>{pData?.adoptionHeading}</h1>
           <p style={{ marginTop: "-20px" }}>
-            The heart-warming journey of bringing a child into your life through
-            adoption is an incredible act of love and commitment, offering the
-            child a nurturing home and a lifetime of opportunities.
+          {pData?.adoptionPara1}
           </p>
           <p style={{ marginTop: "20px" }}>
-            Canada's adoption program under family reunification and sponsorship
-            provides a pathway for eligible Canadians to adopt children from
-            both within Canada and internationally. The program aims to provide
-            permanent homes for children who cannot live with their biological
-            families due to various circumstances.
+          {pData?.adoptionPara2}
           </p>
         </header>
 
@@ -172,14 +182,12 @@ const Adoption = () => {
           ref={(el) => (sectionsRef.current[1] = el)}
         >
           <h2>
-            There are two main types of adoption under family sponsorship in
-            Canada:
+          {pData?.TwoMainHeading}
           </h2>
           <ul>
             <li>
               <p>
-                Intra-country adoption. This involves adopting a child from
-                another province in Canada.
+              {pData?.TwoMainPara1}
               </p>
               <a href="#intra-country" className={styles.button}>
                 Intra-Country Adoption
@@ -187,8 +195,7 @@ const Adoption = () => {
             </li>
             <li style={{ marginTop: "30px" }}>
               <p>
-                Inter-country adoption. This involves adopting a child from
-                another country.
+              {pData?.TwoMainPara2}
               </p>
               <a
                 href="#inter-country"
@@ -206,23 +213,17 @@ const Adoption = () => {
           id="eligibility"
           ref={(el) => (sectionsRef.current[4] = el)}
         >
-          <h2>Eligibility Criteria for Adoption in Canada</h2>
+          <h2> {pData?.EligibilityHeading}</h2>
           <ul style={{marginLeft: "40px"}}>
-            <li>Be a Canadian citizen or permanent resident.</li>
-            <li>Be at least 18 years of age.</li>
-            <li>Have a stable income and living situation.</li>
-            <li>
-              Be able to provide for the child's physical and intellectual
-              needs.
-            </li>
-            <li>Pass a criminal background check and medical assessment.</li>
-            <li>Provide references from other families and professionals.</li>
+            <li>{pData?.e1}</li>
+            <li>{pData?.e2}</li>
+            <li>{pData?.e3}</li>
+            <li>{pData?.e4}</li>
+            <li>{pData?.e5}</li>
+            <li>{pData?.e6}</li>
           </ul>
           <p>
-            Note that if you are adopting a child from abroad, you will need to
-            sponsor the child for permanent residency in Canada. This means that
-            you will be financially responsible for the child's care until they
-            reach the age of majority.
+          {pData?.EligibilityNote}
           </p>
         </section>
 
@@ -237,12 +238,12 @@ const Adoption = () => {
             For Intra-Country Adoption (Inside Canada)
           </h4>
           <ul style={{ marginTop: "20px", marginLeft: "40px" }}>
-            <li>Fill out the adoption application.</li>
-            <li>Attend an adoption orientation.</li>
-            <li>Get matched with a child.</li>
-            <li>Complete a home study.</li>
-            <li>Receive approval from the provincial adoption authority.</li>
-            <li>Finalize the adoption.</li>
+            <li>{pData?.IL1}</li>
+            <li>{pData?.IL2}</li>
+            <li>{pData?.IL3}</li>
+            <li>{pData?.IL4}</li>
+            <li>{pData?.IL5}</li>
+            <li>{pData?.IL6}</li>
           </ul>
         </section>
 
@@ -252,19 +253,13 @@ const Adoption = () => {
           ref={(el) => (sectionsRef.current[3] = el)}
         >
           <h4 className={styles.marginTop}>
-            For Inter-Country Adoption (Outside Canada)
-          </h4>
+            For Inter-Country Adoption (Outside Canada)</h4>
           <ul style={{ marginTop: "20px", marginLeft: "40px" }}>
-            <li>Choose a child from the available list.</li>
-            <li>Complete a home study and provide financial documentation.</li>
-            <li>
-              Receive approval from the Canadian government and the child's
-              country of origin.
-            </li>
-            <li>
-              Travel to the child's country of origin to finalize the adoption.
-            </li>
-            <li>Return to Canada with the child.</li>
+            <li>{pData?.IrL1}</li>
+            <li>{pData?.IrL2}</li>
+            <li>{pData?.IrL3}</li>
+            <li>{pData?.IrL4}</li>
+            <li>{pData?.IrL5}</li>
           </ul>
         </section>
 
@@ -294,26 +289,14 @@ const Adoption = () => {
           id="refusal-reasons"
           ref={(el) => (sectionsRef.current[5] = el)}
         >
-          <h2>Common Reasons for Refusals of Adoption Program</h2>
+          <h2>{pData?.RefusalHeading}</h2>
           <h4>
-            Failing to meet the eligibility criteria to be eligible to sponsor a
-            child for adoption that is:{" "}
+          {pData?.RefusalSubHead}
           </h4>
           <ul style={{ marginTop: "20px", marginLeft: "40px" }}>
-            <li>
-              Incomplete or inaccurate information on your application or during
-              interviews.
-            </li>
-            <li>
-              In some cases, the child may have health concerns that make
-              adoption difficult. The government may refuse adoption if it
-              believes that the child's health needs are too great for the
-              adoptive parents to meet.
-            </li>
-            <li>
-              The child's home country may refuse consent due to concerns about
-              the child's well-being or cultural suitability in Canada.
-            </li>
+            <li>{pData?.r1}</li>
+            <li>{pData?.r2}</li>
+            <li>{pData?.r3}</li>
           </ul>
           <button
             onClick={() =>
@@ -327,24 +310,13 @@ const Adoption = () => {
 
         <section
           className={`${styles.consultation} ${styles.section}`}
-          id="why-choose-us"
           ref={(el) => (sectionsRef.current[6] = el)}
         >
-          <h2>Still Not Sure?</h2>
+          <h2>{pData?.StillNotHeading}</h2>
+          <p>{pData?.s1} </p>
           <p>
-            If you have received a refusal for any of the reasons mentioned
-            above, do not worry. With over a decade of experience, we specialize
-            in previously refused cases. We have successfully obtained approvals
-            for clients with multiple previous refusals by using a tailored
-            approach, addressing each concern listed in previous refusals, and
-            applying case law precedents. Our high success rate is a testament
-            to our expertise.
-          </p>
-          <p>
-            At Brightlight Immigration, we have a dedicated team of visa
-            application specialists who can assist you from the start of the
-            application process all the way to obtaining your visa.
-            <button
+          {pData?.s2}</p>
+          <button
               onClick={() =>
                 (window.location.href =
                   "https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj")
@@ -354,12 +326,11 @@ const Adoption = () => {
               {" "}
               Start your process now
             </button>
-          </p>
         </section>
 
         <section
           className={`${styles.section} ${styles.section}`}
-          id="why-choose-u"
+          id="why-choose-us"
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <h2>Why Choose Us?</h2>

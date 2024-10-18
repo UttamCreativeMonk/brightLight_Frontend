@@ -5,9 +5,13 @@ import Navbar1 from "../components/Navbar1";
 import Testimonials from "../sections/Testimonials";
 import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
+import ogImage from "../assets/ogImage.png";
+import { Helmet } from "react-helmet-async";
 
 const AgricultureStreamLmia = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([])
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -19,6 +23,35 @@ const AgricultureStreamLmia = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/agricultureStreamLmiaMeta")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/agricultureStreamLmia")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   const sectionsRef = useRef([]);
 
@@ -44,6 +77,48 @@ const AgricultureStreamLmia = () => {
 
   return (
     <>
+       <Helmet>
+        <title>
+          {metaData?.metaTitle
+            ? metaData?.metaTitle
+            : "Brightlight Immigration"}
+        </title>
+        <meta
+          name="description"
+          content={
+            metaData?.metaDesc
+              ? metaData?.metaDesc
+              : "Learn about Brightlight Immigration, our mission, values, and the dedicated team behind our immigration services. We are committed to providing honest and accurate advice to guide you through your immigration journey."
+          }
+        />
+        <meta
+          name="title"
+          property="og:title"
+          content={
+            metaData?.metaOgTitle
+              ? metaData?.metaOgTitle
+              : " Brightlight Immigration"
+          }
+        />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:type" content="image/png" />
+        <meta
+          property="og:description"
+          content={
+            metaData?.metaOgDesc
+              ? metaData?.metaOgDesc
+              : "Discover the story behind Brightlight Immigration, our commitment to providing honest and accurate advice, and how our team can assist you with your immigration needs."
+          }
+        />
+        <meta
+          name="Keywords"
+          content={
+            metaData?.metaKeywords
+              ? metaData?.metaKeywords
+              : "Brightlight Immigration, Immigration Services, Mission, Team"
+          }
+        />
+      </Helmet>
       <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
@@ -103,25 +178,16 @@ const AgricultureStreamLmia = () => {
             ref={(el) => (sectionsRef.current[0] = el)}
           >
             <header className={styles.header}>
-              <h1>Agricultural Stream LMIA</h1>
+              <h1>{pData?.AgriculturStreamHeading}</h1>
             </header>
 
             <p>
-              This type of LMIA allows employers to hire foreign workers to fill
-              jobs in farms, nurseries, or greenhouses. It can involve the
-              operation of agricultural machinery, caring for and breeding of
-              animals, and planting & harvesting various crops, trees, sods,
-              etc.
+            {pData?.AgriculturStreamPara}
             </p>
-            <p>To qualify for this stream, employers must meet 2 criteria:</p>
+            <p>{pData?.AgriculturStreamSubHeading}</p>
             <ol style={{ marginLeft: "40px" }}>
-              <li>
-                Production must be in specific commodity sectors from the list
-                below, and
-              </li>
-              <li>
-                The activity must be related to on-farm primary agriculture
-              </li>
+              <li>{pData?.AgriculturStreamSubList1}</li>
+              <li>{pData?.AgriculturStreamSubList2}</li>
             </ol>
           </section>
 
@@ -130,51 +196,50 @@ const AgricultureStreamLmia = () => {
             id="noc"
             ref={(el) => (sectionsRef.current[1] = el)}
           >
-            <h2>NOC Codes</h2>
+            <h2>{pData?.NOCCodesHeading}</h2>
             <table className={styles.table}>
               <thead>
                 <tr>
-                  <th>NOC CODE</th>
-                  <th>OCCUPATION TITLE</th>
+                  <th>{pData?.NocCodeIHeading}</th>
+                  <th>{pData?.OccupationTitleIHeading}</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>80020</td>
-                  <td>Managers in agriculture</td>
+                  <td>{pData?.NocCodeInnerHeading1}</td>
+                  <td>{pData?.OccupationTitleInnerHeading1}</td>
                 </tr>
                 <tr>
-                  <td>80021</td>
-                  <td>Managers in horticulture</td>
+                  <td>{pData?.NocCodeInnerHeading2}</td>
+                  <td>{pData?.OccupationTitleInnerHeading2}</td>
                 </tr>
                 <tr>
-                  <td>82030</td>
-                  <td>Agricultural service contractors and farm supervisors</td>
+                  <td>{pData?.NocCodeInnerHeading3}</td>
+                  <td>{pData?.OccupationTitleInnerHeading3}</td>
                 </tr>
                 <tr>
-                  <td>82031</td>
+                  <td>{pData?.NocCodeInnerHeading4}</td>
                   <td>
-                    Contractors and supervisors, landscaping, grounds
-                    maintenance, and horticulture services
+                  {pData?.OccupationTitleInnerHeading4}
                   </td>
                 </tr>
                 <tr>
-                  <td>84120</td>
+                  <td>{pData?.NocCodeInnerHeading5}</td>
                   <td>
-                    Specialized livestock workers and farm machinery operators
+                  {pData?.OccupationTitleInnerHeading5}
                   </td>
                 </tr>
                 <tr>
-                  <td>85100</td>
-                  <td>Livestock labourers</td>
+                  <td>{pData?.NocCodeInnerHeading6}</td>
+                  <td>{pData?.OccupationTitleInnerHeading6}</td>
                 </tr>
                 <tr>
-                  <td>85101</td>
-                  <td>Harvesting labourers</td>
+                  <td>{pData?.NocCodeInnerHeading7}</td>
+                  <td>{pData?.OccupationTitleInnerHeading7}</td>
                 </tr>
                 <tr>
-                  <td>85103</td>
-                  <td>Nursery and greenhouse laborers</td>
+                  <td>{pData?.NocCodeInnerHeading8}</td>
+                  <td>{pData?.OccupationTitleInnerHeading8}</td>
                 </tr>
               </tbody>
             </table>
@@ -185,43 +250,35 @@ const AgricultureStreamLmia = () => {
             id="national-commodity-list"
             ref={(el) => (sectionsRef.current[2] = el)}
           >
-            <h2>National Commodity List</h2>
+            <h2>{pData?.NatComListIHeading}</h2>
             <ul style={{marginLeft: "40px"}}>
-              <li>Apiary products</li>
+              <li>{pData?.NCL1}</li>
               <li>
-                Fruits, vegetables (including canning/processing of these
-                products if grown on the farm)
+              {pData?.NCL2}
               </li>
-              <li>Mushrooms</li>
-              <li>Flowers</li>
+              <li>{pData?.NCL3}</li>
+              <li>{pData?.NCL4}</li>
               <li>
-                Nursery-grown trees including Christmas trees,
-                greenhouses/nurseries
+              {pData?.NCL5}
               </li>
-              <li>Pedigreed canola seed</li>
-              <li>Seed corn</li>
-              <li>Grains</li>
-              <li>Oil seeds</li>
-              <li>Maple syrup</li>
-              <li>Sod</li>
-              <li>Tobacco</li>
-              <li>Bovine</li>
-              <li>Dairy</li>
-              <li>Duck</li>
-              <li>Horse</li>
-              <li>Mink</li>
-              <li>Poultry</li>
-              <li>Sheep</li>
-              <li>Swine</li>
+              <li>{pData?.NCL6}</li>
+              <li>{pData?.NCL7}</li>
+              <li>{pData?.NCL8}</li>
+              <li>{pData?.NCL9}</li>
+              <li>{pData?.NCL10}</li>
+              <li>{pData?.NCL11}</li>
+              <li>{pData?.NCL12}</li>
+              <li>{pData?.NCL13}</li>
+              <li>{pData?.NCL14}</li>
+              <li>{pData?.NCL15}</li>
+              <li>{pData?.NCL16}</li>
+              <li>{pData?.NCL17}</li>
+              <li>{pData?.NCL18}</li>
+              <li>{pData?.NCL19}</li>
+              <li>{pData?.NCL20}</li>
             </ul>
             <p>
-              Employers must provide proof that the on-farm or off-site housing
-              has been inspected by the appropriate
-              provincial/territorial/municipal body or by an authorized private
-              inspector with appropriate certification. Foreign workers are not
-              obliged to use the accommodation provided by the employer and can
-              choose to live at the accommodation of their own choice with their
-              family.
+            {pData?.NCLPara}
             </p>
           </section>
 
@@ -230,12 +287,9 @@ const AgricultureStreamLmia = () => {
             id="housing-requirements"
             ref={(el) => (sectionsRef.current[3] = el)}
           >
-            <h2>The important thing to note</h2>
+            <h2>{pData?.ImportantNoteHeading}</h2>
             <p>
-              Agriculture Stream LMIA applications are approved with the
-              employment duration of 2 years only. However, if the employer
-              qualifies for the same position in the High-wage LMIA application,
-              the employment duration can be 3 years instead.
+            {pData?.ImportantNotePara}
             </p>
           </section>
 
@@ -244,46 +298,29 @@ const AgricultureStreamLmia = () => {
             id="how-to-apply"
             ref={(el) => (sectionsRef.current[6] = el)}
           >
-            <h2>How to Apply for Agricultural Stream LMIA ?</h2>
+            <h2>{pData?.HowApplyHeading}</h2>
             <ol style={{marginLeft: "40px"}}>
               <li>
-                Have an initial assessment performed by us to verify if the
-                employer is eligible to apply for LMIA for a specific position
-                and how many positions are allowed. We will also discuss the
-                application that should be submitted to the High-wage LMIA
-                program.
+              {pData?.ha1}
               </li>
               <li>
-                We will provide you with a checklist of documents and
-                information required to start the initial process.
+              {pData?.ha2}
               </li>
               <li>
-                If required, perform recruitment efforts as per ESDC program
-                requirements for each LMIA type. Job advertisement postings (All
-                advertisements must be active for 14 days before submission).
+              {pData?.ha3}
               </li>
               <li>
-                Get a housing inspection done by the appropriate
-                provincial/territorial/municipal body or by an authorized
-                private inspector with appropriate certification. The inspector
-                will provide you with a filled in Schedule F – Housing
-                inspection report seasonal agricultural worker program and
-                agricultural stream.
+              {pData?.ha4}
               </li>
-              <li> Interview local applicants.</li>
+              <li>{pData?.ha5}</li>
               <li>
-                Prepare and submit an LMIA application to the Service Canada
-                ESDS department.
+              {pData?.ha6}
               </li>
               <li>
-                Wait for LMIA processing time, which can range from 15 to 60
-                business days. If the Service Canada officer has any questions
-                or concerns or requires any further information, the employer
-                might be contacted for an interview.
+              {pData?.ha7}
               </li>
               <li>
-                Once LMIA is received, the employer can add or remove the name
-                of the foreign worker.
+              {pData?.ha8}
               </li>
             </ol>
           </section>
@@ -293,38 +330,31 @@ const AgricultureStreamLmia = () => {
             id="refusal-reasons"
             ref={(el) => (sectionsRef.current[7] = el)}
           >
-            <h2>Common Reasons for Refusal</h2>
+            <h2>{pData?.RefusalHeading}</h2>
             <h4>
-              Over the years, Service Canada officers have become very strict
-              about the employers meeting the requirements of the program.
+            {pData?.RefusalSubHeading1}
             </h4>
-            <h4>Please see below the common reasons for refusals:</h4>
+            <h4> {pData?.RefusalSubHeading2}</h4>
             <ol style={{ marginLeft: "40px" }}>
               <li>
-                Failure to perform or document the minimum recruitment
-                requirements.
+              {pData?.r1}
               </li>
-              <li>Using the wrong methods of recruitment.</li>
-              <li>Not able to provide housing inspection report.</li>
+              <li>{pData?.r2}</li>
+              <li>{pData?.r3}</li>
               <li>
-                The job requirements mentioned in the job postings and LMIA
-                application are too high compared to the Employment Requirements
-                mentioned on the NOC website.
+              {pData?.r4}
               </li>
               <li>
-                Provided false, misleading, or inaccurate information in the
-                LMIA application.
+              {pData?.r5}
               </li>
               <li>
-                Have been found non-compliant as a result of an employer
-                compliance review.
+              {pData?.r6}
               </li>
               <li>
-                Have been banned from the Temporary Foreign Worker Program
-                because non-compliance was discovered during an inspection.
+              {pData?.r7}
               </li>
               <li>
-                Are in default of payment of an administrative monetary penalty.
+              {pData?.r8}
               </li>
             </ol>
           </section>
@@ -334,25 +364,12 @@ const AgricultureStreamLmia = () => {
             id="why-choose-us"
             ref={(el) => (sectionsRef.current[8] = el)}
           >
-            <h2>Still Not Sure?</h2>
+            <h2>{pData?.StillNotSureHeading}</h2>
             <p>
-              If you have received a refusal for any of the reasons mentioned
-              above, do not worry. With over a decade of experience, we
-              specialize in previously refused cases. While we don't provide
-              jobs for LMIA, we can certainly assist you if you have a job
-              offer. We have obtained approvals for clients who had multiple
-              previous refusals. We achieve this with a tailored approach to
-              your specific case, addressing each concern that the officer has
-              listed in previous refusals. We use case law and find similar
-              cases to your circumstances that had positive results, and we use
-              them as precedents in cases we work on. This is why we have a high
-              success rate.
+            {pData?.StillNotSurePara1}
             </p>
             <p>
-              At Brightlight Immigration, we have a dedicated team of visa
-              application specialists who can assist you from the start of the
-              application process to obtaining your visa. Start your process
-              now.
+            {pData?.StillNotSurePara2}
             </p>
             <button
               onClick={() =>
