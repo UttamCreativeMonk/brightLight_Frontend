@@ -77,6 +77,22 @@ import ChangeCollegeProgramContent from "../admin_sections/ChangeCollegeProgram"
 import ChangeCollegeProgramMeta from "../admin_sections/ChangeCollegeProgramMeta";
 import CategoryBasedExpressContent from "../admin_sections/CategoryBasedExpress";
 import CategoryBasedExpressMeta from "../admin_sections/CategoryBasedExpressMeta";
+import CitizenshipContent from "../admin_sections/Citizenship";
+import CitizenshipMeta from "../admin_sections/CitizenshipMeta";
+import CommonLawPartnerTemporaryContent from "../admin_sections/CommonLawPartnerTemporary";
+import CommonLawPartnerTemporaryContentMeta from "../admin_sections/CommonLawPartnerTemporaryMeta";
+import CommonLawPartnerPermanentContent from "../admin_sections/CommonLawPartnerPermanent";
+import CommonLawPartnerPermanentContentMeta from "../admin_sections/CommonLawPartnerPermanentMeta";
+import DependentChildrenContent from "../admin_sections/DependentChildren";
+import DependentChildrenMeta from "../admin_sections/DependentChildrenMeta";
+import DualIntentVisaMeta from "../admin_sections/DualIntentVisaMeta";
+import DualIntentVisaPageContent from "../admin_sections/DualIntentVisa";
+import EntryLevelSemiSkilledContent from "../admin_sections/EntryLevelSemiSkilled";
+import EntryLevelSemiSkilledMeta from "../admin_sections/EntryLevelSemiSkilledMeta";
+import ExtensionsDraftContent from "../admin_sections/ExtensionsDraft";
+import ExtensionsDraftMeta from "../admin_sections/ExtensionsDraftMeta";
+import CommonLawPartnerInternationalContent from "../admin_sections/CommonLawParenerInternational";
+import CommonLawPartnerInternationalMeta from "../admin_sections/CommonLawParenerInternationalMeta";
 
 let Admin = () => {
   let { logout } = useAuth();
@@ -84,6 +100,7 @@ let Admin = () => {
   let [activePage, setActivePage] = useState("home");
   let [activeSection, setActiveSection] = useState("home-top");
   let [displayParam, setDisplayParam] = useState("main_pages");
+  let [paginationValue, setPaginationValue] = useState(1);
 
   useEffect(() => {
     let params = new URLSearchParams(window.location.search);
@@ -101,6 +118,7 @@ let Admin = () => {
   }, []);
 
   let setInternalPages = () => {
+    setPaginationValue(1);
     let params = new URLSearchParams(window.location.search);
     params.set("display", "internal_pages");
     setDisplayParam("internal_pages");
@@ -116,6 +134,7 @@ let Admin = () => {
   };
 
   let setMainPages = () => {
+    setActiveSection("none");
     let params = new URLSearchParams(window.location.search);
     params.set("display", "main_pages");
     setDisplayParam("main_pages");
@@ -131,6 +150,7 @@ let Admin = () => {
   };
 
   let updateDisplayParam = () => {
+    setActiveSection("none");
     let params = new URLSearchParams(window.location.search);
     let newDisplayValue = params.get("display");
     if (newDisplayValue !== displayParam) {
@@ -995,144 +1015,432 @@ let Admin = () => {
             {/* ////////////////////////////////// */}
 
             <div className={styles.dashboard}>
-              <div className={styles.leftPanel}>
-                <div className={styles.page} onClick={setMainPages}>
-                  <p>{"<-"} Move Back</p>
-                </div>
+              {paginationValue == "1" && (
+                <div className={styles.leftPanel}>
+                  <div className={styles.page} onClick={setMainPages}>
+                    <p>{"<-"} Move To Main Pages</p>
+                  </div>
 
-                <div
-                  className={`${styles.page} ${
-                    activePage === "additional_documents"
-                      ? styles.activePage
-                      : ""
-                  }`}
-                  onClick={() => handlePageClick("additional_documents")}
-                >
-                  <p>Additional Documents Page</p>
-                </div>
-                <div
-                  className={`${styles.page} ${
-                    activePage === "adoption_page" ? styles.activePage : ""
-                  }`}
-                  onClick={() => handlePageClick("adoption_page")}
-                >
-                  <p>Adoption Page</p>
-                </div>
+                  <div
+                    className={`${styles.page} ${
+                      activePage === "additional_documents"
+                        ? styles.activePage
+                        : ""
+                    }`}
+                    onClick={() => handlePageClick("additional_documents")}
+                  >
+                    <p>Additional Documents Page</p>
+                  </div>
+                  <div
+                    className={`${styles.page} ${
+                      activePage === "adoption_page" ? styles.activePage : ""
+                    }`}
+                    onClick={() => handlePageClick("adoption_page")}
+                  >
+                    <p>Adoption Page</p>
+                  </div>
 
-                <div
-                  className={`${styles.page} ${
-                    activePage === "agriculture_and_agri_food_page"
-                      ? styles.activePage
-                      : ""
-                  }`}
-                  onClick={() =>
-                    handlePageClick("agriculture_and_agri_food_page")
-                  }
-                >
-                  <p>Agriculture And Agri Food Occupation Page</p>
-                </div>
+                  <div
+                    className={`${styles.page} ${
+                      activePage === "agriculture_and_agri_food_page"
+                        ? styles.activePage
+                        : ""
+                    }`}
+                    onClick={() =>
+                      handlePageClick("agriculture_and_agri_food_page")
+                    }
+                  >
+                    <p>Agriculture And Agri Food Occupation Page</p>
+                  </div>
 
-                <div
-                  className={`${styles.page} ${
-                    activePage === "agriculture_stream_lmia_page"
-                      ? styles.activePage
-                      : ""
-                  }`}
-                  onClick={() =>
-                    handlePageClick("agriculture_stream_lmia_page")
-                  }
-                >
-                  <p>Agriculture Stream LMIA Page</p>
-                </div>
+                  <div
+                    className={`${styles.page} ${
+                      activePage === "agriculture_stream_lmia_page"
+                        ? styles.activePage
+                        : ""
+                    }`}
+                    onClick={() =>
+                      handlePageClick("agriculture_stream_lmia_page")
+                    }
+                  >
+                    <p>Agriculture Stream LMIA Page</p>
+                  </div>
 
-                <div
-                  className={`${styles.page} ${
-                    activePage === "agri_food_pilot_page"
-                      ? styles.activePage
-                      : ""
-                  }`}
-                  onClick={() => handlePageClick("agri_food_pilot_page")}
-                >
-                  <p>Agri Food Pilot Program Page</p>
-                </div>
+                  <div
+                    className={`${styles.page} ${
+                      activePage === "agri_food_pilot_page"
+                        ? styles.activePage
+                        : ""
+                    }`}
+                    onClick={() => handlePageClick("agri_food_pilot_page")}
+                  >
+                    <p>Agri Food Pilot Program Page</p>
+                  </div>
 
-                <div
-                  className={`${styles.page} ${
-                    activePage === "bcpnp_page" ? styles.activePage : ""
-                  }`}
-                  onClick={() => handlePageClick("bcpnp_page")}
-                >
-                  <p>BCPNP Page</p>
-                </div>
+                  <div
+                    className={`${styles.page} ${
+                      activePage === "bcpnp_page" ? styles.activePage : ""
+                    }`}
+                    onClick={() => handlePageClick("bcpnp_page")}
+                  >
+                    <p>BCPNP Page</p>
+                  </div>
 
-                <div
-                  className={`${styles.page} ${
-                    activePage === "bridging_open_work_permit_page"
-                      ? styles.activePage
-                      : ""
-                  }`}
-                  onClick={() =>
-                    handlePageClick("bridging_open_work_permit_page")
-                  }
-                >
-                  <p>Bridging Open Work Permit LP Page</p>
-                </div>
+                  <div
+                    className={`${styles.page} ${
+                      activePage === "bridging_open_work_permit_page"
+                        ? styles.activePage
+                        : ""
+                    }`}
+                    onClick={() =>
+                      handlePageClick("bridging_open_work_permit_page")
+                    }
+                  >
+                    <p>Bridging Open Work Permit LP Page</p>
+                  </div>
 
-                <div
-                  className={`${styles.page} ${
-                    activePage === "business_visitor_visa_page"
-                      ? styles.activePage
-                      : ""
-                  }`}
-                  onClick={() => handlePageClick("business_visitor_visa_page")}
-                >
-                  <p>Business Visitor Visa Page</p>
-                </div>
+                  <div
+                    className={`${styles.page} ${
+                      activePage === "business_visitor_visa_page"
+                        ? styles.activePage
+                        : ""
+                    }`}
+                    onClick={() =>
+                      handlePageClick("business_visitor_visa_page")
+                    }
+                  >
+                    <p>Business Visitor Visa Page</p>
+                  </div>
 
-                <div
-                  className={`${styles.page} ${
-                    activePage === "canadian_experience_class_page"
-                      ? styles.activePage
-                      : ""
-                  }`}
-                  onClick={() =>
-                    handlePageClick("canadian_experience_class_page")
-                  }
-                >
-                  <p>Canadian Experience Class Page</p>
-                </div>
+                  <div
+                    className={`${styles.page} ${
+                      activePage === "canadian_experience_class_page"
+                        ? styles.activePage
+                        : ""
+                    }`}
+                    onClick={() =>
+                      handlePageClick("canadian_experience_class_page")
+                    }
+                  >
+                    <p>Canadian Experience Class Page</p>
+                  </div>
 
-                <div
-                  className={`${styles.page} ${
-                    activePage === "cby_page" ? styles.activePage : ""
-                  }`}
-                  onClick={() => handlePageClick("cby_page")}
-                >
-                  <p>Cby Page</p>
-                </div>
+                  <div
+                    className={`${styles.page} ${
+                      activePage === "cby_page" ? styles.activePage : ""
+                    }`}
+                    onClick={() => handlePageClick("cby_page")}
+                  >
+                    <p>Cby Page</p>
+                  </div>
 
-                <div
-                  className={`${styles.page} ${
-                    activePage === "change_college_program_page"
-                      ? styles.activePage
-                      : ""
-                  }`}
-                  onClick={() => handlePageClick("change_college_program_page")}
-                >
-                  <p>Change College Program Page</p>
-                </div>
+                  <div
+                    className={`${styles.page} ${
+                      activePage === "change_college_program_page"
+                        ? styles.activePage
+                        : ""
+                    }`}
+                    onClick={() =>
+                      handlePageClick("change_college_program_page")
+                    }
+                  >
+                    <p>Change College Program Page</p>
+                  </div>
 
-                <div
-                  className={`${styles.page} ${
-                    activePage === "category_based_express_page"
-                      ? styles.activePage
-                      : ""
-                  }`}
-                  onClick={() => handlePageClick("category_based_express_page")}
-                >
-                  <p>Category Based Express Page</p>
+                  <div
+                    className={`${styles.page} ${
+                      activePage === "category_based_express_page"
+                        ? styles.activePage
+                        : ""
+                    }`}
+                    onClick={() =>
+                      handlePageClick("category_based_express_page")
+                    }
+                  >
+                    <p>Category Based Express Page</p>
+                  </div>
+
+                  <div
+                    className={`${styles.page} ${
+                      activePage === "citizenship_page" ? styles.activePage : ""
+                    }`}
+                    onClick={() => handlePageClick("citizenship_page")}
+                  >
+                    <p>Citizenship Page</p>
+                  </div>
+
+                  <div
+                    className={`${styles.page} ${
+                      activePage === "common_law_partner_temporary_page"
+                        ? styles.activePage
+                        : ""
+                    }`}
+                    onClick={() =>
+                      handlePageClick("common_law_partner_temporary_page")
+                    }
+                  >
+                    <p>Common Law Partner Temporary Page</p>
+                  </div>
+
+                  <div
+                    className={`${styles.page} ${
+                      activePage === "common_law_partner_permanent_page"
+                        ? styles.activePage
+                        : ""
+                    }`}
+                    onClick={() =>
+                      handlePageClick("common_law_partner_permanent_page")
+                    }
+                  >
+                    <p>Common Law Partner Permanent Page</p>
+                  </div>
+
+                  <div
+                    className={`${styles.page} ${
+                      activePage === "common_law_partner_international_page"
+                        ? styles.activePage
+                        : ""
+                    }`}
+                    onClick={() =>
+                      handlePageClick("common_law_partner_international_page")
+                    }
+                  >
+                    <p>Common Law Partner International Page</p>
+                  </div>
+
+                  <div
+                    className={`${styles.page} ${
+                      activePage === "dependent_children_page"
+                        ? styles.activePage
+                        : ""
+                    }`}
+                    onClick={() => handlePageClick("dependent_children_page")}
+                  >
+                    <p>Dependent Children Page</p>
+                  </div>
+
+                  <div
+                    className={`${styles.page} ${
+                      activePage === "dual_intent_visa_page"
+                        ? styles.activePage
+                        : ""
+                    }`}
+                    onClick={() => handlePageClick("dual_intent_visa_page")}
+                  >
+                    <p>Dual Intent Visa Page</p>
+                  </div>
+
+                  <div
+                    className={`${styles.page} ${
+                      activePage === "entry_level_semi_skilled_page"
+                        ? styles.activePage
+                        : ""
+                    }`}
+                    onClick={() =>
+                      handlePageClick("entry_level_semi_skilled_page")
+                    }
+                  >
+                    <p>Entry Level Semi Skilled Page</p>
+                  </div>
+
+                  <div
+                    className={`${styles.page} ${
+                      activePage === "extensions_draft_page"
+                        ? styles.activePage
+                        : ""
+                    }`}
+                    onClick={() => handlePageClick("extensions_draft_page")}
+                  >
+                    <p>Extensions Draft Page</p>
+                  </div>
+
+                  <div className={styles.paginationButtons}>
+                    <button
+                      className={`${styles.paginationButton} ${
+                        paginationValue == "1" ? styles.activePageButton : ""
+                      }`}
+                      onClick={() => setPaginationValue("1")}
+                    >
+                      1
+                    </button>
+                    <button
+                      className={`${styles.paginationButton} ${
+                        paginationValue == "2" ? styles.activePageButton : ""
+                      }`}
+                      onClick={() => setPaginationValue("2")}
+                    >
+                      2
+                    </button>
+                    <button
+                      className={`${styles.paginationButton} ${
+                        paginationValue == "3" ? styles.activePageButton : ""
+                      }`}
+                      onClick={() => setPaginationValue("3")}
+                    >
+                      3
+                    </button>
+                    <button
+                      className={`${styles.paginationButton} ${
+                        paginationValue == "4" ? styles.activePageButton : ""
+                      }`}
+                      onClick={() => setPaginationValue("4")}
+                    >
+                      4
+                    </button>
+                  </div>
                 </div>
-              </div>
+              )}
+
+              {paginationValue == "2" && (
+                <div className={styles.leftPanel}>
+                  <div
+                    className={`${styles.page} ${
+                      activePage === "additional_documents"
+                        ? styles.activePage
+                        : ""
+                    }`}
+                    onClick={() => handlePageClick("additional_documents")}
+                  >
+                    <p>Page Tab on 2nd Page</p>
+                  </div>
+
+                  <div className={styles.paginationButtons}>
+                    <button
+                      className={`${styles.paginationButton} ${
+                        paginationValue == "1" ? styles.activePageButton : ""
+                      }`}
+                      onClick={() => setPaginationValue("1")}
+                    >
+                      1
+                    </button>
+                    <button
+                      className={`${styles.paginationButton} ${
+                        paginationValue == "2" ? styles.activePageButton : ""
+                      }`}
+                      onClick={() => setPaginationValue("2")}
+                    >
+                      2
+                    </button>
+                    <button
+                      className={`${styles.paginationButton} ${
+                        paginationValue == "3" ? styles.activePageButton : ""
+                      }`}
+                      onClick={() => setPaginationValue("3")}
+                    >
+                      3
+                    </button>
+                    <button
+                      className={`${styles.paginationButton} ${
+                        paginationValue == "4" ? styles.activePageButton : ""
+                      }`}
+                      onClick={() => setPaginationValue("4")}
+                    >
+                      4
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {paginationValue == "3" && (
+                <div className={styles.leftPanel}>
+                  <div
+                    className={`${styles.page} ${
+                      activePage === "additional_documents"
+                        ? styles.activePage
+                        : ""
+                    }`}
+                    onClick={() => handlePageClick("additional_documents")}
+                  >
+                    <p>Page Tab on 3rd Page</p>
+                  </div>
+
+                  <div className={styles.paginationButtons}>
+                    <button
+                      className={`${styles.paginationButton} ${
+                        paginationValue == "1" ? styles.activePageButton : ""
+                      }`}
+                      onClick={() => setPaginationValue("1")}
+                    >
+                      1
+                    </button>
+                    <button
+                      className={`${styles.paginationButton} ${
+                        paginationValue == "2" ? styles.activePageButton : ""
+                      }`}
+                      onClick={() => setPaginationValue("2")}
+                    >
+                      2
+                    </button>
+                    <button
+                      className={`${styles.paginationButton} ${
+                        paginationValue == "3" ? styles.activePageButton : ""
+                      }`}
+                      onClick={() => setPaginationValue("3")}
+                    >
+                      3
+                    </button>
+                    <button
+                      className={`${styles.paginationButton} ${
+                        paginationValue == "4" ? styles.activePageButton : ""
+                      }`}
+                      onClick={() => setPaginationValue("4")}
+                    >
+                      4
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {paginationValue == "4" && (
+                <div className={styles.leftPanel}>
+                  <div
+                    className={`${styles.page} ${
+                      activePage === "additional_documents"
+                        ? styles.activePage
+                        : ""
+                    }`}
+                    onClick={() => handlePageClick("additional_documents")}
+                  >
+                    <p>Page Tab on 4th Page</p>
+                  </div>
+
+                  <div className={styles.paginationButtons}>
+                    <button
+                      className={`${styles.paginationButton} ${
+                        paginationValue == "1" ? styles.activePageButton : ""
+                      }`}
+                      onClick={() => setPaginationValue("1")}
+                    >
+                      1
+                    </button>
+                    <button
+                      className={`${styles.paginationButton} ${
+                        paginationValue == "2" ? styles.activePageButton : ""
+                      }`}
+                      onClick={() => setPaginationValue("2")}
+                    >
+                      2
+                    </button>
+                    <button
+                      className={`${styles.paginationButton} ${
+                        paginationValue == "3" ? styles.activePageButton : ""
+                      }`}
+                      onClick={() => setPaginationValue("3")}
+                    >
+                      3
+                    </button>
+                    <button
+                      className={`${styles.paginationButton} ${
+                        paginationValue == "4" ? styles.activePageButton : ""
+                      }`}
+                      onClick={() => setPaginationValue("4")}
+                    >
+                      4
+                    </button>
+                  </div>
+                </div>
+              )}
+
               <div className={styles.rightPanel}>
                 {activePage === "bcpnp_page" && (
                   <div className={styles.sections}>
@@ -1501,6 +1809,268 @@ let Admin = () => {
                     </div>
                   </div>
                 )}
+
+                {activePage === "citizenship_page" && (
+                  <div className={styles.sections}>
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "citizenship_page_content"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick("citizenship_page_content")
+                      }
+                    >
+                      Page Content
+                    </div>
+
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "citizenship_page_meta"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick("citizenship_page_meta")
+                      }
+                    >
+                      Page Meta
+                    </div>
+                  </div>
+                )}
+
+                {activePage === "common_law_partner_temporary_page" && (
+                  <div className={styles.sections}>
+                    <div
+                      className={`${styles.section} ${
+                        activeSection ===
+                        "common_law_partner_temporary_page_content"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick(
+                          "common_law_partner_temporary_page_content"
+                        )
+                      }
+                    >
+                      Page Content
+                    </div>
+
+                    <div
+                      className={`${styles.section} ${
+                        activeSection ===
+                        "common_law_partner_temporary_page_meta"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick(
+                          "common_law_partner_temporary_page_meta"
+                        )
+                      }
+                    >
+                      Page Meta
+                    </div>
+                  </div>
+                )}
+
+                {activePage === "common_law_partner_permanent_page" && (
+                  <div className={styles.sections}>
+                    <div
+                      className={`${styles.section} ${
+                        activeSection ===
+                        "common_law_partner_permanent_page_content"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick(
+                          "common_law_partner_permanent_page_content"
+                        )
+                      }
+                    >
+                      Page Content
+                    </div>
+
+                    <div
+                      className={`${styles.section} ${
+                        activeSection ===
+                        "common_law_partner_permanent_page_meta"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick(
+                          "common_law_partner_permanent_page_meta"
+                        )
+                      }
+                    >
+                      Page Meta
+                    </div>
+                  </div>
+                )}
+
+                {activePage === "dependent_children_page" && (
+                  <div className={styles.sections}>
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "dependent_children_page_content"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick("dependent_children_page_content")
+                      }
+                    >
+                      Page Content
+                    </div>
+
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "dependent_children_page_meta"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick("dependent_children_page_meta")
+                      }
+                    >
+                      Page Meta
+                    </div>
+                  </div>
+                )}
+
+                {activePage === "dual_intent_visa_page" && (
+                  <div className={styles.sections}>
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "dual_intent_visa_page_content"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick("dual_intent_visa_page_content")
+                      }
+                    >
+                      Page Content
+                    </div>
+
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "dual_intent_visa_page_meta"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick("dual_intent_visa_page_meta")
+                      }
+                    >
+                      Page Meta
+                    </div>
+                  </div>
+                )}
+
+                {activePage === "entry_level_semi_skilled_page" && (
+                  <div className={styles.sections}>
+                    <div
+                      className={`${styles.section} ${
+                        activeSection ===
+                        "entry_level_semi_skilled_page_content"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick(
+                          "entry_level_semi_skilled_page_content"
+                        )
+                      }
+                    >
+                      Page Content
+                    </div>
+
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "entry_level_semi_skilled_page_meta"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick("entry_level_semi_skilled_page_meta")
+                      }
+                    >
+                      Page Meta
+                    </div>
+                  </div>
+                )}
+
+                {activePage === "extensions_draft_page" && (
+                  <div className={styles.sections}>
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "extensions_draft_page_content"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick("extensions_draft_page_content")
+                      }
+                    >
+                      Page Content
+                    </div>
+
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "extensions_draft_page_meta"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick("extensions_draft_page_meta")
+                      }
+                    >
+                      Page Meta
+                    </div>
+                  </div>
+                )}
+
+                {activePage === "common_law_partner_international_page" && (
+                  <div className={styles.sections}>
+                    <div
+                      className={`${styles.section} ${
+                        activeSection ===
+                        "common_law_partner_international_page_content"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick(
+                          "common_law_partner_international_page_content"
+                        )
+                      }
+                    >
+                      Page Content
+                    </div>
+
+                    <div
+                      className={`${styles.section} ${
+                        activeSection ===
+                        "common_law_partner_international_page_meta"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick(
+                          "common_law_partner_international_page_meta"
+                        )
+                      }
+                    >
+                      Page Meta
+                    </div>
+                  </div>
+                )}
+
                 <div className={styles.roshiSection}>
                   {activePage === "bcpnp_page" &&
                     activeSection === "bcpnp_page_content" && (
@@ -1601,6 +2171,85 @@ let Admin = () => {
                   {activePage === "category_based_express_page" &&
                     activeSection === "category_based_express_page_meta" && (
                       <CategoryBasedExpressMeta />
+                    )}
+
+                  {activePage === "citizenship_page" &&
+                    activeSection === "citizenship_page_content" && (
+                      <CitizenshipContent />
+                    )}
+                  {activePage === "citizenship_page" &&
+                    activeSection === "citizenship_page_meta" && (
+                      <CitizenshipMeta />
+                    )}
+
+                  {activePage === "common_law_partner_temporary_page" &&
+                    activeSection ===
+                      "common_law_partner_temporary_page_content" && (
+                      <CommonLawPartnerTemporaryContent />
+                    )}
+                  {activePage === "common_law_partner_temporary_page" &&
+                    activeSection ===
+                      "common_law_partner_temporary_page_meta" && (
+                      <CommonLawPartnerTemporaryContentMeta />
+                    )}
+
+                  {activePage === "common_law_partner_permanent_page" &&
+                    activeSection ===
+                      "common_law_partner_permanent_page_content" && (
+                      <CommonLawPartnerPermanentContent />
+                    )}
+                  {activePage === "common_law_partner_permanent_page" &&
+                    activeSection ===
+                      "common_law_partner_permanent_page_meta" && (
+                      <CommonLawPartnerPermanentContentMeta />
+                    )}
+
+                  {activePage === "dependent_children_page" &&
+                    activeSection === "dependent_children_page_content" && (
+                      <DependentChildrenContent />
+                    )}
+                  {activePage === "dependent_children_page" &&
+                    activeSection === "dependent_children_page_meta" && (
+                      <DependentChildrenMeta />
+                    )}
+
+                  {activePage === "dual_intent_visa_page" &&
+                    activeSection === "dual_intent_visa_page_content" && (
+                      <DualIntentVisaPageContent />
+                    )}
+                  {activePage === "dual_intent_visa_page" &&
+                    activeSection === "dual_intent_visa_page_meta" && (
+                      <DualIntentVisaMeta />
+                    )}
+
+                  {activePage === "entry_level_semi_skilled_page" &&
+                    activeSection ===
+                      "entry_level_semi_skilled_page_content" && (
+                      <EntryLevelSemiSkilledContent />
+                    )}
+                  {activePage === "entry_level_semi_skilled_page" &&
+                    activeSection === "entry_level_semi_skilled_page_meta" && (
+                      <EntryLevelSemiSkilledMeta />
+                    )}
+
+                  {activePage === "extensions_draft_page" &&
+                    activeSection === "extensions_draft_page_content" && (
+                      <ExtensionsDraftContent />
+                    )}
+                  {activePage === "extensions_draft_page" &&
+                    activeSection === "extensions_draft_page_meta" && (
+                      <ExtensionsDraftMeta />
+                    )}
+
+                  {activePage === "common_law_partner_international_page" &&
+                    activeSection ===
+                      "common_law_partner_international_page_content" && (
+                      <CommonLawPartnerInternationalContent />
+                    )}
+                  {activePage === "common_law_partner_international_page" &&
+                    activeSection ===
+                      "common_law_partner_international_page_meta" && (
+                      <CommonLawPartnerInternationalMeta />
                     )}
                 </div>
               </div>
