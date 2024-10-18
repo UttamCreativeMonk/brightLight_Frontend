@@ -12,13 +12,10 @@ import { Helmet } from "react-helmet-async";
 const AgriFoodPilotProgram = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([])
 
   const [showNOC, setShowNOC] = useState("meatProcessing");
 
-
-
-  // Create refs for each section
-  const sectionsRef = useRef([]);
 
   const toggleNOC = (category) => {
     setShowNOC(showNOC === category ? "" : category);
@@ -50,6 +47,22 @@ const AgriFoodPilotProgram = () => {
       });
   }, []);
 
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/agiFoodPilotProgram")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  const sectionsRef = useRef([]);
 
   const handleScroll = () => {
     sectionsRef.current.forEach((section) => {
@@ -156,7 +169,7 @@ const AgriFoodPilotProgram = () => {
           id="about-program"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          <h1>Agri-Food Pilot Program</h1>
+          <h1>{pData?.AgriFoodPilotHeading}</h1>
         </header>
 
         <section
@@ -168,34 +181,21 @@ const AgriFoodPilotProgram = () => {
             id="testing1"
             ref={(el) => (sectionsRef.current[2] = el)}
           >
-            The Agri-Food Pilot is strategically designed to address labor
-            shortages, particularly in critical areas like meat processing and
-            mushroom production, within Canada's agri-food sector, while also
-            supporting the nation's ambitious export objectives. As a
-            cornerstone of Canada's economic growth, the agriculture and
-            agri-food industry sustains approximately one-in-eight jobs across
-            the country.
+           {pData?.AgriFoodPilotPara1}
           </p>
           <p
             className={`${styles.section} ${styles.section}`}
             id="testing2"
             ref={(el) => (sectionsRef.current[3] = el)}
           >
-            This initiative aims to assist the agri-food sector in recruiting
-            full-time, non-seasonal foreign workers essential for filling
-            expanding labor gaps. By offering a pathway to permanent residency
-            after an initial two-year term on a temporary work permit, the pilot
-            program seeks to attract and retain skilled workers, eliminating the
-            need for repetitive work permit renewals.
+        {pData?.AgriFoodPilotPara2}
           </p>
           <p
             className={`${styles.section} ${styles.section}`}
             id="testing3"
             ref={(el) => (sectionsRef.current[4] = el)}
           >
-            In each calendar year, a maximum of 2,750 principal applicants,
-            along with their accompanying family members, will be considered for
-            processing under this pilot program.
+        {pData?.AgriFoodPilotPara3}
           </p>
         </section>
 
@@ -207,14 +207,12 @@ const AgriFoodPilotProgram = () => {
           <h2
             className={`${styles.section} ${styles.section}`}
             id="testing25"
-            ref={(el) => (sectionsRef.current[25] = el)}
-          >
-            Eligibility Criteria for Agri-Food Immigration Pilot
+            ref={(el) => (sectionsRef.current[25] = el)}>
+              {pData?.EligCritHeading}
           </h2>
-          <h4>Who Qualifies for Canada’s Agri-Food Immigration Pilot?</h4>
+          <h4>{pData?.EligCritSubHead1}</h4>
           <p>
-            To be eligible for Canada’s Agri-Food Immigration Pilot, foreign
-            workers need to meet specific criteria:
+          {pData?.EligCritPara1}
           </p>
 
           <h3
@@ -466,20 +464,16 @@ const AgriFoodPilotProgram = () => {
             id="testing6"
             ref={(el) => (sectionsRef.current[8] = el)}
           >
-            2. Qualifying Job Offer
+          {pData?.EligCritPoH2}
           </h3>
           <p>
-            If you are living in Canada at the time of application, you have the
-            option to fulfill either the job offer requirement or the
-            educational requirement.
+          {pData?.EligCritPoPara1}
           </p>
           <p>
-            However, if you are living outside of Canada when you apply, you
-            must meet both the job offer and the educational requirement.
+          {pData?.EligCritPoPara2}
           </p>
           <p>
-            The job offer you receive must be genuine and satisfy all of the
-            following criteria:
+          {pData?.EligCritPoPara3}
           </p>
           <ul
           style={{marginLeft: "40px"}}
@@ -488,29 +482,21 @@ const AgriFoodPilotProgram = () => {
             ref={(el) => (sectionsRef.current[9] = el)}
           >
             <li>
-              The job must be in an eligible occupation under one of the
-              eligible industries.
+            {pData?.EligCritPo2Li1}
             </li>
             <li>
-              The job must be full-time, implying that you work a minimum of 30
-              paid hours per week.
+            {pData?.EligCritPo2Li2}
             </li>
             <li>
-              The job must be non-seasonal, meaning you have consistent and
-              regularly scheduled paid employment throughout the year.
+            {pData?.EligCritPo2Li3}
             </li>
             <li>
-              The job must be permanent, showing there is no predetermined end
-              date.
+            {pData?.EligCritPo2Li4}
             </li>
-            <li>The job must be located in Canada, excluding Quebec.</li>
+            <li> {pData?.EligCritPo2Li5}</li>
           </ul>
           <p>
-            For positions that are unionized, the wage must be determined by the
-            relevant collective agreement. For non-unionized positions, the wage
-            must meet or exceed the prevailing (median) wage for the occupation
-            listed on your job offer in the province of employment (or at the
-            national level if no provincial rate is available).
+          {pData?.EligCritPo2Para2}
           </p>
 
           <h3
@@ -518,11 +504,10 @@ const AgriFoodPilotProgram = () => {
             id="testing8"
             ref={(el) => (sectionsRef.current[10] = el)}
           >
-            3. Minimum Language Requirements
+           {pData?.EligCritPoH3}
           </h3>
           <p>
-            Achieve a minimum Canadian Language Benchmark (CLB) of Level 4 on an
-            approved language test in either English or French.
+          {pData?.EligCritPo3Para}
           </p>
 
           <h3
@@ -530,12 +515,10 @@ const AgriFoodPilotProgram = () => {
             id="testing9"
             ref={(el) => (sectionsRef.current[11] = el)}
           >
-            4. Minimum Education Requirements
+             {pData?.EligCritPoH4}
           </h3>
           <p>
-            The education requirement for the agri-food pilot program depends on
-            whether you are residing in Canada or outside of Canada when you
-            apply:
+          {pData?.EligCritPo4Para}
           </p>
           <ul
           style={{marginLeft: "40px"}}
@@ -544,33 +527,27 @@ const AgriFoodPilotProgram = () => {
             ref={(el) => (sectionsRef.current[12] = el)}
           >
             <li>
-              If you are residing in Canada:
+            {pData?.EligCritPo4Li1}
               <ul>
                 <li>
-                  You may choose to meet either the educational requirement or
-                  the job offer requirement.
+                {pData?.EligCritPo4SubLi1}
                 </li>
               </ul>
             </li>
             <li>
-              If you are residing outside of Canada:
+            {pData?.EligCritPo4Li2}
               <ul>
                 <li>
-                  You must meet both the educational requirement and the job
-                  offer.
+                {pData?.EligCritPo2SubLi}
                 </li>
               </ul>
             </li>
             <li>
-              The educational requirement entails having at least one of the
-              following:
+            {pData?.EligCritPo4Li3}
               <ul>
-                <li>A Canadian high school diploma, or</li>
+                <li>{pData?.EligCritPo3SubLi1}</li>
                 <li>
-                  An Educational Credential Assessment (ECA) report from a
-                  designated organization or professional body, demonstrating
-                  the completion of a foreign credential at the secondary school
-                  level or higher.
+                {pData?.EligCritPo3SubLi2}
                 </li>
               </ul>
             </li>
@@ -581,38 +558,34 @@ const AgriFoodPilotProgram = () => {
             id="testing11"
             ref={(el) => (sectionsRef.current[13] = el)}
           >
-            5. Settlement Funds Requirement
+           {pData?.EligCritPoH5}
           </h3>
           <p>
-            Demonstrate sufficient funds to support yourself and your family
-            upon settling in Canada. If you&#39;re already employed in Canada
-            with a valid work permit, no proof of funds is necessary. For those
-            not currently employed in Canada, specific settlement funds are
-            required:
+          {pData?.EligCritPo5Para}
           </p>
           <table className={styles.table}>
             <thead>
               <tr>
-                <th>Number of family members</th>
+                <th>{pData?.EligCritPo5Head1}</th>
                 <th>Required funds (in CAD)</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>1 (single applicant)</td>
-                <td>$13,757</td>
+                <td>{pData?.EligCritPo5Head1Po1}</td>
+                <td>{pData?.EligCritPo5Head2Po1}</td>
               </tr>
               <tr>
-                <td>2</td>
-                <td>$17,127</td>
+                <td>{pData?.EligCritPo5Head1Po2}</td>
+                <td>{pData?.EligCritPo5Head2Po2}</td>
               </tr>
               <tr>
-                <td>3</td>
-                <td>$21,055</td>
+                <td>{pData?.EligCritPo5Head1Po3}</td>
+                <td>{pData?.EligCritPo5Head2Po3}</td>
               </tr>
               <tr>
-                <td>For each additional family member, add</td>
-                <td>$3,706</td>
+                <td>{pData?.EligCritPo5Head1Po4}</td>
+                <td>{pData?.EligCritPo5Head2Po4}</td>
               </tr>
             </tbody>
           </table>
@@ -623,7 +596,7 @@ const AgriFoodPilotProgram = () => {
           id="how-to-apply"
           ref={(el) => (sectionsRef.current[20] = el)}
         >
-          <h2>How to Apply for Canada’s Agri-Food Immigration Pilot</h2>
+          <h2>{pData?.HowToApplyHeading}</h2>
           <ul
           style={{marginLeft: "40px"}}
             className={`${styles.section} ${styles.section}`}
@@ -631,13 +604,10 @@ const AgriFoodPilotProgram = () => {
             ref={(el) => (sectionsRef.current[21] = el)}
           >
             <li>
-              If you meet the program requirements listed above, then you can
-              submit your application for permanent resident status directly to
-              IRCC.
+            {pData?.ha1}
             </li>
             <li>
-              Once you have completed your application, you will be required to
-              submit the application in hard copy by mail.
+            {pData?.ha2}
             </li>
           </ul>
         </section>
@@ -646,21 +616,13 @@ const AgriFoodPilotProgram = () => {
           className={`${styles.contact} ${styles.section}`}
           ref={(el) => (sectionsRef.current[22] = el)}
         >
-          <h2>Still Not Sure?</h2>
+          <h2>{pData?.StillNotSureHeading}</h2>
           <p
             className={`${styles.section} ${styles.section}`}
             id="testing"
             ref={(el) => (sectionsRef.current[23] = el)}
           >
-            Contact Brightlight Immigration today to assess your profile and
-            embark on a transformative journey towards achieving your Canadian
-            dream. With over a decade of experience, we specialize in handling
-            Express Entry Programs. Our approval rate for these programs is
-            nearly 100%. We achieve this with a tailored approach to your
-            specific case. We use case law and find similar cases to your
-            circumstances that had positive results, and we use them as
-            precedents in cases we work on. This is why we have a high success
-            rate.
+            {pData?.StillNotSurePara}
           </p>
           <a href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj">
             <button className={styles.book_button} id="book-appointment">

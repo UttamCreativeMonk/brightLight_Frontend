@@ -5,9 +5,13 @@ import Navbar1 from "../components/Navbar1";
 import Testimonials from "../sections/Testimonials";
 import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
+import ogImage from "../assets/ogImage.png";
+import { Helmet } from "react-helmet-async";
 
 const CategoryBasedExpress = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  let [metaData, setMetaData] = useState([]);
+  let [pData, setPData] = useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -19,6 +23,35 @@ const CategoryBasedExpress = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/categoryBasedExpressMeta")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/categoryBasedExpress")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   const sectionsRef = useRef([]);
 
@@ -44,6 +77,48 @@ const CategoryBasedExpress = () => {
 
   return (
     <>
+          <Helmet>
+        <title>
+          {metaData?.metaTitle
+            ? metaData?.metaTitle
+            : "Brightlight Immigration"}
+        </title>
+        <meta
+          name="description"
+          content={
+            metaData?.metaDesc
+              ? metaData?.metaDesc
+              : "Learn about Brightlight Immigration, our mission, values, and the dedicated team behind our immigration services. We are committed to providing honest and accurate advice to guide you through your immigration journey."
+          }
+        />
+        <meta
+          name="title"
+          property="og:title"
+          content={
+            metaData?.metaOgTitle
+              ? metaData?.metaOgTitle
+              : " Brightlight Immigration"
+          }
+        />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:type" content="image/png" />
+        <meta
+          property="og:description"
+          content={
+            metaData?.metaOgDesc
+              ? metaData?.metaOgDesc
+              : "Discover the story behind Brightlight Immigration, our commitment to providing honest and accurate advice, and how our team can assist you with your immigration needs."
+          }
+        />
+        <meta
+          name="Keywords"
+          content={
+            metaData?.metaKeywords
+              ? metaData?.metaKeywords
+              : "Brightlight Immigration, Immigration Services, Mission, Team"
+          }
+        />
+      </Helmet>
       <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
@@ -91,20 +166,14 @@ const CategoryBasedExpress = () => {
             ref={(el) => (sectionsRef.current[0] = el)}
           >
             <header className={styles.header}>
-              <h1>Citizenship - The highest form of legal status in Canada</h1>
+              <h1>{pData?.heading}</h1>
             </header>
 
             <p className={styles.discription}>
-              Category-Based Express Entry Selection Draws
+            {pData?.description1}
             </p>
             <p className={styles.discription}>
-              Category-based draws are an additional type of Express Entry draw.
-              These draws target specific groups of Express Entry candidates who
-              possess certain skills, qualifications, or experience that are in
-              high demand in Canada's labor market. By focusing on specific
-              categories, the Canadian government plans to attract highly
-              skilled and qualified individuals to fill labor shortages and
-              contribute to the country's economic growth.
+            {pData?.description2}
             </p>
           </section>
 
@@ -113,30 +182,19 @@ const CategoryBasedExpress = () => {
             id="benefits"
             ref={(el) => (sectionsRef.current[1] = el)}
           >
-            <h2>Benefits of Category-Based Express Entry Selection Draws:</h2>
+            <h2>{pData?.BenifitHeading}</h2>
             <h4>
-              Category-based draws offer several benefits to you, including:
+            {pData?.BenifitSubHead}
             </h4>
             <ul style={{marginLeft: "40px"}}>
               <li>
-                Your chances of getting an ITA are Increased. By focusing on
-                specific groups of candidates, category-based draws often have
-                lower CRS cut-offs compared to general Express Entry draws. This
-                means that candidates with lower CRS scores may still have a
-                chance of receiving an ITA.
+              {pData?.b1}
               </li>
               <li>
-                It is a faster pathway to Canadian Permanent Residence. Once
-                you’re selected through a category-based draw, you can proceed
-                directly to the application stage for permanent residence,
-                shortening the overall immigration process.
+              {pData?.b2}
               </li>
               <li>
-                Opportunities for skilled professionals in category-based draws
-                are in demand. This means you’ll have a clear path to pursue
-                your career in Canada. Whether you're a healthcare worker, a
-                skilled tradesperson, or an expert in STEM fields, Canada
-                welcomes your talents.
+              {pData?.b3}
               </li>
             </ul>
           </section>
@@ -147,8 +205,7 @@ const CategoryBasedExpress = () => {
             ref={(el) => (sectionsRef.current[33] = el)}
           >
             <h2>
-              Here are the 6 categories of Category-Based Express Entry
-              Selection Draws:
+            {pData?.SixCategoriesCategoryBasedHeading}
             </h2>
             <div className={styles.button2Parent}>
               <button
@@ -201,15 +258,9 @@ const CategoryBasedExpress = () => {
             id="testing"
             ref={(el) => (sectionsRef.current[35] = el)}
           >
-            <h2>How do Category Based Draws work?</h2>
+            <h2>{pData?.HowCategoryBasedDrawsWorkHeading}</h2>
             <p>
-              Category-based draws are conducted separately from regular Express
-              Entry draws, which typically invite candidates based on their
-              Comprehensive Ranking System (CRS) score. Instead, category-based
-              draws target specific groups of candidates based on their
-              qualifications, such as work experience in healthcare, French
-              language proficiency, or STEM (Science, Technology, Engineering,
-              and Mathematics) skills.
+            {pData?.HowCategoryBasedDrawsWorkPara}
             </p>
           </section>
 
@@ -218,28 +269,18 @@ const CategoryBasedExpress = () => {
             id="eligibility"
             ref={(el) => (sectionsRef.current[2] = el)}
           >
-            <h2> Eligibility Criteria for a Category-Based Draw</h2>
+            <h2>{pData?.eligibleCriteriaHeading}</h2>
             <p>
-              To be eligible for a category-based draw, you must meet all the
-              requirements specified by IRCC for that particular category. Once
-              a category-based draw is announced, IRCC will rank eligible
-              candidates in the Express Entry pool based on their CRS score and
-              select the highest-ranked candidates to receive invitations to
-              apply (ITAs) for permanent residence. The eligibility requirements
-              for category-based draws vary depending on the specific category.
-              However, here are some general eligibility criteria that apply to
-              all categories. These include:
+            {pData?.eligibileSubHead}
             </p>
             <ul style={{marginLeft: "40px"}}>
-              <li>You must have a valid Express Entry profile.</li>
+              <li>{pData?.ec1}</li>
               <li>
-                You must meet the language proficiency requirements for the
-                selected category.
+              {pData?.ec2}
               </li>
-              <li>Have relevant work experience in the selected category.</li>
+              <li>{pData?.ec3}</li>
               <li>
-                You must meet the educational requirements for the selected
-                category.
+              {pData?.ec4}
               </li>
             </ul>
           </section>
@@ -249,7 +290,7 @@ const CategoryBasedExpress = () => {
             id="testing"
             ref={(el) => (sectionsRef.current[31] = el)}
           >
-            <h2>Express Entry Category based draws history</h2>
+            <h2>{pData?.ExpressEntryHeading}</h2>
             <button
               className={styles.button1}
               onClick={() => (window.location.href = "/previous-draw-history")}
@@ -263,37 +304,28 @@ const CategoryBasedExpress = () => {
             id="how-to-apply"
             ref={(el) => (sectionsRef.current[3] = el)}
           >
-            <h2>How to apply for Category Based Draw?</h2>
+            <h2>{pData?.howToApplyHeading}</h2>
             <ul style={{marginLeft: "40px"}}>
               <li>
-                Create an Express Entry profile first. Or even better and
-                stress-free solution, let us handle your case for you.
+              {pData?.ha1}
               </li>
               <li>
-                Next, IRCC conducts draws irregularly, so keep a check on the
-                official website.
+              {pData?.ha2}
               </li>
               <li>
-                The higher your score, the more likely you are to get an ITA.
-                Improve language skills, gain work experience, and get a higher
-                education.
+              {pData?.ha3}
               </li>
               <li>
-                If you meet the criteria and have a high enough score, you will
-                get an ITA to apply for permanent residence.
+              {pData?.ha4}
                 <a href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj">
                   Click here
                 </a>
               </li>
               <li>
-                You’ll have 60 days to submit your complete application,
-                including documents like identity proof, language test results,
-                and work experience verification.
+              {pData?.ha5}
               </li>
               <li>
-                Once your application is approved, you will receive a
-                Confirmation of Permanent Residence (COPR), allowing you to live
-                and work in Canada permanently.
+              {pData?.ha6}
               </li>
             </ul>
           </section>
@@ -303,31 +335,23 @@ const CategoryBasedExpress = () => {
             id="refusal-reasons"
             ref={(el) => (sectionsRef.current[4] = el)}
           >
-            <h2>Common Reasons for Refusals in Category-Based Draw</h2>
+            <h2> {pData?.RefusalHeading}</h2>
             <ul style={{marginLeft: "40px"}}>
               <li>
-                Your applicant does not meet the eligibility criteria for the
-                program you are applying for. The eligibility criteria vary
-                depending on the program, but they typically include age,
-                education, work experience, language proficiency, and financial
-                resources.
+              {pData?.r1}
               </li>
               <li>
-                You shared inaccurate and incomplete information on your Express
-                Entry profile.
+              {pData?.r2}
               </li>
               <li>
-                You have failed to meet the minimum language requirements for
-                the program you are applying for.
+              {pData?.r3}
               </li>
-              <li>Your CRS Score is not high enough.</li>
+              <li> {pData?.r4}</li>
               <li>
-                Failed to submit all of the required documentation with your
-                application.
+              {pData?.r5}
               </li>
               <li>
-                You have a medical condition that could pose a health risk to
-                yourself or others.
+              {pData?.r6}
               </li>
             </ul>
             <p></p>
@@ -338,22 +362,12 @@ const CategoryBasedExpress = () => {
             id="why-choose-us"
             ref={(el) => (sectionsRef.current[5] = el)}
           >
-            <h2>Still not sure?</h2>
+            <h2> {pData?.StillNotSureHeading}</h2>
             <p>
-              If you have received a refusal for any of the reasons mentioned
-              above or have doubts regarding your case and application, do not
-              worry. With over a decade of experience, we specialize in handling
-              Express Entry Programs. Our approval rate for these programs is
-              near 100%. We achieve this with a tailored approach to your
-              specific case. We use case law and find similar cases to your
-              circumstances that had positive results, and we use them as
-              precedents in cases we work on. This is why we have a high success
-              rate.
+            {pData?.StillNotSurePara1}
             </p>
             <p>
-              At Brightlight Immigration, we have a dedicated team of visa
-              application specialists who can assist you from the start of the
-              application process to obtaining your PR. Start your process now.
+            {pData?.StillNotSurePara2}
             </p>
             <button
               onClick={() =>

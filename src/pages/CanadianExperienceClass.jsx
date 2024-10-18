@@ -12,6 +12,7 @@ import { Helmet } from "react-helmet-async";
 const CanadianExperienceClass = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([])
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -32,6 +33,22 @@ const CanadianExperienceClass = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/canadianExperienceClass")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -178,42 +195,29 @@ const CanadianExperienceClass = () => {
           ref={(el) => (sectionsRef.current[2] = el)}
         >
           <h2 className={styles.subheading}>
-            Eligibility Criteria for Canadian Experience Class (CEC)
+          {pData?.EligibilityHeading}
           </h2>
           <p>
-            To be eligible for the CEC, you must meet the following
-            requirements:{" "}
+          {pData?.EligPara}
           </p>
           <ul>
             <li>
-              Have at least one year of paid skilled work experience in Canada.
-              This means you must have worked in a job that is categorized as
-              skilled in the National Occupational Classification (NOC). You
-              must also have worked for at least 1,560 hours (30 hours per week
-              for 52 weeks) over a 12-month period.
+            {pData?.e1}
             </li>
             <li>
-              Have gained your work experience while authorized to work in
-              Canada. You must have been legally permitted to work in Canada
-              while you were employed.
+            {pData?.e2}
             </li>
             <li>
-              You cannot count the work experience that you gained while you
-              were a visitor or student.
+            {pData?.e3}
             </li>
             <li>
-              Have performed the main duties of your job and have been able to
-              perform most of the duties listed in the lead statement of the
-              occupational description for your job.
+            {pData?.e4}
             </li>
             <li>
-              A valid language test score for English or French is required,
-              depending on the occupation.
+            {pData?.e5}
             </li>
             <li>
-              You should meet the minimum Canadian Experience Class
-              Comprehensive Ranking System (CRS) score in the Express Entry
-              system
+            {pData?.e16}
             </li>
           </ul>
         </section>
@@ -224,7 +228,7 @@ const CanadianExperienceClass = () => {
           ref={(el) => (sectionsRef.current[3] = el)}
         >
           <h2 className={styles.subheading}>
-            Express Entry FSWP Draws History
+          {pData?.ExpressEntryHead}
           </h2>
           <p>
             For the latest updates on Express Entry draws,{" "}
@@ -241,14 +245,11 @@ const CanadianExperienceClass = () => {
           ref={(el) => (sectionsRef.current[4] = el)}
         >
           <h2 className={styles.subheading}>
-            How to Apply for the Canadian Experience Class (CEC) Program
+          {pData?.HowToApplyHeading}
           </h2>
           <ol style={{ marginLeft: "40px" }}>
             <li>
-              Create an Express Entry profile and submit your information,
-              including your work experience, language skills, and education. Or
-              even better and stress-free solution, let us handle your case for
-              you.{" "}
+            {pData?.ha1}
               <Link
                 to="https://book.brightlightimmigration.ca/calendar-page"
                 className={styles.link}
@@ -257,17 +258,13 @@ const CanadianExperienceClass = () => {
               </Link>{" "}
             </li>
             <li>
-              Next, receive an invitation to apply from IRCC. Note that only the
-              highest-ranked candidates receive an invitation to apply for
-              permanent residence
+            {pData?.ha2}
             </li>
             <li>
-              Once you receive the ITA, submit your complete application,
-              including supporting documents and fees, within 60 days.
+            {pData?.ha3}
             </li>
             <li>
-              Wait for processing. IRCC will assess your application and decide
-              whether to grant you permanent residence.
+            {pData?.ha4}
             </li>
           </ol>
         </section>
@@ -278,27 +275,20 @@ const CanadianExperienceClass = () => {
           ref={(el) => (sectionsRef.current[5] = el)}
         >
           <h2 className={styles.subheading}>
-            Common Reasons for Refusals of Canadian Experience Class (CEC)
-            Program
+          {pData?.RefusalHeading}
           </h2>
           <ul style={{ marginLeft: "40px" }}>
             <li>
-              Your application is incomplete and has inaccurate information.
+            {pData?.r1}
             </li>
             <li>
-              You did not include the essential paperwork, like work experience
-              letters, language test results, and your passport.
+            {pData?.r2}
             </li>
             <li>
-              Your profile may not be strong enough if it doesn't meet the
-              minimum requirements for factors like age, education, work
-              experience, language skills, and job offer.
+            {pData?.r3}
             </li>
             <li>
-              If you have any criminal convictions or health conditions that
-              could make you inadmissible to Canada, check your admissibility
-              status with the Canadian government to avoid any surprises. Or let
-              us handle it for you.{" "}
+            {pData?.r4}
               <Link
                 to="https://book.brightlightimmigration.ca/calendar-page"
                 className={styles.link}
@@ -307,12 +297,9 @@ const CanadianExperienceClass = () => {
               </Link>
               .
             </li>
-            <li>You are a refugee claimant in Canada.</li>
-            <li>
-              Gained your work experience in Canada without temporary resident
-              status
-            </li>
-            <li>You are working in Canada without authorization</li>
+            <li>{pData?.r5}</li>
+            <li>{pData?.r6}</li>
+            <li>{pData?.r7}</li>
           </ul>
         </section>
 
@@ -321,19 +308,12 @@ const CanadianExperienceClass = () => {
           id="testing2"
           ref={(el) => (sectionsRef.current[6] = el)}
         >
-          <h2 className={styles.subheading}>Still Not Sure?</h2>
+          <h2 className={styles.subheading}>{pData?.StillNotSureHeading}</h2>
           <p>
-            If you have received a refusal or have doubts regarding your case
-            and application, don't worry. With over a decade of experience, we
-            specialize in handling Express Entry Programs. Our approval rate for
-            these programs is nearly 100%, achieved through a tailored approach
-            to your specific case and using similar successful cases as
-            precedents.
+          {pData?.s1}
           </p>
           <p>
-            At Brightlight Immigration, our dedicated team of visa application
-            specialists will assist you from the start of the application
-            process all the way to obtaining your PR. Start your process now.
+          {pData?.s2}
           </p>
           <button
             className={styles.button}

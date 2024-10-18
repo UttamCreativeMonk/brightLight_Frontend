@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet-async";
 const BusinessVisitorVisa = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData, setPData] = useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -37,6 +38,49 @@ const BusinessVisitorVisa = () => {
         console.log(error);
       });
   }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/buisinessVisitorVisa")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  const extractStrongText = (htmlString) => {
+    if (typeof htmlString !== "string") return "";
+    const strongMatch = htmlString.match(/<strong>(.*?)<\/strong>/);
+    return strongMatch ? strongMatch[1] : "";
+  };
+
+  const extractRemainingText = (htmlString) => {
+    if (typeof htmlString !== "string") return "";
+    return htmlString.replace(/<strong>.*?<\/strong>/, "").trim();
+  };
+
+  // Example usage
+  const fetchedValue = pData?.e3;
+  const strongText = extractStrongText(fetchedValue);
+  const remainingText = extractRemainingText(fetchedValue);
+
+  const fetchedValue1 = pData?.ActivitiesSubPara;
+  const strongText1 = extractStrongText(fetchedValue1);
+  const remainingText1 = extractRemainingText(fetchedValue1);
+
+  const fetchedValue2 = pData?.e4;
+  const strongText2 = extractStrongText(fetchedValue2);
+  const remainingText2 = extractRemainingText(fetchedValue2);
+
+  const fetchedValue3 = pData?.e5;
+  const strongText3 = extractStrongText(fetchedValue3);
+  const remainingText3 = extractRemainingText(fetchedValue3);
 
   const sectionsRef = useRef([]);
 
@@ -152,7 +196,7 @@ const BusinessVisitorVisa = () => {
           id="about-program"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          Business Visitor Visa
+          {pData?.buisinessVisitorVisaaHeading}
         </h1>
 
         <section
@@ -160,15 +204,8 @@ const BusinessVisitorVisa = () => {
           id="testing"
           ref={(el) => (sectionsRef.current[1] = el)}
         >
-          <h2>
-            Business Visitors in Canada: Meetings, Events, and Conferences.{" "}
-          </h2>
-          <p>
-            Business Visa is a great option for business owners who want to
-            travel to Canada for purposes of exploring business opportunities.
-            The best part about this program is that you do not require any
-            sponsorship.
-          </p>
+          <h2>{pData?.buisinessVisitorVisaSubHead}</h2>
+          <p>{pData?.buisinessVisitorVisaPara}</p>
         </section>
 
         <section
@@ -176,43 +213,20 @@ const BusinessVisitorVisa = () => {
           id="activities"
           ref={(el) => (sectionsRef.current[2] = el)}
         >
-          <h2 className={styles.subheading}>
-            As a business visitor, you may engage in the following activities:
-          </h2>
+          <h2 className={styles.subheading}>{pData?.ActivitiesHeading}</h2>
           <ul style={{ marginLeft: "40px" }}>
-            <li>
-              Purchasing Canadian goods or services for a foreign business or
-              government.
-            </li>
-            <li>Accepting orders for goods or services.</li>
-            <li>
-              Attending meetings, conferences, conventions, or trade fairs.
-            </li>
-            <li>
-              Providing after-sales service related to warranties or sales
-              agreements.
-            </li>
-            <li>
-              Receiving training from a Canadian parent company (while employed
-              outside Canada).
-            </li>
-            <li>
-              Training employees of a Canadian branch of a foreign company.
-            </li>
-            <li>
-              Receiving training from a Canadian company that sold you equipment
-              or services.
-            </li>
+            <li>{pData?.a1}</li>
+            <li>{pData?.a2}</li>
+            <li>{pData?.a3}</li>
+            <li>{pData?.a4}</li>
+            <li>{pData?.a5}</li>
+            <li>{pData?.a6}</li>
+            <li>{pData?.a7}</li>
           </ul>
-          <h4>Additional Considerations</h4>
+          <h4>{pData?.ActivitiesSubHead}</h4>
           <ul>
             <li>
-              <p>
-                <strong>Canada-United States-Mexico Agreement (CUSMA):</strong>{" "}
-                U.S. or Mexican nationals may participate in other activities
-                such as research, marketing, and general services. Refer to the
-                Global Affairs Canada website for details.
-              </p>
+              <p><strong>{strongText1}</strong>{remainingText1}</p>
             </li>
           </ul>
         </section>
@@ -222,57 +236,25 @@ const BusinessVisitorVisa = () => {
           id="eligibility"
           ref={(el) => (sectionsRef.current[3] = el)}
         >
-          <h2 className={styles.subheading}>
-            Eligibility criteria for a Business Visitor Visa?
-          </h2>
-          <h4>
-            Before proceeding, learn whether you qualify as a business visitor
-            or if you need to apply for a work permit instead. Business visitors
-            typically stay in Canada for a few days or weeks to attend meetings
-            or events, with a maximum stay of up to 6 months. A separate
-            application can be filed to extend the stay.
-          </h4>
-          <p>
-            To qualify as a business visitor, you must meet the following
-            requirements:
-          </p>
+          <h2 className={styles.subheading}>{pData?.EligibilityHeading}</h2>
+          <h4>{pData?.EligibilityPara}</h4>
+          <p>{pData?.EligLiHead}</p>
           <ul className={styles.eligibilityList}>
+            <li>{pData?.e1}</li>
+            <li>{pData?.e2}</li>
+            <li><strong>{strongText}</strong> {" "} {remainingText}</li>
+            <li><strong>{strongText2}</strong> {" "} {remainingText2}</li>
             <li>
-              {" "}
-              <strong>Duration of Stay:</strong> Your planned stay is less than
-              6 months.
-            </li>
-            <li>
-              {" "}
-              <strong>Non-Engagement in Canadian Labor Market:</strong> You do
-              not intend to enter the Canadian labor market.
-            </li>
-            <li>
-              {" "}
-              <strong>Business Ties Outside Canada:</strong> Your primary
-              business operations, income, and profits are outside Canada.
-            </li>
-            <li>
-              {" "}
-              <strong>Documentary Support:</strong> You possess documents
-              supporting your application.
-            </li>
-            <li>
-              <strong>Basic Entry Requirements:</strong> You meet Canada’s basic
-              entry criteria, including:
+            <strong>{strongText3}</strong> {" "} {remainingText3}
               <ul>
-                <li>Valid travel document (e.g., passport)</li>
-                <li>Adequate funds for your stay and return</li>
-                <li>Intent to leave Canada at the end of your stay</li>
-                <li>No criminal, security, or health risks to Canadians</li>
+                <li>{pData?.e5SubLi1}</li>
+                <li>{pData?.e5SubLi2}</li>
+                <li>{pData?.e5SubLi3}</li>
+                <li>{pData?.e5SubLi4}</li>
               </ul>
             </li>
           </ul>
-          <p>
-            If your stay exceeds 6 months or involves working in Canada, you may
-            be considered a temporary worker and need to apply for a work
-            permit.
-          </p>
+          <p>{pData?.EligLastPara}</p>
         </section>
 
         <section
@@ -280,43 +262,32 @@ const BusinessVisitorVisa = () => {
           id="event-codes"
           ref={(el) => (sectionsRef.current[4] = el)}
         >
-          <h2 className={styles.subheading}>Event Code (if Applicable)</h2>
-          <li style={{marginLeft: "40px"}}>
+          <h2 className={styles.subheading}>{pData?.EventCodeHeading}</h2>
+          <li style={{ marginLeft: "40px" }}>
             If you require a business visitor visa for Canada and your meeting,
             event, or conference is registered with Immigration, Refugees and
             Citizenship Canada (IRCC), your organizer will provide an event
             code.
           </li>
-          <li style={{marginLeft: "40px", marginTop: "20px"}}>
+          <li style={{ marginLeft: "40px", marginTop: "20px" }}>
             Include this event code on your visa application form to indicate
             your participation in a registered event.
           </li>
         </section>
 
         <section className={styles.documents}>
-          <h2 className={styles.subheading}>Essential Documents for Entry</h2>
-          <p>
-            Upon arrival at the border, ensure you have the following documents:
-          </p>
+          <h2 className={styles.subheading}>{pData?.EssenDocuHeading}</h2>
+          <p>{pData?.EssenDocuPara}</p>
           <ul>
-            <li>Valid passport or travel document for the entire stay.</li>
-            <li>Visitor visa (if applicable).</li>
-            <li>Same passport used in your eTA application (if applicable).</li>
-            <li>
-              For U.S. lawful permanent residents (green card holders), a valid
-              green card and passport from your country of nationality (or
-              equivalent document).
-            </li>
-            <li>Letters of support from your parent company.</li>
-            <li>
-              Letter of invitation from the Canadian host business or
-              recognition letter from the Canada Border Services Agency.
-            </li>
-            <li>Relevant documents such as warranty or service agreements.</li>
-            <li>24-hour contact details of your business host in Canada.</li>
-            <li>
-              Proof of sufficient funds to cover your stay and return journey.
-            </li>
+            <li>{pData?.ed1}</li>
+            <li>{pData?.ed2}</li>
+            <li></li>
+            <li>{pData?.ed4}</li>
+            <li>{pData?.ed5}</li>
+            <li>{pData?.ed6}</li>
+            <li>{pData?.ed7}</li>
+            <li>{pData?.ed8}</li>
+            <li>{pData?.ed9}</li>
           </ul>
         </section>
 
@@ -325,21 +296,9 @@ const BusinessVisitorVisa = () => {
           id="testing2"
           ref={(el) => (sectionsRef.current[6] = el)}
         >
-          <h2 className={styles.subheading}>Still Not Sure?</h2>
-          <p>
-            If you have received a refusal or have doubts regarding your case
-            and application, do not worry. With over a decade of experience, we
-            specialize in handling previous refusals. Our approval rate for
-            these programs is nearly 100%. We have achieved this with a tailored
-            approach to your specific case, using case law and finding similar
-            cases with positive results as precedents.
-          </p>
-          <p>
-            At Brightlight Immigration, we have a dedicated team of visa
-            application specialists who can assist you from the start of the
-            application process all the way to obtaining your visa. Start your
-            process now.
-          </p>
+          <h2 className={styles.subheading}>{pData?.StillNotHeading}</h2>
+          <p>{pData?.s1}</p>
+          <p>{pData?.s2}</p>
           <button
             className={styles.button}
             onClick={() =>
@@ -357,7 +316,7 @@ const BusinessVisitorVisa = () => {
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul style={{marginLeft: "40px"}}>
+          <ul style={{ marginLeft: "40px" }}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

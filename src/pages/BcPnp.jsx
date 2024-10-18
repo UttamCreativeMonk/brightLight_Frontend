@@ -10,6 +10,7 @@ import { Helmet } from "react-helmet-async";
 
 const BcPnp = () => {
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([])
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -31,6 +32,22 @@ const BcPnp = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com//bc-pnp-page")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -152,29 +169,21 @@ const BcPnp = () => {
           id="about-program"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          British Columbia Provincial Nominee Program (BC PNP)
+          {pData?.Heading}
         </h1>
         <p
           className={`${styles.description} ${styles.section}`}
           id="testing1"
           ref={(el) => (sectionsRef.current[1] = el)}
         >
-          British Columbia (BC) is a beautiful province in Canada with stunning
-          scenery, exciting cities, and lots of job opportunities. If you want
-          to move to BC, the BC Provincial Nominee Program (BCPNP) can help you
-          make it happen.
+          {pData?.Description1}
         </p>
         <p
           className={`${styles.description} ${styles.section}`}
           id="testing2"
           ref={(el) => (sectionsRef.current[2] = el)}
         >
-          The British Columbia Provincial Nominee Program (BC PNP) is an
-          economic immigration program that allows British Columbia to select
-          skilled workers, business people, and international graduates who will
-          contribute to the province's economy. If you are nominated by BC PNP,
-          you and your family can apply to IRCC for permanent residence in
-          Canada.
+          {pData?.Description2}
         </p>
 
         <h2
@@ -182,8 +191,7 @@ const BcPnp = () => {
           id="testing3"
           ref={(el) => (sectionsRef.current[3] = el)}
         >
-          There are five streams under British Columbia Provincial Nominee
-          Program (BC PNP):
+  {pData?.fiveStreamsHeading}
         </h2>
         <div
           className={`${styles.streams} ${styles.section}`}
@@ -213,8 +221,7 @@ const BcPnp = () => {
           </a>
         </div>
         <p>
-          Note: BCPNP issues targeted invitations to apply for select
-          occupations called priority occupations
+        {pData?.fiveStreamsNote}
         </p>
 
         <h2
@@ -222,23 +229,21 @@ const BcPnp = () => {
           id="eligibility"
           ref={(el) => (sectionsRef.current[5] = el)}
         >
-          Eligibility criteria for British Columbia Provincial Nominee Program
-          (BC PNP)
+  {pData?.EligibilityHeading}
         </h2>
         <h3
           className={`${styles.subheading} ${styles.section}`}
           id="testing5"
           ref={(el) => (sectionsRef.current[6] = el)}
         >
-          Candidate’s Criteria
+  {pData?.EligibilitySubHead}
         </h3>
         <p
           className={`${styles.description} ${styles.section}`}
           id="testing6"
           ref={(el) => (sectionsRef.current[7] = el)}
         >
-          Please review the eligibility criteria for each stream, as it varies
-          from one stream to another.
+  {pData?.EligibilityReviewLine}
         </p>
 
         <h3
@@ -246,7 +251,7 @@ const BcPnp = () => {
           id="testing7"
           ref={(el) => (sectionsRef.current[8] = el)}
         >
-          Eligibility Criteria for Employer Supporting BCPNP Application
+            {pData?.EligibilityCriteriaHeading}
         </h3>
         <ul
           className={`${styles.list} ${styles.section}`}
@@ -254,114 +259,105 @@ const BcPnp = () => {
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <li className={styles.listItem}>
-            Employer Eligibility Criteria:
+          {pData?.EligibilityList1}
             <ul>
               <li>
-                Employer must be established in BC with a physical presence.
+              {pData?.EligibilityList1NestedList1}
               </li>
               <li>
-                Business structures accepted:
+              {pData?.EligibilityList1NestedList2}
                 <ul>
                   <li>
-                    Incorporated in B.C. or extra-provincially registered.
+                  {pData?.EligibilityList1NestedList2Nested1}
                   </li>
                   <li>
-                    Registered as a general, limited, or limited liability
-                    partnership in B.C.
+                  {pData?.EligibilityList1NestedList2Nested2}
                   </li>
                 </ul>
               </li>
               <li>
-                Accepts applications from public sector or non-profit
-                organizations in B.C., including:
+              {pData?.EligibilityList1NestedList3}
                 <ul>
-                  <li>Health authorities and agencies</li>
-                  <li>Public post-secondary education institutions</li>
-                  <li>Public school districts</li>
+                  <li>{pData?.EligibilityList1NestedList3Nested1}</li>
+                  <li>{pData?.EligibilityList1NestedList3Nested2}</li>
+                  <li>{pData?.EligibilityList1NestedList3Nested3}</li>
                   <li>
-                    Accredited private non-profit post-secondary institutions
+                  {pData?.EligibilityList1NestedList3Nested4}
                   </li>
-                  <li>Research institutions supported by government</li>
-                  <li>Government organizations and agencies</li>
-                  <li>Registered non-profit groups</li>
+                  <li>{pData?.EligibilityList1NestedList3Nested5}</li>
+                  <li>{pData?.EligibilityList1NestedList3Nested6}</li>
+                  <li>{pData?.EligibilityList1NestedList3Nested7}</li>
                 </ul>
               </li>
             </ul>
           </li>
           <li className={styles.listItem}>
-            Operational Requirements:
+          {pData?.EligibilityList2}
             <ul className={styles.nestedList}>
               <li className={styles.nestedListItem}>
-                Must have a valid municipal business licence.
+              {pData?.EligibilityList2NestedList1}
               </li>
               <li className={styles.nestedListItem}>
-                Must have operated in B.C. for at least one year (two years for
-                BC Entry Level and Semi-Skilled Worker Stream).
+              {pData?.EligibilityList2NestedList2}
               </li>
               <li className={styles.nestedListItem}>
-                Minimum employee requirements:
+              {pData?.EligibilityList2NestedList3}
                 <ul className={styles.nestedList}>
                   <li className={styles.nestedListItem}>
-                    Metro Vancouver: 5 full-time employees.
+                  {pData?.EligibilityList2NestedList3Nested1}
                   </li>
                   <li className={styles.nestedListItem}>
-                    Outside Metro Vancouver: 3 full-time employees.
+                  {pData?.EligibilityList2NestedList3Nested2}
                   </li>
                 </ul>
               </li>
             </ul>
           </li>
           <li className={styles.listItem}>
-            Compliance and Legal Considerations:
+          {pData?.EligibilityList3}
             <ul className={styles.nestedList}>
               <li className={styles.nestedListItem}>
-                Application may be refused if employer or owner/director:
+              {pData?.EligibilityList3NestedList1}
                 <ul className={styles.nestedList}>
                   <li className={styles.nestedListItem}>
-                    Received penalties or fines within past two years.
+                  {pData?.EligibilityList3NestedList1Nested1}
                   </li>
                   <li className={styles.nestedListItem}>
-                    Under investigation or charged with criminal offence related
-                    to immigration or business operation.
+                  {pData?.EligibilityList3NestedList1Nested2}
                   </li>
                 </ul>
               </li>
               <li className={styles.nestedListItem}>
-                Genuine recruitment efforts must be demonstrated.
+              {pData?.EligibilityList3NestedList2}
               </li>
             </ul>
             <li className={styles.nestedListItem}>
-              <> Disqualifications:</>
+              <>{pData?.EligibilityList4}</>
               <ul className={styles.nestedList}>
                 <li className={styles.nestedListItem}>
-                  Employers involved in certain businesses (e.g., pornographic
-                  products, employment agencies).
+                {pData?.EligibilityList4NestedList1}
                 </li>
                 <li className={styles.nestedListItem}>
-                  Businesses bringing BC PNP or BC government into disrepute.
+                {pData?.EligibilityList4NestedList2}
                 </li>
               </ul>
             </li>
             <li className={styles.nestedListItem}>
-              Company Ownership Restrictions:
+            {pData?.EligibilityList5}
               <ul className={styles.nestedList}>
                 <li className={styles.nestedListItem}>
-                  Applicant and family members must not have held more than 10%
-                  ownership in the BC company in past 5 years.
+                {pData?.EligibilityList5NestedList1}
                 </li>
                 <li>
-                  Family members include spouse, parents, siblings, children,
-                  and others.
+                {pData?.EligibilityList5NestedList2}
                 </li>
               </ul>
             </li>
             <li className={styles.nestedListItem}>
-              Discretionary Consideration:
+            {pData?.EligibilityList6}
               <ul className={styles.nestedList}>
                 <li className={styles.nestedListItem}>
-                  BC PNP may consider applications not meeting minimum
-                  requirements based on various factors like business structure,
-                  length of operation, and employee count.
+                {pData?.EligibilityList6NestedList1}
                 </li>
               </ul>
             </li>
@@ -373,7 +369,7 @@ const BcPnp = () => {
           id="how-to-apply"
           ref={(el) => (sectionsRef.current[10] = el)}
         >
-          How to Apply for BCPNP?
+           {pData?.ApplyHeading}
         </h2>
         <ul
           className={`${styles.list} ${styles.section}`}
@@ -381,25 +377,20 @@ const BcPnp = () => {
           ref={(el) => (sectionsRef.current[11] = el)}
         >
           <li className={styles.listItem}>
-            Create an online profile and provide information about your skills,
-            experience, education, and work experience. Or, for a stress-free
-            solution,
+          {pData?.ApplyList1}
             <a href="/contact-us" className={styles.link}>
               let us handle your case for you
             </a>
             .
           </li>
           <li className={styles.listItem}>
-            Submit an expression of interest (EOI) in the program and rank your
-            choices of streams.
+          {pData?.ApplyList2}.
           </li>
           <li className={styles.listItem}>
-            Complete and submit a detailed application package, including all
-            the relevant and supporting documents.
+          {pData?.ApplyList3}
           </li>
           <li className={styles.listItem}>
-            Once your application is approved, you will be nominated by B.C. and
-            can apply for permanent residence to IRCC.
+          {pData?.ApplyList4}
           </li>
         </ul>
 
@@ -408,23 +399,20 @@ const BcPnp = () => {
           id="refusal-reasons"
           ref={(el) => (sectionsRef.current[12] = el)}
         >
-          Common Reasons for Refusals in BCPNP
+             {pData?.RefusalHeading}
         </h2>
         <ul
           className={`${styles.list} ${styles.section}`}
           id="testing13"
           ref={(el) => (sectionsRef.current[14] = el)}
         >
-          <li className={styles.listItem}>You shared incorrect information.</li>
+          <li className={styles.listItem}>{pData?.RefusalList1}</li>
           <li className={styles.listItem}>
-            You couldn’t meet the minimum qualifications for BC PNP including
-            having the required skills, experience, education, and language
-            proficiency.
+          {pData?.RefusalList2}
           </li>
-          <li className={styles.listItem}>Your occupation is not in demand.</li>
+          <li className={styles.listItem}>{pData?.RefusalList3}</li>
           <li className={styles.listItem}>
-            You couldn’t demonstrate your family ties to that particular
-            province.
+          {pData?.RefusalList4}
           </li>
         </ul>
 
@@ -433,31 +421,21 @@ const BcPnp = () => {
           id="why-choose-us"
           ref={(el) => (sectionsRef.current[15] = el)}
         >
-          Still Not Sure?
+        {pData?.StillNotSureHeading}
         </h2>
         <p
           className={`${styles.description} ${styles.section}`}
           id="testing16"
           ref={(el) => (sectionsRef.current[17] = el)}
         >
-          If you have received a refusal for any of the reasons mentioned above,
-          do not worry. With over a decade of experience, we specialize in
-          previously refused cases. We have got approvals for clients who had
-          multiple previous refusals. We achieve this with a tailored approach
-          to your specific case, addressing each concern that the officer has
-          listed in previous refusals. We use case law and find similar cases to
-          your circumstances that had positive results, and we use them as
-          precedents in cases we work on. This is why we have a high success
-          rate.
+          {pData?.StillNotSurePara1} 
         </p>
         <p
           className={`${styles.description} ${styles.section}`}
           id="testing18"
           ref={(el) => (sectionsRef.current[18] = el)}
         >
-          At Brightlight Immigration, we have a dedicated team of visa
-          application specialists who can assist you from the start of the
-          application process all the way to obtaining your visa.{" "}
+            {pData?.StillNotSurePara2} 
         </p>
         <button
           className={styles.button1}
