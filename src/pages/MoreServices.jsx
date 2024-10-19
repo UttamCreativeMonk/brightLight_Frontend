@@ -33,26 +33,10 @@ import RestorationImg from "../assets/services-restoration.png";
 import RestorationHover from "../assets/services-restoration-White.png";
 import FlagpolingImg from "../assets/services-flagpoling.png";
 import FlagpolingHover from "../assets/services-flagpoling-White.png";
-import SpousalPermitImg from "../assets/services-spousalPermit.png";
-import SpousalPermitHover from "../assets/services-spousalPermit-White.png";
-import OutsideCanandaImg from "../assets/services-outsideCanada.png";
-import OutsideCanandaHover from "../assets/services-outsideCanada-White.png";
-import InsideCanadaImg from "../assets/services-insideCanada.png";
-import InsideCanadaHover from "../assets/services-insideCanada-White.png";
 import StudyPermitMinorsImg from "../assets/services-studyPermitMinors.png";
 import StudyPermitMinorsHover from "../assets/services-studyPermitMinors-White.png";
-import ParentsGrandparentsImg from "../assets/services-parentsAndGrandParents.png";
-import ParentsGrandparentsHover from "../assets/services-parentsAndGrandParents-White.png";
-import DependentChildrenImg from "../assets/services-dependentChildren.png";
-import DependentChildrenHover from "../assets/services-dependentChildren-White.png";
 import HumanitarianCompassionateImg from "../assets/services-H&C.png";
 import HumanitarianCompassionateHover from "../assets/services-H&C-White.png";
-import OrphanImg from "../assets/services-orphan.png";
-import OrphanHover from "../assets/services-orphan-White.png";
-import AdoptionImg from "../assets/services-adoption.png";
-import AdoptionHover from "../assets/services-adoption-White.png";
-import LonelyCanadianImg from "../assets/services-lonely.png";
-import LonelyCanadianHover from "../assets/services-lonely-White.png";
 import WorkPermitImg from "../assets/services-workPermit.png";
 import WorkPermitHover from "../assets/services-workPermit-White.png";
 import CaregiverImg from "../assets/services-caregivers.png";
@@ -61,12 +45,26 @@ import ExtensionsDraftImg from "../assets/services-timeExtention.png";
 import ExtensionsDraftHover from "../assets/services-timeExtention-White.png";
 import RestorationStatusDraftImg from "../assets/services-restoration.png";
 import RestorationStatusDraftHover from "../assets/services-restoration-White.png";
+import FrancoImg from "../assets/services-franco.png";
+import FrancoHover from "../assets/services-francoWhite.png";
+import SpousalSponImg from "../assets/services-spousalPermitSpon.png";
+import SpousalSponHover from "../assets/services-spousalPermitSponWhite.png";
+import PgwpImg from "../assets/services-pgwp.png";
+import PgwpHover from "../assets/services-pgwpWhite.png";
+import ReplyPflImg from "../assets/services-replyPFL.png";
+import ReplyPflHover from "../assets/services-replyPFLWhite.png";
+import EmergencyVisaImg from "../assets/services-emergencyVisa.png";
+import EmergencyVisaHover from "../assets/services-emergencyVisaWhite.png";
+import DualIntentVisaImg from "../assets/services-dualIntenVisa.png";
+import DualIntentVisaHover from "../assets/services-dualIntenVisaWhite.png";
+import LmiaImg from "../assets/services-lmia.png";
+import LmiaHover from "../assets/services-lmiaWhite.png";
 
 import ogImage from "../assets/ogImage.png";
 import { Helmet } from "react-helmet-async";
 
 import Footer1 from "../components/Footer1";
-import Navbar3 from "../components/Navbar3";
+
 
 const MoreServices = () => {
   const [selectedHeading, setSelectedHeading] = useState("Permanent Residency");
@@ -107,8 +105,8 @@ const MoreServices = () => {
 
 
     {
-      img: graduatedStudentImg,
-      hoverImg: graduatedStudentImgHover,
+      img: LmiaImg,
+      hoverImg: LmiaHover,
       title: "LMIA Work Permit",
       description: "If you're looking to apply for an LMIA, it's because you are either a foreign worker who wants to apply for a job on a temporary...",
       link: "/lmia-reviewed"
@@ -154,8 +152,8 @@ const MoreServices = () => {
 
 
     {
-      img: PilotProgramImg,
-      hoverImg: PilotProgramHover,
+      img: FrancoImg,
+      hoverImg: FrancoHover,
       title: "Franco-Mobility Program",
       description: "Mobilité Francophone: Unlocking Opportunities for French-Speaking Workers....",
       link: "/francophone-mobility-program"
@@ -174,8 +172,8 @@ const MoreServices = () => {
 
 
     {
-      img: RNIPImg,
-      hoverImg: RNIPHover,
+      img: SpousalSponImg,
+      hoverImg: SpousalSponHover,
       title: "Spousal Sponsorship",
       description: "The Canadian government understands the importance of bringing loved ones together, and its Family reunification....",
       link: "/spouse-common-law-sponsership"
@@ -200,8 +198,8 @@ const MoreServices = () => {
 
 
     {
-      img: VisitorVisaImg,
-      hoverImg: VisitorVisaHover,
+      img: EmergencyVisaImg,
+      hoverImg: EmergencyVisaHover,
       title: "Emergency Visa",
       description: "An emergency visa is a type of visa that allows individuals to travel to a country urgently due to unforeseen circumstances.......",
       link: "/visitor-visa"
@@ -235,8 +233,8 @@ const MoreServices = () => {
 
 
     {
-      img: SpousalPermitImg,
-      hoverImg: SpousalPermitHover,
+      img: PgwpImg,
+      hoverImg: PgwpHover,
       title: "PGWP",
       description: " If you are an international student who has graduated from a designated learning institution (DLI) in Canada, you may be eligible for a PGWP.....",
       link: "/pgwp"
@@ -245,20 +243,8 @@ const MoreServices = () => {
 
 
     {
-      img: OutsideCanandaImg,
-      hoverImg: OutsideCanandaHover,
-      title: "Reconsideration for Refusal",
-      description: "Are you a Canadian immigrant who has recently received a rejection for your visa application? If so,.....",
-      link: "/reconsideration"
-    },
-
-
-
-
-
-    {
-      img: InsideCanadaImg,
-      hoverImg: InsideCanadaHover,
+      img: ReplyPflImg,
+      hoverImg: ReplyPflHover,
       title: "PFL",
       description: "Responding to a Procedural Fairness Letter (PFL) is a crucial step in addressing concerns raised .....",
       link: "/reply-to-pfl-page"
@@ -267,8 +253,8 @@ const MoreServices = () => {
 
 
     {
-      img: StudyPermitMinorsImg,
-      hoverImg: StudyPermitMinorsHover,
+      img: DualIntentVisaImg,
+      hoverImg: DualIntentVisaHover,
       title: "Dual Intent Visa",
       description: "A Dual Intent Visa allows you to have two different reasons for visiting Canada. This means you can come to.....",
       link: "/dual-intent-visa"
