@@ -7,6 +7,7 @@ import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
 import ogImage from "../assets/ogImage.png";
 import { Helmet } from "react-helmet-async";
+import FieldOfStudyTable from "../components/FieldOfStudyTable";
 
 const Pgwp = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -62,7 +63,7 @@ const Pgwp = () => {
 
   return (
     <>
-          <Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle
@@ -148,7 +149,9 @@ const Pgwp = () => {
           id="about-program"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          <h1>Canada’s Post-Graduate Work Permit (PGWP)</h1>
+          <h1>
+            Canada’s Post Graduate Work Permit (PGWP) – Updated October, 2024
+          </h1>
           <p>
             If you are an international student who has graduated from a
             designated learning institution (DLI) in Canada, you may be eligible
@@ -171,20 +174,20 @@ const Pgwp = () => {
           ref={(el) => (sectionsRef.current[1] = el)}
         >
           <h2>Benefits of a Post-Graduate Work Permit (PGWP)</h2>
-          <ul style={{marginLeft: "40px"}}>
+          <ul style={{ marginLeft: "40px" }}>
             <li>
-              <strong>Valuable Canadian Work Experience:</strong> Enhance your
+              You gain valuable Canadian work experience that can enhance your
               career prospects and increase your chances of obtaining permanent
               residency in Canada.
             </li>
             <li>
-              <strong>Professional Networking:</strong> Build your network and
-              explore new career opportunities that can help you establish
-              yourself in the Canadian job market.
+              It builds your professional network and you are open to new career
+              opportunities that can help you establish yourself in the Canadian
+              job market.
             </li>
             <li>
-              <strong>Career Exploration:</strong> Explore different career
-              options and find a job that aligns with your skills and interests.
+              The PGWP allows you to explore different career options and find a
+              job that aligns with your skills and interests.
             </li>
           </ul>
         </section>
@@ -198,35 +201,24 @@ const Pgwp = () => {
           <p>Are you eligible for a PGWP? Let's find out.</p>
           <ul style={{ marginLeft: "40px" }}>
             <li>
-              <strong>Graduation from a Qualifying DLI:</strong> Be a foreign
-              national who has graduated from a qualifying DLI and qualifying
-              program.
+              Be a foreign national who has graduated from a qualifying DLI and
+              qualifying program
+            </li>
+            <li>Never held a PGWP work permit before.</li>
+            <li>
+              Had authorization to study in Canada that expired in the 180 days
+              immediately preceding the PGWP application.
             </li>
             <li>
-              <strong>No Previous PGWP:</strong> Must never have held a PGWP
-              before.
+              Must have completed a full-time program of at least eight months,
+              leading to a diploma, certificate, or degree.
             </li>
             <li>
-              <strong>Study Authorization:</strong> Had authorization to study
-              in Canada that expired in the 180 days immediately preceding the
-              PGWP application.
+              You must have maintained full-time student status throughout your
+              program of study.
             </li>
-            <li>
-              <strong>Program Duration:</strong> Must have completed a full-time
-              program of at least eight months, leading to a diploma,
-              certificate, or degree.
-            </li>
-            <li>
-              <strong>Full-Time Status:</strong> Maintained full-time student
-              status throughout the program of study.
-            </li>
-            <li>
-              <strong>Passing Grades:</strong> Achieved a minimum passing grade
-              in courses.
-            </li>
-            <li>
-              <strong>Clean Record:</strong> No criminal convictions.
-            </li>
+            <li>Have a minimum passing grade in your courses.</li>
+            <li>Don’t have any criminal convictions.</li>
           </ul>
         </section>
 
@@ -235,27 +227,281 @@ const Pgwp = () => {
           id="application-process"
           ref={(el) => (sectionsRef.current[3] = el)}
         >
-          <h2>How to Apply for Post-Graduate Work Permit (PGWP)</h2>
+          <h2>
+            Changes were Announced to the Post Graduate Work Permit (PGWP)
+            Eligibility - September 18, 2024
+          </h2>
           <p>
-            Meet the eligibility criteria? Here’s how you can apply for PGWP:
+            <strong>What hasn’t changed</strong>
           </p>
-          <p>You can apply for a PGWP from inside or outside Canada.</p>
-          <p>Here’s what you will need to provide when you apply for a PGWP</p>
-          <ul style={{ marginLeft: "40px" }}>
+          <ul
+            style={{
+              marginTop: "20px",
+              marginBottom: "20px",
+              marginLeft: "40px",
+            }}
+          >
             <li>
-              <strong>Application Location:</strong> You can apply for a PGWP
-              from inside or outside Canada.
+              To be eligible for a PGWP, you must continue to meet the{" "}
+              <a
+                style={{ color: "dodgerblue" }}
+                href="https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/after-graduation/eligibility.html"
+              >
+                general and physical location
+              </a>{" "}
+              eligibility requirements (even after November 1, 2024) and
+              complete a study program at a{" "}
+              <a
+                style={{ color: "dodgerblue" }}
+                href="https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/prepare/designated-learning-institutions-list.html"
+              >
+                PGWP eligible designated learning institution
+              </a>
+              .
+            </li>
+          </ul>
+          <p style={{ marginTop: "30px" }}>
+            <strong>Flight School Eligibility:</strong>
+          </p>
+          <p>
+            To be eligible for a PGWP as a Flight school graduate must meet the
+            general and program specific requirements listed above, and one of
+            the following:
+          </p>
+          <ul
+            style={{
+              marginTop: "20px",
+              marginBottom: "20px",
+              marginLeft: "40px",
+            }}
+          >
+            <li>
+              You completed a flight training course at a DLI training centre
+              and now have a Canadian commercial pilot’s license{" "}
+              <strong>or</strong>
             </li>
             <li>
-              <strong>Required Documents:</strong>
-              <ul style={{ marginTop: "10px", marginLeft: "40px" }}>
-                <li>A copy of your study permit.</li>
+              You have or are in the process of getting an instructor’s rating{" "}
+              <strong>and</strong> a job offer as a flight instructor from a DLI
+              flight training centre.
+            </li>
+          </ul>
+
+          <h2 style={{ marginTop: "30px", fontSize: "20px" }}>
+            If you Submitted your Study Permit Application Before November 1,
+            2024
+          </h2>
+          <p>
+            If you submitted your{" "}
+            <strong>study permit application before November 1, 2024</strong>{" "}
+            and are applying for a PGWP on or after November 1, 2024, you must
+            also meet the new requirement that applies to your situation.
+          </p>
+          <ul style={{ marginLeft: "40px", marginTop: "20px" }}>
+            <li>
+              If you graduated with a bachelor’s degree, master’s degree or
+              doctoral degree from a university:
+              <ul
+                style={{
+                  marginLeft: "40px",
+                  listStyle: "circle",
+                  marginTop: "10px",
+                  marginBottom: "30px",
+                }}
+              >
                 <li>
-                  A copy of your final academic transcripts OR a letter from
-                  your school confirming your graduation.
+                  <strong>Language requirement:</strong> You must prove your
+                  English or French language skills with a minimum level of
+                  Canadian Language Benchmarks (CLB) 7 in English or Niveaux de
+                  competence linguistique canadiens (NCLC) 7 in French in all 4
+                  language areas.
                 </li>
-                <li>A copy of your passport.</li>
               </ul>
+            </li>
+
+            <li>
+              If you graduated in any other university program:
+              <ul
+                style={{
+                  marginLeft: "40px",
+                  listStyle: "circle",
+                  marginTop: "10px",
+                  marginBottom: "30px",
+                }}
+              >
+                <li>
+                  <strong>Language requirement:</strong> You must prove your
+                  English or French language skills with a minimum level of CLB
+                  7 in English or NCLC 7 in French in all 4 language areas.
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              If you graduated from a college program or any other program not
+              listed above:
+              <ul
+                style={{
+                  marginLeft: "40px",
+                  listStyle: "circle",
+                  marginTop: "10px",
+                }}
+              >
+                <li>
+                  <strong>Language requirement:</strong> You must prove your
+                  English or French language skills with a minimum level of CLB
+                  5 in English or NCLC 5 in French in all 4 language areas.
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <h2 style={{ marginTop: "50px", fontSize: "20px" }}>
+            If you submit your study permit application on or after November 1,
+            2024
+          </h2>
+          <p>
+            If you submit{" "}
+            <strong>
+              your study permit application on or after November 1, 2024,
+            </strong>{" "}
+            you must also meet the new requirements that apply to your situation
+            to be eligible to apply for a PGWP.
+          </p>
+          <ul style={{ marginLeft: "40px", marginTop: "20px" }}>
+            <li>
+              If you Graduated from a University Bachelor’s degree, Master’s
+              Degree or Doctoral Degree Program:
+              <ul
+                style={{
+                  marginLeft: "40px",
+                  listStyle: "circle",
+                  marginTop: "10px",
+                  marginBottom: "30px",
+                }}
+              >
+                <li>
+                  <strong>Language requirement:</strong> You must prove your
+                  English or French language skills with a minimum level of
+                  Canadian Language Benchmarks (CLB) 7 in English or Niveaux de
+                  competence linguistique canadiens (NCLC) 7 in French in all 4
+                  language areas.
+                </li>
+
+                <li>
+                  <strong>
+                    <a href="#field-study">Field of study requirement:</a>
+                  </strong>{" "}
+                  All fields of study are eligible. There is no additional field
+                  of study requirement.
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              If you Graduated from Any Other University Program:
+              <ul
+                style={{
+                  marginLeft: "40px",
+                  listStyle: "circle",
+                  marginTop: "10px",
+                  marginBottom: "30px",
+                }}
+              >
+                <li>
+                  <strong>Language requirement:</strong> You must prove your
+                  English or French language skills with a minimum level of CLB
+                  7 in English or NCLC 7 in French in all 4 language areas.
+                </li>
+
+                <li>
+                  <strong>
+                    <a href="#field-study">Field of study requirement:</a>
+                  </strong>{" "}
+                  You must graduate in an eligible field of study.
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              If you graduated from a College Program or Any Other Program Not
+              listed Above:
+              <ul
+                style={{
+                  marginLeft: "40px",
+                  listStyle: "circle",
+                  marginTop: "10px",
+                }}
+              >
+                <li>
+                  <strong>Language requirement:</strong> You must prove your
+                  English or French language skills with a minimum level of CLB
+                  5 in English or NCLC 5 in French in all 4 language areas.
+                </li>
+
+                <li>
+                  <strong>
+                    <a href="#field-study">Field of study requirement: </a>
+                  </strong>{" "}
+                  You must graduate in an eligible field of study.
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <button
+            className={styles.button1}
+            onClick={() => (window.location.href = "/bcpnp-calculator")}
+          >
+            CLB Calculator
+          </button>
+        </section>
+
+        <section
+          className={`${styles.refusalReasons} ${styles.section}`}
+          id="field-study"
+          ref={(el) => (sectionsRef.current[244] = el)}
+        >
+          <h2>⁠Field of Study Requirement:</h2>
+          <p>
+            If your study program has a field of study requirement, you must
+            graduate from a program linked to certain occupations in long-term
+            shortage. The fields of study are divided into 5 broad categories:
+          </p>
+          <ul style={{ marginLeft: "40px", marginTop: "10px" }}>
+            <li>A copy of your study permit</li>
+            <li>Agriculture and Agri-food</li>
+            <li>Healthcare</li>
+            <li>Science, Technology, Engineering and Mathematics (STEM)</li>
+            <li>Trade</li>
+            <li>Transport</li>
+          </ul>
+        </section>
+
+        <FieldOfStudyTable />
+
+        <section
+          className={`${styles.refusalReasons} ${styles.section}`}
+          id="how-to-apply"
+          ref={(el) => (sectionsRef.current[24] = el)}
+        >
+          <h2>⁠How to apply for Post Graduate Work Permit (PGWP)?</h2>
+          <p>
+            Meet the eligibility criteria? Let's see how you can apply for PGWP.
+          </p>
+          <p style={{ marginTop: "20px", marginBottom: "10px" }}>
+            You can apply for a PGWP from inside or outside Canada.
+          </p>
+          <p>Here’s what you will need to provide when you apply for a PGWP </p>
+          <ul style={{ marginLeft: "40px", marginTop: "10px" }}>
+            <li>A copy of your study permit</li>
+            <li>
+              A copy of your final academic transcripts OR a letter from your
+              school confirming your graduation
+            </li>
+            <li>A copy of your passport</li>
+            <li>
+              Valid English or French language skills (IELTS, CELPIP, TEF, TCF)
             </li>
           </ul>
         </section>
@@ -275,21 +521,27 @@ const Pgwp = () => {
           <ul style={{ marginLeft: "40px" }}>
             <li>Failure to meet the eligibility criteria set by IRCC.</li>
             <li>
-              Not completing a full-time program of at least eight months at a
-              qualifying DLI.
+              You haven’t completed a full-time program of at least eight months
+              at a qualifying DLI.
             </li>
             <li>
-              Studying part-time during any period other than the final
-              semester.
+              You are only permitted to study part-time during your final
+              semester of study. If you have studied part-time at any other time
+              during your program, your application will be refused.
             </li>
             <li>
-              Study permit expired before graduation without applying for an
-              extension or restoration of status.
+              Your study permit expired before you graduated and you did not
+              apply for an extension or restoration of status.
             </li>
           </ul>
-        </section>
 
-        
+          <button
+            className={styles.button1}
+            onClick={() => (window.location.href = "/bcpnp-calculator")}
+          >
+            CLB Calculator
+          </button>
+        </section>
 
         <section
           className={`${styles.consultation} ${styles.section}`}
@@ -327,7 +579,7 @@ const Pgwp = () => {
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul style={{marginLeft: "40px"}}>
+          <ul style={{ marginLeft: "40px" }}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

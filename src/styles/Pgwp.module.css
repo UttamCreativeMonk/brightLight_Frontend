@@ -12,6 +12,23 @@
   margin: auto;
   text-align: center;
 }
+.button1 {
+  display: block;
+  /* margin: auto; */
+  background-color: #00273f;
+  color: white;
+  padding: 15px;
+  border-radius: 3px;
+  margin-top: 20px;
+  text-decoration: none;
+  margin: auto;
+  cursor: pointer;
+  border: none;
+}
+.button1:hover {
+  opacity: 0.9;
+  text-decoration: none;
+}
 
 .bannerHeading h1 {
   color: #e8c47c;
