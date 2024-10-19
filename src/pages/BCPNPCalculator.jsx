@@ -1289,7 +1289,7 @@ const BCPNPCalculator = () => {
                         name="languageProficiencyRegion"
                         value={applicableLastSection == true ? "0" : "1"}
                         // value="1"
-                        disabled={applicableLastSection}
+                        disabled={!applicableLastSection}
                         onChange={handleLanguageProficiencyRegionChange}
                       />{" "}
                       {data?.twsq1o1}
@@ -1305,7 +1305,7 @@ const BCPNPCalculator = () => {
                         name="languageProficiencyRegion"
                         value={applicableLastSection == true ? "0" : "2"}
                         // value="2"
-                        disabled={applicableLastSection}
+                        disabled={!applicableLastSection}
                         onChange={handleLanguageProficiencyRegionChange}
                       />{" "}
                       {data?.twsq1o2}
@@ -1320,7 +1320,7 @@ const BCPNPCalculator = () => {
                         name="languageProficiencyRegion"
                         value={applicableLastSection == true ? "0" : "3"}
                         // value="3"
-                        disabled={applicableLastSection}
+                        disabled={!applicableLastSection}
                         onChange={handleLanguageProficiencyRegionChange}
                       />{" "}
                       {data?.twsq1o3}

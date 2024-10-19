@@ -197,7 +197,7 @@ const Pnp = () => {
           ref={(el) => (sectionsRef.current[16] = el)}
           onClick={() => (window.location.href = "/bc-pnp")}
         >
-          Learn More
+          BCPNP
         </button>
 
         <h2

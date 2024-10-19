@@ -42,7 +42,7 @@ import BusinessVisitorVisa from "../pages/BusinessVisitorVisa";
 import VisitorVisa from "../pages/VisitorVisa";
 import TemporaryResidentPermitDraft from "../pages/TemporaryResidentPermitDraft";
 import SuperVisa from "../pages/SuperVisa";
-import Cby from "../pages/Cby";  // not use anywhere
+import Cby from "../pages/Cby"; // not use anywhere
 import CommonLawPartnerTemporary from "../pages/CommonLawPartnerTemporary";
 import CommonLawPartnerPermanent from "../pages/CommonLawPartnerPermanent";
 import CommonLawPartnerInternational from "../pages/CommonLawPartnerInternational";
@@ -95,8 +95,9 @@ import SpouseInland from "../pages/SpouseInland";
 import SpouseOutland from "../pages/SpouseOutland";
 import SpouseCommonLawSpon from "../pages/SpouseCommonLawSpon";
 import SameSex from "../pages/SameSex";
-import CategoryBasedExpress from "../pages/CategoryBasedExpress" ;
+import CategoryBasedExpress from "../pages/CategoryBasedExpress";
 import AgricultureandAgriFoodOccu from "../pages/AgricultureandAgriFoodOccu";
+import OpenWorkPermitForSpouseInland from "../pages/OpenWorkPermitForSpouseInland";
 
 let AllRoutes = () => {
   return (
@@ -114,10 +115,8 @@ let AllRoutes = () => {
       />
       <Route path="/blogs" element={<Blogs />} />
       <Route path="/blogs/:id" element={<BlogDetails />} />
-
       <Route path="/news" element={<News />} />
       <Route path="/news/:id" element={<NewsDetails />} />
-
       <Route path="/category-based" element={<CategoryBased />} />
       <Route path="/clb-ilets-calculator" element={<CLBILETSCalculator />} />
       <Route path="/previous-draw-history" element={<PreviousDrawHistory />} />
@@ -126,12 +125,9 @@ let AllRoutes = () => {
         element={<PrivateRoute element={Admin} />}
       />
       <Route path="/more-services" element={<MoreServices />} />
-
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/terms-&-conditions" element={<TermsAndConditions />} />
-
       <Route path="*" element={<NotFoundPage />} />
-
       <Route path="/skilled-worker-stream" element={<SkilledWorkerStream />} />
       <Route path="/priorities-program" element={<PrioritiesProgram />} />
       <Route
@@ -187,9 +183,7 @@ let AllRoutes = () => {
       <Route path="/dual-intent-visa" element={<DualIntentVisa />} />
       <Route path="/business-visitor-visa" element={<BusinessVisitorVisa />} />
       <Route path="/visitor-visa" element={<VisitorVisa />} />
-
       <Route path="/temporary-resident" element={<TemporaryResident />} />
-
       <Route
         path="/temporary-resident-permit-draft"
         element={<TemporaryResidentPermitDraft />}
@@ -204,11 +198,11 @@ let AllRoutes = () => {
         path="/common-law-partner-permanent"
         element={<CommonLawPartnerPermanent />}
       />
-     <Route
+      <Route
         path="/common-law-partner-international"
         element={<CommonLawPartnerInternational />}
       />
-           <Route
+      <Route
         path="/spouse-common-law-sponsership"
         element={<SpouseCommonLawSpon />}
       />
@@ -216,10 +210,13 @@ let AllRoutes = () => {
         path="/restoration-status-draft"
         element={<RestorationStatusDraft />}
       />
-
       <Route
         path="/spousal-open-work-permit"
         element={<SpousalOpenWorkPermit />}
+      />
+      <Route
+        path="/open-work-permit-for-spouse-inland"
+        element={<OpenWorkPermitForSpouseInland />}
       />
       <Route path="/flagpoling" element={<Flagpoling />} />
       <Route path="/extensions-draft" element={<ExtensionsDraft />} />
@@ -228,7 +225,10 @@ let AllRoutes = () => {
       <Route path="/non-sds" element={<NonSds />} />
       <Route path="/outside-canada" element={<OutsideCananda />} />
       <Route path="/visitor-to-student" element={<VisitorToStudent />} />
-      <Route path="/change-college-program" element={<ChangeCollegeProgram />}/>
+      <Route
+        path="/change-college-program"
+        element={<ChangeCollegeProgram />}
+      />
       <Route path="/inside-canada" element={<InsideCanada />} />
       <Route path="/student-visa" element={<StudentVisa />} />
       <Route path="/ParentsGrandparents" element={<ParentsGrandparents />} />
@@ -240,9 +240,15 @@ let AllRoutes = () => {
       />
       <Route path="/dependent-children" element={<DependentChildren />} />
       <Route path="/adoption" element={<Adoption />} />
-      <Route path="/family-reunification-sponsorship" element={<FamilyReunificationSponsorship />} />
+      <Route
+        path="/family-reunification-sponsorship"
+        element={<FamilyReunificationSponsorship />}
+      />
       <Route path="/pgwp" element={<Pgwp />} />
-      <Route path="/openWork-dependent-children" element={<OpenWorkCanadaLP />} />
+      <Route
+        path="/openWork-dependent-children"
+        element={<OpenWorkCanadaLP />}
+      />
       <Route
         path="/open-work-vulnerable-lp"
         element={<OpenWorkVulnerableLP />}
@@ -269,11 +275,14 @@ let AllRoutes = () => {
       <Route path="/citizenship" element={<Citizenship />} />
       <Route path="/pr-renewal" element={<PrRenewal />} />
       <Route path="/work-permit" element={<WorkPermit />} />
-
-      <Route path="/category-based-express" element={<CategoryBasedExpress />} />
-
-      <Route path="/agriculture-agri-food-occupation" element={<AgricultureandAgriFoodOccu />} />
-
+      <Route
+        path="/category-based-express"
+        element={<CategoryBasedExpress />}
+      />
+      <Route
+        path="/agriculture-agri-food-occupation"
+        element={<AgricultureandAgriFoodOccu />}
+      />
       <Route
         path="/in-home-caregiver-program-lp"
         element={<InCaregiverProgramLP />}
@@ -287,15 +296,10 @@ let AllRoutes = () => {
         element={<PermanentResidencePathwaysCaregiversLP />}
       />
       <Route path="/spouse-inland" element={<SpouseInland />} />
-
       <Route path="/spouse-outland" element={<SpouseOutland />} />
-
       <Route path="/same-sex" element={<SameSex />} />
-
       <Route path="/immigration-tools" element={<Immigration />} />
-
       <Route path="/search" element={<Search />} />
-
       <Route path="/auth/dashboard/login/admin" element={<Login />} />
     </Routes>
   );

@@ -30,7 +30,7 @@ const AgricultureStreamLmia = () => {
       })
       .then((data) => {
         if (data) {
-          setPData(data[0]);
+          setMetaData(data[0]);
         }
       })
       .catch((error) => {
@@ -250,7 +250,7 @@ const AgricultureStreamLmia = () => {
             id="national-commodity-list"
             ref={(el) => (sectionsRef.current[2] = el)}
           >
-            <h2>{pData?.NatComListIHeading}</h2>
+            <h2 style={{fontSize: "20px", color: "black"}}>{pData?.NatComListIHeading}</h2>
             <ul style={{marginLeft: "40px"}}>
               <li>{pData?.NCL1}</li>
               <li>
@@ -287,7 +287,7 @@ const AgricultureStreamLmia = () => {
             id="housing-requirements"
             ref={(el) => (sectionsRef.current[3] = el)}
           >
-            <h2>{pData?.ImportantNoteHeading}</h2>
+            <h2 style={{fontSize: "20px", color: "black"}}>{pData?.ImportantNoteHeading}</h2>
             <p>
             {pData?.ImportantNotePara}
             </p>

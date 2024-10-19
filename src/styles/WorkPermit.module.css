@@ -184,6 +184,36 @@
     opacity: 1;
     transform: translateX(0);
   }
+
+  .pathwaysBtnFlex{
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+
+  .pathwaysBtnFlex div{
+    width: 33%;
+    padding: 20px 30px;
+    border: 2px solid #00273f;
+    border-radius: 10px;
+    color: #00273f;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media all and (max-width: 700px){
+    .pathwaysBtnFlex{
+      flex-direction: column;
+      justify-content: center;
+    }
+  
+    .pathwaysBtnFlex div{
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
   
 
   .button1 {

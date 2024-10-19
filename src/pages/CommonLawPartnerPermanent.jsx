@@ -198,7 +198,7 @@ const CommonLawPartnerPermanent = () => {
         </section>
 
         <section className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[2] = el}>
-          <h2 className={styles.subheading}>Eligibility criteria of Open Work Permit for Spouse or Common-law Partner of a Permanent Resident/Canadiancitizen:
+          <h2 className={styles.subheading}>Eligibility criteria of Open Work Permit for Spouse or Common-law Partner of a Permanent Resident/Canadian Citizen:
           </h2>
           <ol style={{marginLeft: "40px"}}>
             <li>

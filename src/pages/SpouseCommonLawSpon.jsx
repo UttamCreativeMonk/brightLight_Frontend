@@ -62,7 +62,7 @@ const SpouseCommonLawSpon = () => {
 
   return (
     <>
-          <Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle
@@ -144,7 +144,6 @@ const SpouseCommonLawSpon = () => {
             </div>
           </div>
         </div>
-        
       </div>
 
       <div className={styles.container}>
@@ -193,18 +192,27 @@ const SpouseCommonLawSpon = () => {
           </h2>
           <ul style={{ listStyle: "none" }}>
             <li>
-              <button style={{display: "flex", margin: "0"}} onClick={() => (window.location.href = "/")}>
+              <button
+                style={{ display: "flex", margin: "0" }}
+                onClick={() => (window.location.href = "/spouse-inland")}
+              >
                 Spouse or Common-Law Partner IN CANADA{" "}
               </button>
             </li>
             <li>
-              <button style={{display: "flex", margin: "0"}} onClick={() => (window.location.href = "/")}>
-                Spouse or Common-Law Partner IN CANADA{" "}
+              <button
+                style={{ display: "flex", margin: "0" }}
+                onClick={() => (window.location.href = "/spouse-outland")}
+              >
+                Spouse or Common-Law Partner OUTSIDE CANADA{" "}
               </button>
             </li>
             <li>
-              <button style={{display: "flex", margin: "0"}} onClick={() => (window.location.href = "/")}>
-                Spouse or Common-Law Partner IN CANADA{" "}
+              <button
+                style={{ display: "flex", margin: "0" }}
+                onClick={() => (window.location.href = "/same-sex")}
+              >
+                Same-Sex Partner{" "}
               </button>
             </li>
           </ul>
@@ -219,7 +227,7 @@ const SpouseCommonLawSpon = () => {
             Eligibility criteria for sponsoring your Spouse or Common-law
             Partner for Permanent Residence in Canada:
           </h2>
-          <ul style={{marginLeft: "40px"}}>
+          <ul style={{ marginLeft: "40px" }}>
             <li>You must be a Canadian citizen or permanent resident. </li>
             <li>
               You must show that you have the financial means to support your
@@ -242,7 +250,7 @@ const SpouseCommonLawSpon = () => {
           <h2 className={styles.subheading}>
             How to apply to sponsoring your Spouse or Common-law Partner?
           </h2>
-          <ol style={{marginLeft: "40px"}}>
+          <ol style={{ marginLeft: "40px" }}>
             <li>
               You will need to submit a comprehensive application package to
               IRCC, including marriage certificates, proof of cohabitation (such
@@ -292,8 +300,6 @@ const SpouseCommonLawSpon = () => {
           </ul>
         </section>
 
-        
-
         <section
           className={`${styles.whyChooseUs} ${styles.section}`}
           id="why-choose-us"
@@ -333,7 +339,7 @@ const SpouseCommonLawSpon = () => {
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <h2>Why Choose Us?</h2>
-          <ul style={{marginLeft: "40px"}}>
+          <ul style={{ marginLeft: "40px" }}>
             <li>
               <strong>Experienced Team:</strong> Over a decade of experience in
               handling Immigration applications with a high success rate.

@@ -164,16 +164,16 @@ const CommonLawPartnerTemporary = () => {
             without having an offer of employment.
           </p>
           <p>They are usually classified into the following two categories:</p>
-          <ul style={{marginLeft: "40px"}}>
+          <ol style={{marginLeft: "40px"}}>
             <li>
               Family members of foreign nationals authorized to work in
               high-skilled occupations (TEER 0, 1, 2, or 3) – [C41 and C46]
             </li>
-            <li>
+            <li style={{marginTop: "10px", marginBottom: "20px"}}>
               Family members of foreign nationals authorized to work in
               low-skilled occupations (TEER 4 or 5) – [C47 and C48]
             </li>
-          </ul>
+          </ol>
           <p>
             Both the applicant and their spouse must fulfill their respective
             sets of requirements to reunite and work in Canada.

@@ -167,65 +167,29 @@ let WorkPermit = () => {
           </section>
 
           <section
-            className={`${styles.section} ${styles.section}`}
+            className={`${styles.pathways} ${styles.section}`}
             id="how-to-apply"
-            ref={(el) => (sectionsRef.current[1] = el)}
-          >
-            <h2>Pathways to Get a Work Permit</h2>
-            <div className={styles.pathways}>
-              <div className={styles.pathway}>
-                <h3>
-                  <Link to="/open-work-permit">
-                    <button>Open Work Permit</button>
-                  </Link>
-                </h3>
-                <p>
-                  An open work permit allows you to work for any employer in
-                  Canada. Learn more about the eligibility criteria and
-                  application process.
-                </p>
-              </div>
-              <div className={styles.pathway}>
-                <h3>
-                  <Link to="/lmia-reviewed">
-                    <button>
-                      {" "}
-                      Labour Market Impact Assessment (LMIA)-Based Work Permit
-                    </button>
-                  </Link>
-                </h3>
-                <p>
-                  This permit is employer-specific and requires a positive LMIA.
-                  Discover the steps involved in obtaining this permit.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          <section
-            className={`${styles.section} ${styles.section}`}
-            id="why-choose-us"
             ref={(el) => (sectionsRef.current[15] = el)}
           >
             <h2>Pathways to get a Work Permit</h2>
-            <ul style={{marginLeft: "40px"}}>
-              <li>
+            <div className={styles.pathwaysBtnFlex}>
+              <div>
                 <strong
                   style={{ cursor: "pointer" }}
                   onClick={() => (window.location.href = "/open-work-permit")}
                 >
                   Open Work Permit
                 </strong>
-              </li>
-              <li>
+              </div>
+              <div>
                 <strong
                   style={{ cursor: "pointer" }}
                   onClick={() => (window.location.href = "/lmia-reviewed")}
                 >
                   Labour Market Impact Assessment (LMIA)based work permit
                 </strong>
-              </li>
-              <li>
+              </div>
+              <div>
                 <strong
                   style={{ cursor: "pointer" }}
                   onClick={() =>
@@ -234,8 +198,8 @@ let WorkPermit = () => {
                 >
                   Spousal Open Work Permit
                 </strong>
-              </li>
-            </ul>
+              </div>
+            </div>
           </section>
 
           <section

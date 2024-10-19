@@ -563,8 +563,11 @@ const Navbar3 = (props) => {
                           <a href="/cby">
                             Open Work Permit - For Spouse of Student
                           </a>
-                          <a href="/open-work-permit">
+                          <a href="/open-work-permit-for-spouse-inland">
                             PR Open Work Permit, Inland
+                          </a>
+                          <a href="/francophone-mobility-program">
+                            Francophone Mobility Program
                           </a>
                           {/* <a href="/cby">Cby</a> */}
                         </div>
@@ -742,6 +745,7 @@ const Navbar3 = (props) => {
                           </a>
                         </div>
                       </div>
+
                       {/* // */}
                       <div className={`${styles.relativeDiv} ${styles.flex}`}>
                         <a
@@ -805,8 +809,15 @@ const Navbar3 = (props) => {
                           {/* <a href="/cby">Cby</a> */}
                         </div>
                       </div>
+                      <a href="/francophone-mobility-program">
+                        Francophone Mobility Program
+                      </a>
                     </div>
                   </div>
+                  <a href="/lmia-reviewed">LMIA Work Permit</a>
+                  <a href="/francophone-mobility-program">
+                    Francophone Mobility Program
+                  </a>
                   <div className={`${styles.relativeDiv} ${styles.flex}`}>
                     <a
                       href="/pathways-for-caregiver"
@@ -1288,7 +1299,9 @@ const Navbar3 = (props) => {
                           {isFederalSkilledProgramOpenEight && (
                             <div className={styles.subSubDropdownContent}>
                               <a href="/low-wage-lmia">High Wage / Low Wage</a>
-                              <a href="/agriculture-stream-lmia">Agriculture</a>
+                              <a href="/agriculture-stream-lmia">
+                                Agriculture Stream LMIA
+                              </a>
                               {/* <a href="#">PR Supporting</a> */}
                               <a href="/global-stream-lmia">
                                 Global Talent Stream
@@ -1298,6 +1311,7 @@ const Navbar3 = (props) => {
                               </a>
                             </div>
                           )}
+
                           <a href="#" onClick={toggleFederalSkilledProgramNine}>
                             Open Work Permit
                             <span className={styles.arrow}>▼</span>
@@ -1339,15 +1353,26 @@ const Navbar3 = (props) => {
                               <a href="/cby">
                                 Open Work Permit - For Spouse of Student
                               </a>
-                              <a href="/open-work-permit">
+                              <a href="/open-work-permit-for-spouse-inland">
                                 PR Open Work Permit, Inland
+                              </a>
+                              <a href="/francophone-mobility-program">
+                                Francophone Mobility Program
                               </a>
                             </div>
                           )}
+
+                          <a href="/francophone-mobility-program">
+                            Francophone Mobility Program
+                          </a>
                         </div>
                       </div>
                     )}
                   </div>
+                  <a href="/lmia-reviewed">LMIA Work Permit</a>
+                  <a href="/francophone-mobility-program">
+                    Francophone Mobility Program
+                  </a>
                   <div className={styles.subDropdown}>
                     <a href="#" onClick={toggleFederalSkilledProgramTen}>
                       Caregiver <span className={styles.arrow}>▼</span>

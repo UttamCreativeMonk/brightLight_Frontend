@@ -11,7 +11,7 @@ import { Helmet } from "react-helmet-async";
 const AgricultureandAgriFoodOccu = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
-  let [pData,setPData]=useState([])
+  let [pData, setPData] = useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -25,7 +25,6 @@ const AgricultureandAgriFoodOccu = () => {
   };
 
   useEffect(() => {
-
     fetch("https://brightlight-node.onrender.com/agricultAndAgriFoodOccuMeta")
       .then((res) => {
         return res.json();
@@ -40,8 +39,6 @@ const AgricultureandAgriFoodOccu = () => {
       });
   }, []);
 
-
-  
   useEffect(() => {
     fetch("https://brightlight-node.onrender.com/agricultureAgriFoodOccupation")
       .then((res) => {
@@ -56,8 +53,6 @@ const AgricultureandAgriFoodOccu = () => {
         console.log(error);
       });
   }, []);
-
-
 
   const sectionsRef = useRef([]);
 
@@ -83,7 +78,7 @@ const AgricultureandAgriFoodOccu = () => {
 
   return (
     <>
-        <Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle
@@ -125,7 +120,7 @@ const AgricultureandAgriFoodOccu = () => {
           }
         />
       </Helmet>
-      
+
       <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
@@ -147,11 +142,9 @@ const AgricultureandAgriFoodOccu = () => {
               {/* <p onClick={() => scrollToSection("benefits")}>Benefits</p> */}
               <p onClick={() => scrollToSection("eligibility")}>Eligibility</p>
               <p onClick={() => scrollToSection("express-entry")}>
-              Express Entry
+                Express Entry
               </p>
-              <p onClick={() => scrollToSection("noc")}>
-              Noc's
-              </p>
+              <p onClick={() => scrollToSection("noc")}>Noc's</p>
               <p onClick={() => scrollToSection("why-choose-us")}>
                 Why Choose Us?
               </p>
@@ -177,7 +170,7 @@ const AgricultureandAgriFoodOccu = () => {
             </header>
 
             <p className={styles.discription}>
-            {pData?.agricultAndAgriFoodOccuPara}
+              {pData?.agricultAndAgriFoodOccuPara}
             </p>
           </section>
 
@@ -187,19 +180,16 @@ const AgricultureandAgriFoodOccu = () => {
             ref={(el) => (sectionsRef.current[2] = el)}
           >
             <h2>{pData?.FirstEligibleHeading}</h2>
-            <p>
-            {pData?.FirstEligSubHead}
-            </p>
+            <p>{pData?.FirstEligSubHead}</p>
             <ul>
+              <li>{pData?.e1}</li>
               <li>
-              {pData?.e1}
-              </li>
-              <li>
-              {pData?.e2}
+                {pData?.e2}
                 <ul className={styles.subList}>
                   <li>
-                  {pData?.e2SubLi1}
+                    {pData?.e2SubLi1}
                     <button
+                      style={{ margin: "0 !important" }}
                       className={styles.button2}
                       onClick={() =>
                         (window.location.href =
@@ -210,8 +200,9 @@ const AgricultureandAgriFoodOccu = () => {
                     </button>
                   </li>
                   <li>
-                  {pData?.e2SubLi2}
+                    {pData?.e2SubLi2}
                     <button
+                      style={{ margin: "0 !important" }}
                       className={styles.button2}
                       onClick={() =>
                         (window.location.href = "/canadian-experience-class")
@@ -222,8 +213,9 @@ const AgricultureandAgriFoodOccu = () => {
                   </li>
 
                   <li>
-                  {pData?.e2SubLi3}
+                    {pData?.e2SubLi3}
                     <button
+                      style={{ margin: "0" }}
                       className={styles.button2}
                       onClick={() =>
                         (window.location.href =
@@ -236,9 +228,7 @@ const AgricultureandAgriFoodOccu = () => {
                 </ul>
               </li>
             </ul>
-            <p>
-            {pData?.FirstEligPara}
-            </p>
+            <p>{pData?.FirstEligPara}</p>
           </section>
 
           <section
@@ -246,18 +236,14 @@ const AgricultureandAgriFoodOccu = () => {
             id="testing"
             ref={(el) => (sectionsRef.current[3] = el)}
           >
-            <h2>
-            {pData?.EligCriHeading}
-            </h2>
+            <h2>{pData?.EligCriHeading}</h2>
             <h4>
               Once you have met eligibility for one of the Express Entry
               programs, now you need to meet eligibility for Agriculture and
               agri-food occupations criteria:
             </h4>
             <ul className={styles.leftList}>
-              <li>
-              {pData?.ec1}
-              </li>
+              <li>{pData?.ec1}</li>
               <li> {pData?.ec2}</li>
             </ul>
           </section>
@@ -267,16 +253,14 @@ const AgricultureandAgriFoodOccu = () => {
             id="express-entry"
             ref={(el) => (sectionsRef.current[31] = el)}
           >
-            <h2>
-            {pData?.EligEntryHeading}
-            </h2>
+            <h2>{pData?.EligEntryHeading}</h2>
             <button
               className={styles.button1}
               onClick={() => (window.location.href = "/previous-draw-history")}
             >
               Previous Draw
             </button>
-            <p style={{marginTop: "20px"}}>
+            <p style={{ marginTop: "20px" }}>
               The first ever Express Entry draw for Agriculture and agri-food
               occupations workers was held on September, 2023. Express Entry
               draw 267 saw a CRS score of 354 and invited 600 candidates
@@ -290,8 +274,7 @@ const AgricultureandAgriFoodOccu = () => {
             id="noc"
             ref={(el) => (sectionsRef.current[4] = el)}
           >
-            <h2>{pData?.HereEligTabHeading}
-            </h2>
+            <h2>{pData?.HereEligTabHeading}</h2>
 
             <table className={styles.occupationTable}>
               <thead>
@@ -303,9 +286,7 @@ const AgricultureandAgriFoodOccu = () => {
               </thead>
               <tbody>
                 <tr>
-                  <td>
-                  {pData?.HeT1Po1}
-                  </td>
+                  <td>{pData?.HeT1Po1}</td>
                   <td>{pData?.HeT2Po1}</td>
                   <td>2</td>
                 </tr>
@@ -328,12 +309,8 @@ const AgricultureandAgriFoodOccu = () => {
             ref={(el) => (sectionsRef.current[5] = el)}
           >
             <h2>{pData?.StillNotHeading}</h2>
-            <p>
-            {pData?.s1}
-            </p>
-            <p>
-            {pData?.s2}
-            </p>
+            <p>{pData?.s1}</p>
+            <p>{pData?.s2}</p>
             <button
               onClick={() =>
                 (window.location.href =
@@ -345,30 +322,30 @@ const AgricultureandAgriFoodOccu = () => {
           </section>
 
           <section
-          className={`${styles.section} ${styles.section}`}
-          id="why-choose-us"
-          ref={(el) => (sectionsRef.current[6] = el)}
-        >
-          <h2>Why Choose Us?</h2>
-          <ul style={{marginLeft: "40px"}}>
-            <li>
-              <strong>Experienced Team:</strong> Over a decade of experience in
-              handling Immigration applications with a high success rate.
-            </li>
-            <li>
-              <strong>Tailored Approach:</strong> Personalized services and
-              strategies based on your specific case.
-            </li>
-            <li>
-              <strong>High Success Rate:</strong> Proven track record using case
-              law and precedents for positive results.
-            </li>
-            <li>
-              <strong>Comprehensive Support:</strong> Assistance from the start
-              of the application process to obtaining your PR.
-            </li>
-          </ul>
-        </section>
+            className={`${styles.section} ${styles.section}`}
+            id="why-choose-us"
+            ref={(el) => (sectionsRef.current[6] = el)}
+          >
+            <h2>Why Choose Us?</h2>
+            <ul style={{ marginLeft: "40px" }}>
+              <li>
+                <strong>Experienced Team:</strong> Over a decade of experience
+                in handling Immigration applications with a high success rate.
+              </li>
+              <li>
+                <strong>Tailored Approach:</strong> Personalized services and
+                strategies based on your specific case.
+              </li>
+              <li>
+                <strong>High Success Rate:</strong> Proven track record using
+                case law and precedents for positive results.
+              </li>
+              <li>
+                <strong>Comprehensive Support:</strong> Assistance from the
+                start of the application process to obtaining your PR.
+              </li>
+            </ul>
+          </section>
         </main>
       </div>
 
