@@ -5054,6 +5054,10 @@ const FieldOfStudyTable = () => {
     </tr>,
   ];
 
+  let [selectedOption, setSelectedOption] = useState(
+    "Agriculture and Agri Food"
+  );
+
   const ITEMS_PER_PAGE = 50;
   const [currentPage, setCurrentPage] = useState(0);
   const [filterText, setFilterText] = useState("");
@@ -5096,6 +5100,23 @@ const FieldOfStudyTable = () => {
           className={styles.filterInput}
         />
       </div>
+      <select
+        onChange={(e) => {
+          setSelectedOption(e.target.value);
+          setFilterText(e.target.value);
+        }}
+        className={styles.selectOption}
+      >
+        <option value="Agriculture">
+          Agriculture and agri-food
+        </option>
+        <option value="Healthcare">Healthcare</option>
+        <option value="STEM">
+          Science, Technology, Engineering and Mathematics (STEM)
+        </option>
+        <option value="Trade">Trade</option>
+        <option value="Transport">Transport</option>
+      </select>
       <table className={`${styles.table} ${styles.paginationBorder}`}>
         <thead>
           <tr>

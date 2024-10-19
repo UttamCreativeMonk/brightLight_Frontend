@@ -144,6 +144,17 @@
   outline: none;
 }
 
+@media all and (max-width: 600px){
+  .filterContainer{
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  .filterContainer input{
+    width: 100%;
+  }
+}
+
 .filterSelect {
   border: 1px solid rgb(202, 202, 202);
   padding: 10px;
