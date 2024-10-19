@@ -360,7 +360,7 @@ const VisitorToStudent = () => {
             <option value="transport">Transport</option>
           </select> */}
 
-<FieldOfStudyTable/>
+             <FieldOfStudyTable/>
 
           <h2>Important Points to Remember:</h2>
           <ul>
