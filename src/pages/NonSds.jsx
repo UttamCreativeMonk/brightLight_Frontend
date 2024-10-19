@@ -7,6 +7,7 @@ import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
 import ogImage from "../assets/ogImage.png";
 import { Helmet } from "react-helmet-async";
+import FieldOfStudyTable from "../components/FieldOfStudyTable";
 
 const NonSds = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -298,9 +299,9 @@ const NonSds = () => {
 
             <button
               className={styles.button}
-              onClick={() => (window.location.href = "/bcpnp-calculator")}
+              onClick={() => (window.location.href = "/clb-ilets-calculator")}
             >
-              Start your process now
+              CLB Calculator
             </button>
           </div>
         </section>
@@ -424,7 +425,80 @@ const NonSds = () => {
             </tbody>
           </table>
         </section>
+        <section
+          className={`${styles.applicationProcess} ${styles.section}`}
+          id="pgwp-requirements"
+          ref={(el) => (sectionsRef.current[26] = el)}
+        >
+          <h2 className={styles.subheading}>
+          If you submit your study permit application on or after November 1, 2024 
+          </h2>
+          <h4>NOTE: Changes were Announced to the Post Graduate Work Permit (PGWP) Eligibility - September 18, 2024</h4>
+          <p>
+            If you submit your study permit application on or after November 1, 2024, you must also meet the new requirements that apply to your situation to be eligible to apply for a PGWP.
+          </p>
+          
+          <ul style={{ marginLeft: "40px", marginTop:"20px"}}>
+          <li><strong>If you Graduated from a University Bachelor’s degree, Master’s Degree or Doctoral Degree Program:</strong></li>
+          <ul style={{ marginLeft: "40px", listStyleType: "circle" }}>
+            <li> <strong>Language requirement: </strong> You must prove your English or French language skills with a minimum level of Canadian Language Benchmarks (CLB) 7 in English or Niveaux de competence linguistique canadiens (NCLC) 7 in French in all 4 language areas.
+            </li>
+            <li><strong>Field of study requirement:</strong> All fields of study are eligible. There is no additional field of study requirement. <a href="#field-study"> Field of study Requirement </a></li>
+            </ul>
+          </ul>
 
+         
+          <ul style={{ marginLeft: "40px", marginTop:"20px"}}>
+          <li><strong>If you Graduated from Any Other University Program:</strong> </li>
+          <ul style={{ marginLeft: "40px", listStyleType: "circle" }}>
+            <li> <strong>Language requirement:</strong> You must prove your English or French language skills with a minimum level of CLB 7 in English or NCLC 7 in French in all 4 language areas.</li>
+            <li><strong>Field of study requirement:</strong> You must graduate in an eligible field of study.<a href="#field-study"> Field of study Requirement </a> </li>
+            </ul>
+          </ul>
+
+         
+          <ul style={{ marginLeft: "40px", marginTop:"20px"}}>
+          <li> <strong>If you graduated from a College Program or Any Other Program Not listed Above:</strong></li>
+          <ul style={{ marginLeft: "40px", listStyleType: "circle" }}>
+            <li><strong>Language requirement:</strong> You must prove your English or French language skills with a minimum level of CLB 5 in English or NCLC 5 in French in all 4 language areas.</li>
+            <li> <strong>Field of study requirement:</strong> You must graduate in an eligible field of study.<a href="#field-study"> Field of study Requirement </a> </li>
+            </ul>
+          </ul>
+          <button id="field-study"
+            className={styles.button}
+            onClick={() =>
+              (window.location.href =
+                "/clb-ilets-calculator")
+            }
+          >
+           CLB CALCULATOR
+          </button>
+
+          <h3 >Field of Study Requirement</h3>
+          <p style={{ marginTop:"20px" , marginBottom:"20px"}}>
+          If your study program has a field of study requirement, you must graduate from a program linked to certain occupations in long-term shortage. The fields of study are divided into 5 broad categories:
+          </p>
+          <ul style={{ marginLeft: "40px", marginTop:"20px"}}>
+            <li>Agriculture and Agri-food</li>
+            <li>Healthcare</li>
+            <li>Science, Technology, Engineering and Mathematics (STEM)</li>
+            <li>Trade</li>
+            <li>Transport</li>
+          </ul>
+
+          {/* <h4 > Select Field of Study:</h4> */}
+          {/* <select className={styles.dropdown}>
+            <option value="">Select a field</option>
+            <option value="agriculture">Agriculture and Agri-food</option>
+            <option value="healthcare">Healthcare</option>
+            <option value="stem">Science, Technology, Engineering and Mathematics (STEM)</option>
+            <option value="trade">Trade</option>
+            <option value="transport">Transport</option>
+          </select> */}
+
+         <FieldOfStudyTable/>
+        </section>
+        
         <h3 style={{ marginBottom: "20px" }}>
           I am an international student. Is my spouse, common law partner,
           eligible for an Open Work Permit?

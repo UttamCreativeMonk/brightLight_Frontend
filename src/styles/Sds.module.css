@@ -182,7 +182,7 @@
 .subheading {
   font-size: 1.8rem;
   margin-bottom: 15px;
-  color: #333;
+  /* color: #333; */
   text-align: left;
 }
 
@@ -252,7 +252,7 @@
 .applicationProcess h3 {
   margin-top: 20px;
   margin-bottom: 5px;
-  color: #333;
+  /* color: #333; */
 }
 .countryTable th ,tr{
   text-align: center;
@@ -280,7 +280,7 @@
   margin-bottom: 20px;
 }
 .applicationSubmission{
-  color: #333;
+  /* color: #333; */
   margin-top: 20px;
 }
 

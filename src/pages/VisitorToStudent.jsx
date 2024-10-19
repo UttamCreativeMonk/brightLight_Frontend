@@ -7,6 +7,7 @@ import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
 import ogImage from "../assets/ogImage.png";
 import { Helmet } from "react-helmet-async";
+import FieldOfStudyTable from "../components/FieldOfStudyTable";
 
 const VisitorToStudent = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -152,7 +153,7 @@ const VisitorToStudent = () => {
           id="about-program"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          Visitor to Student
+          Visitor to Student (Inside Canada)
         </h1>
         <p className={styles.intro}>
           Transitioning from visitor status to student status (also known as a
@@ -179,39 +180,26 @@ const VisitorToStudent = () => {
           </h4>
           <ol style={{ marginLeft: "40px" }} className={styles.benefitsList}>
             <li style={{ marginBottom: "10px" }}>
-              A Guaranteed Investment Certificate (GIC) is not required to apply
-              for a Study Permit when you apply from inside Canada.
+            A Guaranteed Investment Certificate (GIC) is not required to apply for a Study Permit when you apply from inside Canada.
+
             </li>
             <li style={{ marginBottom: "10px" }}>
-              You do not need to pay a 1-year fee to college or university,
-              upfront.
+            You do not need to pay a 1-year fee to college or university, upfront.
             </li>
             <li style={{ marginBottom: "10px" }}>
-              You do not need a Provincial Attestation Letter (PAL) when you
-              apply for a Study Permit from inside Canada.
+            While you study, you are allowed to work up to 24 hours per week, starting September, 2024.
             </li>
             <li style={{ marginBottom: "10px" }}>
-              While you study, you are allowed to work up to 24 hours per week,
-              starting September 2024.
+            Every 2 semesters, you are allowed to take a scheduled break for one semester. During this time, there are no restrictions on your work hours.
             </li>
             <li style={{ marginBottom: "10px" }}>
-              Every 2 semesters, you are allowed to take a scheduled break for
-              one semester. During this time, there are no restrictions on your
-              work hours.
+            If you decide to stay in Canada after completing your studies, you may be eligible for a post-graduate work permit, which can give you valuable work experience and enhance your chances of obtaining permanent residency.
             </li>
             <li style={{ marginBottom: "10px" }}>
-              If you decide to stay in Canada after completing your studies, you
-              may be eligible for a post-graduate work permit, which can give
-              you valuable work experience and enhance your chances of obtaining
-              permanent residency.
+            You can continue your studies without having to return to your home country.
             </li>
             <li style={{ marginBottom: "10px" }}>
-              You can continue your studies without having to return to your
-              home country.
-            </li>
-            <li style={{ marginBottom: "10px" }}>
-              You can avoid the hassle and expense of traveling back and forth
-              between Canada and your home country.
+            You can avoid the hassle and expense of traveling back and forth between Canada and your home country.
             </li>
           </ol>
         </section>
@@ -224,51 +212,60 @@ const VisitorToStudent = () => {
           <h2 className={styles.subheading}>
             Eligibility Criteria for the Student Permit Program
           </h2>
-          <ul style={{marginLeft: "40px"}} className={styles.eligibilityList}>
+          <ul style={{ marginLeft: "40px" }} className={styles.eligibilityList}>
             <li>
-              You are already in Canada legally with a valid status, such as a
-              valid study permit, work permit, or visitor record.
+            You are already in Canada legally with a valid status. This could mean you have a valid study permit, a valid work permit, or a valid visitor record
             </li>
-            <li>You have taken a prerequisite course inside Canada.</li>
+            <li>You have taken a prerequisite course inside Canada</li>
             <li>
-              You are enrolled in a full-time program at a designated learning
-              institution (DLI).
+            You are enrolled in a full-time program at a designated learning institution (DLI). A DLI is a school that has been approved by the Canadian government to accept international students.
             </li>
             <li>
-              You have sufficient funds to support yourself while you study in
-              Canada, including tuition, living expenses, and return
-              transportation.
+            You have a valid Provincial Attestation Letter or PAL.
             </li>
-            <li>You have no criminal record.</li>
+            <li>You have sufficient funds to support yourself while you study in Canada. This means you have enough money to cover your tuition, living expenses, and return transportation.</li>
+            <li>
+            You have no criminal record.
+            </li>
           </ul>
           <p className={styles.eligibilityAdditional}>
             In addition, you should meet at least one of the following
             conditions:
           </p>
           <ul className={styles.eligibilityAdditionalList}>
-            <li>Your work permit or study permit is still valid.</li>
+            <li>you’re a Ukrainian national or family member of a Ukrainian national</li>
             <li>
-              You are the parent, spouse, or common-law partner of someone with
-              a valid work or study permit.
+            you have a valid study or work permit
             </li>
             <li>
-              You are the parent, spouse, or common-law partner of someone with
-              a valid Temporary Resident Permit with a validity of 6 months or
-              more.
+            your spouse, common-law partner or parent has a valid study or work permit
             </li>
             <li>
-              You are a minor, and your parents or guardian are planning to send
-              you to primary or secondary school.
+            you’re a minor child in primary or secondary school
             </li>
-            <li>You are an exchange student or a visiting student.</li>
+            <li>you’re an exchange student or visiting student</li>
             <li>
-              You have sponsorship for immigration and your permanent residency
-              profile is already in the pool.
+            you completed a short-term course or study program required to be accepted at a DLI
             </li>
             <li>
-              You are completing a short-term course aimed at making you
-              eligible to be accepted at a designated learning institute.
+            you or your spouse, common-law partner or dependent child has a temporary resident permit (TRP) valid for 6 months or more
             </li>
+            <li>
+            you’re being sponsored to immigrate and you already applied for permanent residence (if you’re eligible)
+            </li>
+            <li>
+            you or your spouse, common-law partner or dependent child are subject to an unenforceable removal order
+            </li>
+            <li>you’re the spouse, common-law partner or dependent child of:</li>
+            <ul style={{ marginLeft: "40px", listStyleType: "circle" }}>
+         
+            <li>an athlete on a team based in Canada</li>
+            <li>a member of the media</li>
+            <li>a member of the clergy</li>
+            <li>military personnel on duty in Canada or</li>
+            <li>an accredited foreign representative</li>
+            </ul>
+            <li>you’re a refugee claimant in Canada or a family member of a refugee claimant in Canada</li>
           </ul>
         </section>
 
@@ -281,20 +278,104 @@ const VisitorToStudent = () => {
             How to Apply for a Study Permit When Applying as a Visitor
           </h2>
           <p className={styles.processDescription}>
-            You will need to provide the same documents as you would if you were
-            applying from outside Canada. This includes your passport, letter of
-            acceptance from your DLI, proof of financial support, and police
-            certificates. Here are 5 easy steps we help you follow to process
-            your application:
+          You will need to provide the same documents as you would if you were applying from outside Canada. This includes your passport, letter of acceptance from your DLI, proof of financial support, and police certificates. Here are 5 easy steps we help you follow to process your application.
           </p>
           <ol className={styles.processList}>
             <li>Contact Bright Light Immigration.</li>
             <li>Apply to a prerequisite course (Mandatory).</li>
-            <li>Apply to a Public/Private College.</li>
+            <li>Apply to a Public/Private College (Valid Letter of Acceptance – LOA)</li>
+            <li>Get a Provincial Attestation Letter (PAL)</li>
             <li>Get your documents and submit your application.</li>
-            <li>Obtain your Study Permit.</li>
+            <li>Get your Study Permit.</li>
           </ol>
         </section>
+
+        <section
+          className={`${styles.applicationProcess} ${styles.section}`}
+          id="pgwp-requirements"
+          ref={(el) => (sectionsRef.current[26] = el)}
+        >
+          <h2 className={styles.subheading}>
+          If you submit your study permit application on or after November 1, 2024 
+          </h2>
+          <h4>NOTE: Changes were Announced to the Post Graduate Work Permit (PGWP) Eligibility - September 18, 2024</h4>
+          <p>
+            If you submit your study permit application on or after November 1, 2024, you must also meet the new requirements that apply to your situation to be eligible to apply for a PGWP.
+          </p>
+          
+          <ul style={{ marginLeft: "40px", marginTop:"20px"}}>
+          <li><strong>If you Graduated from a University Bachelor’s degree, Master’s Degree or Doctoral Degree Program:</strong></li>
+          <ul style={{ marginLeft: "40px", listStyleType: "circle" }}>
+            <li> <strong>Language requirement: </strong>You must prove your English or French language skills with a minimum level of Canadian Language Benchmarks (CLB) 7 in English or Niveaux de competence linguistique canadiens (NCLC) 7 in French in all 4 language areas.</li>
+            <li><strong>Field of study requirement:</strong> All fields of study are eligible. There is no additional field of study requirement. <a href="#field-study"> Field of study Requirement </a></li>
+            </ul>
+          </ul>
+
+         
+          <ul style={{ marginLeft: "40px", marginTop:"20px"}}>
+          <li><strong>If you Graduated from Any Other University Program:</strong> </li>
+          <ul style={{ marginLeft: "40px", listStyleType: "circle" }}>
+            <li> <strong>Language requirement:</strong> You must prove your English or French language skills with a minimum level of CLB 7 in English or NCLC 7 in French in all 4 language areas.</li>
+            <li><strong>Field of study requirement:</strong> You must graduate in an eligible field of study.<a href="#field-study"> Field of study Requirement </a> </li>
+            </ul>
+          </ul>
+
+         
+          <ul style={{ marginLeft: "40px", marginTop:"20px"}}>
+          <li> <strong>If you graduated from a College Program or Any Other Program Not listed Above:</strong></li>
+          <ul style={{ marginLeft: "40px", listStyleType: "circle" }}>
+            <li><strong>Language requirement:</strong> You must prove your English or French language skills with a minimum level of CLB 5 in English or NCLC 5 in French in all 4 language areas.</li>
+            <li> <strong>Field of study requirement:</strong> You must graduate in an eligible field of study. <a href="#field-study"> Field of study Requirement </a></li>
+            </ul>
+          </ul>
+          <button id="field-study"
+            className={styles.button}
+            onClick={() =>
+              (window.location.href =
+                "/clb-ilets-calculator")
+            }
+          >
+           CLB CALCULATOR
+          </button>
+
+          <h3>Field of Study Requirement</h3>
+          <p style={{ marginTop:"20px" , marginBottom:"20px"}}>
+          If your study program has a field of study requirement, you must graduate from a program linked to certain occupations in long-term shortage. The fields of study are divided into 5 broad categories:
+          </p>
+          <ul style={{ marginLeft: "40px", marginTop:"20px"}}>
+            <li>Agriculture and Agri-food</li>
+            <li>Healthcare</li>
+            <li>Science, Technology, Engineering and Mathematics (STEM)</li>
+            <li>Trade</li>
+            <li>Transport</li>
+          </ul>
+
+          {/* <h4>Select Field of Study:</h4>
+          <select className={styles.dropdown}>
+            <option value="">Select a field</option>
+            <option value="agriculture">Agriculture and Agri-food</option>
+            <option value="healthcare">Healthcare</option>
+            <option value="stem">Science, Technology, Engineering and Mathematics (STEM)</option>
+            <option value="trade">Trade</option>
+            <option value="transport">Transport</option>
+          </select> */}
+
+<FieldOfStudyTable/>
+
+          <h2>Important Points to Remember:</h2>
+          <ul>
+            <li>To apply for a study permit as a visitor in Canada, you must submit your completion letter for the prerequisite program along with your letter of acceptance. 
+            </li>
+            <li>Ensure that your acceptance letter clearly states that the program is a prerequisite for admission.
+            </li>
+            <li>If the post-secondary school you wish to attend is not on the DLI List, you cannot apply for a study permit.
+            </li>
+            <li>September 18, 2024. Make sure you are choosing a course that is eligible. {" "}<a href="/pgwp">PGWP</a>(eligibility applying after November 1, 2024)
+            </li>
+            <li>During the prerequisite program, you're not eligible to work off-campus. However, once you've completed the prerequisite and commenced your main program, you can work off-campus.</li>
+          </ul>
+        </section>
+
 
         <section
           className={`${styles.refusals} ${styles.section}`}
@@ -304,11 +385,11 @@ const VisitorToStudent = () => {
           <h2 className={styles.subheading}>
             Reasons for Refusals of Study Permit When Applying as a Visitor
           </h2>
-          <h4>
+          <ul className={styles.refusalList}>
+          <li>
             You should have a Letter of Acceptance (LOA) from a DLI. If you do
             not have a LOA, your application will be refused.
-          </h4>
-          <ul className={styles.refusalList}>
+            </li>
             <li>You do not have a Letter of Acceptance (LOA) from a DLI.</li>
             <li>
               If you do not have strong ties to your home country, such as a job
