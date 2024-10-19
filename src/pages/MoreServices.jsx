@@ -104,13 +104,17 @@ const MoreServices = () => {
       description: "Temporary residency in Canada is a status granted by Canadian immigration....",
       link: "/temporary-resident-permit-draft"
     },
+
+
     {
       img: graduatedStudentImg,
       hoverImg: graduatedStudentImgHover,
-      title: "Student Visa",
-      description: "Canada ranks as one of the top choices worldwide for students...",
-      link: "/student-visa"
+      title: "LMIA Work Permit",
+      description: "If you're looking to apply for an LMIA, it's because you are either a foreign worker who wants to apply for a job on a temporary...",
+      link: "/lmia-reviewed"
     },
+
+
     {
       img: parentsImg,
       hoverImg: parentsImgHover,
@@ -146,13 +150,19 @@ const MoreServices = () => {
       description: "The Canadian Express Entry Program is a points-based system used by the residence....",
       link: "/express-entry"
     },
+
+
+
     {
       img: PilotProgramImg,
       hoverImg: PilotProgramHover,
-      title: "Pilot programs",
-      description: "The diverse economy of Canada offers various opportunities to advance your career and more....",
-      link: "/pilot-programs"
+      title: "Franco-Mobility Program",
+      description: "Mobilité Francophone: Unlocking Opportunities for French-Speaking Workers....",
+      link: "/francophone-mobility-program"
     },
+
+
+    
     {
       img: PNPImg,
       hoverImg: PNPHover,
@@ -160,13 +170,18 @@ const MoreServices = () => {
       description: "While the federal Express Entry system remains a popular pathway to Canadian residence....",
       link: "/pnp"
     },
+
+
+
     {
       img: RNIPImg,
       hoverImg: RNIPHover,
-      title: "RNIP",
-      description: "The Rural and Northern Immigration Pilot (RNIP) is revolutionizing the way economic immigration benefits....",
-      link: "/rnip"
+      title: "Spousal Sponsorship",
+      description: "The Canadian government understands the importance of bringing loved ones together, and its Family reunification....",
+      link: "/spouse-common-law-sponsership"
     },
+
+
     {
       img: SuperVisaImg,
       hoverImg: SuperVisaHover,
@@ -181,6 +196,19 @@ const MoreServices = () => {
       description: "A Visitor Visa, also known as a Temporary Resident Visa (TRV), allows people from other countries......",
       link: "/visitor-visa"
     },
+
+
+
+    {
+      img: VisitorVisaImg,
+      hoverImg: VisitorVisaHover,
+      title: "Emergency Visa",
+      description: "An emergency visa is a type of visa that allows individuals to travel to a country urgently due to unforeseen circumstances.......",
+      link: "/visitor-visa"
+    },
+
+
+
     {
       img: TemporaryResidentPermitImg,
       hoverImg: TemporaryResidentPermitHover,
@@ -202,48 +230,66 @@ const MoreServices = () => {
       description: "Flagpoling is a legal process of exiting Canada and re-entering the country without physically crossing into the USA to obtain ....",
       link: "/flagpoling"
     },
+
+
+
+
     {
       img: SpousalPermitImg,
       hoverImg: SpousalPermitHover,
-      title: "Spousal Permit",
-      description: "With a Spousal Open Work Permit (SOWP), your spouse can accompany you in Canada, allowing them to flourish professionally....",
-      link: "/spousal-open-work-permit"
+      title: "PGWP",
+      description: " If you are an international student who has graduated from a designated learning institution (DLI) in Canada, you may be eligible for a PGWP.....",
+      link: "/pgwp"
     },
+
+
+
     {
       img: OutsideCanandaImg,
       hoverImg: OutsideCanandaHover,
-      title: "Outside Canada",
-      description: "So, you've set your sights on pursuing higher education in the vibrant and diverse world of Canada.....",
-      link: "/outside-canada"
+      title: "Reconsideration for Refusal",
+      description: "Are you a Canadian immigrant who has recently received a rejection for your visa application? If so,.....",
+      link: "/reconsideration"
     },
+
+
+
+
+
     {
       img: InsideCanadaImg,
       hoverImg: InsideCanadaHover,
-      title: "Inside Canada",
-      description: "While the standard procedure for obtaining a Canadian student visa is to apply from outside Canada.....",
-      link: "/inside-canada"
+      title: "PFL",
+      description: "Responding to a Procedural Fairness Letter (PFL) is a crucial step in addressing concerns raised .....",
+      link: "/reply-to-pfl-page"
     },
+
+
+
     {
       img: StudyPermitMinorsImg,
       hoverImg: StudyPermitMinorsHover,
-      title: "Study Permit Minors",
-      description: "As parents, we all aspire to provide our children with the best possible foundation for their future.....",
-      link: "/study-permit-minors"
+      title: "Dual Intent Visa",
+      description: "A Dual Intent Visa allows you to have two different reasons for visiting Canada. This means you can come to.....",
+      link: "/dual-intent-visa"
     },
-    {
-      img: ParentsGrandparentsImg,
-      hoverImg: ParentsGrandparentsHover,
-      title: "Parents / GrandParents",
-      description: "Parents and grandparents are incredibly important in one’s life. They're like the foundation of our lives....",
-      link: "/ParentsGrandparents"
-    },
-    {
-      img: DependentChildrenImg,
-      hoverImg: DependentChildrenHover,
-      title: "Dependent Children",
-      description: "The Dependent Child Program helps families stay together and gives your child the chance to go to good schools in Canada....",
-      link: "/dependent-children"
-    },
+
+
+
+    // {
+    //   img: ParentsGrandparentsImg,
+    //   hoverImg: ParentsGrandparentsHover,
+    //   title: "Parents / GrandParents",
+    //   description: "Parents and grandparents are incredibly important in one’s life. They're like the foundation of our lives....",
+    //   link: "/ParentsGrandparents"
+    // },
+    // {
+    //   img: DependentChildrenImg,
+    //   hoverImg: DependentChildrenHover,
+    //   title: "Dependent Children",
+    //   description: "The Dependent Child Program helps families stay together and gives your child the chance to go to good schools in Canada....",
+    //   link: "/dependent-children"
+    // },
     {
       img: HumanitarianCompassionateImg,
       hoverImg: HumanitarianCompassionateHover,
@@ -251,27 +297,27 @@ const MoreServices = () => {
       description: "Unlike traditional immigration programs that prioritize factors like education, work experience, and language proficiency....",
       link: "/humanitarian-compassionate"
     },
-    {
-      img: OrphanImg,
-      hoverImg: OrphanHover,
-      title: "Orphan",
-      description: "The Canada Orphan Sponsorship Program gives orphaned kids a chance to be with their Canadian relatives or start a new life in Canada.....",
-      link: "/orphan"
-    },
-    {
-      img: AdoptionImg,
-      hoverImg: AdoptionHover,
-      title: "Adoption",
-      description: "The heart-warming journey of bringing a child into your life through adoption is an incredible act of love and commitment, offering the child.....",
-      link: "/adoption"
-    },
-    {
-      img: LonelyCanadianImg,
-      hoverImg: LonelyCanadianHover,
-      title: "Lonely Canadian",
-      description: "Canada’s family sponsorship program prioritizes family reunification. If you wish to sponsor other family members who may be lonely.....",
-      link: "/lonely-canadian"
-    },
+    // {
+    //   img: OrphanImg,
+    //   hoverImg: OrphanHover,
+    //   title: "Orphan",
+    //   description: "The Canada Orphan Sponsorship Program gives orphaned kids a chance to be with their Canadian relatives or start a new life in Canada.....",
+    //   link: "/orphan"
+    // },
+    // {
+    //   img: AdoptionImg,
+    //   hoverImg: AdoptionHover,
+    //   title: "Adoption",
+    //   description: "The heart-warming journey of bringing a child into your life through adoption is an incredible act of love and commitment, offering the child.....",
+    //   link: "/adoption"
+    // },
+    // {
+    //   img: LonelyCanadianImg,
+    //   hoverImg: LonelyCanadianHover,
+    //   title: "Lonely Canadian",
+    //   description: "Canada’s family sponsorship program prioritizes family reunification. If you wish to sponsor other family members who may be lonely.....",
+    //   link: "/lonely-canadian"
+    // },
     {
       img: WorkPermitImg,
       hoverImg: WorkPermitHover,
@@ -300,7 +346,6 @@ const MoreServices = () => {
       description: "Are you a temporary resident in Canada who has lost status? Don't despair! There is a way to regain your legal standing in Canada.....",
       link: "/restoration-status-draft"
     },
-
   ];
 
   const handleHeadingClick = (link) => {

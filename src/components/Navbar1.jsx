@@ -1422,6 +1422,7 @@ const Navbar3 = (props) => {
                       </div>
                     )}
                   </div>
+                  <a href="/more-services">More Services</a>
                 </div>
               </div>
 
