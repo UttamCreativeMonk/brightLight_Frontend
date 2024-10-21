@@ -93,6 +93,20 @@ import ExtensionsDraftContent from "../admin_sections/ExtensionsDraft";
 import ExtensionsDraftMeta from "../admin_sections/ExtensionsDraftMeta";
 import CommonLawPartnerInternationalContent from "../admin_sections/CommonLawParenerInternational";
 import CommonLawPartnerInternationalMeta from "../admin_sections/CommonLawParenerInternationalMeta";
+import FamilyReunificationContent from "../admin_sections/FamilyReunification";
+import FamilyReunificationMeta from "../admin_sections/FamilyReunificationMeta";
+import FederalSkilledTradeProgramContent from "../admin_sections/FederalSkilledTradeProgram";
+import FederalSkilledTradeProgramMeta from "../admin_sections/FederalSkilledTradeProgramMeta";
+import FederalSkilledWorkerProgramContent from "../admin_sections/FederalSkilledWorkerProgram";
+import FederalSkilledWorkerProgramMeta from "../admin_sections/FederalSkilledWorkerProgramMeta";
+import FlagPolingContent from "../admin_sections/FlagPoling";
+import FlagPolingMeta from "../admin_sections/FlagPolingMeta";
+import FrancophoneContent from "../admin_sections/Francophone";
+import FrancophoneMeta from "../admin_sections/FrancophoneMeta";
+import FrenchTargetedDrawContent from "../admin_sections/FrenchTargetDraw";
+import FrenchTargetedDrawMeta from "../admin_sections/FrenchTargetDrawMeta";
+import HealthAuthoritiesStreamContent from "../admin_sections/HealthAuthoritiesStream";
+import HealthAuthoritiesStreamMeta from "../admin_sections/HealthAuthoritiesStreamMeta";
 
 let Admin = () => {
   let { logout } = useAuth();
@@ -1295,13 +1309,90 @@ let Admin = () => {
                 <div className={styles.leftPanel}>
                   <div
                     className={`${styles.page} ${
-                      activePage === "additional_documents"
+                      activePage === "family_reunification"
                         ? styles.activePage
                         : ""
                     }`}
-                    onClick={() => handlePageClick("additional_documents")}
+                    onClick={() => handlePageClick("family_reunification")}
                   >
-                    <p>Page Tab on 2nd Page</p>
+                    <p>Family Reunification Page</p>
+                  </div>
+
+                  <div
+                    className={`${styles.page} ${
+                      activePage === "federal_skilled_trade_program"
+                        ? styles.activePage
+                        : ""
+                    }`}
+                    onClick={() =>
+                      handlePageClick("federal_skilled_trade_program")
+                    }
+                  >
+                    <p>Federal Skilled Trade Program Page</p>
+                  </div>
+
+                  <div
+                    className={`${styles.page} ${
+                      activePage === "federal_skilled_worker_program"
+                        ? styles.activePage
+                        : ""
+                    }`}
+                    onClick={() =>
+                      handlePageClick("federal_skilled_worker_program")
+                    }
+                  >
+                    <p>Federal Skilled Worker Program Page</p>
+                  </div>
+
+                  <div
+                    className={`${styles.page} ${
+                      activePage === "flag_poling" ? styles.activePage : ""
+                    }`}
+                    onClick={() => handlePageClick("flag_poling")}
+                  >
+                    <p>Flag Poling Page</p>
+                  </div>
+
+                  <div
+                    className={`${styles.page} ${
+                      activePage === "francophone" ? styles.activePage : ""
+                    }`}
+                    onClick={() => handlePageClick("francophone")}
+                  >
+                    <p>Framcophone Mobility Page</p>
+                  </div>
+
+                  <div
+                    className={`${styles.page} ${
+                      activePage === "french_tageted_draw"
+                        ? styles.activePage
+                        : ""
+                    }`}
+                    onClick={() => handlePageClick("french_tageted_draw")}
+                  >
+                    <p>French Targeted Draw Page</p>
+                  </div>
+
+                  <div
+                    className={`${styles.page} ${
+                      activePage === "global_stream_lmia"
+                        ? styles.activePage
+                        : ""
+                    }`}
+                    onClick={() => handlePageClick("global_stream_lmia")}
+                  >
+                    <p>Global Stream LMIA Page</p>
+                  </div>
+
+                  <div
+                    className={`${styles.page} ${
+                      activePage === "health_authorities_stream"
+                        ? styles.activePage
+                        : ""
+                    }`}
+                    onClick={() => handlePageClick("health_authorities_stream")}
+                  >
+                    <p>Health Authorities Stream Page</p>
                   </div>
 
                   <div className={styles.paginationButtons}>
@@ -2071,6 +2162,246 @@ let Admin = () => {
                   </div>
                 )}
 
+                {activePage === "family_reunification" && (
+                  <div className={styles.sections}>
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "family_reunification_content"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick("family_reunification_content")
+                      }
+                    >
+                      Page Content
+                    </div>
+
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "family_reunification_meta"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick("family_reunification_meta")
+                      }
+                    >
+                      Page Meta
+                    </div>
+                  </div>
+                )}
+
+                {activePage === "federal_skilled_trade_program" && (
+                  <div className={styles.sections}>
+                    <div
+                      className={`${styles.section} ${
+                        activeSection ===
+                        "federal_skilled_trade_program_content"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick(
+                          "federal_skilled_trade_program_content"
+                        )
+                      }
+                    >
+                      Page Content
+                    </div>
+
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "federal_skilled_trade_program_meta"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick("federal_skilled_trade_program_meta")
+                      }
+                    >
+                      Page Meta
+                    </div>
+                  </div>
+                )}
+
+                {activePage === "federal_skilled_worker_program" && (
+                  <div className={styles.sections}>
+                    <div
+                      className={`${styles.section} ${
+                        activeSection ===
+                        "federal_skilled_worker_program_content"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick(
+                          "federal_skilled_worker_program_content"
+                        )
+                      }
+                    >
+                      Page Content
+                    </div>
+
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "federal_skilled_worker_program_meta"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick(
+                          "federal_skilled_worker_program_meta"
+                        )
+                      }
+                    >
+                      Page Meta
+                    </div>
+                  </div>
+                )}
+
+                {activePage === "flag_poling" && (
+                  <div className={styles.sections}>
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "flag_poling_content"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() => handleSectionClick("flag_poling_content")}
+                    >
+                      Page Content
+                    </div>
+
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "flag_poling_meta"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() => handleSectionClick("flag_poling_meta")}
+                    >
+                      Page Meta
+                    </div>
+                  </div>
+                )}
+
+                {activePage === "francophone" && (
+                  <div className={styles.sections}>
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "francophone_content"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() => handleSectionClick("francophone_content")}
+                    >
+                      Page Content
+                    </div>
+
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "francophone_meta"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() => handleSectionClick("francophone_meta")}
+                    >
+                      Page Meta
+                    </div>
+                  </div>
+                )}
+
+                {activePage === "french_tageted_draw" && (
+                  <div className={styles.sections}>
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "french_tageted_draw_content"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick("french_tageted_draw_content")
+                      }
+                    >
+                      Page Content
+                    </div>
+
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "french_tageted_draw_meta"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick("french_tageted_draw_meta")
+                      }
+                    >
+                      Page Meta
+                    </div>
+                  </div>
+                )}
+
+                {activePage === "global_stream_lmia" && (
+                  <div className={styles.sections}>
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "global_stream_lmia_content"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick("global_stream_lmia_content")
+                      }
+                    >
+                      Page Content
+                    </div>
+
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "global_stream_lmia_meta"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick("global_stream_lmia_meta")
+                      }
+                    >
+                      Page Meta
+                    </div>
+                  </div>
+                )}
+
+                {activePage === "health_authorities_stream" && (
+                  <div className={styles.sections}>
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "health_authorities_stream_content"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick("health_authorities_stream_content")
+                      }
+                    >
+                      Page Content
+                    </div>
+
+                    <div
+                      className={`${styles.section} ${
+                        activeSection === "health_authorities_stream_meta"
+                          ? styles.activeSection
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleSectionClick("health_authorities_stream_meta")
+                      }
+                    >
+                      Page Meta
+                    </div>
+                  </div>
+                )}
+
                 <div className={styles.roshiSection}>
                   {activePage === "bcpnp_page" &&
                     activeSection === "bcpnp_page_content" && (
@@ -2250,6 +2581,76 @@ let Admin = () => {
                     activeSection ===
                       "common_law_partner_international_page_meta" && (
                       <CommonLawPartnerInternationalMeta />
+                    )}
+
+                  {activePage === "family_reunification" &&
+                    activeSection === "family_reunification_content" && (
+                      <FamilyReunificationContent />
+                    )}
+                  {activePage === "family_reunification" &&
+                    activeSection === "family_reunification_meta" && (
+                      <FamilyReunificationMeta />
+                    )}
+
+                  {activePage === "federal_skilled_trade_program" &&
+                    activeSection ===
+                      "federal_skilled_trade_program_content" && (
+                      <FederalSkilledTradeProgramContent />
+                    )}
+                  {activePage === "federal_skilled_trade_program" &&
+                    activeSection === "federal_skilled_trade_program_meta" && (
+                      <FederalSkilledTradeProgramMeta />
+                    )}
+
+                  {activePage === "federal_skilled_worker_program" &&
+                    activeSection ===
+                      "federal_skilled_worker_program_content" && (
+                      <FederalSkilledWorkerProgramContent />
+                    )}
+                  {activePage === "federal_skilled_worker_program" &&
+                    activeSection === "federal_skilled_worker_program_meta" && (
+                      <FederalSkilledWorkerProgramMeta />
+                    )}
+
+                  {activePage === "flag_poling" &&
+                    activeSection === "flag_poling_content" && (
+                      <FlagPolingContent />
+                    )}
+                  {activePage === "flag_poling" &&
+                    activeSection === "flag_poling_meta" && <FlagPolingMeta />}
+
+                  {activePage === "francophone" &&
+                    activeSection === "francophone_content" && (
+                      <FrancophoneContent />
+                    )}
+                  {activePage === "francophone" &&
+                    activeSection === "francophone_meta" && <FrancophoneMeta />}
+
+                  {activePage === "french_tageted_draw" &&
+                    activeSection === "french_tageted_draw_content" && (
+                      <FrenchTargetedDrawContent />
+                    )}
+                  {activePage === "french_tageted_draw" &&
+                    activeSection === "french_tageted_draw_meta" && (
+                      <FrenchTargetedDrawMeta />
+                    )}
+
+                  {activePage === "global_stream_lmia" &&
+                    activeSection === "global_stream_lmia_content" && (
+                      <FrenchTargetedDrawContent />
+                    )}
+                  {activePage === "global_stream_lmia" &&
+                    activeSection === "global_stream_lmia_meta" && (
+                      <FrenchTargetedDrawMeta />
+                    )}
+
+                  {activePage === "health_authorities_stream" &&
+                    activeSection === "health_authorities_stream_content" && (
+                      <HealthAuthoritiesStreamContent />
+                    )}
+                  {activePage === "health_authorities_stream" &&
+                    activeSection === "health_authorities_stream_meta" && (
+                      <HealthAuthoritiesStreamMeta />
                     )}
                 </div>
               </div>
