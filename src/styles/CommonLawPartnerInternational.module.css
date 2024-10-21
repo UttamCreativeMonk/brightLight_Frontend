@@ -154,7 +154,10 @@
 
   
   .applicationProcess li{
-    margin-top: 10px;
+    margin-top: 15px;
+  }
+  .application li{
+    margin-top: 15px;
   }
   .eligibility li{
     margin-top: 10px;

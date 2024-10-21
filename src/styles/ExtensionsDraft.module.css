@@ -213,6 +213,11 @@
     opacity: 1;
     transform: translateX(0);
   }
+
+
+  .assistance p{
+    margin-top: 15px;
+  }
   
   
   @media (max-width: 1080px) {

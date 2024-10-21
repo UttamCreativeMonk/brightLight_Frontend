@@ -12,6 +12,7 @@ import { Helmet } from "react-helmet-async";
 const FederalSkilledTradesProgram = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([])
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -37,6 +38,22 @@ const FederalSkilledTradesProgram = () => {
         console.log(error);
       });
   }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/federalSkilledTradedProgam")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
 
   const sectionsRef = useRef([]);
 
@@ -154,7 +171,7 @@ const FederalSkilledTradesProgram = () => {
           id="about-program"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          Federal Skilled Trades Program (FSTP)
+          {pData?.TradProgHeading}
         </h1>
 
         <section
@@ -163,19 +180,10 @@ const FederalSkilledTradesProgram = () => {
           ref={(el) => (sectionsRef.current[1] = el)}
         >
           <p>
-            If you're a skilled tradesperson with a passion for building,
-            fixing, or creating, Canada's Federal Skilled Trades Program (FSTP)
-            can open doors to a rewarding career and a fulfilling new life in
-            Canada.
+          {pData?.TradProgPara1}
           </p>
           <p>
-            The Federal Skilled Trades Program (FSTP) is an immigration pathway
-            for skilled tradespeople who want to become permanent residents of
-            Canada. It is one of several streams under the Express Entry
-            immigration system, designed to address labor shortages in Canada's
-            skilled trades sector. Skilled tradespeople are in high demand
-            across Canada in various industries, including construction,
-            manufacturing, and healthcare.
+          {pData?.TradProgPara2}
           </p>
         </section>
 
@@ -185,73 +193,57 @@ const FederalSkilledTradesProgram = () => {
           ref={(el) => (sectionsRef.current[2] = el)}
         >
           <h2 className={styles.subheading}>
-            Eligibility Criteria for Federal Skilled Trades Program (FSTP)
+          {pData?.EligibilityHeading}
           </h2>
           <p>
-            If you're a skilled tradesperson looking to immigrate to Canada, the
-            Federal Skilled Trades Program (FSTP) could be a great option for
-            you. To be eligible, you must meet the following requirements:
+          {pData?.EligPara}
           </p>
           <ul>
             <li>
-              Two years of paid full-time work experience (or an equal amount of
-              part-time work experience) in a skilled trade within the last five
-              years.
+            {pData?.e1}
             </li>
             <li>
-              Your work experience must be in one of the following categories:
+            {pData?.e2}
               <ul className={styles.subList}>
                 <li>
-                  Major Group 72: Technical Trades and Transportation Officers
-                  and Controllers
+                {pData?.e2SubLi1}
                   <ul className={styles.subList02}>
                     <li>
-                      Excluding Sub-Major Group 726: Transportation Officers and
-                      Controllers
+                    {pData?.e2SubLiSub1}
                     </li>
                   </ul>
                 </li>
-                <li>Major Group 73: General Trades</li>
+                <li>{pData?.e2SubLi2}</li>
                 <li>
-                  Major Group 82: Supervisors in Natural Resources, Agriculture,
-                  and Related Production
+                {pData?.e2SubLi3}
                 </li>
                 <li>
-                  Major Group 83: Occupations in Natural Resources and Related
-                  Production
+                {pData?.e2SubLi4}
                 </li>
                 <li>
-                  Major Group 92: Processing, Manufacturing, and Utilities
-                  Supervisors, and Utilities Operators and Controllers
+                {pData?.e2SubLi5}
                 </li>
                 <li>
-                  Major Group 93: Central Control and Process Operators and
-                  Aircraft Assembly Assemblers and Inspectors
+                {pData?.e2SubLi6}
                 </li>
-                <li>Minor Group 6320: Cooks, Butchers, and Bakers</li>
-                <li>Unit Group 62200: Chefs</li>
+                <li>  {pData?.e2SubLi7}</li>
+                <li>  {pData?.e2SubLi8}</li>
               </ul>
             </li>
             <li>
-              Have a valid job offer from a Canadian employer or be certified in
-              your trade by a recognized Canadian body.
+            {pData?.e3}
             </li>
             <li>
-              Meet the language requirements for English or French, as set out
-              by IRCC.
+            {pData?.e4}
             </li>
             <li>
-              Have the ability to financially support yourself or your
-              dependents in Canada.
+            {pData?.e5}
             </li>
             <li>
-              Be admissible to Canada, meaning you do not have any criminal
-              convictions or health issues that would prevent you from living in
-              Canada.
+            {pData?.e6}
             </li>
             <li>
-              Plan to reside outside the province of Quebec because Quebec
-              selects its skilled workers independently.
+            {pData?.e7}
             </li>
           </ul>
         </section>
@@ -262,7 +254,7 @@ const FederalSkilledTradesProgram = () => {
           ref={(el) => (sectionsRef.current[3] = el)}
         >
           <h2 className={styles.subheading}>
-            Express Entry FSTP Draws History
+          {pData?.ExpressEntryHead}
           </h2>
           <p>
             For the latest updates on Express Entry draws,
@@ -279,13 +271,11 @@ const FederalSkilledTradesProgram = () => {
           ref={(el) => (sectionsRef.current[4] = el)}
         >
           <h2 className={styles.subheading}>
-            How to Apply for the Federal Skilled Trades Program (FSTP)
+          {pData?.HowToApplyHeading}
           </h2>
           <ol style={{ marginLeft: "40px" }}>
             <li>
-              Create an Express Entry profile and submit it to Immigration,
-              Refugees and Citizenship Canada (IRCC). For a stress-free
-              solution, let us handle your case for you.{" "}
+            {pData?.ha1}
               <Link
                 to="https://book.brightlightimmigration.ca/calendar-page"
                 className={styles.link}
@@ -295,25 +285,19 @@ const FederalSkilledTradesProgram = () => {
               .
             </li>
             <li>
-              After that, you will receive an invitation to apply (ITA) from
-              IRCC. Note that ITAs are issued to candidates who score high
-              enough on the Comprehensive Ranking System (CRS), which is a
-              points-based system that assesses candidates' eligibility for the
-              program.{" "}
+            {pData?.ha2}
               <Link to="/Federal-Skilled" className={styles.link}>
                 Click here
               </Link>{" "}
               you can find a link to a FSWP Calculator.
             </li>
             <li>
-              Submit a complete application, including supporting documents such
-              as work experience certificates, language test results, and
-              credentials.
+            {pData?.ha3}
             </li>
             <li>
-              Provide biometrics, which includes fingerprints and a photo.
+            {pData?.ha4}
             </li>
-            <li>Obtain a medical exam and undergo security screening.</li>
+            <li>{pData?.ha5}</li>
           </ol>
         </section>
 
@@ -323,30 +307,23 @@ const FederalSkilledTradesProgram = () => {
           ref={(el) => (sectionsRef.current[5] = el)}
         >
           <h2 className={styles.subheading}>
-            Common Reasons for Refusals of the Federal Skilled Trades Program
-            (FSTP)
+          {pData?.RefusalHeading}
           </h2>
           <ul style={{ marginLeft: "40px" }}>
             <li>
-              Inadequate qualifications: You do not have the necessary skills,
-              education, or experience to perform the job duties.
+            {pData?.r1}
             </li>
             <li>
-              Insufficient language proficiency: Your language skills do not
-              meet the demands of the position.
+            {pData?.r2}
             </li>
             <li>
-              Inadequate finances: You cannot show sufficient funds to support
-              yourself or your family during their stay in the country.
+            {pData?.r3}
             </li>
             <li>
-              Incomplete or inaccurate application: Your application is missing
-              essential documents or contains errors.
+            {pData?.r4}
             </li>
             <li>
-              Weak ties to your home country: You did not prove to have a strong
-              connection to your home country, such as property or family
-              obligations.
+            {pData?.r5}
             </li>
           </ul>
         </section>
@@ -356,19 +333,12 @@ const FederalSkilledTradesProgram = () => {
           id="testing2"
           ref={(el) => (sectionsRef.current[6] = el)}
         >
-          <h2 className={styles.subheading}>Still Not Sure?</h2>
+          <h2 className={styles.subheading}>{pData?.StillNotSureHeading}</h2>
           <p>
-            If you have received a refusal for any of the reasons mentioned
-            above or have doubts regarding your case and application, do not
-            worry. With over a decade of experience, we specialize in handling
-            Express Entry Programs. Our approval rate for these programs is
-            nearly 100%, achieved through a tailored approach to your specific
-            case and using similar successful cases as precedents.
+          {pData?.s1}
           </p>
           <p>
-            At Brightlight Immigration, our dedicated team of visa application
-            specialists will assist you from the start of the application
-            process all the way to obtaining your PR. Start your process now.
+          {pData?.s2}
           </p>
           <button
             className={styles.button}

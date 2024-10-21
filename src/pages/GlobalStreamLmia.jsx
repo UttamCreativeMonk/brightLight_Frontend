@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet-async";
 const GlobalStreamLmia = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([])
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -31,6 +32,21 @@ const GlobalStreamLmia = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/globalStreamLmia")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -146,7 +162,7 @@ const GlobalStreamLmia = () => {
       <div className={styles.container}>
         <main className={styles.mainContent}>
           <header className={styles.header}>
-            <h1>Global Talent Stream (GTS) LMIA</h1>
+            <h1>{pData?.GTSHeading}</h1>
           </header>
           <section
             className={`${styles.section} ${styles.section}`}
@@ -154,12 +170,7 @@ const GlobalStreamLmia = () => {
             ref={(el) => (sectionsRef.current[0] = el)}
           >
             <p>
-              This type of LMIA stream is designed to expedite the process of
-              hiring foreign workers with exceptional skills and experience in
-              in-demand occupations, including engineers, scientists, and IT
-              professionals. The GTS is a priority stream within the Temporary
-              Foreign Worker Program (TFWP), and it is intended to attract
-              highly skilled workers who can contribute to Canada's economy.
+            {pData?.GTSDescription}
             </p>
           </section>
 
@@ -168,20 +179,17 @@ const GlobalStreamLmia = () => {
             id="benifits"
             ref={(el) => (sectionsRef.current[1] = el)}
           >
-            <h2>Benefits of Global Talent Stream (GTS) LMIA</h2>
+            <h2>{pData?.GTSBenefitsHeading}</h2>
             <ul style={{marginLeft: "40px"}}>
               <li>
-                GTS LMIAs are typically processed within 10 business days.
+              {pData?.GTSBenefitsLis1}
               </li>
-              <li>Faster processing of work permits with GTS LMIA.</li>
+              <li>{pData?.GTSBenefitsLis2}</li>
               <li>
-                Using this LMIA, foreign workers can stay in Canada as workers
-                for up to three years, with many options to extend or transition
-                to permanent resident status.
+              {pData?.GTSBenefitsLis3}
               </li>
               <li>
-                No or minimal recruitment efforts are required to obtain LMIA
-                approval.
+              {pData?.GTSBenefitsLis4}
               </li>
             </ul>
           </section>
@@ -191,201 +199,157 @@ const GlobalStreamLmia = () => {
             id="eligibility"
             ref={(el) => (sectionsRef.current[2] = el)}
           >
-            <h2>Eligibility Criteria for Global Talent Stream (GTS) LMIA</h2>
-            <h3>Global Talent Stream Categories:</h3>
+            <h2>{pData?.GTSEligibilityHeading}</h2>
+            <h3>{pData?.GTSEligibilitySubHeading1}</h3>
             <p>
-              The Global Talent Stream consists of two categories with their own
-              set of requirements:
+            {pData?.GTSEligibilitySubHeading2}
             </p>
             <ol style={{ marginLeft: "40px" }}>
               <li>
                 <strong>
                   <a href="#CategoryA">
-                    Category A - Referred by one of the stream's designated
-                    referral partners
+                  {pData?.GTSCategoryAPreviewHeading}
                   </a>
                 </strong>
               </li>
               <li>
                 <strong>
                   <a href="#CategoryB">
-                    Category B - In-demand occupations on the global talent
-                    occupations list
+                  {pData?.GTSCategoryBPreviewHeading}
                   </a>
                 </strong>
               </li>
             </ol>
 
             <h3 id="CategoryA">
-              1 Category A - Referred by one of the stream's designated referral
-              partners
+              1{" "}{pData?.GTSCategoryAHeading}
             </h3>
 
             <p>
-              If you've been referred by a designated referral partner and are
-              hiring someone with unique, specialized talent, your application
-              will fall under Category A. This stream is perfect for businesses
-              looking to bring in individuals who can drive growth and
-              innovation.
+            {pData?.GTSCategoryADescription}
             </p>
             <ul style={{ marginLeft: "20px" }}>
-              <li>The employer company must be based in Canada.</li>
+              <li>{pData?.GTSCategoryAList1}</li>
               <li>
-                The company should focus on innovation and be willing and able
-                to grow.
+              {pData?.GTSCategoryAList2}
               </li>
               <li>
-                The position must require advanced industry knowledge and a
-                relevant advanced degree, or a minimum of 5 years of specialized
-                experience. The employer must offer a minimum of $38.46 per hour
-                ($80,000 annual base salary) or the equivalent of the prevailing
-                wage for the occupation.
+              {pData?.GTSCategoryAList3}
               </li>
               <li>
-                The employer must have identified a qualified temporary foreign
-                worker (TFW) to hire for this position.
+              {pData?.GTSCategoryAList4}
               </li>
             </ul>
 
             <h3 id="CategoryB">
-              Category B - In-demand occupations on the global talent
-              occupations list
+            {pData?.GTSCategoryBHeading}
             </h3>
             <p>
-              If you're seeking to hire highly skilled temporary foreign workers
-              (TFWs) to fill in-demand positions, you may qualify for Category
-              B. No referral is required for this category, making it a great
-              option for companies needing to fill roles quickly.
+            {pData?.GTSCategoryBDescription}
             </p>
             <p>
-              Here's the list of occupations allowed under the Global Talent
-              Stream:
+            {pData?.GTSCategoryBTableHeading}
             </p>
             <table className={styles.table}>
               <thead>
                 <tr>
-                  <th>NOC Code</th>
-                  <th>Job Title</th>
+                  <th>{pData?.GSTCategoryBInnerHeading1}</th>
+                  <th>{pData?.GSTCategoryBInnerHeading2}</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>20012</td>
-                  <td>Computer and information systems managers</td>
+                  <td>{pData?.GSTCategoryBINoc1}</td>
+                  <td>{pData?.GSTCategoryBIJob1}</td>
                 </tr>
                 <tr>
-                  <td>21300</td>
-                  <td>Civil engineers</td>
+                  <td>{pData?.GSTCategoryBINoc2}</td>
+                  <td>{pData?.GSTCategoryBIJob2}</td>
                 </tr>
                 <tr>
-                  <td>21310</td>
-                  <td>Electrical and electronics engineers</td>
+                  <td>{pData?.GSTCategoryBINoc3}</td>
+                  <td>{pData?.GSTCategoryBIJob3}</td>
                 </tr>
                 <tr>
-                  <td>21330</td>
-                  <td>Mining engineers</td>
+                  <td>{pData?.GSTCategoryBINoc4}</td>
+                  <td>{pData?.GSTCategoryBIJob4}</td>
                 </tr>
                 <tr>
-                  <td>21390</td>
-                  <td>Aerospace engineers</td>
+                  <td>{pData?.GSTCategoryBINoc5}</td>
+                  <td>{pData?.GSTCategoryBIJob5}</td>
                 </tr>
                 <tr>
-                  <td>21311</td>
-                  <td>Computer engineers</td>
+                  <td>{pData?.GSTCategoryBINoc6}</td>
+                  <td>{pData?.GSTCategoryBIJob6}</td>
                 </tr>
                 <tr>
-                  <td>21210</td>
-                  <td>Mathematicians and statisticians</td>
+                  <td>{pData?.GSTCategoryBINoc7}</td>
+                  <td>{pData?.GSTCategoryBIJob7}</td>
                 </tr>
                 <tr>
-                  <td>21211</td>
-                  <td>Data scientists</td>
+                  <td>{pData?.GSTCategoryBINoc8}</td>
+                  <td>{pData?.GSTCategoryBIJob8}</td>
                 </tr>
                 <tr>
-                  <td>21220</td>
-                  <td>Cybersecurity specialists</td>
+                  <td>{pData?.GSTCategoryBINoc9}</td>
+                  <td>{pData?.GSTCategoryBIJob9}</td>
                 </tr>
                 <tr>
-                  <td>21221</td>
-                  <td>Business system specialists</td>
+                  <td>{pData?.GSTCategoryBINoc10}</td>
+                  <td>{pData?.GSTCategoryBIJob10}</td>
                 </tr>
                 <tr>
-                  <td>21222</td>
-                  <td>Information systems specialists</td>
+                  <td>{pData?.GSTCategoryBINoc11}</td>
+                  <td>{pData?.GSTCategoryBIJob11}</td>
                 </tr>
                 <tr>
-                  <td>21223</td>
-                  <td>Web designers</td>
+                  <td>{pData?.GSTCategoryBINoc12}</td>
+                  <td>{pData?.GSTCategoryBIJob12}</td>
                 </tr>
                 <tr>
-                  <td>21223</td>
-                  <td>Database analysts and data administrators</td>
+                  <td>{pData?.GSTCategoryBINoc13}</td>
+                  <td>{pData?.GSTCategoryBIJob13}</td>
                 </tr>
                 <tr>
-                  <td>21231</td>
-                  <td>Software engineers and designers</td>
+                  <td>{pData?.GSTCategoryBINoc14}</td>
+                  <td>{pData?.GSTCategoryBIJob14}</td>
                 </tr>
                 <tr>
-                  <td>21230</td>
-                  <td>Computer systems developers and programmers</td>
+                  <td>{pData?.GSTCategoryBINoc15}</td>
+                  <td>{pData?.GSTCategoryBIJob15}</td>
                 </tr>
                 <tr>
-                  <td>21232</td>
-                  <td>Software developers and programmers</td>
+                  <td>{pData?.GSTCategoryBINoc16}</td>
+                  <td>{pData?.GSTCategoryBIJob16}</td>
                 </tr>
                 <tr>
-                  <td>21234</td>
-                  <td>Web developers and programmers</td>
+                  <td>{pData?.GSTCategoryBINoc17}</td>
+                  <td>{pData?.GSTCategoryBIJob17}</td>
                 </tr>
                 <tr>
-                  <td>22310</td>
+                  <td>{pData?.GSTCategoryBINoc18}</td>
                   <td>
-                    Electrical and electronics engineering technologists and
-                    technicians
+                  {pData?.GSTCategoryBIJob18}
                   </td>
                 </tr>
                 <tr>
-                  <td>22220</td>
-                  <td>Computer network technicians</td>
+                  <td>{pData?.GSTCategoryBINoc19}</td>
+                  <td>{pData?.GSTCategoryBIJob19}</td>
                 </tr>
                 <tr>
-                  <td>22222</td>
-                  <td>Information systems testing technicians</td>
+                  <td>{pData?.GSTCategoryBINoc20}</td>
+                  <td>{pData?.GSTCategoryBIJob20}</td>
                 </tr>
                 <tr>
-                  <td>51120</td>
+                  <td>{pData?.GSTCategoryBINoc21}</td>
                   <td>
-                    Producer, technical, creative, and artistic director, and
-                    project manager – Visual effects and video game (The
-                    position must require a minimum of 3 years of experience in
-                    the visual effects, video game, or animation industries in 1
-                    or a combination of the following roles: producer, technical
-                    director, creative director, artistic director or project
-                    manager, senior coordinator, department manager, with 3
-                    years of job experience in at least 1 or more of the
-                    following skills relevant to the visual effects, video game
-                    or animation industries: surfacing and look development;
-                    character or simulation rigging; matte painting; managing
-                    budgets or teams; or technical pipeline development and
-                    application for visual effects, video games, or animation
-                    production.)
+                  {pData?.GSTCategoryBIJob21}
                   </td>
                 </tr>
                 <tr>
-                  <td>52120</td>
+                  <td>{pData?.GSTCategoryBINoc22}</td>
                   <td>
-                    Digital media designers (The position must require a minimum
-                    of 3 years of job experience in at least 1 of the following
-                    digital media design skills: 3D modeling, compositing, paint
-                    and roto, layout and match move, digital environment and
-                    Matte painting, texture, lighting shading, character
-                    effects, effects and simulations, design and scenario,
-                    rigging, user interface or user experience, responsive
-                    design (for gaming), virtual reality, augmented reality,
-                    digital media animation, levels editing for digital media
-                    design, software editing for digital media design, pipeline
-                    software development or applications relevant for digital
-                    media design)
+                  {pData?.GSTCategoryBIJob22}
                   </td>
                 </tr>
               </tbody>
@@ -397,73 +361,51 @@ const GlobalStreamLmia = () => {
             id="labour-market"
             ref={(el) => (sectionsRef.current[3] = el)}
           >
-            <h2>Labour Market Benefits Plan (LMBP)</h2>
+            <h2>{pData?.LMBPHeading}</h2>
             <p>
-              The Labour Market Benefits Plan (LMBP) is a mandatory component of
-              the Global Talent Stream (GTS) application process. It requires
-              employers to outline specific activities they will undertake to
-              create positive outcomes for the Canadian labor market as a result
-              of hiring a foreign worker.
+            {pData?.LMBPDescription}
             </p>
             <p>
-              The LMBP consists of 1 mandatory activity and at least 2
-              supplementary activities. The mandatory activity is tailored to
-              either Category A or Category B, as follows:
+            {pData?.LMBPHListIntro1}
             </p>
             <ul style={{ marginLeft: "40px" }}>
               <li>
-                Category A: The employer must create jobs for Canadian citizens
-                and permanent residents.
+              {pData?.LMBPList1}
               </li>
               <li>
-                Category B: The employer must invest in the training and skill
-                improvement of Canadian citizens and permanent residents.
+              {pData?.LMBPList2}
               </li>
             </ul>
             <p>
-              The supplementary activities must demonstrate how hiring foreign
-              workers will lead to skills transfer, job creation, or enhanced
-              workforce development for Canadians. Examples of supplementary
-              activities include:
+            <strong>
+            {pData?.LMBPHListIntro2}
+            </strong>
             </p>
             <ul style={{ marginLeft: "40px" }}>
               <li>
-                Increasing the number of Canadians and permanent residents
-                employed full-time and part-time.
+              {pData?.LMBPExList1}
               </li>
               <li>
-                Establishing or enhancing educational partnerships with local or
-                regional post-secondary institutions or other organizations
-                supporting skills and training.
+              {pData?.LMBPExList2}
               </li>
-              <li>Providing paid co-op or internship opportunities.</li>
+              <li>{pData?.LMBPExList3}</li>
               <li>
-                Developing, implementing, or participating in initiatives that
-                increase the participation of underrepresented groups in the
-                workplace.
+              {pData?.LMBPExList4}
               </li>
               <li>
-                Providing direct training aimed at improving skills, including
-                supporting employees to travel to and attend industry or
-                industry sector conferences relevant to the development of their
-                specialized skillset.
+              {pData?.LMBPExList5}
               </li>
               <li>
-                Ensuring that the foreign worker will supervise and mentor
-                Canadian workers to support knowledge transfer.
+              {pData?.LMBPExList6}
               </li>
               <li>
-                Increasing the growth of revenue, employment, or investment at
-                the firm.
+              {pData?.LMBPExList7}
               </li>
               <li>
-                Developing or improving best company practices or policies
-                related to the attraction and retention of the Canadian
-                workforce.
+              {pData?.LMBPExList8}
               </li>
               <li>
-                Developing or enhancing partnerships with organizations that
-                assist with identifying top domestic capital.
+              {pData?.LMBPExList9}
               </li>
             </ul>
           </section>
@@ -473,41 +415,30 @@ const GlobalStreamLmia = () => {
             id="how-to-apply"
             ref={(el) => (sectionsRef.current[4] = el)}
           >
-            <h2>How to Apply for Global Talent Stream (GTS) LMIA</h2>
+            <h2>{pData?.HowToApplyHeading}</h2>
             <ol style={{marginLeft: "40px"}}>
               <li>
-                Have an initial assessment performed by us to verify if the
-                employer is eligible to apply for LMIA for a specific position
-                and how many positions are allowed.
+              {pData?.HowToApplyList1}
               </li>
               <li>
-                We will provide you with a checklist of documents and
-                information required to start the initial process.
+              {pData?.HowToApplyList2}
               </li>
               <li>
-                While there is no minimum recruitment requirement for the GTS,
-                it is recommended to perform recruitment efforts. They do not
-                need to meet the criteria of high-wage recruitment and
-                advertising efforts guidelines set by ESDC.
+              {pData?.HowToApplyList3}
               </li>
               <li>
-                Prepare the Labour Market Benefits Plan according to the
-                category GTS LMIA application is to be applied under.
+              {pData?.HowToApplyList4}
               </li>
-              <li> Interview local applicants.</li>
+              <li>{pData?.HowToApplyList5}</li>
               <li>
-                Prepare and submit an LMIA application to the Service Canada
-                ESDS department.
+              {pData?.HowToApplyList6}
               </li>
               <li>
-                Wait for LMIA processing time, which can range from 7 to 10
-                business days. If the Service
+              {pData?.HowToApplyList7}
               </li>
             </ol>
             <p>
-              Canada officer has any questions or concerns or requires any
-              further information, the employer might be contacted for an
-              interview.
+            {pData?.HowToApplyPara}
             </p>
           </section>
 
@@ -517,31 +448,23 @@ const GlobalStreamLmia = () => {
             ref={(el) => (sectionsRef.current[5] = el)}
           >
             <h2>
-              Common Reasons for Refusal of Global Talent Stream (GTS) LMIA
+            {pData?.RefusalHeading}
             </h2>
             <ol style={{marginLeft: "40px"}}>
               <li>
-                Insufficient Evidence of Labour Market Benefits A Labour Market
-                Benefits Plan (LMBP) submitted by the employer may lack clear
-                and substantive activities aimed at benefiting the Canadian
-                labor market. ESDC assesses the proposed activities to ensure
-                they contribute to skills development, job creation, or other
-                positive outcomes for Canadians.
+              {pData?.Refusallist1}
               </li>
               <li>
-                Provided false, misleading, or inaccurate information in the
-                LMIA application.
+              {pData?.Refusallist2}
               </li>
               <li>
-                Have been found non-compliant as a result of an employer
-                compliance review.
+              {pData?.Refusallist3}
               </li>
               <li>
-                Have been banned from the Temporary Foreign Worker Program
-                because non-compliance was discovered during an inspection.
+              {pData?.Refusallist4}
               </li>
               <li>
-                Are in default of payment of an administrative monetary penalty.
+              {pData?.Refusallist5}
               </li>
             </ol>
           </section>
@@ -551,28 +474,15 @@ const GlobalStreamLmia = () => {
             id="how-to-apply"
             ref={(el) => (sectionsRef.current[6] = el)}
           >
-            <h2>Still Not Sure?</h2>
+            <h2>  {pData?.StillNotSureHeading}</h2>
             <p>
-              If you have received a refusal for any of the reasons mentioned
-              above, do not worry. With over a decade of experience, we
-              specialize in previously refused cases. While we don't provide
-              jobs for LMIA, we can certainly assist you if you have a job
-              offer.
+            {pData?.StillNotSurePara1}
             </p>
             <p>
-              We have obtained approvals for clients who had multiple previous
-              refusals. We achieve this with a tailored approach to your
-              specific case, addressing each concern that the officer has listed
-              in previous refusals. We use case law and find similar cases to
-              your circumstances that had positive results, and we use them as
-              precedents in cases we work on. This is why we have a high success
-              rate.
+            {pData?.StillNotSurePara2}
             </p>
             <p>
-              At Brightlight Immigration, we have a dedicated team of visa
-              application specialists who can assist you from the start of the
-              application process to obtaining your visa. Start your process
-              now.
+            {pData?.StillNotSurePara3}
             </p>
           </section>
 

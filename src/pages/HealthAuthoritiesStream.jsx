@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet-async";
 const HealthAuthorityStream = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([])
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -30,6 +31,21 @@ const HealthAuthorityStream = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/health-authority-stream")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -58,6 +74,40 @@ const HealthAuthorityStream = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const extractStrongText = (htmlString) => {
+    if (typeof htmlString !== "string") return "";
+    const strongMatch = htmlString.match(/<strong>(.*?)<\/strong>/);
+    return strongMatch ? strongMatch[1] : "";
+  };
+
+  const extractRemainingText = (htmlString) => {
+    if (typeof htmlString !== "string") return "";
+    return htmlString.replace(/<strong>.*?<\/strong>/, "").trim();
+  };
+
+  
+  const fetchedValue = pData?.BenifitsList1;
+  const strongText = extractStrongText(fetchedValue);
+  const remainingText = extractRemainingText(fetchedValue);
+
+  const fetchedValue1 = pData?.BenifitsList2;
+  const strongText1 = extractStrongText(fetchedValue1);
+  const remainingText1 = extractRemainingText(fetchedValue1);
+
+  const fetchedValue2 = pData?.BenifitsList3;
+  const strongText2 = extractStrongText(fetchedValue2);
+  const remainingText2 = extractRemainingText(fetchedValue2);
+
+  const fetchedValue3 = pData?.BenifitsList4;
+  const strongText3 = extractStrongText(fetchedValue3);
+  const remainingText3 = extractRemainingText(fetchedValue3);
+
+  const fetchedValue4 = pData?.BenifitsList5;
+  const strongText4 = extractStrongText(fetchedValue4);
+  const remainingText4 = extractRemainingText(fetchedValue4);
+
+
 
   return (
     <>
@@ -145,7 +195,7 @@ const HealthAuthorityStream = () => {
           id="about-program"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          British Columbia Health Authority Stream
+         {pData?.Heading}
         </h1>
         <p
           style={{ textAlign: "center" }}
@@ -153,11 +203,7 @@ const HealthAuthorityStream = () => {
           id="testing1"
           ref={(el) => (sectionsRef.current[1] = el)}
         >
-          The British Columbia Health Authority Stream is one of the specialized
-          immigration streams within the British Columbia Provincial Nominee
-          Program (BCPNP), operated by the province of British Columbia. This
-          stream aims to attract skilled immigrants who can contribute
-          significantly to the healthcare infrastructure in BC.
+          {pData?.Description}
         </p>
         <p
           style={{ textAlign: "center" }}
@@ -165,8 +211,7 @@ const HealthAuthorityStream = () => {
           id="testing2"
           ref={(el) => (sectionsRef.current[2] = el)}
         >
-          Note: This stream is different from healthcare priority occupations
-          applying under BCPNP Skilled Worker or International Graduate streams.
+           {pData?.topSectionNote}
         </p>
 
         <h2
@@ -174,7 +219,7 @@ const HealthAuthorityStream = () => {
           id="benefits"
           ref={(el) => (sectionsRef.current[3] = el)}
         >
-          Benefits of British Columbia Health Authority Stream
+           {pData?.BenifitsHeading}
         </h2>
         <ul
         style={{marginLeft: "40px"}}
@@ -183,29 +228,19 @@ const HealthAuthorityStream = () => {
           ref={(el) => (sectionsRef.current[4] = el)}
         >
           <li className={styles.listItem}>
-            <b>Job Offer:</b> The job offer can fall under any NOC tier, ranging
-            from 0 to 5. It does not have to be a high-skilled occupation or
-            related to healthcare.
+         <strong>{strongText}</strong>{" "} {remainingText}
           </li>
           <li className={styles.listItem}>
-            <b>No Draws:</b> The BC Health Authority stream operates without
-            draws. All you need to do is meet the eligibility criteria for this
-            program.
+          <strong>{strongText1}</strong>{" "} {remainingText1}
           </li>
           <li className={styles.listItem}>
-            <b>Nomination Priority:</b> Successful candidates nominated through
-            the BC Health Authority Program receive an invitation to apply for
-            Canadian permanent residence.
+          <strong>{strongText2}</strong>{" "} {remainingText2}
           </li>
           <li className={styles.listItem}>
-            <b>No Express Entry Profile Required:</b> Unlike other immigration
-            streams, applicants for this program do not need an Express Entry
-            profile to be eligible.
+          <strong>{strongText3}</strong>{" "} {remainingText3}
           </li>
           <li className={styles.listItem}>
-            <b>Accelerated Processing:</b> While Express Entry is not mandatory,
-            candidates with an active profile may choose to apply through the
-            Express Entry system for faster processing.
+          <strong>{strongText4}</strong>{" "} {remainingText4}
           </li>
         </ul>
 
@@ -214,11 +249,10 @@ const HealthAuthorityStream = () => {
           id="eligibility"
           ref={(el) => (sectionsRef.current[5] = el)}
         >
-          Eligibility for the British Columbia Health Authority Stream
+          {pData?.EligibilityHeading}
         </h2>
         <p>
-          To qualify for this stream, applicants must meet the following
-          requirements:
+        {pData?.EligibilitySubHead}
         </p>
         <h3
           className={`${styles.subheading} ${styles.section}`}
@@ -234,30 +268,26 @@ const HealthAuthorityStream = () => {
           ref={(el) => (sectionsRef.current[7] = el)}
         >
           <li className={styles.listItem}>
-            Hold an indeterminate (no defined end date), full-time job offer in
-            ANY occupation from one of B.C. public health <b>authorities</b>{" "}
-            listed below:
+          {pData?.EligibilityList1}
             <ol className={styles.nestedList}>
               <li className={styles.nestedListItem}>
-                Provincial Health Services Authority
+              {pData?.EligibilityList1NestedList1}
               </li>
               <li className={styles.nestedListItem}>
-                First Nations Health Authority
+              {pData?.EligibilityList1NestedList2}
               </li>
-              <li className={styles.nestedListItem}>Fraser Health</li>
-              <li className={styles.nestedListItem}>Interior Health</li>
-              <li className={styles.nestedListItem}>Island Health</li>
-              <li className={styles.nestedListItem}>Northern Health</li>
+              <li className={styles.nestedListItem}>{pData?.EligibilityList1NestedList3}</li>
+              <li className={styles.nestedListItem}>{pData?.EligibilityList1NestedList4}</li>
+              <li className={styles.nestedListItem}>{pData?.EligibilityList1NestedList5}</li>
+              <li className={styles.nestedListItem}>{pData?.EligibilityList1NestedList6}</li>
               <li className={styles.nestedListItem}>
-                Vancouver Coastal Health
+              {pData?.EligibilityList1NestedList7}
               </li>
-              <li className={styles.nestedListItem}>Providence Health Care</li>
+              <li className={styles.nestedListItem}>{pData?.EligibilityList1NestedList8}</li>
             </ol>
           </li>
           <li className={styles.listItem}>
-            Alternatively, possess a letter from a health authority or midwife
-            practice group confirming your role as a physician, nurse
-            practitioner, or midwife in British Columbia.
+          {pData?.EligibilityList1Point2}
           </li>
         </ul>
 
@@ -266,7 +296,7 @@ const HealthAuthorityStream = () => {
           id="testing5"
           ref={(el) => (sectionsRef.current[8] = el)}
         >
-          2. Education and Qualifications
+          2. {pData?.EligibilityList2}
         </h3>
         <ul
         style={{marginLeft: "40px"}}
@@ -275,8 +305,7 @@ const HealthAuthorityStream = () => {
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <li className={styles.listItem}>
-            Satisfy the education, training, experience, and qualification
-            criteria specified by the public health authority.
+          {pData?.EligibilityList2NestedList1}
           </li>
         </ul>
 
@@ -285,7 +314,7 @@ const HealthAuthorityStream = () => {
           id="testing7"
           ref={(el) => (sectionsRef.current[10] = el)}
         >
-          3. Health Authority Support
+          3.  {pData?.EligibilityList3}
         </h3>
         <ul
         style={{marginLeft: "40px"}}
@@ -294,8 +323,7 @@ const HealthAuthorityStream = () => {
           ref={(el) => (sectionsRef.current[11] = el)}
         >
           <li className={styles.listItem}>
-            The health authority must provide recommendation and support your
-            application.
+          {pData?.EligibilityList3NestedList1}
           </li>
         </ul>
 
@@ -304,7 +332,7 @@ const HealthAuthorityStream = () => {
           id="testing9"
           ref={(el) => (sectionsRef.current[12] = el)}
         >
-          4. Language
+          4.  {pData?.EligibilityList4}
         </h3>
         <ul
         style={{marginLeft: "40px"}}
@@ -313,14 +341,10 @@ const HealthAuthorityStream = () => {
           ref={(el) => (sectionsRef.current[13] = el)}
         >
           <li className={styles.listItem}>
-            If the Job Offer's NOC code is of TEER Category 0 or 1, you do not
-            need language results to be eligible (BCPNP can still ask you to
-            pass a language test at their own discretion).
+          {pData?.EligibilityList4NestedList1}
           </li>
           <li className={styles.listItem}>
-            If the Job Offer's NOC code is of TEER Category 2, 3, 4 or 5, you
-            will need to have a Canadian Language Benchmark (CLB) score of at
-            least 4 to be eligible.
+          {pData?.EligibilityList4NestedList2}
           </li>
         </ul>
 
@@ -329,7 +353,7 @@ const HealthAuthorityStream = () => {
           id="testing11"
           ref={(el) => (sectionsRef.current[14] = el)}
         >
-          5. Financial Capability
+          5.  {pData?.EligibilityList5}
         </h3>
         <ul
         style={{marginLeft: "40px"}}
@@ -338,8 +362,7 @@ const HealthAuthorityStream = () => {
           ref={(el) => (sectionsRef.current[15] = el)}
         >
           <li className={styles.listItem}>
-            Demonstrate that you can support yourself and your dependents during
-            your stay in British Columbia.
+          {pData?.EligibilityList5NestedList1}
           </li>
         </ul>
 
@@ -349,15 +372,13 @@ const HealthAuthorityStream = () => {
           id="how-to-apply-3"
           ref={(el) => (sectionsRef.current[19] = el)}
         >
-          Express Entry BC (EEBC) Option:
+         {pData?.ExpEntryOptionHeading}
         </h2>
         <p className={styles.description}>
-          Applicants who meet the eligibility criteria can also explore
-          the Express Entry BC (EEBC) option for accelerated processing.
+        {pData?.ExpEntryOptionPara1}
         </p>
         <p className={styles.description}>
-          Please note*** that if your job offer falls within a priority
-          technology occupation, it does not need to be indeterminate.
+        {pData?.ExpEntryOptionPara2}
         </p>
       
         <h2
@@ -365,7 +386,7 @@ const HealthAuthorityStream = () => {
           id="how-to-apply"
           ref={(el) => (sectionsRef.current[16] = el)}
         >
-          How to Apply for BC Health Authority Stream?
+           {pData?.ApplyHeading}
         </h2>
         <ul
         style={{marginLeft: "40px"}}
@@ -374,36 +395,25 @@ const HealthAuthorityStream = () => {
           ref={(el) => (sectionsRef.current[17] = el)}
         >
           <li className={styles.listItem}>
-            The BC Health Authority stream accepts new applications at any time.
+          {pData?.ApplyList1}
           </li>
           <li className={styles.listItem}>
-            Specify whether you are applying through the Express Entry system or
-            non-Express Entry system.
+          {pData?.ApplyList2}
           </li>
           <li className={styles.listItem}>
-            Provide resume, job description, recommendation letter, and BC PNP
-            Employer Declaration Form from one of the health authorities.
+          {pData?.ApplyList3}
           </li>
           <li className={styles.listItem}>
-            Upon approval, candidates receive a provincial nomination for
-            permanent residence from BC.
+          {pData?.ApplyList4}
           </li>
           <li className={styles.listItem}>
-            Candidates can also request a work permit support letter if their
-            work permit is expiring or if they do not have a work permit at all.
-            This allows them to work in Canada while their permanent residence
-            application is processed.
+          {pData?.ApplyList5}
           </li>
           <li className={styles.listItem}>
-            If applying through Express Entry, candidates receive a nomination
-            notification on their IRCC online account. Accepting the nomination
-            boosts their Comprehensive Ranking System (CRS) score by 600 points,
-            and hence guarantees an Invitation to Apply (ITA) for permanent
-            residence.
+          {pData?.ApplyList6}
           </li>
           <li className={styles.listItem}>
-            If applying through the non-Express Entry system, candidates must
-            prepare a paper-based application and submit it online.
+          {pData?.ApplyList7}
           </li>
         </ul>
         <button
@@ -413,35 +423,22 @@ const HealthAuthorityStream = () => {
           Calculate Your BCPNP Score
         </button>
 
-
-
-
         <h2 className={styles.subtitle} id="book-appointment">
-          Still Not Sure?
+        {pData?.StillNotSureHeading}
         </h2>
         <p
           className={`${styles.description} ${styles.section}`}
           id="testing14"
           ref={(el) => (sectionsRef.current[18] = el)}
         >
-          Contact Brightlight Immigration today to assess your profile and
-          embark on a transformative journey towards achieving your Canadian
-          dream. With over a decade of experience, we specialize in handling
-          BCPNP Health Authority Program. Our approval rate for these programs
-          is nearly 100%. We achieve this with a tailored approach to your
-          specific case. We use case law and find similar cases to your
-          circumstances that had positive results, and we use them as precedents
-          in cases we work on. This is why we have a high success rate.
+            {pData?.StillNotSurePara1}
         </p>
         <p
           className={`${styles.description} ${styles.section}`}
           id="testing15"
           ref={(el) => (sectionsRef.current[19] = el)}
         >
-          At Brightlight Immigration, we have a dedicated team of visa
-          application specialists who can assist you from the start of the
-          application process all the way to obtaining your PR. Start your
-          process now.
+        {pData?.StillNotSurePara2}
         </p>
 
         <button

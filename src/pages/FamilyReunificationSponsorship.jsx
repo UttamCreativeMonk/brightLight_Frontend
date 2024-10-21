@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet-async";
 const FamilyReunificationSponsorship = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([])
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -31,6 +32,22 @@ const FamilyReunificationSponsorship = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/familyReunification")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -152,20 +169,12 @@ const FamilyReunificationSponsorship = () => {
           id="about-program"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          <h1>Family Reunification and Sponsorship</h1>
+          <h1>{pData?.FamilyHeading}</h1>
           <p>
-            Canada is renowned for its welcoming spirit and commitment to
-            diversity, making it a haven for immigrants looking for a better
-            life. When it comes to family reunification, Canada has established
-            a comprehensive program that allows Canadian citizens and permanent
-            residents to bring their loved ones to the country.
+          {pData?.FamilyPara1}
           </p>
           <p>
-            Canada's Family Reunification Program is one of the three main
-            pathways to permanent residency in Canada, alongside economic
-            immigration and refugee protection. It allows Canadian citizens and
-            permanent residents to sponsor certain relatives to immigrate to
-            Canada as permanent residents.
+          {pData?.FamilyPara2}
           </p>
         </header>
 
@@ -174,7 +183,7 @@ const FamilyReunificationSponsorship = () => {
           id="categories"
           ref={(el) => (sectionsRef.current[1] = el)}
         >
-          <h2>Categories Who Can Be Sponsored</h2>
+          <h2>{pData?.CategoriesHeading}</h2>
           <ul>
             <li>
               <button
@@ -227,14 +236,10 @@ const FamilyReunificationSponsorship = () => {
           ref={(el) => (sectionsRef.current[2] = el)}
         >
           <h2>
-            Eligibility Criteria for Family Reunification and Sponsorship
-            Program
+          {pData?.EligibilityHeading}
           </h2>
           <p>
-            The requirements for this program can vary depending on the
-            relationship between the sponsor and the person being sponsored.
-            However, if you’re the sponsor, you must meet the following general
-            requirements:
+          {pData?.EligibilitySubHeading}
           </p>
           <ul
             style={{
@@ -244,22 +249,19 @@ const FamilyReunificationSponsorship = () => {
             }}
           >
             <li>
-              <strong>Age:</strong> Should be at least 18 years old.
+            {pData?.e1}
             </li>
             <li>
-              <strong>Residency:</strong> Should be a Canadian citizen or
-              permanent resident.
+            {pData?.e2}
             </li>
             <li>
-              <strong>Support:</strong> Should be physically and financially
-              able to support the person being sponsored.
+            {pData?.e3}
             </li>
             <li>
-              <strong>Criminal Record:</strong> Have a clean criminal record.
+            {pData?.e4}
             </li>
             <li>
-              <strong>Housing:</strong> Should be able to provide adequate
-              housing for the person being sponsored.
+            {pData?.e5}
             </li>
           </ul>
         </section>
@@ -270,28 +272,20 @@ const FamilyReunificationSponsorship = () => {
           ref={(el) => (sectionsRef.current[3] = el)}
         >
           <h2>
-            How to Apply for the Family Reunification and Sponsorship Program
+          {pData?.HowApplyHeading}
           </h2>
           <ol style={{marginLeft: "40px"}}>
             <li>
-              Complete a comprehensive application form, providing detailed
-              information about yourself, your relationship to the person being
-              sponsored, and your financial and housing arrangements.
+            {pData?.ha1}
             </li>
             <li>
-              Pay the application fee for sponsorship, which is currently
-              CAD$1,080 for spousal sponsorship and CAD$1,080 for parent and
-              grandparent sponsorship.
+            {pData?.ha2}
             </li>
             <li>
-              If the sponsorship application is approved, the person you are
-              sponsoring will receive an invitation to apply for permanent
-              residence.
+            {pData?.ha3}
             </li>
             <li>
-              Ensure the person you are sponsoring completes a separate
-              permanent residence application, providing details about their
-              education, work experience, and language skills.
+            {pData?.ha4}
             </li>
           </ol>
         </section>
@@ -301,24 +295,16 @@ const FamilyReunificationSponsorship = () => {
           id="refusal-reasons"
           ref={(el) => (sectionsRef.current[4] = el)}
         >
-          <h2>Reasons for Refusals of Family Reunification and Sponsorship</h2>
+          <h2>{pData?.RefusalHeading}</h2>
           <ul style={{marginLeft: "40px"}}>
             <li>
-              It is crucial to provide complete and accurate information in your
-              application. Missing or incorrect details can raise red flags and
-              lead to a refusal.
+            {pData?.r1}
             </li>
             <li>
-              Sponsors must demonstrate their ability to financially support the
-              family members they are sponsoring. This means having sufficient
-              income and assets to meet their basic needs.
+            {pData?.r2}
             </li>
             <li>
-              The immigration authorities may need to verify the genuineness of
-              the relationship between the sponsor and the person being
-              sponsored. This may involve providing documentation such as
-              marriage certificates, birth certificates, or joint financial
-              records. Failure to do so will lead to refusal.
+            {pData?.r3}
             </li>
           </ul>
         </section>
@@ -328,24 +314,14 @@ const FamilyReunificationSponsorship = () => {
           id="why-choose-us"
           ref={(el) => (sectionsRef.current[5] = el)}
         >
-          <h2>Still Not Sure?</h2>
+          <h2>{pData?.StillNotHeading}</h2>
           <p>
-            If you have received a refusal for any of the reasons mentioned
-            above, do not worry. With over a decade of experience, we specialize
-            in previously refused cases. We have got approvals for clients who
-            had multiple previous refusals. We achieve this with a tailored
-            approach to your specific case, addressing each concern that the
-            officer has listed in previous refusals. We use case law and find
-            similar cases to your circumstances that had positive results, and
-            we use them as precedents in cases we work on. This is why we have a
-            high success rate.
+          {pData?.s1}
           </p>
           <p>
-            At Brightlight Immigration, we have a dedicated team of visa
-            application specialists who can assist you from the start of the
-            application process all the way to obtaining your visa. Start your
-            process now.
-            <button
+          {pData?.s2}
+          </p>
+          <button
               className={styles.button}
               onClick={() =>
                 (window.location.href =
@@ -354,7 +330,6 @@ const FamilyReunificationSponsorship = () => {
             >
               Start your process now
             </button>
-          </p>
         </section>
 
         <section

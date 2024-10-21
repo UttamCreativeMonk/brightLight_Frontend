@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet-async";
 const CommonLawPartnerPermanent = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([])
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -32,6 +33,22 @@ const CommonLawPartnerPermanent = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/commonLawPartnerPermanent")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -138,83 +155,65 @@ const CommonLawPartnerPermanent = () => {
 
       <div className={styles.container}>
         <h1 className={styles.heading} >
-          Open Work Permit for Spouse or Common-law Partner of a Permanent
-          Resident/Canadian Citizen
+        {pData?.comLawPartPermanHeading}
         </h1>
 
         <section className={`${styles.introduction} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
           <p>
-            The processing time for a PR application can be longer than usually
-            expected. There are various reasons for this to happen. The common
-            scenarios for application delays are applications stuck in
-            background checks, requests for additional medical examinations,
-            poor staffing at the country of citizenship, security clearance
-            delays, etc. The good thing is you can apply for authorization to
-            work while waiting for your permanent residency application to be
-            processed.
+          {pData?.comLawPartPermanPerPara1}
           </p>
           <p >
-            You can apply for this type of open work permit if you’ve applied
-            for permanent residence under one of the following classes:
+          {pData?.comLawPartPermanPerPara2}
           </p>
           <ul className={styles.introductionUl}>
 
             <li>
-              The spouse or common-law partner in Canada class (SCLPC) as a
-              spouse or common-law partner.
+            {pData?.comLawPartPermanPerLi1}
             </li>
             <li>
-              The family class as a spouse, common-law, or conjugal partner
-              (sponsored overseas).
+            {pData?.comLawPartPermanPerLi2}
             </li>
           </ul>
         </section>
 
         <section className={`${styles.benefits} ${styles.section}`} id="benifits" ref={(el) => sectionsRef.current[1] = el}>
           <h2 className={styles.subheading}>
-            Benefits of Open Work Permit for Spouse or Common-law Partner of a
-            Permanent Resident/Canadian Citizen
+          {pData?.BenifitHeading}
           </h2>
           <ul style={{marginLeft: "40px"}}>
             <li>
-              It permits your spouse or common-law partner to work, alleviating
-              financial strain on you.
+            {pData?.b1}
             </li>
             <li>
-              It provides your spouse or common-law partner with the opportunity
-              to gain Canadian work experience.
+            {pData?.b2}
             </li>
             <li>
-              They have the flexibility to work for any employer and in any
-              position.
+            {pData?.b3}
             </li>
-            <li>They can also establish their own business if desired.</li>
+            <li>{pData?.b4}</li>
             <li>
-              Unlike visitors, they are allowed to stay in Canada for longer
-              than six months, with multiple entries allowed.
+            {pData?.b5}
             </li>
-            <li>The dependent child can also accompany.</li>
+            <li>{pData?.b6}</li>
           </ul>
         </section>
 
         <section className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[2] = el}>
-          <h2 className={styles.subheading}>Eligibility criteria of Open Work Permit for Spouse or Common-law Partner of a Permanent Resident/Canadian Citizen:
+          <h2 className={styles.subheading}>
+            {pData?.b1EligibilityHeading}
           </h2>
           <ol style={{marginLeft: "40px"}}>
             <li>
-              Both the sponsor and principal applicant must be in a genuine
-              relationship with each other.
+            {pData?.e1}
             </li>
             <li>
-              Provide application fees receipt or Acknowledgement of Receipt
-              (AOR) of your permanent residence application.
+            {pData?.e2}
             </li>
             <li>
-              Both the sponsor and principal applicant must be living together.
+            {pData?.e3}
             </li>
             <li>
-              If your spouse doesn’t have valid temporary resident status, they
-              must wait until you’ve received your approval in principle letter.
+            {pData?.e4}
             </li>
           </ol>
         </section>
@@ -224,58 +223,47 @@ const CommonLawPartnerPermanent = () => {
           </h2>
           <ol style={{marginLeft: "40px"}}>
             <li>
-              Identify the principal applicant’s occupation in TEER category 0,
-              1, 2, or 3 of the National Occupation Classification system.
+            {pData?.ha1}
             </li>
             <li>
-              Gather documents to prove the above-mentioned eligibility
-              criteria.
+            {pData?.ha2}
             </li>
             <li>
-              Gather documents to prove that your relationship is genuine.
+            {pData?.ha3}
             </li>
             <li>
-              You might be required to get a medical exam and police clearance
-              certificates, if applying from outside Canada.
+            {pData?.ha4}
             </li>
-            <li>Submit a complete application to IRCC.</li>
+            <li> {pData?.ha5}</li>
             <li>
-              After receiving the Biometric Collection Instruction letter, make
-              an appointment for biometrics within 30 days of receiving the
-              letter.
+            {pData?.ha6}
             </li>
-            <li>Wait for IRCC to process your application.</li>
+            <li> {pData?.ha7}</li>
           </ol>
         </section>
 
         <section className={`${styles.refusalReasons} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[4] = el}>
-          <h2 className={styles.subheading}>Common reasons for refusals of Open Work Permit for Spouse or Common-law Partner of a Permanent Resident/Canadiancitizen:</h2>
+          <h2 className={styles.subheading}> {pData?.RefusalHeading}</h2>
           <ul style={{marginLeft: "40px"}}>
             <li>
-              Lack of documentation verifying the National Occupational
-              Classification (NOC) of the principal applicant.
+            {pData?.r1}
             </li>
             <li>
-              Inadequate evidence demonstrating the genuineness of the marriage.
+            {pData?.r2}
             </li>
             <li>
-              The principal applicant is employed in a low-skill occupation
-              under the low wage stream of LMIA.
+            {pData?.r3}
             </li>
             <li>
-              The principal applicant's work permit is nearing expiration, and
-              there has been no application filed to extend their stay.
+            {pData?.r4}
             </li>
           </ul>
         </section>
 
         <section className={`${styles.assistance} ${styles.section}`} id="testing2" ref={(el) => sectionsRef.current[5] = el}>
-          <h2 className={styles.subheading}>Need Assistance?</h2>
+          <h2 className={styles.subheading}>{pData?.NeedAssisHeading}</h2>
           <p>
-            If you need help with your application or have received a refusal,
-            our experienced team at Brightlight Immigration can assist you. We
-            specialize in handling complex cases and offer tailored solutions to
-            increase your chances of approval.
+          {pData?.NeedAssisPara}
           </p>
           <button className={styles.button}
               onClick={() =>

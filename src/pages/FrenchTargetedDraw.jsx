@@ -12,6 +12,7 @@ import { Helmet } from "react-helmet-async";
 const FrenchTargetedDraw = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([])
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -31,6 +32,22 @@ const FrenchTargetedDraw = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/frenchTargatedDraw")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -59,6 +76,42 @@ const FrenchTargetedDraw = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  
+  const extractStrongText = (htmlString) => {
+    if (typeof htmlString !== "string") return "";
+    const strongMatch = htmlString.match(/<strong>(.*?)<\/strong>/);
+    return strongMatch ? strongMatch[1] : "";
+  };
+
+  const extractRemainingText = (htmlString) => {
+    if (typeof htmlString !== "string") return "";
+    return htmlString.replace(/<strong>.*?<\/strong>/, "").trim();
+  };
+  const fetchedValue = pData?.b1;
+  const strongText = extractStrongText(fetchedValue);
+  const remainingText = extractRemainingText(fetchedValue);
+
+  const fetchedValue1 = pData?.b2;
+  const strongText1 = extractStrongText(fetchedValue1);
+  const remainingText1 = extractRemainingText(fetchedValue1);
+
+  const fetchedValue2 = pData?.b3;
+  const strongText2 = extractStrongText(fetchedValue2);
+  const remainingText2 = extractRemainingText(fetchedValue2);
+
+  const fetchedValue3 = pData?.b4;
+  const strongText3 = extractStrongText(fetchedValue3);
+  const remainingText3 = extractRemainingText(fetchedValue3);
+
+  const fetchedValue4 = pData?.b5;
+  const strongText4 = extractStrongText(fetchedValue4);
+  const remainingText4 = extractRemainingText(fetchedValue4);
+
+  const fetchedValue5 = pData?.b6;
+  const strongText5 = extractStrongText(fetchedValue5);
+  const remainingText5 = extractRemainingText(fetchedValue5);
+
 
   return (
     <>
@@ -147,18 +200,12 @@ const FrenchTargetedDraw = () => {
           id="about-program"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          Category-Based Express Entry Selection Draws: French Language
-          Proficiency
+           {pData?.frenchHeading}
         </h1>
 
         <section className={styles.introduction}>
           <p>
-            If you are interested in applying under the French-language
-            proficiency category in the Express Entry program, there are
-            specific eligibility criteria that you need to fulfill. These
-            criteria have been put in place to ensure that candidates possess
-            the necessary language skills to contribute effectively to the
-            Canadian workforce and society.
+          {pData?.frenchPara1}
           </p>
         </section>
 
@@ -168,59 +215,29 @@ const FrenchTargetedDraw = () => {
           ref={(el) => (sectionsRef.current[1] = el)}
         >
           <h2 className={styles.subheading}>
-            Benefits of French Language Proficiency
+          {pData?.BenefitsHeading}
           </h2>
           <p>
-            Discover the significance of strong French language skills in
-            Canadian permanent residency (PR) applications:
+          {pData?.BenefitsPara}
           </p>
           <ul>
             <li>
-              <strong>Leverage Targeted Draws by IRCC:</strong> The Immigration,
-              Refugees, and Citizenship Canada (IRCC) has been conducting
-              specialized draws for French language proficiency. These draws
-              typically feature significantly lower competition compared to
-              general draw categories. For instance, the latest draw, held on
-              February 29, 2024 (Draw #287), saw the lowest score at only 336,
-              inviting 2500 eligible candidates.
+              <strong>{strongText}</strong>{" "}{remainingText}
             </li>
             <li>
-              <strong>Increase Your CRS Score:</strong> A robust command of
-              French can substantially enhance your Comprehensive Ranking System
-              (CRS) score, boosting your chances of obtaining permanent
-              residency. A higher CRS score improves your likelihood of
-              receiving invitations from Express Entry draws.
+              <strong>{strongText1}</strong>{" "} {remainingText1}
             </li>
             <li>
-              <strong>Accelerate PR with Advanced French Proficiency:</strong>{" "}
-              Scoring well on a French language test can elevate your CRS score,
-              expediting your path to PR. A strong CRS score increases your
-              chances of receiving invitations from Express Entry draws, thereby
-              facilitating permanent residency.
+              <strong>{strongText2}</strong>{" "} {remainingText2}
             </li>
             <li>
-              <strong>Access Diverse Job Opportunities:</strong> In Canada,
-              proficiency in both English and French is often a prerequisite for
-              numerous job positions. As the demand for French-speaking
-              professionals rises, so do the prospects for skilled workers
-              fluent in French. Strengthening your French language abilities
-              expands your job market opportunities.
+              <strong>{strongText3}</strong>{" "} {remainingText3}
             </li>
             <li>
-              <strong>Pursue Federal Government Roles:</strong> Proficiency in
-              both French and English can make you an appealing candidate for
-              various federal government positions. Many government jobs in
-              Canada require bilingual proficiency, making French language
-              proficiency a valuable asset for securing employment
-              opportunities.
+              <strong>{strongText4}</strong>{" "} {remainingText4}
             </li>
             <li>
-              <strong>Seamlessly Integrate into Canadian Society:</strong> With
-              a significant segment of the Canadian population being French
-              speakers, mastering French facilitates your integration into
-              Canadian society. Fluency in French enhances communication and
-              cultural assimilation, easing your settlement and adaptation
-              within the community.
+              <strong>{strongText5}</strong>{" "} {remainingText5}
             </li>
           </ul>
         </section>
@@ -231,22 +248,17 @@ const FrenchTargetedDraw = () => {
           ref={(el) => (sectionsRef.current[2] = el)}
         >
           <h2 className={styles.subheading}>
-            First You Must Be Eligible with Express Entry
+          {pData?.FirstEligibleHeading}
           </h2>
           <p>
-            Before you can participate in a French-language-specific draw
-            through Canada's Express Entry system, you need to be eligible.
-            Here's how you can get started:
+          {pData?.FirstEligiblePara}
           </p>
           <ol>
             <li>
-              Join the Express Entry Pool: The first step towards becoming a
-              candidate for a French-language-specific draw is to get into the
-              Express Entry pool.
+            {pData?.fe1}
             </li>
             <li>
-              Choose Your Program: There are three programs you can be eligible
-              for to join the Express Entry pool:
+            {pData?.fe2}
               <ul >
                 <li>
                 <button
@@ -255,10 +267,9 @@ const FrenchTargetedDraw = () => {
                   (window.location.href = "/federal-skilled-worker-program")
                 }>
                 Federal Skilled Worker Program (FSW)
-              </button>
+              </button>{" "}
 
-                  : This program is ideal for tech workers who have the
-                  necessary work experience, education, and language ability.
+              {pData?.fe2Sub1}
                 </li>
                 <li>
                 <button
@@ -269,9 +280,7 @@ const FrenchTargetedDraw = () => {
               >
                Canadian Experience Class (CEC)
               </button>
-
-                  : Similar to the FSW program, the CEC is also suitable for
-                  tech workers who have gained Canadian work experience.
+{" "}      {pData?.fe2Sub2}
                 </li>
                 <li>
                 <button
@@ -281,18 +290,14 @@ const FrenchTargetedDraw = () => {
                 }
               >
                  Federal Skilled Trades Program (FSTP)
-              </button>
-                  : If you're a trades worker, this program is designed for you.
-                  It requires proof of relevant work experience, education, and
-                  language proficiency.
+              </button>{" "}
+              {pData?.fe2Su3}
                 </li>
               </ul>
             </li>
           </ol>
           <p>
-            Remember, each program has its own set of eligibility requirements.
-            So, make sure to review these carefully and ensure you meet all the
-            necessary criteria before applying.
+          {pData?.feLastPara}
           </p>
         </section>
 
@@ -302,16 +307,14 @@ const FrenchTargetedDraw = () => {
           ref={(el) => (sectionsRef.current[3] = el)}
         >
           <h2 className={styles.subheading}>
-            Eligibility Criteria for French Language Proficiency Category
+          {pData?.EligCritHead}
           </h2>
           <p>
-            Once you have met eligibility for one of the programs of Express
-            Entry now you need to be eligible for the French-language
-            proficiency category:
+          {pData?.EligCritSubHead}
           </p>
           <ul>
             <li>
-              You have CLB level 7 or higher in French.{" "}
+            {pData?.EligCritLi1}{" "}
               <button
                 className={styles.button}
                 onClick={() =>
@@ -321,24 +324,13 @@ const FrenchTargetedDraw = () => {
                 CLB Calculators
               </button>
             </li>
-            <li>A valid Express Entry profile.</li>
+            <li>{pData?.EligCritLi2}</li>
           </ul>
           <p>
-            In addition to meeting the language requirements, it is crucial to
-            fulfill all the requirements outlined in the instructions for the
-            specific round you are applying for. These instructions provide
-            detailed information about the eligibility criteria, documentation,
-            and any additional requirements that must be met in order to be
-            considered for the French-language proficiency category. We will be
-            providing information for each round as soon as IRCC provides any
-            update.
+          {pData?.EligCritPara1}
           </p>
           <p>
-            To obtain complete eligibility details for the French-language
-            proficiency category, it is essential to review the instructions for
-            each round. These instructions provide comprehensive information
-            about the specific requirements that must be met in order to be
-            eligible for this category.
+          {pData?.EligCritPara2}
           </p>
         </section>
 
@@ -348,12 +340,10 @@ const FrenchTargetedDraw = () => {
           ref={(el) => (sectionsRef.current[4] = el)}
         >
           <h2 className={styles.subheading}>
-            Express Entry French-Language Proficiency Draws History
+          {pData?.ExpressEntryFrenchHeading}
           </h2>
           <p>
-            The first-ever Express Entry draw targeted for the French language
-            was held in February 2024. Express Entry draw 282 saw a CRS score of
-            365 and invited 7000 candidates eligible for French language.
+          {pData?.ExpressEntryFrenchPara}
           </p>
           <button
             className={styles.button}
@@ -370,20 +360,12 @@ const FrenchTargetedDraw = () => {
           id="testing5"
           ref={(el) => (sectionsRef.current[5] = el)}
         >
-          <h2 className={styles.subheading}>Still Not Sure?</h2>
+          <h2 className={styles.subheading}>{pData?.StillNotSureHeading}</h2>
           <p>
-            Contact Brightlight Immigration today to assess your profile and
-            embark on a transformative journey towards achieving your Canadian
-            dream. With over a decade of experience, we specialize in handling
-            Express Entry Programs. Our approval rate for these programs is
-            nearly 100%. We achieve this with a tailored approach to your
-            specific case, using similar successful cases as precedents.
+          {pData?.s1}
           </p>
           <p>
-            At Brightlight Immigration, we have a dedicated team of visa
-            application specialists who can assist you from the start of the
-            application process all the way to obtaining your PR. Start your
-            process now.
+          {pData?.s2}
           </p>
           <button
             className={styles.button}

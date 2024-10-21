@@ -12,6 +12,8 @@ import { Helmet } from "react-helmet-async";
 const FederalSkilledWorkerProgram = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([])
+
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
@@ -37,6 +39,22 @@ const FederalSkilledWorkerProgram = () => {
         console.log(error);
       });
   }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/federalSkilledWorkerProgam")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
 
   const sectionsRef = useRef([]);
 
@@ -150,7 +168,7 @@ const FederalSkilledWorkerProgram = () => {
           id="about-program"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          Federal Skilled Worker Program (FSWP)
+           {pData?.WorkProgHeading}
         </h1>
 
         <section
@@ -159,16 +177,10 @@ const FederalSkilledWorkerProgram = () => {
           ref={(el) => (sectionsRef.current[1] = el)}
         >
           <p>
-            Elevate your career with Canada's FSWP, a pathway to skilled
-            professionals.
+          {pData?.WorkProgPara1}
           </p>
           <p>
-            The Federal Skilled Worker Program (FSWP) is one of Canada's most
-            popular immigration programs, designed to attract skilled workers
-            from around the world who have the skills and experience to
-            contribute to the Canadian economy. The program is managed through
-            Express Entry, a streamlined system that allows eligible candidates
-            to apply for Canadian permanent residency.
+          {pData?.WorkProgPara2}
           </p>
         </section>
 
@@ -178,58 +190,50 @@ const FederalSkilledWorkerProgram = () => {
           ref={(el) => (sectionsRef.current[3] = el)}
         >
           <h2 className={styles.subheading}>
-            Eligibility Criteria for Federal Skilled Worker Program (FSWP)
+          {pData?.EligibilityHeading}
           </h2>
           <p>
-            To meet the eligibility requirements for the Federal Skilled Worker
-            Program FSWP, you must meet the following requirements:
+          {pData?.EligPara}
           </p>
           <ul>
-            <li>You must be between 18 and 45 years old.</li>
+            <li>{pData?.e1}</li>
             <li>
-              You must have at least one year of full-time post-secondary
-              education or an equivalent qualification, assessed through an
-              Educational Credential Assessment (ECA) for immigration purposes.
+            {pData?.e2}
             </li>
             <li>
-              A minimum level of approved language tests in English or French
-              for writing, reading, listening, and speaking is essential.
+            {pData?.e3}
             </li>
             <li>
-              Must have at least 1 year of continuous work experience in a
-              skilled occupation listed in NOC TEER categories 0, 1, 2, or 3.
-              The work experience must be in the same type of job as the one you
-              want to use for your immigration application.
+            {pData?.e4}
             </li>
           </ul>
 
           <h3 className={styles.subheading} id="categories">
-            TEER Categories and Examples of Jobs
+          {pData?.EligTableHeading}
           </h3>
           <table className={styles.table}>
             <thead>
               <tr>
-                <th>TEER</th>
-                <th>Occupation Types</th>
-                <th>Examples</th>
+                <th>{pData?.EligTableHead1}</th>
+                <th>{pData?.EligTableHead2}</th>
+                <th>{pData?.EligTableHead3}</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>TEER 0</td>
-                <td>Management occupations</td>
+                <td>{pData?.EligTable1HeadLi1}</td>
+                <td>{pData?.EligTable2HeadLi1}</td>
                 <td>
-                  Advertising, marketing and public relations managers,
-                  Financial managers
+                {pData?.EligTable3HeadLi1}
                 </td>
               </tr>
               <tr>
-                <td>TEER 1</td>
-                <td>Occupations that usually require a university degree</td>
-                <td>Financial advisors, Software engineers</td>
+                <td>{pData?.EligTable1HeadLi2}</td>
+                <td>{pData?.EligTable2HeadLi2}</td>
+                <td>{pData?.EligTable3HeadLi2}</td>
               </tr>
               <tr>
-                <td>TEER 2</td>
+                <td>{pData?.EligTable1HeadLi3}</td>
                 <td>
                   Occupations that usually require:
                   <ul>
@@ -239,12 +243,11 @@ const FederalSkilledWorkerProgram = () => {
                   </ul>
                 </td>
                 <td>
-                  Computer network and web technicians, Medical laboratory
-                  technologists
+                {pData?.EligTable3HeadLi3}
                 </td>
               </tr>
               <tr>
-                <td>TEER 3</td>
+                <td>{pData?.EligTable1HeadLi4}</td>
                 <td>
                   Occupations that usually require:
                   <ul>
@@ -254,11 +257,11 @@ const FederalSkilledWorkerProgram = () => {
                   </ul>
                 </td>
                 <td>
-                  Bakers, Dental assistants and dental laboratory assistants
+                {pData?.EligTable3HeadLi4}
                 </td>
               </tr>
               <tr>
-                <td>TEER 4</td>
+                <td>{pData?.EligTable1HeadLi5}</td>
                 <td>
                   Occupations that usually require:
                   <ul>
@@ -267,41 +270,31 @@ const FederalSkilledWorkerProgram = () => {
                   </ul>
                 </td>
                 <td>
-                  Home child care providers, Retail salespersons and visual
-                  merchandisers
+                {pData?.EligTable3HeadLi5}
                 </td>
               </tr>
               <tr>
-                <td>TEER 5</td>
+                <td>{pData?.EligTable1HeadLi6}</td>
                 <td>
-                  Occupations that usually need short-term work demonstration
-                  and no formal education
+                {pData?.EligTable2HeadLi6}
                 </td>
                 <td>
-                  Landscaping and grounds maintenance labourers, Delivery
-                  service drivers and door-to-door distributors
+                {pData?.EligTable3HeadLi6}
                 </td>
               </tr>
             </tbody>
           </table>
 
           <p>
-            You do not need a job offer to apply for the FSWP, but having a
-            valid job offer from a Canadian employer may increase your chances
-            of receiving an invitation to apply for permanent residency.
+          {pData?.EligLastPara}
           </p>
 
           <section className={styles.expressEntry}>
             <h2 className={styles.subheading}>
-              Assessment through a Federal Skilled Worker Program (FSWP)
-              Calculator
+            {pData?.AssessmentHeading}
             </h2>
             <p>
-              Once you have met the minimum requirements for the FSWP, you will
-              be assessed based on the Comprehensive Ranking System (CRS). The
-              CRS is a points-based system that evaluates candidates on factors
-              such as their age, education, language skills, work experience,
-              and adaptability.
+            {pData?.AssessmentPara}
             </p>
             <button
               className={styles.button}
@@ -318,12 +311,12 @@ const FederalSkilledWorkerProgram = () => {
           ref={(el) => (sectionsRef.current[4] = el)}
         >
           <h2 className={styles.subheading}>
-            Express Entry Federal Skilled Worker Program (FSWP) Draws History
+          {pData?.ExpressEntryHead}
           </h2>
           <p>
-            For the latest updates on Express Entry draws,
+            For the latest updates on Express Entry draws, {" "}
             <Link to="/previous-draw-history" className={styles.link}>
-              click here
+              Click here
             </Link>
             .
           </p>
@@ -335,13 +328,11 @@ const FederalSkilledWorkerProgram = () => {
           ref={(el) => (sectionsRef.current[5] = el)}
         >
           <h2 className={styles.subheading}>
-            How to Apply for Federal Skilled Worker Program (FSWP)
+          {pData?.HowToApplyHeading}
           </h2>
           <ol style={{ marginLeft: "40px" }}>
             <li>
-              Create your profile on the Immigration, Refugees and Citizenship
-              Canada (IRCC) website, or for a stress-free solution, let us
-              handle your case for you.{" "}
+            {pData?.ha1} {" "}
               <Link
                 to="https://book.brightlightimmigration.ca/calendar-page"
                 className={styles.link}
@@ -351,26 +342,19 @@ const FederalSkilledWorkerProgram = () => {
               .
             </li>
             <li>
-              Collect all required documentation to support your application,
-              such as education certificates, language test results, work
-              experience letters, and any other relevant documents.
+            {pData?.ha2}
             </li>
             <li>
-              Place your profile in the Express Entry pool. Your CRS score will
-              determine your position in the pool.
+            {pData?.ha3}
             </li>
             <li>
-              You will receive an ITA if your CRS score is high enough and meets
-              the requirements.
+            {pData?.ha4}
             </li>
             <li>
-              A complete application for permanent residency submission will be
-              required within 60 days of receiving the ITA.
+            {pData?.ha5}
             </li>
             <li>
-              Provide additional documentation and undergo medical examinations
-              as required. Your application will be processed, and a decision
-              will be made.
+            {pData?.ha6}
             </li>
           </ol>
         </section>
@@ -381,28 +365,23 @@ const FederalSkilledWorkerProgram = () => {
           ref={(el) => (sectionsRef.current[6] = el)}
         >
           <h2 className={styles.subheading}>
-            Common Reasons for Refusals of Federal Skilled Worker Program (FSWP)
+          {pData?.RefusalHeading}
           </h2>
           <ul style={{ marginLeft: "40px" }}>
             <li>
-              You don’t have a Canadian high school diploma or equivalent,
-              language proficiency in English or French, and skilled work
-              experience in a NOC-listed occupation.
+            {pData?.r1}
             </li>
             <li>
-              Your Comprehensive Ranking System (CRS) score isn’t high enough.
+            {pData?.r2}
             </li>
             <li>
-              Criminal convictions, health issues, or security concerns may make
-              you inadmissible. Exceptions and waivers may apply.
+            {pData?.r3}
             </li>
             <li>
-              You did not submit all the required documents and provided
-              inaccurate information.
+            {pData?.r4}
             </li>
             <li>
-              You failed to provide sufficient proof of funds to support
-              yourself or your family in Canada.
+            {pData?.r5}
             </li>
           </ul>
         </section>
@@ -412,19 +391,12 @@ const FederalSkilledWorkerProgram = () => {
           id="testing3"
           ref={(el) => (sectionsRef.current[7] = el)}
         >
-          <h2 className={styles.subheading}>Still Not Sure?</h2>
+          <h2 className={styles.subheading}>{pData?.StillNotSureHeading}</h2>
           <p>
-            If you have received a refusal for any of the reasons mentioned
-            above or have doubts regarding your case and application, do not
-            worry. With over a decade of experience, we specialize in handling
-            Express Entry Programs. Our approval rate for these programs is
-            nearly 100%, achieved through a tailored approach to your specific
-            case and using similar successful cases as precedents.
+          {pData?.s1}
           </p>
           <p>
-            At Brightlight Immigration, our dedicated team of visa application
-            specialists will assist you from the start of the application
-            process all the way to obtaining your PR. Start your process now.
+          {pData?.s2}
           </p>
           <button
             className={styles.button}

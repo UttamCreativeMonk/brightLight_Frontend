@@ -11,6 +11,8 @@ import { Helmet } from "react-helmet-async";
 const Flagpoling = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([])
+
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
@@ -36,6 +38,22 @@ const Flagpoling = () => {
         console.log(error);
       });
   }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/flagpoling")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
 
   const sectionsRef = useRef([]);
 
@@ -149,7 +167,7 @@ const Flagpoling = () => {
           id="about-program"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          Flagpoling
+         {pData?.flagpolingHeading}
         </h1>
         <section
           className={`${styles.introduction} ${styles.section}`}
@@ -157,20 +175,10 @@ const Flagpoling = () => {
           ref={(el) => (sectionsRef.current[1] = el)}
         >
           <p>
-            Flagpoling is a legal process of exiting Canada and re-entering the
-            country without physically crossing into the USA to obtain, change,
-            or extend a valid status in Canada. It is commonly used to obtain a
-            new temporary residence status, such as renewing a study permit,
-            applying for a work permit, or finalizing the permanent residency
-            (PR) process.
+          {pData?.flagpolingPara1}
           </p>
           <p>
-            Typically, temporary resident visa holders have the option to apply
-            through online or paper applications. However, these applications
-            can take weeks or even months to process. Therefore, sometimes
-            people choose to save time by going to the port of entry (aka
-            border). This allows for quick processing, which can be helpful for
-            people who need their application processed quickly.
+          {pData?.flagpolingPara2}
           </p>
         </section>
 
@@ -179,25 +187,16 @@ const Flagpoling = () => {
           id="benifits"
           ref={(el) => (sectionsRef.current[2] = el)}
         >
-          <h2 className={styles.subheading}>Benefits of Flagpoling</h2>
+          <h2 className={styles.subheading}>{pData?.BenifitHeading}</h2>
           <ul style={{marginLeft: "40px"}}>
             <li>
-              Flagpoling is a time-saving alternative to applying for a work or
-              study permit through online or paper applications, where
-              processing times can take weeks or even months or longer than what
-              is mentioned on the IRCC website.
+            {pData?.b1}
             </li>
             <li>
-              You do not need to gather extensive documentation, complete
-              complex and lengthy forms, etc. Instead, candidates can present
-              their passport and supporting documents directly to a Canada
-              Border Services Agency (CBSA) officer, attend the interview, and
-              obtain the new permit on the spot.
+            {pData?.b2}
             </li>
             <li>
-              Many times, CBSA officers follow a more humane approach than IRCC
-              officers and consider humanitarian and compassionate grounds in
-              approving the application.
+            {pData?.b3}
             </li>
           </ul>
         </section>
@@ -208,30 +207,24 @@ const Flagpoling = () => {
           ref={(el) => (sectionsRef.current[3] = el)}
         >
           <h2 className={styles.subheading}>
-            Eligibility Criteria for Flagpoling
+          {pData?.EligibilityHeading}
           </h2>
-          <h4>The eligibility criteria for flagpoling are as follows:</h4>
+          <h4>  {pData?.EligibilitySubHead}</h4>
           <ul>
             <li>
-              You must be currently holding a valid visitor, study, or work
-              permit.
+            {pData?.e1}
             </li>
             <li>
-              If your current status has expired, you must have applied for an
-              extension online and have proof of application submission and
-              receipt.
+            {pData?.e2}
             </li>
             <li>
-              Do not attempt flagpoling if you are out of status or have applied
-              for restoration of status.
+            {pData?.e3}
             </li>
             <li>
-              You meet the requirements of the new permit that you are
-              requesting as per IRCC guidelines.
+            {pData?.e4}
             </li>
             <li>
-              It is recommended that you carry original documents with you at
-              the time when the CBSA officer interviews you.
+            {pData?.e5}
             </li>
           </ul>
         </section>
@@ -241,17 +234,9 @@ const Flagpoling = () => {
           id="tips"
           ref={(el) => (sectionsRef.current[4] = el)}
         >
-          <h2 className={styles.subheading}>Don’t Forget This Important Tip</h2>
+          <h2 className={styles.subheading}>  {pData?.DoNotForgetHeading}</h2>
           <p>
-            While flagpoling can be a helpful tool when used under the right
-            circumstances, it's important to approach it with careful
-            preparation and the right documentation. We strongly advocate for
-            thorough preparation to maximize the benefits of this process.
-            However, it's crucial to remember that flagpoling also comes with
-            inherent risks. Potential denial of entry at both US and Canadian
-            borders could lead to forced removal from Canada back to your home
-            country. Additionally, flagpoling typically involves a detailed
-            interview with a US immigration officer or CBSA border officer.
+          {pData?.DoNotForgetSubHead}
           </p>
         </section>
 
@@ -260,21 +245,12 @@ const Flagpoling = () => {
           id="how-to-apply"
           ref={(el) => (sectionsRef.current[5] = el)}
         >
-          <h2 className={styles.subheading}>Still Not Sure?</h2>
+          <h2 className={styles.subheading}>{pData?.StillNotHeading}</h2>
           <p>
-            To avoid these risks and ensure a smooth flagpoling experience, we
-            highly recommend hiring representation from a Regulated Canadian
-            Immigration Consultant (RCIC). An RCIC can not only guide you on the
-            necessary documents for flagpoling but also effectively prepare you
-            for the Port of Entry and border interviews conducted by immigration
-            officers.
+          {pData?.s1}
           </p>
           <p>
-            Brightlight Immigration is available to represent you at any Point
-            of Entry in the Lower Mainland, British Columbia. Our experienced
-            consultants will ensure you have the necessary documentation,
-            provide tailored guidance, and assist you in effectively
-            communicating your case to immigration officers.
+          {pData?.s2}
           </p>
           <button
             className={styles.button}

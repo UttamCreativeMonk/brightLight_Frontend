@@ -5,9 +5,13 @@ import Footer1 from "../components/Footer1";
 import Testimonials from "../sections/Testimonials";
 import RecentBlogs from "../sections/RecentBlogs";
 import FAQ from "../sections/FAQ";
+import ogImage from "../assets/ogImage.png";
+import { Helmet } from "react-helmet-async";
 
 const HealthcareTargetedDraw = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([])
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -19,6 +23,36 @@ const HealthcareTargetedDraw = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/healthcareTargatedDrawMeta")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/healthcareTargatedDraw")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   const sectionsRef = useRef([]);
 
@@ -44,6 +78,48 @@ const HealthcareTargetedDraw = () => {
 
   return (
     <>
+              <Helmet>
+        <title>
+          {metaData?.metaTitle
+            ? metaData?.metaTitle
+            : "Brightlight Immigration"}
+        </title>
+        <meta
+          name="description"
+          content={
+            metaData?.metaDesc
+              ? metaData?.metaDesc
+              : "Learn about Brightlight Immigration, our mission, values, and the dedicated team behind our immigration services. We are committed to providing honest and accurate advice to guide you through your immigration journey."
+          }
+        />
+        <meta
+          name="title"
+          property="og:title"
+          content={
+            metaData?.metaOgTitle
+              ? metaData?.metaOgTitle
+              : " Brightlight Immigration"
+          }
+        />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:type" content="image/png" />
+        <meta
+          property="og:description"
+          content={
+            metaData?.metaOgDesc
+              ? metaData?.metaOgDesc
+              : "Discover the story behind Brightlight Immigration, our commitment to providing honest and accurate advice, and how our team can assist you with your immigration needs."
+          }
+        />
+        <meta
+          name="Keywords"
+          content={
+            metaData?.metaKeywords
+              ? metaData?.metaKeywords
+              : "Brightlight Immigration, Immigration Services, Mission, Team"
+          }
+        />
+      </Helmet>
       <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
@@ -84,7 +160,7 @@ const HealthcareTargetedDraw = () => {
 
       <div className={styles.container}>
         <h1 className={styles.heading}>
-          Category-Based Express Entry Selection Draws: Healthcare Draw
+        {pData?.healthcareTargatedDrawHeading}
         </h1>
 
         <section
@@ -93,17 +169,7 @@ const HealthcareTargetedDraw = () => {
           ref={(el) => (sectionsRef.current[0] = el)}
         >
           <p>
-            In 2023, the Canadian Government launched the Express Entry
-            healthcare draws, a strategic initiative aimed at attracting and
-            retaining crucial healthcare professionals like nurses, physicians,
-            and dentists. This program fast-tracks immigration applications,
-            significantly reducing the time between application and approval for
-            permanent residency. The process, managed by Canada's Immigration,
-            Refugees, and Citizenship Canada (IRCC), aims to process the
-            majority of applications within six months. However, it's important
-            to note that this is not a guaranteed timeline. The urgent need for
-            additional healthcare workers in Canada is evident, and the Express
-            Entry healthcare draws are a crucial tool in addressing this issue.
+          {pData?.healthcareTargatedDrawPara}
           </p>
         </section>
 
@@ -113,23 +179,16 @@ const HealthcareTargetedDraw = () => {
           ref={(el) => (sectionsRef.current[1] = el)}
         >
           <h2 className={styles.subheading}>
-            Eligibility Criteria for Express Entry Healthcare Draws
+          {pData?.EligibilityCriteriaHeading}
           </h2>
           <p>
-            Understanding the process of becoming eligible for Express Entry
-            healthcare draws requires a comprehensive understanding of the
-            Express Entry system itself.
+          {pData?.EligPara1}
           </p>
           <p>
-            Express Entry is not an immigration program but a system used to
-            manage several Canadian immigration programs. It operates on an
-            expression of interest intake model, where you submit your profile
-            into a pool of candidates and wait for an invitation to apply for
-            permanent residency.
+          {pData?.EligPara2}
           </p>
           <p>
-            To be eligible for Express Entry, you must meet the criteria for one
-            of the following programs:
+          {pData?.EligPara3}
           </p>
           <ul style={{ marginLeft: "40px" }}>
             <li
@@ -203,24 +262,13 @@ const HealthcareTargetedDraw = () => {
             </li>
           </ul>
           <p>
-            Once you've submitted your profile, your eligibility for each
-            program is evaluated based on your work experience, education, age,
-            and language proficiency. This evaluation is conducted using the
-            Comprehensive Ranking System (CRS), which assigns a score to your
-            profile.
+          {pData?.EligPara4}
           </p>
           <p>
-            Your CRS score is crucial as it determines whether you receive an
-            invitation to apply (ITA) in a round of invitations, also known as a
-            draw. In an all-program draw, the highest-scoring candidates are
-            invited, while in a category-based draw, the top-scoring candidates
-            who meet the draw's category eligibility criteria are invited.
+          {pData?.EligPara5}
           </p>
           <p>
-            Healthcare Express Entry draws are category-based draws. To be
-            eligible for the health worker category, you must have at least six
-            months of full-time work experience in an eligible healthcare
-            occupation within the past three years.
+          {pData?.EligPara6}
           </p>
         </section>
 
@@ -230,29 +278,20 @@ const HealthcareTargetedDraw = () => {
           ref={(el) => (sectionsRef.current[2] = el)}
         >
           <h2 className={styles.subheading}>
-            Eligible Occupations for Express Entry Healthcare Draws
+            {pData?.EligibleOccupationsHeading}
           </h2>
           <p>
-            In order to be eligible for Express Entry Healthcare draws, you must
-            have at least six months of full-time (or the equivalent in
-            part-time) paid work experience within the three years preceding the
-            issuance of an ITA and when IRCC receives your application for
-            Canadian permanent residency.
+          {pData?.EligibleOccupationsPara}
           </p>
           <p>Healthcare occupations category eligibility:</p>
           <ul>
             <li>
-              Within the last 3 years, you have at least 6 months of full-time,
-              continuous work experience (or an equivalent amount of part-time
-              work experience) in a single eligible National Occupational
-              Classification (NOC) in the healthcare sector.
+            {pData?.eo1}
             </li>
-            <li>A valid Express Entry profile.</li>
+            <li>{pData?.eo2}</li>
           </ul>
           <p>
-            **The following table contains the most up-to-date list of eligible
-            occupations. Remember that Canada may change these occupations in
-            response to labor market conditions.
+          {pData?.EligibleOccupTableHeading}
           </p>
           <p>
             <a
@@ -268,207 +307,186 @@ const HealthcareTargetedDraw = () => {
           <table className={styles.table}>
             <thead>
               <tr>
-                <th>Occupation</th>
-                <th>2021 NOC Code</th>
-                <th>2021 TEER Category</th>
+                <th>{pData?.EligibleOccupTableHead1}</th>
+                <th>{pData?.EligibleOccupTableHead2}</th>
+                <th>{pData?.EligibleOccupTableHead3}</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Audiologists and speech language pathologists</td>
-                <td>31112</td>
-                <td>1</td>
+                <td>{pData?.eoT1Li1}</td>
+                <td>{pData?.eoT2Li1}</td>
+                <td>{pData?.eoT3Li1}</td>
               </tr>
               <tr>
-                <td>Chiropractors</td>
-                <td>31201</td>
-                <td>1</td>
+                <td>{pData?.eoT1Li2}</td>
+                <td>{pData?.eoT2Li2}</td>
+                <td>{pData?.eoT3Li2}</td>
               </tr>
               <tr>
-                <td>Dentists</td>
-                <td>31110</td>
-                <td>1</td>
+                <td>{pData?.eoT1Li3}</td>
+                <td>{pData?.eoT2Li3}</td>
+                <td>{pData?.eoT3Li3}</td>
               </tr>
               <tr>
-                <td>Dieticians and nutritionists</td>
-                <td>31121</td>
-                <td>1</td>
+                <td>{pData?.eoT1Li4}</td>
+                <td>{pData?.eoT2Li4}</td>
+                <td>{pData?.eoT3Li4}</td>
               </tr>
               <tr>
-                <td>Education counsellors</td>
-                <td>41320</td>
-                <td>1</td>
+                <td>{pData?.eoT1Li5}</td>
+                <td>{pData?.eoT2Li5}</td>
+                <td>{pData?.eoT3Li5}</td>
               </tr>
               <tr>
-                <td>General practitioners and family physicians</td>
-                <td>31102</td>
-                <td>1</td>
+                <td>{pData?.eoT1Li6}</td>
+                <td>{pData?.eoT2Li6}</td>
+                <td>{pData?.eoT3Li6}</td>
               </tr>
               <tr>
-                <td>Instructors of persons with disabilities</td>
-                <td>42203</td>
-                <td>2</td>
+                <td>{pData?.eoT1Li7}</td>
+                <td>{pData?.eoT2Li7}</td>
+                <td>{pData?.eoT3Li7}</td>
               </tr>
               <tr>
-                <td>
-                  Kinesiologists and other professional occupations in therapy
-                  and assessment
-                </td>
-                <td>31204</td>
-                <td>1</td>
+                <td>{pData?.eoT1Li8}</td>
+                <td>{pData?.eoT2Li8}</td>
+                <td>{pData?.eoT3Li8}</td>
               </tr>
               <tr>
-                <td>Licensed practical nurses</td>
-                <td>32101</td>
-                <td>2</td>
+                <td>{pData?.eoT1Li9}</td>
+                <td>{pData?.eoT2Li9}</td>
+                <td>{pData?.eoT3Li9}</td>
               </tr>
               <tr>
-                <td>Massage therapists</td>
-                <td>32201</td>
-                <td>2</td>
+                <td>{pData?.eoT1Li10}</td>
+                <td>{pData?.eoT2Li10}</td>
+                <td>{pData?.eoT3Li10}</td>
               </tr>
               <tr>
-                <td>
-                  Medical laboratory assistants and related technical
-                  occupations
-                </td>
-                <td>33101</td>
-                <td>3</td>
+                <td>{pData?.eoT1Li11}</td>
+                <td>{pData?.eoT2Li11}</td>
+                <td>{pData?.eoT3Li11}</td>
               </tr>
               <tr>
-                <td>Medical laboratory technologists</td>
-                <td>32120</td>
-                <td>2</td>
+                <td>{pData?.eoT1Li12}</td>
+                <td>{pData?.eoT2Li12}</td>
+                <td>{pData?.eoT3Li12}</td>
               </tr>
               <tr>
-                <td>Medical radiation technologists</td>
-                <td>32121</td>
-                <td>2</td>
+                <td>{pData?.eoT1Li13}</td>
+                <td>{pData?.eoT2Li13}</td>
+                <td>{pData?.eoT3Li13}</td>
               </tr>
               <tr>
-                <td>Medical sonographers</td>
-                <td>32122</td>
-                <td>2</td>
+                <td>{pData?.eoT1Li14}</td>
+                <td>{pData?.eoT2Li14}</td>
+                <td>{pData?.eoT3Li14}</td>
               </tr>
               <tr>
-                <td>Nurse aides, orderlies, and patient service associates</td>
-                <td>33102</td>
-                <td>3</td>
+                <td>{pData?.eoT1Li15}</td>
+                <td>{pData?.eoT2Li15}</td>
+                <td>{pData?.eoT3Li15}</td>
               </tr>
               <tr>
-                <td>Nurse practitioners</td>
-                <td>31302</td>
-                <td>1</td>
+                <td>{pData?.eoT1Li16}</td>
+                <td>{pData?.eoT2Li16}</td>
+                <td>{pData?.eoT3Li16}</td>
               </tr>
               <tr>
-                <td>Nursing coordinators and supervisors</td>
-                <td>31300</td>
-                <td>1</td>
+                <td>{pData?.eoT1Li17}</td>
+                <td>{pData?.eoT2Li17}</td>
+                <td>{pData?.eoT3Li17}</td>
               </tr>
               <tr>
-                <td>Occupational therapists</td>
-                <td>31203</td>
-                <td>1</td>
+                <td>{pData?.eoT1Li18}</td>
+                <td>{pData?.eoT2Li18}</td>
+                <td>{pData?.eoT3Li18}</td>
               </tr>
               <tr>
-                <td>Optometrists</td>
-                <td>31111</td>
-                <td>1</td>
+                <td>{pData?.eoT1Li19}</td>
+                <td>{pData?.eoT2Li19}</td>
+                <td>{pData?.eoT3Li19}</td>
               </tr>
               <tr>
-                <td>
-                  Other assisting occupations in support of health services
-                </td>
-                <td>33109</td>
-                <td>3</td>
+                <td>{pData?.eoT1Li20}</td>
+                <td>{pData?.eoT2Li20}</td>
+                <td>{pData?.eoT3Li20}</td>
               </tr>
               <tr>
-                <td>Other practitioners of natural healing</td>
-                <td>32209</td>
-                <td>2</td>
+                <td>{pData?.eoT1Li21}</td>
+                <td>{pData?.eoT2Li21}</td>
+                <td>{pData?.eoT3Li21}</td>
               </tr>
               <tr>
-                <td>
-                  Other professional occupations in health diagnosing and
-                  treating
-                </td>
-                <td>31209</td>
-                <td>1</td>
+                <td>{pData?.eoT1Li22}</td>
+                <td>{pData?.eoT2Li22}</td>
+                <td>{pData?.eoT3Li22}</td>
               </tr>
               <tr>
-                <td>Other technical occupations in therapy and assessment</td>
-                <td>32109</td>
-                <td>2</td>
+                <td>{pData?.eoT1Li23}</td>
+                <td>{pData?.eoT2Li23}</td>
+                <td>{pData?.eoT3Li23}</td>
               </tr>
               <tr>
-                <td>Paramedical occupations</td>
-                <td>32102</td>
-                <td>2</td>
+                <td>{pData?.eoT1Li24}</td>
+                <td>{pData?.eoT2Li24}</td>
+                <td>{pData?.eoT3Li24}</td>
               </tr>
               <tr>
-                <td>Pharmacy technical assistants and pharmacy assistants</td>
-                <td>33103</td>
-                <td>3</td>
+                <td>{pData?.eoT1Li25}</td>
+                <td>{pData?.eoT2Li25}</td>
+                <td>{pData?.eoT3Li25}</td>
               </tr>
               <tr>
-                <td>
-                  Physician assistants, midwives, and allied health
-                  professionals
-                </td>
-                <td>31303</td>
-                <td>1</td>
+                <td>{pData?.eoT1Li26}</td>
+                <td>{pData?.eoT2Li26}</td>
+                <td>{pData?.eoT3Li26}</td>
               </tr>
               <tr>
-                <td>Physiotherapists</td>
-                <td>31202</td>
-                <td>1</td>
+                <td>{pData?.eoT1Li27}</td>
+                <td>{pData?.eoT2Li27}</td>
+                <td>{pData?.eoT3Li27}</td>
               </tr>
               <tr>
-                <td>Psychologists</td>
-                <td>31200</td>
-                <td>1</td>
+                <td>{pData?.eoT1Li28}</td>
+                <td>{pData?.eoT2Li28}</td>
+                <td>{pData?.eoT3Li28}</td>
               </tr>
               <tr>
-                <td>Registered nurses and registered psychiatric nurses</td>
-                <td>31301</td>
-                <td>1</td>
+                <td>{pData?.eoT1Li29}</td>
+                <td>{pData?.eoT2Li29}</td>
+                <td>{pData?.eoT3Li29}</td>
               </tr>
               <tr>
-                <td>
-                  Respiratory therapists, clinical perfusionists, and
-                  cardiopulmonary technologists
-                </td>
-                <td>32103</td>
-                <td>2</td>
+                <td>{pData?.eoT1Li30}</td>
+                <td>{pData?.eoT2Li30}</td>
+                <td>{pData?.eoT3Li30}</td>
               </tr>
               <tr>
-                <td>Specialists in clinical and laboratory medicine</td>
-                <td>31100</td>
-                <td>1</td>
+                <td>{pData?.eoT1Li31}</td>
+                <td>{pData?.eoT2Li31}</td>
+                <td>{pData?.eoT3Li31}</td>
               </tr>
               <tr>
-                <td>Specialists in surgery</td>
-                <td>31101</td>
-                <td>1</td>
+                <td>{pData?.eoT1Li32}</td>
+                <td>{pData?.eoT2Li32}</td>
+                <td>{pData?.eoT3Li32}</td>
               </tr>
               <tr>
-                <td>
-                  Therapists in counselling and related specialized therapies
-                </td>
-                <td>41301</td>
-                <td>1</td>
+                <td>{pData?.eoT1Li33}</td>
+                <td>{pData?.eoT2Li33}</td>
+                <td>{pData?.eoT3Li33}</td>
               </tr>
               <tr>
-                <td>
-                  Traditional Chinese medicine practitioners and acupuncturists
-                </td>
-                <td>32200</td>
-                <td>2</td>
+                <td>{pData?.eoT1Li34}</td>
+                <td>{pData?.eoT2Li34}</td>
+                <td>{pData?.eoT3Li34}</td>
               </tr>
               <tr>
-                <td>Veterinarians</td>
-                <td>31103</td>
-                <td>1</td>
+                <td>{pData?.eoT1Li35}</td>
+                <td>{pData?.eoT2Li35}</td>
+                <td>{pData?.eoT3Li35}</td>
               </tr>
             </tbody>
           </table>
@@ -480,13 +498,10 @@ const HealthcareTargetedDraw = () => {
           ref={(el) => (sectionsRef.current[3] = el)}
         >
           <h2 className={styles.subheading}>
-            Express Entry Healthcare Draws History
+          {pData?.ExpressEntryHealthcareHeading}
           </h2>
           <p>
-            The first-ever Express Entry draw for targeted healthcare occupation
-            workers was held in February 2024. Express Entry draw #284 saw a CRS
-            score of 422 and invited 3500 candidates eligible for category-based
-            selection in healthcare occupations.
+          {pData?.hehc1}
           </p>
           {/* <Link to="" className={styles.button}>
             
@@ -505,32 +520,25 @@ const HealthcareTargetedDraw = () => {
           ref={(el) => (sectionsRef.current[4] = el)}
         >
           <h2 className={styles.subheading}>
-            How to Apply for Express Entry Healthcare Draws
+          {pData?.HowApplyHeading}
           </h2>
           <ol style={{ marginLeft: "40px" }}>
-            <li>Submit your profile to the Express Entry pool</li>
+            <li>{pData?.ha1}</li>
             <li>
-              Prove that you have at least six months of eligible work
-              experience in healthcare (within the three years preceding the
-              issuance of an ITA and receipt of your application by IRCC)
+            {pData?.ha2}
             </li>
             <li>
-              Await an ITA (or take steps to improve your CRS score to increase
-              your chances of receiving an ITA)
+            {pData?.ha3}
             </li>
             <li>
-              Respond to the ITA by submitting your application for permanent
-              residency
+            {pData?.ha4}
             </li>
             <li>
-              Wait for a decision from an IRCC officer. If approved, you can
-              become a permanent resident of Canada.
+            {pData?.ha5}
             </li>
           </ol>
           <p>
-            Remember, the key to success in the Express Entry system is to
-            ensure you meet all the eligibility requirements and continuously
-            work on improving your CRS score.
+          {pData?.haRemb}
           </p>
         </section>
 
@@ -539,23 +547,12 @@ const HealthcareTargetedDraw = () => {
           id="testing1"
           ref={(el) => (sectionsRef.current[5] = el)}
         >
-          <h2 className={styles.subheading}>Still Not Sure?</h2>
+          <h2 className={styles.subheading}>{pData?.StillNotHeading}</h2>
           <p>
-            Contact Brightlight Immigration today to assess your profile and
-            embark on a transformative journey towards achieving your Canadian
-            dream. With over a decade of experience, we specialize in handling
-            Express Entry Programs. Our approval rate for these programs is
-            nearly 100%. We achieve this with a tailored approach to your
-            specific case. We use case law and find similar cases to your
-            circumstances that had positive results, and we use them as
-            precedents in cases we work on. This is why we have a high success
-            rate.
+          {pData?.s1}
           </p>
           <p>
-            At Brightlight Immigration, we have a dedicated team of visa
-            application specialists who can assist you from the start of the
-            application process all the way to obtaining your PR. Start your
-            process now.
+          {pData?.s2}
           </p>
           {/* <Link to="" className={styles.button}>
          

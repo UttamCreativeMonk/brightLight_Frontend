@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet-async";
 const DependentChildren = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([])
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -36,6 +37,22 @@ const DependentChildren = () => {
         console.log(error);
       });
   }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/dependentChildren")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
 
   const sectionsRef = useRef([]);
 
@@ -146,16 +163,12 @@ const DependentChildren = () => {
           id="about-program"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          <h1>Canada’s Dependent Children Sponsorship Program</h1>
+          <h1>{pData?.DepChildHeading}</h1>
           <p style={{ textAlign: "center" }}>
-            The Dependent Child Program helps families stay together and gives
-            your child the chance to go to good schools in Canada, grow up in a
-            safe place, and be successful in the future.
+          {pData?.DepChildPara1}
           </p>
           <p style={{ textAlign: "center" }}>
-            The Dependent Children Program allows Canadian citizens and
-            permanent residents to bring their unmarried children under the age
-            of 22 to Canada as permanent residents.
+          {pData?.DepChildPara2}
           </p>
         </header>
 
@@ -164,10 +177,9 @@ const DependentChildren = () => {
           id="eligibility"
           ref={(el) => (sectionsRef.current[1] = el)}
         >
-          <h2>Eligibility requirements for the dependent child:</h2>
+          <h2>{pData?.EligibilityHeading}</h2>
           <h4>
-            The child must be under the age of 22 on the date the sponsorship
-            application is submitted.
+          {pData?.EligibilitySubHeading}
           </h4>
           {/* <h3 className={styles.marginTop}>For the Dependent Child:</h3> */}
           <ul style={{ marginLeft: "40px" }}>
@@ -186,14 +198,13 @@ const DependentChildren = () => {
           </h2>
           <ul style={{marginLeft: "40px"}}>
             <li>
-              You must have an annual income that meets the Canadian income
-              requirements for sponsorship.
+            {pData?.e1}
             </li>
             <li>
-              You should have sufficient funds and assets to support your child.
+            {pData?.e2}
             </li>
             <li>
-              You must have adequate accommodation for your child to live.
+            {pData?.e3}
             </li>
           </ul>
         </section>
@@ -203,21 +214,16 @@ const DependentChildren = () => {
           id="application-process"
           ref={(el) => (sectionsRef.current[2] = el)}
         >
-          <h2>How to apply for the Dependent Children Sponsorship Program?</h2>
+          <h2>   {pData?.HowApplyHeading}</h2>
           <ol style={{marginLeft: "40px"}}>
             <li>
-              Collect and submit a variety of documents to support your
-              application, such as proof of identity, proof of relationship with
-              your child, financial documentation, and accommodation details.
+            {pData?.ha1}
             </li>
             <li>
-              You and your child must attend biometrics appointments at
-              designated Service Canada locations to provide fingerprints and
-              photographs for processing.
+            {pData?.ha2}
             </li>
             <li>
-              If the application is approved, your child will be issued a visa
-              to travel to Canada.
+            {pData?.ha3}
             </li>
           </ol>
         </section>
@@ -228,23 +234,17 @@ const DependentChildren = () => {
           ref={(el) => (sectionsRef.current[3] = el)}
         >
           <h2>
-            Common reasons for refusals of Canada’s Dependent Children
-            Sponsorship Program:
+          {pData?.RefusalHeading}
           </h2>
           <ul style={{marginLeft: "40px"}}>
             <li>
-              Fails to meet the eligibility criteria for the DC Program, such as
-              being a Canadian citizen or permanent resident, having the
-              financial means to support the sponsored child, or having a clean
-              criminal record.
+            {pData?.r1}
             </li>
             <li>
-              Your child is not under the age of 22 or is married or in a
-              common-law relationship.
+            {pData?.r2}
             </li>
             <li>
-              You or your child may have provided false or misleading
-              information on their application.
+            {pData?.r3}
             </li>
           </ul>
           <button
@@ -262,22 +262,12 @@ const DependentChildren = () => {
           id="why-choose-us"
           ref={(el) => (sectionsRef.current[4] = el)}
         >
-          <h2>Still Not Sure?</h2>
+          <h2>{pData?.StillNotHeading}</h2>
           <p>
-            If you have received a refusal for any of the reasons mentioned
-            above, do not worry. With over a decade of experience, we specialize
-            in previously refused cases. We have got approvals for clients who
-            had multiple previous refusals. We achieve this with a tailored
-            approach to your specific case, addressing each concern that the
-            officer has listed in previous refusals. We use case law and find
-            similar cases to your circumstances that had positive results, and
-            we use them as precedents in cases we work on. This is why we have a
-            high success rate.
+          {pData?.s1}
           </p>
           <p>
-            At Brightlight Immigration, we have a dedicated team of visa
-            application specialists who can assist you from the start of the
-            application process to obtaining your visa.
+          {pData?.s2}
           </p>
           <button
             onClick={() =>

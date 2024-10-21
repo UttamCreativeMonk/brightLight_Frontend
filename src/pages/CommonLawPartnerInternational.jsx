@@ -55,6 +55,22 @@ const CommonLawPartnerInternational = () => {
       });
   }, []);
 
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/changeCollegeProgram")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+
 
   const sectionsRef = useRef([]);
 
@@ -77,6 +93,50 @@ const CommonLawPartnerInternational = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+
+
+  const extractStrongText = (htmlString) => {
+    if (typeof htmlString !== "string") return "";
+    const strongMatch = htmlString.match(/<strong>(.*?)<\/strong>/);
+    return strongMatch ? strongMatch[1] : "";
+  };
+
+  const extractRemainingText = (htmlString) => {
+    if (typeof htmlString !== "string") return "";
+    return htmlString.replace(/<strong>.*?<\/strong>/, "").trim();
+  };
+
+
+  const fetchedValue = pData?.er1li3Head;
+  const strongText = extractStrongText(fetchedValue);
+
+  const fetchedValue1 = pData?.er2li2Head;
+  const strongText1 = extractStrongText(fetchedValue1);
+
+  const fetchedValue2 = pData?.EligReqSubHead3;
+  const strongText2 = extractStrongText(fetchedValue2);
+  const remainingText2 = extractRemainingText(fetchedValue2);
+
+  const fetchedValue3 = pData?.erali1;
+  const strongText3 = extractStrongText(fetchedValue3);
+  const remainingText3 = extractRemainingText(fetchedValue3);
+
+  const fetchedValue4 = pData?.erali2;
+  const strongText4 = extractStrongText(fetchedValue4);
+  const remainingText4 = extractRemainingText(fetchedValue4);
+
+  const fetchedValue5 = pData?.erali3;
+  const strongText5 = extractStrongText(fetchedValue5);
+  const remainingText5 = extractRemainingText(fetchedValue5);
+
+  const fetchedValue6 = pData?.erali4;
+  const strongText6 = extractStrongText(fetchedValue6);
+  const remainingText6 = extractRemainingText(fetchedValue6);
+
+  const fetchedValue7 = pData?.erali5;
+  const strongText7 = extractStrongText(fetchedValue7);
+  const remainingText7 = extractRemainingText(fetchedValue7);
 
   return (
     <>
@@ -172,8 +232,7 @@ const CommonLawPartnerInternational = () => {
           ref={(el) => (sectionsRef.current[0] = el)}
         >
           <h1>
-            Open Work Permit for Spouse or Common-law Partner of an
-            International Student
+          {pData?.comLawPartnerInternHeading}
           </h1>
         </header>
 
@@ -183,17 +242,10 @@ const CommonLawPartnerInternational = () => {
           ref={(el) => (sectionsRef.current[1] = el)}
         >
           <p>
-            Canada allows spouses and common-law partners to accompany their
-            partners who are international students. Over the years, IRCC has
-            made drastic changes to this program, allowing only certain
-            international students to invite their partners. It is crucial to
-            understand the program eligibility before initiating your
-            immigration process to avoid any long period of separation between
-            you and your partner.
+          {pData?.comLawPartnerInternPara1}
           </p>
           <p>
-            Both the applicant and their spouse must fulfill their respective
-            sets of requirements to reunite and work in Canada.
+          {pData?.comLawPartnerInternPara2}
           </p>
         </section>
 
@@ -203,8 +255,7 @@ const CommonLawPartnerInternational = () => {
           ref={(el) => (sectionsRef.current[2] = el)}
         >
           <h2>
-            Benefits of Open Work Permit for Spouse or Common-law Partner of an
-            International Student:
+          {pData?.BenifitHeading}
           </h2>
           <ul
             style={{ marginLeft: "40px" }}
@@ -213,32 +264,26 @@ const CommonLawPartnerInternational = () => {
             ref={(el) => (sectionsRef.current[3] = el)}
           >
             <li>
-              It enables your spouse or common-law partner to accompany you to
-              Canada and reside with you.
+            {pData?.b1}
             </li>
             <li>
-              It permits your spouse or common-law partner to work, alleviating
-              financial strain on you while you are in school full-time.
+            {pData?.b2}
             </li>
             <li>
-              It provides your spouse or common-law partner with the opportunity
-              to gain Canadian work experience and enhance their skills.
+            {pData?.b3}
             </li>
             <li>
-              Through the Canadian work experience gained, they may become
-              eligible for permanent residency programs.
+            {pData?.b4}
             </li>
             <li>
-              They have the flexibility to work for any employer and in any
-              position.
+            {pData?.b5}
             </li>
-            <li>They can also establish their own business if desired.</li>
+            <li>{pData?.b6}</li>
             <li>
-              Unlike visitors, they are allowed to stay in Canada for longer
-              than six months, with multiple entries allowed.
+            {pData?.b7}
             </li>
             <li>
-              It also offers a chance to immerse oneself in Canadian society.
+            {pData?.b8}
             </li>
           </ul>
         </section>
@@ -249,14 +294,10 @@ const CommonLawPartnerInternational = () => {
           ref={(el) => (sectionsRef.current[4] = el)}
         >
           <h2>
-            Eligibility criteria for Open Work Permit for Spouse or Common-law
-            Partner of an International Student:
+          {pData?.EligCritHeading}
           </h2>
           <p>
-            The requirements for principal applicant (international student)
-            differ for both the categories (Before March 19, 2024, applicants
-            and After March 19, 2024 applicants). However, the requirements are
-            same for the accompanying spouse or common-law partner.
+          {pData?.EligCritPara}
           </p>
         </section>
         {/* /// */}
@@ -266,12 +307,10 @@ const CommonLawPartnerInternational = () => {
           id="testing"
           ref={(el) => (sectionsRef.current[5] = el)}
         >
-          <h2>Eligibility Requirements of the international student:</h2>
-          <h3>Applications submitted before March 19, 2024</h3>
+          <h2>{pData?.EligReqHeading}</h2>
+          <h3>{pData?.EligReqSubHead1}</h3>
           <p>
-            For the international student to be eligible to apply for their
-            partner under administrative code C42, they must meet all of the
-            following requirements:
+            {pData?.EligReqSubHead1Para1}
           </p>  
           <ul
             style={{ marginLeft: "40px", marginTop: "0px" }}
@@ -280,43 +319,31 @@ const CommonLawPartnerInternational = () => {
             ref={(el) => (sectionsRef.current[6] = el)}
           >
             <li>
-              Proof that the international student is attending a designated
-              learning institution (DLI)
+            {pData?.er1li1}
             </li>
             <li>
-              The international student must be actively studying full-time in a
-              post-graduation work permit-eligible program at one of the
-              following:{" "}
+            {pData?.er1li2}
             </li>
             <ul style={{ marginLeft: "40px", marginTop: "0px",  listStyleType: "circle" }}>
               <li>
-                A Canadian public post-secondary institution (college,
-                trade/technical school, university, or CEGEP in Quebec).
+              {pData?.er1li21}
               </li>
               <li>
-                A private post-secondary institution in Quebec operating under
-                the same rules as public institutions.
+              {pData?.er1li22}
               </li>
               <li>
-                A private or public secondary or post-secondary institution in
-                Quebec offering qualifying programs of 900 hours or longer
-                leading to a Diploma of Vocational Studies (DVS) or an
-                Attestation of Vocational Specialization (AVS).
+              {pData?.er1li23}
               </li>
               <li>
-                A Canadian private institution authorized by provincial statute
-                to confer degrees (e.g., bachelor’s, master’s, or doctorate) if
-                the study permit holder is enrolled in a degree program
-                authorized by the province.{" "}
+              {pData?.er1li24}
               </li>
             </ul>
-            <p><strong>The international student is not eligible to apply if: </strong></p>
+            <p><strong>{strongText}</strong></p>
             <ul style={{ marginLeft: "40px", marginTop: "0px" }}>
-              <li>Not enrolled while residing in Canada.</li>
-              <li>Enrolled in part-time studies.</li>
+              <li>{pData?.er1li31}</li>
+              <li>{pData?.er1li32}</li>
               <li>
-                Enrollment in a private post-secondary program or institution
-                not meeting specified eligibility criteria.
+              {pData?.er1li33}
               </li>
             </ul>
           </ul>
@@ -324,18 +351,15 @@ const CommonLawPartnerInternational = () => {
           <h3
             className={`${styles.section} ${styles.section}`}
             id="testing"
-            ref={(el) => (sectionsRef.current[7] = el)}
-          >
-            Applications submitted on or after March 19, 2024
+            ref={(el) => (sectionsRef.current[7] = el)}>
+              {pData?.EligReqSubHead2}
           </h3>
           <p
             className={`${styles.section} ${styles.section}`}
             id="testing"
             ref={(el) => (sectionsRef.current[8] = el)}
           >
-            For the international graduate to be eligible to apply for their
-            partner under administrative code C42, they must meet all of the
-            following requirements:
+          {pData?.EligReqSubHead2Para2}
           </p>
           <ul  
           style={{marginLeft: "40px", marginTop: "-20px"}}
@@ -344,22 +368,15 @@ const CommonLawPartnerInternational = () => {
             ref={(el) => (sectionsRef.current[9] = el)}
           >
             <li>
-              hold a valid study permit AND must be physically residing in
-              Canada while studying or be approved for a study permit, if
-              applying as a family group outside of Canada AND provide proof
-              that they plan to physically reside in Canada while studying
+            {pData?.er2li1}
             </li>
             <li>
-              be studying on a full-time basis in a graduate program (master’s
-              and doctorate) in a university or polytechnic institution, or a
-              professional degree-granting program in a university (e.g.,
-              medicine, dentistry, law, etc.)
+            {pData?.er2li2}
             </li>
-            <p>Graduate programs are defined as follows:</p>
+            <p><strong>{strongText1}</strong></p>
             <ul>
               <li>
-                master’s and doctorate degrees granted by universities or
-                polytechnic institutions
+              {pData?.er2li3}
               </li>
             </ul>
           </ul>
@@ -369,7 +386,7 @@ const CommonLawPartnerInternational = () => {
             id="testing"
             ref={(el) => (sectionsRef.current[10] = el)}
           >
-            Professional degree programs are identified under the following:
+           <strong>{strongText2}</strong>
           </h3>
           <ul
           style={{marginLeft: "40px", marginTop: "0px"}}
@@ -377,22 +394,22 @@ const CommonLawPartnerInternational = () => {
             id="testing"
             ref={(el) => (sectionsRef.current[11] = el)}
           >
-            <li>Doctor of Dental Surgery (DDS, DMD)</li>
-            <li>Bachelor of Law or Juris Doctor (LLB, JD, BCL)</li>
-            <li>Doctor of Medicine (MD)</li>
-            <li>Doctor of Optometry (OD)</li>
-            <li>Pharmacy (PharmD, BS, BSc, BPharm)</li>
-            <li>Doctor of Veterinary Medicine (DVM)</li>
-            <li>Bachelor of Science in Nursing (BScN, BSN, BNSc)</li>
-            <li>Bachelor of Education (BEd)</li>
-            <li>Bachelor of Engineering (BEng, BE, BASc) only</li>
+            <li>{pData?.er3li1}</li>
+            <li> {pData?.er3li2}</li>
+            <li> {pData?.er3li3}</li>
+            <li> {pData?.er3li4}</li>
+            <li> {pData?.er3li5}</li>
+            <li> {pData?.er3li6}</li>
+            <li> {pData?.er3li7}</li>
+            <li> {pData?.er3li8}</li>
+            <li> {pData?.er3li9}</li>
           </ul>
           <p
             className={`${styles.section} ${styles.section}`}
             id="testing"
             ref={(el) => (sectionsRef.current[12] = el)}
           >
-           <strong> The international student is not eligible to apply if:{" "}</strong>
+           <strong> {pData?.EligReqSubHead4}</strong>
           </p>
           <ul
           style={{marginLeft: "40px", marginTop: "-20px"}}
@@ -400,11 +417,10 @@ const CommonLawPartnerInternational = () => {
             id="testing"
             ref={(el) => (sectionsRef.current[13] = el)}
           >
-            <li>Not enrolled while residing in Canada.</li>
-            <li>Enrolled in part-time studies.</li>
+            <li> {pData?.er4li1}</li>
+            <li>{pData?.er4li2}</li>
             <li>
-              Not enrolled in a private post-secondary program/institution other
-              than those listed
+            {pData?.er4li3}
             </li>
           </ul>
         </section>
@@ -419,15 +435,14 @@ const CommonLawPartnerInternational = () => {
             id="testing"
             ref={(el) => (sectionsRef.current[15] = el)}
           >
-            Eligibilty Requirements for accompanying spouse or common-law
-            partner:
+           {pData?.EligReqAccomHeading}
           </h2>
           <p
             className={`${styles.section} ${styles.section}`}
             id="testing"
             ref={(el) => (sectionsRef.current[16] = el)}
           >
-            Your family member must meet following requirements:
+               {pData?.EligReqAccomSubHead}
           </p>
           <ul
           style={{marginLeft: "40px", marginTop: "-20px"}}
@@ -437,32 +452,20 @@ const CommonLawPartnerInternational = () => {
           >
             <li>
               {" "}
-              <strong>General Eligibility:</strong> The applicant must meet
-              general work permit criteria, including police and medical
-              clearances, and not be inadmissible to Canada.
+              <strong>{strongText3}</strong> {" "}  {remainingText3}
             </li>
             <li>
               {" "}
-              <strong>Relationship:</strong> A genuine relationship between the
-              applicant and the study permit holder is required.
+              <strong>{strongText4}</strong> {" "}  {remainingText4}
             </li>
             <li>
-              {" "}
-              <strong>Proof of Spousal Relationship:</strong>Evidence must
-              demonstrate the applicant's genuine status as the spouse or
-              common-law partner of a valid study permit holder.
+            <strong>{strongText5}</strong> {" "}  {remainingText5}
             </li>
             <li>
-              <strong> Additional Documentation: </strong>Supplementary proof is
-              necessary to satisfy IRCC that the relationship was not primarily
-              for status acquisition or is not genuine.
+            <strong>{strongText6}</strong> {" "}  {remainingText6}
             </li>
             <li>
-              <strong>Applicants in Canada:</strong> They must possess valid
-              temporary resident status, have applied for an extension before
-              its expiry (maintained status), or be eligible for restoration of
-              status as a visitor, worker, or student. They must also be
-              eligible to apply for a work permit from within Canada.
+            <strong>{strongText7}</strong> {" "}  {remainingText7}
             </li>
           </ul>
         </section>
@@ -478,22 +481,13 @@ const CommonLawPartnerInternational = () => {
           </h2>
           <ol style={{marginLeft: "40px", marginTop: "10px"}}>
             <li>
-              You can choose to apply together for a Study Permit and Spousal
-              Open Work Permit before traveling to Canada. If the applications
-              are approved, study and work permits will be issued upon arrival
-              in Canada, allowing the spouse to begin working immediately.
+            {pData?.wa1}
             </li>
             <li>
-              Foreign nationals exempt from the Temporary Resident Visa (TRV)
-              requirement can apply for the Spousal Open Work Permit (SOWP) upon
-              arrival in Canada, with immediate issuance upon approval by CBSA
-              officer.
+            {pData?.wa2}
             </li>
             <li>
-              Some spouses/common-law partners may enter Canada as visitors and
-              apply for the work permit later. In such cases, the application
-              can be submitted at any time, ensuring the visitor status remains
-              valid during the application process.
+            {pData?.wa3}
             </li>
           </ol>
         </section>
@@ -503,25 +497,21 @@ const CommonLawPartnerInternational = () => {
           id="testing"
           ref={(el) => (sectionsRef.current[19] = el)}>
           <h2>
-            How to apply for Open Work Permit for Spouse or Common-law Partner
-            of an International Student?
+          {pData?.HowApplyHeading}
           </h2>
           <ol className={styles.subList} style={{marginLeft: "40px", marginTop: "10px"}} >
             <li>
-              Gather documents to prove above-mentioned eligibility criteria for
-              internation student.
+            {pData?.ha1}
             </li>
-            <li>Gather documents to prove the relationship is genuine.</li>
+            <li>{pData?.ha2}</li>
             <li>
-              You might be required to get a medical exam and police clearance
-              certificates, if applying from outside Canada.
+            {pData?.ha3}
             </li>
-            <li>Submit complete application to IRCC</li>
+            <li>{pData?.ha4}</li>
             <li>
-              After receiving, Biometric Collection Instruction letter, make an
-              appointment for biometrics within 30 days of receiving the letter.
+            {pData?.ha5}
             </li>
-            <li>Wait for IRCC to process your application.</li>
+            <li>{pData?.ha6}</li>
           </ol>
         </section>
 
@@ -531,20 +521,17 @@ const CommonLawPartnerInternational = () => {
           ref={(el) => (sectionsRef.current[20] = el)}
         >
           <h2>
-            Common reasongs for refusal of Open Work Permit for Spouse or
-            Common-law Partner of an International Student:
+          {pData?.RefusalHeading}
           </h2>
           <ul style={{marginLeft: "40px", marginTop: "10px"}}>
             <li>
-              Lack of documentation verifying the enrollment status of the
-              international student.
+            {pData?.r1}
             </li>
             <li>
-              Inadequate evidence demonstrating the genuineness of the marriage.
+            {pData?.r2}
             </li>
             <li>
-              The principal applicant's study permit is nearing expiration, and
-              there has been no application filed to extend their stay.
+            {pData?.r3}
             </li>
           </ul>
           <button

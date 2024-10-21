@@ -11,6 +11,8 @@ import { Helmet } from "react-helmet-async";
 const FrancophoneMobilityProgram = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([])
+
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -31,6 +33,21 @@ const FrancophoneMobilityProgram = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/francoMob")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -152,10 +169,9 @@ const FrancophoneMobilityProgram = () => {
           id="about-program"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          <h1>Francophone Mobility Program – NO LMIA Required</h1>
+          <h1>{pData?.FrancophoneHeading}</h1>
           <p>
-            Mobilité Francophone: Unlocking Opportunities for French-Speaking
-            Workers
+          {pData?.FrancophonePara}
           </p>
         </header>
 
@@ -164,48 +180,25 @@ const FrancophoneMobilityProgram = () => {
           id="benefits"
           ref={(el) => (sectionsRef.current[1] = el)}
         >
-          <h2>Benefits of Francophone Mobility Program</h2>
+          <h2>{pData?.BenifitsHeading}</h2>
           <h4>
-            The Francophone Mobility Program offers an exciting pathway for
-            foreign workers seeking employment in Canada. Designed to promote
-            French-speaking talent, this program operates outside of Quebec and
-            provides unique advantages. Let’s explore the key details:
+          {pData?.BenifitsSubHeading}
           </h4>
           <ul style={{ marginLeft: "40px" }}>
             <li>
-              <strong>No LMIA Required:</strong> Unlike traditional work
-              permits, the <strong>Mobilité Francophone</strong> stream operates
-              under the
-              <strong> International Mobility Program</strong>. Employers can
-              hire foreign nationals without the need for a{" "}
-              <strong>Labour Market Impact Assessment (LMIA)</strong>. This
-              means no recruitment efforts or training requirements for Canadian
-              citizens or permanent residents. Additionally, the $1,000 LMIA
-              application fee is waived.
+            {pData?.BenifitsList1}
             </li>
             <li>
-              <strong>Eligibility Without Borders:</strong> The{" "}
-              <strong>Mobilité Francophone program</strong>Mobilité Francophone
-              is open to workers of <strong>any nationality and age</strong>.
-              Unlike the International Experience Canada (IEC) Program, there
-              are no nationality-based restrictions.
+            {pData?.BenifitsList2}
             </li>
             <li>
-              <strong>Language Flexibility:</strong> While the program aims to
-              promote French-speaking workers, the{" "}
-              <strong> language of work does not need to be French</strong>.
-              Employers are not required to communicate in French.
+            {pData?.BenifitsList3}
             </li>
             <li>
-              <strong>TEER Skill Levels:</strong> All{" "}
-              <strong>TEER skill level occupations </strong>(0-5) are eligible
-              to apply, except for primary agricultural work.
+            {pData?.BenifitsList4}
             </li>
             <li>
-              <strong>Stream Evolution:</strong> The program’s eligibility is
-              now tied to public policy reasons related to Canada’s academic
-              institutions or economy, rather than cultural, social, or economic
-              benefits.
+            {pData?.BenifitsList5}
             </li>
           </ul>
         </section>
@@ -215,32 +208,21 @@ const FrancophoneMobilityProgram = () => {
           id="eligibility"
           ref={(el) => (sectionsRef.current[2] = el)}
         >
-          <h2>Eligibility Criteria for Francophone Mobility Program</h2>
+          <h2> {pData?.EligibilityHeading}</h2>
           <p>
-            To qualify for <strong>Mobilité Francophone</strong>, applicants
-            must meet the following conditions:
+          {pData?.EligibilitySubHead}
           </p>
           <ol
             style={{ marginLeft: "40px", marginTop: "20px", lineHeight: "2" }}
           >
             <li>
-              <strong>Job Offer:</strong> Must be from outside Quebec (anywhere
-              else in Canada). Primary agricultural work is not covered.
+            {pData?.EmpReqList1}
             </li>
             <li>
-              <strong>French Language Proficiency:</strong> You must demonstrate
-              a <strong> CLB 5 equivalent</strong> in speaking and listening
-              (not reading and writing) through a French language exam.
-              Alternatively, proof of previous French study or work experience
-              is acceptable.
+            {pData?.EmpReqList2}
             </li>
             <li>
-              <strong>TEF Assessment:</strong> If language proficiency is
-              unclear in the initial application, the{" "}
-              <strong> Test d’Evaluation Du Français (TEF) </strong>may be
-              required. A result of{" "}
-              <strong> Canadian Language Benchmark (CLB) 5 or higher </strong>{" "}
-              is the threshold.
+            {pData?.EligibilityList3}
             </li>
           </ol>
           <button
@@ -256,25 +238,19 @@ const FrancophoneMobilityProgram = () => {
           id="employer-requirement"
           ref={(el) => (sectionsRef.current[3] = el)}
         >
-          <h2>Employer Requirements for the Francophone Mobility Program</h2>
+          <h2>{pData?.EmpReqHeading}</h2>
           <ol style={{marginLeft: "40px"}}>
             <li style={{ marginBottom: "10px" }}>
-              <strong>Job Offer:</strong> Issue a job offer at a reasonable wage
-              rate within the province of work.
+            {pData?.EmpReqList1}
             </li>
             <li style={{ marginBottom: "10px" }}>
-              <strong>LMIA Exempt Code:</strong> Request the LMIA exempt code
-              for the job offer and work permit application. Employer compliance
-              fee is $230.
+            {pData?.EmpReqList2}
             </li>
             <li style={{ marginBottom: "10px" }}>
-              <strong>Proof of Operations:</strong> Provide evidence of
-              operations, payroll, and income to justify the hire and the
-              position.
+            {pData?.EmpReqList3}
             </li>
             <li>
-              <strong>Work Location Identification:</strong> Identify the work
-              location for the job offer and the foreign worker.
+            {pData?.EmpReqList4}
             </li>
           </ol>
         </section>
@@ -284,20 +260,16 @@ const FrancophoneMobilityProgram = () => {
           id="work-permit-duration"
           ref={(el) => (sectionsRef.current[4] = el)}
         >
-          <h2>Work Permit Duration for Francophone Mobility Program</h2>
+          <h2>{pData?.WorkPerDurHeading}</h2>
           <p>
-            Work Permit Duration for Francophone Mobility Program Under the{" "}
-            <strong> C16 LMIA exempt permit code,</strong> the work permit
-            duration is determined by whichever of the following dates comes
-            earlier:
+          {pData?.WorkPerDurSubHead}
           </p>
           <ul style={{ marginLeft: "40px", marginTop: "20px" }}>
             <li>
-              The expiration date of the foreign worker’s passport{" "}
-              <strong>OR</strong>
+            {pData?.WorkPerDurList1}
             </li>
             <li>
-              The duration specified in the job offer issued by the employer.
+            {pData?.WorkPerDurList2}
             </li>
           </ul>
         </section>
@@ -308,20 +280,17 @@ const FrancophoneMobilityProgram = () => {
           ref={(el) => (sectionsRef.current[5] = el)}
         >
           <h2>
-            Family Members and Dependents for Francophone Mobility Program
+          {pData?.FamilyMemHeading}
           </h2>
           <p>
-            For the <strong>Francophone Mobility Program</strong> , family
-            members and dependents have specific options:
+          {pData?.FamilyMemSubHead}
           </p>
           <ul style={{ marginLeft: "40px", marginTop: "10px" }}>
             <li>
-              <strong>Dependent Children:</strong> Can apply for study permits.
+            {pData?.FamilyMemList1}
             </li>
             <li>
-              <strong>Spouses and Common-Law Partners:</strong> Eligible for a
-              spousal open work permit, valid for the duration of the main
-              applicant’s work permit.
+            {pData?.FamilyMemList2}
             </li>
           </ul>
         </section>
@@ -331,10 +300,10 @@ const FrancophoneMobilityProgram = () => {
           id="application-process"
           ref={(el) => (sectionsRef.current[6] = el)}
         >
-          <h2>Application Process for Francophone Mobility Program</h2>
+          <h2> {pData?.AppProHeading}</h2>
           <ol style={{marginLeft: "40px"}}>
             <li>
-              <strong>Job Search:</strong>
+              <strong> {pData?.AppProSubHead1}</strong>
               <ul
                 style={{
                   marginLeft: "40px",
@@ -343,20 +312,15 @@ const FrancophoneMobilityProgram = () => {
                 }}
               >
                 <li>
-                  Identify opportunities: Utilize specialized job platforms and
-                  the LinkedIn network to find job offers that align with your
-                  profile in regions outside Quebec.
+                {pData?.AppProSubHead1List1}
                 </li>
                 <li>
-                  <strong>Tip:</strong> Customize your search by applying
-                  filters for TEER 0 to TEER 5 positions and specifying your
-                  preference for French. Remember agriculture jobs are not
-                  covered under this program.
+                {pData?.AppProSubHead1List2}
                 </li>
               </ul>
             </li>
             <li>
-              <strong>Preparing Your Application:</strong>
+              <strong>{pData?.AppProSubHead2}</strong>
               <ul
                 style={{
                   marginLeft: "40px",
@@ -365,19 +329,15 @@ const FrancophoneMobilityProgram = () => {
                 }}
               >
                 <li>
-                  <strong>CV and Cover Letter: </strong> Adapt your CV and cover
-                  letter to the Canadian format, emphasizing your fluency in
-                  French and relevant professional experience.
+                {pData?.AppProSubHead2List1}
                 </li>
                 <li>
-                  <strong>Tip:</strong> Highlight concrete examples of
-                  professional achievements to showcase your value to potential
-                  Canadian employers.
+                {pData?.AppProSubHead2List2}
                 </li>
               </ul>
             </li>
             <li>
-              <strong>File Submission:</strong>
+              <strong>{pData?.AppProSubHead3}</strong>
               <ul
                 style={{
                   marginLeft: "40px",
@@ -386,19 +346,14 @@ const FrancophoneMobilityProgram = () => {
                 }}
               >
                 <li>
-                  <strong>Eligibility Criteria: </strong> Ensure that you meet
-                  all eligibility criteria before submitting your application.
+                {pData?.AppProSubHead3List1}
                 </li>
                 <li>
                   {" "}
-                  <strong>Necessary Documents:</strong> Compile essential
-                  documents, including proof of language skills, professional
-                  qualifications, and a valid job offer.
+                  {pData?.AppProSubHead3List2}
                 </li>
                 <li>
-                  <strong>Tip:</strong> Review your application thoroughly to
-                  avoid errors or omissions that could delay or jeopardize the
-                  process.
+                {pData?.AppProSubHead3List3}
                 </li>
               </ul>
             </li>
@@ -410,17 +365,13 @@ const FrancophoneMobilityProgram = () => {
           id="work-permit-renewals"
           ref={(el) => (sectionsRef.current[7] = el)}
         >
-          <h2>Work Permit Renewals for the Mobilité Francophone Stream</h2>
+          <h2>{pData?.WorkPerRenHeading}</h2>
           <ul>
             <h4>
-              If you currently hold a work permit issued through the Mobilité
-              Francophone stream, you can easily renew it. Here’s how:
+            {pData?.WorkPerRenSubHead}
             </h4>
             <li style={{marginLeft: "40px"}}>
-              <strong>Submission Options:</strong> Renewals can be submitted by
-              mail or online. Existing permits under the discontinued
-              “Significant benefit – Francophone destined to work outside of
-              Quebec” category can be renewed through Mobilité Francophone.
+            {pData?.WorkPerRenList}
             </li>
           </ul>
         </section>
@@ -430,21 +381,12 @@ const FrancophoneMobilityProgram = () => {
           id="why-choose-us"
           ref={(el) => (sectionsRef.current[8] = el)}
         >
-          <h2>Still not sure?</h2>
+          <h2>{pData?.StillNotSureHeading}</h2>
           <p>
-            If you have received a refusal for any of the reasons mentioned
-            above, do not worry. With over a decade of experience, we specialize
-            in previously refused cases. While we don't provide jobs for LMIA,
-            we can certainly assist you if you have a job offer. We have
-            obtained approvals for clients who had multiple previous refusals
-            with a tailored approach, addressing each concern listed in previous
-            refusals. We use case law and similar cases as precedents to achieve
-            a high success rate.
+          {pData?.StillNotSurePara1}
           </p>
           <p>
-            At Brightlight Immigration, we have a dedicated team of visa
-            application specialists to assist you from the start of the
-            application process to obtaining your visa. Start your process now.
+          {pData?.StillNotSurePara2}
           </p>
           <button
             onClick={() =>

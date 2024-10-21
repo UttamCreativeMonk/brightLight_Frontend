@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet-async";
 const ExtensionsDraft = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([])
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -31,6 +32,22 @@ const ExtensionsDraft = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/extensionsDraft")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -148,7 +165,7 @@ const ExtensionsDraft = () => {
           id="about-program"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          Extension of Temporary Status
+       {pData?.extensionHeading}
         </h1>
         <section
           className={`${styles.introduction} ${styles.section}`}
@@ -156,9 +173,7 @@ const ExtensionsDraft = () => {
           ref={(el) => (sectionsRef.current[1] = el)}
         >
           <p>
-            The plans can change, and you may need to extend your stay in Canada
-            for various reasons. Let us guide you to maintain your legal status
-            in Canada.
+          {pData?.extensionPara}
           </p>
           <p style={{marginTop: "20px"}}>
             If you are visiting Canada for leisure, work, family visits,
@@ -175,22 +190,17 @@ const ExtensionsDraft = () => {
           ref={(el) => (sectionsRef.current[2] = el)}
         >
           <h2 className={styles.subheading}>
-            Benefits of Extending Your Temporary Status
+          {pData?.BenifitHeading}
           </h2>
           <ul style={{marginLeft: "40px"}}>
             <li>
-              You can stay longer in Canada after applying for an extension,
-              without having to leave Canada and come back.
+            {pData?.b1}
             </li>
             <li>
-              By not needing to travel outside of Canada, you save money on
-              travel expenses such as flights, accommodation, and other
-              associated costs.
+            {pData?.b2}
             </li>
             <li>
-              Applying for an extension ensures that you adhere to Canadian
-              immigration laws and regulations, avoiding any potential penalties
-              or issues with future visa applications.
+            {pData?.b3}
             </li>
           </ul>
         </section>
@@ -201,32 +211,25 @@ const ExtensionsDraft = () => {
           ref={(el) => (sectionsRef.current[3] = el)}
         >
           <h2 className={styles.subheading}>
-            How to Apply for an Extension of Temporary Status?
+          {pData?.HowToApplyHeading}
           </h2>
           <p>
-            To extend your visitor status in Canada, you'll need to gather the
-            following documents. Please note that this is a general list, and
-            you may be required to provide additional documents depending on
-            your specific circumstances.
+          {pData?.HowToApplySubHead}
           </p>
           <ul>
             <li>
-              Complete the appropriate visitor record extension application
-              forms.
+            {pData?.ha1}
             </li>
-            <li>Pay the applicable application fee.</li>
-            <li>Submit a copy of your valid passport.</li>
+            <li>{pData?.ha2}</li>
+            <li>{pData?.ha3}</li>
             <li>
-              Provide evidence of sufficient financial funds to support
-              yourself.
+            {pData?.ha4}
             </li>
             <li>
-              Provide a strong reason why you want to continue to live in
-              Canada.
+            {pData?.ha5}
             </li>
             <li>
-              Provide compelling reasons about why you will leave Canada after
-              the end of the proposed stay.
+            {pData?.ha6}
             </li>
           </ul>
         </section>
@@ -236,23 +239,12 @@ const ExtensionsDraft = () => {
           id="testing3"
           ref={(el) => (sectionsRef.current[4] = el)}
         >
-          <h2 className={styles.subheading}>Still Not Sure?</h2>
+          <h2 className={styles.subheading}>{pData?.StillNotHeading}</h2>
           <p>
-            If you have received a refusal for any reason, do not worry. With
-            over a decade of experience, we specialize in previously refused
-            cases. We have secured approvals for clients who had multiple
-            previous refusals. We achieve this with a tailored approach to your
-            specific case, addressing each concern that the officer has listed
-            in previous refusals. We use case law and find similar cases to your
-            circumstances that had positive results, and we use them as
-            precedents in cases we work on. This is why we have a high success
-            rate.
+          {pData?.s1}
           </p>
           <p>
-            At Brightlight Immigration, we have a dedicated team of visa
-            application specialists who can assist you from the start of the
-            application process all the way to obtaining your visa. Start your
-            process now.
+          {pData?.s2}
           </p>
 
           <button
