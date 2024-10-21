@@ -107,6 +107,8 @@ import FrenchTargetedDrawContent from "../admin_sections/FrenchTargetDraw";
 import FrenchTargetedDrawMeta from "../admin_sections/FrenchTargetDrawMeta";
 import HealthAuthoritiesStreamContent from "../admin_sections/HealthAuthoritiesStream";
 import HealthAuthoritiesStreamMeta from "../admin_sections/HealthAuthoritiesStreamMeta";
+import GlobalStreamLMIAContent from "../admin_sections/GlobalStreamLMIA";
+import GlobalStreamLMIAMeta from "../admin_sections/GlobalStreamLMIAMeta";
 
 let Admin = () => {
   let { logout } = useAuth();
@@ -2634,14 +2636,14 @@ let Admin = () => {
                     activeSection === "french_tageted_draw_meta" && (
                       <FrenchTargetedDrawMeta />
                     )}
-
+ 
                   {activePage === "global_stream_lmia" &&
                     activeSection === "global_stream_lmia_content" && (
-                      <FrenchTargetedDrawContent />
+                      <GlobalStreamLMIAContent />
                     )}
                   {activePage === "global_stream_lmia" &&
                     activeSection === "global_stream_lmia_meta" && (
-                      <FrenchTargetedDrawMeta />
+                      <GlobalStreamLMIAMeta />
                     )}
 
                   {activePage === "health_authorities_stream" &&
