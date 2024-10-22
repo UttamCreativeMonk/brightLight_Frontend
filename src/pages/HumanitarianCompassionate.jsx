@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet-async";
 const HumanitarianCompassionate = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([])
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -30,6 +31,21 @@ const HumanitarianCompassionate = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/humanitarian-compassionate")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -145,20 +161,12 @@ const HumanitarianCompassionate = () => {
           id="about-program"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          <h1>Canada Humanitarian and Compassionate (H&C) Program</h1>
+          <h1>{pData?.HumaniHeading}</h1>
           <p>
-            Unlike traditional immigration programs that prioritize factors like
-            education, work experience, and language proficiency, the
-            Humanitarian and Compassionate (H&C) program focuses on the human
-            element, acknowledging that life's challenges can be tough and
-            unpredictable.
+          {pData?.HumaniPara1}
           </p>
           <p>
-            The Humanitarian and Compassionate (H&C) program allows Canadian
-            citizens and permanent residents to sponsor certain family members
-            who meet the H&C criteria. This program focuses on individuals or
-            families who, despite their efforts, end up in difficult situations
-            and can't go through the usual immigration process.
+          {pData?.HumaniPara2}
           </p>
         </header>
 
@@ -168,14 +176,10 @@ const HumanitarianCompassionate = () => {
           ref={(el) => (sectionsRef.current[1] = el)}
         >
           <h2>
-            Who Can Apply Under the Humanitarian and Compassionate (H&C) Program
-            for Family Reunification?
+          {pData?.WhoCanAppHeading}
           </h2>
           <p>
-            If you are a Canadian citizen or permanent resident, you can sponsor
-            certain family members under the H&C program if you can show that
-            the family member is eligible for H&C consideration based on one or
-            more of the following factors:
+          {pData?.WhoCanAppPara}
           </p>
           <ul
             style={{
@@ -185,41 +189,30 @@ const HumanitarianCompassionate = () => {
             }}
           >
             <li>
-              The family member is at risk of suffering significant hardship or
-              harm if they are not allowed to stay in Canada.
+            {pData?.wL1}
             </li>
             <li>
-              The family member has already established strong ties to Canada
-              and would experience significant hardship if they were forced to
-              leave.
+            {pData?.wL2}
             </li>
             <li>
-              The family member's case presents unique and compelling
-              circumstances that warrant humanitarian consideration. This could
-              include medical conditions, domestic violence, or other
-              exceptional factors.
+            {pData?.wL3}
             </li>
           </ul>
           <h2>
-            Here are a few examples of Humanitarian and Compassionate (H&C)
-            cases under family reunification:
+          {pData?.FewExamHeading}
           </h2>
           <ul style={{marginLeft: "40px"}}>
             <li>
-              A child who has been separated from their parents due to war or
-              persecution in their home country.
+            {pData?.feL1}
             </li>
             <li>
-              A spouse or common-law partner who has been living outside Canada
-              and has no family or support network in their home country.
+            {pData?.feL2}
             </li>
             <li>
-              A dependent child who needs special medical care that is not
-              available in their home country.
+            {pData?.feL3}
             </li>
             <li>
-              A sponsor who is elderly or ill and cannot travel to their home
-              country to bring their family members to Canada.
+            {pData?.feL4}
             </li>
           </ul>
         </section>
@@ -230,12 +223,10 @@ const HumanitarianCompassionate = () => {
           ref={(el) => (sectionsRef.current[2] = el)}
         >
           <h2>
-            Eligibility Criteria for the Humanitarian and Compassionate (H&C)
-            Program
+          {pData?.EligibilityHeading}
           </h2>
           <h4>
-            To be eligible for H&C sponsorship under the family reunification
-            program, you must meet the following criteria:
+          {pData?.EligibilitySubHeading}
           </h4>
           <ul
             style={{
@@ -245,20 +236,16 @@ const HumanitarianCompassionate = () => {
             }}
           >
             <li>
-              You must be a spouse, common-law partner, or parent of a Canadian
-              citizen or permanent resident.
+            {pData?.e1}
             </li>
             <li>
-              The Canadian citizen or permanent resident should be living in
-              Canada at the time of your application.
+            {pData?.e2}
             </li>
             <li>
-              You must show proof of the difficulties you'll face if you can't
-              stay in Canada.
+            {pData?.e3}
             </li>
             <li>
-              Your case must present unique and compelling circumstances that
-              need humanitarian consideration.
+            {pData?.e4}
             </li>
           </ul>
         </section>
@@ -269,16 +256,15 @@ const HumanitarianCompassionate = () => {
           ref={(el) => (sectionsRef.current[3] = el)}
         >
           <h2>
-            How to Apply for the Humanitarian and Compassionate (H&C) Program
+          {pData?.HowApplyHeading}
           </h2>
           <ol style={{marginLeft: "40px"}}>
-            <li>Collect all relevant evidence to support your H&C claims.</li>
+            <li>  {pData?.ha1}</li>
             <li>
-              Fill out the necessary forms and submit your application to IRCC.
+            {pData?.ha2}
             </li>
             <li>
-              Your sponsor will attend an interview with an IRCC officer on your
-              behalf.
+            {pData?.ha3}
             </li>
           </ol>
         </section>
@@ -289,23 +275,17 @@ const HumanitarianCompassionate = () => {
           ref={(el) => (sectionsRef.current[4] = el)}
         >
           <h2>
-            Common Reasons for Refusals of the Humanitarian and Compassionate
-            (H&C) Program
+          {pData?.RefusalHeading}
           </h2>
           <ul style={{marginLeft: "40px"}}>
             <li>
-              You did not provide enough evidence to support your H&C claims.
-              This could include evidence of hardship, integration, or
-              humanitarian reasons.
+            {pData?.r1}
             </li>
             <li>
-              You provided unclear or inconsistent information in your
-              application, making it difficult for an IRCC officer to understand
-              your situation and make a decision.
+            {pData?.r2}
             </li>
             <li>
-              You may be inadmissible to Canada based on other grounds, such as
-              criminality, health, or financial reasons.
+            {pData?.r3}
             </li>
           </ul>
           <button
@@ -323,20 +303,12 @@ const HumanitarianCompassionate = () => {
           id="why-choose-us"
           ref={(el) => (sectionsRef.current[5] = el)}
         >
-          <h2>Still Not Sure?</h2>
+          <h2>{pData?.StillNotHeading}</h2>
           <p>
-            If you have received a refusal for any of the reasons mentioned
-            above, do not worry. With over a decade of experience, we specialize
-            in previously refused cases. We have successfully obtained approvals
-            for clients with multiple previous refusals by using a tailored
-            approach, addressing each concern listed in previous refusals, and
-            applying case law precedents. Our high success rate is a testament
-            to our expertise.
+          {pData?.s1}
           </p>
           <p>
-            At Brightlight Immigration, we have a dedicated team of visa
-            application specialists who can assist you from the start of the
-            application process all the way to obtaining your visa.{" "}
+          {pData?.s2}
           </p>
           <button
             onClick={() =>

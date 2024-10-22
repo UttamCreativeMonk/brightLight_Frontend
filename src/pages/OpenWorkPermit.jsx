@@ -13,6 +13,7 @@ import { Helmet } from "react-helmet-async";
 const OpenWorkPermit = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -33,6 +34,21 @@ const OpenWorkPermit = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/openWorkPer")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -149,13 +165,9 @@ const OpenWorkPermit = () => {
             ref={(el) => (sectionsRef.current[0] = el)}
           >
             <header className={styles.header}>
-              <h1>Open Work Permit</h1>
+              <h1>{pData?.openWorkPermitHeading}</h1>
               <p>
-                A Canadian Open Work Permit is a temporary document that allows
-                foreign nationals to work in Canada without being tied to a
-                specific employer. This type of permit offers flexibility and
-                opens up a wide range of job opportunities for eligible
-                individuals.
+              {pData?.WhatIsPara}
               </p>
             </header>
           </section>
@@ -165,7 +177,7 @@ const OpenWorkPermit = () => {
             id="categories"
             ref={(el) => (sectionsRef.current[1] = el)}
           >
-            <h2>Categories Under Open Work Permit</h2>
+            <h2>{pData?.CategoriesHeading}</h2>
             <div className={styles.categories}>
               <Link to="/pgwp" className={styles.button}>
                 Post-Graduate Work Permit (PGWP)
@@ -198,31 +210,25 @@ const OpenWorkPermit = () => {
             id="how-to-apply"
             ref={(el) => (sectionsRef.current[2] = el)}
           >
-            <h2>Here’s How We Can Help You</h2>
+            <h2>{pData?.HowWeHelpHeading}</h2>
             <p>
-              Our process is designed to assist you from start to finish,
-              ensuring you have the support you need to obtain your Open Work
-              Permit. We follow a structured approach that includes:
+            {pData?.HowWeHelpSubHeading}
             </p>
             <ul style={{ marginLeft: "40px" }}>
               <li>
-                Initial Consultation: Understanding your needs and eligibility.
+              {pData?.hh1}
               </li>
               <li>
-                Document Preparation: Assisting with gathering and preparing
-                necessary documents.
+              {pData?.hh2}
               </li>
               <li>
-                Application Submission: Filing your application accurately and
-                on time.
+              {pData?.hh3}
               </li>
               <li>
-                Follow-Up: Monitoring the progress of your application and
-                addressing any issues.
+              {pData?.hh4}
               </li>
               <li>
-                Support Throughout: Providing guidance and support throughout
-                the entire process.
+              {pData?.hh5}
               </li>
             </ul>
             <button

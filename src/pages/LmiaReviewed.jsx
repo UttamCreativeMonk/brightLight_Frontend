@@ -12,6 +12,7 @@ import { Helmet } from "react-helmet-async";
 const LmiaReviewed = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -32,6 +33,21 @@ const LmiaReviewed = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/Lmia")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -156,42 +172,19 @@ const LmiaReviewed = () => {
             ref={(el) => (sectionsRef.current[0] = el)}
           >
             <header className={styles.header}>
-              <h1>Labour Market Impact Assessment (LMIA)</h1>
+              <h1>{pData?.LmiaHeading}</h1>
 
               <p>
-                If you're looking to apply for an LMIA, it's because you are
-                either a foreign worker who wants to apply for a job on a
-                temporary work permit that is available in any Canadian province
-                or an employer who wants to bring in skilled professionals or
-                experienced workers to join their team in Canada.
+              {pData?.WhatIsLmiaPara1}
               </p>
               <p>
-                Canada relies on the Temporary Foreign Worker Program (TFWP) to
-                bring in workers from other countries when there's a shortage of
-                qualified workers in Canada for a particular job. When a
-                Canadian employer wants to hire a foreign worker, they generally
-                submit an application known as a Labour Market Impact Assessment
-                (LMIA) to the Canadian Government Department - Employment and
-                Social Development Canada (ESDC).
+              {pData?.WhatIsLmiaPara2}
               </p>
               <p>
-                An ESDC officer after reviewing the application assesses whether
-                hiring the foreign worker would be beneficial for the Canadian
-                job market. They ensure that qualified Canadians/PR hasn't been
-                overlooked for the position and that the foreign worker will
-                receive appropriate pay and benefits according to federal and
-                provincial regulations.
+              {pData?.WhatIsLmiaPara3}
               </p>
               <p>
-                If the LMIA is positive or neutral, it means there's no Canadian
-                available for the job, and hiring a foreign worker won't hurt
-                the Canadian job market. However, if it's negative, it means
-                that the employer has failed to demonstrate that he does not
-                meet at least one of the requirements mentioned on the ESDC
-                website. At Brightlight Immigration, we do not provide
-                recruitment services. As your official legal consultants, we can
-                represent your case to ESDC and get you the desired favorable
-                response.
+              {pData?.WhatIsLmiaPara4}
               </p>
             </header>
           </section>
@@ -201,48 +194,33 @@ const LmiaReviewed = () => {
             id="benifits"
             ref={(el) => (sectionsRef.current[1] = el)}
           >
-            <h2>Benefits of the LMIA Program</h2>
+            <h2>{pData?.BenifitsHeading}</h2>
             <div className={styles.benefits}>
               <div className={styles.benefit}>
-                <h3>Benefits for Canadian Employers</h3>
+                <h3>{pData?.BenefitsCanadianEmployersSubHeading}</h3>
                 <ul style={{marginLeft: "40px"}}>
                   <li>
-                    The LMIA program lets Canadian employers hire skilled people
-                    from around the world, filling important roles in various
-                    industries.
+                  {pData?.b11}
                   </li>
                   <li>
-                    Canadian businesses can grow by hiring workers from other
-                    countries, bringing in new ideas, and reaching more
-                    customers. This global connection makes them more innovative
-                    and competitive.
+                  {pData?.b12}
                   </li>
                   <li>
-                    The LMIA program helps solve shortages of workers in
-                    important areas like manufacturing, healthcare, and
-                    technology. By filling these gaps, businesses can run
-                    smoothly and help Canada's economy grow.
+                  {pData?.b13}
                   </li>
                 </ul>
               </div>
               <div className={styles.benefit}>
-                <h3>Benefits for Foreign Workers</h3>
+                <h3>{pData?.BenefitsForeignWorkersSubHeading}</h3>
                 <ul style={{marginLeft: "40px"}}>
                   <li>
-                    The LMIA program gives foreign workers a chance to work in
-                    Canada, gaining valuable experience in a well-known country.
-                    This experience can open doors for their future careers.
+                  {pData?.b21}
                   </li>
                   <li>
-                    Working in Canada helps foreign workers learn new skills,
-                    adapt to different work settings, and experience various
-                    industries and cultures. This professional growth can lead
-                    to better jobs and personal development.
+                  {pData?.b22}
                   </li>
                   <li>
-                    Foreign workers who get jobs through the LMIA program can
-                    work legally in Canada, giving them financial stability and
-                    an opportunity to start a new life in a friendly country.
+                  {pData?.b23}
                   </li>
                 </ul>
               </div>
@@ -254,7 +232,7 @@ const LmiaReviewed = () => {
             id="pathways"
             ref={(el) => (sectionsRef.current[2] = el)}
           >
-            <h2>Pathways of LMIA Available</h2>
+            <h2>{pData?.PathwaysHeading}</h2>
             <div className={styles.pathways}>
               <Link to="/low-wage-lmia" className={styles.button}>
                 High-wage/Low-wage LMIA
@@ -282,9 +260,9 @@ const LmiaReviewed = () => {
             id="how-to-apply"
             ref={(el) => (sectionsRef.current[3] = el)}
           >
-            <h2>How to Apply for LMIA</h2>
+            <h2>{pData?.ApplyHeading}</h2>
             <div className={styles.applicationProcess}>
-              <h3>As an Employer</h3>
+              <h3>{pData?.ApplyEmployerSubHeading}</h3>
               <ul
                 style={{
                   marginTop: "10px",
@@ -293,21 +271,16 @@ const LmiaReviewed = () => {
                 }}
               >
                 <li>
-                  You must submit an LMIA application to Employment and Social
-                  Development Canada (ESDC).
+                {pData?.ae1}
                 </li>
                 <li>
-                  ESDC will assess the application to determine whether you meet
-                  the requirements.
+                {pData?.ae2}
                 </li>
                 <li>
-                  If the application is approved, ESDC will provide you with a
-                  copy of the positive LMIA.
+                {pData?.ae3}
                 </li>
                 <li>
-                  You can then add the foreign worker’s name to the LMIA so that
-                  they can apply for a work permit. This can be done upfront as
-                  well.
+                {pData?.ae4}
                 </li>
               </ul>
               <h3>As a Foreign Worker</h3>
@@ -318,19 +291,16 @@ const LmiaReviewed = () => {
                   marginBottom: "30px",
                 }}
               >
-                <li>Apply for a work permit as per guidelines set by IRCC.</li>
+                <li> {pData?.af1}</li>
                 <li>
-                  IRCC will assess your application to check if you meet the
-                  requirements.
+                {pData?.af2}
                 </li>
                 <li>
-                  If your application is approved, IRCC will issue you a work
-                  visa.
+                {pData?.af3}
                 </li>
-                <li>After entering Canada, you will be given a work permit.</li>
+                <li>{pData?.af4}</li>
                 <li>
-                  With the work permit, you’re supposed to work for the employer
-                  who provided you with the LMIA.
+                {pData?.af5}
                 </li>
               </ul>
             </div>
@@ -341,7 +311,7 @@ const LmiaReviewed = () => {
             id="refusal-reasons"
             ref={(el) => (sectionsRef.current[4] = el)}
           >
-            <h2>Common Reasons for LMIA Refusal</h2>
+            <h2>{pData?.RefusalHeading}</h2>
             <h4>
               Don’t forget to avoid these common LMIA refusal reasons and
               increase your chances of approval.
@@ -354,36 +324,29 @@ const LmiaReviewed = () => {
               }}
             >
               <li>
-                As an employer, you did not try to hire Canadians by
-                advertising, attending job fairs, or using online platforms.
+              {pData?.r1}
               </li>
               <li>
-                As an employer, you had an LMIA revoked in the past two years.
+              {pData?.r2}
               </li>
               <li>
-                As an employer, you have labor disputes or violate employment
-                standards.
+              {pData?.r3}
               </li>
-              <li>As an employer, your business isn’t legitimate.</li>
+              <li> {pData?.r4}</li>
               <li>
-                As an employer, you did not provide the necessary documentation
-                for the foreign worker's work permit.
+              {pData?.r5}
               </li>
               <li>
-                As a worker, you don't have enough relevant work experience or
-                qualifications for the position.
+              {pData?.r6}
               </li>
               <li>
-                As a worker, you couldn’t meet the language requirements as
-                required.
+              {pData?.r7}
               </li>
               <li>
-                As a worker, you have a criminal history, especially for serious
-                offenses.
+              {pData?.r8}
               </li>
               <li>
-                As a worker, you do not meet the specific requirements outlined
-                in the job description.
+              {pData?.r9}
               </li>
             </ul>
           </section>
@@ -395,25 +358,12 @@ const LmiaReviewed = () => {
             id="why-choose-us"
             ref={(el) => (sectionsRef.current[5] = el)}
           >
-            <h2>Still Not Sure?</h2>
+            <h2> {pData?.StillNotHeading}</h2>
             <p>
-              If you have received a refusal for any of the reasons mentioned
-              above, do not worry. With over a decade of experience, we
-              specialize in previously refused cases. While we don't provide
-              jobs for LMIA, we can certainly assist you if you have a job
-              offer. We have obtained approvals for clients who had multiple
-              previous refusals. We achieve this with a tailored approach to
-              your specific case, addressing each concern that the officer has
-              listed in previous refusals. We use case law and find similar
-              cases to your circumstances that had positive results, and we use
-              them as precedents in cases we work on. This is why we have a high
-              success rate.
+            {pData?.s1}
             </p>
             <p>
-              At Brightlight Immigration, we have a dedicated team of visa
-              application specialists who can assist you from the start of the
-              application process to obtaining your visa. Start your process
-              now.
+            {pData?.s2}
             </p>
             <a
               href="https://api.leadconnectorhq.com/widget/booking/Tg8EPG2CVEMkQ1J0F3yj"

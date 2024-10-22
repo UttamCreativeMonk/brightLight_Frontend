@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet-async";
 const Pnp = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -31,6 +32,22 @@ const Pnp = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/pnp-page")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -148,47 +165,31 @@ const Pnp = () => {
           id="about-program"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          Provincial Nominee Program
+          {pData?.Heading}
         </h1>
         <p
           className={`${styles.paragraph} ${styles.section}`}
           id="testing1"
           ref={(el) => (sectionsRef.current[1] = el)}
         >
-          While the federal Express Entry system remains a popular pathway to
-          Canadian permanent residence, the Provincial Nominee Program (PNP)
-          offers a unique and often faster track for individuals interested in
-          settling in a specific province or territory.
+          {pData?.Description1}
         </p>
         <p
           className={`${styles.paragraph} ${styles.section}`}
           id="testing2"
           ref={(el) => (sectionsRef.current[2] = el)}
         >
-          Unlike the federal Express Entry, which considers applicants based on
-          a standardized set of criteria, PNPs provide a more personalized
-          approach to selecting immigrants. Each province and territory has its
-          own set of PNP streams, each tailored to meet their specific needs.
-          This flexibility allows skilled workers, entrepreneurs, and investors
-          to find a PNP stream that aligns with their qualifications and
-          aspirations.
+           {pData?.Description2}
         </p>
         <p
           className={`${styles.paragraph} ${styles.section}`}
           id="testing3"
           ref={(el) => (sectionsRef.current[3] = el)}
         >
-          The PNP's diverse streams cater to a wide range of skills and
-          experiences. For skilled workers, various streams prioritize
-          professionals with specific occupations, such as healthcare workers,
-          engineers, and IT experts. Entrepreneurs can explore PNP streams that
-          support business creation and investment opportunities. And for those
-          seeking a more direct path to Canadian residency, the PNP offers
-          streams for international graduates and individuals with family ties
-          to Canada.
+           {pData?.Description3}
         </p>
         <h2 className={styles.heading2}>
-          BC Provincial Nominee Program (BC PNP)
+        {pData?.bcpnpHeading}
         </h2>
         <button
           style={{ marginTop: "10px", marginBottom: "60px" }}
@@ -280,7 +281,7 @@ const Pnp = () => {
           id="testing7"
           ref={(el) => (sectionsRef.current[28] = el)}
         >
-          How to apply for PNP?
+          {pData?.ApplyHeading}
         </h3>
         <ul
           style={{
@@ -293,25 +294,19 @@ const Pnp = () => {
           ref={(el) => (sectionsRef.current[49] = el)}
         >
           <li className={styles.listItem}>
-            Firstly, choose the province or territory you are interested in
-            living in. Each province and territory has its own set of PNP
-            programs and eligibility criteria, so it is important to research
-            your options carefully. Or, for a stress free solution, let us
-            handle your case for you.{" "}
+          {pData?.ApplyList1}{" "}
             <a href="/pnp" className={styles.link}>
               Click here
             </a>
           </li>
           <li className={styles.listItem}>
-            Submit all of the required documents for that particular province.
+          {pData?.ApplyList2}
           </li>
           <li className={styles.listItem}>
-            You may be required to attend an interview as part of your
-            application process.
+          {pData?.ApplyList3}
           </li>
           <li className={styles.listItem}>
-            If your application is successful, the province or territory will
-            nominate you for permanent residence.
+          {pData?.ApplyList4}
           </li>
         </ul>
 
@@ -320,7 +315,7 @@ const Pnp = () => {
           id="refusal-reasons"
           ref={(el) => (sectionsRef.current[10] = el)}
         >
-          Common reasons for refusals for PNP
+           {pData?.RefusalHeading}
         </h3>
         <ul
           style={{
@@ -332,21 +327,14 @@ const Pnp = () => {
           id="testing9"
           ref={(el) => (sectionsRef.current[11] = el)}
         >
-          <li className={styles.listItem}>You shared incorrect information.</li>
-          <li className={styles.listItem}>
-            You couldn’t meet the minimum qualifications for the PNP program you
-            are applying to including having the required skills, experience,
-            education, and language proficiency.
-          </li>
-          <li className={styles.listItem}>Your occupation is not in demand.</li>
-          <li className={styles.listItem}>
-            You couldn’t demonstrate your family ties to that particular
-            province.
-          </li>
+          <li className={styles.listItem}>{pData?.RefusalList1}</li>
+          <li className={styles.listItem}>{pData?.RefusalList2}</li>
+          <li className={styles.listItem}>{pData?.RefusalList3}</li>
+          <li className={styles.listItem}>{pData?.RefusalList4}</li>
         </ul>
 
-        {/* <h3 className={styles.heading3} id="why-choose-us">
-          Still not sure?
+        <h3 className={styles.heading3} >
+        {pData?.StillNotSureHeading}
         </h3>
         <p
           style={{marginTop: "20px", marginBottom: "-20px"}}
@@ -354,25 +342,14 @@ const Pnp = () => {
           id="testing10"
           ref={(el) => (sectionsRef.current[12] = el)}
         >
-          If you have received a refusal for any of the reasons mentioned above,
-          do not worry. With over a decade of experience, we specialize in
-          previously refused cases. We have got approvals for clients who had
-          multiple previous refusals. We achieve this with a tailored approach
-          to your specific case, addressing each concern that the officer has
-          listed in previous refusals. We use case law and find similar cases to
-          your circumstances that had positive results, and we use them as
-          precedents in cases we work on. This is why we have a high success
-          rate.
+          {pData?.StillNotSurePara1}
         </p>
         <p
           className={`${styles.paragraph} ${styles.section}`}
           id="testing11"
           ref={(el) => (sectionsRef.current[13] = el)}
         >
-          At Brightlight Immigration, we have a dedicated team of visa
-          application specialists who can assist you from the start of the
-          application process all the way to obtaining your visa. Start your
-          process now.
+           {pData?.StillNotSurePara2}
         </p>
         <button
           id="book-appointment"
@@ -383,7 +360,7 @@ const Pnp = () => {
           }
         >
           Book Appointment
-        </button> */}
+        </button>
 
         <section
           className={`${styles.whyChooseUs} ${styles.section}`}

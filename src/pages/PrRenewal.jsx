@@ -12,6 +12,7 @@ let PrRenewal = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
   const [data, setData] = useState({});
+  let [pData,setPData]=useState([]);
 
   useEffect(() => {
     fetch("https://brightlight-node.onrender.com/prRenewalMeta")
@@ -21,6 +22,21 @@ let PrRenewal = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/pr-renewal")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -147,7 +163,7 @@ let PrRenewal = () => {
         id="about-the-program"
         ref={(el) => (sectionsRef.current[100] = el)}
       >
-        <h2 style={{ textAlign: "center" }} className={styles.sectionTitle}>
+        <h2 style={{ textAlign: "center" ,   color: "#e8c47c" }} className={styles.sectionTitle}>
           Permanent Residency Renewal
         </h2>
         <p style={{ textAlign: "center", marginTop: "20px" }}>
@@ -179,26 +195,14 @@ let PrRenewal = () => {
         ref={(el) => (sectionsRef.current[0] = el)}
       >
         <h2 className={styles.sectionTitle}>
-          Eligibility for Permanent Residency Renewal
+        {pData?.EligibleHeading}
         </h2>
         <ul style={{ marginLeft: "40px" }} className={styles.sectionContent}>
-          <li>You should be a permanent resident of Canada.</li>
-          <li>
-            You have lived in Canada for at least 2 years out of the last 5
-            years.
-          </li>
-          <li>
-            You can apply for renewal up to 90 days before your current PR card
-            expires.
-          </li>
-          <li>
-            You shouldn’t be under an active removal order by a Canadian
-            immigration judge.
-          </li>
-          <li>
-            If you have already become a Canadian citizen, you do not need to
-            renew your PR card.
-          </li>
+          <li>{pData?.e1}</li>
+          <li>{pData?.e2}</li>
+          <li>{pData?.e3}</li>
+          <li>{pData?.e4}</li>
+          <li>{pData?.e5}</li>
         </ul>
       </div>
 
@@ -208,15 +212,10 @@ let PrRenewal = () => {
         ref={(el) => (sectionsRef.current[1] = el)}
       >
         <h2 className={styles.sectionTitle}>
-          How to Apply for Permanent Residency Renewal
+        {pData?.HowApplyHeading}
         </h2>
         <p className={styles.sectionContent}>
-          Renewing your PR card is a straightforward process that can be done
-          online through the Government of Canada's website or by mail. You will
-          need to fill out the necessary forms, provide supporting documents,
-          and pay the applicable fees. However, this is a golden ticket for you
-          and you shouldn’t risk it if you are not sure about it. Let us take
-          care of this for you and get your renewal at the earliest.
+        {pData?.HowApplyPara}
         </p>
       </div>
 
@@ -226,24 +225,17 @@ let PrRenewal = () => {
         ref={(el) => (sectionsRef.current[2] = el)}
       >
         <h2 className={styles.sectionTitle}>
-          Reasons for Refusal of Permanent Residency Renewal
+        {pData?.RefusalHeading}
         </h2>
         <p style={{ marginTop: "20px", marginBottom: "20px" }}>
           Don’t forget to avoid these common PR Renewal refusal reasons and
           increase your chances of approval.
         </p>
         <ul style={{ marginLeft: "40px" }} className={styles.sectionContent}>
-          <li>You did not complete two years out of the last five years.</li>
-          <li>
-            You are not physically present in Canada when you apply for renewal.
-          </li>
-          <li>
-            You got convicted of an offense related to the misuse of a PR card.
-          </li>
-          <li>
-            You gave false or misleading information on your PR card renewal
-            application.
-          </li>
+          <li>{pData?.r1}</li>
+          <li>{pData?.r2}</li>
+          <li>{pData?.r3}</li>
+          <li>{pData?.r4}</li>
         </ul>
       </div>
 

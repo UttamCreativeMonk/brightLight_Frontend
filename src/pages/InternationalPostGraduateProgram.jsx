@@ -11,7 +11,8 @@ import { Helmet } from "react-helmet-async";
 const InternationalPostGraduateProgram = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
-
+  let [pData,setPData]=useState([]);
+  
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
@@ -31,6 +32,21 @@ const InternationalPostGraduateProgram = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/international-post-graduate-program-page")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -149,15 +165,10 @@ const InternationalPostGraduateProgram = () => {
           ref={(el) => (sectionsRef.current[30] = el)}
         >
           <h2 className={styles.header}>
-            British Columbia Provincial Nominee Program BC PNP International
-            Post- Graduate (IPG) Stream
+          {pData?.Heading}
           </h2>
           <p style={{ textAlign: "center", marginTop: "20px" }}>
-            The British Columbia International Post-Graduate stream is part of
-            the British Columbia Provincial Nominee Program (BC PNP), which is
-            administered by the province of British Columbia. This stream
-            focuses on nominating immigrants who have recently graduated from an
-            eligible British Columbia institution at the post-graduate level.
+          {pData?.Description}
           </p>
         </section>
         <section
@@ -165,23 +176,19 @@ const InternationalPostGraduateProgram = () => {
           id="benefits"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          <h2>Benefits of BCPNP International Post-Graduate Stream</h2>
+          <h2>{pData?.BenifitsHeading}</h2>
           <ul style={{marginLeft: "40px"}}>
             <li>
-              No Job Offer Required: Candidates do not need a job offer to
-              apply.
+            {pData?.BenifitsList1}
             </li>
             <li>
-              Nomination Priority: Successful candidates receive an invitation
-              to apply for Canadian permanent residence.
+            {pData?.BenifitsList2}
             </li>
             <li>
-              No Express Entry Profile Required: No need for an Express Entry
-              profile.
+            {pData?.BenifitsList3}
             </li>
             <li>
-              Accelerated Processing: Option to apply through Express Entry for
-              faster processing.
+            {pData?.BenifitsList4}
             </li>
           </ul>
         </section>
@@ -190,7 +197,7 @@ const InternationalPostGraduateProgram = () => {
           id="eligibility"
           ref={(el) => (sectionsRef.current[1] = el)}
         >
-          <h4>First you must be eligible with BCPNP Skilled Worker Program</h4>
+          <h4> {pData?.EligibilitySubHead}</h4>
           <ul className={styles.subheadingLink}>
                 <li>
                   <button
@@ -230,76 +237,61 @@ const InternationalPostGraduateProgram = () => {
                   and language proficiency.
                 </li>
               </ul>
-          <h2>Eligibility Criteria for International Post-Graduate Stream</h2>
+          <h2> {pData?.EligibilityHeading}</h2>
           <div className={styles.criteria}>
-            <h3>1. Educational Qualifications</h3>
+            <h3> {pData?.EligibilityList1}</h3>
             <ul style={{marginLeft: "40px"}}>
               <li>
-                Must hold a master’s or doctoral (PhD) degree obtained within
-                the past three years.
+              {pData?.EligibilityList1NestedList1}
               </li>
               <li>
-                Degree must be from an eligible program at a post-secondary
-                institution in British Columbia.
+              {pData?.EligibilityList1NestedList2}
               </li>
               <li>
-                Doctoral degrees are accepted from any field of study at a
-                public BC institution.
+              {pData?.EligibilityList1NestedList3}
               </li>
               <li>
-                Master’s degrees must be in natural, applied, or health sciences
-                fields.
+              {pData?.EligibilityList1NestedList4}
               </li>
-              <li>Distance education programs are not eligible.</li>
+              <li>{pData?.EligibilityList1NestedList5}</li>
             </ul>
           </div>
           <div className={styles.criteria}>
-            <h3>2. Intent to Live and Work in British Columbia</h3>
+            <h3>{pData?.EligibilityList2}</h3>
             <ul style={{marginLeft: "40px"}}>
               <li>
-                Applicants must demonstrate their commitment to residing and
-                working in British Columbia.
+              {pData?.EligibilityList2NestedList1}
               </li>
               <li>
-                Evidence of this intent can include:
+              {pData?.EligibilityList2NestedList2}
                 <ul>
-                  <li>Previous or current periods of residence in BC.</li>
-                  <li>Connections to BC through work, study, or family.</li>
+                  <li>{pData?.EligibilityList2NestedList2NestedList1}</li>
+                  <li>{pData?.EligibilityList2NestedList2NestedList2}</li>
                   <li>
-                    Actions taken to permanently settle in BC, such as job
-                    search efforts or finding accommodation.
+                  {pData?.EligibilityList2NestedList2NestedList3}
                   </li>
-                  <li>Community involvement.</li>
-                  <li>Financial capacity to support oneself in BC.</li>
+                  <li>{pData?.EligibilityList2NestedList2NestedList4}</li>
+                  <li>{pData?.EligibilityList2NestedList2NestedList5}</li>
                   <li>
-                    A plan to obtain or maintain legal authorization to work in
-                    BC.
+                  {pData?.EligibilityList2NestedList2NestedList6}
                   </li>
                 </ul>
               </li>
             </ul>
           </div>
           <div className={styles.criteria}>
-            <h3>3. Connection to British Columbia</h3>
+            <h3>{pData?.EligibilityList3}</h3>
             <ul style={{marginLeft: "40px"}}>
               <li>
-                Candidates must have completed a master’s or doctorate degree
-                from one of BC’s eligible institutions in one of BC’s eligible
-                programs.
+              {pData?.EligibilityList3NestedList1}
               </li>
             </ul>
           </div>
           <p style={{ marginBottom: "20px", marginTop: "30px" }}>
-            Note: After graduating from an IPG eligible program, candidates are
-            expected to continue residing in BC. Exceptions may be considered in
-            extenuating circumstances where leaving BC was necessary after
-            graduation.
+          {pData?.EligibilityList3Note}
           </p>
           <p>
-            Remember that meeting these eligibility criteria does not guarantee
-            an invitation to apply; invitations are based on threshold scores
-            during draws. If your score meets or exceeds the threshold, you’ll
-            receive an invitation to apply from the BCPNP.
+          {pData?.EligibilityList3Remember}
           </p>
         </section>
         <section
@@ -307,11 +299,9 @@ const InternationalPostGraduateProgram = () => {
           id="testing1"
           ref={(el) => (sectionsRef.current[2] = el)}
         >
-          <h2>Requirements for the Express Entry Category</h2>
+          <h2>{pData?.ReqExpressHeading}</h2>
           <p>
-            To be eligible for the International Graduates (IG) stream, you must
-            qualify under one of the three federal programs. To understand the
-            eligibility criteria for these programs, click on either the:
+          {pData?.ReqExpressDesc}
           </p>
           <ul style={{marginLeft: "40px"}}>
             <li>
@@ -336,10 +326,9 @@ const InternationalPostGraduateProgram = () => {
           id="employer_requirements"
           ref={(el) => (sectionsRef.current[3] = el)}
         >
-          <h2>Employer Requirements</h2>
+          <h2>{pData?.EmpRequirementsHeading}</h2>
           <p>
-            You do not need a job offer from an employer to apply to this
-            stream.
+          {pData?.EmpRequirementsDescription}
           </p>
         </section>
         <section
@@ -348,89 +337,69 @@ const InternationalPostGraduateProgram = () => {
           ref={(el) => (sectionsRef.current[4] = el)}
         >
           <h2>
-            Application Procedure for British Columbia Provincial Nominee
-            Program BC PNP International Post-Graduate (IPG) Stream
+          {pData?.ApplicationHeading}
           </h2>
           <ol style={{marginLeft: "40px"}} className={styles.sectionLi}>
             <li>
-              <strong>Eligibility and Application Submission:</strong>
+              <strong>{pData?.ApplyPoint1}</strong>
               <ul>
-                <li>The stream is open to new applications at any time.</li>
+                <li>{pData?.ApplyPoint1List1}</li>
                 <li>
-                  Eligible candidates must submit an application through BC’s
-                  online immigration portal.
+                {pData?.ApplyPoint1List2}
                 </li>
                 <li>
-                  Candidates must specify whether they are applying through the
-                  accelerated Express Entry system or the regular Skills
-                  Immigration system.
+                {pData?.ApplyPoint1List3}
                 </li>
                 <li>
-                  The BC International Post-Graduate stream charges a $1,475 CAD
-                  application fee per applicant.
+                {pData?.ApplyPoint1List4}
                 </li>
               </ul>
             </li>
             <li>
-              <strong>Approval and Provincial Nomination:</strong>
+              <strong>{pData?.ApplyPoint2}</strong>
               <ul>
-                <li>The stream is open to new applications at any time.</li>
+                <li>{pData?.ApplyPoint2List1}</li>
                 <li>
-                  If the application is approved, the candidate receives a
-                  provincial nomination for permanent residence from BC.
+                {pData?.ApplyPoint2List2}
                 </li>
                 <li>
-                  Candidates can also request a letter of support for a
-                  temporary work permit. This allows them to work in Canada
-                  while their permanent residence application is processed.
+                {pData?.ApplyPoint2List3}
                 </li>
                 <li>
-                  Applying for a work permit with provincial support represents
-                  a separate application to IRCC.
+                {pData?.ApplyPoint2List4}
                 </li>
               </ul>
             </li>
             <li>
-              <strong>Express Entry Applicants:</strong>
+              <strong>{pData?.ApplyPoint3}</strong>
               <ul>
                 <li>
-                  If the applicant indicated Express Entry on their BC
-                  application:
+                {pData?.ApplyPoint3List1}
                   <ul>
                     <li>
-                      They receive a nomination notification on their IRCC
-                      online account.
+                    {pData?.ApplyPoint3List1Nested1}
                     </li>
                     <li>
-                      Accepting the provincial nomination increases
-                      their Comprehensive Ranking System (CRS) score by 600
-                      points.
+                    {pData?.ApplyPoint3List1Nested2}
                     </li>
                     <li>
-                      This virtually guarantees an Invitation to Apply (ITA) for
-                      permanent residence in the next Express Entry draw.
+                    {pData?.ApplyPoint3List1Nested3}
                     </li>
                     <li>
-                      After receiving an ITA, the applicant must submit an
-                      official application for Canadian permanent residence
-                      within the designated timeframe.
+                    {pData?.ApplyPoint3List1Nested4}
                     </li>
                     <li>
-                      Express Entry applications are generally processed
-                      within six months.
+                    {pData?.ApplyPoint3List1Nested5}
                     </li>
                   </ul>
                 </li>
               </ul>
             </li>
             <li>
-              <strong>Skills Immigration Applicants:</strong>
+              <strong>{pData?.ApplyPoint4}</strong>
               <ul>
                 <li>
-                  If the applicant indicated the regular non-Express Entry
-                  Skills Immigration system on their BC profile, they have six
-                  months to submit an online application for permanent
-                  residence.
+                {pData?.ApplyPoint4List1}
                 </li>
               </ul>
             </li>
@@ -442,13 +411,11 @@ const InternationalPostGraduateProgram = () => {
           id="testing2"
           ref={(el) => (sectionsRef.current[5] = el)}
         >
-          <h2>Still Not Sure?</h2>
+          <h2>{pData?.StillNotSureHeading}</h2>
           <p>
-            Contact Brightlight Immigration to assess your profile and start
-            your journey towards Canadian permanent residence. With a high
-            approval rate and a tailored approach, we handle BCPNP International
-            Post-Graduate Stream cases with expertise.
+           {pData?.StillNotSurePara1}
           </p>
+
           <button
             className={styles.button}
             onClick={() =>

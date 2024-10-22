@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/PermanentResidency.module.css";
 import ServiceImg from "../assets/service-data-image.webp";
 import studyVisaImg from "../assets/graduatedStudent.png";
@@ -13,6 +13,7 @@ import { Helmet } from "react-helmet-async";
 const PermanentResidency = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -39,6 +40,44 @@ const PermanentResidency = () => {
       .catch((error) => {
         console.log(error);
       });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/permanent-residency")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+
+  const sectionsRef = useRef([]);
+
+  const handleScroll = () => {
+    sectionsRef.current.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add(styles.visible);
+      } else {
+        section.classList.remove(styles.visible);
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
@@ -89,13 +128,10 @@ const PermanentResidency = () => {
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <div className={styles.bannerHeading}>
-            <h1>Permanent Residency</h1>
+            <h1>{pData?.heading}</h1>
             <p>Make Canada your home through the <b>Permanent Residency</b> program</p>
             <p>
-              Canada welcomes thousands of skilled individuals from around the
-              world every year. With a thriving economy, high living standards,
-              and better opportunities, it's no wonder so many aspire to call it
-              home.
+            {pData?.description}
             </p>
           </div>
 
@@ -130,12 +166,7 @@ const PermanentResidency = () => {
       <div id="about-program" className={styles.canadianParent}>
         <div className={styles.canadianContent}>
           <p>
-            The Canadian Permanent Residency (PR) Program, managed by
-            Immigration, Refugees and Citizenship Canada (IRCC), allows foreign
-            nationals to obtain permanent resident status in Canada. This status
-            gives you the right to live, work, and study in Canada indefinitely,
-            with the same rights and freedoms as Canadian citizens (except
-            voting and running for office).
+          {pData?.aboutDescription}
           </p>
 
           <p>
@@ -155,25 +186,25 @@ const PermanentResidency = () => {
       <div id="Pathways-becoming-PR" className={styles.pathwayParent}>
         <div className={styles.pathway}>
           <div className={styles.pathwayHeading}>
-            <h1>Pathways to Becoming a PR</h1>
+            <h1>{pData?.pathHeading}</h1>
           </div>
 
           <div className={styles.pathwayCardsParent}>
             <div className={styles.pathwayCards} onClick={() =>(window.location.href ="/express-entry")}>
               <img src={studyVisaImg} alt="Express Entry" />
-              <h2>Express Entry</h2>
+              <h2>{pData?.p1Heading}</h2>
             </div>
             <div className={styles.pathwayCards} onClick={() =>(window.location.href ="/pilot-programs")}>
               <img src={studyVisaImg} alt="Pilot Program" />
-              <h2>Pilot Program</h2>
+              <h2>{pData?.p2Heading}</h2>
             </div>
             <div className={styles.pathwayCards} onClick={() =>(window.location.href ="/pnp")}>
               <img src={studyVisaImg} alt="PNP" />
-              <h2>PNP</h2>
+              <h2>{pData?.p3Heading}</h2>
             </div>
             <div className={styles.pathwayCards} onClick={() =>(window.location.href ="/rnip")}>
               <img src={studyVisaImg} alt="RNIP" />
-              <h2>RNIP</h2>
+              <h2>{pData?.p4Heading}</h2>
             </div>
           </div>
         </div>

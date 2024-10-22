@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet-async";
 const OpenWorkVulnerableLP = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -31,6 +32,21 @@ const OpenWorkVulnerableLP = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/openWorkVulnerable")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -147,11 +163,9 @@ const OpenWorkVulnerableLP = () => {
           id="about-program"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          <h1>Open Work Permit for Vulnerable Workers</h1>
+          <h1>{pData?.OpenWorkVulHeading}</h1>
           <p>
-            Every employer in Canada is entitled to a safe and healthy work
-            environment. Those being exploited at their workplaces can acquire
-            an open work permit for vulnerable workers.
+          {pData?.OpenWorkVulPara}
           </p>
         </header>
 
@@ -160,22 +174,19 @@ const OpenWorkVulnerableLP = () => {
           id="benefits"
           ref={(el) => (sectionsRef.current[1] = el)}
         >
-          <h2>Benefits of Open Work Permit for Vulnerable Workers</h2>
+          <h2>{pData?.BenifitsHeading}</h2>
           <ul style={{marginLeft: "40px"}}>
             <li>
-              <strong>Flexibility:</strong> Work with nearly any employer across
-              Canada.
+            {pData?.BenifitsList1}
             </li>
             <li>
-              <strong>Remedy for Abusive Environments:</strong> Provides a way
-              to flee an abusive work environment and seek another job.
+            {pData?.BenifitsList2}
             </li>
             <li>
-              <strong>No Application Fee:</strong> There is no fee for applying.
+            {pData?.BenifitsList3}
             </li>
             <li>
-              <strong>Temporary Permit:</strong> Allows enough time to secure
-              alternative employment and apply for a new work permit.
+            {pData?.BenifitsList4}
             </li>
           </ul>
         </section>
@@ -185,21 +196,19 @@ const OpenWorkVulnerableLP = () => {
           id="eligibility"
           ref={(el) => (sectionsRef.current[2] = el)}
         >
-          <h2>Eligibility for Open Work Permit for Vulnerable Workers</h2>
+          <h2>{pData?.EligibilityHeading}</h2>
           <ul style={{marginLeft: "40px"}}>
             <li>
-              You are inside Canada and hold a specific employer's work permit,
-              such as a Labour Market Impact Assessment (LMIA)-based work permit
-              or under the Seasonal Agricultural Worker Program.
+            {pData?.EligibilityList1}
             </li>
-            <li>You are facing or at risk of job-related abuse in Canada.</li>
+            <li>{pData?.EligibilityList2}</li>
           </ul>
-          <h3>How IRCC Defines Abuse</h3>
+          <h3>{pData?.HowIRCCHead}</h3>
           <p>
-            Any behavior that scares, controls, or isolates you could be abuse.
+          {pData?.HowIRCCSubHead1}
           </p>
           <p>
-            Abuse can be physical, sexual, financial, or mental and can include
+          {pData?.HowIRCCSubHead2}
           </p>
           <ul
             style={{
@@ -208,14 +217,11 @@ const OpenWorkVulnerableLP = () => {
               marginBottom: "20px",
             }}
           >
-            <li>Physical abuse, including assault and forcible confinement</li>
-            <li>Sexual abuse, including sexual contact without consent</li>
-            <li>Psychological abuse, including threats and intimidation</li>
-            <li>Financial abuse, including fraud and extortion</li>
-            <li>
-              Reprisals, such as disciplinary measures, demotions, dismissals,
-              or threats of such actions
-            </li>
+            <li>{pData?.HowIRCCList1}</li>
+            <li>{pData?.HowIRCCList2}</li>
+            <li>{pData?.HowIRCCList3}</li>
+            <li>{pData?.HowIRCCList4}</li>
+            <li>{pData?.HowIRCCList5}</li>
           </ul>
         </section>
 
@@ -226,10 +232,9 @@ const OpenWorkVulnerableLP = () => {
         >
           <h2>Types of Evidence</h2>
           <p>
-            You should also include as much evidence as you can with your
-            application.
+          {pData?.TypesEvidenceHeading}
           </p>
-          <p>Evidence could include:</p>
+          <p> {pData?.TypesEvidenceSubHead}</p>
           <ul
             style={{
               marginLeft: "40px",
@@ -238,27 +243,23 @@ const OpenWorkVulnerableLP = () => {
             }}
           >
             <li>
-              Letter, statement, or report from an abuse support organization,
-              medical doctor, or health care professional
+            {pData?.TypesEvidenceList1}
             </li>
-            <li>Sworn statement (affidavit) from yourself</li>
+            <li> {pData?.TypesEvidenceList2}</li>
             <li>
-              Copy of an official report to an enforcement agency (e.g., police
-              or Canada Border Services Agency)
+            {pData?.TypesEvidenceList3}
             </li>
             <li>
-              Official complaint to a provincial government enforcement agency
-              (e.g., employment standards branch)
+            {pData?.TypesEvidenceList4}
             </li>
-            <li>Victim impact statement</li>
-            <li>Email or text messages</li>
-            <li>Pay stubs or bank statements</li>
-            <li>Photos showing injuries or working conditions</li>
-            <li>Witness testimony</li>
+            <li> {pData?.TypesEvidenceList5}</li>
+            <li> {pData?.TypesEvidenceList6}</li>
+            <li> {pData?.TypesEvidenceList7}</li>
+            <li> {pData?.TypesEvidenceList8}</li>
+            <li> {pData?.TypesEvidenceList9}</li>
           </ul>
           <p>
-            The list above includes examples of evidence. You may have other
-            types of evidence.
+          {pData?.TypesEvidencePara}
           </p>
         </section>
 
@@ -267,24 +268,13 @@ const OpenWorkVulnerableLP = () => {
           id="application-process"
           ref={(el) => (sectionsRef.current[5] = el)}
         >
-          <h2>How to Apply</h2>
+          <h2> {pData?.HowApplyHeading}</h2>
           <ol style={{marginLeft: "40px"}}>
-            <li>Collect extensive documents to provide evidence to IRCC.</li>
-            <li>
-              Draft a mandatory letter describing the abuse, along with a sworn
-              statement by the applicant.
-            </li>
-            <li>
-              Apply to IRCC and wait for processing, usually within a week.
-            </li>
-            <li>
-              The IRCC officer may request additional documents or, in rare
-              cases, interview the applicant.
-            </li>
-            <li>
-              Once approved, IRCC sends a work permit by mail, which is valid
-              for 1 year.
-            </li>
+            <li> {pData?.ha1}</li>
+            <li>{pData?.ha2}</li>
+            <li>{pData?.ha3}</li>
+            <li>{pData?.ha4}</li>
+            <li>{pData?.ha5}</li>
           </ol>
         </section>
 
@@ -293,21 +283,12 @@ const OpenWorkVulnerableLP = () => {
           id="why-choose-us"
           ref={(el) => (sectionsRef.current[4] = el)}
         >
-          <h2>Still Not Sure?</h2>
+          <h2> {pData?.StillNotSureHeading}</h2>
           <p>
-            If you have received a refusal for any of the reasons mentioned
-            above, do not worry. With over a decade of experience, we specialize
-            in previously refused cases. While we don't provide jobs for LMIA,
-            we can certainly assist you if you have a job offer. We have
-            obtained approvals for clients who had multiple previous refusals.
-            We achieve this with a tailored approach to your specific case,
-            addressing each concern listed in previous refusals. We use case law
-            and similar cases as precedents to achieve a high success rate.
+          {pData?.StillNotSurePara1}
           </p>
           <p style={{ marginTop: "20px" }}>
-            At Brightlight Immigration, we have a dedicated team of visa
-            application specialists who can assist you from the start of the
-            application process to obtaining your visa. Start your process now.
+          {pData?.StillNotSurePara2}
           </p>
           <button
             onClick={() =>

@@ -12,6 +12,7 @@ import { Helmet } from "react-helmet-async";
 const LonelyCanadian = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -31,6 +32,21 @@ const LonelyCanadian = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/lonelyCanadian")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -157,14 +173,10 @@ const LonelyCanadian = () => {
           ref={(el) => (sectionsRef.current[0] = el)}
         >
           <h1>
-            Lonely Canadian Sponsoring Other Relatives: A Path to Family
-            Reunification
+          {pData?.LonCanHeading}
           </h1>
           <p>
-            Canada’s family sponsorship program prioritizes family
-            reunification. If you wish to sponsor other family members who may
-            be lonely or orphaned, certain conditions apply. Here’s what you
-            need to know:
+          {pData?.LonCanPara}
           </p>
         </header>
 
@@ -174,11 +186,10 @@ const LonelyCanadian = () => {
           ref={(el) => (sectionsRef.current[1] = el)}
         >
           <h2>
-            Eligibility Criteria to Sponsor Other Relatives as a Lonely Canadian
+          {pData?.EligibilityHeading}
           </h2>
           <h4>
-            To sponsor relatives such as nephews, nieces, uncles, and aunts, the
-            sponsor must meet the following criteria:
+          {pData?.EligibilitySubHeading}
           </h4>
           <ol
             style={{
@@ -189,32 +200,25 @@ const LonelyCanadian = () => {
           >
             <li style={{ marginBottom: "10px" }}>
               {" "}
-              <strong>Minimum Necessary Income:</strong> The sponsor should have
-              sufficient income.
+              {pData?.e1}
             </li>
             <li style={{ marginBottom: "10px" }}>
-              <strong>Age Requirement:</strong> Be at least 18 years old.
+            {pData?.e2}
             </li>
             <li style={{ marginBottom: "10px" }}>
-              <strong>Canadian Citizenship or Permanent Residency:</strong> The
-              sponsor must be a Canadian citizen or permanent resident residing
-              in Canada.
+            {pData?.e3}
             </li>
             <li style={{ marginBottom: "10px" }}>
-              <strong>Debt and Bankruptcy:</strong> Be free from debt or
-              bankruptcy proceedings.
+            {pData?.e4}
             </li>
             <li style={{ marginBottom: "10px" }}>
-              <strong>Application Readiness:</strong> Prepared to submit the
-              sponsorship application with all required forms and documents.
+            {pData?.e5}
             </li>
             <li style={{ marginBottom: "10px" }}>
-              <strong>Undertaking Obligations:</strong> Willing to accept the
-              responsibilities of undertaking.
+            {pData?.e6}
             </li>
             <li>
-              <strong>No Removal Orders or Criminal Convictions:</strong> Free
-              from any restrictions of removal orders and criminal convictions.
+            {pData?.e7}
             </li>
           </ol>
         </section>
@@ -224,31 +228,25 @@ const LonelyCanadian = () => {
           id="duration"
           ref={(el) => (sectionsRef.current[2] = el)}
         >
-          <h2>Duration of Undertaking</h2>
+          <h2>{pData?.DurationHeading}</h2>
           <ul style={{marginLeft: "40px"}}>
             <li>
-              The undertaking to sponsor other relatives to Canada lasts for ten
-              years.
+            {pData?.DLi1}
             </li>
             <li>
-              This period begins when your relative becomes a permanent resident
-              of Canada.
+            {pData?.DLi2}
             </li>
             <li>
-              During this time, the relative will not have access to social
-              assistance.
+            {pData?.DLi3}
             </li>
             <li>
-              If the sponsor receives any social assistance, they must repay the
-              amount to the government.
+            {pData?.DLi4}
             </li>
             <li>
-              The undertaking also extends to the spouse or child of the
-              sponsored relative.
+            {pData?.DLi5}
             </li>
             <li>
-              Social assistance for disabled individuals does not impact the
-              sponsorship application.
+            {pData?.DLi6}
             </li>
           </ul>
         </section>
@@ -258,25 +256,20 @@ const LonelyCanadian = () => {
           id="bankruptcy"
           ref={(el) => (sectionsRef.current[3] = el)}
         >
-          <h2>Bankruptcy and Criminal Sentences</h2>
+          <h2>{pData?.BankruptcyHeading}</h2>
           <ul style={{marginLeft: "40px"}}>
             <li>
-              Sponsoring other relatives is not allowed if the sponsor is filing
-              for bankruptcy.
+            {pData?.bankL1}
             </li>
             <li>
-              Eligibility to sponsor is possible only after the discharge of
-              bankruptcy.
+            {pData?.bankL2}
             </li>
             <li>
-              Similarly, a criminal conviction can disqualify the sponsor from
-              sponsoring another relative.
+            {pData?.bankL3}
             </li>
-            <li>The severity of the crime determines most restrictions.</li>
+            <li>{pData?.bankL4}</li>
             <li>
-              However, eligibility may be regained if the sentence is over five
-              years old and there is no past criminal record outside Canada
-              during the same period.
+               {pData?.bankL5}
             </li>
           </ul>
         </section>
@@ -286,10 +279,10 @@ const LonelyCanadian = () => {
           id="sponsor-siblings"
           ref={(el) => (sectionsRef.current[4] = el)}
         >
-          <h2>Sponsoring Siblings</h2>
+          <h2>  {pData?.SponsoringHeading}</h2>
           <ul>
             <li>
-              <h4>Alternative options exist for sponsoring siblings:</h4>
+              <h4>{pData?.SponsoringSubHead1}</h4>
             </li>
           </ul>
 
@@ -302,17 +295,15 @@ const LonelyCanadian = () => {
             }}
           >
             <li>
-              Siblings Below 18: You can sponsor a brother or sister below 18
-              years of age who has lost both parents.
+            {pData?.SponLi1}
             </li>
             <li>
-              Lone Sponsor: Even if you are a lonely sponsor, you can sponsor a
-              brother or sister who is over 18 years of age.
+            {pData?.SponLi2}
             </li>
           </ul>
           <ul>
             <li>
-              <h4>A lonely sponsor does not have:</h4>
+              <h4>{pData?.SponsoringSubHead2}</h4>
             </li>
           </ul>
 
@@ -324,13 +315,13 @@ const LonelyCanadian = () => {
               marginBottom: "20px",
             }}
           >
-            <li>Mother</li>
-            <li>Father</li>
-            <li>Child</li>
-            <li>Spouse</li>
-            <li>Common-law partner</li>
-            <li>Conjugal partner</li>
-            <li>Grandparents</li>
+            <li>{pData?.SponLi3}</li>
+            <li>{pData?.SponLi4}</li>
+            <li>{pData?.SponLi5}</li>
+            <li>{pData?.SponLi6}</li>
+            <li>{pData?.SponLi7}</li>
+            <li>{pData?.SponLi8}</li>
+            <li>{pData?.SponLi9}</li>
           </ul>
         </section>
 
@@ -339,10 +330,9 @@ const LonelyCanadian = () => {
           id="alternatives"
           ref={(el) => (sectionsRef.current[5] = el)}
         >
-          <h2>Exploring Other Possibilities</h2>
+          <h2>{pData?.ExplHeading}</h2>
           <p>
-            Consider the following alternatives if you cannot sponsor a sibling
-            over 18 years of age:
+          {pData?.ExplSubHead}
           </p>
           <ol
             style={{
@@ -352,21 +342,19 @@ const LonelyCanadian = () => {
             }}
           >
             <li style={{ marginBottom: "10px" }}>
-              Study in Canada: Apply for immigration through a study permit.{" "}
+            {pData?.ExpLi1} {" "}
               <a href="/study-visa" className={styles.link}>
                 Learn more about Study Visas
-              </a>
+              </a>  {" "}
             </li>
             <li style={{ marginBottom: "10px" }}>
-              Business Partnership: Successful business owners can secure a work
-              permit if eligible.
+            {pData?.ExpLi2}  {" "}
             </li>
             <li>
-              Express Entry: Permanent residents can leverage the Comprehensive
-              Ranking System to receive an Invitation to Apply.{" "}
+            {pData?.ExpLi3}  {" "}
               <a href="/express-entry" className={styles.link}>
                 Learn more about Express Entry
-              </a>
+              </a>  {" "}
             </li>
           </ol>
         </section>
@@ -376,8 +364,8 @@ const LonelyCanadian = () => {
           id="application-process"
           ref={(el) => (sectionsRef.current[6] = el)}
         >
-          <h2>How to Apply for Sponsoring a Relative as a Lonely Canadian</h2>
-          <h3>Step 1: Obtain the Application Package</h3>
+          <h2>{pData?.HowApplyHeading}</h2>
+          <h3>{pData?.HowApplyStepHead1}</h3>
           <ul
             style={{
               marginLeft: "40px",
@@ -386,7 +374,7 @@ const LonelyCanadian = () => {
             }}
           >
             <h4>
-              <strong>Application Package Contents:</strong>
+              <strong>{pData?.HowApplySubHead1}</strong>
             </h4>
             <li style={{ listStyle: "none" }}>
               <ul
@@ -397,24 +385,21 @@ const LonelyCanadian = () => {
                 }}
               >
                 <li>
-                  <strong>Instruction Guide:</strong> Read this guide before
-                  filling out the forms.
+                {pData?.ha1}
                 </li>
                 <li>
-                  <strong>Forms:</strong> Complete the necessary forms.
+                {pData?.ha2}
                 </li>
                 <li>
-                  <strong>Document Checklist:</strong> Ensure you include all
-                  required documents.
+                {pData?.ha3}
                 </li>
                 <li>
-                  <strong>Eligibility Check:</strong> Confirm your eligibility
-                  to sponsor a relative.
+                {pData?.ha4}
                 </li>
               </ul>
             </li>
             <h4>
-              <strong>Application Submission:</strong>
+              <strong>{pData?.HowApplySubHead2}</strong>
             </h4>
             <li style={{ listStyle: "none" }}>
               <ul
@@ -424,25 +409,23 @@ const LonelyCanadian = () => {
                   marginBottom: "60px",
                 }}
               >
-                <li>Provide proof of income.</li>
+                <li>{pData?.ha5}</li>
                 <li>
-                  Relatives must express their intent to support themselves.
+                {pData?.ha6}
                 </li>
                 <li>
-                  Agree in writing to support your relatives for a specified
-                  period (3 to 20 years).
+                {pData?.ha7}
                 </li>
                 <li>
-                  Include all dependent children of your relative (if any).
+                {pData?.ha8}
                 </li>
-                <li>Submit all documents listed in the document checklist.</li>
-                <li>Missing information or documents can cause delays.</li>
+                <li>{pData?.ha9}</li>
+                <li>{pData?.ha10}</li>
               </ul>
             </li>
             <h4>
               <strong>
-                Truthfulness: All information in your application must be
-                accurate. Be truthful about:
+              {pData?.HowApplySubHead3}
               </strong>
             </h4>
             <li style={{ listStyle: "none" }}>
@@ -453,21 +436,17 @@ const LonelyCanadian = () => {
                   marginBottom: "60px",
                 }}
               >
-                <li>Your family members (include all in your application).</li>
-                <li>Your marital status.</li>
-                <li>Any changes in your circumstances.</li>
-                <li>
-                  Sponsored individuals must also declare their close family
-                  members, who will undergo security, criminality, and medical
-                  checks. Failure to do so may affect future sponsorship.
-                </li>
+                <li>{pData?.ha11}</li>
+                <li>{pData?.ha12}</li>
+                <li>{pData?.ha13}</li>
+                <li>{pData?.ha14}</li>
               </ul>
             </li>
           </ul>
-          <h3>Step 2: Pay Application Fees</h3>
+          <h3>{pData?.HowApplyStepHead2}</h3>
           <ul>
             <h4>
-              <strong>Biometrics Fee:</strong>
+              <strong>{pData?.HowApplySubHead4}</strong>
             </h4>
             <li style={{ listStyle: "none" }}>
               <ul
@@ -478,23 +457,21 @@ const LonelyCanadian = () => {
                 }}
               >
                 <li>
-                  In most cases, pay the biometrics fee when submitting your
-                  application.
+                {pData?.ha15}
                 </li>
                 <li>
-                  This fee covers fingerprint collection and a digital photo.
+                {pData?.ha16}
                 </li>
               </ul>
             </li>
             <h4>
-              <strong>Third-Party Fees:</strong>
+              <strong>{pData?.HowApplySubHead5}</strong>
             </h4>
             <li style={{ listStyle: "none" }}>
               <ul>
                 <li style={{ listStyle: "none" }}>
                   <p>
-                    Depending on your situation, you may need to pay third
-                    parties for:
+                  {pData?.haPara1}
                   </p>
                   <ul
                     style={{
@@ -503,17 +480,16 @@ const LonelyCanadian = () => {
                       marginBottom: "60px",
                     }}
                   >
-                    <li>Medical exams.</li>
-                    <li>Police certificates.</li>
+                    <li>{pData?.ha17}</li>
+                    <li>{pData?.ha18}</li>
                   </ul>
                 </li>
               </ul>
             </li>
           </ul>
-          <h3>Step 3: Submit Your Application</h3>
+          <h3>{pData?.HowApplyStepHead3}</h3>
           <p>
-            Mail all application documents to the address provided in the
-            instruction guide of your package.
+          {pData?.haPara2}
           </p>
           <button
             onClick={() =>

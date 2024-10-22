@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet-async";
 const PermanentResidencePathwaysCaregiversLP = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -24,7 +25,7 @@ const PermanentResidencePathwaysCaregiversLP = () => {
   };
 
   useEffect(() => {
-    fetch("https://brightlight-node.onrender.com/prioritiesProgramMeta")
+    fetch("https://brightlight-node.onrender.com/permanResidPathCareMeta")
       .then((res) => {
         return res.json();
       })
@@ -37,6 +38,22 @@ const PermanentResidencePathwaysCaregiversLP = () => {
         console.log(error);
       });
   }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/permanentResidencyPathwayCaregiver")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
 
   const sectionsRef = useRef([]);
 
@@ -59,6 +76,24 @@ const PermanentResidencePathwaysCaregiversLP = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const extractStrongText = (htmlString) => {
+    if (typeof htmlString !== "string") return "";
+    const strongMatch = htmlString.match(/<strong>(.*?)<\/strong>/);
+    return strongMatch ? strongMatch[1] : "";
+  };
+
+  const extractRemainingText = (htmlString) => {
+    if (typeof htmlString !== "string") return "";
+    return htmlString.replace(/<strong>.*?<\/strong>/, "").trim();
+  };
+  const fetchedValue1 = pData?.ec1;
+  const strongText1 = extractStrongText(fetchedValue1);
+  const remainingText1 = extractRemainingText(fetchedValue1);
+
+  const fetchedValue2 = pData?.ec2;
+  const strongText2 = extractStrongText(fetchedValue2);
+  const remainingText2 = extractRemainingText(fetchedValue2);
 
   return (
     <>
@@ -145,21 +180,17 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           id="about-program"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          Permanent Residence Pathways available for Caregivers
+         {pData?.heading}
         </h1>
         <p
           className={`${styles.description} ${styles.section}`}
           id="testing1"
           ref={(el) => (sectionsRef.current[1] = el)}
         >
-          The caregivers play a crucial role in contributing to the Canadian
-          economy by providing invaluable support to families and individuals in
-          need. The caregiver program by Immigration, Refugees and Citizenship
-          Canada offers a pathway to permanent residency in Canada for
-          individuals who provide the essential care.
+         {pData?.description}
         </p>
         <h2 className={styles.subtitle} style={{ marginTop: "50px" }}>
-          Here are the permanent residence pathways available for caregivers:
+        {pData?.HerePermanentResHeading}
         </h2>
         <ul style={{marginLeft: "40px"}} className={styles.list}>
           <li>
@@ -183,7 +214,7 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           id="benifits"
           ref={(el) => (sectionsRef.current[2] = el)}
         >
-          Benefits of Permanent Residence Pathways available for Caregivers:
+         {pData?.BenifitHeading}
         </h2>
         <ul
         style={{marginLeft: "40px"}}
@@ -192,22 +223,16 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           ref={(el) => (sectionsRef.current[3] = el)}
         >
           <li>
-            Caregiver pathways provide you with an opportunity to apply for
-            permanent residence, after gaining 12 months of experience in
-            Canada.
+          {pData?.b1}
           </li>
           <li>
-            The permanent residence applications do not have any points system
-            like Express Entry or provincial nomination programs. It is based on
-            a first-come, first-served basis.
+          {pData?.b2}
           </li>
           <li>
-            The language requirements for both work permit and permanent
-            residency application are very low.
+          {pData?.b3}
           </li>
           <li>
-            The spouse and dependent children can accompany you throughout the
-            process.
+          {pData?.b4}
           </li>
         </ul>
         <h2
@@ -216,24 +241,20 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           id="eligibility"
           ref={(el) => (sectionsRef.current[4] = el)}
         >
-          Eligibility criteria for Permanent Residence Pathways available for
-          Caregivers:
+         {pData?.eligibleCriteriaHeading}
         </h2>
         <h3
           className={`${styles.subheading} ${styles.section}`}
           id="category"
           ref={(el) => (sectionsRef.current[5] = el)}
         >
-          1. Qualifying Occupations:
+             {pData?.eligibileSubHead1}
         </h3>
         <p style={{ marginTop: "10px" }}>
-          In the caregiver program, only two occupations are allowed for the
-          purpose of defining the occupation mentioned in the job offer as well
-          as the in-Canada qualify work experience to apply for permanent
-          residency:{" "}
+        {pData?.eligibileSubHead1Para}
         </p>
         <h4 style={{ marginTop: "20px" }}>
-          The two National Occupational Classification (NOC) codes are:
+        {pData?.NocListHeading}
         </h4>
         <ul
           style={{ marginTop: "30px", marginLeft: "40px" }}
@@ -242,18 +263,10 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           ref={(el) => (sectionsRef.current[6] = el)}
         >
           <li>
-            <strong>NOC 44100: Home childcare providers</strong> - If you care
-            for the well-being and physical and social development of children,
-            then you qualify for this NOC code. Nanny, babysitter, and parent’s
-            helper are included in this NOC. Foster parents, babysitters at a
-            fitness center or a shopping center are not included in this NOC.
+            <strong>{strongText1}</strong> {remainingText1}
           </li>
           <li>
-            <strong>NOC 44101: Home support workers</strong> - If you provide
-            personal care and companionship for seniors, persons with
-            disabilities, and convalescent clients in the employer’s home, then
-            you qualify for this NOC code. If you are employed at a nursing home
-            or other such institution, you do not qualify for this NOC.
+          <strong>{strongText2}</strong> {remainingText2}
           </li>
         </ul>
         <h3
@@ -261,9 +274,9 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           id="testing4"
           ref={(el) => (sectionsRef.current[7] = el)}
         >
-          2. Application Categories:
+             {pData?.eligibileSubHead2}
         </h3>
-        <p>There are 2 categories you can apply under:</p>
+        <p>{pData?.eligibileSubHead2Para}</p>
         <ul
           style={{ marginTop: "30px", marginLeft: "40px" }}
           className={`${styles.list} ${styles.section}`}
@@ -271,12 +284,10 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           ref={(el) => (sectionsRef.current[8] = el)}
         >
           <li>
-            a. Applicants without 12 months of Qualifying Canadian work
-            experience (Category A – Gaining experience)
+          {pData?.ec3}
           </li>
           <li>
-            b. Applicants with 12 months of Qualifying Canadian work experience
-            (Category B – Direct to permanent residence)
+          {pData?.ec4}
           </li>
         </ul>
         <h3
@@ -285,9 +296,9 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           id="testng6"
           ref={(el) => (sectionsRef.current[9] = el)}
         >
-          3. Education:
+           {pData?.eligibileSubHead3}
         </h3>
-        <p>You are required have either of the following:</p>
+        <p> {pData?.eceligibileSubHead3Para3}</p>
         <ul
           style={{ marginTop: "30px", marginLeft: "40px" }}
           className={`${styles.list} ${styles.section}`}
@@ -297,15 +308,10 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           <li>
             <ul>
               <li>
-                Canadian 1-year post-secondary (or higher) educational
-                credential
+              {pData?.ec5}
               </li>
               <li>
-                1-year post-secondary outside Canada education program,
-                equivalent to Canadian 1-year post-secondary (or higher)
-                educational credential, with Educational Credential Assessment
-                (ECA) report issued for immigration purposes by an organization
-                designated by IRCC, within the last 5 years.
+              {pData?.ec6}
               </li>
             </ul>
           </li>
@@ -316,7 +322,7 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           id="testing8"
           ref={(el) => (sectionsRef.current[11] = el)}
         >
-          4. Language requirements:
+         {pData?.eligibileSubHead4}
         </h3>
         <ul
           style={{ marginTop: "30px", marginLeft: "40px" }}
@@ -324,13 +330,10 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           id="testing9"
           ref={(el) => (sectionsRef.current[12] = el)}
         >
-          <li>CLB 5 in reading, writing, speaking, and listening.</li>
-          <li>IELTS: reading-4, writing-5, speaking-5, and listening-5</li>
-          <li>CELPIP-G: 5 in reading, writing, speaking, and listening.</li>
-          <li>
-            PTE: reading-(42-50), writing-(51-59), speaking-(51-58), and
-            listening-(39-49)
-          </li>
+          <li> {pData?.ec7}</li>
+          <li>{pData?.ec8}</li>
+          <li>{pData?.ec9}</li>
+          <li>{pData?.ec10}</li>
         </ul>
         <h3
           style={{ marginTop: "30px" }}
@@ -338,8 +341,7 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           id="testing10"
           ref={(el) => (sectionsRef.current[13] = el)}
         >
-          5. Qualifying Canadian work experience and permanent residency
-          application categories:
+         {pData?.eligibileSubHead5}
         </h3>
         <h4
           style={{ marginTop: "20px" }}
@@ -347,16 +349,10 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           id="CategoryA"
           ref={(el) => (sectionsRef.current[14] = el)}
         >
-          Applicants under Category A – Gaining experience:
+         {pData?.eligibileSubHead5Head1}
         </h4>
         <p style={{ marginTop: "10px" }}>
-          If you are a permanent residency applicant without 12 months of
-          Qualifying Canadian work experience (Category A – Gaining experience),
-          then you will be issued an occupation-restricted open work permit
-          (OROWP). Within 36 months of the OROWP being issued, you are required
-          to submit proof of at least 12 months of authorized full-time work
-          experience. You will also be required to provide the following with
-          the application:
+          {pData?.eligibileSubHead5Para1}
           <ul
             style={{ marginTop: "30px", marginLeft: "40px" }}
             className={`${styles.list} ${styles.section}`}
@@ -364,16 +360,10 @@ const PermanentResidencePathwaysCaregiversLP = () => {
             ref={(el) => (sectionsRef.current[15] = el)}
           >
             <li>
-              An employment offer from a qualifying Canadian employer in either
-              NOC 44101: Home support workers or NOC 44100: Home childcare
-              providers.
+            {pData?.ec11}
             </li>
             <li>
-              Documents from the home country to prove that you can perform the
-              job duties mentioned in the employment offer such as employer
-              reference letters, employment records, work contracts, pay stubs,
-              copies of relevant education credentials or training, which can
-              include diplomas or certificates training.
+            {pData?.ec12}
             </li>
           </ul>
         </p>
@@ -382,13 +372,10 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           id="CategoryB"
           ref={(el) => (sectionsRef.current[16] = el)}
         >
-          Applicants under Category B – Direct to Permanent residence:
+            {pData?.eligibileSubHead5Head2}
         </h4>
         <p>
-          If you are a permanent residency applicant with 12 months of
-          Qualifying Canadian work experience (Category B – Direct to permanent
-          residence), then you submit the documents to prove your work
-          experience upfront.
+          {pData?.eligibileSubHead5Para2}
         </p>
         <h2
           style={{ marginTop: "30px" }}
@@ -396,35 +383,25 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           id="testing13"
           ref={(el) => (sectionsRef.current[17] = el)}
         >
-          How to apply for Permanent Residence Pathways available for
-          Caregivers?
-        </h2>
+           {pData?.howToApplyHeading}
+          </h2>
         <ol
         style={{marginLeft: "40px"}}
           className={`${styles.list} ${styles.section}`}
           id="testing14"
           ref={(el) => (sectionsRef.current[18] = el)}
         >
-          <li>
-            Select the right program as per your qualifications - HCCP or HSWP
-          </li>
-          <li>
-            Choose the right category - Category A (gaining experience) or
-            Category B (Direct to PR), depending upon your situation
-          </li>
-          <li>
-            Apply for education credential evaluation of your education program
-            if studied outside Canada.
-          </li>
-          <li>Appear for an acceptable English test.</li>
+          <li>{pData?.ha1}</li>
+          <li>{pData?.ha2}</li>
+          <li>{pData?.ha3}</li>
+          <li>{pData?.ha4}</li>
         </ol>
         <h3
           className={`${styles.subheading} ${styles.section}`}
           id="testing15"
           ref={(el) => (sectionsRef.current[19] = el)}
         >
-          Now if you are applying to Gaining Experience category of Caregiver
-          pilot:
+           {pData?.NowApplyGainHeading}
         </h3>
         <ol
         style={{marginLeft: "40px"}}
@@ -432,32 +409,20 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           id="testing16"
           ref={(el) => (sectionsRef.current[20] = el)}
         >
-          <li>
-            If you do not have qualifying Canadian experience, look for a
-            genuine job offer.
-          </li>
-          <li>
-            Complete your work permit and PR application after ensuring IRCC is
-            still accepting applications for either HCCP or HSWP.
-          </li>
-          <li>Provide medical exam sheet and police clearance to IRCC.</li>
-          <li>Pay IRCC fees and submit the application.</li>
-          <li>
-            You will receive an occupation-restricted open work permit (OROWP)
-            and letter of introduction for a work permit for port of entry.
-          </li>
-          <li>
-            Get 12 months of qualifying work experience in Canada within 36
-            months of receiving OROWP.
-          </li>
-          <li>Provide proof of work experience to IRCC.</li>
+          <li>{pData?.ge1}</li>
+          <li>{pData?.ge2}</li>
+          <li>{pData?.ge3}</li>
+          <li>{pData?.ge4}</li>
+          <li>{pData?.ge5}</li>
+          <li>{pData?.ge6}</li>
+          <li>{pData?.ge7}</li>
         </ol>
         <h3
           className={`${styles.subheading} ${styles.section}`}
           id="testing17"
           ref={(el) => (sectionsRef.current[21] = el)}
         >
-          Now if you are applying to Direct to PR category of Caregiver pilot:
+       {pData?.NowApplyDirectHeading}
         </h3>
         <ol
         style={{marginLeft: "40px"}}
@@ -465,17 +430,10 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           id="testing18"
           ref={(el) => (sectionsRef.current[22] = el)}
         >
-          <li>
-            If you have qualifying Canadian experience of 12 months, prepare PR
-            application after ensuring IRCC is still accepting applications for
-            either HCCP or HSWP.
-          </li>
-          <li>Provide medical exam sheet and police clearance to IRCC.</li>
-          <li>Pay IRCC fees and submit the application.</li>
-          <li>
-            Apply for Bridging Open Work Permit if your current work permit is
-            expiring.
-          </li>
+          <li>{pData?.dc1}</li>
+          <li>{pData?.dc2}</li>
+          <li>{pData?.dc3}</li>
+          <li>{pData?.dc4}</li>
         </ol>
 
         <h2
@@ -483,28 +441,17 @@ const PermanentResidencePathwaysCaregiversLP = () => {
           id="why-choose-us"
           ref={(el) => (sectionsRef.current[23] = el)}
         >
-          Still not sure?
+         {pData?.StillNotSureHeading}
         </h2>
         <p
           className={`${styles.description5} ${styles.section}`}
           id="testing19"
           ref={(el) => (sectionsRef.current[24] = el)}
         >
-          If you have received a refusal for any of the reasons mentioned above,
-          do not worry. With over a decade of experience, we specialize in
-          previously refused cases. While we don't provide jobs for LMIA, we can
-          certainly assist you if you have a job offer. We have obtained
-          approvals for clients who had multiple previous refusals. We achieve
-          this with a tailored approach to your specific case, addressing each
-          concern that the officer has listed in previous refusals. We use case
-          law and find similar cases to your circumstances that had positive
-          results, and we use them as precedents in cases we work on. This is
-          why we have a high success rate.
+          {pData?.StillNotSurePara1}
         </p>
         <p style={{ marginBottom: "30px" }}>
-          At Brightlight Immigration, we have a dedicated team of visa
-          application specialists who can assist you from the start of the
-          application process to obtaining your visa. Start your process now.
+        {pData?.StillNotSurePara2}
         </p>
         <button
           className={styles.bookAppointment}

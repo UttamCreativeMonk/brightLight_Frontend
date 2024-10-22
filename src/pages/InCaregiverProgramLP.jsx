@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet-async";
 const InCaregiverProgramLP = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([])
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -31,6 +32,21 @@ const InCaregiverProgramLP = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/in-home-caregiver")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -147,12 +163,9 @@ const InCaregiverProgramLP = () => {
           id="about-program"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          <h1>In Home Caregiver Program</h1>
+          <h1>{pData?.heading}</h1>
           <p>
-            The Canadian government provides a remedy to Canadian families to
-            hire full-time caregivers to provide care to their children,
-            seniors, or persons with certified medical needs. You can use this
-            opportunity to seek work permit and permanent residency in Canada.
+          {pData?.description}
           </p>
         </header>
 
@@ -161,30 +174,22 @@ const InCaregiverProgramLP = () => {
           id="benifits"
           ref={(el) => (sectionsRef.current[1] = el)}
         >
-          <h2>Benefits of In Home Caregiver Program</h2>
+          <h2>{pData?.benefitsHeading}</h2>
           <ul style={{ marginLeft: "40px" }}>
             <li>
-              The employers can hire a full-time dedicated caregiver for the
-              person in need, thereby creating a less stressful environment when
-              caring for individuals with high needs.
+            {pData?.b1}
             </li>
             <li>
-              The work permit provides you with an opportunity to gain
-              qualifying experience in Canada to apply for permanent residence.
+            {pData?.b2}
             </li>
             <li>
-              These permanent residence applications do not have any points
-              system like Express Entry or provincial nomination programs. It is
-              based on a first-come, first-served basis.
+            {pData?.b3}
             </li>
             <li>
-              The language requirements for both work permit and permanent
-              residency application are very low.
+            {pData?.b4}
             </li>
             <li>
-              The spouse and dependent children may accompany you throughout the
-              work permit duration depending on your wage rate and National
-              Occupational Classification (NOC) level.
+            {pData?.b5}
             </li>
           </ul>
         </section>
@@ -194,8 +199,8 @@ const InCaregiverProgramLP = () => {
           id="eligibility"
           ref={(el) => (sectionsRef.current[2] = el)}
         >
-          <h2>Eligibility Criteria for In Home Caregiver Program</h2>
-          <p>In home Caregiver program is a two-step process:</p>
+          <h2>{pData?.eligibilityHeading}</h2>
+          <p>  {pData?.eligibilityDescription}</p>
           <ol
             style={{ marginTop: "20px" }}
             className={`${styles.section} ${styles.section}`}
@@ -205,13 +210,12 @@ const InCaregiverProgramLP = () => {
             <li
               style={{ listStyle: "none", fontSize: "18px", fontWeight: "600" }}
             >
-              Step 1: Your employer applies for Labour Market Impact Assessment
-              (LMIA).
+             {pData?.elibilityS1}
             </li>
             <li
               style={{ listStyle: "none", fontSize: "18px", fontWeight: "600" }}
             >
-              Step 2: You can apply for work permit.
+            {pData?.elibilityS2}
             </li>
           </ol>
 
@@ -220,11 +224,10 @@ const InCaregiverProgramLP = () => {
             id="testing2"
             ref={(el) => (sectionsRef.current[4] = el)}
           >
-            Step 1: Labour Market Impact Assessment (LMIA) Process
+              {pData?.s1Heading}
           </h3>
           <p>
-            For the employer considering hiring a foreign worker on a caregiver
-            LMIA, here is the eligibility check:
+          {pData?.s1Desc}
           </p>
           <ul
             style={{ marginTop: "20px", marginLeft: "40px" }}
@@ -233,26 +236,21 @@ const InCaregiverProgramLP = () => {
             ref={(el) => (sectionsRef.current[5] = el)}
           >
             <li>
-              Have a valid payroll account with Canada Revenue Agency (CRA).
+            {pData?.s1l1}
             </li>
             <li>
-              Provide proof of individual requiring care such as a long form
-              birth certificate, passport or physician’s note, depending on the
-              type of care required.
+            {pData?.s1l2}
             </li>
             <li>
-              Must demonstrate their financial ability to pay the caregiver’s
-              wages.
+            {pData?.s1l3}
             </li>
             <li>
-              Pay the foreign worker the prevailing wage for the position.
+            {pData?.s1l4}
             </li>
           </ul>
 
           <p>
-            Your employer is required to apply for a Labour Market Impact
-            Assessment (LMIA). The application is submitted online by the
-            employer on LMIA portal.
+           {pData?.s1discalmier}
           </p>
 
           <h4
@@ -260,8 +258,7 @@ const InCaregiverProgramLP = () => {
             id="testing4"
             ref={(el) => (sectionsRef.current[6] = el)}
           >
-            The employers in Canada can hire a foreign worker for one of the two
-            categories:
+          {pData?.foreignHeading}
           </h4>
           <div
             className={`${styles.categories} ${styles.section}`}
@@ -273,11 +270,9 @@ const InCaregiverProgramLP = () => {
               id="testing5"
               ref={(el) => (sectionsRef.current[8] = el)}
             >
-              <h2>1. Caregivers for children</h2>
+              <h2> {pData?.foreign1}</h2>
               <p>
-                This category includes positions such as childcare provider,
-                live-in caregiver, nanny that fall under NOC 44100. The children
-                to whom care will be provided should be under 18 years of age.
+              {pData?.foreign1Desc}
               </p>
             </div>
             <div
@@ -285,20 +280,17 @@ const InCaregiverProgramLP = () => {
               id="testing6"
               ref={(el) => (sectionsRef.current[9] = el)}
             >
-              <h2>2. Caregivers for people with high medical needs</h2>
+              <h2> {pData?.foreign2}</h2>
               <p>
-                This category includes workers who provide care to people with
-                the age of 65 years or over, people with disabilities, a chronic
-                or terminal illness. The positions included are as follows:
+              {pData?.foreign2Desc}
               </p>
               <ul style={{ marginTop: "20px", marginLeft: "40px" }}>
                 <li>
-                  Registered nurse or registered psychiatric nurse (NOC 31301)
+                {pData?.f2l1}
                 </li>
-                <li>Licensed practical nurse (NOC 32101)</li>
+                <li>{pData?.f2l2}</li>
                 <li>
-                  Attendant for persons with disabilities, home support worker,
-                  live-in caregiver, personal care attendant (NOC 44101)
+                {pData?.f2l3}
                 </li>
               </ul>
             </div>
@@ -309,16 +301,13 @@ const InCaregiverProgramLP = () => {
             id="testing7"
             ref={(el) => (sectionsRef.current[10] = el)}
           >
-            Proof of Individual Requiring Care
+           {pData?.proofHeading}
           </h2>
           <p>
-            At the time of LMIA application, the employer is required to provide
-            proof to Service Canada to prove that they or their dependant is in
-            need of care by a full-time caregiver.
+          {pData?.proofDesc1}
           </p>
           <p>
-            For age and parentage for each child under the age of 18, they can
-            provide one of the following documents:
+          {pData?.proofDesc2}
           </p>
           <ul
             style={{ marginTop: "20px", marginLeft: "40px" }}
@@ -326,16 +315,15 @@ const InCaregiverProgramLP = () => {
             id="testing8"
             ref={(el) => (sectionsRef.current[11] = el)}
           >
-            <li>Long form birth certificate</li>
-            <li>Adoption order</li>
-            <li>Official guardianship, or</li>
+            <li>{pData?.under18l1}</li>
+            <li>{pData?.under18l2}</li>
+            <li>{pData?.under18l3}</li>
             <li>
-              Medical doctor's note confirming the pregnancy and the due date
+            {pData?.under18l4}
             </li>
           </ul>
           <p>
-            For age for each senior, 65 years or older, they can provide one of
-            the following documents:
+          {pData?.seniorHeading}
           </p>
           <ul
             style={{ marginTop: "20px", marginLeft: "40px" }}
@@ -343,13 +331,12 @@ const InCaregiverProgramLP = () => {
             id="testing9"
             ref={(el) => (sectionsRef.current[12] = el)}
           >
-            <li>Birth certificate</li>
-            <li>Passport, or</li>
-            <li>Old Age Security (OAS) identification card</li>
+            <li>{pData?.seniorl1}</li>
+            <li>{pData?.seniorl2}</li>
+            <li>{pData?.seniorl3}</li>
           </ul>
           <p>
-            For disability, chronic or terminal illness for each disabled,
-            chronically or terminally ill person, they can provide:
+          {pData?.disabilityHeading}
           </p>
           <ul
             style={{ marginTop: "20px", marginLeft: "40px" }}
@@ -358,14 +345,10 @@ const InCaregiverProgramLP = () => {
             ref={(el) => (sectionsRef.current[13] = el)}
           >
             <li>
-              Completed Schedule H - Medical disability, chronic or terminal
-              illness certificate (EMP5600) form, signed and dated by the
-              physician, or
+            {pData?.disabilityl1}
             </li>
             <li>
-              Physician's note attesting that the patient has a disability,
-              chronic or terminal illness and that they require access to a
-              live-in caregiver
+            {pData?.disabilityl2}
             </li>
           </ul>
 
@@ -374,7 +357,7 @@ const InCaregiverProgramLP = () => {
             id="testing12"
             ref={(el) => (sectionsRef.current[14] = el)}
           >
-            Step 2: You Apply for Work Permit
+            {pData?.step2Heading}
           </h3>
           <p
             style={{ marginTop: "20px" }}
@@ -382,15 +365,7 @@ const InCaregiverProgramLP = () => {
             id="testing13"
             ref={(el) => (sectionsRef.current[15] = el)}
           >
-            If you are a foreign national residing within Canada on a work
-            permit or study permit, you can apply for a work permit under
-            Temporary Foreign Worker Program after your employer obtains a
-            positive Labour Market Impact Assessment (LMIA). You cannot apply
-            for a work permit with caregiver LMIA if you are not currently
-            already authorized to work or study (whether you are physically
-            within or outside Canada). You must have a valid passport, be fluent
-            in English or French and meet the minimum education and experience
-            requirements for the job.
+          {pData?.step2Desc}
           </p>
         </section>
 
@@ -399,74 +374,56 @@ const InCaregiverProgramLP = () => {
           id="how-to-apply"
           ref={(el) => (sectionsRef.current[16] = el)}
         >
-          <h3>How to Apply for In Home Caregiver Program?</h3>
-          <h2>As an Employer:</h2>
+          <h3>{pData?.applyHeading}</h3>
+          <h2>{pData?.asEmployer}</h2>
           <ol style={{ marginTop: "20px", marginLeft: "40px" }}>
             <li>
-              Have an initial assessment performed by us to verify if the
-              employer is eligible to apply for LMIA.
+            {pData?.emp1}
             </li>
             <li>
-              We will provide you checklist of documents and information
-              required to start the initial process.
+            {pData?.emp2}
             </li>
             <li>
-              Perform recruitment efforts as per ESDC program requirements for
-              each LMIA type – high wage or low wage occupation LMIA.
-              (Hyperlink)
+            {pData?.emp3}
             </li>
-            <li>Screen and interview local candidates.</li>
+            <li>{pData?.emp4}</li>
             <li>
-              Prepare and submit LMIA application to Service Canada ESDS
-              department.
+            {pData?.emp5}
             </li>
-            <li>Pay the fees when requested, within 2 business days.</li>
-            <li>LMIA fees exemptions:</li>
+            <li>{pData?.emp6}</li>
+            <li>{pData?.emp7}</li>
             <ul>
               <li>
-                If applying for LMIA to provide care for an individual requiring
-                assistance with medical needs, the LMIA processing fee of
-                $1000.00 is not required. A medical certificate attesting to the
-                individual’s incapacity to care for themselves will have to be
-                provided.
+              {pData?.emp7l1}
               </li>
               <li>
-                If applying for LMIA to provide care for a child under 13 years
-                of age and the employer’s gross annual income is $150,000 or
-                less, the LMIA processing fee of $1000.00 is not required.
+              {pData?.emp7l2}
               </li>
             </ul>
             <li>
-              Wait for LMIA processing time, which can range from 30 to 90
-              business days. If the Service Canada officer has any questions or
-              concerns or requires any further information, the employer might
-              be contacted for an interview.
+            {pData?.emp8}
             </li>
             <li>
-              You will receive a positive LMIA by email or in the inbox section
-              of LMIA portal.
+            {pData?.emp9}
             </li>
           </ol>
 
-          <h2>As a Foreign Worker:</h2>
+          <h2>{pData?.asForiegn}</h2>
           <ul
             style={{ marginTop: "20px", marginLeft: "40px" }}
             className={`${styles.section} ${styles.section}`}
             id="testing14"
             ref={(el) => (sectionsRef.current[17] = el)}
           >
-            <li>Apply for a work permit as per guidelines set by IRCC.</li>
+            <li>{pData?.asF1}</li>
             <li>
-              IRCC will assess your application to check if you meet the
-              requirements.
+              {pData?.asF2}
             </li>
             <li>
-              If your application is approved, IRCC will issue you a work
-              permit.
+            {pData?.asF3}
             </li>
             <li>
-              Begin working with your employer to gain qualifying work
-              experience for permanent residency pathways.
+            {pData?.asF4}
             </li>
           </ul>
         </section>
@@ -476,25 +433,13 @@ const InCaregiverProgramLP = () => {
           id="testing1"
           ref={(el) => (sectionsRef.current[18] = el)}
         >
-          <h2>Still Not Sure?</h2>
+          <h2>{pData?.StillNotHeading}</h2>
           <p>
-            If you have received a refusal for any of the reasons mentioned
-            above, do not worry. With over a decade of experience, we specialize
-            in previously refused cases. While we don't provide jobs for LMIA,
-            we can certainly assist you if you have a job offer. We have
-            obtained approvals for clients who had multiple previous refusals.
-            We achieve this with a tailored approach to your specific case,
-            addressing each concern that the officer has listed in previous
-            refusals. We use case law and find similar cases to your
-            circumstances that had positive results, and we use them as
-            precedents in cases we work on. This is why we have a high success
-            rate.
+          {pData?.s1}
           </p>
 
           <p>
-            At Brightlight Immigration, we have a dedicated team of visa
-            application specialists who can assist you from the start of the
-            application process to obtaining your visa. Start your process now.
+          {pData?.s2}
           </p>
 
           <button

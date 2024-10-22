@@ -12,6 +12,7 @@ import { Helmet } from "react-helmet-async";
 const PathwaysForCaregiver = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -33,6 +34,21 @@ const PathwaysForCaregiver = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/pathway-for-caregiver")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -142,17 +158,14 @@ const PathwaysForCaregiver = () => {
           id="testing0"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          Pathways for Caregivers
+          {pData?.heading}
         </h1>
         <p
           className={`${styles.description} ${styles.section}`}
           id="testing1"
           ref={(el) => (sectionsRef.current[1] = el)}
         >
-          The Canadian government is actively welcoming foreign residents with
-          the right skills and experience to fill the country's critical need
-          for caregivers. IRCC defines caregivers as the workers who provide
-          care for children, seniors, or people with disabilities or illness.
+            {pData?.description}
         </p>
         <h2
           style={{ marginTop: "50px" }}
@@ -160,7 +173,7 @@ const PathwaysForCaregiver = () => {
           id="benifits"
           ref={(el) => (sectionsRef.current[2] = el)}
         >
-          Benefits of Pathways for Caregivers:
+             {pData?.benefitsHeading}
         </h2>
         <ul
         style={{marginLeft: "40px"}}
@@ -169,27 +182,19 @@ const PathwaysForCaregiver = () => {
           ref={(el) => (sectionsRef.current[3] = el)}
         >
           <li>
-            Canadian families can hire a full-time dedicated caregiver for the
-            person in need, thereby creating a less stressful environment when
-            caring for individuals with high needs.
+          {pData?.b1}
           </li>
           <li>
-            Caregiver pathways provide you with an opportunity to apply for
-            permanent residence, after gaining 12 months of experience in
-            Canada.
+          {pData?.b2}
           </li>
           <li>
-            The permanent residence applications do not have any points system
-            like Express Entry or provincial nomination programs. It is based on
-            a first-come, first-served basis.
+          {pData?.b3}
           </li>
           <li>
-            The language requirements for both work permit and permanent
-            residency application are very low.
+          {pData?.b4}
           </li>
           <li>
-            The spouse and dependent children can accompany you throughout the
-            process.
+          {pData?.b5}
           </li>
         </ul>
         <h2
@@ -198,7 +203,7 @@ const PathwaysForCaregiver = () => {
           id="testing2"
           ref={(el) => (sectionsRef.current[4] = el)}
         >
-          Here are the temporary residence pathways available for caregivers:
+             {pData?.temporaryHeading}
         </h2>
         <ul
         style={{marginLeft: "40px"}}
@@ -209,9 +214,8 @@ const PathwaysForCaregiver = () => {
           <li>
             <a className={styles.link} href="/in-home-caregiver-program-lp">
               In Home Caregiver program
-            </a>
-            - Work permit applications received with Labour Market Impact
-            Assessment (LMIA)
+            </a>{" "}
+            -{pData?.temporaryl1}
           </li>
         </ul>
         <h2
@@ -220,7 +224,7 @@ const PathwaysForCaregiver = () => {
           id="testing4"
           ref={(el) => (sectionsRef.current[6] = el)}
         >
-          Here are the permanent residence pathways available for caregivers:
+             {pData?.permanentHeading}
         </h2>
         <ul
         style={{marginLeft: "40px"}}
@@ -234,9 +238,8 @@ const PathwaysForCaregiver = () => {
               href="/permanent-residence-pathways-caregivers-lp"
             >
               Category A – Gaining experience
-            </a>
-            - For Home Child-Care Provider and Home Support Worker without
-            Canadian Experience
+            </a>{" "}
+            -{pData?.permanentl1}
           </li>
           <li>
             <a
@@ -244,9 +247,8 @@ const PathwaysForCaregiver = () => {
               href="/permanent-residence-pathways-caregivers-lp"
             >
               Category B – Direct to permanent residence
-            </a>
-            - For Home Child-Care Provider and Home Support Worker with Canadian
-            Experience
+            </a>{" "}
+            -{pData?.permanentl2}
           </li>
         </ul>
         <h2
@@ -255,7 +257,7 @@ const PathwaysForCaregiver = () => {
           id="how-to-apply"
           ref={(el) => (sectionsRef.current[8] = el)}
         >
-          How to apply for Pathways for Caregivers?
+                {pData?.applyHeading}
         </h2>
         <ol
         style={{marginLeft: "40px"}}
@@ -264,17 +266,13 @@ const PathwaysForCaregiver = () => {
           ref={(el) => (sectionsRef.current[9] = el)}
         >
           <li className={styles.listOl}>
-            Select the right NOC occupation as per your qualifications - HCCP or
-            HSWP
+          {pData?.a1}
           </li>
           <li className={styles.listOl}>
-            Choose the right pathway for yourself – temporary pathway is only
-            available to individuals who are already on a work permit or study
-            permit. Permanent pathways are available to all.
+          {pData?.a2}
           </li>
           <li className={styles.listOl}>
-            Check each pathway page for eligibility criteria and application
-            process.
+          {pData?.a3}
           </li>
         </ol>
 

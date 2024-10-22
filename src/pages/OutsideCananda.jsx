@@ -12,6 +12,7 @@ import { Helmet } from "react-helmet-async";
 const OutsideCananda = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -32,6 +33,21 @@ const OutsideCananda = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/outsideCanada")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -143,21 +159,14 @@ const OutsideCananda = () => {
           id="about-program"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          Student Visa: Outside Canada
+         {pData?.outsideCanadaHeading}
         </h1>
-        <p className={styles.intro}>Your Study Permit from Outside Canada</p>
+        <p className={styles.intro}>  {pData?.outsideCanadatPara1}</p>
         <p className={styles.intro}>
-          So, you've set your sights on pursuing higher education in the vibrant
-          and diverse world of Canada, where you'll be surrounded by fellow
-          students from all corners of the globe, your mind buzzing with
-          intellectual discussions and creative endeavors. Read on then.
+        {pData?.outsideCanadatPara2}
         </p>
         <p className={styles.intro}>
-          Studying in Canada is an excellent option for international students
-          seeking quality education and a vibrant cultural experience. To pursue
-          studies in Canada, you will require a valid study permit. This permit
-          will allow you to legally live and study in the country while
-          attending a designated learning institution (DLI).
+        {pData?.outsideCanadatPara3}
         </p>
 
         <section
@@ -165,7 +174,7 @@ const OutsideCananda = () => {
           id="programs"
           ref={(el) => (sectionsRef.current[1] = el)}
         >
-          <h2 className={styles.subheading}>Two Main Programs to Consider</h2>
+          <h2 className={styles.subheading}>  {pData?.TwoMainHeading}</h2>
           <div className={styles.buttonContainer}>
             <Link to="/sds" className={styles.button}>
               Student Direct Stream (SDS) Study Visa

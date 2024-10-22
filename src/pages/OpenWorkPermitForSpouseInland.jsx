@@ -13,6 +13,7 @@ import { Helmet } from "react-helmet-async";
 const OpenWorkPermitForSpouseInland = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -26,13 +27,29 @@ const OpenWorkPermitForSpouseInland = () => {
   };
 
   useEffect(() => {
-    fetch("https://brightlight-node.onrender.com/openWorkPerMeta")
+    fetch("https://brightlight-node.onrender.com/OpenWorkPermitForSpouseInMeta")
       .then((res) => {
         return res.json();
       })
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/OpenWorkPermitForSpouseIn")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -110,7 +127,7 @@ const OpenWorkPermitForSpouseInland = () => {
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
           <header className={styles.header}>
-            <h1>Open Work Permit</h1>
+            {/* <h1>Open Work Permit</h1> */}
           </header>
           <div
             className={`${styles.bannerHeadingRotateParent} ${
@@ -153,20 +170,11 @@ const OpenWorkPermitForSpouseInland = () => {
           >
             <header className={styles.header}>
               <h1>
-                Open Work Permit for Spouse or Common-law Partner of a Permanent
-                Resident/Canadian Citizen
+              {pData?.OpenWorkPermitForSpouseHeading}
               </h1>
               <p>
-                The processing time for a PR application can be longer than
-                usually expected. There are various reasons for this to happen.
-                The common scenarios for application delays are - applications
-                stuck in background checks, requests for additional medical
-                examinations, poor staffing at the country of citizenship,
-                security clearance delays, etc. The good thing is you can apply
-                for authorization to work while waiting for your permanent
-                residency application to be processed.
+              {pData?.OpenWorkPermitForSpousePara}
               </p>
-
               <p
                 style={{
                   marginTop: "20px",
@@ -174,20 +182,16 @@ const OpenWorkPermitForSpouseInland = () => {
                   textAlign: "left",
                 }}
               >
-                You can apply for this type of open work permit if you’ve
-                applied for permanent residence under one of the following
-                classes:
+                {pData?.OpenWorkPerSpouListHead}
               </p>
 
               <ul style={{ marginLeft: "40px" }}>
                 <li style={{ fontWeight: "600" }}>
-                  the spouse or common-law partner in Canada class (SCLPC) as a
-                  spouse or common-law partner
+                 {pData?.OpenWorkPerSpouLi1}
                 </li>
 
                 <li style={{ fontWeight: "600" }}>
-                  the family class as a spouse, common-law or conjugal partner
-                  (sponsored overseas)
+                {pData?.OpenWorkPerSpouLi2}
                 </li>
               </ul>
             </header>
@@ -199,28 +203,23 @@ const OpenWorkPermitForSpouseInland = () => {
             ref={(el) => (sectionsRef.current[1] = el)}
           >
             <h2>
-              Benefits of Open Work Permit for Spouse or Common-law Partner of a
-              Permanent Resident/Canadian Citizen:
+            {pData?.BenifitsHeading}
             </h2>
             <ul style={{ marginLeft: "40px" }}>
               <li>
-                It permits your spouse or common-law partner to work,
-                alleviating financial strain on you.
+              {pData?.b1}
               </li>
               <li>
-                It provides your spouse or common-law partner with the
-                opportunity to gain Canadian work experience.
+              {pData?.b2}
               </li>
               <li>
-                They have the flexibility to work for any employer and in any
-                position.
+              {pData?.b3}
               </li>
-              <li>They can also establish their own business if desired.</li>
+              <li>{pData?.b4}</li>
               <li>
-                Unlike visitors, they are allowed to stay in Canada for longer
-                than six months, with multiple entries allowed.{" "}
+              {pData?.b5}{" "}
               </li>
-              <li>The dependent child can also accompany. </li>
+              <li>{pData?.b6}</li>
             </ul>
           </section>
 
@@ -230,26 +229,20 @@ const OpenWorkPermitForSpouseInland = () => {
             ref={(el) => (sectionsRef.current[2] = el)}
           >
             <h2>
-              Eligibility criteria of Open Work Permit for Spouse or Common-law
-              Partner of a Permanent Resident/Canadian Citizen:
+            {pData?.EligibilityHeading}
             </h2>
             <ol style={{ marginLeft: "40px" }}>
               <li>
-                Both the sponsor and principal applicant must be in a genuine
-                relationship with each other.
+              {pData?.EligLi1}
               </li>
               <li>
-                Provide application fees receipt or Acknowledgement of Receipt
-                (AOR) of your permanent residence application.
+              {pData?.EligLi2}
               </li>
               <li>
-                Both the sponsor and principal applicant must be living
-                together.
+              {pData?.EligLi3}
               </li>
               <li>
-                If your spouse doesn’t have valid temporary resident status,
-                they must wait until you’ve received your approval in principle
-                letter.
+              {pData?.EligLi4}
               </li>
             </ol>
           </section>
@@ -260,33 +253,28 @@ const OpenWorkPermitForSpouseInland = () => {
             ref={(el) => (sectionsRef.current[25] = el)}
           >
             <h2>
-              How to apply for an Open Work Permit for Spouse or Common-law
-              Partner of a Permanent Resident/Canadian Citizen?
+            {pData?.HowApplyHeading}
             </h2>
             <ol style={{ marginLeft: "40px" }}>
               <li>
-                Identify the principal applicant’s occupation in TEER category
-                0, 1, 2 or 3 of the National Occupation Classification system.
+              {pData?.ha1}
               </li>
               <li>
-                Gather documents to prove above-mentioned eligibility criteria.
+              {pData?.ha2}
               </li>
               <li>
-                Gather documents to prove that your relationship is genuine
+              {pData?.ha3}
               </li>
               <li>
-                You might be required to get a medical exam and police clearance
-                certificates, if applying from outside Canada.
+              {pData?.ha4}
               </li>
 
-              <li>Submit a complete application to IRCC.</li>
+              <li>{pData?.ha5}</li>
 
               <li>
-                After receiving, Biometric Collection Instruction letter, make
-                an appointment for biometrics within 30 days of receiving the
-                letter.
+              {pData?.ha6}
               </li>
-              <li>Wait for IRCC to process your application.</li>
+              <li>{pData?.ha6}</li>
             </ol>
           </section>
 
@@ -296,25 +284,20 @@ const OpenWorkPermitForSpouseInland = () => {
             ref={(el) => (sectionsRef.current[35] = el)}
           >
             <h2>
-              Common reasons for refusals of Open Work Permit for Spouse or
-              Common-law Partner of a Permanent Resident/Canadiancitizen:
+            {pData?.RefusalHeading}
             </h2>
             <ol style={{ marginLeft: "40px" }}>
               <li>
-                Lack of documentation verifying the National Occupational
-                Classification (NOC) of the principal applicant.
+              {pData?.r1}
               </li>
               <li>
-                Inadequate evidence demonstrating the genuineness of the
-                marriage.
+              {pData?.r2}
               </li>
               <li>
-                The principal applicant is employed in a low skill occupation
-                under the low wage stream of LMIA.
+              {pData?.r3}
               </li>
               <li>
-                The principal applicant's work permit is nearing expiration, and
-                there has been no application filed to extend their stay.
+              {pData?.r4}
               </li>
             </ol>
           </section>

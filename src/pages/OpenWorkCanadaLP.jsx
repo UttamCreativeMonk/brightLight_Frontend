@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet-async";
 const OpenWorkCanadaLP = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -31,6 +32,21 @@ const OpenWorkCanadaLP = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/openWorkDependentChild")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -156,9 +172,7 @@ const OpenWorkCanadaLP = () => {
             Open Work Permit for Dependent Child of Foreign Worker in Canada
           </h1>
           <p>
-            IRCC now allows your dependent children of Temporary Foreign Workers
-            (TFWs) to obtain work permits without the need for an LMIA or job
-            offer, under LMIA exemption codes C46 and C48.
+          {pData?.openWorkDepPara}
           </p>
         </header>
 
@@ -167,34 +181,25 @@ const OpenWorkCanadaLP = () => {
           id="benefits"
           ref={(el) => (sectionsRef.current[1] = el)}
         >
-          <h2>Benefits of Open Work Permit for Dependent Child</h2>
+          <h2>{pData?.BenifitsHeading}</h2>
           <ul style={{marginLeft: "40px"}}>
             <li>
-              <strong>Financial Independence:</strong> Enables your dependent
-              child to work and earn income, supporting their expenses or saving
-              for education.
+            {pData?.BenifitsList1}
             </li>
             <li>
-              <strong>Professional Development:</strong> Provides opportunities
-              for skill enhancement and career growth.
+            {pData?.BenifitsList2}
             </li>
             <li>
-              <strong>Integration:</strong> Helps your dependent child integrate
-              into Canadian society and understand Canadian workplace dynamics.
+            {pData?.BenifitsList3}
             </li>
             <li>
-              <strong>Contribution to Household Income:</strong> Additional
-              income can reduce financial strain and improve the family's
-              standard of living.
+            {pData?.BenifitsList4}
             </li>
             <li>
-              <strong>Networking Opportunities:</strong> Allows your child to
-              build professional networks beneficial for their future career.
+            {pData?.BenifitsList5}
             </li>
             <li>
-              <strong>Pathway to Permanent Residency:</strong> Canadian work
-              experience may make your child eligible for permanent residency in
-              the future.
+            {pData?.BenifitsList6}
             </li>
           </ul>
         </section>
@@ -205,16 +210,13 @@ const OpenWorkCanadaLP = () => {
           ref={(el) => (sectionsRef.current[2] = el)}
         >
           <h2>
-            Eligibility criteria for Open work permit for Dependent child of
-            foreign worker in Canada:
+          {pData?.EligibilityHeading}
           </h2>
           <p>
-            There are 3 main groups of eligible family members as classified
-            below:{" "}
+          {pData?.EligibilitySubHead}{" "}
           </p>
           <h3>
-            1. Foreign Nationals in High-Skilled Occupations (TEER 0, 1, 2, or
-            3)
+          {pData?.EligMainSubHead1}
           </h3>
           <ul
             style={{
@@ -224,62 +226,48 @@ const OpenWorkCanadaLP = () => {
             }}
           >
             <li>
-              <strong>Valid Work Authorization:</strong> You must possess one of
-              the following:
+            {pData?.EligMain1List1}
               <ul className={styles.subList}>
-                <li>A valid work permit, subject to certain exceptions*.</li>
+                <li>{pData?.EligMainSub1List1}.</li>
                 <li>
-                  An approved work permit that has not yet been issued
-                  (indicated by a port of entry letter of introduction).
+                {pData?.EligMainSub1List2}
                 </li>
-                <li>Authorization to work without a permit.</li>
+                <li>{pData?.EligMainSub1List3}</li>
               </ul>
             </li>
             <li>
-              <strong>Work Permit Validity:</strong>Your work permit or
-              authorized work status must be valid for at least six months
-              beyond the date you submit your family member's open work permit
-              application.
+            {pData?.EligMain2List}
             </li>
             <li>
-              <strong>High-Skilled Occupation:</strong>You must be employed or
-              have a confirmed offer of employment in a high-skilled occupation,
-              as defined by the National Occupation Classification system (TEER
-              categories 0, 1, 2, or 3).
+            {pData?.EligMain3List}
             </li>
             <li>
-              <strong>Canadian Residence:</strong> You must be living in Canada
-              or have plans to move to Canada to work.
+            {pData?.EligMain4List}
             </li>
             <li>
-              <strong>Not Eligible:</strong>
+              <strong>{pData?.EligMain5List}</strong>
               <ul className={styles.subList}>
                 <li>
-                  You have made a refugee claim that has been referred to the
-                  Immigration and Refugee Board.
+                {pData?.EligMainSub5List1}
                 </li>
-                <li>You are subject to an unenforceable removal order.</li>
+                <li>{pData?.EligMainSub5List2}</li>
                 <li>
-                  You are an international student working in a co-op program
-                  without a work permit.
+                {pData?.EligMainSub5List3}
                 </li>
                 <li>
-                  You are an international student working off-campus without a
-                  work permit.
+                {pData?.EligMainSub5List4}
                 </li>
                 <li>
-                  You have applied for a post-graduation work permit (PGWP) but
-                  have not yet received a positive decision.
+                {pData?.EligMainSub5List5}
                 </li>
-                <li>You, yourself, hold a spousal open work permit.</li>
+                <li>{pData?.EligMainSub5List6}.</li>
               </ul>
             </li>
           </ul>
 
-          <h3>2. Foreign Nationals in Low-Skilled Occupations (TEER 4 or 5)</h3>
+          <h3>{pData?.EligMainSubHead2}</h3>
           <h4>
-            You must meet the following four requirements to be eligible to
-            apply for your child:
+          {pData?.EligMainSubHead2Para}
           </h4>
           <ul
             style={{
@@ -289,37 +277,28 @@ const OpenWorkCanadaLP = () => {
             }}
           >
             <li>
-              <strong>Valid Work Authorization:</strong> You must possess one of
-              the following:
+            {pData?.EligMain6List}
               <ul className={styles.subList}>
-                <li>A valid work permit, subject to certain exceptions*.</li>
+                <li>{pData?.EligMainSub6List1}</li>
                 <li>
-                  An approved work permit that has not yet been issued
-                  (indicated by a port of entry letter of introduction).
+                {pData?.EligMainSub6List2}
                 </li>
-                <li>Authorization to work without a permit.</li>
+                <li>{pData?.EligMainSub6List3}</li>
               </ul>
             </li>
             <li>
-              <strong>Work Permit Validity:</strong>Your work permit or
-              authorized work status must be valid for at least six months
-              beyond the date you submit your family member's open work permit
-              application.
+            {pData?.EligMain7List}
             </li>
             <li>
-              <strong>Low-Skilled Occupation:</strong> You must be employed or
-              have a confirmed offer of employment in a low-skilled occupation,
-              as defined by the National Occupation Classification system (TEER
-              categories 4 or 5).
+            {pData?.EligMain8List}
             </li>
             <li>
-              <strong>Canadian Residence:</strong> You must be living in Canada
-              or have plans to move to Canada to work.
+            {pData?.EligMain9List}
             </li>
             <li>
-              <strong>
-                If the work permit holder is under the Agri-Food Pilot:
-              </strong>
+         
+              {pData?.EligMain10List}
+           
               you must hold a labor market impact assessment (LMIA)-based work
               permit in the agriculture or low-wage stream of the Agri-Food
               Pilot and must have received an acknowledgment of receipt AOR
@@ -327,45 +306,37 @@ const OpenWorkCanadaLP = () => {
               residence is complete.
             </li>
             <li>
-              <strong>Not Eligible currently:</strong>
+              <strong>{pData?.EligMain11List}</strong>
               <ul className={styles.subList}>
                 <li>
-                  You hold a work permit under the <strong>low-wage</strong>{" "}
-                  stream of the Temporary Foreign Worker Program.
+                {pData?.EligMainSub11List1}
                 </li>
                 <li>
-                  You hold a work permit under the Seasonal Agricultural Worker
-                  Program.
+                {pData?.EligMainSub11List2}
                 </li>
                 <li>
-                  You hold a work permit under the agricultural stream of the
-                  Temporary Foreign Worker Program.
+                {pData?.EligMainSub11List3}
                 </li>
                 <li>
-                  You have made a refugee claim referred to the Immigration and
-                  Refugee Board.
+                {pData?.EligMainSub11List4}
                 </li>
-                <li>You are subject to an unenforceable removal order.</li>
-                <li>You are an international student in a co-op program.</li>
+                <li>{pData?.EligMainSub11List5}</li>
+                <li>{pData?.EligMainSub11List6}</li>
                 <li>
-                  You are an international student working off-campus without a
-                  work permit.
+                {pData?.EligMainSub11List7}
                 </li>
                 <li>
-                  You are applying for a Post-Graduation Work Permit (PGWP) and
-                  haven't received a positive decision on your application yet.
+                {pData?.EligMainSub11List8}
                 </li>
               </ul>
             </li>
           </ul>
 
           <h3>
-            3. Foreign Nationals Applying for Permanent Residence through
-            Economic Immigration Program
+          {pData?.EligMainSubHead3}
           </h3>
           <h4>
-            You must meet the following four requirements to be eligible to
-            apply for your child:
+          {pData?.EligMainSubHead3Para}
           </h4>
           <ul
             style={{
@@ -375,50 +346,38 @@ const OpenWorkCanadaLP = () => {
             }}
           >
             <li>
-              <strong>Valid Work Authorization:</strong> You must possess one of
-              the following:
+            {pData?.EligMain12List}
               <ul className={styles.subList}>
-                <li>A valid work permit, subject to certain exceptions*.</li>
+                <li>{pData?.EligMainSub12List1}</li>
                 <li>
-                  An approved work permit (employer-specific or open under a
-                  non-family category).
+                {pData?.EligMainSub12List2}
                 </li>
               </ul>
             </li>
             <li>
-              <strong>Work Permit Validity:</strong> Your work permit or
-              authorized work status must be valid for at least six months
-              beyond the date you submit your family member's open work permit
-              application.
+            {pData?.EligMain13List}
             </li>
             <li>
-              <strong>Canadian Residence:</strong> You must be living in Canada
-              or have plans to move to Canada to work.
+            {pData?.EligMain14List}
             </li>
             <li>
-              <strong>Permanent Residency in Process:</strong> Your work permit
-              was issued or approved because you applied for an economic class
-              permanent residence program.
+            {pData?.EligMain15List}
             </li>
           </ul>
 
-          <h3>Requirements for Your Dependent Child</h3>
+          <h3>{pData?.ReqHeading}</h3>
           <ul style={{marginLeft: "40px"}}>
             <li>
-              <strong>General Eligibility:</strong> Must meet general work
-              permit criteria, including police and medical clearances.
+            {pData?.Reqlist1}
             </li>
             <li>
-              <strong>Relationship:</strong> Must be in a genuine relationship
-              with the principal applicant.
+            {pData?.Reqlist2}
             </li>
             <li>
-              <strong>Temporary Residency:</strong> Must have valid temporary
-              resident status or be eligible for restoration of status.
+            {pData?.Reqlist3}
             </li>
             <li>
-              <strong>Minimum Age to Work:</strong> Must be of legal working age
-              as defined by the province/territory. See the chart below.
+            {pData?.Reqlist4}
             </li>
           </ul>
         </section>
@@ -428,92 +387,80 @@ const OpenWorkCanadaLP = () => {
           id="age-chart"
           ref={(el) => (sectionsRef.current[3] = el)}
         >
-          <h2>Legal Minimum Age to Work by Province/Territory</h2>
+          <h2>{pData?.LegalMinTableHeading}</h2>
           <table>
             <thead>
               <tr>
-                <th>Province/Territory</th>
-                <th>Minimum Legal Age to Work</th>
-                <th>Exceptions</th>
+                <th>{pData?.LegalMinTableHead1}</th>
+                <th>{pData?.LegalMinTableHead2}</th>
+                <th>{pData?.LegalMinTableHead3}</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Alberta</td>
-                <td>13 years</td>
-                <td>Children who are 12 or younger may do artistic work.</td>
+                <td>{pData?.LegalMinTab1Head1}</td>
+                <td>{pData?.LegalMinTab2Head1}</td>
+                <td>{pData?.LegalMinTab3Head1}</td>
               </tr>
               <tr>
-                <td>British Columbia</td>
-                <td>15 years</td>
-                <td>
-                  Children 12-14 may work with written consent from
-                  parents/guardians.
-                </td>
+                <td>{pData?.LegalMinTab1Head2}</td>
+                <td>{pData?.LegalMinTab2Head2}</td>
+                <td>{pData?.LegalMinTab3Head2}</td>
               </tr>
               <tr>
-                <td>Manitoba</td>
-                <td>13 years</td>
-                <td>
-                  Children 13-15 must complete a Young Worker Readiness
-                  Certificate Course.
-                </td>
+                <td>{pData?.LegalMinTab1Head3}</td>
+                <td>{pData?.LegalMinTab2Head3}</td>
+                <td>{pData?.LegalMinTab3Head3}</td>
               </tr>
               <tr>
-                <td>New Brunswick</td>
-                <td>16 years</td>
-                <td>
-                  Employers may apply for Authorization to employ children under
-                  16.
-                </td>
+                <td>{pData?.LegalMinTab1Head4}</td>
+                <td>{pData?.LegalMinTab2Head4}</td>
+                <td>{pData?.LegalMinTab3Head4}</td>
               </tr>
               <tr>
-                <td>Newfoundland and Labrador</td>
-                <td>16 years</td>
-                <td>Some restrictions apply to children under 16.</td>
+                <td>{pData?.LegalMinTab1Head5}</td>
+                <td>{pData?.LegalMinTab2Head5}</td>
+                <td>{pData?.LegalMinTab3Head5}</td>
               </tr>
               <tr>
-                <td>Nova Scotia</td>
-                <td>16 years</td>
-                <td>Children 14-15 may work in restaurants with conditions.</td>
+                <td>{pData?.LegalMinTab1Head6}</td>
+                <td>{pData?.LegalMinTab2Head6}</td>
+                <td>{pData?.LegalMinTab3Head6}</td>
               </tr>
               <tr>
-                <td>Ontario</td>
-                <td>14 years</td>
-                <td>Minors may not work during school hours.</td>
+                <td>{pData?.LegalMinTab1Head7}</td>
+                <td>{pData?.LegalMinTab2Head7}</td>
+                <td>{pData?.LegalMinTab3Head7}</td>
               </tr>
               <tr>
-                <td>Prince Edward Island</td>
-                <td>16 years</td>
-                <td>Many restrictions apply.</td>
+                <td>{pData?.LegalMinTab1Head8}</td>
+                <td>{pData?.LegalMinTab2Head8}</td>
+                <td>{pData?.LegalMinTab3Head8}</td>
               </tr>
               <tr>
-                <td>Quebec</td>
-                <td>No minimum age</td>
-                <td>Children under 14 need parents’ or guardians’ consent.</td>
+                <td>{pData?.LegalMinTab1Head9}</td>
+                <td>{pData?.LegalMinTab2Head9}</td>
+                <td>{pData?.LegalMinTab3Head9}</td>
               </tr>
               <tr>
-                <td>Saskatchewan</td>
-                <td>16 years</td>
-                <td>14-15 year olds need consent and must complete YWRCC.</td>
+                <td>{pData?.LegalMinTab1Head10}</td>
+                <td>{pData?.LegalMinTab2Head10}</td>
+                <td>{pData?.LegalMinTab3Head10}</td>
               </tr>
               <tr>
-                <td>Northwest Territories</td>
-                <td>No minimum age</td>
-                <td>
-                  Youths less than 17 need authorization for specific times and
-                  industries.
-                </td>
+                <td>{pData?.LegalMinTab1Head11}</td>
+                <td>{pData?.LegalMinTab2Head11}</td>
+                <td>{pData?.LegalMinTab3Head11}</td>
               </tr>
               <tr>
-                <td>Nunavut</td>
-                <td>No minimum age</td>
-                <td>Hiring under 17 has many restrictions.</td>
+                <td>{pData?.LegalMinTab1Head12}</td>
+                <td>{pData?.LegalMinTab2Head12}</td>
+                <td>{pData?.LegalMinTab3Head12}</td>
               </tr>
               <tr>
-                <td>Yukon</td>
-                <td>No minimum age</td>
-                <td>Many restrictions for youth workers.</td>
+                <td>{pData?.LegalMinTab1Head13}</td>
+                <td>{pData?.LegalMinTab2Head13}</td>
+                <td>{pData?.LegalMinTab3Head13}</td>
               </tr>
             </tbody>
           </table>
@@ -524,24 +471,17 @@ const OpenWorkCanadaLP = () => {
           id="application-process"
           ref={(el) => (sectionsRef.current[4] = el)}
         >
-          <h2>How to Apply</h2>
+          <h2>{pData?.HowApplyHeading}</h2>
           <ol style={{marginLeft: "40px"}}>
             <li>
-              Identify the principal applicant’s occupation in TEER category 0,
-              1, 2, 3, 4, or 5.
+            {pData?.HowAppList1}
             </li>
-            <li>Gather documents to prove eligibility criteria.</li>
-            <li>Gather documents to prove a genuine relationship.</li>
-            <li>
-              If applying from outside Canada, you might need a medical exam and
-              police clearance certificates.
-            </li>
-            <li>Submit a complete application to IRCC.</li>
-            <li>
-              After receiving the Biometric Collection Instruction letter, make
-              an appointment for biometrics within 30 days.
-            </li>
-            <li>Wait for IRCC to process your application.</li>
+            <li>{pData?.HowAppList2}</li>
+            <li>{pData?.HowAppList3}</li>
+            <li>{pData?.HowAppList4}</li>
+            <li>{pData?.HowAppList5}</li>
+            <li>{pData?.HowAppList6}</li>
+            <li>{pData?.HowAppList7}</li>
           </ol>
         </section>
 
@@ -550,22 +490,19 @@ const OpenWorkCanadaLP = () => {
           id="refusal-reasons"
           ref={(el) => (sectionsRef.current[5] = el)}
         >
-          <h2>Common Reasons for Refusal</h2>
+          <h2>{pData?.RefusalHeading}</h2>
           <ul style={{marginLeft: "40px"}}>
             <li>
-              Lack of documentation verifying the NOC of the principal
-              applicant.
+            {pData?.RefusalList1}
             </li>
             <li>
-              Inadequate evidence of the relationship between parent and child.
+            {pData?.RefusalList2}
             </li>
             <li>
-              Principal applicant is employed in a low-skill occupation and has
-              not applied for PR.
+            {pData?.RefusalList3}
             </li>
             <li>
-              Principal applicant's work permit is expiring without an extension
-              application.
+            {pData?.RefusalList4}
             </li>
           </ul>
         </section>
@@ -575,16 +512,9 @@ const OpenWorkCanadaLP = () => {
           id="why-choose-us"
           ref={(el) => (sectionsRef.current[6] = el)}
         >
-          <h2>Still Not Sure?</h2>
+          <h2>{pData?.StillNotSureHeading}</h2>
           <p>
-            If you have received a refusal for any of the reasons mentioned
-            above, do not worry. With over a decade of experience, we specialize
-            in previously refused cases. While we don't provide jobs for LMIA,
-            we can assist if you have a job offer. We have successfully obtained
-            approvals for clients with previous refusals through a tailored
-            approach, addressing each concern listed in refusals, and using case
-            law as precedents. Contact us at Brightlight Immigration for expert
-            assistance from start to finish.
+          {pData?.StillNotSurePara}
           </p>
           <button
             onClick={() =>

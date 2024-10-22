@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet-async";
 const PrioritiesProgram = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -31,6 +32,21 @@ const PrioritiesProgram = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/priorities-program-page")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -149,8 +165,7 @@ const PrioritiesProgram = () => {
           ref={(el) => (sectionsRef.current[30] = el)}
         >
           <h3 style={{ textAlign: "center", color: "#e8c47c" }}>
-            British Columbia Provincial Nominee Program Targeted Draws for
-            Program Priorities Occupations
+          {pData?.heading}
           </h3>
           <p
             style={{
@@ -159,9 +174,7 @@ const PrioritiesProgram = () => {
               textAlign: "center",
             }}
           >
-            British Columbia has a significant demand in essential sectors of
-            the care economy, including healthcare, childcare, and veterinary
-            care, as well as in the construction and technology sectors
+           {pData?.description}
           </p>
         </section>
         <section
@@ -169,24 +182,19 @@ const PrioritiesProgram = () => {
           id="benefits"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          <h3>Benefits of Priority Occupations List</h3>
+          <h3>{pData?.benefitsHeading}</h3>
           <ul style={{ marginLeft: "40px" }}>
             <li>
-              The draws held in these Priority Occupations are generally
-              targeted occupations, and the cut-off is much lower than the
-              non-priority occupation.
+            {pData?.b1}
             </li>
             <li>
-              Priority Program candidates receive additional rounds of
-              invitations to apply on a weekly basis.
+            {pData?.b2}
             </li>
             <li>
-              PNP applications are processed at an expedited rate for Priority
-              Program applicants.
+            {pData?.b3}
             </li>
             <li>
-              Some employers can access Priority Program “concierge services” to
-              facilitate the hiring of foreign nationals.
+            {pData?.b4}
             </li>
           </ul>
         </section>
@@ -196,11 +204,10 @@ const PrioritiesProgram = () => {
           id="eligibility"
           ref={(el) => (sectionsRef.current[1] = el)}
         >
-          <h3>Eligibility Criteria for BCPNP Targeted Draws</h3>
+          <h3>{pData?.eligibilityHeading}</h3>
           <ol style={{ marginLeft: "40px" }}>
             <li>
-              You must fulfill the eligibility requirements for one of the
-              following BCPNP streams:
+            {pData?.elibilityP1}
               <ul style={{ marginLeft: "40px", marginTop: "10px" }}>
                 <li>
                   <a href="/skilled-worker" className={styles.link}>
@@ -215,8 +222,7 @@ const PrioritiesProgram = () => {
               </ul>
             </li>
             <li>
-              Additionally, you must satisfy the eligibility criteria specific
-              to your BCPNP Program Priorities Occupations.
+            {pData?.elibilityP2}
             </li>
           </ol>
         </section>
@@ -226,14 +232,14 @@ const PrioritiesProgram = () => {
           id="Priority_Occupation_List"
           ref={(el) => (sectionsRef.current[2] = el)}
         >
-          <h3>Priority Occupations List</h3>
+          <h3>{pData?.pOL}</h3>
 
           <div
             className={`${styles.occupationList} ${styles.section}`}
             id="testing1"
             ref={(el) => (sectionsRef.current[3] = el)}
           >
-            <h4>Childcare Professionals</h4>
+            <h4>{pData?.childcareHeading}</h4>
             <p className={styles.sectionPara}>
               Individuals with a job offer in the occupation of 42202 Early
               Childhood Educators and Assistants may be eligible for targeted
@@ -246,14 +252,14 @@ const PrioritiesProgram = () => {
             <table className={styles.table}>
               <thead>
                 <tr>
-                  <th>Occupation</th>
-                  <th>NOC Code</th>
+                  <th>{pData?.t1h1}</th>
+                  <th>{pData?.t1h2}</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Early Childhood Educators and Assistants</td>
-                  <td>42202</td>
+                  <td>{pData?.t1r1c1}</td>
+                  <td>{pData?.t1r1c2}</td>
                 </tr>
               </tbody>
             </table>
@@ -264,11 +270,9 @@ const PrioritiesProgram = () => {
             id="testing2"
             ref={(el) => (sectionsRef.current[4] = el)}
           >
-            <h4>Construction</h4>
+            <h4>{pData?.construction}</h4>
             <p style={{ marginBottom: "20px" }}>
-              Individuals working in the construction sector can take advantage
-              of targeted invitations to apply by meeting the following
-              requirements:
+            {pData?.constuctionDesc}
             </p>
             <ol
               style={{
@@ -278,23 +282,16 @@ const PrioritiesProgram = () => {
               }}
             >
               <li>
-                The job offer must be for an indeterminate, full-time
-                position within one of the priority construction occupations.
+              {pData?.cd1}
               </li>
               <li>
-                You must hold a valid trade certificate issued by, or have an
-                apprenticeship registered with SkilledTradesBC.
+              {pData?.cd2}
               </li>
               <li>
-                Your trade certificate must align with the specific job you’ve
-                been offered.
+              {pData?.cd3}
               </li>
               <li>
-                Remember that meeting these eligibility criteria does not
-                guarantee an invitation to apply; invitations are based on
-                threshold scores during draws. If your score meets or exceeds
-                the threshold, you’ll receive an invitation to apply from the
-                BCPNP.
+              {pData?.cd4}
               </li>
             </ol>
             <p style={{ marginBottom: "40px" }}>
@@ -304,145 +301,126 @@ const PrioritiesProgram = () => {
             <table className={styles.table}>
               <thead>
                 <tr>
-                  <th>Occupation</th>
-                  <th>NOC Code</th>
+                  <th>{pData?.t2h1}</th>
+                  <th>{pData?.t2h2}</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>
-                    Landscape and Horticulture Technicians and Specialists
-                  </td>
-                  <td>22114</td>
+                  <td>{pData?.t2r1c1}</td>
+                  <td>{pData?.t2r1c2}</td>
                 </tr>
                 <tr>
-                  <td>Sheet Metal Workers</td>
-                  <td>72102</td>
+                  <td>{pData?.t2r2c1}</td>
+                  <td>{pData?.t2r2c2}</td>
                 </tr>
                 <tr>
-                  <td>Boilermakers</td>
-                  <td>72103</td>
+                  <td>{pData?.t2r3c1}</td>
+                  <td>{pData?.t2r3c2}</td>
                 </tr>
                 <tr>
-                  <td>
-                    Structural Metal and Platework Fabricators and Fitters
-                  </td>
-                  <td>72104</td>
+                  <td>{pData?.t2r4c1}</td>
+                  <td>{pData?.t2r4c2}</td>
                 </tr>
                 <tr>
-                  <td>Ironworkers</td>
-                  <td>72105</td>
+                  <td>{pData?.t2r5c1}</td>
+                  <td>{pData?.t2r5c2}</td>
                 </tr>
                 <tr>
-                  <td>Welders and Related Machine Operators</td>
-                  <td>72106</td>
+                  <td>{pData?.t2r6c1}</td>
+                  <td>{pData?.t2r6c2}</td>
                 </tr>
                 <tr>
-                  <td>Electricians (Except Industrial and Power System)</td>
-                  <td>72200</td>
+                  <td>{pData?.t2r7c1}</td>
+                  <td>{pData?.t2r7c2}</td>
                 </tr>
                 <tr>
-                  <td>Industrial Electricians</td>
-                  <td>72201</td>
+                  <td>{pData?.t2r8c1}</td>
+                  <td>{pData?.t2r8c2}</td>
                 </tr>
                 <tr>
-                  <td>Plumbers</td>
-                  <td>72300</td>
+                  <td>{pData?.t2r9c1}</td>
+                  <td>{pData?.t2r9c2}</td>
                 </tr>
                 <tr>
-                  <td>
-                    Steamfitters, Pipefitters and Sprinkler System Installers
-                  </td>
-                  <td>72301</td>
+                  <td>{pData?.t2r10c1}</td>
+                  <td>{pData?.t2r210c2}</td>
                 </tr>
                 <tr>
-                  <td>Gas Fitters</td>
-                  <td>72302</td>
+                  <td>{pData?.t2r11c1}</td>
+                  <td>{pData?.t2r11c2}</td>
                 </tr>
                 <tr>
-                  <td>Carpenters</td>
-                  <td>72310</td>
+                  <td>{pData?.t2r12c1}</td>
+                  <td>{pData?.t2r12c2}</td>
                 </tr>
                 <tr>
-                  <td>Cabinetmakers</td>
-                  <td>72311</td>
+                  <td>{pData?.t2r13c1}</td>
+                  <td>{pData?.t2r13c2}</td>
                 </tr>
                 <tr>
-                  <td>Bricklayers</td>
-                  <td>72320</td>
+                  <td>{pData?.t2r14c1}</td>
+                  <td>{pData?.t2r14c2}</td>
                 </tr>
                 <tr>
-                  <td>Construction Millwrights and Industrial Mechanics</td>
-                  <td>72400</td>
+                  <td>{pData?.t2r15c1}</td>
+                  <td>{pData?.t2r15c2}</td>
                 </tr>
                 <tr>
-                  <td>Heavy-Duty Equipment Mechanics</td>
-                  <td>72401</td>
+                  <td>{pData?.t2r16c1}</td>
+                  <td>{pData?.t2r16c2}</td>
                 </tr>
                 <tr>
-                  <td>Heating, Refrigeration and Air Conditioning Mechanics</td>
-                  <td>72402</td>
+                  <td>{pData?.t2r17c1}</td>
+                  <td>{pData?.t2r17c2}</td>
                 </tr>
                 <tr>
-                  <td>Crane Operators</td>
-                  <td>72500</td>
+                  <td>{pData?.t2r18c1}</td>
+                  <td>{pData?.t2r18c2}</td>
                 </tr>
                 <tr>
-                  <td>Concrete Finishers</td>
-                  <td>73100</td>
+                  <td>{pData?.t2r19c1}</td>
+                  <td>{pData?.t2r19c2}</td>
                 </tr>
                 <tr>
-                  <td>Tilesetters</td>
-                  <td>73101</td>
+                  <td>{pData?.t2r20c1}</td>
+                  <td>{pData?.t2r20c2}</td>
                 </tr>
                 <tr>
-                  <td>
-                    Plasterers, Drywall Installers and Finishers and Lathers
-                  </td>
-                  <td>73102</td>
+                  <td>{pData?.t2r21c1}</td>
+                  <td>{pData?.t2r21c2}</td>
                 </tr>
                 <tr>
-                  <td>Roofers and Shinglers</td>
-                  <td>73110</td>
+                  <td>{pData?.t2r22c1}</td>
+                  <td>{pData?.t2r22c2}</td>
                 </tr>
                 <tr>
-                  <td>Glaziers</td>
-                  <td>73111</td>
+                  <td>{pData?.t2r23c1}</td>
+                  <td>{pData?.t2r23c2}</td>
                 </tr>
                 <tr>
-                  <td>Painters and Decorators (Except Interior Decorators)</td>
-                  <td>73112</td>
+                  <td>{pData?.t2r24c1}</td>
+                  <td>{pData?.t2r24c2}</td>
                 </tr>
                 <tr>
-                  <td>Floor Covering Installers</td>
-                  <td>73113</td>
+                  <td>{pData?.t2r25c1}</td>
+                  <td>{pData?.t2r25c2}</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
           <div className={styles.occupationList}>
-            <h4>Healthcare Professionals</h4>
+            <h4> {pData?.hpHeading}</h4>
             <ul style={{ marginLeft: "40px" }}>
               <li>
-                Individuals who are direct employees of a provincial health
-                authority or are physicians, nurse practitioners, or
-                midwives with the endorsement of a provincial health authority
-                can directly submit an application through the Health Authority
-                stream.
+              {pData?.hpl1}
               </li>
               <li>
-                For those not employed by a health authority (and therefore need
-                to register through an alternative stream), targeted invitations
-                to apply may be available if they have a job offer in one of the
-                following occupations.
+              {pData?.hpl12}
               </li>
               <li>
-                Remember that meeting these eligibility criteria does not
-                guarantee an invitation to apply; invitations are based on
-                threshold scores during draws. If your score meets or exceeds
-                the threshold, you’ll receive an invitation to apply from the
-                BCPNP.
+              {pData?.hpl13}
               </li>
             </ul>
             <p>
@@ -456,179 +434,161 @@ const PrioritiesProgram = () => {
             >
               <thead>
                 <tr>
-                  <th>Occupation</th>
-                  <th>NOC Code</th>
+                  <th>{pData?.t3h1}</th>
+                  <th>{pData?.t3h2}</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Managers in Health Care</td>
-                  <td>30010</td>
+                  <td>{pData?.t3r1c1}</td>
+                  <td>{pData?.t3r1c2}</td>
                 </tr>
                 <tr>
-                  <td>Specialists in Clinical and Laboratory Medicine</td>
-                  <td>31100</td>
+                  <td>{pData?.t3r2c1}</td>
+                  <td>{pData?.t3r2c2}</td>
                 </tr>
                 <tr>
-                  <td>Specialists in Surgery</td>
-                  <td>31101</td>
+                  <td>{pData?.t3r3c1}</td>
+                  <td>{pData?.t3r3c2}</td>
                 </tr>
                 <tr>
-                  <td>General Practitioners and Family Physicians</td>
-                  <td>31102</td>
+                  <td>{pData?.t3r4c1}</td>
+                  <td>{pData?.t3r4c2}</td>
                 </tr>
                 <tr>
-                  <td>Dentists</td>
-                  <td>31110</td>
+                  <td>{pData?.t3r5c1}</td>
+                  <td>{pData?.t3r5c2}</td>
                 </tr>
                 <tr>
-                  <td>Audiologists and Speech-Language Pathologists</td>
-                  <td>31112</td>
+                  <td>{pData?.t3r6c1}</td>
+                  <td>{pData?.t3r6c2}</td>
                 </tr>
                 <tr>
-                  <td>Pharmacists</td>
-                  <td>31120</td>
+                  <td>{pData?.t3r7c1}</td>
+                  <td>{pData?.t3r7c2}</td>
                 </tr>
                 <tr>
-                  <td>Dietitians and Nutritionists</td>
-                  <td>31121</td>
+                  <td>{pData?.t3r8c1}</td>
+                  <td>{pData?.t3r8c2}</td>
                 </tr>
                 <tr>
-                  <td>Psychologists</td>
-                  <td>31200</td>
+                  <td>{pData?.t3r9c1}</td>
+                  <td>{pData?.t3r9c2}</td>
                 </tr>
                 <tr>
-                  <td>Chiropractors</td>
-                  <td>31201</td>
+                  <td>{pData?.t3r10c1}</td>
+                  <td>{pData?.t3r10c2}</td>
                 </tr>
                 <tr>
-                  <td>Physiotherapists</td>
-                  <td>31202</td>
+                  <td>{pData?.t3r11c1}</td>
+                  <td>{pData?.t3r11c2}</td>
                 </tr>
                 <tr>
-                  <td>Occupational Therapists</td>
-                  <td>31203</td>
-                </tr>
-                <tr>
-                  <td>
-                    Kinesiologists and Other Professional Occupations in Therapy
-                    and Assessment
-                  </td>
-                  <td>31204</td>
+                  <td>{pData?.t3r12c1}</td>
+                  <td>{pData?.t3r12c2}</td>
                 </tr>
                 <tr>
                   <td>
-                    Other Professional Occupations in Health Diagnosing and
-                    Treating
+                  {pData?.t3r13c1}
                   </td>
-                  <td>31209</td>
-                </tr>
-                <tr>
-                  <td>Nursing Coordinators and Supervisors</td>
-                  <td>31300</td>
-                </tr>
-                <tr>
-                  <td>Registered Nurses and Registered Psychiatric Nurses</td>
-                  <td>31301</td>
-                </tr>
-                <tr>
-                  <td>Nurse Practitioners</td>
-                  <td>31302</td>
+                  <td>{pData?.t3r13c2}</td>
                 </tr>
                 <tr>
                   <td>
-                    Physician Assistants, Midwives and Allied Health
-                    Professionals
+                  {pData?.t3r14c1}
                   </td>
-                  <td>31303</td>
+                  <td>{pData?.t3r14c2}</td>
                 </tr>
                 <tr>
-                  <td>Licensed Practical Nurses</td>
-                  <td>32101</td>
+                  <td>{pData?.t3r15c1}</td>
+                  <td>{pData?.t3r15c2}</td>
                 </tr>
                 <tr>
-                  <td>Paramedical Occupations</td>
-                  <td>32102</td>
+                  <td>{pData?.t3r16c1}</td>
+                  <td>{pData?.t3r16c2}</td>
+                </tr>
+                <tr>
+                  <td>{pData?.t3r17c1}</td>
+                  <td>{pData?.t3r17c2}</td>
                 </tr>
                 <tr>
                   <td>
-                    Respiratory Therapists, Clinical Perfusionists and
-                    Cardiopulmonary Technologists
+                  {pData?.t3r18c1}
                   </td>
-                  <td>32103</td>
+                  <td>{pData?.t3r18c2}</td>
                 </tr>
                 <tr>
-                  <td>Medical Radiation Technologists</td>
-                  <td>32104</td>
+                  <td>{pData?.t3r19c1}</td>
+                  <td>{pData?.t3r19c2}</td>
                 </tr>
                 <tr>
-                  <td>Medical Laboratory Technologists</td>
-                  <td>32105</td>
+                  <td>{pData?.t3r20c1}</td>
+                  <td>{pData?.t3r20c2}</td>
                 </tr>
                 <tr>
-                  <td>Medical Laboratory Technicians</td>
-                  <td>32106</td>
+                  <td>{pData?.t3r21c1}</td>
+                  <td>{pData?.t3r21c2}</td>
                 </tr>
                 <tr>
-                  <td>Opticians</td>
-                  <td>32110</td>
+                  <td>{pData?.t3r22c1}</td>
+                  <td>{pData?.t3r22c2}</td>
                 </tr>
                 <tr>
-                  <td>Dental Hygienists and Dental Therapists</td>
-                  <td>32111</td>
+                  <td>{pData?.t3r23c1}</td>
+                  <td>{pData?.t3r23c2}</td>
                 </tr>
                 <tr>
-                  <td>Dental Assistants</td>
-                  <td>32112</td>
+                  <td>{pData?.t3r24c1}</td>
+                  <td>{pData?.t3r24c2}</td>
                 </tr>
                 <tr>
-                  <td>Other Technical Occupations in Health Care</td>
-                  <td>32119</td>
+                  <td>{pData?.t3r25c1}</td>
+                  <td>{pData?.t3r25c2}</td>
                 </tr>
                 <tr>
-                  <td>Veterinarians</td>
-                  <td>31103</td>
+                  <td>{pData?.t3r26c1}</td>
+                  <td>{pData?.t3r26c2}</td>
                 </tr>
                 <tr>
-                  <td>Veterinary Technologists and Technicians</td>
-                  <td>32120</td>
+                  <td>{pData?.t3r27c1}</td>
+                  <td>{pData?.t3r27c2}</td>
+                </tr>
+                <tr>
+                  <td>{pData?.t3r28c1}</td>
+                  <td>{pData?.t3r28c2}</td>
+                </tr>
+                <tr>
+                  <td>{pData?.t3r29c1}</td>
+                  <td>{pData?.t3r29c2}</td>
+                </tr>
+                <tr>
+                  <td>{pData?.t3r30c1}</td>
+                  <td>{pData?.t3r30c2}</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
           <div className={styles.occupationList}>
-            <h4>Technology Sector Opportunities</h4>
+            <h4>{pData?.tsoHeading}</h4>
             <p style={{ marginBottom: "20px" }}>
-              The British Columbia Provincial Nominee Program (BC PNP) provides
-              a pathway to permanent residence for skilled workers in specific,
-              high-demand technology occupations. To cater to the unique
-              requirements of B.C.&#39;s thriving technology sector, priority
-              technology occupations do not necessitate a permanent job offer.
+              {pData?.tsoDesc1}
             </p>
             <p>
-              For individuals working in the technology sector, the following
-              criteria must be met to qualify for targeted invitations to apply:
+            {pData?.tsoDesc2}
             </p>
             <ol style={{ marginLeft: "40px" }}>
               <li>
-                The job offer should fall within one of the priority technology
-                occupations.
+              {pData?.tsol1}
               </li>
               <li>
-                The job offer must have a minimum duration of one year (365
-                days).
+              {pData?.tsol2}
               </li>
               <li>
-                At the time of application, there should be at least 120
-                calendar days remaining on the job offer.
+              {pData?.tsol3}
               </li>
               <li>
-                Remember that meeting these eligibility criteria does not
-                guarantee an invitation to apply; invitations are based on
-                threshold scores during draws. If your score meets or exceeds
-                the threshold, you’ll receive an invitation to apply from the
-                BCPNP.
+              {pData?.tsol4}
               </li>
             </ol>
             <p>
@@ -642,66 +602,66 @@ const PrioritiesProgram = () => {
             >
               <thead>
                 <tr>
-                  <th>Occupation</th>
-                  <th>NOC Code</th>
+                  <th>{pData?.t4h1}</th>
+                  <th>{pData?.t4h2}</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Telecommunication Carriers Managers</td>
-                  <td>10030</td>
+                  <td>{pData?.t4r1c1}</td>
+                  <td>{pData?.t4r1c2}</td>
                 </tr>
                 <tr>
-                  <td>Information Systems Managers</td>
-                  <td>10031</td>
+                  <td>{pData?.t4r2c1}</td>
+                  <td>{pData?.t4r2c2}</td>
                 </tr>
                 <tr>
-                  <td>Computer and Information Systems Managers</td>
-                  <td>10032</td>
+                  <td>{pData?.t4r3c1}</td>
+                  <td>{pData?.t4r3c2}</td>
                 </tr>
                 <tr>
-                  <td>Software Engineers and Designers</td>
-                  <td>21701</td>
+                  <td>{pData?.t4r4c1}</td>
+                  <td>{pData?.t4r4c2}</td>
                 </tr>
                 <tr>
-                  <td>Computer Programmers and Interactive Media Developers</td>
-                  <td>21702</td>
+                  <td>{pData?.t4r5c1}</td>
+                  <td>{pData?.t4r5c2}</td>
                 </tr>
                 <tr>
-                  <td>Web Designers and Developers</td>
-                  <td>21703</td>
+                  <td>{pData?.t4r6c1}</td>
+                  <td>{pData?.t4r6c2}</td>
                 </tr>
                 <tr>
-                  <td>Database Analysts and Data Administrators</td>
-                  <td>21704</td>
+                  <td>{pData?.t4r7c1}</td>
+                  <td>{pData?.t4r7c2}</td>
                 </tr>
                 <tr>
-                  <td>Network Specialists</td>
-                  <td>21705</td>
+                  <td>{pData?.t4r8c1}</td>
+                  <td>{pData?.t4r8c2}</td>
                 </tr>
                 <tr>
-                  <td>Computer Network Technicians</td>
-                  <td>22801</td>
+                  <td>{pData?.t4r9c1}</td>
+                  <td>{pData?.t4r9c2}</td>
                 </tr>
                 <tr>
-                  <td>Network Operators</td>
-                  <td>22802</td>
+                  <td>{pData?.t4r10c1}</td>
+                  <td>{pData?.t4r10c2}</td>
                 </tr>
                 <tr>
-                  <td>Computer Support Workers</td>
-                  <td>22803</td>
+                  <td>{pData?.t4r11c1}</td>
+                  <td>{pData?.t4r11c2}</td>
                 </tr>
                 <tr>
-                  <td>Security Analysts</td>
-                  <td>22804</td>
+                  <td>{pData?.t4r12c1}</td>
+                  <td>{pData?.t4r12c2}</td>
                 </tr>
                 <tr>
-                  <td>Systems Analysts</td>
-                  <td>22805</td>
+                  <td>{pData?.t4r13c1}</td>
+                  <td>{pData?.t4r13c2}</td>
                 </tr>
                 <tr>
-                  <td>Other Information Technology Occupations</td>
-                  <td>22809</td>
+                  <td>{pData?.t4r14c1}</td>
+                  <td>{pData?.t4r14c2}</td>
                 </tr>
               </tbody>
             </table>
@@ -712,36 +672,31 @@ const PrioritiesProgram = () => {
             id="testing5"
             ref={(el) => (sectionsRef.current[7] = el)}
           >
-            <h4>Veterinary Care</h4>
-            <p style={{ marginBottom: "20px" }}>
-              Veterinary Care Workers with job offers in one of the following
-              occupations may benefit from targeted invitations to apply.
+            <h4>{pData?.vcHeading}</h4>
+             <p style={{ marginBottom: "20px" }}>
+              {pData?.vcDesc1}
             </p>
             <p style={{ marginBottom: "20px" }}>
-              Remember that meeting these eligibility criteria does not
-              guarantee an invitation to apply; invitations are based on
-              threshold scores during draws. If your score meets or exceeds the
-              threshold, you’ll receive an invitation to apply from the BCPNP.
+            {pData?.vcDesc2}
             </p>
             <p style={{ marginBottom: "20px" }}>
-              For a comprehensive list of eligible National Occupational
-              Classification (NOC) codes, please refer to the NOC list below:
+            {pData?.vcDesc3}
             </p>
             <table className={styles.table}>
               <thead>
                 <tr>
-                  <th>Occupation</th>
-                  <th>NOC Code</th>
+                  <th>{pData?.t5h1}</th>
+                  <th>{pData?.t5h2}</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Veterinarians</td>
-                  <td>31103</td>
+                  <td>{pData?.t5r1c1}</td>
+                  <td>{pData?.t5r1c2}</td>
                 </tr>
                 <tr>
-                  <td>Veterinary Technologists and Technicians</td>
-                  <td>32120</td>
+                  <td>{pData?.t5r2c1}</td>
+                  <td>{pData?.t5r2c2}</td>
                 </tr>
               </tbody>
             </table>
@@ -760,78 +715,60 @@ const PrioritiesProgram = () => {
           ref={(el) => (sectionsRef.current[8] = el)}
         >
           <h3 style={{ marginBottom: "20px" }}>
-            Application Procedure for British Columbia Priorities Program:
+          {pData?.applicationHeading}
           </h3>
           <ol style={{ marginLeft: "40px" }}>
             <li>
-              Register online on the BCPNP website and submit your BCPNP
-              profile:
+            {pData?.a1}
               <ul>
                 <li>
-                  Begin by choosing the appropriate program, which typically
-                  aligns with BC&#39;s Skills Immigration programs, such as the
-                  BC Skilled Worker or BC International Graduate programs.
+                {pData?.a1l1}
                 </li>
                 <li>
-                  Ensure eligibility by verifying that you meet the National
-                  Occupation Classification (NOC) code requirements for one of
-                  the in-demand occupations, categorized into streams like
-                  Childcare, Healthcare, Construction, Technology, and
-                  Veterinary-care.
+                {pData?.a1l2}
                 </li>
                 <li>
-                  Once confirmed eligible, initiate the application process by
-                  registering a profile with BCPNP Online.
+                {pData?.a1l3}
                 </li>
               </ul>
             </li>
             <li>
-              Check your score:
+            {pData?.a2}
               <ul>
                 <li>
-                  Upon registration, applicants should assess their score based
-                  on the provided criteria.
+                {pData?.a2l1}
                 </li>
               </ul>
             </li>
             <li>
-              Improve your score if necessary:
+            {pData?.a3}
               <ul>
                 <li>
-                  If your score falls below the cutoff set by the last draw
-                  conducted by BCPNP for your occupation, take steps to enhance
-                  your score to increase your chances of receiving an invitation
-                  to apply (ITA).
+                {pData?.a3l1}
                 </li>
               </ul>
             </li>
             <li>
-              Receive an Invitation to Apply (ITA):
+            {pData?.a4}
               <ul>
                 <li>
-                  If you meet or exceed the cutoff score from the last draw
-                  conducted by BCPNP for your occupation, you will receive an
-                  ITA to proceed with your application.
+                {pData?.a4l1}
                 </li>
               </ul>
             </li>
             <li>
-              Prepare and submit your BCPNP application within 30 days:
+            {pData?.a5}
               <ul>
                 <li>
-                  Upon receiving an ITA, applicants must diligently prepare and
-                  submit their BCPNP application within the specified timeframe
-                  of 30 days.
+                {pData?.a5l1}
                 </li>
               </ul>
             </li>
           </ol>
 
-          <h3 style={{ marginTop: "50px" }}>Still Not Sure ?</h3>
+          <h3 style={{ marginTop: "50px" }}>{pData?.StillNotHeading}</h3>
           <p>
-            Still not sure? Contact Brightlight Immigration today to assess your
-            profile and embark on a transformative journey towards achieving
-            your Canadian dream.
+          {pData?.s1}
           </p>
           <button
             id="book-appointment"
@@ -844,6 +781,7 @@ const PrioritiesProgram = () => {
             Book Appointment
           </button>
         </section>
+
         <section
           className={`${styles.section} ${styles.section}`}
           id="why-choose-us"

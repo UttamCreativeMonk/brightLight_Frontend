@@ -12,6 +12,7 @@ import FieldOfStudyTable from "../components/FieldOfStudyTable";
 const Pgwp = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -25,13 +26,29 @@ const Pgwp = () => {
   };
 
   useEffect(() => {
-    fetch("https://brightlight-node.onrender.com/pathwaysForCaregiverMeta")
+    fetch("https://brightlight-node.onrender.com/pgwpMeta")
       .then((res) => {
         return res.json();
       })
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/pgwp")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -150,21 +167,13 @@ const Pgwp = () => {
           ref={(el) => (sectionsRef.current[0] = el)}
         >
           <h1>
-            Canada’s Post Graduate Work Permit (PGWP) – Updated October, 2024
+          {pData?.PgwpHeading}
           </h1>
           <p>
-            If you are an international student who has graduated from a
-            designated learning institution (DLI) in Canada, you may be eligible
-            for a PGWP.
+          {pData?.PgwpPara1}
           </p>
           <p>
-            The Post-Graduation Work Permit (PGWP) is a temporary work permit
-            that allows international students who have graduated from a
-            Canadian Designated Learning Institution (DLI) to work in Canada
-            after they graduate for up to 3 years. The PGWP is a valuable
-            opportunity for international students to gain valuable Canadian
-            work experience, which can help them qualify for Canadian Permanent
-            Residence.
+          {pData?.PgwpPara2}
           </p>
         </header>
 
@@ -173,7 +182,7 @@ const Pgwp = () => {
           id="benefits"
           ref={(el) => (sectionsRef.current[1] = el)}
         >
-          <h2>Benefits of a Post-Graduate Work Permit (PGWP)</h2>
+          <h2>{pData?.BenifitsHeading}</h2>
           <ul style={{ marginLeft: "40px" }}>
             <li>
               You gain valuable Canadian work experience that can enhance your
@@ -485,21 +494,20 @@ const Pgwp = () => {
           id="how-to-apply"
           ref={(el) => (sectionsRef.current[24] = el)}
         >
-          <h2>⁠How to apply for Post Graduate Work Permit (PGWP)?</h2>
+          <h2>{pData?.HowApplyHeading}</h2>
           <p>
-            Meet the eligibility criteria? Let's see how you can apply for PGWP.
+          {pData?.HowApplyPara1}
           </p>
           <p style={{ marginTop: "20px", marginBottom: "10px" }}>
-            You can apply for a PGWP from inside or outside Canada.
+          {pData?.HowApplyPara2}
           </p>
-          <p>Here’s what you will need to provide when you apply for a PGWP </p>
+          <p>   {pData?.HowApplyPara3} </p>
           <ul style={{ marginLeft: "40px", marginTop: "10px" }}>
-            <li>A copy of your study permit</li>
+            <li>   {pData?.ha3}</li>
             <li>
-              A copy of your final academic transcripts OR a letter from your
-              school confirming your graduation
+            {pData?.ha4}
             </li>
-            <li>A copy of your passport</li>
+            <li>{pData?.ha5}</li>
             <li>
               Valid English or French language skills (IELTS, CELPIP, TEF, TCF)
             </li>
@@ -512,14 +520,13 @@ const Pgwp = () => {
           ref={(el) => (sectionsRef.current[4] = el)}
         >
           <h2>
-            Common Reasons for Refusal of Post-Graduate Work Permit (PGWP)
+          {pData?.RefusalHeading}
           </h2>
           <h4>
-            Don’t forget to avoid these common PGWP refusal reasons and increase
-            your chances of approval.
+          {pData?.RefusalSubHeading}
           </h4>
           <ul style={{ marginLeft: "40px" }}>
-            <li>Failure to meet the eligibility criteria set by IRCC.</li>
+            <li>{pData?.refList1}</li>
             <li>
               You haven’t completed a full-time program of at least eight months
               at a qualifying DLI.
@@ -548,20 +555,12 @@ const Pgwp = () => {
           id="why-choose-us"
           ref={(el) => (sectionsRef.current[5] = el)}
         >
-          <h2>Still Not Sure?</h2>
+          <h2>{pData?.StillNotSureHeading}</h2>
           <p>
-            If you have received a refusal for any of the reasons mentioned
-            above, do not worry. With over a decade of experience, we specialize
-            in previously refused cases. We have successfully obtained approvals
-            for clients with multiple previous refusals through a tailored
-            approach, addressing each concern listed in previous refusals and
-            using case law as precedents. This high success rate is why our
-            clients trust us.
+          {pData?.StillNotSurePara1}
           </p>
           <p>
-            At Brightlight Immigration, our dedicated team of visa application
-            specialists can assist you from start to finish. Start your process
-            now!
+          {pData?.StillNotSurePara2}
           </p>
           <button
             onClick={() =>

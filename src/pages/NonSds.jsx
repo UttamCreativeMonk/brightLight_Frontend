@@ -12,6 +12,7 @@ import FieldOfStudyTable from "../components/FieldOfStudyTable";
 const NonSds = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -32,6 +33,21 @@ const NonSds = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/nonSds")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -160,31 +176,18 @@ const NonSds = () => {
           id="about-program"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          Non-Student Direct Stream (Non-SDS) / General Student Visa
+         {pData?.nonSdsHeading}
         </h1>
 
         <section className={styles.intro}>
           <p>
-            While the Student Direct Stream (SDS) program offers a streamlined
-            application process for select countries, the Non-SDS Canada Student
-            Visa program extends this opportunity to students from all corners
-            of the globe.
+          {pData?.nonSdsPara1}
           </p>
           <p>
-            The Non-SDS or General Student Visa is an option for international
-            students who do not meet the eligibility requirements for the
-            Student Direct Stream (SDS) program. The SDS program offers a
-            streamlined visa application process with faster processing times
-            for certain eligible students from India and Brazil. Non-SDS
-            applicants, on the other hand, must undergo a more comprehensive
-            application process, which may take longer to process.
+          {pData?.nonSdsPara2}
           </p>
           <p>
-            While Non-SDS or General Student Visa offers greater flexibility in
-            terms of nationality and program selection, it also entails a
-            lengthier application process and more stringent documentation
-            requirements. Let&#39;s look into the pros and cons of this visa to
-            help you make an informed decision.
+          {pData?.nonSdsPara3}
           </p>
         </section>
 
@@ -193,24 +196,24 @@ const NonSds = () => {
           id="pros-cons"
           ref={(el) => (sectionsRef.current[1] = el)}
         >
-          <h2 className={styles.subheading}>Pros and Cons</h2>
+          <h2 className={styles.subheading}>{pData?.ProsConsHeading}</h2>
           <div className={styles.grid}>
             <div className={styles.pros}>
-              <h3>Pros:</h3>
+              <h3>{pData?.ProsHeading}</h3>
               <ul style={{marginLeft: "40px"}}>
-                <li>No specific nationality requirements</li>
-                <li>Allows students from all countries to apply.</li>
-                <li>More flexibility in choosing a DLI.</li>
-                <li>No language score requirements for certain programs</li>
+                <li>{pData?.ProsLi1}</li>
+                <li>{pData?.ProsLi2}</li>
+                <li>{pData?.ProsLi3}</li>
+                <li>{pData?.ProsLi4}</li>
               </ul>
             </div>
             <div className={styles.cons}>
-              <h3>Cons:</h3>
+              <h3>{pData?.ConsHeading}</h3>
               <ul style={{marginLeft: "40px"}}>
-                <li>Longer application process</li>
-                <li>Processing times can be unpredictable.</li>
-                <li>Higher funds are required.</li>
-                <li>More strict documentation requirements</li>
+                <li>{pData?.ConsLi1}</li>
+                <li>{pData?.ConsLi2}</li>
+                <li>{pData?.ConsLi3}</li>
+                <li>{pData?.ConsLi4}</li>
               </ul>
             </div>
           </div>
@@ -221,30 +224,22 @@ const NonSds = () => {
           id="eligibility"
           ref={(el) => (sectionsRef.current[2] = el)}
         >
-          <h2 className={styles.subheading}>Eligibility for Non-SDS Program</h2>
+          <h2 className={styles.subheading}>{pData?.EligibilityHeading}</h2>
           <ul style={{marginLeft: "40px"}}>
             <li>
-              You need to have a valid offer of admission from a designated
-              learning institution (DLI) in Canada.
+            {pData?.e1}
             </li>
             <li>
-              Hold a <b>provincial attestation letter (PAL)</b> from the
-              province or territory where you plan to study.
+            {pData?.e2}
             </li>
             <li>
-              Demonstrate adequate English language proficiency, typically with
-              an IELTS score of 6.0 for undergraduate studies and 6.5 for
-              postgraduate studies. See Chart Below for Other Accepted Language
-              tests and its requirements.
+            {pData?.e3}
             </li>
             <li>
-              Show sufficient funds to support yourself during your studies in
-              Canada. This may include personal savings, parental support, or
-              external scholarships.
+            {pData?.e4}
             </li>
             <li>
-              Also, you should meet all other Canadian immigration requirements,
-              such as criminal background checks and medical exams.
+            {pData?.e4}
             </li>
           </ul>
 
@@ -253,48 +248,48 @@ const NonSds = () => {
             id="language-chart"
             ref={(el) => (sectionsRef.current[3] = el)}
           >
-            <h3>Minimum Language Test Scores Required:</h3>
+            <h3>{pData?.eligibTabHeading}</h3>
             <table>
               <thead>
                 <tr>
-                  <th>English Language Test</th>
-                  <th>Minimum Score Required for SDS</th>
+                  <th>{pData?.eligibTabEnglanTestHead1}</th>
+                  <th>{pData?.eligibTabMinScReqSDSHead2}</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>IELTS Academic (Grade 12)</td>
-                  <td>Overall 6.0 - 5.5 acceptable in one of the modules</td>
+                  <td>{pData?.eligibTab1Value1}</td>
+                  <td>{pData?.eligibTab2Value1}</td>
                 </tr>
                 <tr>
-                  <td>IELTS Academic (Graduation)</td>
-                  <td>Overall 6.5 - no less than 6 in any of the modules</td>
+                  <td>{pData?.eligibTab1Value2}</td>
+                  <td>{pData?.eligibTab2Value2}</td>
                 </tr>
                 <tr>
-                  <td>CELPIP General</td>
-                  <td>7 in each module</td>
+                  <td>{pData?.eligibTab1Value3}</td>
+                  <td>{pData?.eligibTab2Value3}</td>
                 </tr>
                 <tr>
-                  <td>PTE Academic</td>
-                  <td>60</td>
+                  <td>{pData?.eligibTab1Value4}</td>
+                  <td>{pData?.eligibTab2Value4}</td>
                 </tr>
                 <tr>
-                  <td>TOEFL iBT</td>
-                  <td>83</td>
+                  <td>{pData?.eligibTab1Value5}</td>
+                  <td>{pData?.eligibTab2Value5}</td>
                 </tr>
                 <tr>
-                  <td>CAEL</td>
-                  <td>60</td>
+                  <td>{pData?.eligibTab1Value6}</td>
+                  <td>{pData?.eligibTab2Value6}</td>
                 </tr>
                 <tr>
-                  <td>NIVEAUX DE compétence linguistique canadiens</td>
-                  <td>Score of at least 7 for French*</td>
+                  <td>{pData?.eligibTab1Value7}</td>
+                  <td>{pData?.eligibTab2Value7}</td>
                 </tr>
               </tbody>
             </table>
 
             <h2 style={{ marginTop: "50px" }}>
-              Check what CLB score you need to achieve to meet CLB criteria.
+            {pData?.CheckCLBHeading}
             </h2>
 
             <button
@@ -312,29 +307,21 @@ const NonSds = () => {
           ref={(el) => (sectionsRef.current[4] = el)}
         >
           <h2 className={styles.subheading}>
-            Application Process (how to apply)
+          {pData?.AppProcesHeading}
           </h2>
           <p>
-            The application process for a Non-SDS Canada or General Student Visa
-            involves you submitting your complete application package to the
-            Canadian government. This package should typically include:
+          {pData?.AppProcesSubHeading}
           </p>
           <ul>
-            <li>Your completed application forms.</li>
-            <li>Your passport or travel document.</li>
-            <li>Proof of identity.</li>
-            <li>
-              Hold a <b>Provincial attestation letter (PAL)</b> from the
-              province or territory where you plan to study.
-            </li>
-            <li>Proof of funds. (See Chart Below)</li>
-            <li>Your letter of acceptance from a DLI.</li>
-            <li>English language proficiency test results.</li>
-            <li>Medical exam results.</li>
-            <li>
-              Police certificates from your home country and any other country
-              you have lived in for more than six months.
-            </li>
+            <li>{pData?.ap1}</li>
+            <li>{pData?.ap2}</li>
+            <li>{pData?.ap3}</li>
+            <li>{pData?.ap4}</li>
+            <li>{pData?.ap5}</li>
+            <li>{pData?.ap6}</li>
+            <li>{pData?.ap7}</li>
+            <li>{pData?.ap8}</li>
+            <li>{pData?.ap9}</li>
           </ul>
         </section>
 
@@ -344,34 +331,35 @@ const NonSds = () => {
           ref={(el) => (sectionsRef.current[5] = el)}
         >
           <h2 className={styles.subheading}>
-            Proof of Funds Chart updated as per new guidelines Jan 2024
+          {pData?.ProofFundHeading}
           </h2>
           <table>
             <thead>
               <tr>
-                <th>Single Applicant</th>
-                <th>Cost</th>
+                <th>{pData?.ProofFundTable1Head1}</th>
+                <th>{pData?.ProofFundTable1Head2}</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Tuition Fees</td>
-                <td>$20,000.00</td>
+                <td>{pData?.ProofFund1Table11}</td>
+                <td>{pData?.ProofFund1Table21}</td>
               </tr>
               <tr>
-                <td>Living Expense</td>
-                <td>$20,636.00</td>
+                <td>{pData?.ProofFund1Table12}</td>
+                <td>{pData?.ProofFund1Table22}</td>
               </tr>
               <tr>
-                <td>Transportation</td>
-                <td>$2,000.00</td>
+                <td>{pData?.ProofFund1Table13}</td>
+                <td>{pData?.ProofFund1Table23}</td>
               </tr>
               <tr>
-                <td>Minimum Funds Required</td>
-                <td>$42,636.00</td>
+                <td>{pData?.ProofFund1Table14}</td>
+                <td>{pData?.ProofFund1Table24}</td>
               </tr>
             </tbody>
           </table>
+
           <table>
             <thead>
               <tr>
@@ -424,7 +412,9 @@ const NonSds = () => {
               </tr>
             </tbody>
           </table>
+
         </section>
+        
         <section
           className={`${styles.applicationProcess} ${styles.section}`}
           id="pgwp-requirements"
@@ -500,13 +490,10 @@ const NonSds = () => {
         </section>
         
         <h3 style={{ marginBottom: "20px" }}>
-          I am an international student. Is my spouse, common law partner,
-          eligible for an Open Work Permit?
+        {pData?.ProofFundTableOpenPermitHeading}
         </h3>
         <p>
-          As of March 19, 2024, to be eligible to apply for a Spousal Open Work
-          Permit as an international student, you must be enrolled in one of the
-          following programs:
+        {pData?.ProofFundTableOpenPermitPara}
         </p>
 
         <section
@@ -516,16 +503,15 @@ const NonSds = () => {
         >
           <ul>
             <li style={{ listStyle: "none" }}>
-              <strong>Graduate Programs:</strong>
+              <strong>{pData?.GradProgHeading}</strong>
               <ul style={{marginLeft: "40px"}}>
                 <li>
-                  Graduate programs encompass master’s and doctorate degrees
-                  granted by universities or polytechnic institutions.
+                {pData?.GradProgPara}
                 </li>
               </ul>
             </li>
             <li style={{ listStyle: "none" }}>
-              <strong>Professional Degree Programs:</strong>
+              <strong>{pData?.ProfDegProgHeading}</strong>
               <li
                 style={{
                   listStyle: "disc",
@@ -533,18 +519,18 @@ const NonSds = () => {
                   marginTop: "10px",
                 }}
               >
-                Professional degree programs include the following:
+              {pData?.ProfDegProgSubHead}
               </li>
               <ul style={{ marginLeft: "80px" }}>
-                <li>Doctor of Dental Surgery (DDS, DMD)</li>
-                <li>Bachelor of Law or Juris Doctor (LLB, JD, BCL)</li>
-                <li>Doctor of Medicine (MD)</li>
-                <li>Doctor of Optometry (OD)</li>
-                <li>Pharmacy (PharmD, BS, BSc, BPharm)</li>
-                <li>Doctor of Veterinary Medicine (DVM)</li>
-                <li>Bachelor of Science in Nursing (BScN, BSN, BNSc)</li>
-                <li>Bachelor of Education (BEd)</li>
-                <li>Bachelor of Engineering (BEng, BE, BASc) (only)</li>
+                <li>{pData?.ProfDegProgList1}</li>
+                <li>{pData?.ProfDegProgList2}</li>
+                <li>{pData?.ProfDegProgList3}</li>
+                <li>{pData?.ProfDegProgList4}</li>
+                <li>{pData?.ProfDegProgList5}</li>
+                <li>{pData?.ProfDegProgList6}</li>
+                <li>{pData?.ProfDegProgList7}</li>
+                <li>{pData?.ProfDegProgList8}</li>
+                <li>{pData?.ProfDegProgList9}</li>
               </ul>
             </li>
           </ul>
@@ -556,23 +542,19 @@ const NonSds = () => {
           ref={(el) => (sectionsRef.current[7] = el)}
         >
           <h2 className={styles.subheading}>
-            Don’t forget to avoid these common Non-SDS or General Student Visa
-            refusal reasons and increase your chances of approval.
+          {pData?.RefusalHeading}
           </h2>
           <ul style={{marginLeft: "40px"}}>
             <li>
-              Your application is incomplete, and you did not share all the
-              required documentation.
+            {pData?.r1}
             </li>
             <li>
-              You do not have enough money to support yourself during your stay
-              in the country.
+            {pData?.r2}
             </li>
-            <li>Your health condition poses a risk to public health.</li>
-            <li>You submitted fraudulent documents in your application.</li>
+            <li>{pData?.r3}</li>
+            <li>{pData?.r4}</li>
             <li>
-              You may have violated the terms of your previous visa, such as
-              overstaying or working illegally.
+            {pData?.r5}
             </li>
           </ul>
         </section>
@@ -582,24 +564,12 @@ const NonSds = () => {
           id="book-appointment"
           ref={(el) => (sectionsRef.current[8] = el)}
         >
-          <h2 className={styles.subheading}>In Case,</h2>
+          <h2 className={styles.subheading}>{pData?.InCaseHeading}</h2>
           <p>
-            If you have faced a refusal for any of the reasons mentioned above,
-            don&#39;t worry. With over 10 years of experience, we specialize in
-            handling previously refused cases. We have successfully secured
-            approval for students who have had multiple refusals, long gaps in
-            education, and are of mature age.
+          {pData?.inCase1}
           </p>
           <p>
-            We achieve this by tailoring our approach to your specific case and
-            addressing each concern raised by the officer in previous refusals.
-            Using case law, we identify similar cases with positive outcomes and
-            apply them as precedents in the cases we handle. This is why we have
-            a high success rate, with over 90% approval in such cases. At
-            Brightlight Immigration, we have a dedicated team of visa
-            application specialists who can assist you from the start of the
-            application process all the way to obtaining your visa. Start your
-            process now.
+          {pData?.inCase2}
           </p>
 
           <button

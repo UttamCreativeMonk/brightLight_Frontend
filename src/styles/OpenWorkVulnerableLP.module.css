@@ -181,6 +181,11 @@
     margin-bottom: 20px;
     text-align: center;
   }
+
+  .header p{
+    text-align: center;
+  }
+  
   .benefits strong{
     color: #333;
   }

@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet-async";
 const InternationalGraduateProgram = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -31,6 +32,21 @@ const InternationalGraduateProgram = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/international-graduate-program-page")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -154,17 +170,10 @@ const InternationalGraduateProgram = () => {
           ref={(el) => (sectionsRef.current[21] = el)}
         >
           <h2 style={{textAlign: "center"}}> 
-            British Columbia Provincial Nominee Program International Graduate
-            stream
+          {pData?.Heading}
           </h2>
           <p style={{textAlign: "center"}}>
-            The British Columbia International Graduate stream is one of the
-            immigration pathways offered within the British Columbia Provincial
-            Nominee Program (BC PNP). Operated by the province of British
-            Columbia, the BC PNP aims to nominate skilled immigrants for
-            permanent residence in Canada. The BC International Graduate stream
-            prioritizes candidates who have completed post-secondary education
-            in Canada and have received an offer for skilled employment.
+          {pData?.Description}
           </p>
         </section>
         <section
@@ -172,19 +181,16 @@ const InternationalGraduateProgram = () => {
           id="benefits"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          <h2>Benefits of BCPNP International Graduate Stream</h2>
+          <h2>{pData?.BenifitsHeading}</h2>
           <ul style={{marginLeft: "40px"}}>
             <li>
-              Nomination Priority: Successful candidates receive an invitation
-              to apply for Canadian permanent residence.
+            {pData?.BenifitsList1}
             </li>
             <li>
-              No Express Entry Profile Required: No need for an Express Entry
-              profile.
+            {pData?.BenifitsList2}
             </li>
             <li>
-              Accelerated Processing: Option to apply through Express Entry for
-              faster processing.
+            {pData?.BenifitsList3}
             </li>
           </ul>
         </section>
@@ -193,7 +199,7 @@ const InternationalGraduateProgram = () => {
           id="eligibility"
           ref={(el) => (sectionsRef.current[1] = el)}
         >
-          <h2>First you must be eligible with BCPNP Skilled Worker Program</h2>
+          <h2>{pData?.EligibilityHeading}</h2>
           <ul className={styles.subheadingLink}>
                 <li>
                   <button
@@ -233,89 +239,71 @@ const InternationalGraduateProgram = () => {
                   and language proficiency.
                 </li>
               </ul>
-          <h4>Eligibility Criteria for International Graduate Stream</h4>
+          <h4>{pData?.EligibilityHeading}</h4>
           <div className={styles.criteria}>
-            <h3>1. Job Offer</h3>
+            <h3>{pData?.EligibilityList1}</h3>
             <ul>
               <li>
-                You must hold an indeterminate, full-time job offer from an
-                eligible BC employer.
+              {pData?.EligibilityList1NestedList1}
               </li>
               <li>
-                The job offer should fall under NOC TEER Categories 1, 2, or 3.
+              {pData?.EligibilityList1NestedList2}
               </li>
               <li>
-                If the job offer is in an eligible tech occupation or falls
-                under NOC 41200 (university professors and lecturers), it does
-                not need to be indeterminate.
+              {pData?.EligibilityList1NestedList3}
               </li>
               <li>
-                The wage must be at market rate and comparable to similar roles
-                in BC.
+              {pData?.EligibilityList1NestedList4}
               </li>
               <li>
-                Additional qualification requirements may apply based on the NOC
-                code of the job offer.
+              {pData?.EligibilityList1NestedList5}
               </li>
             </ul>
           </div>
           <div className={styles.criteria}>
-            <h3>2. Education</h3>
+            <h3>{pData?.EligibilityList2}</h3>
             <ul>
               <li>
-                You need a degree, diploma, or certificate from an eligible
-                Canadian post-secondary institution.
+              {pData?.EligibilityList2NestedList1}
               </li>
               <li>
-                The degree or diploma program completion date should be within
-                the last three years from the date on your official transcript.
+              {pData?.EligibilityList2NestedList2}
               </li>
               <li>
-                Undergraduate or graduate degrees must be from authorized
-                institutions that can grant degrees.
+              {pData?.EligibilityList2NestedList3}
               </li>
               <li>
-                Diplomas and certificates must be from public post-secondary
-                institutions in Canada (private institutions are not eligible).
+              {pData?.EligibilityList2NestedList4}
               </li>
               <li>
-                Language training and programs shorter than 8 months (excluding
-                internships and co-op terms) do not qualify.
+              {pData?.EligibilityList2NestedList5}
               </li>
             </ul>
           </div>
           <div className={styles.criteria}>
-            <h3>3. Language Proficiency</h3>
+            <h3>{pData?.EligibilityList3}</h3>
             <ul>
               <li>
-                If the job offer’s NOC code is TEER Category 1, language results
-                are not mandatory for eligibility (although BCPNP may still
-                request a language test).
+              {pData?.EligibilityList3NestedList1}
               </li>
               <li>
-                For TEER Categories 2 or 3, you need a Canadian Language
-                Benchmark (CLB) score of at least 4.
+              {pData?.EligibilityList3NestedList2}
               </li>
             </ul>
           </div>
           <div className={styles.criteria}>
-            <h3>4. Minimum Income Requirements</h3>
+            <h3>{pData?.EligibilityList4}</h3>
             <ul>
               <li>
-                You must demonstrate that your gross annual wage in the job
-                offer meets minimum income requirements.
+              {pData?.EligibilityList4NestedList1}
               </li>
               <li>
-                These requirements vary based on your location of residence in
-                BC and the number of dependents.
+              {pData?.EligibilityList4NestedList2}
               </li>
             </ul>
           </div>
           <p>
-            Remember that meeting these eligibility criteria does not guarantee
-            an invitation to apply; invitations are based on threshold scores
-            during draws. If your score meets or exceeds the threshold, you’ll
-            receive an invitation to apply from the BCPNP.
+          {pData?.EligibilityList4Remember}
           </p>
         </section>
         <section
@@ -323,11 +311,9 @@ const InternationalGraduateProgram = () => {
           id="employer_requirements"
           ref={(el) => (sectionsRef.current[2] = el)}
         >
-          <h2>Requirements for the Express Entry Category</h2>
+          <h2>{pData?.ReqExpressHeading}</h2>
           <p>
-            To be eligible for the International Graduates (IG) stream, you must
-            qualify under one of the three federal programs. To understand the
-            eligibility criteria for these programs, click on either the:
+          {pData?.ReqExpressDesc}
           </p>
           <ul style={{marginLeft: "40px"}}>
             <li>
@@ -352,23 +338,21 @@ const InternationalGraduateProgram = () => {
           id="testing1"
           ref={(el) => (sectionsRef.current[3] = el)}
         >
-          <h2>Employer’s Eligibility Requirements</h2>
+          <h2>  {pData?.EmpRequirementsHeading}</h2>
           <p>
-            As a British Columbia employer participating in the BC Skilled
-            Worker program, ensure you:
+          {pData?.EmpRequirementsDescription}
           </p>
           <ul style={{marginLeft: "40px"}}>
-            <li>Established in B.C.</li>
-            <li>Comply with domestic labor market recruitment.</li>
-            <li>At least 1 year in operation in BC.</li>
+            <li>  {pData?.EmpRequirementsList1}</li>
+            <li>  {pData?.EmpRequirementsList2}</li>
+            <li>  {pData?.EmpRequirementsList3}</li>
             <li>
-              Minimum full-time employees: Metro Vancouver (5), Outside Metro
-              Vancouver (3).
+            {pData?.EmpRequirementsList4}
             </li>
-            <li>Offer full-time, permanent employment.</li>
-            <li>Align wages with industry standards.</li>
-            <li>Submit required documentation and forms.</li>
-            <li>Adhere to all relevant laws and regulations.</li>
+            <li>  {pData?.EmpRequirementsList5}</li>
+            <li>  {pData?.EmpRequirementsList6}</li>
+            <li>  {pData?.EmpRequirementsList7}</li>
+            <li>  {pData?.EmpRequirementsList8}</li>
           </ul>
         </section>
         <section
@@ -389,118 +373,89 @@ const InternationalGraduateProgram = () => {
           ref={(el) => (sectionsRef.current[5] = el)}
         >
           <h2>
-            Application Process for British Columbia Provincial Nominee Program
-            International Graduate Stream application
+          {pData?.ApplicationHeading}
           </h2>
           <ol style={{marginLeft: "40px"}}>
             <li>
-              <strong>Expression of Interest (EOI) System</strong>
+              <strong>  {pData?.ApplyPoint1}</strong>
               <ul>
                 <li>
-                  The British Columbia International Graduate stream operates on
-                  an Expression of Interest (EOI) system.
+                {pData?.ApplyPoint1List1}
                 </li>
                 <li>
-                  Candidates who meet the minimum stream requirements can
-                  register a profile using the BC’s online immigration portal.
+                {pData?.ApplyPoint1List2}
                 </li>
               </ul>
             </li>
             <li>
-              <strong>Profile Registration:</strong>
+              <strong> {pData?.ApplyPoint2}</strong>
               <ul>
                 <li>
-                  Candidates must indicate on their BC profile whether they are
-                  applying through:
+                {pData?.ApplyPoint2List1}
                   <ul>
-                    <li>The accelerated Express Entry system, or</li>
+                    <li> {pData?.ApplyPoint2List1Nested1} </li>
                     <li>
-                      The regular non- Express Entry Skills Immigration system.
+                    {pData?.ApplyPoint2List1Nested2}
                     </li>
                   </ul>
                 </li>
                 <li>
-                  Once the profile has been submitted, candidates will be
-                  assigned a score and ranked against one another using the BC
-                  Skills Immigration Ranking System.
+                {pData?.ApplyPoint2List2}
                 </li>
               </ul>
             </li>
             <li>
-              <strong>Invitation to Apply (ITA):</strong>
+              <strong>{pData?.ApplyPoint3}</strong>
               <ul>
                 <li>
-                  The highest ranking candidates will be invited to apply to the
-                  stream in one of the stream’s periodic intakes.
+                {pData?.ApplyPoint3List1}
                 </li>
                 <li>
-                  Candidates must submit a complete application to the stream
-                  within 30 days from when they receive the invitation to apply.
+                {pData?.ApplyPoint3List2}
                 </li>
               </ul>
             </li>
             <li>
-              <strong>Application Fee:</strong>
+              <strong> {pData?.ApplyPoint4}</strong>
               <ul>
                 <li>
-                  The BC International Graduate stream charges a $1,475 CAD
-                  application fee per applicant.
+                {pData?.ApplyPoint4List1}
                 </li>
               </ul>
             </li>
             <li>
-              <strong>Provincial Nomination:</strong>
+              <strong> {pData?.ApplyPoint5}</strong>
               <ul>
                 <li>
-                  If the application is approved, the candidate will be issued
-                  a provincial nomination for permanent residence from BC.
+                {pData?.ApplyPoint5List1}
                 </li>
                 <li>
-                  Candidates can also request to receive a letter of support for
-                  a temporary work permit, allowing them to begin working in
-                  Canada while their application for permanent residence is
-                  processed.
+                {pData?.ApplyPoint5List2}
                 </li>
                 <li>
-                  Applying for a work permit with a letter of support from a
-                  province represents a separate application to IRCC.
+                {pData?.ApplyPoint5List3}
                 </li>
               </ul>
             </li>
             <li>
-              <strong>Express Entry Stream:</strong>
+              <strong>{pData?.ApplyPoint6}</strong>
               <ul>
                 <li>
-                  If the applicant indicated on their BC profile that they were
-                  applying to the BC Skilled Worker stream through Express
-                  Entry, they will receive a notification of nomination on their
-                  IRCC online account.
+                {pData?.ApplyPoint6List1}
                 </li>
                 <li>
-                  After accepting the provincial nomination, the
-                  applicant’s Comprehensive Ranking System (CRS) score will
-                  increase by 600 points, virtually guaranteeing they will
-                  receive an Invitation to Apply (ITA) for permanent residence
-                  in the next Express Entry draw.
+                {pData?.ApplyPoint6List2}
                 </li>
                 <li>
-                  After receiving an ITA, the applicant must prepare and submit
-                  an official application for Canadian permanent residence
-                  within the designated timeframe. Applications for permanent
-                  residence submitted through Express Entry are generally
-                  processed within six months.
+                {pData?.ApplyPoint6List3}
                 </li>
               </ul>
             </li>
             <li>
-              <strong>Regular Skills Immigration System:</strong>
+              <strong>  {pData?.ApplyPoint7}</strong>
               <ul>
                 <li>
-                  If the applicant indicated on their BC profile that they were
-                  applying to the BC International Graduate stream through
-                  the regular Skills Immigration system, the applicant has six
-                  months to submit an official application for permanent
-                  residence online.
+                {pData?.ApplyPoint7List1}
                 </li>
               </ul>
             </li>
@@ -515,12 +470,9 @@ const InternationalGraduateProgram = () => {
           id="book-appointment"
           ref={(el) => (sectionsRef.current[6] = el)}
         >
-          <h2>Still Not Sure?</h2>
+          <h2>  {pData?.StillNotSureHeading}</h2>
           <p>
-            Contact Brightlight Immigration to assess your profile and start
-            your journey towards Canadian permanent residence. With a high
-            approval rate and a tailored approach, we handle BCPNP International
-            Graduate Stream cases with expertise.
+          {pData?.StillNotSurePara1}
           </p>
           <button
             className={styles.button}

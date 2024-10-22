@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet-async";
 const ParentsGrandparents = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -31,6 +32,21 @@ const ParentsGrandparents = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/ParentsGrandparents")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -147,27 +163,21 @@ const ParentsGrandparents = () => {
           id="about-program"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          Parents and Grandparents Program (PGP)
+         {pData?.ParGrHeading}
         </h1>
         <p
           className={`${styles.description} ${styles.section}`}
           id="testing1"
           ref={(el) => (sectionsRef.current[1] = el)}
         >
-          Parents and grandparents are incredibly important in one’s life.
-          They're like the foundation of our lives, helping us become who we are
-          today. Many dream of bringing their parents and grandparents from
-          their native countries to be together in Canada. The Family
-          Reunification and Sponsorship program makes this possible.
+         {pData?.ParGrPara1}
         </p>
         <p
           className={`${styles.description} ${styles.section}`}
           id="testing2"
           ref={(el) => (sectionsRef.current[2] = el)}
         >
-          The Parents and Grandparents Program (PGP) allows Canadian citizens
-          and permanent residents to sponsor their parents and grandparents to
-          immigrate to Canada.
+          {pData?.ParGrPara2}
         </p>
 
         <section
@@ -176,8 +186,7 @@ const ParentsGrandparents = () => {
           ref={(el) => (sectionsRef.current[3] = el)}
         >
           <h2 className={styles.subheading} id="eligibility">
-            Eligibility criteria for Sponsor of Parents and Grandparents Program
-            (PGP):
+          {pData?.EligibilityHeading1}
           </h2>
           {/* <ul className={styles.list} >
             <li>
@@ -188,18 +197,13 @@ const ParentsGrandparents = () => {
             </li>
           </ul> */}
           <p>
-            You can sponsor your parents and grandparents, related by blood or
-            adoption. This includes your mother, father, step-parents, and
-            grandparents. However, you cannot sponsor your parents' or
-            grandparents' siblings, unless they are dependent children.
+             {pData?.EligibilityPara}
           </p>
           <h2 className={styles.subheading}>
-            Eligibility criteria for Parents and Grandparents Program (PGP) PR
-            Sponsorship:
+          {pData?.EligibilityHeading2}
           </h2>
           <h4>
-            Are you eligible to sponsor your parents or grandparents? Let's find
-            out.
+          {pData?.EligibilitySubHead}
           </h4>
           <ul
             style={{
@@ -209,14 +213,12 @@ const ParentsGrandparents = () => {
             }}
             className={styles.list}
           >
-            <li>You should be a Canadian citizen or permanent resident.</li>
-            <li>You must be at least 18 years old.</li>
-            <li>You should be living in Canada.</li>
-            <li>
-              You are able to financially support your parents or grandparents.
-            </li>
-            <li>You do not have any criminal record.</li>
-            <li>Meet income requirement for the past 3 years.</li>
+            <li>{pData?.e1}</li>
+            <li>{pData?.e2}</li>
+            <li>{pData?.e3}</li>
+            <li>{pData?.e4}</li>
+            <li>{pData?.e5}</li>
+            <li>{pData?.e6}</li>
           </ul>
 
           <h3 style={{ marginBottom: "20px" }}>
@@ -286,11 +288,10 @@ const ParentsGrandparents = () => {
           ref={(el) => (sectionsRef.current[5] = el)}
         >
           <h2 className={styles.subheading} id="how-to-apply">
-            How to apply for the Parents and Grandparents Program (PGP)?
+          {pData?.HowApplyHeading}
           </h2>
           <h4>
-            Meet the eligibility criteria? Let's see how you can sponsor your
-            parents or grandparents
+          {pData?.HowApplySubHead}
           </h4>
           <ul
             style={{
@@ -300,29 +301,11 @@ const ParentsGrandparents = () => {
             }}
             className={styles.list}
           >
-            <li>
-              The first step is to submit an Interest to Sponsor form on the
-              IRCC website. This form allows you to express your interest in
-              sponsoring your parents or grandparents and will help IRCC
-              determine if you are eligible for the program.
-            </li>
-            <li>
-              If your Interest to Sponsor form is approved, you will be invited
-              to apply for the program.
-            </li>
-            <li>
-              Once you get the ITA, complete the pending form that asks about
-              you, your parents or grandparents, and your financial situation.
-              Show proof of your income, like tax papers, etc.
-            </li>
-            <li>
-              If your application is approved, your parents or grandparents need
-              to apply for permanent residence.
-            </li>
-            <li>
-              Wait for the revert. It takes 12 to 24 months, depending on how
-              many applications they receive, for your application to process.
-            </li>
+            <li>{pData?.ha1}</li>
+            <li>{pData?.ha2}</li>
+            <li>{pData?.ha3}</li>
+            <li>{pData?.ha4}</li>
+            <li>{pData?.ha5}</li>
           </ul>
         </section>
 
@@ -332,11 +315,10 @@ const ParentsGrandparents = () => {
           ref={(el) => (sectionsRef.current[6] = el)}
         >
           <h2 className={styles.subheading} id="refusal-reasons">
-            Common reasons for refusal of Parents and Grandparents Program (PGP)
+          {pData?.RefusalHeading}
           </h2>
           <h4>
-            Don’t forget to avoid these common PGP refusal reasons and increase
-            your chances of approval.
+          {pData?.RefusalSubHead}
           </h4>
           <ul
             style={{
@@ -346,30 +328,11 @@ const ParentsGrandparents = () => {
             }}
             className={styles.list}
           >
-            <li>
-              If you can't show you have enough money to support your parents or
-              grandparents without help, your application will be refused. The
-              minimum income needed is CAD 43,082 for a single sponsor and CAD
-              52,965 for a married or common-law couple. This income is for the
-              year 2022 if you are applying for 2023/2024.
-            </li>
-            <li>
-              Not meeting the income requirement for the previous 3 years.
-            </li>
-            <li>
-              The parent or grandparent you're sponsoring failed to pass a
-              medical check. They need to be healthy without serious conditions
-              that could cost a lot for Canadian health care.
-            </li>
-            <li>
-              The sponsored person couldn’t show they can fit into Canadian
-              life. This means being willing to learn English or French and
-              respecting Canadian rules.
-            </li>
-            <li>
-              Giving incorrect information in your application could also lead
-              to rejection.
-            </li>
+            <li>{pData?.r1}</li>
+            <li>{pData?.r2}</li>
+            <li>{pData?.r3}</li>
+            <li>{pData?.r4}</li>
+            <li>{pData?.r5}</li>
           </ul>
           <button
             onClick={() =>
@@ -388,24 +351,13 @@ const ParentsGrandparents = () => {
           ref={(el) => (sectionsRef.current[7] = el)}
         >
           <h2 className={styles.subheading} id="why-choose-us">
-            Still not Sure?
+          {pData?.StillNotHeading}
           </h2>
           <p className={styles.paragraph}>
-            If you have received a refusal for any of the reasons mentioned
-            above, do not worry. With over a decade of experience, we specialize
-            in previously refused cases. We have achieved approvals for clients
-            who had multiple previous refusals. We achieve this with a tailored
-            approach to your specific case, addressing each concern that the
-            officer has listed in previous refusals. We use case law and find
-            similar cases to your circumstances that had positive results, and
-            we use them as precedents in cases we work on. This is why we have a
-            high success rate.
+          {pData?.s1}
           </p>
           <p className={styles.paragraph}>
-            At Brightlight Immigration, we have a dedicated team of visa
-            application specialists who can assist you from the start of the
-            application process all the way to obtaining your visa. Start your
-            process now.
+          {pData?.s2}
           </p>
           <button
             onClick={() => (window.location.href = "/contact-us")}

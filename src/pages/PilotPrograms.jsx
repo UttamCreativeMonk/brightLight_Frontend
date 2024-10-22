@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet-async";
 const PilotPrograms = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -30,6 +31,21 @@ const PilotPrograms = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/pilotProgram")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -143,22 +159,15 @@ const PilotPrograms = () => {
           id="about-program"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          Canada’s Pilot Programs
+          {pData?.pilotProgramHeading}
         </h1>
 
         <div className={styles.introduction}>
           <p>
-            The diverse economy of Canada offers various opportunities to
-            advance your career in fields such as agriculture and more.
+          {pData?.pilotProgramPara1}
           </p>
           <p>
-            Canada's Pilot Programs are temporary immigration programs designed
-            to address the specific needs of certain Canadian regions or
-            communities. These programs aim to attract skilled, semi-skilled,
-            and unskilled workers to fill labor shortages in various sectors and
-            contribute to the economic growth and development of those areas.
-            Many times, these programs become permanent, providing more PR
-            opportunities.
+          {pData?.pilotProgramPara2}
           </p>
         </div>
 
@@ -168,7 +177,7 @@ const PilotPrograms = () => {
           ref={(el) => (sectionsRef.current[1] = el)}
         >
           <h2 className={styles.subheading}>
-            Here is one of the Pilot Programs
+          {pData?.HereHeading}
           </h2>
           <ul>
             <li>
