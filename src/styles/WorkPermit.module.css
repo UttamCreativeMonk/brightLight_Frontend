@@ -51,7 +51,6 @@
   font-size: 28px;
 }
 
-
 .bannerHeadingRotatePara p {
   cursor: pointer;
 }
@@ -163,88 +162,95 @@
   margin-bottom: 20px;
 }
 
-   .container h2{
+.container h2 {
+  margin-bottom: 20px;
+  text-align: left;
+}
+.section {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
 
-    margin-bottom: 20px;
-    text-align: left;
-  }
-  .section {
-    opacity: 0;
-    transform: translateX(-100px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-    margin-top: 20px;
-    margin-bottom: 50px;
-  }
+.section p {
+  margin-bottom: 20px;
+}
 
-  .section p{
-    margin-bottom: 20px;
-  }
-  
-  .section.visible {
-    opacity: 1;
-    transform: translateX(0);
-  }
+.section.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
 
-  .pathwaysBtnFlex{
-    display: flex;
-    align-items: stretch;
-    justify-content: space-between;
-  }
+.pathwaysBtnFlex {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+}
 
-  .pathwaysBtnFlex div{
-    width: 33%;
-    padding: 20px 30px;
-    border: 2px solid #00273f;
-    border-radius: 10px;
-    color: #00273f;
-    text-align: center;
-    display: flex;
-    align-items: center;
+.pathwaysBtnFlex div {
+  width: 33%;
+  padding: 20px 30px;
+  border: 2px solid #00273f;
+  border-radius: 10px;
+  color: #00273f;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+}
+
+.pathwaysBtnFlex div:hover {
+  background-color: #00273f;
+  color: white;
+  border: 2px solid ghostwhite;
+  opacity: 0.9;
+}
+
+@media all and (max-width: 700px) {
+  .pathwaysBtnFlex {
+    flex-direction: column;
     justify-content: center;
   }
 
-  @media all and (max-width: 700px){
-    .pathwaysBtnFlex{
-      flex-direction: column;
-      justify-content: center;
-    }
-  
-    .pathwaysBtnFlex div{
-      width: 100%;
-      margin-bottom: 20px;
-    }
+  .pathwaysBtnFlex div {
+    width: 100%;
+    margin-bottom: 20px;
   }
-  
+}
 
-  .button1 {
-    display: block;
-    /* margin: auto; */
-    background-color: #00273f;
-    color: white;
-    padding: 15px;
-    border-radius: 3px;
-    margin-top: 20px;
-    text-decoration: none;
-    margin: auto;
-    cursor: pointer;
-    border: none;
-  }
-  .button1:hover {
-    opacity: 0.9;
-    text-decoration: none;
-  }
+.button1 {
+  display: block;
+  /* margin: auto; */
+  background-color: #00273f;
+  color: white;
+  padding: 15px;
+  border-radius: 3px;
+  margin-top: 20px;
+  text-decoration: none;
+  margin: auto;
+  cursor: pointer;
+  border: none;
+}
+.button1:hover {
+  opacity: 0.9;
+  text-decoration: none;
+}
 
-  .discription{
-    text-align: center;
-  }
+.discription {
+  text-align: center;
+}
 
-  @media (max-width: 400px) {
-    .container h2{
-      font-size: 20px;
-      margin-top: 10px;
-      margin-bottom: 20px;
-    }
-    .heading {
-      font-size: 24px;
-    }
+@media (max-width: 400px) {
+  .container h2 {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
   }
+  .heading {
+    font-size: 24px;
+  }
+}

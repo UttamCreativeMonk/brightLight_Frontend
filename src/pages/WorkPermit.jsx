@@ -173,7 +173,7 @@ let WorkPermit = () => {
           >
             <h2>Pathways to get a Work Permit</h2>
             <div className={styles.pathwaysBtnFlex}>
-              <div>
+              <div onClick={() => (window.location.href = "/open-work-permit")}>
                 <strong
                   style={{ cursor: "pointer" }}
                   onClick={() => (window.location.href = "/open-work-permit")}
@@ -181,7 +181,7 @@ let WorkPermit = () => {
                   Open Work Permit
                 </strong>
               </div>
-              <div>
+              <div onClick={() => (window.location.href = "/lmia-reviewed")} >
                 <strong
                   style={{ cursor: "pointer" }}
                   onClick={() => (window.location.href = "/lmia-reviewed")}
@@ -189,12 +189,10 @@ let WorkPermit = () => {
                   Labour Market Impact Assessment (LMIA)based work permit
                 </strong>
               </div>
-              <div>
+              <div  onClick={() => (window.location.href = "/spousal-open-work-permit")}>
                 <strong
                   style={{ cursor: "pointer" }}
-                  onClick={() =>
-                    (window.location.href = "/spousal-open-work-permit")
-                  }
+                  onClick={() => (window.location.href = "/spousal-open-work-permit")}
                 >
                   Spousal Open Work Permit
                 </strong>
