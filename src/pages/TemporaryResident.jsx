@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet-async";
 const TemporaryResident = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -31,6 +32,21 @@ const TemporaryResident = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/temporaryResidency")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -147,7 +163,7 @@ const TemporaryResident = () => {
           id="about-program"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          Temporary Residency
+          {pData?.temporaryResidencyHeading}
         </h1>
 
         <section
@@ -156,30 +172,22 @@ const TemporaryResident = () => {
           ref={(el) => (sectionsRef.current[1] = el)}
         >
           <p>
-            Temporary residency in Canada is a status granted by Canadian
-            immigration officers to foreign nationals, permitting them to reside
-            there for a limited period. Individuals who enter Canada on a
-            temporary residency basis legally and for various purposes,
-            including visiting relatives, joining a family member who holds
-            permanent residency, working, or starting a business.
+          {pData?.temporaryResidencyPara1}
           </p>
           <p>
-            When granted temporary residency status, foreign nationals become
-            temporary residents of Canada. This status differs from permanent
-            residency, <a href="/pr-renewal">Pr Renewal</a> which allows
-            individuals to stay in Canada indefinitely.
+          {pData?.temporaryResidencyPara2}{" "}<a href="/pr-renewal">Pr Renewal</a>
           </p>
           <p>
-            Canada warmly welcomes visitors, workers, and entrepreneurs from
-            across the globe. This option might be perfect for you if you're
-            considering a temporary stay in Canada.
+          {pData?.temporaryResidencyPara3}
+
           </p>
         </section>
 
         {/* New Section for Visa Categories */}
         <section className={styles.visaCategories} id="visa-categories">
           <h2 className={styles.subheading}>
-            Visa Categories under Temporary Residency
+          {pData?.VisaCategHeading}
+
           </h2>
           <div className={styles.buttonContainer}>
             <button

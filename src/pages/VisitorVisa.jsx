@@ -12,6 +12,7 @@ import { Helmet } from "react-helmet-async";
 const VisitorVisa = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -32,6 +33,21 @@ const VisitorVisa = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/visitorVisa")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -156,7 +172,7 @@ const VisitorVisa = () => {
           id="about-program"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          Visitor Visa
+          {pData?.visitorVisaHeading}
         </h1>
 
         <section
@@ -165,18 +181,7 @@ const VisitorVisa = () => {
           ref={(el) => (sectionsRef.current[1] = el)}
         >
           <p>
-            A Visitor Visa, also known as a Temporary Resident Visa (TRV),
-            allows people from other countries to visit Canada for a short
-            period. Are you planning to visit Canada and need to apply for a
-            Visitor Visa? There are several different options through which you
-            can apply for a Visitor Visa, each with its own specific
-            requirements. You can visit Canada for various purposes, all of
-            which are generally covered by the Visitor Visa umbrella. For some
-            visa-exempt countries, a simple Electronic Travel Authorisation
-            (eTA) application can be submitted. However, if you're from a
-            country that requires a visa, you'll need to obtain authorization to
-            enter and stay in Canada for a specific period, which is a Temporary
-            Resident Visa, also commonly known as Visitor Visa.
+          {pData?.visitorVisaPara}
           </p>
         </section>
 
@@ -186,7 +191,7 @@ const VisitorVisa = () => {
           ref={(el) => (sectionsRef.current[2] = el)}
         >
           <h2 className={styles.subheading}>
-            Choose Your Application of Interest:
+          {pData?.ChooseApplHeading}
           </h2>
           <div className={styles.buttons}>
             <Link to="/business-visitor-visa" className={styles.button}>
@@ -215,26 +220,18 @@ const VisitorVisa = () => {
           id="eligibility"
           ref={(el) => (sectionsRef.current[3] = el)}
         >
-          <h2 className={styles.subheading}>Eligibility Criteria</h2>
+          <h2 className={styles.subheading}>{pData?.EligibilityHeading}</h2>
           <p>
-            To obtain a visitor visa, you must meet essential requirements,
-            which may vary depending on your individual circumstances and
-            country of citizenship and residence.
+          {pData?.EligibilityPara}
           </p>
-          <p>Essential requirements include:</p>
+          <p>{pData?.EligLiHead}</p>
           <ul>
-            <li>A passport that is valid for 6 months or more</li>
-            <li>No criminal or immigration-related convictions</li>
-            <li>Proof of strong ties to your home country</li>
-            <li>
-              Proof of your intention to leave Canada at the end of your visit
-            </li>
-            <li>Proof that you have enough funds to cover your stay</li>
-            <li>
-              The amount of money you will need depends on the purpose of your
-              visit, how long you plan to stay, and whether you will stay in a
-              hotel or with friends or relatives.
-            </li>
+            <li>{pData?.e1}</li>
+            <li>{pData?.e2}</li>
+            <li>{pData?.e3}</li>
+            <li>{pData?.e4}</li>
+            <li>{pData?.e5}</li>
+            <li>{pData?.e6}</li>
           </ul>
         </section>
 
@@ -243,26 +240,14 @@ const VisitorVisa = () => {
           id="how-to-apply"
           ref={(el) => (sectionsRef.current[4] = el)}
         >
-          <h2 className={styles.subheading}>How to Apply for a Visitor Visa</h2>
-          <p>To start the process of obtaining a Canadian visitor visa, you, as the applicant, must follow a series of steps and complete specific requirements, as outlined below:</p>
+          <h2 className={styles.subheading}>  {pData?.eHowApplyHeading1}</h2>
+          <p>  {pData?.HowApplyPara}</p>
           <ol className={styles.visitorVisaList}>
-            <li>Assess your eligibility for a Canadian visitor visa.</li>
-            <li>
-              Gather the necessary documents and complete the required
-              application forms.
-            </li>
-            <li>
-              Submit your Canadian visitor visa application in accordance with
-              IRCC guidelines and our recommendations.
-            </li>
-            <li>
-              Wait for the processing of your application and respond promptly
-              to any additional inquiries from the authorities (if any).
-            </li>
-            <li>
-              Send your passport for the stamping of your Temporary Resident
-              Visa (TRV).
-            </li>
+            <li>{pData?.ha1}</li>
+            <li>{pData?.ha2}</li>
+            <li>{pData?.ha3}</li>
+            <li>{pData?.ha4}</li>
+            <li>{pData?.ha5}</li>
           </ol>
         </section>
 
@@ -271,18 +256,9 @@ const VisitorVisa = () => {
           id="tourism"
           ref={(el) => (sectionsRef.current[5] = el)}
         >
-          <h2 className={styles.subheading}>Tourism Visa</h2>
+          <h2 className={styles.subheading}> {pData?.TourismVisaHeading}</h2>
           <p>
-            Canadian immigration allows you to visit Canada for tourism purposes
-            and explore various tourist destinations, which are world-renowned.
-            To apply for a visitor visa for tourism purposes, you don’t need an
-            invitation from a Canadian citizen, permanent resident, or Canadian
-            business. However, you must satisfy Immigration, Refugees and
-            Citizenship Canada (IRCC) that you have sufficient funds to support
-            your trip to Canada. If dependents are accompanying you, you’ll need
-            to provide additional proof of funds. Furthermore, you’ll need to
-            provide convincing reasons why you will return to your home country
-            or country of residence after your trip is completed.
+          {pData?.TourismVisaPara}
           </p>
         </section>
 
@@ -291,14 +267,9 @@ const VisitorVisa = () => {
           id="emergency-visa"
           ref={(el) => (sectionsRef.current[6] = el)}
         >
-          <h2 className={styles.subheading}>Emergency Visa</h2>
+          <h2 className={styles.subheading}> {pData?.EmergencyVisaHeading}</h2>
           <p>
-            Canada Immigration allows for the application of an emergency visa
-            in situations that necessitate an immediate visit to Canada. This
-            could be due to unexpected circumstances such as emergency medical
-            care, sudden illness, to be present during the final moments of
-            life, end-of-life care, or the death or funeral of a family member,
-            close relative, or friend who is residing in Canada.
+          {pData?.EmergencyVisaPara}
           </p>
         </section>
 
@@ -308,30 +279,22 @@ const VisitorVisa = () => {
           ref={(el) => (sectionsRef.current[7] = el)}
         >
           <h2 className={styles.subheading}>
-            Common Reasons for Refusals of Visitor Visa
+          {pData?.RefusalHeading}
           </h2>
-          <p>When applying for a visitor visa, visa officers often look for signs that you'll return home after your trip. They want to be sure you have the means to support yourself financially and strong reasons to stay put. Here’s how to increase your chances of approval:
+          <p> {pData?.RefusalSubHead}
           </p>
           <ul>
             <li>
-              Prove that you can afford your trip. Address any concerns about
-              your financial ability to cover your expenses. Show your bank
-              statements, employment contracts, or pay stubs to demonstrate a
-              steady income, etc.
+            {pData?.r1}
             </li>
             <li>
-              Highlight your attachment to home. Visa officers want to see why
-              you're not eager to abandon your home life. Showcase your
-              commitments to your home country.
+            {pData?.r2}
             </li>
             <li>
-              Clearly express your visit's purpose and explain in detail the
-              reason for your visit, whether it's business, tourism, medical
-              treatment, etc.
+            {pData?.r3}
             </li>
             <li>
-              Showcase your travel experience and that you intend to return
-              home.
+            {pData?.r4}
             </li>
           </ul>
         </section>
@@ -341,23 +304,12 @@ const VisitorVisa = () => {
           id="testing2"
           ref={(el) => (sectionsRef.current[8] = el)}
         >
-          <h2 className={styles.subheading}>Still Not Sure?</h2>
+          <h2 className={styles.subheading}> {pData?.StillNotHeading}</h2>
           <p>
-            If you have received a refusal for any of the reasons mentioned
-            above, do not worry. With over a decade of experience, we specialize
-            in previously refused cases. We have obtained approvals for clients
-            who had multiple previous refusals. We achieve this with a tailored
-            approach to your specific case, addressing each concern that the
-            officer has listed in previous refusals. We use case laws and find
-            similar cases to your circumstances that had positive results, and
-            we use them as precedents in cases we work on. This is why we have a
-            high success rate.
+          {pData?.s1}
           </p>
           <p>
-            At Brightlight Immigration, we have a dedicated team of visa
-            application specialists who can assist you from the start of the
-            application process all the way to obtaining your visa. Start your
-            process now.
+          {pData?.s2}
           </p>
           <button
             className={styles.button}

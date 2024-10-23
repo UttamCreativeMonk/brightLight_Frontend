@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet-async";
 const SuperVisa = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -32,6 +33,21 @@ const SuperVisa = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/superVisa")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -137,210 +153,170 @@ const SuperVisa = () => {
 
       <div className={styles.container}>
         <h1  className={`${styles.heading} ${styles.section}`} id="about-program" ref={(el) => sectionsRef.current[0] = el}>
-          Super Visa
+        {pData?.superVisaHeading}
         </h1>
 
         <section className={`${styles.introduction} ${styles.section}`} id="testing" ref={(el) => sectionsRef.current[1] = el}>
           <p>
-            The Super Visa is a temporary visa program offered to parents and
-            grandparents of Canadian citizens or permanent residents.
+          {pData?.superVisaPara}
           </p>
         </section>
 
         <section className={`${styles.benefits} ${styles.section}`} id="benifits" ref={(el) => sectionsRef.current[2] = el}>
-          <h2 className={styles.subheading}>Benefits of Super Visa</h2>
+          <h2 className={styles.subheading}>{pData?.BenifitsHeading}</h2>
           <ul style={{marginLeft: "40px"}}>
             <li>
-              It allows them to visit their children or grandchildren in Canada
-              for up to five continuous years from their first arrival, with no
-              requirement to extend their status during this five-year stay.
+            {pData?.BenifitsList1}
             </li>
             <li>
-              This is a multiple-entry visa option, granting multiple entries
-              over up to 10 years or until the passport expires.
+            {pData?.BenifitsList2}
             </li>
           </ul>
         </section>
 
         <section className={`${styles.eligibility} ${styles.section}`} id="eligibility" ref={(el) => sectionsRef.current[3] = el}>
           <h2 className={styles.subheading}>
-            Eligibility Criteria for Super Visa
+          {pData?.EligibilityHeading}
           </h2>
           <p>
-            To meet the eligibility requirements for a Super Visa, you as the
-            sponsor (child or grandchild in Canada) must:
+          {pData?.EligibilitySubHead}
           </p>
           <ul>
-            <li>Be a Canadian citizen or permanent resident of Canada.</li>
+            <li> {pData?.EligibilityList1}</li>
             <li>
-              Provide proof of your relationship with your parents or
-              grandparents.
+            {pData?.EligibilityList2}
             </li>
             <li>
-              Meet the income requirements set by the Government of Canada.
-              Check the income requirement in the chart below:
+            {pData?.EligibilityList3}
             </li>
             <li>
-              Provide proof that you have medical insurance for your
-              parents/grandparents from a Canadian insurance company. The
-              insurance must meet the following criteria:
+            {pData?.EligibilityList4}
               <ul className={styles.subList}> 
-                <li>Valid for at least one year from the date of entry.</li>
-                <li>Coverage of at least $100,000.</li>
+                <li>{pData?.EligibilitySub4List1}</li>
+                <li>   {pData?.EligibilitySub4List2}</li>
 
               </ul>
               <li>
-                  Proof that the medical insurance has been paid in full or that
-                  monthly payments have been set up.
+              {pData?.EligEligibilityList5ibilityList2}
                 </li>
             </li>
           </ul>
 
-          <h3>Apart from these basic requirements</h3>
-          <h4>There are some additional requirements that your parents/grandparents will need to meet:</h4>
+          <h3>   {pData?.ApartHeading}</h3>
+          <h4>   {pData?.ApartSubHead}:</h4>
           <ul>
             <li>
-              Their Super Visa application must be submitted from outside
-              Canada.
+            {pData?.ApartLi1}
             </li>
-            <li>They must pass the immigration medical exam to qualify.</li>
+            <li>{pData?.ApartLi2}</li>
             <li>
-              They must meet the requirement to pass a security and health
-              eligibility check.
+            {pData?.ApartLi3}
             </li>
             <li>
-              If they are inadmissible to Canada, they do not qualify for this
-              program.
+            {pData?.ApartLi4}
             </li>
           </ul>
         </section>
 
         <section className={`${styles.incomeTable} ${styles.section}`} id="income-table" ref={(el) => sectionsRef.current[4] = el}>
-          <h2 className={styles.subheading}>Super Visa Income Table</h2>
+          <h2 className={styles.subheading}>{pData?.SuperVisaTabHeading}</h2>
           <h4>
-            Minimum necessary income requirements Updated as of June 3, 2024:
+          {pData?.SuperVisaTabSubHead}
           </h4>
-          <h4>Low Income Cut-Off (LICO):</h4>
+          <h4>{pData?.SuperVisaTabSubHead2}</h4>
           <table className={styles.table}>
             <thead>
               <tr>
-                <th>Size of Family Unit</th>
-                <th>Minimum Necessary Gross Income</th>
+                <th>{pData?.SupVTabHead1}</th>
+                <th>{pData?.SupVTabHead2}</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>1 person (your child or grandchild)</td>
-                <td>$29,380</td>
+                <td>{pData?.SupVTabHead1P1}</td>
+                <td>{pData?.SupVTabHead2P1}</td>
               </tr>
               <tr>
-                <td>2 persons</td>
-                <td>$36,576</td>
+                <td>{pData?.SupVTabHead1P2}</td>
+                <td>{pData?.SupVTabHead2P2}</td>
               </tr>
               <tr>
-                <td>3 persons</td>
-                <td>$44,966</td>
+                <td>{pData?.SupVTabHead1P3}</td>
+                <td>{pData?.SupVTabHead2P3}</td>
               </tr>
               <tr>
-                <td>4 persons</td>
-                <td>$54,594</td>
+                <td>{pData?.SupVTabHead1P4}</td>
+                <td>{pData?.SupVTabHead2P4}</td>
               </tr>
               <tr>
-                <td>5 persons</td>
-                <td>$61,920</td>
+                <td>{pData?.SupVTabHead1P5}</td>
+                <td>{pData?.SupVTabHead2P5}</td>
               </tr>
               <tr>
-                <td>6 persons</td>
-                <td>$69,834</td>
+                <td>{pData?.SupVTabHead1P6}</td>
+                <td>{pData?.SupVTabHead2P6}</td>
               </tr>
               <tr>
-                <td>7 or more</td>
-                <td>$77,750</td>
+                <td>{pData?.SupVTabHead1P7}</td>
+                <td>{pData?.SupVTabHead2P7}</td>
               </tr>
               <tr>
-                <td>More than 7 persons, for each additional person, add</td>
-                <td>$7,916</td>
+                <td>{pData?.SupVTabHead1P8}</td>
+                <td>{pData?.SupVTabHead2P8}</td>
               </tr>
             </tbody>
           </table>
         </section>
 
         <section className={`${styles.applicationProcess} ${styles.section}`} id="how-to-apply" ref={(el) => sectionsRef.current[5] = el}>
-          <h2 className={styles.subheading}>How to Apply</h2>
-          <h4>To start the application process, there are several forms and steps that you, as the applicant, will need to complete. The steps are as follows:</h4>
+          <h2 className={styles.subheading}>{pData?.HowtoApplyHeading}</h2>
+          <h4>{pData?.HowtoApplySubHead}</h4>
           <ol>
             <li>
-              Check your income requirements to ensure you meet the latest
-              standards.
+            {pData?.ha1}
             </li>
             <li>
-              Obtain upfront medical clearance from a doctor authorized by IRCC.
+            {pData?.ha2}
             </li>
             <li>
-              Secure medical insurance that complies with IRCC guidelines.
+            {pData?.ha3}
             </li>
             <li>
-              Complete all required documents for the Super Visa application.
+            {pData?.ha4}
             </li>
-            <li>Submit your Super Visa application.</li>
+            <li>
+            {pData?.ha5}
+            </li>
           </ol>
         </section>
 
         <section  className={`${styles.refusalReasons} ${styles.section}`} id="refusal-reasons" ref={(el) => sectionsRef.current[6] = el}>
-          <h2 className={styles.subheading}>Common Reasons for Refusal</h2>
+          <h2 className={styles.subheading}>{pData?.RefusalHeading}</h2>
           <ul style={{marginLeft: "40px"}}>
             <li>
-              Sponsor does not have sufficient financial support based on family
-              size. This is a common reason for refusal because you may have
-              miscalculated your funds based on the income chart and family
-              size.
+            {pData?.r1}
             </li>
             <li>
-              Immigration officer feels that your ties to your home country are
-              not strong. This means you have not demonstrated strong
-              connections to your home country, such as a job, family, and
-              property.
+            {pData?.r2}
             </li>
             <li>
-              Immigration officer feels that you will not leave Canada at the
-              end of your stay. This means the officer believes you have
-              intentions to immigrate to Canada permanently.
+            {pData?.r3}
             </li>
             <li>
-              You have previous refusals from IRCC that have not been explained
-              in the current application submission. This means you have prior
-              applications that were denied and you have not provided a
-              satisfactory explanation for those refusals.
+            {pData?.r4}
             </li>
             <li>
-              Your medical insurance coverage was inadequate according to the
-              set requirements. This means the insurance policy you provided
-              does not meet the minimum coverage standards required for Super
-              Visa holders.
+            {pData?.r5}
             </li>
             <li>
-              Documents you provided were either incomplete or inaccurate. This
-              means the documents you submitted were not complete or contained
-              errors, which may lead to refusal and even misrepresentation
-              charges.
+            {pData?.r6}
             </li>
           </ul>
           <p>
-            If you have received a refusal for any of the reasons mentioned
-            above, do not worry. With over a decade of experience, we specialize
-            in previously refused cases. We have got approvals for clients who
-            had multiple previous refusals. We achieve this with a tailored
-            approach to your specific case, addressing each concern that the
-            officer has listed in previous refusals. We use case law and find
-            similar cases to your circumstances that had positive results, and
-            we use them as precedents in cases we work on. This is why we have a
-            high success rate.
+          {pData?.rPara1}
           </p>
           <p>
-            At Brightlight Immigration, we have a dedicated team of visa
-            application specialists who can assist you from the start of the
-            application process all the way to obtaining your visa. Start your
-            process now.
+          {pData?.rPara2}
           </p>
         </section>
 

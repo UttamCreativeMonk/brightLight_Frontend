@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet-async";
 const AgriFoodPilotProgram = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -30,6 +31,21 @@ const AgriFoodPilotProgram = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/rnip-page")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -145,7 +161,7 @@ const AgriFoodPilotProgram = () => {
           id="about-program"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          <h1>Rural and Northern Immigration Pilot (RNIP)</h1>
+          <h1>{pData?.heading}</h1>
         </header>
         <section>
           <p
@@ -153,132 +169,92 @@ const AgriFoodPilotProgram = () => {
             id="benefits"
             ref={(el) => (sectionsRef.current[1] = el)}
           >
-            The Rural and Northern Immigration Pilot (RNIP) is revolutionizing
-            the way economic immigration benefits smaller communities across
-            Canada. Unlike traditional immigration programs that often favor
-            large cities, RNIP empowers rural and northern communities to take
-            charge of their own economic growth by attracting foreign workers
-            and international students who want to settle permanently.
+           {pData?.description1}
           </p>
           <p
             className={`${styles.section} ${styles.section}`}
             id="testing2"
             ref={(el) => (sectionsRef.current[2] = el)}
           >
-            The program's community-driven approach is its strength. Communities
-            themselves assess prospective candidates, ensuring they have the
-            skills and intentions that align perfectly with local needs. This
-            means newcomers don't just fill jobs - they become integral parts of
-            the community fabric, contributing their unique talents and
-            perspectives to enrich the area.
+            {pData?.description2}
           </p>
           <p style={{ marginBottom: "20px" }}>
-            The participating communities will:
+              {pData?.participationHeading}
           </p>
           <ul style={{ marginLeft: "40px" }}>
             <li>
-              Recommend candidates for permanent residence to IRCC for a final
-              decision.
+            {pData?.p1}
             </li>
             <li>
-              Connect newcomers with settlement services and mentoring
-              opportunities with established members of the community.
+            {pData?.p2}
             </li>
           </ul>
 
-          <h2>Benefits of Rural and Northern Immigration Pilot (RNIP)</h2>
+          <h2>{pData?.benefitsHeading}</h2>
           <ul style={{ marginLeft: "40px" }}>
             <li>
-              Great alternative to Provincial Nominee Programs (PNPs),
-              especially as PNPs are becoming more competitive and difficult to
-              qualify for.
+            {pData?.b1}
             </li>
             <li>
-              Some RNIP communities may have lower eligibility requirements
-              compared to other immigration programs, making it easier for
-              individuals to qualify for permanent residence.
+            {pData?.b2}
             </li>
             <li>
-              1 year work permit for you and your spouses or common-law partner,
-              while waiting for PR.
+            {pData?.b3}
             </li>
           </ul>
-          <h2>Eligibility Requirements for RNIP</h2>
-          <p>There are two main parts to eligibility:</p>
+          <h2>{pData?.eligibilityHeading}</h2>
+          <p>{pData?.eligibilityDescription}</p>
           <ol style={{ marginLeft: "40px" }}>
             <li style={{ marginBottom: "20px" }}>
-              IRCC requirements: You&#39;ll need to check if you meet the
-              general criteria set by Immigration, Refugees and Citizenship
-              Canada (IRCC). This could include things like having the right
-              education, work experience, language skills, and more.
+            {pData?.elibilityP1}
             </li>
             <li>
-              Community-specific requirements: On top of the IRCC rules, each
-              participating community may have its own unique eligibility
-              criteria. You&#39;ll need to research the specific community
-              you&#39;re interested in to see what they require.
+            {pData?.elibilityP2}
             </li>
           </ol>
-          <h2>How to Apply for RINP?</h2>
+          <h2>  {pData?.applyHeading}</h2>
           <ol style={{ marginLeft: "40px" }}>
             <li style={{ marginBottom: "20px" }}>
-              Find an eligible job: The first step in the actual application
-              process is to secure a job offer from an employer in one of the
-              participating communities. This can be a challenge, so it&#39;s
-              important to start your job search early and be persistent.
+            {pData?.apply1}
             </li>
             <li style={{ marginBottom: "20px" }}>
-              Get a recommendation from the community: Once you have a job
-              offer, your next step is to submit an application for
-              recommendation to the community you want to live in. They&#39;ll
-              review
+            {pData?.apply2}
             </li>
             <li style={{ marginBottom: "20px" }}>
-              Apply for permanent residence: If the community recommends you,
-              congratulations! You can then move on to the final step of
-              applying for permanent residence through the federal government.
-              This involves submitting a full application with all the necessary
-              documents and fees.
+            {pData?.apply3}
             </li>
           </ol>
           <p style={{ marginBottom: "20px" }}>
-            IRCC eligibility requirements is first set of requirements that you
-            will need to meet to qualify to apply and obtain PR in RNIP program:
+            {pData?.applyRequirementsHeading}
           </p>
           <p style={{ marginBottom: "20px" }}>You must:</p>
           <ul style={{ marginLeft: "40px" }}>
             <li>
-              Have qualifying work experience or have graduated from a publicly
-              funded post-secondary institution in the recommending community
+            {pData?.ar1}
             </li>
-            <li>Meet or exceed the language requirements</li>
-            <li>Meet or exceed the educational requirements</li>
+            <li>  {pData?.ar2}</li>
+            <li>  {pData?.ar3}</li>
             <li>
-              Prove you have enough money to support your transition into the
-              community
+            {pData?.ar4}
             </li>
-            <li>Intend to live in the community</li>
-            <li>Meet community-specific requirements</li>
+            <li>  {pData?.ar5}</li>
+            <li>  {pData?.ar6}</li>
           </ul>
           <p>
-            If you meet all the requirements, you can start to look for an
-            eligible job in the community.
+          {pData?.arEndingPara}
           </p>
           <h2
             className={`${styles.section} ${styles.section}`}
             id="testing3"
             ref={(el) => (sectionsRef.current[3] = el)}
           >
-            Participating Communities
+           {pData?.participatingCommunitiesHeading}
           </h2>
           <p style={{ marginBottom: "20px", marginTop: "10px" }}>
-            As a candidate, you need to find a job with an employer in 1 of the
-            participating communities. If a community endorses you and you’re
-            successful in applying for permanent residence, you’ll then move
-            there to work and live.
+          {pData?.participatingCommunitiesDescription1}
           </p>
           <p style={{ marginBottom: "20px" }}>
-            The communities participating in the pilot are:
+          {pData?.participatingCommunitiesDescription2}
           </p>
           <table
             className={`${styles.table} ${styles.section}`}
@@ -287,92 +263,87 @@ const AgriFoodPilotProgram = () => {
           >
             <thead>
               <tr>
-                <th>Community</th>
+                <th> {pData?.t1h1}</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>North Bay, ON</td>
+                <td> {pData?.t1r1c1}</td>
               </tr>
               <tr>
-                <td>Sudbury, ON</td>
+                <td> {pData?.t1r2c1}</td>
               </tr>
               <tr>
-                <td>Timmins, ON</td>
+                <td> {pData?.t1r3c1}</td>
               </tr>
               <tr>
-                <td>Sault Ste. Marie, ON</td>
+                <td> {pData?.t1r4c1}</td>
               </tr>
               <tr>
-                <td>Thunder Bay, ON</td>
+                <td> {pData?.t1r5c1}</td>
               </tr>
               <tr>
-                <td>Brandon, MB</td>
+                <td> {pData?.t1r6c1}</td>
               </tr>
               <tr>
-                <td>Altona/Rhineland, MB</td>
+                <td> {pData?.t1r7c1}</td>
               </tr>
               <tr>
-                <td>Moose Jaw, SK</td>
+                <td> {pData?.t1r8c1}</td>
               </tr>
               <tr>
-                <td>Claresholm, AB</td>
+                <td> {pData?.t1r9c1}</td>
               </tr>
               <tr>
-                <td>Vernon, BC</td>
+                <td> {pData?.t1r10c1}</td>
               </tr>
               <tr>
-                <td>West Kootenay (Trail, Castlegar, Rossland, Nelson), BC</td>
+                <td> {pData?.t1r11c1}</td>
               </tr>
             </tbody>
           </table>
 
           <p style={{ marginBottom: "20px" }}>
-            Each community will also have its own:
+            {pData?.eachCommunityPara}
           </p>
           <ul style={{ marginLeft: "40px" }}>
-            <li>Additional eligibility requirements</li>
-            <li>Job search process</li>
-            <li>Community recommendation application process</li>
-            <li>Criteria to calculate points based on your profile</li>
+            <li>{pData?.eachCommunityParaList1}</li>
+            <li>{pData?.eachCommunityParaList2}</li>
+            <li>{pData?.eachCommunityParaList3}</li>
+            <li>{pData?.eachCommunityParaList4}</li>
           </ul>
 
-          <h2>Work Experience Requirements</h2>
+          <h2>{pData?.workExpHeading}</h2>
           <ul style={{ marginTop: "20px", marginLeft: "40px" }}>
             <li>
-              You need 1 year of continuous work experience (at least 1,560
-              hours) in the past 3 years.
+            {pData?.workExpList1}
             </li>
             <li>
-              The following hours of work are eligible:
+            {pData?.workExpList2}
               <ul style={{ marginLeft: "40px", marginTop: "20px" }}>
-                <li>Count the hours worked in part-time and full-time jobs.</li>
+                <li>{pData?.workExpList2Nested1}</li>
                 <li>
-                  The hours must be in one occupation, but they can be with
-                  different employers.
+                {pData?.workExpList2Nested2}
                 </li>
-                <li>The hours must be over a period of at least 12 months.</li>
-                <li>These working hours can be inside or outside Canada.</li>
+                <li>{pData?.workExpList2Nested3}</li>
+                <li>{pData?.workExpList2Nested4}</li>
                 <li>
-                  If you worked in Canada, you must have been allowed to work in
-                  Canada.
+                {pData?.workExpList2Nested5}
                 </li>
               </ul>
             </li>
             <li>
-              Don’t count hours you weren’t paid for (volunteering or unpaid
-              internships don’t count).
+            {pData?.workExpList3}
             </li>
-            <li>Don’t count hours when you were self-employed.</li>
+            <li>{pData?.workExpList4}</li>
             <li>
-              Your work experience must include:
+            {pData?.workExpList5}
               <ul style={{ marginLeft: "20px", marginTop: "20px" }}>
                 <li>
-                  Most of the main duties and all the essential duties listed in
-                  your National Occupational Classification (NOC).
+                {pData?.workExpList5Nested1}
                 </li>
                 <li>
-                  The activities listed in the lead statement of your NOC.
+                {pData?.workExpList5Nested2}
                 </li>
               </ul>
             </li>
@@ -383,11 +354,10 @@ const AgriFoodPilotProgram = () => {
             id="testing10"
             ref={(el) => (sectionsRef.current[11] = el)}
           >
-            Job Offer Requirements
+            {pData?.jobOfferHeading}
           </h2>
           <p>
-            Your job offer must be for an occupation at a skill level related to
-            the NOC TEER category that matches your work experience.
+          {pData?.jobOfferDesc}
           </p>
           <table
             className={`${styles.jobOfferTable} ${styles.section}`}
@@ -396,30 +366,30 @@ const AgriFoodPilotProgram = () => {
           >
             <thead>
               <tr>
-                <th>Job Offer TEER Category</th>
-                <th>Required Work Experience TEER Category</th>
+                <th>{pData?.t2h1}</th>
+                <th>{pData?.t2h2}</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>TEER 0 or 1</td>
-                <td>TEER 0, 1, 2, or 3</td>
+                <td>{pData?.t2r1c1}</td>
+                <td>{pData?.t2r1c2}</td>
               </tr>
               <tr>
-                <td>TEER 2 or 3</td>
-                <td>TEER 1, 2, 3, or 4</td>
+                <td>{pData?.t2r2c1}</td>
+                <td>{pData?.t2r2c2}</td>
               </tr>
               <tr>
-                <td>TEER 4</td>
-                <td>TEER 2, 3, or 4</td>
+                <td>{pData?.t2r3c1}</td>
+                <td>{pData?.t2r3c2}</td>
               </tr>
               <tr>
-                <td>TEER 5</td>
-                <td>Same 5-digit NOC Code</td>
+                <td>{pData?.t2r4c1}</td>
+                <td>{pData?.t2r4c2}</td>
               </tr>
               <tr>
-                <td>Health Care Exception</td>
-                <td>NOC 31301 with TEER 1</td>
+                <td>{pData?.t2r5c1}</td>
+                <td>{pData?.t2r5c2}</td>
               </tr>
             </tbody>
           </table>
@@ -429,7 +399,7 @@ const AgriFoodPilotProgram = () => {
             id="testing12"
             ref={(el) => (sectionsRef.current[13] = el)}
           >
-            International Students Requirements
+           {pData?.internationalStudentsHeading}
           </h2>
           <ul
           style={{marginLeft: "40px"}}
@@ -438,62 +408,52 @@ const AgriFoodPilotProgram = () => {
             ref={(el) => (sectionsRef.current[14] = el)}
           >
             <li>
-              You’re exempt from the work experience criteria above if you
-              graduated with:
+            {pData?.isList1}
               <ul style={{ marginLeft: "20px", marginTop: "20px" }}>
                 <li>
-                  A credential from a post-secondary program of 2 years or
-                  longer and you:
+                {pData?.isList1Nested1}
                   <ul style={{ marginLeft: "20px", marginTop: "20px" }}>
                     <li>
-                      were studying as a full-time student for the full duration
-                      of the 2+ years
+                    {pData?.isList1Nested1Nested1}
                     </li>
                     <li>
-                      received the credential no more than 18 months before your
-                      application for permanent residence
+                    {pData?.isList1Nested1Nested2}
                     </li>
                     <li>
-                      were in the community for at least 16 of the last 24
-                      months spent studying to get your credential
+                    {pData?.isList1Nested1Nested3}
                     </li>
                   </ul>
                 </li>
-                <p>or</p>
+                <p>{pData?.orStatement}</p>
                 <li style={{ marginTop: "20px" }}>
-                  A credential from a post-secondary program of 2 years or
-                  longer and you:
+                {pData?.isList1Nested2}
                   <ul style={{ marginLeft: "20px", marginTop: "20px" }}>
                     <li>
-                      Were studying as a full-time student for the full duration
-                      of the 2+ years
+                    {pData?.isList1Nested2Nested1}
                     </li>
                     <li>
-                      Received the credential no more than 18 months before your
-                      application for permanent residence
+                    {pData?.isList1Nested2Nested2}
                     </li>
                     <li>
-                      Were in the community for at least 16 of the last 24
-                      months spent studying to get your credential
+                    {pData?.isList1Nested2Nested3}
                     </li>
                   </ul>
                 </li>
               </ul>
             </li>
           </ul>
+
           <p>
-            Important: Before you apply as an international student, make sure
-            your program doesn&#39;t fall into these categories:
+          {pData?.isImportantPara}
           </p>
+
           <ul style={{ marginLeft: "40px", marginTop: "20px" }}>
-            <li>Studied English or French for more than half of the program</li>
+            <li>  {pData?.isImportantParaList1}</li>
             <li>
-              Distance learning was your main method of instruction for than
-              half of the program
+            {pData?.isImportantParaList2}
             </li>
             <li>
-              You&#39;ve received a scholarship or fellowship that requires you
-              to return to your home country to apply what you learned
+            {pData?.isImportantParaList3}
             </li>
           </ul>
 
@@ -502,25 +462,23 @@ const AgriFoodPilotProgram = () => {
             id="testing14"
             ref={(el) => (sectionsRef.current[15] = el)}
           >
-            Language Requirements
+             {pData?.languageRequirementsHeading}
           </h2>
           <p style={{ marginBottom: "20px" }}>
-            Language Requirements You must meet the minimum language
-            requirements based on the NOC category that applies to the job offer
-            in the community.
+          {pData?.languageRequirementsDescription1}
           </p>
-          <p style={{ marginBottom: "20px" }}>This can either be the:</p>
+          <p style={{ marginBottom: "20px" }}>  {pData?.languageRequirementsDescription2}</p>
           <ul style={{ marginLeft: "40px" }}>
-            <li>Canadian Language Benchmarks (CLB), or</li>
-            <li>Niveaux de compétence linguistique canadiens (NCLC)</li>
+            <li>  {pData?.languageRequirementsList1Point1}</li>
+            <li>  {pData?.languageRequirementsList1Point2}</li>
           </ul>
           <p style={{ marginBottom: "20px", marginTop: "20px" }}>
-            The minimum language requirements for each NOC category are:
+          {pData?.languageRequirementsDescription3}
           </p>
           <ul style={{ marginLeft: "40px" }}>
-            <li>NOC 0 and A: CLB/NCLC 6</li>
-            <li>NOC B: CLB/NCLC 5</li>
-            <li>NOC C and D: CLB/NCLC 4</li>
+            <li>  {pData?.languageRequirementsList2Point1}</li>
+            <li> {pData?.languageRequirementsList2Point2}</li>
+            <li> {pData?.languageRequirementsList2Point3}</li>
           </ul>
           <table
             className={`${styles.languageTable} ${styles.section}`}
@@ -529,42 +487,33 @@ const AgriFoodPilotProgram = () => {
           >
             <thead>
               <tr>
-                <th>NOC Category</th>
-                <th>Minimum Language Requirement (CLB/NCLC)</th>
-                <th>IELTS Equivalency (Module)</th>
+                <th> {pData?.t3h1}</th>
+                <th> {pData?.t3h2}</th>
+                <th> {pData?.t3h3}</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>NOC 0 and A</td>
-                <td>6</td>
-                <td>
-                  Listening: 5.5, Reading: 5.0, Writing: 5.5, Speaking: 5.5
-                </td>
+                <td> {pData?.t3r1c1} </td>
+                <td>{pData?.t3r1c2} </td>
+                <td>{pData?.t3r1c3} </td>
               </tr>
               <tr>
-                <td>NOC B</td>
-                <td>5</td>
-                <td>
-                  Listening: 5.0, Reading: 4.0, Writing: 5.0, Speaking: 5.0
-                </td>
+                <td>{pData?.t3r2c1} </td>
+                <td>{pData?.t3r2c2} </td>
+                <td>{pData?.t3r2c3} </td>
               </tr>
               <tr>
-                <td>NOC C and D</td>
-                <td>4</td>
-                <td>
-                  Listening: 4.5, Reading: 3.5, Writing: 4.0, Speaking: 4.0
-                </td>
+                <td>{pData?.t3r3c1}</td>
+                <td>{pData?.t3r3c2}</td>
+                <td>{pData?.t3r3c3}</td>
               </tr>
             </tbody>
           </table>
 
-          <h2>Educational Requirements</h2>
+          <h2>{pData?.educationalReqHeading}</h2>
           <p>
-            You must have a Canadian high school diploma or an educational
-            credential assessment (ECA) report, from a designated organization
-            or professional body, showing that you completed a foreign
-            credential that’s equal to Canadian secondary school (high school).
+             {pData?.educationalReqDescription}
           </p>
 
           <h2
@@ -572,25 +521,22 @@ const AgriFoodPilotProgram = () => {
             id="testing16"
             ref={(el) => (sectionsRef.current[17] = el)}
           >
-            Settlement Funds
+            {pData?.settlementFundsHeading}
           </h2>
           <ul style={{marginLeft: "40px"}}>
             <li>
-              Applicants who are not currently working legally in Canada must
-              demonstrate sufficient financial resources to support themselves
-              and any accompanying dependents during the settlement process.
+            {pData?.settlementFundsPara1}
             </li>
             <li>
-              The proof of funds is required regardless of whether family
-              members will be joining the applicant in Canada.
+            {pData?.settlementFundsPara2}
             </li>
           </ul>
 
-          <h2>Intention to Reside in the Community</h2>
+          <h2>{pData?.intentionHeading}</h2>
           <p>
-            To participate in the pilot, you must plan to live in the community.
+          {pData?.intentionDescription}
           </p>
-          <h2>Finding a Job for Canadian Immigration</h2>
+          <h2>{pData?.findingJobHeading}</h2>
           <ul style={{ marginLeft: "40px" }}>
             <li>
               As a candidate, you must have a genuine job offer to work in one
@@ -606,35 +552,33 @@ const AgriFoodPilotProgram = () => {
             </li>
           </ul>
 
-          <h2>Job offer requirements</h2>
+          <h2>   {pData?.jobOfferReqHeading}</h2>
           <p style={{ marginTop: "20px", marginBottom: "20px" }}>
-            To be eligible for a job offer, the position must meet all of the
-            following criteria:
+          {pData?.jobOfferReqDescription}
           </p>
           <ul style={{marginLeft: "40px"}}>
-            <li>Located in the community</li>
+            <li>  {pData?.jobOfferReqList1}</li>
             <li>
-              Employer continues to run the business in the same community
+            {pData?.jobOfferReqList2}
             </li>
-            <li>Full-time, with at least 30 paid hours per week</li>
-            <li>Non-seasonal, with consistent hours throughout the year</li>
-            <li>Permanent position, no set end date</li>
+            <li>{pData?.jobOfferReqList3}</li>
+            <li>{pData?.jobOfferReqList4}</li>
+            <li>{pData?.jobOfferReqList5}</li>
             <li>
-              Meets or exceeds the Job Bank’s minimum wage for your job offer’s
-              National Occupational Classification (NOC).
+            {pData?.jobOfferReqList6}
             </li>
-            <li>You have the required skills and experience to do the job</li>
+            <li>{pData?.jobOfferReqList7}</li>
           </ul>
 
           <p style={{ marginTop: "20px", marginBottom: "20px" }}>
-            The job offer cannot be from:
+          {pData?.jobOfferCannotPara}
           </p>
           <ul style={{marginLeft: "40px"}}>
-            <li>A consulate</li>
-            <li>A staffing or employment agency</li>
-            <li>A business you own or have significant control over</li>
-            <li>A business offering adult services on a regular basis</li>
-            <li>An employer with administrative penalties</li>
+            <li>{pData?.jobOfferCannotList1}</li>
+            <li>{pData?.jobOfferCannotList2}</li>
+            <li>{pData?.jobOfferCannotList3}</li>
+            <li>{pData?.jobOfferCannotList4}</li>
+            <li>{pData?.jobOfferCannotList5}</li>
           </ul>
 
           <h2
@@ -642,44 +586,36 @@ const AgriFoodPilotProgram = () => {
             id="testing18"
             ref={(el) => (sectionsRef.current[19] = el)}
           >
-            How to Apply
+             {pData?.howApplyHeading}
           </h2>
           <ol style={{marginLeft: "40px"}} className={styles.howToApplyLi}>
             <li>
-              Look for a qualifying job offer with a qualifying employer in the
-              qualifying community.
+            {pData?.howApplyList1}
+
             </li>
             <li>
-              Ensure your job offer location is within RNIP Communities
-              Boundaries.
+            {pData?.howApplyList2}
             </li>
             <li>
-              Appear for English or French test and obtain the score as per your
-              NOC.
+            {pData?.howApplyList3}
             </li>
             <li>
-              Submit an application for RNIP recommendation after following all
-              IRCC and Community specific guidelines.
+            {pData?.howApplyList4}
             </li>
             <li>
-              The community reviews your RNIP application, might interview you
-              and the employer.
+            {pData?.howApplyList5}
             </li>
             <li>
-              The community recommends you, making you eligible to apply to IRCC
-              for permanent residence in Canada based on their recommendation.
+            {pData?.howApplyList6}
             </li>
             <li>
-              You submit PR application to Immigration, Refugees and Citizenship
-              Canada (IRCC).
+            {pData?.howApplyList7}
             </li>
             <li>
-              IRCC conducts application reviews to check if you meet the IRCC
-              RNIP requirements, perform medical clearances, and conduct
-              background checks.
+            {pData?.howApplyList8}
             </li>
             <li>
-              You and your family members will receive permanent residency.
+            {pData?.howApplyList9}
             </li>
           </ol>
 
@@ -688,17 +624,17 @@ const AgriFoodPilotProgram = () => {
             id="refusal-reasons"
             ref={(el) => (sectionsRef.current[21] = el)}
           >
-            Common Reasons for Refusals for RNIP
+             {pData?.refusalReasonsHeading}
           </h2>
           <ul style={{marginLeft: "40px"}}>
             <li>
-              Having a job offer that does not match your work experience.
+            {pData?.refusalReasonsList1}
             </li>
             <li>
-              Employer cannot justify the need and genuineness of the job offer.
+            {pData?.refusalReasonsList2}
             </li>
             <li>
-              Improper calculation of hours that count towards work experience.
+            {pData?.refusalReasonsList3}
             </li>
           </ul>
 

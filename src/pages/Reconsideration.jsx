@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet-async";
 const Reconsideration = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -31,6 +32,21 @@ const Reconsideration = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/reconsideration")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -153,7 +169,7 @@ const Reconsideration = () => {
       <div className={styles.container}>
         <main className={styles.mainContent}>
           <header className={styles.header}>
-            <h1>Reconsideration for Refusal Decision</h1>
+            <h1>{pData?.ReconsiderationHeading}</h1>
           </header>
           <section
             className={`${styles.discription} ${styles.section}`}
@@ -161,23 +177,11 @@ const Reconsideration = () => {
             ref={(el) => (sectionsRef.current[0] = el)}
           >
             <p>
-              Are you a Canadian immigrant who has recently received a rejection
-              for your visa application? If so, you're not alone. Many people
-              experience this setback on their journey to becoming a Canadian
-              resident.
+               {pData?.DonotWorryPara1}
             </p>
-            <p>Firstly, don’t worry. There's still hope!</p>
+            <p> {pData?.DonotWorryPara2}</p>
             <p>
-              IRCC offers a Reconsideration of Refusal Decision program, which
-              gives you the chance to appeal the decision and potentially secure
-              the visa you deserve. A reconsideration of a refusal decision,
-              also known as a request for reconsideration, is a formal process
-              that allows you to ask IRCC to review your case again. The
-              Reconsideration of Refusal program allows you to challenge the
-              refusal decision of your application based on new information or
-              arguments that were not previously considered. This is a great
-              opportunity to present additional evidence or address any
-              misunderstandings that may have led to the initial rejection.
+            {pData?.DonotWorryPara3}
             </p>
           </section>
 
@@ -197,11 +201,7 @@ const Reconsideration = () => {
               <li>Humanitarian and compassionate considerations</li>
             </ul>
             <p>
-              You can request reconsideration within 30 days of the date of the
-              refusal letter. However, there are some exceptions to this rule.
-              For example, if you have new information that you did not submit
-              with your original application, you may be able to request
-              reconsideration more than 90 days after the refusal letter.
+            {pData?.rrPara}
             </p>
           </section>
 
@@ -213,24 +213,18 @@ const Reconsideration = () => {
             <h2>Eligibility for Reconsideration for Refusal Decision</h2>
             <p>
               <strong> 
-                Are you considering reconsideration requests? See if you meet
-                the eligibility.
+              {pData?.EligibilitySubHeading}
               </strong>
             </p>
             <ul style={{marginLeft: "40px"}}>
               <li>
-                You must have received a letter saying your application was
-                rejected or refused by IRCC. This letter will tell you why.
+              {pData?.er1}
               </li>
               <li>
-                Your initial application must have been turned down because of a
-                mistake. This means the officer who looked at your case made an
-                error in understanding your circumstances.
+              {pData?.er2}
               </li>
               <li>
-                You must have new info or reasons that weren't considered
-                before. This new info should relate to why your application was
-                rejected and be enough to change the decision.
+              {pData?.er3}
               </li>
             </ul>
           </section>
@@ -240,28 +234,21 @@ const Reconsideration = () => {
             id="how-to-apply"
             ref={(el) => (sectionsRef.current[3] = el)}
           >
-            <h2>How to Apply for Reconsideration</h2>
+            <h2>{pData?.HowToApplyHeading}</h2>
             <p>
               <strong>
-                Meet the eligibility criteria? Let's see how you can request a
-                reconsideration.
+              {pData?.HowToApplySubHeading}
               </strong>
             </p>
             <ul style={{marginLeft: "40px"}}>
               <li>
-                You must submit the request within 30 days of receiving the
-                refusal letter. The request should be well-written and clearly
-                explain why you believe the decision should be overturned.
+              {pData?.HowApplyL1}
               </li>
               <li>
-                Wait for IRCC to review your request and provide any additional
-                information or documentation that the IRCC officer may request.
+              {pData?.HowApplyL2}
               </li>
               <li>
-                IRCC will decide on your request within 90 days of receiving it.
-                If the decision is in your favor, you will be granted the visa
-                you requested. If the decision is not in your favor, you will
-                have the option to appeal the decision.
+              {pData?.HowApplyL3}
               </li>
             </ul>
           </section>
@@ -271,40 +258,34 @@ const Reconsideration = () => {
             id="refusal-reasons"
             ref={(el) => (sectionsRef.current[4] = el)}
           >
-            <h2>Reasons for Refusal After Reconsideration</h2>
+            <h2>{pData?.RefusalHeading}</h2>
             <p>
               {" "}
               <strong>
-                Don’t forget to avoid these common reconsideration request
-                refusal reasons and increase your chances of approval.
+              {pData?.RefusalReasonSubHeading}
               </strong>
             </p>
             <ul style={{marginLeft: "40px"}}>
               <li>
-                Failing to provide enough new evidence to counter the initial
-                refusal reasons.
+              {pData?.r1}
               </li>
               <li>
-                Submitting new evidence that is irrelevant or unconvincing.
+              {pData?.r2}
               </li>
               <li>
-                Not addressing the legal basis for the initial refusal
-                adequately.
+              {pData?.r3}
               </li>
               <li>
-                Making procedural errors in the reconsideration request itself.
+              {pData?.r4}
               </li>
               <li>
-                Providing contradictory or inconsistent information compared to
-                the original application.
+              {pData?.r5}
               </li>
               <li>
-                Failing to articulate a persuasive case for reconsidering the
-                decision.
+              {pData?.r6}
               </li>
               <li>
-                Not proving why you should be granted the visa despite the
-                initial refusal.
+              {pData?.r7}
               </li>
             </ul>
             <span className={styles.bookButtonPara}>
@@ -326,23 +307,12 @@ const Reconsideration = () => {
             id="why-choose-us"
             ref={(el) => (sectionsRef.current[5] = el)}
           >
-            <h2>Still Not Sure?</h2>
+            <h2>{pData?.StillNotHeading}</h2>
             <p>
-              If you have received a refusal for any of the reasons mentioned
-              above, do not worry. With over a decade of experience, we
-              specialize in previously refused cases. We have got approvals for
-              clients who had multiple previous refusals. We achieve this with a
-              tailored approach to your specific case, addressing each concern
-              that the officer has listed in previous refusals. We use case law
-              and find similar cases to your circumstances that had positive
-              results, and we use them as precedents in cases we work on. This
-              is why we have a high success rate.
+            {pData?.s1}
             </p>
             <p>
-              At Brightlight Immigration, we have a dedicated team of visa
-              application specialists who can assist you from the start of the
-              application process all the way to obtaining your visa. Start your
-              process now.
+            {pData?.s2}
             </p>
             <button
               onClick={() =>

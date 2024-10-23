@@ -110,9 +110,11 @@ const CommonLawPartnerInternational = () => {
 
   const fetchedValue = pData?.er1li3Head;
   const strongText = extractStrongText(fetchedValue);
+  const remainingText = extractRemainingText(fetchedValue);
 
   const fetchedValue1 = pData?.er2li2Head;
   const strongText1 = extractStrongText(fetchedValue1);
+  const remainingText1 = extractRemainingText(fetchedValue1);
 
   const fetchedValue2 = pData?.EligReqSubHead3;
   const strongText2 = extractStrongText(fetchedValue2);

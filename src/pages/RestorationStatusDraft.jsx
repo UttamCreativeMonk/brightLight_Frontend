@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet-async";
 const RestorationStatusDraft = () => {
   let [metaData, setMetaData] = useState([]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  let [pData,setPData]=useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -30,6 +31,21 @@ const RestorationStatusDraft = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/restorationStatus")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -147,7 +163,7 @@ const RestorationStatusDraft = () => {
           id="about-program"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          Restoration of Status
+          {pData?.restorationStatusDraftHeading}
         </h1>
         <section
           className={`${styles.introduction} ${styles.section}`}
@@ -155,31 +171,16 @@ const RestorationStatusDraft = () => {
           ref={(el) => (sectionsRef.current[1] = el)}
         >
           <p>
-            Are you a temporary resident in Canada who has lost status? Don't
-            despair! There is a way to regain your legal standing in Canada.
+          {pData?.restorationStatusDraftPara1}
           </p>
           <p>
-            The restoration of status is a process that provides temporary
-            residents with a second chance to maintain their legal presence in
-            Canada. If your temporary status (student visa, visitor permit, or
-            work permit) lapses or expires and you did not apply for an
-            extension before the expiry date, you will be considered out of
-            status. At this point, you have a few options. You can either depart
-            Canada immediately or apply to restore your temporary status. You
-            have a maximum of 90 days from the date your status expires to apply
-            for restoration of your status.
+          {pData?.restorationStatusDraftPara2}
           </p>
           <p>
-            This is a very serious situation that should be handled with the
-            utmost importance, as any further delay could have a negative impact
-            on any future applications you may submit. If you meet specific
-            eligibility requirements, you can apply to reinstate your status and
-            continue enjoying the advantages of living and working in Canada.
+          {pData?.restorationStatusDraftPara3}
           </p>
           <p>
-            <strong>Important things to know:</strong> If you're a student or
-            worker on temporary status, you're not allowed to work or study
-            while your restoration application is under review.
+          {pData?.restorationStatusDraftPara4}
           </p>
         </section>
 
@@ -189,23 +190,17 @@ const RestorationStatusDraft = () => {
           ref={(el) => (sectionsRef.current[2] = el)}
         >
           <h2 className={styles.subheading}>
-            How to Check if Your Immigration Status is Valid
+          {pData?.HowToCheckHeading}
           </h2>
           <p>
-            To check if your stay in Canada is still allowed, look for the
-            expiration date printed on your permits. These dates provide an
-            indication of your temporary permission to remain in Canada until
-            that point.
+          {pData?.HowToCheckSubHead}
           </p>
           <ul>
             <li>
-              If you are visiting Canada as a tourist, your stay is typically
-              valid for 6 months from the date you entered the country.
+            {pData?.hc1}
             </li>
             <li>
-              It is illegal to stay in Canada beyond the authorized period. If
-              your stay expires and you have not applied for an extension, you
-              must apply for restoration of status within 90 days.
+            {pData?.hc2}
             </li>
           </ul>
         </section>
@@ -216,30 +211,24 @@ const RestorationStatusDraft = () => {
           ref={(el) => (sectionsRef.current[3] = el)}
         >
           <h2 className={styles.subheading}>
-            What Are the Requirements for Restoration of Your Status?
+           {pData?.WhatAreRequHeading}
           </h2>
           <h4>
-            To regain your legal status in Canada, you must meet the following
-            requirements:
+          {pData?.WhatAreRequSubHead}
           </h4>
           <ul>
             <li>
-              Apply for restoration of status within 90 days (3 months) of your
-              status expiration.
+            {pData?.WRLi1}
             </li>
             <li>
-              Maintain the initial requirements and conditions of your stay,
-              whether it is for study, work, or visiting Canada.
+            {pData?.WRLi2}
             </li>
             <li>
-              Adhere to all conditions imposed on your stay, including not
-              engaging in unauthorized work.
+            {pData?.WRLi3}
             </li>
           </ul>
           <p>
-            <strong>Important Tip:</strong> Restoration of status cannot be
-            granted at any Canadian port of entry, so you must apply while you
-            are still in the country.
+            {pData?.WrNote}
           </p>
         </section>
 
@@ -249,34 +238,24 @@ const RestorationStatusDraft = () => {
           ref={(el) => (sectionsRef.current[4] = el)}
         >
           <h2 className={styles.subheading}>
-            How to Apply for Restoration of Status
+           {pData?.HowToApplyHeading}
           </h2>
           <p>
-            To apply for status restoration, you will need to provide specific
-            documents and information to Immigration, Refugees and Citizenship
-            Canada (IRCC). The specific requirements vary based on the type of
-            restoration you are seeking, whether it's for a visitor, student, or
-            worker. It is crucial to complete the correct forms for your
-            restoration type and submit the necessary documents to increase the
-            chances of your application being approved. Here are a few general
-            guidelines:
+            {pData?.HowToApplySubHead}
           </p>
           <ul>
             <li>
-              Provide a compelling reason why your previous status expired.
+             {pData?.haLi1}
             </li>
-            <li>Submit photocopies of all valid pages of your passport.</li>
+            <li>{pData?.haLi2}</li>
             <li>
-              Attach a photocopy of your last valid immigration document, such
-              as a visitor visa, work permit, or study permit.
-            </li>
-            <li>
-              If you are applying for restoration as a spouse, provide a copy of
-              your marriage certificate or license (if applicable).
+            {pData?.haLi3}
             </li>
             <li>
-              Showcase sufficient financial means to support yourself during
-              your extended stay in Canada.
+            {pData?.haLi4}
+            </li>
+            <li>
+            {pData?.haLi5}
             </li>
           </ul>
         </section>
@@ -287,23 +266,20 @@ const RestorationStatusDraft = () => {
           ref={(el) => (sectionsRef.current[5] = el)}
         >
           <h2 className={styles.subheading}>
-            Common Reasons for Refusal of Restoration of Status Applications
+          {pData?.RefusalHeading}
           </h2>
           <ul style={{ marginLeft: "40px" }}>
             <li>
-              Missed the deadline to submit the restoration application within
-              90 days of the expiry of status.
+            {pData?.r1}
             </li>
             <li>Continued working or studying on the restoration status.</li>
             <li>
-              Did not answer the questions in the application form correctly,
-              completely, and truthfully.
+            {pData?.r3}
             </li>
             <li>
-              Applied for the wrong type of intent along with the restoration
-              application.
+            {pData?.r4}
             </li>
-            <li>Paid insufficient fees to IRCC.</li>
+            <li> {pData?.r5}</li>
           </ul>
         </section>
 
@@ -312,26 +288,15 @@ const RestorationStatusDraft = () => {
           id="why-choose-us"
           ref={(el) => (sectionsRef.current[6] = el)}
         >
-          <h2 className={styles.subheading}>Still Not Sure?</h2>
+          <h2 className={styles.subheading}> {pData?.StillNotHeading}</h2>
           <p>
-            If you have received a refusal for any reason, do not worry. With
-            over a decade of experience, we specialize in previously refused
-            cases. We have obtained approvals for clients who had multiple
-            previous refusals.
+          {pData?.s1}
           </p>
           <p>
-            We achieve this with a tailored approach to your specific case,
-            addressing each concern that the officer has listed in previous
-            refusals. We use case law and find similar cases to your
-            circumstances that had positive results, and we use them as
-            precedents in the cases we work on. This is why we have a high
-            success rate.
+          {pData?.s2}
           </p>
           <p>
-            At Brightlight Immigration, we have a dedicated team of visa
-            application specialists who can assist you from the start of the
-            application process all the way to obtaining your visa. Start your
-            process now.
+          {pData?.s3}
           </p>
           <button
             className={styles.button}

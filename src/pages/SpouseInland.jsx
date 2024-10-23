@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet-async";
 const SpouseInland = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -30,15 +31,106 @@ const SpouseInland = () => {
       });
   }, []);
 
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/SpouseInland")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  const extractStrongText = (htmlString) => {
+    if (typeof htmlString !== "string") return "";
+    const strongMatch = htmlString.match(/<strong>(.*?)<\/strong>/);
+    return strongMatch ? strongMatch[1] : "";
+  };
+
+  const extractRemainingText = (htmlString) => {
+    if (typeof htmlString !== "string") return "";
+    return htmlString.replace(/<strong>.*?<\/strong>/, "").trim();
+  };
+
+
+  const fetchedValue1 = pData?.kp1;
+  const strongText1 = extractStrongText(fetchedValue1);
+  const remainingText1 = extractRemainingText(fetchedValue1);
+
+  const fetchedValue2 = pData?.kp2;
+  const strongText2 = extractStrongText(fetchedValue2);
+  const remainingText2 = extractRemainingText(fetchedValue2)
+
+  
+  const fetchedValue3 = pData?.kp3;
+  const strongText3 = extractStrongText(fetchedValue3);
+  const remainingText3 = extractRemainingText(fetchedValue3)
+
+  
+  const fetchedValue4 = pData?.kp4;
+  const strongText4 = extractStrongText(fetchedValue4);
+  const remainingText4 = extractRemainingText(fetchedValue4)
+
+
+  const fetchedValue5 = pData?.b1;
+  const strongText5 = extractStrongText(fetchedValue5);
+  const remainingText5 = extractRemainingText(fetchedValue5)
+
+  
+  const fetchedValue6 = pData?.b2;
+  const strongText6 = extractStrongText(fetchedValue6);
+  const remainingText6 = extractRemainingText(fetchedValue6)
+
+  
+  const fetchedValue7 = pData?.b3;
+  const strongText7 = extractStrongText(fetchedValue7);
+  const remainingText7 = extractRemainingText(fetchedValue7)
+
+
+  const fetchedValue8 = pData?.er1;
+  const strongText8 = extractStrongText(fetchedValue8);
+  const remainingText8 = extractRemainingText(fetchedValue8)
+
+  
+  const fetchedValue9 = pData?.er2;
+  const strongText9 = extractStrongText(fetchedValue9);
+  const remainingText9 = extractRemainingText(fetchedValue9)
+
+  //
+
+  const fetchedValue10 = pData?.eow1;
+  const strongText10 = extractStrongText(fetchedValue10);
+  const remainingText10 = extractRemainingText(fetchedValue10)
+
+  
+  const fetchedValue11 = pData?.eow2;
+  const strongText11 = extractStrongText(fetchedValue11);
+  const remainingText11 = extractRemainingText(fetchedValue11)
+
+
+  const fetchedValue12 = pData?.eow3;
+  const strongText12 = extractStrongText(fetchedValue12);
+  const remainingText12 = extractRemainingText(fetchedValue12)
+
+  
+  const fetchedValue13 = pData?.eow4;
+  const strongText13 = extractStrongText(fetchedValue13);
+  const remainingText13 = extractRemainingText(fetchedValue13)
   return (
     <>
-              <Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle
@@ -123,15 +215,10 @@ const SpouseInland = () => {
             marginBottom: "20px",
           }}
         >
-          Inland Spousal and Common-Law Partner Sponsorship
+          {pData?.heading}
         </h1>
         <p className={styles.headingPara}>
-          Inland sponsorship enables Canadians and permanent residents to
-          sponsor their spouse or common-law partner for permanent resident
-          status when the couple is already living together in Canada. This
-          comprehensive guide outlines the key components of Inland sponsorship,
-          helping you determine if this spousal sponsorship category aligns with
-          your needs.
+          I{pData?.description}
         </p>
 
         <h2
@@ -140,7 +227,7 @@ const SpouseInland = () => {
           }}
           id="Key Points"
         >
-          Key Points about Inland Sponsorship:
+           {pData?.KeyPointsHeading}
         </h2>
         <ul
           style={{
@@ -150,29 +237,20 @@ const SpouseInland = () => {
           }}
         >
           <li>
-            <strong> Eligibility: </strong>Canadians and permanent residents can
-            sponsor their loved ones, provided they legally cohabit in Canada.
+            <strong>{strongText1}</strong> {remainingText1}
           </li>
           <li>
-            <strong> Temporary Status Requirement:</strong> The foreign spouse
-            or common-law partner does not need to hold valid temporary status
-            in Canada (e.g., as a worker, student, or visitor).
+          <strong>{strongText2}</strong> {remainingText2}
           </li>
           <li>
-            <strong> Continued Living and Working:</strong> During the Inland
-            sponsorship application process, the sponsored person can continue
-            living, working, or studying in Canada.
+          <strong>{strongText3}</strong> {remainingText3}
           </li>
           <li>
-            <strong> PR Visa Approval:</strong> Both the Canadian citizen or
-            permanent resident and the foreign national must be approved by
-            Immigration, Refugees and Citizenship Canada (IRCC) for the
-            sponsored person to receive a Canadian PR visa through Inland
-            sponsorship.
+          <strong>{strongText4}</strong> {remainingText4}
           </li>
         </ul>
 
-        <h2 id="Benifits">Benefits of Inland Spousal Sponsorship</h2>
+        <h2 id="Benifits">  {pData?.BenefitHeading}</h2>
         <ul
           style={{
             marginTop: "20px",
@@ -181,23 +259,18 @@ const SpouseInland = () => {
           }}
         >
           <li>
-            <strong>Open Work Permit (OWP):</strong> Applicants may qualify for
-            an open work permit, allowing full-time employment while their
-            permanent residence application is processed.
+          <strong>{strongText5}</strong> {remainingText5}
           </li>
           <li>
-            <strong> Economic and Emotional Relief:</strong> An OWP eases
-            financial and emotional burdens during the potentially lengthy
-            application process.
+          <strong>{strongText6}</strong> {remainingText6}
           </li>
           <li>
-            <strong> Staying in Canada:</strong> Inland sponsorship applicants
-            are generally expected to remain in Canada throughout processing.
+          <strong>{strongText7}</strong> {remainingText7}
           </li>
         </ul>
 
         <h2 id="Eligibility">
-          Eligibility Criteria for Inland Spousal Sponsorship
+        {pData?.eligibleCriteriaHeading}
         </h2>
         <ul
           style={{
@@ -205,14 +278,12 @@ const SpouseInland = () => {
             marginLeft: "40px"
           }}
         >
-          <li>Your spouse or partner must live with you in Canada.</li>
+          <li>  {pData?.e1}</li>
           <li>
-            Your spouse or partner must have temporary resident status in
-            Canada.
+          {pData?.e2}
           </li>
           <li>
-            Both the sponsor and sponsored person must meet the basic
-            requirements for immigration to Canada:
+          {pData?.e3}
           </li>
           <ul 
                    style={{
@@ -223,50 +294,42 @@ const SpouseInland = () => {
                   }}
           >
             <li>
-              The sponsor must be a Canadian citizen or permanent resident.
+            {pData?.e3Sub1}
             </li>
-            <li>Both parties must be at least 18 years old.</li>
+            <li>{pData?.e3Sub2}</li>
           </ul>
           <h3 style={{ margin: "20px 0px" }}>
-            The relationship must fall into one of the following categories:
+            {pData?.eligRelHeading}
           </h3>
           <ul>
             <li>
-              Spouse: Legally married with a valid marriage certificate
-              recognized under Canadian law.
+            <strong>{strongText8}</strong> {remainingText8}
             </li>
             <li>
-              Common Law: Cohabiting in a marriage-like relationship for at
-              least 12 consecutive months.
+            <strong>{strongText9}</strong> {remainingText9}
             </li>
           </ul>
           <li>
-            The sponsored person cannot have been sponsored by their spouse in
-            Canada within the past five years.
+          {pData?.er3}
           </li>
           <li>
-            Neither spouse must be in prison, charged with a serious offense, or
-            bankrupt.
+          {pData?.er4}
           </li>
           <li>
-            Please note that conjugal partnerships (where religious or marital
-            status barriers prevent living together or marriage) are not
-            eligible for Inland sponsorship.
+          {pData?.er5}
           </li>
         </ul>
 
-        <h2 id="Inland-SOWP">How does Inland Spousal Sponsorship work?</h2>
+        <h2 id="Inland-SOWP">{pData?.HowInlaSpoSponWorkHeading}</h2>
         <p
           style={{
             marginBottom: "60px",
           }}
         >
-          Inland sponsorship is a specialized application process designed to
-          sponsor a loved one under Canada’s Spouse or Common-Law Partner in
-          Canada Class immigration program.
+         {pData?.HowInlaSpoSponWorkPara}
         </p>
 
-        <h3>Application Components:</h3>
+        <h3>{pData?.AppCompHeading}</h3>
         <ul
           style={{
             marginBottom: "60px",
@@ -274,15 +337,14 @@ const SpouseInland = () => {
           }}
         >
           <li>
-            The Canadian citizen or permanent resident applies to become a
-            sponsor.
+          {pData?.ac1}
           </li>
           <li>
-            The foreign spouse or partner applies for permanent residence.
+          {pData?.ac2}
           </li>
         </ul>
 
-        <h2   id="How-to-apply">How to apply for Inland Spousal Sponsorship?</h2> 
+        <h2   id="How-to-apply">{pData?.HowAppInlSpoSponHeading}</h2> 
         <ol className={styles.howToApply}
           style={{
             marginTop: "20px",
@@ -290,50 +352,36 @@ const SpouseInland = () => {
             marginLeft: "40px"
           }}
         >
-          <li>Verify eligibility for both sponsor and sponsored person.</li>
-          <li>Pay the required fees online.</li>
-          <li>Collect supporting documents.</li>
-          <li>
-            Complete and submit the necessary forms to the appropriate visa
-            office.
-          </li>
+          <li>{pData?.ha1}</li>
+          <li>{pData?.ha2}</li>
+          <li>{pData?.ha3}</li>
+          <li>{pData?.ha4}</li>
         </ol>
 
-        <h3>Remaining in Canada:</h3>
+        <h3>{pData?.RemainingCanadaHeading}</h3>
         <p>
-          Inland sponsorship applicants are generally expected to stay in Canada
-          during processing. If the spouse or common-law partner needs to travel
-          outside the country, Outland sponsorship may be a better option.
+          {pData?.RemainingCanadaPara}
         </p>
 
-        <h2>How long does it take to process Inland applications?</h2>
+        <h2>{pData?.HowLongProcInlAppHeading}</h2>
         <p
           style={{
             marginBottom: "60px",
           }}
         >
-          Current approval times for Inland spousal sponsorship applications are
-          approximately 12-14 months. Quebec residents or those planning to
-          settle in Quebec may experience up to 24 months.
+         {pData?.HowLongProcInlAppPara}
         </p>
 
-        <h2>Inland Spousal Sponsorship - Spousal Open Work Permit</h2>
+        <h2>{pData?.InlSpouSponHeading}</h2>
         <p
           style={{
             marginBottom: "20px",
           }}
         >
-          The Spousal Open Work Permit Pilot Program (OWPP) allows spouses or
-          common-law partners to work in Canada while awaiting spousal
-          sponsorship application outcomes. Applicants can apply for an open
-          work permit any time after applying for permanent residence in the
-          Spouse or Common-Law Partner in Canada (SCLPC) class. The open work
-          permit is not job-specific and allows work for any Canadian employer.
-          These permits are typically valid for two years or until the passport
-          expiry date.
+             {pData?.InlSpouSponPara}
         </p>
 
-        <h3>Eligibility for Open Work Permit under the Pilot Program</h3>
+        <h3>{pData?.EligOpenWorkHeading}</h3>
         <ul
           style={{
             marginLeft: "40px",
@@ -343,30 +391,22 @@ const SpouseInland = () => {
         >
           <li>
             {" "}
-            <strong>Residency in Canada:</strong> You must currently reside in
-            Canada.
+            <strong>{strongText10}</strong> {remainingText10}
           </li>
           <li>
-            <strong> Sponsorship Category:</strong> You need to be sponsored
-            under the Spouse or Common-Law Partner in Canada (SCLPC) Class.
+          <strong>{strongText11}</strong> {remainingText11}
           </li>
           <li>
-            <strong> Valid Temporary Resident Status:</strong> Hold a valid
-            temporary resident status, such as a visitor, student, or worker.
+          <strong>{strongText12}</strong> {remainingText12}
           </li>
           <li>
-            <strong> Same Address as Sponsor:</strong> You must live at the same
-            address as your sponsor.
+          <strong>{strongText13}</strong> {remainingText13}
           </li>
         </ul>
 
-        <h3>Applying for a Spousal or Partner Work Permit</h3>
+        <h3>{pData?.AppSpouHeading}</h3>
         <p>
-          New spousal or partner work permit applications can be submitted along
-          with your sponsorship application. These applications may also be
-          submitted concurrently with an application for permanent residence.
-          Ensure you include the appropriate fees and send the application by
-          mail or courier.
+           {pData?.AppSpouPara}
         </p>
 
         <section

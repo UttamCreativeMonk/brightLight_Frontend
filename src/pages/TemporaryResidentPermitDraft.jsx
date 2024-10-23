@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet-async";
 const TemporaryResidentPermitDraft = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -31,6 +32,21 @@ const TemporaryResidentPermitDraft = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/temporaryResidentPermit")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -150,7 +166,7 @@ const TemporaryResidentPermitDraft = () => {
           id="about-program"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          Temporary Resident Permit (TRP)
+          {pData?.temporaryResidentPermrHeading}
         </h1>
 
         <section
@@ -159,10 +175,7 @@ const TemporaryResidentPermitDraft = () => {
           ref={(el) => (sectionsRef.current[1] = el)}
         >
           <p>
-            It is a legal document issued by Citizenship and Immigration Canada
-            (CIC) that allows individuals who are inadmissible to Canada to
-            temporarily visit and stay in the country under very specific
-            circumstances.
+          {pData?.temporaryResidentPermPara}
           </p>
         </section>
 
@@ -172,15 +185,10 @@ const TemporaryResidentPermitDraft = () => {
           ref={(el) => (sectionsRef.current[2] = el)}
         >
           <h2 className={styles.subheading}>
-            Eligibility Criteria for Temporary Resident Permit
+          {pData?.EligibilityHeading}
           </h2>
           <p>
-            The TRP is only granted when the individual's reasons for visiting
-            Canada are compelling enough to outweigh the potential risks their
-            presence may pose. For example, someone might receive a TRP for a
-            work-related visit if their expertise is deemed beneficial to the
-            Canadian economy or society, despite the reasons that initially made
-            them inadmissible.
+          {pData?.EligibilityPara}
           </p>
         </section>
 
@@ -190,14 +198,10 @@ const TemporaryResidentPermitDraft = () => {
           ref={(el) => (sectionsRef.current[3] = el)}
         >
           <h2 className={styles.subheading}>
-            How to Apply for a Temporary Resident Permit
+          {pData?.HowApplyHeading}
           </h2>
           <p>
-            To obtain a Temporary Resident Permit requires you to show a
-            compelling purpose for your intended visit to Canada. The
-            application process can vary depending on your country of origin.
-            For specific country-specific requirements, kindly connect with our
-            office at 604 503 3734.
+          {pData?.HowApplyPara}
           </p>
         </section>
 
@@ -207,41 +211,29 @@ const TemporaryResidentPermitDraft = () => {
           ref={(el) => (sectionsRef.current[4] = el)}
         >
           <h2 className={styles.subheading}>
-            Common Reasons for Refusals of Temporary Resident Permit (TRP)
+          {pData?.RefusalHeading}
           </h2>
           <h4>
-            To increase your chances of securing a Temporary Resident Permit
-            (TRP), it's crucial to be mindful of common reasons for rejection.
-            By understanding these, you can make your application to address any
-            potential concerns and boost your chances of approval.
+          {pData?.RefusalSubHead}
           </h4>
           <ul>
             <li>
-              When an individual is deemed inadmissible to Canada, it means they
-              are prohibited from entering the country, often due to medical or
-              criminal history issues.
+            {pData?.r1}
             </li>
             <li>
-              Individuals linked to terrorism, espionage, or other threats to
-              national security may be considered inadmissible.
+            {pData?.r2}
             </li>
             <li>
-              Convictions for serious crimes, including murder, manslaughter,
-              drug trafficking, and organized crime offenses, can lead to a
-              refusal.
+            {pData?.r3}
             </li>
             <li>
-              Involvement in criminal organizations or gangs can render an
-              individual refusal.
+            {pData?.r4}
             </li>
             <li>
-              Providing false or misleading information during the application
-              process or any previous immigration interactions can result in a
-              refusal.
+            {pData?.r5}
             </li>
             <li>
-              Failure to comply with Canadian immigration laws, such as
-              overstaying a visa, can make an individual inadmissible.
+            {pData?.r6}
             </li>
           </ul>
         </section>
@@ -251,24 +243,12 @@ const TemporaryResidentPermitDraft = () => {
           id="testing2"
           ref={(el) => (sectionsRef.current[5] = el)}
         >
-          <h2 className={styles.subheading}>Still Not Sure?</h2>
+          <h2 className={styles.subheading}> {pData?.StillNotHeading}</h2>
           <p>
-            If you have received a refusal or are inadmissible for any of the
-            reasons mentioned above, do not worry. With over a decade of
-            experience, we specialize in previously refused cases. We have
-            obtained approvals for clients who had multiple previous refusals.
-            We achieve this with a tailored approach to your specific case,
-            addressing each concern that the officer has listed in previous
-            refusals. We use case law and find similar cases to your
-            circumstances that had positive results, and we use them as
-            precedents in cases we work on. This is why we have a high success
-            rate.
+          {pData?.s1}
           </p>
           <p>
-            At Brightlight Immigration, we have a dedicated team of visa
-            application specialists who can assist you from the start of the
-            application process all the way to obtaining your visa. Start your
-            process now.
+          {pData?.s2}
           </p>
           <button
             className={styles.button}

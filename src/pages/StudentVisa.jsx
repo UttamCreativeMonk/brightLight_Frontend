@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet-async";
 const StudentVisa = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -30,6 +31,21 @@ const StudentVisa = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/studentVisa")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -141,20 +157,10 @@ const StudentVisa = () => {
           id="about-program"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          Student Visa
+            {pData?.StudVisaHeading}
         </h1>
         <p className={styles.description}>
-          Canada ranks as one of the top choices worldwide for students. Its
-          uniqueness lies not only in offering opportunities for academic
-          pursuit but also in inviting exploration of its diverse cultures and
-          the enjoyment of a safe, high-quality life. With its comprehensive
-          healthcare system and stunning natural landscapes, this destination
-          becomes an attractive prospect for pursuing your academic aspirations.
-          Whether your passion lies in STEM (Science, Technology, Engineering,
-          Math) fields, healthcare, humanities, social sciences, or creative
-          pursuits, Canada's diverse educational system has something to offer
-          everyone. As a student in Canada, you have the privilege of learning
-          at some of the world's top-rated universities and colleges.
+        {pData?.StudVisaPara}
         </p>
 
         <section
@@ -163,33 +169,30 @@ const StudentVisa = () => {
           ref={(el) => (sectionsRef.current[1] = el)}
         >
           <h2 className={styles.subheading} id="pathways">
-            Pathways to Study Abroad
+           {pData?.PathwaysHeading}
           </h2>
           <div className={styles.pathwayContainer}>
             <a href="/outside-canada">
               <div className={styles.pathway}>
-                <h3 className={styles.pathwayTitle}>Outside Canada</h3>
+                <h3 className={styles.pathwayTitle}>{pData?.PathwaysCard1Head}</h3>
                 <p className={styles.pathwayDescription}>
-                  Explore study options and visa requirements for students
-                  planning to study in Canada from abroad.
+                {pData?.PathwaysCard1Para}
                 </p>
               </div>
             </a>
             <a href="/inside-canada">
               <div className={styles.pathway}>
-                <h3 className={styles.pathwayTitle}>Inside Canada</h3>
+                <h3 className={styles.pathwayTitle}>{pData?.PathwaysCard2Head}</h3>
                 <p className={styles.pathwayDescription}>
-                  Discover the options available for students already in Canada
-                  or planning to transfer from one institution to another.
+                {pData?.PathwaysCard2Para}
                 </p>
               </div>
             </a>
             <a href="/study-permit-minors">
               <div className={styles.pathway}>
-                <h3 className={styles.pathwayTitle}>Study Permit for Minor</h3>
+                <h3 className={styles.pathwayTitle}>{pData?.PathwaysCard3Head}</h3>
                 <p className={styles.pathwayDescription}>
-                  Learn about the specific requirements and process for
-                  obtaining a study permit for minors.
+                {pData?.PathwaysCard3Para}
                 </p>
               </div>
             </a>
@@ -206,16 +209,13 @@ const StudentVisa = () => {
             className={styles.subheading}
             id="how-to-apply"
           >
-            Start Your Journey
+          {pData?.StartJourHeading}
           </h2>
           <p
             style={{ textAlign: "left", marginBottom: "20px" }}
             className={styles.callToActionText}
           >
-            Ready to take the next step in your educational journey? Whether
-            you’re planning to study from abroad or already in Canada, our
-            expert team can guide you through the process and ensure you meet
-            all the requirements for a successful student visa application.
+           {pData?.StartPara}
           </p>
           <button
             className={styles.button}

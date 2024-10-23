@@ -303,6 +303,10 @@
   transform: translateX(0);
 }
 
+.subStillPara {
+  margin-top: 12px;
+}
+
 
 @media (max-width: 400px) {
   .container h2 {

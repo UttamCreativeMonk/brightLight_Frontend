@@ -12,6 +12,7 @@ import FieldOfStudyTable from "../components/FieldOfStudyTable";
 const VisitorToStudent = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -38,6 +39,22 @@ const VisitorToStudent = () => {
         console.log(error);
       });
   }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/visitorToStudent")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
 
   const sectionsRef = useRef([]);
 
@@ -153,17 +170,10 @@ const VisitorToStudent = () => {
           id="about-program"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          Visitor to Student (Inside Canada)
+          {pData?.visitorToStudentHeading}
         </h1>
         <p className={styles.intro}>
-          Transitioning from visitor status to student status (also known as a
-          change of status) can be an option for you if you have been staying in
-          Canada as a visitor and wish to pursue full-time studies in a
-          recognized academic institution. This program, known as the Visitor to
-          Student Program (VTS), allows you to extend your stay and pursue
-          studies at a designated learning institution (DLI). This process
-          involves you applying for a student visa or changing your current visa
-          to a student visa.
+        {pData?.visitorToStudentPara}
         </p>
 
         <section
@@ -210,15 +220,15 @@ const VisitorToStudent = () => {
           ref={(el) => (sectionsRef.current[2] = el)}
         >
           <h2 className={styles.subheading}>
-            Eligibility Criteria for the Student Permit Program
+          {pData?.EligibilityHeading}
           </h2>
           <ul style={{ marginLeft: "40px" }} className={styles.eligibilityList}>
             <li>
-            You are already in Canada legally with a valid status. This could mean you have a valid study permit, a valid work permit, or a valid visitor record
+            {pData?.e1}
             </li>
-            <li>You have taken a prerequisite course inside Canada</li>
+            <li> {pData?.e2}</li>
             <li>
-            You are enrolled in a full-time program at a designated learning institution (DLI). A DLI is a school that has been approved by the Canadian government to accept international students.
+            {pData?.e3}
             </li>
             <li>
             You have a valid Provincial Attestation Letter or PAL.
@@ -229,8 +239,7 @@ const VisitorToStudent = () => {
             </li>
           </ul>
           <p className={styles.eligibilityAdditional}>
-            In addition, you should meet at least one of the following
-            conditions:
+          {pData?.EligibilityListHead}
           </p>
           <ul className={styles.eligibilityAdditionalList}>
             <li>you’re a Ukrainian national or family member of a Ukrainian national</li>
@@ -275,18 +284,18 @@ const VisitorToStudent = () => {
           ref={(el) => (sectionsRef.current[3] = el)}
         >
           <h2 className={styles.subheading}>
-            How to Apply for a Study Permit When Applying as a Visitor
+          {pData?.HowtoApplyHeading}
           </h2>
           <p className={styles.processDescription}>
-          You will need to provide the same documents as you would if you were applying from outside Canada. This includes your passport, letter of acceptance from your DLI, proof of financial support, and police certificates. Here are 5 easy steps we help you follow to process your application.
+          {pData?.HowtoApplySubHead}
           </p>
           <ol className={styles.processList}>
-            <li>Contact Bright Light Immigration.</li>
-            <li>Apply to a prerequisite course (Mandatory).</li>
-            <li>Apply to a Public/Private College (Valid Letter of Acceptance – LOA)</li>
-            <li>Get a Provincial Attestation Letter (PAL)</li>
-            <li>Get your documents and submit your application.</li>
-            <li>Get your Study Permit.</li>
+            <li>{pData?.ha1}</li>
+            <li>{pData?.ha2}</li>
+            <li>{pData?.ha3}</li>
+            <li>{pData?.ha4}</li>
+            <li>{pData?.ha5}</li>
+            <li>{pData?.ha6}</li>
           </ol>
         </section>
 
@@ -383,39 +392,33 @@ const VisitorToStudent = () => {
           ref={(el) => (sectionsRef.current[4] = el)}
         >
           <h2 className={styles.subheading}>
-            Reasons for Refusals of Study Permit When Applying as a Visitor
+          {pData?.RefusalHeading}
           </h2>
           <ul className={styles.refusalList}>
           <li>
-            You should have a Letter of Acceptance (LOA) from a DLI. If you do
-            not have a LOA, your application will be refused.
+          {pData?.RefusalSubHead}
             </li>
-            <li>You do not have a Letter of Acceptance (LOA) from a DLI.</li>
+            <li>{pData?.r1}</li>
             <li>
-              If you do not have strong ties to your home country, such as a job
-              offer or property ownership.
+            {pData?.r2}
             </li>
             <li>
-              You do not have enough money to cover tuition, living expenses,
-              and return transportation.
+            {pData?.r3}
             </li>
             <li>
-              You provided false or misleading information on your application.
+            {pData?.r4}
             </li>
             <li>
-              You have a history of immigration violations, such as overstaying
-              a visa or working without authorization.
+            {pData?.r5}
             </li>
             <li>
-              You have a criminal record, depending on the nature of the crime.
+            {pData?.r6}
             </li>
             <li>
-              You submitted incomplete or incorrect documentation with your
-              application.
+            {pData?.r7}
             </li>
             <li>
-              You did not provide sufficient evidence to show your genuine
-              intent to study.
+            {pData?.r8}
             </li>
           </ul>
         </section>
@@ -425,23 +428,12 @@ const VisitorToStudent = () => {
           id="why-choose-us"
           ref={(el) => (sectionsRef.current[5] = el)}
         >
-          <h2 className={styles.subheading}>Still Not Sure?</h2>
+          <h2 className={styles.subheading}>{pData?.StillNotHeading}</h2>
           <p className={styles.callToActionText}>
-            If you have faced a refusal for any of the reasons mentioned above,
-            don't worry. With over 10 years of experience, we specialize in
-            handling previously refused cases. We have successfully secured
-            approval for students who have had multiple refusals, long gaps in
-            education, and are of mature age.
+          {pData?.s1}
           </p>
           <p className={styles.callToActionText}>
-            We achieve this by tailoring our approach to your specific case and
-            addressing each concern raised by the officer in previous refusals.
-            Using case law, we identify similar cases with positive outcomes and
-            apply them as precedents. This is why we have a high success rate,
-            with over 90% approval in such cases. At Brightlight Immigration, we
-            have a dedicated team of visa application specialists ready to
-            assist you from the start of the application process to obtaining
-            your visa. Start your process now.
+          {pData?.s2}
           </p>
           <a
             id="book-appointment"

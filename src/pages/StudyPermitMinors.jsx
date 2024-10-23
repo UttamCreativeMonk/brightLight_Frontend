@@ -12,6 +12,7 @@ import { Helmet } from "react-helmet-async";
 const StudyPermitMinors = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -31,6 +32,21 @@ const StudyPermitMinors = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/studyPermitMinors")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -152,19 +168,11 @@ const StudyPermitMinors = () => {
           id="about-program"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          Canadian Study Permit for Minors
+         {pData?.StudyPerMinHeading}
         </h1>
         <section className={styles.introduction}>
           <p>
-            As parents, we all aspire to provide our children with the best
-            possible foundation for their future. Canada offers a unique and
-            enriching educational experience that can set your child on a path
-            to success and global citizenship. A study permit for minors allows
-            a child under the age of 18 to attend any type of educational
-            institution in Canada, including elementary schools, secondary
-            schools, vocational schools, colleges, and universities. Minors who
-            want to study in Canada for more than 6 months must apply for a
-            study permit before they enter the country.
+          {pData?.StudyPerMinPara1}
           </p>
         </section>
 
@@ -174,26 +182,17 @@ const StudyPermitMinors = () => {
           ref={(el) => (sectionsRef.current[1] = el)}
         >
           <p>
-            In general, minors who intend to study in Canada for six months or
-            more will need to apply for a study permit. However, there are a few
-            exceptions to this rule:
+          {pData?.StudyPerMinLiHead}
           </p>
           <ul>
             <li>
-              Minors who are refugees or refugee claimants do not need a study
-              permit if they are accompanied by their parents or if they have a
-              custodian in Canada who is a Canadian citizen or permanent
-              resident.
+            {pData?.StudyPerMinLi1}
             </li>
             <li>
-              Minors who are children of Canadian citizens or permanent
-              residents do not need a study permit.
+            {pData?.StudyPerMinLi2}
             </li>
             <li>
-              Minors who are attending preschool, primary school, or secondary
-              school in Canada and are accompanied by a parent who has
-              authorization to study or work in Canada do not need a study
-              permit.
+            {pData?.StudyPerMinLi3}
             </li>
           </ul>
         </section>
@@ -203,21 +202,18 @@ const StudyPermitMinors = () => {
           id="eligibility"
           ref={(el) => (sectionsRef.current[2] = el)}
         >
-          <h2 className={styles.subheading}>Eligibility for the Program</h2>
+          <h2 className={styles.subheading}> {pData?.EligibilityHeading}</h2>
           <ul style={{marginLeft: "40px"}}>
-            <li>Be between the ages of 12 and 17</li>
+            <li> {pData?.e1}</li>
             <li>
-              Have a valid acceptance letter from a designated learning
-              institution (DLI) in Canada
+            {pData?.e2}
             </li>
             <li>
-              Be able to show that you or your child have enough money to
-              support themselves in Canada
+            {pData?.e3}
             </li>
-            <li>Do not pose a risk to public safety or security</li>
+            <li>{pData?.e4}</li>
             <li>
-              Be able to speak and understand at least one of Canada's official
-              languages (English or French)
+            {pData?.e5}
             </li>
           </ul>
         </section>
@@ -227,32 +223,26 @@ const StudyPermitMinors = () => {
           id="how-to-apply"
           ref={(el) => (sectionsRef.current[3] = el)}
         >
-          <h2 className={styles.subheading}>Application Process</h2>
+          <h2 className={styles.subheading}>{pData?.AppProcHeading}</h2>
           <p>
-            Meet the eligibility criteria? Let's see how you or your child can
-            apply for a Study Permit for minors. The application process is
-            similar to the application process for an adult, refer to the{" "}
-            <Link to="/student-visa">student visa page</Link>. However, some
-            additional documents are required, such as:
+          {pData?.AppProcSubHead}{" "}
+            <Link to="/student-visa">student visa page</Link>.
           </p>
           <ul>
             <li>
-              A letter of acceptance from the educational institution in Canada
-              that the minor is going to.
+            {pData?.ap1}
             </li>
             <li>
-              Proof of financial support, such as bank statements, letters of
-              support from family members, or proof of scholarships or financial
-              aid.
+            {pData?.ap2}
             </li>
             <li>
-              A medical certificate from a doctor in the minor's home country.
+            {pData?.ap3}
             </li>
-            <li>A police certificate from the minor's home country.</li>
+            <li>{pData?.ap4}</li>
             <li>
-              Proof of travel documents (passport or travel document number).
+            {pData?.ap5}
             </li>
-            <li>A recent photograph of the minor.</li>
+            <li>{pData?.ap6}</li>
           </ul>
         </section>
 
@@ -261,24 +251,13 @@ const StudyPermitMinors = () => {
           id="refusal-reasons"
           ref={(el) => (sectionsRef.current[4] = el)}
         >
-          <h2 className={styles.subheading}>Reasons for Refusal</h2>
+          <h2 className={styles.subheading}>  {pData?.RefusalHeading}</h2>
           <ul style={{marginLeft: "40px"}}>
-            <li>The nature of the minor's program of study is irrelevant.</li>
-            <li>The minor's age is not between 12 and 17.</li>
-            <li>
-              The IRCC officer is not convinced with the minor's academic
-              record, language proficiency, and other factors to determine if
-              they are likely to succeed in their studies.
-            </li>
-            <li>
-              The minors does not have sufficient funds to support themselves
-              during their studies, including tuition fees, accommodation, food,
-              and other living expenses.
-            </li>
-            <li>
-              The minor does not have the intention to return to their home
-              country.
-            </li>
+            <li>  {pData?.r1}</li>
+            <li> {pData?.r2}</li>
+            <li>{pData?.r3}</li>
+            <li>{pData?.r4}</li>
+            <li>{pData?.r5}</li>
           </ul>
         </section>
 
@@ -287,21 +266,9 @@ const StudyPermitMinors = () => {
           id="why-choose-us"
           ref={(el) => (sectionsRef.current[5] = el)}
         >
-          <h2 className={styles.subheading}>Still Not Sure?</h2>
+          <h2 className={styles.subheading}> {pData?.StillNotHeading}</h2>
           <p>
-            If you or your child have faced a refusal for any of the reasons
-            mentioned above, don't worry. With over 10 years of experience, we
-            specialize in handling previously refused cases. We have
-            successfully secured approval for students who have had multiple
-            refusals, long gaps in education, and are of mature age. We achieve
-            this by tailoring our approach to your specific case and addressing
-            each concern raised by the officer in previous refusals. Using case
-            law, we identify similar cases with positive outcomes and apply them
-            as precedents in the cases we handle. This is why we have a high
-            success rate, with over 90% approval in such cases. At Brightlight
-            Immigration, we have a dedicated team of visa application
-            specialists who can assist you from the start of the application
-            process all the way to obtaining your visa. Start your process now.
+          {pData?.s1}
           </p>
 
           <button

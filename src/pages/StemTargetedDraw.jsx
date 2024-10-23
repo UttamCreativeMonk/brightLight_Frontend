@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet-async";
 const StemTargetedDraw = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -31,6 +32,21 @@ const StemTargetedDraw = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/stemTagatedDraw")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -104,6 +120,7 @@ const StemTargetedDraw = () => {
           }
         />
       </Helmet>
+
       <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
@@ -144,8 +161,7 @@ const StemTargetedDraw = () => {
 
       <div className={styles.container}>
         <h1 className={styles.heading}>
-          Category-Based Express Entry Selection Draws: STEM (Science,
-          Technology, Engineering, Math) Occupations
+           {pData?.stemTargetedDrawHeading}
         </h1>
 
         <section
@@ -154,19 +170,10 @@ const StemTargetedDraw = () => {
           ref={(el) => (sectionsRef.current[0] = el)}
         >
           <p>
-            Canada's Express Entry system is not just a general immigration
-            tool, but also a strategic resource for targeting specific sectors
-            of the economy. Occasionally, Canada conducts Science, Technology,
-            Engineering, and Math (STEM)-specific draws through the Express
-            Entry system. These draws specifically target candidates who have
-            work experience in eligible STEM occupations.
+          {pData?.stemTargetedDrawPara1}
           </p>
           <p>
-            If you're part of the STEM workforce and are considering immigrating
-            to Canada, these specialized draws could be a significant
-            opportunity for you. Stay tuned for more updates on these
-            STEM-specific Express Entry draws and make your move to Canada a
-            successful one.
+          {pData?.stemTargetedDrawPara2}
           </p>
         </section>
 
@@ -176,22 +183,17 @@ const StemTargetedDraw = () => {
           ref={(el) => (sectionsRef.current[1] = el)}
         >
           <h2 className={styles.subheading}>
-            First You Must Be Eligible with Express Entry
+          {pData?.EligibilityFirstHeading}
           </h2>
           <p>
-            Before you can participate in a STEM-specific draw through Canada's
-            Express Entry system, you need to be eligible. Here's how you can
-            get started:
+          {pData?.EligFirstSubHead}
           </p>
           <ol style={{ marginLeft: "40px" }}>
             <li>
-              Join the Express Entry Pool: The first step towards becoming a
-              candidate for a STEM-specific draw is to get into the Express
-              Entry pool.
+            {pData?.EligPara1}
             </li>
             <li>
-              Choose Your Program: There are three programs you can be eligible
-              for to join the Express Entry pool:
+            {pData?.EligPara2}
               <ul
                 className={styles.subheadingLink}
                 style={{ marginTop: "20px" }}
@@ -206,8 +208,7 @@ const StemTargetedDraw = () => {
                   >
                     Federal Skilled Worker Program (FSW)
                   </button>
-                  This program is ideal for tech workers who have the necessary
-                  work experience, education, and language ability.
+                  {pData?.EligPara2Li1}
                 </li>
                 <li style={{ textAlign: "center", marginBottom: "30px" }}>
                   <button
@@ -218,8 +219,7 @@ const StemTargetedDraw = () => {
                   >
                     Canadian Experience Class (CEC)
                   </button>
-                  Similar to the FSW program, the CEC is also suitable for tech
-                  workers who have gained Canadian work experience.
+                  {pData?.EligPara2Li2}
                 </li>
                 <li>
                   <button
@@ -229,50 +229,30 @@ const StemTargetedDraw = () => {
                     }
                   >
                     Federal Skilled Trades Program (FSTP)
-                  </button>
-                  If you're a trades worker, this program is designed for you.
-                  It requires proof of relevant work experience, education, and
-                  language proficiency.
+                   </button>
+                   {pData?.EligPara2Li3}
                 </li>
               </ul>
             </li>
           </ol>
           <p>
-            Remember, each program has its own set of eligibility requirements.
-            So, make sure to review these carefully and ensure you meet all the
-            necessary criteria before applying.
+          {pData?.EligPara3}
           </p>
-          <h2>Important things to keep in mind:</h2>
+          <h2> {pData?.ImportantThingsHeading}</h2>
           <p>
-            When it comes to the Federal Skilled Worker Program (FSW) BACKLINK
-            and the Canadian Experience Class (CEC) BACKLINK - the two programs
-            most relevant to tech workers - you&#39;ll need at least one year of
-            continuous work experience in a &quot;skilled&quot; occupation.
-            These occupations are classified under 0, 1, 2, and 3 of Canada’s
-            Training Education Experience Responsibilities (TEER) categories.
+           {pData?.ImportantThingsPara}
           </p>
-          <p>Here are a couple of important points to remember:</p>
+          <p> {pData?.itH}</p>
           <ul style={{ marginLeft: "40px" }} className={styles.leftList}>
             <li>
-              You can accumulate this work experience over two years in
-              part-time roles, as long as it adds up to 1,560 hours, which is
-              equivalent to one year of full-time work.
+            {pData?.it1}
             </li>
             <li>
-              The CEC program requires at least one year of skilled work
-              experience in Canada. On the other hand, the FSW program doesn't
-              require any Canadian work experience.
+            {pData?.it2}
             </li>
           </ul>
           <p>
-            The reason we&#39;re stressing that you need to be eligible for
-            Express Entry is to make it clear that having six months of work
-            experience in a STEM occupation isn&#39;t enough to qualify for
-            Express Entry. You need to meet the work experience requirements for
-            at least one of the programs first. If you have one year of work
-            experience in an eligible STEM occupation and meet the other
-            requirements of the CEC or the FSW, then you may be invited in a
-            STEM-specific draw.
+          {pData?.ImportantThingsPara2}
           </p>
         </section>
 
@@ -282,22 +262,15 @@ const StemTargetedDraw = () => {
           ref={(el) => (sectionsRef.current[2] = el)}
         >
           <h2 className={styles.subheading}>
-            Eligibility Criteria for STEM (Science, Technology, Engineering,
-            Math) Occupations
+          {pData?.EligCritHeading}
           </h2>
           <p>
-            To be Eligible in Science, Technology, Engineering, and Math (STEM)
-            occupations category you must meet the following eligibility
-            criteria:
+          {pData?.EligCritSubHeading}
           </p>
           <ul>
-            <li>A valid university degree in a STEM field.</li>
-            <li>
-              Within the last 3 years, you have at least 6 months of full-time,
-              continuous work experience (or an equivalent amount of part-time
-              work experience) in a single eligible STEM occupation.
-            </li>
-            <li>A valid Express Entry profile.</li>
+            <li> {pData?.ec1}</li>
+            <li>{pData?.ec2}</li>
+            <li> {pData?.ec3}</li>
           </ul>
         </section>
 
@@ -307,13 +280,10 @@ const StemTargetedDraw = () => {
           ref={(el) => (sectionsRef.current[7] = el)}
         >
           <h2 className={styles.subheading}>
-            Express Entry STEM draws history
+           {pData?.ExpressEntryHeading}
           </h2>
-          <p>
-            The first ever Express Entry draw for STEM workers was just
-            held. Express Entry draw 254 saw a CRS score of 486 and invited 500
-            candidates eligible for category-based selection in science,
-            technology, mathematics, and engineering (STEM) occupations.
+           <p>
+          {pData?.ExpressEntryPara}
           </p>
           <button
             className={styles.button}
@@ -328,7 +298,7 @@ const StemTargetedDraw = () => {
           id="stem-noc-codes"
           ref={(el) => (sectionsRef.current[3] = el)}
         >
-          <h2 className={styles.subheading}>STEM Eligible NOC Codes</h2>
+          <h2 className={styles.subheading}>{pData?.StemEligTableHeading}</h2>
           {/* <p>
             <a
               href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/submit-profile/rounds-invitations/category-based-selection.html"
@@ -343,136 +313,131 @@ const StemTargetedDraw = () => {
           <table className={styles.table}>
             <thead>
               <tr>
-                <th>Occupation</th>
-                <th>2021 NOC Code</th>
-                <th>TEER Category</th>
+                <th> {pData?.stT1h1}</th>
+                <th> {pData?.stT2h2}</th>
+                <th>{pData?.stT3h3}</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Architects</td>
-                <td>21200</td>
-                <td>1</td>
+                <td> {pData?.stT1Li1}</td>
+                <td>{pData?.stT2Li1}</td>
+                <td>{pData?.stT3Li1}</td>
               </tr>
               <tr>
-                <td>Architecture and science managers</td>
-                <td>20011</td>
-                <td>0</td>
+                <td> {pData?.stT1Li2}</td>
+                <td>{pData?.stT2Li2}</td>
+                <td>{pData?.stT3Li2}</td>
               </tr>
               <tr>
-                <td>Business systems specialists</td>
-                <td>21221</td>
-                <td>1</td>
+                <td> {pData?.stT1Li3}</td>
+                <td>{pData?.stT2Li3}</td>
+                <td>{pData?.stT3Li3}</td>
               </tr>
               <tr>
-                <td>Civil Engineers</td>
-                <td>21300</td>
-                <td>1</td>
+                <td> {pData?.stT1Li4}</td>
+                <td>{pData?.stT2Li4}</td>
+                <td>{pData?.stT3Li4}</td>
               </tr>
               <tr>
-                <td>Computer and information systems managers</td>
-                <td>20012</td>
-                <td>0</td>
+                <td> {pData?.stT1Li5}</td>
+                <td>{pData?.stT2Li5}</td>
+                <td>{pData?.stT3Li5}</td>
               </tr>
               <tr>
-                <td>
-                  Computer engineers (except software engineers and designers)
-                </td>
-                <td>21311</td>
-                <td>1</td>
+                <td>{pData?.stT1Li6}</td>
+                <td>{pData?.stT2Li6}</td>
+                <td>{pData?.stT3Li6}</td>
               </tr>
               <tr>
-                <td>Computer systems developers and programmers</td>
-                <td>21230</td>
-                <td>1</td>
+                <td>{pData?.stT1Li7}</td>
+                <td>{pData?.stT2Li7}</td>
+                <td>{pData?.stT3Li7}</td>
               </tr>
               <tr>
-                <td>Cybersecurity specialists</td>
-                <td>21220</td>
-                <td>1</td>
+                <td>{pData?.stT1Li8}</td>
+                <td>{pData?.stT2Li8}</td>
+                <td>{pData?.stT3Li8}</td>
               </tr>
               <tr>
-                <td>Data scientists</td>
-                <td>21211</td>
-                <td>1</td>
+                <td> {pData?.stT1Li9}</td>
+                <td>{pData?.stT2Li9}</td>
+                <td>{pData?.stT3Li9}</td>
               </tr>
               <tr>
-                <td>Database analysts and data administrators</td>
-                <td>21223</td>
-                <td>1</td>
+                <td> {pData?.stT1Li10}</td>
+                <td>{pData?.stT2Li10}</td>
+                <td>{pData?.stT3Li10}</td>
               </tr>
               <tr>
-                <td>Electrical and electronics engineers</td>
-                <td>21310</td>
-                <td>1</td>
+                <td> {pData?.stT1Li11}</td>
+                <td>{pData?.stT2Li11}</td>
+                <td>{pData?.stT3Li11}</td>
               </tr>
               <tr>
-                <td>Engineering managers</td>
-                <td>20010</td>
-                <td>0</td>
+                <td> {pData?.stT1Li12}</td>
+                <td>{pData?.stT2Li12}</td>
+                <td>{pData?.stT3Li12}</td>
               </tr>
               <tr>
-                <td>Industrial and manufacturing engineers</td>
-                <td>21321</td>
-                <td>1</td>
+                <td> {pData?.stT1Li13}</td>
+                <td>{pData?.stT2Li13}</td>
+                <td>{pData?.stT3Li13}</td>
               </tr>
               <tr>
-                <td>Information systems specialists</td>
-                <td>21222</td>
-                <td>1</td>
+                <td> {pData?.stT1Li14}</td>
+                <td>{pData?.stT2Li14}</td>
+                <td>{pData?.stT3Li14}</td>
               </tr>
               <tr>
-                <td>Land surveyors</td>
-                <td>21203</td>
-                <td>1</td>
+                <td> {pData?.stT1Li15}</td>
+                <td>{pData?.stT2Li15}</td>
+                <td>{pData?.stT3Li15}</td>
               </tr>
               <tr>
-                <td>Landscape Architects</td>
-                <td>21201</td>
-                <td>1</td>
+                <td> {pData?.stT1Li16}</td>
+                <td>{pData?.stT2Li16}</td>
+                <td>{pData?.stT3Li16}</td>
               </tr>
               <tr>
-                <td>Mathematicians, statisticians and actuaries</td>
-                <td>21210</td>
-                <td>1</td>
+                <td> {pData?.stT1Li17}</td>
+                <td>{pData?.stT2Li17}</td>
+                <td>{pData?.stT3Li17}</td>
               </tr>
               <tr>
-                <td>Metallurgical and materials engineers</td>
-                <td>21322</td>
-                <td>1</td>
+                <td> {pData?.stT1Li18}</td>
+                <td>{pData?.stT2Li8}</td>
+                <td>{pData?.stT3Li18}</td>
               </tr>
               <tr>
-                <td>
-                  Natural and applied science policy researchers, consultants
-                  and program officers
-                </td>
-                <td>41400</td>
-                <td>1</td>
+                <td>{pData?.stT1Li19}</td>
+                <td>{pData?.stT2Li9}</td>
+                <td>{pData?.stT3Li19}</td>
               </tr>
               <tr>
-                <td>Software developers and programmers</td>
-                <td>21232</td>
-                <td>1</td>
+                <td> {pData?.stT1Li20}</td>
+                <td>{pData?.stT2Li20}</td>
+                <td>{pData?.stT3Li20}</td>
               </tr>
               <tr>
-                <td>Software engineers and designers</td>
-                <td>21231</td>
-                <td>1</td>
+                <td> {pData?.stT1Li21}</td>
+                <td>{pData?.stT2Li21}</td>
+                <td>{pData?.stT3Li21}</td>
               </tr>
               <tr>
-                <td>Urban and land use planners</td>
-                <td>21202</td>
-                <td>1</td>
+                <td> {pData?.stT1Li22}</td>
+                <td>{pData?.stT2Li22}</td>
+                <td>{pData?.stT3Li22}</td>
               </tr>
               <tr>
-                <td>Web designers</td>
-                <td>21233</td>
-                <td>1</td>
+                <td> {pData?.stT1Li23}</td>
+                <td>{pData?.stT2Li23}</td>
+                <td>{pData?.stT3Li23}</td>
               </tr>
               <tr>
-                <td>Web developers and programmers</td>
-                <td>21234</td>
-                <td>1</td>
+                <td> {pData?.stT1Li24}</td>
+                <td>{pData?.stT2Li24}</td>
+                <td>{pData?.stT3Li24}</td>
               </tr>
             </tbody>
           </table>
@@ -505,23 +470,12 @@ const StemTargetedDraw = () => {
           id="testing2"
           ref={(el) => (sectionsRef.current[5] = el)}
         >
-          <h2 className={styles.subheading}>Still Not Sure?</h2>
+          <h2 className={styles.subheading}>{pData?.StillNotHeading}</h2>
           <p>
-            Contact Brightlight Immigration today to assess your profile and
-            embark on a transformative journey towards achieving your Canadian
-            dream. With over a decade of experience, we specialize in handling
-            Express Entry Programs. Our approval rate for these programs is
-            nearly 100%. We achieve this with a tailored approach to your
-            specific case. We use case law and find similar cases to your
-            circumstances that had positive results, and we use them as
-            precedents in cases we work on. This is why we have a high success
-            rate.
+          {pData?.s1}
           </p>
           <p>
-            At Brightlight Immigration, we have a dedicated team of visa
-            application specialists who can assist you from the start of the
-            application process all the way to obtaining your PR. Start your
-            process now.
+          {pData?.s2}
           </p>
           {/* <Link to="/contact-us" className={styles.button}>
            

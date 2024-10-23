@@ -12,6 +12,7 @@ import FieldOfStudyTable from "../components/FieldOfStudyTable";
 const Sds = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -32,6 +33,21 @@ const Sds = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/sds")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -151,12 +167,10 @@ const Sds = () => {
 
       <div className={styles.container}>
         <h1 className={styles.heading} id="about-program">
-          Student Direct Stream (SDS)
+        {pData?.SdsHeading}
         </h1>
         <p style={{ textAlign: "center" }}>
-          The <strong>Student Direct Stream (SDS)</strong>  offers eligible international students
-          from 14 countries an expedited pathway to obtain their Canadian study
-          permit.
+        {pData?.SdsPara}
         </p>
 
         <section
@@ -164,24 +178,20 @@ const Sds = () => {
           id="testing"
           ref={(el) => (sectionsRef.current[1] = el)}
         >
-          <h2>What is a Study Permit?</h2>
+          <h2>   {pData?.WhatisStudyPerHeading}</h2>
           <p>
-            A study permit grants you the authorization to stay in Canada for
-            educational purposes. It contains essential information about you,
-            including:
+          {pData?.WhatisStudyPerSubHead}
           </p>
           <ul>
-            <li>The reason for your presence in Canada</li>
-            <li>The level of your study program</li>
-            <li>The duration of your study program</li>
+            <li>   {pData?.wspLi1}</li>
+            <li>  {pData?.wspLi2}</li>
+            <li>  {pData?.wspLi3}</li>
             <li>
-              Whether you can work on- or off-campus during your studies, along
-              with any associated restrictions.
+            {pData?.wspLi4}
             </li>
           </ul>
           <p>
-            Most study permit applications submitted through the SDS are
-            processed within 20 calendar days, although some may take longer.
+           {pData?.WhatisStudyPerLastPara}
           </p>
         </section>
 
@@ -190,24 +200,20 @@ const Sds = () => {
           id="faster-processing"
           ref={(el) => (sectionsRef.current[2] = el)}
         >
-          <h2 className={styles.subheading}>
-            How to Benefit from Faster Processing
+           <h2 className={styles.subheading}>
+             {pData?.BenifitHeading}
           </h2>
-          <p>To take advantage of quicker processing times, students must:</p>
+          <p>  {pData?.BenifitSubHead}</p>
           <ul>
             <li>
-             <strong> Provide Biometrics:</strong> If required, submit your biometrics promptly.
+             {pData?.BenLi1}
             </li>
             <li>
-             <strong>Meet Eligibility Requirements:</strong> Ensure you meet all eligibility
-              criteria.
+            {pData?.BenLi2}
             </li>
           </ul>
           <p>
-            <strong>Note:</strong> A study permit is not a visa and cannot be
-            used for travel to or entry into Canada. Depending on your
-            situation, you may also need to obtain a visitor visa or an
-            electronic travel authorization (eTA).
+          {pData?.BenNote}
           </p>
         </section>
 
@@ -217,101 +223,92 @@ const Sds = () => {
           ref={(el) => (sectionsRef.current[3] = el)}
         >
           <h2 className={styles.subheading}>
-            Eligibility Criteria for the Student Direct Stream (SDS)
+          {pData?.EligCritTableHeading}
           </h2>
           <p>
-            Legal residents of the following 14 countries may qualify for faster
-            study permit processing through the SDS:
+          {pData?.EligCritTableSubHead}
           </p>
           <table className={styles.countryTable}>
             <thead>
               <tr>
-                <th>Eligible Countries</th>
+                <th>{pData?.emh1}</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Antigua and Barbuda</td>
+                <td>{pData?.e2}</td>
               </tr>
               <tr>
-                <td>Brazil</td>
+                <td>{pData?.e3}</td>
               </tr>
               <tr>
-                <td>China</td>
+                <td>{pData?.e4}</td>
               </tr>
               <tr>
-                <td>Colombia</td>
+                <td>{pData?.e5}</td>
               </tr>
               <tr>
-                <td>Costa Rica</td>
+                <td>{pData?.e6}</td>
               </tr>
               <tr>
-                <td>India</td>
+                <td>{pData?.e7}</td>
               </tr>
               <tr>
-                <td>Morocco</td>
+                <td>{pData?.e8}</td>
               </tr>
               <tr>
-                <td>Pakistan</td>
+                <td>{pData?.e9}</td>
               </tr>
               <tr>
-                <td>Peru</td>
+                <td>{pData?.e10}</td>
               </tr>
               <tr>
-                <td>St. Vincent and the Grenadines</td>
+                <td>{pData?.e11}</td>
               </tr>
               <tr>
-                <td>Senegal</td>
+                <td>{pData?.e12}</td>
               </tr>
               <tr>
-                <td>The Philippines</td>
+                <td>{pData?.e13}</td>
               </tr>
               <tr>
-                <td>Trinidad and Tobago</td>
+                <td>{pData?.e14}</td>
               </tr>
               <tr>
-                <td>Vietnam</td>
+                <td>{pData?.e15}</td>
               </tr>
             </tbody>
           </table>
-          <p> <strong>To be eligible, you must:</strong></p>
+          <p> <strong> {pData?.toBeEligibUnderTabHeading1}</strong></p>
           <ul style={{ marginLeft: "40px" }}>
             <li>
-              Hold a provincial attestation letter (PAL) from the province or
-              territory where you plan to study.
+            {pData?.toBeEligibUnderTablist1}
             </li>
             <li>
-              Possess an acceptance letter from a post-secondary designated
-              learning institution (DLI).
+            {pData?.toBeEligibUnderTablist2}
             </li>
-            <li>Reside outside of Canada when applying.</li>
-            <li>Provide proof of payment for first-year tuition.</li>
-            <li>Hold a Guaranteed Investment Certificate (GIC) of C$20,635.</li>
+            <li>{pData?.toBeEligibUnderTablist3}</li>
+            <li>  {pData?.toBeEligibUnderTablist4}</li>
+            <li>  {pData?.toBeEligibUnderTablist5}</li>
             <li>
-              Submit your most recent secondary or post-secondary transcripts.
+            {pData?.toBeEligibUnderTablist6}
             </li>
             <li>
-              Demonstrate sufficient language proficiency through a recognized
-              language test result (see Language Test Results below).
+            {pData?.toBeEligibUnderTablist7}
             </li>
           </ul>
           <p>
-            Depending on your study location and personal circumstances, you may
-            need to:
+          {pData?.toBeEligibUnderTabHeading2}
           </p>
           <ul style={{ marginLeft: "40px" }}>
             <li>
-              Obtain a Certificat d’acceptation du Québec (CAQ) if planning to
-              study in Quebec.
+            {pData?.toBeEligibUnderTablist8}
             </li>
-            <li>Complete a medical exam (if applicable) before applying.</li>
-            <li>Obtain a police certificate (if applicable).</li>
+            <li>{pData?.toBeEligibUnderTablist9}</li>
+            <li>{pData?.toBeEligibUnderTablist10}</li>
           </ul>
           <p>
-            Additional documentation may be necessary, potentially extending
-            processing times. For specific instructions, refer to your country’s
-            visa office guidelines by selecting your country of residence from
-            the provided menu.
+          {pData?.toBeEligibUnderLastPara}
           </p>
 
           <button
@@ -328,218 +325,194 @@ const Sds = () => {
           ref={(el) => (sectionsRef.current[4] = el)}
         >
           <h2 className={styles.subheading}>
-            How to Apply for Student Direct Stream (SDS)
+          {pData?.HowtoApplyHeading}
           </h2>
-          <h4>Application Process:</h4>
+          <h4>{pData?.HowtoApplyAppProcHead}</h4>
           <p>
-            If you’re considering applying for a study permit through the
-            Student Direct Stream (SDS), here’s what you’ll need:
+           {pData?.HowtoApplyAppProcPara}
           </p>
           <ol style={{ marginLeft: "40px" }}>
             <li>
-              <h3>Provincial Attestation Letters (PAL)</h3>
+              <h3>{pData?.HowtoApplyAppProcStep1}</h3>
               <ul style={{ marginLeft: "40px" }}>
                 <li>
-                  As of January 22, 2024, most students planning to study in
-                  Canada must provide a Provincial Attestation Letter
-                  (PAL) specific to their chosen study location.
+                {pData?.HowtoApplyAppProcStep1Li1}
                 </li>
                 <li>
-                  A PAL serves as an electronic certification, confirming a
-                  student’s eligibility to apply for a study permit within a
-                  province’s quota.
+                {pData?.HowtoApplyAppProcStep1Li2}
                 </li>
                 <li>
-                  Note: Master’s degree, doctoral degree, and K-12 students are
-                  exempt from the PAL requirement.
+                {pData?.HowtoApplyAppProcStep1Note}
                 </li>
               </ul>
             </li>
             <li>
-              <h3>Proof of First-Year Tuition Payment</h3>
+              <h3>{pData?.HowtoApplyAppProcStep2}</h3>
               <p>
-                Students can demonstrate full payment of their first year’s
-                tuition by including one of the following documents with their
-                application:
+              {pData?.HowtoApplyAppProcSubHStep2}
               </p>
               <ul style={{ marginLeft: "40px", marginTop: "10px" }}>
-                <li>
-                  A receipt from the Designated Learning Institution (DLI)
-                </li>
-                <li>An official letter from the DLI confirming payment</li>
-                <li>A bank receipt indicating funds transferred to the DLI</li>
-                <li>
-                  Proof of funds in a repository account at the DLI for future
-                  tuition payments
-                </li>
+                <li>{pData?.HowtoApplyAppProcStep2Li1}</li>
+                <li>{pData?.HowtoApplyAppProcStep2Li2}</li>
+                <li>{pData?.HowtoApplyAppProcStep2Li3}</li>
+                <li>{pData?.HowtoApplyAppProcStep2Li4}</li>
               </ul>
             </li>
             <li>
-              <h3>Proof of Funds Chart</h3>
+              <h3>{pData?.HowtoApplyAppProcStep3Tab}</h3>
               <p style={{ marginBottom: "20px" }}>
-                Scenarios with estimated one year tuition fees of 20,000 &amp;
-                minimum travel cost per person of $2000 CAD based on the new
-                cost of living
+              {pData?.HowtoApplyAppProcStep3TabSubH}
               </p>
               <table className={styles.fundsTable}>
                 <thead>
                   <tr>
-                    <th>Single Applicant</th>
-                    <th>Cost</th>
+                    <th>{pData?.ProofFundTable1Head1}</th>
+                    <th>{pData?.ProofFundTable2Head2}</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Tuition Fees</td>
-                    <td>$20,000.00</td>
+                    <td>{pData?.ProofFund1Table11}</td>
+                    <td>{pData?.ProofFund1Table21}</td>
                   </tr>
                   <tr>
-                    <td>Living Expense</td>
-                    <td>$20,636.00</td>
+                    <td>{pData?.ProofFund1Table12}</td>
+                    <td>{pData?.ProofFund1Table22}</td>
                   </tr>
                   <tr>
-                    <td>Transportation</td>
-                    <td>$2,000.00</td>
+                    <td>{pData?.ProofFund1Table13}</td>
+                    <td>{pData?.ProofFund1Table23}</td>
                   </tr>
                   <tr>
-                    <td>Minimum Funds Required</td>
-                    <td>$42,636.00</td>
+                    <td>{pData?.ProofFund1Table14}</td>
+                    <td>{pData?.ProofFund1Table24}</td>
                   </tr>
                 </tbody>
               </table>
               <table className={styles.fundsTable}>
                 <thead>
                   <tr>
-                    <th>Family of 2</th>
-                    <th>Cost</th>
+                    <th>{pData?.ProofFundTable2Head1}</th>
+                    <th>{pData?.ProofFundTable2Head2}</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Tuition Fees</td>
-                    <td>$20,000.00</td>
+                    <td>{pData?.ProofFund2Table11}</td>
+                    <td>{pData?.ProofFund2Table21}</td>
                   </tr>
                   <tr>
-                    <td>Living Expense</td>
-                    <td>$25,691.00</td>
+                    <td>{pData?.ProofFund2Table12}</td>
+                    <td>{pData?.ProofFund2Table22}</td>
                   </tr>
                   <tr>
-                    <td>Transportation</td>
-                    <td>$4,000.00</td>
+                    <td>{pData?.ProofFund2Table13}</td>
+                    <td>{pData?.ProofFund2Table23}</td>
                   </tr>
                   <tr>
-                    <td>Minimum Funds Required</td>
-                    <td>$49,691.00</td>
+                    <td>{pData?.ProofFund2Table14}</td>
+                    <td>{pData?.ProofFund2Table24}</td>
                   </tr>
                 </tbody>
               </table>
               <table className={styles.fundsTable}>
                 <thead>
                   <tr>
-                    <th>Family of 4</th>
-                    <th>Cost</th>
+                    <th>{pData?.ProofFundTable3Head1}</th>
+                    <th>{pData?.ProofFundTable3Head2}</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Tuition Fees</td>
-                    <td>$20,000.00</td>
+                    <td>{pData?.ProofFund3Table11}</td>
+                    <td>{pData?.ProofFund3Table21}</td>
                   </tr>
                   <tr>
-                    <td>Living Expense</td>
-                    <td>$38,346.00</td>
+                    <td>{pData?.ProofFund3Table12}</td>
+                    <td>{pData?.ProofFund3Table22}</td>
                   </tr>
                   <tr>
-                    <td>Transportation</td>
-                    <td>$8,000.00</td>
+                    <td>{pData?.ProofFund3Table13}</td>
+                    <td>{pData?.ProofFund3Table23}</td>
                   </tr>
                   <tr>
-                    <td>Minimum Funds Required</td>
-                    <td>$66,346.00</td>
+                    <td>{pData?.ProofFund3Table14}</td>
+                    <td>{pData?.ProofFund3Table24}</td>
                   </tr>
                 </tbody>
               </table>
             </li>
             <li>
-              <h3>Medical Exam</h3>
+              <h3>{pData?.HowtoApplyAppProcStep4}</h3>
               <p style={{ marginBottom: "20px" }}>
-                You may need to undergo a medical exam conducted by an
-                Immigration, Refugees and Citizenship Canada (IRCC)-approved
-                doctor if:
+              {pData?.HowtoApplyAppProcSubHStep4}
               </p>
               <ul style={{ marginLeft: "40px" }}>
                 <li>
-                  You have lived or traveled in certain countries or territories
-                  for six months or longer in the year before coming to Canada.
+                {pData?.HowtoApplyAppProcStep4Li1}
                 </li>
                 <li>
-                  You plan to study or work in fields related to health, primary
-                  or secondary education, child care, or elder care.
+                {pData?.HowtoApplyAppProcStep4Li2}
                 </li>
               </ul>
             </li>
             <li>
-              <h3>Police Certificate</h3>
+              <h3> {pData?.HowtoApplyAppProcStep5}</h3>
               <p>
-                To determine whether you need to submit a police certificate,
-                select your country of residence from the menu and refer to the
-                specific visa office instructions.
+              {pData?.HowtoApplyAppProcSubHStep5}
               </p>
             </li>
             <li>
-              <h3>Language Test Results</h3>
+              <h3>{pData?.HowtoApplyAppProcStep6}</h3>
               <p style={{ marginBottom: "20px" }}>
-                Include your language test results demonstrating proficiency in
-                English or French. As of August 10, 2023, SDS applicants can
-                submit English proficiency test results from four new providers:
+                {pData?.HowtoApplyAppProcSubHStep6}
               </p>
               <ul style={{ marginLeft: "40px" }}>
-                <li>Canadian Academic English Language (CAEL)</li>
+                <li> {pData?.HowtoApplyAppProcStep6Li1}</li>
                 <li>
-                  Canadian English Language Proficiency Index Program (CELPIP
-                  General)
+                {pData?.HowtoApplyAppProcStep6Li2}
                 </li>
-                <li>Pearson Test of English – Academic (PTE Academic)</li>
-                <li>Test of English as a Foreign Language (TOEFL iBT)</li>
+                <li>{pData?.HowtoApplyAppProcStep6Li3}</li>
+                <li>{pData?.HowtoApplyAppProcStep6Li4}</li>
               </ul>
               <p style={{ marginBottom: "20px" }}>
-                Minimum language test scores required:
+              {pData?.HowtoApplyAppProc2TabHead}
               </p>
               <table className={styles.languageTable}>
                 <thead>
                   <tr>
-                    <th>English Language Test</th>
-                    <th>Minimum Score Required for SDS</th>
+                    <th> {pData?.HowtoApplyAppProc2TabHead1}</th>
+                    <th>{pData?.HowtoApplyAppProc2TabHead2}</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>IELTS Academic (Grade 12)</td>
-                    <td>Overall 6.0 - 5.5 acceptable in one of the modules</td>
+                    <td>{pData?.HowtoApplyAppProc2TabHead1Point1}</td>
+                    <td>{pData?.HowtoApplyAppProc2TabHead2Point1}</td>
                   </tr>
                   <tr>
-                    <td>IELTS Academic (Graduation)</td>
-                    <td>Overall 6.5 - no less than 6 in any of the modules</td>
+                    <td>{pData?.HowtoApplyAppProc2TabHead1Point2}</td>
+                    <td>{pData?.HowtoApplyAppProc2TabHead2Point2}</td>
                   </tr>
                   <tr>
-                    <td>CELPIP General</td>
-                    <td>7 in each module</td>
+                    <td>{pData?.HowtoApplyAppProc2TabHead1Point3}</td>
+                    <td>{pData?.HowtoApplyAppProc2TabHead2Point3}</td>
                   </tr>
                   <tr>
-                    <td>PTE Academic</td>
-                    <td>60</td>
+                    <td>{pData?.HowtoApplyAppProc2TabHead1Point4}</td>
+                    <td>{pData?.HowtoApplyAppProc2TabHead2Point4}</td>
                   </tr>
                   <tr>
-                    <td>TOEFL iBT</td>
-                    <td>83</td>
+                    <td>{pData?.HowtoApplyAppProc2TabHead1Point5}</td>
+                    <td>{pData?.HowtoApplyAppProc2TabHead2Point5}</td>
                   </tr>
                   <tr>
-                    <td>CAEL</td>
-                    <td>60</td>
+                    <td>{pData?.HowtoApplyAppProc2TabHead1Point6}</td>
+                    <td>{pData?.HowtoApplyAppProc2TabHead2Point6}</td>
                   </tr>
                   <tr>
-                    <td>NIVEAUX DE compétence linguistique canadiens</td>
-                    <td>score of at least 7 for French*</td>
+                    <td>{pData?.HowtoApplyAppProc2TabHead1Point7}</td>
+                    <td>{pData?.HowtoApplyAppProc2TabHead2Point7}</td>
                   </tr>
                 </tbody>
               </table>
@@ -625,33 +598,26 @@ const Sds = () => {
           ref={(el) => (sectionsRef.current[0] = el)}
         >
           <h2 className={styles.subheading}>
-            Bringing Spouses, Common-Law Partners, and Dependent Children
+          {pData?.BringingSpouHeading}
           </h2>
           <p>
-            If your spouse, common-law partner, or dependent children plan to
-            accompany you to Canada, they may also qualify for faster processing
-            of the following:
+          {pData?.BringingSpouSubHead1}
           </p>
           <ul style={{ marginLeft: "40px" }}>
-            <li>Visitor Visa</li>
-            <li>Work Permit</li>
-            <li>Study Permit</li>
+            <li>{pData?.BringingSpouLi1}</li>
+            <li>{pData?.BringingSpouLi2}</li>
+            <li>{pData?.BringingSpouLi3}</li>
           </ul>
           <p>
-            To benefit from expedited processing, their completed applications
-            must be submitted alongside yours. When applying, select the option
-            indicating that you have family members accompanying you to Canada.
+          {pData?.BringingSpouPara1}
           </p>
           <p>
             <strong>
-              I am an international student. Is my spouse, common law partner,
-              eligible for an Open Work Permit?
+            {pData?.intenationalHeading}
             </strong>{" "}
           </p>
           <p>
-            As of March 19, 2024, to be eligible to apply for a Spousal Open
-            Work Permit as an international student, you must be enrolled in one
-            of the following programs:
+          {pData?.intenationalPara}
           </p>
           <ul>
             <li
@@ -661,16 +627,15 @@ const Sds = () => {
                 marginTop: "10px",
               }}
             >
-              <strong>Graduate Programs:</strong>
+              <strong>{pData?.graduateProgHeading}</strong>
               <ul style={{ marginLeft: "40px" }}>
                 <li>
-                  Graduate programs encompass master’s and doctorate
-                  degrees granted by universities or polytechnic institutions.
+                {pData?.graduateProgPara}
                 </li>
               </ul>
             </li>
             <li style={{ listStyle: "none" }}>
-              <strong>Professional Degree Programs:</strong>
+              <strong>{pData?.ProfessionalDegHeading}</strong>
               <li
                 style={{
                   listStyle: "disc",
@@ -678,18 +643,18 @@ const Sds = () => {
                   marginTop: "10px",
                 }}
               >
-                Professional degree programs include the following:
+                {pData?.ProfessionalDegSubHead}
               </li>
               <ul style={{ marginLeft: "40px" }}>
-                <li>Doctor of Dental Surgery (DDS, DMD)</li>
-                <li>Bachelor of Law or Juris Doctor (LLB, JD, BCL)</li>
-                <li>Doctor of Medicine (MD)</li>
-                <li>Doctor of Optometry (OD)</li>
-                <li>Pharmacy (PharmD, BS, BSc, BPharm)</li>
-                <li>Doctor of Veterinary Medicine (DVM)</li>
-                <li>Bachelor of Science in Nursing (BScN, BSN, BNSc)</li>
-                <li>Bachelor of Education (BEd)</li>
-                <li>Bachelor of Engineering (BEng, BE, BASc) (only)</li>
+                <li>{pData?.ProfessionalDegLi1}</li>
+                <li>{pData?.ProfessionalDegLi2}</li>
+                <li>{pData?.ProfessionalDegLi3}</li>
+                <li>{pData?.ProfessionalDegLi4}</li>
+                <li>{pData?.ProfessionalDegLi5}</li>
+                <li>{pData?.ProfessionalDegLi6}</li>
+                <li>{pData?.ProfessionalDegLi7}</li>
+                <li>{pData?.ProfessionalDegLi8}</li>
+                <li>{pData?.ProfessionalDegLi9}</li>
               </ul>
             </li>
           </ul>
@@ -701,22 +666,17 @@ const Sds = () => {
           ref={(el) => (sectionsRef.current[5] = el)}
         >
           <h2 className={styles.subheading}>
-            Who Isn’t Eligible for the Student Direct Stream (SDS)?
+          {pData?.WhoIsNotHeading}
           </h2>
           <p style={{ marginBottom: "20px" }}>
-            According to the Government of Canada:
+          {pData?.WhoIsNotSubHead}
           </p>
           <ul style={{ marginLeft: "40px" }}>
             <li>
-              If you reside anywhere other than the 14 countries listed above
-              (even if you’re a citizen of those countries), you must apply
-              through the regular study permit process.
+            {pData?.WhoIsNotSubLi1}
             </li>
             <li>
-              If you live in a different country (even if you’re a citizen of
-              the 14 eligible countries) or don’t meet the eligibility criteria
-              for faster processing, you may still be eligible for a study
-              permit through the standard application process.
+            {pData?.WhoIsNotSubLi2}
             </li>
           </ul>
         </section>
@@ -726,24 +686,22 @@ const Sds = () => {
           id="application-submission"
           ref={(el) => (sectionsRef.current[6] = el)}
         >
-          <h2 className={styles.subheading}>Submitting Your Application</h2>
+          <h2 className={styles.subheading}>  {pData?.SubmAppHeading}</h2>
           <ul style={{ marginLeft: "40px" }}>
             <li>
-              Students applying through the Student Direct Stream can only apply
-              online; there’s no paper application process. To complete your
-              application, follow these steps:
+            {pData?.SubmAppSubHead}
             </li>
             <li>
-              To complete your application, follow these steps:
+            {pData?.SubmAppLiHead}
               <ol style={{ marginLeft: "20px", marginBottom: "70px" }}>
-                <li>Review the instruction guide to fill out the forms.</li>
-                <li>Create electronic copies of your documents.</li>
-                <li>Pay the application fee using a credit or debit card.</li>
+                <li>  {pData?.SubmAppLi1}</li>
+                <li>{pData?.SubmAppLi2}</li>
+                <li>{pData?.SubmAppLi3}</li>
               </ol>
             </li>
           </ul>
 
-          <h3>Paying for Your Biometrics</h3>
+          <h3>{pData?.PayBioHeading}</h3>
           <ul
             style={{
               marginTop: "10px",
@@ -752,12 +710,10 @@ const Sds = () => {
             }}
           >
             <li>
-              Most students need to provide biometrics and should pay the fee
-              along with their online application.
+            {pData?.PayBioLi1}
             </li>
             <li>
-              If you require assistance with biometrics or passport submission,
-              visit a visa application centre (VAC).
+            {pData?.PayBioLi2}
             </li>
           </ul>
           <h3>After You Apply</h3>
@@ -769,21 +725,16 @@ const Sds = () => {
             }}
           >
             <li>
-              Book an appointment to provide your biometrics after submitting
-              your study permit application through the Student Direct Stream.
+            {pData?.AfteApplyLi1}
             </li>
             <li>
-              You’ll receive an instruction letter detailing where and how to
-              provide your biometrics within 30 days. Bring this letter and your
-              valid passport to your appointment.
+            {pData?.AfteApplyLi2}
             </li>
             <li>
-              If you didn’t pay the biometrics fee during application, you’ll
-              receive a reminder letter. The visa office won’t process your
-              application until you’ve provided biometrics.
+            {pData?.AfteApplyLi3}
             </li>
           </ul>
-          <h3>Processing Time</h3>
+          <h3> {pData?.ProcessingTimeHeading}</h3>
           <ul
             style={{
               marginTop: "20px",
@@ -792,20 +743,15 @@ const Sds = () => {
             }}
           >
             <li>
-              The visa office typically processes most applications within 20
-              calendar days after receiving biometrics from eligible applicants.
+            {pData?.ProcessingTimeLi1}
             </li>
             <li>
-              If your application doesn’t meet the eligibility criteria for the
-              Student Direct Stream, it will be reviewed as a regular study
-              permit application, without faster processing.
+            {pData?.ProcessingTimeLi2}
             </li>
           </ul>
-          <h3>Application Refusal</h3>
+          <h3>  {pData?.AppRefHeading}</h3>
           <p>
-            If your application is refused, you’ll receive a letter explaining
-            the decision. For any questions, reach out directly to the visa
-            office.
+          {pData?.AppRefPara}
           </p>
         </section>
 
@@ -814,39 +760,27 @@ const Sds = () => {
           id="refusal-reasons"
           ref={(el) => (sectionsRef.current[7] = el)}
         >
-          <h2 className={styles.subheading}>Reasons for Refusal</h2>
+          <h2 className={styles.subheading}>  {pData?.RefusalHeading}</h2>
           <p style={{ marginBottom: "20px" }}>
-            Insufficient Identity or travel history documents
+          {pData?.RefusalHeading}
           </p>
           <ul>
-            <li>Not having an intention of coming back to your home country</li>
-            <li>You failed to submit a Letter of Acceptance</li>
-            <li>Lack of academic performance & low language test scores</li>
-            <li>Financially unstable</li>
-            <li>Unclear purpose of your visit</li>
-            <li>Biometric Rejections</li>
-            <li>Family Relations in Canada</li>
-            <li>Hiring an Unauthorized Immigration Consultant</li>
-            <li>
-              Choice of study program that does not match with past
-              qualifications and experience
-            </li>
+            <li>  {pData?.r1}</li>
+            <li> {pData?.r2}</li>
+            <li> {pData?.r3}</li>
+            <li> {pData?.r4}</li>
+            <li> {pData?.r5}</li>
+            <li> {pData?.r6}</li>
+            <li> {pData?.r7}</li>
+            <li> {pData?.r8}</li>
+            <li>{pData?.r9}</li>
           </ul>
-          <h2 className={styles.subheading}>Still Not Sure ?</h2>
+          <h2 className={styles.subheading}> {pData?.StillNotSureHeading}</h2>
           <p>
-            Still not sure? If you have faced a refusal for any of the reasons
-            mentioned above, don't worry. With over 10 years of experience, we
-            specialize in handling previously refused cases. We have
-            successfully secured approval for students who have had multiple
-            refusals, long gaps in education, and are of mature age. We achieve
-            this by tailoring our approach to your specific case and addressing
-            each concern raised by the officer in previous refusals. Using case
-            law, we identify similar cases with positive outcomes and apply them
-            as precedents in the cases we handle. This is why we have a high
-            success rate, with over 90% approval in such cases. At Brightlight
-            Immigration, we have a dedicated team of visa application
-            specialists who can assist you from the start of the application
-            process all the way to obtaining your visa. Start your process now.
+          {pData?.StillNotSurePara1}
+          </p>
+          <p className={styles.subStillPara}>
+          {pData?.StillNotSurePara2}
           </p>
 
           <button

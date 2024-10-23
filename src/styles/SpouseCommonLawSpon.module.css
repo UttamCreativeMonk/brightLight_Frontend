@@ -140,6 +140,9 @@
     .introduction, .benefits, .eligibility, .applicationProcess, .refusalReasons, .assistance, .whyChooseUs {
       margin-bottom: 20px;
     }
+    .applicationProcess li{
+      margin-top: 15px;
+    }
 
     .refusalReasons ul{
       margin-left: 40px !important;

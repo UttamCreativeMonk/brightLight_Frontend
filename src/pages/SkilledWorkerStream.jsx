@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet-async";
 const SkilledWorkerStream = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -31,6 +32,21 @@ const SkilledWorkerStream = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/skilled-worker-stream")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -107,12 +123,12 @@ const SkilledWorkerStream = () => {
       <Navbar1 />
       <div className={styles.bannerParent}>
         <div className={styles.banner}>
-          <header className={styles.header}>
+          {/* <header className={styles.header}>
             <h1>
               British Columbia Provincial Nominee Program (BC PNP) Skilled
               Worker Stream
             </h1>
-          </header>
+          </header> */}
           <div
             className={`${styles.bannerHeadingRotateParent} ${
               isDropdownOpen ? styles.active : ""
@@ -152,20 +168,15 @@ const SkilledWorkerStream = () => {
 
       <div className={styles.container}>
         <section
-          className={`${styles.section} ${styles.section}`}
+          className={`${styles.header} ${styles.section}`}
           id="benefits-2"
           ref={(el) => (sectionsRef.current[50] = el)}
         >
-          <h2>
-            British Columbia Provincial Nominee Program (BC PNP) Skilled Worker
-            Stream
-          </h2>
+          <h1>
+          {pData?.heading}
+          </h1>
           <p>
-            The British Columbia Skilled Worker Stream is an integral part of
-            the British Columbia Provincial Nominee Program (BC PNP). Designed
-            to attract skilled immigrants, this stream prioritizes individuals
-            who hold job offers and demonstrate a strong potential to contribute
-            to the labor force in British Columbia.
+          {pData?.description}
           </p>
         </section>
         <section
@@ -173,22 +184,16 @@ const SkilledWorkerStream = () => {
           id="benefits"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          <h2>Benefits of BC Skilled Worker Stream</h2>
+          <h2>    {pData?.benefitsHeading}</h2>
           <ul style={{marginLeft: "40px"}}>
             <li>
-              Nomination Priority: Successful candidates nominated through the
-              BC Skilled Worker stream receive an invitation to apply for
-              Canadian permanent residence.
+            {pData?.b1}
             </li>
             <li>
-              No Express Entry Profile Required: Unlike other immigration
-              streams, applicants for this stream do not need an Express Entry
-              profile to be eligible.
+            {pData?.b2}
             </li>
             <li>
-              Accelerated Processing: While Express Entry is not mandatory,
-              candidates with an active profile may choose to apply through the
-              Express Entry system for faster processing.
+            {pData?.b3}
             </li>
           </ul>
         </section>
@@ -199,66 +204,58 @@ const SkilledWorkerStream = () => {
           ref={(el) => (sectionsRef.current[1] = el)}
         >
           <h3 style={{ marginBottom: "20px" }}>
-            First you must be eligible with BCPNP Skilled Worker Stream:
+          {pData?.eligibleSubHeading}
           </h3>
           <h2 style={{ marginBottom: "20px" }}>
-            Eligibility Requirements for the BC Skilled Worker Stream
+          {pData?.eligibileHeading}
           </h2>
           <p style={{ marginBottom: "20px" }}>
-            As an aspiring skilled worker in British Columbia, you’ll need to
-            meet specific criteria to qualify for this stream. Here are the key
-            eligibility requirements:
+          {pData?.eligibleDesc}
           </p>
           <ol style={{marginLeft: "40px"}}>
             <li>
-              <strong>Job Offer Acceptance:</strong>
+              <strong>   {pData?.e1}</strong>
               <ul>
                 <li>
-                  You must have accepted an indeterminate (with no defined end
-                  date), full-time job offer from a B.C. employer.
+                {pData?.e1l1}
                 </li>
                 <li>
-                  The job offer must fall under NOC (National Occupational
-                  Classification) Skill Levels 0, 1, 2, or 3.
+                {pData?.e1l2}
                 </li>
               </ul>
             </li>
             <li>
-              <strong>Qualifications and Experience:</strong>
+              <strong>{pData?.e2}</strong>
               <ul>
                 <li>
-                  You should be qualified to perform the duties of the job.
+                {pData?.e2l1}
                 </li>
                 <li>
-                  A minimum of two years of full-time (or full-time equivalent)
-                  work experience at NOC Skill Levels 0, 1, 2, or 3 is required.
-                </li>
-              </ul>
-            </li>
-            <li>
-              <strong>Language Proficiency:</strong>
-              <ul>
-                <li>
-                  Meet the minimum language requirements in either English or
-                  French.
+                {pData?.e2l2}
                 </li>
               </ul>
             </li>
             <li>
-              <strong>Wage Offer:</strong>
+              <strong>{pData?.e3}</strong>
               <ul>
                 <li>
-                  Your wage offer should align with B.C. wage rates for the
-                  specific occupation.
+                {pData?.e3l1}
                 </li>
               </ul>
             </li>
             <li>
-              <strong>Financial Capability:</strong>
+              <strong>{pData?.e4}</strong>
               <ul>
                 <li>
-                  Demonstrate that you can support yourself and your dependents
-                  during your stay in British Columbia.
+                {pData?.e4l1}
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>{pData?.e5}</strong>
+              <ul>
+                <li>
+                {pData?.e5l1}
                 </li>
               </ul>
             </li>
@@ -270,12 +267,9 @@ const SkilledWorkerStream = () => {
           id="testting1"
           ref={(el) => (sectionsRef.current[2] = el)}
         >
-          <h2>Express Entry Consideration</h2>
+          <h2>{pData?.expressConsiderationHeading}</h2>
           <p>
-            While an Express Entry profile is not mandatory, candidates who meet
-            the eligibility criteria for the BC Skilled Worker stream and have
-            an active Express Entry profile may choose to apply through Express
-            Entry for accelerated processing.
+          {pData?.expressConsiderationDescription}
           </p>
         </section>
 
@@ -284,79 +278,67 @@ const SkilledWorkerStream = () => {
           id="employer_requirements"
           ref={(el) => (sectionsRef.current[3] = el)}
         >
-          <h2>Employer Requirements for BC PNP Skilled Worker Stream</h2>
+          <h2>{pData?.recruitmentHeading}</h2>
           <p>
-            For applicants to most BC Skills Immigration programs, the employer
-            must meet specific requirements:
+          {pData?.recruitmentDescription}
           </p>
           <h4 style={{ marginTop: "20px" }}>
-            Employer Eligibility Requirements for the BC Skilled Worker Stream
+          {pData?.recruitmentSubHeading}
           </h4>
           <p style={{ marginBottom: "20px" }}>
-            As an employer in British Columbia, you play a crucial role in
-            supporting skilled workers through the BC Skilled Worker stream. To
-            participate, your organization must meet specific requirements and
-            fulfill responsibilities:
+          {pData?.recruitmentSubDesc}
           </p>
           <ol style={{marginLeft: "40px"}}>
             <li>
-              <strong>Establishment in B.C.:</strong>
+              <strong>{pData?.r1}</strong>
               <ul>
                 <li>
-                  Your business must be established within the province of
-                  British Columbia.
+                {pData?.r1l1}
                 </li>
               </ul>
             </li>
             <li>
-              <strong>Domestic Labor Market Recruitment:</strong>
+              <strong>{pData?.r2}</strong>
               <ul>
                 <li>
-                  Comply with domestic labor market recruitment requirements to
-                  ensure fair opportunities for local workers.
+                {pData?.r2l1}
                 </li>
               </ul>
             </li>
             <li>
-              <strong>Job Offer:</strong>
+              <strong>{pData?.r3}</strong>
               <ul>
                 <li>
-                  Offer full-time, permanent employment to eligible candidates.
+                {pData?.r3l1}
                 </li>
                 <li>
-                  Note that certain categories, such as BC PNP Tech occupations,
-                  university professors, lecturers, and post-doctoral fellows
-                  working for a public university in B.C., do not require a
-                  permanent job offer.
+                {pData?.r3l2}
                 </li>
               </ul>
             </li>
             <li>
-              <strong>Wage Alignment:</strong>
+              <strong>{pData?.r4}</strong>
               <ul>
                 <li>
-                  The wage you offer should be in line with industry standards
-                  for the specific occupation.
+                {pData?.r4l1}
                 </li>
               </ul>
             </li>
             <li>
-              <strong>Documentation and Forms:</strong>
+              <strong>{pData?.r5}</strong>
               <ul>
-                <li>Provide a signed job offer to candidates.</li>
+                <li>{pData?.r5l1}</li>
                 <li>
-                  Complete and sign the employer declaration form as part of the
-                  application process.
+                {pData?.r5l2}
                 </li>
-                <li>Submit supporting documents related to your business.</li>
+                <li>{pData?.r5l3}</li>
               </ul>
             </li>
             <li>
-              <strong>Compliance with Laws and Regulations:</strong>
+              <strong>{pData?.r6}</strong>
               <ul>
                 <li>
-                  Adhere to all relevant laws and regulations governing
-                  employment and business practices.
+                {pData?.r6l1}
                 </li>
               </ul>
             </li>
@@ -381,79 +363,69 @@ const SkilledWorkerStream = () => {
           id="process"
           ref={(el) => (sectionsRef.current[5] = el)}
         >
-          <h2>Application Process for BC Skilled Worker Stream</h2>
+          <h2>{pData?.applicationHeading}</h2>
           <ol style={{marginLeft: "40px"}}>
             <li>
               <strong className={styles.sectionStrong}>
-                Expression of Interest (EOI) System:
+              {pData?.a1}
               </strong>
               <ul>
                 <li>
-                  Candidates meeting minimum requirements register a profile on
-                  BC’s online immigration portal.
+                {pData?.a1l1}
                 </li>
                 <li>
-                  Specify whether applying via Express Entry or Skills
-                  Immigration system.
+                {pData?.a1l2}
                 </li>
               </ul>
             </li>
             <li>
               <strong className={styles.sectionStrong}>
-                Profile Assessment and Ranking:
+              {pData?.a2}
               </strong>
               <ul>
                 <li>
-                  Submitted profiles are scored and ranked using the BC Skills
-                  Immigration Ranking System.
+                {pData?.a2l1}
                 </li>
                 <li>
-                  Highest-ranking candidates receive invitations to apply during
-                  periodic intakes.
+                {pData?.a2l2}
                 </li>
               </ul>
             </li>
             <li>
               <strong className={styles.sectionStrong}>
-                Invitation to Apply (ITA):
+              {pData?.a3}
               </strong>
               <ul>
                 <li>
-                  Invited candidates must submit a complete application within
-                  30 days.
+                {pData?.a3l1}
                 </li>
-                <li>Application fee: $1475 CAD per applicant.</li>
+                <li>{pData?.a3l2}</li>
               </ul>
             </li>
             <li>
-              <strong>Provincial Nomination and Work Permit:</strong>
+              <strong>{pData?.a4}</strong>
               <ul>
                 <li>
-                  If approved, candidates receive a provincial nomination for
-                  permanent residence.
+                {pData?.a4l1}
                 </li>
                 <li>
-                  Request a letter of support for a temporary work permit to
-                  start working in Canada during processing.
+                {pData?.a4l2}
                 </li>
               </ul>
             </li>
             <li>
               <strong className={styles.sectionStrong}>
-                Express Entry Applicants:
+              {pData?.a5}
               </strong>
               <ul>
                 <li>
-                  If applying through Express Entry, receive a nomination
-                  notification on IRCC account.
+                {pData?.a5l1}
                 </li>
                 <li>
-                  Accepting the nomination boosts Comprehensive Ranking System
-                  (CRS) score by 600 points.
+                {pData?.a5l2}
                 </li>
                 <li>
-                  Virtually guarantees an Invitation to Apply (ITA) for
-                  permanent residence.
+                {pData?.a5l3}
                 </li>
                 <li>
                   Submit official application within the designated timeframe
@@ -514,23 +486,12 @@ const SkilledWorkerStream = () => {
           id="book-appointment"
           ref={(el) => (sectionsRef.current[6] = el)}
         >
-          <h2>Still not sure?</h2>
+          <h2>   {pData?.StillNotHeading}</h2>
           <p>
-            Contact Brightlight Immigration today to assess your profile and
-            embark on a transformative journey towards achieving your Canadian
-            dream. With over a decade of experience, we specialize in handling
-            BCPNP Skilled Worker Stream. Our approval rate for these programs is
-            near to 100%. We achieve this with a tailored approach to your
-            specific case. We use case law and find similar cases to your
-            circumstances that had positive results, and we use them as
-            precedents in cases we work on. This is why we have a high success
-            rate.
+          {pData?.s1}
           </p>
-          <p>
-            At Brightlight Immigration, we have a dedicated team of visa
-            application specialists who can assist you from the start of the
-            application process all the way to obtaining your PR. Start your
-            process now.
+          <p >
+          {pData?.s2}
           </p>
           <button
             className={styles.button}

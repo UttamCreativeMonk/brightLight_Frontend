@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet-async";
 const SameSex = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -31,6 +32,21 @@ const SameSex = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/sameSex")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -60,6 +76,72 @@ const SameSex = () => {
     };
   }, []);
 
+
+  const extractStrongText = (htmlString) => {
+    if (typeof htmlString !== "string") return "";
+    const strongMatch = htmlString.match(/<strong>(.*?)<\/strong>/);
+    return strongMatch ? strongMatch[1] : "";
+  };
+
+  const extractRemainingText = (htmlString) => {
+    if (typeof htmlString !== "string") return "";
+    return htmlString.replace(/<strong>.*?<\/strong>/, "").trim();
+  };
+
+
+  const fetchedValue1 = pData?.e1;
+  const strongText1 = extractStrongText(fetchedValue1);
+  const remainingText1 = extractRemainingText(fetchedValue1);
+
+  const fetchedValue2 = pData?.e2;
+  const strongText2 = extractStrongText(fetchedValue2);
+  const remainingText2 = extractRemainingText(fetchedValue2);
+
+  const fetchedValue3 = pData?.e3;
+  const strongText3 = extractStrongText(fetchedValue3);
+  const remainingText3 = extractRemainingText(fetchedValue3);
+
+  const fetchedValue4 = pData?.py1;
+  const strongText4 = extractStrongText(fetchedValue4);
+  const remainingText4 = extractRemainingText(fetchedValue4);
+
+  const fetchedValue5 = pData?.py2;
+  const strongText5 = extractStrongText(fetchedValue5);
+  const remainingText5 = extractRemainingText(fetchedValue5);
+
+  const fetchedValue6 = pData?.py3;
+  const strongText6 = extractStrongText(fetchedValue6);
+  const remainingText6 = extractRemainingText(fetchedValue6);
+
+  const fetchedValue7 = pData?.py4;
+  const strongText7 = extractStrongText(fetchedValue7);
+  const remainingText7 = extractRemainingText(fetchedValue7);
+
+  const fetchedValue8 = pData?.py5;
+  const strongText8 = extractStrongText(fetchedValue8);
+  const remainingText8 = extractRemainingText(fetchedValue8);
+
+  //
+
+  const fetchedValue9 = pData?.Q1;
+  const strongText9 = extractStrongText(fetchedValue9);
+  const remainingText9 = extractRemainingText(fetchedValue9);
+
+  const fetchedValue10 = pData?.Q2;
+  const strongText10 = extractStrongText(fetchedValue10);
+  const remainingText10 = extractRemainingText(fetchedValue10);
+
+  const fetchedValue11 = pData?.Q3;
+  const strongText11 = extractStrongText(fetchedValue11);
+  const remainingText11 = extractRemainingText(fetchedValue11);
+
+  const fetchedValue12 = pData?.c1;
+  const strongText12 = extractStrongText(fetchedValue12);
+  const remainingText12 = extractRemainingText(fetchedValue12);
+
+  const fetchedValue13 = pData?.c2;
+  const strongText13 = extractStrongText(fetchedValue13);
+  const remainingText13 = extractRemainingText(fetchedValue13);
   return (
     <>
               <Helmet>
@@ -149,20 +231,14 @@ const SameSex = () => {
           id="about-program"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          Same-Sex Spousal Sponsorship in Canada
+         {pData?.heading}
         </h1>
         <p
           className={`${styles.paragraphIntro} ${styles.section}`}
           id="testing"
           ref={(el) => (sectionsRef.current[1] = el)}
         >
-          As a permanent resident or Canadian citizen, you have the opportunity
-          to bring your same-sex partner to Canada through the permanent
-          residence application process. Canada, known for its progressive
-          values, respects privacy and individual liberty for all residents. In
-          2005, the country legally recognized same-sex marriages, leading to
-          the inclusion of common-law partners, same-sex spouses, and conjugal
-          partners in the Citizenship and Immigration Canada (CIC) policies.
+         {pData?.description}
         </p>
 
         <h2
@@ -170,16 +246,14 @@ const SameSex = () => {
           id="eligibility"
           ref={(el) => (sectionsRef.current[2] = el)}
         >
-          Eligibility Criteria for Same-Sex Sponsorship:
+          {pData?.eligibleCriteriaHeading}
         </h2>
         <p
           className={`${styles.paragraph} ${styles.section}`}
           id="testing"
           ref={(el) => (sectionsRef.current[3] = el)}
         >
-          If you’re in a same-sex relationship and your partner resides outside
-          Canada, you can sponsor them to join you in Canada. To qualify,
-          consider the following criteria:
+           {pData?.eligibileSubHead}
         </p>
         <ul
           style={{
@@ -192,21 +266,13 @@ const SameSex = () => {
           ref={(el) => (sectionsRef.current[4] = el)}
         >
           <li className={styles.listItem}>
-            <strong>Permanent Resident or Canadian Citizen:</strong>
-            You must be either a permanent resident or a Canadian citizen.
+            <strong>{strongText1}</strong>{remainingText1}
           </li>
           <li className={styles.listItem}>
-            <strong>Marriage in Canada:</strong> If you and your same-sex
-            partner are married within Canada, and possess a valid marriage
-            certificate issued by a Canadian province or territory, you meet the
-            eligibility requirements.
+          <strong>{strongText2}</strong>{remainingText2}
           </li>
           <li className={styles.listItem}>
-            <strong>Marriage Outside Canada:</strong> If your marriage occurred
-            outside Canada, you can still apply for spousal sponsorship or
-            conjugal partner sponsorship if the marriage is legally recognized
-            in Canada and complies with the laws of the country where it took
-            place.
+          <strong>{strongText3}</strong>{remainingText3}
           </li>
         </ul>
 
@@ -220,16 +286,14 @@ const SameSex = () => {
           id="testing"
           ref={(el) => (sectionsRef.current[5] = el)}
         >
-          Same-Sex Partner Sponsorship
+           {pData?.SameSexPartSponHeading}
         </h2>
         <p
           className={`${styles.paragraph} ${styles.section}`}
           id="testing"
           ref={(el) => (sectionsRef.current[6] = el)}
         >
-          In Canada, two partner categories are acknowledged: conjugal and
-          common-law. Even if you’re not legally married to your same-sex
-          partner, you can sponsor them to reside in Canada together.
+         {pData?.SameSexPartSponPara}
         </p>
 
         <h2
@@ -237,19 +301,14 @@ const SameSex = () => {
           id="common-law-partner"
           ref={(el) => (sectionsRef.current[7] = el)}
         >
-          What is a Common Law Partner?
+           {pData?.WhatCommonLawPartHeading}
         </h2>
         <p
           className={`${styles.paragraph} ${styles.section}`}
           id="testing"
           ref={(el) => (sectionsRef.current[8] = el)}
         >
-          A Common Law Partner refers to an individual with whom you share a
-          continuous living arrangement for more than one year, maintaining a
-          conjugal relationship. Whether your partner is of the opposite or same
-          gender, this definition applies for immigration purposes.
-          Demonstrating a significant level of commitment between both parties
-          is essential.
+           {pData?.WhatCommonLawPartPara}
         </p>
 
         <h2
@@ -258,11 +317,10 @@ const SameSex = () => {
           id="testing"
           ref={(el) => (sectionsRef.current[9] = el)}
         >
-          Proving Your Common Law Partnership
+           {pData?.ProvYourCommonLawPartHeading}
         </h2>
         <p>
-          To establish your common-law relationship, consider the following
-          aspects:
+        {pData?.ProvYourCommonLawPartDesc}
         </p>
         <ul
           style={{
@@ -275,24 +333,19 @@ const SameSex = () => {
           ref={(el) => (sectionsRef.current[10] = el)}
         >
           <li className={styles.listItem}>
-            <strong>Shared Residence:</strong> You and your partner must reside
-            in the same home, sharing responsibilities such as household chores.
+          <strong>{strongText4}</strong>{remainingText4}
           </li>
           <li className={styles.listItem}>
-            <strong>Financial and Emotional Support:</strong> Provide evidence
-            of mutual financial arrangements and emotional support.
+          <strong>{strongText5}</strong>{remainingText5}
           </li>
           <li className={styles.listItem}>
-            <strong>Parenting Together:</strong> If applicable, demonstrate that
-            you have children together.
+          <strong>{strongText6}</strong>{remainingText6}
           </li>
           <li className={styles.listItem}>
-            <strong>Public Presentation:</strong> Present yourselves as a couple
-            in public settings.
+          <strong>{strongText7}</strong>{remainingText7}
           </li>
           <li className={styles.listItem}>
-            <strong>Personal Behavior:</strong> Factors like fidelity,
-            commitment, and feelings toward each other contribute to the proof.
+          <strong>{strongText8}</strong>{remainingText8}
           </li>
         </ul>
 
@@ -302,11 +355,10 @@ const SameSex = () => {
           id="testing"
           ref={(el) => (sectionsRef.current[11] = el)}
         >
-          Common Law: Required Documents for Sponsorship
+           {pData?.CommonLawRequDocuSponHeading}
         </h2>
         <p>
-          When applying, submit at least two of the following documents to
-          validate your common-law relationship:
+          {pData?.CommonLawRequDocuSponPara}
         </p>
         <ul
           style={{
@@ -319,34 +371,30 @@ const SameSex = () => {
           ref={(el) => (sectionsRef.current[12] = el)}
         >
           <li className={styles.listItem}>
-            Pay stubs or tax forms showing the same address.
+           {pData?.crd1}
           </li>
           <li className={styles.listItem}>
-            Proof of living together for a minimum of one year
+          {pData?.crd2}
           </li>
           <li className={styles.listItem}>
-            Evidence of property ownership or shared rent
+          {pData?.crd3}
           </li>
-          <li className={styles.listItem}>Joint bank accounts</li>
-          <li className={styles.listItem}>Utility bills in both names</li>
-          <li className={styles.listItem}>Government-issued IDs</li>
-          <li className={styles.listItem}>Car insurance details</li>
+          <li className={styles.listItem}>{pData?.crd4}</li>
+          <li className={styles.listItem}>{pData?.crd5}</li>
+          <li className={styles.listItem}>{pData?.crd6}</li>
+          <li className={styles.listItem}>{pData?.crd7}</li>
           <li className={styles.listItem}>
-            Birth certificates or adoption records for shared children.
-          </li>
-          <li className={styles.listItem}>
-            Photos portraying your conjugal relationship.
+          {pData?.crd8}
           </li>
           <li className={styles.listItem}>
-            Affirmation from family and friends (letters, emails, social media)
+          {pData?.crd9}
+          </li>
+          <li className={styles.listItem}>
+          {pData?.crd10}
           </li>
         </ul>
         <p>
-          If specific documents are unavailable, explore alternative ways to
-          demonstrate your relationship. Sworn declarations or letters from
-          trusted sources can strengthen your case. Ultimately, the visa
-          officer’s discretion will determine the acceptance of your common-law
-          documents, so providing ample proof enhances your chances of approval.
+          {pData?.CommonLawRequDocuSponPara2}
         </p>
 
         <h2
@@ -354,19 +402,14 @@ const SameSex = () => {
           id="conjugal-partner"
           ref={(el) => (sectionsRef.current[13] = el)}
         >
-          Who Qualifies as a Conjugal Partner?
+          {pData?.WhoQualConjHeading}
         </h2>
         <p
           className={`${styles.paragraph} ${styles.section}`}
           id="testing"
           ref={(el) => (sectionsRef.current[14] = el)}
         >
-          A Conjugal Partner refers to an individual living outside of Canada
-          with whom you share a committed and romantic relationship lasting at
-          least one year. However, significant barriers prevent you from
-          residing together. These barriers may include factors beyond their
-          control, such as immigration restrictions, religious considerations,
-          or sexual orientation.
+          {pData?.WhoQualConjDisc}
         </p>
 
         <h2
@@ -375,7 +418,7 @@ const SameSex = () => {
           id="testing"
           ref={(el) => (sectionsRef.current[15] = el)}
         >
-          Qualifications for Conjugal Partnership
+          {pData?.QualConjPartHeading}
         </h2>
         <ul
           style={{
@@ -388,22 +431,13 @@ const SameSex = () => {
           ref={(el) => (sectionsRef.current[16] = el)}
         >
           <li className={styles.listItem}>
-            <strong>Barriers to Living Together:</strong> Despite the inability
-            to cohabit, your relationship must demonstrate commitment and
-            genuine connection.
+          <strong>{strongText9}</strong>{remainingText9}
           </li>
           <li className={styles.listItem}>
-            <strong>Legal Marriage Constraints:</strong> Some conjugal partners
-            cannot legally marry their sponsor but still qualify under this
-            category.
+          <strong>{strongText10}</strong>{remainingText10}
           </li>
           <li className={styles.listItem}>
-            <strong>
-              Similarities to Common-Law and Spousal Relationships:
-            </strong>{" "}
-            In all other aspects, conjugal partnerships mirror common-law unions
-            or marriages, requiring a bona fide relationship lasting at least
-            one year.
+          <strong>{strongText11}</strong> {" "}{remainingText11}
           </li>
         </ul>
 
@@ -413,7 +447,7 @@ const SameSex = () => {
           id="testing"
           ref={(el) => (sectionsRef.current[151] = el)}
         >
-          Conjugal Relationship Considerations
+          {pData?.ConjRelConsidHeading}
         </h2>
         <ul
           style={{
@@ -426,15 +460,10 @@ const SameSex = () => {
           ref={(el) => (sectionsRef.current[161] = el)}
         >
           <li className={styles.listItem}>
-            <strong>Country-Specific Challenges:</strong> If your relationship
-            faces obstacles due to factors like a country’s stance on same-sex
-            marriage, lack of divorce options, or legal restrictions, it still
-            qualifies as a conjugal relationship.
+          <strong>{strongText12}</strong>{remainingText12}
           </li>
           <li className={styles.listItem}>
-            <strong>Emotional, Financial, and Physical Interdependence:</strong>{" "}
-            Conjugal partners must rely on each other emotionally, financially,
-            and physically.
+          <strong>{strongText13}</strong>{remainingText13}
           </li>
         </ul>
 
@@ -444,10 +473,10 @@ const SameSex = () => {
           id="testing"
           ref={(el) => (sectionsRef.current[17] = el)}
         >
-          Conjugal Partner: Required Documents for Sponsorship
+          {pData?.ConjPartReqDocSponHeading}
         </h2>
         <p>
-          When applying to sponsor a spouse, gather the following documents:
+        {pData?.ConjPartReqDocSponPara}
         </p>
         <ul
           style={{
@@ -459,31 +488,18 @@ const SameSex = () => {
           id="testing"
           ref={(el) => (sectionsRef.current[18] = el)}
         >
-          <li className={styles.listItem}>Completed application forms.</li>
-          <li className={styles.listItem}>Proof of status in Canada</li>
-          <li className={styles.listItem}>Identity documents</li>
-          <li className={styles.listItem}>Marriage certificate</li>
-          <li className={styles.listItem}>
-            Police certificates from countries where your spouse lived for six
-            months or longer after turning 18.
-          </li>
-          <li className={styles.listItem}>
-            Medical certificate for your spouse
-          </li>
-          <li className={styles.listItem}>
-            Proof of payment for government fees
-          </li>
-          <li className={styles.listItem}>Digital photo</li>
-          <li className={styles.listItem}>
-            Relationship information and sponsorship evaluation questionnaire
-          </li>
-          <li className={styles.listItem}>Wedding invitations and photos</li>
-          <li className={styles.listItem}>
-            Birth certificates or adoption records for shared children.
-          </li>
-          <li className={styles.listItem}>
-            Proof of marriage registration with a government authority
-          </li>
+          <li className={styles.listItem}>{pData?.cprd1}</li>
+          <li className={styles.listItem}>{pData?.cprd2}</li>
+          <li className={styles.listItem}>{pData?.cprd3}</li>
+          <li className={styles.listItem}>{pData?.cprd4}</li>
+          <li className={styles.listItem}>{pData?.cprd5}</li>
+          <li className={styles.listItem}>{pData?.cprd6}</li>
+          <li className={styles.listItem}>{pData?.cprd7}</li>
+          <li className={styles.listItem}>{pData?.cprd8}</li>
+          <li className={styles.listItem}>{pData?.cprd9}</li>
+          <li className={styles.listItem}>{pData?.cprd10}</li>
+          <li className={styles.listItem}>{pData?.cprd11}</li>
+          <li className={styles.listItem}>{pData?.cprd12}</li>
         </ul>
 
         <h2
@@ -491,18 +507,14 @@ const SameSex = () => {
           id="appointment"
           ref={(el) => (sectionsRef.current[19] = el)}
         >
-          Still not sure?
+          {pData?.StillNotHeading}
         </h2>
         <p
           className={`${styles.paragraph} ${styles.section}`}
           id="testing"
           ref={(el) => (sectionsRef.current[20] = el)}
         >
-          Are you facing challenges in bringing your same-sex spouse or conjugal
-          partner to Canada? Look no further than Brightlight Immigration. With
-          over 12 years of expertise, we specialize in creating robust same-sex
-          sponsorship applications, ensuring your spouse, common-law partner, or
-          conjugal partner can join you in Canada.
+          {pData?.StillNotPara}
         </p>
         <button
           className={styles.button}

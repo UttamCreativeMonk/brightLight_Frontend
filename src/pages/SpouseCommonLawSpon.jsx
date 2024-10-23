@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet-async";
 const SpouseCommonLawSpon = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -31,6 +32,20 @@ const SpouseCommonLawSpon = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/spouseCommomlawSponsership")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -152,7 +167,7 @@ const SpouseCommonLawSpon = () => {
           id="about-program"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          Spouse and Common-Law Partner Sponsorship Program
+          {pData?.spouseCommLawSponHeading}
         </h1>
 
         <section
@@ -161,24 +176,10 @@ const SpouseCommonLawSpon = () => {
           ref={(el) => (sectionsRef.current[1] = el)}
         >
           <p>
-            The Canadian government understands the importance of bringing loved
-            ones together, and its Family reunification and sponsorship program
-            plays a vital role in reuniting spouses, and common-law partners
-            with their families in Canada.
+          {pData?.spouseCommLawSponPara1}
           </p>
           <p>
-            As a Canadian citizen or permanent resident , you may be eligible to
-            sponsor your spouse or common-law partner to become a permanent
-            resident and build a life together in this vibrant nation. Whether
-            you've met your partner abroad or have been separated by distance,
-            Canada's Family Class sponsorship program offers a pathway to
-            reunite with your loved ones and create a fulfilling future
-            together. If you are eligible to sponsor your spouse or common-law
-            partner, you will be responsible for their financial well-being for
-            quite some time after they become permanent residents. This means
-            that you will need to be able to provide them with basic needs. You
-            will also need to be able to show that you can support yourself and
-            your family financially.
+          {pData?.spouseCommLawSponPara2}
           </p>
         </section>
 
@@ -188,7 +189,7 @@ const SpouseCommonLawSpon = () => {
           ref={(el) => (sectionsRef.current[2] = el)}
         >
           <h2 className={styles.subheading}>
-            3 main pathways for sponsoring a Spouse or Common-law Partner:
+          {pData?.PathwaysHeading}
           </h2>
           <ul style={{ listStyle: "none" }}>
             <li>
@@ -224,21 +225,12 @@ const SpouseCommonLawSpon = () => {
           ref={(el) => (sectionsRef.current[3] = el)}
         >
           <h2 className={styles.subheading}>
-            Eligibility criteria for sponsoring your Spouse or Common-law
-            Partner for Permanent Residence in Canada:
+          {pData?.EligibilityHeading}
           </h2>
           <ul style={{ marginLeft: "40px" }}>
-            <li>You must be a Canadian citizen or permanent resident. </li>
-            <li>
-              You must show that you have the financial means to support your
-              spouse or partner financially after they arrive in Canada.
-            </li>
-            <li>
-              You must provide evidence to prove that your relationship with
-              your spouse or partner is genuine and that it meets the definition
-              of a spousal or common-law partnership under Canadian immigration
-              law.
-            </li>
+            <li>{pData?.e1}</li>
+            <li>{pData?.e2}</li>
+            <li>{pData?.e3}</li>
           </ul>
         </section>
 
@@ -248,26 +240,17 @@ const SpouseCommonLawSpon = () => {
           ref={(el) => (sectionsRef.current[4] = el)}
         >
           <h2 className={styles.subheading}>
-            How to apply to sponsoring your Spouse or Common-law Partner?
+          {pData?.HowApplyHeading}
           </h2>
           <ol style={{ marginLeft: "40px" }}>
             <li>
-              You will need to submit a comprehensive application package to
-              IRCC, including marriage certificates, proof of cohabitation (such
-              as lease agreements, joint bank statements, or utility bills),
-              photographs of you and your spouse or partner together, letters
-              from friends and family testifying to your relationship, etc.
+            {pData?.ha1}
             </li>
             <li>
-              IRCC will review your application to ensure you meet all
-              eligibility requirements and assess the genuineness of your
-              relationship.
+            {pData?.ha2}
             </li>
             <li>
-              If your application is approved, your spouse or partner will
-              receive an invitation to apply for permanent residence. Once they
-              complete the application and meet all requirements, they will be
-              granted permanent residency status.
+            {pData?.ha4}
             </li>
           </ol>
         </section>
@@ -278,24 +261,18 @@ const SpouseCommonLawSpon = () => {
           ref={(el) => (sectionsRef.current[5] = el)}
         >
           <h2 className={styles.subheading}>
-            Common reasons for refusals of sponsoring a Spouse or Common-law
-            Partner
+          {pData?.RefusalHeading}
           </h2>
-          <h4>Missing or incomplete documentation.</h4>
+          <h4>{pData?.RefusalSubHead}</h4>
           <ul>
             <li>
-              IRCC is highly cautious against marriage of convenience
-              arrangements, where a relationship is entered into primarily for
-              immigration purposes. If IRCC suspects that this is the case, your
-              application will be refused.
+            {pData?.r1}
             </li>
             <li>
-              You fail to show your ability to financially support yourself,
-              your spouse, or your partner.
+            {pData?.r2}
             </li>
             <li>
-              If either you or your sponsored person has a criminal record, they
-              may be inadmissible to Canada.
+            {pData?.r3}
             </li>
           </ul>
         </section>
@@ -305,22 +282,12 @@ const SpouseCommonLawSpon = () => {
           id="why-choose-us"
           ref={(el) => (sectionsRef.current[7] = el)}
         >
-          <h2 className={styles.subheading}>Still not sure?</h2>
+          <h2 className={styles.subheading}> {pData?.StillNotHeading}</h2>
           <p>
-            If you have received a refusal for any of the reasons mentioned
-            above, do not worry. With over a decade of experience, we specialize
-            in previously refused cases. We have got approvals for clients who
-            had multiple previous refusals. We achieve this with a tailored
-            approach to your specific case, addressing each concern that the
-            officer has listed in previous refusals. We use case law and find
-            similar cases to your circumstances that had positive results, and
-            we use them as precedents in cases we work on. This is why we have a
-            high success rate.
+          {pData?.s1}
           </p>
           <p style={{ marginTop: "20px" }}>
-            At Brightlight Immigration, we have a dedicated team of visa
-            application specialists who can assist you from the start of the
-            application process to obtaining your visa. Start your process now.
+          {pData?.s2}
           </p>
           <button
             id="book-appointment"

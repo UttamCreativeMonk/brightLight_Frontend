@@ -165,6 +165,9 @@
     list-style-type: disc;
     margin-left: 40px;
   }
+  .introduction p{
+    text-align: center;
+  }
 
   .eligibility p, .transportEligibility p{
     margin-bottom: 20px;

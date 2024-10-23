@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet-async";
 const TradeOccupationTargetedDraw = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -31,6 +32,21 @@ const TradeOccupationTargetedDraw = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/tradeOccupationTargetedDraw")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -152,7 +168,7 @@ const TradeOccupationTargetedDraw = () => {
           id="about-program"
           ref={(el) => (sectionsRef.current[0] = el)}
         >
-          Category-Based Express Entry Selection Draws: Trade Occupations
+          {pData?.tradeOccupationTargDrawHeading}
         </h1>
 
         <div
@@ -161,18 +177,7 @@ const TradeOccupationTargetedDraw = () => {
           ref={(el) => (sectionsRef.current[1] = el)}
         >
           <p>
-            Canada’s Express Entry system for Trades is tailored to meet the
-            rising demand for skilled workers in various trade sectors. This
-            streamlined system simplifies immigration, targeting skilled trades
-            professionals directly. Through Express Entry, meticulous evaluation
-            of international candidates' profiles occurs, emphasizing their
-            trade expertise, work experience, and language proficiency.
-            Exceptional candidates, demonstrating excellence in their trades
-            with significant experience and language skills, receive Invitations
-            to Apply (ITAs) for permanent residency. This process is central to
-            Canada's strategy to strengthen its skilled trade workforce,
-            demonstrating a dedicated commitment to improving its trade
-            infrastructure.
+          {pData?.tradeOccupationTargDrawPara}
           </p>
         </div>
 
@@ -182,12 +187,10 @@ const TradeOccupationTargetedDraw = () => {
           ref={(el) => (sectionsRef.current[2] = el)}
         >
           <h2 className={styles.subheading}>
-            First You Must Be Eligible with Express Entry
+          {pData?.EligibilityFirstHeading}
           </h2>
           <p>
-            Before you can participate in a STEM-specific draw through
-            Canada&#39;s Express Entry system, you need to be eligible.
-            Here&#39;s how you can get started:
+          {pData?.EligFirstSubHead}
           </p>
           <ol
             className={`${styles.section} ${styles.section}`}
@@ -195,13 +198,10 @@ const TradeOccupationTargetedDraw = () => {
             ref={(el) => (sectionsRef.current[3] = el)}
           >
             <li>
-              Join the Express Entry Pool: The first step towards becoming a
-              candidate for a trade-specific draw is to get into the Express
-              Entry pool.
+            {pData?.EligPara1}
             </li>
             <li>
-              Choose Your Program: There are three programs you can be eligible
-              for to join the Express Entry pool:
+            {pData?.EligPara2}
               <ul className={styles.subheadingLink}>
                 <li>
                   <button
@@ -212,8 +212,7 @@ const TradeOccupationTargetedDraw = () => {
                   >
                     Federal Skilled Worker Program (FSW)
                   </button>
-                  This program is ideal for tech workers who have the necessary
-                  work experience, education, and language ability.
+                  {pData?.EligPara2Li1}
                 </li>
                 <li>
                   <button
@@ -224,8 +223,7 @@ const TradeOccupationTargetedDraw = () => {
                   >
                     Canadian Experience Class (CEC)
                   </button>
-                  Like the FSW program, the CEC is also suitable for tech
-                  workers who have gained Canadian work experience.
+                  {pData?.EligPara2Li2}
                 </li>
                 <li>
                   <button
@@ -236,17 +234,13 @@ const TradeOccupationTargetedDraw = () => {
                   >
                     Federal Skilled Trades Program (FSTP)
                   </button>
-                  If you&#39;re a trades worker, this program is designed for
-                  you. It requires proof of relevant work experience, education,
-                  and language proficiency.
+                  {pData?.EligPara2Li3}
                 </li>
               </ul>
             </li>
           </ol>
           <p>
-            Remember, each program has its own set of eligibility requirements.
-            So, make sure to review these carefully and ensure you meet all the
-            necessary criteria before applying.
+          {pData?.EligPara3}
           </p>
         </div>
 
@@ -256,20 +250,17 @@ const TradeOccupationTargetedDraw = () => {
           ref={(el) => (sectionsRef.current[4] = el)}
         >
           <h2 className={styles.subheading}>
-            Eligibility Criteria for Trade Occupations Category
+           {pData?.EligCritHeading}
           </h2>
-          <p>Once you have met eligibility for one of the Express Entry programs, now you need to meet eligibility for
-          Trade specific criteria:</p>
+          <p>{pData?.EligCritSubHead}</p>
           <ul>
             <li>
-              You must have a Red Seal or other recognized trade certification.
+            {pData?.ec1}
             </li>
             <li>
-              Within the last 3 years, you have at least 6 months of full-time,
-              continuous work experience (or an equivalent amount of part-time
-              work experience) in a single eligible trade occupation.
+            {pData?.ec2}
             </li>
-            <li>A valid Express Entry profile.</li>
+            <li>{pData?.ec3}</li>
           </ul>
           <p>
             Here is the list of eligible NOCs:{" "}
@@ -291,7 +282,7 @@ const TradeOccupationTargetedDraw = () => {
             className={styles.subheading}
             id="criteria-trade-occupations-category"
           >
-            Eligible Trade Occupations
+             {pData?.EligTradeOccuTableHeading}
           </h2>
           <table
             className={`${styles.table} ${styles.section}`}
@@ -300,64 +291,61 @@ const TradeOccupationTargetedDraw = () => {
           >
             <thead>
               <tr>
-                <th>Occupations</th>
-                <th>2021 NOC Code</th>
-                <th>2021 TEER Category</th>
+                <th>  {pData?.etoT1h1}</th>
+                <th> {pData?.etoT2h2}</th>
+                <th>{pData?.etoT3h3}</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Carpenters</td>
-                <td>72310</td>
-                <td>2</td>
+                <td>  {pData?.etoT1Li1}</td>
+                <td> {pData?.etoT2Li1}</td>
+                <td>{pData?.etoT3Li1}</td>
               </tr>
               <tr>
-                <td>Construction millwrights and industrial mechanics</td>
-                <td>72400</td>
-                <td>2</td>
+                <td>  {pData?.etoT1Li2}</td>
+                <td>{pData?.etoT2Li2}</td>
+                <td>{pData?.etoT3Li2}</td>
               </tr>
               <tr>
-                <td>
-                  Contractors and supervisors, other construction trades,
-                  installers, repairers, and servicers
-                </td>
-                <td>72014</td>
-                <td>2</td>
+                <td>{pData?.etoT1Li3}</td>
+                <td>{pData?.etoT2Li3}</td>
+                <td>{pData?.etoT3Li3}</td>
               </tr>
               <tr>
-                <td>Electricians (except industrial and power system)</td>
-                <td>72200</td>
-                <td>2</td>
+                <td> {pData?.etoT1Li4}</td>
+                <td>{pData?.etoT2Li4}</td>
+                <td>{pData?.etoT3Li4}</td>
               </tr>
               <tr>
-                <td>Elevator constructors and mechanics</td>
-                <td>72406</td>
-                <td>2</td>
+                <td> {pData?.etoT1Li5}</td>
+                <td>{pData?.etoT2Li5}</td>
+                <td>{pData?.etoT3Li5}</td>
               </tr>
               <tr>
-                <td>Heating, refrigeration, and air conditioning mechanics</td>
-                <td>72402</td>
-                <td>2</td>
+                <td> {pData?.etoT1Li6}</td>
+                <td>{pData?.etoT2Li6}</td>
+                <td>{pData?.etoT3Li6}</td>
               </tr>
               <tr>
-                <td>Machine fitters</td>
-                <td>72405</td>
-                <td>2</td>
+                <td> {pData?.etoT1Li7}</td>
+                <td>{pData?.etoT2Li7}</td>
+                <td>{pData?.etoT3Li7}</td>
               </tr>
               <tr>
-                <td>Plumbers</td>
-                <td>72300</td>
-                <td>2</td>
+                <td> {pData?.etoT1Li8}</td>
+                <td>{pData?.etoT2Li8}</td>
+                <td>{pData?.etoT3Li8}</td>
               </tr>
               <tr>
-                <td>Residential and commercial installers and servicers</td>
-                <td>73200</td>
-                <td>3</td>
+                <td> {pData?.etoT1Li9}</td>
+                <td>{pData?.etoT2Li9}</td>
+                <td>{pData?.etoT3Li9}</td>
               </tr>
               <tr>
-                <td>Welders and related machine operators</td>
-                <td>72106</td>
-                <td>2</td>
+                <td> {pData?.etoT1Li10}</td>
+                <td>{pData?.etoT2Li10}</td>
+                <td>{pData?.etoT3Li10}</td>
               </tr>
             </tbody>
           </table>
@@ -369,13 +357,10 @@ const TradeOccupationTargetedDraw = () => {
           ref={(el) => (sectionsRef.current[7] = el)}
         >
           <h2 className={styles.subheading}>
-            Express Entry Trade Occupations Draw History
+          {pData?.ExpressEntryHeading}
           </h2>
           <p>
-            The first-ever Express Entry draw for Trade occupation workers was
-            held in August 2023. Express Entry draw #261 saw a CRS score of 388
-            and invited 1500 candidates eligible for category-based selection in
-            Trade occupations.
+          {pData?.ExpressEntryPara}
           </p>
 
           <button
@@ -391,23 +376,12 @@ const TradeOccupationTargetedDraw = () => {
           id="testing6"
           ref={(el) => (sectionsRef.current[8] = el)}
         >
-          <h2 className={styles.subheading}>Still Not Sure?</h2>
+          <h2 className={styles.subheading}>{pData?.StillNotHeading}</h2>
           <p>
-            Contact Brightlight Immigration today to assess your profile and
-            embark on a transformative journey towards achieving your Canadian
-            dream. With over a decade of experience, we specialize in handling
-            Express Entry Programs. Our approval rate for these programs is
-            nearly 100%. We achieve this with a tailored approach to your
-            specific case. We use case law and find similar cases to your
-            circumstances that had positive results, and we use them as
-            precedents in cases we work on. This is why we have a high success
-            rate.
+          {pData?.s1}
           </p>
           <p>
-            At Brightlight Immigration, we have a dedicated team of visa
-            application specialists who can assist you from the start of the
-            application process all the way to obtaining your PR. Start your
-            process now.
+          {pData?.s2}
           </p>
 
           <button

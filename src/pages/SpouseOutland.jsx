@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet-async";
 const SpouseOutland = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let [metaData, setMetaData] = useState([]);
+  let [pData,setPData]=useState([]);
 
   useEffect(() => {
     fetch("https://brightlight-node.onrender.com/spousalOutlandMeta")
@@ -20,6 +21,21 @@ const SpouseOutland = () => {
       .then((data) => {
         if (data) {
           setMetaData(data[0]);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("https://brightlight-node.onrender.com/SpouseOutland")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setPData(data[0]);
         }
       })
       .catch((error) => {
@@ -37,9 +53,69 @@ const SpouseOutland = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  const extractStrongText = (htmlString) => {
+    if (typeof htmlString !== "string") return "";
+    const strongMatch = htmlString.match(/<strong>(.*?)<\/strong>/);
+    return strongMatch ? strongMatch[1] : "";
+  };
+
+  const extractRemainingText = (htmlString) => {
+    if (typeof htmlString !== "string") return "";
+    return htmlString.replace(/<strong>.*?<\/strong>/, "").trim();
+  };
+
+
+  const fetchedValue1 = pData?.e3Sub1;
+  const strongText1 = extractStrongText(fetchedValue1);
+  const remainingText1 = extractRemainingText(fetchedValue1);
+
+  const fetchedValue2 = pData?.e3Sub2;
+  const strongText2 = extractStrongText(fetchedValue2);
+  const remainingText2 = extractRemainingText(fetchedValue2)
+
+  const fetchedValue3 = pData?.e3Sub3;
+  const strongText3 = extractStrongText(fetchedValue3);
+  const remainingText3 = extractRemainingText(fetchedValue3)
+
+  //
+
+  
+  const fetchedValue4 = pData?.osp1;
+  const strongText4 = extractStrongText(fetchedValue4);
+  const remainingText4 = extractRemainingText(fetchedValue4);
+
+  const fetchedValue5 = pData?.osp2;
+  const strongText5 = extractStrongText(fetchedValue5);
+  const remainingText5 = extractRemainingText(fetchedValue5)
+
+  const fetchedValue6 = pData?.osp3;
+  const strongText6 = extractStrongText(fetchedValue6);
+  const remainingText6= extractRemainingText(fetchedValue6)
+
+  const fetchedValue7 = pData?.osp4;
+  const strongText7 = extractStrongText(fetchedValue7);
+  const remainingText7 = extractRemainingText(fetchedValue7)
+
+  //
+
+
+  const fetchedValue8 = pData?.qsc1;
+  const strongText8 =  extractStrongText(fetchedValue8);
+  const remainingText8= extractRemainingText(fetchedValue8)
+
+  const fetchedValue9 = pData?.qsc2;
+  const strongText9 = extractStrongText(fetchedValue9);
+  const remainingText9 = extractRemainingText(fetchedValue9)
+
+  //
+  const fetchedValue10 = pData?.qsc2;
+  const strongText10 = extractStrongText(fetchedValue10);
+  const remainingText10 = extractRemainingText(fetchedValue10)
+
   return (
     <>
-              <Helmet>
+      <Helmet>
         <title>
           {metaData?.metaTitle
             ? metaData?.metaTitle
@@ -127,25 +203,18 @@ const SpouseOutland = () => {
           }}
           id="about-program"
         >
-          Outland Spousal and Common-Law Partner Sponsorship
+         {pData?.heading}
         </h1>
         <p
           style={{
             marginBottom: "50px",
           }}
         >
-          Outland sponsorship provides an opportunity for Canadians and
-          permanent residents to sponsor their spouse or common-law partner for
-          permanent residence in Canada. Outland sponsorship allows foreign
-          nationals residing abroad to be sponsored by their Canadian spouse or
-          partner for permanent resident (PR) status in Canada. Unlike the
-          Inland spousal sponsorship, which requires couples to live together
-          within Canada, the Outland process accommodates situations where
-          partners are separated by geographical boundaries.
+          {pData?.description}
         </p>
 
-        <h2>Is Outland Sponsorship Right for You?</h2>
-        <p>Consider Outland sponsorship if:</p>
+        <h2>{pData?.IsOutlandSponHeading}</h2>
+        <p>{pData?.IsOutlandSponSubHead}</p>
         <ul
           style={{
             marginLeft: "40px",
@@ -153,17 +222,11 @@ const SpouseOutland = () => {
             marginBottom: "30px",
           }}
         >
-          <li>You cannot apply for spousal sponsorship from within Canada.</li>
-          <li>
-            Your loved one is not legally residing in Canada during the
-            application process.
-          </li>
+          <li>{pData?.os1}</li>
+          <li>{pData?.os2}</li>
         </ul>
         <p>
-          Even applicants currently in Canada can choose the Outland sponsorship
-          route. It permits travel to and from Canada while the application is
-          underway, making it suitable for those with work or personal
-          commitments that require international mobility.
+        {pData?.IsOutlandSponSubPara}
         </p>
 
         <h2
@@ -172,13 +235,10 @@ const SpouseOutland = () => {
           }}
           id="Process"
         >
-          Approval Process
+           {pData?.ApprovalProcessHeading}
         </h2>
         <p>
-          For the sponsored person to obtain Canadian PR through Outland
-          sponsorship, both the Canadian citizen or permanent resident and the
-          foreign national must receive approval from Immigration, Refugees and
-          Citizenship Canada (IRCC).
+           {pData?.ApprovalProcessPara}
         </p>
 
         <h2
@@ -187,11 +247,10 @@ const SpouseOutland = () => {
           }}
           id="Eligibility"
         >
-          Eligibility Criteria
+           {pData?.eligCritHeading}
         </h2>
         <p>
-          To sponsor a loved one under the Outland application category, both
-          the sponsor and sponsored person must meet specific requirements:
+          {pData?.eligCritSubHead}
         </p>
         <ul
           style={{
@@ -200,11 +259,9 @@ const SpouseOutland = () => {
             marginBottom: "20px",
           }}
         >
-          <li>The sponsor must be a Canadian citizen or permanent resident.</li>
-          <li>Both parties must be at least 18 years old.</li>
-          <li>
-            The relationship can fall into one of the following categories:
-          </li>
+          <li>  {pData?.e1} </li>
+          <li> {pData?.e2}</li>
+          <li>{pData?.e3}</li>
           <ul
             style={{
               listStyle: "circle",
@@ -214,34 +271,24 @@ const SpouseOutland = () => {
             }}
           >
             <li>
-              <strong>Spouse:</strong> Legally married with a valid marriage
-              recognized by the jurisdiction where registered and under Canadian
-              law.
+              <strong> {strongText1}</strong> {remainingText1}
             </li>
             <li>
-              <strong>Common-law:</strong> Cohabiting or having cohabited for at
-              least 12 consecutive months in a marriage-like relationship.
+            <strong> {strongText2}</strong> {remainingText2}
             </li>
             <li>
-              <strong>Conjugal partnership*:</strong> In an ongoing committed
-              relationship for at least 12 months, despite legal constraints
-              preventing physical cohabitation (e.g., immigration barriers or
-              marital status).
+            <strong> {strongText3}</strong> {remainingText3}
             </li>
           </ul>
           <li>
-            The sponsor must not have sponsored a spouse in Canada within the
-            five years preceding the application.
+            {pData?.e4}
           </li>
           <li>
-            Neither spouse should be incarcerated, charged with a serious
-            offense, or bankrupt.
+             {pData?.e5}
           </li>
         </ul>
         <p>
-          Note: If you are in a conjugal relationship, submit an Outland
-          sponsorship application, as this type of relationship is not eligible
-          under Inland sponsorship.
+            {pData?.eNote}
         </p>
 
         <h2
@@ -250,21 +297,17 @@ const SpouseOutland = () => {
           }}
           id="How-to-apply"
         >
-          How to apply for Outland Sponsorship in Canada?
+            {pData?.HowToApplyOutlSponHeading}
         </h2>
         <p>
-          Outland sponsorship is a specialized application process designed to
-          facilitate the sponsorship of a loved one under Canada’s Family Class
-          immigration program. If you are a Canadian citizen or a permanent
-          resident, this process allows you to sponsor your foreign spouse or
-          partner for permanent residence.
+           {pData?.HowToApplyOutlSponPara}
         </p>
         <h3
           style={{
             marginTop: "20px",
           }}
         >
-          Outland Sponsorship Process:
+            {pData?.HowToApplyOutlSponProcHeading}
         </h3>
         <ol
           style={{
@@ -274,28 +317,20 @@ const SpouseOutland = () => {
           }}
         >
           <li>
-            Eligibility Verification: Begin by confirming your eligibility as a
-            sponsor. Ensure that you meet the necessary criteria to support your
-            loved one’s immigration application.
+          <strong> {strongText4}</strong> {remainingText4}
           </li>
           <li>
-            Document Collection: Gather all relevant supporting documents. These
-            may include proof of your relationship, financial stability, and
-            other required paperwork.
+          <strong> {strongText5}</strong> {remainingText5}
           </li>
           <li>
-            Form Completion: Fill out the necessary forms accurately. Pay
-            attention to any country-specific forms that may be applicable based
-            on your spouse or partner’s country of residence.
+          <strong> {strongText6}</strong> {remainingText6}
           </li>
           <li>
-            Submission: Submit your completed application package to the
-            appropriate visa office in Canada. Follow the instructions provided
-            in the official guide available on the government website.
+          <strong> {strongText7}</strong> {remainingText7}
           </li>
         </ol>
 
-        <h2>Quebec-Specific Considerations:</h2>
+        <h2>  {pData?.QueSpecConsidHeading}</h2>
         <p
           style={{
             marginLeft: "40px",
@@ -303,12 +338,7 @@ const SpouseOutland = () => {
             marginBottom: "20px",
           }}
         >
-          <strong>Sponsorship in Quebec:</strong> If you reside in the province
-          of Quebec, additional requirements apply. Quebec sponsors must commit
-          to a financial undertaking to support their sponsored family members.
-          The duration of this commitment varies based on the relationship type.
-          For spousal sponsorship, the sponsor commits to financially supporting
-          their spouse, common-law partner, or conjugal partner for three years.
+        <strong> {strongText8}</strong> {remainingText8}
         </p>
         <p
           style={{
@@ -317,17 +347,12 @@ const SpouseOutland = () => {
             marginBottom: "50px",
           }}
         >
-          <strong>Processing Time:</strong> Outland sponsorship applications in
-          Quebec may take up to 24 months to process.
+         <strong> {strongText9}</strong> {remainingText9}
         </p>
 
-        <h2 id="Process-Timeline">Processing Timeline:</h2>
+        <h2 id="Process-Timeline">  {pData?.ProcTimeHeading}</h2>
         <p>
-          <strong>IRCC’s Targeted Processing Period:</strong> Generally, spousal
-          sponsorships are processed within approximately 12-14 months. This
-          timeline includes the time required for biometrics collection and the
-          review of both the sponsor’s eligibility and the sponsored person’s
-          application for permanent residence.
+        <strong> {strongText10}</strong> {remainingText10}
         </p>
         <ul
           style={{
@@ -337,26 +362,20 @@ const SpouseOutland = () => {
           }}
         >
           <li>
-            Acknowledgment of Receipt (AOR): After submitting your application,
-            you will receive an acknowledgment of receipt from IRCC.
+          {pData?.pt1}
           </li>
           <li>
-            Eligibility Assessment: IRCC assesses the sponsor’s eligibility,
-            which typically takes 4-5 months.
+          {pData?.pt2}
           </li>
           <li>
-            Evaluation of Permanent Residence Application: The final step
-            involves evaluating the sponsored person’s application for permanent
-            residence, which may take approximately 6-8 months.
+          {pData?.pt3}
           </li>
           <li>
-            Quebec-Specific Processing: As mentioned earlier, Quebec-based
-            sponsorships may take up to 10-12 months to process.
+          {pData?.pt4}
           </li>
         </ul>
         <p>
-          Remember that these timelines are approximate and subject to change
-          based on individual circumstances and processing volumes.
+          {pData?.ptNote}
         </p>
 
         <h2
@@ -364,15 +383,10 @@ const SpouseOutland = () => {
             marginTop: "50px",
           }}
         >
-          Dual Intent Visa for Outland Spouse
+           {pData?.DualIntVisaOutSpouHeading}
         </h2>
         <p>
-          Navigating the waiting period during spousal sponsorship applications
-          can be challenging for newly married couples. These applications often
-          take a considerable amount of time to process. However, there is an
-          alternative: the Dual Intent Visitor Visa. In most cases, this visa is
-          approved within 30 days and boasts a remarkable success rate of over
-          90%.
+        {pData?.DualIntVisaOutSpouPara}
         </p>
 
         <h3
@@ -381,21 +395,13 @@ const SpouseOutland = () => {
           }}
           id="Dual-Intent-Visa"
         >
-          What is a Dual Intent Visa?
+          {pData?.WhatisDualIntVisaHeading}
         </h3>
         <p>
-          The concept of Dual Intent involves simultaneously pursuing two
-          pathways: applying for permanent residence and seeking temporary
-          status. Essentially, it demonstrates an intention to both reside in
-          Canada permanently and stay temporarily. For temporary residents, this
-          can be a complex process. They must convincingly express their desire
-          to leave Canada at the end of their authorized stay while also aiming
-          to become permanent residents.
+          {pData?.wd1}
         </p>
         <p>
-          At Brightlight Immigration, we understand that correctly demonstrating
-          Dual Intent can be challenging. With over 12 years of experience, we
-          strive to simplify this process for you.
+          {pData?.wd2}
         </p>
 
         <h2
@@ -403,12 +409,10 @@ const SpouseOutland = () => {
             marginTop: "50px",
           }}
         >
-          Spouses and Partners
+             {pData?.SpousesPartnersHeading}
         </h2>
         <p>
-          When assessing foreign nationals sponsored for permanent residence as
-          spouses or common-law partners, officers take individual circumstances
-          into account. Factors considered include:
+             {pData?.SpousesPartnerPara1}
         </p>
         <ul
           style={{
@@ -417,19 +421,13 @@ const SpouseOutland = () => {
             marginBottom: "30px",
           }}
         >
-          <li>Approval status of the sponsorship application</li>
-          <li>Stage one approval for permanent residence</li>
-          <li>Retention of ties in the applicant’s home country</li>
-          <li>
-            Contingency plans in case the permanent residence application is
-            refused
-          </li>
+          <li>{pData?.sp1}</li>
+          <li>{pData?.sp2}</li>
+          <li>{pData?.sp3}</li>
+          <li>{pData?.sp4}</li>
         </ul>
         <p>
-          If a spouse or partner can convincingly demonstrate that they will
-          leave Canada at the end of their authorized stay, even if their
-          permanent residence application is rejected, officers may issue a
-          temporary resident visa (TRV).
+           {pData?.spousesPartnerPara2}
         </p>
 
         <section
